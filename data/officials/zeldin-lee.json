@@ -1,0 +1,43 @@
+{
+  "name": "Zeldin, Lee",
+  "slug": "zeldin-lee",
+  "title": "Administrator",
+  "agency": "Environmental Protection Agency",
+  "level": "Cabinet",
+  "filingType": "278-T Periodic Transaction Report",
+  "mostRecentFilingDate": "2025-09-24",
+  "transactions": [
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares",
+      "ticker": "NRSN",
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares",
+      "ticker": "NRSN",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Datavault",
+      "ticker": "DVLT",
+      "type": "Purchase",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Datavault",
+      "ticker": "DVLT",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    }
+  ]
+}

@@ -5,10 +5,10 @@
   "agency": "Department of Housing and Urban Development",
   "level": "Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2025-12-18",
+  "mostRecentFilingDate": "2026-01-16",
   "transactions": [
     {
-      "description": "Bitmine Immersion Technologies Inc.",
+      "description": "Bitmine Immersion Technologies (BMNR)",
       "ticker": "BMNR",
       "type": "Purchase",
       "date": "2025-11-19",
@@ -16,43 +16,59 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Alphabet Inc.",
+      "description": "Alphabet, Inc. (GOOGL)",
       "ticker": "GOOGL",
       "type": "Sale",
-      "date": "2025-01-28",
-      "amount": "$1,001-$15,000",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Zillow Group Inc.",
-      "ticker": "ZG",
+      "description": "Zillow Group, Inc. (Z)",
+      "ticker": "Z",
       "type": "Sale",
-      "date": "2025-01-28",
+      "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Microsoft Corp.",
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
       "ticker": "MSFT",
       "type": "Sale",
-      "date": "2025-01-27",
-      "amount": "$1,001-$15,000",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Amazon.com Inc.",
+      "description": "Amazon.com, Inc. (AMZN)",
       "ticker": "AMZN",
       "type": "Sale",
-      "date": "2025-01-27",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-02-12",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Berkshire Hathaway Inc.",
-      "ticker": "BRK.B",
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
       "type": "Sale",
-      "date": "2025-01-24",
-      "amount": "$1,001-$15,000",
+      "date": "2025-02-12",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     }
   ]

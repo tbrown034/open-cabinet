@@ -1,0 +1,35 @@
+{
+  "name": "Molinaro, Marcus",
+  "slug": "molinaro-marcus",
+  "title": "Administrator, Federal Transit Administration",
+  "agency": "Department of Transportation",
+  "level": "Sub-Cabinet",
+  "filingType": "278-T Periodic Transaction Report",
+  "mostRecentFilingDate": "2026-02-20",
+  "transactions": [
+    {
+      "description": "State Street SPDR S&P 500 ETF Trust",
+      "ticker": "FBVVNX",
+      "type": "Purchase",
+      "date": "2025-06-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    }
+  ]
+}

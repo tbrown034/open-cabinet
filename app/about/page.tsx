@@ -188,6 +188,36 @@ export default function AboutPage() {
 
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+            Related resources
+          </h2>
+          <div className="flex items-start gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://assets.propublica.org/prod/v3/images/favicons/favicon-32x32.png"
+              alt=""
+              width={20}
+              height={20}
+              className="mt-1 shrink-0"
+            />
+            <p className="text-sm">
+              <a
+                href="https://projects.propublica.org/trump-town/"
+                className="underline hover:text-neutral-900 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ProPublica{"'"}s Trump Town
+              </a>{" "}
+              provides searchable access to raw disclosure documents for 1,500+
+              executive branch appointees. Open Cabinet focuses specifically on
+              stock trades, transaction timelines, and compliance tracking — a
+              different lens on the same public records.
+            </p>
+          </div>
+        </section>
+
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
             About the developer
           </h2>
           <p>

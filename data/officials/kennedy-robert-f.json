@@ -1,0 +1,83 @@
+{
+  "name": "Kennedy, Robert F",
+  "slug": "kennedy-robert-f",
+  "title": "Secretary",
+  "agency": "Department of Health and Human Services",
+  "level": "Cabinet",
+  "filingType": "278-T Periodic Transaction Report",
+  "mostRecentFilingDate": "2025-05-09",
+  "transactions": [
+    {
+      "description": "ASML Holding NV",
+      "ticker": "ASML",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Amazon.com, Inc.",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Apple, Inc.",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Uber Technologies, Inc.",
+      "ticker": "UBER",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Uber Technologies, Inc.",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Zscaler, Inc.",
+      "ticker": "ZS",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "CRISPR Therapeutics AG Common Shares",
+      "ticker": "CRSP",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "NIKE, Inc.",
+      "ticker": "NKE",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "NIKE, Inc.",
+      "ticker": "NKE",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    }
+  ]
+}
