@@ -124,6 +124,13 @@ export default async function DashboardPage() {
             {lateCount}
           </span>
           late filings
+          <span className="text-neutral-400 ml-1">
+            ({officials.find((o) => o.slug === "trump-donald-j")
+              ? `${officials
+                  .find((o) => o.slug === "trump-donald-j")!
+                  .transactions.filter((t) => t.lateFilingFlag).length} from Trump`
+              : ""})
+          </span>
         </div>
       </div>
 

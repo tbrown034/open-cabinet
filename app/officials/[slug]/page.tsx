@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
 import { formatDate, amountRangeLabel } from "@/lib/format";
+import { getNewsForOfficial } from "@/lib/news";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 
@@ -26,6 +27,7 @@ export default async function OfficialPage({
     notFound();
   }
 
+  const news = await getNewsForOfficial(slug);
   const { transactions } = official;
   const sorted = [...transactions].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -117,7 +119,7 @@ export default async function OfficialPage({
               <tr
                 key={`${tx.date}-${tx.description}-${i}`}
                 className={`border-b border-neutral-100 ${
-                  i % 2 === 1 ? "bg-neutral-50/50" : ""
+                  i % 2 === 1 ? "bg-neutral-50/60" : ""
                 }`}
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
@@ -155,6 +157,35 @@ export default async function OfficialPage({
           </tbody>
         </table>
       </div>
+
+      {news.length > 0 && (
+        <section className="mt-12">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
+            In the News
+          </h2>
+          <div className="space-y-4">
+            {news.map((item, i) => (
+              <div
+                key={i}
+                className="border-l-2 border-neutral-200 pl-4 text-sm"
+              >
+                <a
+                  href={item.url}
+                  className="text-neutral-900 hover:underline font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.headline}
+                </a>
+                <div className="text-xs text-neutral-400 mt-0.5">
+                  {item.source} · {item.date}
+                </div>
+                <p className="text-neutral-500 mt-1">{item.relevance}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics, {official.filingType}. Asset

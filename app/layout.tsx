@@ -39,9 +39,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${dmMono.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${dmMono.variable} ${instrumentSerif.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
+      <body className="bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
+        {/* Thin accent bar — signals "publication" not "app" */}
+        <div className="h-[3px] bg-neutral-800 w-full" />
         <header className="border-b border-neutral-200">
           <nav className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
@@ -84,22 +86,41 @@ export default function RootLayout({
             </div>
           </nav>
         </header>
-        <main className="flex-1">{children}</main>
-        <footer className="border-t border-neutral-200 mt-16">
-          <div className="mx-auto max-w-5xl px-4 py-8 text-xs text-neutral-400 leading-relaxed">
-            <p>
-              Data sourced from financial disclosures filed with the{" "}
-              <a
-                href="https://extapps2.oge.gov/201/Presiden.nsf"
-                className="underline hover:text-neutral-600"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                U.S. Office of Government Ethics
-              </a>{" "}
-              under the Ethics in Government Act. This tool is for informational
-              and journalism purposes only.
-            </p>
+        <main>{children}</main>
+        <footer className="border-t border-neutral-200">
+          <div className="mx-auto max-w-5xl px-4 py-8">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-neutral-400 leading-relaxed">
+              <div>
+                <p>
+                  Source:{" "}
+                  <a
+                    href="https://extapps2.oge.gov/201/Presiden.nsf"
+                    className="underline hover:text-neutral-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    U.S. Office of Government Ethics
+                  </a>
+                </p>
+                <p className="mt-1">
+                  For informational and journalism purposes only. Not investment
+                  advice.
+                </p>
+              </div>
+              <div className="text-right">
+                <p>
+                  Built by{" "}
+                  <a
+                    href="https://trevorthewebdeveloper.com"
+                    className="underline hover:text-neutral-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Trevor Brown
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
         </footer>
       </body>

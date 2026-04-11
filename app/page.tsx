@@ -1,10 +1,13 @@
 import { getOfficialsIndex, getAllOfficials } from "@/lib/data";
 import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
+import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
+import Link from "next/link";
 
 export default async function Home() {
   const index = await getOfficialsIndex();
   const allOfficials = await getAllOfficials();
+  const news = await getNewsCoverage();
   const { officials } = index;
 
   const totalOfficials = officials.length;
@@ -16,6 +19,8 @@ export default async function Home() {
   const estimatedTotal = allOfficials
     .flatMap((o) => o.transactions)
     .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
+
+  const recentNews = news.slice(0, 4);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
@@ -54,6 +59,46 @@ export default async function Home() {
       </div>
 
       <OfficialsTable officials={officials} />
+
+      {recentNews.length > 0 && (
+        <section className="mt-16">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
+            Recent Coverage
+          </h2>
+          <div className="space-y-4">
+            {recentNews.map((item, i) => (
+              <div
+                key={i}
+                className="border-l-2 border-neutral-200 pl-4 text-sm"
+              >
+                <a
+                  href={item.url}
+                  className="text-neutral-900 hover:underline font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.headline}
+                </a>
+                <div className="text-xs text-neutral-400 mt-0.5">
+                  {item.source} · {item.date}
+                  {item.official && (
+                    <>
+                      {" · "}
+                      <Link
+                        href={`/officials/${item.official}`}
+                        className="hover:underline"
+                      >
+                        View profile
+                      </Link>
+                    </>
+                  )}
+                </div>
+                <p className="text-neutral-500 mt-1">{item.relevance}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics. Values reported in ranges per
