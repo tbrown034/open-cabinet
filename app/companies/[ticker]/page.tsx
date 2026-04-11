@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTradesByTicker, getAllTickers } from "@/lib/data";
@@ -8,6 +9,27 @@ import CompanyBarChart from "@/app/components/company-bar-chart";
 export async function generateStaticParams() {
   const tickers = await getAllTickers();
   return tickers.map((ticker) => ({ ticker: ticker.toLowerCase() }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ ticker: string }>;
+}): Promise<Metadata> {
+  const { ticker } = await params;
+  const tickerMap = await getTradesByTicker();
+  const company = tickerMap.get(ticker.toUpperCase());
+  if (!company) return { title: "Not Found — Open Cabinet" };
+  const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
+  return {
+    title: `${company.ticker} — Who in Government Trades This Stock — Open Cabinet`,
+    description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
+    openGraph: {
+      title: `${company.ticker} — Who in Government Trades This Stock`,
+      description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
+      type: "website",
+    },
+  };
 }
 
 function isSale(type: string): boolean {

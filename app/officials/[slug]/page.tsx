@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
@@ -9,6 +10,26 @@ import TransactionTimeline from "@/app/components/transaction-timeline";
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const official = await getOfficialBySlug(slug);
+  if (!official) return { title: "Not Found — Open Cabinet" };
+  const displayName = official.name.split(",").reverse().join(" ").trim();
+  return {
+    title: `${displayName} Financial Trades — Open Cabinet`,
+    description: official.summary || `Financial transaction data for ${displayName}, ${official.title}.`,
+    openGraph: {
+      title: `${displayName} Financial Trades — Open Cabinet`,
+      description: `${official.transactions.length} transactions reported by ${displayName}, ${official.title}.`,
+      type: "website",
+    },
+  };
 }
 
 function isSale(type: Transaction["type"]): boolean {

@@ -29,6 +29,13 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "Open Cabinet — Executive Branch Stock Tracker",
+    description:
+      "29 officials. 2,100+ transactions. ~$3.6B estimated value. The first stock tracker for the executive branch.",
+    type: "website",
+    siteName: "Open Cabinet",
+  },
 };
 
 export default function RootLayout({
