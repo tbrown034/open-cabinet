@@ -83,7 +83,7 @@ export default function CompanyBarChart({
                   y={y + bandHeight / 2}
                   textAnchor="end"
                   dominantBaseline="middle"
-                  className="fill-neutral-700 text-[12px]"
+                  fill="#44403c" className="text-[12px]"
                 >
                   {o.name.length > 20
                     ? o.name.substring(0, 18) + "..."
@@ -96,7 +96,7 @@ export default function CompanyBarChart({
                   y={y}
                   width={Math.max(barW, 2)}
                   height={bandHeight}
-                  className="fill-neutral-800"
+                  fill="#292524"
                   rx={1}
                 />
 
@@ -105,7 +105,7 @@ export default function CompanyBarChart({
                   x={barW + 6}
                   y={y + bandHeight / 2}
                   dominantBaseline="middle"
-                  className="fill-neutral-400 text-[11px]"
+                  fill="#a8a29e" className="text-[11px]"
                 >
                   {formatCompactCurrency(o.totalValue)}
                 </text>

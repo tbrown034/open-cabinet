@@ -299,7 +299,7 @@ function TimelineView({
                 <text
                   y={20}
                   textAnchor="middle"
-                  className="fill-neutral-400 text-[11px]"
+                  fill="#a8a29e" className="text-[11px]"
                 >
                   {formatTick(tick)}
                 </text>

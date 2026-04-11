@@ -64,6 +64,12 @@ export default function RootLayout({
                 Directory
               </Link>
               <Link
+                href="/dashboard"
+                className="hover:text-neutral-900 transition-colors"
+              >
+                Dashboard
+              </Link>
+              <Link
                 href="/companies"
                 className="hover:text-neutral-900 transition-colors"
               >
