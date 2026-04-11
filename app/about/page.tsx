@@ -153,10 +153,11 @@ export default function AboutPage() {
               $15,000 could be worth $1,002 or $14,999.
             </li>
             <li>
-              <strong>Not all officials are tracked.</strong> Some executive
-              branch filers require individual OGE Form 201 requests to access
-              their disclosures. This database includes only those with publicly
-              available 278-T reports.
+              <strong>Coverage limited to Level I, Level II, and the
+              President.</strong> The OGE database lists over 16,000 records.
+              This tracker covers 29 officials whose 278-T transaction reports
+              are directly downloadable. Approximately 179 additional officials
+              require individual Form 201 requests to access their disclosures.
             </li>
             <li>
               <strong>PDF extraction is imperfect.</strong> Some filings use
@@ -168,6 +169,12 @@ export default function AboutPage() {
               assets (private equity, real estate LLCs, retirement accounts) do
               not have ticker symbols. We include them when they appear in the
               original filing.
+            </li>
+            <li>
+              <strong>Summaries are descriptive, not editorial.</strong> The
+              plain-English summaries on each official{"'"}s page describe what
+              the data shows — they do not make judgments about legality or
+              ethics. This site is not affiliated with any government agency.
             </li>
           </ul>
         </section>
@@ -214,12 +221,28 @@ export default function AboutPage() {
               different lens on the same public records.
             </p>
           </div>
+          <div className="flex items-start gap-3 mt-4">
+            <div className="w-5 h-5 mt-1 shrink-0 bg-neutral-300 rounded-sm" />
+            <p className="text-sm">
+              <a
+                href="https://www.opensecrets.org/biden/executive-branch"
+                className="underline hover:text-neutral-900 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                OpenSecrets Executive Branch
+              </a>{" "}
+              tracks financial connections between executive branch officials and
+              their former employers, clients, and industries.
+            </p>
+          </div>
         </section>
 
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="text-lg font-semibold text-neutral-900 mb-3">
             About the developer
           </h2>
+          {/* Note: Related resources is above this section */}
           <p>
             Built by{" "}
             <a
