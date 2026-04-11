@@ -1,37 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Open Cabinet
 
-## Getting Started
+The first interactive stock tracker for the executive branch.
 
-First, run the development server:
+Congress has 19 stock trackers (Capitol Trades, Quiver Quantitative, Unusual Whales). The executive branch -- same STOCK Act rules, same 30/45-day filing requirements -- has had zero. Open Cabinet fills that gap.
+
+## Key Stats
+
+- **29 officials** tracked, from the President to deputy commissioners
+- **2,100+ transactions** extracted from OGE filing PDFs
+- **~$3.6B** estimated total transaction value
+- **578 companies** searchable by ticker or name
+- **564 late filings** flagged (213 from Trump alone)
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| **Directory** (`/`) | All officials with transaction counts, sortable table |
+| **Dashboard** (`/dashboard`) | Aggregate buy/sell ratio, asset category treemap, official rankings |
+| **All Trades** (`/all`) | Swim lane visualization -- every transaction on one canvas |
+| **Companies** (`/companies`) | Search by ticker or company name across all officials |
+| **Company Detail** (`/companies/[ticker]`) | Who in government trades this stock, with D3 bar chart |
+| **Official Detail** (`/officials/[slug]`) | Transaction timeline, trade table, news coverage, summary |
+| **About** (`/about`) | Methodology, legal basis, limitations, disclaimers |
+
+## Data Source
+
+All data comes from the U.S. Office of Government Ethics. Transaction reports (278-T Periodic Transaction Reports) are filed under the STOCK Act and the Ethics in Government Act (5 U.S.C. Section 13107). Federal government documents carry no copyright (17 U.S.C. Section 105).
+
+Transaction data is extracted from OGE filing PDFs and stored as static JSON in the `data/` directory.
+
+## Tech Stack
+
+- **Next.js 16** (App Router, static generation)
+- **React 19**
+- **D3.js** v7 sub-modules (d3-scale, d3-hierarchy, d3-time, d3-array, d3-shape, d3-format)
+- **TypeScript**
+- **Tailwind CSS 4**
+- **pnpm**
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/tbrown034/open-cabinet-.git
+cd open-cabinet-
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Legal
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This tool aggregates public records. The Ethics in Government Act's news media exception explicitly permits dissemination of financial disclosures to the general public. No enforcement action has ever been brought against a disclosure aggregator. This tool is for informational and journalism purposes only -- it does not constitute investment advice.
 
-## Learn More
+## Built By
 
-To learn more about Next.js, take a look at the following resources:
+[Trevor Brown](https://trevorthewebdeveloper.com) -- investigative data journalist turned web developer. 15 years of political reporting at Oklahoma Watch. Built Oklahoma's first statewide financial disclosure database.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# open-cabinet-
+[GitHub](https://github.com/tbrown034) | [Portfolio](https://trevorthewebdeveloper.com)
