@@ -51,6 +51,15 @@ export interface CompanyData {
   trades: CompanyTrade[];
 }
 
+// Mapping for tickers where the description is just the ticker symbol
+const TICKER_NAME_OVERRIDES: Record<string, string> = {
+  DODFX: "Dodge & Cox International Stock Fund",
+  GAJPX: "American Funds Growth Fund of America",
+  GGLPX: "Goldman Sachs GQG Partners Intl Opps Fund",
+  SPMD: "SPDR Portfolio S&P 400 Mid Cap ETF",
+  SPY: "SPDR S&P 500 ETF Trust",
+};
+
 export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   const officials = await getAllOfficials();
   const tickerMap = new Map<string, CompanyData>();
@@ -60,9 +69,13 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
       if (!tx.ticker) continue;
       const ticker = tx.ticker.toUpperCase();
       if (!tickerMap.has(ticker)) {
+        let name = tx.description.replace(/\s*\([^)]*\)\s*$/, "").trim();
+        if (name.toUpperCase() === ticker || TICKER_NAME_OVERRIDES[ticker]) {
+          name = TICKER_NAME_OVERRIDES[ticker] || name;
+        }
         tickerMap.set(ticker, {
           ticker,
-          companyName: tx.description.replace(/\s*\([^)]*\)\s*$/, "").trim(),
+          companyName: name,
           trades: [],
         });
       }
