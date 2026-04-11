@@ -41,7 +41,7 @@
     },
     {
       "description": "Amazon Com Inc Com",
-      "ticker": null,
+      "ticker": "AMZN",
       "type": "Sale",
       "date": "2025-08-07",
       "amount": "$100,001-$250,000",
@@ -504,130 +504,10 @@
       "lateFilingFlag": false
     },
     {
-      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
-      "ticker": "BBAX",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "JPMorgan BetaBuilders Japan ETF",
       "ticker": "BBJP",
       "type": "Sale",
       "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
-      "ticker": "BBAX",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Japan ETF",
-      "ticker": "BBJP",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI EAFE ETF",
-      "ticker": "EFA",
-      "type": "Purchase",
-      "date": "2025-09-12",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
-      "ticker": "BBAX",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Japan ETF",
-      "ticker": "BBJP",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
-      "ticker": "BBAX",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Japan ETF",
-      "ticker": "BBJP",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI EAFE ETF",
-      "ticker": "EFA",
-      "type": "Purchase",
-      "date": "2025-09-12",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
-      "ticker": "BBAX",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Japan ETF",
-      "ticker": "BBJP",
-      "type": "Sale",
-      "date": "2025-09-12",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI EAFE ETF",
-      "ticker": "EFA",
-      "type": "Purchase",
-      "date": "2025-09-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Canada ETF",
-      "ticker": "BBCA",
-      "type": "Sale",
-      "date": "2025-09-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI EAFE ETF",
-      "ticker": "EFA",
-      "type": "Purchase",
-      "date": "2025-09-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "JPMorgan BetaBuilders Canada ETF",
-      "ticker": "BBCA",
-      "type": "Sale",
-      "date": "2025-09-16",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -649,15 +529,7 @@
     },
     {
       "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-10-22",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
-      "ticker": null,
+      "ticker": "JPM",
       "type": "Purchase",
       "date": "2025-10-22",
       "amount": "$1,001-$15,000",
@@ -744,5 +616,5 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Bedford reported 78 sales (est. $37.5M) and 13 purchases (est. $21.2M). Holdings included MDT, REGN, ELF, ALK, IJLXX, among others. 2 of 92 transactions were filed late."
+  "summary": "Bedford reported 67 sales (est. $37.3M) and 8 purchases (est. $21.1M). Holdings included MDT, REGN, ELF, ALK, AMZN, among others. 2 of 76 transactions were filed late."
 }

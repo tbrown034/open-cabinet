@@ -56,14 +56,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "SPDR Gold Shares (GLD)",
-      "ticker": "GLD",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Old Farm Partners",
       "ticker": null,
       "type": "Sale",
@@ -85,14 +77,6 @@
       "type": "Sale",
       "date": "2025-02-19",
       "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Key Square Partners II LP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-02-19",
-      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -160,35 +144,11 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Key Square Partners II LLP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-25",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Totem Macro Global Alpha Select Onshore Fund, LLC",
       "ticker": null,
       "type": "Sale",
       "date": "2025-03-27",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Castle Hook LP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-27",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Castle Hook LP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-27",
-      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
@@ -216,5 +176,5 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Bessent reported 26 sales totaling an estimated $3.3M, consistent with ethics agreement divestitures. Holdings included EWG, THD, GLD, VZ."
+  "summary": "Bessent reported 21 sales totaling an estimated $3.0M, consistent with ethics agreement divestitures. Holdings included EWG, THD, GLD, VZ."
 }
