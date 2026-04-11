@@ -40,6 +40,36 @@ export function amountRangeLabel(range: AmountRange): string {
 }
 
 /**
+ * Returns the midpoint dollar value from an amount range.
+ * Used for estimated total value calculations.
+ */
+export function amountRangeToMidpoint(range: AmountRange): number {
+  const map: Record<AmountRange, number> = {
+    "$1,001-$15,000": 8000,
+    "$15,001-$50,000": 32500,
+    "$50,001-$100,000": 75000,
+    "$100,001-$250,000": 175000,
+    "$250,001-$500,000": 375000,
+    "$500,001-$1,000,000": 750000,
+    "$1,000,001-$5,000,000": 3000000,
+    "$5,000,001-$25,000,000": 15000000,
+    "$25,000,001-$50,000,000": 37500000,
+    "Over $50,000,000": 75000000,
+  };
+  return map[range];
+}
+
+/**
+ * Formats a large number as compact currency: $1.2M, $500K, etc.
+ */
+export function formatCompactCurrency(value: number): string {
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(1)}B`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
+  if (value >= 1_000) return `$${(value / 1_000).toFixed(0)}K`;
+  return `$${value}`;
+}
+
+/**
  * Formats a date string (YYYY-MM-DD) as "Mon DD, YYYY".
  */
 export function formatDate(dateStr: string): string {

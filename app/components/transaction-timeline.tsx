@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { scaleTime, scaleLinear, scaleSqrt } from "d3-scale";
+import { scaleTime, scaleSqrt, scaleLinear } from "d3-scale";
 import { timeFormat } from "d3-time-format";
 import { extent } from "d3-array";
 import type { Transaction } from "@/lib/types";
@@ -10,18 +10,13 @@ import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
 /**
  * TRANSACTION TIMELINE — D3 + React Integration
  *
- * This component demonstrates the "D3 for math, React for DOM" pattern:
+ * Uses "D3 for math, React for DOM": D3 computes scales and positions,
+ * React renders SVG elements and manages state (tooltips, hover).
  *
- * - D3 handles the MATH: computing scales that map data values to pixel
- *   coordinates, formatting dates and numbers, calculating layout positions.
- *
- * - React handles the DOM: rendering SVG elements, managing state (tooltips,
- *   hover), and handling user interactions.
- *
- * Why this pattern? React owns the DOM via its virtual DOM diffing. If D3 also
- * tries to manipulate the DOM (via d3.select().append()), they fight over who
- * controls what. By limiting D3 to pure computation, we get the best of both:
- * D3's powerful data transformation + React's efficient rendering.
+ * Two layout modes:
+ * - TIMELINE: When date range > 7 days. Horizontal timeline, x = date.
+ * - COMPACT GRID: When all trades cluster in ≤7 days. Dots arranged in
+ *   a packed grid, sorted by amount. Shows density without wasting space.
  */
 
 interface TimelineProps {
@@ -38,16 +33,20 @@ function isSale(type: Transaction["type"]): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
 
+function getDotColor(tx: Transaction): string {
+  if (isSale(tx.type)) return "fill-red-600";
+  if (tx.type === "Purchase") return "fill-emerald-600";
+  return "fill-neutral-400";
+}
+
 export default function TransactionTimeline({ transactions }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(800);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
 
-  // Responsive width: observe the container and update width on resize
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
         setWidth(entry.contentRect.width);
@@ -57,49 +56,182 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
     return () => observer.disconnect();
   }, []);
 
-  // ── LAYOUT CONSTANTS ──
-  // These define the "margin convention" — the space between the SVG edge
-  // and the chart area where data is plotted. This leaves room for axes,
-  // labels, and padding.
-  const margin = { top: 20, right: 20, bottom: 40, left: 20 };
-  // Scale height with number of trades so dense single-day clusters
-  // (like Mody's 20 trades) have room to spread vertically
-  const maxSameDay = Math.max(
-    ...Array.from(
-      transactions.reduce((map, tx) => {
-        map.set(tx.date, (map.get(tx.date) || 0) + 1);
-        return map;
-      }, new Map<string, number>()).values()
-    )
+  // Determine if we should use compact mode
+  const dates = transactions.map((tx) => new Date(tx.date + "T00:00:00"));
+  const dateMin = Math.min(...dates.map((d) => d.getTime()));
+  const dateMax = Math.max(...dates.map((d) => d.getTime()));
+  const dateRangeDays = (dateMax - dateMin) / (1000 * 60 * 60 * 24);
+  const useCompactMode = dateRangeDays < 7;
+
+  if (useCompactMode) {
+    return (
+      <CompactGrid
+        transactions={transactions}
+        width={width}
+        containerRef={containerRef}
+        tooltip={tooltip}
+        setTooltip={setTooltip}
+      />
+    );
+  }
+
+  return (
+    <TimelineView
+      transactions={transactions}
+      width={width}
+      containerRef={containerRef}
+      tooltip={tooltip}
+      setTooltip={setTooltip}
+    />
   );
-  const height = Math.max(200, Math.min(400, maxSameDay * 18 + 60));
+}
+
+// ── COMPACT GRID ──
+// For single-day or narrow-range clusters. Arranges dots in rows,
+// sorted by amount (largest first). Dense and informative.
+function CompactGrid({
+  transactions,
+  width,
+  containerRef,
+  tooltip,
+  setTooltip,
+}: {
+  transactions: Transaction[];
+  width: number;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  tooltip: TooltipData | null;
+  setTooltip: (t: TooltipData | null) => void;
+}) {
+  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+  const chartWidth = width - margin.left - margin.right;
+
+  const parsedData = transactions
+    .map((tx) => ({
+      tx,
+      amount: amountRangeToMin(tx.amount),
+    }))
+    .sort((a, b) => b.amount - a.amount);
+
+  const amountExtent = extent(parsedData, (d) => d.amount) as [number, number];
+  const rScale = scaleSqrt()
+    .domain([amountExtent[0], Math.max(amountExtent[1], amountExtent[0] + 1)])
+    .range([6, 22]);
+
+  // Pack dots into rows left-to-right, wrapping when they'd overflow
+  const dotSpacing = 4;
+  const positions: { x: number; y: number; r: number; idx: number }[] = [];
+  let rowX = 0;
+  let rowY = 0;
+  let rowMaxR = 0;
+
+  parsedData.forEach((d, i) => {
+    const r = rScale(d.amount);
+    if (rowX + r * 2 + dotSpacing > chartWidth && rowX > 0) {
+      rowX = 0;
+      rowY += rowMaxR * 2 + dotSpacing;
+      rowMaxR = 0;
+    }
+    positions.push({ x: rowX + r, y: rowY + r, r, idx: i });
+    rowX += r * 2 + dotSpacing;
+    rowMaxR = Math.max(rowMaxR, r);
+  });
+
+  const totalHeight =
+    (positions.length > 0
+      ? Math.max(...positions.map((p) => p.y + p.r))
+      : 40) +
+    margin.top +
+    margin.bottom;
+
+  const dateLabel = formatDate(transactions[0].date);
+
+  return (
+    <div ref={containerRef} className="relative mb-10">
+      <div className="flex items-baseline gap-3 mb-4">
+        <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
+          Transactions
+        </h2>
+        <span className="text-xs text-neutral-400">{dateLabel}</span>
+      </div>
+
+      <svg width={width} height={totalHeight} className="overflow-visible">
+        <g transform={`translate(${margin.left}, ${margin.top})`}>
+          {positions.map((pos) => {
+            const d = parsedData[pos.idx];
+            return (
+              <circle
+                key={`${d.tx.description}-${pos.idx}`}
+                cx={pos.x}
+                cy={pos.y}
+                r={pos.r}
+                className={`transition-opacity duration-150 ${getDotColor(d.tx)}`}
+                opacity={
+                  tooltip
+                    ? tooltip.tx === d.tx
+                      ? 0.9
+                      : 0.25
+                    : 0.7
+                }
+                stroke={d.tx.lateFilingFlag ? "#b45309" : "white"}
+                strokeWidth={d.tx.lateFilingFlag ? 2.5 : 1.5}
+                onMouseEnter={() =>
+                  setTooltip({
+                    tx: d.tx,
+                    x: pos.x + margin.left,
+                    y: pos.y + margin.top,
+                  })
+                }
+                onMouseLeave={() => setTooltip(null)}
+                style={{ cursor: "pointer" }}
+              />
+            );
+          })}
+        </g>
+      </svg>
+
+      <Tooltip tooltip={tooltip} width={width} />
+      <Legend />
+    </div>
+  );
+}
+
+// ── TIMELINE VIEW ──
+// Horizontal timeline for officials with trades across multiple dates.
+function TimelineView({
+  transactions,
+  width,
+  containerRef,
+  tooltip,
+  setTooltip,
+}: {
+  transactions: Transaction[];
+  width: number;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  tooltip: TooltipData | null;
+  setTooltip: (t: TooltipData | null) => void;
+}) {
+  const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+
+  // Dynamic height based on how many trades share a single date
+  const dateCounts = new Map<string, number>();
+  transactions.forEach((tx) => {
+    dateCounts.set(tx.date, (dateCounts.get(tx.date) || 0) + 1);
+  });
+  const maxSameDay = Math.max(...dateCounts.values());
+  const height = Math.max(160, Math.min(300, maxSameDay * 16 + 60));
+
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
 
-  // ── SCALES ──
-  // Scales are the core of D3. A scale is a function that maps from a
-  // "domain" (your data values) to a "range" (pixel positions on screen).
-  //
-  // Think of it like unit conversion:
-  //   domain: [Jan 2025, Dec 2025]  →  range: [0px, 800px]
-  //   So a date of July 2025 maps to roughly 400px.
-
-  // Parse dates and amounts for scale computation
   const parsedData = transactions.map((tx) => ({
     tx,
     date: new Date(tx.date + "T00:00:00"),
     amount: amountRangeToMin(tx.amount),
   }));
 
-  // scaleTime: Maps Date objects to pixel positions.
-  // We use scaleTime (not scaleLinear) because it understands calendar
-  // math — months have different lengths, leap years exist, etc.
-  // .nice() rounds the domain to clean calendar boundaries (e.g., start
-  // of month instead of Jan 17).
+  // scaleTime maps dates to x-pixel positions
   const dateExtent = extent(parsedData, (d) => d.date) as [Date, Date];
-
-  // Add padding to the date range so dots aren't flush against edges
-  const dayPadding = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
+  const dayPadding = 7 * 24 * 60 * 60 * 1000;
   const xScale = scaleTime()
     .domain([
       new Date(dateExtent[0].getTime() - dayPadding),
@@ -107,60 +239,28 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
     ])
     .range([0, chartWidth]);
 
-  // scaleSqrt: Maps dollar amounts to circle radii.
-  // Why sqrt instead of linear? Human perception of area is nonlinear.
-  // If we doubled the radius, the circle AREA would quadruple (area = πr²),
-  // making large values look disproportionately huge. scaleSqrt compensates:
-  // it maps values to radii such that the AREA scales linearly with data.
+  // scaleSqrt maps amounts to radii (area scales linearly with value)
   const amountExtent = extent(parsedData, (d) => d.amount) as [number, number];
   const rScale = scaleSqrt()
     .domain([amountExtent[0], Math.max(amountExtent[1], amountExtent[0] + 1)])
     .range([5, 20]);
 
-  // ── JITTERING ──
-  // When many trades share the same date (like Mody's 20 trades on
-  // Jan 30), dots pile up at one x-coordinate. We spread them vertically
-  // using a deterministic offset based on each trade's position within
-  // its date group. This is called "jittering" in data viz — adding small
-  // random or systematic offsets to prevent overplotting.
-  const dateGroups = new Map<string, number>();
-  const dateCounts = new Map<string, number>();
-  parsedData.forEach((d) => {
-    const key = d.tx.date;
-    dateCounts.set(key, (dateCounts.get(key) || 0) + 1);
-  });
-  parsedData.forEach((d) => {
-    const key = d.tx.date;
-    const idx = dateGroups.get(key) || 0;
-    dateGroups.set(key, idx + 1);
-  });
-
-  // Reset for the actual render pass
+  // Jittering for same-day trades
   const dateGroupIndex = new Map<string, number>();
   function getJitterY(tx: Transaction): number {
     const key = tx.date;
     const count = dateCounts.get(key) || 1;
     const idx = dateGroupIndex.get(key) || 0;
     dateGroupIndex.set(key, idx + 1);
-
     if (count <= 1) return chartHeight / 2;
-
-    // Spread dots evenly across the chart height with padding
-    const padding = 15;
-    const availableHeight = chartHeight - padding * 2;
-    const step = availableHeight / (count - 1);
+    const padding = 12;
+    const available = chartHeight - padding * 2;
+    const step = available / (count - 1);
     return padding + idx * step;
   }
 
-  // ── AXIS TICKS ──
-  // Generate tick positions along the x-axis. scaleTime.ticks() returns
-  // "nice" date values (start of months, quarters, etc.) based on the
-  // data range.
   const ticks = xScale.ticks(Math.max(Math.floor(chartWidth / 120), 2));
   const formatTick = timeFormat("%b %Y");
-
-  // Deduplicate ticks that format to the same label (happens when date
-  // range is very narrow, e.g., all trades on one day)
   const seenLabels = new Set<string>();
   const dedupedTicks = ticks.filter((tick) => {
     const label = formatTick(tick);
@@ -183,12 +283,6 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
         aria-label="Transaction timeline showing trades over time"
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>
-          {/* ── X-AXIS ──
-              We render the axis manually with React instead of using D3's
-              axis generator (d3.axisBottom). This keeps React in control
-              of the DOM. Each tick is a line + text label. */}
-
-          {/* Baseline */}
           <line
             x1={0}
             y1={chartHeight}
@@ -197,7 +291,6 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
             stroke="#d4d4d4"
           />
 
-          {/* Tick marks and labels */}
           {dedupedTicks.map((tick, i) => {
             const x = xScale(tick);
             return (
@@ -214,19 +307,12 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
             );
           })}
 
-          {/* ── DATA POINTS ──
-              Each transaction becomes a circle positioned by date (x) and
-              centered vertically (y). Color encodes type, radius encodes
-              amount. We render sales first so purchases layer on top
-              (purchases are more noteworthy for accountability). */}
           {parsedData
-            .sort((a, b) => b.amount - a.amount) // Larger dots behind
+            .sort((a, b) => b.amount - a.amount)
             .map((d, i) => {
               const cx = xScale(d.date);
               const cy = getJitterY(d.tx);
               const r = rScale(d.amount);
-              const sale = isSale(d.tx.type);
-              const purchase = d.tx.type === "Purchase";
 
               return (
                 <circle
@@ -234,13 +320,7 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
                   cx={cx}
                   cy={cy}
                   r={r}
-                  className={`transition-opacity duration-150 ${
-                    sale
-                      ? "fill-red-600"
-                      : purchase
-                        ? "fill-emerald-600"
-                        : "fill-neutral-400"
-                  }`}
+                  className={`transition-opacity duration-150 ${getDotColor(d.tx)}`}
                   opacity={
                     tooltip
                       ? tooltip.tx === d.tx
@@ -248,11 +328,7 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
                         : 0.25
                       : 0.7
                   }
-                  stroke={
-                    d.tx.lateFilingFlag
-                      ? "#b45309" // amber-700 ring for late filings
-                      : "white"
-                  }
+                  stroke={d.tx.lateFilingFlag ? "#b45309" : "white"}
                   strokeWidth={d.tx.lateFilingFlag ? 2.5 : 1.5}
                   onMouseEnter={() =>
                     setTooltip({ tx: d.tx, x: cx + margin.left, y: cy })
@@ -265,58 +341,69 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
         </g>
       </svg>
 
-      {/* ── TOOLTIP ──
-          Rendered as a React div positioned absolutely over the SVG.
-          This is easier to style than SVG foreignObject and supports
-          full CSS/HTML. */}
-      {tooltip && (
-        <div
-          className="absolute pointer-events-none bg-white border border-neutral-200 shadow-sm px-3 py-2 text-xs max-w-60 z-10"
-          style={{
-            left: Math.min(tooltip.x, width - 220),
-            top: tooltip.y - 80,
-          }}
-        >
-          <div className="font-medium text-neutral-900 mb-1">
-            {tooltip.tx.description}
-          </div>
-          <div className="text-neutral-500 space-y-0.5">
-            <div>{formatDate(tooltip.tx.date)}</div>
-            <div>
-              <span
-                className={
-                  isSale(tooltip.tx.type)
-                    ? "text-red-700"
-                    : tooltip.tx.type === "Purchase"
-                      ? "text-emerald-700"
-                      : ""
-                }
-              >
-                {tooltip.tx.type}
-              </span>{" "}
-              · {amountRangeLabel(tooltip.tx.amount)}
-            </div>
-            {tooltip.tx.ticker && <div>Ticker: {tooltip.tx.ticker}</div>}
-            {tooltip.tx.lateFilingFlag && (
-              <div className="text-amber-700 font-medium">Late filing</div>
-            )}
-          </div>
-        </div>
-      )}
+      <Tooltip tooltip={tooltip} width={width} />
+      <Legend />
+    </div>
+  );
+}
 
-      {/* ── LEGEND ── */}
-      <div className="flex gap-4 mt-3 text-xs text-neutral-400">
-        <div className="flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-70" />
-          Sale
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-70" />
-          Purchase
-        </div>
-        <div className="text-neutral-300">|</div>
-        <div>Circle size = transaction amount</div>
+function Tooltip({
+  tooltip,
+  width,
+}: {
+  tooltip: TooltipData | null;
+  width: number;
+}) {
+  if (!tooltip) return null;
+  return (
+    <div
+      className="absolute pointer-events-none bg-white border border-neutral-200 shadow-sm px-3 py-2 text-xs max-w-60 z-10"
+      style={{
+        left: Math.min(tooltip.x, width - 220),
+        top: Math.max(tooltip.y - 80, 0),
+      }}
+    >
+      <div className="font-medium text-neutral-900 mb-1">
+        {tooltip.tx.description}
       </div>
+      <div className="text-neutral-500 space-y-0.5">
+        <div>{formatDate(tooltip.tx.date)}</div>
+        <div>
+          <span
+            className={
+              isSale(tooltip.tx.type)
+                ? "text-red-700"
+                : tooltip.tx.type === "Purchase"
+                  ? "text-emerald-700"
+                  : ""
+            }
+          >
+            {tooltip.tx.type}
+          </span>{" "}
+          · {amountRangeLabel(tooltip.tx.amount)}
+        </div>
+        {tooltip.tx.ticker && <div>Ticker: {tooltip.tx.ticker}</div>}
+        {tooltip.tx.lateFilingFlag && (
+          <div className="text-amber-700 font-medium">Late filing</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Legend() {
+  return (
+    <div className="flex gap-4 mt-3 text-xs text-neutral-400">
+      <div className="flex items-center gap-1.5">
+        <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-70" />
+        Sale
+      </div>
+      <div className="flex items-center gap-1.5">
+        <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-70" />
+        Purchase
+      </div>
+      <div className="text-neutral-300">|</div>
+      <div>Circle size = transaction amount</div>
     </div>
   );
 }

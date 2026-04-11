@@ -22,6 +22,16 @@ export async function getOfficialBySlug(
   }
 }
 
+export async function getAllOfficials(): Promise<OfficialData[]> {
+  const index = await getOfficialsIndex();
+  const officials = await Promise.all(
+    index.officials
+      .filter((o) => o.dataStatus === "parsed")
+      .map((o) => getOfficialBySlug(o.slug))
+  );
+  return officials.filter((o): o is OfficialData => o !== null);
+}
+
 export async function getAllOfficialSlugs(): Promise<string[]> {
   const index = await getOfficialsIndex();
   return index.officials.map((o) => o.slug);

@@ -53,7 +53,7 @@ export default function OfficialsTable({
             <th className="pb-2 pr-4 font-medium">
               <button
                 onClick={() => handleSort("name")}
-                className="hover:text-neutral-900 transition-colors"
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Name{sortKey === "name" ? arrow : ""}
               </button>
@@ -61,7 +61,7 @@ export default function OfficialsTable({
             <th className="pb-2 pr-4 font-medium hidden md:table-cell">
               <button
                 onClick={() => handleSort("agency")}
-                className="hover:text-neutral-900 transition-colors"
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Agency{sortKey === "agency" ? arrow : ""}
               </button>
@@ -69,7 +69,7 @@ export default function OfficialsTable({
             <th className="pb-2 pr-4 font-medium text-right">
               <button
                 onClick={() => handleSort("transactionCount")}
-                className="hover:text-neutral-900 transition-colors"
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Trades{sortKey === "transactionCount" ? arrow : ""}
               </button>
@@ -77,7 +77,7 @@ export default function OfficialsTable({
             <th className="pb-2 font-medium text-right hidden sm:table-cell">
               <button
                 onClick={() => handleSort("mostRecentFilingDate")}
-                className="hover:text-neutral-900 transition-colors"
+                className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Latest filing
                 {sortKey === "mostRecentFilingDate" ? arrow : ""}
@@ -89,14 +89,18 @@ export default function OfficialsTable({
           {sorted.map((official, i) => (
             <tr
               key={official.slug}
-              className={`border-b border-neutral-100 hover:bg-neutral-50 transition-colors ${
+              className={`border-b border-neutral-100 cursor-pointer transition-colors hover:bg-neutral-100 ${
                 i % 2 === 1 ? "bg-neutral-50/50" : ""
               }`}
+              onClick={() => {
+                window.location.href = `/officials/${official.slug}`;
+              }}
             >
               <td className="py-3 pr-4">
                 <Link
                   href={`/officials/${official.slug}`}
                   className="text-neutral-900 hover:underline"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   {official.name}
                 </Link>

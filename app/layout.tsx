@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -25,6 +26,9 @@ export const metadata: Metadata = {
   title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
     "Track financial transactions of cabinet secretaries, agency heads, and senior government officials. Data from the U.S. Office of Government Ethics.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -40,7 +44,14 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
         <header className="border-b border-neutral-200">
           <nav className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-2">
+              <Image
+                src="/logo-cabinet.svg"
+                alt=""
+                width={22}
+                height={22}
+                className="opacity-80"
+              />
               <span className="text-lg font-semibold tracking-tight text-neutral-900">
                 Open Cabinet
               </span>
