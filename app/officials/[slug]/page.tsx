@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
 import { formatDate, amountRangeLabel } from "@/lib/format";
 import type { Transaction } from "@/lib/types";
+import TransactionTimeline from "@/app/components/transaction-timeline";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -89,6 +90,8 @@ export default async function OfficialPage({
           {formatDate(latest.toISOString().split("T")[0])}
         </div>
       </div>
+
+      <TransactionTimeline transactions={transactions} />
 
       <div className="overflow-x-auto -mx-4 px-4">
         <table className="w-full text-left text-sm">
