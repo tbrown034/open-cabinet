@@ -1,0 +1,157 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
+import { formatDate, amountRangeLabel } from "@/lib/format";
+import type { Transaction } from "@/lib/types";
+
+export async function generateStaticParams() {
+  const slugs = await getAllOfficialSlugs();
+  return slugs.map((slug) => ({ slug }));
+}
+
+function isSale(type: Transaction["type"]): boolean {
+  return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
+}
+
+export default async function OfficialPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const official = await getOfficialBySlug(slug);
+
+  if (!official) {
+    notFound();
+  }
+
+  const { transactions } = official;
+  const sorted = [...transactions].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  const totalTrades = transactions.length;
+  const buys = transactions.filter((t) => t.type === "Purchase").length;
+  const sells = transactions.filter((t) => isSale(t.type)).length;
+  const lateFilings = transactions.filter((t) => t.lateFilingFlag).length;
+
+  const dates = transactions.map((t) => new Date(t.date).getTime());
+  const earliest = new Date(Math.min(...dates));
+  const latest = new Date(Math.max(...dates));
+
+  return (
+    <div className="mx-auto max-w-5xl px-4 py-16">
+      <Link
+        href="/"
+        className="text-sm text-neutral-400 hover:text-neutral-600 transition-colors"
+      >
+        ← Back to directory
+      </Link>
+
+      <header className="mt-6 mb-12">
+        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-2">
+          {official.name}
+        </h1>
+        <p className="text-neutral-500">
+          {official.title} · {official.agency}
+        </p>
+      </header>
+
+      <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-10">
+        <div>
+          <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+            {totalTrades}
+          </span>
+          trades
+        </div>
+        <div>
+          <span className="text-lg font-semibold text-red-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+            {sells}
+          </span>
+          {sells === 1 ? "sale" : "sales"}
+        </div>
+        <div>
+          <span className="text-lg font-semibold text-emerald-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+            {buys}
+          </span>
+          {buys === 1 ? "purchase" : "purchases"}
+        </div>
+        {lateFilings > 0 && (
+          <div>
+            <span className="text-lg font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+              {lateFilings}
+            </span>
+            late {lateFilings === 1 ? "filing" : "filings"}
+          </div>
+        )}
+        <div className="text-neutral-400">
+          {formatDate(earliest.toISOString().split("T")[0])} –{" "}
+          {formatDate(latest.toISOString().split("T")[0])}
+        </div>
+      </div>
+
+      <div className="overflow-x-auto -mx-4 px-4">
+        <table className="w-full text-left text-sm">
+          <thead>
+            <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
+              <th className="pb-2 pr-4 font-medium">Date</th>
+              <th className="pb-2 pr-4 font-medium">Description</th>
+              <th className="pb-2 pr-4 font-medium hidden sm:table-cell">
+                Ticker
+              </th>
+              <th className="pb-2 pr-4 font-medium">Type</th>
+              <th className="pb-2 font-medium text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sorted.map((tx, i) => (
+              <tr
+                key={`${tx.date}-${tx.description}-${i}`}
+                className={`border-b border-neutral-100 ${
+                  i % 2 === 1 ? "bg-neutral-50/50" : ""
+                }`}
+              >
+                <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
+                  {formatDate(tx.date)}
+                </td>
+                <td className="py-2.5 pr-4 text-neutral-900">
+                  {tx.description}
+                  {tx.lateFilingFlag && (
+                    <span className="ml-2 text-xs text-amber-700 font-medium uppercase">
+                      Late
+                    </span>
+                  )}
+                </td>
+                <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
+                  {tx.ticker || "—"}
+                </td>
+                <td className="py-2.5 pr-4 whitespace-nowrap">
+                  <span
+                    className={
+                      isSale(tx.type)
+                        ? "text-red-700"
+                        : tx.type === "Purchase"
+                          ? "text-emerald-700"
+                          : "text-neutral-600"
+                    }
+                  >
+                    {tx.type}
+                  </span>
+                </td>
+                <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
+                  {amountRangeLabel(tx.amount)}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <p className="text-xs text-neutral-400 mt-8">
+        Source: U.S. Office of Government Ethics, {official.filingType}. Asset
+        values and transaction amounts are reported in ranges as required by
+        federal law.
+      </p>
+    </div>
+  );
+}
