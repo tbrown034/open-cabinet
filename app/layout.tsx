@@ -72,6 +72,12 @@ export default function RootLayout({
                 Dashboard
               </Link>
               <Link
+                href="/all"
+                className="hover:text-neutral-900 transition-colors"
+              >
+                All Trades
+              </Link>
+              <Link
                 href="/companies"
                 className="hover:text-neutral-900 transition-colors"
               >
