@@ -58,6 +58,12 @@ export default async function OfficialPage({
         </p>
       </header>
 
+      {official.summary && (
+        <p className="text-sm text-neutral-600 leading-relaxed border-l-2 border-neutral-200 pl-4 mb-10">
+          {official.summary}
+        </p>
+      )}
+
       <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-10">
         <div>
           <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">

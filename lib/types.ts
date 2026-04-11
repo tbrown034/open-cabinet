@@ -40,6 +40,7 @@ export interface OfficialData {
   filingType: string;
   mostRecentFilingDate: string;
   ogeProfileUrl?: string;
+  summary?: string;
   transactions: Transaction[];
 }
 
