@@ -1,0 +1,28 @@
+{
+  "name": "Wright, Christopher",
+  "slug": "wright-christopher",
+  "title": "Secretary of Energy",
+  "agency": "Department of Energy",
+  "level": "Cabinet",
+  "filingType": "278-T Periodic Transaction Report",
+  "mostRecentFilingDate": "2026-02-10",
+  "transactions": [
+    {
+      "description": "GS Three LLC (Real estate, Glenwood Springs, CO)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Westside Link LLC (Real estate, Denver, CO)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "notes": "Late filing: notification received over 30 days ago"
+    }
+  ]
+}
