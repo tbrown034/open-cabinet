@@ -58,7 +58,7 @@ export default function RootLayout({
                 Open Cabinet
               </span>
             </Link>
-            <div className="flex gap-6 text-sm text-neutral-500">
+            <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-500">
               <Link
                 href="/"
                 className="hover:text-neutral-900 transition-colors"

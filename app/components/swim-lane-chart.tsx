@@ -81,7 +81,8 @@ export default function SwimLaneChart({
   const laneHeight = 28;
   const height =
     officials.length * laneHeight + margin.top + margin.bottom;
-  const chartWidth = width - margin.left - margin.right;
+  const effectiveWidth = Math.max(width, 800);
+  const chartWidth = effectiveWidth - margin.left - margin.right;
   const chartHeight = officials.length * laneHeight;
 
   // scaleBand: one lane per official, spaced evenly
@@ -119,10 +120,14 @@ export default function SwimLaneChart({
     return <div ref={containerRef} style={{ height }} />;
   }
 
+  // On mobile, set a minimum width so the chart is readable with horizontal scroll
+  const minWidth = 800;
+  const svgWidth = Math.max(width, minWidth);
+
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative overflow-x-auto">
       <svg
-        width={width}
+        width={svgWidth}
         height={height}
         role="img"
         aria-label={`Swim lane chart showing ${officials.reduce((s, o) => s + o.transactions.length, 0)} transactions across ${officials.length} officials`}
