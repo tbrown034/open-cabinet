@@ -90,13 +90,21 @@ export default function SwimLaneChart({
     return () => observer.disconnect();
   }, []);
 
-  const margin = { top: 30, right: 20, bottom: 40, left: 220 };
-  // Cabinet-only view gets bigger lanes for the hero screenshot
-  const laneHeight = filter === "cabinet" ? 56 : 44;
+  // Responsive: on mobile (<640px), labels go above rows, not left
+  const isMobile = width > 0 && width < 640;
+  const margin = {
+    top: 30,
+    right: 10,
+    bottom: 40,
+    left: isMobile ? 10 : 220,
+  };
+  // Mobile: taller lanes to fit label above dots. Desktop: standard
+  const laneHeight = isMobile
+    ? 60
+    : filter === "cabinet" ? 56 : 44;
   const height =
     filtered.length * laneHeight + margin.top + margin.bottom;
-  const effectiveWidth = Math.max(width, 800);
-  const chartWidth = effectiveWidth - margin.left - margin.right;
+  const chartWidth = Math.max(width - margin.left - margin.right, 200);
   const chartHeight = filtered.length * laneHeight;
 
   // scaleBand: one lane per official, spaced evenly
@@ -135,12 +143,10 @@ export default function SwimLaneChart({
     return <div ref={containerRef} style={{ height }} />;
   }
 
-  // On mobile, set a minimum width so the chart is readable with horizontal scroll
-  const minWidth = 800;
-  const svgWidth = Math.max(width, minWidth);
+  const svgWidth = width;
 
   return (
-    <div ref={containerRef} className="relative overflow-x-auto">
+    <div ref={containerRef} className="relative">
       {/* Filter tabs */}
       <div className="flex gap-1 mb-4 text-xs">
         {([
@@ -195,29 +201,46 @@ export default function SwimLaneChart({
                   strokeWidth={0.5}
                 />
                 {/* Official name + title label */}
-                <a href={`/officials/${o.slug}`}>
-                  <text
-                    x={-8}
-                    y={y + bandHeight / 2 - 6}
-                    textAnchor="end"
-                    dominantBaseline="middle"
-                    fill="#292524"
-                    className="text-[11px]"
-                    fontWeight="500"
-                  >
-                    {displayName(o.name)}
-                  </text>
-                  <text
-                    x={-8}
-                    y={y + bandHeight / 2 + 7}
-                    textAnchor="end"
-                    dominantBaseline="middle"
-                    fill="#a3a3a3"
-                    className="text-[9px]"
-                  >
-                    {o.title.length > 28 ? o.title.substring(0, 26) + "..." : o.title}
-                  </text>
-                </a>
+                {isMobile ? (
+                  // Mobile: label inside the lane, top-left
+                  <a href={`/officials/${o.slug}`}>
+                    <text
+                      x={4}
+                      y={y + 12}
+                      textAnchor="start"
+                      fill="#292524"
+                      className="text-[10px]"
+                      fontWeight="500"
+                    >
+                      {displayName(o.name)}
+                    </text>
+                  </a>
+                ) : (
+                  // Desktop: label to the left of the lane
+                  <a href={`/officials/${o.slug}`}>
+                    <text
+                      x={-8}
+                      y={y + bandHeight / 2 - 6}
+                      textAnchor="end"
+                      dominantBaseline="middle"
+                      fill="#292524"
+                      className="text-[11px]"
+                      fontWeight="500"
+                    >
+                      {displayName(o.name)}
+                    </text>
+                    <text
+                      x={-8}
+                      y={y + bandHeight / 2 + 7}
+                      textAnchor="end"
+                      dominantBaseline="middle"
+                      fill="#a3a3a3"
+                      className="text-[9px]"
+                    >
+                      {o.title.length > 28 ? o.title.substring(0, 26) + "..." : o.title}
+                    </text>
+                  </a>
+                )}
               </g>
             );
           })}
@@ -267,7 +290,10 @@ export default function SwimLaneChart({
               const y = yScale(o.name) ?? 0;
               const bandHeight = yScale.bandwidth();
               const cx = xScale(new Date(tx.date + "T00:00:00"));
-              const cy = y + bandHeight / 2;
+              // Mobile: dots in lower half of lane (label is in upper half)
+              const cy = isMobile
+                ? y + bandHeight * 0.65
+                : y + bandHeight / 2;
               const r = rScale(amountRangeToMin(tx.amount as any));
 
               return (
