@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import type { OfficialIndexEntry } from "@/lib/types";
 import { formatDate } from "@/lib/format";
+import OfficialAvatar from "./official-avatar";
 
 type SortKey = "name" | "agency" | "transactionCount" | "mostRecentFilingDate";
 type SortDirection = "asc" | "desc";
@@ -97,18 +98,27 @@ export default function OfficialsTable({
               }}
             >
               <td className="py-3 pr-4">
-                <Link
-                  href={`/officials/${official.slug}`}
-                  className="text-neutral-900 hover:underline"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  {official.name}
-                </Link>
-                <div className="text-xs text-neutral-400 mt-0.5">
-                  {official.title}
-                </div>
-                <div className="text-xs text-neutral-400 mt-0.5 md:hidden">
-                  {official.agency}
+                <div className="flex items-center gap-3">
+                  <OfficialAvatar
+                    name={official.name}
+                    party={official.party}
+                    size={36}
+                  />
+                  <div>
+                    <Link
+                      href={`/officials/${official.slug}`}
+                      className="text-neutral-900 hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {official.name}
+                    </Link>
+                    <div className="text-xs text-neutral-400 mt-0.5">
+                      {official.title}
+                    </div>
+                    <div className="text-xs text-neutral-400 mt-0.5 md:hidden">
+                      {official.agency}
+                    </div>
+                  </div>
                 </div>
               </td>
               <td className="py-3 pr-4 text-neutral-500 hidden md:table-cell">

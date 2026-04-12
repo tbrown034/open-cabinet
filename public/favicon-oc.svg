@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Favicon: OC in a box with open corner -->
+  <rect x="2" y="2" width="28" height="28" rx="2" stroke="#1c1917" stroke-width="2" fill="white"/>
+  <!-- Open corner -->
+  <rect x="21" y="0" width="13" height="13" fill="white"/>
+  <line x1="21" y1="2" x2="30" y2="2" stroke="#1c1917" stroke-width="2"/>
+  <line x1="30" y1="2" x2="30" y2="11" stroke="#1c1917" stroke-width="2"/>
+  <line x1="21" y1="2" x2="30" y2="11" stroke="#1c1917" stroke-width="1" stroke-dasharray="2,1.5"/>
+  <!-- OC -->
+  <text x="5" y="24" font-family="'Courier New', monospace" font-size="16" font-weight="700" fill="#1c1917">OC</text>
+</svg>

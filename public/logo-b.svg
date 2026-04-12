@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 40" fill="none">
+  <!-- OC monogram in a government-form-style box, then wordmark -->
+  <!-- The box has one open corner — "open" cabinet -->
+  <rect x="2" y="4" width="32" height="32" rx="1" stroke="#1c1917" stroke-width="1.5" fill="none"/>
+  <!-- Open corner — top right is clipped/removed -->
+  <rect x="24" y="0" width="14" height="14" fill="white"/>
+  <!-- Small diagonal line at the open corner — like a folded page -->
+  <line x1="24" y1="4" x2="34" y2="4" stroke="#1c1917" stroke-width="1.5"/>
+  <line x1="34" y1="4" x2="34" y2="14" stroke="#1c1917" stroke-width="1.5"/>
+  <line x1="24" y1="4" x2="34" y2="14" stroke="#1c1917" stroke-width="0.75" stroke-dasharray="2,2"/>
+  <!-- OC inside the box -->
+  <text x="6" y="28" font-family="'Courier New', monospace" font-size="18" font-weight="700" fill="#1c1917">OC</text>
+  <!-- Wordmark -->
+  <text x="44" y="16" font-family="Georgia, 'Times New Roman', serif" font-size="11" font-weight="300" fill="#1c1917" letter-spacing="2.5">OPEN</text>
+  <text x="44" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#1c1917" letter-spacing="0.5">CABINET</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <!-- Typographic masthead: OPEN CABINET with editorial styling -->
+  <!-- "OPEN" in light weight, "CABINET" in bold — like a newspaper section header -->
+  <text x="0" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="300" fill="#1c1917" letter-spacing="3">OPEN</text>
+  <text x="95" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#1c1917" letter-spacing="1">CABINET</text>
+  <!-- Thin rule line underneath — newspaper style -->
+  <line x1="0" y1="36" x2="200" y2="36" stroke="#1c1917" stroke-width="0.75"/>
+</svg>

@@ -6,6 +6,7 @@ import { formatDate, amountRangeLabel } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
+import OfficialAvatar from "@/app/components/official-avatar";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -72,13 +73,20 @@ export default async function OfficialPage({
         ← Back to directory
       </Link>
 
-      <header className="mt-6 mb-12">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-2">
-          {official.name}
-        </h1>
-        <p className="text-neutral-500">
-          {official.title} · {official.agency}
-        </p>
+      <header className="mt-6 mb-12 flex items-start gap-4">
+        <OfficialAvatar
+          name={official.name}
+          party={official.party}
+          size={72}
+        />
+        <div>
+          <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-2">
+            {official.name}
+          </h1>
+          <p className="text-neutral-500">
+            {official.title} · {official.agency}
+          </p>
+        </div>
       </header>
 
       {official.summary && (

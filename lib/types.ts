@@ -39,6 +39,8 @@ export interface OfficialData {
   level: GovernmentLevel;
   filingType: string;
   mostRecentFilingDate: string;
+  party?: "R" | "D" | "I";
+  photoUrl?: string;
   ogeProfileUrl?: string;
   summary?: string;
   confirmedDate?: string;
@@ -54,6 +56,7 @@ export interface OfficialIndexEntry {
   title: string;
   agency: string;
   level: GovernmentLevel;
+  party?: "R" | "D" | "I";
   transactionCount: number;
   mostRecentFilingDate: string;
   dataStatus: DataStatus;
