@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTradesByTicker } from "@/lib/data";
 import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import CompanySearch from "../components/company-search";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Company Lookup — Open Cabinet",
@@ -29,9 +30,14 @@ export default async function CompaniesPage() {
     }))
     .sort((a, b) => b.tradeCount - a.tradeCount);
 
+  // Top 5 most-traded by number of officials
+  const featured = [...companies]
+    .sort((a, b) => b.officialCount - a.officialCount)
+    .slice(0, 5);
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
-      <header className="mb-12">
+      <header className="mb-10">
         <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-4">
           Company Lookup
         </h1>
@@ -41,11 +47,33 @@ export default async function CompaniesPage() {
         </p>
       </header>
 
+      <div className="mb-10">
+        <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
+          Most widely held
+        </h2>
+        <div className="flex flex-wrap gap-3">
+          {featured.map((c) => (
+            <Link
+              key={c.ticker}
+              href={`/companies/${c.ticker.toLowerCase()}`}
+              className="border border-neutral-200 px-3 py-2 text-sm hover:bg-neutral-50 transition-colors"
+            >
+              <span className="font-[family-name:var(--font-dm-mono)] font-medium text-neutral-900">
+                {c.ticker}
+              </span>
+              <span className="text-neutral-400 ml-2">
+                {c.officialCount} officials
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+
       <CompanySearch companies={companies} />
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics. Only assets with identified
-        ticker symbols are searchable.
+        ticker symbols are searchable. {companies.length} companies tracked.
       </p>
     </div>
   );

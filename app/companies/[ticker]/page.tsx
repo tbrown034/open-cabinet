@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getTradesByTicker, getAllTickers } from "@/lib/data";
+import { getTradesByTicker, getAllTickers, COMPANY_CONTEXT } from "@/lib/data";
 import { formatDate, amountRangeLabel, amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
 import CompanyBarChart from "@/app/components/company-bar-chart";
@@ -99,6 +99,11 @@ export default async function CompanyPage({
           </h1>
           <span className="text-neutral-500">{company.companyName}</span>
         </div>
+        {COMPANY_CONTEXT[company.ticker] && (
+          <p className="text-sm text-neutral-400 mt-2 max-w-2xl">
+            {COMPANY_CONTEXT[company.ticker]}
+          </p>
+        )}
       </header>
 
       <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-10">
