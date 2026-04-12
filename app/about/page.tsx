@@ -25,6 +25,62 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+            Features
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            <div>
+              <div className="font-medium text-neutral-900">Official Directory</div>
+              <p className="text-neutral-500 mt-0.5">
+                29 officials with sortable table, trade counts, and filing dates
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Transaction Timelines</div>
+              <p className="text-neutral-500 mt-0.5">
+                D3 visualizations with confirmation dates and 90-day deadline markers
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">All Trades View</div>
+              <p className="text-neutral-500 mt-0.5">
+                Swim lane chart showing 2,100+ transactions across all officials on one canvas
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Company Lookup</div>
+              <p className="text-neutral-500 mt-0.5">
+                Search 578 tickers to see which officials traded each stock
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Aggregate Dashboard</div>
+              <p className="text-neutral-500 mt-0.5">
+                Buy/sell ratio, asset category treemap, and official rankings
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">News Coverage</div>
+              <p className="text-neutral-500 mt-0.5">
+                34 articles from ProPublica, CNBC, Bloomberg, NOTUS, and others
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Late Filing Tracking</div>
+              <p className="text-neutral-500 mt-0.5">
+                563 late filings flagged with per-official and aggregate counts
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Downloadable Data</div>
+              <p className="text-neutral-500 mt-0.5">
+                Full dataset available as CSV and JSON for journalists and researchers
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
             What the STOCK Act requires
           </h2>
           <p>
