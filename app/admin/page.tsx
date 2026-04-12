@@ -28,9 +28,18 @@ export default function AdminPage() {
           accounts are authorized.
         </p>
         <button
-          onClick={() =>
-            signIn.social({ provider: "google", callbackURL: "/admin" })
-          }
+          onClick={async () => {
+            const res = await signIn.social({
+              provider: "google",
+              callbackURL: "/admin",
+            });
+            // Better Auth returns {data: {url, redirect}, error}
+            // The client should auto-redirect, but if not, do it manually
+            const url = res?.data?.url;
+            if (url && typeof url === "string" && url.startsWith("http")) {
+              window.location.href = url;
+            }
+          }}
           className="border border-neutral-900 px-6 py-2.5 text-sm text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors cursor-pointer"
         >
           Sign in with Google
