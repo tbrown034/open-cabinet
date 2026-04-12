@@ -45,9 +45,12 @@ interface SwimOfficial {
   slug: string;
   title: string;
   agency: string;
+  level: string;
   totalValue: number;
   transactions: SwimTransaction[];
 }
+
+type FilterTab = "all" | "cabinet" | "sub-cabinet";
 
 interface TooltipData {
   tx: SwimTransaction;
@@ -64,6 +67,16 @@ export default function SwimLaneChart({
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(1000);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
+  const [filter, setFilter] = useState<FilterTab>("all");
+
+  const cabinetCount = officials.filter((o) => o.level === "Cabinet").length;
+  const subCabinetCount = officials.filter((o) => o.level === "Sub-Cabinet").length;
+
+  const filtered = filter === "cabinet"
+    ? officials.filter((o) => o.level === "Cabinet")
+    : filter === "sub-cabinet"
+      ? officials.filter((o) => o.level === "Sub-Cabinet")
+      : officials;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -78,21 +91,22 @@ export default function SwimLaneChart({
   }, []);
 
   const margin = { top: 30, right: 20, bottom: 40, left: 180 };
-  const laneHeight = 34; // Increased from 28 — gives dots room to breathe
+  // Cabinet-only view gets bigger lanes for the hero screenshot
+  const laneHeight = filter === "cabinet" ? 56 : 44;
   const height =
-    officials.length * laneHeight + margin.top + margin.bottom;
+    filtered.length * laneHeight + margin.top + margin.bottom;
   const effectiveWidth = Math.max(width, 800);
   const chartWidth = effectiveWidth - margin.left - margin.right;
-  const chartHeight = officials.length * laneHeight;
+  const chartHeight = filtered.length * laneHeight;
 
   // scaleBand: one lane per official, spaced evenly
   const yScale = scaleBand()
-    .domain(officials.map((o) => o.name))
+    .domain(filtered.map((o) => o.name))
     .range([0, chartHeight])
     .padding(0.15);
 
   // Collect all transaction dates for the x-axis domain
-  const allDates = officials.flatMap((o) =>
+  const allDates = filtered.flatMap((o) =>
     o.transactions.map((tx) => new Date(tx.date + "T00:00:00"))
   );
   const dateExtent = extent(allDates) as [Date, Date];
@@ -105,14 +119,14 @@ export default function SwimLaneChart({
     .range([0, chartWidth]);
 
   // Collect all amounts for radius scale
-  const allAmounts = officials.flatMap((o) =>
+  const allAmounts = filtered.flatMap((o) =>
     o.transactions.map((tx) => amountRangeToMin(tx.amount as any))
   );
   const amountExtent = extent(allAmounts) as [number, number];
-  // Capped max radius at 8px (was 10) to reduce overlap in dense clusters
+  const maxR = filter === "cabinet" ? 12 : 10;
   const rScale = scaleSqrt()
     .domain([amountExtent[0], Math.max(amountExtent[1], amountExtent[0] + 1)])
-    .range([2, 8]);
+    .range([2, maxR]);
 
   const ticks = xScale.ticks(Math.max(Math.floor(chartWidth / 140), 3));
   const formatTick = timeFormat("%b %Y");
@@ -127,15 +141,36 @@ export default function SwimLaneChart({
 
   return (
     <div ref={containerRef} className="relative overflow-x-auto">
+      {/* Filter tabs */}
+      <div className="flex gap-1 mb-4 text-xs">
+        {([
+          { key: "all" as FilterTab, label: `All (${officials.length})` },
+          { key: "cabinet" as FilterTab, label: `Cabinet (${cabinetCount})` },
+          { key: "sub-cabinet" as FilterTab, label: `Sub-Cabinet (${subCabinetCount})` },
+        ]).map((tab) => (
+          <button
+            key={tab.key}
+            onClick={() => setFilter(tab.key)}
+            className={`px-3 py-1.5 transition-colors cursor-pointer ${
+              filter === tab.key
+                ? "bg-neutral-900 text-white"
+                : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
       <svg
         width={svgWidth}
         height={height}
         role="img"
-        aria-label={`Swim lane chart showing ${officials.reduce((s, o) => s + o.transactions.length, 0)} transactions across ${officials.length} officials`}
+        aria-label={`Swim lane chart showing ${filtered.reduce((s, o) => s + o.transactions.length, 0)} transactions across ${filtered.length} officials`}
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>
           {/* Lane backgrounds and labels */}
-          {officials.map((o, i) => {
+          {filtered.map((o, i) => {
             const y = yScale(o.name) ?? 0;
             const bandHeight = yScale.bandwidth();
             return (
@@ -218,7 +253,7 @@ export default function SwimLaneChart({
           ))}
 
           {/* Transaction dots — render all 2,200+ circles */}
-          {officials.flatMap((o) =>
+          {filtered.flatMap((o) =>
             o.transactions.map((tx, i) => {
               const y = yScale(o.name) ?? 0;
               const bandHeight = yScale.bandwidth();

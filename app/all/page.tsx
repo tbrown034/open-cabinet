@@ -29,6 +29,7 @@ export default async function AllTradesPage() {
       slug: o.slug,
       title: o.title,
       agency: o.agency,
+      level: o.level,
       totalValue: o.transactions.reduce(
         (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
         0
