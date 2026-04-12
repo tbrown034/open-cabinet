@@ -78,7 +78,7 @@ export default function SwimLaneChart({
   }, []);
 
   const margin = { top: 30, right: 20, bottom: 40, left: 180 };
-  const laneHeight = 28;
+  const laneHeight = 34; // Increased from 28 — gives dots room to breathe
   const height =
     officials.length * laneHeight + margin.top + margin.bottom;
   const effectiveWidth = Math.max(width, 800);
@@ -109,9 +109,10 @@ export default function SwimLaneChart({
     o.transactions.map((tx) => amountRangeToMin(tx.amount as any))
   );
   const amountExtent = extent(allAmounts) as [number, number];
+  // Capped max radius at 8px (was 10) to reduce overlap in dense clusters
   const rScale = scaleSqrt()
     .domain([amountExtent[0], Math.max(amountExtent[1], amountExtent[0] + 1)])
-    .range([2, 10]);
+    .range([2, 8]);
 
   const ticks = xScale.ticks(Math.max(Math.floor(chartWidth / 140), 3));
   const formatTick = timeFormat("%b %Y");
@@ -235,12 +236,12 @@ export default function SwimLaneChart({
                   opacity={
                     tooltip
                       ? tooltip.tx === tx && tooltip.officialName === o.name
-                        ? 0.95
-                        : 0.15
-                      : 0.6
+                        ? 1
+                        : 0.2
+                      : 0.85
                   }
                   stroke="white"
-                  strokeWidth={0.5}
+                  strokeWidth={1}
                   onMouseEnter={() =>
                     setTooltip({
                       tx,
