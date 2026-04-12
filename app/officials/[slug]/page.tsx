@@ -120,6 +120,18 @@ export default async function OfficialPage({
         </div>
       </div>
 
+      {buys === 0 && sells > 0 && (
+        <p className="text-xs text-neutral-400 mb-6">
+          All transactions were sales — consistent with ethics agreement
+          divestitures upon entering government service.
+        </p>
+      )}
+      {sells === 0 && buys > 0 && (
+        <p className="text-xs text-neutral-400 mb-6">
+          All transactions were purchases made while in office.
+        </p>
+      )}
+
       <TransactionTimeline transactions={transactions} />
 
       <div className="overflow-x-auto -mx-4 px-4">
@@ -211,7 +223,15 @@ export default async function OfficialPage({
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics, {official.filingType}. Asset
         values and transaction amounts are reported in ranges as required by
-        federal law.
+        federal law.{" "}
+        <a
+          href="https://extapps2.oge.gov/201/Presiden.nsf"
+          className="underline hover:text-neutral-600"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View original filings
+        </a>
       </p>
     </div>
   );
