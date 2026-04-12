@@ -12,8 +12,8 @@
     "generate-exports": "npx tsx scripts/generate-exports.ts"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
     "better-auth": "^1.6.2",
-    "better-sqlite3": "^12.8.0",
     "d3-array": "^3.2.4",
     "d3-format": "^3.1.2",
     "d3-hierarchy": "^3.1.2",
@@ -21,13 +21,13 @@
     "d3-shape": "^3.2.0",
     "d3-time": "^3.1.0",
     "d3-time-format": "^4.1.0",
+    "drizzle-orm": "^0.45.2",
     "next": "16.2.3",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
-    "@types/better-sqlite3": "^7.6.13",
     "@types/d3-array": "^3.2.2",
     "@types/d3-format": "^3.0.4",
     "@types/d3-hierarchy": "^3.1.7",
@@ -38,6 +38,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
     "tailwindcss": "^4",
