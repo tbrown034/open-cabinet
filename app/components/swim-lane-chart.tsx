@@ -68,15 +68,26 @@ export default function SwimLaneChart({
   const [width, setWidth] = useState(1000);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
   const [filter, setFilter] = useState<FilterTab>("all");
+  const [sortBy, setSortBy] = useState<"volume" | "name" | "recent">("volume");
 
   const cabinetCount = officials.filter((o) => o.level === "Cabinet").length;
   const subCabinetCount = officials.filter((o) => o.level === "Sub-Cabinet").length;
 
-  const filtered = filter === "cabinet"
+  const filteredUnsorted = filter === "cabinet"
     ? officials.filter((o) => o.level === "Cabinet")
     : filter === "sub-cabinet"
       ? officials.filter((o) => o.level === "Sub-Cabinet")
       : officials;
+
+  const filtered = [...filteredUnsorted].sort((a, b) => {
+    if (sortBy === "name") return displayName(a.name).localeCompare(displayName(b.name));
+    if (sortBy === "recent") {
+      const aMax = Math.max(...a.transactions.map((t) => new Date(t.date).getTime()));
+      const bMax = Math.max(...b.transactions.map((t) => new Date(t.date).getTime()));
+      return bMax - aMax;
+    }
+    return b.totalValue - a.totalValue; // volume (default)
+  });
 
   useEffect(() => {
     const container = containerRef.current;
@@ -98,9 +109,9 @@ export default function SwimLaneChart({
     bottom: 40,
     left: isMobile ? 10 : 220,
   };
-  // Mobile: taller lanes to fit label above dots. Desktop: standard
+  // Mobile: taller lanes to fit name + title above dots
   const laneHeight = isMobile
-    ? 60
+    ? 65
     : filter === "cabinet" ? 56 : 44;
   const height =
     filtered.length * laneHeight + margin.top + margin.bottom;
@@ -131,10 +142,11 @@ export default function SwimLaneChart({
     o.transactions.map((tx) => amountRangeToMin(tx.amount as any))
   );
   const amountExtent = extent(allAmounts) as [number, number];
-  const maxR = filter === "cabinet" ? 12 : 10;
+  const maxR = isMobile ? 10 : filter === "cabinet" ? 12 : 10;
+  const minR = isMobile ? 3 : 2;
   const rScale = scaleSqrt()
     .domain([amountExtent[0], Math.max(amountExtent[1], amountExtent[0] + 1)])
-    .range([2, maxR]);
+    .range([minR, maxR]);
 
   const ticks = xScale.ticks(Math.max(Math.floor(chartWidth / 140), 3));
   const formatTick = timeFormat("%b %Y");
@@ -164,6 +176,24 @@ export default function SwimLaneChart({
             }`}
           >
             {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Sort options */}
+      <div className="flex gap-3 mb-4 text-[10px] text-neutral-400">
+        <span>Sort:</span>
+        {([
+          { key: "volume" as const, label: "Volume" },
+          { key: "recent" as const, label: "Recent" },
+          { key: "name" as const, label: "Name" },
+        ]).map((s) => (
+          <button
+            key={s.key}
+            onClick={() => setSortBy(s.key)}
+            className={`cursor-pointer ${sortBy === s.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
+          >
+            {s.label}
           </button>
         ))}
       </div>
@@ -202,7 +232,7 @@ export default function SwimLaneChart({
                 />
                 {/* Official name + title label */}
                 {isMobile ? (
-                  // Mobile: label inside the lane, top-left
+                  // Mobile: name + title inside the lane, top-left
                   <a href={`/officials/${o.slug}`}>
                     <text
                       x={4}
@@ -213,6 +243,15 @@ export default function SwimLaneChart({
                       fontWeight="500"
                     >
                       {displayName(o.name)}
+                    </text>
+                    <text
+                      x={4}
+                      y={y + 23}
+                      textAnchor="start"
+                      fill="#a3a3a3"
+                      className="text-[8px]"
+                    >
+                      {o.title.length > 35 ? o.title.substring(0, 33) + "..." : o.title}
                     </text>
                   </a>
                 ) : (
@@ -290,9 +329,9 @@ export default function SwimLaneChart({
               const y = yScale(o.name) ?? 0;
               const bandHeight = yScale.bandwidth();
               const cx = xScale(new Date(tx.date + "T00:00:00"));
-              // Mobile: dots in lower half of lane (label is in upper half)
+              // Mobile: dots below name+title. Desktop: centered
               const cy = isMobile
-                ? y + bandHeight * 0.65
+                ? y + bandHeight * 0.72
                 : y + bandHeight / 2;
               const r = rScale(amountRangeToMin(tx.amount as any));
 
