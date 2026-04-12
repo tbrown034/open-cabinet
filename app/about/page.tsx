@@ -253,45 +253,37 @@ export default function AboutPage() {
           <h2 className="text-lg font-semibold text-neutral-900 mb-3">
             Related resources
           </h2>
-          <div className="flex items-start gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://assets.propublica.org/prod/v3/images/favicons/favicon-32x32.png"
-              alt=""
-              width={20}
-              height={20}
-              className="mt-1 shrink-0"
-            />
-            <p className="text-sm">
+          <ul className="space-y-3 text-sm">
+            <li>
               <a
-                href="https://projects.propublica.org/trump-town/"
+                href="https://projects.propublica.org/trump-team-financial-disclosures/"
                 className="underline hover:text-neutral-900 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ProPublica{"'"}s Trump Town
-              </a>{" "}
-              provides searchable access to raw disclosure documents for 1,500+
-              executive branch appointees. Open Cabinet focuses specifically on
-              stock trades, transaction timelines, and compliance tracking — a
-              different lens on the same public records.
-            </p>
-          </div>
-          <div className="flex items-start gap-3 mt-4">
-            <div className="w-5 h-5 mt-1 shrink-0 bg-neutral-300 rounded-sm" />
-            <p className="text-sm">
+                ProPublica: Trump Team Financial Disclosures
+              </a>
+              <span className="text-neutral-500">
+                {" "}— Searchable access to raw disclosure documents for 1,500+
+                appointees. Open Cabinet focuses on transaction timelines and
+                compliance tracking — a different lens on the same public records.
+              </span>
+            </li>
+            <li>
               <a
                 href="https://www.opensecrets.org/biden/executive-branch"
                 className="underline hover:text-neutral-900 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                OpenSecrets Executive Branch
-              </a>{" "}
-              tracks financial connections between executive branch officials and
-              their former employers, clients, and industries.
-            </p>
-          </div>
+                OpenSecrets: Executive Branch
+              </a>
+              <span className="text-neutral-500">
+                {" "}— Financial connections between officials and the industries
+                they regulate.
+              </span>
+            </li>
+          </ul>
         </section>
 
         <section className="border-t border-neutral-200 pt-8">

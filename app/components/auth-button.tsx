@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useSession, signIn } from "@/lib/auth-client";
+import { useSession } from "@/lib/auth-client";
 
 export default function AuthButton() {
   const { data: session, isPending } = useSession();
@@ -9,7 +9,8 @@ export default function AuthButton() {
   if (isPending) return null;
 
   if (session?.user) {
-    const displayName = session.user.name || session.user.email?.split("@")[0] || "Account";
+    const displayName =
+      session.user.name || session.user.email?.split("@")[0] || "Account";
     return (
       <Link
         href="/admin"
@@ -20,12 +21,13 @@ export default function AuthButton() {
     );
   }
 
+  // Link to /admin page which has the full sign-in flow with error handling
   return (
-    <button
-      onClick={() => signIn.social({ provider: "google", callbackURL: "/admin" })}
-      className="text-xs text-neutral-400 hover:text-neutral-900 transition-colors cursor-pointer"
+    <Link
+      href="/admin"
+      className="text-xs text-neutral-400 hover:text-neutral-900 transition-colors"
     >
       Sign in
-    </button>
+    </Link>
   );
 }
