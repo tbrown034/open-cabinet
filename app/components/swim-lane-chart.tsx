@@ -90,7 +90,7 @@ export default function SwimLaneChart({
     return () => observer.disconnect();
   }, []);
 
-  const margin = { top: 30, right: 20, bottom: 40, left: 180 };
+  const margin = { top: 30, right: 20, bottom: 40, left: 220 };
   // Cabinet-only view gets bigger lanes for the hero screenshot
   const laneHeight = filter === "cabinet" ? 56 : 44;
   const height =
@@ -194,19 +194,28 @@ export default function SwimLaneChart({
                   stroke="#e5e5e5"
                   strokeWidth={0.5}
                 />
-                {/* Official name label */}
+                {/* Official name + title label */}
                 <a href={`/officials/${o.slug}`}>
                   <text
                     x={-8}
-                    y={y + bandHeight / 2}
+                    y={y + bandHeight / 2 - 6}
                     textAnchor="end"
                     dominantBaseline="middle"
-                    fill="#525252"
-                    className="text-[10px]"
+                    fill="#292524"
+                    className="text-[11px]"
+                    fontWeight="500"
                   >
-                    {displayName(o.name).length > 22
-                      ? displayName(o.name).substring(0, 20) + "..."
-                      : displayName(o.name)}
+                    {displayName(o.name)}
+                  </text>
+                  <text
+                    x={-8}
+                    y={y + bandHeight / 2 + 7}
+                    textAnchor="end"
+                    dominantBaseline="middle"
+                    fill="#a3a3a3"
+                    className="text-[9px]"
+                  >
+                    {o.title.length > 28 ? o.title.substring(0, 26) + "..." : o.title}
                   </text>
                 </a>
               </g>

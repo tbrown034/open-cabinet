@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { displayName } from "@/lib/format";
 
 interface AvatarProps {
@@ -33,7 +34,8 @@ export default function OfficialAvatar({
   showParty = true,
 }: AvatarProps) {
   const initials = getInitials(name);
-  const hasPhoto = slug ? true : false; // Photos exist for most officials
+  const [photoLoaded, setPhotoLoaded] = useState(false);
+  const [photoError, setPhotoError] = useState(false);
 
   return (
     <div
@@ -41,25 +43,28 @@ export default function OfficialAvatar({
       style={{ width: size, height: size }}
     >
       <div className="w-full h-full rounded-full bg-neutral-200 overflow-hidden flex items-center justify-center">
-        {slug && (
+        {/* Photo — renders on top when loaded */}
+        {slug && !photoError && (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={`/photos/${slug}.jpg`}
             alt={displayName(name)}
             width={size}
             height={size}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
+            className="absolute inset-0 w-full h-full object-cover rounded-full"
+            onLoad={() => setPhotoLoaded(true)}
+            onError={() => setPhotoError(true)}
           />
         )}
-        <span
-          className="absolute inset-0 flex items-center justify-center text-neutral-500 font-medium select-none leading-none -z-0"
-          style={{ fontSize: size * 0.35 }}
-        >
-          {initials}
-        </span>
+        {/* Initials — only visible when no photo */}
+        {!photoLoaded && (
+          <span
+            className="text-neutral-500 font-medium select-none leading-none"
+            style={{ fontSize: size * 0.35 }}
+          >
+            {initials}
+          </span>
+        )}
       </div>
 
       {showParty && party && (
