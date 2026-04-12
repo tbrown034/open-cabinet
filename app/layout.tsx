@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import Image from "next/image";
 import MobileNav from "./components/mobile-nav";
 import AuthButton from "./components/auth-button";
 
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Track financial transactions of cabinet secretaries, agency heads, and senior government officials. Data from the U.S. Office of Government Ethics.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon-oc.svg",
   },
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
@@ -55,17 +54,13 @@ export default function RootLayout({
         <div className="h-[3px] bg-neutral-800 w-full" />
         <header className="border-b border-neutral-200 relative">
           <nav className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo-cabinet.svg"
-                alt=""
-                width={22}
-                height={22}
-                className="opacity-80"
+            <Link href="/">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-c.svg"
+                alt="Open Cabinet"
+                className="h-8"
               />
-              <span className="text-lg font-semibold tracking-tight text-neutral-900">
-                Open Cabinet
-              </span>
             </Link>
 
             {/* Desktop nav — hidden on mobile */}
