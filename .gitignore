@@ -38,6 +38,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# auth database
+sqlite.db
+
 # vercel
 .vercel
 

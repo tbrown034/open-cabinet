@@ -12,6 +12,8 @@
     "generate-exports": "npx tsx scripts/generate-exports.ts"
   },
   "dependencies": {
+    "better-auth": "^1.6.2",
+    "better-sqlite3": "^12.8.0",
     "d3-array": "^3.2.4",
     "d3-format": "^3.1.2",
     "d3-hierarchy": "^3.1.2",
@@ -25,6 +27,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/d3-array": "^3.2.2",
     "@types/d3-format": "^3.0.4",
     "@types/d3-hierarchy": "^3.1.7",
