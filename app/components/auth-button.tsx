@@ -21,7 +21,6 @@ export default function AuthButton() {
     );
   }
 
-  // Link to /admin page which has the full sign-in flow with error handling
   return (
     <Link
       href="/admin"
