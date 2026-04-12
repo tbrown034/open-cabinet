@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTradesByTicker, getAllTickers, COMPANY_CONTEXT } from "@/lib/data";
-import { formatDate, amountRangeLabel, amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
+import { formatDate, amountRangeLabel, amountRangeToMidpoint, formatCompactCurrency, displayName } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
 import CompanyBarChart from "@/app/components/company-bar-chart";
 
@@ -160,7 +160,7 @@ export default async function CompanyPage({
                     href={`/officials/${t.officialSlug}`}
                     className="text-neutral-900 hover:underline"
                   >
-                    {t.officialName}
+                    {displayName(t.officialName)}
                   </Link>
                   <div className="text-xs text-neutral-400">{t.officialTitle}</div>
                 </td>

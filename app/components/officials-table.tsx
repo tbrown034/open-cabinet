@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { OfficialIndexEntry } from "@/lib/types";
-import { formatDate } from "@/lib/format";
+import { formatDate, displayName } from "@/lib/format";
 import OfficialAvatar from "./official-avatar";
 
 type SortKey = "name" | "agency" | "transactionCount" | "mostRecentFilingDate";
@@ -14,8 +14,8 @@ export default function OfficialsTable({
 }: {
   officials: OfficialIndexEntry[];
 }) {
-  const [sortKey, setSortKey] = useState<SortKey>("name");
-  const [sortDir, setSortDir] = useState<SortDirection>("asc");
+  const [sortKey, setSortKey] = useState<SortKey>("transactionCount");
+  const [sortDir, setSortDir] = useState<SortDirection>("desc");
 
   function handleSort(key: SortKey) {
     if (sortKey === key) {
@@ -101,6 +101,7 @@ export default function OfficialsTable({
                 <div className="flex items-center gap-3">
                   <OfficialAvatar
                     name={official.name}
+                    slug={official.slug}
                     party={official.party}
                     size={36}
                   />
@@ -110,7 +111,7 @@ export default function OfficialsTable({
                       className="text-neutral-900 hover:underline"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      {official.name}
+                      {displayName(official.name)}
                     </Link>
                     <div className="text-xs text-neutral-400 mt-0.5">
                       {official.title}

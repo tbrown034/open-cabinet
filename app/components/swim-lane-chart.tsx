@@ -4,7 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { scaleTime, scaleSqrt, scaleBand } from "d3-scale";
 import { extent } from "d3-array";
 import { timeFormat } from "d3-time-format";
-import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
+import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/lib/format";
 
 /**
  * SWIM LANE CHART — All Officials, All Trades, One Canvas
@@ -204,9 +204,9 @@ export default function SwimLaneChart({
                     fill="#525252"
                     className="text-[10px]"
                   >
-                    {o.name.length > 22
-                      ? o.name.substring(0, 20) + "..."
-                      : o.name}
+                    {displayName(o.name).length > 22
+                      ? displayName(o.name).substring(0, 20) + "..."
+                      : displayName(o.name)}
                   </text>
                 </a>
               </g>
@@ -304,7 +304,7 @@ export default function SwimLaneChart({
           }}
         >
           <div className="font-medium text-neutral-900 mb-1">
-            {tooltip.officialName}
+            {displayName(tooltip.officialName)}
           </div>
           <div className="text-neutral-600">{tooltip.tx.description}</div>
           <div className="text-neutral-500 mt-1">

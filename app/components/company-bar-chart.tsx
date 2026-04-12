@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { scaleLinear, scaleBand } from "d3-scale";
-import { formatCompactCurrency } from "@/lib/format";
+import { formatCompactCurrency, displayName } from "@/lib/format";
 
 /**
  * HORIZONTAL BAR CHART — Who traded this stock?
@@ -85,9 +85,9 @@ export default function CompanyBarChart({
                   dominantBaseline="middle"
                   fill="#44403c" className="text-[12px]"
                 >
-                  {o.name.length > 20
-                    ? o.name.substring(0, 18) + "..."
-                    : o.name}
+                  {displayName(o.name).length > 20
+                    ? displayName(o.name).substring(0, 18) + "..."
+                    : displayName(o.name)}
                 </text>
 
                 {/* Bar */}

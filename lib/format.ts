@@ -70,6 +70,15 @@ export function formatCompactCurrency(value: number): string {
 }
 
 /**
+ * Converts "Last, First" to "First Last" for display.
+ */
+export function displayName(name: string): string {
+  const parts = name.split(",").map((s) => s.trim());
+  if (parts.length >= 2) return `${parts[1]} ${parts[0]}`;
+  return name;
+}
+
+/**
  * Formats a date string (YYYY-MM-DD) as "Mon DD, YYYY".
  */
 export function formatDate(dateStr: string): string {

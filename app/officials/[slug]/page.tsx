@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
-import { formatDate, amountRangeLabel } from "@/lib/format";
+import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
@@ -76,12 +76,13 @@ export default async function OfficialPage({
       <header className="mt-6 mb-12 flex items-start gap-4">
         <OfficialAvatar
           name={official.name}
+          slug={official.slug}
           party={official.party}
           size={72}
         />
         <div>
           <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-2">
-            {official.name}
+            {displayName(official.name)}
           </h1>
           <p className="text-neutral-500">
             {official.title} · {official.agency}

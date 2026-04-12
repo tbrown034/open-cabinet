@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { formatCompactCurrency } from "@/lib/format";
+import { formatCompactCurrency, displayName } from "@/lib/format";
 
 interface RankingEntry {
   name: string;
@@ -38,7 +38,7 @@ export default function OfficialRankings({
                 href={`/officials/${r.slug}`}
                 className="w-44 shrink-0 text-right text-neutral-700 hover:underline truncate text-xs"
               >
-                {r.name}
+                {displayName(r.name)}
               </Link>
               <div className="flex-1 h-5 bg-neutral-100">
                 <div
