@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "check-filings": "npx tsx scripts/check-new-filings.ts",
-    "rebuild-index": "npx tsx scripts/rebuild-index.ts"
+    "rebuild-index": "npx tsx scripts/rebuild-index.ts",
+    "generate-exports": "npx tsx scripts/generate-exports.ts"
   },
   "dependencies": {
     "d3-array": "^3.2.4",

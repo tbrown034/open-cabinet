@@ -114,6 +114,13 @@ export default function RootLayout({
                   >
                     U.S. Office of Government Ethics
                   </a>
+                  {" · "}
+                  <Link
+                    href="/download"
+                    className="underline hover:text-neutral-600"
+                  >
+                    Download data
+                  </Link>
                 </p>
                 <p className="mt-1">
                   For informational and journalism purposes only. Not investment

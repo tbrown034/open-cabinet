@@ -2,6 +2,7 @@ import { getOfficialsIndex, getAllOfficials } from "@/lib/data";
 import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
+import Explainer from "./components/explainer";
 import Link from "next/link";
 
 export default async function Home() {
@@ -81,6 +82,8 @@ export default async function Home() {
         require individual requests from OGE. Most recent filing:{" "}
         {mostRecentFiling}.
       </p>
+
+      <Explainer />
 
       {recentNews.length > 0 && (
         <section className="border-t border-neutral-200 pt-10">
