@@ -19,8 +19,16 @@ import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
  *   a packed grid, sorted by amount. Shows density without wasting space.
  */
 
+interface CareerEvent {
+  date: string;
+  label: string;
+  style: "solid" | "dashed" | "dotted";
+  color: string;
+}
+
 interface TimelineProps {
   transactions: Transaction[];
+  careerEvents?: CareerEvent[];
 }
 
 interface TooltipData {
@@ -39,7 +47,7 @@ function getDotColor(tx: Transaction): string {
   return "fill-neutral-400";
 }
 
-export default function TransactionTimeline({ transactions }: TimelineProps) {
+export default function TransactionTimeline({ transactions, careerEvents = [] }: TimelineProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(800);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
@@ -78,6 +86,7 @@ export default function TransactionTimeline({ transactions }: TimelineProps) {
   return (
     <TimelineView
       transactions={transactions}
+      careerEvents={careerEvents}
       width={width}
       containerRef={containerRef}
       tooltip={tooltip}
@@ -199,18 +208,20 @@ function CompactGrid({
 // Horizontal timeline for officials with trades across multiple dates.
 function TimelineView({
   transactions,
+  careerEvents = [],
   width,
   containerRef,
   tooltip,
   setTooltip,
 }: {
   transactions: Transaction[];
+  careerEvents?: CareerEvent[];
   width: number;
   containerRef: React.RefObject<HTMLDivElement | null>;
   tooltip: TooltipData | null;
   setTooltip: (t: TooltipData | null) => void;
 }) {
-  const margin = { top: 20, right: 20, bottom: 40, left: 20 };
+  const margin = { top: 28, right: 20, bottom: 40, left: 20 };
 
   // Dynamic height based on how many trades share a single date
   const dateCounts = new Map<string, number>();
@@ -230,12 +241,17 @@ function TimelineView({
   }));
 
   // scaleTime maps dates to x-pixel positions
+  // Extend domain to include career events (confirmation, deadline)
   const dateExtent = extent(parsedData, (d) => d.date) as [Date, Date];
-  const dayPadding = 7 * 24 * 60 * 60 * 1000;
+  const eventDates = careerEvents.map((e) => new Date(e.date + "T00:00:00").getTime());
+  const allTimestamps = [dateExtent[0].getTime(), dateExtent[1].getTime(), ...eventDates];
+  const domainMin = Math.min(...allTimestamps);
+  const domainMax = Math.max(...allTimestamps);
+  const dayPadding = 14 * 24 * 60 * 60 * 1000;
   const xScale = scaleTime()
     .domain([
-      new Date(dateExtent[0].getTime() - dayPadding),
-      new Date(dateExtent[1].getTime() + dayPadding),
+      new Date(domainMin - dayPadding),
+      new Date(domainMax + dayPadding),
     ])
     .range([0, chartWidth]);
 
@@ -283,6 +299,34 @@ function TimelineView({
         aria-label="Transaction timeline showing trades over time"
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>
+          {/* Career event marker lines — rendered before dots so dots are on top */}
+          {careerEvents.map((event, i) => {
+            const x = xScale(new Date(event.date + "T00:00:00"));
+            const strokeDash = event.style === "dashed" ? "4,4" : event.style === "dotted" ? "2,3" : "none";
+            return (
+              <g key={`event-${i}`}>
+                <line
+                  x1={x}
+                  y1={-8}
+                  x2={x}
+                  y2={chartHeight}
+                  stroke={event.color}
+                  strokeWidth={1}
+                  strokeDasharray={strokeDash}
+                />
+                <text
+                  x={x}
+                  y={-12}
+                  textAnchor="middle"
+                  fill={event.color}
+                  className="text-[9px]"
+                >
+                  {event.label}
+                </text>
+              </g>
+            );
+          })}
+
           <line
             x1={0}
             y1={chartHeight}

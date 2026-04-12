@@ -132,7 +132,44 @@ export default async function OfficialPage({
         </p>
       )}
 
-      <TransactionTimeline transactions={transactions} />
+      <TransactionTimeline
+        transactions={transactions}
+        careerEvents={(() => {
+          const events: Array<{ date: string; label: string; style: "solid" | "dashed" | "dotted"; color: string }> = [];
+          const confirmDate = official.confirmedDate || official.tookOfficeDate;
+          if (confirmDate) {
+            events.push({
+              date: confirmDate,
+              label: official.tookOfficeDate ? "Took office" : "Confirmed",
+              style: "solid",
+              color: "#a3a3a3",
+            });
+            // 90-day deadline (President is exempt)
+            if (!official.tookOfficeDate) {
+              const deadline = new Date(confirmDate + "T00:00:00");
+              deadline.setDate(deadline.getDate() + 90);
+              events.push({
+                date: deadline.toISOString().split("T")[0],
+                label: "90-day deadline",
+                style: "dashed",
+                color: "#f87171",
+              });
+            }
+          }
+          if (official.ethicsAgreementDate && confirmDate) {
+            const diff = Math.abs(new Date(official.ethicsAgreementDate).getTime() - new Date(confirmDate).getTime());
+            if (diff > 7 * 24 * 60 * 60 * 1000) {
+              events.push({
+                date: official.ethicsAgreementDate,
+                label: "Ethics agmt",
+                style: "dotted",
+                color: "#d4d4d4",
+              });
+            }
+          }
+          return events;
+        })()}
+      />
 
       <div className="overflow-x-auto -mx-4 px-4">
         <table className="w-full text-left text-sm">

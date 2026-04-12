@@ -41,6 +41,10 @@ export interface OfficialData {
   mostRecentFilingDate: string;
   ogeProfileUrl?: string;
   summary?: string;
+  confirmedDate?: string;
+  tookOfficeDate?: string; // For President (inaugurated, not confirmed)
+  ethicsAgreementDate?: string;
+  departedDate?: string | null;
   transactions: Transaction[];
 }
 
