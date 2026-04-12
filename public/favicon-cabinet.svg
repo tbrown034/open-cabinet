@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Simple filing cabinet, one drawer open -->
+  <rect x="5" y="3" width="22" height="26" rx="1.5"/>
+  <!-- Top drawer closed -->
+  <line x1="5" y1="12" x2="27" y2="12"/>
+  <line x1="14" y1="7.5" x2="18" y2="7.5"/>
+  <!-- Bottom drawer open — pulled out slightly -->
+  <rect x="3" y="14" width="26" height="10" rx="1"/>
+  <line x1="14" y1="19" x2="18" y2="19"/>
+</svg>

@@ -1,13 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" stroke="#1c1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Simplified filing cabinet for favicon -->
-  <rect x="6" y="4" width="20" height="26" rx="1" />
-  <!-- Top section -->
-  <line x1="6" y1="11" x2="26" y2="11" />
-  <line x1="14" y1="7.5" x2="18" y2="7.5" />
-  <!-- Open drawer -->
-  <rect x="4" y="12" width="24" height="7" rx="0.5" />
-  <line x1="14" y1="15.5" x2="18" y2="15.5" />
-  <!-- Bottom section -->
-  <line x1="6" y1="20" x2="26" y2="20" />
-  <line x1="14" y1="24" x2="18" y2="24" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Ultra-simple filing cabinet at 16px -->
+  <!-- Top section (closed drawer) -->
+  <rect x="2" y="1" width="12" height="6" rx="0.5" fill="#292524" />
+  <rect x="6.5" y="3.5" width="3" height="1" rx="0.5" fill="#a8a29e"/>
+  <!-- Bottom section (open drawer, slightly wider) -->
+  <rect x="1" y="8" width="14" height="6" rx="0.5" fill="#57534e"/>
+  <rect x="6.5" y="10.5" width="3" height="1" rx="0.5" fill="#d6d3d1"/>
 </svg>

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Track financial transactions of cabinet secretaries, agency heads, and senior government officials. Data from the U.S. Office of Government Ethics.",
   icons: {
-    icon: "/favicon-oc.svg",
+    icon: "/favicon.svg",
   },
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
