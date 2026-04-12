@@ -290,7 +290,7 @@ export default function SwimLaneChart({
       )}
 
       {/* Legend */}
-      <div className="flex gap-4 mt-3 text-xs text-neutral-400">
+      <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-neutral-400">
         <div className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-60" />
           Sale
@@ -300,7 +300,14 @@ export default function SwimLaneChart({
           Purchase
         </div>
         <div className="text-neutral-300">|</div>
-        <div>Circle size = transaction amount</div>
+        <div className="flex items-center gap-2">
+          <svg width="44" height="14" className="shrink-0">
+            <circle cx="4" cy="7" r="3" fill="#a3a3a3" opacity="0.5" />
+            <circle cx="16" cy="7" r="5" fill="#a3a3a3" opacity="0.5" />
+            <circle cx="32" cy="7" r="7" fill="#a3a3a3" opacity="0.5" />
+          </svg>
+          $1K &rarr; $50M+
+        </div>
         <div className="text-neutral-300">|</div>
         <div>Sorted by total volume</div>
       </div>

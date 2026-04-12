@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllOfficials } from "@/lib/data";
-import { amountRangeToMidpoint } from "@/lib/format";
+import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
 import SwimLaneChart from "../components/swim-lane-chart";
 
@@ -45,7 +45,17 @@ export default async function AllTradesPage() {
     }))
     .sort((a, b) => b.totalValue - a.totalValue);
 
-  const totalTx = ranked.reduce((sum, o) => sum + o.transactions.length, 0);
+  const allTx = ranked.flatMap((o) => o.transactions);
+  const totalTx = allTx.length;
+  const salesCount = allTx.filter((tx) => tx.isSale).length;
+  const purchasesCount = allTx.filter((tx) => tx.type === "Purchase").length;
+  const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
+  const salesValue = allTx
+    .filter((tx) => tx.isSale)
+    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount as any), 0);
+  const purchasesValue = allTx
+    .filter((tx) => tx.type === "Purchase")
+    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount as any), 0);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
@@ -58,6 +68,20 @@ export default async function AllTradesPage() {
           officials. {totalTx.toLocaleString()} trades from January 2025 to the
           present. The density is the story.
         </p>
+        <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-500 mt-4">
+          <span>
+            <span className="text-red-700 font-semibold">{salesCount}</span>{" "}
+            sales ({formatCompactCurrency(salesValue)})
+          </span>
+          <span>
+            <span className="text-emerald-700 font-semibold">{purchasesCount}</span>{" "}
+            purchases ({formatCompactCurrency(purchasesValue)})
+          </span>
+          <span>
+            <span className="text-amber-700 font-semibold">{lateCount}</span>{" "}
+            late filings
+          </span>
+        </div>
       </header>
 
       <SwimLaneChart officials={ranked} />
