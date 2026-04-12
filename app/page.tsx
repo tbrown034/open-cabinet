@@ -16,9 +16,18 @@ export default async function Home() {
     0
   );
 
-  const estimatedTotal = allOfficials
-    .flatMap((o) => o.transactions)
-    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
+  const allTx = allOfficials.flatMap((o) => o.transactions);
+  const estimatedTotal = allTx.reduce(
+    (sum, tx) => sum + amountRangeToMidpoint(tx.amount),
+    0
+  );
+  const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
+
+  // Most recent filing date across all officials
+  const mostRecentFiling = officials.reduce((latest, o) =>
+    o.mostRecentFilingDate > latest ? o.mostRecentFilingDate : latest,
+    ""
+  );
 
   const recentNews = news.slice(0, 4);
 
@@ -46,7 +55,7 @@ export default async function Home() {
         </div>
         <div>
           <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {totalTransactions}
+            {totalTransactions.toLocaleString()}
           </span>
           transactions
         </div>
@@ -56,12 +65,25 @@ export default async function Home() {
           </span>
           est. value
         </div>
+        <div>
+          <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
+            {lateCount}
+          </span>
+          late filings
+        </div>
       </div>
 
       <OfficialsTable officials={officials} />
 
+      <p className="text-xs text-neutral-400 mt-6 mb-12">
+        Showing {totalOfficials} of 43 officials with publicly downloadable
+        filings. Approximately 179 additional officials have filed reports that
+        require individual requests from OGE. Most recent filing:{" "}
+        {mostRecentFiling}.
+      </p>
+
       {recentNews.length > 0 && (
-        <section className="mt-16">
+        <section className="border-t border-neutral-200 pt-10">
           <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
             Recent Coverage
           </h2>
@@ -99,12 +121,6 @@ export default async function Home() {
           </div>
         </section>
       )}
-
-      <p className="text-xs text-neutral-400 mt-8">
-        Source: U.S. Office of Government Ethics. Values reported in ranges per
-        federal law. Estimated values use range midpoints. Last updated{" "}
-        {index.lastUpdated}.
-      </p>
     </div>
   );
 }
