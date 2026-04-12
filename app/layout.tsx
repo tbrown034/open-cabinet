@@ -3,6 +3,8 @@ import { DM_Sans, DM_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import MobileNav from "./components/mobile-nav";
+import AuthButton from "./components/auth-button";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -51,7 +53,7 @@ export default function RootLayout({
       <body className="bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
         {/* Thin accent bar — signals "publication" not "app" */}
         <div className="h-[3px] bg-neutral-800 w-full" />
-        <header className="border-b border-neutral-200">
+        <header className="border-b border-neutral-200 relative">
           <nav className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -65,37 +67,22 @@ export default function RootLayout({
                 Open Cabinet
               </span>
             </Link>
-            <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-neutral-500">
-              <Link
-                href="/"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                Directory
-              </Link>
-              <Link
-                href="/dashboard"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                Dashboard
-              </Link>
-              <Link
-                href="/all"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                All Trades
-              </Link>
-              <Link
-                href="/companies"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                Companies
-              </Link>
-              <Link
-                href="/about"
-                className="hover:text-neutral-900 transition-colors"
-              >
-                About
-              </Link>
+
+            {/* Desktop nav — hidden on mobile */}
+            <div className="hidden md:flex items-center gap-5 text-sm text-neutral-500">
+              <Link href="/" className="hover:text-neutral-900 transition-colors">Directory</Link>
+              <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Dashboard</Link>
+              <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
+              <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
+              <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+              <span className="text-neutral-200">|</span>
+              <AuthButton />
+            </div>
+
+            {/* Mobile: auth + hamburger */}
+            <div className="flex md:hidden items-center gap-3">
+              <AuthButton />
+              <MobileNav />
             </div>
           </nav>
         </header>
