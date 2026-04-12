@@ -198,7 +198,66 @@ export default function SwimLaneChart({
         ))}
       </div>
 
-      <svg
+      {/* MOBILE: HTML cards with inline SVG dot strips */}
+      {isMobile && (
+        <div className="space-y-1">
+          {filtered.map((o) => {
+            const dotHeight = 30;
+            return (
+              <div key={o.slug} className="border-b border-neutral-100 pb-1">
+                <a href={`/officials/${o.slug}`} className="flex items-center gap-2 py-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`/photos/${o.slug}.jpg`}
+                    alt=""
+                    className="w-8 h-8 rounded-full object-cover shrink-0 bg-neutral-200"
+                    onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                  />
+                  <div className="min-w-0">
+                    <div className="text-xs font-medium text-neutral-900 truncate">
+                      {displayName(o.name)}
+                    </div>
+                    <div className="text-[10px] text-neutral-400 truncate">
+                      {o.title}
+                    </div>
+                  </div>
+                </a>
+                <svg width={chartWidth} height={dotHeight} className="overflow-visible">
+                  {o.transactions.map((tx, i) => {
+                    const cx = xScale(new Date(tx.date + "T00:00:00"));
+                    const r = rScale(amountRangeToMin(tx.amount as any));
+                    return (
+                      <circle
+                        key={i}
+                        cx={cx}
+                        cy={dotHeight / 2}
+                        r={r}
+                        fill={tx.isSale ? "#dc2626" : "#16a34a"}
+                        opacity={0.85}
+                        stroke="white"
+                        strokeWidth={1}
+                      />
+                    );
+                  })}
+                </svg>
+              </div>
+            );
+          })}
+          <div className="flex gap-3 mt-2 text-[10px] text-neutral-400">
+            <div className="flex items-center gap-1">
+              <span className="inline-block w-2 h-2 rounded-full bg-red-600 opacity-60" />
+              Sale
+            </div>
+            <div className="flex items-center gap-1">
+              <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 opacity-60" />
+              Purchase
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* DESKTOP: Full SVG swim lane chart */}
+      {!isMobile && <><svg
         width={svgWidth}
         height={height}
         role="img"
@@ -368,7 +427,7 @@ export default function SwimLaneChart({
         </g>
       </svg>
 
-      {/* Tooltip */}
+      {/* Desktop Tooltip */}
       {tooltip && (
         <div
           className="absolute pointer-events-none bg-white border border-neutral-200 shadow-sm px-3 py-2 text-xs max-w-64 z-10"
@@ -399,7 +458,6 @@ export default function SwimLaneChart({
         </div>
       )}
 
-      {/* Legend */}
       <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-neutral-400">
         <div className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-60" />
@@ -410,17 +468,9 @@ export default function SwimLaneChart({
           Purchase
         </div>
         <div className="text-neutral-300">|</div>
-        <div className="flex items-center gap-2">
-          <svg width="44" height="14" className="shrink-0">
-            <circle cx="4" cy="7" r="3" fill="#a3a3a3" opacity="0.5" />
-            <circle cx="16" cy="7" r="5" fill="#a3a3a3" opacity="0.5" />
-            <circle cx="32" cy="7" r="7" fill="#a3a3a3" opacity="0.5" />
-          </svg>
-          $1K &rarr; $50M+
-        </div>
-        <div className="text-neutral-300">|</div>
-        <div>Sorted by total volume</div>
+        <div>Circle size = amount</div>
       </div>
+      </>}
     </div>
   );
 }
