@@ -59,6 +59,7 @@ export interface OfficialIndexEntry {
   party?: "R" | "D" | "I";
   transactionCount: number;
   mostRecentFilingDate: string;
+  departedDate?: string | null;
   dataStatus: DataStatus;
 }
 

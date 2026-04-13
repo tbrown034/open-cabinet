@@ -1,8 +1,8 @@
 # Open Cabinet
 
-The first interactive stock tracker for the executive branch.
+An interactive financial disclosure and conflict-of-interest tracker for the executive branch.
 
-Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, same 30/45-day filing requirements — has had zero. Open Cabinet fills that gap.
+Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, same 30/45-day filing requirements — has had no comparable public tool. Open Cabinet fills that gap.
 
 **Live:** [open-cabinet.vercel.app](https://open-cabinet.vercel.app)
 

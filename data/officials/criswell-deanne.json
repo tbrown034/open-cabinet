@@ -7,20 +7,112 @@
   "filingType": "278-T Periodic Transaction Report",
   "mostRecentFilingDate": "2024-12-19",
   "transactions": [
-    { "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)", "ticker": "SWVXX", "type": "Purchase", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Amazon.com, Inc. (AMZN)", "ticker": "AMZN", "type": "Sale", "date": "2024-11-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Meta Platforms Inc. Class A Common Stock (META)", "ticker": "META", "type": "Sale", "date": "2024-11-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Paycom Software, Inc. (PAYC)", "ticker": "PAYC", "type": "Sale", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Autodesk, Inc. (ADSK)", "ticker": "ADSK", "type": "Sale", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Palantir Technologies Inc. Class A Common Stock (PLTR)", "ticker": "PLTR", "type": "Sale", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "CrowdStrike Holdings Inc. Class A Common Stock (CRWD)", "ticker": "CRWD", "type": "Sale", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Apple, Inc. (AAPL)", "ticker": "AAPL", "type": "Sale", "date": "2024-11-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "lululemon athletica, Inc. (LULU)", "ticker": "LULU", "type": "Sale", "date": "2024-11-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Invesco QQQ Trust, Series 1 (QQQ)", "ticker": "QQQ", "type": "Sale", "date": "2024-11-20", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Advanced Micro Devices, Inc. (AMD)", "ticker": "AMD", "type": "Sale", "date": "2024-06-12", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Meta Platforms Inc. (META)", "ticker": "META", "type": "Sale", "date": "2024-06-12", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "NVIDIA Corp. (NVDA)", "ticker": "NVDA", "type": "Sale", "date": "2024-06-12", "amount": "$1,001-$15,000", "lateFilingFlag": false }
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Autodesk, Inc. (ADSK)",
+      "ticker": "ADSK",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Palantir Technologies Inc. Class A Common Stock (PLTR)",
+      "ticker": "PLTR",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "CrowdStrike Holdings Inc. Class A Common Stock (CRWD)",
+      "ticker": "CRWD",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "lululemon athletica, Inc. (LULU)",
+      "ticker": "LULU",
+      "type": "Sale",
+      "date": "2024-11-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+      "ticker": "QQQ",
+      "type": "Sale",
+      "date": "2024-11-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Advanced Micro Devices, Inc. (AMD)",
+      "ticker": "AMD",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Meta Platforms Inc. (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    }
   ],
   "summary": "Criswell reported 13 transactions across 2 recent filings (2024), all sales except one money fund purchase. She traded actively in tech stocks (NVDA, META, CRWD, PLTR, AMD) and consumer names (LULU, ADSK, PAYC). An additional 15 earlier filings (2021-2024) exist but are not yet parsed. Biden-era FEMA Administrator who left office in January 2025.",
-  "party": "D"
+  "party": "D",
+  "departedDate": "2025-01-20"
 }
