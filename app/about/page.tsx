@@ -231,6 +231,70 @@ export default function AboutPage() {
           </p>
         </section>
 
+        {/* AI transparency */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            AI transparency
+          </h2>
+          <p className="text-neutral-600 leading-relaxed mb-4">
+            This project uses AI at several stages. In the interest of
+            transparency, here is exactly where and how.
+          </p>
+          <div className="space-y-4 text-sm">
+            <div>
+              <div className="font-medium text-neutral-900">PDF parsing</div>
+              <p className="text-neutral-500 mt-0.5">
+                Transaction data is extracted from OGE filing PDFs using
+                Anthropic{"'"}s Claude API (claude-haiku-4-5). Each table row is
+                read and output as structured JSON. All parsed data is verified
+                against the source PDF.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">
+                Official summaries
+              </div>
+              <p className="text-neutral-500 mt-0.5">
+                The plain-English summary on each official{"'"}s page is
+                AI-generated from their parsed transaction data. Summaries
+                describe what the data shows — they do not make editorial
+                judgments. Each is reviewed for factual accuracy.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">News coverage</div>
+              <p className="text-neutral-500 mt-0.5">
+                Articles in the {"\""}In the News{"\""} sections are collected
+                via AI-assisted web search across major outlets (ProPublica,
+                CNBC, NOTUS, Bloomberg, etc.). Every linked article is a real,
+                published piece — no AI-generated news content.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">
+                Codebase
+              </div>
+              <p className="text-neutral-500 mt-0.5">
+                The application was built with Claude Code
+                (claude-opus-4-6), Anthropic{"'"}s CLI development tool. All
+                code, architecture, and editorial decisions are human-directed.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">
+                What AI does not do
+              </div>
+              <p className="text-neutral-500 mt-0.5">
+                AI does not generate or fabricate transaction data. It does not
+                make editorial judgments about whether trades are legal or
+                ethical. It does not determine which officials to track or how
+                to present findings. All data traces back to a government-filed
+                PDF.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Open source + contact */}
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
