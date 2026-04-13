@@ -39,13 +39,13 @@ export default function BuySellRatio({
           <span className="font-semibold font-[family-name:var(--font-dm-mono)] tabular-nums">
             {salesCount}
           </span>{" "}
-          sales ({formatCompactCurrency(salesValue)})
+          sales (est. {formatCompactCurrency(salesValue)})
         </div>
         <div className="text-emerald-700">
           <span className="font-semibold font-[family-name:var(--font-dm-mono)] tabular-nums">
             {purchasesCount}
           </span>{" "}
-          purchases ({formatCompactCurrency(purchasesValue)})
+          purchases (est. {formatCompactCurrency(purchasesValue)})
         </div>
       </div>
     </section>
