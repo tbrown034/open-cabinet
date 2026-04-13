@@ -196,3 +196,45 @@ Phase 30+ (Session 5):
 **Next:** Configure GitHub repo secrets for Actions, run first real pipeline, update .env.example (currently gitignored by .env* pattern — needs !.env.example exception), Form 201 requests for Oz/Pirro/Loeffler/Patel.
 
 ---
+
+## 2026-04-13 - Verification Marathon + Tribune Email
+
+**Session Summary:**
+- Complete data verification of all 34 officials using natural-pdf + Claude Opus page-by-page extraction
+- Trump data expanded from 384 to 1,315 transactions (was 25% complete, now full)
+- Fixed McMahon $47M parsing error (Angleton ISD bond: Over $50M should have been $1M-$5M)
+- Dedup key corrected from (description, date, type) to (description, date, type, amount) — restored 34 legitimate transactions
+- Removed 83 amended filing duplicates
+- Resolved missing tickers: Miran (58), Wright (74 ETFs)
+- ProPublica cross-reference confirmed our 278-T data is more complete
+- Four parallel audits: copy review (SPJ/AP), security scan, visual/mobile, ProPublica cross-check
+- Email sent to Texas Tribune editor Chris at 1:20 PM EDT
+- 27 commits, all pushed and deployed
+
+**Data Changes:**
+- Total transactions: 2,320 → 3,283 (+963, mostly Trump)
+- Late filings: 563 → 1,217 (37.1% rate)
+- Trump: 384 → 1,315 transactions (858 late, 65% rate)
+- Criswell: 13 → 80 transactions
+- All 34 officials at HIGH or MEDIUM confidence
+
+**Key Fixes:**
+- McMahon $47M→$1-5M parsing error
+- Dedup key: added amount to prevent deleting legitimate same-day trades
+- "FormerAdministrator" spacing bug
+- sm:truncate-none invalid Tailwind 4 class
+- new Date() showing dynamic "Last updated" instead of hardcoded date
+- "1 sales" singular/plural grammar on 2 official pages
+- "Opus-verified" jargon removed from user-facing summaries
+- README $2.9B → $2.7B estimated value correction
+- ProPublica added back to coverage note
+- Jonathan Soma / natural-pdf credited and linked in about + scrollytelling
+
+**Infrastructure:**
+- natural-pdf verification script (scripts/verify-naturalpdf.py)
+- Data verification plan (docs/data-verification-plan.md)
+- Blog Part 8 written (The Verification Marathon)
+
+**Next:** Launch posts (HN, Bluesky, LinkedIn, Reddit). Update launch-posts.md numbers. Vercel Cron secrets. Form 201 requests for Oz/Pirro/Loeffler.
+
+---

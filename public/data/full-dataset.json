@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-04-13T17:35:38.970Z",
+  "generatedAt": "2026-04-13T18:57:00Z",
   "officialCount": 34,
-  "transactionCount": 3283,
+  "transactionCount": 3332,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -9,7 +9,7 @@
       "title": "FAA Administrator",
       "agency": "Department of Transportation",
       "level": "Sub-Cabinet",
-      "transactionCount": 76,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-09",
       "transactions": [
         {
@@ -620,6 +620,31 @@
           "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Bedford reported 67 sales (est. $37.3M) and 8 purchases (est. $21.1M). Holdings included MDT, REGN, ELF, ALK, AMZN, among others. 2 of 76 transactions were filed late.",
+      "confirmedDate": "2025-07-09",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-09",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-01-21",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BC33926D1346296F85258D86003449A3/$FILE/Bryan-Bedford-11.03.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-12-19",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-11-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -628,7 +653,7 @@
       "title": "Secretary of the Treasury",
       "agency": "Department of the Treasury",
       "level": "Cabinet",
-      "transactionCount": 21,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-12-05",
       "transactions": [
         {
@@ -798,6 +823,61 @@
           "date": "2025-11-27",
           "amount": "$100,001-$250,000",
           "lateFilingFlag": false
+        },
+        {
+          "description": "SPDR Gold Shares (GLD)",
+          "ticker": "GLD",
+          "type": "Sale",
+          "date": "2025-03-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Key Square Partners II LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-19",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Key Square Partners II LLP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Castle Hook LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Castle Hook LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        }
+      ],
+      "summary": "26 sales totaling an estimated $3.3M, consistent with ethics agreement divestitures upon entering government service.",
+      "confirmedDate": "2025-01-27",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-12-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-08-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BA716BA5B423A76685258CE6002C8303/$FILE/Scott-Bessent-07.14.2025-278T.pdf",
+          "label": "278-T"
         }
       ]
     },
@@ -807,7 +887,7 @@
       "title": "Commissioner",
       "agency": "Social Security Administration",
       "level": "Cabinet",
-      "transactionCount": 95,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-03-06",
       "transactions": [
         {
@@ -1475,6 +1555,36 @@
           "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": true
         }
+      ],
+      "summary": "29 sales and 66 purchases across 95 transactions. 1 filed late.",
+      "confirmedDate": "2025-05-06",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-03-06",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCD5083EB618F35085258DB200344824/$FILE/Frank-J-Bisignano-02.10.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-12-13",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA16C26F767256C285258D5F00343F7B/$FILE/Frank-J-Bisignano-09.09.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-12-13",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCA8E4D588C234CD85258D5F00343F83/$FILE/Frank-J-Bisignano-08.08.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-19",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FB264D7E3496773E85258CCC002C7F4A/$FILE/Frank-J-Bisignano-07.03.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9A2C2ECDD1FAECA185258CC8002C7D03/$FILE/Frank-J-Bisignano-06.26.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -1483,7 +1593,7 @@
       "title": "Deputy Attorney General",
       "agency": "Department of Justice",
       "level": "Sub-Cabinet",
-      "transactionCount": 15,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-06-03",
       "transactions": [
         {
@@ -1606,6 +1716,16 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Blanche reported 15 sales totaling an estimated $360K, consistent with ethics agreement divestitures. Holdings included XLF, XLV, TSLA, COIN, DAL, among others. One transaction was flagged as a late filing.",
+      "confirmedDate": "2025-03-05",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-07-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -1614,7 +1734,7 @@
       "title": "Attorney General",
       "agency": "Department of Justice",
       "level": "Cabinet",
-      "transactionCount": 2,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-05-05",
       "transactions": [
         {
@@ -1633,6 +1753,17 @@
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Bondi reported 2 sales totaling an estimated $3.4M, consistent with ethics agreement divestitures.",
+      "confirmedDate": "2025-02-04",
+      "party": "R",
+      "departedDate": "2026-04-02",
+      "sourceFilings": [
+        {
+          "date": "2025-05-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -1641,7 +1772,7 @@
       "title": "Secretary",
       "agency": "Department of the Interior",
       "level": "Cabinet",
-      "transactionCount": 124,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-11-13",
       "transactions": [
         {
@@ -2636,6 +2767,31 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Burgum reported 61 sales (est. $9.6M) and 60 purchases (est. $2.3M). Holdings included CIVIX, TEAM, MSFT, TFDXX, DUK, among others. Nearly all filings (103 of 124) were late.",
+      "confirmedDate": "2025-01-30",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-01-21",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/056ABAA54A1FAC1585258D8600344DDF/$FILE/Douglas-J-Burgum-11.13.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-11-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7C0B79B66E94715885258D4F00317C5D/$FILE/Doug-Burgum-09.18.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4570FD57E16F594E85258CC8002C7DA3/$FILE/Douglas-J-Burgum-06.12.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-05-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E15FC684C226F64785258C8A002C72AC/$FILE/Douglas-J-Burgum-04.30.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -2644,7 +2800,7 @@
       "title": "Secretary of Labor",
       "agency": "Department of Labor",
       "level": "Cabinet",
-      "transactionCount": 98,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-07-02",
       "transactions": [
         {
@@ -3333,6 +3489,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "98 sales and no purchases across 98 transactions. 0 filed late.",
+      "confirmedDate": "2025-03-10",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-09-09",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -3341,7 +3507,7 @@
       "title": "Administrator, Federal Emergency Management Agency",
       "agency": "Department of Homeland Security",
       "level": "Sub-Cabinet",
-      "transactionCount": 80,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2024-12-19",
       "transactions": [
         {
@@ -3904,6 +4070,96 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "39 sales and 41 purchases across 80 transactions. 0 filed late.",
+      "party": "D",
+      "departedDate": "2025-01-20",
+      "sourceFilings": [
+        {
+          "date": "2025-01-25",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7D4E0C157D5EAD7085258C1D00320572/$FILE/Deanne-Criswell-12.19.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-08-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E17EF5BDAB771EB385258B86002DDD08/$FILE/Deanne-Criswell-06.24.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-05-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/25E7F390E4D9D1F785258B10002EFB8D/$FILE/Deanne-Criswell-04.02.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-02-21",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5050D101570BB0D085258ACA00347878/$FILE/Dianne-Criswell-12.19.2023-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2023-10-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/651911337FC85C0085258A54002EEBC8/$FILE/Deanne-Criswell-09.08.2023-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2023-08-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9186734EDFB39F6085258A0C002EF245/$FILE/Deanne-Criswell-06.09.2023-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2023-02-07",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B064D2C895C8D7008525894F003442AC/$FILE/Deanne-Criswell-01.04.2023-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2022-10-04",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/251763FD50CDF140852588D1002ED451/$FILE/Deanne-Criswell-08.10.2022-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2022-09-02",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D35261AFD48DF3EE852588B1002EB958/$FILE/Deanne-Criswell-07.01.2022-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2022-06-28",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/05BBA24C3215FBC08525886F002EC55E/$FILE/Deanne-Criswell-05.18.2022-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2022-03-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9B1EEC36309D0956852588030033C13A/$FILE/Deanne-Criswell-02.04.2022-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2022-02-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3909A58D046FDEEA852587DC0033C377/$FILE/Deanne-Criswell-01.20.2022-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-12-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E85AB5CBC0931285852587AC0033CDC5/$FILE/Deanne-Criswell-12.01.2021-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-09-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FD54C77633EEF27385258750002E5457/$FILE/Deanne-Criswell-09.06.2021-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-09-08",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B60B3A50D1966CA58525874A002E54D5/$FILE/Deanne-Criswell-08.23.2021-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-08-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/93FDEB99F2A1DF7E85258742002E548A/$FILE/Deanne-Criswell-08.10.2021-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-08-18",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C9A5D86474A7CEFE85258735002E4AB2/$FILE/Deanne-Chriswell-08.05.2021-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -3912,7 +4168,7 @@
       "title": "Principal Deputy Director of National Intelligence",
       "agency": "Office of the Director of National Intelligence",
       "level": "Sub-Cabinet",
-      "transactionCount": 112,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-02-10",
       "transactions": [
         {
@@ -4699,6 +4955,31 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "53 sales and 59 purchases across 112 transactions. 0 filed late.",
+      "party": "D",
+      "departedDate": "2025-01-25",
+      "sourceFilings": [
+        {
+          "date": "2025-03-25",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F2DB7167AE9E497285258C58002C7886/$FILE/Stacey-Dixon-02.10.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-08-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/706D50AB594C0CB985258742002E54E3/$FILE/Stacey-Dixon-08.24.2021-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2021-08-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E19691CF6317598D85258742002E54E1/$FILE/Stacey-Dixon-08.24.2021-278T(1).pdf",
+          "label": "278-T (1)"
+        },
+        {
+          "date": "2021-08-28",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AE01276632D6DB948525873F002E548E/$FILE/Stacy-Dixon-08.12.2021-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -4707,7 +4988,7 @@
       "title": "Secretary",
       "agency": "Department of Transportation",
       "level": "Cabinet",
-      "transactionCount": 38,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-04-23",
       "transactions": [
         {
@@ -5014,6 +5295,16 @@
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Duffy reported 37 sales (est. $695K) and 1 purchase (est. $8K). Holdings included MSFT, VRTX, UNH, ORCL, AMZN, among others.",
+      "confirmedDate": "2025-01-28",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-05-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5022,7 +5313,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of Homeland Security",
       "level": "Sub-Cabinet",
-      "transactionCount": 63,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-05-01",
       "transactions": [
         {
@@ -5529,6 +5820,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
         }
+      ],
+      "summary": "Edgar reported 63 sales totaling an estimated $744K, consistent with ethics agreement divestitures. Holdings included ACN, LIN, ABT, ABBV, ADBE, among others. Nearly all filings (63 of 63) were late.",
+      "confirmedDate": "2025-03-06",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-05-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5537,7 +5838,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of the Treasury",
       "level": "Sub-Cabinet",
-      "transactionCount": 1,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-06-26",
       "transactions": [
         {
@@ -5548,6 +5849,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Faulkender reported 1 sale totaling an estimated $8K, consistent with ethics agreement divestitures.",
+      "confirmedDate": "2025-03-26",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-09-09",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AF83B6CFCFDD7C7985258D00002BFE32/$FILE/Michael-W-Faulkender-06.26.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5556,7 +5867,7 @@
       "title": "Director of National Intelligence",
       "agency": "Office of the Director of National Intelligence",
       "level": "Cabinet",
-      "transactionCount": 13,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-05-21",
       "transactions": [
         {
@@ -5663,6 +5974,16 @@
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Gabbard reported 9 sales (est. $480K) and 4 purchases (est. $400K). Holdings included AAPL, NVDA, RMBL, TSLA, VOO, among others.",
+      "confirmedDate": "2025-02-12",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-06-03",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5671,7 +5992,7 @@
       "title": "Secretary of Defense",
       "agency": "Department of Defense",
       "level": "Cabinet",
-      "transactionCount": 29,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-04-11",
       "transactions": [
         {
@@ -5906,6 +6227,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Hegseth reported 29 sales totaling an estimated $428K, consistent with ethics agreement divestitures. Holdings included WMT, TMO, PEP, PNC, MSFT, among others.",
+      "confirmedDate": "2025-01-24",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-06-07",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1D97817A20B559D085258CA2002C8C51/$FILE/Pete-Hegseth-04.11.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5914,7 +6245,7 @@
       "title": "Secretary",
       "agency": "Department of Health and Human Services",
       "level": "Cabinet",
-      "transactionCount": 9,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-05-09",
       "transactions": [
         {
@@ -5989,6 +6320,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Kennedy reported 7 sales (est. $80K) and 2 purchases (est. $16K). Holdings included ASML, AMZN, AAPL, UBER, ZS, among others. 7 of 9 transactions were filed late.",
+      "confirmedDate": "2025-02-13",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-05-17",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -5997,7 +6338,7 @@
       "title": "Director, Office of Science and Technology Policy",
       "agency": "Office of Science and Technology Policy",
       "level": "Sub-Cabinet",
-      "transactionCount": 55,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-01-10",
       "transactions": [
         {
@@ -6440,6 +6781,56 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Kratsios reported 22 sales (est. $18.6M) and 33 purchases (est. $3.7M). Holdings included VIG, VTEB, SWPPX, VTI, VNQ, among others.",
+      "confirmedDate": "2025-03-25",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-01-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-09-18",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-08-03",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2DA8F217908CB8BC85258CDB002C8F7D/$FILE/Michael-J-Kratsios-07.25.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-19",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DB50C7FE9979CB3885258CCC002C8B0A/$FILE/Michael-J-Kratsios-07.15.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-16",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/25B7D3B2253E46BB85258CC9002C84A3/$FILE/Michael-J-Kratsios-06.24.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-16",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-05-16",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-05-10",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-04-09",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C168F84EC148EDC785258C67002C8092/$FILE/Michael-J-Kratsios-03.18.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -6448,7 +6839,7 @@
       "title": "Director, Office of Personnel Management",
       "agency": "Office of Personnel Management",
       "level": "Sub-Cabinet",
-      "transactionCount": 72,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-03-14",
       "transactions": [
         {
@@ -7027,6 +7418,46 @@
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Kupor reported 71 sales (est. $28.5M) and 1 purchase (est. $3.0M). Holdings included ABNB, OMDA, COIN, IOT, GOOG, among others.",
+      "confirmedDate": "2025-07-09",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-03-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-03-07",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-01-30",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-12-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-11-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-10-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-10-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -7035,7 +7466,7 @@
       "title": "Deputy Secretary of State",
       "agency": "Department of State",
       "level": "Sub-Cabinet",
-      "transactionCount": 89,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-05-22",
       "transactions": [
         {
@@ -7750,6 +8181,16 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Landau reported 89 sales totaling an estimated $7.8M, consistent with ethics agreement divestitures. Holdings included DANOY, UL, VEA, NMTRX, NSRGY, among others.",
+      "confirmedDate": "2025-03-24",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-07-16",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -7758,7 +8199,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of Veterans Affairs",
       "level": "Sub-Cabinet",
-      "transactionCount": 3,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-06-11",
       "transactions": [
         {
@@ -7785,6 +8226,16 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Lawrence reported 3 sales totaling an estimated $96K, consistent with ethics agreement divestitures. Notable: Dominion Energy sale is relevant given VA's large energy footprint. Filer received a 30-day filing extension. Confirmed to second Trump-term role as Deputy Secretary of VA after previously serving as Under Secretary for Benefits (2018-2021).",
+      "confirmedDate": "2025-02-06",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-07-11",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5B8B5CEB2359CA1D85258CC4002C8A8E/$FILE/Paul-R-Lawrence-06.11.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -7793,7 +8244,7 @@
       "title": "Secretary of Commerce",
       "agency": "Department of Commerce",
       "level": "Cabinet",
-      "transactionCount": 20,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-11-05",
       "transactions": [
         {
@@ -7956,6 +8407,21 @@
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Lutnick reported 20 sales totaling an estimated $474.9M, consistent with ethics agreement divestitures. Holdings included BGC, NMRK, NDAQ, DIS, GEHC, among others.",
+      "confirmedDate": "2025-02-18",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-12-10",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8C12E5475578E84385258D5C00345940/$FILE/Howard-Lutnick-11.05.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-16",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/66A69EB879848CF885258CC9002C8582/$FILE/Howard-Lutnick-06.17.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -7964,7 +8430,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of the Interior",
       "level": "Sub-Cabinet",
-      "transactionCount": 22,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-08-07",
       "transactions": [
         {
@@ -8143,6 +8609,31 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "MacGregor reported 22 transactions across 4 filings spanning both Trump terms (2020 and 2025). Her 2025 divestitures are significant: she sold over $1M in NextEra Energy stock (an energy company regulated by Interior) through options exercises and direct sales, reinvesting into index funds per Certificate of Divestiture from OGE. Also sold AMZN, AAPL, and NFLX. Her 2020 filings show small Amazon sales under an ethics screening arrangement.",
+      "confirmedDate": "2025-03-13",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-09-06",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E7B021C3112F2B3485258CFD002C03E5/$FILE/Katharine-MacGregor-08.07.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2020-09-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/294765D0509B1112852585E10027E9D3/$FILE/Katharine-MacGregor-08.13.2020-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2020-07-28",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2020-06-11",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -8151,7 +8642,7 @@
       "title": "Secretary of Education",
       "agency": "Department of Education",
       "level": "Cabinet",
-      "transactionCount": 156,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-01",
       "transactions": [
         {
@@ -9246,6 +9737,21 @@
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         }
+      ],
+      "summary": "144 sales and 12 purchases across 156 transactions. 153 filed late.",
+      "confirmedDate": "2025-03-03",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6439C8BBFB85065585258DCC002DC69B/$FILE/Linda-McMahon-07.02.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-11",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -9254,7 +9760,7 @@
       "title": "Administrator, Federal Highway Administration",
       "agency": "Department of Transportation",
       "level": "Sub-Cabinet",
-      "transactionCount": 20,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-01",
       "transactions": [
         {
@@ -9417,6 +9923,36 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
         }
+      ],
+      "summary": "McMaster reported 7 sales (est. $582K) and 13 purchases (est. $342K). Holdings included GRAB, OSS, HOOD, TSLA, AMKR, among others. 15 of 20 transactions were filed late.",
+      "confirmedDate": "2025-09-18",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6669428412F0329885258DCC002DC6FF/$FILE/Sean-McMaster-02.27.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-03-13",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-01-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-01-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-01-06",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B716301C2D9B9D585258D7700345AA8/$FILE/Sean-McMaster-09.29.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -9425,7 +9961,7 @@
       "title": "Chairman, Council of Economic Advisers",
       "agency": "Council of Economic Advisers",
       "level": "Sub-Cabinet",
-      "transactionCount": 70,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-12-03",
       "transactions": [
         {
@@ -9988,6 +10524,21 @@
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Miran reported 64 sales (est. $4.7M) and 6 purchases (est. $1.7M). Holdings included IVV, GOOGL, AMZN, BRK.B, MSFT, among others.",
+      "confirmedDate": "2025-03-12",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-12-31",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/86C03B37455893E185258D710034584A/$FILE/Stephen-I-Miran-12.03.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-09-06",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -9996,7 +10547,7 @@
       "title": "Deputy Commissioner, Social Security Administration",
       "agency": "Social Security Administration",
       "level": "Sub-Cabinet",
-      "transactionCount": 262,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-10",
       "transactions": [
         {
@@ -10007,17 +10558,31 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
           "type": "Purchase",
           "date": "2026-02-03",
-          "amount": "$1,001-$15,000",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
           "type": "Purchase",
           "date": "2026-02-03",
-          "amount": "$15,001-$50,000",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "type": "Purchase",
+          "date": "2026-02-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
+          "type": "Purchase",
+          "date": "2026-02-03",
+          "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
@@ -10035,14 +10600,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "type": "Purchase",
-          "date": "2026-02-03",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Core S&P US Growth ETF (IUSG)",
+          "description": "iShares Core S&P US Value ETF (IUSV)",
           "type": "Sale",
           "date": "2026-02-02",
           "amount": "$1,001-$15,000",
@@ -10056,8 +10614,22 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
+          "description": "iShares Core S&P US Growth ETF (IUSG)",
           "type": "Sale",
+          "date": "2026-02-02",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Core S&P US Growth ETF (IUSG)",
+          "type": "Sale",
+          "date": "2026-02-02",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
           "date": "2026-02-02",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
@@ -10077,686 +10649,21 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Agilent Technologies, Inc. (A)",
+          "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
           "type": "Sale",
-          "date": "2026-01-30",
+          "date": "2026-02-02",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "AIA Group Ltd ADR (AAGIY)",
+          "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
           "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Apple, Inc. (AAPL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "AbbVie, Inc. (ABBV)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Ambev SA (ABEV)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Abbott Laboratories (ABT)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Accenture Plc (ACN)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Analog Devices, Inc. (ADI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Autodesk, Inc. (ADSK)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "American Electric Power Co., Inc. (AEP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "American International Group, Inc. (AIG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Alkami Technology Inc. Common Stock (ALKT)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Allstate Corp (ALL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Applied Materials, Inc. (AMAT)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Advanced Micro Devices, Inc. (AMD)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "AMETEK, Inc. (AME)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Amazon.com, Inc. (AMZN)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Amazon.com, Inc. (AMZN)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Aon Plc (AON)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Atmos Energy Corp. (ATO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Broadcom, Inc. (AVGO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "American Water Works Co., Inc. (AWK)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "American Express Co. (AXP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Barrick Mining Corp (B)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Boeing Co (BA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Bae Systems PLC (BAESY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Booz Allen Hamilton Holding Corp. (BAH)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Becton, Dickinson and Company (BDX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF (BIL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Bio-Rad Laboratories Inc Class A (BIO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The Bank of New York Mellon Corporation (BK)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "BlackRock, Inc. (BLK)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Broadridge Financial Solutions, Inc. (BR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Berkshire Hathaway Inc. (BRKB)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "British American Tobacco Industries p.l.c. Common Stock ADR (BTI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Anheuser-Busch Inbev SA Sponsored ADR (Belgium) (BUD)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Casey's General Stores, Inc. (CASY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Cameco Corporation Common Stock (CCJ)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "CDW Corp. (CDW)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Compagnie Financiere Richemont SA ADR (CFRUY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The Carlyle Group Inc. Common Stock (CG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "C.H. Robinson Worldwide, Inc. (CHRW)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Charter Communications, Inc. (CHTR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Cincinnati Financial Corp. (CINF)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Colgate-Palmolive Co. (CL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Comcast Corp. (CMCSA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "CME Group, Inc. (CME)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Cummins, Inc. (CMI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "CenterPoint Energy, Inc. (CNP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "ConocoPhillips (COP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Copart, Inc. (CPRT)",
-          "type": "Sale",
-          "date": "2026-01-30",
+          "date": "2026-02-02",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
           "description": "salesforce.com, inc. (CRM)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "CoStar Group, Inc. (CSGP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Carlisle Cos., Inc. (CSL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Cintas Corp. (CTAS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Chevron Corp. (CVX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Danone SA ADR (DANOY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Dollar General Corp. (DG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Danaher Corp. (DHR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The Walt Disney Co. (DIS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Doximity Inc. Class A Common Stock (DOCS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Dynatrace Inc. Common Stock (DT)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "DTE Energy Co. (DTE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Duke Energy Corp. (DUK)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "eBay, Inc. (EBAY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Equifax, Inc. (EFX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Elevance Health Inc. Common Stock (ELV)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Enbridge Inc Common Stock (ENB)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The Ensign Group, Inc. (ENSG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Equity Residential (EQR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Evercore, Inc. (EVR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Exelon Corp. (EXC)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Expeditors International of Washington, Inc. (EXPD)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Fanuc Corp ADR (FANUY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Fastenal Co. (FAST)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Fair Isaac Corp. (FICO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Five Below, Inc. (FIVE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Fomento Economico Mexicano S.A.B. de C.V. Common Stock (FMX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Floor & Decor Holdings, Inc. (FND)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Franco-Nevada Corporation (FNV)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Freshpet Inc. (FRPT)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "GoDaddy, Inc. (GDDY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SPDR Gold Shares (GLD)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Globant S.A. Common Shares (GLOB)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Alphabet, Inc. (GOOG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Guidewire Software, Inc. (GWRE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "HCA Healthcare, Inc. (HCA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "HEICO Corp. (HEI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Heineken NV ADR (HEINY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Haleon plc American Depositary Shares (Each representing two Ordinary Shares) (HLN)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Honeywell International, Inc. (HON)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Intercontinental Exchange, Inc. (ICE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "IDEXX Laboratories, Inc. (IDXX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "International Flavors & Fragrances, Inc. (IFF)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Imperial Oil Limited Common Stock (IMO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Intuit, Inc. (INTU)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Gartner, Inc. (IT)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10770,546 +10677,280 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Jardine Matheson Holdings Ltd ADR (JMHLY)",
+          "description": "iShares Russell 2000 ETF (IWM)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Johnson & Johnson (JNJ)",
+          "description": "eBay, Inc. (EBAY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "JPMorgan Chase & Co. (JPM)",
+          "description": "Xcel Energy, Inc. (XEL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Kinsale Capital Group, Inc. (KNSL)",
+          "description": "Workiva, Inc. (WK)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "The Coca-Cola Co. (KO)",
+          "description": "Workday, Inc. (WDAY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "The Kroger Co. (KR)",
+          "description": "Willis Towers Watson Public Limited Company Ordinary Shares (WTW)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Quaker Chemical Corp. (KWR)",
+          "description": "White Mountains Insurance Group Ltd. (WTM)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Lincoln Electric Holdings, Inc. (LECO)",
+          "description": "Wheaton Precious Metals Corp Common Shares (Canada) (WPM)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Eli Lilly & Co. (LLY)",
+          "description": "Weyerhaeuser Co. (WY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Grand Canyon Education, Inc. (LOPE)",
+          "description": "West Pharmaceutical Services, Inc. (WST)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Lam Research Corp. (LRCX)",
+          "description": "Wells Fargo & Co. (WFC)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Lvmh Moet Hennessy Louis Vuitton SE ADR (LVMUY)",
+          "description": "Walmart, Inc. (WMT)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Lloyds Banking Group Plc American Depositary Shares (LYG)",
+          "description": "Walmart, Inc. (WMT)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Mastercard, Inc. (MA)",
+          "description": "Wal-Mart de Mexico SPN ADR (WMMVY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Medtronic Plc (MDT)",
+          "description": "Visa, Inc. (V)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Medpace Holdings, Inc. (MEDP)",
+          "description": "Visa, Inc. (V)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Mitsubishi Electric Corp ADR (MIELY)",
+          "description": "Verizon Communications, Inc. (VZ)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Merck KGaA ADR (MKKGY)",
+          "description": "Verizon Communications, Inc. (VZ)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Markel Corp. (MKL)",
+          "description": "Verisk Analytics, Inc. (VRSK)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Mueller Industries, Inc. (MLI)",
+          "description": "Verisk Analytics, Inc. (VRSK)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Martin Marietta Materials, Inc. (MLM)",
+          "description": "Veeva Systems, Inc. (VEEV)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Altria Group, Inc. (MO)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Modine Manufacturing Co. (MOD)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Morgan Stanley (MS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "MS&AD Insurance Group Holdings Inc ADR (MSADY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Microsoft Corp. (MSFT)",
-          "type": "Sale",
+          "description": "Vanguard Value Index Fund ETF Shares (VTV)",
+          "type": "Purchase",
           "date": "2026-01-30",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Microsoft Corp. (MSFT)",
-          "type": "Sale",
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
           "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
+          "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Motorola Solutions, Inc. (MSI)",
-          "type": "Sale",
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
           "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
-          "description": "NextEra Energy, Inc. (NEE)",
-          "type": "Sale",
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
           "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Newmont Corp. (NEM)",
-          "type": "Sale",
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
           "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
-          "description": "National Oilwell Varco, Inc. (NOV)",
-          "type": "Sale",
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "type": "Purchase",
           "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
         {
-          "description": "ServiceNow, Inc. (NOW)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nestle SA ADR (NSRGY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nutrien Ltd. Common Shares (NTR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NVIDIA Corp. (NVDA)",
-          "type": "Sale",
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "type": "Purchase",
           "date": "2026-01-30",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
-          "description": "NVIDIA Corp. (NVDA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Novartis AG Common Stock (NVS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "ONEOK, Inc. (OKE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Oracle Corp. (ORCL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Old Republic International Corp. (ORI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "O'Reilly Automotive, Inc. (ORLY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Otis Worldwide Corporation Common Stock (OTIS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PDF Solutions, Inc. (PDFS)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Public Service Enterprise Group, Inc. (PEG)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PepsiCo, Inc. (PEP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Progressive Corp. (PGR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Philip Morris International, Inc. (PM)",
-          "type": "Sale",
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "type": "Purchase",
           "date": "2026-01-30",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
-          "description": "PPG Industries, Inc. (PPG)",
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Universal Health Services, Inc. (UHS)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "PPL Corp. (PPL)",
+          "description": "UnitedHealth Group, Inc. (UNH)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Prosus NV ADR (PROSY)",
+          "description": "Unilever PLC Common Stock (UL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Privia Health Group Inc. Common Stock (PRVA)",
+          "description": "UOL Group Ltd ADR (UOLGY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Pure Storage, Inc. (PSTG)",
+          "description": "Tyler Technologies, Inc. (TYL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Power Corporation of Canada (PWCDF)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Invesco QQQ Trust, Series 1 (QQQ)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "RB Global Inc (RBA)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "RenaissanceRe Holdings Ltd. (RNR)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Rollins, Inc. (ROL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Ross Stores, Inc. (ROST)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Regal Rexnord Corporation Common Stock (RRX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Rush Street Interactive Inc. Class A Common Stock (RSI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SAP SE ADS (SAP)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Starbucks Corp. (SBUX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Shell PLC (SHEL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The Sherwin-Williams Co. (SHW)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SLB Ltd (SLB)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SMC Corp ADR (SMCAY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Shimano Inc ADR (SMNNY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Sompo Holdings Inc ADR (SMPNY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Snowflake Inc. Class A Common Stock (SNOW)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SECOM Co Ltd ADR (SOMLY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "S&P Global, Inc. (SPGI)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SPDR S&P 500 ETF Trust (SPY)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "STERIS Plc (STE)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "AT&T Inc (T)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "TE Connectivity Ltd. (TEL)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "The TJX Cos., Inc. (TJX)",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Thermo Fisher Scientific, Inc. (TMO)",
+          "description": "Twist Bioscience Corp. (TWST)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -11330,6 +10971,104 @@
           "lateFilingFlag": false
         },
         {
+          "description": "TransUnion (TRU)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Thermo Fisher Scientific, Inc. (TMO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Walt Disney Co. (DIS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The TJX Cos., Inc. (TJX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The TJX Cos., Inc. (TJX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Sherwin-Williams Co. (SHW)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Kroger Co. (KR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Ensign Group, Inc. (ENSG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Coca-Cola Co. (KO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Carlyle Group Inc. Common Stock (CG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "The Bank of New York Mellon Corporation (BK)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Texas Instruments Incorporated (TXN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Texas Instruments Incorporated (TXN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Tesla, Inc. (TSLA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Tesla, Inc. (TSLA)",
           "type": "Sale",
           "date": "2026-01-30",
@@ -11344,217 +11083,182 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Twist Bioscience Corp. (TWST)",
+          "description": "TE Connectivity Ltd. (TEL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Texas Instruments Incorporated (TXN)",
+          "description": "State Street SPDR Bloomberg 1-3 Month T-Bill ETF (BIL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Tyler Technologies, Inc. (TYL)",
+          "description": "Starbucks Corp. (SBUX)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Universal Health Services, Inc. (UHS)",
+          "description": "Starbucks Corp. (SBUX)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Unilever PLC Common Stock (UL)",
+          "description": "Sompo Holdings Inc ADR (SMPNY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "UnitedHealth Group, Inc. (UNH)",
+          "description": "Snowflake Inc. Class A Common Stock (SNOW)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "UOL Group Ltd ADR (UOLGY)",
+          "description": "Shimano Inc ADR (SMNNY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Visa, Inc. (V)",
+          "description": "Shell PLC (SHEL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Veeva Systems, Inc. (VEEV)",
+          "description": "ServiceNow, Inc. (NOW)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Verisk Analytics, Inc. (VRSK)",
+          "description": "STERIS Plc (STE)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
+          "description": "SPDR S&P 500 ETF Trust (SPY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "type": "Purchase",
+          "description": "SPDR S&P 500 ETF Trust (SPY)",
+          "type": "Sale",
           "date": "2026-01-30",
-          "amount": "$250,001-$500,000",
+          "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Value Index Fund ETF Shares (VTV)",
-          "type": "Purchase",
+          "description": "SPDR Gold Shares (GLD)",
+          "type": "Sale",
           "date": "2026-01-30",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Verizon Communications, Inc. (VZ)",
+          "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Workday, Inc. (WDAY)",
+          "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Wells Fargo & Co. (WFC)",
+          "description": "SMC Corp ADR (SMCAY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Workiva, Inc. (WK)",
+          "description": "SLB Ltd (SLB)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Wal-Mart de Mexico SPN ADR (WMMVY)",
+          "description": "SECOM Co Ltd ADR (SOMLY)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Walmart, Inc. (WMT)",
+          "description": "SAP SE ADS (SAP)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Wheaton Precious Metals Corp Common Shares (Canada) (WPM)",
+          "description": "S&P Global, Inc. (SPGI)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "West Pharmaceutical Services, Inc. (WST)",
+          "description": "S&P Global, Inc. (SPGI)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "White Mountains Insurance Group Ltd. (WTM)",
+          "description": "Rush Street Interactive Inc. Class A Common Stock (RSI)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Willis Towers Watson Public Limited Company Ordinary Shares (WTW)",
+          "description": "Ross Stores, Inc. (ROST)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Weyerhaeuser Co. (WY)",
+          "description": "Rollins, Inc. (ROL)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Xcel Energy, Inc. (XEL)",
+          "description": "RenaissanceRe Holdings Ltd. (RNR)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Exxon Mobil Corp. (XOM)",
+          "description": "Regal Rexnord Corporation Common Stock (RRX)",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -11568,10 +11272,1179 @@
           "lateFilingFlag": false
         },
         {
+          "description": "RB Global Inc (RBA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Quaker Chemical Corp. (KWR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Pure Storage, Inc. (PSTG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Public Service Enterprise Group, Inc. (PEG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Prosus NV ADR (PROSY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Progressive Corp. (PGR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Privia Health Group Inc. Common Stock (PRVA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Primo Brands Corp (PRMB)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Power Corporation of Canada (PWCDF)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Philip Morris International, Inc. (PM)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PepsiCo, Inc. (PEP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Paycom Software, Inc. (PAYC)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PPL Corp. (PPL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PPG Industries, Inc. (PPG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PDF Solutions, Inc. (PDFS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Otis Worldwide Corporation Common Stock (OTIS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Oracle Corp. (ORCL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Old Republic International Corp. (ORI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ONEOK, Inc. (OKE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "O'Reilly Automotive, Inc. (ORLY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nutrien Ltd. Common Shares (NTR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Novartis AG Common Stock (NVS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NextEra Energy, Inc. (NEE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Newmont Corp. (NEM)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Netflix, Inc. (NFLX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nestle SA ADR (NSRGY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "National Oilwell Varco, Inc. (NOV)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NVIDIA Corp. (NVDA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NVIDIA Corp. (NVDA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Mueller Industries, Inc. (MLI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Motorola Solutions, Inc. (MSI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Morgan Stanley (MS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Modine Manufacturing Co. (MOD)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Mitsubishi Electric Corp ADR (MIELY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Microsoft Corp. (MSFT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Microsoft Corp. (MSFT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Merck KGaA ADR (MKKGY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Medtronic Plc (MDT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Medpace Holdings, Inc. (MEDP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Mastercard, Inc. (MA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Mastercard, Inc. (MA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Martin Marietta Materials, Inc. (MLM)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Markel Corp. (MKL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MS&AD Insurance Group Holdings Inc ADR (MSADY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Lvmh Moet Hennessy Louis Vuitton SE ADR (LVMUY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Lloyds Banking Group Plc American Depositary Shares (LYG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Lincoln Electric Holdings, Inc. (LECO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Lam Research Corp. (LRCX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kinsale Capital Group, Inc. (KNSL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Johnson & Johnson (JNJ)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Jardine Matheson Holdings Ltd ADR (JMHLY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "JPMorgan Chase & Co. (JPM)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Intuit, Inc. (INTU)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Intuit, Inc. (INTU)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "International Flavors & Fragrances, Inc. (IFF)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Intercontinental Exchange, Inc. (ICE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Imperial Oil Limited Common Stock (IMO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "IDEXX Laboratories, Inc. (IDXX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Honeywell International, Inc. (HON)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Heineken NV ADR (HEINY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Haleon plc American Depositary Shares (Each representing two Ordinary Shares) (HLN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HEICO Corp. (HEI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HCA Healthcare, Inc. (HCA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Guidewire Software, Inc. (GWRE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Grand Canyon Education, Inc. (LOPE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GoDaddy, Inc. (GDDY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Globant S.A. Common Shares (GLOB)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Gartner, Inc. (IT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Freshpet Inc. (FRPT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Franco-Nevada Corporation (FNV)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fomento Economico Mexicano S.A.B. de C.V. Common Stock (FMX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Floor & Decor Holdings, Inc. (FND)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Five Below, Inc. (FIVE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fastenal Co. (FAST)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fanuc Corp ADR (FANUY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fair Isaac Corp. (FICO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Exxon Mobil Corp. (XOM)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Expeditors International of Washington, Inc. (EXPD)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Exelon Corp. (EXC)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Evercore, Inc. (EVR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Equity Residential (EQR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Equifax, Inc. (EFX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Enbridge Inc Common Stock (ENB)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Eli Lilly & Co. (LLY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Elevance Health Inc. Common Stock (ELV)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dynatrace Inc. Common Stock (DT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Duke Energy Corp. (DUK)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Doximity Inc. Class A Common Stock (DOCS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dollar General Corp. (DG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Danone SA ADR (DANOY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Danaher Corp. (DHR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Danaher Corp. (DHR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "DTE Energy Co. (DTE)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cummins, Inc. (CMI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Copart, Inc. (CPRT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ConocoPhillips (COP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Compagnie Financiere Richemont SA ADR (CFRUY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Comcast Corp. (CMCSA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Colgate-Palmolive Co. (CL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CoStar Group, Inc. (CSGP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cintas Corp. (CTAS)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cincinnati Financial Corp. (CINF)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cigna Corp. (CI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Chevron Corp. (CVX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Chevron Corp. (CVX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Charter Communications, Inc. (CHTR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CenterPoint Energy, Inc. (CNP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Casey's General Stores, Inc. (CASY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Carlisle Cos., Inc. (CSL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cameco Corporation Common Stock (CCJ)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CME Group, Inc. (CME)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CDW Corp. (CDW)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "C.H. Robinson Worldwide, Inc. (CHRW)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Broadridge Financial Solutions, Inc. (BR)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Broadcom, Inc. (AVGO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Broadcom, Inc. (AVGO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "British American Tobacco Industries p.l.c. Common Stock ADR (BTI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Booz Allen Hamilton Holding Corp. (BAH)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Boeing Co (BA)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "BlackRock, Inc. (BLK)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bio-Rad Laboratories Inc Class A (BIO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Berkshire Hathaway Inc. (BRKB)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Becton, Dickinson and Company (BDX)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Barrick Mining Corp (B)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bae Systems PLC (BAESY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Autodesk, Inc. (ADSK)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Atmos Energy Corp. (ATO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Applied Materials, Inc. (AMAT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Apple, Inc. (AAPL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Apple, Inc. (AAPL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Aon Plc (AON)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Anheuser-Busch Inbev SA Sponsored ADR (Belgium) (BUD)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Analog Devices, Inc. (ADI)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "American Water Works Co., Inc. (AWK)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "American International Group, Inc. (AIG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "American Express Co. (AXP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "American Electric Power Co., Inc. (AEP)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Ambev SA (ABEV)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Altria Group, Inc. (MO)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alphabet, Inc. (GOOG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alphabet, Inc. (GOOG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alphabet, Inc. (GOOG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alphabet, Inc. (GOOG)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Allstate Corp (ALL)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alkami Technology Inc. Common Stock (ALKT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Agilent Technologies, Inc. (A)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Advanced Micro Devices, Inc. (AMD)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Accenture Plc (ACN)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Abbott Laboratories (ABT)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "AbbVie, Inc. (ABBV)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "AT&T Inc (T)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "AMETEK, Inc. (AME)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "AIA Group Ltd ADR (AAGIY)",
+          "type": "Sale",
+          "date": "2026-01-30",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
           "type": "Sale",
           "date": "2026-01-28",
           "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
+          "type": "Sale",
+          "date": "2026-01-28",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Oracle Corp. (ORCL)",
+          "type": "Sale",
+          "date": "2026-01-28",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NVIDIA Corp. (NVDA)",
+          "type": "Sale",
+          "date": "2026-01-28",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Microsoft Corp. (MSFT)",
+          "type": "Sale",
+          "date": "2026-01-28",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "type": "Sale",
+          "date": "2026-01-28",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
@@ -11596,34 +12469,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Meta Platforms Inc. Class A Common Stock (META)",
-          "type": "Sale",
-          "date": "2026-01-28",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Microsoft Corp. (MSFT)",
-          "type": "Sale",
-          "date": "2026-01-28",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NVIDIA Corp. (NVDA)",
-          "type": "Sale",
-          "date": "2026-01-28",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Oracle Corp. (ORCL)",
-          "type": "Sale",
-          "date": "2026-01-28",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "AT&T Inc (T)",
           "type": "Sale",
           "date": "2026-01-28",
@@ -11631,63 +12476,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "type": "Purchase",
-          "date": "2026-01-28",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "INDIANA ST FIN AUTH REV REF LEASE SER A MAR22 05.000%FEB01 2029 Bond",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "MARYLAND ST TRANSN AUTH TRANSN FACS PRJS REV JUN20 05.000%JUL01 2035 Bond",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "DISTRICT COLUMBIA GO BDS SER A FEB19 05.000%OCT15 2034",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NEW YORK N Y GO BDS SER C OCT20 05.000%AUG01 2034",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "UNIV CALIF REGTS MED CTR POOLED REV BDS SER P MAY22 05.000%MAY15 2037",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "BROWARD CNTY FLA TOURIST DEV TAX REV BDS DEC21 05.000%SEP01 2032",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NEW YORK ST DORM AUTH ST PERS INCOME TAX REV A MAR21 05.000%MAR15 2030 Bond",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "FLORIDA ST BRD ED PUB ED FULL FAITH CREDIT CAP C AUG18 05.000%JUN01 2029 Bond",
+          "description": "WASHINGTON ST VARIOUS PURP GO BDS SER C FEB19 05.000%FEB01 2033",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
@@ -11701,21 +12490,14 @@
           "lateFilingFlag": false
         },
         {
-          "description": "OHIO ST HWY CAP IMPT GO BDS W JUN20 05.000%MAY01 2031",
+          "description": "UNIV CALIF REGTS MED CTR POOLED REV BDS SER P MAY22 05.000%MAY15 2037",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "HOUSTON TEX UTIL SYS REV COMB FIRST LIEN REF C JUL20 05.000%NOV15 2028 Bond",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PIMA CNTY ARIZ SWR REV SYS OBLIGS SER B DEC20 05.000%JUL01 2027 Bond",
+          "description": "TEXAS WTR DEV BRD REV ST REVOLVING FD REV BDS JUN20 05.000%AUG01 2027",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
@@ -11736,13 +12518,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "NORTH CAROLINA ST GO REF BDS SER A MAR16 05.000%JUN01 2028",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "SOUTH DAKOTA CONSERVANCY DIST REV ST REVOLVING JUL20 05.000%AUG01 2032 Bond",
           "type": "Sale",
           "date": "2026-01-23",
@@ -11757,35 +12532,14 @@
           "lateFilingFlag": false
         },
         {
-          "description": "NEW YORK ST URBAN DEV CORP REV PERS INCOME E DEC20 05.000%MAR15 2031 bond",
+          "description": "PIMA CNTY ARIZ SWR REV SYS OBLIGS SER B DEC20 05.000%JUL01 2027 Bond",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "INDIANA ST FIN AUTH REV REF LEASE SER A MAR22 05.000%FEB01 2033 Bond",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "MICHIGAN FIN AUTH REV HOSP REF BDS BHSH SER A MAY22 05.000%APR15 2037",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "CENTRAL PUGET SOUND WA RTA REV IMPT REF BDS 1 S NOV21 05.000%NOV01 2034",
-          "type": "Sale",
-          "date": "2026-01-23",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "WASHINGTON ST VARIOUS PURP GO BDS SER C FEB19 05.000%FEB01 2033",
+          "description": "OHIO ST HWY CAP IMPT GO BDS W JUN20 05.000%MAY01 2031",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
@@ -11799,7 +12553,56 @@
           "lateFilingFlag": false
         },
         {
-          "description": "LOWER COLO RIV AT TEX TRANS RV REF BDS LCRA MAY20 05.000%MAY15 2030",
+          "description": "NY ST DORM AUTH SLS TAX REV BDS SER C PRF28 JUL18 05.000%MAR15 2029",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NORTH CAROLINA ST GO REF BDS SER A MAR16 05.000%JUN01 2028",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NEW YORK ST URBAN DEV CORP REV PERS INCOME E DEC20 05.000%MAR15 2031 bond",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NEW YORK ST DORM AUTH ST PERS INCOME TAX REV A MAR21 05.000%MAR15 2030 Bond",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NEW YORK N Y GO BDS SER C OCT20 05.000%AUG01 2034",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "NEW YORK N Y GO BDS SER C OCT20 05.000%AUG01 2034",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MICHIGAN FIN AUTH REV HOSP REF BDS BHSH SER A MAY22 05.000%APR15 2037",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MARYLAND ST TRANSN AUTH TRANSN FACS PRJS REV JUN20 05.000%JUL01 2035 Bond",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
@@ -11813,7 +12616,42 @@
           "lateFilingFlag": false
         },
         {
-          "description": "NY ST DORM AUTH SLS TAX REV BDS SER C PRF28 JUL18 05.000%MAR15 2029",
+          "description": "LOWER COLO RIV AT TEX TRANS RV REF BDS LCRA MAY20 05.000%MAY15 2030",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "LEWISVILLE TEX INDPT SCH DIST UNLTD TAX PSF GTD JUL20 05.000%AUG15 2026",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "INDIANA ST FIN AUTH REV REF LEASE SER A MAR22 05.000%FEB01 2033 Bond",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "INDIANA ST FIN AUTH REV REF LEASE SER A MAR22 05.000%FEB01 2029 Bond",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HOUSTON TEX UTIL SYS REV COMB FIRST LIEN REF C JUL20 05.000%NOV15 2028 Bond",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "FLORIDA ST BRD ED PUB ED FULL FAITH CREDIT CAP C AUG18 05.000%JUN01 2029 Bond",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
@@ -11827,11 +12665,42 @@
           "lateFilingFlag": false
         },
         {
-          "description": "LEWISVILLE TEX INDPT SCH DIST UNLTD TAX PSF GTD JUL20 05.000%AUG15 2026",
+          "description": "DISTRICT COLUMBIA GO BDS SER A FEB19 05.000%OCT15 2034",
           "type": "Sale",
           "date": "2026-01-23",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
+        },
+        {
+          "description": "CENTRAL PUGET SOUND WA RTA REV IMPT REF BDS 1 S NOV21 05.000%NOV01 2034",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "BROWARD CNTY FLA TOURIST DEV TAX REV BDS DEC21 05.000%SEP01 2032",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "BROWARD CNTY FLA TOURIST DEV TAX REV BDS DEC21 05.000%SEP01 2032",
+          "type": "Sale",
+          "date": "2026-01-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        }
+      ],
+      "summary": "283 sales and 23 purchases across 306 transactions. 0 filed late.",
+      "confirmedDate": "2025-12-18",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-10",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
+          "label": "278-T"
         }
       ]
     },
@@ -11841,7 +12710,7 @@
       "title": "Administrator, Federal Transit Administration",
       "agency": "Department of Transportation",
       "level": "Sub-Cabinet",
-      "transactionCount": 3,
+      "filingType": "278-TERM Termination Report",
       "mostRecentFilingDate": "2026-02-20",
       "transactions": [
         {
@@ -11868,7 +12737,11 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
-      ]
+      ],
+      "summary": "Molinaro reported 3 transactions extracted from his 278-TERM termination report (not a standard 278-T periodic transaction report). 2 purchases and 1 sale.",
+      "confirmedDate": "2025-08-02",
+      "departedDate": "2026-02-20",
+      "party": "R"
     },
     {
       "name": "Noem, Kristi",
@@ -11876,7 +12749,7 @@
       "title": "Secretary",
       "agency": "Department of Homeland Security",
       "level": "Cabinet",
-      "transactionCount": 1,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-07-23",
       "transactions": [
         {
@@ -11887,6 +12760,17 @@
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Noem reported 1 sale totaling an estimated $75K, consistent with ethics agreement divestitures.",
+      "confirmedDate": "2025-01-25",
+      "departedDate": "2026-03-05",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-08-02",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B62CBA20DBEA2EF85258CDA002C951F/$FILE/Kristi-Noem-07.23.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -11895,7 +12779,7 @@
       "title": "Secretary of the Navy",
       "agency": "Department of Defense - Department of the Navy",
       "level": "Cabinet",
-      "transactionCount": 57,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-03-26",
       "transactions": [
         {
@@ -12354,6 +13238,31 @@
           "amount": "$250,001-$500,000",
           "lateFilingFlag": true
         }
+      ],
+      "summary": "Phelan reported 35 sales (est. $32.4M) and 22 purchases (est. $6.0M). 2 of 57 transactions were filed late.",
+      "confirmedDate": "2025-03-24",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-03-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/68666D69BEFB693D85258DC6002DC641/$FILE/John-Phelan-01.09.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2026-03-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F6D5E76DFD84296785258DC6002DC61D/$FILE/John-Phelan-10.02.2025-278T(2).pdf",
+          "label": "278-T (2)"
+        },
+        {
+          "date": "2026-02-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DFA1DC5E6B4CE0BF85258DAB00346FD8/$FILE/John-Phelan-07.28.2025-278T(2).pdf",
+          "label": "278-T (2)"
+        },
+        {
+          "date": "2026-02-27",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/687996565E337F3385258DAB00346FB5/$FILE/John-Phelan-11.17.2025-278T(1).pdf",
+          "label": "278-T (1)"
+        }
       ]
     },
     {
@@ -12362,7 +13271,7 @@
       "title": "Deputy Secretary of Labor",
       "agency": "Department of Labor",
       "level": "Sub-Cabinet",
-      "transactionCount": 33,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-04-21",
       "transactions": [
         {
@@ -12629,6 +13538,16 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Sonderling reported 33 sales totaling an estimated $264K, consistent with ethics agreement divestitures. Holdings included AAPL, ABT, ABBV, AMZN, AMGN, among others.",
+      "confirmedDate": "2025-03-12",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-05-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7ADAE025CB4460B285258C8A002C85CE/$FILE/Keith-Sonderling-04.21.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -12637,7 +13556,7 @@
       "title": "President of the United States",
       "agency": "Executive Office of the President",
       "level": "Cabinet",
-      "transactionCount": 1315,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-02-27",
       "transactions": [
         {
@@ -14199,7 +15118,7 @@
           "type": "Purchase",
           "date": "2025-11-17",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NEW YORK NY CITY MUN WT RV BE/R/ 2,7 061543 OTO 111413 CALLABLE VARATE PUTBND CALLABLE@ 100 120725 VARATE PUTBND",
@@ -14213,21 +15132,21 @@
           "type": "Purchase",
           "date": "2025-11-14",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "KEYCORP DP SH PFD H -KEYpl",
           "type": "Purchase",
           "date": "2025-11-14",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NORTHERN TR CORP ALT TIER 14.6000% 12/31/49",
           "type": "Sale",
           "date": "2025-11-14",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "MIAMI-DADE CNTY FL WTR & SR B FN BE/R/ 5 DUE 100133 OTO 120425 FC 040126 2.610% YIELD TO MATURITY",
@@ -14248,7 +15167,7 @@
           "type": "Purchase",
           "date": "2025-11-13",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO NEW -WFCpl",
@@ -14878,7 +15797,7 @@
           "type": "Purchase",
           "date": "2025-10-31",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NATL RURAL UTILS COOP 04.850% 020729 DTD020524",
@@ -14962,14 +15881,14 @@
           "type": "Sale",
           "date": "2025-10-30",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "TRUIST FINL CORP PERP NT 5.1000%",
           "type": "Purchase",
           "date": "2025-10-30",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "RACINE WIS MUNI SCH 5% DUE 04/01/30",
@@ -15032,14 +15951,14 @@
           "type": "Purchase",
           "date": "2025-10-15",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "M & T BK CORP PERP SUB GLBL 3.5000%",
           "type": "Purchase",
           "date": "2025-10-15",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AMERICAN MUN PWR OH ELECT UTIL 5'4 DUE 02/15/34",
@@ -15123,7 +16042,7 @@
           "type": "Purchase",
           "date": "2025-10-07",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NORTH TEX TWY AUTH 5% DUE 01/01/39",
@@ -15704,14 +16623,14 @@
           "type": "Purchase",
           "date": "2025-09-16",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PNC FINL SVCS GROUP INC PERP 6.2500%",
           "type": "Purchase",
           "date": "2025-09-16",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WICHITA KS WTR & SWR UTIL REV RFDG REV 2015D B/E 3.00 % Due Oct 1, 2026",
@@ -15851,7 +16770,7 @@
           "type": "Sale",
           "date": "2025-09-10",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
@@ -15900,21 +16819,21 @@
           "type": "Purchase",
           "date": "2025-09-09",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC PE 6.2500%",
           "type": "Sale",
           "date": "2025-09-09",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC PE 6.2500%",
           "type": "Purchase",
           "date": "2025-09-09",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
@@ -17006,14 +17925,14 @@
           "type": "Purchase",
           "date": "2025-07-16",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK AMERICA CORP PERP GLBL 6.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-07-14",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK OF AMERICA CORPORATION -BACpl",
@@ -17027,7 +17946,7 @@
           "type": "Purchase",
           "date": "2025-06-30",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CITIZENS FINL GROUP INC PERP 4.0000%",
@@ -17069,7 +17988,7 @@
           "type": "Purchase",
           "date": "2025-06-27",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO PERP A BB N 3.9000% 12/31/49",
@@ -17678,35 +18597,35 @@
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PURCHASED 65000.00 PAR VALUE OF, AMERICAN EXPRESS CO ALT TIER 3.5500%",
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PURCHASED 101000.00 PAR VALUE OF, BP CAP MKTS PLC PERP SUB G 6.4500%",
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK NEW YORK MELLON CORP PE 6.3000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 5.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 4.4500%",
@@ -17720,21 +18639,21 @@
           "type": "Purchase",
           "date": "2025-05-13",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AIR LEASE CORP TIER I PERP G 4.6500% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-12",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK OF AMERICA CORPORATION",
           "type": "Purchase",
           "date": "2025-05-12",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
@@ -17748,7 +18667,7 @@
           "type": "Purchase",
           "date": "2025-05-12",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GOLDMAN SACHS GROUP INC PERP 7.5000% 12/31/49",
@@ -17762,7 +18681,7 @@
           "type": "Purchase",
           "date": "2025-05-12",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO PERP NN 6.8750%",
@@ -17776,7 +18695,7 @@
           "type": "Purchase",
           "date": "2025-05-12",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
@@ -17804,7 +18723,7 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AMERICAN EXPRESS CO ALT TIER 3.5500%",
@@ -17825,7 +18744,7 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK OF AMERICA CORPORATION - BAC",
@@ -17846,14 +18765,14 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
@@ -17881,7 +18800,7 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GOLDMAN SACHS GROUP INC PERP 7.5000% 12/31/49",
@@ -17895,14 +18814,14 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 5.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO ALT TIER 3.6500% 12/31/49",
@@ -17958,14 +18877,14 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "US BANCORP ALT TIER I PERP 5.3000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "US BANCORP ALT TIER I PERP 5.3000% 12/31/49",
@@ -17979,7 +18898,7 @@
           "type": "Purchase",
           "date": "2025-05-09",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CONNECTICUT ST HEALTH & EDL 5.0000% 07/01/64",
@@ -18000,14 +18919,14 @@
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AMERICAN EXPRESS CO ALT TIER 3.5500%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AMERICAN EXPRESS CO ALT TIER 3.5500%",
@@ -18049,7 +18968,7 @@
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
@@ -18063,7 +18982,7 @@
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "DOMINION ENERGY INC PERP GLB 4.3500% 12/31/49",
@@ -18091,196 +19010,196 @@
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GOLDMAN SACHS GROUP INC PERP 7.5000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GOLDMAN SACHS GROUP INC PERP 6.1250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GOLDMAN SACHS GROUP INC PERP 6.1250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 5.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 5.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "HUNTINGTON BANCSHARES INC TI 4.4500%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO PERP NT 6.5000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO ALT TIER 3.6500% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO ALT TIER 3.6500% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "JPMORGAN CHASE & CO PERP NN 6.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "METLIFE INC PERP JR SB GLBL 5.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "METLIFE INC PERP JR SB GLBL 5.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "METLIFE INC PERP JR SB GLBL 5.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "MORGAN STANLEY DEP SHS REPST 6.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "MORGAN STANLEY PERP JR GLBL 5.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SEMPRA PERP SUB GLBL-C 4.8750%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "STATE STR CORP PERP-I BO 6.7000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "TRUIST FINL CORP PERP NT 5.1000%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "TRUIST FINL CORP PERP NT 5.1000%",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "US BANCORP ALT TIER I PERP 5.3000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "US BANCORP ALT TIER I PERP 5.3000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO NEW - WFCpl",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO PERP A BB N 3.9000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO PERP A BB N 3.9000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-08",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "DUVAL CNTY FLA SCH BRD CTFS 5.0000% 07/01/29",
@@ -18294,63 +19213,63 @@
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "AIR LEASE CORP PERP GLBL D N 6.0000% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK OF AMERICA CORPORATION - BACpl",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BK OF AMERICA CORP PERP TT N 6.1250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK AMERICA CORP PERP GLBL 6.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "MORGAN STANLEY DEP SHS REPST 6.6250% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PNC FINL SVCS GROUP INC TIER 6.2000%",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO PERP NT 6.8500% 12/31/49",
           "type": "Purchase",
           "date": "2025-05-07",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PALM BEACH CNTY FLA SCH BRD 5.0000% 08/01/30",
@@ -21353,42 +22272,42 @@
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CITIZENS FINL GROUP INC PERP 4.000%",
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "FIFTH THIRD BANCORP 6% 12/31/49",
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "KEY CORP DP SH PFD H GTO 08/24/22 RT 6.200%",
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO NEW PERP PFD CNV A 7.50%",
           "type": "Purchase",
           "date": "2025-01-30",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "ATLANTA GA DEV AUTH REV GA ST UNIV RESH FNDTN SCI PK PJ B/E PTC 4.00 % Due Jul 1, 2028",
@@ -21535,14 +22454,14 @@
           "type": "Purchase",
           "date": "2025-01-22",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SCHERTZ-CIBOLO-UNVL 5% UTX DUE 02/01/34",
           "type": "Purchase",
           "date": "2025-01-22",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "TRIBOROUGH BROG & T 5% DUE ON 12/01/50",
@@ -21556,175 +22475,175 @@
           "type": "Purchase",
           "date": "2025-01-21",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SPDR SERIES TRUST STATE STREET SPDR PORTFOLIO HIGH YIELD BOND ETF DISCRETIONARY ORDER J.P. MORGAN SECURITIES LLC MAKES A MARKET IN THIS SECURITY ROME: WHIPA",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GENERAL MTRS FINL CO INC DUE 03/01/2028 05.250% MS 01 DISCRETIONARY ORDER YIELD 4.083% TO PAR CALL YIELD 4.374% TO MATURITY CALLABLE 02/20/28 AT 100.000 TIME OF EXE",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NEWELL RUBBERMAID INC SENIOR UNSECURED NOTES DUE 09/15/2029 06.825% MS 15 DISCRETIONARY ORDER YIELD 8.429% TO PAR CALL YIELD 8.438% TO MATURITY CALLABLE 06/15",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "UNITED RENTALS NORTH AMER INC SENIOR SECURED NOTES REGS DUE 12/15/2029 06.000% JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE P",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NEW YORK CMNTY BANCORP INC SUBORDINATED NOTE DUE 11/08/2028 06.828% MN 06 DISCRETIONARY ORDER CALLABLE 05/18/28 AT 100.000 TIME OF EXECUTION 14:49:39 FINRA LINK FI",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WHIRLPOOL CORP DEB SENIOR NOTES DUE 02/28/2029 04.750% FA 28 DISCRETIONARY ORDER YIELD 5.128% TO MATURITY YIELD 5.159% TO PAR CALL CALLABLE 11/28/28 AT 100.000",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "NETFLIX INC REGS DUE 11/15/2029 05.375% JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SIRIUS XM RADIO INC SENIOR NOTES REGS DUE 07/01/2029 05.500% JJ 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CARNIVAL CORP REGS DUE 08/15/2029 07.000% FA 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "OLIN CORP DUE 08/01/2029 05.825% FA 01 DISCRETIONARY ORDER YIELD 5.168% TO PAR CALL YIELD 21.288% TO CALL YIELD 5.418% TO MATURITY CALLABLE 08/01/27 AT 100.000",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "FIRST HORIZON BK MEMPHIS TENN DUE 05/01/2030 05.750% MN 01 DISCRETIONARY ORDER YIELD 4.897% TO PAR CALL YIELD 4.940% TO MATURITY CALLABLE 02/01/30 AT 100.000 TIME C",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "THE BOEING COMPANY SENIOR UNSECURED NOTE DUE 05/01/2027 05.040% MN 01 DISCRETIONARY ORDER YIELD 4.080% TO PAR CALL YIELD 4.197% TO MATURITY CALLABLE 03/01/27 AT",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BLOCK FINL LLC SENIOR UNSECURED NOTE DUE 08/15/2030 03.875% FA 15 DISCRETIONARY ORDER YIELD 4.805% TO MATURITY YIELD 4.855% TO PAR CALL CALLABLE 05/15/30 AT 100.000",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "OCCIDENTAL PETE SR DEBS-REG SENIOR NOTES DUE 09/01/2030 06.625% MS 01 DISCRETIONARY ORDER YIELD 4.852% TO PAR CALL YIELD 4.838% TO MATURITY CALLABLE 03/01/30 AT",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "VICTORIAS SECRET CO REGS DUE 07/15/2029 04.825% JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "COREWEAVE INC REGS DUE 02/01/2031 09.000% FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "COTY INC SENIOR SECURED NOTES REGS DUE 01/15/2029 04.750% JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "MACYS RETAIL HOLDINGS LLC REGS DUE 03/15/2030 05.875% MS 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG.S",
           "type": "Purchase",
           "date": "2025-01-20",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "DU PAGE CNTY ILL CM 4% GO UTX DUE 01/15/42",
           "type": "Purchase",
           "date": "2025-01-13",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO NEW - STOCK",
           "type": "Purchase",
           "date": "2025-01-13",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "BANK OF AMERICA CORPORATION CONV PFD SER L 7.250%",
           "type": "Purchase",
           "date": "2025-01-06",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "COMERICA FINL INC PERP A 4.150% 12/31/49",
           "type": "Purchase",
           "date": "2025-01-06",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "WELLS FARGO & CO NEW - STOCK",
           "type": "Purchase",
           "date": "2025-01-06",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "SPDR SERIES TRUST STATE STREET SPDR PORTFOLIO HIGH YIELD BOND ETF DISCRETIONARY ORDER J.P. MORGAN SECURITIES LLC MAKES A MARKET IN THIS SECURITY ROME: WHIP",
           "type": "Purchase",
           "date": "2025-01-02",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "GENERAL MTRS FINL CO INC DUE 03/01/2026 05.250% MS 01 DISCRETIONARY ORDER YIELD 3.935% TO PAR CALL YIELD 4.585% TO MATURITY CALLABLE 02/02/28 AT 100.000 TIME OF EXE",
@@ -21787,14 +22706,14 @@
           "type": "Purchase",
           "date": "2025-01-02",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "FIRST HORIZON BK MEMPHIS TENN DUE 05/01/2030 05.750% MN 01 DISCRETIONARY ORDER YIELD 4.758% TO PAR CALL YIELD 4.807% TO MATURITY CALLABLE 02/01/30 AT 100.000 TIME C",
           "type": "Purchase",
           "date": "2025-01-02",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "THE BOEING COMPANY SENIOR UNSECURED NOTE DUE 05/01/2027 05.040% MN 01 DISCRETIONARY ORDER YIELD 4.088% TO PAR CALL YIELD 4.200% TO MATURITY CALLABLE 03/01/27 AT",
@@ -21822,28 +22741,93 @@
           "type": "Purchase",
           "date": "2025-01-01",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "CAPE ANN MA TRAN AUTH REV ANTIC NT B/E B/O 4.25% Due Jul 15, 2028",
           "type": "Purchase",
           "date": "2025-01-01",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "LAKE CNTY OH VARIOUS PURP IMPT NT B/E 3.75% Due Sep 18, 2028",
           "type": "Purchase",
           "date": "2025-01-01",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "PROSPER TX INDPT SCH DIST BLDG SER B B/E PSF GTO 4.00% Due Feb 15, 2050",
           "type": "Purchase",
           "date": "2025-01-01",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
+        }
+      ],
+      "summary": "10 sales and 1305 purchases across 1315 transactions. 980 were filed late. Holdings include bank preferred securities, municipal bonds and corporate bonds.",
+      "tookOfficeDate": "2025-01-20",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-02-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
+          "label": "278-T (1)"
+        },
+        {
+          "date": "2026-02-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BCF60D94B8F1E59285258DB000347F61/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(2).pdf",
+          "label": "278-T (2)"
+        },
+        {
+          "date": "2026-01-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/268353939B7DACB585258D81003471B1/$FILE/Donald-J-Trump%201.14.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-12-18",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-11-14",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/903A217DC18563EC85258D4A0031B044/$FILE/Donald%20J.%20Trump%2011.14.2025%20278-T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-10-20",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/18353894FE440B3685258D430031A337/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T%20(2).pdf",
+          "label": "278-T (2)"
+        },
+        {
+          "date": "2025-10-20",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C89623DC721F62585258D430031A32A/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-10-17",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA799A2729B4D1BE85258D430031A320/$FILE/Donald%20J.%20Trump%2010.17.2025%20278-T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-09-03",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/322B8A28DB21CC9285258CFD002C0D0B/$FILE/Donald%20J.%20Trump%209.3.25%20278-T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-08-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+          "label": "278-T (2) Amended"
+        },
+        {
+          "date": "2025-08-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5315A095A2EE1B9185258CEB006E7E36/$FILE/Donald-J-Trump-08.12.2025-278T(3).pdf",
+          "label": "278-T (3)"
+        },
+        {
+          "date": "2025-08-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+          "label": "278-T"
         }
       ]
     },
@@ -21853,7 +22837,7 @@
       "title": "Secretary of Housing and Urban Development",
       "agency": "Department of Housing and Urban Development",
       "level": "Cabinet",
-      "transactionCount": 8,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-01",
       "transactions": [
         {
@@ -21920,6 +22904,21 @@
           "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Turner reported 7 sales (est. $178K) and 1 purchase (est. $32K). Holdings included BMNR, GOOGL, Z, BRKB, MSFT, among others.",
+      "confirmedDate": "2025-02-05",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3A9FB168C78ABC2885258DCC002DDC8D/$FILE/Eric-Scott-Turner-01.16.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-03-25",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BF782DF3A2A5684F85258C58002C87DB/$FILE/Eric-Scott-Turner-03.04.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -21928,7 +22927,7 @@
       "title": "Administrator, Federal Aviation Administration",
       "agency": "Department of Transportation",
       "level": "Sub-Cabinet",
-      "transactionCount": 15,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-01-02",
       "transactions": [
         {
@@ -22051,6 +23050,41 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Whitaker reported 15 sales totaling an estimated $480K across 6 filings (2023-2024), all divestitures consistent with his ethics agreement as FAA Administrator. Holdings included major tech (GOOGL, MSFT, AAPL, AVGO, AMZN), financials (JPM, PNC, TFC), and a drone company (ANRA Technologies) relevant to FAA oversight. Biden-era appointee.",
+      "party": "D",
+      "departedDate": "2025-01-20",
+      "sourceFilings": [
+        {
+          "date": "2025-02-19",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6FD7FCF61FFBC2E585258C36003206A2/$FILE/Michael-Whitaker-01.02.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-10-11",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5869AEBEFF9021F185258BB3002DE6F6/$FILE/Michael-Whitaker-09.04.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-08-13",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1D6326BD7BC8EA6785258B78002DF46D/$FILE/Michael-Whitaker-07.01.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-04-26",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0B06315BB4E757EE85258B0B002F0FC4/$FILE/Michael-Whitaker-03.07.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-03-22",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9FE9B64160567BA585258AE8002F0EEE/$FILE/Michael-Whitaker-01.24.2024-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2024-01-12",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9AA54EBCD9524B2785258AA2003493CD/$FILE/Michael-Whitaker-12.05.2023-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -22059,7 +23093,7 @@
       "title": "Secretary of Energy",
       "agency": "Department of Energy",
       "level": "Cabinet",
-      "transactionCount": 302,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2026-04-01",
       "transactions": [
         {
@@ -22232,7 +23266,7 @@
         },
         {
           "description": "Baytex Energy Corp",
-          "ticker": null,
+          "ticker": "BTE",
           "type": "Sale",
           "date": "2025-02-27",
           "amount": "$250,001-$500,000",
@@ -24478,6 +25512,31 @@
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         }
+      ],
+      "summary": "Wright reported 66 sales (est. $84.2M) and 236 purchases (est. $94.4M). Holdings included GAJPX, GGLPX, SPY, SPMD, DODFX, among others. 11 of 302 transactions were filed late.",
+      "confirmedDate": "2025-02-03",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2026-04-01",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22F95E0EAFBF6F1D85258DCC002DDF75/$FILE/Christopher-A-Wright-01.13.2026-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-09-19",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B30D247EB32A424585258D0A002C189C/$FILE/Christopher-A-Wright-07.01.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DA3D3F7F65344C85258CC8002C8F08/$FILE/Christopher-A-Wright-04.29.2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-04-18",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5057175949E7195F85258C70002C8C7C/$FILE/Christopher-A-Wright-03.19.2025-278T.pdf",
+          "label": "278-T"
+        }
       ]
     },
     {
@@ -24486,7 +25545,7 @@
       "title": "Administrator",
       "agency": "Environmental Protection Agency",
       "level": "Cabinet",
-      "transactionCount": 4,
+      "filingType": "278-T Periodic Transaction Report",
       "mostRecentFilingDate": "2025-09-24",
       "transactions": [
         {
@@ -24520,6 +25579,21 @@
           "date": "2025-05-16",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
+        }
+      ],
+      "summary": "Zeldin reported 2 sales (est. $16K) and 2 purchases (est. $16K). Holdings included NRSN, DVLT. One transaction was flagged as a late filing.",
+      "confirmedDate": "2025-01-29",
+      "party": "R",
+      "sourceFilings": [
+        {
+          "date": "2025-11-18",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1F2CA5D27DDE1D9085258D460031984D/$FILE/Lee-Zeldin-09-24-2025-278T.pdf",
+          "label": "278-T"
+        },
+        {
+          "date": "2025-07-15",
+          "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf",
+          "label": "278-T"
         }
       ]
     }
