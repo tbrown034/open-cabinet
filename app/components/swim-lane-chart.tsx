@@ -269,8 +269,7 @@ export default function SwimLaneChart({
                         r={r}
                         fill={tx.isSale ? "#dc2626" : "#16a34a"}
                         opacity={0.85}
-                        stroke="white"
-                        strokeWidth={1}
+                        stroke="none"
                       />
                     );
                   })}
@@ -479,10 +478,9 @@ export default function SwimLaneChart({
                       ? tooltip.tx === tx && tooltip.officialName === o.name
                         ? 1
                         : 0.15
-                      : 0.9
+                      : 0.85
                   }
-                  stroke="white"
-                  strokeWidth={0.5}
+                  stroke="none"
                   onMouseEnter={() =>
                     setTooltip({
                       tx,
