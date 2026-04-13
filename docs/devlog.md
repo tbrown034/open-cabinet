@@ -88,3 +88,60 @@ Phase 30+ (Session 5):
 - 0 build errors, 0 console errors
 
 ---
+
+## 2026-04-12 - Design Overhaul, Fact-Check, Research Vault, Data Expansion
+
+**Session Summary:**
+- Major design polish pass across all pages
+- Font swap: Instrument Serif to Source Serif 4 (eliminated AI tell)
+- Fact-checked all site content against 6 research briefs, fixed 9 issues
+- Expanded from 29 to 34 officials (2,118 to 2,320 transactions)
+- Built 180+ pages of internal research knowledge base
+- Added AI transparency section, MIT license, open source infrastructure
+
+**Design Changes:**
+- Source Serif 4 headlines (institutional weight, no AI signal)
+- Hero: abstract swim lane graphic, asterisk link to coverage note
+- Scrollytelling explainer (Tribune-style) for filing process
+- Scrollytelling About page (law + deadlines, how it was built)
+- "By the numbers" infographic section (dark background, stat cards with citations)
+- Footer: redesigned with nav, GitHub, issues, contact, MIT license
+- CTA cards with arrows between directory and explainer
+- Company lookup: red sells / green buys columns
+- Swim lane: time range filters, dual x-axis, solid dots, inauguration marker
+- Dashboard renamed to "Overview," moved down in nav
+- Directory: expandable table (show 10, "Show all" button)
+- Single-day filing callouts (Chavez-DeRemer)
+- Treemap: distinct category colors replacing monochrome
+- Auth button removed from public nav
+
+**Content/Accuracy Fixes:**
+- Section 208 description corrected (official action while conflicted, not trading)
+- 30/45-day deadlines described as "whichever comes first"
+- "Every stock trade" corrected to "individual stock trades" (ETFs exempt)
+- Late filing "fine" corrected to "fee"
+- "Congress wrote the rules in 2012" to "strengthened" (1978 predates)
+- "For the first time" hedged re: ProPublica
+- In the News: AI-assisted search disclosure + last updated dates
+
+**Data Expansion:**
+- Added: Dixon (111 tx), MacGregor (23), Whitaker (15), Criswell (13), Lawrence (3)
+- Updated 9 officials with current filing dates
+- +37 new Mody transactions
+- Photos for all 34 officials
+
+**Research Knowledge Base (research/):**
+- 01: STOCK Act and federal ethics law
+- 02: Case law and legal precedent
+- 03: News coverage tracker (official-by-official)
+- 04: OGE structure and data
+- 05: Late filing patterns
+- 06: Divestiture process
+
+**Infrastructure:**
+- MIT LICENSE, port pinned to 3003, open source ready
+- Blog Part 6 written
+
+**Next:** Database migration (Neon PostgreSQL), automated OGE polling pipeline, daily PDF parsing with Claude API, Form 201 requests for high-priority officials.
+
+---
