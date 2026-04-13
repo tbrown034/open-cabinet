@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
 
 export const metadata: Metadata = {
@@ -275,9 +276,10 @@ export default function AboutPage() {
                 Codebase
               </div>
               <p className="text-neutral-500 mt-0.5">
-                The application was built with Claude Code
-                (claude-opus-4-6), Anthropic{"'"}s CLI development tool. All
-                code, architecture, and editorial decisions are human-directed.
+                Built by Trevor Brown with the assistance of Claude Code
+                (claude-opus-4-6), Anthropic{"'"}s CLI development tool.
+                Architecture, design, and editorial decisions are
+                human-directed.
               </p>
             </div>
             <div>
@@ -293,6 +295,25 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+        </section>
+
+        {/* Download the data */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            Download the data
+          </h2>
+          <p className="text-neutral-600 leading-relaxed">
+            The full dataset is available for journalists, researchers, and
+            anyone who wants to work with it.{" "}
+            <Link
+              href="/download"
+              className="underline hover:text-neutral-900 font-medium"
+            >
+              Download as CSV or JSON
+            </Link>
+            . Includes all transactions, official metadata, and ticker
+            mappings. Federal government data carries no copyright.
+          </p>
         </section>
 
         {/* Open source + contact */}
