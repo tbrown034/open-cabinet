@@ -9,6 +9,7 @@ const links = [
   { href: "/all", label: "All Trades" },
   { href: "/companies", label: "Companies" },
   { href: "/dashboard", label: "Overview" },
+  { href: "/late-filings", label: "Late Filings" },
   { href: "/about", label: "About" },
   { href: "/admin", label: "Admin" },
 ];
