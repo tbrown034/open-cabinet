@@ -40,7 +40,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <header className="flex-1">
             <h1 className="font-[family-name:var(--font-source-serif)] text-4xl md:text-5xl text-neutral-900 mb-4 leading-tight">
-              What is the Cabinet
+              What is Trump{"'"}s Cabinet
               <br />
               buying and selling?
             </h1>
