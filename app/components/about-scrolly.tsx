@@ -15,7 +15,7 @@ const LAW_STEPS = [
     id: "30-day",
     label: "30-day window",
     title: "Report every trade within 30 days",
-    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade, or 45 days after the transaction itself — whichever comes first. The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
+    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself — whichever comes first. The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
   },
   {
     id: "divestiture",
@@ -86,7 +86,7 @@ const BUILD_STEPS = [
     id: "monitor",
     label: "Monitor",
     title: "Weekly checks with email alerts",
-    body: "A Vercel Cron job checks the OGE API weekly for new filings. The pipeline parses new PDFs, validates the data and inserts it into the database. Email alerts notify the admin of new filings, errors, credit exhaustion, or low-confidence parses. A public feedback form lets anyone report data errors.",
+    body: "A Vercel Cron job checks the OGE API weekly for new filings. The pipeline parses new PDFs, validates the data and inserts it into the database. Email alerts notify the admin of new filings, errors, credit exhaustion or low-confidence parses. A public feedback form lets anyone report data errors.",
   },
   {
     id: "ai-role",
