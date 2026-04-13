@@ -10,6 +10,7 @@
  * Config in vercel.json: { "crons": [{ "path": "/api/cron", "schedule": "0 10 * * 1" }] }
  */
 import { NextRequest, NextResponse } from "next/server";
+import { notify } from "@/lib/notify";
 
 export const maxDuration = 300; // 5 minutes (Vercel Pro)
 
@@ -79,6 +80,16 @@ export async function GET(request: NextRequest) {
       message: "OGE check complete. Run 'pnpm run pipeline' locally for full parse.",
     });
   } catch (err) {
+    // Notify admin of failure
+    await notify({
+      type: "pipeline_error",
+      details: `Cron job failed: ${(err as Error).message}`,
+      metadata: {
+        duration: `${((Date.now() - startTime) / 1000).toFixed(1)}s`,
+        environment: process.env.VERCEL_ENV || "local",
+      },
+    });
+
     return NextResponse.json(
       {
         error: (err as Error).message,
