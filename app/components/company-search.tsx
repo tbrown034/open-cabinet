@@ -8,6 +8,8 @@ interface CompanyEntry {
   ticker: string;
   companyName: string;
   tradeCount: number;
+  buyCount: number;
+  sellCount: number;
   officialCount: number;
   estimatedValue: number;
 }
@@ -46,11 +48,12 @@ export default function CompanySearch({
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
-              <th className="pb-2 pr-4 font-medium">Ticker</th>
-              <th className="pb-2 pr-4 font-medium">Company</th>
-              <th className="pb-2 pr-4 font-medium text-right">Officials</th>
-              <th className="pb-2 pr-4 font-medium text-right">Trades</th>
-              <th className="pb-2 font-medium text-right">Est. value</th>
+              <th className="pb-2 pr-3 font-medium">Ticker</th>
+              <th className="pb-2 pr-3 font-medium">Company</th>
+              <th className="pb-2 pr-3 font-medium text-right hidden sm:table-cell">Officials</th>
+              <th className="pb-2 pr-3 font-medium text-right">Sells</th>
+              <th className="pb-2 pr-3 font-medium text-right">Buys</th>
+              <th className="pb-2 font-medium text-right hidden sm:table-cell">Est. value</th>
             </tr>
           </thead>
           <tbody>
@@ -64,7 +67,7 @@ export default function CompanySearch({
                   window.location.href = `/companies/${c.ticker.toLowerCase()}`;
                 }}
               >
-                <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-900 font-medium">
+                <td className="py-2.5 pr-3 font-[family-name:var(--font-dm-mono)] text-neutral-900 font-medium">
                   <Link
                     href={`/companies/${c.ticker.toLowerCase()}`}
                     onClick={(e) => e.stopPropagation()}
@@ -73,14 +76,17 @@ export default function CompanySearch({
                     {c.ticker}
                   </Link>
                 </td>
-                <td className="py-2.5 pr-4 text-neutral-600">{c.companyName}</td>
-                <td className="py-2.5 pr-4 text-right tabular-nums text-neutral-900">
+                <td className="py-2.5 pr-3 text-neutral-600 max-w-[160px] truncate sm:max-w-none sm:truncate-none">{c.companyName}</td>
+                <td className="py-2.5 pr-3 text-right tabular-nums text-neutral-900 hidden sm:table-cell">
                   {c.officialCount}
                 </td>
-                <td className="py-2.5 pr-4 text-right tabular-nums font-[family-name:var(--font-dm-mono)]">
-                  {c.tradeCount}
+                <td className="py-2.5 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-red-700">
+                  {c.sellCount || "—"}
                 </td>
-                <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500">
+                <td className="py-2.5 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-emerald-700">
+                  {c.buyCount || "—"}
+                </td>
+                <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
                   {formatCompactCurrency(c.estimatedValue)}
                 </td>
               </tr>

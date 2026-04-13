@@ -13,11 +13,16 @@ export const metadata: Metadata = {
 export default async function CompaniesPage() {
   const tickerMap = await getTradesByTicker();
 
+  const isSale = (type: string) =>
+    type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
+
   const companies = Array.from(tickerMap.values())
     .map((c) => ({
       ticker: c.ticker,
       companyName: c.companyName,
       tradeCount: c.trades.length,
+      buyCount: c.trades.filter((t) => t.type === "Purchase").length,
+      sellCount: c.trades.filter((t) => isSale(t.type)).length,
       officialCount: new Set(c.trades.map((t) => t.officialSlug)).size,
       estimatedValue: c.trades.reduce(
         (sum, t) =>
@@ -38,7 +43,7 @@ export default async function CompaniesPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <header className="mb-10">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-4">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">
           Company Lookup
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">

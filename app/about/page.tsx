@@ -1,256 +1,166 @@
 import type { Metadata } from "next";
+import AboutScrolly from "../components/about-scrolly";
 
 export const metadata: Metadata = {
   title: "About — Open Cabinet",
   description:
-    "How Open Cabinet tracks executive branch financial disclosures. Data sources, methodology, legal basis, and known limitations.",
+    "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings, and how this tool was built.",
 };
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-16">
-      <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-6">
-        About This Project
-      </h1>
+    <div>
+      {/* Hero */}
+      <div className="mx-auto max-w-3xl px-4 pt-16 pb-12">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-4xl md:text-5xl text-neutral-900 mb-4 leading-tight">
+          About Open Cabinet
+        </h1>
+        <p className="text-neutral-500 max-w-xl leading-relaxed">
+          An accountability tool that parses executive branch transaction
+          data into searchable, sortable, and visual formats — something no
+          public tool has done before.
+        </p>
+        <p className="text-xs text-neutral-400 mt-3">Last updated April 2026</p>
+      </div>
 
-      <div className="space-y-10 text-neutral-700 leading-relaxed">
-        <section>
-          <p>
-            Open Cabinet tracks financial transactions reported by executive
-            branch officials under the STOCK Act. Congress has more than a dozen
-            stock trackers. The executive branch has had zero. This fills that
-            gap.
-          </p>
-        </section>
+      {/* Scrollytelling sections */}
+      <AboutScrolly />
 
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Features
+      {/* Quick facts — infographic style */}
+      <div className="bg-neutral-900 text-white py-16 px-4">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl mb-2">
+            By the numbers
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
-            <div>
-              <div className="font-medium text-neutral-900">Official Directory</div>
-              <p className="text-neutral-500 mt-0.5">
-                29 officials with sortable table, trade counts, and filing dates
-              </p>
+          <p className="text-neutral-400 text-sm mb-10">
+            Key facts about executive branch financial disclosure, sourced from
+            federal law, OGE data, and published investigations.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                $200
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                The penalty for filing a stock trade disclosure late. It{"'"}s
+                routinely waived.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                5 U.S.C. Section 13106(a)
+              </div>
             </div>
-            <div>
-              <div className="font-medium text-neutral-900">Transaction Timelines</div>
-              <p className="text-neutral-500 mt-0.5">
-                D3 visualizations with confirmation dates and 90-day deadline markers
-              </p>
+
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                0
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                Criminal prosecutions ever brought under the STOCK Act{"'"}s
+                insider trading provisions.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                Campaign Legal Center, Georgetown Law (2021)
+              </div>
             </div>
-            <div>
-              <div className="font-medium text-neutral-900">All Trades View</div>
-              <p className="text-neutral-500 mt-0.5">
-                Swim lane chart showing 2,100+ transactions across all officials on one canvas
-              </p>
+
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                14 sec
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                Floor debate before Congress gutted the STOCK Act{"'"}s online
+                disclosure database in 2013.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                S.716, 113th Congress (Roll Call, April 2013)
+              </div>
             </div>
-            <div>
-              <div className="font-medium text-neutral-900">Company Lookup</div>
-              <p className="text-neutral-500 mt-0.5">
-                Search 578 tickers to see which officials traded each stock
-              </p>
+
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                19+
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                Stock trackers that exist for Congress. Before Open Cabinet, the
+                executive branch had zero.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                Capitol Trades, Quiver, Unusual Whales, et al.
+              </div>
             </div>
-            <div>
-              <div className="font-medium text-neutral-900">Aggregate Dashboard</div>
-              <p className="text-neutral-500 mt-0.5">
-                Buy/sell ratio, asset category treemap, and official rankings
-              </p>
+
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                4
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                OGE directors in a single year (2025). The Senate-confirmed
+                director was removed by email on a Friday night.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                CNN, CREW (February 2025)
+              </div>
             </div>
-            <div>
-              <div className="font-medium text-neutral-900">News Coverage</div>
-              <p className="text-neutral-500 mt-0.5">
-                34 articles from ProPublica, CNBC, Bloomberg, NOTUS, and others
-              </p>
-            </div>
-            <div>
-              <div className="font-medium text-neutral-900">Late Filing Tracking</div>
-              <p className="text-neutral-500 mt-0.5">
-                563 late filings flagged with per-official and aggregate counts
-              </p>
-            </div>
-            <div>
-              <div className="font-medium text-neutral-900">Downloadable Data</div>
-              <p className="text-neutral-500 mt-0.5">
-                Full dataset available as CSV and JSON for journalists and researchers
-              </p>
+
+            <div className="border border-neutral-700 p-5">
+              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
+                $72M
+              </div>
+              <div className="text-sm text-neutral-300 mb-2">
+                Capital gains tax deferred by Rex Tillerson when he divested
+                from ExxonMobil to become Secretary of State.
+              </div>
+              <div className="text-[10px] text-neutral-500">
+                26 U.S.C. Section 1043; CNBC (March 2018)
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
+      {/* Static sections */}
+      <div className="mx-auto max-w-3xl px-4 py-16 space-y-12">
+        {/* Known limitations */}
         <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            What the STOCK Act requires
-          </h2>
-          <p>
-            The Stop Trading on Congressional Knowledge Act of 2012 requires
-            senior federal officials to disclose securities transactions within
-            30 days and file a public report within 45 days. These disclosures
-            are called 278-T Periodic Transaction Reports.
-          </p>
-          <p className="mt-3">
-            Transaction amounts are reported in ranges (e.g., $1,001 to
-            $15,000), not exact figures. This is by design in federal law. Every
-            number on this site reflects those ranges, not precise dollar
-            amounts.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Where the data comes from
-          </h2>
-          <p>
-            All data is sourced from the U.S. Office of Government Ethics, which
-            publishes financial disclosures for executive branch officials.
-            Reports are available through the{" "}
-            <a
-              href="https://extapps2.oge.gov/201/Presiden.nsf"
-              className="underline hover:text-neutral-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              OGE public disclosure portal
-            </a>
-            .
-          </p>
-          <p className="mt-3">
-            Each official{"'"}s transaction data is extracted from their 278-T
-            filing PDFs. These PDFs list each transaction with the asset
-            description, transaction type (sale or purchase), date, amount
-            range, and whether the filing was late.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Methodology
-          </h2>
-          <p>
-            For the current version, transaction data has been manually
-            extracted from OGE filing PDFs. Each entry is verified against the
-            original document. Automated PDF parsing is planned for future
-            versions.
-          </p>
-
-          <h3 className="text-sm font-semibold text-neutral-900 mt-4 mb-2">
-            What{"'"}s included
-          </h3>
-          <ul className="list-disc pl-5 space-y-1 text-sm">
-            <li>
-              Periodic transaction reports (278-T) for officials with publicly
-              available filings
-            </li>
-            <li>
-              Transaction details: asset name, ticker symbol (when available),
-              type, date, amount range
-            </li>
-            <li>Late filing flags based on the 30-day notification window</li>
-          </ul>
-
-          <h3 className="text-sm font-semibold text-neutral-900 mt-4 mb-2">
-            What{"'"}s not included
-          </h3>
-          <ul className="list-disc pl-5 space-y-1 text-sm">
-            <li>
-              Annual financial disclosures (278 reports) showing total holdings
-            </li>
-            <li>
-              Officials whose disclosures require an OGE Form 201 request
-            </li>
-            <li>
-              Blind trust arrangements, which are exempt from transaction
-              reporting
-            </li>
-            <li>
-              Officials who have not filed any 278-T reports during the tracking
-              period
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Late filings
-          </h2>
-          <p>
-            When a transaction report is marked as having a notification
-            received over 30 days ago, we flag it as a late filing. Under the
-            STOCK Act, officials must notify their agency ethics office within
-            30 days of a covered transaction. Late filings may indicate
-            compliance issues, though they are common and do not necessarily
-            suggest wrongdoing.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Legal basis
-          </h2>
-          <p>
-            All data displayed here comes from public records filed under the
-            Ethics in Government Act (5 U.S.C. Section 13107). Federal
-            government documents carry no copyright protection (17 U.S.C.
-            Section 105). The news media exception in the Ethics in Government
-            Act explicitly permits dissemination of financial disclosures to the
-            general public.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
             Known limitations
           </h2>
-          <ul className="list-disc pl-5 space-y-2 text-sm">
+          <ul className="space-y-3 text-sm text-neutral-600">
             <li>
-              <strong>Ranges, not exact amounts.</strong> All dollar values are
-              reported in statutory ranges. A transaction listed as $1,001 to
-              $15,000 could be worth $1,002 or $14,999.
+              <strong className="text-neutral-900">
+                Ranges, not exact amounts.
+              </strong>{" "}
+              All dollar values are reported in statutory ranges. A transaction
+              listed as $1,001 to $15,000 could be worth $1,002 or $14,999.
             </li>
             <li>
-              <strong>Coverage limited to Level I, Level II, and the
-              President.</strong> The OGE database lists over 16,000 records.
-              This tracker covers 29 officials whose 278-T transaction reports
-              are directly downloadable. Approximately 179 additional officials
-              require individual Form 201 requests to access their disclosures.
+              <strong className="text-neutral-900">
+                29 of 43 officials with downloadable filings.
+              </strong>{" "}
+              Approximately 179 additional officials require individual Form 201
+              requests to access their disclosures.
             </li>
             <li>
-              <strong>PDF extraction is imperfect.</strong> Some filings use
-              inconsistent formatting. Data is verified against original
-              documents, but errors are possible.
+              <strong className="text-neutral-900">
+                PDF extraction is imperfect.
+              </strong>{" "}
+              Some filings use inconsistent formatting. Data is verified against
+              original documents, but errors are possible.
             </li>
             <li>
-              <strong>Ticker symbols are not always provided.</strong> Some
-              assets (private equity, real estate LLCs, retirement accounts) do
-              not have ticker symbols. We include them when they appear in the
-              original filing.
-            </li>
-            <li>
-              <strong>Summaries are descriptive, not editorial.</strong> The
-              plain-English summaries on each official{"'"}s page describe what
-              the data shows — they do not make judgments about legality or
-              ethics. This site is not affiliated with any government agency.
+              <strong className="text-neutral-900">
+                Ticker symbols are not always provided.
+              </strong>{" "}
+              Some assets (private equity, real estate LLCs, retirement accounts)
+              do not have ticker symbols.
             </li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
-            Disclaimers
-          </h2>
-          <p className="text-sm text-neutral-500">
-            This tool is for informational and journalism purposes only. Nothing
-            here constitutes investment advice. Asset values and transaction
-            amounts are reported in ranges as required by federal law. Exact
-            values are not disclosed. This database may not include all
-            executive branch filers. Some disclosures require individual
-            requests under OGE Form 201.
-          </p>
-        </section>
-
+        {/* Related resources */}
         <section className="border-t border-neutral-200 pt-8">
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
             Related resources
           </h2>
           <ul className="space-y-3 text-sm">
@@ -265,8 +175,7 @@ export default function AboutPage() {
               </a>
               <span className="text-neutral-500">
                 {" "}— Searchable access to raw disclosure documents for 1,500+
-                appointees. Open Cabinet focuses on transaction timelines and
-                compliance tracking — a different lens on the same public records.
+                appointees.
               </span>
             </li>
             <li>
@@ -283,15 +192,28 @@ export default function AboutPage() {
                 they regulate.
               </span>
             </li>
+            <li>
+              <a
+                href="https://extapps2.oge.gov/201/Presiden.nsf"
+                className="underline hover:text-neutral-900 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                OGE Public Disclosure Portal
+              </a>
+              <span className="text-neutral-500">
+                {" "}— The primary source for all data on this site.
+              </span>
+            </li>
           </ul>
         </section>
 
+        {/* About the developer */}
         <section className="border-t border-neutral-200 pt-8">
-          <h2 className="text-lg font-semibold text-neutral-900 mb-3">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
             About the developer
           </h2>
-          {/* Note: Related resources is above this section */}
-          <p>
+          <p className="text-neutral-600 leading-relaxed">
             Built by{" "}
             <a
               href="https://trevorthewebdeveloper.com"
@@ -308,11 +230,64 @@ export default function AboutPage() {
             instinct driving a developer tool.
           </p>
         </section>
-      </div>
 
-      <p className="text-xs text-neutral-400 mt-12">
-        Source: U.S. Office of Government Ethics. Last updated April 2026.
-      </p>
+        {/* Open source + contact */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            Open source
+          </h2>
+          <p className="text-neutral-600 leading-relaxed">
+            Open Cabinet is open source under the{" "}
+            <a
+              href="https://github.com/tbrown034/open-cabinet/blob/main/LICENSE"
+              className="underline hover:text-neutral-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MIT License
+            </a>
+            . The code, data pipeline, and research are available on{" "}
+            <a
+              href="https://github.com/tbrown034/open-cabinet"
+              className="underline hover:text-neutral-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+            . Found a bug or data error?{" "}
+            <a
+              href="https://github.com/tbrown034/open-cabinet/issues"
+              className="underline hover:text-neutral-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open an issue
+            </a>{" "}
+            or email{" "}
+            <a
+              href="mailto:trevorbrown.web@gmail.com"
+              className="underline hover:text-neutral-900"
+            >
+              trevorbrown.web@gmail.com
+            </a>
+            .
+          </p>
+        </section>
+
+        {/* Disclaimers */}
+        <section className="border-t border-neutral-200 pt-8">
+          <p className="text-sm text-neutral-500">
+            This tool is for informational and journalism purposes only. Nothing
+            here constitutes investment advice. Asset values and transaction
+            amounts are reported in ranges as required by federal law. This
+            database may not include all executive branch filers. Data sourced
+            from the U.S. Office of Government Ethics under the Ethics in
+            Government Act (5 U.S.C. Section 13107). Federal government
+            documents carry no copyright (17 U.S.C. Section 105).
+          </p>
+        </section>
+      </div>
     </div>
   );
 }
