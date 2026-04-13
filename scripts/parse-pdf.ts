@@ -196,6 +196,17 @@ async function parsePdf(
     (inputTokens / 1_000_000) * pricing.input +
     (outputTokens / 1_000_000) * pricing.output;
 
+  // Post-processing: programmatic ticker extraction as fallback
+  // AI sometimes misses tickers that are clearly in the description
+  for (const tx of parsed) {
+    if (!tx.ticker) {
+      const match = tx.description.match(/\(([A-Z]{1,6})\)\s*$/);
+      if (match) {
+        tx.ticker = match[1];
+      }
+    }
+  }
+
   const result: ParseResult = {
     transactions: parsed,
     tokenUsage: {
