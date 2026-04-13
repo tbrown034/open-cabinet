@@ -1,12 +1,8 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
+import { db } from "./db";
 import * as schema from "./auth-schema";
-
-const sql = neon(process.env.DATABASE_URL! || process.env.DATABASE_URL_UNPOOLED!);
-const db = drizzle(sql);
 
 const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
 
