@@ -139,6 +139,11 @@ export default async function Home() {
         <div id="coverage-note" className="bg-stone-50 border border-neutral-200 px-4 py-3 text-xs text-neutral-500 leading-relaxed scroll-mt-24 mt-6">
           <p>
             <strong className="text-neutral-700">*Why these officials?</strong>{" "}
+            Congress has dozens of stock trackers —{" "}
+            <a href="https://www.capitoltrades.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Capitol Trades</a>,{" "}
+            <a href="https://www.quiverquant.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Quiver Quantitative</a>,{" "}
+            <a href="https://unusualwhales.com/politics" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Unusual Whales</a>{" "}
+            and others. The executive branch has had no comparable public tool.
             Open Cabinet tracks {totalOfficials} officials whose 278-T
             transaction reports are directly downloadable from OGE{"'"}s public
             portal. These are Executive Level I and II positions — the most
