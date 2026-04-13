@@ -62,19 +62,19 @@ const BUILD_STEPS = [
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf (a Python library by data journalist Jonathan Soma) to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach avoids token limits on large filings and handles OCR noise from scanned documents.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf (a Python library by data journalist Jonathan Soma) to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
   },
   {
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-verified reference files; and anomaly detection. We maintain reference files for five officials (ranging from 2 to 1,315 transactions) to catch regressions.",
+    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-checked sample filings and outlier detection. We maintain samples for five officials (ranging from two to 1,315 transactions) to catch errors.",
   },
   {
     id: "store",
     label: "Store",
     title: "PostgreSQL database with deduplication",
-    body: "Parsed transactions go into a Neon PostgreSQL database with a UNIQUE constraint that catches duplicate entries from amended filings. Each transaction links to its source PDF and the pipeline run that created it — enabling rollback if bad data gets in.",
+    body: "Parsed transactions go into a Neon PostgreSQL database with built-in duplicate detection that catches repeated entries from amended filings. Each transaction links to its source PDF — if bad data gets in, it can be traced and removed.",
   },
   {
     id: "build-viz",

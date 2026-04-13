@@ -153,12 +153,6 @@ export default function RootLayout({
                   Contact
                 </a>
                 <span>MIT License</span>
-                <a
-                  href="/admin"
-                  className="underline hover:text-neutral-600"
-                >
-                  Admin
-                </a>
               </div>
             </div>
           </div>

@@ -272,8 +272,8 @@ export default function AboutPage() {
                 Codebase
               </div>
               <p className="text-neutral-500 mt-0.5">
-                Built by Trevor Brown with the assistance of Claude Code
-                (claude-opus-4-6), Anthropic{"'"}s CLI development tool.
+                Built by Trevor Brown with the assistance of Claude Code,
+                Anthropic{"'"}s CLI development tool.
                 Architecture, design and editorial decisions are
                 human-directed.
               </p>
