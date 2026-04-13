@@ -31,7 +31,7 @@ const STEPS = [
     id: "reporting",
     label: "Ongoing",
     title: "Every trade gets disclosed",
-    body: "Under the STOCK Act, officials must report individual securities transactions over $1,000 within 30 days of notification — or 45 days of the trade, whichever comes first. Mutual funds and ETFs are exempt. These are filed as 278-T reports — the core data that powers this tracker.",
+    body: "Under the STOCK Act (5 U.S.C. 13104), officials must report individual securities transactions over $1,000 within 30 days of notification — or 45 days of the trade, whichever comes first. Mutual funds and ETFs are exempt under 5 CFR 2640.201. These are filed as 278-T reports — the core data that powers this tracker.",
   },
   {
     id: "compliance",
