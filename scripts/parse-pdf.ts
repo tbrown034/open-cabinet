@@ -132,6 +132,9 @@ async function parsePdf(pdfPath: string): Promise<ParseResult> {
   });
 
   // Extract the text response
+  // Note: if credits run out, the SDK throws an Anthropic.BadRequestError
+  // with message containing "credit balance is too low" — the pipeline
+  // orchestrator should catch this and log it, not crash silently.
   const textBlock = response.content.find((block) => block.type === "text");
   if (!textBlock || textBlock.type !== "text") {
     throw new Error("No text response from Claude API");
@@ -342,8 +345,11 @@ async function createBatch(items: BatchItem[]): Promise<string> {
 export { parsePdf, createBatch, quickValidate, VALID_TYPES, VALID_AMOUNTS };
 export type { ParsedTransaction, ParseResult, BatchItem };
 
-// Run CLI if invoked directly
-main().catch((err) => {
-  console.error("Parse failed:", err.message);
-  process.exit(1);
-});
+// Run CLI if invoked directly (not when imported by other scripts)
+const isDirectRun = process.argv[1]?.includes("parse-pdf");
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error("Parse failed:", err.message);
+    process.exit(1);
+  });
+}
