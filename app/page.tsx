@@ -139,58 +139,23 @@ export default async function Home() {
         <div id="coverage-note" className="bg-stone-50 border border-neutral-200 px-4 py-3 text-xs text-neutral-500 leading-relaxed scroll-mt-24 mt-6">
           <p>
             <strong className="text-neutral-700">*Why these officials?</strong>{" "}
-            Congress has dozens of stock trackers —{" "}
-            <a href="https://www.capitoltrades.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Capitol Trades</a>,{" "}
-            <a href="https://www.quiverquant.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Quiver Quantitative</a>,{" "}
-            <a href="https://unusualwhales.com/politics" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">Unusual Whales</a>{" "}
-            and others. The executive branch has had no comparable public tool.
-            Open Cabinet tracks {totalOfficials} officials whose 278-T
-            transaction reports are directly downloadable from OGE{"'"}s public
-            portal. These are Executive Level I and II positions — the most
-            senior appointees. Approximately 248 additional officials have
-            filed transaction reports but their PDFs require individual{" "}
-            <a
-              href="https://extapps2.oge.gov/201/Presiden.nsf"
-              className="underline hover:text-neutral-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            Open Cabinet tracks {totalOfficials} executive branch officials
+            whose 278-T transaction reports are directly downloadable from
+            OGE{"'"}s public portal. Hundreds more have filed reports that
+            require individual{" "}
+            <a href="https://extapps2.oge.gov/201/Presiden.nsf" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               Form 201 requests
-            </a>{" "}
-            from OGE, including officials like Dr. Oz, Jeanine Pirro, Kelly
-            Loeffler and Kash Patel.
-          </p>
-          <p className="mt-2">
-            This is an{" "}
-            <a
-              href="https://github.com/tbrown034/open-cabinet"
-              className="underline hover:text-neutral-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            </a>
+            . This is an{" "}
+            <a href="https://github.com/tbrown034/open-cabinet" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               open-source project
             </a>
-            . Expanding coverage to more officials is a{" "}
-            <a
-              href="https://github.com/tbrown034/open-cabinet/issues"
-              className="underline hover:text-neutral-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documented goal
+            {" "}— expanding coverage is an ongoing goal. For legislative
+            branch tracking, see{" "}
+            <a href="https://www.capitoltrades.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
+              Capitol Trades
             </a>
-            .{" "}
-            The team at{" "}
-            <a
-              href="https://projects.propublica.org/trump-team-financial-disclosures/"
-              className="underline hover:text-neutral-600"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ProPublica
-            </a>{" "}
-            maintains a broader database covering raw disclosure documents for
-            1,500+ appointees.
+            .
           </p>
         </div>
       </div>

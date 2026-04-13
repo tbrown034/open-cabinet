@@ -22,7 +22,7 @@ export default function AboutPage() {
           disclosure data into searchable, sortable and visual formats —
           tracking stock trades and potential conflicts of interest.
         </p>
-        <p className="text-xs text-neutral-400 mt-3">Last updated April 2026</p>
+        <p className="text-xs text-neutral-400 mt-3">Last updated April 12, 2026</p>
       </div>
 
       {/* Scrollytelling sections */}
@@ -81,21 +81,6 @@ export default function AboutPage() {
 
             <div className="border border-neutral-700 p-5">
               <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                19+
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                Stock trackers that exist for Congress. Before Open Cabinet, the
-                executive branch had zero.
-              </div>
-              <div className="text-[10px] text-neutral-500">
-                <a href="https://www.capitoltrades.com" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Capitol Trades</a>,{" "}
-                <a href="https://www.quiverquant.com" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Quiver</a>,{" "}
-                <a href="https://unusualwhales.com/politics" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Unusual Whales</a>, et al.
-              </div>
-            </div>
-
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
                 4
               </div>
               <div className="text-sm text-neutral-300 mb-2">
@@ -104,19 +89,6 @@ export default function AboutPage() {
               </div>
               <a href="https://www.citizensforethics.org/reports-investigations/crew-investigations/trumps-unprecedented-meddling-has-turned-oge-into-a-revolving-door/" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
                 CREW (February 2025)
-              </a>
-            </div>
-
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                $72M
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                Capital gains tax deferred by Rex Tillerson when he divested
-                from ExxonMobil to become Secretary of State.
-              </div>
-              <a href="https://www.law.cornell.edu/uscode/text/26/1043" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                26 U.S.C. Section 1043
               </a>
             </div>
           </div>
@@ -140,17 +112,20 @@ export default function AboutPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
-                34 of 37 officials with publicly downloadable filings.
+                Coverage is limited to officials with publicly downloadable filings.
               </strong>{" "}
-              Approximately 248 additional officials have filed transaction
-              reports that require individual Form 201 requests from OGE.
+              Open Cabinet tracks 34 of the most senior appointees. Hundreds
+              more have filed transaction reports that require individual
+              Form 201 requests from OGE — a process we are working to expand.
             </li>
             <li>
               <strong className="text-neutral-900">
-                PDF extraction is imperfect.
+                PDF parsing is automated with human review.
               </strong>{" "}
-              Some filings use inconsistent formatting. Data is verified against
-              original documents, but errors are possible.
+              Transaction data is extracted from OGE filings using AI and
+              validated against a regression test suite of hand-verified
+              reference files. Source PDFs are linked from each official{"'"}s
+              page for independent verification.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -184,7 +159,7 @@ export default function AboutPage() {
             </li>
             <li>
               <a
-                href="https://www.opensecrets.org/biden/executive-branch"
+                href="https://www.opensecrets.org/trump/executive-branch"
                 className="underline hover:text-neutral-900 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"

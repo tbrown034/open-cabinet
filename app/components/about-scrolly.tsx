@@ -56,7 +56,7 @@ const BUILD_STEPS = [
     id: "filter",
     label: "Filter officials",
     title: "Find the ones with transaction reports",
-    body: "Of those records, about 300 are 278-T Periodic Transaction Reports for Level I and II officials — the most senior appointees. Another 248 officials have transaction reports that require individual Form 201 requests from OGE.",
+    body: "We filter for 278-T Periodic Transaction Reports — the ongoing stock trade disclosures. About 37 of the most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of those. Hundreds more officials have filed reports that require individual written requests to access.",
   },
   {
     id: "parse-pdfs",
@@ -68,7 +68,7 @@ const BUILD_STEPS = [
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Every parsed transaction runs through automated checks: valid types, amounts and dates; known ticker symbols; regression tests against hand-verified reference data; parser confidence scoring; and anomaly detection. The suite must pass before data goes live. Reference files cover officials ranging from 2 to 389 transactions.",
+    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-verified reference files; and anomaly detection. We maintain reference files for five officials (ranging from 2 to 389 transactions) to catch regressions.",
   },
   {
     id: "store",
