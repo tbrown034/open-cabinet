@@ -140,7 +140,7 @@ export default function AboutPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
-                29 of 43 officials with downloadable filings.
+                34 of 37 officials with publicly downloadable filings.
               </strong>{" "}
               Approximately 179 additional officials require individual Form 201
               requests to access their disclosures.
@@ -380,7 +380,7 @@ export default function AboutPage() {
             Report an issue
           </h2>
           <p className="text-neutral-500 text-sm mb-6">
-            Found a data error, missing official, or bug? We review every
+            Found a data error, missing official or bug? We review every
             submission. Your feedback helps keep this tool accurate.
           </p>
           <FeedbackForm />
