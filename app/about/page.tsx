@@ -240,11 +240,15 @@ export default function AboutPage() {
             <div>
               <div className="font-medium text-neutral-900">PDF parsing</div>
               <p className="text-neutral-500 mt-0.5">
-                We use natural-pdf (by Jonathan Soma) to extract text from
-                every page of every PDF, then Claude Opus parses each page
-                into structured data. This page-by-page approach handles
-                scanned documents and avoids token limits. All parsed data
-                is validated against source PDFs through automated checks.
+                We use{" "}
+                <a href="https://github.com/jsoma/natural-pdf" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">natural-pdf</a>
+                {" "}(by data journalist{" "}
+                <a href="https://github.com/jsoma" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Jonathan Soma</a>)
+                {" "}to extract text from every page of every PDF, then Claude
+                Opus parses each page into structured data. This page-by-page
+                approach handles scanned documents and avoids token limits.
+                All parsed data is validated against source PDFs through
+                automated checks.
               </p>
             </div>
             <div>
