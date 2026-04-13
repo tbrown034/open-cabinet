@@ -86,7 +86,7 @@ const BUILD_STEPS = [
     id: "ai-role",
     label: "AI usage",
     title: "Where AI is and isn't involved",
-    body: "PDF parsing uses Anthropic's Claude API (claude-haiku-4-5) to read table rows from government forms. Official summaries are AI-generated from parsed transaction data and reviewed for accuracy. News coverage is collected via AI-assisted web search. The codebase was built with Claude Code (claude-opus-4-6). All AI outputs are verified against source documents — no AI-generated data is presented without a human-verifiable source. D3 visualizations, data transformations, and editorial decisions are human-directed.",
+    body: "PDF parsing uses Anthropic's Claude API (claude-haiku-4-5) to read table rows from government forms. Official summaries are AI-generated from parsed transaction data and reviewed for accuracy. News coverage is collected via AI-assisted web search. The application was built by Trevor Brown with the assistance of Claude Code (claude-opus-4-6). All AI outputs are verified against source documents — no AI-generated data is presented without a human-verifiable source.",
   },
 ];
 
