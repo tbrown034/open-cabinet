@@ -51,13 +51,7 @@ export default async function Home() {
               sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
-              Published{" "}
-              {new Date().toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}
-              {" · "}Most recent filing:{" "}
+              Published April 12, 2026 · Most recent filing:{" "}
               {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
                 "en-US",
                 { month: "short", day: "numeric", year: "numeric" }
