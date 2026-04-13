@@ -228,10 +228,19 @@ export default function AboutPage() {
               Trevor Brown
             </a>
             , investigative data journalist turned web developer. 15 years of
-            political reporting, including six years covering elections, dark
-            money, financial disclosures and government accountability at
-            Oklahoma Watch. This project bridges both worlds — journalism
-            instinct driving a developer tool.
+            political reporting, most recently six years covering elections,
+            dark money, financial disclosures and government accountability
+            at{" "}
+            <a
+              href="https://oklahomawatch.org"
+              className="underline hover:text-neutral-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Oklahoma Watch
+            </a>
+            . This project bridges both worlds — journalism instinct driving
+            a developer tool.
           </p>
         </section>
 
