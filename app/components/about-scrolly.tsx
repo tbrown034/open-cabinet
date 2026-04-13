@@ -80,7 +80,7 @@ const BUILD_STEPS = [
     id: "build-viz",
     label: "Visualize",
     title: "Turn rows into timelines",
-    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 2,200+ trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
+    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 3,200+ trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
   },
   {
     id: "monitor",
