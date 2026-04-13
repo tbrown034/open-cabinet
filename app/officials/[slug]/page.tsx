@@ -288,6 +288,40 @@ export default async function OfficialPage({
         </section>
       )}
 
+      {/* Source filings */}
+      {(official as any).sourceFilings?.length > 0 && (
+        <section className="mt-12 border-t border-neutral-200 pt-8">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
+            Source filings
+          </h2>
+          <p className="text-xs text-neutral-400 mb-3">
+            Original PDFs from the U.S. Office of Government Ethics. These are
+            the documents Open Cabinet parses.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {(official as any).sourceFilings.map(
+              (filing: { date: string; url: string; label: string }, i: number) => (
+                <a
+                  key={i}
+                  href={filing.url}
+                  className="border border-neutral-200 px-3 py-2 text-sm hover:bg-neutral-50 transition-colors flex items-center justify-between"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>
+                    <span className="text-neutral-900 font-medium">
+                      {filing.label}
+                    </span>
+                    <span className="text-neutral-400 ml-2">{filing.date}</span>
+                  </span>
+                  <span className="text-neutral-300 text-xs">PDF</span>
+                </a>
+              )
+            )}
+          </div>
+        </section>
+      )}
+
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics, {official.filingType}. Asset
         values and transaction amounts are reported in ranges as required by
