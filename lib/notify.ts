@@ -15,7 +15,7 @@
 import { Resend } from "resend";
 
 const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
-const FROM_EMAIL = "Open Cabinet <onboarding@resend.dev>";
+const FROM_EMAIL = "Open Cabinet <alerts@trevorthewebdeveloper.com>";
 
 type AlertType =
   | "pipeline_error"
