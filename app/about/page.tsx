@@ -126,7 +126,7 @@ export default function AboutPage() {
       {/* Static sections */}
       <div className="mx-auto max-w-3xl px-4 py-16 space-y-12">
         {/* Known limitations */}
-        <section>
+        <section id="known-limitations" className="scroll-mt-24">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
             Known limitations
           </h2>
