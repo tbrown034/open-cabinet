@@ -13,6 +13,7 @@
     "seed": "npx tsx scripts/seed-from-json.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.88.0",
     "@neondatabase/serverless": "^1.0.2",
     "better-auth": "^1.6.2",
     "d3-array": "^3.2.4",
