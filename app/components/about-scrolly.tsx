@@ -62,13 +62,13 @@ const BUILD_STEPS = [
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We parse these using Claude Sonnet via the Anthropic API. Parses can also be cross-checked with OpenAI to compare outputs across independent models.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf (a Python library by data journalist Jonathan Soma) to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach avoids token limits on large filings and handles OCR noise from scanned documents.",
   },
   {
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-verified reference files; and anomaly detection. We maintain reference files for five officials (ranging from 2 to 389 transactions) to catch regressions.",
+    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-verified reference files; and anomaly detection. We maintain reference files for five officials (ranging from 2 to 1,315 transactions) to catch regressions.",
   },
   {
     id: "store",
@@ -92,7 +92,7 @@ const BUILD_STEPS = [
     id: "ai-role",
     label: "AI usage",
     title: "Where AI is and isn't involved",
-    body: "PDF parsing uses Claude Sonnet (default) with GPT-5.4-mini for cross-provider verification. Official summaries are AI-generated from parsed data and reviewed for accuracy. News coverage is collected via AI-assisted search. The application was built by Trevor Brown with the assistance of Claude Code. All AI outputs are verified against source documents — no AI-generated data is presented without a human-verifiable source.",
+    body: "Initial data extraction used Claude Opus for maximum accuracy on scanned documents. Ongoing parsing uses Claude Sonnet with OpenAI cross-verification. Official summaries are AI-generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with the assistance of Claude Code. All AI outputs are verified against source documents — no AI-generated data is presented without a human-verifiable source.",
   },
 ];
 
