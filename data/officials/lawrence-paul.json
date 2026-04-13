@@ -7,11 +7,39 @@
   "filingType": "278-T Periodic Transaction Report",
   "mostRecentFilingDate": "2025-06-11",
   "transactions": [
-    { "description": "Dominion Energy, Inc. (D)", "ticker": "D", "type": "Sale", "date": "2025-05-08", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Fidelity Software and IT Services Portfolio (FSCSX)", "ticker": "FSCSX", "type": "Sale", "date": "2025-04-22", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "T Rowe Price Health Sciences Fund, Inc Class I Shares (THISX)", "ticker": "THISX", "type": "Sale", "date": "2025-04-28", "amount": "$15,001-$50,000", "lateFilingFlag": false }
+    {
+      "description": "Dominion Energy, Inc. (D)",
+      "ticker": "D",
+      "type": "Sale",
+      "date": "2025-05-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Fidelity Software and IT Services Portfolio (FSCSX)",
+      "ticker": "FSCSX",
+      "type": "Sale",
+      "date": "2025-04-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "T Rowe Price Health Sciences Fund, Inc Class I Shares (THISX)",
+      "ticker": "THISX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    }
   ],
   "summary": "Lawrence reported 3 sales totaling an estimated $96K, consistent with ethics agreement divestitures. Notable: Dominion Energy sale is relevant given VA's large energy footprint. Filer received a 30-day filing extension. Confirmed to second Trump-term role as Deputy Secretary of VA after previously serving as Under Secretary for Benefits (2018-2021).",
   "confirmedDate": "2025-02-06",
-  "party": "R"
+  "party": "R",
+  "sourceFilings": [
+    {
+      "date": "2025-07-11",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5B8B5CEB2359CA1D85258CC4002C8A8E/$FILE/Paul-R-Lawrence-06.11.2025-278T.pdf",
+      "label": "278-T"
+    }
+  ]
 }
