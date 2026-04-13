@@ -10,7 +10,9 @@
     "check-filings": "npx tsx scripts/check-new-filings.ts",
     "rebuild-index": "npx tsx scripts/rebuild-index.ts",
     "generate-exports": "npx tsx scripts/generate-exports.ts",
-    "seed": "npx tsx scripts/seed-from-json.ts"
+    "seed": "npx tsx scripts/seed-from-json.ts",
+    "validate": "npx tsx scripts/validate.ts",
+    "parse-pdf": "npx tsx scripts/parse-pdf.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.88.0",
