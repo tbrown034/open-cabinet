@@ -186,5 +186,27 @@
   ],
   "summary": "MacGregor reported 23 transactions across 4 filings spanning both Trump terms (2020 and 2025). Her 2025 divestitures are significant: she sold over $1M in NextEra Energy stock (an energy company regulated by Interior) through options exercises and direct sales, reinvesting into index funds per Certificate of Divestiture from OGE. Also sold AMZN, AAPL, and NFLX. Her 2020 filings show small Amazon sales under an ethics screening arrangement.",
   "confirmedDate": "2025-03-13",
-  "party": "R"
+  "party": "R",
+  "sourceFilings": [
+    {
+      "date": "2025-09-06",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E7B021C3112F2B3485258CFD002C03E5/$FILE/Katharine-MacGregor-08.07.2025-278T.pdf",
+      "label": "278-T"
+    },
+    {
+      "date": "2020-09-12",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/294765D0509B1112852585E10027E9D3/$FILE/Katharine-MacGregor-08.13.2020-278T.pdf",
+      "label": "278-T"
+    },
+    {
+      "date": "2020-07-28",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
+      "label": "278-T"
+    },
+    {
+      "date": "2020-06-11",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
+      "label": "278-T"
+    }
+  ]
 }

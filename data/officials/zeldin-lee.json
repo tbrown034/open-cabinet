@@ -42,5 +42,17 @@
   ],
   "summary": "Zeldin reported 2 sales (est. $16K) and 2 purchases (est. $16K). Holdings included NRSN, DVLT. One transaction was flagged as a late filing.",
   "confirmedDate": "2025-01-29",
-  "party": "R"
+  "party": "R",
+  "sourceFilings": [
+    {
+      "date": "2025-11-18",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1F2CA5D27DDE1D9085258D460031984D/$FILE/Lee-Zeldin-09-24-2025-278T.pdf",
+      "label": "278-T"
+    },
+    {
+      "date": "2025-07-15",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf",
+      "label": "278-T"
+    }
+  ]
 }

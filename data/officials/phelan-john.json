@@ -466,5 +466,27 @@
   ],
   "summary": "Phelan reported 35 sales (est. $32.4M) and 22 purchases (est. $6.0M). 2 of 57 transactions were filed late.",
   "confirmedDate": "2025-03-24",
-  "party": "R"
+  "party": "R",
+  "sourceFilings": [
+    {
+      "date": "2026-03-26",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/68666D69BEFB693D85258DC6002DC641/$FILE/John-Phelan-01.09.2026-278T.pdf",
+      "label": "278-T"
+    },
+    {
+      "date": "2026-03-26",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F6D5E76DFD84296785258DC6002DC61D/$FILE/John-Phelan-10.02.2025-278T(2).pdf",
+      "label": "278-T (2)"
+    },
+    {
+      "date": "2026-02-27",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DFA1DC5E6B4CE0BF85258DAB00346FD8/$FILE/John-Phelan-07.28.2025-278T(2).pdf",
+      "label": "278-T (2)"
+    },
+    {
+      "date": "2026-02-27",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/687996565E337F3385258DAB00346FB5/$FILE/John-Phelan-11.17.2025-278T(1).pdf",
+      "label": "278-T (1)"
+    }
+  ]
 }
