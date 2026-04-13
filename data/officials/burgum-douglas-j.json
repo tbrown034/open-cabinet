@@ -8,6 +8,30 @@
   "mostRecentFilingDate": "2025-11-13",
   "transactions": [
     {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Causeway International Value Fund Institutional Class Shares",
+      "ticker": "CIVIX",
+      "type": "Purchase",
+      "date": "2025-01-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
       "description": "Arthur Ventures Growth I, LP - Protenus",
       "ticker": null,
       "type": "Sale",
@@ -48,30 +72,6 @@
       "lateFilingFlag": true
     },
     {
-      "description": "Arthur Ventures V, LP",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-01-15",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Arthur Ventures V, LP",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-01-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Causeway International Value Fund Institutional Class Shares",
-      "ticker": "CIVIX",
-      "type": "Purchase",
-      "date": "2025-01-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": true
-    },
-    {
       "description": "Microsoft Corp.",
       "ticker": "MSFT",
       "type": "Sale",
@@ -85,6 +85,14 @@
       "type": "Sale",
       "date": "2025-01-31",
       "amount": "$15,001-$50,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Atlassian Corporation Plc Class A Ordinary Shares",
+      "ticker": "TEAM",
+      "type": "Sale",
+      "date": "2025-01-31",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": true
     },
     {
@@ -381,6 +389,14 @@
       "type": "Purchase",
       "date": "2025-02-26",
       "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$1,001-$15,000",
       "lateFilingFlag": true
     },
     {
@@ -896,6 +912,38 @@
       "lateFilingFlag": true
     },
     {
+      "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
       "description": "Arthur Ventures Growth IV, LP",
       "ticker": null,
       "type": "Purchase",
@@ -904,11 +952,27 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Arthur Ventures Growth IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Arthur Ventures V, LP",
       "ticker": null,
       "type": "Purchase",
       "date": "2025-09-04",
       "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-04",
+      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {

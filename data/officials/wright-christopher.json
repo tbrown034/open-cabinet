@@ -8,1654 +8,6 @@
   "mostRecentFilingDate": "2026-04-01",
   "transactions": [
     {
-      "description": "GS Three, LLC",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2026-01-02",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Westside Link LLC",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-12-01",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "REOFF XXVII, LLC",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-05-30",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "REOFF XXV, LLC",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-06-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-17",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-17",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-02",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-02",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-04-02",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-04-02",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-04-02",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPY (S&P 500 SPDR ETF)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DODFX (Dodge & Cox International Stock Fund)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Westside LC LLC",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-17",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-18",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-19",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-20",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-21",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "CL Covault LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "CL Urban LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Bison Hawksbill LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Bison IV Friends and Family LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-05",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Sugar Free Capital",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Next Frontier Fund IV LP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-06",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": true
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-17",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-18",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-18",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-19",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-19",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-20",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-20",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-21",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-21",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-24",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-10",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-11",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-15",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-16",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-17",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Muni Bond ETF",
-      "ticker": "VTEB",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-21",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Municipal Bond Fund",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-22",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Municipal Bond Fund",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-23",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Small Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Small Cap ETF",
-      "ticker": "SCHA",
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US Large Cap ETF",
-      "ticker": "SCHX",
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Charles Schwab US Reit ETF",
-      "ticker": "SCHH",
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Fund International ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Municipal Bond Fund",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab US TIPS ETF",
-      "ticker": "SCHP",
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab International Equity ETF",
-      "ticker": "SCHF",
-      "type": "Purchase",
-      "date": "2025-04-24",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-25",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-26",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-27",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-28",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-03",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-05",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-06",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-26",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-27",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-02-28",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-05",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-06",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-10",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-11",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-12",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-12",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-13",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-13",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc Class A",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-14",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab Value Advantage Money Fund",
-      "ticker": "SWVXX",
-      "type": "Purchase",
-      "date": "2025-03-14",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Liberty Energy Inc. (LBRT)",
       "ticker": "LBRT",
       "type": "Sale",
@@ -1680,6 +32,14 @@
       "lateFilingFlag": true
     },
     {
+      "description": "EMX Royalty Corporation Common Shares (Canada) (EMX)",
+      "ticker": "EMX",
+      "type": "Sale",
+      "date": "2025-02-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
       "description": "Liberty Energy Inc. (LBRT)",
       "ticker": "LBRT",
       "type": "Sale",
@@ -1699,49 +59,121 @@
       "description": "Liberty Energy Inc. (LBRT)",
       "ticker": "LBRT",
       "type": "Sale",
-      "date": "2025-03-10",
+      "date": "2025-02-25",
       "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-11",
-      "amount": "$500,001-$1,000,000",
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-02-25",
+      "amount": "$50,001-$100,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-12",
-      "amount": "$500,001-$1,000,000",
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-02-25",
+      "amount": "$50,001-$100,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-13",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Liberty Energy Inc. (LBRT)",
-      "ticker": "LBRT",
-      "type": "Sale",
-      "date": "2025-03-14",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "EMX Royalty Corporation Common Shares (Canada) (EMX)",
-      "ticker": "EMX",
-      "type": "Sale",
-      "date": "2025-02-12",
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-25",
       "amount": "$100,001-$250,000",
-      "lateFilingFlag": true
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-02-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-02-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-26",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-26",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
     },
     {
       "description": "Baytex Energy Corp",
@@ -1880,11 +312,539 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-02-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-02-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-02-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-02-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-02-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Nordic American Tankers Ltd. (NAT)",
       "ticker": "NAT",
       "type": "Sale",
       "date": "2025-02-28",
       "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-02-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-02-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-02-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-02-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Bison IV Friends and Family LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Next Frontier Fund IV LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "CL Covault LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "CL Urban LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Bison Hawksbill LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "Sugar Free Capital",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dodge & Cox International Stock Fund (DODFX)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-11",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-11",
+      "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
@@ -1896,202 +856,34 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": null,
       "type": "Purchase",
-      "date": "2025-02-25",
-      "amount": "$50,001-$100,000",
+      "date": "2025-03-11",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-02-25",
-      "amount": "$50,001-$100,000",
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
       "type": "Purchase",
-      "date": "2025-02-25",
-      "amount": "$100,001-$250,000",
+      "date": "2025-03-12",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-02-25",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-02-25",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-02-26",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-02-26",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-02-26",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-02-26",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-02-26",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-02-27",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-02-27",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-02-27",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-02-27",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-02-27",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-02-28",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-02-28",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-02-28",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-02-28",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-02-28",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-03",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-03",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-03",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-03",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-03",
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-12",
       "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
@@ -2099,206 +891,6 @@
       "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
       "ticker": "GAJPX",
       "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-06",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-07",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs High Yield Municipal Fund Class P Shares (GGLPX)",
-      "ticker": "GGLPX",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPMD (S&P 400 Mid-Cap ETF)",
-      "ticker": "SPMD",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Dodge & Cox International Stock Fund (DODFX)",
-      "ticker": "DODFX",
-      "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
-      "ticker": "GAJPX",
-      "type": "Purchase",
       "date": "2025-03-12",
       "amount": "$100,001-$250,000",
       "lateFilingFlag": false
@@ -2333,6 +925,30 @@
       "type": "Purchase",
       "date": "2025-03-12",
       "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
@@ -2376,6 +992,30 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Goldman Sachs Dynamic Municipal Income Fund Class P Shares (GAJPX)",
       "ticker": "GAJPX",
       "type": "Purchase",
@@ -2413,10 +1053,1378 @@
       "type": "Purchase",
       "date": "2025-03-14",
       "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-19",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-20",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc. (LBRT)",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Liberty Energy Inc Class A",
+      "ticker": "LBRT",
+      "type": "Sale",
+      "date": "2025-03-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-04-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-04-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-04-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Westside LC LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Muni Bond ETF",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPY (S&P 500 SPDR ETF)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPMD (S&P 400 Mid-Cap ETF)",
+      "ticker": "SPMD",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DODFX (Dodge & Cox International Stock Fund)",
+      "ticker": "DODFX",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Municipal Bond Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
+      "ticker": "GAJPX",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GGLPX (Goldman Sachs High Yield Municipal Fund)",
+      "ticker": "GGLPX",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Municipal Bond Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Small Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Small Cap ETF",
+      "ticker": "SCHA",
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Charles Schwab US Reit ETF",
+      "ticker": "SCHH",
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund International ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Municipal Bond Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab US TIPS ETF",
+      "ticker": "SCHP",
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab International Equity ETF",
+      "ticker": "SCHF",
+      "type": "Purchase",
+      "date": "2025-04-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "REOFF XXVII, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "REOFF XXV, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Westside Link LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true
+    },
+    {
+      "description": "GS Three, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$250,001-$500,000",
       "lateFilingFlag": false
     }
   ],
-  "summary": "Wright reported 66 sales (est. $84.2M) and 235 purchases (est. $94.4M). Holdings included GAJPX, GGLPX, SPY, SPMD, DODFX, among others. 11 of 301 transactions were filed late.",
+  "summary": "Wright reported 66 sales (est. $84.2M) and 236 purchases (est. $94.4M). Holdings included GAJPX, GGLPX, SPY, SPMD, DODFX, among others. 11 of 302 transactions were filed late.",
   "confirmedDate": "2025-02-03",
   "party": "R",
   "sourceFilings": [

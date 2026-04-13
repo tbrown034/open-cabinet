@@ -8,6 +8,30 @@
   "mostRecentFilingDate": "2025-05-22",
   "transactions": [
     {
+      "description": "Vanguard Developed Markets Index Fund ETF Shares",
+      "ticker": "VEA",
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "United States Treasury Bill",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "United States Treasury Bill",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Danone S.A.",
       "ticker": "DANOY",
       "type": "Sale",
@@ -24,11 +48,59 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard Developed Markets Index Fund ETF Shares",
-      "ticker": "VEA",
+      "description": "Wells Fargo & Co 4.25% Series DD",
+      "ticker": "WFC",
       "type": "Sale",
-      "date": "2025-03-26",
+      "date": "2025-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "United States Treasury Bill",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-09",
       "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "United States Treasury Bill",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Union Pacific Corporation",
+      "ticker": "UNP",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Bunge Global SA",
+      "ticker": "BG",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Goldman Sachs Group Inc. 7.500% Due 2065",
+      "ticker": "GS",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Bank of America Corp 6.300% Due 2065",
+      "ticker": "BAC",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -53,38 +125,6 @@
       "type": "Sale",
       "date": "2025-04-28",
       "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "United States Treasury Bill",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-04-14",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "United States Treasury Bill",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-04-09",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "United States Treasury Bill",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-04-03",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "United States Treasury Bill",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-26",
-      "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
@@ -608,46 +648,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Union Pacific Corporation",
-      "ticker": "UNP",
-      "type": "Sale",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Bunge Global SA",
-      "ticker": "BG",
-      "type": "Sale",
-      "date": "2025-04-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Goldman Sachs Group Inc. 7.500% Due 2065",
-      "ticker": "GS",
-      "type": "Sale",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Bank of America Corp 6.300% Due 2065",
-      "ticker": "BAC",
-      "type": "Sale",
-      "date": "2025-04-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Wells Fargo & Co 4.25% Series DD",
-      "ticker": "WFC",
-      "type": "Sale",
-      "date": "2025-04-08",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Westinghouse Air Brake Technologies Corporation",
       "ticker": "WAB",
       "type": "Sale",
@@ -672,6 +672,22 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Nestle S.A.",
+      "ticker": "NSRGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Westinghouse Air Brake Technologies Corporation",
+      "ticker": "WAB",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "JPMorgan Chase & Co 7.132% Due 2065",
       "ticker": "JPM",
       "type": "Sale",
@@ -693,6 +709,14 @@
       "type": "Sale",
       "date": "2025-05-01",
       "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Ally Financial Inc 4.700% Due 2065",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-01",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     }
   ],

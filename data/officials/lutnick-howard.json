@@ -8,6 +8,86 @@
   "mostRecentFilingDate": "2025-11-05",
   "transactions": [
     {
+      "description": "GE Healthcare Technologies Inc. (GEHC)",
+      "ticker": "GEHC",
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GE Vernova LLC (GEV)",
+      "ticker": "GEV",
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "GE Aerospace (GE)",
+      "ticker": "GE",
+      "type": "Sale",
+      "date": "2025-03-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Newmark Group, Inc. (NMRK)",
+      "ticker": "NMRK",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BGC Group, Inc. (BGC)",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Nasdaq, Inc. (NDAQ)",
+      "ticker": "NDAQ",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "The Walt Disney Co. (DIS)",
+      "ticker": "DIS",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Kimberly Akimbo LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Kiajia, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Structured Services Investor, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Cantor Fitzgerald, L.P",
       "ticker": null,
       "type": "Sale",
@@ -72,83 +152,19 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Newmark Group, Inc. (NMRK)",
-      "ticker": "NMRK",
-      "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "Over $50,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "BGC Group, Inc. (BGC)",
+      "description": "Shares in Retirement Accounts (BGC)",
       "ticker": "BGC",
       "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "Over $50,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Nasdaq, Inc. (NDAQ)",
-      "ticker": "NDAQ",
-      "type": "Sale",
-      "date": "2025-05-16",
+      "date": "2025-10-06",
       "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "The Walt Disney Co. (DIS)",
-      "ticker": "DIS",
+      "description": "Shares in Retirement Accounts (NMRK)",
+      "ticker": "NMRK",
       "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Kimberly Akimbo LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Kiajia, LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Structured Services Investor, LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GE Healthcare Technologies Inc. (GEHC)",
-      "ticker": "GEHC",
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GE Vernova LLC (GEV)",
-      "ticker": "GEV",
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GE Aerospace (GE)",
-      "ticker": "GE",
-      "type": "Sale",
-      "date": "2025-03-07",
-      "amount": "$15,001-$50,000",
+      "date": "2025-10-06",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     }
   ],
