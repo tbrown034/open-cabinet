@@ -24,14 +24,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Apple, Inc. (AAPL)",
-      "ticker": "AAPL",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "AbbVie, Inc. (ABBV)",
       "ticker": "ABBV",
       "type": "Sale",
@@ -136,22 +128,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Amazon.com, Inc. (AMZN)",
-      "ticker": "AMZN",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Amazon.com, Inc. (AMZN)",
-      "ticker": "AMZN",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Aon Plc (AON)",
       "ticker": "AON",
       "type": "Sale",
@@ -162,14 +138,6 @@
     {
       "description": "Atmos Energy Corp. (ATO)",
       "ticker": "ATO",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Broadcom, Inc. (AVGO)",
-      "ticker": "AVGO",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -456,14 +424,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Chevron Corp. (CVX)",
-      "ticker": "CVX",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Danone SA ADR (DANOY)",
       "ticker": "DANOY",
       "type": "Sale",
@@ -474,22 +434,6 @@
     {
       "description": "Dollar General Corp. (DG)",
       "ticker": "DG",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Danaher Corp. (DHR)",
-      "ticker": "DHR",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
-      "ticker": "DIA",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -696,14 +640,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Alphabet, Inc. (GOOG)",
-      "ticker": "GOOG",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Guidewire Software, Inc. (GWRE)",
       "ticker": "GWRE",
       "type": "Sale",
@@ -784,40 +720,8 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Intuit, Inc. (INTU)",
-      "ticker": "INTU",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Gartner, Inc. (IT)",
       "ticker": "IT",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P US Growth ETF (IUSG)",
-      "ticker": "IUSG",
-      "type": "Sale",
-      "date": "2026-02-02",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P US Value ETF (IUSV)",
-      "ticker": "IUSV",
-      "type": "Sale",
-      "date": "2026-02-02",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Russell 2000 ETF (IWM)",
-      "ticker": "IWM",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -928,14 +832,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Mastercard, Inc. (MA)",
-      "ticker": "MA",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Medtronic Plc (MDT)",
       "ticker": "MDT",
       "type": "Sale",
@@ -946,14 +842,6 @@
     {
       "description": "Medpace Holdings, Inc. (MEDP)",
       "ticker": "MEDP",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Meta Platforms Inc. Class A Common Stock (META)",
-      "ticker": "META",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -1036,14 +924,6 @@
       "ticker": "MSFT",
       "type": "Sale",
       "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Microsoft Corp. (MSFT)",
-      "ticker": "MSFT",
-      "type": "Sale",
-      "date": "2026-01-30",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -1109,14 +989,6 @@
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "NVIDIA Corp. (NVDA)",
-      "ticker": "NVDA",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
@@ -1280,14 +1152,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Invesco QQQ Trust, Series 1 (QQQ)",
-      "ticker": "QQQ",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "RB Global Inc (RBA)",
       "ticker": "RBA",
       "type": "Sale",
@@ -1346,14 +1210,6 @@
     {
       "description": "SAP SE ADS (SAP)",
       "ticker": "SAP",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Starbucks Corp. (SBUX)",
-      "ticker": "SBUX",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -1424,22 +1280,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "S&P Global, Inc. (SPGI)",
-      "ticker": "SPGI",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR S&P 500 ETF Trust (SPY)",
-      "ticker": "SPY",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "STERIS Plc (STE)",
       "ticker": "STE",
       "type": "Sale",
@@ -1464,14 +1304,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "The TJX Cos., Inc. (TJX)",
-      "ticker": "TJX",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Thermo Fisher Scientific, Inc. (TMO)",
       "ticker": "TMO",
       "type": "Sale",
@@ -1488,22 +1320,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "TransUnion (TRU)",
-      "ticker": "TRU",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Tesla, Inc. (TSLA)",
-      "ticker": "TSLA",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
       "ticker": "TSM",
       "type": "Sale",
@@ -1512,24 +1328,8 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
-      "ticker": "TTTXX",
-      "type": "Sale",
-      "date": "2026-01-28",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Twist Bioscience Corp. (TWST)",
       "ticker": "TWST",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Texas Instruments Incorporated (TXN)",
-      "ticker": "TXN",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -1576,22 +1376,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Visa, Inc. (V)",
-      "ticker": "V",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
-      "ticker": "VEA",
-      "type": "Sale",
-      "date": "2026-02-02",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Veeva Systems, Inc. (VEEV)",
       "ticker": "VEEV",
       "type": "Sale",
@@ -1608,51 +1392,11 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Verisk Analytics, Inc. (VRSK)",
-      "ticker": "VRSK",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
       "ticker": "VRTX",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-02-03",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-02-02",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -1668,38 +1412,6 @@
       "ticker": "VUG",
       "type": "Purchase",
       "date": "2026-02-02",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
-      "ticker": "VUG",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-      "ticker": "VXUS",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-      "ticker": "VXUS",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Verizon Communications, Inc. (VZ)",
-      "ticker": "VZ",
-      "type": "Sale",
-      "date": "2026-01-30",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -1730,14 +1442,6 @@
     {
       "description": "Wal - Mart de Mexico SPN ADR (WMMVY)",
       "ticker": "WMMVY",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Walmart, Inc. (WMT)",
-      "ticker": "WMT",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -1877,14 +1581,6 @@
       "type": "Purchase",
       "date": "2026-02-03",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-02-03",
-      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
@@ -2152,14 +1848,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Amazon.com, Inc. (AMZN)",
-      "ticker": "AMZN",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Broadcom, Inc. (AVGO)",
       "ticker": "AVGO",
       "type": "Sale",
@@ -2186,22 +1874,6 @@
     {
       "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
       "ticker": "DIA",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Alphabet, Inc. (GOOG)",
-      "ticker": "GOOG",
-      "type": "Sale",
-      "date": "2026-01-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Alphabet, Inc. (GOOG)",
-      "ticker": "GOOG",
       "type": "Sale",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
@@ -2384,24 +2056,8 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
       "ticker": "VUG",
-      "type": "Purchase",
-      "date": "2026-01-30",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-      "ticker": "VXUS",
       "type": "Purchase",
       "date": "2026-01-30",
       "amount": "$15,001-$50,000",
