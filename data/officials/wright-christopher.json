@@ -569,7 +569,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-18",
       "amount": "$1,000,001-$5,000,000",
@@ -585,7 +585,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-19",
       "amount": "$1,000,001-$5,000,000",
@@ -641,7 +641,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-09",
       "amount": "$100,001-$250,000",
@@ -649,6 +649,14 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
+      "ticker": "SCHX",
+      "type": "Purchase",
+      "date": "2025-04-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab Fund US Large Cap ETF",
       "ticker": null,
       "type": "Purchase",
       "date": "2025-04-09",
@@ -656,16 +664,8 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Schwab Fund US Large Cap ETF",
-      "ticker": null,
-      "type": "Purchase",
-      "date": "2025-04-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-09",
       "amount": "$15,001-$50,000",
@@ -681,7 +681,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-09",
       "amount": "$250,001-$500,000",
@@ -689,7 +689,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-09",
       "amount": "$15,001-$50,000",
@@ -697,7 +697,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-09",
       "amount": "$100,001-$250,000",
@@ -713,7 +713,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$50,001-$100,000",
@@ -721,7 +721,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$100,001-$250,000",
@@ -737,7 +737,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$15,001-$50,000",
@@ -753,7 +753,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$100,001-$250,000",
@@ -761,7 +761,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$15,001-$50,000",
@@ -769,7 +769,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-10",
       "amount": "$50,001-$100,000",
@@ -785,7 +785,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$50,001-$100,000",
@@ -793,7 +793,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$100,001-$250,000",
@@ -809,7 +809,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$15,001-$50,000",
@@ -825,7 +825,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$100,001-$250,000",
@@ -833,7 +833,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$15,001-$50,000",
@@ -841,7 +841,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-11",
       "amount": "$50,001-$100,000",
@@ -857,7 +857,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$50,001-$100,000",
@@ -865,7 +865,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$100,001-$250,000",
@@ -881,7 +881,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$15,001-$50,000",
@@ -897,7 +897,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$100,001-$250,000",
@@ -905,7 +905,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$15,001-$50,000",
@@ -913,7 +913,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-14",
       "amount": "$50,001-$100,000",
@@ -929,7 +929,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$50,001-$100,000",
@@ -937,7 +937,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$100,001-$250,000",
@@ -953,7 +953,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$15,001-$50,000",
@@ -969,7 +969,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$100,001-$250,000",
@@ -977,7 +977,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$15,001-$50,000",
@@ -985,7 +985,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-15",
       "amount": "$50,001-$100,000",
@@ -1001,7 +1001,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$50,001-$100,000",
@@ -1009,7 +1009,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$100,001-$250,000",
@@ -1025,7 +1025,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$15,001-$50,000",
@@ -1041,7 +1041,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$100,001-$250,000",
@@ -1049,7 +1049,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$15,001-$50,000",
@@ -1057,7 +1057,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$50,001-$100,000",
@@ -1073,7 +1073,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$50,001-$100,000",
@@ -1081,7 +1081,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$100,001-$250,000",
@@ -1097,7 +1097,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$15,001-$50,000",
@@ -1113,7 +1113,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$100,001-$250,000",
@@ -1121,7 +1121,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$15,001-$50,000",
@@ -1129,7 +1129,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-17",
       "amount": "$50,001-$100,000",
@@ -1145,7 +1145,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$50,001-$100,000",
@@ -1153,7 +1153,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$100,001-$250,000",
@@ -1169,7 +1169,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$15,001-$50,000",
@@ -1185,7 +1185,7 @@
     },
     {
       "description": "Vanguard Muni Bond ETF",
-      "ticker": null,
+      "ticker": "VTEB",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$100,001-$250,000",
@@ -1193,7 +1193,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$15,001-$50,000",
@@ -1201,7 +1201,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-21",
       "amount": "$50,001-$100,000",
@@ -1217,7 +1217,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-22",
       "amount": "$100,001-$250,000",
@@ -1225,7 +1225,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-22",
       "amount": "$250,001-$500,000",
@@ -1249,7 +1249,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-22",
       "amount": "$100,001-$250,000",
@@ -1265,7 +1265,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-22",
       "amount": "$15,001-$50,000",
@@ -1273,7 +1273,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-22",
       "amount": "$50,001-$100,000",
@@ -1289,7 +1289,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-23",
       "amount": "$50,001-$100,000",
@@ -1297,7 +1297,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-23",
       "amount": "$100,001-$250,000",
@@ -1313,7 +1313,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-23",
       "amount": "$50,001-$100,000",
@@ -1337,7 +1337,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-23",
       "amount": "$15,001-$50,000",
@@ -1345,7 +1345,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-23",
       "amount": "$50,001-$100,000",
@@ -1361,7 +1361,7 @@
     },
     {
       "description": "Schwab US Small Cap ETF",
-      "ticker": null,
+      "ticker": "SCHA",
       "type": "Purchase",
       "date": "2025-04-24",
       "amount": "$50,001-$100,000",
@@ -1369,7 +1369,7 @@
     },
     {
       "description": "Schwab US Large Cap ETF",
-      "ticker": null,
+      "ticker": "SCHX",
       "type": "Purchase",
       "date": "2025-04-24",
       "amount": "$100,001-$250,000",
@@ -1385,7 +1385,7 @@
     },
     {
       "description": "Charles Schwab US Reit ETF",
-      "ticker": null,
+      "ticker": "SCHH",
       "type": "Purchase",
       "date": "2025-04-24",
       "amount": "$50,001-$100,000",
@@ -1409,7 +1409,7 @@
     },
     {
       "description": "Schwab US TIPS ETF",
-      "ticker": null,
+      "ticker": "SCHP",
       "type": "Purchase",
       "date": "2025-04-24",
       "amount": "$15,001-$50,000",
@@ -1417,7 +1417,7 @@
     },
     {
       "description": "Schwab International Equity ETF",
-      "ticker": null,
+      "ticker": "SCHF",
       "type": "Purchase",
       "date": "2025-04-24",
       "amount": "$50,001-$100,000",
@@ -1529,7 +1529,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-04",
       "amount": "$1,000,001-$5,000,000",
@@ -1545,7 +1545,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-05",
       "amount": "$1,000,001-$5,000,000",
@@ -1561,7 +1561,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-06",
       "amount": "$1,000,001-$5,000,000",
@@ -1577,7 +1577,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-07",
       "amount": "$1,000,001-$5,000,000",
@@ -1593,7 +1593,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-10",
       "amount": "$1,000,001-$5,000,000",
@@ -1617,7 +1617,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-12",
       "amount": "$1,000,001-$5,000,000",
@@ -1633,7 +1633,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-13",
       "amount": "$1,000,001-$5,000,000",
@@ -1649,7 +1649,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-14",
       "amount": "$1,000,001-$5,000,000",
@@ -1889,7 +1889,7 @@
     },
     {
       "description": "Schwab Value Advantage Money Fund",
-      "ticker": null,
+      "ticker": "SWVXX",
       "type": "Purchase",
       "date": "2025-03-11",
       "amount": "$5,000,001-$25,000,000",
