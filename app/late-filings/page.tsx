@@ -276,11 +276,21 @@ export default async function LateFilingsPage() {
                   penalty
                 </a>{" "}
                 — $200, routinely waived — has never deterred anyone. No criminal
-                prosecution has ever been brought under the STOCK Act (
-                <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-                  Georgetown Law, 2021
+                prosecution has ever been brought under the STOCK Act.*
+              </p>
+              <p className="text-xs text-neutral-500 mt-2">
+                *Sources:{" "}
+                <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="underline hover:text-neutral-700" target="_blank" rel="noopener noreferrer">
+                  Georgetown Law (2021)
                 </a>
-                ).
+                ;{" "}
+                <a href="https://campaignlegal.org/update/stock-act-failed-effort-stop-insider-trading-congress" className="underline hover:text-neutral-700" target="_blank" rel="noopener noreferrer">
+                  Campaign Legal Center
+                </a>
+                ;{" "}
+                <a href="https://news.bloomberglaw.com/white-collar-and-criminal-law/hard-lessons-learned-after-a-decade-of-the-stock-act" className="underline hover:text-neutral-700" target="_blank" rel="noopener noreferrer">
+                  Bloomberg Law (2022)
+                </a>
               </p>
             </div>
           </div>
