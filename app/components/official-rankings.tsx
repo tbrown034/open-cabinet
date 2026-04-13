@@ -47,7 +47,7 @@ export default function OfficialRankings({
                 />
               </div>
               <span className="w-16 text-right text-xs text-neutral-400 font-[family-name:var(--font-dm-mono)] tabular-nums shrink-0">
-                {formatCompactCurrency(r.totalValue)}
+                ~{formatCompactCurrency(r.totalValue)}
               </span>
             </div>
           );
