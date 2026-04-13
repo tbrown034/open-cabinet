@@ -81,7 +81,7 @@ export default async function OfficialPage({
           size={72}
         />
         <div>
-          <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-2">
+          <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-2">
             {displayName(official.name)}
           </h1>
           <p className="text-neutral-500">
@@ -128,6 +128,9 @@ export default async function OfficialPage({
           {formatDate(latest.toISOString().split("T")[0])}
         </div>
       </div>
+      <p className="text-xs text-neutral-400 -mt-8 mb-10">
+        Last filing: {formatDate(latest.toISOString().split("T")[0])}
+      </p>
 
       {buys === 0 && sells > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
@@ -238,30 +241,39 @@ export default async function OfficialPage({
       </div>
 
       {news.length > 0 && (
-        <section className="mt-12">
-          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
-            In the News
-          </h2>
-          <div className="space-y-4">
-            {news.map((item, i) => (
-              <div
-                key={i}
-                className="border-l-2 border-neutral-200 pl-4 text-sm"
-              >
-                <a
-                  href={item.url}
-                  className="text-neutral-900 hover:underline font-medium"
-                  target="_blank"
-                  rel="noopener noreferrer"
+        <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">
+          <div className="mx-auto max-w-5xl">
+            <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-1">
+              In the News
+            </h2>
+            <p className="text-sm text-neutral-500 mb-1">
+              Published reporting on {displayName(official.name)}{"'"}s financial
+              disclosures from major outlets.
+            </p>
+            <p className="text-xs text-neutral-400 mb-6">
+              AI-assisted search. Last updated April 2026.
+            </p>
+            <div className="space-y-4">
+              {news.map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white border border-neutral-200 px-4 py-3 text-sm"
                 >
-                  {item.headline}
-                </a>
-                <div className="text-xs text-neutral-400 mt-0.5">
-                  {item.source} · {item.date}
+                  <a
+                    href={item.url}
+                    className="text-neutral-900 hover:underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {item.headline}
+                  </a>
+                  <div className="text-xs text-neutral-400 mt-1">
+                    {item.source} · {item.date}
+                  </div>
+                  <p className="text-neutral-500 mt-1">{item.relevance}</p>
                 </div>
-                <p className="text-neutral-500 mt-1">{item.relevance}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
       )}

@@ -61,7 +61,7 @@ export default async function AllTradesPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
       <header className="mb-10">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-4">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">
           All Trades
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">

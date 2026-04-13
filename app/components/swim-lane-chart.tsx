@@ -69,15 +69,31 @@ export default function SwimLaneChart({
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
   const [filter, setFilter] = useState<FilterTab>("all");
   const [sortBy, setSortBy] = useState<"volume" | "name" | "recent">("volume");
+  const [timeRange, setTimeRange] = useState<"inaug" | "2025" | "2026" | "all">("inaug");
+
+  // Time range cutoffs
+  const timeRangeStart = timeRange === "inaug" ? "2025-01-20"
+    : timeRange === "2025" ? "2025-01-01"
+    : timeRange === "2026" ? "2026-01-01"
+    : "1900-01-01";
+  const timeRangeEnd = timeRange === "2025" ? "2025-12-31"
+    : timeRange === "2026" ? "2026-12-31"
+    : "2099-12-31";
 
   const cabinetCount = officials.filter((o) => o.level === "Cabinet").length;
   const subCabinetCount = officials.filter((o) => o.level === "Sub-Cabinet").length;
 
-  const filteredUnsorted = filter === "cabinet"
+  const filteredUnsorted = (filter === "cabinet"
     ? officials.filter((o) => o.level === "Cabinet")
     : filter === "sub-cabinet"
       ? officials.filter((o) => o.level === "Sub-Cabinet")
-      : officials;
+      : officials
+  ).map((o) => ({
+    ...o,
+    transactions: o.transactions.filter(
+      (t) => t.date >= timeRangeStart && t.date <= timeRangeEnd
+    ),
+  })).filter((o) => o.transactions.length > 0);
 
   const filtered = [...filteredUnsorted].sort((a, b) => {
     if (sortBy === "name") return displayName(a.name).localeCompare(displayName(b.name));
@@ -104,7 +120,7 @@ export default function SwimLaneChart({
   // Responsive: on mobile (<640px), labels go above rows, not left
   const isMobile = width > 0 && width < 640;
   const margin = {
-    top: 30,
+    top: 40,
     right: 10,
     bottom: 40,
     left: isMobile ? 10 : 220,
@@ -180,22 +196,41 @@ export default function SwimLaneChart({
         ))}
       </div>
 
-      {/* Sort options */}
-      <div className="flex gap-3 mb-4 text-[10px] text-neutral-400">
-        <span>Sort:</span>
-        {([
-          { key: "volume" as const, label: "Volume" },
-          { key: "recent" as const, label: "Recent" },
-          { key: "name" as const, label: "Name" },
-        ]).map((s) => (
-          <button
-            key={s.key}
-            onClick={() => setSortBy(s.key)}
-            className={`cursor-pointer ${sortBy === s.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
-          >
-            {s.label}
-          </button>
-        ))}
+      {/* Time range + sort */}
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-4 text-[10px] text-neutral-400">
+        <div className="flex gap-3 items-center">
+          <span>Period:</span>
+          {([
+            { key: "inaug" as const, label: "Since inauguration" },
+            { key: "2025" as const, label: "2025" },
+            { key: "2026" as const, label: "2026" },
+            { key: "all" as const, label: "All time" },
+          ]).map((t) => (
+            <button
+              key={t.key}
+              onClick={() => setTimeRange(t.key)}
+              className={`cursor-pointer ${timeRange === t.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+        <div className="flex gap-3 items-center">
+          <span>Sort:</span>
+          {([
+            { key: "volume" as const, label: "Volume" },
+            { key: "recent" as const, label: "Recent" },
+            { key: "name" as const, label: "Name" },
+          ]).map((s) => (
+            <button
+              key={s.key}
+              onClick={() => setSortBy(s.key)}
+              className={`cursor-pointer ${sortBy === s.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
+            >
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* MOBILE: HTML cards with inline SVG dot strips */}
@@ -343,25 +378,28 @@ export default function SwimLaneChart({
             );
           })}
 
-          {/* X-axis */}
-          <line
-            x1={0}
-            y1={chartHeight}
-            x2={chartWidth}
-            y2={chartHeight}
-            stroke="#d4d4d4"
-          />
+          {/* X-axis top */}
+          <line x1={0} y1={0} x2={chartWidth} y2={0} stroke="#d4d4d4" />
           {ticks.map((tick, i) => {
             const x = xScale(tick);
             return (
-              <g key={i} transform={`translate(${x}, ${chartHeight})`}>
+              <g key={`top-${i}`} transform={`translate(${x}, 0)`}>
+                <line y1={0} y2={-4} stroke="#a3a3a3" />
+                <text y={-8} textAnchor="middle" fill="#a3a3a3" className="text-[10px]">
+                  {formatTick(tick)}
+                </text>
+              </g>
+            );
+          })}
+
+          {/* X-axis bottom */}
+          <line x1={0} y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="#d4d4d4" />
+          {ticks.map((tick, i) => {
+            const x = xScale(tick);
+            return (
+              <g key={`bot-${i}`} transform={`translate(${x}, ${chartHeight})`}>
                 <line y1={0} y2={6} stroke="#a3a3a3" />
-                <text
-                  y={20}
-                  textAnchor="middle"
-                  fill="#a3a3a3"
-                  className="text-[10px]"
-                >
+                <text y={20} textAnchor="middle" fill="#a3a3a3" className="text-[10px]">
                   {formatTick(tick)}
                 </text>
               </g>
@@ -381,6 +419,41 @@ export default function SwimLaneChart({
               strokeDasharray="2,4"
             />
           ))}
+
+          {/* Key date markers */}
+          {(() => {
+            const markers = [
+              { date: "2025-01-20", label: "Inauguration", color: "#525252" },
+            ];
+            return markers.map((m) => {
+              const x = xScale(new Date(m.date + "T00:00:00"));
+              if (x < 0 || x > chartWidth) return null;
+              return (
+                <g key={m.date}>
+                  <line
+                    x1={x}
+                    y1={-8}
+                    x2={x}
+                    y2={chartHeight}
+                    stroke={m.color}
+                    strokeWidth={1}
+                    strokeDasharray="4,3"
+                    opacity={0.6}
+                  />
+                  <text
+                    x={x}
+                    y={-12}
+                    textAnchor="middle"
+                    fill={m.color}
+                    className="text-[9px]"
+                    fontWeight="500"
+                  >
+                    {m.label}
+                  </text>
+                </g>
+              );
+            });
+          })()}
 
           {/* Transaction dots — render all 2,200+ circles */}
           {filtered.flatMap((o) =>
@@ -405,11 +478,11 @@ export default function SwimLaneChart({
                     tooltip
                       ? tooltip.tx === tx && tooltip.officialName === o.name
                         ? 1
-                        : 0.2
-                      : 0.85
+                        : 0.15
+                      : 0.9
                   }
                   stroke="white"
-                  strokeWidth={1}
+                  strokeWidth={0.5}
                   onMouseEnter={() =>
                     setTooltip({
                       tx,
@@ -466,6 +539,10 @@ export default function SwimLaneChart({
         <div className="flex items-center gap-1.5">
           <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-60" />
           Purchase
+        </div>
+        <div className="flex items-center gap-1.5">
+          <span className="inline-block w-0 h-3 border-l border-dashed border-neutral-500" />
+          Inauguration
         </div>
         <div className="text-neutral-300">|</div>
         <div>Circle size = amount</div>

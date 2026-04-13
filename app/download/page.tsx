@@ -36,7 +36,7 @@ export default function DownloadPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <header className="mb-12">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-4">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">
           Download Data
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">

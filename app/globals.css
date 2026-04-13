@@ -3,5 +3,5 @@
 @theme inline {
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-dm-mono);
-  --font-serif: var(--font-instrument-serif);
+  --font-serif: var(--font-source-serif);
 }

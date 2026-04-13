@@ -11,11 +11,14 @@ type SortDirection = "asc" | "desc";
 
 export default function OfficialsTable({
   officials,
+  initialLimit,
 }: {
   officials: OfficialIndexEntry[];
+  initialLimit?: number;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("transactionCount");
   const [sortDir, setSortDir] = useState<SortDirection>("desc");
+  const [showAll, setShowAll] = useState(!initialLimit);
 
   function handleSort(key: SortKey) {
     if (sortKey === key) {
@@ -87,7 +90,7 @@ export default function OfficialsTable({
           </tr>
         </thead>
         <tbody className="text-sm">
-          {sorted.map((official, i) => (
+          {(showAll ? sorted : sorted.slice(0, initialLimit)).map((official, i) => (
             <tr
               key={official.slug}
               className={`border-b border-neutral-100 cursor-pointer transition-colors hover:bg-neutral-100 ${
@@ -135,6 +138,14 @@ export default function OfficialsTable({
           ))}
         </tbody>
       </table>
+      {!showAll && initialLimit && sorted.length > initialLimit && (
+        <button
+          onClick={() => setShowAll(true)}
+          className="mt-4 w-full py-2.5 text-sm text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer"
+        >
+          Show all {sorted.length} officials
+        </button>
+      )}
     </div>
   );
 }

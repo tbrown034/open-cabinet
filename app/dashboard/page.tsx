@@ -10,7 +10,7 @@ import BuySellRatio from "../components/buy-sell-ratio";
 import SectorTreemap from "../components/sector-treemap";
 
 export const metadata: Metadata = {
-  title: "Dashboard — Open Cabinet",
+  title: "Overview — Open Cabinet",
   description:
     "Aggregate analysis of executive branch financial transactions.",
 };
@@ -97,8 +97,8 @@ export default async function DashboardPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <header className="mb-12">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900 mb-4">
-          Dashboard
+        <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">
+          Overview
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           Aggregate view of all executive branch financial transactions tracked

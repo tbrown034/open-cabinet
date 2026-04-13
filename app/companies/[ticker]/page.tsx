@@ -94,7 +94,7 @@ export default async function CompanyPage({
 
       <header className="mt-6 mb-12">
         <div className="flex items-baseline gap-3">
-          <h1 className="font-[family-name:var(--font-instrument-serif)] text-4xl text-neutral-900">
+          <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900">
             {company.ticker}
           </h1>
           <span className="text-neutral-500">{company.companyName}</span>

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Mono, Instrument_Serif } from "next/font/google";
+import { DM_Sans, DM_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import MobileNav from "./components/mobile-nav";
-import AuthButton from "./components/auth-button";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -16,10 +15,10 @@ const dmMono = DM_Mono({
   weight: ["400", "500"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -47,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${dmMono.variable} ${instrumentSerif.variable} antialiased`}
+      className={`${dmSans.variable} ${dmMono.variable} ${sourceSerif.variable} antialiased`}
     >
       <body className="bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
         {/* Thin accent bar — signals "publication" not "app" */}
@@ -66,28 +65,47 @@ export default function RootLayout({
             {/* Desktop nav — hidden on mobile */}
             <div className="hidden md:flex items-center gap-5 text-sm text-neutral-500">
               <Link href="/" className="hover:text-neutral-900 transition-colors">Directory</Link>
-              <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Dashboard</Link>
               <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
               <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
+              <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
               <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
-              <span className="text-neutral-200">|</span>
-              <AuthButton />
             </div>
 
-            {/* Mobile: auth + hamburger */}
-            <div className="flex md:hidden items-center gap-3">
-              <AuthButton />
+            {/* Mobile hamburger */}
+            <div className="flex md:hidden items-center">
               <MobileNav />
             </div>
           </nav>
         </header>
         <main>{children}</main>
-        <footer className="border-t border-neutral-200">
-          <div className="mx-auto max-w-5xl px-4 py-8">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-neutral-400 leading-relaxed">
-              <div>
+        <footer className="border-t border-neutral-200 bg-stone-50">
+          <div className="mx-auto max-w-5xl px-4 py-10">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
+              {/* Brand */}
+              <div className="flex items-center gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/logo-c.svg" alt="Open Cabinet" className="h-6 opacity-60" />
+                <p className="text-xs text-neutral-400">
+                  Executive branch stock tracker
+                </p>
+              </div>
+
+              {/* Nav */}
+              <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-neutral-500">
+                <Link href="/" className="hover:text-neutral-900 transition-colors">Directory</Link>
+                <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
+                <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
+                <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
+                <Link href="/download" className="hover:text-neutral-900 transition-colors">Download</Link>
+                <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+              </nav>
+            </div>
+
+            {/* Attribution + legal */}
+            <div className="mt-8 pt-6 border-t border-neutral-200 text-[11px] text-neutral-400 leading-relaxed space-y-3">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <p>
-                  Source:{" "}
+                  Data from the{" "}
                   <a
                     href="https://extapps2.oge.gov/201/Presiden.nsf"
                     className="underline hover:text-neutral-600"
@@ -96,21 +114,9 @@ export default function RootLayout({
                   >
                     U.S. Office of Government Ethics
                   </a>
-                  {" · "}
-                  <Link
-                    href="/download"
-                    className="underline hover:text-neutral-600"
-                  >
-                    Download data
-                  </Link>
+                  . For informational and journalism purposes only. Not investment advice.
                 </p>
-                <p className="mt-1">
-                  For informational and journalism purposes only. Not investment
-                  advice.
-                </p>
-              </div>
-              <div className="text-right">
-                <p>
+                <p className="whitespace-nowrap">
                   Built by{" "}
                   <a
                     href="https://trevorthewebdeveloper.com"
@@ -121,6 +127,31 @@ export default function RootLayout({
                     Trevor Brown
                   </a>
                 </p>
+              </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                <a
+                  href="https://github.com/tbrown034/open-cabinet"
+                  className="underline hover:text-neutral-600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source code
+                </a>
+                <a
+                  href="https://github.com/tbrown034/open-cabinet/issues"
+                  className="underline hover:text-neutral-600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Report a bug
+                </a>
+                <a
+                  href="mailto:trevorbrown.web@gmail.com"
+                  className="underline hover:text-neutral-600"
+                >
+                  Contact
+                </a>
+                <span>MIT License</span>
               </div>
             </div>
           </div>

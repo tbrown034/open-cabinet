@@ -78,18 +78,19 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
     .padding(2)
     .tile(treemapSquarify)(root);
 
-  // Muted, editorial color palette — not rainbow, not dashboard
+  // Muted editorial palette — distinct enough to read, not dashboard-rainbow.
+  // Each category gets its own hue so the treemap is scannable at a glance.
   const colorScale = scaleOrdinal<string>()
     .domain(data.map((d) => d.name))
     .range([
-      "#292524", // stone-800
-      "#44403c", // stone-700
-      "#57534e", // stone-600
-      "#78716c", // stone-500
-      "#a8a29e", // stone-400
-      "#d6d3d1", // stone-300
-      "#e7e5e4", // stone-200
-      "#f5f5f4", // stone-100
+      "#292524", // stone-800 (largest)
+      "#1e3a5f", // dark navy
+      "#5b4a3f", // warm brown
+      "#3d5a47", // forest green
+      "#6b4c5e", // muted plum
+      "#4a6670", // slate teal
+      "#7a6340", // bronze
+      "#5c5c7a", // dusty indigo
     ]);
 
   // After treemap() runs, each node has x0, y0, x1, y1 added.
@@ -126,8 +127,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
             const isSmall = w < 80 || h < 40;
             const isHovered = hovered === d.name;
             const color = colorScale(d.name);
-            const isLight =
-              color === "#d6d3d1" || color === "#e7e5e4" || color === "#f5f5f4" || color === "#a8a29e";
+            const isLight = false; // all colors are dark now — always use white text
 
             return (
               <g

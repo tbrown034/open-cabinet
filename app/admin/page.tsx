@@ -20,7 +20,7 @@ export default function AdminPage() {
   if (!session) {
     return (
       <div className="mx-auto max-w-md px-4 py-16">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-3xl text-neutral-900 mb-6">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-3xl text-neutral-900 mb-6">
           Admin
         </h1>
         <p className="text-neutral-500 text-sm mb-8">
@@ -51,7 +51,7 @@ export default function AdminPage() {
   if (!isAdmin) {
     return (
       <div className="mx-auto max-w-md px-4 py-16">
-        <h1 className="font-[family-name:var(--font-instrument-serif)] text-3xl text-neutral-900 mb-4">
+        <h1 className="font-[family-name:var(--font-source-serif)] text-3xl text-neutral-900 mb-4">
           Access Denied
         </h1>
         <p className="text-neutral-500 text-sm mb-6">
@@ -83,7 +83,7 @@ export default function AdminPage() {
     <div className="mx-auto max-w-5xl px-4 py-16">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-10">
         <div>
-          <h1 className="font-[family-name:var(--font-instrument-serif)] text-3xl text-neutral-900 mb-1">
+          <h1 className="font-[family-name:var(--font-source-serif)] text-3xl text-neutral-900 mb-1">
             Admin
           </h1>
           <p className="text-sm text-neutral-500">

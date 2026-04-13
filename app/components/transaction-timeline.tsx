@@ -153,15 +153,41 @@ function CompactGrid({
     margin.bottom;
 
   const dateLabel = formatDate(transactions[0].date);
+  const uniqueDates = new Set(transactions.map((tx) => tx.date));
+  const saleCount = transactions.filter((tx) => isSale(tx.type)).length;
+  const purchaseCount = transactions.filter((tx) => tx.type === "Purchase").length;
+  const isSingleDay = uniqueDates.size === 1;
+
+  // Build a human-readable description of what happened
+  let contextNote = "";
+  if (isSingleDay && transactions.length > 10) {
+    if (saleCount === transactions.length) {
+      contextNote = `All ${transactions.length} transactions were sales on a single day — consistent with a coordinated divestiture.`;
+    } else if (purchaseCount === transactions.length) {
+      contextNote = `All ${transactions.length} transactions were purchases on a single day.`;
+    } else {
+      contextNote = `${transactions.length} transactions filed on a single day — ${saleCount} sales and ${purchaseCount} purchases.`;
+    }
+  } else if (uniqueDates.size <= 3 && transactions.length > 10) {
+    contextNote = `${transactions.length} transactions across ${uniqueDates.size} days.`;
+  }
 
   return (
     <div ref={containerRef} className="relative mb-10">
-      <div className="flex items-baseline gap-3 mb-4">
-        <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
-          Transactions
-        </h2>
-        <span className="text-xs text-neutral-400">{dateLabel}</span>
+      <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-1">
+        {isSingleDay ? "Single-day filing" : "Transactions"}
+      </h2>
+      <div className="flex items-baseline gap-2 mb-2">
+        <span className="text-sm font-medium text-neutral-900">{dateLabel}</span>
+        <span className="text-xs text-neutral-400">
+          {transactions.length} transactions
+        </span>
       </div>
+      {contextNote && (
+        <p className="text-xs text-neutral-500 mb-4 max-w-md leading-relaxed">
+          {contextNote}
+        </p>
+      )}
 
       <svg width={width} height={totalHeight} className="overflow-visible">
         <g transform={`translate(${margin.left}, ${margin.top})`}>
@@ -437,7 +463,7 @@ function Tooltip({
 
 function Legend() {
   return (
-    <div className="flex gap-4 mt-3 text-xs text-neutral-400">
+    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-neutral-400">
       <div className="flex items-center gap-1.5">
         <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-70" />
         Sale
@@ -445,6 +471,13 @@ function Legend() {
       <div className="flex items-center gap-1.5">
         <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-70" />
         Purchase
+      </div>
+      <div className="flex items-center gap-1.5">
+        <span
+          className="inline-block w-2.5 h-2.5 rounded-full bg-neutral-300"
+          style={{ border: "2px solid #b45309" }}
+        />
+        Late filing
       </div>
       <div className="text-neutral-300">|</div>
       <div>Circle size = transaction amount</div>
