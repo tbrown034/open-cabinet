@@ -64,7 +64,7 @@ export default function RootLayout({
 
             {/* Desktop nav — hidden on mobile */}
             <div className="hidden md:flex items-center gap-5 text-sm text-neutral-500">
-              <Link href="/" className="hover:text-neutral-900 transition-colors">Directory</Link>
+              <Link href="/#directory" className="hover:text-neutral-900 transition-colors">Directory</Link>
               <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
               <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
               <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
@@ -94,7 +94,7 @@ export default function RootLayout({
 
               {/* Nav */}
               <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-neutral-500">
-                <Link href="/" className="hover:text-neutral-900 transition-colors">Directory</Link>
+                <Link href="/#directory" className="hover:text-neutral-900 transition-colors">Directory</Link>
                 <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
                 <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
                 <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>

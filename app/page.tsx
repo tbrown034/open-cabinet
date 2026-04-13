@@ -118,7 +118,7 @@ export default async function Home() {
       </div>
 
       {/* ── DIRECTORY PREVIEW ── */}
-      <div className="mx-auto max-w-5xl px-4 pb-6">
+      <div id="directory" className="mx-auto max-w-5xl px-4 pb-6 scroll-mt-20">
         <div className="flex items-end justify-between mb-4">
           <div>
             <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900">
