@@ -69,6 +69,7 @@ export default function RootLayout({
               <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
               <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
               <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
+              <Link href="/admin" className="hover:text-neutral-900 transition-colors text-neutral-300">Admin</Link>
             </div>
 
             {/* Mobile hamburger */}

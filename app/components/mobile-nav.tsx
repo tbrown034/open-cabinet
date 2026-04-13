@@ -10,6 +10,7 @@ const links = [
   { href: "/companies", label: "Companies" },
   { href: "/dashboard", label: "Overview" },
   { href: "/about", label: "About" },
+  { href: "/admin", label: "Admin" },
 ];
 
 export default function MobileNav() {
