@@ -92,8 +92,8 @@ pnpm run seed                  # Seed database from JSON files
 ## Setup
 
 ```bash
-git clone https://github.com/tbrown034/open-cabinet-.git
-cd open-cabinet-
+git clone https://github.com/tbrown034/open-cabinet.git
+cd open-cabinet
 pnpm install
 cp .env.example .env.local  # Fill in your API keys
 pnpm dev                    # http://localhost:3003

@@ -7,10 +7,10 @@ import SwimLaneChart from "../components/swim-lane-chart";
 export const metadata: Metadata = {
   title: "All Executive Branch Trades — Open Cabinet",
   description:
-    "Every executive branch transaction on one canvas. 2,100+ trades across 29 officials.",
+    "Every executive branch transaction on one canvas. 2,300+ trades across 34 officials.",
   openGraph: {
     title: "All Executive Branch Trades — Open Cabinet",
-    description: "Every reported transaction across 29 officials on one D3 visualization.",
+    description: "Every reported transaction across 34 officials on one D3 visualization.",
     type: "website",
   },
 };

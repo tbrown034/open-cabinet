@@ -12,7 +12,7 @@ const exports = [
     format: "CSV",
     description:
       "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate and late filing flag.",
-    rows: "2,118 rows",
+    rows: "2,320 rows",
   },
   {
     name: "Officials Summary",
@@ -28,7 +28,7 @@ const exports = [
     format: "JSON",
     description:
       "Complete structured dataset with all officials and their transactions. Suitable for programmatic analysis.",
-    rows: "29 officials, 2,118 transactions",
+    rows: "34 officials, 2,320 transactions",
   },
 ];
 
