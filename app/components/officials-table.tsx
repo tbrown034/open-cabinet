@@ -116,11 +116,11 @@ export default function OfficialsTable({
                     >
                       {displayName(official.name)}
                     </Link>
-                    <div className="text-xs text-neutral-400 mt-0.5">
+                    <div className="text-xs text-neutral-400 mt-0.5 hidden md:block">
                       {official.title}
                     </div>
                     <div className="text-xs text-neutral-400 mt-0.5 md:hidden">
-                      {official.agency}
+                      {official.title} · {official.agency}
                     </div>
                   </div>
                 </div>

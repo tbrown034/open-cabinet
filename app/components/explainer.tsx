@@ -13,7 +13,7 @@ const STEPS = [
     id: "disclosure",
     label: "Disclosure",
     title: "They file a financial report",
-    body: "The nominee submits a Public Financial Disclosure Report (OGE Form 278e) listing all assets, income sources, liabilities, and positions held. This is the baseline portrait of their financial life.",
+    body: "The nominee submits a Public Financial Disclosure Report (OGE Form 278e) listing all assets, income sources, liabilities and positions held. This is the baseline portrait of their financial life.",
   },
   {
     id: "ethics",
@@ -37,7 +37,7 @@ const STEPS = [
     id: "compliance",
     label: "Compliance",
     title: "The ethics office certifies",
-    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings, missed deadlines, and new purchases in regulated sectors all raise flags.",
+    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings, missed deadlines and new purchases in regulated sectors all raise flags.",
   },
 ];
 
@@ -258,7 +258,7 @@ export default function Explainer() {
               </div>
               <p className="text-neutral-500">
                 Each PDF is read and every transaction is extracted: asset name,
-                ticker, type (sale/purchase), date, amount range, and filing
+                ticker, type (sale/purchase), date, amount range and filing
                 status.
               </p>
             </div>
@@ -267,7 +267,7 @@ export default function Explainer() {
                 3. Data becomes searchable
               </div>
               <p className="text-neutral-500">
-                Structured data powers timelines, company lookups, and aggregate
+                Structured data powers timelines, company lookups and aggregate
                 analysis. Currently tracking 29 officials with 2,100+
                 transactions.
               </p>

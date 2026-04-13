@@ -6,7 +6,7 @@ import FeedbackForm from "../components/feedback-form";
 export const metadata: Metadata = {
   title: "About — Open Cabinet",
   description:
-    "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings, and how this tool was built.",
+    "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",
 };
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           An accountability tool that parses executive branch transaction
-          data into searchable, sortable, and visual formats — something no
+          data into searchable, sortable and visual formats — something no
           public tool has done before.
         </p>
         <p className="text-xs text-neutral-400 mt-3">Last updated April 2026</p>
@@ -36,7 +36,7 @@ export default function AboutPage() {
           </h2>
           <p className="text-neutral-400 text-sm mb-10">
             Key facts about executive branch financial disclosure, sourced from
-            federal law, OGE data, and published investigations.
+            federal law, OGE data and published investigations.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -48,9 +48,9 @@ export default function AboutPage() {
                 The penalty for filing a stock trade disclosure late. It{"'"}s
                 routinely waived.
               </div>
-              <div className="text-[10px] text-neutral-500">
+              <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
                 5 U.S.C. Section 13106(a)
-              </div>
+              </a>
             </div>
 
             <div className="border border-neutral-700 p-5">
@@ -61,9 +61,9 @@ export default function AboutPage() {
                 Criminal prosecutions ever brought under the STOCK Act{"'"}s
                 insider trading provisions.
               </div>
-              <div className="text-[10px] text-neutral-500">
-                Campaign Legal Center, Georgetown Law (2021)
-              </div>
+              <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
+                Campaign Legal Center; Georgetown Law (2021)
+              </a>
             </div>
 
             <div className="border border-neutral-700 p-5">
@@ -74,9 +74,9 @@ export default function AboutPage() {
                 Floor debate before Congress gutted the STOCK Act{"'"}s online
                 disclosure database in 2013.
               </div>
-              <div className="text-[10px] text-neutral-500">
-                S.716, 113th Congress (Roll Call, April 2013)
-              </div>
+              <a href="https://www.congress.gov/bill/113th-congress/senate-bill/716" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
+                S.716, 113th Congress
+              </a>
             </div>
 
             <div className="border border-neutral-700 p-5">
@@ -88,7 +88,9 @@ export default function AboutPage() {
                 executive branch had zero.
               </div>
               <div className="text-[10px] text-neutral-500">
-                Capitol Trades, Quiver, Unusual Whales, et al.
+                <a href="https://www.capitoltrades.com" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Capitol Trades</a>,{" "}
+                <a href="https://www.quiverquant.com" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Quiver</a>,{" "}
+                <a href="https://unusualwhales.com/politics" className="hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">Unusual Whales</a>, et al.
               </div>
             </div>
 
@@ -100,9 +102,9 @@ export default function AboutPage() {
                 OGE directors in a single year (2025). The Senate-confirmed
                 director was removed by email on a Friday night.
               </div>
-              <div className="text-[10px] text-neutral-500">
-                CNN, CREW (February 2025)
-              </div>
+              <a href="https://www.citizensforethics.org/reports-investigations/crew-investigations/trumps-unprecedented-meddling-has-turned-oge-into-a-revolving-door/" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
+                CREW (February 2025)
+              </a>
             </div>
 
             <div className="border border-neutral-700 p-5">
@@ -113,9 +115,9 @@ export default function AboutPage() {
                 Capital gains tax deferred by Rex Tillerson when he divested
                 from ExxonMobil to become Secretary of State.
               </div>
-              <div className="text-[10px] text-neutral-500">
-                26 U.S.C. Section 1043; CNBC (March 2018)
-              </div>
+              <a href="https://www.law.cornell.edu/uscode/text/26/1043" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
+                26 U.S.C. Section 1043
+              </a>
             </div>
           </div>
         </div>
@@ -227,7 +229,7 @@ export default function AboutPage() {
             </a>
             , investigative data journalist turned web developer. 15 years of
             political reporting, including six years covering elections, dark
-            money, financial disclosures, and government accountability at
+            money, financial disclosures and government accountability at
             Oklahoma Watch. This project bridges both worlds — journalism
             instinct driving a developer tool.
           </p>
@@ -281,7 +283,7 @@ export default function AboutPage() {
               <p className="text-neutral-500 mt-0.5">
                 Built by Trevor Brown with the assistance of Claude Code
                 (claude-opus-4-6), Anthropic{"'"}s CLI development tool.
-                Architecture, design, and editorial decisions are
+                Architecture, design and editorial decisions are
                 human-directed.
               </p>
             </div>
@@ -306,7 +308,7 @@ export default function AboutPage() {
             Download the data
           </h2>
           <p className="text-neutral-600 leading-relaxed">
-            The full dataset is available for journalists, researchers, and
+            The full dataset is available for journalists, researchers and
             anyone who wants to work with it.{" "}
             <Link
               href="/download"
@@ -314,7 +316,7 @@ export default function AboutPage() {
             >
               Download as CSV or JSON
             </Link>
-            . Includes all transactions, official metadata, and ticker
+            . Includes all transactions, official metadata and ticker
             mappings. Federal government data carries no copyright.
           </p>
         </section>
@@ -334,7 +336,7 @@ export default function AboutPage() {
             >
               MIT License
             </a>
-            . The code, data pipeline, and research are available on{" "}
+            . The code, data pipeline and research are available on{" "}
             <a
               href="https://github.com/tbrown034/open-cabinet"
               className="underline hover:text-neutral-900"

@@ -27,7 +27,7 @@ const LAW_STEPS = [
     id: "extensions",
     label: "Extensions",
     title: "Deadlines can be extended",
-    body: "OGE can grant extensions on divestiture deadlines. Some assets — especially private equity, real estate LLCs, and illiquid holdings — take longer to sell. Officials must request the extension and demonstrate good-faith effort. The ethics agreement remains binding.",
+    body: "OGE can grant extensions on divestiture deadlines. Some assets — especially private equity, real estate LLCs and illiquid holdings — take longer to sell. Officials must request the extension and demonstrate good-faith effort. The ethics agreement remains binding.",
   },
   {
     id: "late-filings",
@@ -50,7 +50,7 @@ const BUILD_STEPS = [
     id: "oge-api",
     label: "OGE API",
     title: "Start with the public records",
-    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers. It returns 16,857 records — names, titles, agencies, filing types, and links to PDF documents. No authentication required. This is the entry point.",
+    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers. It returns 16,857 records — names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
   },
   {
     id: "filter",
@@ -62,13 +62,13 @@ const BUILD_STEPS = [
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range, and whether the filing was late. We parse these using Claude Sonnet via the Anthropic API, with OpenAI GPT-5.4 as a cross-provider verification check. Two different companies extracting the same data = highest confidence.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We parse these using Claude Sonnet via the Anthropic API, with OpenAI GPT-5.4 as a cross-provider verification check. Two different companies extracting the same data = highest confidence.",
   },
   {
     id: "validate",
     label: "Validate",
     title: "Six layers of verification",
-    body: "Every parsed transaction runs through schema validation (valid types, amounts, dates), ticker checks, golden file regression tests against manually verified data, confidence scoring, and anomaly detection. The validation suite must pass before data goes live. Five golden files cover officials from 2 to 389 transactions.",
+    body: "Every parsed transaction runs through schema validation (valid types, amounts, dates), ticker checks, golden file regression tests against manually verified data, confidence scoring and anomaly detection. The validation suite must pass before data goes live. Five golden files cover officials from 2 to 389 transactions.",
   },
   {
     id: "store",
@@ -80,13 +80,13 @@ const BUILD_STEPS = [
     id: "build-viz",
     label: "Visualize",
     title: "Turn rows into timelines",
-    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 2,300+ trades on one canvas, treemaps for asset categories, and bar charts for company lookups. D3 computes the math; React renders the SVG.",
+    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 2,300+ trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
   },
   {
     id: "monitor",
     label: "Monitor",
     title: "Weekly checks with email alerts",
-    body: "A Vercel Cron job checks the OGE API weekly for new filings. The pipeline parses new PDFs, validates the data, and inserts it into the database. Email alerts notify the admin of new filings, errors, credit exhaustion, or low-confidence parses. A public feedback form lets anyone report data errors.",
+    body: "A Vercel Cron job checks the OGE API weekly for new filings. The pipeline parses new PDFs, validates the data and inserts it into the database. Email alerts notify the admin of new filings, errors, credit exhaustion, or low-confidence parses. A public feedback form lets anyone report data errors.",
   },
   {
     id: "ai-role",
@@ -249,7 +249,7 @@ export default function AboutScrolly() {
       <section className="bg-stone-50 -mx-0 py-16">
         <ScrollySection
           title="The law and the deadlines"
-          subtitle="What the STOCK Act requires, how divestiture works, and what happens when officials miss their deadlines."
+          subtitle="What the STOCK Act requires, how divestiture works and what happens when officials miss their deadlines."
           steps={LAW_STEPS}
         />
       </section>

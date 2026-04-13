@@ -48,7 +48,7 @@ export default async function Home() {
               Senior officials must disclose individual stock trades and
               potential conflicts of interest, but the filings are scattered
               across PDFs and hard to search. Open Cabinet makes them
-              sortable, searchable, and visual.
+              sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
               Updated{" "}
@@ -126,7 +126,7 @@ export default async function Home() {
             </h2>
             <p className="text-xs text-neutral-400 mt-1">
               Executive Level I and II officials — cabinet secretaries, agency
-              heads, and senior appointees confirmed by the Senate.
+              heads and senior appointees confirmed by the Senate.
             </p>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default async function Home() {
               Form 201 requests
             </a>{" "}
             from OGE, including officials like Dr. Oz, Jeanine Pirro, Kelly
-            Loeffler, and Kash Patel.
+            Loeffler and Kash Patel.
           </p>
           <p className="mt-2">
             This is an{" "}
@@ -230,7 +230,7 @@ export default async function Home() {
                   How This Works
                 </div>
                 <p className="text-xs text-neutral-500 mt-1">
-                  The STOCK Act, divestiture deadlines, and how we built this
+                  The STOCK Act, divestiture deadlines and how we built this
                   tracker from OGE data.
                 </p>
               </div>
@@ -254,7 +254,7 @@ export default async function Home() {
             </h2>
             <p className="text-sm text-neutral-500 mb-1">
               Published reporting on executive branch financial conflicts from
-              ProPublica, CNBC, NOTUS, and other outlets.
+              ProPublica, CNBC, NOTUS and other outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
               Collected via AI-assisted search. Checked daily. Last updated{" "}
