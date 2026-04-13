@@ -20,7 +20,7 @@ const exports = [
     format: "CSV",
     description:
       "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count and estimated total value.",
-    rows: "29 rows",
+    rows: "34 rows",
   },
   {
     name: "Full Dataset",
