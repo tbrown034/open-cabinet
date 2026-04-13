@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Late Filings — Open Cabinet",
   description:
-    "563 late financial disclosures across 29 executive branch officials. Who's missing deadlines and what it means.",
+    "Late financial disclosures across executive branch officials. Who's missing deadlines and what it means.",
 };
 
 function isSale(type: string): boolean {
