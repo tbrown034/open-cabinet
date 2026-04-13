@@ -235,16 +235,30 @@ export default function AdminPage() {
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
           Pipeline Status
         </h2>
-        <div className="bg-stone-50 border border-neutral-200 p-4 mb-4 text-sm">
-          <p className="text-neutral-600 mb-2">
-            Run the pipeline locally:
-          </p>
-          <code className="text-xs font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-            pnpm run pipeline
-          </code>
-          <span className="text-xs text-neutral-400 ml-2">
-            or with --dry-run / --verify
-          </span>
+        <div className="bg-stone-50 border border-neutral-200 p-4 mb-4 text-sm space-y-3">
+          <div>
+            <div className="text-neutral-900 font-medium text-xs mb-1">Automated</div>
+            <p className="text-neutral-500 text-xs">
+              Runs weekly (Monday 6 AM ET) via GitHub Actions. Can also be triggered manually from the{" "}
+              <a href="https://github.com/tbrown034/open-cabinet/actions" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Actions tab</a>.
+            </p>
+          </div>
+          <div>
+            <div className="text-neutral-900 font-medium text-xs mb-1">Manual (local)</div>
+            <div className="flex flex-wrap gap-2">
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run pipeline</code>
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run pipeline -- --dry-run</code>
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run pipeline -- --verify</code>
+            </div>
+          </div>
+          <div>
+            <div className="text-neutral-900 font-medium text-xs mb-1">Other commands</div>
+            <div className="flex flex-wrap gap-2">
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run validate</code>
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run check-news</code>
+              <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">pnpm run parse-pdf &lt;file&gt;</code>
+            </div>
+          </div>
         </div>
 
         {runs.length > 0 ? (

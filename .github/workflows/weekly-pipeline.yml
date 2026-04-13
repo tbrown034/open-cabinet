@@ -1,16 +1,19 @@
-# Daily OGE Filing Check
-# Runs at 6 AM ET (10:00 UTC) every day.
+# Weekly OGE Filing Check
+# Runs Monday at 6 AM ET (10:00 UTC).
 # Checks for new 278-T filings, parses with Claude Sonnet,
 # validates, and inserts into Neon PostgreSQL.
 #
-# Estimated daily cost: $0-0.10 (0-3 new PDFs typical)
-# Monthly cost: ~$1-3
+# Filings are relatively rare (1-2 per week). Weekly is sufficient
+# and avoids burning API credits on empty checks.
+#
+# Estimated weekly cost: $0-0.15 (0-5 new PDFs typical)
+# Monthly cost: ~$0.50-1
 
-name: Daily Pipeline
+name: Weekly Pipeline
 
 on:
   schedule:
-    - cron: "0 10 * * *" # 6 AM ET / 10 AM UTC
+    - cron: "0 10 * * 1" # Monday 6 AM ET / 10 AM UTC
   workflow_dispatch: # Allow manual triggers from GitHub UI
 
 jobs:
