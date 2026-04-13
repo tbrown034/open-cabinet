@@ -12,7 +12,8 @@
     "generate-exports": "npx tsx scripts/generate-exports.ts",
     "seed": "npx tsx scripts/seed-from-json.ts",
     "validate": "npx tsx scripts/validate.ts",
-    "parse-pdf": "npx tsx scripts/parse-pdf.ts"
+    "parse-pdf": "npx tsx scripts/parse-pdf.ts",
+    "pipeline": "npx tsx scripts/pipeline.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.88.0",
