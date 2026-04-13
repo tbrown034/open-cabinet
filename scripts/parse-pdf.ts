@@ -19,6 +19,7 @@
  */
 import { readFile, writeFile } from "fs/promises";
 import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
@@ -87,19 +88,31 @@ Return ONLY a JSON array of transaction objects. No markdown, no explanation, no
 
 // ── PARSER ──
 
-type ModelChoice = "claude-sonnet-4-6" | "claude-haiku-4-5" | "claude-opus-4-6";
+type ModelChoice =
+  | "claude-sonnet-4-6"
+  | "claude-haiku-4-5"
+  | "claude-opus-4-6"
+  | "gpt-5.4-mini"
+  | "gpt-5.4-nano";
 
 // Cost per million tokens by model
-const MODEL_COSTS: Record<ModelChoice, { input: number; output: number }> = {
-  "claude-sonnet-4-6": { input: 3.0, output: 15.0 },
-  "claude-haiku-4-5": { input: 1.0, output: 5.0 },
-  "claude-opus-4-6": { input: 5.0, output: 25.0 },
+const MODEL_COSTS: Record<ModelChoice, { input: number; output: number; provider: "anthropic" | "openai" }> = {
+  "claude-sonnet-4-6": { input: 3.0, output: 15.0, provider: "anthropic" },
+  "claude-haiku-4-5": { input: 1.0, output: 5.0, provider: "anthropic" },
+  "claude-opus-4-6": { input: 5.0, output: 25.0, provider: "anthropic" },
+  "gpt-5.4-mini": { input: 0.75, output: 4.5, provider: "openai" },
+  "gpt-5.4-nano": { input: 0.20, output: 1.25, provider: "openai" },
 };
 
 async function parsePdf(
   pdfPath: string,
   modelOverride?: ModelChoice
 ): Promise<ParseResult> {
+  // Route to OpenAI if an OpenAI model is selected
+  if (modelOverride?.startsWith("gpt-")) {
+    return parseWithOpenAI(pdfPath, modelOverride as "gpt-5.4-mini" | "gpt-5.4-nano");
+  }
+
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     throw new Error("ANTHROPIC_API_KEY must be set in .env.local");
@@ -301,14 +314,18 @@ async function main() {
     console.log("Options:");
     console.log("  --model=claude-sonnet-4-6  Model to use (default: sonnet)");
     console.log("  --model=claude-haiku-4-5   Cheaper, less accurate");
-    console.log("  --model=claude-opus-4-6    Most accurate, highest cost");
-    console.log("  --verify                   Parse with default model then verify with opus");
+    console.log("  --model=claude-opus-4-6    Most accurate Anthropic model");
+    console.log("  --model=gpt-5.4-mini       OpenAI cross-provider check");
+    console.log("  --model=gpt-5.4-nano       OpenAI cheapest option");
+    console.log("  --verify                   Parse then cross-check with different provider");
     console.log("");
     console.log("Projected costs per PDF:");
-    console.log("  Haiku:  ~$0.01   (good for clean PDFs)");
-    console.log("  Sonnet: ~$0.04   (default — best accuracy/cost)");
-    console.log("  Opus:   ~$0.06   (verification / complex PDFs)");
-    console.log("  Batch:  50% off  (use createBatch() for bulk)");
+    console.log("  Haiku:      ~$0.01   (Anthropic, clean PDFs)");
+    console.log("  Sonnet:     ~$0.02   (Anthropic, default — best accuracy/cost)");
+    console.log("  Opus:       ~$0.06   (Anthropic, complex PDFs)");
+    console.log("  GPT-5.4m:   ~$0.01   (OpenAI, cross-provider verify)");
+    console.log("  GPT-5.4n:   ~$0.003  (OpenAI, cheapest)");
+    console.log("  Batch:      50% off  (both providers)");
     process.exit(1);
   }
 
@@ -357,15 +374,21 @@ async function main() {
   await writeFile(outputPath, JSON.stringify(result, null, 2));
   console.log(`\nOutput: ${outputPath}`);
 
-  // Verification pass with a second model
+  // Verification pass with a different provider for cross-check
   if (verifyFlag) {
-    console.log(`\n--- Verification Pass (Opus) ---`);
-    const verifyResult = await parsePdf(pdfPath, "claude-opus-4-6");
+    const useOpenAI = !!process.env.OPENAI_API_KEY;
+    const verifyProvider = useOpenAI ? "OpenAI GPT-5.4-mini" : "Claude Opus";
+    console.log(`\n--- Verification Pass (${verifyProvider}) ---`);
+
+    const verifyResult = useOpenAI
+      ? await parseWithOpenAI(pdfPath, "gpt-5.4-mini")
+      : await parsePdf(pdfPath, "claude-opus-4-6");
+
     console.log(
       `Verification: ${verifyResult.transactions.length} transactions`
     );
     console.log(
-      `Cost: $${verifyResult.tokenUsage.estimatedCostUsd} (Opus)`
+      `Cost: $${verifyResult.tokenUsage.estimatedCostUsd} (${verifyResult.model})`
     );
 
     const diff = diffParseResults(result, verifyResult);
@@ -386,6 +409,83 @@ async function main() {
       `\nTotal cost: $${(result.tokenUsage.estimatedCostUsd + verifyResult.tokenUsage.estimatedCostUsd).toFixed(4)} (primary + verification)`
     );
   }
+}
+
+// ── OPENAI PARSING ──
+// Cross-provider verification: parse with GPT as a second opinion
+
+async function parseWithOpenAI(
+  pdfPath: string,
+  model: "gpt-5.4-mini" | "gpt-5.4-nano" = "gpt-5.4-mini"
+): Promise<ParseResult> {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new Error("OPENAI_API_KEY must be set in .env.local for OpenAI parsing");
+  }
+
+  const client = new OpenAI({ apiKey });
+  const pdfBuffer = await readFile(pdfPath);
+  const pdfBase64 = pdfBuffer.toString("base64");
+
+  console.log(
+    `  Sending PDF to OpenAI ${model} (${(pdfBuffer.length / 1024).toFixed(0)} KB)...`
+  );
+
+  const response = await client.chat.completions.create({
+    model,
+    max_completion_tokens: 16000,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "file",
+            file: {
+              filename: "filing.pdf",
+              file_data: `data:application/pdf;base64,${pdfBase64}`,
+            },
+          } as any, // OpenAI SDK types may not include file type yet
+          {
+            type: "text",
+            text: EXTRACTION_PROMPT,
+          },
+        ],
+      },
+    ],
+  });
+
+  const rawText = response.choices[0]?.message?.content?.trim() || "";
+  let cleaned = rawText;
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
+  }
+
+  let parsed: ParsedTransaction[];
+  try {
+    parsed = JSON.parse(cleaned);
+  } catch (err) {
+    console.error("Failed to parse OpenAI JSON response:");
+    console.error(cleaned.substring(0, 500));
+    throw new Error(`JSON parse failed: ${err}`);
+  }
+
+  const inputTokens = response.usage?.prompt_tokens || 0;
+  const outputTokens = response.usage?.completion_tokens || 0;
+  const pricing = MODEL_COSTS[model];
+  const costUsd =
+    (inputTokens / 1_000_000) * pricing.input +
+    (outputTokens / 1_000_000) * pricing.output;
+
+  return {
+    transactions: parsed,
+    tokenUsage: {
+      inputTokens,
+      outputTokens,
+      estimatedCostUsd: Math.round(costUsd * 10000) / 10000,
+    },
+    model,
+    pdfPath,
+  };
 }
 
 // ── BATCH PARSING ──
@@ -446,7 +546,7 @@ async function createBatch(items: BatchItem[]): Promise<string> {
 }
 
 // Export for use by other scripts (pipeline orchestrator)
-export { parsePdf, createBatch, quickValidate, diffParseResults, VALID_TYPES, VALID_AMOUNTS, MODEL_COSTS };
+export { parsePdf, parseWithOpenAI, createBatch, quickValidate, diffParseResults, VALID_TYPES, VALID_AMOUNTS, MODEL_COSTS };
 export type { ParsedTransaction, ParseResult, BatchItem, ModelChoice };
 
 // Run CLI if invoked directly (not when imported by other scripts)
