@@ -117,9 +117,15 @@ export default function OfficialsTable({
                       {displayName(official.name)}
                     </Link>
                     <div className="text-xs text-neutral-400 mt-0.5 hidden md:block">
+                      {official.departedDate && (
+                        <span className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1">Former</span>
+                      )}
                       {official.title}
                     </div>
                     <div className="text-xs text-neutral-400 mt-0.5 md:hidden">
+                      {official.departedDate && (
+                        <span className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1">Former</span>
+                      )}
                       {official.title} · {official.agency}
                     </div>
                   </div>

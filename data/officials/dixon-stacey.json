@@ -7,118 +7,896 @@
   "filingType": "278-T Periodic Transaction Report",
   "mostRecentFilingDate": "2025-02-10",
   "transactions": [
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Purchase", "date": "2025-01-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Purchase", "date": "2025-01-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Core Aggressive Allo (AOA)", "ticker": "AOA", "type": "Sale", "date": "2025-01-27", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American Inv Co of Amer F2 (ICAFX)", "ticker": "ICAFX", "type": "Purchase", "date": "2024-01-11", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "iShares Core Aggressive Allo (AOA)", "ticker": "AOA", "type": "Purchase", "date": "2024-12-27", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Purchase", "date": "2024-02-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American Inv Co of Amer F2 (ICAFX)", "ticker": "ICAFX", "type": "Purchase", "date": "2024-02-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American Inv Co of Amer F2 (ICAFX)", "ticker": "ICAFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Balanced F2 (AMBFX)", "ticker": "AMBFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Inc Builder F2 (CAIFX)", "ticker": "CAIFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Global Insight F2 (AGVGX)", "ticker": "AGVGX", "type": "Purchase", "date": "2024-05-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Small Cap World F2 (SMCFX)", "ticker": "SMCFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American WA Mutual F2 (WMFFX)", "ticker": "WMFFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Inc Builder F2 (CAIFX)", "ticker": "CAIFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Inc Builder F2 (CAIFX)", "ticker": "CAIFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American GW Fd of America F2 (GFFFX)", "ticker": "GFFFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Balanced F2 (AMBFX)", "ticker": "AMBFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Balanced F2 (AMBFX)", "ticker": "AMBFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American WA Mutual F2 (WMFFX)", "ticker": "WMFFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Small Cap World F2 (SMCFX)", "ticker": "SMCFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Small Cap World F2 (SMCFX)", "ticker": "SMCFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Multi Sector Inc F2 (MIAYX)", "ticker": "MIAYX", "type": "Purchase", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American GW Fd of America F2 (GFFFX)", "ticker": "GFFFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Multi Sector Inc F2 (MIAYX)", "ticker": "MIAYX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American GW Fd of America F2 (GFFFX)", "ticker": "GFFFX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Global Insight F2 (AGVGX)", "ticker": "AGVGX", "type": "Purchase", "date": "2024-11-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Multi Sector Inc F2 (MIAYX)", "ticker": "MIAYX", "type": "Purchase", "date": "2024-02-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Inv Co of Amer F2 (ICAFX)", "ticker": "ICAFX", "type": "Purchase", "date": "2024-12-19", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Purchase", "date": "2024-12-19", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Core Aggressive Allo (AOA)", "ticker": "AOA", "type": "Purchase", "date": "2024-01-02", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American WA Mutual F2 (WMFFX)", "ticker": "WMFFX", "type": "Purchase", "date": "2024-12-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American GW Fd of America F2 (GFFFX)", "ticker": "GFFFX", "type": "Purchase", "date": "2024-12-19", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Inc Builder F2 (CAIFX)", "ticker": "CAIFX", "type": "Purchase", "date": "2024-12-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Balanced F2 (AMBFX)", "ticker": "AMBFX", "type": "Purchase", "date": "2024-12-19", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Core Aggressive Allo (AOA)", "ticker": "AOA", "type": "Sale", "date": "2024-01-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Sale", "date": "2024-12-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Sale", "date": "2024-12-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Sale", "date": "2024-05-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Core Aggressive Allo (AOA)", "ticker": "AOA", "type": "Sale", "date": "2024-01-11", "amount": "$50,001-$100,000", "lateFilingFlag": false },
-    { "description": "DoorDash Inc Cl A (DASH)", "ticker": "DASH", "type": "Purchase", "date": "2021-08-10", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Spotify Technology SA (SPOT)", "ticker": "SPOT", "type": "Sale", "date": "2021-08-10", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Roblox Corp Cl A (RBLX)", "ticker": "RBLX", "type": "Purchase", "date": "2021-08-09", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Veeva Sys Inc Cl A (VEEV)", "ticker": "VEEV", "type": "Sale", "date": "2021-08-09", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Okta, Inc Cl A (OKTA)", "ticker": "OKTA", "type": "Sale", "date": "2021-07-26", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Snowflake Inc Cl A (SNOW)", "ticker": "SNOW", "type": "Purchase", "date": "2021-07-16", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Royalty Pharma PLC Shs Class A (RPRX)", "ticker": "RPRX", "type": "Purchase", "date": "2021-07-16", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Russell 1000 Grw ETF (IWF)", "ticker": "IWF", "type": "Sale", "date": "2021-07-16", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Chewy Inc Cl A (CHWY)", "ticker": "CHWY", "type": "Sale", "date": "2021-06-21", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Snowflake Inc Cl A (SNOW)", "ticker": "SNOW", "type": "Sale", "date": "2021-06-15", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Royalty Pharma PLC Shs Class A (RPRX)", "ticker": "RPRX", "type": "Sale", "date": "2021-06-15", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Russell 1000 Grw ETF (IWF)", "ticker": "IWF", "type": "Purchase", "date": "2021-06-15", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Uber Technologies Inc (UBER)", "ticker": "UBER", "type": "Sale", "date": "2021-05-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Netflix Inc (NFLX)", "ticker": "NFLX", "type": "Sale", "date": "2021-05-10", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Cloudflare Inc Cl A (NET)", "ticker": "NET", "type": "Purchase", "date": "2021-04-27", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Cloudflare Inc Cl A (NET)", "ticker": "NET", "type": "Purchase", "date": "2021-04-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Facebook Inc Cl-A (FB)", "ticker": "FB", "type": "Sale", "date": "2021-04-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "DoorDash Inc Cl A (DASH)", "ticker": "DASH", "type": "Purchase", "date": "2021-04-16", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "iShares Russell 1000 Grw ETF (IWF)", "ticker": "IWF", "type": "Sale", "date": "2021-04-16", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Inc Builder F2 (CAIFX)", "ticker": "CAIFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Cap Wrld Gr & Inc F2 (WGIFX)", "ticker": "WGIFX", "type": "Purchase", "date": "2021-08-23", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American GW Fd of America F2 (GFFFX)", "ticker": "GFFFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Balanced F2 (AMBFX)", "ticker": "AMBFX", "type": "Purchase", "date": "2021-08-23", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American Small Cap World F2 (SMCFX)", "ticker": "SMCFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Inv Co of Amer F2 (ICAFX)", "ticker": "ICAFX", "type": "Purchase", "date": "2021-08-23", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "American WA Mutual F2 (WMFFX)", "ticker": "WMFFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "American Bd Fd of America F2 (ABNFX)", "ticker": "ABNFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Strategic Bond F2 (ANBFX)", "ticker": "ANBFX", "type": "Purchase", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "10X Genomics Inc Cl A (TXG)", "ticker": "TXG", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Airbnb Inc Cl A (ABNB)", "ticker": "ABNB", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Carvana Co Cl A (CVNA)", "ticker": "CVNA", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Cloudflare Inc Cl A (NET)", "ticker": "NET", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Coupa Software Inc (COUP)", "ticker": "COUP", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "CrowdStrike Hldgs Inc Cl A (CRWD)", "ticker": "CRWD", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Datadog Inc Cl A (DDOG)", "ticker": "DDOG", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Dexcom Inc (DXCM)", "ticker": "DXCM", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "DocuSign Inc (DOCU)", "ticker": "DOCU", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "DoorDash Inc Cl A (DASH)", "ticker": "DASH", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Illumina Inc (ILMN)", "ticker": "ILMN", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Moderna Inc (MRNA)", "ticker": "MRNA", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "MongoDB Inc Cl A (MDB)", "ticker": "MDB", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "NVIDIA Corporation (NVDA)", "ticker": "NVDA", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Okta, Inc Cl A (OKTA)", "ticker": "OKTA", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Pinterest Inc Cl A (PINS)", "ticker": "PINS", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Roblox Corp Cl A (RBLX)", "ticker": "RBLX", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Royalty Pharma PLC Shs Class A (RPRX)", "ticker": "RPRX", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Sea Limited ADR (SE)", "ticker": "SE", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Shopify Inc (SHOP)", "ticker": "SHOP", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Snap Inc. Cl A (SNAP)", "ticker": "SNAP", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Snowflake Inc Cl A (SNOW)", "ticker": "SNOW", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Spotify Technology SA (SPOT)", "ticker": "SPOT", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Square Inc Class A (SQ)", "ticker": "SQ", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Trade Desk Inc Class A (TTD)", "ticker": "TTD", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Twilio Inc Cl A (TWLO)", "ticker": "TWLO", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Twitter Inc (TSTR)", "ticker": "TSTR", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Uber Technologies Inc (UBER)", "ticker": "UBER", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Unity Software Inc (U)", "ticker": "U", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Veeva Sys Inc Cl A (VEEV)", "ticker": "VEEV", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Wayfair Inc (W)", "ticker": "W", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Zillow Group Inc Cl C Cap Stk (Z)", "ticker": "Z", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Zoom Video Communications-A (ZM)", "ticker": "ZM", "type": "Sale (Full)", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Intuitive Surgical Inc (ISRG)", "ticker": "ISRG", "type": "Sale (Full)", "date": "2021-08-12", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Unity Software Inc (U)", "ticker": "U", "type": "Purchase", "date": "2021-08-11", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Amazon.com, Inc. (AMZN)", "ticker": "AMZN", "type": "Sale", "date": "2021-08-23", "amount": "$1,001-$15,000", "lateFilingFlag": false }
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2025-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2025-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Aggressive Allo (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2025-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Inv Co of Amer F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Aggressive Allo (AOA)",
+      "ticker": "AOA",
+      "type": "Purchase",
+      "date": "2024-12-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Inv Co of Amer F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Inv Co of Amer F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Balanced F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Inc Builder F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Global Insight F2 (AGVGX)",
+      "ticker": "AGVGX",
+      "type": "Purchase",
+      "date": "2024-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Small Cap World F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American WA Mutual F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Inc Builder F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Inc Builder F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American GW Fd of America F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Balanced F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Balanced F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American WA Mutual F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Small Cap World F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Small Cap World F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Multi Sector Inc F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American GW Fd of America F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Multi Sector Inc F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American GW Fd of America F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Global Insight F2 (AGVGX)",
+      "ticker": "AGVGX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Multi Sector Inc F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Inv Co of Amer F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Aggressive Allo (AOA)",
+      "ticker": "AOA",
+      "type": "Purchase",
+      "date": "2024-01-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American WA Mutual F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-12-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American GW Fd of America F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Inc Builder F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-12-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Balanced F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Aggressive Allo (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Sale",
+      "date": "2024-12-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Sale",
+      "date": "2024-12-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Sale",
+      "date": "2024-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Aggressive Allo (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2024-01-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DoorDash Inc Cl A (DASH)",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Spotify Technology SA (SPOT)",
+      "ticker": "SPOT",
+      "type": "Sale",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Roblox Corp Cl A (RBLX)",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Veeva Sys Inc Cl A (VEEV)",
+      "ticker": "VEEV",
+      "type": "Sale",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc Cl A (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2021-07-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Snowflake Inc Cl A (SNOW)",
+      "ticker": "SNOW",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Royalty Pharma PLC Shs Class A (RPRX)",
+      "ticker": "RPRX",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Russell 1000 Grw ETF (IWF)",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Chewy Inc Cl A (CHWY)",
+      "ticker": "CHWY",
+      "type": "Sale",
+      "date": "2021-06-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Snowflake Inc Cl A (SNOW)",
+      "ticker": "SNOW",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Royalty Pharma PLC Shs Class A (RPRX)",
+      "ticker": "RPRX",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Russell 1000 Grw ETF (IWF)",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Uber Technologies Inc (UBER)",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2021-05-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Netflix Inc (NFLX)",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": "2021-05-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Cloudflare Inc Cl A (NET)",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Cloudflare Inc Cl A (NET)",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Facebook Inc Cl-A (FB)",
+      "ticker": "FB",
+      "type": "Sale",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DoorDash Inc Cl A (DASH)",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Russell 1000 Grw ETF (IWF)",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Inc Builder F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Cap Wrld Gr & Inc F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American GW Fd of America F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Balanced F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Small Cap World F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Inv Co of Amer F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American WA Mutual F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "American Bd Fd of America F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Strategic Bond F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "10X Genomics Inc Cl A (TXG)",
+      "ticker": "TXG",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Airbnb Inc Cl A (ABNB)",
+      "ticker": "ABNB",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Carvana Co Cl A (CVNA)",
+      "ticker": "CVNA",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Cloudflare Inc Cl A (NET)",
+      "ticker": "NET",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coupa Software Inc (COUP)",
+      "ticker": "COUP",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "CrowdStrike Hldgs Inc Cl A (CRWD)",
+      "ticker": "CRWD",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Datadog Inc Cl A (DDOG)",
+      "ticker": "DDOG",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dexcom Inc (DXCM)",
+      "ticker": "DXCM",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DocuSign Inc (DOCU)",
+      "ticker": "DOCU",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DoorDash Inc Cl A (DASH)",
+      "ticker": "DASH",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Illumina Inc (ILMN)",
+      "ticker": "ILMN",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Moderna Inc (MRNA)",
+      "ticker": "MRNA",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "MongoDB Inc Cl A (MDB)",
+      "ticker": "MDB",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "NVIDIA Corporation (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc Cl A (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Pinterest Inc Cl A (PINS)",
+      "ticker": "PINS",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Roblox Corp Cl A (RBLX)",
+      "ticker": "RBLX",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Royalty Pharma PLC Shs Class A (RPRX)",
+      "ticker": "RPRX",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Sea Limited ADR (SE)",
+      "ticker": "SE",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Shopify Inc (SHOP)",
+      "ticker": "SHOP",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Snap Inc. Cl A (SNAP)",
+      "ticker": "SNAP",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Snowflake Inc Cl A (SNOW)",
+      "ticker": "SNOW",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Spotify Technology SA (SPOT)",
+      "ticker": "SPOT",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Square Inc Class A (SQ)",
+      "ticker": "SQ",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Trade Desk Inc Class A (TTD)",
+      "ticker": "TTD",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Twilio Inc Cl A (TWLO)",
+      "ticker": "TWLO",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Twitter Inc (TSTR)",
+      "ticker": "TSTR",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Uber Technologies Inc (UBER)",
+      "ticker": "UBER",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Unity Software Inc (U)",
+      "ticker": "U",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Veeva Sys Inc Cl A (VEEV)",
+      "ticker": "VEEV",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Wayfair Inc (W)",
+      "ticker": "W",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Zillow Group Inc Cl C Cap Stk (Z)",
+      "ticker": "Z",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Zoom Video Communications-A (ZM)",
+      "ticker": "ZM",
+      "type": "Sale (Full)",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Intuitive Surgical Inc (ISRG)",
+      "ticker": "ISRG",
+      "type": "Sale (Full)",
+      "date": "2021-08-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Unity Software Inc (U)",
+      "ticker": "U",
+      "type": "Purchase",
+      "date": "2021-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    }
   ],
   "summary": "Dixon reported 110 transactions across 4 filings spanning 2021-2025. In August 2021, she sold all individual stock holdings (33 tech companies including NVDA, CRWD, SNOW, AMZN) and moved into American Funds mutual funds, consistent with ethics agreement divestitures. Her 2024-2025 transactions are entirely mutual fund purchases with a few sales. Biden-era appointee (ODNI).",
-  "party": "D"
+  "party": "D",
+  "departedDate": "2025-01-25"
 }

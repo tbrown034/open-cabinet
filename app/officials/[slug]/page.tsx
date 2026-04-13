@@ -85,6 +85,11 @@ export default async function OfficialPage({
             {displayName(official.name)}
           </h1>
           <p className="text-neutral-500">
+            {official.departedDate && (
+              <span className="text-xs uppercase tracking-wider text-amber-700 font-medium mr-2">
+                Former
+              </span>
+            )}
             {official.title} · {official.agency}
           </p>
         </div>

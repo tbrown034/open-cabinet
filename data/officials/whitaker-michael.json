@@ -7,22 +7,128 @@
   "filingType": "278-T Periodic Transaction Report",
   "mostRecentFilingDate": "2025-01-02",
   "transactions": [
-    { "description": "AT&T Inc (T)", "ticker": "T", "type": "Sale", "date": "2024-12-18", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "Texas Instruments Incorporated (TXN)", "ticker": "TXN", "type": "Sale", "date": "2024-08-21", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Apple, Inc. (AAPL)", "ticker": "AAPL", "type": "Sale", "date": "2024-06-11", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Broadcom, Inc. (AVGO)", "ticker": "AVGO", "type": "Sale", "date": "2024-02-22", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Microsoft Corp. (MSFT)", "ticker": "MSFT", "type": "Sale", "date": "2024-01-09", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Alphabet, Inc. Class A (GOOGL)", "ticker": "GOOGL", "type": "Sale", "date": "2024-01-09", "amount": "$50,001-$100,000", "lateFilingFlag": false },
-    { "description": "ANRA Technologies", "ticker": null, "type": "Sale", "date": "2024-01-03", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "ANRA Technologies", "ticker": null, "type": "Sale", "date": "2024-01-08", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Amazon.com, Inc. (AMZN)", "ticker": "AMZN", "type": "Sale", "date": "2023-11-07", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Broadcom, Inc. (AVGO)", "ticker": "AVGO", "type": "Sale", "date": "2023-11-14", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "JPMorgan Chase & Co. (JPM)", "ticker": "JPM", "type": "Sale", "date": "2023-11-14", "amount": "$1,001-$15,000", "lateFilingFlag": false },
-    { "description": "The PNC Financial Services Group, Inc. (PNC)", "ticker": "PNC", "type": "Sale", "date": "2023-11-14", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Target Corp. (TGT)", "ticker": "TGT", "type": "Sale", "date": "2023-11-14", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Truist Financial Corporation Common Stock (TFC)", "ticker": "TFC", "type": "Sale", "date": "2023-11-14", "amount": "$15,001-$50,000", "lateFilingFlag": false },
-    { "description": "Pfizer Inc. (PFE)", "ticker": "PFE", "type": "Sale", "date": "2023-11-14", "amount": "$1,001-$15,000", "lateFilingFlag": false }
+    {
+      "description": "AT&T Inc (T)",
+      "ticker": "T",
+      "type": "Sale",
+      "date": "2024-12-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Texas Instruments Incorporated (TXN)",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2024-08-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2024-06-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2024-02-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet, Inc. Class A (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2023-11-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "JPMorgan Chase & Co. (JPM)",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "The PNC Financial Services Group, Inc. (PNC)",
+      "ticker": "PNC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Target Corp. (TGT)",
+      "ticker": "TGT",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Truist Financial Corporation Common Stock (TFC)",
+      "ticker": "TFC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Pfizer Inc. (PFE)",
+      "ticker": "PFE",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    }
   ],
   "summary": "Whitaker reported 15 sales totaling an estimated $480K across 6 filings (2023-2024), all divestitures consistent with his ethics agreement as FAA Administrator. Holdings included major tech (GOOGL, MSFT, AAPL, AVGO, AMZN), financials (JPM, PNC, TFC), and a drone company (ANRA Technologies) relevant to FAA oversight. Biden-era appointee.",
-  "party": "D"
+  "party": "D",
+  "departedDate": "2025-01-20"
 }
