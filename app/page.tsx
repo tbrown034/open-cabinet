@@ -230,12 +230,7 @@ export default async function Home() {
               ProPublica, CNBC, NOTUS and other outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
-              Collected via AI-assisted search. Checked weekly. Last updated{" "}
-              {new Date().toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}.
+              Collected via AI-assisted search. Checked weekly. Last updated April 13, 2026.
             </p>
             <div className="space-y-4">
               {recentNews.map((item, i) => (
