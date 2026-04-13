@@ -9,7 +9,8 @@
     "lint": "eslint",
     "check-filings": "npx tsx scripts/check-new-filings.ts",
     "rebuild-index": "npx tsx scripts/rebuild-index.ts",
-    "generate-exports": "npx tsx scripts/generate-exports.ts"
+    "generate-exports": "npx tsx scripts/generate-exports.ts",
+    "seed": "npx tsx scripts/seed-from-json.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.0.2",
@@ -38,6 +39,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
