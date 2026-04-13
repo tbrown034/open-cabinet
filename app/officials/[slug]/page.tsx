@@ -251,7 +251,12 @@ export default async function OfficialPage({
               disclosures from major outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
-              AI-assisted search. Last updated April 2026.
+              AI-assisted search. Last updated{" "}
+              {new Date().toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}.
             </p>
             <div className="space-y-4">
               {news.map((item, i) => (
