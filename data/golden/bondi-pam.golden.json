@@ -9,7 +9,7 @@
   "transactions": [
     {
       "description": "Trump Media & Technology Group",
-      "ticker": null,
+      "ticker": "DJT",
       "type": "Sale",
       "date": "2025-04-02",
       "amount": "$1,000,001-$5,000,000",
@@ -17,7 +17,7 @@
     },
     {
       "description": "Trump Media & Technology Group Warrants",
-      "ticker": null,
+      "ticker": "DJT",
       "type": "Sale",
       "date": "2025-04-02",
       "amount": "$250,001-$500,000",
@@ -26,5 +26,13 @@
   ],
   "summary": "Bondi reported 2 sales totaling an estimated $3.4M, consistent with ethics agreement divestitures.",
   "confirmedDate": "2025-02-04",
-  "party": "R"
+  "party": "R",
+  "departedDate": "2026-04-02",
+  "sourceFilings": [
+    {
+      "date": "2025-05-14",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf",
+      "label": "278-T"
+    }
+  ]
 }
