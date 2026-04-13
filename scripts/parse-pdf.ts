@@ -104,10 +104,12 @@ async function parsePdf(pdfPath: string): Promise<ParseResult> {
   );
 
   // Send to Claude with the PDF as a document
-  const model = "claude-haiku-4-5-20251001";
+  // claude-haiku-4-5 is the alias (preferred over date-suffixed version)
+  // Haiku pricing: $1/M input, $5/M output — ~$0.05-0.15 per PDF
+  const model = "claude-haiku-4-5";
   const response = await client.messages.create({
     model,
-    max_tokens: 8192,
+    max_tokens: 16000, // Trump has 389 transactions — needs room
     messages: [
       {
         role: "user",
@@ -156,11 +158,11 @@ async function parsePdf(pdfPath: string): Promise<ParseResult> {
     throw new Error("Response is not a JSON array");
   }
 
-  // Calculate cost (Haiku pricing as of 2025)
+  // Calculate cost — Haiku 4.5: $1/M input, $5/M output
   const inputTokens = response.usage.input_tokens;
   const outputTokens = response.usage.output_tokens;
   const costUsd =
-    (inputTokens / 1_000_000) * 0.8 + (outputTokens / 1_000_000) * 4.0;
+    (inputTokens / 1_000_000) * 1.0 + (outputTokens / 1_000_000) * 5.0;
 
   const result: ParseResult = {
     transactions: parsed,
@@ -279,9 +281,66 @@ async function main() {
   console.log(`\nOutput: ${outputPath}`);
 }
 
+// ── BATCH PARSING ──
+// The Anthropic Batch API processes requests at 50% cost.
+// Use this for bulk operations (initial parse, re-parse after model update).
+// Results take up to 1 hour instead of real-time.
+
+interface BatchItem {
+  customId: string; // e.g., "bessent-278T-2025-05-05"
+  pdfPath: string;
+}
+
+async function createBatch(items: BatchItem[]): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY must be set");
+
+  const client = new Anthropic({ apiKey });
+
+  const requests = await Promise.all(
+    items.map(async (item) => {
+      const pdfBuffer = await readFile(item.pdfPath);
+      const pdfBase64 = pdfBuffer.toString("base64");
+
+      return {
+        custom_id: item.customId,
+        params: {
+          model: "claude-haiku-4-5" as const,
+          max_tokens: 16000,
+          messages: [
+            {
+              role: "user" as const,
+              content: [
+                {
+                  type: "document" as const,
+                  source: {
+                    type: "base64" as const,
+                    media_type: "application/pdf" as const,
+                    data: pdfBase64,
+                  },
+                },
+                {
+                  type: "text" as const,
+                  text: EXTRACTION_PROMPT,
+                },
+              ],
+            },
+          ],
+        },
+      };
+    })
+  );
+
+  console.log(`Submitting batch of ${requests.length} PDFs (50% cost)...`);
+  const batch = await client.messages.batches.create({ requests });
+  console.log(`Batch ID: ${batch.id}`);
+  console.log(`Status: ${batch.processing_status}`);
+  return batch.id;
+}
+
 // Export for use by other scripts (pipeline orchestrator)
-export { parsePdf, quickValidate, VALID_TYPES, VALID_AMOUNTS };
-export type { ParsedTransaction, ParseResult };
+export { parsePdf, createBatch, quickValidate, VALID_TYPES, VALID_AMOUNTS };
+export type { ParsedTransaction, ParseResult, BatchItem };
 
 // Run CLI if invoked directly
 main().catch((err) => {
