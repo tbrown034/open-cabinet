@@ -178,18 +178,14 @@ export default async function LateFilingsPage() {
               {officialStats.map((o, i) => (
                 <tr
                   key={o.slug}
-                  className={`border-b border-neutral-100 hover:bg-neutral-100 transition-colors cursor-pointer ${
+                  className={`border-b border-neutral-100 hover:bg-neutral-100 transition-colors ${
                     i % 2 === 1 ? "bg-neutral-50/50" : ""
                   }`}
-                  onClick={() => {
-                    window.location.href = `/officials/${o.slug}`;
-                  }}
                 >
                   <td className="py-2.5 pr-3">
                     <Link
                       href={`/officials/${o.slug}`}
                       className="text-neutral-900 hover:underline font-medium"
-                      onClick={(e) => e.stopPropagation()}
                     >
                       {displayName(o.name)}
                     </Link>
