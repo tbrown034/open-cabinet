@@ -541,6 +541,14 @@ export default function AdminPage() {
           >
             OpenAI Dashboard
           </a>
+          <a
+            href="https://console.neon.tech"
+            className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Neon Database
+          </a>
         </div>
       </section>
       {/* Models */}
