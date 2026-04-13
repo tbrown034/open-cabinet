@@ -252,14 +252,23 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
             .returning({ id: officials.id });
         }
 
-        // Insert transactions
+        // Insert transactions.
+        // For amended filings: delete all existing transactions from this
+        // official that came from the same pdfSource URL, then insert fresh.
+        // This handles both amendments and re-parses cleanly.
+        // For new filings: no existing rows to delete, just insert.
         if (!options.dryRun) {
+          // Delete any prior rows from this source PDF (handles re-parse / amendment)
+          await db
+            .delete(transactions)
+            .where(eq(transactions.pdfSource, filing.pdfUrl));
+
           let inserted = 0;
           const batchSize = 50;
 
           for (let i = 0; i < result.transactions.length; i += batchSize) {
             const batch = result.transactions.slice(i, i + batchSize);
-            const values = batch.map((tx: ParsedTransaction) => ({
+            const values = batch.map((tx: ParsedTransaction, j: number) => ({
               officialId: official.id,
               description: tx.description,
               ticker: tx.ticker || null,
@@ -270,6 +279,7 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
               confidence: tx.confidence,
               needsReview: tx.confidence < 0.8,
               pdfSource: filing.pdfUrl,
+              rowIndex: i + j,
               batchId: run.id,
             }));
 
@@ -279,7 +289,7 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
 
           newTransactionsParsed += inserted;
           console.log(
-            `  Inserted ${inserted} transactions (dupes skipped via UNIQUE)\n`
+            `  Inserted ${inserted} transactions (replaced any prior rows from same PDF)\n`
           );
         } else {
           console.log(

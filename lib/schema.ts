@@ -7,8 +7,11 @@
  *
  * Key design decisions:
  * - officials.slug is the unique identifier (matches JSON filenames)
- * - transactions have a UNIQUE constraint to prevent duplicates from
- *   amended filings that restate the same trades
+ * - transactions use a UNIQUE constraint on (officialId, description,
+ *   date, amount, type, pdfSource) — this allows legitimate duplicate
+ *   lot sales within a single filing while still catching cross-filing
+ *   duplicates from amended filings. When an amended filing replaces
+ *   an original, the pipeline deletes the original's transactions first.
  * - batchId links transactions to the pipeline run that created them,
  *   enabling "revert this run" rollback
  * - confidence + needsReview support the human-in-the-loop review queue
@@ -51,8 +54,13 @@ export const officials = pgTable("officials", {
 
 // ── TRANSACTIONS ──
 // One row per financial transaction extracted from OGE 278-T PDFs.
-// The UNIQUE constraint prevents duplicates when amended filings
-// restate the same trades.
+// The UNIQUE constraint prevents cross-filing duplicates (amended
+// filings restating the same trades) while allowing legitimate
+// duplicate lot sales within a single filing. Including pdfSource
+// means two rows with identical (desc, date, type, amount) from the
+// SAME PDF are allowed — they represent different lots. When an
+// amended filing arrives, the pipeline deletes all transactions from
+// the original filing first, then inserts the amendment's rows.
 export const transactions = pgTable(
   "transactions",
   {
@@ -67,6 +75,7 @@ export const transactions = pgTable(
     amount: text("amount").notNull(), // "$1,001-$15,000" (exact OGE range string)
     lateFilingFlag: boolean("late_filing_flag").default(false).notNull(),
     pdfSource: text("pdf_source"), // URL of the source PDF
+    rowIndex: integer("row_index"), // Position in source PDF (distinguishes duplicate lots)
     confidence: real("confidence"), // Parser confidence 0.0-1.0
     needsReview: boolean("needs_review").default(false).notNull(),
     batchId: integer("batch_id").references(() => pipelineRuns.id, {
@@ -81,7 +90,8 @@ export const transactions = pgTable(
       table.description,
       table.date,
       table.amount,
-      table.type
+      table.type,
+      table.rowIndex
     ),
     index("transactions_official_idx").on(table.officialId),
     index("transactions_ticker_idx").on(table.ticker),

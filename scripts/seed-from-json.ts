@@ -75,13 +75,16 @@ async function seedOfficials() {
 
     totalOfficials++;
 
-    // Insert transactions in batches of 50 (Neon HTTP has payload limits)
+    // Insert transactions in batches of 50 (Neon HTTP has payload limits).
+    // Each transaction gets a rowIndex (its position in the array) so that
+    // legitimate duplicate lot sales — same (description, date, type, amount)
+    // but different lots — get distinct UNIQUE keys in the database.
     const txBatchSize = 50;
     let txInserted = 0;
 
     for (let i = 0; i < data.transactions.length; i += txBatchSize) {
       const batch = data.transactions.slice(i, i + txBatchSize);
-      const values = batch.map((tx) => ({
+      const values = batch.map((tx, j) => ({
         officialId: inserted.id,
         description: tx.description,
         ticker: tx.ticker || null,
@@ -89,13 +92,14 @@ async function seedOfficials() {
         date: tx.date,
         amount: tx.amount,
         lateFilingFlag: tx.lateFilingFlag,
+        rowIndex: i + j, // Global position distinguishes duplicate lots
         notes: tx.notes || null,
       }));
 
-      const result = await db
+      await db
         .insert(transactions)
         .values(values)
-        .onConflictDoNothing(); // Skip duplicates via UNIQUE constraint
+        .onConflictDoNothing(); // Skip only true duplicates (same key + rowIndex)
 
       txInserted += batch.length;
     }
