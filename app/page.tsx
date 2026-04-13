@@ -51,7 +51,13 @@ export default async function Home() {
               sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
-              Updated{" "}
+              Published{" "}
+              {new Date().toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+              {" · "}Most recent filing:{" "}
               {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
                 "en-US",
                 { month: "short", day: "numeric", year: "numeric" }
@@ -89,7 +95,7 @@ export default async function Home() {
         </div>
 
         {/* Stats bar */}
-        <div className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-sm text-neutral-500 border-b border-neutral-200 pb-6">
+        <div className="flex flex-wrap gap-x-8 gap-y-2 mt-10 text-sm text-neutral-500 border-b border-neutral-200 pb-4">
           <div>
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {totalOfficials}
@@ -115,6 +121,9 @@ export default async function Home() {
             late filings<a href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
           </div>
         </div>
+        <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
+          Transactions filed January 2025 to present. Dollar values are estimates based on statutory reporting ranges.
+        </p>
       </div>
 
       {/* ── DIRECTORY PREVIEW ── */}
