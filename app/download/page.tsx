@@ -77,8 +77,17 @@ export default function DownloadPage() {
 
       <p className="text-xs text-neutral-400 mt-8">
         Data updated {new Date().toISOString().split("T")[0]}. Federal
-        government documents carry no copyright (17 U.S.C. Section 105). If you
-        use this data, please credit Open Cabinet and link to the source.
+        government documents carry no copyright (
+        <a
+          href="https://www.law.cornell.edu/uscode/text/17/105"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-neutral-600"
+        >
+          17 U.S.C. &sect;105
+        </a>
+        ). If you use this data, please credit Open Cabinet and link to the
+        source.
       </p>
     </div>
   );

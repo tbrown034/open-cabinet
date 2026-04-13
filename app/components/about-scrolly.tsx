@@ -9,19 +9,19 @@ const LAW_STEPS = [
     id: "stock-act",
     label: "The STOCK Act",
     title: "Congress strengthened the rules in 2012",
-    body: "The Ethics in Government Act of 1978 created financial disclosure requirements after Watergate. The STOCK Act of 2012 added periodic transaction reporting — requiring officials to disclose individual stock trades over $1,000 within days, not just annually. The law covers both Congress and the executive branch.",
+    body: "The Ethics in Government Act of 1978 (Pub. L. 95-521) created financial disclosure requirements after Watergate. The STOCK Act of 2012 (Pub. L. 112-105) added periodic transaction reporting — requiring officials to disclose individual stock trades over $1,000 within days, not just annually. The law covers both Congress and the executive branch.",
   },
   {
     id: "30-day",
     label: "30-day window",
     title: "Report every trade within 30 days",
-    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself — whichever comes first. The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
+    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself — whichever comes first (5 U.S.C. \u00A713105(l)). The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
   },
   {
     id: "divestiture",
     label: "90-day divestiture",
     title: "Sell your conflicts within 90 days",
-    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. This only covers conflicting assets — officials can keep and trade non-conflicting stocks.",
+    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. Divestitures may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043). This only covers conflicting assets — officials can keep and trade non-conflicting stocks.",
   },
   {
     id: "extensions",
@@ -33,13 +33,13 @@ const LAW_STEPS = [
     id: "late-filings",
     label: "Late filings",
     title: "Missing the deadline is common",
-    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee — routinely waived. A 2022 Business Insider investigation found at least 72 members of Congress violated the same deadline. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
+    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)) — routinely waived. A 2022 Business Insider investigation found at least 72 members of Congress violated the same deadline. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
   },
   {
     id: "consequences",
     label: "Consequences",
     title: "What happens when officials don't comply",
-    body: "Late disclosure carries a $200 fee. But taking official action on matters affecting your financial holdings is a potential criminal violation under 18 U.S.C. Section 208. The distinction matters: late reporting is a paperwork problem; participating in decisions while financially conflicted is a federal crime carrying up to five years in prison.",
+    body: "Late disclosure carries a $200 fee (5 U.S.C. \u00A713106(a)). But taking official action on matters affecting your financial holdings is a potential criminal violation under 18 U.S.C. \u00A7208. The distinction matters: late reporting is a paperwork problem; participating in decisions while financially conflicted is a federal crime carrying up to five years in prison.",
   },
 ];
 
@@ -50,7 +50,7 @@ const BUILD_STEPS = [
     id: "oge-api",
     label: "OGE API",
     title: "Start with the public records",
-    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers. It returns 16,857 records — names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
+    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers (5 U.S.C. \u00A713107). It returns 16,857 records — names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
   },
   {
     id: "filter",
