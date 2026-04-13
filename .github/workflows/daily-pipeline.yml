@@ -1,0 +1,56 @@
+# Daily OGE Filing Check
+# Runs at 6 AM ET (10:00 UTC) every day.
+# Checks for new 278-T filings, parses with Claude Sonnet,
+# validates, and inserts into Neon PostgreSQL.
+#
+# Estimated daily cost: $0-0.10 (0-3 new PDFs typical)
+# Monthly cost: ~$1-3
+
+name: Daily Pipeline
+
+on:
+  schedule:
+    - cron: "0 10 * * *" # 6 AM ET / 10 AM UTC
+  workflow_dispatch: # Allow manual triggers from GitHub UI
+
+jobs:
+  check-and-parse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run pipeline (dry run first)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL_UNPOOLED: ${{ secrets.DATABASE_URL_UNPOOLED }}
+        run: |
+          echo "=== Checking for new filings ==="
+          pnpm run pipeline -- --dry-run 2>&1 | head -30
+
+          echo ""
+          echo "=== Running full pipeline ==="
+          pnpm run pipeline
+
+      - name: Run validation
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DATABASE_URL_UNPOOLED: ${{ secrets.DATABASE_URL_UNPOOLED }}
+        run: pnpm run validate
