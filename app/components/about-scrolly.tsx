@@ -62,13 +62,13 @@ const BUILD_STEPS = [
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We parse these using Claude Sonnet via the Anthropic API, with OpenAI GPT-5.4 as a cross-provider verification check. Two different companies extracting the same data = highest confidence.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We parse these using Claude Sonnet via the Anthropic API. Parses can also be cross-checked with OpenAI to compare outputs across independent models.",
   },
   {
     id: "validate",
     label: "Validate",
-    title: "Six layers of verification",
-    body: "Every parsed transaction runs through six checks: valid types, amounts and dates; known ticker symbols; regression tests against hand-verified reference data; parser confidence scoring; and anomaly detection. The suite must pass before data goes live. Reference files cover officials ranging from 2 to 389 transactions.",
+    title: "Automated checks before data goes live",
+    body: "Every parsed transaction runs through automated checks: valid types, amounts and dates; known ticker symbols; regression tests against hand-verified reference data; parser confidence scoring; and anomaly detection. The suite must pass before data goes live. Reference files cover officials ranging from 2 to 389 transactions.",
   },
   {
     id: "store",
