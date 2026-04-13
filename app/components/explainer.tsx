@@ -7,19 +7,19 @@ const STEPS = [
     id: "nominated",
     label: "Nominated",
     title: "The president nominates a candidate",
-    body: "When the president selects someone for a cabinet or senior position, the ethics clock starts. The nominee must disclose every financial holding before confirmation hearings begin.",
+    body: "When the president selects someone for a cabinet or senior position, the ethics clock starts. The nominee must disclose every financial holding before confirmation hearings begin, as required by the Ethics in Government Act (Pub. L. 95-521).",
   },
   {
     id: "disclosure",
     label: "Disclosure",
     title: "They file a financial report",
-    body: "The nominee submits a Public Financial Disclosure Report (OGE Form 278e) listing all assets, income sources, liabilities and positions held. This is the baseline portrait of their financial life.",
+    body: "The nominee submits a Public Financial Disclosure Report (OGE Form 278e) listing all assets, income sources, liabilities and positions held (5 U.S.C. \u00A713104). This is the baseline portrait of their financial life.",
   },
   {
     id: "ethics",
     label: "Ethics Agreement",
     title: "They sign a divestiture plan",
-    body: "The Office of Government Ethics reviews the disclosure and negotiates an ethics agreement. The nominee pledges to sell conflicting holdings — usually within 90 days of confirmation.",
+    body: "The Office of Government Ethics reviews the disclosure and negotiates an ethics agreement. The nominee pledges to sell conflicting holdings — usually within 90 days of confirmation. Sales may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043).",
   },
   {
     id: "confirmed",
@@ -31,13 +31,13 @@ const STEPS = [
     id: "reporting",
     label: "Ongoing",
     title: "Every trade gets disclosed",
-    body: "Under the STOCK Act (5 U.S.C. 13104), officials must report individual securities transactions over $1,000 within 30 days of notification — or 45 days of the trade, whichever comes first. Mutual funds and ETFs are exempt under 5 CFR 2640.201. These are filed as 278-T reports — the core data that powers this tracker.",
+    body: "Under the STOCK Act (5 U.S.C. \u00A713104), officials must report individual securities transactions over $1,000 within 30 days of notification — or 45 days of the trade, whichever comes first (5 U.S.C. \u00A713105(l)). Mutual funds and ETFs are exempt (5 CFR \u00A72640.201). These are filed as OGE Form 278-T reports — the core data that powers this tracker.",
   },
   {
     id: "compliance",
     label: "Compliance",
     title: "The ethics office certifies",
-    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings, missed deadlines and new purchases in regulated sectors all raise flags.",
+    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags — criminal conflict of interest is covered by 18 U.S.C. \u00A7208.",
   },
 ];
 
@@ -215,9 +215,10 @@ export default function Explainer() {
                   Late filings
                 </div>
                 <p className="text-neutral-500 mt-1">
-                  Officials must report within 30 days of notification (45
-                  days of the trade). Late filings are common and not
-                  necessarily evidence of wrongdoing — but patterns matter.
+                  Officials must report within 30 days of notification or 45
+                  days of the trade (5 U.S.C. {"\u00A7"}13105(l)). Late filings are
+                  common and not necessarily evidence of wrongdoing — but
+                  patterns matter.
                 </p>
               </div>
             </div>
@@ -249,7 +250,8 @@ export default function Explainer() {
               </div>
               <p className="text-neutral-500">
                 The Office of Government Ethics posts financial disclosure
-                reports as PDF documents on their public portal.
+                reports as PDF documents on their public portal, as required
+                by 5 U.S.C. {"\u00A7"}13107.
               </p>
             </div>
             <div>
