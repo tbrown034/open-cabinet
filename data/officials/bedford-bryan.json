@@ -504,6 +504,14 @@
       "lateFilingFlag": false
     },
     {
+      "description": "JPMorgan BetaBuilders Japan ETF",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "iShares MSCI EAFE ETF",
       "ticker": "EFA",
       "type": "Purchase",
@@ -520,20 +528,20 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
-      "ticker": "JPM",
-      "type": "Purchase",
-      "date": "2025-10-22",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Republic Airways Holdings Inc",
       "ticker": "RJET",
       "type": "Sale",
       "date": "2025-10-21",
       "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": true
+    },
+    {
+      "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
+      "ticker": "JPM",
+      "type": "Purchase",
+      "date": "2025-10-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
     },
     {
       "description": "Republic Airways Holdings Inc.",
@@ -571,8 +579,24 @@
       "description": "Republic Airways Holdings Inc.",
       "ticker": "RJET",
       "type": "Sale",
+      "date": "2026-02-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Republic Airways Holdings Inc.",
+      "ticker": "RJET",
+      "type": "Sale",
       "date": "2026-02-19",
       "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Republic Airways Holdings Inc.",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -582,9 +606,17 @@
       "date": "2026-02-20",
       "amount": "$15,001-$50,000",
       "lateFilingFlag": false
+    },
+    {
+      "description": "Republic Airways Holdings Inc.",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
     }
   ],
-  "summary": "Bedford reported 63 sales (est. $37.3M) and 8 purchases (est. $21.1M). Holdings included MDT, REGN, ELF, ALK, AMZN, among others. 2 of 72 transactions were filed late.",
+  "summary": "Bedford reported 67 sales (est. $37.3M) and 8 purchases (est. $21.1M). Holdings included MDT, REGN, ELF, ALK, AMZN, among others. 2 of 76 transactions were filed late.",
   "confirmedDate": "2025-07-09",
   "party": "R",
   "sourceFilings": [
