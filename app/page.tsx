@@ -106,7 +106,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               ~{formatCompactCurrency(estimatedTotal)}
             </span>
-            est. value
+            est. total value
           </div>
           <div>
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
