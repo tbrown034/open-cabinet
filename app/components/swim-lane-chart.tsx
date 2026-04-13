@@ -22,7 +22,7 @@ import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/l
  * - scaleSqrt (radius): Maps transaction amounts to dot sizes. Using
  *   sqrt ensures perceived area scales linearly with value.
  *
- * Performance with 2,200+ circles:
+ * Performance with 3,200+ circles:
  * - React renders all circles as individual SVG elements. SVG handles
  *   this fine — browsers can render thousands of circles efficiently.
  * - We reduce re-renders by only updating tooltip state (one state var).
@@ -454,7 +454,7 @@ export default function SwimLaneChart({
             });
           })()}
 
-          {/* Transaction dots — render all 2,200+ circles */}
+          {/* Transaction dots — render all 3,200+ circles */}
           {filtered.flatMap((o) =>
             o.transactions.map((tx, i) => {
               const y = yScale(o.name) ?? 0;
