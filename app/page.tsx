@@ -223,8 +223,8 @@ export default async function Home() {
                   Company Lookup
                 </div>
                 <p className="text-xs text-neutral-500 mt-1">
-                  Search by ticker to see which officials traded each stock. 578
-                  companies tracked.
+                  Search by ticker to see which officials traded each stock.
+                  620+ companies tracked.
                 </p>
               </div>
               <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>

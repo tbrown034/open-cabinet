@@ -11,7 +11,6 @@ const links = [
   { href: "/dashboard", label: "Overview" },
   { href: "/late-filings", label: "Late Filings" },
   { href: "/about", label: "About" },
-  { href: "/admin", label: "Admin" },
 ];
 
 export default function MobileNav() {
