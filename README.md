@@ -17,11 +17,12 @@ Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, 
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 34 |
-| Transactions | 2,320 |
+| Transactions | 3,283 |
 | Estimated value | ~$2.9B |
-| Late filings | 563 |
+| Late filings | 1,217 |
 | Companies searchable | 620+ |
 | News articles linked | 34 |
+| Source filing PDFs linked | 111 |
 
 ## Pages
 
@@ -48,9 +49,9 @@ The automated pipeline checks for new filings weekly:
 
 1. **Check** — Vercel Cron polls the OGE API for new 278-T filings
 2. **Download** — New PDFs are downloaded from OGE's public portal
-3. **Parse** — Claude Sonnet extracts structured data from each PDF
-4. **Verify** — OpenAI GPT-5.4 cross-checks the parse (two providers, same data = high confidence)
-5. **Validate** — Six-layer validation: schema, tickers, regression tests, confidence, anomaly detection
+3. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page
+4. **Parse** — Claude Opus/Sonnet structures each page into transaction data
+5. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection
 6. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback
 7. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend
 
