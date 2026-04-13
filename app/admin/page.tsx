@@ -36,6 +36,14 @@ export default function AdminPage() {
   const [reviewItems, setReviewItems] = useState<ReviewItem[]>([]);
   const [reviewCount, setReviewCount] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [stats, setStats] = useState<{
+    officials: number;
+    transactions: number;
+    newsArticles: number;
+    needsReview: number;
+    totalPipelineCost: number;
+    lastPipelineRun: PipelineRun | null;
+  } | null>(null);
 
   const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
   const isAdmin = session?.user?.email === ADMIN_EMAIL;
@@ -44,9 +52,10 @@ export default function AdminPage() {
     if (!isAdmin) return;
     setLoading(true);
     try {
-      const [pipelineRes, reviewRes] = await Promise.all([
+      const [pipelineRes, reviewRes, statsRes] = await Promise.all([
         fetch("/api/admin/pipeline"),
         fetch("/api/admin/review"),
+        fetch("/api/admin/stats"),
       ]);
       if (pipelineRes.ok) {
         const data = await pipelineRes.json();
@@ -56,6 +65,9 @@ export default function AdminPage() {
         const data = await reviewRes.json();
         setReviewItems(data.items || []);
         setReviewCount(data.count || 0);
+      }
+      if (statsRes.ok) {
+        setStats(await statsRes.json());
       }
     } catch (err) {
       console.error("Failed to fetch admin data:", err);
@@ -161,6 +173,47 @@ export default function AdminPage() {
           </button>
         </div>
       </div>
+
+      {/* Database Stats */}
+      {stats && (
+        <section className="mb-12">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
+            Database
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="border border-neutral-200 px-4 py-3">
+              <div className="text-2xl font-semibold font-[family-name:var(--font-dm-mono)] text-neutral-900">
+                {stats.officials}
+              </div>
+              <div className="text-xs text-neutral-500">officials</div>
+            </div>
+            <div className="border border-neutral-200 px-4 py-3">
+              <div className="text-2xl font-semibold font-[family-name:var(--font-dm-mono)] text-neutral-900">
+                {stats.transactions.toLocaleString()}
+              </div>
+              <div className="text-xs text-neutral-500">transactions</div>
+            </div>
+            <div className="border border-neutral-200 px-4 py-3">
+              <div className="text-2xl font-semibold font-[family-name:var(--font-dm-mono)] text-neutral-900">
+                {stats.newsArticles}
+              </div>
+              <div className="text-xs text-neutral-500">news articles</div>
+            </div>
+            <div className="border border-neutral-200 px-4 py-3">
+              <div className={`text-2xl font-semibold font-[family-name:var(--font-dm-mono)] ${stats.needsReview > 0 ? "text-amber-700" : "text-neutral-900"}`}>
+                {stats.needsReview}
+              </div>
+              <div className="text-xs text-neutral-500">needs review</div>
+            </div>
+            <div className="border border-neutral-200 px-4 py-3">
+              <div className="text-2xl font-semibold font-[family-name:var(--font-dm-mono)] text-neutral-900">
+                ${stats.totalPipelineCost.toFixed(2)}
+              </div>
+              <div className="text-xs text-neutral-500">pipeline cost</div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Pipeline Status */}
       <section className="mb-12">
