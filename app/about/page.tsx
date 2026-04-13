@@ -247,9 +247,11 @@ export default function AboutPage() {
               <div className="font-medium text-neutral-900">PDF parsing</div>
               <p className="text-neutral-500 mt-0.5">
                 Transaction data is extracted from OGE filing PDFs using
-                Anthropic{"'"}s Claude API (claude-haiku-4-5). Each table row is
-                read and output as structured JSON. All parsed data is verified
-                against the source PDF.
+                Claude Sonnet (default) via the Anthropic API. Each parse
+                can be cross-verified with OpenAI{"'"}s GPT-5.4 for
+                independent confirmation. All parsed data is validated
+                against the source PDF through a six-layer verification
+                suite.
               </p>
             </div>
             <div>

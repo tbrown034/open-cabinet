@@ -72,10 +72,17 @@ export default async function LateFilingsPage() {
           Late filings
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
-          The STOCK Act requires officials to disclose stock trades within 30
+          The{" "}
+          <a href="https://www.law.cornell.edu/uscode/text/5/13105" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+            STOCK Act
+          </a>{" "}
+          requires officials to disclose stock trades within 30
           days of notification — 45 days from the transaction at most. When that
-          deadline passes, the filing is late. The penalty is a $200 fee that is
-          routinely waived.
+          deadline passes, the filing is late. The penalty is a{" "}
+          <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+            $200 fee
+          </a>{" "}
+          that is routinely waived.
         </p>
       </header>
 
@@ -143,10 +150,17 @@ export default async function LateFilingsPage() {
             The $200 question
           </div>
           <p className="text-neutral-600">
-            Under 5 U.S.C. Section 13106(a), each late filing carries a $200
-            fee. It{"'"}s routinely waived. No executive branch official has ever
-            been meaningfully sanctioned for late 278-T filings. At {totalLate}{" "}
-            late filings, the theoretical maximum penalty is $
+            Under{" "}
+            <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+              5 U.S.C. Section 13106(a)
+            </a>
+            , each late filing carries a $200 fee. It{"'"}s routinely waived.
+            No executive branch official has ever been meaningfully sanctioned
+            for late 278-T filings (
+            <a href="https://campaignlegal.org/update/stock-act-failed-effort-stop-insider-trading-congress" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+              Campaign Legal Center
+            </a>
+            ). At {totalLate} late filings, the theoretical maximum penalty is $
             {(totalLate * 200).toLocaleString()} — but that assumes one fee per
             transaction. The actual fee is per report, not per transaction.
           </p>
@@ -237,8 +251,12 @@ export default async function LateFilingsPage() {
                 The self-certification
               </div>
               <p>
-                Each 278-T form has a column: {"\""}Notification Received Over 30
-                Days Ago.{"\""} Officials mark Yes or No. A {"\""}Yes{"\""} is a
+                Each{" "}
+                <a href="https://www.oge.gov/web/OGE.nsf/0/78E3B27A68F437DC852585B6005A23E9/$FILE/OGE%20Form%20278-T%20Dec%202023.pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  278-T form
+                </a>{" "}
+                has a column: {"\""}Notification Received Over 30 Days Ago.{"\""}
+                {" "}Officials mark Yes or No. A {"\""}Yes{"\""} is a
                 self-admission that they reported late. Open Cabinet reads this
                 field directly from the OGE filings.
               </p>
@@ -248,10 +266,21 @@ export default async function LateFilingsPage() {
                 The enforcement gap
               </div>
               <p>
-                A 2022 Business Insider investigation found at least 72 members
-                of Congress violated the same deadline. The penalty — $200,
-                routinely waived — has never deterred anyone. No criminal
-                prosecution has ever been brought under the STOCK Act.
+                A{" "}
+                <a href="https://www.businessinsider.com/conflicted-congress-key-findings-stock-act-violations-exposed-2021-12" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  2022 Business Insider investigation
+                </a>{" "}
+                found at least 72 members of Congress violated the same deadline.
+                The{" "}
+                <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  penalty
+                </a>{" "}
+                — $200, routinely waived — has never deterred anyone. No criminal
+                prosecution has ever been brought under the STOCK Act (
+                <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  Georgetown Law, 2021
+                </a>
+                ).
               </p>
             </div>
           </div>
