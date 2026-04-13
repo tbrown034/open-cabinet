@@ -263,8 +263,9 @@ export default function AdminPage() {
           <div>
             <div className="text-neutral-900 font-medium text-xs mb-1">Automated</div>
             <p className="text-neutral-500 text-xs">
-              Runs weekly (Monday 6 AM ET) via GitHub Actions. Can also be triggered manually from the{" "}
-              <a href="https://github.com/tbrown034/open-cabinet/actions" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Actions tab</a>.
+              Runs weekly (Monday 6 AM ET) via Vercel Cron. Can also be triggered from the{" "}
+              <a href="https://vercel.com/tbrown034s-projects/open-cabinet/settings/cron-jobs" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Vercel dashboard</a>{" "}
+              or locally with the commands below.
             </p>
           </div>
           <div>
@@ -517,12 +518,12 @@ export default function AdminPage() {
             Data exports
           </Link>
           <a
-            href="https://github.com/tbrown034/open-cabinet/actions"
+            href="https://vercel.com/tbrown034s-projects/open-cabinet/settings/cron-jobs"
             className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub Actions
+            Vercel Cron
           </a>
           <a
             href="https://console.anthropic.com"

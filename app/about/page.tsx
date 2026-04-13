@@ -18,9 +18,9 @@ export default function AboutPage() {
           About Open Cabinet
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
-          An accountability tool that parses executive branch transaction
-          data into searchable, sortable and visual formats — something no
-          public tool has done before.
+          An accountability tool that parses executive branch financial
+          disclosure data into searchable, sortable and visual formats —
+          tracking stock trades and potential conflicts of interest.
         </p>
         <p className="text-xs text-neutral-400 mt-3">Last updated April 2026</p>
       </div>
@@ -142,8 +142,8 @@ export default function AboutPage() {
               <strong className="text-neutral-900">
                 34 of 37 officials with publicly downloadable filings.
               </strong>{" "}
-              Approximately 179 additional officials require individual Form 201
-              requests to access their disclosures.
+              Approximately 248 additional officials have filed transaction
+              reports that require individual Form 201 requests from OGE.
             </li>
             <li>
               <strong className="text-neutral-900">
