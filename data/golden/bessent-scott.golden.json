@@ -1,12 +1,10 @@
 {
-  "name": "Bessent, Scott",
   "slug": "bessent-scott",
-  "title": "Secretary of the Treasury",
-  "agency": "Department of the Treasury",
-  "level": "Cabinet",
-  "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2025-12-05",
-  "transactions": [
+  "transactionCount": 26,
+  "sales": 26,
+  "purchases": 0,
+  "lateFilings": 0,
+  "sampleTransactions": [
     {
       "description": "Old Farm Partners",
       "ticker": null,
@@ -46,149 +44,6 @@
       "date": "2025-02-20",
       "amount": "$250,001-$500,000",
       "lateFilingFlag": false
-    },
-    {
-      "description": "Key Square Master Fund SP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-02-21",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI Germany ETF (EWG)",
-      "ticker": "EWG",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares MSCI Thailand ETF (THD)",
-      "ticker": "THD",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "SPDR Gold Shares (GLD)",
-      "ticker": "GLD",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Verizon Communications, Inc. (VZ)",
-      "ticker": "VZ",
-      "type": "Sale",
-      "date": "2025-03-04",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Skye Global Fund",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-11",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Roxo Energy Funding IV LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-25",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Key Square Partners II LLP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-25",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Roxo Energy Funding IV LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-25",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Roxo Energy Funding IV LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-25",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Totem Macro Global Alpha Select Onshore Fund, LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-27",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Castle Hook LP",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-27",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Old Farm Partners Master",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-04-24",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Totem Macro Global Alpha Select Onshore Fund, LLC",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-06-30",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Totem Management Seed",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-09-23",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "GreenGage Global Holdings",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-11-27",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    }
-  ],
-  "summary": "Bessent reported 21 sales totaling an estimated $3.0M, consistent with ethics agreement divestitures. Holdings included EWG, THD, GLD, VZ.",
-  "confirmedDate": "2025-01-27",
-  "party": "R",
-  "sourceFilings": [
-    {
-      "date": "2025-12-31",
-      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf",
-      "label": "278-T"
-    },
-    {
-      "date": "2025-08-14",
-      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BA716BA5B423A76685258CE6002C8303/$FILE/Scott-Bessent-07.14.2025-278T.pdf",
-      "label": "278-T"
     }
   ]
 }
