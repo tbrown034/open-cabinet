@@ -25,14 +25,14 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
-    "Track financial transactions of cabinet secretaries, agency heads, and senior government officials. Data from the U.S. Office of Government Ethics.",
+    "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
     description:
-      "29 officials. 2,100+ transactions. ~$3.6B estimated value. The first stock tracker for the executive branch.",
+      "34 officials. 2,300+ transactions. ~$2.9B estimated value. The first interactive stock tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
   },

@@ -11,7 +11,7 @@ const exports = [
     file: "/data/all-transactions.csv",
     format: "CSV",
     description:
-      "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate, and late filing flag.",
+      "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate and late filing flag.",
     rows: "2,118 rows",
   },
   {
@@ -19,7 +19,7 @@ const exports = [
     file: "/data/officials-summary.csv",
     format: "CSV",
     description:
-      "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count, and estimated total value.",
+      "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count and estimated total value.",
     rows: "29 rows",
   },
   {
@@ -42,7 +42,7 @@ export default function DownloadPage() {
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           All data is sourced from public financial disclosures filed with the
           U.S. Office of Government Ethics. Free to use for journalism,
-          research, and analysis.
+          research and analysis.
         </p>
       </header>
 
