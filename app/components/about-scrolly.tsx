@@ -68,7 +68,7 @@ const BUILD_STEPS = [
     id: "validate",
     label: "Validate",
     title: "Six layers of verification",
-    body: "Every parsed transaction runs through schema validation (valid types, amounts, dates), ticker checks, golden file regression tests against manually verified data, confidence scoring and anomaly detection. The validation suite must pass before data goes live. Five golden files cover officials from 2 to 389 transactions.",
+    body: "Every parsed transaction runs through six checks: valid types, amounts and dates; known ticker symbols; regression tests against hand-verified reference data; parser confidence scoring; and anomaly detection. The suite must pass before data goes live. Reference files cover officials ranging from 2 to 389 transactions.",
   },
   {
     id: "store",
