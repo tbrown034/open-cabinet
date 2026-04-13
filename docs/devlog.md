@@ -145,3 +145,54 @@ Phase 30+ (Session 5):
 **Next:** Database migration (Neon PostgreSQL), automated OGE polling pipeline, daily PDF parsing with Claude API, Form 201 requests for high-priority officials.
 
 ---
+
+## 2026-04-12 (Evening) - Full Data Pipeline Built
+
+**Session Summary:**
+- Built the complete automated data pipeline across 4 planned sessions (A-D)
+- Database schema designed and migrated to Neon PostgreSQL (5 new tables)
+- PDF parser with multi-provider support (Claude Sonnet + OpenAI GPT-5.4)
+- Validation suite with 6 layers and golden file regression tests
+- Pipeline orchestrator that chains OGE polling through DB insertion
+- Admin dashboard with OAuth, live DB stats, review queue, pipeline history
+- GitHub Actions daily cron at 6 AM ET
+
+**Pipeline Architecture:**
+- Session A: Schema (officials, transactions, news_coverage, pipeline_runs, validation_results) + seed from JSON
+- Session B: PDF parser (Sonnet default, Haiku/Opus/GPT-5.4 options, --verify for cross-provider check) + validation suite (5/5 golden files pass)
+- Session C: Pipeline orchestrator (check OGE -> download -> parse -> validate -> insert, with batchId for rollback)
+- Session D: Admin UI (stats, pipeline history, review queue) + GitHub Actions cron + API routes
+
+**Key Decisions:**
+- Sonnet 4.6 as default parser ($0.02/PDF) — better accuracy than Haiku for messy PDFs
+- OpenAI GPT-5.4-mini as cross-provider verification — two companies agreeing = highest confidence
+- JSON files remain as build cache — site still statically generated from JSON, DB is authoritative store
+- Pipeline runs locally or in GitHub Actions, NOT Vercel functions (timeout too short)
+- drizzle-kit pull before generate to baseline existing auth tables
+- batchId on transactions for "revert this pipeline run" rollback capability
+
+**Testing Results:**
+- Parser: Bessent (2tx, $0.007), Bisignano (14tx, $0.013) — both 0 errors
+- Cross-verify: Claude Sonnet + GPT-5.4-mini = 100% agreement on Bessent
+- Validation: 2,320 tx validated, 0 schema failures, 5/5 golden files pass
+- Pipeline dry-run: successfully polled OGE (12K records), found 306 filings, downloaded and parsed
+
+**Files Created:**
+- lib/db.ts, lib/schema.ts — shared DB connection + Drizzle schema
+- scripts/seed-from-json.ts — JSON to DB seeder
+- scripts/parse-pdf.ts — multi-model PDF parser with verification
+- scripts/validate.ts — 6-layer validation suite
+- scripts/pipeline.ts — end-to-end pipeline orchestrator
+- data/golden/*.json — 5 golden reference files
+- app/api/admin/{pipeline,review,stats}/route.ts — admin API
+- .github/workflows/daily-pipeline.yml — daily cron
+
+**Costs:**
+- Bessent parse: $0.007 (Haiku), $0.022 (Sonnet)
+- Cross-verify (Sonnet + GPT): $0.025 total
+- Projected monthly: $1-3 for daily operations
+- Full re-parse of all filings: ~$15-25 one-time
+
+**Next:** Configure GitHub repo secrets for Actions, run first real pipeline, update .env.example (currently gitignored by .env* pattern — needs !.env.example exception), Form 201 requests for Oz/Pirro/Loeffler/Patel.
+
+---
