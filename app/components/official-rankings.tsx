@@ -36,9 +36,10 @@ export default function OfficialRankings({
             <div key={r.slug} className="flex items-center gap-3 text-sm">
               <Link
                 href={`/officials/${r.slug}`}
-                className="w-44 shrink-0 text-right text-neutral-700 hover:underline truncate text-xs"
+                className="w-52 shrink-0 text-right hover:underline truncate"
               >
-                {displayName(r.name)}
+                <span className="text-xs text-neutral-700">{displayName(r.name)}</span>
+                <span className="text-[10px] text-neutral-400 ml-1 hidden sm:inline">{r.title}</span>
               </Link>
               <div className="flex-1 h-5 bg-neutral-100">
                 <div
