@@ -87,7 +87,19 @@ Return ONLY a JSON array of transaction objects. No markdown, no explanation, no
 
 // ── PARSER ──
 
-async function parsePdf(pdfPath: string): Promise<ParseResult> {
+type ModelChoice = "claude-sonnet-4-6" | "claude-haiku-4-5" | "claude-opus-4-6";
+
+// Cost per million tokens by model
+const MODEL_COSTS: Record<ModelChoice, { input: number; output: number }> = {
+  "claude-sonnet-4-6": { input: 3.0, output: 15.0 },
+  "claude-haiku-4-5": { input: 1.0, output: 5.0 },
+  "claude-opus-4-6": { input: 5.0, output: 25.0 },
+};
+
+async function parsePdf(
+  pdfPath: string,
+  modelOverride?: ModelChoice
+): Promise<ParseResult> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     throw new Error("ANTHROPIC_API_KEY must be set in .env.local");
@@ -103,10 +115,12 @@ async function parsePdf(pdfPath: string): Promise<ParseResult> {
     `  Sending PDF to Claude API (${(pdfBuffer.length / 1024).toFixed(0)} KB)...`
   );
 
-  // Send to Claude with the PDF as a document
-  // claude-haiku-4-5 is the alias (preferred over date-suffixed version)
-  // Haiku pricing: $1/M input, $5/M output — ~$0.05-0.15 per PDF
-  const model = "claude-haiku-4-5";
+  // Model selection:
+  // - sonnet (default): Best accuracy/cost balance for messy PDFs ($3/$15 per MTok)
+  // - haiku: Cheapest, fine for clean PDFs ($1/$5 per MTok)
+  // - opus: Highest accuracy, use for verification ($5/$25 per MTok)
+  // Batch API halves all costs (50% discount)
+  const model = modelOverride || "claude-sonnet-4-6";
   const response = await client.messages.create({
     model,
     max_tokens: 16000, // Trump has 389 transactions — needs room
@@ -161,11 +175,13 @@ async function parsePdf(pdfPath: string): Promise<ParseResult> {
     throw new Error("Response is not a JSON array");
   }
 
-  // Calculate cost — Haiku 4.5: $1/M input, $5/M output
+  // Calculate cost using model-specific pricing
   const inputTokens = response.usage.input_tokens;
   const outputTokens = response.usage.output_tokens;
+  const pricing = MODEL_COSTS[model as ModelChoice] || MODEL_COSTS["claude-sonnet-4-6"];
   const costUsd =
-    (inputTokens / 1_000_000) * 1.0 + (outputTokens / 1_000_000) * 5.0;
+    (inputTokens / 1_000_000) * pricing.input +
+    (outputTokens / 1_000_000) * pricing.output;
 
   const result: ParseResult = {
     transactions: parsed,
@@ -231,19 +247,77 @@ function quickValidate(tx: ParsedTransaction, index: number): string[] {
 
 // ── CLI ──
 
+/**
+ * Compare two parse results and report differences.
+ * Used by admin UI to verify a parse with a second model.
+ */
+function diffParseResults(
+  primary: ParseResult,
+  verification: ParseResult
+): { matches: number; differences: string[]; total: number } {
+  const differences: string[] = [];
+  const pTx = primary.transactions;
+  const vTx = verification.transactions;
+
+  if (pTx.length !== vTx.length) {
+    differences.push(
+      `Transaction count: ${pTx.length} (${primary.model}) vs ${vTx.length} (${verification.model})`
+    );
+  }
+
+  let matches = 0;
+  const total = Math.max(pTx.length, vTx.length) * 5; // 5 fields per tx
+
+  for (let i = 0; i < Math.min(pTx.length, vTx.length); i++) {
+    const p = pTx[i];
+    const v = vTx[i];
+    if (p.description === v.description) matches++; else
+      differences.push(`[${i}] description: "${p.description.substring(0, 40)}..." vs "${v.description.substring(0, 40)}..."`);
+    if (p.type === v.type) matches++; else
+      differences.push(`[${i}] type: ${p.type} vs ${v.type}`);
+    if (p.date === v.date) matches++; else
+      differences.push(`[${i}] date: ${p.date} vs ${v.date}`);
+    if (p.amount === v.amount) matches++; else
+      differences.push(`[${i}] amount: ${p.amount} vs ${v.amount}`);
+    if (p.lateFilingFlag === v.lateFilingFlag) matches++; else
+      differences.push(`[${i}] lateFilingFlag: ${p.lateFilingFlag} vs ${v.lateFilingFlag}`);
+  }
+
+  return { matches, differences, total };
+}
+
 async function main() {
-  const pdfPath = process.argv[2];
+  const args = process.argv.slice(2);
+  const modelFlag = args.find((a) => a.startsWith("--model="));
+  const verifyFlag = args.includes("--verify");
+  const pdfPath = args.find((a) => !a.startsWith("--"));
+  const selectedModel = modelFlag
+    ? (modelFlag.split("=")[1] as ModelChoice)
+    : undefined;
 
   if (!pdfPath) {
-    console.log("Usage: npx tsx scripts/parse-pdf.ts <path-to-pdf>");
-    console.log("       npx tsx scripts/parse-pdf.ts /tmp/cabinet-pdfs/filing.pdf");
+    console.log("Usage: npx tsx scripts/parse-pdf.ts <path-to-pdf> [options]");
+    console.log("");
+    console.log("Options:");
+    console.log("  --model=claude-sonnet-4-6  Model to use (default: sonnet)");
+    console.log("  --model=claude-haiku-4-5   Cheaper, less accurate");
+    console.log("  --model=claude-opus-4-6    Most accurate, highest cost");
+    console.log("  --verify                   Parse with default model then verify with opus");
+    console.log("");
+    console.log("Projected costs per PDF:");
+    console.log("  Haiku:  ~$0.01   (good for clean PDFs)");
+    console.log("  Sonnet: ~$0.04   (default — best accuracy/cost)");
+    console.log("  Opus:   ~$0.06   (verification / complex PDFs)");
+    console.log("  Batch:  50% off  (use createBatch() for bulk)");
     process.exit(1);
   }
 
   console.log(`\n=== Open Cabinet PDF Parser ===\n`);
   console.log(`PDF: ${pdfPath}`);
+  console.log(`Model: ${selectedModel || "claude-sonnet-4-6 (default)"}`);
+  if (verifyFlag) console.log(`Verification: will re-parse with Opus after`);
 
-  const result = await parsePdf(pdfPath);
+  const result = await parsePdf(pdfPath, selectedModel);
 
   // Quick validation pass
   const allErrors: string[] = [];
@@ -282,6 +356,36 @@ async function main() {
   const outputPath = pdfPath.replace(/\.pdf$/i, ".parsed.json");
   await writeFile(outputPath, JSON.stringify(result, null, 2));
   console.log(`\nOutput: ${outputPath}`);
+
+  // Verification pass with a second model
+  if (verifyFlag) {
+    console.log(`\n--- Verification Pass (Opus) ---`);
+    const verifyResult = await parsePdf(pdfPath, "claude-opus-4-6");
+    console.log(
+      `Verification: ${verifyResult.transactions.length} transactions`
+    );
+    console.log(
+      `Cost: $${verifyResult.tokenUsage.estimatedCostUsd} (Opus)`
+    );
+
+    const diff = diffParseResults(result, verifyResult);
+    const accuracy = diff.total > 0 ? ((diff.matches / diff.total) * 100).toFixed(1) : "100";
+    console.log(`Agreement: ${accuracy}% (${diff.matches}/${diff.total} fields match)`);
+
+    if (diff.differences.length > 0) {
+      console.log(`\nDifferences:`);
+      diff.differences.slice(0, 10).forEach((d) => console.log(`  ${d}`));
+      if (diff.differences.length > 10) {
+        console.log(`  ... and ${diff.differences.length - 10} more`);
+      }
+    } else {
+      console.log(`Models agree on all fields.`);
+    }
+
+    console.log(
+      `\nTotal cost: $${(result.tokenUsage.estimatedCostUsd + verifyResult.tokenUsage.estimatedCostUsd).toFixed(4)} (primary + verification)`
+    );
+  }
 }
 
 // ── BATCH PARSING ──
@@ -342,8 +446,8 @@ async function createBatch(items: BatchItem[]): Promise<string> {
 }
 
 // Export for use by other scripts (pipeline orchestrator)
-export { parsePdf, createBatch, quickValidate, VALID_TYPES, VALID_AMOUNTS };
-export type { ParsedTransaction, ParseResult, BatchItem };
+export { parsePdf, createBatch, quickValidate, diffParseResults, VALID_TYPES, VALID_AMOUNTS, MODEL_COSTS };
+export type { ParsedTransaction, ParseResult, BatchItem, ModelChoice };
 
 // Run CLI if invoked directly (not when imported by other scripts)
 const isDirectRun = process.argv[1]?.includes("parse-pdf");
