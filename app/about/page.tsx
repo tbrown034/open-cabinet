@@ -217,31 +217,39 @@ export default function AboutPage() {
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
             About the developer
           </h2>
-          <p className="text-neutral-600 leading-relaxed">
-            Built by{" "}
-            <a
-              href="https://trevorthewebdeveloper.com"
-              className="underline hover:text-neutral-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Trevor Brown
-            </a>
-            , investigative data journalist turned web developer. 15 years of
-            political reporting, most recently six years covering elections,
-            dark money, financial disclosures and government accountability
-            at{" "}
-            <a
-              href="https://oklahomawatch.org"
-              className="underline hover:text-neutral-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Oklahoma Watch
-            </a>
-            . This project bridges both worlds — journalism instinct driving
-            a developer tool.
-          </p>
+          <div className="flex items-start gap-5">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/photos/trevor-brown.jpg"
+              alt="Trevor Brown"
+              className="w-20 h-20 rounded-full object-cover shrink-0"
+            />
+            <p className="text-neutral-600 leading-relaxed">
+              Built by{" "}
+              <a
+                href="https://trevorthewebdeveloper.com"
+                className="underline hover:text-neutral-900"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Trevor Brown
+              </a>
+              , investigative data journalist turned web developer. 15 years of
+              political reporting, most recently six years covering elections,
+              dark money, financial disclosures and government accountability
+              at{" "}
+              <a
+                href="https://oklahomawatch.org"
+                className="underline hover:text-neutral-900"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Oklahoma Watch
+              </a>
+              . This project bridges both worlds — journalism instinct driving
+              a developer tool.
+            </p>
+          </div>
         </section>
 
         {/* AI transparency */}
