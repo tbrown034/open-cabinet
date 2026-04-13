@@ -192,39 +192,48 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <Link
               href="/all"
-              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-400 transition-colors group"
+              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-900 hover:bg-neutral-50 transition-colors group flex justify-between items-start"
             >
-              <div className="text-sm font-medium text-neutral-900 group-hover:underline">
-                All Trades
+              <div>
+                <div className="text-sm font-medium text-neutral-900 group-hover:underline">
+                  All Trades
+                </div>
+                <p className="text-xs text-neutral-500 mt-1">
+                  {totalTransactions.toLocaleString()} transactions across{" "}
+                  {totalOfficials} officials on one swim lane chart.
+                </p>
               </div>
-              <p className="text-xs text-neutral-500 mt-1">
-                {totalTransactions.toLocaleString()} transactions across{" "}
-                {totalOfficials} officials on one swim lane chart.
-              </p>
+              <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>
             </Link>
             <Link
               href="/companies"
-              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-400 transition-colors group"
+              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-900 hover:bg-neutral-50 transition-colors group flex justify-between items-start"
             >
-              <div className="text-sm font-medium text-neutral-900 group-hover:underline">
-                Company Lookup
+              <div>
+                <div className="text-sm font-medium text-neutral-900 group-hover:underline">
+                  Company Lookup
+                </div>
+                <p className="text-xs text-neutral-500 mt-1">
+                  Search by ticker to see which officials traded each stock. 578
+                  companies tracked.
+                </p>
               </div>
-              <p className="text-xs text-neutral-500 mt-1">
-                Search by ticker to see which officials traded each stock. 578
-                companies tracked.
-              </p>
+              <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>
             </Link>
             <Link
               href="/about"
-              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-400 transition-colors group"
+              className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-900 hover:bg-neutral-50 transition-colors group flex justify-between items-start"
             >
-              <div className="text-sm font-medium text-neutral-900 group-hover:underline">
-                How This Works
+              <div>
+                <div className="text-sm font-medium text-neutral-900 group-hover:underline">
+                  How This Works
+                </div>
+                <p className="text-xs text-neutral-500 mt-1">
+                  The STOCK Act, divestiture deadlines, and how we built this
+                  tracker from OGE data.
+                </p>
               </div>
-              <p className="text-xs text-neutral-500 mt-1">
-                The STOCK Act, divestiture deadlines, and how we built this
-                tracker from OGE data.
-              </p>
+              <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>
             </Link>
           </div>
         </div>
