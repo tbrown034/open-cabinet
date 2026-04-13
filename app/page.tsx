@@ -150,8 +150,12 @@ export default async function Home() {
             <a href="https://github.com/tbrown034/open-cabinet" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               open-source project
             </a>
-            {" "}— expanding coverage is an ongoing goal. For legislative
-            branch tracking, see{" "}
+            {" "}— expanding coverage is an ongoing goal. For raw disclosure
+            documents across 1,500+ appointees, see{" "}
+            <a href="https://projects.propublica.org/trump-team-financial-disclosures/" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
+              ProPublica
+            </a>
+            . For legislative branch tracking, see{" "}
             <a href="https://www.capitoltrades.com" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               Capitol Trades
             </a>

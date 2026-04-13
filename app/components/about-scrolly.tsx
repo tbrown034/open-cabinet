@@ -62,7 +62,7 @@ const BUILD_STEPS = [
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf (a Python library by data journalist Jonathan Soma) to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf — an open-source Python library by data journalist Jonathan Soma (github.com/jsoma/natural-pdf) — to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
   },
   {
     id: "validate",
