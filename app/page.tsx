@@ -45,9 +45,10 @@ export default async function Home() {
               buying and selling?
             </h1>
             <p className="text-neutral-500 max-w-xl leading-relaxed">
-              Senior officials must disclose individual stock trades, but the
-              filings are scattered across PDFs and hard to search. Open Cabinet
-              makes them sortable, searchable, and visual.
+              Senior officials must disclose individual stock trades and
+              potential conflicts of interest, but the filings are scattered
+              across PDFs and hard to search. Open Cabinet makes them
+              sortable, searchable, and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
               Updated{" "}
@@ -93,7 +94,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {totalOfficials}
             </span>
-            officials<a href="#coverage-note" className="text-neutral-400 hover:text-neutral-600 ml-0.5 no-underline">*</a>
+            officials<a href="#coverage-note" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
           </div>
           <div>
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -256,8 +257,12 @@ export default async function Home() {
               ProPublica, CNBC, NOTUS, and other outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
-              Collected via AI-assisted search. Checked daily. Last updated
-              April 2026.
+              Collected via AI-assisted search. Checked daily. Last updated{" "}
+              {new Date().toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}.
             </p>
             <div className="space-y-4">
               {recentNews.map((item, i) => (
