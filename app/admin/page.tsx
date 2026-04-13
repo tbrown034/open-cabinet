@@ -36,6 +36,8 @@ export default function AdminPage() {
   const [reviewItems, setReviewItems] = useState<ReviewItem[]>([]);
   const [reviewCount, setReviewCount] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [validationReport, setValidationReport] = useState<any>(null);
+  const [validating, setValidating] = useState(false);
   const [stats, setStats] = useState<{
     officials: number;
     transactions: number;
@@ -78,6 +80,19 @@ export default function AdminPage() {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
+  async function runValidation() {
+    setValidating(true);
+    try {
+      const res = await fetch("/api/admin/validate", { method: "POST" });
+      if (res.ok) {
+        setValidationReport(await res.json());
+      }
+    } catch (err) {
+      console.error("Validation failed:", err);
+    }
+    setValidating(false);
+  }
 
   async function handleReview(id: number, action: "approve" | "delete") {
     const res = await fetch("/api/admin/review", {
@@ -386,6 +401,50 @@ export default function AdminPage() {
         )}
       </section>
 
+      {/* Data Validation */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
+            Data Validation
+          </h2>
+          <button
+            onClick={runValidation}
+            disabled={validating}
+            className="text-xs bg-neutral-900 text-white px-3 py-1.5 hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
+          >
+            {validating ? "Running..." : "Run Validation"}
+          </button>
+        </div>
+        {validationReport ? (
+          <div className={`border px-4 py-3 text-sm ${validationReport.result === "PASS" ? "border-emerald-200 bg-emerald-50" : "border-red-200 bg-red-50"}`}>
+            <div className="flex items-center gap-2 mb-2">
+              <span className={`font-medium ${validationReport.result === "PASS" ? "text-emerald-700" : "text-red-700"}`}>
+                {validationReport.result}
+              </span>
+              <span className="text-xs text-neutral-400">{validationReport.duration}</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <div>Officials: {validationReport.officials}</div>
+              <div>Transactions: {validationReport.transactions}</div>
+              <div>Needs review: {validationReport.needsReview}</div>
+              <div>Issues: {validationReport.totalIssues}</div>
+            </div>
+            {validationReport.totalIssues > 0 && (
+              <div className="mt-2 text-xs text-red-700">
+                {Object.entries(validationReport.checks)
+                  .filter(([, v]) => (v as number) > 0)
+                  .map(([k, v]) => `${k}: ${v}`)
+                  .join(" | ")}
+              </div>
+            )}
+          </div>
+        ) : (
+          <p className="text-sm text-neutral-400">
+            Click {"\""}Run Validation{"\""} to check data integrity.
+          </p>
+        )}
+      </section>
+
       {/* Quick Links */}
       <section>
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
@@ -397,6 +456,12 @@ export default function AdminPage() {
             className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
           >
             Directory
+          </Link>
+          <Link
+            href="/late-filings"
+            className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
+          >
+            Late Filings
           </Link>
           <Link
             href="/download"
