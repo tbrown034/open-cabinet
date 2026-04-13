@@ -56,7 +56,7 @@ const BUILD_STEPS = [
     id: "filter",
     label: "Filter officials",
     title: "Find the ones with transaction reports",
-    body: "We filter for 278-T Periodic Transaction Reports — the ongoing stock trade disclosures. About 37 of the most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of those. Hundreds more officials have filed reports that require individual written requests to access.",
+    body: "We filter for 278-T Periodic Transaction Reports — the ongoing stock trade disclosures. The most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of them. Hundreds more officials have filed reports that require individual written requests to access.",
   },
   {
     id: "parse-pdfs",
