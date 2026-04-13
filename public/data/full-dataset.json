@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-04-13T03:46:04.572Z",
+  "exportedAt": "2026-04-13T14:21:39.123Z",
   "officialCount": 34,
-  "transactionCount": 2320,
+  "transactionCount": 2237,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -9,7 +9,7 @@
       "title": "FAA Administrator",
       "agency": "Department of Transportation",
       "level": "Sub-Cabinet",
-      "transactionCount": 76,
+      "transactionCount": 72,
       "mostRecentFilingDate": "2026-04-09",
       "transactions": [
         {
@@ -493,14 +493,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "JPMorgan BetaBuilders Japan ETF",
-          "ticker": "BBJP",
-          "type": "Sale",
-          "date": "2025-09-12",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "iShares MSCI EAFE ETF",
           "ticker": "EFA",
           "type": "Purchase",
@@ -577,14 +569,6 @@
           "ticker": "RJET",
           "type": "Sale",
           "date": "2026-02-18",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Republic Airways Holdings Inc.",
-          "ticker": "RJET",
-          "type": "Sale",
-          "date": "2026-02-18",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
@@ -593,23 +577,7 @@
           "ticker": "RJET",
           "type": "Sale",
           "date": "2026-02-19",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Republic Airways Holdings Inc.",
-          "ticker": "RJET",
-          "type": "Sale",
-          "date": "2026-02-19",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Republic Airways Holdings Inc.",
-          "ticker": "RJET",
-          "type": "Sale",
-          "date": "2026-02-20",
-          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -628,7 +596,7 @@
       "title": "Secretary of the Treasury",
       "agency": "Department of the Treasury",
       "level": "Cabinet",
-      "transactionCount": 21,
+      "transactionCount": 19,
       "mostRecentFilingDate": "2025-12-05",
       "transactions": [
         {
@@ -740,22 +708,6 @@
           "ticker": null,
           "type": "Sale",
           "date": "2025-03-25",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Roxo Energy Funding IV LLC",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Roxo Energy Funding IV LLC",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-03-25",
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
@@ -807,7 +759,7 @@
       "title": "Commissioner",
       "agency": "Social Security Administration",
       "level": "Cabinet",
-      "transactionCount": 94,
+      "transactionCount": 84,
       "mostRecentFilingDate": "2026-03-06",
       "transactions": [
         {
@@ -928,86 +880,6 @@
           "type": "Sale",
           "date": "2025-06-17",
           "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
-          "ticker": "VONG",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-          "ticker": "VIG",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
-          "ticker": "VYM",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares National Muni Bond ETF",
-          "ticker": "MUB",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF",
-          "ticker": "USHY",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares 1-3 Year Treasury Bond ETF",
-          "ticker": "SHY",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
-          "ticker": "VTEB",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
-          "ticker": "VONG",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
-          "ticker": "VYM",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
-          "ticker": "VYM",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1706,7 +1578,7 @@
       "transactions": [
         {
           "description": "Trump Media & Technology Group",
-          "ticker": null,
+          "ticker": "DJT",
           "type": "Sale",
           "date": "2025-04-02",
           "amount": "$1,000,001-$5,000,000",
@@ -1714,7 +1586,7 @@
         },
         {
           "description": "Trump Media & Technology Group Warrants",
-          "ticker": null,
+          "ticker": "DJT",
           "type": "Sale",
           "date": "2025-04-02",
           "amount": "$250,001-$500,000",
@@ -1728,7 +1600,7 @@
       "title": "Secretary",
       "agency": "Department of the Interior",
       "level": "Cabinet",
-      "transactionCount": 124,
+      "transactionCount": 116,
       "mostRecentFilingDate": "2025-11-13",
       "transactions": [
         {
@@ -1793,14 +1665,6 @@
           "type": "Purchase",
           "date": "2025-01-16",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Atlassian Corporation Plc Class A Ordinary Shares",
-          "ticker": "TEAM",
-          "type": "Sale",
-          "date": "2025-01-31",
-          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -2105,14 +1969,6 @@
           "type": "Purchase",
           "date": "2025-02-21",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures V, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-02-26",
-          "amount": "$1,001-$15,000",
           "lateFilingFlag": true
         },
         {
@@ -2608,23 +2464,7 @@
           "ticker": null,
           "type": "Sale",
           "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-07-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
-          "ticker": null,
-          "type": "Exchange",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -2640,23 +2480,7 @@
           "ticker": null,
           "type": "Purchase",
           "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -2672,23 +2496,7 @@
           "ticker": null,
           "type": "Purchase",
           "date": "2025-08-21",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-08-21",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Arthur Ventures V, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-09-04",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
@@ -3633,7 +3441,7 @@
       "title": "Principal Deputy Director of National Intelligence",
       "agency": "Office of the Director of National Intelligence",
       "level": "Sub-Cabinet",
-      "transactionCount": 111,
+      "transactionCount": 110,
       "mostRecentFilingDate": "2025-02-10",
       "transactions": [
         {
@@ -3969,14 +3777,6 @@
           "ticker": "AMBFX",
           "type": "Purchase",
           "date": "2024-12-19",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Core Aggressive Allo (AOA)",
-          "ticker": "AOA",
-          "type": "Sale",
-          "date": "2024-01-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
@@ -4847,7 +4647,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of Homeland Security",
       "level": "Sub-Cabinet",
-      "transactionCount": 63,
+      "transactionCount": 62,
       "mostRecentFilingDate": "2025-05-01",
       "transactions": [
         {
@@ -5077,14 +4877,6 @@
         {
           "description": "Honeywell International, Inc.",
           "ticker": "HON",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "International Business Machines Corp.",
-          "ticker": "IBM",
           "type": "Sale",
           "date": "2025-03-25",
           "amount": "$1,001-$15,000",
@@ -5822,7 +5614,7 @@
       "title": "Director, Office of Science and Technology Policy",
       "agency": "Office of Science and Technology Policy",
       "level": "Sub-Cabinet",
-      "transactionCount": 55,
+      "transactionCount": 53,
       "mostRecentFilingDate": "2026-01-10",
       "transactions": [
         {
@@ -5991,22 +5783,6 @@
           "type": "Purchase",
           "date": "2025-03-24",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Core S&P Total US Stock Market ETF",
-          "ticker": "ITOT",
-          "type": "Sale",
-          "date": "2025-03-31",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2025-03-31",
-          "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
         {
@@ -6860,7 +6636,7 @@
       "title": "Deputy Secretary of State",
       "agency": "Department of State",
       "level": "Sub-Cabinet",
-      "transactionCount": 89,
+      "transactionCount": 86,
       "mostRecentFilingDate": "2025-05-22",
       "transactions": [
         {
@@ -6892,14 +6668,6 @@
           "ticker": "NMTRX",
           "type": "Sale",
           "date": "2025-04-24",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nestle S.A.",
-          "ticker": "NSRGY",
-          "type": "Sale",
-          "date": "2025-04-28",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
@@ -7424,14 +7192,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Westinghouse Air Brake Technologies Corporation",
-          "ticker": "WAB",
-          "type": "Sale",
-          "date": "2025-04-28",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Orkla ASA",
           "ticker": "ORKLY",
           "type": "Sale",
@@ -7552,14 +7312,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Ally Financial Inc 4.700% Due 2065",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-05-01",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Builders FirstSource Inc 4.250% Due 2032",
           "ticker": null,
           "type": "Sale",
@@ -7618,7 +7370,7 @@
       "title": "Secretary of Commerce",
       "agency": "Department of Commerce",
       "level": "Cabinet",
-      "transactionCount": 20,
+      "transactionCount": 18,
       "mostRecentFilingDate": "2025-11-05",
       "transactions": [
         {
@@ -7667,22 +7419,6 @@
           "type": "Sale",
           "date": "2025-10-06",
           "amount": "Over $50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Shares in Retirement Accounts (BGC)",
-          "ticker": "BGC",
-          "type": "Sale",
-          "date": "2025-10-06",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Shares in Retirement Accounts (NMRK)",
-          "ticker": "NMRK",
-          "type": "Sale",
-          "date": "2025-10-06",
-          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": false
         },
         {
@@ -7789,7 +7525,7 @@
       "title": "Deputy Secretary",
       "agency": "Department of the Interior",
       "level": "Sub-Cabinet",
-      "transactionCount": 23,
+      "transactionCount": 22,
       "mostRecentFilingDate": "2025-08-07",
       "transactions": [
         {
@@ -7836,14 +7572,6 @@
           "description": "NextEra Energy, Inc. (NEE) (option strike price $75.38)",
           "ticker": "NEE",
           "type": "Purchase",
-          "date": "2025-07-22",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NextEra Energy, Inc. (NEE)",
-          "ticker": "NEE",
-          "type": "Sale",
           "date": "2025-07-22",
           "amount": "$100,001-$250,000",
           "lateFilingFlag": false
@@ -9913,7 +9641,7 @@
       "title": "Deputy Commissioner, Social Security Administration",
       "agency": "Social Security Administration",
       "level": "Sub-Cabinet",
-      "transactionCount": 303,
+      "transactionCount": 260,
       "mostRecentFilingDate": "2026-04-10",
       "transactions": [
         {
@@ -9927,14 +9655,6 @@
         {
           "description": "AIA Group Ltd ADR (AAGIY)",
           "ticker": "AAGIY",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Apple, Inc. (AAPL)",
-          "ticker": "AAPL",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10045,22 +9765,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Amazon.com, Inc. (AMZN)",
-          "ticker": "AMZN",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Amazon.com, Inc. (AMZN)",
-          "ticker": "AMZN",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Aon Plc (AON)",
           "ticker": "AON",
           "type": "Sale",
@@ -10071,14 +9775,6 @@
         {
           "description": "Atmos Energy Corp. (ATO)",
           "ticker": "ATO",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Broadcom, Inc. (AVGO)",
-          "ticker": "AVGO",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10365,14 +10061,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Chevron Corp. (CVX)",
-          "ticker": "CVX",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Danone SA ADR (DANOY)",
           "ticker": "DANOY",
           "type": "Sale",
@@ -10383,22 +10071,6 @@
         {
           "description": "Dollar General Corp. (DG)",
           "ticker": "DG",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Danaher Corp. (DHR)",
-          "ticker": "DHR",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
-          "ticker": "DIA",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10605,14 +10277,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Alphabet, Inc. (GOOG)",
-          "ticker": "GOOG",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Guidewire Software, Inc. (GWRE)",
           "ticker": "GWRE",
           "type": "Sale",
@@ -10693,40 +10357,8 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Intuit, Inc. (INTU)",
-          "ticker": "INTU",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Gartner, Inc. (IT)",
           "ticker": "IT",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Core S&P US Growth ETF (IUSG)",
-          "ticker": "IUSG",
-          "type": "Sale",
-          "date": "2026-02-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Core S&P US Value ETF (IUSV)",
-          "ticker": "IUSV",
-          "type": "Sale",
-          "date": "2026-02-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Russell 2000 ETF (IWM)",
-          "ticker": "IWM",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10837,14 +10469,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Mastercard, Inc. (MA)",
-          "ticker": "MA",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Medtronic Plc (MDT)",
           "ticker": "MDT",
           "type": "Sale",
@@ -10855,14 +10479,6 @@
         {
           "description": "Medpace Holdings, Inc. (MEDP)",
           "ticker": "MEDP",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Meta Platforms Inc. Class A Common Stock (META)",
-          "ticker": "META",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -10945,14 +10561,6 @@
           "ticker": "MSFT",
           "type": "Sale",
           "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Microsoft Corp. (MSFT)",
-          "ticker": "MSFT",
-          "type": "Sale",
-          "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
@@ -11018,14 +10626,6 @@
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NVIDIA Corp. (NVDA)",
-          "ticker": "NVDA",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
@@ -11189,14 +10789,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Invesco QQQ Trust, Series 1 (QQQ)",
-          "ticker": "QQQ",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "RB Global Inc (RBA)",
           "ticker": "RBA",
           "type": "Sale",
@@ -11255,14 +10847,6 @@
         {
           "description": "SAP SE ADS (SAP)",
           "ticker": "SAP",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Starbucks Corp. (SBUX)",
-          "ticker": "SBUX",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -11333,22 +10917,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "S&P Global, Inc. (SPGI)",
-          "ticker": "SPGI",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "SPDR S&P 500 ETF Trust (SPY)",
-          "ticker": "SPY",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "STERIS Plc (STE)",
           "ticker": "STE",
           "type": "Sale",
@@ -11373,14 +10941,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "The TJX Cos., Inc. (TJX)",
-          "ticker": "TJX",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Thermo Fisher Scientific, Inc. (TMO)",
           "ticker": "TMO",
           "type": "Sale",
@@ -11397,22 +10957,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "TransUnion (TRU)",
-          "ticker": "TRU",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Tesla, Inc. (TSLA)",
-          "ticker": "TSLA",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
           "ticker": "TSM",
           "type": "Sale",
@@ -11421,24 +10965,8 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
-          "ticker": "TTTXX",
-          "type": "Sale",
-          "date": "2026-01-28",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Twist Bioscience Corp. (TWST)",
           "ticker": "TWST",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Texas Instruments Incorporated (TXN)",
-          "ticker": "TXN",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -11485,22 +11013,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Visa, Inc. (V)",
-          "ticker": "V",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
-          "ticker": "VEA",
-          "type": "Sale",
-          "date": "2026-02-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Veeva Systems, Inc. (VEEV)",
           "ticker": "VEEV",
           "type": "Sale",
@@ -11517,51 +11029,11 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Verisk Analytics, Inc. (VRSK)",
-          "ticker": "VRSK",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
           "ticker": "VRTX",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-02-03",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-02-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
@@ -11577,38 +11049,6 @@
           "ticker": "VUG",
           "type": "Purchase",
           "date": "2026-02-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
-          "ticker": "VUG",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "ticker": "VXUS",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "ticker": "VXUS",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Verizon Communications, Inc. (VZ)",
-          "ticker": "VZ",
-          "type": "Sale",
-          "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
@@ -11639,14 +11079,6 @@
         {
           "description": "Wal - Mart de Mexico SPN ADR (WMMVY)",
           "ticker": "WMMVY",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Walmart, Inc. (WMT)",
-          "ticker": "WMT",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -11786,14 +11218,6 @@
           "type": "Purchase",
           "date": "2026-02-03",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-02-03",
-          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
@@ -12061,14 +11485,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Amazon.com, Inc. (AMZN)",
-          "ticker": "AMZN",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Broadcom, Inc. (AVGO)",
           "ticker": "AVGO",
           "type": "Sale",
@@ -12095,22 +11511,6 @@
         {
           "description": "SPDR Dow Jones Industrial Average ETF Trust (DIA)",
           "ticker": "DIA",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Alphabet, Inc. (GOOG)",
-          "ticker": "GOOG",
-          "type": "Sale",
-          "date": "2026-01-30",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Alphabet, Inc. (GOOG)",
-          "ticker": "GOOG",
           "type": "Sale",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
@@ -12293,24 +11693,8 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
-          "ticker": "VTI",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
           "ticker": "VUG",
-          "type": "Purchase",
-          "date": "2026-01-30",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
-          "ticker": "VXUS",
           "type": "Purchase",
           "date": "2026-01-30",
           "amount": "$15,001-$50,000",
@@ -13144,7 +12528,7 @@
       "title": "President of the United States",
       "agency": "Executive Office of the President",
       "level": "Cabinet",
-      "transactionCount": 389,
+      "transactionCount": 384,
       "mostRecentFilingDate": "2026-02-27",
       "transactions": [
         {
@@ -15062,14 +14446,6 @@
         {
           "description": "HUNTINGTON BANCSHARES INC PE 6.2500%",
           "ticker": null,
-          "type": "Sale",
-          "date": "2025-09-09",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "HUNTINGTON BANCSHARES INC PE 6.2500%",
-          "ticker": null,
           "type": "Purchase",
           "date": "2025-09-09",
           "amount": "$15,001-$50,000",
@@ -15344,14 +14720,6 @@
           "ticker": "MS",
           "type": "Purchase",
           "date": "2025-06-30",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "MORGAN STANLEY DEP SHS REPST 6.6250% 12/31/49",
-          "ticker": "MS",
-          "type": "Purchase",
-          "date": "2025-06-30",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
         },
@@ -15456,14 +14824,6 @@
           "ticker": null,
           "type": "Purchase",
           "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "CITIZENS FINL GROUP INC PERP 4.0000%",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-06-18",
           "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
@@ -15489,14 +14849,6 @@
           "type": "Purchase",
           "date": "2025-06-18",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "KEYCORP PERP JR GLBL -D 5.0000% 12/31/49",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
@@ -15713,14 +15065,6 @@
           "type": "Purchase",
           "date": "2025-05-22",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Fifth Third Bancorp 7.5938% 12/31/49",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-05-16",
-          "amount": "$15,001-$50,000",
           "lateFilingFlag": true
         },
         {
@@ -16473,7 +15817,7 @@
       "title": "Secretary of Energy",
       "agency": "Department of Energy",
       "level": "Cabinet",
-      "transactionCount": 302,
+      "transactionCount": 301,
       "mostRecentFilingDate": "2026-04-01",
       "transactions": [
         {
@@ -18072,14 +17416,6 @@
           "description": "Liberty Energy Inc Class A",
           "ticker": "LBRT",
           "type": "Sale",
-          "date": "2025-03-11",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Schwab Value Advantage Money Fund",
-          "ticker": null,
-          "type": "Purchase",
           "date": "2025-03-11",
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": false
