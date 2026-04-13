@@ -152,7 +152,7 @@ export default function RootLayout({
                 >
                   Contact
                 </a>
-                <span>MIT License</span>
+                <a href="https://github.com/tbrown034/open-cabinet/blob/main/LICENSE" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">MIT License</a>
               </div>
             </div>
           </div>

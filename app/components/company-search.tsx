@@ -76,7 +76,7 @@ export default function CompanySearch({
                     {c.ticker}
                   </Link>
                 </td>
-                <td className="py-2.5 pr-3 text-neutral-600 max-w-[160px] truncate sm:max-w-none sm:truncate-none">{c.companyName}</td>
+                <td className="py-2.5 pr-3 text-neutral-600 max-w-[160px] truncate sm:max-w-none sm:whitespace-normal sm:max-w-none">{c.companyName}</td>
                 <td className="py-2.5 pr-3 text-right tabular-nums text-neutral-900 hidden sm:table-cell">
                   {c.officialCount}
                 </td>

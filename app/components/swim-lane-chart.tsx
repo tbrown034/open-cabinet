@@ -27,7 +27,7 @@ import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/l
  *   this fine — browsers can render thousands of circles efficiently.
  * - We reduce re-renders by only updating tooltip state (one state var).
  * - No transitions or animations — static render is fastest.
- * - For 10,000+ elements, we'd switch to Canvas. At 2,200, SVG is fine.
+ * - For 10,000+ elements, we'd switch to Canvas. At 3,200+, SVG is fine.
  */
 
 interface SwimTransaction {
