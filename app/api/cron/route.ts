@@ -72,6 +72,17 @@ export async function GET(request: NextRequest) {
       })
       .where(eq(pipelineRuns.id, run.id));
 
+    // Weekly summary email
+    await notify({
+      type: "new_filings",
+      details: `Weekly OGE check completed.\n\nTotal OGE records: ${totalRecords}\nDuration: ${((Date.now() - startTime) / 1000).toFixed(1)}s\nRun #${run.id}`,
+      metadata: {
+        totalOgeRecords: totalRecords,
+        runId: run.id,
+        duration: `${((Date.now() - startTime) / 1000).toFixed(1)}s`,
+      },
+    });
+
     return NextResponse.json({
       status: "completed",
       runId: run.id,

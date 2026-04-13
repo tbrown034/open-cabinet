@@ -27,6 +27,7 @@ import { eq } from "drizzle-orm";
 import { officials, transactions, pipelineRuns } from "../lib/schema";
 import { parsePdf, quickValidate } from "./parse-pdf";
 import type { ParsedTransaction } from "./parse-pdf";
+import { notify } from "../lib/notify";
 import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
@@ -292,10 +293,15 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
         errors.push({ step: "parse", error: `${filing.name}: ${errMsg}` });
         console.log(`  Parse failed: ${errMsg}\n`);
 
-        // If credit balance error, log clearly
+        // If credit balance error, notify and stop
         if (errMsg.includes("credit balance")) {
           console.log("  *** API CREDITS EXHAUSTED — pipeline stopping ***");
           console.log("  Top up credits at console.anthropic.com\n");
+          await notify({
+            type: "credits_exhausted",
+            details: `Pipeline stopped: ${errMsg}\n\nProcessed ${newTransactionsParsed} transactions before running out.`,
+            metadata: { processedSoFar: newTransactionsParsed },
+          });
           break;
         }
       }
@@ -337,6 +343,28 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
       completedAt: new Date(),
     })
     .where(eq(pipelineRuns.id, run.id));
+
+  // Send completion email
+  if (newTransactionsParsed > 0) {
+    await notify({
+      type: "new_filings",
+      details: `Pipeline completed: ${newFilingsFound} new filings, ${newTransactionsParsed} transactions parsed.\n\nCost: $${totalTokenUsage.costUsd.toFixed(4)}\nDuration: ${((Date.now() - startTime) / 1000).toFixed(1)}s\nErrors: ${errors.length}`,
+      metadata: {
+        runId: run.id,
+        newFilings: newFilingsFound,
+        transactions: newTransactionsParsed,
+        cost: `$${totalTokenUsage.costUsd.toFixed(4)}`,
+      },
+    });
+  }
+
+  if (errors.length > 0) {
+    await notify({
+      type: "pipeline_error",
+      details: `Pipeline completed with ${errors.length} errors:\n\n${errors.map((e) => `[${e.step}] ${e.error}`).join("\n")}`,
+      metadata: { runId: run.id, errorCount: errors.length },
+    });
+  }
 
   // Report
   console.log("=== Pipeline Report ===");

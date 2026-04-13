@@ -81,6 +81,30 @@ export default function AdminPage() {
     fetchData();
   }, [fetchData]);
 
+  async function runCronCheck() {
+    setValidating(true);
+    try {
+      const secret = prompt("Enter CRON_SECRET to trigger a check:");
+      if (!secret) { setValidating(false); return; }
+      const res = await fetch("/api/cron", {
+        headers: { Authorization: `Bearer ${secret}` },
+      });
+      const data = await res.json();
+      setValidationReport({
+        ...data,
+        result: res.ok ? "PASS" : "FAIL",
+        checks: { totalOgeRecords: data.totalOgeRecords || 0 },
+        totalIssues: res.ok ? 0 : 1,
+        transactions: data.totalOgeRecords,
+        officials: "-",
+        needsReview: "-",
+      });
+    } catch (err) {
+      setValidationReport({ result: "FAIL", totalIssues: 1, checks: { error: (err as Error).message } });
+    }
+    setValidating(false);
+  }
+
   async function runValidation() {
     setValidating(true);
     try {
@@ -421,13 +445,22 @@ export default function AdminPage() {
           <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
             Data Validation
           </h2>
-          <button
-            onClick={runValidation}
-            disabled={validating}
-            className="text-xs bg-neutral-900 text-white px-3 py-1.5 hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
-          >
-            {validating ? "Running..." : "Run Validation"}
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={runValidation}
+              disabled={validating}
+              className="text-xs bg-neutral-900 text-white px-3 py-1.5 hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
+            >
+              {validating ? "Running..." : "Run Validation"}
+            </button>
+            <button
+              onClick={runCronCheck}
+              disabled={validating}
+              className="text-xs border border-neutral-300 text-neutral-700 px-3 py-1.5 hover:bg-neutral-50 transition-colors cursor-pointer disabled:opacity-50"
+            >
+              Check OGE
+            </button>
+          </div>
         </div>
         {validationReport ? (
           <div className={`border px-4 py-3 text-sm ${validationReport.result === "PASS" ? "border-emerald-200 bg-emerald-50" : "border-red-200 bg-red-50"}`}>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
+import FeedbackForm from "../components/feedback-form";
 
 export const metadata: Metadata = {
   title: "About — Open Cabinet",
@@ -358,6 +359,18 @@ export default function AboutPage() {
             </a>
             .
           </p>
+        </section>
+
+        {/* Feedback */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-2">
+            Report an issue
+          </h2>
+          <p className="text-neutral-500 text-sm mb-6">
+            Found a data error, missing official, or bug? We review every
+            submission. Your feedback helps keep this tool accurate.
+          </p>
+          <FeedbackForm />
         </section>
 
         {/* Disclaimers */}
