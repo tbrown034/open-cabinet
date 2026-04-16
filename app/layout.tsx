@@ -3,6 +3,7 @@ import { DM_Sans, DM_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import MobileNav from "./components/mobile-nav";
+import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -157,6 +158,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
