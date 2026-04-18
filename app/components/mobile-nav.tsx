@@ -10,6 +10,7 @@ const links = [
   { href: "/companies", label: "Companies" },
   { href: "/dashboard", label: "Overview" },
   { href: "/late-filings", label: "Late Filings" },
+  { href: "/methodology", label: "Methodology" },
   { href: "/about", label: "About" },
 ];
 

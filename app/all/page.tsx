@@ -91,7 +91,7 @@ export default async function AllTradesPage() {
         Source: U.S. Office of Government Ethics. Red = sale, green = purchase.
         Circle size = transaction amount range. Dollar values are estimates
         based on range midpoints.{" "}
-        <a href="/about#known-limitations" className="underline hover:text-neutral-600">
+        <a href="/methodology#known-limitations" className="underline hover:text-neutral-600">
           Learn more
         </a>
         .
