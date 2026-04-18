@@ -290,6 +290,26 @@ export default function SwimLaneChart({
         </div>
       )}
 
+      {/* Legend — above chart so readers see it first */}
+      {!isMobile && (
+        <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3 text-xs text-neutral-400">
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-60" />
+            Sale
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-60" />
+            Purchase
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="inline-block w-0 h-3 border-l border-dashed border-neutral-500" />
+            Inauguration
+          </div>
+          <div className="text-neutral-300">|</div>
+          <div>Circle size = transaction amount</div>
+        </div>
+      )}
+
       {/* DESKTOP: Full SVG swim lane chart */}
       {!isMobile && <><svg
         width={svgWidth}
@@ -529,21 +549,8 @@ export default function SwimLaneChart({
         </div>
       )}
 
-      <div className="flex flex-wrap gap-x-4 gap-y-2 mt-3 text-xs text-neutral-400">
-        <div className="flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-60" />
-          Sale
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-60" />
-          Purchase
-        </div>
-        <div className="flex items-center gap-1.5">
-          <span className="inline-block w-0 h-3 border-l border-dashed border-neutral-500" />
-          Inauguration
-        </div>
-        <div className="text-neutral-300">|</div>
-        <div>Circle size = amount</div>
+      <div className="text-[10px] text-neutral-400 mt-2">
+        Hover over any dot for details. Click an official{"'"}s name to view their full profile.
       </div>
       </>}
     </div>

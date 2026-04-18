@@ -300,7 +300,7 @@ export default async function LateFilingsPage() {
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics, 278-T Periodic Transaction
         Reports. Late filing status is self-reported by filers on each form.{" "}
-        <Link href="/about" className="underline hover:text-neutral-600">
+        <Link href="/methodology" className="underline hover:text-neutral-600">
           Read more about methodology
         </Link>
         .

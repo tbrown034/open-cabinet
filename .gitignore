@@ -42,9 +42,13 @@ yarn-error.log*
 # auth database
 sqlite.db
 
+# reception and feedback tracking
+/reception
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local

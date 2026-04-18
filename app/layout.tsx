@@ -70,6 +70,7 @@ export default function RootLayout({
               <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
               <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
               <Link href="/late-filings" className="hover:text-neutral-900 transition-colors">Late Filings</Link>
+              <Link href="/methodology" className="hover:text-neutral-900 transition-colors">Methodology</Link>
               <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
             </div>
 
@@ -99,6 +100,7 @@ export default function RootLayout({
                 <Link href="/companies" className="hover:text-neutral-900 transition-colors">Companies</Link>
                 <Link href="/dashboard" className="hover:text-neutral-900 transition-colors">Overview</Link>
                 <Link href="/download" className="hover:text-neutral-900 transition-colors">Download</Link>
+                <Link href="/methodology" className="hover:text-neutral-900 transition-colors">Methodology</Link>
                 <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
               </nav>
             </div>

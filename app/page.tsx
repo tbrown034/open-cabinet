@@ -1,5 +1,5 @@
 import { getOfficialsIndex, getAllOfficials } from "@/lib/data";
-import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
+import { amountRangeToMidpoint, formatCompactCurrency, displayName } from "@/lib/format";
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
@@ -31,10 +31,59 @@ export default async function Home() {
     ""
   );
 
+  // Detect recent filings (within 7 days of index update)
+  const indexDate = new Date(index.lastUpdated + "T00:00:00");
+  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const recentFilers = officials.filter((o) => {
+    const filingDate = new Date(o.mostRecentFilingDate + "T00:00:00");
+    return filingDate >= recentCutoff;
+  });
+
   const recentNews = news.slice(0, 4);
 
   return (
     <div>
+      {/* ── NEW FILINGS BANNER ── */}
+      {recentFilers.length > 0 && (
+        <div className="bg-neutral-900 text-white">
+          <div className="mx-auto max-w-5xl px-4 py-2.5 flex items-center gap-3 text-sm">
+            <span className="bg-white text-neutral-900 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
+              New
+            </span>
+            <span className="text-neutral-300">
+              {recentFilers.length === 1 ? (
+                <>
+                  <Link
+                    href={`/officials/${recentFilers[0].slug}`}
+                    className="text-white underline hover:text-neutral-200"
+                  >
+                    {displayName(recentFilers[0].name)}
+                  </Link>
+                  {" "}filed a new disclosure on{" "}
+                  {new Date(recentFilers[0].mostRecentFilingDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                </>
+              ) : (
+                <>
+                  {recentFilers.length} officials filed new disclosures this week:{" "}
+                  {recentFilers.slice(0, 3).map((o, i) => (
+                    <span key={o.slug}>
+                      {i > 0 && ", "}
+                      <Link
+                        href={`/officials/${o.slug}`}
+                        className="text-white underline hover:text-neutral-200"
+                      >
+                        {displayName(o.name)}
+                      </Link>
+                    </span>
+                  ))}
+                  {recentFilers.length > 3 && ` and ${recentFilers.length - 3} more`}
+                </>
+              )}
+            </span>
+          </div>
+        </div>
+      )}
+
       {/* ── HERO ── */}
       <div className="mx-auto max-w-5xl px-4 pt-16 pb-12">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
@@ -55,7 +104,8 @@ export default async function Home() {
               {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
                 "en-US",
                 { month: "short", day: "numeric", year: "numeric" }
-              )}
+              )}{" "}
+              · Data checked daily
             </p>
           </header>
 
@@ -106,7 +156,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               ~{formatCompactCurrency(estimatedTotal)}
             </span>
-            est. value<a href="/about#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
+            est. value<a href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
           </div>
           <div>
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -199,12 +249,12 @@ export default async function Home() {
               <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>
             </Link>
             <Link
-              href="/about"
+              href="/methodology"
               className="border border-neutral-200 bg-white px-5 py-4 hover:border-neutral-900 hover:bg-neutral-50 transition-colors group flex justify-between items-start"
             >
               <div>
                 <div className="text-sm font-medium text-neutral-900 group-hover:underline">
-                  How This Works
+                  Methodology
                 </div>
                 <p className="text-xs text-neutral-500 mt-1">
                   The STOCK Act, divestiture deadlines and how we built this
