@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
+import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
 import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
 import type { Transaction } from "@/lib/types";
@@ -50,6 +50,7 @@ export default async function OfficialPage({
   }
 
   const news = await getNewsForOfficial(slug);
+  const index = await getOfficialsIndex();
   const { transactions } = official;
   const sorted = [...transactions].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -64,6 +65,15 @@ export default async function OfficialPage({
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
 
+  // Check if this official has a recent OGE filing
+  const indexEntry = index.officials.find((o) => o.slug === slug);
+  const ogeFilingDate = official.mostRecentFilingDate;
+  const indexDate = new Date(index.lastUpdated + "T00:00:00");
+  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const isRecentFiling = ogeFilingDate
+    ? new Date(ogeFilingDate + "T00:00:00") >= recentCutoff
+    : false;
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <Link
@@ -72,6 +82,23 @@ export default async function OfficialPage({
       >
         ← Back to directory
       </Link>
+
+      {isRecentFiling && (
+        <div className="mt-4 bg-neutral-900 text-white px-4 py-3 text-sm flex items-start gap-3">
+          <span className="bg-white text-neutral-900 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0 mt-0.5">
+            New
+          </span>
+          <span className="text-neutral-300">
+            {displayName(official.name)} filed a new disclosure with OGE on{" "}
+            {formatDate(ogeFilingDate)}.
+            {" "}The report contains {totalTrades} transactions
+            {" "}from {formatDate(earliest.toISOString().split("T")[0])} to{" "}
+            {formatDate(latest.toISOString().split("T")[0])}.
+            {" "}Officials have 30 to 45 days to report each trade, so
+            transaction dates will be earlier than the filing date.
+          </span>
+        </div>
+      )}
 
       <header className="mt-6 mb-12 flex items-start gap-4">
         <OfficialAvatar
@@ -134,7 +161,9 @@ export default async function OfficialPage({
         </div>
       </div>
       <p className="text-xs text-neutral-400 -mt-8 mb-10">
-        Last filing: {formatDate(latest.toISOString().split("T")[0])}
+        Last filing: {formatDate(ogeFilingDate)}
+        <span className="text-neutral-300 mx-1.5">|</span>
+        Transactions: {formatDate(earliest.toISOString().split("T")[0])} – {formatDate(latest.toISOString().split("T")[0])}
       </p>
 
       {buys === 0 && sells > 0 && (
