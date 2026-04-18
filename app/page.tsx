@@ -31,13 +31,27 @@ export default async function Home() {
     ""
   );
 
-  // Detect recent filings (within 7 days of index update)
+  // Detect recent new transactions (within 14 days of index update)
+  // Uses actual transaction dates, not OGE report filing dates, so
+  // the banner only fires when there are genuinely new trades to see
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
-  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const recentFilers = officials.filter((o) => {
-    const filingDate = new Date(o.mostRecentFilingDate + "T00:00:00");
-    return filingDate >= recentCutoff;
-  });
+  const recentCutoff = new Date(indexDate.getTime() - 14 * 24 * 60 * 60 * 1000);
+  const recentFilers = allOfficials
+    .filter((o) => {
+      const latestTxDate = o.transactions.reduce(
+        (latest, tx) => (tx.date > latest ? tx.date : latest),
+        ""
+      );
+      return latestTxDate >= recentCutoff.toISOString().slice(0, 10);
+    })
+    .map((o) => ({
+      slug: o.slug,
+      name: o.name,
+      latestTxDate: o.transactions.reduce(
+        (latest, tx) => (tx.date > latest ? tx.date : latest),
+        ""
+      ),
+    }));
 
   const recentNews = news.slice(0, 4);
 
@@ -53,21 +67,22 @@ export default async function Home() {
             <span className="text-neutral-300">
               {recentFilers.length === 1 ? (
                 <>
+                  New transactions from{" "}
                   <Link
                     href={`/officials/${recentFilers[0].slug}`}
                     className="text-white underline hover:text-neutral-200"
                   >
                     {displayName(recentFilers[0].name)}
                   </Link>
-                  {" "}filed a new disclosure on{" "}
-                  {new Date(recentFilers[0].mostRecentFilingDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                  {" "}as of{" "}
+                  {new Date(recentFilers[0].latestTxDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                 </>
               ) : (
                 <>
-                  {recentFilers.length} officials filed new disclosures this week:{" "}
+                  New transactions from{" "}
                   {recentFilers.slice(0, 3).map((o, i) => (
                     <span key={o.slug}>
-                      {i > 0 && ", "}
+                      {i > 0 && (i === recentFilers.slice(0, 3).length - 1 ? " and " : ", ")}
                       <Link
                         href={`/officials/${o.slug}`}
                         className="text-white underline hover:text-neutral-200"
