@@ -31,27 +31,30 @@ export default async function Home() {
     ""
   );
 
-  // Detect recent new transactions (within 14 days of index update)
-  // Uses actual transaction dates, not OGE report filing dates, so
-  // the banner only fires when there are genuinely new trades to see
+  // Detect recent OGE filings (within 7 days of index update)
+  // mostRecentFilingDate = when the 278-T was filed with OGE (the news event)
+  // Transaction dates inside the filing may be weeks/months earlier
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
-  const recentCutoff = new Date(indexDate.getTime() - 14 * 24 * 60 * 60 * 1000);
-  const recentFilers = allOfficials
+  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const recentFilers = officials
     .filter((o) => {
-      const latestTxDate = o.transactions.reduce(
-        (latest, tx) => (tx.date > latest ? tx.date : latest),
-        ""
-      );
-      return latestTxDate >= recentCutoff.toISOString().slice(0, 10);
+      const filingDate = new Date(o.mostRecentFilingDate + "T00:00:00");
+      return filingDate >= recentCutoff;
     })
-    .map((o) => ({
-      slug: o.slug,
-      name: o.name,
-      latestTxDate: o.transactions.reduce(
-        (latest, tx) => (tx.date > latest ? tx.date : latest),
-        ""
-      ),
-    }));
+    .map((o) => {
+      // Get transaction date range from the full data
+      const full = allOfficials.find((a) => a.slug === o.slug);
+      const txDates = full?.transactions.map((t) => t.date).sort() ?? [];
+      const txCount = full?.transactions.length ?? o.transactionCount;
+      return {
+        slug: o.slug,
+        name: o.name,
+        filingDate: o.mostRecentFilingDate,
+        txCount,
+        earliestTx: txDates[0] ?? "",
+        latestTx: txDates[txDates.length - 1] ?? "",
+      };
+    });
 
   const recentNews = news.slice(0, 4);
 
@@ -67,19 +70,23 @@ export default async function Home() {
             <span className="text-neutral-300">
               {recentFilers.length === 1 ? (
                 <>
-                  New transactions from{" "}
                   <Link
                     href={`/officials/${recentFilers[0].slug}`}
                     className="text-white underline hover:text-neutral-200"
                   >
                     {displayName(recentFilers[0].name)}
                   </Link>
-                  {" "}as of{" "}
-                  {new Date(recentFilers[0].latestTxDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                  {" "}filed a new disclosure ({recentFilers[0].txCount} transactions) &mdash;{" "}
+                  <Link
+                    href={`/officials/${recentFilers[0].slug}`}
+                    className="text-white underline hover:text-neutral-200"
+                  >
+                    view trades
+                  </Link>
                 </>
               ) : (
                 <>
-                  New transactions from{" "}
+                  New disclosures filed by{" "}
                   {recentFilers.slice(0, 3).map((o, i) => (
                     <span key={o.slug}>
                       {i > 0 && (i === recentFilers.slice(0, 3).length - 1 ? " and " : ", ")}
