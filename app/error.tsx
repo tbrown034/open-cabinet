@@ -1,11 +1,19 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function Error({
+  error,
   reset,
 }: {
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  useEffect(() => {
+    // Surfaces in Vercel runtime logs for post-mortem.
+    console.error("Route error:", error);
+  }, [error]);
+
   return (
     <div className="mx-auto max-w-md px-4 py-32 text-center">
       <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
@@ -33,6 +41,11 @@ export default function Error({
         </a>
         .
       </p>
+      {error.digest && (
+        <p className="text-[11px] text-neutral-300 mt-6 font-[family-name:var(--font-dm-mono)]">
+          Ref: {error.digest}
+        </p>
+      )}
     </div>
   );
 }

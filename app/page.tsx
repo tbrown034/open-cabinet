@@ -113,7 +113,7 @@ export default async function Home() {
             <h1 className="font-[family-name:var(--font-source-serif)] text-4xl md:text-5xl text-neutral-900 mb-4 leading-tight">
               What is Trump{"'"}s Cabinet
               <br />
-              buying and selling?
+              Buying and Selling?
             </h1>
             <p className="text-neutral-500 max-w-xl leading-relaxed">
               Senior officials must disclose individual stock trades and
