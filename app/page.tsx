@@ -3,7 +3,12 @@ import { amountRangeToMidpoint, formatCompactCurrency, displayName } from "@/lib
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
+import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
 import Link from "next/link";
+
+function isSale(type: string): boolean {
+  return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
+}
 
 export default async function Home() {
   const index = await getOfficialsIndex();
@@ -57,6 +62,27 @@ export default async function Home() {
     });
 
   const recentNews = news.slice(0, 4);
+
+  const swimPreview: PreviewOfficial[] = allOfficials
+    .map((o) => ({
+      name: o.name,
+      slug: o.slug,
+      title: o.title,
+      totalValue: o.transactions.reduce(
+        (sum, tx) => sum + amountRangeToMidpoint(tx.amount),
+        0
+      ),
+      transactions: o.transactions.map((tx) => ({
+        description: tx.description,
+        ticker: tx.ticker,
+        type: tx.type,
+        date: tx.date,
+        amount: tx.amount,
+        isSale: isSale(tx.type),
+      })),
+    }))
+    .sort((a, b) => b.totalValue - a.totalValue)
+    .map(({ totalValue: _tv, ...rest }) => rest);
 
   return (
     <div>
@@ -190,6 +216,14 @@ export default async function Home() {
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
           Transactions filed January 2025 to present. Dollar values are estimates based on statutory reporting ranges.
         </p>
+
+        {/* ── SWIM LANE PREVIEW ── */}
+        <div className="mt-8">
+          <HomeSwimPreview
+            officials={swimPreview}
+            totalOfficials={totalOfficials}
+          />
+        </div>
       </div>
 
       {/* ── DIRECTORY PREVIEW ── */}
