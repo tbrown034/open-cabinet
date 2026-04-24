@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { scaleTime, scaleSqrt, scaleLinear } from "d3-scale";
+import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeFormat } from "d3-time-format";
 import { extent } from "d3-array";
 import type { Transaction } from "@/lib/types";

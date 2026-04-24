@@ -20,7 +20,6 @@ export default function MethodologyPage() {
           How we collect, parse and verify executive branch financial
           disclosures — and the federal laws that require them.
         </p>
-        <p className="text-xs text-neutral-400 mt-3">Last updated April 17, 2026</p>
       </div>
 
       {/* Scrollytelling sections */}

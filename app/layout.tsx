@@ -24,6 +24,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://open-cabinet.org"),
   title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
     "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
     description:
-      "34 officials. 3,200+ transactions. ~$2.7B estimated value. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
+      "34 officials. 3,300+ transactions. ~$2.7B estimated value. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
   },

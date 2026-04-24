@@ -270,7 +270,7 @@ export default function Explainer() {
               </div>
               <p className="text-neutral-500">
                 Structured data powers timelines, company lookups and aggregate
-                analysis. Currently tracking 34 officials with 3,200+
+                analysis. Currently tracking 34 officials with 3,300+
                 transactions.
               </p>
             </div>

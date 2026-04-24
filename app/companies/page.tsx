@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTradesByTicker } from "@/lib/data";
-import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
+import { amountRangeToMidpoint } from "@/lib/format";
 import CompanySearch from "../components/company-search";
 import Link from "next/link";
 

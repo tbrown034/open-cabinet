@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllOfficials } from "@/lib/data";
-import { formatDate, displayName } from "@/lib/format";
+import { displayName } from "@/lib/format";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -268,7 +268,7 @@ export default async function LateFilingsPage() {
               <p>
                 A{" "}
                 <a href="https://www.businessinsider.com/conflicted-congress-key-findings-stock-act-violations-exposed-2021-12" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-                  2022 Business Insider investigation
+                  2021 Business Insider investigation
                 </a>{" "}
                 found at least 72 members of Congress violated the same deadline.
                 The{" "}
