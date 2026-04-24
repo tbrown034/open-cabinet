@@ -122,12 +122,12 @@ export default async function Home() {
               sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
-              Published April 12, 2026 · Most recent filing:{" "}
+              Most recent filing:{" "}
               {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
                 "en-US",
                 { month: "short", day: "numeric", year: "numeric" }
               )}{" "}
-              · Data checked daily
+              · Data checked weekly
             </p>
           </header>
 
@@ -306,7 +306,7 @@ export default async function Home() {
               ProPublica, CNBC, NOTUS and other outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
-              Collected via AI-assisted search. Checked weekly. Last updated April 13, 2026.
+              Collected via AI-assisted search. Checked weekly.
             </p>
             <div className="space-y-4">
               {recentNews.map((item, i) => (

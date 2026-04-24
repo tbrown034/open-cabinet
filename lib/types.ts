@@ -31,6 +31,12 @@ export interface Transaction {
   notes?: string;
 }
 
+export interface SourceFiling {
+  date: string;
+  url: string;
+  label: string;
+}
+
 export interface OfficialData {
   name: string;
   slug: string;
@@ -48,6 +54,7 @@ export interface OfficialData {
   ethicsAgreementDate?: string;
   departedDate?: string | null;
   transactions: Transaction[];
+  sourceFilings?: SourceFiling[];
 }
 
 export interface OfficialIndexEntry {

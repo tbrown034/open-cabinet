@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
 import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
@@ -46,6 +46,15 @@ export default async function OfficialPage({
   const official = await getOfficialBySlug(slug);
 
   if (!official) {
+    // Canonical slugs are lastname-firstname. If a user lands on
+    // firstname-lastname (a natural guess), redirect to the canonical URL.
+    const parts = slug.split("-");
+    if (parts.length >= 2) {
+      const reversed = [parts[parts.length - 1], ...parts.slice(0, -1)].join("-");
+      if (reversed !== slug && (await getOfficialBySlug(reversed))) {
+        redirect(`/officials/${reversed}`);
+      }
+    }
     notFound();
   }
 
@@ -66,7 +75,6 @@ export default async function OfficialPage({
   const latest = new Date(Math.max(...dates));
 
   // Check if this official has a recent OGE filing
-  const indexEntry = index.officials.find((o) => o.slug === slug);
   const ogeFilingDate = official.mostRecentFilingDate;
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
   const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
@@ -285,7 +293,7 @@ export default async function OfficialPage({
               disclosures from major outlets.
             </p>
             <p className="text-xs text-neutral-400 mb-6">
-              AI-assisted search. Last updated April 13, 2026.
+              AI-assisted search across major outlets.
             </p>
             <div className="space-y-4">
               {news.map((item, i) => (
@@ -313,7 +321,7 @@ export default async function OfficialPage({
       )}
 
       {/* Source filings */}
-      {(official as any).sourceFilings?.length > 0 && (
+      {official.sourceFilings && official.sourceFilings.length > 0 && (
         <section className="mt-12 border-t border-neutral-200 pt-8">
           <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
             Source filings
@@ -323,8 +331,8 @@ export default async function OfficialPage({
             the documents Open Cabinet parses.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {(official as any).sourceFilings.map(
-              (filing: { date: string; url: string; label: string }, i: number) => (
+            {official.sourceFilings.map(
+              (filing, i) => (
                 <a
                   key={i}
                   href={filing.url}
