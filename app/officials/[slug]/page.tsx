@@ -12,8 +12,11 @@ import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import OfficialAvatar from "@/app/components/official-avatar";
 import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
-import DivestitureFlow from "@/app/components/divestiture-flow";
-import { amountRangeToMidpoint } from "@/lib/format";
+import DivestitureLedger from "@/app/components/divestiture-ledger";
+import {
+  getDivestitureData,
+  buildPromiseEvidence,
+} from "@/lib/divestiture";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -69,6 +72,10 @@ export default async function OfficialPage({
   const holdings = await getHoldingsForOfficial(slug);
   const reconciliation = holdings
     ? reconcileHoldingsAgainstTrades(holdings, official.transactions)
+    : null;
+  const divestiture = await getDivestitureData(slug);
+  const promiseEvidence = divestiture
+    ? buildPromiseEvidence(divestiture, official.transactions)
     : null;
   const index = await getOfficialsIndex();
   const { transactions } = official;
@@ -296,9 +303,9 @@ export default async function OfficialPage({
         </table>
       </div>
 
-      {/* Divestiture compliance section gated until all three source
-          documents are parsed (Nominee 278 + Ethics Agreement + Compliance
-          Certification). Showing only one of the three was misleading. */}
+      {divestiture && promiseEvidence && (
+        <DivestitureLedger data={divestiture} evidence={promiseEvidence} />
+      )}
 
       {news.length > 0 && (
         <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">
