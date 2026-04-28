@@ -20,12 +20,29 @@ export interface HoldingRow {
   description: string;
   ticker: string | null;
   isEIF: boolean;
-  eifFlag: string | null;
+  eif: string | null;
   value: string | null;
   incomeType: string | null;
-  incomeAmount: string | null;
-  incomeAmountExact: string | null;
-  notes: string | null;
+  incomeAmt: { bucket: string | null; exact: string | null } | null;
+}
+
+const VALUE_MIDPOINT: Record<string, number> = {
+  "None (or less than $1,001)": 500,
+  "$1,001 - $15,000": 8000,
+  "$15,001 - $50,000": 32500,
+  "$50,001 - $100,000": 75000,
+  "$100,001 - $250,000": 175000,
+  "$250,001 - $500,000": 375000,
+  "$500,001 - $1,000,000": 750000,
+  "$1,000,001 - $5,000,000": 3000000,
+  "$5,000,001 - $25,000,000": 15000000,
+  "$25,000,001 - $50,000,000": 37500000,
+  "Over $50,000,000": 75000000,
+};
+
+export function holdingValueMidpoint(value: string | null): number {
+  if (!value) return 0;
+  return VALUE_MIDPOINT[value] ?? 0;
 }
 
 export interface TickerReconciliation {
@@ -34,6 +51,7 @@ export interface TickerReconciliation {
   saleCount: number;
   status: "sold" | "no-sale-on-file" | "exempt";
   note: string;
+  entryValueMidpoint: number; // sum of value-bucket midpoints across all holdings of this ticker
 }
 
 const HOLDINGS_DIR = path.join(process.cwd(), "data", "holdings");
@@ -64,22 +82,24 @@ export function reconcileHoldingsAgainstTrades(
 ): TickerReconciliation[] {
   const sales = transactions.filter((t) => t.type.startsWith("Sale"));
 
-  // Map ticker -> first description encountered in entry holdings.
-  // Strip value-bucket fragments and "(or less than $X)" noise that the
-  // current parser leaks into the description field — these come from PDF
-  // column wrapping and will be eliminated when column-aware extraction
-  // replaces the regex pass.
-  const cleanDesc = (s: string) =>
-    s
-      .replace(/\$[\d,]+\s*-\s*\$[\d,]+/g, "")
-      .replace(/\bNone\s*\(or less\s*\$?[\d,]*\s*than\s*\$?\d+\)?/gi, "")
-      .replace(/-\s*$/, "")
-      .replace(/\s+/g, " ")
-      .trim();
-  const heldTickerInfo = new Map<string, string>();
+  // Map ticker -> first description + sum of value-bucket midpoints across
+  // every holding row that mentions this ticker (e.g. BGC appears in many
+  // trust entities — we sum them).
+  const heldTickerInfo = new Map<
+    string,
+    { description: string; entryValueMidpoint: number }
+  >();
   for (const h of holdings) {
-    if (h.ticker && !heldTickerInfo.has(h.ticker)) {
-      heldTickerInfo.set(h.ticker, cleanDesc(h.description));
+    if (!h.ticker) continue;
+    const existing = heldTickerInfo.get(h.ticker);
+    const valueAdd = holdingValueMidpoint(h.value);
+    if (existing) {
+      existing.entryValueMidpoint += valueAdd;
+    } else {
+      heldTickerInfo.set(h.ticker, {
+        description: h.description,
+        entryValueMidpoint: valueAdd,
+      });
     }
   }
 
@@ -96,9 +116,9 @@ export function reconcileHoldingsAgainstTrades(
 
   const out: TickerReconciliation[] = [];
   for (const ticker of allTickers) {
-    const heldDesc = heldTickerInfo.get(ticker) ?? "";
+    const held = heldTickerInfo.get(ticker);
     const saleCount = saleCounts.get(ticker) ?? 0;
-    const isHeld = heldTickerInfo.has(ticker);
+    const isHeld = held !== undefined;
 
     let status: TickerReconciliation["status"];
     let note = "";
@@ -120,10 +140,11 @@ export function reconcileHoldingsAgainstTrades(
 
     out.push({
       ticker,
-      description: heldDesc || `Sold via 278-T (${ticker})`,
+      description: held?.description || `Sold via 278-T (${ticker})`,
       saleCount,
       status,
       note,
+      entryValueMidpoint: held?.entryValueMidpoint ?? 0,
     });
   }
 
