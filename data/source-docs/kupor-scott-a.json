@@ -1,0 +1,39 @@
+{
+  "official": "kupor-scott-a",
+  "displayName": "Scott Kupor",
+  "documents": [
+    {
+      "kind": "transaction_278t",
+      "title": "Form 278T Transaction Report",
+      "filedDate": "2026-03-14",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/kupor-scott-a-transaction_278t-2026-03-14.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf",
+      "summary": "OPM Director transaction report disclosing securities trades. Records multiple sales and purchases across diversified portfolio."
+    },
+    {
+      "kind": "ethics_agreement",
+      "title": "Ethics Agreement",
+      "filedDate": "2025-04-03",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/kupor-scott-a-ethics_agreement-2025-04-03.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7620081F5AD4411785258C61002C8BE0/$FILE/Kupor%2C%20Scott%20%20finalEA.pdf",
+      "summary": "Commits to ethics obligations as OPM Director including recusal from matters involving venture capital background and divestiture from certain investments."
+    },
+    {
+      "kind": "nominee_278",
+      "title": "Nominee Form 278",
+      "filedDate": "2025-04-03",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/kupor-scott-a-nominee_278-2025-04-03.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7523958412D636E385258C61002C7E68/$FILE/Kupor%2C%20Scott%20%20final278.pdf",
+      "summary": "Financial disclosure for OPM Director nominee listing significant venture capital investments, portfolio company stakes, and diverse equity holdings."
+    }
+  ],
+  "propublicaCheck": {
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
+    "filingsListedThere": null,
+    "discrepancies": "Not independently verified via ProPublica cross-check"
+  },
+  "generatedAt": "2026-04-28"
+}

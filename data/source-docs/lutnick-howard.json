@@ -1,0 +1,66 @@
+{
+  "official": "lutnick-howard",
+  "displayName": "Howard Lutnick",
+  "documents": [
+    {
+      "kind": "nominee_278",
+      "title": "Nominee Form 278",
+      "filedDate": "2025-01-24",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-nominee-278.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC841CF0E3B5807A85258C1C00320D21/$FILE/Lutnick%2C%20Howard%20%20final278.pdf",
+      "summary": "Pre-confirmation disclosure for Commerce Secretary nominee. Discloses extensive holdings tied to Cantor Fitzgerald, BGC Group, and Newmark Group, plus dozens of family real-estate LLCs and trust positions. ProPublica records the reported asset minimum at $723M."
+    },
+    {
+      "kind": "ethics_agreement",
+      "title": "Ethics Agreement",
+      "filedDate": "2025-01-24",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-ethics-agreement.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/436440318CFB67BE85258C1C003219C1/$FILE/Lutnick%2C%20Howard%20%20finalEA.pdf",
+      "summary": "Commits to resign from Cantor Fitzgerald, BGC Group, and Newmark Group and divest equity in those firms within 90 days of confirmation. Lists divestiture commitments for GE Healthcare, GE Vernova, GE Aerospace, NASDAQ, Walt Disney, Roivant Sciences, and other family-trust holdings, with recusal pledges for retained positions in 31 family LLCs and several trusts. A separate, deeper ledger of these promises is maintained at data/divestiture/lutnick-howard.json."
+    },
+    {
+      "kind": "compliance_cert",
+      "title": "Certification of Ethics Agreement Compliance (initial)",
+      "filedDate": "2025-05-28",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-compliance-cert-initial.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4452B23B6A938EFE85258C98002C2FD5/$FILE/Lutnick%20EA%20Certification%20Portfolio%201%20of%201.pdf",
+      "summary": "Initial self-certification filed with OGE marking Yes on every applicable section (resignations, divestitures, periodic transaction report filings, recusals, ethics briefing). Lutnick states that on 05/19/2025 he and his trusts entered agreements to divest Cantor Fitzgerald, BGC Group, and Newmark Group, with completion subject to regulatory approvals."
+    },
+    {
+      "kind": "compliance_cert",
+      "title": "Certification of Ethics Agreement Compliance (updated)",
+      "filedDate": "2025-06-19",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-compliance-cert-updated.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4452B23B6A938EFE85258C98002C2FD5/$FILE/Lutnick%20EA%20Certification%20Portfolio%201%20of%201.pdf",
+      "summary": "Updated certification adding Section 10 detail on the signed divestiture agreements. Reiterates that the Cantor Fitzgerald, BGC Group, and Newmark Group divestitures were entered into on 05/19/2025 and remained pending regulatory approvals at the time of signing."
+    },
+    {
+      "kind": "transaction_278t",
+      "title": "Form 278T Periodic Transaction Report",
+      "filedDate": "2025-07-16",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-transaction_278t-2025-07-16.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/66A69EB879848CF885258CC9002C8582/$FILE/Howard-Lutnick-06.17.2025-278T.pdf",
+      "summary": "Discloses ten sales: Newmark Group (NMRK), BGC Group (BGC), and Nasdaq (NDAQ) on 05/16/2025; Walt Disney (DIS), Kimberly Akimbo LLC, Kiajia LLC, and Structured Services Investor LLC on 05/16/2025; and GE Healthcare (GEHC), GE Vernova (GEV), and GE Aerospace (GE) on 03/07/2025. The Newmark and BGC sales are each disclosed as Over $50,000,000. All marked No on the 30-day late notification flag."
+    },
+    {
+      "kind": "transaction_278t",
+      "title": "Form 278T Periodic Transaction Report",
+      "filedDate": "2025-12-10",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/lutnick-howard-transaction_278t-2025-12-10.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8C12E5475578E84385258D5C00345940/$FILE/Howard-Lutnick-11.05.2025-278T.pdf",
+      "summary": "Discloses ten sales all dated 10/06/2025, with endnotes stating each transaction was entered into on 05/16/2025 in accordance with the Ethics Agreement and consummated on 10/06/2025 following regulatory approvals. Sales include Cantor Fitzgerald L.P., CF Group Management Inc., BGC Group Class B, Tangible Benefits LLC, KBCR Management Partners LLC, LFA LLC, and additional BGC and NMRK shares held in retirement accounts. The Cantor Fitzgerald, CF Group Management, and BGC Class B sales are each disclosed as Over $50,000,000. All marked No on the 30-day late notification flag."
+    }
+  ],
+  "propublicaCheck": {
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
+    "filingsListedThere": "Lutnick is featured in ProPublica's Wealthiest Officials section as Secretary, Department of Commerce, with reported assets at a $723M minimum.",
+    "discrepancies": "No discrepancies identified between OGE filings reviewed here and the high-level data ProPublica surfaces."
+  },
+  "generatedAt": "2026-04-28"
+}

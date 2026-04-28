@@ -1,0 +1,51 @@
+{
+  "official": "mcmahon-linda",
+  "displayName": "Linda McMahon",
+  "documents": [
+    {
+      "kind": "transaction_278t",
+      "label": "278 Transaction",
+      "date": "2026-04-01",
+      "agency": "Department of Education",
+      "title": "Secretary, Department of Education",
+      "level": "n/a",
+      "amended": "",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6439C8BBFB85065585258DCC002DC69B/$FILE/Linda-McMahon-07.02.2025-278T.pdf",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/mcmahon-linda-transaction_278t-2026-04-01.pdf",
+      "summary": "Periodic Transaction Report (OGE Form 278-T) signed by McMahon on 07/02/2025 and OGE-certified 03/30/2026. Discloses one transaction: a sale of Trump Media & Tech Group Corp (DJT) on 06/12/2025 in the $100,001-$250,000 range, marked No on the 30-day notification flag."
+    },
+    {
+      "kind": "transaction_278t",
+      "label": "278 Transaction",
+      "date": "2025-07-11",
+      "agency": "Department of Education",
+      "title": "Secretary, Department of Education",
+      "level": "n/a",
+      "amended": "",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/mcmahon-linda-transaction_278t-2025-07-11.pdf",
+      "summary": "Large 278-T signed 05/30/2025 disclosing 124+ transactions, almost entirely state and municipal bond sales and purchases plus one Ares Management Corp (ARES) sale in the $5,000,001-$25,000,000 range. The vast majority of rows are marked Yes in the Notification Received Over 30 Days Ago column, indicating the filer received notification more than 30 days before the report. Transaction dates cluster between December 2024 and May 2025."
+    },
+    {
+      "kind": "compliance_cert",
+      "label": "Certification of Ethics Agreement Compliance",
+      "date": "2025-07-04",
+      "agency": "Department of Education",
+      "title": "Secretary, Department of Education",
+      "level": "n/a",
+      "amended": "",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/044EC3313DD1394985258CBD002C24B3/$FILE/McMahon%20EA%20Certification%201%20of%201.pdf",
+      "publiclyDownloadable": true,
+      "pdfPath": "/data/source-docs/mcmahon-linda-compliance_cert-2025-07-04.pdf",
+      "summary": "Ethics Agreement Compliance Certification signed 5/31/2025. Lists ethics agreement signed 02/05/2025, confirmed 03/03/2025, with a certification due date of 06/09/2025. Marks Yes on resignations, No on the divestitures-completed-within-time-period question, and Yes on having filed a 278-T to disclose the divestitures (filing date 5-31-25). Comments section discloses that all divestitures are complete except North Haven Private Income Fund LLC, which is only redeemable quarterly and which McMahon states will be addressed by the end of June."
+    }
+  ],
+  "propublicaCheck": {
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
+    "filingsListedThere": "ProPublica's Trump Team Financial Disclosures database lists Linda McMahon as Secretary, Department of Education with reported asset value of $413M and a profile in the wealthiest-officials section. The aggregate filings index confirms her presence; specific document-by-document filing list was not retrievable from the landing page in this check.",
+    "discrepancies": "None identified between OGE-listed filings and ProPublica's high-level entry. ProPublica's public-facing summary leans on the nominee 278 (not pulled into this batch because no nominee 278 appears for McMahon in the post-2024-12-01 OGE corpus filtered here)."
+  },
+  "generatedAt": "2026-04-28"
+}
