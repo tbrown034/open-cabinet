@@ -47,29 +47,20 @@ export default function DivestitureFlow({
       <p className="text-sm text-neutral-600 leading-relaxed mb-6 max-w-2xl">
         Of the {total} individually-tracked stock positions disclosed on
         Lutnick&rsquo;s Nominee 278 entry filing, here is what shows up in
-        the 278-T sales record so far.
+        the 278-T sales record so far. Bars below are sized by midpoint
+        dollar value of the OGE-reported amount ranges.
       </p>
 
-      {/* TOP — entry portfolio bar (one segment per ticker) */}
+      {/* TOP — entry portfolio bar weighted by midpoint dollars */}
       <div className="mb-2">
         <div className="flex items-baseline justify-between mb-2">
           <span className="text-xs uppercase tracking-wider text-neutral-500">
-            Entry portfolio &mdash; {total} stock positions
+            Entry portfolio &mdash; ~{formatCompactCurrency(
+              reconciliation.reduce((s, r) => s + r.entryValueMidpoint, 0)
+            )} across {total} stock positions
           </span>
         </div>
-        <div className="flex h-10 w-full overflow-hidden border border-neutral-200">
-          {reconciliation.map((r, i) => (
-            <div
-              key={r.ticker}
-              className="flex-1 flex items-center justify-center text-[10px] font-medium text-white tabular-nums border-r border-white/30 last:border-r-0"
-              style={{ backgroundColor: STATUS_FILL[r.status] }}
-              title={`${r.ticker} — ${r.status === "sold" ? "Sold" : r.status === "no-sale-on-file" ? "No sale on file" : "Exempt fund"}`}
-            >
-              {/* Show ticker label only if there's room */}
-              {total <= 14 ? r.ticker : i % 2 === 0 ? r.ticker : ""}
-            </div>
-          ))}
-        </div>
+        <WeightedBar reconciliation={reconciliation} />
       </div>
 
       {/* CONNECTOR — visual flow indication */}
@@ -94,9 +85,14 @@ export default function DivestitureFlow({
           <div className="text-xs text-emerald-800 mb-2">
             position{sold.length === 1 ? "" : "s"} matched to a sale on file
           </div>
+          <div className="text-[11px] text-emerald-700 mb-1">
+            <span className="font-semibold">~{formatCompactCurrency(matchedSalesValue)}</span> in
+            disclosed sale volume
+          </div>
           <div className="text-[11px] text-emerald-700">
-            ~{formatCompactCurrency(matchedSalesValue)} in disclosed sale volume
-            from these tickers
+            <span className="font-semibold">~{formatCompactCurrency(
+              sold.reduce((s, r) => s + r.entryValueMidpoint, 0)
+            )}</span> in entry-portfolio value
           </div>
           <div className="text-[10px] text-emerald-700/70 mt-2 leading-snug">
             {sold.map((s) => s.ticker).join(", ")}
@@ -113,6 +109,11 @@ export default function DivestitureFlow({
           <div className="text-xs text-amber-800 mb-2">
             position{unmatched.length === 1 ? "" : "s"} held at entry without
             a matching sale
+          </div>
+          <div className="text-[11px] text-amber-700 mb-1">
+            <span className="font-semibold">~{formatCompactCurrency(
+              unmatched.reduce((s, r) => s + r.entryValueMidpoint, 0)
+            )}</span> in entry-portfolio value
           </div>
           <div className="text-[11px] text-amber-700">
             May be still held, sold via Form 201 channel, or below the
@@ -144,12 +145,62 @@ export default function DivestitureFlow({
       </div>
 
       <p className="text-xs text-neutral-400 mt-6 max-w-2xl leading-relaxed">
-        Equal-width segments represent position count, not dollar value. The
-        entry-holdings value buckets in the source PDF are still being parsed
-        column-aware; once that lands, this view will weight by dollar amount.
-        The $474.9M sale-volume figure is taken directly from Lutnick&rsquo;s
-        existing 278-T transactions and is unaffected by the holdings parser.
+        Bar widths use midpoint values from OGE-reported amount ranges
+        (e.g. &ldquo;$5,000,001 - $25,000,000&rdquo; counts as $15M). The
+        &ldquo;Over $50,000,000&rdquo; bucket is conservatively floored at
+        $75M but the actual value can be far higher &mdash; Lutnick&rsquo;s
+        Cantor Fitzgerald LP partnership interest sits in this bucket and
+        is widely reported above $1B. Tickered positions account for
+        ~{formatCompactCurrency(
+          reconciliation.reduce((s, r) => s + r.entryValueMidpoint, 0)
+        )} of the larger ~$1.4B total in his Nominee 278 filing; the
+        remainder is held through trusts and partnerships without a public
+        ticker.
       </p>
     </section>
+  );
+}
+
+function WeightedBar({
+  reconciliation,
+}: {
+  reconciliation: TickerReconciliation[];
+}) {
+  // Position-count fallback for tickers with $0 entry value (their amount
+  // bucket either parses as None-or-less-than-$1,001 or didn't parse).
+  const totalValue = reconciliation.reduce(
+    (s, r) => s + r.entryValueMidpoint,
+    0
+  );
+  // Floor each segment at 1.5% so single-digit-K positions stay visible.
+  const minWidthPct = 1.5;
+  const segments = reconciliation.map((r) => {
+    const valuePct =
+      totalValue > 0 ? (r.entryValueMidpoint / totalValue) * 100 : 0;
+    return {
+      ...r,
+      widthPct: Math.max(valuePct, minWidthPct),
+    };
+  });
+  const sumWidths = segments.reduce((s, x) => s + x.widthPct, 0);
+  // Renormalize so floored widths still sum to 100%
+  for (const s of segments) s.widthPct = (s.widthPct / sumWidths) * 100;
+
+  return (
+    <div className="flex h-12 w-full overflow-hidden border border-neutral-200">
+      {segments.map((s) => (
+        <div
+          key={s.ticker}
+          className="flex items-center justify-center text-[10px] font-medium text-white tabular-nums border-r border-white/30 last:border-r-0"
+          style={{
+            backgroundColor: STATUS_FILL[s.status],
+            width: `${s.widthPct}%`,
+          }}
+          title={`${s.ticker} — ${s.entryValueMidpoint > 0 ? "$" + (s.entryValueMidpoint / 1e6).toFixed(1) + "M" : "value < $1K bucket"}`}
+        >
+          {s.widthPct > 4 ? s.ticker : ""}
+        </div>
+      ))}
+    </div>
   );
 }
