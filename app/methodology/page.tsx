@@ -18,7 +18,49 @@ export default function MethodologyPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           How we collect, parse and verify executive branch financial
-          disclosures — and the federal laws that require them.
+          disclosures &mdash; and the federal laws that require them.
+        </p>
+      </div>
+
+      {/* What we ingest, and what we don't */}
+      <div id="what-we-ingest" className="mx-auto max-w-3xl px-4 pb-16 scroll-mt-24">
+        <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+          What we ingest, and what we don{"'"}t
+        </h2>
+        <p className="text-neutral-600 leading-relaxed mb-4">
+          Senior executive branch officials file three different financial
+          disclosure documents with the Office of Government Ethics. Open
+          Cabinet ingests one of them today, and is in the process of adding a
+          second.
+        </p>
+        <ul className="space-y-3 text-neutral-600 leading-relaxed mb-4">
+          <li>
+            <strong className="text-neutral-900">OGE Form 278-T (Periodic Transaction Report).</strong>{" "}
+            Filed within 30 to 45 days of any individual-security transaction
+            over $1,000. This is what powers the trades, dollar volume and
+            late-filing counts on this site.
+          </li>
+          <li>
+            <strong className="text-neutral-900">OGE Form 278 (Nominee/Entry Report).</strong>{" "}
+            Filed once, before Senate confirmation, listing every asset the
+            official held going in. This is the baseline against which
+            divestitures should be measured. Nominee 278 ingestion is in
+            progress; until it is complete, this site cannot tell you whether
+            an official has fully divested a holding &mdash; only what they
+            have traded.
+          </li>
+          <li>
+            <strong className="text-neutral-900">OGE Form 278e (Annual Report).</strong>{" "}
+            Filed every May 15 by every covered official, restating holdings
+            and transactions for the prior year. We will ingest these as the
+            May 2026 cycle lands.
+          </li>
+        </ul>
+        <p className="text-neutral-600 leading-relaxed">
+          Until Nominee 278 data is in, statements like &ldquo;consistent with
+          ethics agreement divestitures&rdquo; are not something this site can
+          support from data alone &mdash; only from a side-by-side reading of
+          the ethics agreement and the trades on file.
         </p>
       </div>
 

@@ -4,9 +4,21 @@ import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
 import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
+import {
+  getHoldingsForOfficial,
+  reconcileHoldingsAgainstTrades,
+} from "@/lib/holdings";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import OfficialAvatar from "@/app/components/official-avatar";
+import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
+import DivestitureLedger from "@/app/components/divestiture-ledger";
+import SourceDocuments from "@/app/components/source-documents";
+import {
+  getDivestitureData,
+  buildPromiseEvidence,
+} from "@/lib/divestiture";
+import { getSourceDocuments } from "@/lib/source-docs";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -59,6 +71,15 @@ export default async function OfficialPage({
   }
 
   const news = await getNewsForOfficial(slug);
+  const holdings = await getHoldingsForOfficial(slug);
+  const reconciliation = holdings
+    ? reconcileHoldingsAgainstTrades(holdings, official.transactions)
+    : null;
+  const divestiture = await getDivestitureData(slug);
+  const promiseEvidence = divestiture
+    ? buildPromiseEvidence(divestiture, official.transactions)
+    : null;
+  const sourceDocs = await getSourceDocuments(slug);
   const index = await getOfficialsIndex();
   const { transactions } = official;
   const sorted = [...transactions].sort(
@@ -176,8 +197,11 @@ export default async function OfficialPage({
 
       {buys === 0 && sells > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
-          All transactions were sales — consistent with ethics agreement
-          divestitures upon entering government service.
+          Every transaction on file is a sale. This is the pattern you would
+          expect from an official liquidating positions to comply with an
+          ethics agreement, but Open Cabinet does not yet ingest the
+          entry-disclosure baseline (Nominee 278) needed to confirm which
+          holdings have been fully divested.
         </p>
       )}
       {sells === 0 && buys > 0 && (
@@ -281,6 +305,12 @@ export default async function OfficialPage({
           </tbody>
         </table>
       </div>
+
+      {sourceDocs && <SourceDocuments data={sourceDocs} />}
+
+      {divestiture && promiseEvidence && (
+        <DivestitureLedger data={divestiture} evidence={promiseEvidence} />
+      )}
 
       {news.length > 0 && (
         <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">

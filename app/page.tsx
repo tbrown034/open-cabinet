@@ -142,9 +142,9 @@ export default async function Home() {
               Buying and Selling?
             </h1>
             <p className="text-neutral-500 max-w-xl leading-relaxed">
-              Senior officials must disclose individual stock trades and
-              potential conflicts of interest, but the filings are scattered
-              across PDFs and hard to search. Open Cabinet makes them
+              Individual stock trades disclosed to the Office of Government
+              Ethics &mdash; the slice of executive financial activity the
+              public is allowed to see. Open Cabinet makes the filings
               sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
@@ -204,7 +204,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               ~{formatCompactCurrency(estimatedTotal)}
             </span>
-            est. value<a href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
+            trade volume (est.)<a href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
           </div>
           <div>
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -214,7 +214,10 @@ export default async function Home() {
           </div>
         </div>
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
-          Transactions filed January 2025 to present. Dollar values are estimates based on statutory reporting ranges.
+          Transactions filed January 2025 to present. Trade volume is the
+          midpoint of the reporting ranges, summed across all disclosed
+          transactions &mdash; not portfolio value, net worth or exposure.
+          A single position bought and later sold counts twice.
         </p>
 
         {/* ── SWIM LANE PREVIEW ── */}

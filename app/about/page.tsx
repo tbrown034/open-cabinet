@@ -71,6 +71,28 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* What this site covers */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            What this site covers
+          </h2>
+          <p className="text-neutral-600 leading-relaxed">
+            Open Cabinet shows individual-security trades disclosed via OGE
+            Form 278-T &mdash; the periodic transaction reports senior
+            officials must file within 30 to 45 days of a trade. It does not
+            show every financial move an official makes. It does not show
+            holdings inside diversified mutual funds, exempt trust assets,
+            real estate, private equity not actively traded, or anything that
+            falls below the statutory $1,000 reporting threshold.
+            Entry-disclosure holdings (Nominee 278) are being added next;
+            annual reports (278e) follow in May. See the{" "}
+            <Link href="/methodology#what-we-ingest" className="underline hover:text-neutral-900">
+              methodology
+            </Link>{" "}
+            for details.
+          </p>
+        </section>
+
         {/* Other projects */}
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">

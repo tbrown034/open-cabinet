@@ -162,7 +162,7 @@ function CompactGrid({
   let contextNote = "";
   if (isSingleDay && transactions.length > 10) {
     if (saleCount === transactions.length) {
-      contextNote = `All ${transactions.length} transactions were sales on a single day — consistent with a coordinated divestiture.`;
+      contextNote = `All ${transactions.length} transactions were sales on a single day — a pattern consistent with a coordinated divestiture (compliance verification requires entry-holdings data not yet ingested).`;
     } else if (purchaseCount === transactions.length) {
       contextNote = `All ${transactions.length} transactions were purchases on a single day.`;
     } else {

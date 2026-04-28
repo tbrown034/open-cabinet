@@ -1,0 +1,219 @@
+{
+  "official": "lutnick-howard",
+  "displayName": "Howard Lutnick",
+  "confirmedDate": "2025-02-18",
+  "deadline90Days": "2025-05-19",
+
+  "sourceDocuments": [
+    {
+      "kind": "nominee_278",
+      "title": "Nominee 278 (entry holdings)",
+      "subtitle": "What he disclosed owning before confirmation",
+      "filedDate": "2025-01-24",
+      "pdfPath": "/data/source-docs/lutnick-howard-nominee-278.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC841CF0E3B5807A85258C1C00320D21/$FILE/Lutnick%2C%20Howard%20%20final278.pdf"
+    },
+    {
+      "kind": "ethics_agreement",
+      "title": "Ethics Agreement",
+      "subtitle": "What he promised to sell, resign from, or recuse from",
+      "filedDate": "2025-01-21",
+      "pdfPath": "/data/source-docs/lutnick-howard-ethics-agreement.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/436440318CFB67BE85258C1C003219C1/$FILE/Lutnick%2C%20Howard%20%20finalEA.pdf"
+    },
+    {
+      "kind": "compliance_cert",
+      "title": "Compliance Certification (initial)",
+      "subtitle": "Self-certification filed with OGE confirming Ethics Agreement obligations were met",
+      "filedDate": "2025-05-24",
+      "pdfPath": "/data/source-docs/lutnick-howard-compliance-cert-initial.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4452B23B6A938EFE85258C98002C2FD5/$FILE/Lutnick%20EA%20Certification%20Portfolio%201%20of%201.pdf"
+    },
+    {
+      "kind": "compliance_cert",
+      "title": "Compliance Certification (updated)",
+      "subtitle": "Updated filing dated June 19, 2025 — adds Section 10 detail on signed divestiture agreements",
+      "filedDate": "2025-06-19",
+      "pdfPath": "/data/source-docs/lutnick-howard-compliance-cert-updated.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4452B23B6A938EFE85258C98002C2FD5/$FILE/Lutnick%20EA%20Certification%20Portfolio%201%20of%201.pdf"
+    },
+    {
+      "kind": "transaction_reports",
+      "title": "278-T Periodic Transaction Reports",
+      "subtitle": "Trade-by-trade disclosures filed during service",
+      "filedDate": "2025-06-17",
+      "pdfPath": null,
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf"
+    }
+  ],
+
+  "complianceVerdict": {
+    "certifiedDate": "2025-06-19",
+    "summary": "OGE-form certification: appointee marked 'Yes' on every applicable section (resignations, divestitures, periodic transaction reports filed, recusals, ethics briefing).",
+    "keyExcerpt": "In accordance with the requirements of my Ethics Agreement, on May 19, 2025, I and trusts that I am the beneficiary of entered into agreements to divest my interests in Cantor Fitzgerald L.P., BGC Group, Inc., and Newmark Group, Inc. As noted in my ethics agreements, these divestitures are subject to regulatory approvals and will be completed once obtained.",
+    "excerptSource": "Section 10, Updated Compliance Certification (signed June 19, 2025)"
+  },
+
+  "promises": [
+    {
+      "entity": "Cantor Fitzgerald, L.P.",
+      "ticker": null,
+      "section": "Section 2",
+      "action": "Resign from positions; divest all partnership interests (including those held in family trusts) within 90 days of confirmation.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["cantor", "fitzgerald"]
+    },
+    {
+      "entity": "BGC Group, Inc.",
+      "ticker": "BGC",
+      "section": "Sections 3, 11",
+      "action": "Resign from positions; divest all equity (including stock, restricted stock units, retirement plan holdings, and family trust interests) within 90 days. Forfeit unvested restricted stock units at resignation.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["BGC"],
+      "matchedSaleDescriptionTokens": ["bgc"]
+    },
+    {
+      "entity": "Newmark Group, Inc.",
+      "ticker": "NMRK",
+      "section": "Sections 4, 11",
+      "action": "Resign from positions; divest equity, partnership units, DRS distributions, preferred units, and non-exchangeable units within 90 days. Forfeit unvested equity at resignation.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["NMRK"],
+      "matchedSaleDescriptionTokens": ["newmark"]
+    },
+    {
+      "entity": "GE Healthcare Technologies",
+      "ticker": "GEHC",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["GEHC"],
+      "matchedSaleDescriptionTokens": ["ge healthcare"]
+    },
+    {
+      "entity": "GE Vernova LLC",
+      "ticker": "GEV",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["GEV"],
+      "matchedSaleDescriptionTokens": ["ge vernova"]
+    },
+    {
+      "entity": "GE Aerospace",
+      "ticker": "GE",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["GE"],
+      "matchedSaleDescriptionTokens": ["ge aerospace"]
+    },
+    {
+      "entity": "NASDAQ",
+      "ticker": "NDAQ",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["NDAQ"],
+      "matchedSaleDescriptionTokens": ["nasdaq"]
+    },
+    {
+      "entity": "Walt Disney Company",
+      "ticker": "DIS",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["DIS"],
+      "matchedSaleDescriptionTokens": ["disney"]
+    },
+    {
+      "entity": "Roivant Sciences Ltd.",
+      "ticker": "ROIV",
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": ["ROIV"],
+      "matchedSaleDescriptionTokens": ["roivant"]
+    },
+    {
+      "entity": "Kimberly Akimbo LLC",
+      "ticker": null,
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["kimberly", "akimbo"]
+    },
+    {
+      "entity": "Kiajia, LLC",
+      "ticker": null,
+      "section": "Section 8",
+      "action": "Divest from family trusts within 90 days.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["kiajia"]
+    },
+    {
+      "entity": "CF Group Management, Inc.",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest as soon as practicable.",
+      "deadline": null,
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["cf group management"]
+    },
+    {
+      "entity": "KBCR Management Partners, LLC",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest as soon as practicable.",
+      "deadline": null,
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["kbcr"]
+    },
+    {
+      "entity": "LFA, LLC",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest as soon as practicable.",
+      "deadline": null,
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["lfa"]
+    },
+    {
+      "entity": "Structured Services Investor LLC",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest as soon as practicable.",
+      "deadline": null,
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["structured services investor"]
+    },
+    {
+      "entity": "Tangible Benefits, LLC",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest as soon as practicable.",
+      "deadline": null,
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["tangible benefits"]
+    },
+    {
+      "entity": "CF Realty Fund III, L.P.",
+      "ticker": null,
+      "section": "Section 11",
+      "action": "Divest within 90 days of confirmation.",
+      "deadline": "2025-05-19",
+      "matchedSaleTickers": [],
+      "matchedSaleDescriptionTokens": ["cf realty fund iii"]
+    }
+  ],
+
+  "retainedPositions": {
+    "summary": "Lutnick disclosed retaining unpaid positions with 31 family real-estate and asset-management LLCs (Section 9), three 770 Ocean Road entities (Section 10), and as trustee of the Howard W. Lutnick Family Trust, HWL Revocable Trust, Lutnick 2020 GRAT 3 and 4, CFGP Trust, and the HWL Personal Asset Trust (Section 8). He committed to recuse from official matters affecting any of them.",
+    "section9Count": 31,
+    "section10Count": 3,
+    "trusteePositionsRetained": 6
+  }
+}

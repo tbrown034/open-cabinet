@@ -123,7 +123,7 @@ export default async function CompanyPage({
           <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
             ~{formatCompactCurrency(totalValue)}
           </span>
-          est. value
+          trade volume (est.)
         </div>
       </div>
 
