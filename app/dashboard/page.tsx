@@ -109,7 +109,7 @@ export default async function DashboardPage() {
       <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-12">
         <div>
           <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {allTx.length}
+            {allTx.length.toLocaleString()}
           </span>
           transactions
         </div>
@@ -121,14 +121,14 @@ export default async function DashboardPage() {
         </div>
         <div>
           <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {lateCount}
+            {lateCount.toLocaleString()}
           </span>
           late filings
           <span className="text-neutral-400 ml-1">
             ({officials.find((o) => o.slug === "trump-donald-j")
               ? `${officials
                   .find((o) => o.slug === "trump-donald-j")!
-                  .transactions.filter((t) => t.lateFilingFlag).length} from Trump`
+                  .transactions.filter((t) => t.lateFilingFlag).length.toLocaleString()} from Trump`
               : ""})
           </span>
         </div>

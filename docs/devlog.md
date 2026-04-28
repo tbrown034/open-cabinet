@@ -238,3 +238,63 @@ Phase 30+ (Session 5):
 **Next:** Launch posts (HN, Bluesky, LinkedIn, Reddit). Update launch-posts.md numbers. Vercel Cron secrets. Form 201 requests for Oz/Pirro/Loeffler.
 
 ---
+
+## 2026-04-17 - Reddit Launch Reception + About/Methodology Split + Filing Banners
+
+**Session Summary:**
+- Reddit r/dataisbeautiful post hit #1 of all time: 476K views, 1.1K upvotes, 97.3% ratio
+- Vercel analytics: 1,411 visitors, 4,600 page views, 34% bounce rate
+- Analyzed 49 Reddit comments for actionable feedback
+- Split About page into /about and /methodology based on user confusion
+- Built new filing banner system (landing page + official detail pages)
+- Moved swim lane legend, created reception tracking
+
+**What Changed:**
+
+UX improvements from Reddit feedback:
+- Moved swim lane chart legend above SVG (multiple users missed it below)
+- Added "Data checked daily" to landing page hero
+- Split /about into two routes: /methodology (scrollytelling, known limitations, AI transparency, data download) and /about (developer bio, resources, open source, feedback form)
+- Added "Methodology" to desktop nav, mobile nav, and footer
+- Updated all internal links from /about#known-limitations to /methodology#known-limitations
+
+New filing banner system:
+- Landing page: dark banner at top listing officials with OGE filings in the last 7 days, with links to their profiles
+- Official detail page: matching dark banner explaining: who filed, when, transaction count, date range, and why transaction dates differ from filing date (30-45 day reporting window)
+- Fixed "Last filing" line on official pages to show both OGE filing date and transaction date range separately
+- Key distinction: mostRecentFilingDate (OGE report submission) vs transaction dates (when trades happened). Banner triggers on filing date (the news event) but clearly explains the transaction dates inside
+
+Infrastructure:
+- Created /reception directory (gitignored) for tracking feedback and inbound inquiries
+- Logged all Reddit comments, feature requests, and analytics in reception/feedback-log.md
+- Bought open-cabinet.org domain ($9) because Reddit filters blocked Vercel URLs
+
+**Key Feedback from Reddit:**
+1. Filter by security type (bonds vs stocks vs ETFs) — most requested feature
+2. Rate-of-change analysis / correlation with policy events — stretch goal
+3. Gains/losses tracking — not possible with statutory ranges
+4. Real-time alerts — weekly cron exists but users don't know
+5. Trump municipal bond purchases fascinated people — asset-type breakdowns have audience demand
+
+**Inbound:**
+- Jonathan Alpart (Powerback.us, FEC Committee C00909036) — civic-tech builder, asked about alternative data sources after OpenSecrets API sunset, interested in lobbying/legislation visualization
+
+**Notable Technical Detail:**
+- mostRecentFilingDate vs transaction dates caused confusion: OGE filing dates (April 9-10 for Bedford/Mody) are when the 278-T report was submitted, but transactions inside are from weeks earlier (Feb). The banner system now makes this explicit on both pages.
+
+**Files Changed:**
+- app/about/page.tsx (rewritten — developer/project focus only)
+- app/methodology/page.tsx (new — scrollytelling, limitations, AI, data)
+- app/components/swim-lane-chart.tsx (legend moved above chart)
+- app/page.tsx (new filing banner, "Data checked daily", CTA updated)
+- app/officials/[slug]/page.tsx (new filing banner, fixed "Last filing" date display)
+- app/layout.tsx (Methodology added to desktop nav + footer)
+- app/components/mobile-nav.tsx (Methodology added)
+- app/late-filings/page.tsx (methodology link updated)
+- app/all/page.tsx (methodology link updated)
+- .gitignore (/reception added)
+- reception/feedback-log.md (new, gitignored)
+
+**Next:** Security type filter on official pages. Respond to Jonathan Alpart email. Continue monitoring Reddit thread for new feedback.
+
+---

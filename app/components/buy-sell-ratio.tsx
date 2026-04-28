@@ -37,13 +37,13 @@ export default function BuySellRatio({
       <div className="flex justify-between text-sm">
         <div className="text-red-700">
           <span className="font-semibold font-[family-name:var(--font-dm-mono)] tabular-nums">
-            {salesCount}
+            {salesCount.toLocaleString()}
           </span>{" "}
           sales (est. {formatCompactCurrency(salesValue)})
         </div>
         <div className="text-emerald-700">
           <span className="font-semibold font-[family-name:var(--font-dm-mono)] tabular-nums">
-            {purchasesCount}
+            {purchasesCount.toLocaleString()}
           </span>{" "}
           purchases (est. {formatCompactCurrency(purchasesValue)})
         </div>

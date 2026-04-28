@@ -71,15 +71,15 @@ export default async function AllTradesPage() {
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-500 mt-4">
           <span>
-            <span className="text-red-700 font-semibold">{salesCount}</span>{" "}
+            <span className="text-red-700 font-semibold">{salesCount.toLocaleString()}</span>{" "}
             sales (est. {formatCompactCurrency(salesValue)})
           </span>
           <span>
-            <span className="text-emerald-700 font-semibold">{purchasesCount}</span>{" "}
+            <span className="text-emerald-700 font-semibold">{purchasesCount.toLocaleString()}</span>{" "}
             purchases (est. {formatCompactCurrency(purchasesValue)})
           </span>
           <span>
-            <span className="text-amber-700 font-semibold">{lateCount}</span>{" "}
+            <span className="text-amber-700 font-semibold">{lateCount.toLocaleString()}</span>{" "}
             late filings
           </span>
         </div>

@@ -19,6 +19,28 @@ const DATA_DIR = path.join(process.cwd(), "data");
 const PDF_DIR = path.join(DATA_DIR, "pdfs");
 const LAST_CHECK_PATH = path.join(DATA_DIR, "meta", "last-check.json");
 
+// Earliest filing date we care about. The 30 days after Jan 20, 2025
+// inauguration are dominated by departing Biden-era cabinet members filing
+// their exit 278-T reports. Anything from Feb 2025 forward is overwhelmingly
+// Trump-2 administration. Bump this date if scope changes.
+const MIN_DOC_DATE = "2025-02-01";
+
+// OGE name format drifts: middle initials and trailing periods come and go
+// across filings. Map every variant we've seen back to the canonical name
+// used in our officials index, so count diffs don't get split across spellings.
+const NAME_ALIASES: Record<string, string> = {
+  "Trump, Donald J": "Trump, Donald J.",
+  "Wright, Christopher A": "Wright, Christopher",
+  "McMahon, Linda E": "McMahon, Linda",
+  "Sonderling, Keith": "Sonderling, Keith E",
+  "Lawrence, Paul": "Lawrence, Paul R",
+  "Miran, Stephen": "Miran, Stephen I",
+};
+
+function canonicalName(name: string): string {
+  return NAME_ALIASES[name] ?? name;
+}
+
 interface OGERecord {
   type: string;
   name: string;
@@ -95,8 +117,14 @@ function is278T(typeField: string): boolean {
 
 function isTargetLevel(record: OGERecord): boolean {
   if (record.level === "Level I" || record.level === "Level II") return true;
-  if (record.name === "Trump, Donald J") return true;
+  if (record.name === "Trump, Donald J" || record.name === "Trump, Donald J.")
+    return true;
   return false;
+}
+
+function isInScope(docDate: string): boolean {
+  // OGE docDate format is "YYYY-MM-DD"; lexicographic compare works.
+  return docDate >= MIN_DOC_DATE;
 }
 
 async function main() {
@@ -152,9 +180,14 @@ async function main() {
   for (const r of allRecords) {
     if (!isTargetLevel(r)) continue;
     if (!is278T(r.type)) continue;
+    if (!isInScope(r.docDate)) continue;
     const pdfUrl = extractPdfUrl(r.type);
     if (!pdfUrl) continue;
-    targetFilings.push({ name: r.name, pdfUrl, docDate: r.docDate });
+    targetFilings.push({
+      name: canonicalName(r.name),
+      pdfUrl,
+      docDate: r.docDate,
+    });
   }
 
   // Count filings per official

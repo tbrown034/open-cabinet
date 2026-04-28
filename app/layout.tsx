@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
     description:
-      "34 officials. 3,300+ transactions. ~$2.7B estimated value. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
+      "34 officials. 3,300+ transactions. ~$2.8B estimated value. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
   },
@@ -104,6 +104,35 @@ export default function RootLayout({
                 <Link href="/methodology" className="hover:text-neutral-900 transition-colors">Methodology</Link>
                 <Link href="/about" className="hover:text-neutral-900 transition-colors">About</Link>
               </nav>
+            </div>
+
+            {/* Other projects by Trevor */}
+            <div className="mt-8 pt-6 border-t border-neutral-200">
+              <p className="text-[11px] uppercase tracking-wider text-neutral-400 mb-2">
+                More government accountability tools
+              </p>
+              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-600">
+                <a
+                  href="https://capitolreleases.com"
+                  className="hover:text-neutral-900 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Capitol Releases
+                </a>
+                <span className="text-neutral-400">— Senate press-release archive, 100 senators, updated 4&times; daily</span>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-600 mt-1">
+                <a
+                  href="https://delegation-decoded.vercel.app"
+                  className="hover:text-neutral-900 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Delegation Decoded
+                </a>
+                <span className="text-neutral-400">— Congressional tracking by state delegation: trades, bills, committees</span>
+              </div>
             </div>
 
             {/* Attribution + legal */}
