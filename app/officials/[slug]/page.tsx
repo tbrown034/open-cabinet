@@ -4,9 +4,14 @@ import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
 import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
+import {
+  getHoldingsForOfficial,
+  reconcileHoldingsAgainstTrades,
+} from "@/lib/holdings";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import OfficialAvatar from "@/app/components/official-avatar";
+import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -59,6 +64,10 @@ export default async function OfficialPage({
   }
 
   const news = await getNewsForOfficial(slug);
+  const holdings = await getHoldingsForOfficial(slug);
+  const reconciliation = holdings
+    ? reconcileHoldingsAgainstTrades(holdings, official.transactions)
+    : null;
   const index = await getOfficialsIndex();
   const { transactions } = official;
   const sorted = [...transactions].sort(
@@ -284,6 +293,16 @@ export default async function OfficialPage({
           </tbody>
         </table>
       </div>
+
+      {holdings && reconciliation && (
+        <HoldingsReconciliation
+          reconciliation={reconciliation}
+          totalHoldingsCount={holdings.length}
+          totalSales={
+            official.transactions.filter((t) => t.type.startsWith("Sale")).length
+          }
+        />
+      )}
 
       {news.length > 0 && (
         <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">
