@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
-import { formatDate, amountRangeLabel, displayName } from "@/lib/format";
+import {
+  formatDate,
+  amountRangeLabel,
+  displayName,
+  getSourceFilingForTransaction,
+} from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
 import {
   getHoldingsForOfficial,
@@ -259,11 +264,17 @@ export default async function OfficialPage({
                 Ticker
               </th>
               <th className="pb-2 pr-4 font-medium">Type</th>
-              <th className="pb-2 font-medium text-right">Amount</th>
+              <th className="pb-2 pr-4 font-medium text-right">Amount</th>
+              <th className="pb-2 font-medium text-right">Source</th>
             </tr>
           </thead>
           <tbody>
-            {sorted.map((tx, i) => (
+            {sorted.map((tx, i) => {
+              const sourceFiling = getSourceFilingForTransaction(
+                tx,
+                official.sourceFilings
+              );
+              return (
               <tr
                 key={`${tx.date}-${tx.description}-${i}`}
                 className={`border-b border-neutral-100 ${
@@ -297,11 +308,27 @@ export default async function OfficialPage({
                     {tx.type}
                   </span>
                 </td>
-                <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
+                <td className="py-2.5 pr-4 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
                   {amountRangeLabel(tx.amount)}
                 </td>
+                <td className="py-2.5 text-right whitespace-nowrap">
+                  {sourceFiling ? (
+                    <a
+                      href={sourceFiling.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title={`${sourceFiling.label} filed ${formatDate(sourceFiling.date)}`}
+                      className="text-xs text-neutral-400 hover:text-neutral-900 underline underline-offset-2 decoration-neutral-200 hover:decoration-neutral-900"
+                    >
+                      PDF
+                    </a>
+                  ) : (
+                    <span className="text-xs text-neutral-300">—</span>
+                  )}
+                </td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       </div>
