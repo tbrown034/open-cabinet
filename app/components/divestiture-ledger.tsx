@@ -4,6 +4,7 @@ import type {
   SourceDocument,
 } from "@/lib/divestiture";
 import { formatDate, formatCompactCurrency } from "@/lib/format";
+import DivestitureTimelineStrip from "./divestiture-timeline-strip";
 
 interface Props {
   data: DivestitureData;
@@ -114,6 +115,14 @@ export default function DivestitureLedger({ data, evidence }: Props) {
           {data.complianceVerdict.summary}
         </p>
       </div>
+
+      {/* PROMISE TIMELINE */}
+      <DivestitureTimelineStrip
+        evidence={evidence}
+        confirmedDate={data.confirmedDate}
+        deadline90Days={data.deadline90Days}
+        certifiedDate={data.complianceVerdict.certifiedDate}
+      />
 
       {/* PROMISE LEDGER */}
       <div className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
