@@ -296,30 +296,9 @@ export default async function OfficialPage({
         </table>
       </div>
 
-      {holdings && reconciliation && (
-        <>
-          <DivestitureFlow
-            reconciliation={reconciliation}
-            matchedSalesValue={official.transactions
-              .filter(
-                (t) =>
-                  t.type.startsWith("Sale") &&
-                  t.ticker &&
-                  reconciliation.some(
-                    (r) => r.ticker === t.ticker && r.status === "sold"
-                  )
-              )
-              .reduce((sum, t) => sum + amountRangeToMidpoint(t.amount), 0)}
-          />
-          <HoldingsReconciliation
-            reconciliation={reconciliation}
-            totalHoldingsCount={holdings.length}
-            totalSales={
-              official.transactions.filter((t) => t.type.startsWith("Sale")).length
-            }
-          />
-        </>
-      )}
+      {/* Divestiture compliance section gated until all three source
+          documents are parsed (Nominee 278 + Ethics Agreement + Compliance
+          Certification). Showing only one of the three was misleading. */}
 
       {news.length > 0 && (
         <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">
