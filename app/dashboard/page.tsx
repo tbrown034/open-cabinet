@@ -117,7 +117,7 @@ export default async function DashboardPage() {
           <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
             ~{formatCompactCurrency(totalValue)}
           </span>
-          est. total value
+          trade volume (est.)
         </div>
         <div>
           <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">

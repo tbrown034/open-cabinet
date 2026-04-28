@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Open Cabinet — Executive Branch Stock Tracker",
     description:
-      "34 officials. 3,300+ transactions. ~$2.8B estimated value. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
+      "34 officials. 3,300+ transactions. ~$2.8B in disclosed trade volume. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
   },
