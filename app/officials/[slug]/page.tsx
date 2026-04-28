@@ -12,6 +12,8 @@ import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import OfficialAvatar from "@/app/components/official-avatar";
 import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
+import DivestitureFlow from "@/app/components/divestiture-flow";
+import { amountRangeToMidpoint } from "@/lib/format";
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -295,13 +297,28 @@ export default async function OfficialPage({
       </div>
 
       {holdings && reconciliation && (
-        <HoldingsReconciliation
-          reconciliation={reconciliation}
-          totalHoldingsCount={holdings.length}
-          totalSales={
-            official.transactions.filter((t) => t.type.startsWith("Sale")).length
-          }
-        />
+        <>
+          <DivestitureFlow
+            reconciliation={reconciliation}
+            matchedSalesValue={official.transactions
+              .filter(
+                (t) =>
+                  t.type.startsWith("Sale") &&
+                  t.ticker &&
+                  reconciliation.some(
+                    (r) => r.ticker === t.ticker && r.status === "sold"
+                  )
+              )
+              .reduce((sum, t) => sum + amountRangeToMidpoint(t.amount), 0)}
+          />
+          <HoldingsReconciliation
+            reconciliation={reconciliation}
+            totalHoldingsCount={holdings.length}
+            totalSales={
+              official.transactions.filter((t) => t.type.startsWith("Sale")).length
+            }
+          />
+        </>
       )}
 
       {news.length > 0 && (
