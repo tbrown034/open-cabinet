@@ -176,8 +176,11 @@ export default async function OfficialPage({
 
       {buys === 0 && sells > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
-          All transactions were sales — consistent with ethics agreement
-          divestitures upon entering government service.
+          Every transaction on file is a sale. This is the pattern you would
+          expect from an official liquidating positions to comply with an
+          ethics agreement, but Open Cabinet does not yet ingest the
+          entry-disclosure baseline (Nominee 278) needed to confirm which
+          holdings have been fully divested.
         </p>
       )}
       {sells === 0 && buys > 0 && (

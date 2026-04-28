@@ -56,7 +56,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
     return (
       <section>
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-6">
-          Transaction volume by asset category
+          Trade volume by asset category (buys + sells)
         </h2>
         <div ref={containerRef} className="h-[260px]" />
       </section>
@@ -110,7 +110,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
   return (
     <section>
       <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-6">
-        Transaction volume by asset category
+        Trade volume by asset category (buys + sells)
       </h2>
 
       <div ref={containerRef} className="relative">

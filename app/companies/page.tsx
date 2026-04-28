@@ -54,7 +54,7 @@ export default async function CompaniesPage() {
 
       <div className="mb-10">
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-3">
-          Most widely held
+          Most traded by officials
         </h2>
         <div className="flex flex-wrap gap-3">
           {featured.map((c) => (
