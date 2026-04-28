@@ -71,6 +71,49 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Other projects */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            Other projects
+          </h2>
+          <p className="text-sm text-neutral-500 mb-5">
+            Open Cabinet is one of three accountability tools built to make
+            federal government records easier to navigate.
+          </p>
+          <ul className="space-y-4 text-sm">
+            <li>
+              <a
+                href="https://capitolreleases.com"
+                className="underline hover:text-neutral-900 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Capitol Releases
+              </a>
+              <span className="text-neutral-500">
+                {" "}— A searchable archive of every press release published by
+                all 100 U.S. senators&rsquo; offices, normalized and updated four
+                times a day.
+              </span>
+            </li>
+            <li>
+              <a
+                href="https://delegation-decoded.vercel.app"
+                className="underline hover:text-neutral-900 font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Delegation Decoded
+              </a>
+              <span className="text-neutral-500">
+                {" "}— Congressional accountability tracking organized by state
+                delegation: stock trades, legislation, committee assignments and
+                campaign finance for all 538 members.
+              </span>
+            </li>
+          </ul>
+        </section>
+
         {/* Related resources */}
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">

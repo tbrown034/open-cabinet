@@ -1,38 +1,44 @@
 import type { Metadata } from "next";
+import { getAllOfficials } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Download Data — Open Cabinet",
   description: "Download executive branch financial transaction data as CSV or JSON.",
 };
 
-const exports = [
-  {
-    name: "All Transactions",
-    file: "/data/all-transactions.csv",
-    format: "CSV",
-    description:
-      "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate and late filing flag.",
-    rows: "3,332 rows",
-  },
-  {
-    name: "Officials Summary",
-    file: "/data/officials-summary.csv",
-    format: "CSV",
-    description:
-      "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count and estimated total value.",
-    rows: "34 rows",
-  },
-  {
-    name: "Full Dataset",
-    file: "/data/full-dataset.json",
-    format: "JSON",
-    description:
-      "Complete structured dataset with all officials and their transactions. Suitable for programmatic analysis.",
-    rows: "34 officials, 3,332 transactions",
-  },
-];
+export default async function DownloadPage() {
+  const officials = await getAllOfficials();
+  const txCount = officials.reduce((s, o) => s + o.transactions.length, 0);
+  const officialCount = officials.length;
+  const fmt = (n: number) => n.toLocaleString();
 
-export default function DownloadPage() {
+  const exports = [
+    {
+      name: "All Transactions",
+      file: "/data/all-transactions.csv",
+      format: "CSV",
+      description:
+        "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate and late filing flag.",
+      rows: `${fmt(txCount)} rows`,
+    },
+    {
+      name: "Officials Summary",
+      file: "/data/officials-summary.csv",
+      format: "CSV",
+      description:
+        "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count and estimated total value.",
+      rows: `${officialCount} rows`,
+    },
+    {
+      name: "Full Dataset",
+      file: "/data/full-dataset.json",
+      format: "JSON",
+      description:
+        "Complete structured dataset with all officials and their transactions. Suitable for programmatic analysis.",
+      rows: `${officialCount} officials, ${fmt(txCount)} transactions`,
+    },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <header className="mb-12">
