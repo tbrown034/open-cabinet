@@ -3,6 +3,7 @@ import type {
   DocumentKind,
 } from "@/lib/source-docs";
 import { formatDate } from "@/lib/format";
+import DocumentTimeline from "./document-timeline";
 
 interface Props {
   data: SourceDocumentsData;
@@ -36,6 +37,8 @@ export default function SourceDocuments({ data }: Props) {
         where one is publicly available. We do not issue compliance verdicts
         &mdash; that is OGE&rsquo;s role, not ours.
       </p>
+
+      <DocumentTimeline documents={data.documents} />
 
       <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-500 mb-6">
         <span>
