@@ -1,4 +1,4 @@
-import type { AmountRange } from "./types";
+import type { AmountRange, SourceFiling, Transaction } from "./types";
 
 /**
  * Returns the minimum dollar value from an amount range string.
@@ -76,6 +76,33 @@ export function displayName(name: string): string {
   const parts = name.split(",").map((s) => s.trim());
   if (parts.length >= 2) return `${parts[1]} ${parts[0]}`;
   return name;
+}
+
+/**
+ * For a given transaction, returns the 278-T filing that disclosed it:
+ * the earliest 278-T whose filed-date is on/after the transaction date.
+ * Falls back to the most recent 278-T (covers late filings whose tx date
+ * sits before the earliest filing in our list).
+ */
+export function getSourceFilingForTransaction(
+  tx: Transaction,
+  sourceFilings: SourceFiling[] | undefined
+): SourceFiling | null {
+  if (!sourceFilings || sourceFilings.length === 0) return null;
+  const periodics = sourceFilings.filter((f) => f.label.startsWith("278-T"));
+  if (periodics.length === 0) return null;
+  const txTime = new Date(tx.date + "T00:00:00").getTime();
+  const eligible = periodics.filter(
+    (f) => new Date(f.date + "T00:00:00").getTime() >= txTime
+  );
+  if (eligible.length > 0) {
+    return eligible.reduce((earliest, f) =>
+      new Date(f.date).getTime() < new Date(earliest.date).getTime() ? f : earliest
+    );
+  }
+  return periodics.reduce((latest, f) =>
+    new Date(f.date).getTime() > new Date(latest.date).getTime() ? f : latest
+  );
 }
 
 /**
