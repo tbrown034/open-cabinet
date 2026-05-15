@@ -23,11 +23,16 @@ const sourceSerif = Source_Serif_4({
   style: ["normal", "italic"],
 });
 
+const SITE_URL = "https://open-cabinet.org";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://open-cabinet.org"),
+  metadataBase: new URL(SITE_URL),
   title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
     "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
     icon: "/favicon.svg",
   },
@@ -37,6 +42,24 @@ export const metadata: Metadata = {
       "34 officials. 3,300+ transactions. ~$2.8B in disclosed trade volume. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
+  },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Open Cabinet",
+  url: SITE_URL,
+  description:
+    "Financial disclosure tracker for U.S. executive branch officials. Stock transactions, asset holdings, and late filings sourced from the U.S. Office of Government Ethics.",
+  publisher: {
+    "@type": "Person",
+    name: "Trevor Brown",
+    url: "https://trevorthewebdeveloper.com",
+    sameAs: [
+      "https://github.com/tbrown034",
+      "https://www.linkedin.com/in/trevorabrown",
+    ],
   },
 };
 
@@ -191,6 +214,10 @@ export default function RootLayout({
           </div>
         </footer>
         <Analytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </body>
     </html>
   );

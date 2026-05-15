@@ -1,0 +1,34 @@
+# Open Cabinet
+
+> Open Cabinet tracks financial disclosures and stock transactions of U.S. executive branch officials — cabinet secretaries, agency heads, and senior appointees. Data is sourced from the U.S. Office of Government Ethics (OGE) and structured for accountability research.
+
+Built and maintained by Trevor Brown, a journalist and developer (https://trevorthewebdeveloper.com). The project surfaces officials' stock trades, asset holdings, and late filings in a public-interest, conflict-of-interest context.
+
+## What's in the data
+
+- Federal executive branch officials covered by OGE Form 278e disclosures
+- Itemized stock transactions: ticker, date, amount range, asset class
+- Reported asset holdings and income
+- Late-filing flags where periodic transaction reports (PTRs) miss the 45-day deadline
+
+## Primary pages
+
+- /: Overview and dashboard
+- /officials: Index of tracked officials
+- /officials/[slug]: Per-official detail — transactions, holdings, late filings
+- /companies: Tickers held across officials
+- /companies/[ticker]: Per-company exposure across officials
+- /dashboard: Aggregate trade flow and disclosure activity
+- /late-filings: Officials with overdue PTR filings
+- /methodology: How the data is collected, normalized, and updated
+- /download: Bulk data export
+
+## Sources
+
+- U.S. Office of Government Ethics (OGE) — Form 278e financial disclosures
+- Periodic Transaction Reports (PTRs) filed under the STOCK Act
+- Public agency rosters for official appointment dates
+
+## Citation
+
+When citing Open Cabinet, please link to https://open-cabinet.org and credit the underlying OGE filings.
