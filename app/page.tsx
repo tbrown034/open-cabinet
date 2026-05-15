@@ -36,30 +36,53 @@ export default async function Home() {
     ""
   );
 
-  // Detect recent OGE filings (within 7 days of index update)
-  // mostRecentFilingDate = when the 278-T was filed with OGE (the news event)
-  // Transaction dates inside the filing may be weeks/months earlier
+  // "New on Open Cabinet" — driven by lastIngestedDate (when our pipeline
+  // added or updated this official's data), NOT by mostRecentFilingDate
+  // (which is the OGE post date and can be weeks older when we ingest a
+  // backlog). 14-day window: long enough that a weekend visitor still sees
+  // the banner, short enough that it fades naturally.
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
-  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const newCutoff = new Date(indexDate.getTime() - 14 * 24 * 60 * 60 * 1000);
+  const newCutoffStr = newCutoff.toISOString().split("T")[0];
   const recentFilers = officials
-    .filter((o) => {
-      const filingDate = new Date(o.mostRecentFilingDate + "T00:00:00");
-      return filingDate >= recentCutoff;
-    })
+    .filter((o) =>
+      o.lastIngestedDate ? o.lastIngestedDate >= newCutoffStr : false
+    )
     .map((o) => {
-      // Get transaction date range from the full data
       const full = allOfficials.find((a) => a.slug === o.slug);
       const txDates = full?.transactions.map((t) => t.date).sort() ?? [];
       const txCount = full?.transactions.length ?? o.transactionCount;
+      const newCount = o.lastIngestedNewCount ?? 0;
+      // First time we've published this official — when the ingest delta
+      // equals the full transaction count, the whole record is new on the
+      // site, not just additions to an existing page.
+      const isFirstAppearance = newCount > 0 && newCount === txCount;
       return {
         slug: o.slug,
         name: o.name,
         filingDate: o.mostRecentFilingDate,
+        ingestedDate: o.lastIngestedDate!,
+        newCount,
         txCount,
+        isFirstAppearance,
         earliestTx: txDates[0] ?? "",
         latestTx: txDates[txDates.length - 1] ?? "",
       };
+    })
+    // New officials first (biggest news), then most recently filed
+    .sort((a, b) => {
+      if (a.isFirstAppearance !== b.isFirstAppearance) {
+        return a.isFirstAppearance ? -1 : 1;
+      }
+      return b.filingDate.localeCompare(a.filingDate);
     });
+
+  const BANNER_VISIBLE = 3;
+  const bannerVisible = recentFilers.slice(0, BANNER_VISIBLE);
+  const bannerOverflow = recentFilers.slice(BANNER_VISIBLE);
+  const overflowTrades = bannerOverflow.reduce((s, o) => s + o.newCount, 0);
+  const newPeopleCount = recentFilers.filter((o) => o.isFirstAppearance).length;
+  const updatedCount = recentFilers.length - newPeopleCount;
 
   const recentNews = news.slice(0, 4);
 
@@ -79,6 +102,7 @@ export default async function Home() {
         date: tx.date,
         amount: tx.amount,
         isSale: isSale(tx.type),
+        lateFiled: tx.lateFilingFlag,
       })),
     }))
     .sort((a, b) => b.totalValue - a.totalValue)
@@ -86,48 +110,80 @@ export default async function Home() {
 
   return (
     <div>
-      {/* ── NEW FILINGS BANNER ── */}
+      {/* ── NEW FILINGS BANNER ──
+          Shows the top 3 most-newsworthy ingests inline. New officials
+          (first appearance on the site) outrank updates. Anything beyond
+          the cap rolls up into a single trailing count so the banner
+          stays one to four lines tall regardless of ingest volume. */}
       {recentFilers.length > 0 && (
         <div className="bg-neutral-900 text-white">
-          <div className="mx-auto max-w-5xl px-4 py-2.5 flex items-center gap-3 text-sm">
-            <span className="bg-white text-neutral-900 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
-              New
-            </span>
-            <span className="text-neutral-300">
-              {recentFilers.length === 1 ? (
-                <>
-                  <Link
-                    href={`/officials/${recentFilers[0].slug}`}
-                    className="text-white underline hover:text-neutral-200"
-                  >
-                    {displayName(recentFilers[0].name)}
-                  </Link>
-                  {" "}filed a new disclosure ({recentFilers[0].txCount} transactions) &mdash;{" "}
-                  <Link
-                    href={`/officials/${recentFilers[0].slug}`}
-                    className="text-white underline hover:text-neutral-200"
-                  >
-                    view trades
-                  </Link>
-                </>
-              ) : (
-                <>
-                  New disclosures filed by{" "}
-                  {recentFilers.slice(0, 3).map((o, i) => (
-                    <span key={o.slug}>
-                      {i > 0 && (i === recentFilers.slice(0, 3).length - 1 ? " and " : ", ")}
-                      <Link
-                        href={`/officials/${o.slug}`}
-                        className="text-white underline hover:text-neutral-200"
-                      >
-                        {displayName(o.name)}
-                      </Link>
+          <div className="mx-auto max-w-5xl px-4 py-3 text-sm">
+            <div className="flex items-baseline gap-3 mb-1.5">
+              <span className="bg-white text-neutral-900 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
+                New
+              </span>
+              <span className="text-neutral-400 text-xs uppercase tracking-wider">
+                {newPeopleCount > 0 && (
+                  <>
+                    {newPeopleCount} new official{newPeopleCount === 1 ? "" : "s"}
+                    {updatedCount > 0 ? " · " : ""}
+                  </>
+                )}
+                {updatedCount > 0 && (
+                  <>
+                    {updatedCount} updated filing{updatedCount === 1 ? "" : "s"}
+                  </>
+                )}
+                {" "}in the last 14 days
+              </span>
+            </div>
+            <ul className="text-neutral-300 space-y-0.5">
+              {bannerVisible.map((o) => (
+                <li
+                  key={o.slug}
+                  className="flex flex-wrap items-baseline gap-x-2"
+                >
+                  {o.isFirstAppearance && (
+                    <span className="bg-amber-300 text-neutral-900 text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
+                      New official
                     </span>
-                  ))}
-                  {recentFilers.length > 3 && ` and ${recentFilers.length - 3} more`}
-                </>
+                  )}
+                  <Link
+                    href={`/officials/${o.slug}`}
+                    className="text-white underline hover:text-neutral-200"
+                  >
+                    {displayName(o.name)}
+                  </Link>
+                  <span className="text-neutral-500 text-xs">
+                    {new Date(o.filingDate + "T00:00:00").toLocaleDateString(
+                      "en-US",
+                      { month: "short", day: "numeric", year: "numeric" }
+                    )}
+                  </span>
+                  {o.newCount > 0 && (
+                    <span className="text-neutral-400 text-xs">
+                      &middot;{" "}
+                      {o.isFirstAppearance
+                        ? `${o.newCount.toLocaleString()} trade${o.newCount === 1 ? "" : "s"}`
+                        : `+${o.newCount.toLocaleString()} new trade${o.newCount === 1 ? "" : "s"}`}
+                    </span>
+                  )}
+                </li>
+              ))}
+              {bannerOverflow.length > 0 && (
+                <li className="text-neutral-400 text-xs pt-0.5">
+                  + {bannerOverflow.length} more updated
+                  {" "}({overflowTrades.toLocaleString()} additional trade
+                  {overflowTrades === 1 ? "" : "s"}) —{" "}
+                  <Link
+                    href="#directory"
+                    className="underline hover:text-neutral-200"
+                  >
+                    see directory
+                  </Link>
+                </li>
               )}
-            </span>
+            </ul>
           </div>
         </div>
       )}
@@ -243,7 +299,11 @@ export default async function Home() {
           </div>
         </div>
 
-        <OfficialsTable officials={officials} initialLimit={10} />
+        <OfficialsTable
+          officials={officials}
+          initialLimit={10}
+          newIngestedCutoff={newCutoffStr}
+        />
 
         <div id="coverage-note" className="bg-stone-50 border border-neutral-200 px-4 py-3 text-xs text-neutral-500 leading-relaxed scroll-mt-24 mt-6">
           <p>

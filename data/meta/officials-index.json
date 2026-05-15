@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-28",
+  "lastUpdated": "2026-05-15",
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -170,6 +170,20 @@
       "dataStatus": "parsed"
     },
     {
+      "name": "Isaacman, Jared",
+      "slug": "isaacman-jared",
+      "title": "Administrator",
+      "agency": "National Aeronautics and Space Administration",
+      "level": "Level II",
+      "party": "R",
+      "transactionCount": 145,
+      "mostRecentFilingDate": "2026-04-17",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 145,
+      "departedDate": null,
+      "dataStatus": "parsed"
+    },
+    {
       "name": "Kennedy, Robert F",
       "slug": "kennedy-robert-f",
       "title": "Secretary",
@@ -188,8 +202,10 @@
       "agency": "Office of Science and Technology Policy",
       "level": "Sub-Cabinet",
       "party": "R",
-      "transactionCount": 55,
-      "mostRecentFilingDate": "2026-01-10",
+      "transactionCount": 61,
+      "mostRecentFilingDate": "2026-04-17",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 6,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -200,8 +216,10 @@
       "agency": "Office of Personnel Management",
       "level": "Sub-Cabinet",
       "party": "R",
-      "transactionCount": 72,
-      "mostRecentFilingDate": "2026-03-14",
+      "transactionCount": 74,
+      "mostRecentFilingDate": "2026-05-01",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 2,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -284,8 +302,10 @@
       "agency": "Council of Economic Advisers",
       "level": "Sub-Cabinet",
       "party": "R",
-      "transactionCount": 70,
-      "mostRecentFilingDate": "2025-12-03",
+      "transactionCount": 77,
+      "mostRecentFilingDate": "2026-04-25",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 7,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -332,8 +352,10 @@
       "agency": "Department of Defense - Department of the Navy",
       "level": "Cabinet",
       "party": "R",
-      "transactionCount": 57,
-      "mostRecentFilingDate": "2026-03-26",
+      "transactionCount": 71,
+      "mostRecentFilingDate": "2026-04-25",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 14,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -356,8 +378,10 @@
       "agency": "Executive Office of the President",
       "level": "Cabinet",
       "party": "R",
-      "transactionCount": 1315,
-      "mostRecentFilingDate": "2026-02-27",
+      "transactionCount": 5011,
+      "mostRecentFilingDate": "2026-05-14",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 3696,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -370,6 +394,20 @@
       "party": "R",
       "transactionCount": 8,
       "mostRecentFilingDate": "2026-04-01",
+      "departedDate": null,
+      "dataStatus": "parsed"
+    },
+    {
+      "name": "Vaden, Stephen A",
+      "slug": "vaden-stephen-a",
+      "title": "Deputy Secretary",
+      "agency": "Department of Agriculture",
+      "level": "Level II",
+      "party": "R",
+      "transactionCount": 6,
+      "mostRecentFilingDate": "2026-04-17",
+      "lastIngestedDate": "2026-05-14",
+      "lastIngestedNewCount": 6,
       "departedDate": null,
       "dataStatus": "parsed"
     },
