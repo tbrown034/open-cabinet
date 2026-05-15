@@ -19,6 +19,9 @@ import MonthlyBars from "@/app/components/monthly-bars";
 import RangeFilter from "@/app/components/range-filter";
 import TransactionFilters from "@/app/components/transaction-filters";
 import type { TxTypeFilter } from "@/app/components/transaction-filters";
+import Pagination from "@/app/components/pagination";
+import ViewToggle from "@/app/components/view-toggle";
+import type { ChartView } from "@/app/components/view-toggle";
 import OfficialAvatar from "@/app/components/official-avatar";
 import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
@@ -118,6 +121,8 @@ export default async function OfficialPage({
     type?: string;
     month?: string;
     late?: string;
+    page?: string;
+    view?: string;
   }>;
 }) {
   const { slug } = await params;
@@ -264,6 +269,34 @@ export default async function OfficialPage({
         year: "numeric",
       })
     : null;
+
+  // Chart view toggle. Default to monthly bars for high-volume officials
+  // (the dot view at 5K trades is a smear); default to dots for everyone
+  // else (where individual transactions still resolve). Either way the
+  // user can override with ?view=.
+  const rawView = (search.view ?? "").toLowerCase();
+  const chartView: ChartView =
+    rawView === "dots" || rawView === "bars"
+      ? (rawView as ChartView)
+      : HIGH_VOLUME
+      ? "bars"
+      : "dots";
+
+  // Table pagination — server-side, link-driven, no JS bundle. Default
+  // page size 100, and we only paginate above a threshold where rendering
+  // every row of HTML actually hurts (the dev-mode TTFB for Trump's
+  // 5,011-row table was the user-visible problem). Officials with fewer
+  // trades see the full table on one page.
+  const TABLE_PAGE_SIZE = 100;
+  const tableNeedsPaging = visibleSorted.length > TABLE_PAGE_SIZE;
+  const totalPages = tableNeedsPaging
+    ? Math.ceil(visibleSorted.length / TABLE_PAGE_SIZE)
+    : 1;
+  const rawPage = parseInt(search.page ?? "1", 10);
+  const page = Number.isFinite(rawPage) && rawPage > 0 ? Math.min(rawPage, totalPages) : 1;
+  const tableSlice = tableNeedsPaging
+    ? visibleSorted.slice((page - 1) * TABLE_PAGE_SIZE, page * TABLE_PAGE_SIZE)
+    : visibleSorted;
 
   // "New on Open Cabinet" banner — driven by lastIngestedDate (pipeline
   // signal), not the OGE post date. Stays up for 14 days. Also pulls in the
@@ -459,27 +492,36 @@ export default async function OfficialPage({
         </p>
       )}
 
-      {HIGH_VOLUME && (
-        <section className="mb-10">
-          <div className="flex items-baseline justify-between mb-3 gap-4 flex-wrap">
-            <div>
-              <h2 className="text-xs uppercase tracking-wider text-neutral-500">
-                Trades by month
-              </h2>
-              <p className="text-xs text-neutral-400 mt-1">
-                Click any month to zoom in. Sales above midline, purchases
-                below. Amber tick = month with late-filed trades.
-              </p>
-            </div>
+      <section className="mb-6">
+        <div className="flex items-baseline justify-between mb-3 gap-4 flex-wrap">
+          <div>
+            <h2 className="text-xs uppercase tracking-wider text-neutral-500">
+              {chartView === "bars" ? "Trades by month" : "Transaction timeline"}
+            </h2>
+            <p className="text-xs text-neutral-400 mt-1">
+              {chartView === "bars"
+                ? "Click any month to zoom in. Sales above midline, purchases below. Amber tick = month with late-filed trades."
+                : "One dot per disclosed trade, sized by amount. Red = sale, green = purchase."}
+            </p>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap">
+            {HIGH_VOLUME && <ViewToggle selected={chartView} />}
             <RangeFilter selected={range} />
           </div>
+        </div>
+        {chartView === "bars" ? (
           <MonthlyBars
             transactions={chartTransactions}
             selectedMonth={monthFilter}
             clickToZoom
           />
-        </section>
-      )}
+        ) : (
+          <TransactionTimeline
+            transactions={visibleTransactions}
+            careerEvents={getCareerEvents(official)}
+          />
+        )}
+      </section>
 
       <TransactionFilters
         type={typeFilter}
@@ -489,36 +531,22 @@ export default async function OfficialPage({
         filteredCount={visibleTransactions.length}
       />
 
-      {!HIGH_VOLUME && (
-        <h2 className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
-          Transaction timeline
-        </h2>
-      )}
-      {HIGH_VOLUME ? (
-        <details className="mb-10 group">
-          <summary className="text-xs uppercase tracking-wider text-neutral-500 cursor-pointer hover:text-neutral-900 transition-colors list-none flex items-center gap-2 [&::-webkit-details-marker]:hidden">
-            <span className="inline-block transition-transform group-open:rotate-90">
-              ›
-            </span>
-            Show every trade as a single-dot timeline
-            <span className="text-neutral-400 normal-case tracking-normal">
-              ({visibleTransactions.length.toLocaleString()} dots at high
-              density — informative, not pretty)
-            </span>
-          </summary>
-          <div className="mt-3">
-            <TransactionTimeline
-              transactions={visibleTransactions}
-              careerEvents={getCareerEvents(official)}
-            />
-          </div>
-        </details>
-      ) : (
-        <TransactionTimeline
-          transactions={visibleTransactions}
-          careerEvents={getCareerEvents(official)}
-        />
-      )}
+      <div id="trades" className="scroll-mt-4">
+        {tableNeedsPaging && (
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            perPage={TABLE_PAGE_SIZE}
+            totalCount={visibleSorted.length}
+            basePath={`/officials/${slug}`}
+            searchParams={{
+              range: range === "all" ? undefined : range,
+              type: typeFilter === "all" ? undefined : typeFilter,
+              month: monthFilter ?? undefined,
+            }}
+          />
+        )}
+      </div>
       <div className="overflow-x-auto -mx-4 px-4">
         <table className="w-full text-left text-sm">
           <thead>
@@ -534,7 +562,7 @@ export default async function OfficialPage({
             </tr>
           </thead>
           <tbody>
-            {visibleSorted.map((tx, i) => {
+            {tableSlice.map((tx, i) => {
               const sourceFiling = getSourceFilingForTransaction(
                 tx,
                 official.sourceFilings
@@ -597,6 +625,20 @@ export default async function OfficialPage({
           </tbody>
         </table>
       </div>
+      {tableNeedsPaging && (
+        <Pagination
+          page={page}
+          totalPages={totalPages}
+          perPage={TABLE_PAGE_SIZE}
+          totalCount={visibleSorted.length}
+          basePath={`/officials/${slug}`}
+          searchParams={{
+            range: range === "all" ? undefined : range,
+            type: typeFilter === "all" ? undefined : typeFilter,
+            month: monthFilter ?? undefined,
+          }}
+        />
+      )}
 
       {sourceDocs && <SourceDocuments data={sourceDocs} />}
 
