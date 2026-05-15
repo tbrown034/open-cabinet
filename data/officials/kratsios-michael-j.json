@@ -5,21 +5,53 @@
   "agency": "Office of Science and Technology Policy",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-01-10",
+  "mostRecentFilingDate": "2026-04-17",
   "transactions": [
     {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
-      "type": "Purchase",
-      "date": "2025-02-24",
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
       "type": "Sale",
-      "date": "2025-03-04",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF (DGRO)",
+      "ticker": "DGRO",
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2026-03-09",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -27,39 +59,79 @@
       "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
       "ticker": "VIG",
       "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
-      "type": "Purchase",
-      "date": "2025-03-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
-      "type": "Sale",
-      "date": "2025-03-06",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-      "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-03-06",
+      "date": "2025-12-26",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
       "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-12-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Schwab S&P 500 Index Fund",
+      "ticker": "SWPPX",
+      "type": "Purchase",
+      "date": "2025-08-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Real Estate Index Fund ETF Shares",
+      "ticker": "VNQ",
+      "type": "Purchase",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+      "ticker": "VTI",
       "type": "Sale",
-      "date": "2025-03-10",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Scale AI vested stock options",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-21",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Scale AI, Inc. Stock",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Purchase",
+      "date": "2025-05-22",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -67,31 +139,23 @@
       "description": "iShares National Muni Bond ETF",
       "ticker": "MUB",
       "type": "Purchase",
-      "date": "2025-03-10",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
-      "type": "Purchase",
-      "date": "2025-03-10",
+      "date": "2025-05-22",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
       "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-03-11",
-      "amount": "$1,001-$15,000",
+      "type": "Sale",
+      "date": "2025-05-22",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
-      "type": "Sale",
-      "date": "2025-03-11",
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-05-19",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -99,47 +163,23 @@
       "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
       "ticker": "VTEB",
       "type": "Sale",
-      "date": "2025-03-12",
+      "date": "2025-05-19",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
       "type": "Purchase",
-      "date": "2025-03-12",
+      "date": "2025-05-16",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
-      "type": "Sale",
-      "date": "2025-03-13",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-      "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-03-13",
-      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
       "ticker": "VTEB",
       "type": "Sale",
-      "date": "2025-03-13",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
-      "type": "Purchase",
-      "date": "2025-03-13",
+      "date": "2025-05-16",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -147,143 +187,15 @@
       "description": "iShares National Muni Bond ETF",
       "ticker": "MUB",
       "type": "Purchase",
-      "date": "2025-03-13",
+      "date": "2025-05-15",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
-      "type": "Purchase",
-      "date": "2025-03-24",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
       "type": "Sale",
-      "date": "2025-03-31",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2025-03-31",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core S&P Total US Stock Market ETF",
-      "ticker": "ITOT",
-      "type": "Sale",
-      "date": "2025-03-31",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2025-03-31",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2025-04-03",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
-      "type": "Sale",
-      "date": "2025-04-03",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-      "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-04-03",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-      "ticker": "VTI",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core MSCI Emerging Markets ETF",
-      "ticker": "IEMG",
-      "type": "Sale",
-      "date": "2025-04-04",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-      "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
-      "ticker": "VWO",
-      "type": "Purchase",
-      "date": "2025-04-04",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core MSCI Emerging Markets ETF",
-      "ticker": "IEMG",
-      "type": "Sale",
-      "date": "2025-04-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
-      "ticker": "VWO",
-      "type": "Purchase",
-      "date": "2025-04-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Core Dividend Growth ETF",
-      "ticker": "DGRO",
-      "type": "Sale",
-      "date": "2025-04-08",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
-      "ticker": "VWO",
-      "type": "Purchase",
-      "date": "2025-04-08",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-      "ticker": "VIG",
-      "type": "Purchase",
-      "date": "2025-04-08",
+      "date": "2025-05-15",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
@@ -304,154 +216,295 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
-      "ticker": "VTEB",
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
       "type": "Sale",
-      "date": "2025-05-15",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
-      "type": "Purchase",
-      "date": "2025-05-15",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
-      "ticker": "VTEB",
-      "type": "Sale",
-      "date": "2025-05-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
-      "type": "Purchase",
-      "date": "2025-05-16",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
-      "ticker": "VTEB",
-      "type": "Sale",
-      "date": "2025-05-19",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
-      "type": "Purchase",
-      "date": "2025-05-19",
+      "date": "2025-04-08",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
       "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core MSCI Emerging Markets ETF",
+      "ticker": "IEMG",
       "type": "Sale",
-      "date": "2025-05-22",
+      "date": "2025-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core MSCI Emerging Markets ETF",
+      "ticker": "IEMG",
+      "type": "Sale",
+      "date": "2025-04-04",
       "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
       "type": "Purchase",
-      "date": "2025-05-22",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-04-04",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
       "description": "iShares Core Dividend Growth ETF",
       "ticker": "DGRO",
-      "type": "Purchase",
-      "date": "2025-05-22",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
-      "ticker": "VTEB",
       "type": "Sale",
-      "date": "2025-05-23",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Scale AI, Inc. Stock",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-06-23",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF",
-      "ticker": "MUB",
-      "type": "Purchase",
-      "date": "2025-07-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Scale AI vested stock options",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-07-21",
-      "amount": "$5,000,001-$25,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
-      "ticker": "VTI",
-      "type": "Sale",
-      "date": "2025-08-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Real Estate Index Fund ETF Shares",
-      "ticker": "VNQ",
-      "type": "Purchase",
-      "date": "2025-08-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Schwab S&P 500 Index Fund",
-      "ticker": "SWPPX",
-      "type": "Purchase",
-      "date": "2025-08-18",
-      "amount": "$1,000,001-$5,000,000",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
       "ticker": "VIG",
       "type": "Purchase",
-      "date": "2025-12-26",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-04-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-03-31",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-12",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
       "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
       "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
       "type": "Purchase",
-      "date": "2025-12-26",
+      "date": "2025-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-02-24",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kratsios reported 22 sales (est. $18.6M) and 33 purchases (est. $3.7M). Holdings included VIG, VTEB, SWPPX, VTI, VNQ, among others.",
+  "summary": "Kratsios reported 25 sales (est. $18.7M) and 36 purchases (est. $3.7M).",
   "confirmedDate": "2025-03-25",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-04-17",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C4BF8463CF0AE7AE85258DDC002DBBFB/$FILE/Michael-J-Kratsios-03.29.2026-278T.pdf",
+      "label": "Michael-J-Kratsios-03.29.2026-278T"
+    },
     {
       "date": "2026-01-27",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf",
@@ -497,5 +550,7 @@
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C168F84EC148EDC785258C67002C8092/$FILE/Michael-J-Kratsios-03.18.2025-278T.pdf",
       "label": "278-T"
     }
-  ]
+  ],
+  "lastIngestedDate": "2026-05-14",
+  "lastIngestedNewCount": 6
 }

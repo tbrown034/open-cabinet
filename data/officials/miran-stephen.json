@@ -5,14 +5,78 @@
   "agency": "Council of Economic Advisers",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2025-12-03",
+  "mostRecentFilingDate": "2026-04-25",
   "transactions": [
+    {
+      "description": "BBH LIMITED DURATION FUND CL I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - SILVER POINT DISTRESSED OPPORTUNITY II SERIES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "ISHARES S&P 500 INDEX FUND",
       "ticker": "IVV",
       "type": "Purchase",
       "date": "2025-11-14",
       "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "VanEck Vectors Short High-Yield Municipal Index ETF",
+      "ticker": "SHYD",
+      "type": "Purchase",
+      "date": "2025-06-13",
+      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -176,6 +240,14 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Eli Lilly & Co.",
+      "ticker": "LLY",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Entegris Inc",
       "ticker": "ENTG",
       "type": "Sale",
@@ -232,6 +304,14 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Keysight Technologies Inc.",
+      "ticker": "KEYS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "KLA Corporation",
       "ticker": "KLAC",
       "type": "Sale",
@@ -280,6 +360,22 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Novo Nordisk",
+      "ticker": "NVO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "NVR Inc.",
+      "ticker": "NVR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Oracle Corp.",
       "ticker": "ORCL",
       "type": "Sale",
@@ -290,6 +386,14 @@
     {
       "description": "Otis Worldwide Corporation",
       "ticker": "OTIS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Procter & Gamble",
+      "ticker": "PG",
       "type": "Sale",
       "date": "2025-06-09",
       "amount": "$15,001-$50,000",
@@ -432,54 +536,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Eli Lilly & Co.",
-      "ticker": "LLY",
-      "type": "Sale",
-      "date": "2025-06-09",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Keysight Technologies Inc.",
-      "ticker": "KEYS",
-      "type": "Sale",
-      "date": "2025-06-09",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Novo Nordisk",
-      "ticker": "NVO",
-      "type": "Sale",
-      "date": "2025-06-09",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "NVR Inc.",
-      "ticker": "NVR",
-      "type": "Sale",
-      "date": "2025-06-09",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Procter & Gamble",
-      "ticker": "PG",
-      "type": "Sale",
-      "date": "2025-06-09",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "VanEck Vectors Short High-Yield Municipal Index ETF",
-      "ticker": "SHYD",
-      "type": "Purchase",
-      "date": "2025-06-13",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Financial Select Sector SPDR Fund",
       "ticker": "XLF",
       "type": "Sale",
@@ -488,19 +544,19 @@
       "lateFilingFlag": false
     },
     {
-      "description": "iShares Transportation Average ETF",
-      "ticker": "IYT",
-      "type": "Sale",
-      "date": "2025-06-05",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "FNMA (Fannie Mae)",
       "ticker": "FNMA",
       "type": "Sale",
       "date": "2025-06-05",
       "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Transportation Average ETF",
+      "ticker": "IYT",
+      "type": "Sale",
+      "date": "2025-06-05",
+      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -520,19 +576,19 @@
       "lateFilingFlag": false
     },
     {
-      "description": "iShares 20+ Year Treasury Bond ETF",
-      "ticker": "TLT",
-      "type": "Purchase",
-      "date": "2025-05-16",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "FNMA (Fannie Mae)",
       "ticker": "FNMA",
       "type": "Sale",
       "date": "2025-05-16",
       "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares 20+ Year Treasury Bond ETF",
+      "ticker": "TLT",
+      "type": "Purchase",
+      "date": "2025-05-16",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
@@ -552,26 +608,31 @@
       "lateFilingFlag": false
     },
     {
-      "description": "S&P 500 futures option, opened",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-03-05",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "S&P 500 future, opened",
       "ticker": null,
       "type": "Purchase",
       "date": "2025-03-05",
       "amount": "$250,001-$500,000",
       "lateFilingFlag": false
+    },
+    {
+      "description": "S&P 500 futures option, opened",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
     }
   ],
-  "summary": "Miran reported 64 sales (est. $4.7M) and 6 purchases (est. $1.7M). Holdings included IVV, GOOGL, AMZN, BRK.B, MSFT, among others.",
+  "summary": "Miran reported 70 sales (est. $6.3M) and 7 purchases (est. $1.7M).",
   "confirmedDate": "2025-03-12",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-04-25",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf",
+      "label": "Stephen-I-Miran-04.03.2026-278T"
+    },
     {
       "date": "2025-12-31",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/86C03B37455893E185258D710034584A/$FILE/Stephen-I-Miran-12.03.2025-278T.pdf",
@@ -582,5 +643,7 @@
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf",
       "label": "278-T"
     }
-  ]
+  ],
+  "lastIngestedDate": "2026-05-14",
+  "lastIngestedNewCount": 7
 }

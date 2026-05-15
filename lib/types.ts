@@ -45,6 +45,13 @@ export interface OfficialData {
   level: GovernmentLevel;
   filingType: string;
   mostRecentFilingDate: string;
+  // When Open Cabinet's pipeline last added or updated this official's data.
+  // Independent of mostRecentFilingDate (which is the OGE post date) so
+  // backfills of older filings still surface as "new on the site."
+  lastIngestedDate?: string;
+  // Number of transactions added in the most recent ingest (0 if no
+  // additions this round — surfaces a per-filing delta on the page banner).
+  lastIngestedNewCount?: number;
   party?: "R" | "D" | "I";
   photoUrl?: string;
   ogeProfileUrl?: string;
@@ -66,6 +73,10 @@ export interface OfficialIndexEntry {
   party?: "R" | "D" | "I";
   transactionCount: number;
   mostRecentFilingDate: string;
+  lastIngestedDate?: string;
+  // Number of new transactions added in the most recent ingest, for badge
+  // copy like "+3,627 trades just added." Optional; may be 0.
+  lastIngestedNewCount?: number;
   departedDate?: string | null;
   dataStatus: DataStatus;
 }

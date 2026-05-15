@@ -12,9 +12,12 @@ type SortDirection = "asc" | "desc";
 export default function OfficialsTable({
   officials,
   initialLimit,
+  newIngestedCutoff,
 }: {
   officials: OfficialIndexEntry[];
   initialLimit?: number;
+  // YYYY-MM-DD; officials whose mostRecentFilingDate >= this get a "New" badge
+  newIngestedCutoff?: string;
 }) {
   const [sortKey, setSortKey] = useState<SortKey>("transactionCount");
   const [sortDir, setSortDir] = useState<SortDirection>("desc");
@@ -46,6 +49,19 @@ export default function OfficialsTable({
         return 0;
     }
   });
+
+  // When a cutoff is set, surface every "New" official in the default view
+  // by re-sorting recent filings to the top. Inside each group we preserve
+  // the chosen sort. The user can still click any header to override.
+  const displaySorted =
+    newIngestedCutoff && sortKey === "transactionCount" && sortDir === "desc"
+      ? [...sorted].sort((a, b) => {
+          const aNew = (a.lastIngestedDate ?? "") >= newIngestedCutoff ? 1 : 0;
+          const bNew = (b.lastIngestedDate ?? "") >= newIngestedCutoff ? 1 : 0;
+          if (aNew !== bNew) return bNew - aNew; // new first
+          return 0; // stable: preserve existing tx-count sort
+        })
+      : sorted;
 
   const arrow = sortDir === "asc" ? " ↑" : " ↓";
 
@@ -90,7 +106,7 @@ export default function OfficialsTable({
           </tr>
         </thead>
         <tbody className="text-sm">
-          {(showAll ? sorted : sorted.slice(0, initialLimit)).map((official, i) => (
+          {(showAll ? displaySorted : displaySorted.slice(0, initialLimit)).map((official, i) => (
             <tr
               key={official.slug}
               className={`border-b border-neutral-100 cursor-pointer transition-colors hover:bg-neutral-100 ${
@@ -109,13 +125,24 @@ export default function OfficialsTable({
                     size={36}
                   />
                   <div>
-                    <Link
-                      href={`/officials/${official.slug}`}
-                      className="text-neutral-900 hover:underline"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {displayName(official.name)}
-                    </Link>
+                    <div className="flex items-center gap-2">
+                      <Link
+                        href={`/officials/${official.slug}`}
+                        className="text-neutral-900 hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {displayName(official.name)}
+                      </Link>
+                      {newIngestedCutoff &&
+                        (official.lastIngestedDate ?? "") >= newIngestedCutoff && (
+                          <span
+                            className="bg-neutral-900 text-white text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 sm:hidden"
+                            title={`New filing ${formatDate(official.mostRecentFilingDate)}`}
+                          >
+                            New
+                          </span>
+                        )}
+                    </div>
                     <div className="text-xs text-neutral-400 mt-0.5 hidden md:block">
                       {official.departedDate && (
                         <span className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1">Former </span>
@@ -138,18 +165,26 @@ export default function OfficialsTable({
                 {official.transactionCount}
               </td>
               <td className="py-3 text-right text-neutral-500 tabular-nums hidden sm:table-cell">
-                {formatDate(official.mostRecentFilingDate)}
+                <span className="inline-flex items-center gap-2 justify-end">
+                  {newIngestedCutoff &&
+                    (official.lastIngestedDate ?? "") >= newIngestedCutoff && (
+                      <span className="bg-neutral-900 text-white text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5">
+                        New
+                      </span>
+                    )}
+                  {formatDate(official.mostRecentFilingDate)}
+                </span>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {!showAll && initialLimit && sorted.length > initialLimit && (
+      {!showAll && initialLimit && displaySorted.length > initialLimit && (
         <button
           onClick={() => setShowAll(true)}
           className="mt-4 w-full py-2.5 text-sm text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer"
         >
-          Show all {sorted.length} officials
+          Show all {displaySorted.length} officials
         </button>
       )}
     </div>

@@ -15,6 +15,8 @@ import {
 } from "@/lib/holdings";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
+import MonthlyBars from "@/app/components/monthly-bars";
+import RangeFilter from "@/app/components/range-filter";
 import OfficialAvatar from "@/app/components/official-avatar";
 import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
@@ -54,12 +56,65 @@ function isSale(type: Transaction["type"]): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
 
+type CareerEventStyle = "solid" | "dashed" | "dotted";
+interface CareerEvent {
+  date: string;
+  label: string;
+  style: CareerEventStyle;
+  color: string;
+}
+
+function getCareerEvents(official: {
+  confirmedDate?: string;
+  tookOfficeDate?: string;
+  ethicsAgreementDate?: string;
+}): CareerEvent[] {
+  const events: CareerEvent[] = [];
+  const confirmDate = official.confirmedDate || official.tookOfficeDate;
+  if (confirmDate) {
+    events.push({
+      date: confirmDate,
+      label: official.tookOfficeDate ? "Took office" : "Confirmed",
+      style: "solid",
+      color: "#a3a3a3",
+    });
+    if (!official.tookOfficeDate) {
+      const deadline = new Date(confirmDate + "T00:00:00");
+      deadline.setDate(deadline.getDate() + 90);
+      events.push({
+        date: deadline.toISOString().split("T")[0],
+        label: "90-day deadline",
+        style: "dashed",
+        color: "#f87171",
+      });
+    }
+  }
+  if (official.ethicsAgreementDate && confirmDate) {
+    const diff = Math.abs(
+      new Date(official.ethicsAgreementDate).getTime() -
+        new Date(confirmDate).getTime()
+    );
+    if (diff > 7 * 24 * 60 * 60 * 1000) {
+      events.push({
+        date: official.ethicsAgreementDate,
+        label: "Ethics agmt",
+        style: "dotted",
+        color: "#d4d4d4",
+      });
+    }
+  }
+  return events;
+}
+
 export default async function OfficialPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ range?: string }>;
 }) {
   const { slug } = await params;
+  const search = (await searchParams) ?? {};
   const official = await getOfficialBySlug(slug);
 
   if (!official) {
@@ -100,13 +155,92 @@ export default async function OfficialPage({
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
 
-  // Check if this official has a recent OGE filing
+  // Density-derived stats — surface the *rhythm* of the trading, not just
+  // the cumulative count. These power the high-volume page tier.
+  const countsByDay = new Map<string, number>();
+  for (const t of transactions) {
+    countsByDay.set(t.date, (countsByDay.get(t.date) ?? 0) + 1);
+  }
+  const countsByMonth = new Map<string, number>();
+  for (const t of transactions) {
+    const k = t.date.slice(0, 7);
+    countsByMonth.set(k, (countsByMonth.get(k) ?? 0) + 1);
+  }
+  const peakDay = Array.from(countsByDay.entries()).sort(
+    (a, b) => b[1] - a[1]
+  )[0];
+  const daysWithHundredPlus = Array.from(countsByDay.values()).filter(
+    (n) => n >= 100
+  ).length;
+  const peakMonthEntry = Array.from(countsByMonth.entries()).sort(
+    (a, b) => b[1] - a[1]
+  )[0];
+  const peakMonth = peakMonthEntry
+    ? { month: peakMonthEntry[0], count: peakMonthEntry[1] }
+    : null;
+  const weeksSpan = Math.max(
+    1,
+    (latest.getTime() - earliest.getTime()) / (7 * 24 * 60 * 60 * 1000)
+  );
+  const tradesPerWeek = totalTrades / weeksSpan;
+  const uniqueAssets = new Set(
+    transactions.map((t) => t.description.trim().toUpperCase())
+  ).size;
+  const maxMonthlyCount = Math.max(0, ...Array.from(countsByMonth.values()));
+
+  // High-volume officials get the monthly bar chart as the dominant viz.
+  // Threshold: either 500+ total trades or any single month over 50 — both
+  // are densities at which the dot-timeline becomes a smear.
+  const HIGH_VOLUME = totalTrades >= 500 || maxMonthlyCount >= 50;
+
+  // Range filter — only meaningful for high-volume officials. Default to
+  // 12-month rolling view, with explicit user override via ?range=.
+  type Range = "ytd" | "12mo" | "all";
+  const rawRange = (search.range ?? "").toLowerCase();
+  const validRange: Range[] = ["ytd", "12mo", "all"];
+  const range: Range = validRange.includes(rawRange as Range)
+    ? (rawRange as Range)
+    : HIGH_VOLUME
+    ? "12mo"
+    : "all";
+
+  const now = new Date();
+  let rangeStart: Date | null = null;
+  if (range === "ytd") rangeStart = new Date(now.getFullYear(), 0, 1);
+  else if (range === "12mo")
+    rangeStart = new Date(now.getTime() - 365 * 24 * 60 * 60 * 1000);
+
+  const inRange = (t: Transaction) => {
+    if (!rangeStart) return true;
+    return new Date(t.date + "T00:00:00") >= rangeStart;
+  };
+  const visibleTransactions = transactions.filter(inRange);
+  const visibleSorted = [...visibleTransactions].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  // "New on Open Cabinet" banner — driven by lastIngestedDate (pipeline
+  // signal), not the OGE post date. Stays up for 14 days. Also pulls in the
+  // number of new transactions added on the latest ingest if available, so
+  // the banner can say "+3,627 trades added" instead of conflating it with
+  // the cumulative total.
   const ogeFilingDate = official.mostRecentFilingDate;
+  const ingestedDate = official.lastIngestedDate;
+  const newCount = official.lastIngestedNewCount ?? 0;
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
-  const recentCutoff = new Date(indexDate.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const isRecentFiling = ogeFilingDate
-    ? new Date(ogeFilingDate + "T00:00:00") >= recentCutoff
+  const recentCutoffStr = new Date(
+    indexDate.getTime() - 14 * 24 * 60 * 60 * 1000
+  )
+    .toISOString()
+    .split("T")[0];
+  const isRecentlyIngested = ingestedDate
+    ? ingestedDate >= recentCutoffStr
     : false;
+  // First-appearance = the ingest delta equals the whole transaction list,
+  // meaning we just published this official for the first time. That's a
+  // bigger story than an additive filing on an existing page.
+  const isFirstAppearance =
+    isRecentlyIngested && newCount > 0 && newCount === totalTrades;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
@@ -117,19 +251,45 @@ export default async function OfficialPage({
         ← Back to directory
       </Link>
 
-      {isRecentFiling && (
+      {isRecentlyIngested && (
         <div className="mt-4 bg-neutral-900 text-white px-4 py-3 text-sm flex items-start gap-3">
-          <span className="bg-white text-neutral-900 text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0 mt-0.5">
-            New
+          <span
+            className={`text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0 mt-0.5 ${
+              isFirstAppearance
+                ? "bg-amber-300 text-neutral-900"
+                : "bg-white text-neutral-900"
+            }`}
+          >
+            {isFirstAppearance ? "New official" : "New filing"}
           </span>
           <span className="text-neutral-300">
-            {displayName(official.name)} filed a new disclosure with OGE on{" "}
-            {formatDate(ogeFilingDate)}.
-            {" "}The report contains {totalTrades} transactions
-            {" "}from {formatDate(earliest.toISOString().split("T")[0])} to{" "}
-            {formatDate(latest.toISOString().split("T")[0])}.
+            {isFirstAppearance ? (
+              <>
+                <span className="text-white font-medium">
+                  {displayName(official.name)} is new on Open Cabinet.
+                </span>{" "}
+                We added {newCount.toLocaleString()} trade
+                {newCount === 1 ? "" : "s"} from a 278-T posted to OGE on{" "}
+                {formatDate(ogeFilingDate)} (ingested {formatDate(ingestedDate!)}).
+              </>
+            ) : newCount > 0 ? (
+              <>
+                <span className="text-white font-medium">
+                  +{newCount.toLocaleString()} new trade
+                  {newCount === 1 ? "" : "s"}
+                </span>{" "}
+                for {displayName(official.name)} from a 278-T posted to OGE on{" "}
+                {formatDate(ogeFilingDate)} (ingested {formatDate(ingestedDate!)}).
+              </>
+            ) : (
+              <>
+                {displayName(official.name)}&rsquo;s page was updated on{" "}
+                {formatDate(ingestedDate!)}, based on a 278-T filed with OGE on{" "}
+                {formatDate(ogeFilingDate)}.
+              </>
+            )}
             {" "}Officials have 30 to 45 days to report each trade, so
-            transaction dates will be earlier than the filing date.
+            transaction dates can be earlier than the filing date.
           </span>
         </div>
       )}
@@ -187,13 +347,51 @@ export default async function OfficialPage({
               {lateFilings}
             </span>
             late {lateFilings === 1 ? "filing" : "filings"}
+            {HIGH_VOLUME && totalTrades > 0 && (
+              <span className="text-xs text-neutral-400 ml-1">
+                ({Math.round((100 * lateFilings) / totalTrades)}%)
+              </span>
+            )}
           </div>
+        )}
+        {HIGH_VOLUME && (
+          <>
+            <div>
+              <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+                {Math.round(tradesPerWeek)}
+              </span>
+              trades/week avg
+            </div>
+            {peakDay && peakDay[1] >= 50 && (
+              <div>
+                <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+                  {peakDay[1]}
+                </span>
+                trades on {formatDate(peakDay[0])}
+              </div>
+            )}
+            {daysWithHundredPlus > 0 && (
+              <div>
+                <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+                  {daysWithHundredPlus}
+                </span>
+                day{daysWithHundredPlus === 1 ? "" : "s"} with 100+ trades
+              </div>
+            )}
+          </>
         )}
         <div className="text-neutral-400">
           {formatDate(earliest.toISOString().split("T")[0])} –{" "}
           {formatDate(latest.toISOString().split("T")[0])}
         </div>
       </div>
+      {HIGH_VOLUME && (
+        <p className="text-xs text-neutral-400 -mt-8 mb-4">
+          Trade-value totals (e.g. on the dashboard) sum the midpoints of OGE
+          disclosure ranges, not exact amounts. Federal law requires only
+          ranges. Treat all dollar estimates as range midpoints.
+        </p>
+      )}
       <p className="text-xs text-neutral-400 -mt-8 mb-10">
         Last filing: {formatDate(ogeFilingDate)}
         <span className="text-neutral-300 mx-1.5">|</span>
@@ -215,45 +413,57 @@ export default async function OfficialPage({
         </p>
       )}
 
-      <TransactionTimeline
-        transactions={transactions}
-        careerEvents={(() => {
-          const events: Array<{ date: string; label: string; style: "solid" | "dashed" | "dotted"; color: string }> = [];
-          const confirmDate = official.confirmedDate || official.tookOfficeDate;
-          if (confirmDate) {
-            events.push({
-              date: confirmDate,
-              label: official.tookOfficeDate ? "Took office" : "Confirmed",
-              style: "solid",
-              color: "#a3a3a3",
-            });
-            // 90-day deadline (President is exempt)
-            if (!official.tookOfficeDate) {
-              const deadline = new Date(confirmDate + "T00:00:00");
-              deadline.setDate(deadline.getDate() + 90);
-              events.push({
-                date: deadline.toISOString().split("T")[0],
-                label: "90-day deadline",
-                style: "dashed",
-                color: "#f87171",
-              });
-            }
-          }
-          if (official.ethicsAgreementDate && confirmDate) {
-            const diff = Math.abs(new Date(official.ethicsAgreementDate).getTime() - new Date(confirmDate).getTime());
-            if (diff > 7 * 24 * 60 * 60 * 1000) {
-              events.push({
-                date: official.ethicsAgreementDate,
-                label: "Ethics agmt",
-                style: "dotted",
-                color: "#d4d4d4",
-              });
-            }
-          }
-          return events;
-        })()}
-      />
+      {HIGH_VOLUME && (
+        <section className="mb-10">
+          <div className="flex items-baseline justify-between mb-3 gap-4 flex-wrap">
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-neutral-500">
+                Trades by month
+              </h2>
+              <p className="text-xs text-neutral-400 mt-1">
+                {visibleTransactions.length.toLocaleString()} trade
+                {visibleTransactions.length === 1 ? "" : "s"} shown
+                {range !== "all" && ` of ${totalTrades.toLocaleString()}`}.
+                Sales above midline, purchases below. Amber tick = month with
+                late-filed trades.
+              </p>
+            </div>
+            <RangeFilter selected={range} />
+          </div>
+          <MonthlyBars transactions={visibleTransactions} />
+        </section>
+      )}
 
+      {!HIGH_VOLUME && (
+        <h2 className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
+          Transaction timeline
+        </h2>
+      )}
+      {HIGH_VOLUME ? (
+        <details className="mb-10 group">
+          <summary className="text-xs uppercase tracking-wider text-neutral-500 cursor-pointer hover:text-neutral-900 transition-colors list-none flex items-center gap-2 [&::-webkit-details-marker]:hidden">
+            <span className="inline-block transition-transform group-open:rotate-90">
+              ›
+            </span>
+            Show every trade as a single-dot timeline
+            <span className="text-neutral-400 normal-case tracking-normal">
+              ({visibleTransactions.length.toLocaleString()} dots at high
+              density — informative, not pretty)
+            </span>
+          </summary>
+          <div className="mt-3">
+            <TransactionTimeline
+              transactions={visibleTransactions}
+              careerEvents={getCareerEvents(official)}
+            />
+          </div>
+        </details>
+      ) : (
+        <TransactionTimeline
+          transactions={visibleTransactions}
+          careerEvents={getCareerEvents(official)}
+        />
+      )}
       <div className="overflow-x-auto -mx-4 px-4">
         <table className="w-full text-left text-sm">
           <thead>
@@ -269,7 +479,7 @@ export default async function OfficialPage({
             </tr>
           </thead>
           <tbody>
-            {sorted.map((tx, i) => {
+            {visibleSorted.map((tx, i) => {
               const sourceFiling = getSourceFilingForTransaction(
                 tx,
                 official.sourceFilings
