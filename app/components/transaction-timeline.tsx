@@ -266,13 +266,15 @@ function TimelineView({
     amount: amountRangeToMin(tx.amount),
   }));
 
-  // scaleTime maps dates to x-pixel positions
-  // Extend domain to include career events (confirmation, deadline)
+  // scaleTime maps dates to x-pixel positions.
+  // We deliberately pin the domain to the visible transactions, NOT the
+  // career events. When a parent narrows the data via a range filter
+  // (?range=ytd etc.), career events from earlier in the official's
+  // tenure would otherwise stretch the axis across blank space and
+  // cram the dots into a sliver on the right.
   const dateExtent = extent(parsedData, (d) => d.date) as [Date, Date];
-  const eventDates = careerEvents.map((e) => new Date(e.date + "T00:00:00").getTime());
-  const allTimestamps = [dateExtent[0].getTime(), dateExtent[1].getTime(), ...eventDates];
-  const domainMin = Math.min(...allTimestamps);
-  const domainMax = Math.max(...allTimestamps);
+  const domainMin = dateExtent[0].getTime();
+  const domainMax = dateExtent[1].getTime();
   const dayPadding = 14 * 24 * 60 * 60 * 1000;
   const xScale = scaleTime()
     .domain([
@@ -280,6 +282,14 @@ function TimelineView({
       new Date(domainMax + dayPadding),
     ])
     .range([0, chartWidth]);
+
+  // Hide career events that fall outside the visible domain — otherwise
+  // they get plotted at chart edges where they're confusing labels for
+  // dates the chart doesn't actually cover.
+  const visibleCareerEvents = careerEvents.filter((e) => {
+    const ts = new Date(e.date + "T00:00:00").getTime();
+    return ts >= domainMin - dayPadding && ts <= domainMax + dayPadding;
+  });
 
   // scaleSqrt maps amounts to radii (area scales linearly with value)
   const amountExtent = extent(parsedData, (d) => d.amount) as [number, number];
@@ -313,10 +323,6 @@ function TimelineView({
 
   return (
     <div ref={containerRef} className="relative mb-10">
-      <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
-        Transaction Timeline
-      </h2>
-
       <svg
         width={width}
         height={height}
@@ -326,7 +332,7 @@ function TimelineView({
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>
           {/* Career event marker lines — rendered before dots so dots are on top */}
-          {careerEvents.map((event, i) => {
+          {visibleCareerEvents.map((event, i) => {
             const x = xScale(new Date(event.date + "T00:00:00"));
             const strokeDash = event.style === "dashed" ? "4,4" : event.style === "dotted" ? "2,3" : "none";
             return (
