@@ -464,18 +464,18 @@ export default async function OfficialPage({
           {formatDate(latest.toISOString().split("T")[0])}
         </div>
       </div>
+      <p className="text-xs text-neutral-400 mb-2">
+        Last filing: {formatDate(ogeFilingDate)}
+        <span className="text-neutral-300 mx-1.5">|</span>
+        Transactions: {formatDate(earliest.toISOString().split("T")[0])} – {formatDate(latest.toISOString().split("T")[0])}
+      </p>
       {HIGH_VOLUME && (
-        <p className="text-xs text-neutral-400 -mt-8 mb-4">
+        <p className="text-xs text-neutral-400 mb-10">
           Trade-value totals (e.g. on the dashboard) sum the midpoints of OGE
           disclosure ranges, not exact amounts. Federal law requires only
           ranges. Treat all dollar estimates as range midpoints.
         </p>
       )}
-      <p className="text-xs text-neutral-400 -mt-8 mb-10">
-        Last filing: {formatDate(ogeFilingDate)}
-        <span className="text-neutral-300 mx-1.5">|</span>
-        Transactions: {formatDate(earliest.toISOString().split("T")[0])} – {formatDate(latest.toISOString().split("T")[0])}
-      </p>
 
       {buys === 0 && sells > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
