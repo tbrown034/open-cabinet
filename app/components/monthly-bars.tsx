@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeMonth } from "d3-time";
 import { timeFormat } from "d3-time-format";
@@ -22,6 +23,12 @@ interface Props {
   // Restrict the chart to a sub-range. Defaults to the full range.
   rangeStart?: Date;
   rangeEnd?: Date;
+  // If set, the parent is rendering a filtered subset and this month
+  // should be drawn with a highlighted outline.
+  selectedMonth?: string | null; // "YYYY-MM"
+  // When true, clicking a bar updates ?month=YYYY-MM on the URL so the
+  // parent server component can re-filter the dataset.
+  clickToZoom?: boolean;
 }
 
 function isSale(type: Transaction["type"]): boolean {
@@ -36,7 +43,26 @@ interface MonthBucket {
   total: number;
 }
 
-export default function MonthlyBars({ transactions, rangeStart, rangeEnd }: Props) {
+export default function MonthlyBars({
+  transactions,
+  rangeStart,
+  rangeEnd,
+  selectedMonth,
+  clickToZoom,
+}: Props) {
+  const router = useRouter();
+  const search = useSearchParams();
+
+  function handleClick(monthKey: string) {
+    if (!clickToZoom) return;
+    const params = new URLSearchParams(search.toString());
+    // Toggle: clicking the same month again clears the filter.
+    if (params.get("month") === monthKey) params.delete("month");
+    else params.set("month", monthKey);
+    const qs = params.toString();
+    router.replace(qs ? `?${qs}` : "?", { scroll: false });
+  }
+
   const data = useMemo(() => {
     if (transactions.length === 0) return { buckets: [] as MonthBucket[], maxStack: 0 };
     const parsed = transactions
@@ -115,13 +141,29 @@ export default function MonthlyBars({ transactions, rangeStart, rangeEnd }: Prop
           const salesH = y(b.sales);
           const purchH = y(b.purchases);
           const isHover = hover?.b.month.getTime() === b.month.getTime();
+          const monthKey = b.month.toISOString().slice(0, 7);
+          const isSelected = selectedMonth === monthKey;
+          const clickable = clickToZoom && b.total > 0;
           return (
             <g
               key={b.month.toISOString()}
               onMouseEnter={() => setHover({ b, x: cx })}
               onMouseLeave={() => setHover(null)}
-              style={{ cursor: b.total > 0 ? "pointer" : "default" }}
+              onClick={() => clickable && handleClick(monthKey)}
+              style={{ cursor: clickable ? "pointer" : "default" }}
             >
+              {/* Selected highlight — drawn behind the bars */}
+              {isSelected && (
+                <rect
+                  x={xPos - 3}
+                  y={margin.top - 2}
+                  width={barWidth + 6}
+                  height={innerH + 4}
+                  fill="none"
+                  stroke="#0a0a0a"
+                  strokeWidth={1}
+                />
+              )}
               {/* Invisible hit target so empty months don't grab hover */}
               {b.total > 0 && (
                 <rect

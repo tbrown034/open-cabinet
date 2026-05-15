@@ -439,19 +439,21 @@ export default function HomeSwimPreview({
         </div>
       )}
 
-      <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3">
+      <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 gap-4 flex-wrap">
         <p className="text-xs text-neutral-500">
-          Showing the {TOP_COUNT} highest-volume officials.{" "}
+          Showing the {TOP_COUNT} highest-volume officials. Bars are monthly
+          trade counts — the per-trade dot view (one circle per disclosure)
+          is on the full chart.{" "}
           <span className="text-neutral-700 font-medium">
             {totalOfficials - TOP_COUNT} more
           </span>{" "}
-          on the full chart.
+          officials there too.
         </p>
         <Link
           href="/all"
           className="text-xs font-medium text-neutral-900 underline underline-offset-4 decoration-2 hover:decoration-red-600"
         >
-          See all {totalOfficials} &rarr;
+          See every trade &rarr;
         </Link>
       </div>
     </div>

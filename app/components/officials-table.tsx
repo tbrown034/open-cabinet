@@ -53,20 +53,33 @@ export default function OfficialsTable({
   // When a cutoff is set, surface every "New" official in the default view
   // by re-sorting recent filings to the top. Inside each group we preserve
   // the chosen sort. The user can still click any header to override.
-  const displaySorted =
-    newIngestedCutoff && sortKey === "transactionCount" && sortDir === "desc"
-      ? [...sorted].sort((a, b) => {
-          const aNew = (a.lastIngestedDate ?? "") >= newIngestedCutoff ? 1 : 0;
-          const bNew = (b.lastIngestedDate ?? "") >= newIngestedCutoff ? 1 : 0;
-          if (aNew !== bNew) return bNew - aNew; // new first
-          return 0; // stable: preserve existing tx-count sort
-        })
-      : sorted;
+  const newGroupingActive =
+    !!newIngestedCutoff && sortKey === "transactionCount" && sortDir === "desc";
+  const displaySorted = newGroupingActive
+    ? [...sorted].sort((a, b) => {
+        const aNew = (a.lastIngestedDate ?? "") >= newIngestedCutoff! ? 1 : 0;
+        const bNew = (b.lastIngestedDate ?? "") >= newIngestedCutoff! ? 1 : 0;
+        if (aNew !== bNew) return bNew - aNew; // new first
+        return 0; // stable: preserve existing tx-count sort
+      })
+    : sorted;
 
+  // The arrow indicates which column drives the displayed order. When the
+  // NEW-first grouping is active, the visible order does NOT match either
+  // column's pure sort (Vaden's 6 trades sits above Mody's 306 because
+  // Vaden is newly added) — so suppressing the arrow is the honest move,
+  // and a caption above the table explains the grouping instead.
   const arrow = sortDir === "asc" ? " ↑" : " ↓";
+  const showSortArrow = !newGroupingActive;
 
   return (
     <div className="overflow-x-auto -mx-4 px-4">
+      {newGroupingActive && (
+        <p className="text-xs text-neutral-500 mb-2 italic">
+          Officials with filings in the last 14 days surface at the top.
+          Click any column header to sort the table by that column instead.
+        </p>
+      )}
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
@@ -75,7 +88,7 @@ export default function OfficialsTable({
                 onClick={() => handleSort("name")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
-                Name{sortKey === "name" ? arrow : ""}
+                Name{showSortArrow && sortKey === "name" ? arrow : ""}
               </button>
             </th>
             <th className="pb-2 pr-4 font-medium hidden md:table-cell">
@@ -83,7 +96,7 @@ export default function OfficialsTable({
                 onClick={() => handleSort("agency")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
-                Agency{sortKey === "agency" ? arrow : ""}
+                Agency{showSortArrow && sortKey === "agency" ? arrow : ""}
               </button>
             </th>
             <th className="pb-2 pr-4 font-medium text-right">
@@ -91,7 +104,7 @@ export default function OfficialsTable({
                 onClick={() => handleSort("transactionCount")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
-                Trades{sortKey === "transactionCount" ? arrow : ""}
+                Trades{showSortArrow && sortKey === "transactionCount" ? arrow : ""}
               </button>
             </th>
             <th className="pb-2 font-medium text-right hidden sm:table-cell">
@@ -100,7 +113,7 @@ export default function OfficialsTable({
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
                 Latest filing
-                {sortKey === "mostRecentFilingDate" ? arrow : ""}
+                {showSortArrow && sortKey === "mostRecentFilingDate" ? arrow : ""}
               </button>
             </th>
           </tr>

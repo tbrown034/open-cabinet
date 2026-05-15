@@ -17,6 +17,8 @@ import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import MonthlyBars from "@/app/components/monthly-bars";
 import RangeFilter from "@/app/components/range-filter";
+import TransactionFilters from "@/app/components/transaction-filters";
+import type { TxTypeFilter } from "@/app/components/transaction-filters";
 import OfficialAvatar from "@/app/components/official-avatar";
 import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
@@ -111,7 +113,12 @@ export default async function OfficialPage({
   searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams?: Promise<{ range?: string }>;
+  searchParams?: Promise<{
+    range?: string;
+    type?: string;
+    month?: string;
+    late?: string;
+  }>;
 }) {
   const { slug } = await params;
   const search = (await searchParams) ?? {};
@@ -214,10 +221,49 @@ export default async function OfficialPage({
     if (!rangeStart) return true;
     return new Date(t.date + "T00:00:00") >= rangeStart;
   };
-  const visibleTransactions = transactions.filter(inRange);
+
+  // Additional filters layered on top of the range filter. Each one is
+  // URL-controlled by TransactionFilters / MonthlyBars (when clickToZoom)
+  // so a journalist can permalink any combination.
+  const rawType = (search.type ?? "all").toLowerCase();
+  const typeFilter: TxTypeFilter = (
+    ["all", "sale", "purchase", "late"].includes(rawType) ? rawType : "all"
+  ) as TxTypeFilter;
+  const monthFilter =
+    typeof search.month === "string" && /^\d{4}-\d{2}$/.test(search.month)
+      ? search.month
+      : null;
+
+  const passesType = (t: Transaction) => {
+    if (typeFilter === "all") return true;
+    if (typeFilter === "sale") return isSale(t.type);
+    if (typeFilter === "purchase") return t.type === "Purchase";
+    if (typeFilter === "late") return Boolean(t.lateFilingFlag);
+    return true;
+  };
+  const passesMonth = (t: Transaction) =>
+    !monthFilter || t.date.slice(0, 7) === monthFilter;
+
+  const rangedTransactions = transactions.filter(inRange);
+  // The bar chart respects range only — clicking a bar within the
+  // chart is itself the month filter, so we don't want the chart to
+  // collapse to a single bar when a month is selected.
+  const chartTransactions = rangedTransactions;
+  // The table and dot-timeline respect every filter, so they narrow to
+  // the user's selection.
+  const visibleTransactions = rangedTransactions
+    .filter(passesType)
+    .filter(passesMonth);
   const visibleSorted = [...visibleTransactions].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+
+  const monthLabel = monthFilter
+    ? new Date(monthFilter + "-01T00:00:00").toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric",
+      })
+    : null;
 
   // "New on Open Cabinet" banner — driven by lastIngestedDate (pipeline
   // signal), not the OGE post date. Stays up for 14 days. Also pulls in the
@@ -421,18 +467,27 @@ export default async function OfficialPage({
                 Trades by month
               </h2>
               <p className="text-xs text-neutral-400 mt-1">
-                {visibleTransactions.length.toLocaleString()} trade
-                {visibleTransactions.length === 1 ? "" : "s"} shown
-                {range !== "all" && ` of ${totalTrades.toLocaleString()}`}.
-                Sales above midline, purchases below. Amber tick = month with
-                late-filed trades.
+                Click any month to zoom in. Sales above midline, purchases
+                below. Amber tick = month with late-filed trades.
               </p>
             </div>
             <RangeFilter selected={range} />
           </div>
-          <MonthlyBars transactions={visibleTransactions} />
+          <MonthlyBars
+            transactions={chartTransactions}
+            selectedMonth={monthFilter}
+            clickToZoom
+          />
         </section>
       )}
+
+      <TransactionFilters
+        type={typeFilter}
+        monthKey={monthFilter}
+        monthLabel={monthLabel}
+        totalCount={transactions.length}
+        filteredCount={visibleTransactions.length}
+      />
 
       {!HIGH_VOLUME && (
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 mb-2">
