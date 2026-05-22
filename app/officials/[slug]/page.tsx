@@ -380,7 +380,7 @@ export default async function OfficialPage({
           party={official.party}
           size={72}
         />
-        <div>
+        <div className="min-w-0 flex-1">
           <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-2">
             {displayName(official.name)}
           </h1>

@@ -129,6 +129,16 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
             const color = colorScale(d.name);
             const isLight = false; // all colors are dark now — always use white text
 
+            // Truncate the name to whatever fits inside the tile minus padding.
+            // 11px medium text is ~6.5px per character; this prevents labels
+            // from rendering past the SVG's right edge on narrow tiles.
+            const maxChars = Math.max(0, Math.floor((w - 12) / 6.5));
+            const displayName =
+              d.name.length > maxChars
+                ? d.name.slice(0, Math.max(0, maxChars - 1)) + "…"
+                : d.name;
+            const clipId = `treemap-clip-${d.name.replace(/\W+/g, "-")}`;
+
             return (
               <g
                 key={d.name}
@@ -136,6 +146,11 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
                 onMouseLeave={() => setHovered(null)}
                 style={{ cursor: "default" }}
               >
+                <defs>
+                  <clipPath id={clipId}>
+                    <rect x={x0} y={y0} width={w} height={h} />
+                  </clipPath>
+                </defs>
                 <rect
                   x={x0}
                   y={y0}
@@ -146,13 +161,13 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
                   className="transition-opacity duration-150"
                 />
                 {!isSmall && (
-                  <>
+                  <g clipPath={`url(#${clipId})`}>
                     <text
                       x={x0 + 6}
                       y={y0 + 16}
                       className={`text-[11px] font-medium ${isLight ? "fill-neutral-700" : "fill-white"}`}
                     >
-                      {d.name}
+                      {displayName}
                     </text>
                     <text
                       x={x0 + 6}
@@ -161,7 +176,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
                     >
                       {formatCompactCurrency(d.value)} ({pct}%)
                     </text>
-                  </>
+                  </g>
                 )}
               </g>
             );
