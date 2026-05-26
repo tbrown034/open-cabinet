@@ -72,14 +72,18 @@ export async function GET(request: NextRequest) {
       })
       .where(eq(pipelineRuns.id, run.id));
 
-    // Weekly summary email
+    // Weekly heartbeat email. New filings counts come from the local
+    // parse step, not this Vercel cron, so the headline is "OGE checked,
+    // 0 new auto-ingested" — silence still means something is broken.
+    const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
     await notify({
       type: "new_filings",
-      details: `Weekly OGE check completed.\n\nTotal OGE records: ${totalRecords}\nDuration: ${((Date.now() - startTime) / 1000).toFixed(1)}s\nRun #${run.id}`,
+      headline: `OGE check OK · 0 new auto-ingested`,
+      summary: `Polled the OGE public portal. ${totalRecords.toLocaleString()} total records in the OGE system. The Vercel cron doesn't auto-parse new PDFs — run \`pnpm run pipeline\` locally to ingest any new 278-Ts.`,
       metadata: {
-        totalOgeRecords: totalRecords,
-        runId: run.id,
-        duration: `${((Date.now() - startTime) / 1000).toFixed(1)}s`,
+        "Total OGE records": totalRecords.toLocaleString(),
+        "Run duration": `${elapsed}s`,
+        "Pipeline run #": run.id,
       },
     });
 

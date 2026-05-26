@@ -48,40 +48,45 @@ const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
 
 interface NotifyOptions {
   type: AlertType;
-  details: string;
+  /** Short subject-line hook. Falls back to the alert type label. */
+  headline?: string;
+  /** One-paragraph summary shown at the top of the email body. */
+  summary?: string;
+  /** Legacy multi-line body for callers that haven't migrated to headline/summary. */
+  details?: string;
   metadata?: Record<string, string | number | boolean>;
 }
 
-export async function notify({ type, details, metadata }: NotifyOptions): Promise<boolean> {
+export async function notify({ type, headline, summary, details, metadata }: NotifyOptions): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY;
+  const priority = PRIORITY_MAP[type];
+  const prefix = priority === "high" ? "[URGENT] " : "";
+  const subject = headline
+    ? `${prefix}Open Cabinet · ${headline}`
+    : `${prefix}Open Cabinet · ${SUBJECT_MAP[type]}`;
+
   if (!apiKey) {
     console.warn("[notify] RESEND_API_KEY not set — skipping email");
-    console.warn(`[notify] Would have sent: ${SUBJECT_MAP[type]} — ${details}`);
+    console.warn(`[notify] Would have sent: ${subject}`);
     return false;
   }
 
   const resend = new Resend(apiKey);
-  const priority = PRIORITY_MAP[type];
-  const prefix = priority === "high" ? "[URGENT] " : "";
-  const subject = `${prefix}Open Cabinet: ${SUBJECT_MAP[type]}`;
-
-  // Build plain text email body
+  const bodyTop = summary || details || "";
   const metaLines = metadata
     ? Object.entries(metadata)
         .map(([k, v]) => `  ${k}: ${v}`)
         .join("\n")
     : "";
 
-  const body = `${SUBJECT_MAP[type]}
-${"=".repeat(40)}
+  const text = `${headline || SUBJECT_MAP[type]}
+${"=".repeat(Math.min(60, (headline || SUBJECT_MAP[type]).length))}
 
-${details}
-
-${metaLines ? `Details:\n${metaLines}\n` : ""}
+${bodyTop}
+${metaLines ? `\n${metaLines}\n` : ""}
 ---
-Time: ${new Date().toISOString()}
+Time: ${new Date().toISOString().replace("T", " ").slice(0, 16)} UTC
 Environment: ${process.env.VERCEL_ENV || "local"}
-Source: Open Cabinet Pipeline
 `;
 
   try {
@@ -89,7 +94,7 @@ Source: Open Cabinet Pipeline
       from: FROM_EMAIL,
       to: [ADMIN_EMAIL],
       subject,
-      text: body,
+      text,
     });
 
     if (error) {
