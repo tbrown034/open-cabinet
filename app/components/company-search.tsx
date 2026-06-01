@@ -31,7 +31,11 @@ export default function CompanySearch({
 
   return (
     <div>
+      <label htmlFor="company-search" className="sr-only">
+        Search companies
+      </label>
       <input
+        id="company-search"
         type="text"
         placeholder="Search by ticker or company name..."
         value={query}
@@ -81,10 +85,10 @@ export default function CompanySearch({
                   {c.officialCount}
                 </td>
                 <td className="py-2.5 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-red-700">
-                  {c.sellCount || "—"}
+                  {c.sellCount || ","}
                 </td>
                 <td className="py-2.5 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-emerald-700">
-                  {c.buyCount || "—"}
+                  {c.buyCount || ","}
                 </td>
                 <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
                   {formatCompactCurrency(c.estimatedValue)}

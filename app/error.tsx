@@ -24,6 +24,7 @@ export default function Error({
         temporarily unavailable.
       </p>
       <button
+        type="button"
         onClick={() => reset()}
         className="bg-neutral-900 text-white px-5 py-2 text-sm hover:bg-neutral-800 transition-colors cursor-pointer"
       >

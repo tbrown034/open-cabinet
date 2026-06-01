@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeMonth } from "d3-time";
@@ -8,7 +8,7 @@ import { timeFormat } from "d3-time-format";
 import type { Transaction } from "@/lib/types";
 
 /**
- * MONTHLY BARS — high-density visualization for officials with so many
+ * MONTHLY BARS, high-density visualization for officials with so many
  * trades that the dot-timeline becomes a smear. One stacked bar per month:
  * sales above the midline (red), purchases below (green). A 1-px amber
  * tick at the top of any month that contains a late-filed trade preserves
@@ -43,7 +43,17 @@ interface MonthBucket {
   total: number;
 }
 
-export default function MonthlyBars({
+const CHART_MARGIN = { top: 28, right: 16, bottom: 28, left: 16 };
+
+export default function MonthlyBars(props: Props) {
+  return (
+    <Suspense fallback={null}>
+      <MonthlyBarsContent {...props} />
+    </Suspense>
+  );
+}
+
+function MonthlyBarsContent({
   transactions,
   rangeStart,
   rangeEnd,
@@ -65,11 +75,16 @@ export default function MonthlyBars({
 
   const data = useMemo(() => {
     if (transactions.length === 0) return { buckets: [] as MonthBucket[], maxStack: 0 };
-    const parsed = transactions
-      .map((t) => ({ ...t, dt: new Date(t.date + "T00:00:00") }))
-      .filter((t) => !isNaN(t.dt.getTime()));
-    const start = rangeStart ?? new Date(Math.min(...parsed.map((t) => t.dt.getTime())));
-    const end = rangeEnd ?? new Date(Math.max(...parsed.map((t) => t.dt.getTime())));
+    const parsed = [];
+    const times = [];
+    for (const t of transactions) {
+      const dt = new Date(t.date + "T00:00:00");
+      if (isNaN(dt.getTime())) continue;
+      parsed.push({ ...t, dt });
+      times.push(dt.getTime());
+    }
+    const start = rangeStart ?? new Date(Math.min(...times));
+    const end = rangeEnd ?? new Date(Math.max(...times));
     const months = timeMonth.range(timeMonth.floor(start), timeMonth.ceil(end));
     const byMonth = new Map<string, MonthBucket>();
     for (const m of months) {
@@ -86,7 +101,9 @@ export default function MonthlyBars({
       if (t.lateFilingFlag) b.late++;
       b.total++;
     }
-    const buckets = Array.from(byMonth.values()).sort((a, b) => a.month.getTime() - b.month.getTime());
+    const buckets = Array.from(byMonth.values()).toSorted(
+      (a, b) => a.month.getTime() - b.month.getTime()
+    );
     const maxStack = buckets.reduce((m, b) => Math.max(m, b.sales, b.purchases), 0);
     return { buckets, maxStack };
   }, [transactions, rangeStart, rangeEnd]);
@@ -95,7 +112,7 @@ export default function MonthlyBars({
 
   const width = 920;
   const height = 200;
-  const margin = { top: 28, right: 16, bottom: 28, left: 16 };
+  const margin = CHART_MARGIN;
   const innerW = width - margin.left - margin.right;
   const innerH = height - margin.top - margin.bottom;
   const midY = margin.top + innerH / 2;
@@ -108,7 +125,7 @@ export default function MonthlyBars({
 
   // Half the inner height for each side of the midline. We use scaleSqrt
   // instead of scaleLinear because high-volume officials (Trump) have one
-  // or two months that are 10-50x the others — linear scaling makes every
+  // or two months that are 10-50x the others, linear scaling makes every
   // smaller month invisible. Sqrt preserves ordinal correctness while
   // compressing the dominance enough to read the rest of the timeline.
   const halfH = (innerH - 6) / 2;
@@ -152,7 +169,7 @@ export default function MonthlyBars({
               onClick={() => clickable && handleClick(monthKey)}
               style={{ cursor: clickable ? "pointer" : "default" }}
             >
-              {/* Selected highlight — drawn behind the bars */}
+              {/* Selected highlight, drawn behind the bars */}
               {isSelected && (
                 <rect
                   x={xPos - 3}
@@ -174,7 +191,7 @@ export default function MonthlyBars({
                   fill="transparent"
                 />
               )}
-              {/* Sales — above the midline */}
+              {/* Sales, above the midline */}
               {b.sales > 0 && (
                 <rect
                   x={xPos}
@@ -185,7 +202,7 @@ export default function MonthlyBars({
                   opacity={isHover ? 1 : 0.85}
                 />
               )}
-              {/* Purchases — below the midline */}
+              {/* Purchases, below the midline */}
               {b.purchases > 0 && (
                 <rect
                   x={xPos}
@@ -196,7 +213,7 @@ export default function MonthlyBars({
                   opacity={isHover ? 1 : 0.85}
                 />
               )}
-              {/* Late-filing tick — amber bar at the very top of the
+              {/* Late-filing tick, amber bar at the very top of the
                   sales stack. We attach it to sales because lateness is
                   the public-interest signal worth foregrounding. */}
               {b.late > 0 && b.sales > 0 && (
@@ -222,9 +239,8 @@ export default function MonthlyBars({
         })}
 
         {/* Year ticks under the midline */}
-        {data.buckets
-          .filter((b, i) => i === 0 || b.month.getMonth() === 0)
-          .map((b) => (
+        {data.buckets.map((b, i) =>
+          i === 0 || b.month.getMonth() === 0 ? (
             <g key={`yr-${b.month.toISOString()}`}>
               <line
                 x1={x(b.month)}
@@ -243,7 +259,8 @@ export default function MonthlyBars({
                 {yearLabel(b.month)}
               </text>
             </g>
-          ))}
+          ) : null
+        )}
 
         {/* Hover label */}
         {hover && (
@@ -264,10 +281,10 @@ export default function MonthlyBars({
       {/* Below-chart legend */}
       <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-500 mt-1 pl-4">
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block w-2 h-2 bg-red-600" /> Sales
+          <span className="inline-block size-2 bg-red-600" /> Sales
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block w-2 h-2 bg-emerald-600" /> Purchases
+          <span className="inline-block size-2 bg-emerald-600" /> Purchases
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span className="inline-block w-3 h-[2px] bg-amber-500" /> Months

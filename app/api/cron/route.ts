@@ -53,7 +53,8 @@ export async function GET(request: NextRequest) {
     // For now: check OGE API for new filing count only
     // Full parse runs if new filings are found
     const ogeRes = await fetch(
-      "https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest?length=1"
+      "https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest?length=1",
+      { cache: "no-store" }
     );
     const ogeData = await ogeRes.json();
     const totalRecords = ogeData.recordsTotal || 0;

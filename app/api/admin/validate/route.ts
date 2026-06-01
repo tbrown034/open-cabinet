@@ -18,45 +18,45 @@ export async function POST() {
 
   const startTime = Date.now();
 
-  // Count totals
-  const [officialCount] = await db.select({ count: count() }).from(officials);
-  const [txCount] = await db.select({ count: count() }).from(transactions);
-  const [reviewCount] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(eq(transactions.needsReview, true));
-
-  // Check for missing required fields
-  const [missingDesc] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(sql`${transactions.description} IS NULL OR ${transactions.description} = ''`);
-
-  const [missingType] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(sql`${transactions.type} IS NULL OR ${transactions.type} = ''`);
-
-  const [missingDate] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(sql`${transactions.date} IS NULL`);
-
-  // Check for orphaned transactions (no matching official)
-  const [orphaned] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(
-      sql`${transactions.officialId} NOT IN (SELECT id FROM officials)`
-    );
-
-  // Officials with no transactions
-  const [emptyOfficials] = await db
-    .select({ count: count() })
-    .from(officials)
-    .where(
-      sql`${officials.id} NOT IN (SELECT DISTINCT official_id FROM transactions)`
-    );
+  const [
+    [officialCount],
+    [txCount],
+    [reviewCount],
+    [missingDesc],
+    [missingType],
+    [missingDate],
+    [orphaned],
+    [emptyOfficials],
+  ] = await Promise.all([
+    db.select({ count: count() }).from(officials),
+    db.select({ count: count() }).from(transactions),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(eq(transactions.needsReview, true)),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(sql`${transactions.description} IS NULL OR ${transactions.description} = ''`),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(sql`${transactions.type} IS NULL OR ${transactions.type} = ''`),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(sql`${transactions.date} IS NULL`),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(sql`${transactions.officialId} NOT IN (SELECT id FROM officials)`),
+    db
+      .select({ count: count() })
+      .from(officials)
+      .where(
+        sql`${officials.id} NOT IN (SELECT DISTINCT official_id FROM transactions)`
+      ),
+  ]);
 
   const duration = Date.now() - startTime;
   const issues =

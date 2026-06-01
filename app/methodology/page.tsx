@@ -3,7 +3,7 @@ import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
 
 export const metadata: Metadata = {
-  title: "Methodology — Open Cabinet",
+  title: "Methodology, Open Cabinet",
   description:
     "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",
 };
@@ -67,7 +67,7 @@ export default function MethodologyPage() {
       {/* Scrollytelling sections */}
       <AboutScrolly />
 
-      {/* Quick facts — infographic style */}
+      {/* Quick facts, infographic style */}
       <div className="bg-neutral-900 text-white py-16 px-4">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl mb-2">
@@ -153,9 +153,26 @@ export default function MethodologyPage() {
               <strong className="text-neutral-900">
                 Coverage is limited to officials with publicly downloadable filings.
               </strong>{" "}
-              Open Cabinet tracks 34 of the most senior appointees. Hundreds
+              Open Cabinet tracks 36 of the most senior appointees. Hundreds
               more have filed transaction reports that require individual
-              Form 201 requests from OGE — a process we are working to expand.
+              Form 201 requests from OGE, a process we are working to expand.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
+                Trump dominates the aggregate counts.
+              </strong>{" "}
+              President Trump accounts for 5,011 of 7,001 tracked transactions
+              and 4,656 of 5,143 late-filed transactions. Across all other
+              tracked officials, Open Cabinet counts 487 late-filed
+              transactions.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
+                Former officials remain in the dataset.
+              </strong>{" "}
+              If OGE filings are relevant to the executive-branch record, Open
+              Cabinet keeps the transactions and labels the official as former
+              rather than deleting historical data.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -207,7 +224,7 @@ export default function MethodologyPage() {
               <p className="text-neutral-500 mt-0.5">
                 The plain-English summary on each official{"'"}s page is
                 AI-generated from their parsed transaction data. Summaries
-                describe what the data shows — they do not make editorial
+                describe what the data shows, they do not make editorial
                 judgments. Each is reviewed for factual accuracy.
               </p>
             </div>
@@ -217,7 +234,7 @@ export default function MethodologyPage() {
                 Articles in the {"\""}In the News{"\""} sections are collected
                 via AI-assisted web search across major outlets (ProPublica,
                 CNBC, NOTUS, Bloomberg, etc.). Every linked article is a real,
-                published piece — no AI-generated news content.
+                published piece, no AI-generated news content.
               </p>
             </div>
             <div>

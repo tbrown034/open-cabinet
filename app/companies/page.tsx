@@ -5,16 +5,17 @@ import CompanySearch from "../components/company-search";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Company Lookup — Open Cabinet",
+  title: "Company Lookup, Open Cabinet",
   description:
     "Search which executive branch officials traded a specific stock or asset.",
 };
 
+function isSale(type: string): boolean {
+  return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
+}
+
 export default async function CompaniesPage() {
   const tickerMap = await getTradesByTicker();
-
-  const isSale = (type: string) =>
-    type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 
   const companies = Array.from(tickerMap.values())
     .map((c) => ({
@@ -33,11 +34,11 @@ export default async function CompaniesPage() {
         0
       ),
     }))
-    .sort((a, b) => b.tradeCount - a.tradeCount);
+    .toSorted((a, b) => b.tradeCount - a.tradeCount);
 
   // Top 5 most-traded by number of officials
-  const featured = [...companies]
-    .sort((a, b) => b.officialCount - a.officialCount)
+  const featured = companies
+    .toSorted((a, b) => b.officialCount - a.officialCount)
     .slice(0, 5);
 
   return (

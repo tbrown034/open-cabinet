@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, DM_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 import MobileNav from "./components/mobile-nav";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -27,7 +28,7 @@ const SITE_URL = "https://open-cabinet.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Open Cabinet — Executive Branch Stock Tracker",
+  title: "Open Cabinet, Executive Branch Stock Tracker",
   description:
     "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
   alternates: {
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Open Cabinet — Executive Branch Stock Tracker",
+    title: "Open Cabinet, Executive Branch Stock Tracker",
     description:
-      "34 officials. 3,300+ transactions. ~$2.8B in disclosed trade volume. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
+      "33 officials. 7,001 transactions. An interactive financial disclosure and conflict-of-interest tracker for the executive branch.",
     type: "website",
     siteName: "Open Cabinet",
   },
@@ -74,20 +75,21 @@ export default function RootLayout({
       className={`${dmSans.variable} ${dmMono.variable} ${sourceSerif.variable} antialiased`}
     >
       <body className="bg-white text-neutral-900 font-[family-name:var(--font-dm-sans)]">
-        {/* Thin accent bar — signals "publication" not "app" */}
+        {/* Thin accent bar, signals "publication" not "app" */}
         <div className="h-[3px] bg-neutral-800 w-full" />
         <header className="border-b border-neutral-200 relative">
-          <nav className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
+          <nav className="mx-auto max-w-5xl p-4 flex items-center justify-between">
             <Link href="/">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/logo-c.svg"
                 alt="Open Cabinet"
-                className="h-8"
+                width={32}
+                height={32}
+                className="h-8 w-auto"
               />
             </Link>
 
-            {/* Desktop nav — hidden on mobile */}
+            {/* Desktop nav, hidden on mobile */}
             <div className="hidden md:flex items-center gap-5 text-sm text-neutral-500">
               <Link href="/#directory" className="hover:text-neutral-900 transition-colors">Directory</Link>
               <Link href="/all" className="hover:text-neutral-900 transition-colors">All Trades</Link>
@@ -110,8 +112,13 @@ export default function RootLayout({
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-8">
               {/* Brand */}
               <div className="flex items-center gap-3">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/logo-c.svg" alt="Open Cabinet" className="h-6 opacity-60" />
+                <Image
+                  src="/logo-c.svg"
+                  alt="Open Cabinet"
+                  width={24}
+                  height={24}
+                  className="h-6 w-auto opacity-60"
+                />
                 <p className="text-xs text-neutral-400">
                   Executive branch stock tracker
                 </p>
@@ -143,7 +150,7 @@ export default function RootLayout({
                 >
                   Capitol Releases
                 </a>
-                <span className="text-neutral-400">— Senate press-release archive, 100 senators, updated 4&times; daily</span>
+                <span className="text-neutral-400">, Senate press-release archive, 100 senators, updated 4&times; daily</span>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-600 mt-1">
                 <a
@@ -154,7 +161,7 @@ export default function RootLayout({
                 >
                   Delegation Decoded
                 </a>
-                <span className="text-neutral-400">— Congressional tracking by state delegation: trades, bills, committees</span>
+                <span className="text-neutral-400">, Congressional tracking by state delegation: trades, bills, committees</span>
               </div>
             </div>
 
@@ -214,10 +221,9 @@ export default function RootLayout({
           </div>
         </footer>
         <Analytics />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-        />
+        <script type="application/ld+json">
+          {JSON.stringify(websiteJsonLd)}
+        </script>
       </body>
     </html>
   );

@@ -23,7 +23,9 @@ interface OfficialData {
   title: string;
   agency: string;
   level: string;
+  confirmedDate?: string | null;
   mostRecentFilingDate: string;
+  departedDate?: string | null;
   transactions: Transaction[];
 }
 
@@ -65,6 +67,7 @@ async function main() {
     "official_name",
     "official_title",
     "agency",
+    "departed_date",
     "description",
     "ticker",
     "type",
@@ -79,6 +82,7 @@ async function main() {
         escapeCsv(o.name),
         escapeCsv(o.title),
         escapeCsv(o.agency),
+        o.departedDate || "",
         escapeCsv(tx.description),
         tx.ticker || "",
         tx.type,
@@ -89,7 +93,7 @@ async function main() {
       ].join(",")
     )
   );
-  const txCsv = [txHeaders.join(","), ...txRows].join("\n");
+  const txCsv = [txHeaders.join(","), ...txRows].join("\n") + "\n";
   await writeFile(path.join(outDir, "all-transactions.csv"), txCsv);
   console.log(`  all-transactions.csv: ${txRows.length} rows`);
 
@@ -100,12 +104,14 @@ async function main() {
     "title",
     "agency",
     "level",
+    "confirmed_date",
+    "departed_date",
     "transaction_count",
     "sales_count",
     "purchases_count",
     "late_filing_count",
     "estimated_total_value",
-    "most_recent_filing",
+    "most_recent_oge_filing_date",
   ];
   const sumRows = allOfficials.map((o) => {
     const sales = o.transactions.filter((t) =>
@@ -124,7 +130,9 @@ async function main() {
       o.slug,
       escapeCsv(o.title),
       escapeCsv(o.agency),
-      o.level,
+        o.level,
+        o.confirmedDate || "",
+        o.departedDate || "",
       String(o.transactions.length),
       String(sales),
       String(purchases),
@@ -133,7 +141,7 @@ async function main() {
       o.mostRecentFilingDate,
     ].join(",");
   });
-  const sumCsv = [sumHeaders.join(","), ...sumRows].join("\n");
+  const sumCsv = [sumHeaders.join(","), ...sumRows].join("\n") + "\n";
   await writeFile(path.join(outDir, "officials-summary.csv"), sumCsv);
   console.log(`  officials-summary.csv: ${sumRows.length} rows`);
 
@@ -151,6 +159,8 @@ async function main() {
       title: o.title,
       agency: o.agency,
       level: o.level,
+      confirmedDate: o.confirmedDate ?? null,
+      departedDate: o.departedDate ?? null,
       transactionCount: o.transactions.length,
       mostRecentFilingDate: o.mostRecentFilingDate,
       transactions: o.transactions,

@@ -44,13 +44,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const official = await getOfficialBySlug(slug);
-  if (!official) return { title: "Not Found — Open Cabinet" };
+  if (!official) return { title: "Not Found, Open Cabinet" };
   const displayName = official.name.split(",").reverse().join(" ").trim();
   return {
-    title: `${displayName} Financial Trades — Open Cabinet`,
+    title: `${displayName} Financial Trades, Open Cabinet`,
     description: official.summary || `Financial transaction data for ${displayName}, ${official.title}.`,
     openGraph: {
-      title: `${displayName} Financial Trades — Open Cabinet`,
+      title: `${displayName} Financial Trades, Open Cabinet`,
       description: `${official.transactions.length} transactions reported by ${displayName}, ${official.title}.`,
       type: "website",
     },
@@ -142,19 +142,21 @@ export default async function OfficialPage({
     notFound();
   }
 
-  const news = await getNewsForOfficial(slug);
-  const holdings = await getHoldingsForOfficial(slug);
+  const [news, holdings, divestiture, sourceDocs, index] = await Promise.all([
+    getNewsForOfficial(slug),
+    getHoldingsForOfficial(slug),
+    getDivestitureData(slug),
+    getSourceDocuments(slug),
+    getOfficialsIndex(),
+  ]);
   const reconciliation = holdings
     ? reconcileHoldingsAgainstTrades(holdings, official.transactions)
     : null;
-  const divestiture = await getDivestitureData(slug);
   const promiseEvidence = divestiture
     ? buildPromiseEvidence(divestiture, official.transactions)
     : null;
-  const sourceDocs = await getSourceDocuments(slug);
-  const index = await getOfficialsIndex();
   const { transactions } = official;
-  const sorted = [...transactions].sort(
+  const sorted = transactions.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -167,7 +169,7 @@ export default async function OfficialPage({
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
 
-  // Density-derived stats — surface the *rhythm* of the trading, not just
+  // Density-derived stats, surface the *rhythm* of the trading, not just
   // the cumulative count. These power the high-volume page tier.
   const countsByDay = new Map<string, number>();
   for (const t of transactions) {
@@ -178,15 +180,19 @@ export default async function OfficialPage({
     const k = t.date.slice(0, 7);
     countsByMonth.set(k, (countsByMonth.get(k) ?? 0) + 1);
   }
-  const peakDay = Array.from(countsByDay.entries()).sort(
-    (a, b) => b[1] - a[1]
-  )[0];
+  let peakDay: [string, number] | undefined;
+  for (const entry of countsByDay.entries()) {
+    if (!peakDay || entry[1] > peakDay[1]) peakDay = entry;
+  }
   const daysWithHundredPlus = Array.from(countsByDay.values()).filter(
     (n) => n >= 100
   ).length;
-  const peakMonthEntry = Array.from(countsByMonth.entries()).sort(
-    (a, b) => b[1] - a[1]
-  )[0];
+  let peakMonthEntry: [string, number] | undefined;
+  for (const entry of countsByMonth.entries()) {
+    if (!peakMonthEntry || entry[1] > peakMonthEntry[1]) {
+      peakMonthEntry = entry;
+    }
+  }
   const peakMonth = peakMonthEntry
     ? { month: peakMonthEntry[0], count: peakMonthEntry[1] }
     : null;
@@ -201,19 +207,17 @@ export default async function OfficialPage({
   const maxMonthlyCount = Math.max(0, ...Array.from(countsByMonth.values()));
 
   // High-volume officials get the monthly bar chart as the dominant viz.
-  // Threshold: either 500+ total trades or any single month over 50 — both
+  // Threshold: either 500+ total trades or any single month over 50, both
   // are densities at which the dot-timeline becomes a smear.
   const HIGH_VOLUME = totalTrades >= 500 || maxMonthlyCount >= 50;
 
-  // Range filter — only meaningful for high-volume officials. Default to
-  // 12-month rolling view, with explicit user override via ?range=.
+  // Range filter, only meaningful for high-volume officials. Default to all
+  // filings so divestiture clusters outside a trailing window remain visible.
   type Range = "ytd" | "12mo" | "all";
   const rawRange = (search.range ?? "").toLowerCase();
-  const validRange: Range[] = ["ytd", "12mo", "all"];
-  const range: Range = validRange.includes(rawRange as Range)
+  const validRanges = new Set<Range>(["ytd", "12mo", "all"]);
+  const range: Range = validRanges.has(rawRange as Range)
     ? (rawRange as Range)
-    : HIGH_VOLUME
-    ? "12mo"
     : "all";
 
   const now = new Date();
@@ -231,9 +235,17 @@ export default async function OfficialPage({
   // URL-controlled by TransactionFilters / MonthlyBars (when clickToZoom)
   // so a journalist can permalink any combination.
   const rawType = (search.type ?? "all").toLowerCase();
-  const typeFilter: TxTypeFilter = (
-    ["all", "sale", "purchase", "late"].includes(rawType) ? rawType : "all"
-  ) as TxTypeFilter;
+  const validTypeFilters = new Set<TxTypeFilter>([
+    "all",
+    "sale",
+    "purchase",
+    "late",
+  ]);
+  const typeFilter: TxTypeFilter = validTypeFilters.has(
+    rawType as TxTypeFilter
+  )
+    ? (rawType as TxTypeFilter)
+    : "all";
   const monthFilter =
     typeof search.month === "string" && /^\d{4}-\d{2}$/.test(search.month)
       ? search.month
@@ -250,16 +262,19 @@ export default async function OfficialPage({
     !monthFilter || t.date.slice(0, 7) === monthFilter;
 
   const rangedTransactions = transactions.filter(inRange);
-  // The bar chart respects range only — clicking a bar within the
+  // The bar chart respects range only, clicking a bar within the
   // chart is itself the month filter, so we don't want the chart to
   // collapse to a single bar when a month is selected.
   const chartTransactions = rangedTransactions;
   // The table and dot-timeline respect every filter, so they narrow to
   // the user's selection.
-  const visibleTransactions = rangedTransactions
-    .filter(passesType)
-    .filter(passesMonth);
-  const visibleSorted = [...visibleTransactions].sort(
+  const visibleTransactions = [];
+  for (const transaction of rangedTransactions) {
+    if (passesType(transaction) && passesMonth(transaction)) {
+      visibleTransactions.push(transaction);
+    }
+  }
+  const visibleSorted = visibleTransactions.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -282,7 +297,7 @@ export default async function OfficialPage({
       ? "bars"
       : "dots";
 
-  // Table pagination — server-side, link-driven, no JS bundle. Default
+  // Table pagination, server-side, link-driven, no JS bundle. Default
   // page size 100, and we only paginate above a threshold where rendering
   // every row of HTML actually hurts (the dev-mode TTFB for Trump's
   // 5,011-row table was the user-visible problem). Officials with fewer
@@ -298,7 +313,7 @@ export default async function OfficialPage({
     ? visibleSorted.slice((page - 1) * TABLE_PAGE_SIZE, page * TABLE_PAGE_SIZE)
     : visibleSorted;
 
-  // "New on Open Cabinet" banner — driven by lastIngestedDate (pipeline
+  // "New on Open Cabinet" banner, driven by lastIngestedDate (pipeline
   // signal), not the OGE post date. Stays up for 14 days. Also pulls in the
   // number of new transactions added on the latest ingest if available, so
   // the banner can say "+3,627 trades added" instead of conflating it with
@@ -373,6 +388,14 @@ export default async function OfficialPage({
         </div>
       )}
 
+      {official.formerOfficial && (
+        <div className="mb-6 border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          {displayName(official.name)} served in a prior administration and is not
+          part of the current executive branch. These disclosure records are retained
+          for reference and are excluded from Open Cabinet&rsquo;s current-roster totals.
+        </div>
+      )}
+
       <header className="mt-6 mb-12 flex items-start gap-4">
         <OfficialAvatar
           name={official.name}
@@ -386,9 +409,14 @@ export default async function OfficialPage({
           </h1>
           <p className="text-neutral-500">
             {official.departedDate && (
-              <span className="text-xs uppercase tracking-wider text-amber-700 font-medium mr-2">
-                Former
-              </span>
+              <>
+                <span className="text-xs uppercase tracking-wider text-amber-700 font-medium mr-2">
+                  Former official
+                </span>
+                <span className="text-xs text-neutral-400 mr-2">
+                  Departed {formatDate(official.departedDate)}
+                </span>
+              </>
             )}
             {official.title} · {official.agency}
           </p>
@@ -540,7 +568,7 @@ export default async function OfficialPage({
             totalCount={visibleSorted.length}
             basePath={`/officials/${slug}`}
             searchParams={{
-              range: range === "all" ? undefined : range,
+              range,
               type: typeFilter === "all" ? undefined : typeFilter,
               month: monthFilter ?? undefined,
             }}
@@ -586,7 +614,7 @@ export default async function OfficialPage({
                   )}
                 </td>
                 <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
-                  {tx.ticker || "—"}
+                  {tx.ticker || "N/A"}
                 </td>
                 <td className="py-2.5 pr-4 whitespace-nowrap">
                   <span
@@ -605,7 +633,7 @@ export default async function OfficialPage({
                   {amountRangeLabel(tx.amount)}
                 </td>
                 <td className="py-2.5 text-right whitespace-nowrap">
-                  {sourceFiling ? (
+                  {sourceFiling?.url ? (
                     <a
                       href={sourceFiling.url}
                       target="_blank"
@@ -615,8 +643,15 @@ export default async function OfficialPage({
                     >
                       PDF
                     </a>
+                  ) : sourceFiling ? (
+                    <span
+                      title={`${sourceFiling.label} filed ${formatDate(sourceFiling.date)} is not currently downloadable from OGE`}
+                      className="text-xs text-neutral-300"
+                    >
+                      No PDF
+                    </span>
                   ) : (
-                    <span className="text-xs text-neutral-300">—</span>
+                    <span className="text-xs text-neutral-300">No PDF</span>
                   )}
                 </td>
               </tr>
@@ -633,7 +668,7 @@ export default async function OfficialPage({
           totalCount={visibleSorted.length}
           basePath={`/officials/${slug}`}
           searchParams={{
-            range: range === "all" ? undefined : range,
+            range,
             type: typeFilter === "all" ? undefined : typeFilter,
             month: monthFilter ?? undefined,
           }}
@@ -660,9 +695,9 @@ export default async function OfficialPage({
               AI-assisted search across major outlets.
             </p>
             <div className="space-y-4">
-              {news.map((item, i) => (
+              {news.map((item) => (
                 <div
-                  key={i}
+                  key={item.url}
                   className="bg-white border border-neutral-200 px-4 py-3 text-sm"
                 >
                   <a
@@ -695,10 +730,10 @@ export default async function OfficialPage({
             the documents Open Cabinet parses.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {official.sourceFilings.map(
-              (filing, i) => (
+            {official.sourceFilings.map((filing) =>
+              filing.url ? (
                 <a
-                  key={i}
+                  key={`${filing.date}-${filing.label}`}
                   href={filing.url}
                   className="border border-neutral-200 px-3 py-2 text-sm hover:bg-neutral-50 transition-colors flex items-center justify-between"
                   target="_blank"
@@ -712,6 +747,19 @@ export default async function OfficialPage({
                   </span>
                   <span className="text-neutral-300 text-xs">PDF</span>
                 </a>
+              ) : (
+                <div
+                  key={`${filing.date}-${filing.label}`}
+                  className="border border-neutral-200 px-3 py-2 text-sm flex items-center justify-between text-neutral-500"
+                >
+                  <span>
+                    <span className="text-neutral-900 font-medium">
+                      {filing.label}
+                    </span>
+                    <span className="text-neutral-400 ml-2">{filing.date}</span>
+                  </span>
+                  <span className="text-neutral-300 text-xs">Unavailable</span>
+                </div>
               )
             )}
           </div>

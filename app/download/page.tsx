@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { getAllOfficials } from "@/lib/data";
+import { getAllOfficials, getOfficialsIndex } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Download Data — Open Cabinet",
+  title: "Download Data, Open Cabinet",
   description: "Download executive branch financial transaction data as CSV or JSON.",
 };
 
+function fmt(n: number): string {
+  return n.toLocaleString();
+}
+
 export default async function DownloadPage() {
-  const officials = await getAllOfficials();
+  const [officials, index] = await Promise.all([
+    getAllOfficials(),
+    getOfficialsIndex(),
+  ]);
   const txCount = officials.reduce((s, o) => s + o.transactions.length, 0);
   const officialCount = officials.length;
-  const fmt = (n: number) => n.toLocaleString();
 
   const exports = [
     {
@@ -82,7 +88,7 @@ export default async function DownloadPage() {
       </div>
 
       <p className="text-xs text-neutral-400 mt-8">
-        Data updated {new Date().toISOString().split("T")[0]}. Federal
+        Data updated {index.lastUpdated}. Federal
         government documents carry no copyright (
         <a
           href="https://www.law.cornell.edu/uscode/text/17/105"

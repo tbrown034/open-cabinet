@@ -19,7 +19,7 @@ const STEPS = [
     id: "ethics",
     label: "Ethics Agreement",
     title: "They sign a divestiture plan",
-    body: "The Office of Government Ethics reviews the disclosure and negotiates an ethics agreement. The nominee pledges to sell conflicting holdings — usually within 90 days of confirmation. Sales may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043).",
+    body: "The Office of Government Ethics reviews the disclosure and negotiates an ethics agreement. The nominee pledges to sell conflicting holdings, usually within 90 days of confirmation. Sales may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043).",
   },
   {
     id: "confirmed",
@@ -31,13 +31,13 @@ const STEPS = [
     id: "reporting",
     label: "Ongoing",
     title: "Every trade gets disclosed",
-    body: "Under the STOCK Act (5 U.S.C. \u00A713104), officials must report individual securities transactions over $1,000 within 30 days of notification — or 45 days of the trade, whichever comes first (5 U.S.C. \u00A713105(l)). Mutual funds and ETFs are exempt (5 CFR \u00A72640.201). These are filed as OGE Form 278-T reports — the core data that powers this tracker.",
+    body: "Under the STOCK Act (5 U.S.C. \u00A713104), officials must report individual securities transactions over $1,000 within 30 days of notification, or 45 days of the trade, whichever comes first (5 U.S.C. \u00A713105(l)). Mutual funds and ETFs are exempt (5 CFR \u00A72640.201). These are filed as OGE Form 278-T reports, the core data that powers this tracker.",
   },
   {
     id: "compliance",
     label: "Compliance",
     title: "The ethics office certifies",
-    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags — criminal conflict of interest is covered by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
+    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags, criminal conflict of interest is covered by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
   },
 ];
 
@@ -62,7 +62,7 @@ function TimelineViz({ activeIndex }: { activeIndex: number }) {
             >
               {/* Dot */}
               <div
-                className={`relative z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-medium transition-all duration-500 shrink-0 ${
+                className={`relative z-10 size-8 rounded-full border-2 flex items-center justify-center text-xs font-medium transition-all duration-500 shrink-0 ${
                   isActive
                     ? "bg-neutral-900 border-neutral-900 text-white scale-110"
                     : isPast
@@ -145,21 +145,21 @@ export default function Explainer() {
             How disclosure works
           </h2>
           <p className="text-neutral-500 text-sm max-w-xl">
-            From nomination to compliance — the process every senior official
+            From nomination to compliance, the process every senior official
             goes through under the STOCK Act and federal ethics law.
           </p>
         </div>
 
         {/* Scrollytelling layout */}
         <div className="relative md:grid md:grid-cols-[1fr_1.2fr] md:gap-16">
-          {/* Sticky viz — left side on desktop, top on mobile */}
+          {/* Sticky viz, left side on desktop, top on mobile */}
           <div className="hidden md:block">
             <div className="sticky top-32">
               <TimelineViz activeIndex={activeIndex} />
             </div>
           </div>
 
-          {/* Scrolling narrative — right side */}
+          {/* Scrolling narrative, right side */}
           <div className="space-y-8 md:space-y-32 md:py-24">
             {STEPS.map((step, i) => (
               <div
@@ -172,7 +172,7 @@ export default function Explainer() {
                 }`}
               >
                 <div className="flex items-center gap-3 mb-3 md:hidden">
-                  <div className="w-6 h-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs font-medium">
+                  <div className="size-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs font-medium">
                     {i + 1}
                   </div>
                   <span className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
@@ -190,26 +190,26 @@ export default function Explainer() {
           </div>
         </div>
 
-        {/* What to watch for — below the scrollytelling */}
+        {/* What to watch for, below the scrollytelling */}
         <div className="mt-16 pt-12 border-t border-neutral-200">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-6">
             What to watch for
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
             <div className="flex gap-3">
-              <span className="inline-block w-3 h-3 rounded-full bg-emerald-600 opacity-70 mt-1 shrink-0" />
+              <span className="inline-block size-3 rounded-full bg-emerald-600 opacity-70 mt-1 shrink-0" />
               <div>
                 <div className="text-neutral-900 font-medium">
                   Purchases while in office
                 </div>
                 <p className="text-neutral-500 mt-1">
                   Most officials sell holdings upon confirmation. New purchases
-                  — especially in sectors they regulate — warrant scrutiny.
+                 , especially in sectors they regulate, warrant scrutiny.
                 </p>
               </div>
             </div>
             <div className="flex gap-3">
-              <span className="inline-block w-3 h-3 rounded-sm bg-amber-600 opacity-70 mt-1 shrink-0" />
+              <span className="inline-block size-3 rounded-sm bg-amber-600 opacity-70 mt-1 shrink-0" />
               <div>
                 <div className="text-neutral-900 font-medium">
                   Late filings
@@ -217,13 +217,13 @@ export default function Explainer() {
                 <p className="text-neutral-500 mt-1">
                   Officials must report within 30 days of notification or 45
                   days of the trade (5 U.S.C. {"\u00A7"}13105(l)). Late filings are
-                  common and not necessarily evidence of wrongdoing — but
+                  common and not necessarily evidence of wrongdoing, but
                   patterns matter.
                 </p>
               </div>
             </div>
             <div className="flex gap-3">
-              <span className="inline-block w-3 h-3 rounded-full bg-red-600 opacity-70 mt-1 shrink-0" />
+              <span className="inline-block size-3 rounded-full bg-red-600 opacity-70 mt-1 shrink-0" />
               <div>
                 <div className="text-neutral-900 font-medium">
                   Regulated-sector holdings
@@ -270,7 +270,7 @@ export default function Explainer() {
               </div>
               <p className="text-neutral-500">
                 Structured data powers timelines, company lookups and aggregate
-                analysis. Currently tracking 34 officials with 3,300+
+                analysis. Currently tracking 33 officials with 7,001
                 transactions.
               </p>
             </div>

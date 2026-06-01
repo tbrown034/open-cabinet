@@ -1,22 +1,28 @@
 import { ImageResponse } from "next/og";
-import { getOfficialBySlug, getAllOfficialSlugs } from "@/lib/data";
+import { getOfficialBySlug } from "@/lib/data";
 import { displayName } from "@/lib/format";
 import type { Transaction } from "@/lib/types";
 
-export const alt = "Open Cabinet — Official financial trades";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
-export async function generateImageMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const slugs = await getAllOfficialSlugs();
-  if (!slugs.includes(slug)) return [];
-  return [{ id: "default", alt, contentType, size }];
-}
+const IMAGE_SIZE = { width: 1200, height: 630 };
+const ROOT_STYLE = {
+  width: "100%",
+  height: "100%",
+  background: "#ffffff",
+  display: "flex",
+  flexDirection: "column",
+  padding: "70px 80px",
+  fontFamily: "serif",
+} as const;
+const NOT_FOUND_STYLE = {
+  width: "100%",
+  height: "100%",
+  background: "#ffffff",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  fontSize: 64,
+  color: "#171717",
+} as const;
 
 function isSale(type: Transaction["type"]) {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
@@ -32,22 +38,11 @@ export default async function OfficialOGImage({
   if (!official) {
     return new ImageResponse(
       (
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            background: "#ffffff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 64,
-            color: "#171717",
-          }}
-        >
+        <div style={NOT_FOUND_STYLE}>
           Open Cabinet
         </div>
       ),
-      { ...size }
+      IMAGE_SIZE
     );
   }
 
@@ -59,17 +54,7 @@ export default async function OfficialOGImage({
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          background: "#ffffff",
-          display: "flex",
-          flexDirection: "column",
-          padding: "70px 80px",
-          fontFamily: "serif",
-        }}
-      >
+      <div style={ROOT_STYLE}>
         <div
           style={{
             height: "6px",
@@ -203,6 +188,6 @@ export default async function OfficialOGImage({
         </div>
       </div>
     ),
-    { ...size }
+    IMAGE_SIZE
   );
 }

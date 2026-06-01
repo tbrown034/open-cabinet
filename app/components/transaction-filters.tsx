@@ -1,18 +1,26 @@
 "use client";
 
 /**
- * TransactionFilters — pill row above an official's chart/table for
+ * TransactionFilters, pill row above an official's chart/table for
  * narrowing the visible set without leaving the page. Each pill writes
  * to a URL param (?type=, ?month=, ?late=) so a journalist can link
  * directly to a filtered view like
  * /officials/trump-donald-j?range=12mo&type=sale&month=2026-03&late=1.
  *
  * The parent server component reads the same params and filters its
- * transactions accordingly — see the official detail page.
+ * transactions accordingly, see the official detail page.
  */
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export type TxTypeFilter = "all" | "sale" | "purchase" | "late";
+
+const FILTER_PILLS: { label: string; value: TxTypeFilter }[] = [
+  { label: "All", value: "all" },
+  { label: "Sales", value: "sale" },
+  { label: "Purchases", value: "purchase" },
+  { label: "Late-filed", value: "late" },
+];
 
 interface Props {
   type: TxTypeFilter;
@@ -22,7 +30,15 @@ interface Props {
   filteredCount: number;
 }
 
-export default function TransactionFilters({
+export default function TransactionFilters(props: Props) {
+  return (
+    <Suspense fallback={null}>
+      <TransactionFiltersContent {...props} />
+    </Suspense>
+  );
+}
+
+function TransactionFiltersContent({
   type,
   monthKey,
   monthLabel,
@@ -44,20 +60,13 @@ export default function TransactionFilters({
     setParam("month", null);
   }
 
-  const pills: { label: string; value: TxTypeFilter }[] = [
-    { label: "All", value: "all" },
-    { label: "Sales", value: "sale" },
-    { label: "Purchases", value: "purchase" },
-    { label: "Late-filed", value: "late" },
-  ];
-
   return (
     <div className="flex flex-wrap items-center gap-2 mb-3">
       <span className="text-[10px] uppercase tracking-wider text-neutral-500 mr-1">
         Filter
       </span>
       <div className="inline-flex border border-neutral-200 text-xs">
-        {pills.map((p) => {
+        {FILTER_PILLS.map((p) => {
           const active = type === p.value;
           return (
             <button

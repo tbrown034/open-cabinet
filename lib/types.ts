@@ -33,7 +33,7 @@ export interface Transaction {
 
 export interface SourceFiling {
   date: string;
-  url: string;
+  url: string | null;
   label: string;
 }
 
@@ -46,8 +46,9 @@ export interface OfficialData {
   filingType: string;
   mostRecentFilingDate: string;
   // When Open Cabinet's pipeline last added or updated this official's data.
-  // Independent of mostRecentFilingDate (which is the OGE post date) so
-  // backfills of older filings still surface as "new on the site."
+  // Independent of mostRecentFilingDate, which is the OGE filing/posting date
+  // for the latest tracked report and can differ from the date in the PDF
+  // filename, so backfills of older filings still surface as "new on the site."
   lastIngestedDate?: string;
   // Number of transactions added in the most recent ingest (0 if no
   // additions this round — surfaces a per-filing delta on the page banner).
@@ -60,6 +61,10 @@ export interface OfficialData {
   tookOfficeDate?: string; // For President (inaugurated, not confirmed)
   ethicsAgreementDate?: string;
   departedDate?: string | null;
+  // True for prior-administration holdovers whose disclosure records are
+  // retained for reference but excluded from current-roster views and the
+  // site's headline totals. Their detail pages remain accessible.
+  formerOfficial?: boolean;
   transactions: Transaction[];
   sourceFilings?: SourceFiling[];
 }
@@ -78,6 +83,7 @@ export interface OfficialIndexEntry {
   // copy like "+3,627 trades just added." Optional; may be 0.
   lastIngestedNewCount?: number;
   departedDate?: string | null;
+  formerOfficial?: boolean;
   dataStatus: DataStatus;
 }
 

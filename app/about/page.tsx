@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import FeedbackForm from "../components/feedback-form";
 
 export const metadata: Metadata = {
-  title: "About — Open Cabinet",
+  title: "About, Open Cabinet",
   description:
     "About Open Cabinet and the journalist-developer who built it. Open source executive branch financial disclosure tracker.",
 };
@@ -18,7 +19,7 @@ export default function AboutPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           An accountability tool that parses executive branch financial
-          disclosure data into searchable, sortable and visual formats —
+          disclosure data into searchable, sortable and visual formats ,
           tracking stock trades and potential conflicts of interest.
         </p>
         <p className="text-xs text-neutral-400 mt-3">
@@ -37,11 +38,12 @@ export default function AboutPage() {
             About the developer
           </h2>
           <div className="flex items-start gap-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/photos/trevor-brown.jpg"
               alt="Trevor Brown"
-              className="w-20 h-20 rounded-full object-cover shrink-0"
+              width={80}
+              height={80}
+              className="size-20 rounded-full object-cover shrink-0"
             />
             <p className="text-neutral-600 leading-relaxed">
               Built by{" "}
@@ -65,7 +67,7 @@ export default function AboutPage() {
               >
                 Oklahoma Watch
               </a>
-              . This project bridges both worlds — journalism instinct driving
+              . This project bridges both worlds, journalism instinct driving
               a developer tool.
             </p>
           </div>
@@ -113,7 +115,7 @@ export default function AboutPage() {
                 Capitol Releases
               </a>
               <span className="text-neutral-500">
-                {" "}— A searchable archive of every press release published by
+                {" "}, A searchable archive of every press release published by
                 all 100 U.S. senators&rsquo; offices, normalized and updated four
                 times a day.
               </span>
@@ -128,7 +130,7 @@ export default function AboutPage() {
                 Delegation Decoded
               </a>
               <span className="text-neutral-500">
-                {" "}— Congressional accountability tracking organized by state
+                {" "}, Congressional accountability tracking organized by state
                 delegation: stock trades, legislation, committee assignments and
                 campaign finance for all 538 members.
               </span>
@@ -152,7 +154,7 @@ export default function AboutPage() {
                 ProPublica: Trump Team Financial Disclosures
               </a>
               <span className="text-neutral-500">
-                {" "}— Searchable access to raw disclosure documents for 1,500+
+                {" "}, Searchable access to raw disclosure documents for 1,500+
                 appointees.
               </span>
             </li>
@@ -166,7 +168,7 @@ export default function AboutPage() {
                 OpenSecrets: Executive Branch
               </a>
               <span className="text-neutral-500">
-                {" "}— Financial connections between officials and the industries
+                {" "}, Financial connections between officials and the industries
                 they regulate.
               </span>
             </li>
@@ -180,7 +182,7 @@ export default function AboutPage() {
                 OGE Public Disclosure Portal
               </a>
               <span className="text-neutral-500">
-                {" "}— The primary source for all data on this site.
+                {" "}, The primary source for all data on this site.
               </span>
             </li>
           </ul>

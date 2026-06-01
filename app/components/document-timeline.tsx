@@ -7,12 +7,13 @@ interface Props {
 }
 
 const KIND_COLOR: Record<SourceDocumentEntry["kind"], string> = {
-  nominee_278: "#1e40af",            // blue-800 — entry baseline
-  ethics_agreement: "#7e22ce",       // purple-700 — promises
-  compliance_cert: "#374151",        // stone-700 — OGE certification
-  transaction_278t: "#dc2626",       // red-600 — sales (matches site convention)
-  certificate_of_divestiture: "#a16207", // amber-700 — Form 201 only
-  conflict_waiver: "#a16207",        // amber-700 — Form 201 only
+  nominee_278: "#1e40af",            // blue-800, entry baseline
+  ethics_agreement: "#7e22ce",       // purple-700, promises
+  compliance_cert: "#374151",        // stone-700, OGE certification
+  transaction_278t: "#dc2626",       // red-600, sales (matches site convention)
+  certificate_of_divestiture: "#a16207", // amber-700, Form 201 only
+  conflict_waiver: "#a16207",        // amber-700, Form 201 only
+  termination: "#78716c",            // stone-500, departure filing
   other: "#a8a29e",                  // stone-400
 };
 
@@ -23,20 +24,39 @@ const KIND_LABEL: Record<SourceDocumentEntry["kind"], string> = {
   transaction_278t: "278-T",
   certificate_of_divestiture: "Cert. of Divestiture",
   conflict_waiver: "Conflict Waiver",
+  termination: "Termination",
   other: "Other",
+};
+
+const TIMELINE_MARGIN = { top: 16, right: 16, bottom: 24, left: 16 };
+const ROW_FOR_KIND: Record<string, number> = {
+  nominee_278: 0,
+  ethics_agreement: 0,
+  compliance_cert: 1,
+  transaction_278t: 2,
+  certificate_of_divestiture: 3,
+  conflict_waiver: 3,
+  termination: 3,
+  other: 3,
 };
 
 export default function DocumentTimeline({ documents }: Props) {
   if (documents.length === 0) return null;
 
-  const dates = documents
-    .map((d) => new Date(d.filedDate))
-    .filter((d) => !isNaN(d.getTime()));
+  const dates: Date[] = [];
+  const times: number[] = [];
+  for (const doc of documents) {
+    const date = new Date(doc.filedDate);
+    const time = date.getTime();
+    if (isNaN(time)) continue;
+    dates.push(date);
+    times.push(time);
+  }
 
   if (dates.length === 0) return null;
 
-  const minDate = new Date(Math.min(...dates.map((d) => +d)));
-  const maxDate = new Date(Math.max(...dates.map((d) => +d)));
+  const minDate = new Date(Math.min(...times));
+  const maxDate = new Date(Math.max(...times));
   // Add small padding on both sides
   const pad = (maxDate.getTime() - minDate.getTime()) * 0.04 || 86400000 * 30;
   const domainStart = new Date(minDate.getTime() - pad);
@@ -44,7 +64,7 @@ export default function DocumentTimeline({ documents }: Props) {
 
   const W = 720;
   const H = 96;
-  const margin = { top: 16, right: 16, bottom: 24, left: 16 };
+  const margin = TIMELINE_MARGIN;
   const innerW = W - margin.left - margin.right;
   const innerH = H - margin.top - margin.bottom;
 
@@ -55,15 +75,6 @@ export default function DocumentTimeline({ documents }: Props) {
   // Vertical jitter so multiple docs on the same date don't overlap
   // We assign each doc a row 0-3 based on kind, then jitter within the row
   const ROWS = 4;
-  const rowForKind: Record<string, number> = {
-    nominee_278: 0,
-    ethics_agreement: 0,
-    compliance_cert: 1,
-    transaction_278t: 2,
-    certificate_of_divestiture: 3,
-    conflict_waiver: 3,
-    other: 3,
-  };
   const rowY = (i: number) => (innerH / (ROWS - 0.5)) * i + 8;
 
   // Build month tick marks
@@ -116,7 +127,7 @@ export default function DocumentTimeline({ documents }: Props) {
                   y={16}
                   textAnchor="middle"
                   className="fill-neutral-500"
-                  style={{ fontSize: 10 }}
+                  style={{ fontSize: 12 }}
                 >
                   {t.label}
                 </text>
@@ -127,21 +138,23 @@ export default function DocumentTimeline({ documents }: Props) {
             {documents.map((doc, i) => {
               const date = new Date(doc.filedDate);
               if (isNaN(date.getTime())) return null;
+              const kind = doc.kind in KIND_COLOR ? doc.kind : "other";
+              const label = doc.label ?? KIND_LABEL[kind];
               const cx = x(date);
-              const cy = rowY(rowForKind[doc.kind] ?? 3);
+              const cy = rowY(ROW_FOR_KIND[kind] ?? 3);
               return (
                 <g key={i}>
                   <circle
                     cx={cx}
                     cy={cy}
                     r={5}
-                    fill={KIND_COLOR[doc.kind]}
+                    fill={KIND_COLOR[kind]}
                     opacity={doc.publiclyDownloadable ? 0.9 : 0.45}
                     stroke="white"
                     strokeWidth={1.5}
                   >
                     <title>
-                      {`${KIND_LABEL[doc.kind]} — filed ${formatDate(doc.filedDate)}${!doc.publiclyDownloadable ? " (Form 201 only)" : ""}`}
+                      {`${label}, filed ${formatDate(doc.filedDate)}${!doc.publiclyDownloadable ? " (Form 201 only)" : ""}`}
                     </title>
                   </circle>
                 </g>
@@ -151,7 +164,7 @@ export default function DocumentTimeline({ documents }: Props) {
         </svg>
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-[10px] text-neutral-500">
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-neutral-500">
           {(
             [
               "nominee_278",
@@ -163,14 +176,14 @@ export default function DocumentTimeline({ documents }: Props) {
           ).map((k) => (
             <span key={k} className="inline-flex items-center gap-1.5">
               <span
-                className="inline-block w-2 h-2 rounded-full"
+                className="inline-block size-2 rounded-full"
                 style={{ backgroundColor: KIND_COLOR[k] }}
               />
               {KIND_LABEL[k]}
             </span>
           ))}
           <span className="inline-flex items-center gap-1.5 text-neutral-400">
-            <span className="inline-block w-2 h-2 rounded-full opacity-45 bg-neutral-400" />
+            <span className="inline-block size-2 rounded-full opacity-45 bg-neutral-400" />
             faded = Form 201 only
           </span>
         </div>

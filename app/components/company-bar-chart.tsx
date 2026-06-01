@@ -1,11 +1,11 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
 import { scaleLinear, scaleBand } from "d3-scale";
 import { formatCompactCurrency, displayName } from "@/lib/format";
+import { useContainerWidth } from "./use-container-width";
 
 /**
- * HORIZONTAL BAR CHART — Who traded this stock?
+ * HORIZONTAL BAR CHART, Who traded this stock?
  *
  * D3 concepts used:
  * - scaleBand: Maps categorical data (official names) to evenly-spaced
@@ -23,6 +23,8 @@ interface OfficialBar {
   tradeCount: number;
 }
 
+const CHART_MARGIN = { top: 10, right: 80, bottom: 10, left: 160 };
+
 export default function CompanyBarChart({
   officials,
   ticker,
@@ -30,22 +32,9 @@ export default function CompanyBarChart({
   officials: OfficialBar[];
   ticker: string;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(800);
+  const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setWidth(entry.contentRect.width);
-      }
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
-
-  const margin = { top: 10, right: 80, bottom: 10, left: 160 };
+  const margin = CHART_MARGIN;
   const barHeight = 28;
   const height = officials.length * barHeight + margin.top + margin.bottom;
   const chartWidth = width - margin.left - margin.right;

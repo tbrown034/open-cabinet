@@ -1,14 +1,15 @@
 import { ImageResponse } from "next/og";
 import { getOfficialsIndex } from "@/lib/data";
 
-export const alt = "Open Cabinet — Executive Branch Stock Tracker";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+const IMAGE_SIZE = { width: 1200, height: 630 };
 
 export default async function OGImage() {
   const index = await getOfficialsIndex();
-  const officialsCount = index.officials.length;
-  const txCount = index.officials.reduce(
+  // Exclude prior-administration holdovers so the share card matches the site's
+  // current-roster headline totals.
+  const current = index.officials.filter((o) => !o.formerOfficial);
+  const officialsCount = current.length;
+  const txCount = current.reduce(
     (sum, o) => sum + (o.transactionCount || 0),
     0
   );
@@ -116,6 +117,6 @@ export default async function OGImage() {
         </div>
       </div>
     ),
-    { ...size }
+    IMAGE_SIZE
   );
 }

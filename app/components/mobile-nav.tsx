@@ -20,8 +20,9 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Hamburger button — visible only on mobile */}
+      {/* Hamburger button, visible only on mobile */}
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className="md:hidden p-1.5 -mr-1.5 cursor-pointer"
         aria-label={open ? "Close menu" : "Open menu"}
@@ -51,7 +52,7 @@ export default function MobileNav() {
         </svg>
       </button>
 
-      {/* Dropdown menu — mobile only */}
+      {/* Dropdown menu, mobile only */}
       {open && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-neutral-200 z-50">
           <div className="mx-auto max-w-5xl px-4 py-3 flex flex-col gap-2">

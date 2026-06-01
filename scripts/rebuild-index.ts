@@ -18,9 +18,11 @@ interface OfficialData {
   level: string;
   party?: string;
   mostRecentFilingDate: string;
+  confirmedDate?: string | null;
   lastIngestedDate?: string;
   lastIngestedNewCount?: number;
   departedDate?: string | null;
+  formerOfficial?: boolean;
   transactions: Array<{ amount: string }>;
 }
 
@@ -49,9 +51,11 @@ async function main() {
       party: data.party || undefined,
       transactionCount: txCount,
       mostRecentFilingDate: data.mostRecentFilingDate,
+      confirmedDate: data.confirmedDate || null,
       lastIngestedDate: data.lastIngestedDate,
       lastIngestedNewCount: data.lastIngestedNewCount,
       departedDate: data.departedDate || null,
+      ...(data.formerOfficial ? { formerOfficial: true } : {}),
       dataStatus: "parsed",
     });
 

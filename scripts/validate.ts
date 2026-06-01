@@ -36,6 +36,13 @@ interface OfficialData {
   transactions: Transaction[];
 }
 
+interface GoldenData {
+  slug: string;
+  transactionCount?: number;
+  transactions?: Transaction[];
+  sampleTransactions?: Transaction[];
+}
+
 interface ValidationReport {
   timestamp: string;
   totalOfficials: number;
@@ -136,7 +143,7 @@ async function validateGoldenFiles(dataDir: string): Promise<{
   for (const goldenFile of goldenFiles) {
     const slug = goldenFile.replace(".golden.json", "");
     const goldenRaw = await readFile(join(goldenDir, goldenFile), "utf-8");
-    const golden: OfficialData = JSON.parse(goldenRaw);
+    const golden: GoldenData = JSON.parse(goldenRaw);
 
     let currentRaw: string;
     try {
@@ -147,19 +154,32 @@ async function validateGoldenFiles(dataDir: string): Promise<{
     }
     const current: OfficialData = JSON.parse(currentRaw);
 
-    // Compare transaction counts
-    if (current.transactions.length !== golden.transactions.length) {
+    const goldenTransactions =
+      golden.transactions ?? golden.sampleTransactions ?? [];
+
+    // Compare transaction counts when the golden file carries one. Count
+    // changes are warnings because backfills can legitimately add filings.
+    if (
+      typeof golden.transactionCount === "number" &&
+      current.transactions.length !== golden.transactionCount
+    ) {
+      errors.push(
+        `${slug}: Transaction count changed — golden: ${golden.transactionCount}, current: ${current.transactions.length}`
+      );
+    } else if (
+      golden.transactions &&
+      current.transactions.length !== golden.transactions.length
+    ) {
       errors.push(
         `${slug}: Transaction count mismatch — golden: ${golden.transactions.length}, current: ${current.transactions.length}`
       );
-      // Don't fail on count differences from data updates — just warn
     }
 
     // Check that every golden transaction exists in current data
     let fieldMatches = 0;
     let fieldTotal = 0;
 
-    for (const gtx of golden.transactions) {
+    for (const gtx of goldenTransactions) {
       const match = current.transactions.find(
         (ctx) =>
           ctx.description === gtx.description &&
@@ -189,7 +209,7 @@ async function validateGoldenFiles(dataDir: string): Promise<{
     if (accuracy >= 95) {
       passed++;
       console.log(
-        `  ${slug}: PASS (${accuracy.toFixed(1)}% field accuracy, ${golden.transactions.length} tx)`
+        `  ${slug}: PASS (${accuracy.toFixed(1)}% field accuracy, ${goldenTransactions.length} golden tx)`
       );
     } else {
       errors.push(`${slug}: FAIL — ${accuracy.toFixed(1)}% accuracy (threshold: 95%)`);

@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import { treemap, hierarchy, treemapSquarify } from "d3-hierarchy";
 import { scaleOrdinal } from "d3-scale";
 import { formatCompactCurrency } from "@/lib/format";
+import { useContainerWidth } from "./use-container-width";
 
 /**
- * TREEMAP — Asset Category Breakdown
+ * TREEMAP, Asset Category Breakdown
  *
  * D3 Hierarchy Concepts:
  *
@@ -14,7 +15,7 @@ import { formatCompactCurrency } from "@/lib/format";
  *    parent/child relationships, computing things like depth and height.
  *
  * 2. treemap(): A LAYOUT function that takes a hierarchy and computes
- *    x0, y0, x1, y1 coordinates for each node — the rectangle positions.
+ *    x0, y0, x1, y1 coordinates for each node, the rectangle positions.
  *    It doesn't draw anything; it just computes geometry.
  *
  * 3. treemapSquarify: The TILING ALGORITHM. Determines how rectangles are
@@ -22,7 +23,7 @@ import { formatCompactCurrency } from "@/lib/format";
  *    (i.e., as square-ish as possible), which makes labels easier to read
  *    and sizes easier to compare than long thin strips.
  *
- * 4. The COLOR MAPPING uses scaleOrdinal — it maps category names to a
+ * 4. The COLOR MAPPING uses scaleOrdinal, it maps category names to a
  *    fixed palette. Unlike scaleLinear (continuous), scaleOrdinal maps
  *    discrete values to discrete outputs.
  */
@@ -33,21 +34,8 @@ interface TreemapEntry {
 }
 
 export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(800);
+  const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
   const [hovered, setHovered] = useState<string | null>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setWidth(entry.contentRect.width);
-      }
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
 
   const height = 260;
 
@@ -70,7 +58,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
     .sum((d: any) => d.value || 0)
     .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
 
-  // Compute the treemap layout — this mutates the hierarchy nodes,
+  // Compute the treemap layout, this mutates the hierarchy nodes,
   // adding x0, y0, x1, y1 properties to each leaf.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   treemap<any>()
@@ -78,7 +66,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
     .padding(2)
     .tile(treemapSquarify)(root);
 
-  // Muted editorial palette — distinct enough to read, not dashboard-rainbow.
+  // Muted editorial palette, distinct enough to read, not dashboard-rainbow.
   // Each category gets its own hue so the treemap is scannable at a glance.
   const colorScale = scaleOrdinal<string>()
     .domain(data.map((d) => d.name))
@@ -127,7 +115,7 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
             const isSmall = w < 80 || h < 40;
             const isHovered = hovered === d.name;
             const color = colorScale(d.name);
-            const isLight = false; // all colors are dark now — always use white text
+            const isLight = false; // all colors are dark now, always use white text
 
             // Truncate the name to whatever fits inside the tile minus padding.
             // 11px medium text is ~6.5px per character; this prevents labels

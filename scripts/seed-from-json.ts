@@ -4,9 +4,8 @@
  * Reads all official JSON files in data/officials/ and news-coverage.json,
  * then inserts everything into the database tables defined in lib/schema.ts.
  *
- * This is a one-time migration script. After seeding, the DB becomes the
- * authoritative data store. JSON files remain as the build cache and
- * git-tracked audit trail.
+ * Syncs the app data tables from the JSON audit trail. Auth tables and
+ * pipeline history are left untouched.
  *
  * Run: pnpm run seed
  */
@@ -160,14 +159,19 @@ async function seedNews() {
 }
 
 async function main() {
-  console.log("=== Open Cabinet Database Seed ===\n");
+  console.log("=== Open Cabinet Database Sync ===\n");
   console.log("Source: data/officials/*.json + data/news-coverage.json");
   console.log("Target: Neon PostgreSQL\n");
+
+  console.log("Clearing data tables...");
+  await db.delete(newsCoverage);
+  await db.delete(transactions);
+  await db.delete(officials);
 
   await seedOfficials();
   await seedNews();
 
-  console.log("\n=== Seed complete ===");
+  console.log("\n=== Sync complete ===");
 }
 
 main().catch((err) => {

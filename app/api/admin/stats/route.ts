@@ -16,22 +16,30 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const [officialCount] = await db.select({ count: count() }).from(officials);
-  const [txCount] = await db.select({ count: count() }).from(transactions);
-  const [newsCount] = await db.select({ count: count() }).from(newsCoverage);
-  const [reviewCount] = await db
-    .select({ count: count() })
-    .from(transactions)
-    .where(eq(transactions.needsReview, true));
-
-  const lastRun = await db
-    .select()
-    .from(pipelineRuns)
-    .orderBy(desc(pipelineRuns.ranAt))
-    .limit(1);
+  const [
+    [officialCount],
+    [txCount],
+    [newsCount],
+    [reviewCount],
+    lastRun,
+    allRuns,
+  ] = await Promise.all([
+    db.select({ count: count() }).from(officials),
+    db.select({ count: count() }).from(transactions),
+    db.select({ count: count() }).from(newsCoverage),
+    db
+      .select({ count: count() })
+      .from(transactions)
+      .where(eq(transactions.needsReview, true)),
+    db
+      .select()
+      .from(pipelineRuns)
+      .orderBy(desc(pipelineRuns.ranAt))
+      .limit(1),
+    db.select({ tokenUsage: pipelineRuns.tokenUsage }).from(pipelineRuns),
+  ]);
 
   // Total cost from all pipeline runs
-  const allRuns = await db.select({ tokenUsage: pipelineRuns.tokenUsage }).from(pipelineRuns);
   const totalCost = allRuns.reduce((sum, r) => {
     const usage = r.tokenUsage as any;
     return sum + (usage?.costUsd || 0);
