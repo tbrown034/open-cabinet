@@ -12,13 +12,13 @@
       "summary": "278T transaction report for Secretary of Defense."
     },
     {
-      "kind": "ethics_agreement",
-      "title": "Ethics Agreement",
+      "kind": "compliance_cert",
+      "title": "Certification of Ethics Agreement Compliance",
       "filedDate": "2025-02-04",
       "publiclyDownloadable": true,
       "pdfPath": "/data/source-docs/hegseth-pete-ethics_agreement-20250204.pdf",
       "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/86080D4792C83F5A85258C270031AD30/$FILE/Certification%20of%20Ethics%20Agreement%20Compliance%20-%20Hegseth%20Signed%2001.28.2025.pdf",
-      "summary": "Ethics Agreement for Secretary of Defense position at Department of Defense."
+      "summary": "Ethics Agreement Compliance Certification for Hegseth's Secretary of Defense role. Marks standard certification sections for ethics-agreement obligations, including resignations, divestitures, transaction reporting, recusals and ethics briefing."
     },
     {
       "kind": "ethics_agreement",
@@ -40,9 +40,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
-    "filingsListedThere": null,
-    "discrepancies": ""
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/hegseth-pete/",
+    "filingsListedThere": 2,
+    "discrepancies": "Verified against ProPublica's appointee page for Pete Hegseth. ProPublica's page embeds 2 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

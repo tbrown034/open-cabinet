@@ -1,0 +1,137 @@
+{
+  "transactions": [
+    {
+      "description": "MSD Hospitality Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-27",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Bear Lake Operations LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Special Investments Fund II, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD EIV Private LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD EIV Private LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Real Estate Credit Opportunity Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Bear Lake Operations LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NFP Continuation Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-13",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SRP Continuation Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Ventures Fund VIII",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Momentum LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Caden Opportunity Fund",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6653,
+    "outputTokens": 1170,
+    "estimatedCostUsd": 0.0375
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/John-Phelan-03.12.2026-278T.pdf"
+}

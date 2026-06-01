@@ -27,7 +27,7 @@
       "publiclyDownloadable": true,
       "pdfPath": "/data/source-docs/chavez-deremer-lori-compliance_cert-2025-07-03.pdf",
       "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5A028D068A8A01B485258CBC002C1E6C/$FILE/Chavez-DeRemer%20EA%20Certification%201%20of%201-%20.pdf",
-      "summary": "Filed before the June 19, 2025 deadline (cover letter dated July 3, 2025). Marks Yes on resignations, divestitures, 278-T filing (referencing the June 18, 2025 transaction report), managed accounts, interim recusals, and the personal/imputed-interest recusal. Marks N/A on the former-employer/client recusal. No waivers or 502(d) authorizations claimed."
+      "summary": "Certification form lists a June 19, 2025 submission due date and a cover letter dated July 3, 2025. Marks Yes on resignations, divestitures, 278-T filing (referencing the June 18, 2025 transaction report), managed accounts, interim recusals, and the personal/imputed-interest recusal. Marks N/A on the former-employer/client recusal. No waivers or 502(d) authorizations claimed."
     },
     {
       "kind": "transaction_278t",
@@ -40,9 +40,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": null,
-    "filingsListedThere": null,
-    "discrepancies": "ProPublica's Trump Team Financial Disclosures index was reachable but its individual-appointee detail pages could not be parsed via WebFetch. Cross-check deferred."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/chavez-deremer-lori-m/",
+    "filingsListedThere": 2,
+    "discrepancies": "Verified against ProPublica's appointee page for Lori Chavez-DeRemer. ProPublica's page embeds 2 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

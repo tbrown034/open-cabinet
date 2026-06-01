@@ -40,9 +40,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": null,
-    "filingsListedThere": null,
-    "discrepancies": "ProPublica's Trump Team Financial Disclosures index was reachable but its individual-appointee detail pages could not be parsed via WebFetch. Cross-check deferred."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/duffy-sean/",
+    "filingsListedThere": 2,
+    "discrepancies": "Verified against ProPublica's appointee page for Sean Duffy. ProPublica's page embeds 2 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-15",
+  "lastUpdated": "2026-06-01",
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -10,6 +10,7 @@
       "party": "R",
       "transactionCount": 76,
       "mostRecentFilingDate": "2026-04-09",
+      "confirmedDate": "2025-07-09",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -21,7 +22,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 26,
-      "mostRecentFilingDate": "2025-12-05",
+      "mostRecentFilingDate": "2025-12-31",
+      "confirmedDate": "2025-01-27",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -34,18 +36,20 @@
       "party": "R",
       "transactionCount": 95,
       "mostRecentFilingDate": "2026-03-06",
+      "confirmedDate": "2025-05-06",
       "departedDate": null,
       "dataStatus": "parsed"
     },
     {
       "name": "Blanche, Todd",
       "slug": "blanche-todd",
-      "title": "Deputy Attorney General",
+      "title": "Acting Attorney General",
       "agency": "Department of Justice",
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 15,
-      "mostRecentFilingDate": "2025-06-03",
+      "mostRecentFilingDate": "2025-07-12",
+      "confirmedDate": "2025-03-05",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -57,7 +61,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 2,
-      "mostRecentFilingDate": "2025-05-05",
+      "mostRecentFilingDate": "2025-05-14",
+      "confirmedDate": "2025-02-04",
       "departedDate": "2026-04-02",
       "dataStatus": "parsed"
     },
@@ -69,7 +74,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 124,
-      "mostRecentFilingDate": "2025-11-13",
+      "mostRecentFilingDate": "2026-01-21",
+      "confirmedDate": "2025-01-30",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -81,8 +87,9 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 98,
-      "mostRecentFilingDate": "2025-07-02",
-      "departedDate": null,
+      "mostRecentFilingDate": "2025-09-09",
+      "confirmedDate": "2025-03-10",
+      "departedDate": "2026-04-20",
       "dataStatus": "parsed"
     },
     {
@@ -93,8 +100,10 @@
       "level": "Sub-Cabinet",
       "party": "D",
       "transactionCount": 80,
-      "mostRecentFilingDate": "2024-12-19",
+      "mostRecentFilingDate": "2025-01-25",
+      "confirmedDate": null,
       "departedDate": "2025-01-20",
+      "formerOfficial": true,
       "dataStatus": "parsed"
     },
     {
@@ -105,8 +114,10 @@
       "level": "Sub-Cabinet",
       "party": "D",
       "transactionCount": 112,
-      "mostRecentFilingDate": "2025-02-10",
+      "mostRecentFilingDate": "2025-03-25",
+      "confirmedDate": null,
       "departedDate": "2025-01-25",
+      "formerOfficial": true,
       "dataStatus": "parsed"
     },
     {
@@ -117,7 +128,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 38,
-      "mostRecentFilingDate": "2025-04-23",
+      "mostRecentFilingDate": "2025-05-14",
+      "confirmedDate": "2025-01-28",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -129,7 +141,8 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 63,
-      "mostRecentFilingDate": "2025-05-01",
+      "mostRecentFilingDate": "2025-05-14",
+      "confirmedDate": "2025-03-06",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -141,8 +154,9 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 1,
-      "mostRecentFilingDate": "2025-06-26",
-      "departedDate": null,
+      "mostRecentFilingDate": "2025-09-09",
+      "confirmedDate": "2025-03-26",
+      "departedDate": "2025-08-22",
       "dataStatus": "parsed"
     },
     {
@@ -153,19 +167,21 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 13,
-      "mostRecentFilingDate": "2025-05-21",
+      "mostRecentFilingDate": "2025-06-03",
+      "confirmedDate": "2025-02-12",
       "departedDate": null,
       "dataStatus": "parsed"
     },
     {
       "name": "Hegseth, Pete",
       "slug": "hegseth-pete",
-      "title": "Secretary of Defense",
-      "agency": "Department of Defense",
+      "title": "Secretary of War",
+      "agency": "Department of War",
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 29,
-      "mostRecentFilingDate": "2025-04-11",
+      "mostRecentFilingDate": "2025-06-07",
+      "confirmedDate": "2025-01-24",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -178,6 +194,7 @@
       "party": "R",
       "transactionCount": 145,
       "mostRecentFilingDate": "2026-04-17",
+      "confirmedDate": "2025-12-17",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 145,
       "departedDate": null,
@@ -191,7 +208,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 9,
-      "mostRecentFilingDate": "2025-05-09",
+      "mostRecentFilingDate": "2025-05-17",
+      "confirmedDate": "2025-02-13",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -204,6 +222,7 @@
       "party": "R",
       "transactionCount": 61,
       "mostRecentFilingDate": "2026-04-17",
+      "confirmedDate": "2025-03-25",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 6,
       "departedDate": null,
@@ -218,6 +237,7 @@
       "party": "R",
       "transactionCount": 74,
       "mostRecentFilingDate": "2026-05-01",
+      "confirmedDate": "2025-07-09",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 2,
       "departedDate": null,
@@ -231,7 +251,8 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 89,
-      "mostRecentFilingDate": "2025-05-22",
+      "mostRecentFilingDate": "2025-07-16",
+      "confirmedDate": "2025-03-24",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -243,7 +264,8 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 3,
-      "mostRecentFilingDate": "2025-06-11",
+      "mostRecentFilingDate": "2025-07-11",
+      "confirmedDate": "2025-03-27",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -255,7 +277,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 20,
-      "mostRecentFilingDate": "2025-11-05",
+      "mostRecentFilingDate": "2025-12-10",
+      "confirmedDate": "2025-02-18",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -267,7 +290,8 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 22,
-      "mostRecentFilingDate": "2025-08-07",
+      "mostRecentFilingDate": "2025-09-06",
+      "confirmedDate": "2025-05-14",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -280,6 +304,7 @@
       "party": "R",
       "transactionCount": 156,
       "mostRecentFilingDate": "2026-04-01",
+      "confirmedDate": "2025-03-03",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -292,21 +317,23 @@
       "party": "R",
       "transactionCount": 20,
       "mostRecentFilingDate": "2026-04-01",
+      "confirmedDate": "2025-09-18",
       "departedDate": null,
       "dataStatus": "parsed"
     },
     {
       "name": "Miran, Stephen I",
       "slug": "miran-stephen",
-      "title": "Chairman, Council of Economic Advisers",
-      "agency": "Council of Economic Advisers",
+      "title": "Member, Board of Governors",
+      "agency": "Board of Governors of the Federal Reserve System",
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 77,
       "mostRecentFilingDate": "2026-04-25",
+      "confirmedDate": "2025-09-15",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 7,
-      "departedDate": null,
+      "departedDate": "2026-05-22",
       "dataStatus": "parsed"
     },
     {
@@ -318,6 +345,7 @@
       "party": "R",
       "transactionCount": 306,
       "mostRecentFilingDate": "2026-04-10",
+      "confirmedDate": "2025-12-18",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -329,7 +357,8 @@
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 3,
-      "mostRecentFilingDate": "2026-02-20",
+      "mostRecentFilingDate": "2026-04-10",
+      "confirmedDate": "2025-08-02",
       "departedDate": "2026-02-20",
       "dataStatus": "parsed"
     },
@@ -341,8 +370,9 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 1,
-      "mostRecentFilingDate": "2025-07-23",
-      "departedDate": "2026-03-05",
+      "mostRecentFilingDate": "2025-08-02",
+      "confirmedDate": "2025-01-25",
+      "departedDate": "2026-03-31",
       "dataStatus": "parsed"
     },
     {
@@ -354,20 +384,22 @@
       "party": "R",
       "transactionCount": 71,
       "mostRecentFilingDate": "2026-04-25",
+      "confirmedDate": "2025-03-24",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 14,
-      "departedDate": null,
+      "departedDate": "2026-04-22",
       "dataStatus": "parsed"
     },
     {
       "name": "Sonderling, Keith E",
       "slug": "sonderling-keith",
-      "title": "Deputy Secretary of Labor",
+      "title": "Acting Secretary of Labor",
       "agency": "Department of Labor",
       "level": "Sub-Cabinet",
       "party": "R",
       "transactionCount": 33,
-      "mostRecentFilingDate": "2025-04-21",
+      "mostRecentFilingDate": "2025-05-14",
+      "confirmedDate": "2025-03-12",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -380,6 +412,7 @@
       "party": "R",
       "transactionCount": 5011,
       "mostRecentFilingDate": "2026-05-14",
+      "confirmedDate": null,
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 3696,
       "departedDate": null,
@@ -394,6 +427,7 @@
       "party": "R",
       "transactionCount": 8,
       "mostRecentFilingDate": "2026-04-01",
+      "confirmedDate": "2025-02-05",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -406,6 +440,7 @@
       "party": "R",
       "transactionCount": 6,
       "mostRecentFilingDate": "2026-04-17",
+      "confirmedDate": "2025-06-10",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 6,
       "departedDate": null,
@@ -419,8 +454,10 @@
       "level": "Sub-Cabinet",
       "party": "D",
       "transactionCount": 15,
-      "mostRecentFilingDate": "2025-01-02",
+      "mostRecentFilingDate": "2025-02-19",
+      "confirmedDate": null,
       "departedDate": "2025-01-20",
+      "formerOfficial": true,
       "dataStatus": "parsed"
     },
     {
@@ -432,6 +469,7 @@
       "party": "R",
       "transactionCount": 302,
       "mostRecentFilingDate": "2026-04-01",
+      "confirmedDate": "2025-02-03",
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -443,7 +481,8 @@
       "level": "Cabinet",
       "party": "R",
       "transactionCount": 4,
-      "mostRecentFilingDate": "2025-09-24",
+      "mostRecentFilingDate": "2025-11-18",
+      "confirmedDate": "2025-01-29",
       "departedDate": null,
       "dataStatus": "parsed"
     }

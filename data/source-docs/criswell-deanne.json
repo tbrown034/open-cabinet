@@ -22,9 +22,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": null,
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/search/",
     "filingsListedThere": null,
-    "discrepancies": "ProPublica's Trump Team Financial Disclosures index was reachable but its individual-appointee detail pages could not be parsed via WebFetch. Criswell was a Biden-administration FEMA Administrator who departed January 20, 2025; she may not appear in ProPublica's Trump Team database. Cross-check deferred."
+    "discrepancies": "No ProPublica appointee page was found in the searchable Trump Team Financial Disclosures index. Criswell is labeled former in Open Cabinet after departing FEMA on January 20, 2025."
   },
   "generatedAt": "2026-04-28"
 }

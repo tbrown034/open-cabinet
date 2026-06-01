@@ -122,9 +122,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
-    "filingsListedThere": "Sean McMaster did not appear on the ProPublica Trump Team Financial Disclosures landing page or its top-wealthiest list at the time of this check. ProPublica's full database may include him via search; not verifiable from the landing page alone.",
-    "discrepancies": "Cannot confirm or deny presence in ProPublica database from landing page check. Distinct issue: OGE's API indexes a Craig Trainor (HUD) compliance certification under McMaster's name on the same date as McMaster's actual certification; this is an OGE indexing error, not a ProPublica discrepancy."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/mcmaster-sean/",
+    "filingsListedThere": 4,
+    "discrepancies": "Verified against ProPublica's appointee page for Sean McMaster. ProPublica's page embeds 4 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

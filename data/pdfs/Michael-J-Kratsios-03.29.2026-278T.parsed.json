@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2026-03-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF (DGRO)",
+      "ticker": "DGRO",
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6555,
+    "outputTokens": 669,
+    "estimatedCostUsd": 0.0297
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-03.29.2026-278T.pdf"
+}

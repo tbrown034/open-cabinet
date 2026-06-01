@@ -5,7 +5,7 @@
   "agency": "Department of Transportation",
   "level": "Sub-Cabinet",
   "filingType": "278-TERM Termination Report",
-  "mostRecentFilingDate": "2026-02-20",
+  "mostRecentFilingDate": "2026-04-10",
   "transactions": [
     {
       "description": "State Street SPDR S&P 500 ETF Trust",
@@ -35,5 +35,12 @@
   "summary": "Molinaro reported 3 transactions extracted from his 278-TERM termination report (not a standard 278-T periodic transaction report). 2 purchases and 1 sale.",
   "confirmedDate": "2025-08-02",
   "departedDate": "2026-02-20",
-  "party": "R"
+  "party": "R",
+  "sourceFilings": [
+    {
+      "date": "2026-04-10",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
+      "label": "278-TERM"
+    }
+  ]
 }
