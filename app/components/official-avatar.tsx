@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { displayName } from "@/lib/format";
 
 interface AvatarProps {
@@ -43,10 +44,9 @@ export default function OfficialAvatar({
       style={{ width: size, height: size }}
     >
       <div className="w-full h-full rounded-full bg-neutral-200 overflow-hidden flex items-center justify-center">
-        {/* Photo — renders on top when loaded */}
+        {/* Photo, renders on top when loaded */}
         {slug && !photoError && (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
+          <Image
             src={`/photos/${slug}.jpg`}
             alt={displayName(name)}
             width={size}
@@ -56,7 +56,7 @@ export default function OfficialAvatar({
             onError={() => setPhotoError(true)}
           />
         )}
-        {/* Initials — only visible when no photo */}
+        {/* Initials, only visible when no photo */}
         {!photoLoaded && (
           <span
             className="text-neutral-500 font-medium select-none leading-none"

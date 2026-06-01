@@ -1,13 +1,16 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useReducer } from "react";
 import { scaleTime, scaleSqrt, scaleBand } from "d3-scale";
 import { extent } from "d3-array";
 import { timeFormat } from "d3-time-format";
+import Link from "next/link";
+import Image from "next/image";
 import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/lib/format";
+import { useContainerWidth } from "./use-container-width";
 
 /**
- * SWIM LANE CHART — All Officials, All Trades, One Canvas
+ * SWIM LANE CHART, All Officials, All Trades, One Canvas
  *
  * D3 concepts:
  *
@@ -24,9 +27,9 @@ import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/l
  *
  * Performance with 3,200+ circles:
  * - React renders all circles as individual SVG elements. SVG handles
- *   this fine — browsers can render thousands of circles efficiently.
+ *   this fine, browsers can render thousands of circles efficiently.
  * - We reduce re-renders by only updating tooltip state (one state var).
- * - No transitions or animations — static render is fastest.
+ * - No transitions or animations, static render is fastest.
  * - For 10,000+ elements, we'd switch to Canvas. At 3,200+, SVG is fine.
  */
 
@@ -46,6 +49,7 @@ interface SwimOfficial {
   title: string;
   agency: string;
   level: string;
+  departedDate?: string | null;
   totalValue: number;
   transactions: SwimTransaction[];
 }
@@ -59,17 +63,40 @@ interface TooltipData {
   y: number;
 }
 
+interface SwimLaneState {
+  tooltip: TooltipData | null;
+  filter: FilterTab;
+  sortBy: "volume" | "name" | "recent";
+  timeRange: "inaug" | "2025" | "2026" | "all";
+}
+
+const INITIAL_SWIM_LANE_STATE: SwimLaneState = {
+  tooltip: null,
+  filter: "all",
+  sortBy: "volume",
+  timeRange: "inaug",
+};
+
+function swimLaneReducer(
+  state: SwimLaneState,
+  patch: Partial<SwimLaneState>
+): SwimLaneState {
+  return { ...state, ...patch };
+}
+
 export default function SwimLaneChart({
   officials,
 }: {
   officials: SwimOfficial[];
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(1000);
-  const [tooltip, setTooltip] = useState<TooltipData | null>(null);
-  const [filter, setFilter] = useState<FilterTab>("all");
-  const [sortBy, setSortBy] = useState<"volume" | "name" | "recent">("volume");
-  const [timeRange, setTimeRange] = useState<"inaug" | "2025" | "2026" | "all">("inaug");
+  const [containerRef, width] = useContainerWidth<HTMLDivElement>(1000);
+  const [state, setSwimLaneState] = useReducer(
+    swimLaneReducer,
+    INITIAL_SWIM_LANE_STATE
+  );
+  const { tooltip, filter, sortBy, timeRange } = state;
+  const setTooltip = (tooltip: TooltipData | null) =>
+    setSwimLaneState({ tooltip });
 
   // Time range cutoffs
   const timeRangeStart = timeRange === "inaug" ? "2025-01-20"
@@ -83,19 +110,18 @@ export default function SwimLaneChart({
   const cabinetCount = officials.filter((o) => o.level === "Cabinet").length;
   const subCabinetCount = officials.filter((o) => o.level === "Sub-Cabinet").length;
 
-  const filteredUnsorted = (filter === "cabinet"
-    ? officials.filter((o) => o.level === "Cabinet")
-    : filter === "sub-cabinet"
-      ? officials.filter((o) => o.level === "Sub-Cabinet")
-      : officials
-  ).map((o) => ({
-    ...o,
-    transactions: o.transactions.filter(
+  const filteredUnsorted = [];
+  for (const official of officials) {
+    if (filter === "cabinet" && official.level !== "Cabinet") continue;
+    if (filter === "sub-cabinet" && official.level !== "Sub-Cabinet") continue;
+    const transactions = official.transactions.filter(
       (t) => t.date >= timeRangeStart && t.date <= timeRangeEnd
-    ),
-  })).filter((o) => o.transactions.length > 0);
+    );
+    if (transactions.length === 0) continue;
+    filteredUnsorted.push({ ...official, transactions });
+  }
 
-  const filtered = [...filteredUnsorted].sort((a, b) => {
+  const filtered = filteredUnsorted.toSorted((a, b) => {
     if (sortBy === "name") return displayName(a.name).localeCompare(displayName(b.name));
     if (sortBy === "recent") {
       const aMax = Math.max(...a.transactions.map((t) => new Date(t.date).getTime()));
@@ -104,18 +130,6 @@ export default function SwimLaneChart({
     }
     return b.totalValue - a.totalValue; // volume (default)
   });
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setWidth(entry.contentRect.width);
-      }
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
 
   // Responsive: on mobile (<640px), labels go above rows, not left
   const isMobile = width > 0 && width < 640;
@@ -183,8 +197,9 @@ export default function SwimLaneChart({
           { key: "sub-cabinet" as FilterTab, label: `Sub-Cabinet (${subCabinetCount})` },
         ]).map((tab) => (
           <button
+            type="button"
             key={tab.key}
-            onClick={() => setFilter(tab.key)}
+            onClick={() => setSwimLaneState({ filter: tab.key })}
             className={`px-3 py-1.5 transition-colors cursor-pointer ${
               filter === tab.key
                 ? "bg-neutral-900 text-white"
@@ -207,8 +222,9 @@ export default function SwimLaneChart({
             { key: "all" as const, label: "All time" },
           ]).map((t) => (
             <button
+              type="button"
               key={t.key}
-              onClick={() => setTimeRange(t.key)}
+              onClick={() => setSwimLaneState({ timeRange: t.key })}
               className={`cursor-pointer ${timeRange === t.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
             >
               {t.label}
@@ -223,8 +239,9 @@ export default function SwimLaneChart({
             { key: "name" as const, label: "Name" },
           ]).map((s) => (
             <button
+              type="button"
               key={s.key}
-              onClick={() => setSortBy(s.key)}
+              onClick={() => setSwimLaneState({ sortBy: s.key })}
               className={`cursor-pointer ${sortBy === s.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
             >
               {s.label}
@@ -238,14 +255,18 @@ export default function SwimLaneChart({
         <div className="space-y-1">
           {filtered.map((o) => {
             const dotHeight = 30;
+            const roleLabel = o.departedDate
+              ? `Former official · ${o.title}`
+              : o.title;
             return (
               <div key={o.slug} className="border-b border-neutral-100 pb-1">
-                <a href={`/officials/${o.slug}`} className="flex items-center gap-2 py-1">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                <Link href={`/officials/${o.slug}`} className="flex items-center gap-2 py-1">
+                  <Image
                     src={`/photos/${o.slug}.jpg`}
                     alt=""
-                    className="w-8 h-8 rounded-full object-cover shrink-0 bg-neutral-200"
+                    width={32}
+                    height={32}
+                    className="size-8 rounded-full object-cover shrink-0 bg-neutral-200"
                     onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                   />
                   <div className="min-w-0">
@@ -253,10 +274,10 @@ export default function SwimLaneChart({
                       {displayName(o.name)}
                     </div>
                     <div className="text-[10px] text-neutral-400 truncate">
-                      {o.title}
+                      {roleLabel}
                     </div>
                   </div>
-                </a>
+                </Link>
                 <svg width={chartWidth} height={dotHeight} className="overflow-visible">
                   {o.transactions.map((tx, i) => {
                     const cx = xScale(new Date(tx.date + "T00:00:00"));
@@ -279,26 +300,26 @@ export default function SwimLaneChart({
           })}
           <div className="flex gap-3 mt-2 text-[10px] text-neutral-400">
             <div className="flex items-center gap-1">
-              <span className="inline-block w-2 h-2 rounded-full bg-red-600 opacity-60" />
+              <span className="inline-block size-2 rounded-full bg-red-600 opacity-60" />
               Sale
             </div>
             <div className="flex items-center gap-1">
-              <span className="inline-block w-2 h-2 rounded-full bg-emerald-600 opacity-60" />
+              <span className="inline-block size-2 rounded-full bg-emerald-600 opacity-60" />
               Purchase
             </div>
           </div>
         </div>
       )}
 
-      {/* Legend — above chart so readers see it first */}
+      {/* Legend, above chart so readers see it first */}
       {!isMobile && (
         <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3 text-xs text-neutral-400">
           <div className="flex items-center gap-1.5">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-60" />
+            <span className="inline-block size-2.5 rounded-full bg-red-600 opacity-60" />
             Sale
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-60" />
+            <span className="inline-block size-2.5 rounded-full bg-emerald-600 opacity-60" />
             Purchase
           </div>
           <div className="flex items-center gap-1.5">
@@ -322,6 +343,9 @@ export default function SwimLaneChart({
           {filtered.map((o, i) => {
             const y = yScale(o.name) ?? 0;
             const bandHeight = yScale.bandwidth();
+            const roleLabel = o.departedDate
+              ? `Former official · ${o.title}`
+              : o.title;
             return (
               <g key={o.slug}>
                 {/* Alternating lane backgrounds for readability */}
@@ -364,7 +388,9 @@ export default function SwimLaneChart({
                       fill="#a3a3a3"
                       className="text-[8px]"
                     >
-                      {o.title.length > 35 ? o.title.substring(0, 33) + "..." : o.title}
+                      {roleLabel.length > 35
+                        ? roleLabel.substring(0, 33) + "..."
+                        : roleLabel}
                     </text>
                   </a>
                 ) : (
@@ -389,7 +415,9 @@ export default function SwimLaneChart({
                       fill="#a3a3a3"
                       className="text-[9px]"
                     >
-                      {o.title.length > 28 ? o.title.substring(0, 26) + "..." : o.title}
+                      {roleLabel.length > 28
+                        ? roleLabel.substring(0, 26) + "..."
+                        : roleLabel}
                     </text>
                   </a>
                 )}
@@ -474,7 +502,7 @@ export default function SwimLaneChart({
             });
           })()}
 
-          {/* Transaction dots — render all 3,200+ circles */}
+          {/* Transaction dots, render all 3,200+ circles */}
           {filtered.flatMap((o) =>
             o.transactions.map((tx, i) => {
               const y = yScale(o.name) ?? 0;

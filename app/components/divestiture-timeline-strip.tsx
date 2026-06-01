@@ -123,7 +123,7 @@ export default function DivestitureTimelineStrip({
                   y={cy + 3}
                   textAnchor="end"
                   className="fill-neutral-800"
-                  style={{ fontSize: 11 }}
+                  style={{ fontSize: 12 }}
                 >
                   {ev.promise.entity.length > 28
                     ? ev.promise.entity.slice(0, 26) + "…"
@@ -151,7 +151,7 @@ export default function DivestitureTimelineStrip({
                     strokeWidth={0.8}
                   >
                     <title>
-                      {`${ev.promise.entity}: ${sale.type} — ${formatDate(sale.date)}`}
+                      {`${ev.promise.entity}: ${sale.type}, ${formatDate(sale.date)}`}
                     </title>
                   </circle>
                 ))}
@@ -161,7 +161,7 @@ export default function DivestitureTimelineStrip({
                     x={labelW + 8}
                     y={cy + 3}
                     className="fill-amber-700"
-                    style={{ fontSize: 9 }}
+                    style={{ fontSize: 12 }}
                   >
                     no 278-T sale on file
                   </text>
@@ -180,7 +180,7 @@ export default function DivestitureTimelineStrip({
                   y={14}
                   textAnchor="middle"
                   className="fill-neutral-500"
-                  style={{ fontSize: 9 }}
+                  style={{ fontSize: 12 }}
                 >
                   {t.label}
                 </text>
@@ -190,9 +190,9 @@ export default function DivestitureTimelineStrip({
         </svg>
 
         {/* Legend */}
-        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-[10px] text-neutral-500">
+        <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-xs text-neutral-500">
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block w-2 h-2 rounded-full bg-red-600" />
+            <span className="inline-block size-2 rounded-full bg-red-600" />
             278-T sale on file
           </span>
           <span className="inline-flex items-center gap-1.5">

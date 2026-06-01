@@ -16,14 +16,21 @@ const KIND_LABEL: Record<DocumentKind, string> = {
   transaction_278t: "278-T Periodic Transaction Report",
   certificate_of_divestiture: "Certificate of Divestiture",
   conflict_waiver: "Conflict of Interest Waiver",
+  termination: "Termination Report",
   other: "Other",
 };
 
 const FORM_201_REQUEST_URL = "https://extapps2.oge.gov/201/Presiden.nsf/201%20Request?OpenForm";
+const AGENCY_CONTACT_URL = "https://www.oge.gov/web/oge.nsf/about_ethics-contact-list";
 
 export default function SourceDocuments({ data }: Props) {
   const publicCount = data.documents.filter((d) => d.publiclyDownloadable).length;
   const form201Count = data.documents.length - publicCount;
+  const propublicaFilings = data.propublicaCheck.filingsListedThere;
+  const requestOnlyLabel = (kind: DocumentKind) =>
+    kind === "conflict_waiver" ? "Contact agency" : "Form 201 only";
+  const requestUrl = (kind: DocumentKind) =>
+    kind === "conflict_waiver" ? AGENCY_CONTACT_URL : FORM_201_REQUEST_URL;
 
   return (
     <section className="mt-12 mb-12 border-t border-neutral-200 pt-10">
@@ -31,9 +38,9 @@ export default function SourceDocuments({ data }: Props) {
         Source documents on file with OGE
       </h2>
       <p className="text-sm text-neutral-600 leading-relaxed mb-6 max-w-2xl">
-        Every financial disclosure document the Office of Government Ethics
+        Reviewed financial disclosure documents the Office of Government Ethics
         has published or recorded for {data.displayName}. Open Cabinet
-        summarizes each document observationally and links to the source PDF
+        summarizes listed documents observationally and links to the source PDF
         where one is publicly available. We do not issue compliance verdicts
         &mdash; that is OGE&rsquo;s role, not ours.
       </p>
@@ -72,11 +79,13 @@ export default function SourceDocuments({ data }: Props) {
       </div>
 
       <ul className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
-        {data.documents.map((doc, i) => (
-          <li key={i} className="py-4">
+        {data.documents.map((doc) => {
+          const displayTitle = doc.label ?? doc.title;
+          return (
+          <li key={`${doc.kind}-${doc.filedDate}-${doc.ogeUrl}`} className="py-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
               <span className="text-[10px] uppercase tracking-wider text-neutral-500 font-mono">
-                {KIND_LABEL[doc.kind]}
+                {KIND_LABEL[doc.kind] ?? KIND_LABEL.other}
               </span>
               {doc.publiclyDownloadable && doc.pdfPath ? (
                 <a
@@ -85,11 +94,11 @@ export default function SourceDocuments({ data }: Props) {
                   rel="noopener noreferrer"
                   className="text-sm text-neutral-900 underline hover:text-neutral-700 font-medium"
                 >
-                  {doc.title}
+                  {displayTitle}
                 </a>
               ) : (
                 <span className="text-sm text-neutral-900 font-medium">
-                  {doc.title}
+                  {displayTitle}
                 </span>
               )}
               <span className="text-xs text-neutral-500">
@@ -97,7 +106,7 @@ export default function SourceDocuments({ data }: Props) {
               </span>
               {!doc.publiclyDownloadable && (
                 <span className="text-[10px] uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.5">
-                  Form 201 only
+                  {requestOnlyLabel(doc.kind)}
                 </span>
               )}
             </div>
@@ -105,36 +114,58 @@ export default function SourceDocuments({ data }: Props) {
               {doc.summary}
             </p>
             <div className="text-xs text-neutral-400 mt-2 flex flex-wrap gap-x-4">
-              <a
-                href={doc.ogeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-neutral-600"
-              >
-                OGE record
-              </a>
-              {!doc.publiclyDownloadable && (
+              {doc.ogeUrl ? (
                 <a
-                  href={FORM_201_REQUEST_URL}
+                  href={doc.ogeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-neutral-600"
                 >
-                  Request via Form 201
+                  OGE record
+                </a>
+              ) : (
+                <span>
+                  {doc.kind === "conflict_waiver"
+                    ? "OGE record requires agency contact"
+                    : "OGE record requires Form 201 request"}
+                </span>
+              )}
+              {!doc.publiclyDownloadable && (
+                <a
+                  href={requestUrl(doc.kind)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-neutral-600"
+                >
+                  {doc.kind === "conflict_waiver"
+                    ? "Contact agency"
+                    : "Request via Form 201"}
                 </a>
               )}
             </div>
           </li>
-        ))}
+          );
+        })}
       </ul>
 
       {/* PROPUBLICA CROSS-CHECK */}
       {data.propublicaCheck.url && (
         <div className="mt-6 text-xs text-neutral-500 leading-relaxed">
           <span className="text-neutral-700 font-medium">Cross-check:</span>{" "}
-          ProPublica&rsquo;s Trump Team Financial Disclosures database lists{" "}
-          {data.propublicaCheck.filingsListedThere ?? "an unknown number of"}{" "}
-          filings for this official.{" "}
+          {typeof propublicaFilings === "number" ? (
+            <span>
+              ProPublica&rsquo;s Trump Team Financial Disclosures database lists{" "}
+              {propublicaFilings} filing
+              {propublicaFilings === 1 ? "" : "s"} for this official.{" "}
+            </span>
+          ) : propublicaFilings ? (
+            <span>{propublicaFilings} </span>
+          ) : (
+            <span>
+              No document-count comparison is available from the ProPublica
+              record in this dataset.{" "}
+            </span>
+          )}
           {data.propublicaCheck.discrepancies && (
             <span>{data.propublicaCheck.discrepancies}{" "}</span>
           )}

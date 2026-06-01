@@ -42,6 +42,7 @@ export default function GlobalError({
             A fatal error occurred. Our logs have been notified.
           </p>
           <button
+            type="button"
             onClick={() => reset()}
             style={{
               backgroundColor: "#171717",

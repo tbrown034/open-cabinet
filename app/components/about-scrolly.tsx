@@ -9,31 +9,31 @@ const LAW_STEPS = [
     id: "stock-act",
     label: "The STOCK Act",
     title: "Congress strengthened the rules in 2012",
-    body: "The Ethics in Government Act of 1978 (Pub. L. 95-521) created financial disclosure requirements after Watergate. The STOCK Act of 2012 (Pub. L. 112-105) added periodic transaction reporting — requiring officials to disclose individual stock trades over $1,000 within days, not just annually. The law covers both Congress and the executive branch.",
+    body: "The Ethics in Government Act of 1978 (Pub. L. 95-521) created financial disclosure requirements after Watergate. The STOCK Act of 2012 (Pub. L. 112-105) added periodic transaction reporting, requiring officials to disclose individual stock trades over $1,000 within days, not just annually. The law covers both Congress and the executive branch.",
   },
   {
     id: "30-day",
     label: "30-day window",
     title: "Report every trade within 30 days",
-    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself — whichever comes first (5 U.S.C. \u00A713105(l)). The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
+    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself, whichever comes first (5 U.S.C. \u00A713105(l)). The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
   },
   {
     id: "divestiture",
     label: "90-day divestiture",
     title: "Sell your conflicts within 90 days",
-    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. Divestitures may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043). This only covers conflicting assets — officials can keep and trade non-conflicting stocks.",
+    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. Divestitures may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043). This only covers conflicting assets, officials can keep and trade non-conflicting stocks.",
   },
   {
     id: "extensions",
     label: "Extensions",
     title: "Deadlines can be extended",
-    body: "OGE can grant extensions on divestiture deadlines. Some assets — especially private equity, real estate LLCs and illiquid holdings — take longer to sell. Officials must request the extension and demonstrate good-faith effort. The ethics agreement remains binding.",
+    body: "OGE can grant extensions on divestiture deadlines. Some assets, especially private equity, real estate LLCs and illiquid holdings, take longer to sell. Officials must request the extension and demonstrate good-faith effort. The ethics agreement remains binding.",
   },
   {
     id: "late-filings",
     label: "Late filings",
     title: "Missing the deadline is common",
-    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)) — routinely waived. A 2021 Business Insider investigation found at least 72 members of Congress violated the same deadline. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
+    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)), routinely waived. A 2021 Business Insider investigation found at least 72 members of Congress violated the same deadline. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
   },
   {
     id: "consequences",
@@ -50,19 +50,19 @@ const BUILD_STEPS = [
     id: "oge-api",
     label: "OGE API",
     title: "Start with the public records",
-    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers (5 U.S.C. \u00A713107). It returns 16,857 records — names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
+    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers (5 U.S.C. \u00A713107). It returns 16,857 records, names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
   },
   {
     id: "filter",
     label: "Filter officials",
     title: "Find the ones with transaction reports",
-    body: "We filter for 278-T Periodic Transaction Reports — the ongoing stock trade disclosures. The most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of them. Hundreds more officials have filed reports that require individual written requests to access.",
+    body: "We filter for 278-T Periodic Transaction Reports, the ongoing stock trade disclosures. The most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of them. Hundreds more officials have filed reports that require individual written requests to access.",
   },
   {
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf — an open-source Python library by data journalist Jonathan Soma (github.com/jsoma/natural-pdf) — to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf, an open-source Python library by data journalist Jonathan Soma (github.com/jsoma/natural-pdf), to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
   },
   {
     id: "validate",
@@ -74,13 +74,13 @@ const BUILD_STEPS = [
     id: "store",
     label: "Store",
     title: "PostgreSQL database with deduplication",
-    body: "Parsed transactions go into a Neon PostgreSQL database with built-in duplicate detection that catches repeated entries from amended filings. Each transaction links to its source PDF — if bad data gets in, it can be traced and removed.",
+    body: "Parsed transactions go into a Neon PostgreSQL database with built-in duplicate detection that catches repeated entries from amended filings. Each transaction links to its source PDF, if bad data gets in, it can be traced and removed.",
   },
   {
     id: "build-viz",
     label: "Visualize",
     title: "Turn rows into timelines",
-    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 3,300+ trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
+    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 7,001 trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
   },
   {
     id: "monitor",
@@ -92,7 +92,7 @@ const BUILD_STEPS = [
     id: "ai-role",
     label: "AI usage",
     title: "Where AI is and isn't involved",
-    body: "Initial data extraction used Claude Opus for maximum accuracy on scanned documents. Ongoing parsing uses Claude Sonnet with OpenAI cross-verification. Official summaries are AI-generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with the assistance of Claude Code. All AI outputs are verified against source documents — no AI-generated data is presented without a human-verifiable source.",
+    body: "Initial data extraction used Claude Opus for maximum accuracy on scanned documents. Ongoing parsing uses Claude Sonnet with OpenAI cross-verification. Official summaries are AI-generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with the assistance of Claude Code. All AI outputs are verified against source documents, no AI-generated data is presented without a human-verifiable source.",
   },
 ];
 
@@ -138,7 +138,7 @@ function ScrollySection({
       </div>
 
       <div className="relative md:grid md:grid-cols-[1fr_1.2fr] md:gap-16">
-        {/* Sticky progress — left side on desktop */}
+        {/* Sticky progress, left side on desktop */}
         <div className="hidden md:block">
           <div className="sticky top-32">
             <div className="w-full max-w-sm mx-auto">
@@ -156,7 +156,7 @@ function ScrollySection({
                       }`}
                     >
                       <div
-                        className={`relative z-10 w-8 h-8 rounded-full border-2 flex items-center justify-center text-xs font-medium transition-all duration-500 shrink-0 ${
+                        className={`relative z-10 size-8 rounded-full border-2 flex items-center justify-center text-xs font-medium transition-all duration-500 shrink-0 ${
                           isActive
                             ? "bg-neutral-900 border-neutral-900 text-white scale-110"
                             : isPast
@@ -222,7 +222,7 @@ function ScrollySection({
               }`}
             >
               <div className="flex items-center gap-3 mb-3 md:hidden">
-                <div className="w-6 h-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs font-medium">
+                <div className="size-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs font-medium">
                   {i + 1}
                 </div>
                 <span className="text-xs uppercase tracking-wider text-neutral-400 font-medium">
@@ -257,7 +257,7 @@ export default function AboutScrolly() {
       <section className="bg-stone-50 -mx-0 py-16">
         <ScrollySection
           title="How this was built"
-          subtitle="From government PDFs to searchable data — the pipeline behind Open Cabinet."
+          subtitle="From government PDFs to searchable data, the pipeline behind Open Cabinet."
           steps={BUILD_STEPS}
         />
       </section>

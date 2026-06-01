@@ -5,16 +5,27 @@ import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
 import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Open Cabinet",
+  description:
+    "Search and analyze executive branch financial transaction disclosures.",
+};
 
 function isSale(type: string): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
 
 export default async function Home() {
-  const index = await getOfficialsIndex();
-  const allOfficials = await getAllOfficials();
-  const news = await getNewsCoverage();
-  const { officials } = index;
+  const [index, allOfficials, news] = await Promise.all([
+    getOfficialsIndex(),
+    getAllOfficials(),
+    getNewsCoverage(),
+  ]);
+  // Drop prior-administration holdovers from the directory, counts and banner.
+  const officials = index.officials.filter((o) => !o.formerOfficial);
+  const officialsBySlug = new Map(allOfficials.map((o) => [o.slug, o]));
 
   const totalOfficials = officials.length;
   const totalTransactions = officials.reduce(
@@ -29,46 +40,45 @@ export default async function Home() {
   );
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
 
-  // Most recent filing date across all officials
+  // Most recent OGE filing/posting date across all officials.
   const mostRecentFiling = officials.reduce(
     (latest, o) =>
       o.mostRecentFilingDate > latest ? o.mostRecentFilingDate : latest,
     ""
   );
 
-  // "New on Open Cabinet" — driven by lastIngestedDate (when our pipeline
+  // "New on Open Cabinet", driven by lastIngestedDate (when our pipeline
   // added or updated this official's data), NOT by mostRecentFilingDate
-  // (which is the OGE post date and can be weeks older when we ingest a
-  // backlog). 14-day window: long enough that a weekend visitor still sees
+  // (which is the OGE filing/posting date and can be weeks older when we
+  // ingest a backlog). 14-day window: long enough that a weekend visitor still sees
   // the banner, short enough that it fades naturally.
   const indexDate = new Date(index.lastUpdated + "T00:00:00");
   const newCutoff = new Date(indexDate.getTime() - 14 * 24 * 60 * 60 * 1000);
   const newCutoffStr = newCutoff.toISOString().split("T")[0];
-  const recentFilers = officials
-    .filter((o) =>
-      o.lastIngestedDate ? o.lastIngestedDate >= newCutoffStr : false
-    )
-    .map((o) => {
-      const full = allOfficials.find((a) => a.slug === o.slug);
-      const txDates = full?.transactions.map((t) => t.date).sort() ?? [];
-      const txCount = full?.transactions.length ?? o.transactionCount;
-      const newCount = o.lastIngestedNewCount ?? 0;
-      // First time we've published this official — when the ingest delta
-      // equals the full transaction count, the whole record is new on the
-      // site, not just additions to an existing page.
-      const isFirstAppearance = newCount > 0 && newCount === txCount;
-      return {
-        slug: o.slug,
-        name: o.name,
-        filingDate: o.mostRecentFilingDate,
-        ingestedDate: o.lastIngestedDate!,
-        newCount,
-        txCount,
-        isFirstAppearance,
-        earliestTx: txDates[0] ?? "",
-        latestTx: txDates[txDates.length - 1] ?? "",
-      };
-    })
+  const recentFilers = [];
+  for (const o of officials) {
+    if (!o.lastIngestedDate || o.lastIngestedDate < newCutoffStr) continue;
+    const full = officialsBySlug.get(o.slug);
+    const txDates = full?.transactions.map((t) => t.date).toSorted() ?? [];
+    const txCount = full?.transactions.length ?? o.transactionCount;
+    const newCount = o.lastIngestedNewCount ?? 0;
+    // First time we've published this official, when the ingest delta
+    // equals the full transaction count, the whole record is new on the
+    // site, not just additions to an existing page.
+    const isFirstAppearance = newCount > 0 && newCount === txCount;
+    recentFilers.push({
+      slug: o.slug,
+      name: o.name,
+      filingDate: o.mostRecentFilingDate,
+      ingestedDate: o.lastIngestedDate,
+      newCount,
+      txCount,
+      isFirstAppearance,
+      earliestTx: txDates[0] ?? "",
+      latestTx: txDates[txDates.length - 1] ?? "",
+    });
+  }
+  recentFilers
     // New officials first (biggest news), then most recently filed
     .sort((a, b) => {
       if (a.isFirstAppearance !== b.isFirstAppearance) {
@@ -105,7 +115,7 @@ export default async function Home() {
         lateFiled: tx.lateFilingFlag,
       })),
     }))
-    .sort((a, b) => b.totalValue - a.totalValue)
+    .toSorted((a, b) => b.totalValue - a.totalValue)
     .map(({ totalValue: _tv, ...rest }) => rest);
 
   return (
@@ -134,7 +144,7 @@ export default async function Home() {
                     {updatedCount} updated filing{updatedCount === 1 ? "" : "s"}
                   </>
                 )}
-                {" "}in the last 14 days
+                {" "}added in the last 14 days
               </span>
             </div>
             <ul className="text-neutral-300 space-y-0.5">
@@ -144,7 +154,7 @@ export default async function Home() {
                   className="flex flex-wrap items-baseline gap-x-2"
                 >
                   {o.isFirstAppearance && (
-                    <span className="bg-amber-300 text-neutral-900 text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
+                    <span className="bg-amber-300 text-amber-950 text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
                       New official
                     </span>
                   )}
@@ -155,6 +165,7 @@ export default async function Home() {
                     {displayName(o.name)}
                   </Link>
                   <span className="text-neutral-500 text-xs">
+                    filed{" "}
                     {new Date(o.filingDate + "T00:00:00").toLocaleDateString(
                       "en-US",
                       { month: "short", day: "numeric", year: "numeric" }
@@ -174,7 +185,7 @@ export default async function Home() {
                 <li className="text-neutral-400 text-xs pt-0.5">
                   + {bannerOverflow.length} more updated
                   {" "}({overflowTrades.toLocaleString()} additional trade
-                  {overflowTrades === 1 ? "" : "s"}) —{" "}
+                  {overflowTrades === 1 ? "" : "s"}) ,{" "}
                   <Link
                     href="#directory"
                     className="underline hover:text-neutral-200"
@@ -204,7 +215,7 @@ export default async function Home() {
               sortable, searchable and visual.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
-              Most recent filing:{" "}
+              Most recent OGE filing:{" "}
               {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
                 "en-US",
                 { month: "short", day: "numeric", year: "numeric" }
@@ -213,8 +224,8 @@ export default async function Home() {
             </p>
           </header>
 
-          {/* Hero graphic — abstract swim lane preview */}
-          <div className="hidden md:flex items-center justify-center w-48 h-48 shrink-0">
+          {/* Hero graphic, abstract swim lane preview */}
+          <div className="hidden md:flex items-center justify-center size-48 shrink-0">
             <svg
               viewBox="0 0 200 200"
               className="w-full h-full"
@@ -248,7 +259,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {totalOfficials}
             </span>
-            officials<a href="#coverage-note" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
+            officials<Link href="#coverage-note" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
           </div>
           <div>
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -260,13 +271,13 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               ~{formatCompactCurrency(estimatedTotal)}
             </span>
-            trade volume (est.)<a href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
+            trade volume (est.)<Link href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
           </div>
           <div>
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {lateCount.toLocaleString()}
             </span>
-            late filings<a href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</a>
+            late filings<Link href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
           </div>
         </div>
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
@@ -290,10 +301,10 @@ export default async function Home() {
         <div className="flex items-end justify-between mb-4">
           <div>
             <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900">
-              Top officials by trading volume
+              Tracked officials
             </h2>
             <p className="text-xs text-neutral-400 mt-1">
-              Executive Level I and II officials — cabinet secretaries, agency
+              Executive Level I and II officials, cabinet secretaries, agency
               heads and senior appointees confirmed by the Senate.
             </p>
           </div>
@@ -319,7 +330,7 @@ export default async function Home() {
             <a href="https://github.com/tbrown034/open-cabinet" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               open-source project
             </a>
-            {" "}— expanding coverage is an ongoing goal. For raw disclosure
+            {" "}, expanding coverage is an ongoing goal. For raw disclosure
             documents across 1,500+ appointees, see{" "}
             <a href="https://projects.propublica.org/trump-team-financial-disclosures/" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               ProPublica
@@ -406,9 +417,9 @@ export default async function Home() {
               Collected via AI-assisted search. Checked weekly.
             </p>
             <div className="space-y-4">
-              {recentNews.map((item, i) => (
+              {recentNews.map((item) => (
                 <div
-                  key={i}
+                  key={item.url}
                   className="bg-white border border-neutral-200 px-4 py-3 text-sm"
                 >
                   <a

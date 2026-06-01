@@ -16,16 +16,18 @@ export async function generateMetadata({
 }: {
   params: Promise<{ ticker: string }>;
 }): Promise<Metadata> {
-  const { ticker } = await params;
-  const tickerMap = await getTradesByTicker();
+  const [{ ticker }, tickerMap] = await Promise.all([
+    params,
+    getTradesByTicker(),
+  ]);
   const company = tickerMap.get(ticker.toUpperCase());
-  if (!company) return { title: "Not Found — Open Cabinet" };
+  if (!company) return { title: "Not Found, Open Cabinet" };
   const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
   return {
-    title: `${company.ticker} — Who in Government Trades This Stock — Open Cabinet`,
+    title: `${company.ticker}, Who in Government Trades This Stock, Open Cabinet`,
     description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
     openGraph: {
-      title: `${company.ticker} — Who in Government Trades This Stock`,
+      title: `${company.ticker}, Who in Government Trades This Stock`,
       description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
       type: "website",
     },
@@ -41,8 +43,10 @@ export default async function CompanyPage({
 }: {
   params: Promise<{ ticker: string }>;
 }) {
-  const { ticker } = await params;
-  const tickerMap = await getTradesByTicker();
+  const [{ ticker }, tickerMap] = await Promise.all([
+    params,
+    getTradesByTicker(),
+  ]);
   const company = tickerMap.get(ticker.toUpperCase());
 
   if (!company) {
@@ -50,7 +54,7 @@ export default async function CompanyPage({
   }
 
   const { trades } = company;
-  const sorted = [...trades].sort(
+  const sorted = trades.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -74,7 +78,7 @@ export default async function CompanyPage({
     g.tradeCount += 1;
   }
 
-  const officials = Array.from(officialGroups.values()).sort(
+  const officials = Array.from(officialGroups.values()).toSorted(
     (a, b) => b.totalValue - a.totalValue
   );
 

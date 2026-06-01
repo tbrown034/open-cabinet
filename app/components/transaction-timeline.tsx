@@ -1,14 +1,15 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeFormat } from "d3-time-format";
 import { extent } from "d3-array";
 import type { Transaction } from "@/lib/types";
 import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
+import { useContainerWidth } from "./use-container-width";
 
 /**
- * TRANSACTION TIMELINE — D3 + React Integration
+ * TRANSACTION TIMELINE, D3 + React Integration
  *
  * Uses "D3 for math, React for DOM": D3 computes scales and positions,
  * React renders SVG elements and manages state (tooltips, hover).
@@ -37,6 +38,10 @@ interface TooltipData {
   y: number;
 }
 
+const EMPTY_CAREER_EVENTS: CareerEvent[] = [];
+const COMPACT_GRID_MARGIN = { top: 10, right: 10, bottom: 10, left: 10 };
+const TIMELINE_MARGIN = { top: 28, right: 20, bottom: 40, left: 20 };
+
 function isSale(type: Transaction["type"]): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
@@ -47,22 +52,16 @@ function getDotColor(tx: Transaction): string {
   return "fill-neutral-400";
 }
 
-export default function TransactionTimeline({ transactions, careerEvents = [] }: TimelineProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(800);
+export default function TransactionTimeline({
+  transactions,
+  careerEvents = EMPTY_CAREER_EVENTS,
+}: TimelineProps) {
+  const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) {
-        setWidth(entry.contentRect.width);
-      }
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
+  if (transactions.length === 0) {
+    return <div ref={containerRef} className="relative mb-10" />;
+  }
 
   // Determine if we should use compact mode
   const dates = transactions.map((tx) => new Date(tx.date + "T00:00:00"));
@@ -111,7 +110,7 @@ function CompactGrid({
   tooltip: TooltipData | null;
   setTooltip: (t: TooltipData | null) => void;
 }) {
-  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+  const margin = COMPACT_GRID_MARGIN;
   const chartWidth = width - margin.left - margin.right;
 
   const parsedData = transactions
@@ -162,11 +161,11 @@ function CompactGrid({
   let contextNote = "";
   if (isSingleDay && transactions.length > 10) {
     if (saleCount === transactions.length) {
-      contextNote = `All ${transactions.length} transactions were sales on a single day — a pattern consistent with a coordinated divestiture (compliance verification requires entry-holdings data not yet ingested).`;
+      contextNote = `All ${transactions.length} transactions were sales on a single day, a pattern consistent with a coordinated divestiture (compliance verification requires entry-holdings data not yet ingested).`;
     } else if (purchaseCount === transactions.length) {
       contextNote = `All ${transactions.length} transactions were purchases on a single day.`;
     } else {
-      contextNote = `${transactions.length} transactions filed on a single day — ${saleCount} sales and ${purchaseCount} purchases.`;
+      contextNote = `${transactions.length} transactions filed on a single day, ${saleCount} sales and ${purchaseCount} purchases.`;
     }
   } else if (uniqueDates.size <= 3 && transactions.length > 10) {
     contextNote = `${transactions.length} transactions across ${uniqueDates.size} days.`;
@@ -234,7 +233,7 @@ function CompactGrid({
 // Horizontal timeline for officials with trades across multiple dates.
 function TimelineView({
   transactions,
-  careerEvents = [],
+  careerEvents = EMPTY_CAREER_EVENTS,
   width,
   containerRef,
   tooltip,
@@ -247,7 +246,7 @@ function TimelineView({
   tooltip: TooltipData | null;
   setTooltip: (t: TooltipData | null) => void;
 }) {
-  const margin = { top: 28, right: 20, bottom: 40, left: 20 };
+  const margin = TIMELINE_MARGIN;
 
   // Dynamic height based on how many trades share a single date
   const dateCounts = new Map<string, number>();
@@ -283,7 +282,7 @@ function TimelineView({
     ])
     .range([0, chartWidth]);
 
-  // Hide career events that fall outside the visible domain — otherwise
+  // Hide career events that fall outside the visible domain, otherwise
   // they get plotted at chart edges where they're confusing labels for
   // dates the chart doesn't actually cover.
   const visibleCareerEvents = careerEvents.filter((e) => {
@@ -331,7 +330,7 @@ function TimelineView({
         aria-label="Transaction timeline showing trades over time"
       >
         <g transform={`translate(${margin.left}, ${margin.top})`}>
-          {/* Career event marker lines — rendered before dots so dots are on top */}
+          {/* Career event marker lines, rendered before dots so dots are on top */}
           {visibleCareerEvents.map((event, i) => {
             const x = xScale(new Date(event.date + "T00:00:00"));
             const strokeDash = event.style === "dashed" ? "4,4" : event.style === "dotted" ? "2,3" : "none";
@@ -471,16 +470,16 @@ function Legend() {
   return (
     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-neutral-400">
       <div className="flex items-center gap-1.5">
-        <span className="inline-block w-2.5 h-2.5 rounded-full bg-red-600 opacity-70" />
+        <span className="inline-block size-2.5 rounded-full bg-red-600 opacity-70" />
         Sale
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-600 opacity-70" />
+        <span className="inline-block size-2.5 rounded-full bg-emerald-600 opacity-70" />
         Purchase
       </div>
       <div className="flex items-center gap-1.5">
         <span
-          className="inline-block w-2.5 h-2.5 rounded-full bg-neutral-300"
+          className="inline-block size-2.5 rounded-full bg-neutral-300"
           style={{ border: "2px solid #b45309" }}
         />
         Late filing

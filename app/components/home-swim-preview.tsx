@@ -1,10 +1,11 @@
 "use client";
 
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useState } from "react";
 import { scaleTime, scaleSqrt, scaleBand } from "d3-scale";
 import { timeFormat } from "d3-time-format";
 import Link from "next/link";
 import { displayName } from "@/lib/format";
+import { useContainerWidth } from "./use-container-width";
 
 interface PreviewTx {
   description: string;
@@ -13,7 +14,7 @@ interface PreviewTx {
   date: string;
   amount: string;
   isSale: boolean;
-  // Optional late-filing flag — may or may not be present on existing data.
+  // Optional late-filing flag, may or may not be present on existing data.
   // We read it defensively below so this component doesn't require a schema change.
   lateFiled?: boolean;
 }
@@ -76,20 +77,9 @@ export default function HomeSwimPreview({
   officials: PreviewOfficial[];
   totalOfficials: number;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(1000);
+  const [containerRef, width] = useContainerWidth<HTMLDivElement>(1000);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
   const top = officials.slice(0, TOP_COUNT);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    const observer = new ResizeObserver((entries) => {
-      for (const entry of entries) setWidth(entry.contentRect.width);
-    });
-    observer.observe(container);
-    return () => observer.disconnect();
-  }, []);
 
   const isMobile = width > 0 && width < 640;
   const margin = {
@@ -109,7 +99,7 @@ export default function HomeSwimPreview({
 
   // Aggregate trades into monthly buckets per official.
   // D3 for math: compute counts in JS, render rects in JSX.
-  const { perOfficial, monthsAxis, maxMonthlyCount, dateExtent } = useMemo(() => {
+  const { perOfficial, monthsAxis, maxMonthlyCount, dateExtent } = (() => {
     const allDates: Date[] = [];
     const buckets = new Map<string, Map<string, MonthBucket>>();
 
@@ -171,7 +161,7 @@ export default function HomeSwimPreview({
       maxMonthlyCount: maxCount,
       dateExtent: [startMonth, endMonth] as [Date, Date],
     };
-  }, [top]);
+  })();
 
   const dayPad = 14 * 24 * 60 * 60 * 1000;
   const xScale = scaleTime()
@@ -442,7 +432,7 @@ export default function HomeSwimPreview({
       <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 gap-4 flex-wrap">
         <p className="text-xs text-neutral-500">
           Showing the {TOP_COUNT} highest-volume officials. Bars are monthly
-          trade counts — the per-trade dot view (one circle per disclosure)
+          trade counts, the per-trade dot view (one circle per disclosure)
           is on the full chart.{" "}
           <span className="text-neutral-700 font-medium">
             {totalOfficials - TOP_COUNT} more

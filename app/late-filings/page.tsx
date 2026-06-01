@@ -4,7 +4,7 @@ import { displayName } from "@/lib/format";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Late Filings — Open Cabinet",
+  title: "Late Filings, Open Cabinet",
   description:
     "Late financial disclosures across executive branch officials. Who's missing deadlines and what it means.",
 };
@@ -18,22 +18,38 @@ export default async function LateFilingsPage() {
 
   // Calculate late filing stats per official
   const officialStats = officials
-    .map((o) => {
+    .reduce<
+      {
+        name: string;
+        slug: string;
+        title: string;
+        agency: string;
+        total: number;
+        late: number;
+        lateRate: number;
+        lateSales: number;
+        latePurchases: number;
+        earliest: string;
+        latest: string;
+      }[]
+    >((stats, o) => {
       const total = o.transactions.length;
-      const late = o.transactions.filter((t) => t.lateFilingFlag).length;
+      let late = 0;
+      let lateSales = 0;
+      let latePurchases = 0;
+      const lateDates: string[] = [];
+      for (const t of o.transactions) {
+        if (!t.lateFilingFlag) continue;
+        late += 1;
+        if (isSale(t.type)) lateSales += 1;
+        if (t.type === "Purchase") latePurchases += 1;
+        lateDates.push(t.date);
+      }
       const lateRate = total > 0 ? (late / total) * 100 : 0;
-      const lateSales = o.transactions.filter(
-        (t) => t.lateFilingFlag && isSale(t.type)
-      ).length;
-      const latePurchases = o.transactions.filter(
-        (t) => t.lateFilingFlag && t.type === "Purchase"
-      ).length;
-      const lateDates = o.transactions
-        .filter((t) => t.lateFilingFlag)
-        .map((t) => t.date)
-        .sort();
+      lateDates.sort();
 
-      return {
+      if (late === 0) return stats;
+      stats.push({
         name: o.name,
         slug: o.slug,
         title: o.title,
@@ -45,9 +61,9 @@ export default async function LateFilingsPage() {
         latePurchases,
         earliest: lateDates[0] || "",
         latest: lateDates[lateDates.length - 1] || "",
-      };
-    })
-    .filter((o) => o.late > 0)
+      });
+      return stats;
+    }, [])
     .sort((a, b) => b.late - a.late);
 
   const totalLate = officialStats.reduce((sum, o) => sum + o.late, 0);
@@ -77,7 +93,7 @@ export default async function LateFilingsPage() {
             STOCK Act
           </a>{" "}
           requires officials to disclose stock trades within 30
-          days of notification — 45 days from the transaction at most. When that
+          days of notification, 45 days from the transaction at most. When that
           deadline passes, the filing is late. The penalty is a{" "}
           <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
             $200 fee
@@ -161,7 +177,7 @@ export default async function LateFilingsPage() {
               Campaign Legal Center
             </a>
             ). At {totalLate.toLocaleString()} late filings, the theoretical maximum penalty is $
-            {(totalLate * 200).toLocaleString()} — but that assumes one fee per
+            {(totalLate * 200).toLocaleString()}, but that assumes one fee per
             transaction. The actual fee is per report, not per transaction.
           </p>
         </div>
@@ -227,10 +243,10 @@ export default async function LateFilingsPage() {
                     </span>
                   </td>
                   <td className="py-2.5 pr-3 text-right tabular-nums text-red-700 hidden sm:table-cell">
-                    {o.lateSales || "—"}
+                    {o.lateSales || ","}
                   </td>
                   <td className="py-2.5 text-right tabular-nums text-emerald-700 hidden sm:table-cell">
-                    {o.latePurchases || "—"}
+                    {o.latePurchases || ","}
                   </td>
                 </tr>
               ))}
@@ -275,7 +291,7 @@ export default async function LateFilingsPage() {
                 <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
                   penalty
                 </a>{" "}
-                — $200, routinely waived — has never deterred anyone. No criminal
+               , $200, routinely waived, has never deterred anyone. No criminal
                 prosecution has ever been brought under the STOCK Act.*
               </p>
               <p className="text-xs text-neutral-500 mt-2">

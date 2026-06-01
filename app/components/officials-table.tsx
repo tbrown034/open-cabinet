@@ -32,7 +32,7 @@ export default function OfficialsTable({
     }
   }
 
-  const sorted = [...officials].sort((a, b) => {
+  const sorted = officials.toSorted((a, b) => {
     const dir = sortDir === "asc" ? 1 : -1;
     switch (sortKey) {
       case "name":
@@ -56,7 +56,7 @@ export default function OfficialsTable({
   const newGroupingActive =
     !!newIngestedCutoff && sortKey === "transactionCount" && sortDir === "desc";
   const displaySorted = newGroupingActive
-    ? [...sorted].sort((a, b) => {
+    ? sorted.toSorted((a, b) => {
         const aNew = (a.lastIngestedDate ?? "") >= newIngestedCutoff! ? 1 : 0;
         const bNew = (b.lastIngestedDate ?? "") >= newIngestedCutoff! ? 1 : 0;
         if (aNew !== bNew) return bNew - aNew; // new first
@@ -67,7 +67,7 @@ export default function OfficialsTable({
   // The arrow indicates which column drives the displayed order. When the
   // NEW-first grouping is active, the visible order does NOT match either
   // column's pure sort (Vaden's 6 trades sits above Mody's 306 because
-  // Vaden is newly added) — so suppressing the arrow is the honest move,
+  // Vaden is newly added), so suppressing the arrow is the honest move,
   // and a caption above the table explains the grouping instead.
   const arrow = sortDir === "asc" ? " ↑" : " ↓";
   const showSortArrow = !newGroupingActive;
@@ -76,7 +76,7 @@ export default function OfficialsTable({
     <div className="overflow-x-auto -mx-4 px-4">
       {newGroupingActive && (
         <p className="text-xs text-neutral-500 mb-2 italic">
-          Officials with filings in the last 14 days surface at the top.
+          Officials added or updated in the last 14 days surface at the top.
           Click any column header to sort the table by that column instead.
         </p>
       )}
@@ -85,6 +85,7 @@ export default function OfficialsTable({
           <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
             <th className="pb-2 pr-4 font-medium">
               <button
+                type="button"
                 onClick={() => handleSort("name")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
@@ -93,6 +94,7 @@ export default function OfficialsTable({
             </th>
             <th className="pb-2 pr-4 font-medium hidden md:table-cell">
               <button
+                type="button"
                 onClick={() => handleSort("agency")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
@@ -101,6 +103,7 @@ export default function OfficialsTable({
             </th>
             <th className="pb-2 pr-4 font-medium text-right">
               <button
+                type="button"
                 onClick={() => handleSort("transactionCount")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
@@ -109,10 +112,11 @@ export default function OfficialsTable({
             </th>
             <th className="pb-2 font-medium text-right hidden sm:table-cell">
               <button
+                type="button"
                 onClick={() => handleSort("mostRecentFilingDate")}
                 className="hover:text-neutral-900 transition-colors cursor-pointer"
               >
-                Latest filing
+                Latest OGE filing
                 {showSortArrow && sortKey === "mostRecentFilingDate" ? arrow : ""}
               </button>
             </th>
@@ -150,7 +154,7 @@ export default function OfficialsTable({
                         (official.lastIngestedDate ?? "") >= newIngestedCutoff && (
                           <span
                             className="bg-neutral-900 text-white text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 sm:hidden"
-                            title={`New filing ${formatDate(official.mostRecentFilingDate)}`}
+                            title={`New OGE filing ${formatDate(official.mostRecentFilingDate)}`}
                           >
                             New
                           </span>
@@ -158,13 +162,23 @@ export default function OfficialsTable({
                     </div>
                     <div className="text-xs text-neutral-400 mt-0.5 hidden md:block">
                       {official.departedDate && (
-                        <span className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1">Former </span>
+                        <span
+                          className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1"
+                          title={`Departed ${formatDate(official.departedDate)}`}
+                        >
+                          Former official
+                        </span>
                       )}
                       {official.title}
                     </div>
                     <div className="text-xs text-neutral-400 mt-0.5 md:hidden">
                       {official.departedDate && (
-                        <span className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1">Former </span>
+                        <span
+                          className="text-[10px] uppercase tracking-wider text-amber-700 font-medium mr-1"
+                          title={`Departed ${formatDate(official.departedDate)}`}
+                        >
+                          Former official
+                        </span>
                       )}
                       {official.title} · {official.agency}
                     </div>
@@ -194,6 +208,7 @@ export default function OfficialsTable({
       </table>
       {!showAll && initialLimit && displaySorted.length > initialLimit && (
         <button
+          type="button"
           onClick={() => setShowAll(true)}
           className="mt-4 w-full py-2.5 text-sm text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-neutral-400 transition-colors cursor-pointer"
         >

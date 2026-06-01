@@ -10,7 +10,7 @@ import BuySellRatio from "../components/buy-sell-ratio";
 import SectorTreemap from "../components/sector-treemap";
 
 export const metadata: Metadata = {
-  title: "Overview — Open Cabinet",
+  title: "Overview, Open Cabinet",
   description:
     "Aggregate analysis of executive branch financial transactions.",
 };
@@ -18,6 +18,16 @@ export const metadata: Metadata = {
 function isSale(type: string): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
+
+const CATEGORY_PATTERNS = {
+  funds: /\b(?:etf|index fund|vanguard|ishares|spdr)\b/,
+  preferred: /\b(?:perp|tier|preferred|pfd)\b/,
+  realEstate: /\breal estate\b/,
+  propertyEntity: /\bllc\b(?=.*\b(?:property|land)\b)/,
+  crypto: /\b(?:bitcoin|ethereum|crypto|solana|polygon|polkadot)\b/,
+  bonds: /\b(?:bond|treasury|muni|fixed income)\b/,
+  retirement: /\b(?:retirement|401k|ira)\b/,
+};
 
 export default async function DashboardPage() {
   const officials = await getAllOfficials();
@@ -67,17 +77,20 @@ export default async function DashboardPage() {
   for (const tx of allTx) {
     const desc = tx.description.toLowerCase();
     let category: string;
-    if (desc.includes("etf") || desc.includes("index fund") || desc.includes("vanguard") || desc.includes("ishares") || desc.includes("spdr")) {
+    if (CATEGORY_PATTERNS.funds.test(desc)) {
       category = "ETFs & Index Funds";
-    } else if (desc.includes("perp") || desc.includes("tier") || desc.includes("preferred") || desc.includes("pfd")) {
+    } else if (CATEGORY_PATTERNS.preferred.test(desc)) {
       category = "Preferred Securities";
-    } else if (desc.includes("real estate") || desc.includes("llc") && (desc.includes("property") || desc.includes("land"))) {
+    } else if (
+      CATEGORY_PATTERNS.realEstate.test(desc) ||
+      CATEGORY_PATTERNS.propertyEntity.test(desc)
+    ) {
       category = "Real Estate";
-    } else if (desc.includes("bitcoin") || desc.includes("ethereum") || desc.includes("crypto") || desc.includes("solana") || desc.includes("polygon") || desc.includes("polkadot")) {
+    } else if (CATEGORY_PATTERNS.crypto.test(desc)) {
       category = "Cryptocurrency";
-    } else if (desc.includes("bond") || desc.includes("treasury") || desc.includes("muni") || desc.includes("fixed income")) {
+    } else if (CATEGORY_PATTERNS.bonds.test(desc)) {
       category = "Bonds & Fixed Income";
-    } else if (desc.includes("retirement") || desc.includes("401k") || desc.includes("ira")) {
+    } else if (CATEGORY_PATTERNS.retirement.test(desc)) {
       category = "Retirement Accounts";
     } else if (tx.ticker) {
       category = "Individual Stocks";

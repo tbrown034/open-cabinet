@@ -1,5 +1,5 @@
 /**
- * Server-rendered pagination — pure <Link> elements, no JS bundle.
+ * Server-rendered pagination, pure <Link> elements, no JS bundle.
  * Preserves all other search params so range/type/month filters stick
  * across page jumps. Render once above the table, once below.
  */

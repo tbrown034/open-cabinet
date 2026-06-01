@@ -100,19 +100,23 @@ export function buildPromiseEvidence(
 
   return data.promises.map((promise) => {
     const matchingSales: Transaction[] = [];
+    const matchedTickers = new Set(promise.matchedSaleTickers);
+    const matchedTokenPatterns = promise.matchedSaleDescriptionTokens.map(
+      (token) =>
+        new RegExp(token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i")
+    );
 
     for (const sale of sales) {
       // Ticker match
-      if (sale.ticker && promise.matchedSaleTickers.includes(sale.ticker)) {
+      if (sale.ticker && matchedTickers.has(sale.ticker)) {
         matchingSales.push(sale);
         continue;
       }
       // Description token match (all tokens must appear in description)
-      const desc = (sale.description ?? "").toLowerCase();
-      const tokens = promise.matchedSaleDescriptionTokens;
+      const desc = sale.description ?? "";
       if (
-        tokens.length > 0 &&
-        tokens.every((tok) => desc.includes(tok.toLowerCase()))
+        matchedTokenPatterns.length > 0 &&
+        matchedTokenPatterns.every((pattern) => pattern.test(desc))
       ) {
         matchingSales.push(sale);
       }

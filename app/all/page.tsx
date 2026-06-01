@@ -3,14 +3,15 @@ import { getAllOfficials } from "@/lib/data";
 import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
 import SwimLaneChart from "../components/swim-lane-chart";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "All Executive Branch Trades — Open Cabinet",
+  title: "All Executive Branch Trades, Open Cabinet",
   description:
-    "Every executive branch transaction on one canvas. 3,300+ trades across 34 officials.",
+    "Every executive branch transaction on one canvas. 7,001 trades across 33 officials.",
   openGraph: {
-    title: "All Executive Branch Trades — Open Cabinet",
-    description: "Every reported transaction across 34 officials on one D3 visualization.",
+    title: "All Executive Branch Trades, Open Cabinet",
+    description: "Every reported transaction across 33 officials on one D3 visualization.",
     type: "website",
   },
 };
@@ -30,6 +31,7 @@ export default async function AllTradesPage() {
       title: o.title,
       agency: o.agency,
       level: o.level,
+      departedDate: o.departedDate ?? null,
       totalValue: o.transactions.reduce(
         (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
         0
@@ -44,7 +46,7 @@ export default async function AllTradesPage() {
         isSale: isSale(tx.type),
       })),
     }))
-    .sort((a, b) => b.totalValue - a.totalValue);
+    .toSorted((a, b) => b.totalValue - a.totalValue);
 
   const allTx = ranked.flatMap((o) => o.transactions);
   const totalTx = allTx.length;
@@ -91,9 +93,12 @@ export default async function AllTradesPage() {
         Source: U.S. Office of Government Ethics. Red = sale, green = purchase.
         Circle size = transaction amount range. Dollar values are estimates
         based on range midpoints.{" "}
-        <a href="/methodology#known-limitations" className="underline hover:text-neutral-600">
-          Learn more
-        </a>
+        <Link
+          href="/methodology#known-limitations"
+          className="underline hover:text-neutral-600"
+        >
+          Read the methodology notes
+        </Link>
         .
       </p>
     </div>

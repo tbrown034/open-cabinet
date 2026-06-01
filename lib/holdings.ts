@@ -40,7 +40,7 @@ const VALUE_MIDPOINT: Record<string, number> = {
   "Over $50,000,000": 75000000,
 };
 
-export function holdingValueMidpoint(value: string | null): number {
+function holdingValueMidpoint(value: string | null): number {
   if (!value) return 0;
   return VALUE_MIDPOINT[value] ?? 0;
 }

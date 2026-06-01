@@ -63,8 +63,8 @@ export default function DivestitureLedger({ data, evidence }: Props) {
           Source documents
         </div>
         <ul className="space-y-2">
-          {data.sourceDocuments.map((doc, i) => (
-            <li key={i} className="text-sm flex items-baseline gap-3">
+          {data.sourceDocuments.map((doc) => (
+            <li key={`${doc.kind}-${doc.filedDate}-${doc.ogeUrl}`} className="text-sm flex items-baseline gap-3">
               <span className="text-[10px] uppercase tracking-wider text-neutral-500 font-mono w-28 shrink-0">
                 {DOC_BADGE[doc.kind]}
               </span>
@@ -197,7 +197,7 @@ export default function DivestitureLedger({ data, evidence }: Props) {
       <p className="text-xs text-neutral-400 mt-6 max-w-2xl leading-relaxed">
         Sources: Office of Government Ethics financial disclosure portal. The
         Ethics Agreement also lists hundreds of subsidiary entities of Cantor
-        Fitzgerald, BGC Group, and Newmark Group in Appendix A — those are
+        Fitzgerald, BGC Group, and Newmark Group in Appendix A, those are
         positions Lutnick committed to resign from, not individually-traded
         stocks, and are not shown in this ledger. For the full list see the
         Ethics Agreement PDF above.

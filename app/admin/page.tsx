@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useReducer, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "@/lib/auth-client";
 
@@ -30,31 +30,65 @@ interface ReviewItem {
   officialSlug: string;
 }
 
-export default function AdminPage() {
-  const { data: session, isPending } = useSession();
-  const [runs, setRuns] = useState<PipelineRun[]>([]);
-  const [reviewItems, setReviewItems] = useState<ReviewItem[]>([]);
-  const [reviewCount, setReviewCount] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [validationReport, setValidationReport] = useState<any>(null);
-  const [ogeReport, setOgeReport] = useState<any>(null);
-  const [validating, setValidating] = useState(false);
-  const [checkingOge, setCheckingOge] = useState(false);
-  const [stats, setStats] = useState<{
+interface AdminState {
+  runs: PipelineRun[];
+  reviewItems: ReviewItem[];
+  reviewCount: number;
+  loading: boolean;
+  validationReport: any;
+  ogeReport: any;
+  validating: boolean;
+  checkingOge: boolean;
+  stats: {
     officials: number;
     transactions: number;
     newsArticles: number;
     needsReview: number;
     totalPipelineCost: number;
     lastPipelineRun: PipelineRun | null;
-  } | null>(null);
+  } | null;
+}
+
+const INITIAL_ADMIN_STATE: AdminState = {
+  runs: [],
+  reviewItems: [],
+  reviewCount: 0,
+  loading: false,
+  validationReport: null,
+  ogeReport: null,
+  validating: false,
+  checkingOge: false,
+  stats: null,
+};
+
+function adminReducer(
+  state: AdminState,
+  patch: Partial<AdminState>
+): AdminState {
+  return { ...state, ...patch };
+}
+
+export default function AdminPage() {
+  const { data: session, isPending } = useSession();
+  const [state, setAdminState] = useReducer(adminReducer, INITIAL_ADMIN_STATE);
+  const {
+    runs,
+    reviewItems,
+    reviewCount,
+    loading,
+    validationReport,
+    ogeReport,
+    validating,
+    checkingOge,
+    stats,
+  } = state;
 
   const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
   const isAdmin = session?.user?.email === ADMIN_EMAIL;
 
   const fetchData = useCallback(async () => {
     if (!isAdmin) return;
-    setLoading(true);
+    setAdminState({ loading: true });
     try {
       const [pipelineRes, reviewRes, statsRes] = await Promise.all([
         fetch("/api/admin/pipeline"),
@@ -63,20 +97,22 @@ export default function AdminPage() {
       ]);
       if (pipelineRes.ok) {
         const data = await pipelineRes.json();
-        setRuns(data.runs || []);
+        setAdminState({ runs: data.runs || [] });
       }
       if (reviewRes.ok) {
         const data = await reviewRes.json();
-        setReviewItems(data.items || []);
-        setReviewCount(data.count || 0);
+        setAdminState({
+          reviewItems: data.items || [],
+          reviewCount: data.count || 0,
+        });
       }
       if (statsRes.ok) {
-        setStats(await statsRes.json());
+        setAdminState({ stats: await statsRes.json() });
       }
     } catch (err) {
       console.error("Failed to fetch admin data:", err);
     }
-    setLoading(false);
+    setAdminState({ loading: false });
   }, [isAdmin]);
 
   useEffect(() => {
@@ -84,37 +120,42 @@ export default function AdminPage() {
   }, [fetchData]);
 
   async function runCronCheck() {
-    setCheckingOge(true);
+    setAdminState({ checkingOge: true });
     try {
       const secret = prompt("Enter CRON_SECRET to trigger OGE check:");
-      if (!secret) { setCheckingOge(false); return; }
+      if (!secret) {
+        setAdminState({ checkingOge: false });
+        return;
+      }
       const res = await fetch("/api/cron", {
         headers: { Authorization: `Bearer ${secret}` },
       });
       const data = await res.json();
-      setOgeReport({
+      setAdminState({
+        ogeReport: {
         ...data,
         ok: res.ok,
+        },
       });
       // Refresh pipeline history after check
       fetchData();
     } catch (err) {
-      setOgeReport({ ok: false, error: (err as Error).message });
+      setAdminState({ ogeReport: { ok: false, error: (err as Error).message } });
     }
-    setCheckingOge(false);
+    setAdminState({ checkingOge: false });
   }
 
   async function runValidation() {
-    setValidating(true);
+    setAdminState({ validating: true });
     try {
       const res = await fetch("/api/admin/validate", { method: "POST" });
       if (res.ok) {
-        setValidationReport(await res.json());
+        setAdminState({ validationReport: await res.json() });
       }
     } catch (err) {
       console.error("Validation failed:", err);
     }
-    setValidating(false);
+    setAdminState({ validating: false });
   }
 
   async function handleReview(id: number, action: "approve" | "delete") {
@@ -124,15 +165,17 @@ export default function AdminPage() {
       body: JSON.stringify({ id, action }),
     });
     if (res.ok) {
-      setReviewItems((prev) => prev.filter((item) => item.id !== id));
-      setReviewCount((prev) => prev - 1);
+      setAdminState({
+        reviewItems: reviewItems.filter((item) => item.id !== id),
+        reviewCount: reviewCount - 1,
+      });
     }
   }
 
   if (isPending) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center text-neutral-500 text-sm">
-        Loading...
+        Loading…
       </div>
     );
   }
@@ -147,6 +190,7 @@ export default function AdminPage() {
           Sign in with Google to access the admin panel.
         </p>
         <button
+          type="button"
           onClick={async () => {
             const res = await signIn.social({
               provider: "google",
@@ -175,6 +219,7 @@ export default function AdminPage() {
           {session.user?.email} is not an authorized admin.
         </p>
         <button
+          type="button"
           onClick={() => signOut()}
           className="text-sm text-neutral-500 hover:text-neutral-900 cursor-pointer"
         >
@@ -197,13 +242,15 @@ export default function AdminPage() {
         </div>
         <div className="flex items-center gap-4">
           <button
+            type="button"
             onClick={fetchData}
             disabled={loading}
             className="text-xs text-neutral-500 hover:text-neutral-900 cursor-pointer"
           >
-            {loading ? "Loading..." : "Refresh"}
+            {loading ? "Loading…" : "Refresh"}
           </button>
           <button
+            type="button"
             onClick={() => signOut()}
             className="text-xs text-neutral-500 hover:text-neutral-900 cursor-pointer"
           >
@@ -342,12 +389,12 @@ export default function AdminPage() {
                     <td className="py-2 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500">
                       {run.tokenUsage
                         ? `$${(run.tokenUsage as any).costUsd?.toFixed(3) || "0"}`
-                        : "—"}
+                        : ","}
                     </td>
                     <td className="py-2 text-right tabular-nums text-neutral-500">
                       {run.duration
                         ? `${(run.duration / 1000).toFixed(0)}s`
-                        : "—"}
+                        : ","}
                     </td>
                   </tr>
                 ))}
@@ -416,12 +463,14 @@ export default function AdminPage() {
                   </div>
                   <div className="flex gap-2 shrink-0">
                     <button
+                      type="button"
                       onClick={() => handleReview(item.id, "approve")}
                       className="text-xs text-emerald-700 hover:text-emerald-900 cursor-pointer"
                     >
                       Approve
                     </button>
                     <button
+                      type="button"
                       onClick={() => handleReview(item.id, "delete")}
                       className="text-xs text-red-700 hover:text-red-900 cursor-pointer"
                     >
@@ -447,18 +496,20 @@ export default function AdminPage() {
           </h2>
           <div className="flex gap-2">
             <button
+              type="button"
               onClick={runValidation}
               disabled={validating}
               className="text-xs bg-neutral-900 text-white px-3 py-1.5 hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
             >
-              {validating ? "Running..." : "Validate DB"}
+              {validating ? "Running…" : "Validate DB"}
             </button>
             <button
+              type="button"
               onClick={runCronCheck}
               disabled={checkingOge}
               className="text-xs border border-neutral-300 text-neutral-700 px-3 py-1.5 hover:bg-neutral-50 transition-colors cursor-pointer disabled:opacity-50"
             >
-              {checkingOge ? "Checking..." : "Check OGE"}
+              {checkingOge ? "Checking…" : "Check OGE"}
             </button>
           </div>
         </div>
@@ -478,10 +529,13 @@ export default function AdminPage() {
             </div>
             {validationReport.totalIssues > 0 && (
               <div className="mt-2 text-xs text-red-700">
-                {Object.entries(validationReport.checks)
-                  .filter(([, v]) => (v as number) > 0)
-                  .map(([k, v]) => `${k}: ${v}`)
-                  .join(" | ")}
+                {Object.entries(validationReport.checks).reduce<string[]>(
+                  (parts, [k, v]) => {
+                    if ((v as number) > 0) parts.push(`${k}: ${v}`);
+                    return parts;
+                  },
+                  []
+                ).join(" | ")}
               </div>
             )}
           </div>

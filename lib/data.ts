@@ -24,11 +24,16 @@ export async function getOfficialBySlug(
 
 export async function getAllOfficials(): Promise<OfficialData[]> {
   const index = await getOfficialsIndex();
-  const officials = await Promise.all(
-    index.officials
-      .filter((o) => o.dataStatus === "parsed")
-      .map((o) => getOfficialBySlug(o.slug))
-  );
+  const officialPromises = [];
+  for (const official of index.officials) {
+    // Exclude prior-administration holdovers from the current roster. Their
+    // detail pages stay reachable via getOfficialBySlug, but they are kept
+    // out of every aggregate view and headline total.
+    if (official.dataStatus === "parsed" && !official.formerOfficial) {
+      officialPromises.push(getOfficialBySlug(official.slug));
+    }
+  }
+  const officials = await Promise.all(officialPromises);
   return officials.filter((o): o is OfficialData => o !== null);
 }
 
