@@ -1,0 +1,65 @@
+{
+  "transactions": [
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale (Partial)",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Trane Technologies plc (TT)",
+      "ticker": "TT",
+      "type": "Sale (Partial)",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv, Inc. (FISV)",
+      "ticker": "FISV",
+      "type": "Sale",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale (Partial)",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Trane Technologies plc (TT)",
+      "ticker": "TT",
+      "type": "Sale (Partial)",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv, Inc. (FISV)",
+      "ticker": "FISV",
+      "type": "Sale",
+      "date": "2026-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6564,
+    "outputTokens": 548,
+    "estimatedCostUsd": 0.0279
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "data/pdfs/Stephen-A-Vaden-03.19.2026-278T.pdf"
+}

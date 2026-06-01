@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "BBH Wealth Strategies, LLC - SILVER POINT DISTRESSED OPPORTUNITY II SERIES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH LIMITED DURATION FUND CL I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6788,
+    "outputTokens": 701,
+    "estimatedCostUsd": 0.0309
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Stephen-I-Miran-04.03.2026-278T.pdf"
+}

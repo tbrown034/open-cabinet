@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Airbnb Inc. Class A Common Stock (ABNB)",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6447,
+    "outputTokens": 191,
+    "estimatedCostUsd": 0.0222
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-04.20.2026-278T.pdf"
+}

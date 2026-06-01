@@ -9,7 +9,7 @@
       "publiclyDownloadable": true,
       "pdfPath": "/data/source-docs/edgar-troy-d-ethics_agreement-20260221.pdf",
       "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B7ACC6407681624185258DA5003486E0/$FILE/Edgar%2C%20Troy%20%20finalEA.pdf",
-      "summary": "Ethics agreement for Deputy Secretary, Department of Homeland Security position."
+      "summary": "Ethics agreement for Edgar's Ambassador to El Salvador nomination."
     },
     {
       "kind": "nominee_278",
@@ -19,13 +19,13 @@
       "summary": "Discloses positions outside government including IBM (Executive, $485K salary), Prospect House Media (Founder, $15K-$50K), and Global Conductor Inc. (Management Consulting, $1M-$5M capital gains). Filing reviewed and accepted by agency ethics official."
     },
     {
-      "kind": "ethics_agreement",
-      "title": "Ethics Agreement",
+      "kind": "compliance_cert",
+      "title": "Certification of Ethics Agreement Compliance",
       "filedDate": "2025-08-16",
       "publiclyDownloadable": true,
-      "pdfPath": "/data/source-docs/edgar-troy-d-ethics_agreement-20250816.pdf",
+      "pdfPath": "/data/source-docs/edgar-troy-d-compliance_cert-2025-08-16.pdf",
       "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7AFB9443B32E737F85258CE8002C28F4/$FILE/Edgar%2C%20EA%20Certification%201%20of%201.pdf",
-      "summary": "Ethics agreement for Deputy Secretary, Department of Homeland Security position."
+      "summary": "Ethics Agreement Compliance Certification for Edgar's Deputy Secretary, Department of Homeland Security role. Marks standard certification sections for ethics-agreement obligations, including resignations, divestitures, transaction reporting, recusals and ethics briefing."
     },
     {
       "kind": "transaction_278t",
@@ -41,7 +41,7 @@
       "title": "Certificate of Divestiture",
       "filedDate": "2025-04-01",
       "publiclyDownloadable": false,
-      "summary": "[Summary pending review of certificate_of_divestiture]"
+      "summary": "OGE-issued Certificate of Divestiture OGE-2025-048 providing tax-deferral treatment for a qualifying divestiture. Document content is not publicly downloadable from the OGE portal; available via Form 201 request."
     },
     {
       "kind": "ethics_agreement",
@@ -66,7 +66,7 @@
       "title": "Termination",
       "filedDate": "2021-02-03",
       "publiclyDownloadable": false,
-      "summary": "[Summary pending review of termination]"
+      "summary": "Termination report for Edgar's prior Chief Financial Officer role. Document content is not publicly downloadable from the OGE portal; available via Form 201 request."
     },
     {
       "kind": "ethics_agreement",
@@ -79,9 +79,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
-    "filingsListedThere": null,
-    "discrepancies": ""
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/edgar-troy-dean/",
+    "filingsListedThere": 2,
+    "discrepancies": "Verified against ProPublica's appointee page for Troy Dean Edgar. ProPublica's page embeds 2 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

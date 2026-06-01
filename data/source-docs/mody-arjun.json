@@ -12,7 +12,7 @@
       "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
       "publiclyDownloadable": true,
       "pdfPath": "/data/source-docs/mody-arjun-transaction_278t-2026-04-10.pdf",
-      "summary": "Large 278-T signed 02/27/2026 (filer received a 0-day filing extension) and OGE-certified 04/07/2026. Discloses dozens of sales executed on 01/30/2026 (Agilent, Apple, AbbVie, Abbott, Accenture, Allstate, Alphabet, Amazon, Berkshire Hathaway, Boeing, Chevron, Disney, Duke Energy, salesforce.com, Cigna, Carlyle Group, etc.) within an SMA, almost all in the $1,001-$15,000 range with one Amazon lot at $15,001-$50,000. The pages reviewed (1-5) show transactions 1-82; the full report continues beyond. All rows marked No on the 30-day notification flag.",
+      "summary": "Large 278-T signed 02/27/2026; the PDF states the filer received a 0-day filing extension. OGE-certified 04/07/2026. Discloses 306 transactions, primarily sales executed on 01/30/2026 (Agilent, Apple, AbbVie, Abbott, Accenture, Allstate, Alphabet, Amazon, Berkshire Hathaway, Boeing, Chevron, Disney, Duke Energy, salesforce.com, Cigna, Carlyle Group, etc.) within an SMA, almost all in the $1,001-$15,000 range with one Amazon lot at $15,001-$50,000. All rows in the extracted dataset are marked No on the 30-day notification flag.",
       "filedDate": "2026-04-10"
     },
     {
@@ -30,16 +30,16 @@
     },
     {
       "kind": "ethics_agreement",
-      "label": "Ethics Agreement",
+      "label": "Amended Ethics Agreement",
       "agency": "Social Security Administration",
       "title": "Deputy Commissioner (nominee)",
       "level": "n/a",
       "amended": "",
-      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/03D642A0F6370D2685258D16002C21B2/$FILE/Mody%2C%20Arjun%20%20finalEA.pdf",
+      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/03D642A0F6370D2685258D16002C21B2/$FILE/Mody%2C%20Arjun%20%20AMENDEDfinalEA.pdf",
       "publiclyDownloadable": true,
-      "pdfPath": "/data/source-docs/mody-arjun-ethics_agreement-2025-10-01.pdf",
-      "summary": "Ethics agreement letter to SSA DAEO Christopher Harris dated 09/29/2025. Section 2 commits Mody's consulting firm Ivy Hill Advisors LLC to remain dormant during appointment. Section 3 covers Common Values PAC impartiality recusal. Section 4 lists divestiture of stocks within 90 days of confirmation: Alphabet, Amazon, AT&T, Autodesk, Cloudflare, Meta, Microsoft, NVIDIA, Oracle, and Taiwan Semiconductor. Same section also lists 120-day divestitures of TPG Twin Brook, Blue Owl Credit Income, Oaktree Strategic Credit, KKR Real Estate Select Trust, plus a 30-day-post-lockout commitment for Blue Owl Technology Finance Corp. Section 6 addresses spouse's employment at Johns Hopkins Community Physicians.",
-      "filedDate": "2025-10-01"
+      "pdfPath": "/data/source-docs/mody-arjun-amended_ethics_agreement-2026-05-18.pdf",
+      "summary": "Amended ethics agreement transmitted by SSA on 05/18/2026, with Mody's 05/14/2026 amendment attached. The amendment says Mody timely requested full redemptions from Blue Owl Credit Income Corp. and KKR Real Estate Select Trust but received only partial redemptions, and extends those divestiture compliance deadlines to 300 days after confirmation. The PDF also includes the original 09/29/2025 ethics agreement: Ivy Hill Advisors LLC remains dormant during appointment; Common Values PAC triggers impartiality recusal; Section 4 lists 90-day divestitures of Alphabet, Amazon, AT&T, Autodesk, Cloudflare, Meta, Microsoft, NVIDIA, Oracle, and Taiwan Semiconductor; and Section 6 addresses spouse employment at Johns Hopkins Community Physicians.",
+      "filedDate": "2026-05-18"
     },
     {
       "kind": "nominee_278",
@@ -56,9 +56,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
-    "filingsListedThere": "Arjun Mody did not appear in the ProPublica Trump Team Financial Disclosures landing page check or top-wealthiest list. The full ProPublica database may include him via search; not verified from the landing page alone.",
-    "discrepancies": "None identified between OGE filings collected here and any ProPublica record. Note that Mody's Section 4 ethics-agreement divestiture list (Alphabet, Amazon, AT&T, Autodesk, Cloudflare, Meta, Microsoft, NVIDIA, Oracle, TSMC) maps onto the 01/30/2026 sales burst in the 04/10/2026 278-T."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/mody-arjun/",
+    "filingsListedThere": 2,
+    "discrepancies": "Verified against ProPublica's appointee page for Arjun Mody. ProPublica's page embeds 2 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

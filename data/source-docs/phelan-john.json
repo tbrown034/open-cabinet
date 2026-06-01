@@ -62,8 +62,8 @@
       "filedDate": "2026-01-29",
       "publiclyDownloadable": false,
       "pdfPath": null,
-      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/",
-      "summary": "Periodic transaction report (Form 278-T) disclosing individual securities transactions over $1,000 during the reporting window. See PDF for the itemized transaction list."
+      "ogeUrl": null,
+      "summary": "Periodic transaction report (Form 278-T) recorded by OGE as pending final disposition. Itemized document is not publicly downloadable from the OGE portal; available via Form 201 request."
     },
     {
       "kind": "transaction_278t",
@@ -71,8 +71,8 @@
       "filedDate": "2026-01-29",
       "publiclyDownloadable": false,
       "pdfPath": null,
-      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/",
-      "summary": "Periodic transaction report (Form 278-T) disclosing individual securities transactions over $1,000 during the reporting window. See PDF for the itemized transaction list."
+      "ogeUrl": null,
+      "summary": "Periodic transaction report (Form 278-T) recorded by OGE as pending final disposition. Itemized document is not publicly downloadable from the OGE portal; available via Form 201 request."
     },
     {
       "kind": "transaction_278t",
@@ -80,8 +80,8 @@
       "filedDate": "2025-09-09",
       "publiclyDownloadable": false,
       "pdfPath": null,
-      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/",
-      "summary": "Periodic transaction report (Form 278-T) disclosing individual securities transactions over $1,000 during the reporting window. See PDF for the itemized transaction list."
+      "ogeUrl": null,
+      "summary": "Periodic transaction report (Form 278-T) recorded by OGE without a publicly downloadable PDF in this dataset. Itemized document is available via Form 201 request."
     },
     {
       "kind": "compliance_cert",
@@ -107,7 +107,7 @@
       "filedDate": "2025-06-12",
       "publiclyDownloadable": false,
       "pdfPath": null,
-      "ogeUrl": "https://extapps2.oge.gov/201/Presiden.nsf/",
+      "ogeUrl": null,
       "summary": "OGE-issued Certificate of Divestiture providing tax-deferral treatment for a specific qualifying divestiture. Document content is not publicly downloadable; available via Form 201 request from OGE."
     },
     {
@@ -130,9 +130,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": null,
-    "filingsListedThere": null,
-    "discrepancies": "Cross-check with ProPublica deferred."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/phelan-john/",
+    "filingsListedThere": 8,
+    "discrepancies": "Verified against ProPublica's appointee page for John Phelan. ProPublica's page embeds 8 unique DocumentCloud disclosure documents; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }

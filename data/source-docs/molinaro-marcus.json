@@ -3,7 +3,7 @@
   "displayName": "Marcus Molinaro",
   "documents": [
     {
-      "kind": "transaction_278t",
+      "kind": "termination",
       "label": "Termination (278-TERM)",
       "agency": "Department of Transportation",
       "title": "Administrator, Federal Transit Administration",
@@ -30,9 +30,9 @@
     }
   ],
   "propublicaCheck": {
-    "url": "https://projects.propublica.org/trump-team-financial-disclosures/",
-    "filingsListedThere": "Marcus Molinaro did not appear in the ProPublica Trump Team Financial Disclosures landing page check or its top-wealthiest list. The full ProPublica database may include him via search; not verified from the landing page alone.",
-    "discrepancies": "None identified between OGE filings collected here and any ProPublica record. Note Molinaro's tenure was brief (08/2025 to 02/20/2026) and the only filings post-2024-12-01 are the compliance certification and the termination 278e; there is no separate 278-T transaction report in the OGE corpus filtered here."
+    "url": "https://projects.propublica.org/trump-team-financial-disclosures/appointees/molinaro-marcus/",
+    "filingsListedThere": 1,
+    "discrepancies": "Verified against ProPublica's appointee page for Marcus Molinaro. ProPublica's page embeds 1 unique DocumentCloud disclosure document; Open Cabinet may list additional OGE-indexed ethics, compliance, certificate, waiver, or request-only records that ProPublica does not expose as separate DocumentCloud PDFs. No contradictory filing record was identified in this check."
   },
   "generatedAt": "2026-04-28"
 }
