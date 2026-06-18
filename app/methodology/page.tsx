@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
+import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Methodology, Open Cabinet",
@@ -8,7 +9,29 @@ export const metadata: Metadata = {
     "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",
 };
 
-export default function MethodologyPage() {
+export default async function MethodologyPage() {
+  const [currentOfficials, trump, index] = await Promise.all([
+    getAllOfficials(),
+    getOfficialBySlug("trump-donald-j"),
+    getOfficialsIndex(),
+  ]);
+  const totalOfficials = index.officials.length;
+  const currentOfficialCount = currentOfficials.length;
+  const currentTransactions = currentOfficials.reduce(
+    (sum, official) => sum + official.transactions.length,
+    0
+  );
+  const currentLateTransactions = currentOfficials.reduce(
+    (sum, official) =>
+      sum + official.transactions.filter((tx) => tx.lateFilingFlag).length,
+    0
+  );
+  const trumpTransactions = trump?.transactions.length ?? 0;
+  const trumpLateTransactions =
+    trump?.transactions.filter((tx) => tx.lateFilingFlag).length ?? 0;
+  const nonTrumpLateTransactions =
+    currentLateTransactions - trumpLateTransactions;
+
   return (
     <div>
       {/* Hero */}
@@ -52,8 +75,9 @@ export default function MethodologyPage() {
           <li>
             <strong className="text-neutral-900">OGE Form 278e (Annual Report).</strong>{" "}
             Filed every May 15 by every covered official, restating holdings
-            and transactions for the prior year. We will ingest these as the
-            May 2026 cycle lands.
+            and transactions for the prior year. Open Cabinet will ingest
+            annual reports as they become available in public, downloadable
+            form.
           </li>
         </ul>
         <p className="text-neutral-600 leading-relaxed">
@@ -153,18 +177,27 @@ export default function MethodologyPage() {
               <strong className="text-neutral-900">
                 Coverage is limited to officials with publicly downloadable filings.
               </strong>{" "}
-              Open Cabinet tracks 36 of the most senior appointees. Hundreds
-              more have filed transaction reports that require individual
-              Form 201 requests from OGE, a process we are working to expand.
+              Open Cabinet tracks {totalOfficials} officials overall,
+              including {currentOfficialCount} in the main directory view.
+              That directory excludes prior-administration holdovers but keeps
+              recent former officials when their filings are part of the current
+              executive-branch record. Hundreds more have filed transaction
+              reports that require individual Form 201 requests from OGE, a
+              process we are working to expand.
             </li>
             <li>
               <strong className="text-neutral-900">
                 Trump dominates the aggregate counts.
               </strong>{" "}
-              President Trump accounts for 5,011 of 7,001 tracked transactions
-              and 4,656 of 5,143 late-filed transactions. Across all other
-              tracked officials, Open Cabinet counts 487 late-filed
-              transactions.
+              President Trump accounts for{" "}
+              {trumpTransactions.toLocaleString()} of{" "}
+              {currentTransactions.toLocaleString()} tracked transactions in
+              the main directory view and{" "}
+              {trumpLateTransactions.toLocaleString()} of{" "}
+              {currentLateTransactions.toLocaleString()} late-filed
+              transactions. Across all other main-directory officials, Open
+              Cabinet counts {nonTrumpLateTransactions.toLocaleString()}{" "}
+              late-filed transactions.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -210,11 +243,10 @@ export default function MethodologyPage() {
                 <a href="https://github.com/jsoma/natural-pdf" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">natural-pdf</a>
                 {" "}(by data journalist{" "}
                 <a href="https://github.com/jsoma" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Jonathan Soma</a>)
-                {" "}to extract text from every page of every PDF, then Claude
-                Opus parses each page into structured data. This page-by-page
-                approach handles scanned documents and avoids token limits.
-                All parsed data is validated against source PDFs through
-                automated checks.
+                {" "}to extract text from PDF pages, then an AI parser turns
+                the disclosure tables into structured data. Large filings are
+                split into page chunks before parsing. All parsed data is
+                validated against source PDFs through automated checks.
               </p>
             </div>
             <div>
@@ -242,10 +274,10 @@ export default function MethodologyPage() {
                 Codebase
               </div>
               <p className="text-neutral-500 mt-0.5">
-                Built by Trevor Brown with the assistance of Claude Code,
-                Anthropic{"'"}s CLI development tool.
                 Architecture, design and editorial decisions are
-                human-directed.
+                human-directed. Automated tooling helps with implementation,
+                but it does not decide what to track, what to publish or how to
+                frame the findings.
               </p>
             </div>
             <div>

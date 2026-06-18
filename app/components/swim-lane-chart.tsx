@@ -7,6 +7,7 @@ import { timeFormat } from "d3-time-format";
 import Link from "next/link";
 import Image from "next/image";
 import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/lib/format";
+import type { AmountRange } from "@/lib/types";
 import { useContainerWidth } from "./use-container-width";
 
 /**
@@ -38,7 +39,7 @@ interface SwimTransaction {
   ticker: string | null;
   type: string;
   date: string;
-  amount: string;
+  amount: AmountRange;
   lateFilingFlag: boolean;
   isSale: boolean;
 }
@@ -169,7 +170,7 @@ export default function SwimLaneChart({
 
   // Collect all amounts for radius scale
   const allAmounts = filtered.flatMap((o) =>
-    o.transactions.map((tx) => amountRangeToMin(tx.amount as any))
+    o.transactions.map((tx) => amountRangeToMin(tx.amount))
   );
   const amountExtent = extent(allAmounts) as [number, number];
   const maxR = isMobile ? 10 : filter === "cabinet" ? 12 : 10;
@@ -281,7 +282,7 @@ export default function SwimLaneChart({
                 <svg width={chartWidth} height={dotHeight} className="overflow-visible">
                   {o.transactions.map((tx, i) => {
                     const cx = xScale(new Date(tx.date + "T00:00:00"));
-                    const r = rScale(amountRangeToMin(tx.amount as any));
+                    const r = rScale(amountRangeToMin(tx.amount));
                     return (
                       <circle
                         key={i}
@@ -512,7 +513,7 @@ export default function SwimLaneChart({
               const cy = isMobile
                 ? y + bandHeight * 0.72
                 : y + bandHeight / 2;
-              const r = rScale(amountRangeToMin(tx.amount as any));
+              const r = rScale(amountRangeToMin(tx.amount));
 
               return (
                 <circle
@@ -568,7 +569,7 @@ export default function SwimLaneChart({
             >
               {tooltip.tx.type}
             </span>{" "}
-            · {amountRangeLabel(tooltip.tx.amount as any)}
+            · {amountRangeLabel(tooltip.tx.amount)}
             {tooltip.tx.ticker && ` · ${tooltip.tx.ticker}`}
           </div>
           {tooltip.tx.lateFilingFlag && (

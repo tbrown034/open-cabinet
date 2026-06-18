@@ -108,7 +108,7 @@ export default async function LateFilingsPage() {
           <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
             {totalLate.toLocaleString()}
           </span>
-          late filings
+          late-filed transactions
         </div>
         <div>
           <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -120,7 +120,7 @@ export default async function LateFilingsPage() {
           <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
             {officialsWithLate}
           </span>
-          officials with late filings
+          officials with late-filed transactions
         </div>
       </div>
 
@@ -176,7 +176,7 @@ export default async function LateFilingsPage() {
             <a href="https://campaignlegal.org/update/stock-act-failed-effort-stop-insider-trading-congress" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
               Campaign Legal Center
             </a>
-            ). At {totalLate.toLocaleString()} late filings, the theoretical maximum penalty is $
+            ). At {totalLate.toLocaleString()} late-filed transactions, the theoretical maximum penalty is $
             {(totalLate * 200).toLocaleString()}, but that assumes one fee per
             transaction. The actual fee is per report, not per transaction.
           </p>

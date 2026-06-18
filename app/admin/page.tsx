@@ -11,8 +11,8 @@ interface PipelineRun {
   status: string;
   newFilingsFound: number;
   newTransactionsParsed: number;
-  errors: any;
-  tokenUsage: any;
+  errors: unknown;
+  tokenUsage: { costUsd?: number } | null;
   duration: number;
   completedAt: string | null;
 }
@@ -30,13 +30,31 @@ interface ReviewItem {
   officialSlug: string;
 }
 
+interface DbValidationReport {
+  result: "PASS" | "FAIL";
+  duration: string;
+  officials: number;
+  transactions: number;
+  needsReview: number;
+  totalIssues: number;
+  checks: Record<string, number>;
+}
+
+interface OgeCheckReport {
+  ok: boolean;
+  duration?: string;
+  totalOgeRecords?: number;
+  runId?: number;
+  error?: string;
+}
+
 interface AdminState {
   runs: PipelineRun[];
   reviewItems: ReviewItem[];
   reviewCount: number;
   loading: boolean;
-  validationReport: any;
-  ogeReport: any;
+  validationReport: DbValidationReport | null;
+  ogeReport: OgeCheckReport | null;
   validating: boolean;
   checkingOge: boolean;
   stats: {
@@ -388,7 +406,7 @@ export default function AdminPage() {
                     </td>
                     <td className="py-2 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500">
                       {run.tokenUsage
-                        ? `$${(run.tokenUsage as any).costUsd?.toFixed(3) || "0"}`
+                        ? `$${run.tokenUsage.costUsd?.toFixed(3) || "0"}`
                         : ","}
                     </td>
                     <td className="py-2 text-right tabular-nums text-neutral-500">

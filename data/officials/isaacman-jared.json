@@ -5,8 +5,24 @@
   "agency": "National Aeronautics and Space Administration",
   "level": "Level II",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-04-17",
+  "mostRecentFilingDate": "2026-06-18",
   "transactions": [
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-12",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "Shift4 Payments Inc. Class A Common Stock",
       "ticker": "FOUR",
@@ -1168,16 +1184,21 @@
       "lateFilingFlag": true
     }
   ],
-  "summary": "Isaacman reported 126 sales (est. $111.9M) and 19 purchases (est. $96.3M). 128 of 145 transactions were filed late.",
+  "summary": "Isaacman reported 126 sales and 21 purchases across 147 transactions in the latest tracked 278-T filing. 128 transactions were marked as filed late.",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-06-18",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/A30668A7B4A01CB685258E1A002DBF7B/$FILE/Jared-Isaacman-05.27.2026-278T.pdf",
+      "label": "Jared-Isaacman-05.27.2026-278T"
+    },
     {
       "date": "2026-04-17",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D566015C161DDA885258DDC002DB5D1/$FILE/Jared-Isaacman-03.16.2026-278T.pdf",
       "label": "Jared-Isaacman-03.16.2026-278T"
     }
   ],
-  "lastIngestedDate": "2026-05-14",
-  "lastIngestedNewCount": 145,
+  "lastIngestedDate": "2026-06-18",
+  "lastIngestedNewCount": 2,
   "confirmedDate": "2025-12-17"
 }

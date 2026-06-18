@@ -1,0 +1,89 @@
+name: OGE filing pipeline
+
+on:
+  schedule:
+    - cron: "0 14 * * 1"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Check and parse without inserting rows"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: oge-filing-pipeline
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Ingest OGE filings into static data
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            pnpm run check-filings -- --dry-run
+          else
+            pnpm run ingest-filings
+          fi
+
+      - name: Rebuild officials index
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run rebuild-index
+
+      - name: Validate data
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run validate
+
+      - name: Regenerate exports
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run generate-exports
+
+      - name: Open pull request for data updates
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/oge-filing-updates
+          delete-branch: true
+          title: "Update OGE filing data"
+          commit-message: "Update OGE filing data"
+          body: |
+            Automated OGE filing pipeline run.
+
+            Validation included:
+            - `pnpm run ingest-filings`
+            - `pnpm run rebuild-index`
+            - `pnpm run validate`
+            - `pnpm run generate-exports`
+          labels: data, automation

@@ -1,0 +1,308 @@
+{
+  "transactions": [
+    {
+      "description": "ABBVIE INC NTS B/E 04.800% 031529 DTD022624 FC091524 CALL@MW+10BP YTM = 4.265 UNSOLICITED ACCRUED INT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "AMERICAN EXPRESS CO NTS 04.918% 072033 DTD072525 FC012026 CALL@MW+15BP YTM = 4.888 UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "CANADIAN IMPERIAL BANK 04.862% 011328 DTD011325 FC071325 FIX-TO-FLOAT YTM = 4.698 UNSOLICITED ACCRUED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "HCA INC B/E 05.450% 091534 DTD081224 FC031525 CALL@MW+25BP YTM = 5.261 UNSOLICITED ACCRUED INT PAID",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "META PLATFORMS INC B/E 04.875% 111535 DTD110325 CALL@MW+15BP YTM = 5.126 UNSOLICITED ACCRUED INT PAID",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "MICROSOFT CORP B/E 03.300% 020627 DTD020617 FC080617 CALL@MW+15BP YTM = 3.988 UNSOLICITED ACCRUED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "ORACLE CORP NTS B/E 05.200% 092635 DTD092625 CALL@MW+208P YTM = 5.999 UNSOLICITED VS* 0000000",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "TOYOTA MOTOR CREDIT CORP 05.100% 032131 DTD032124 FC092124 CALL@MW+15BP YTM = 4.590 UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "WESTERN MIDSTREAM NTS 6.350% 011529 DTD092923 FC011524 B/E CALL@MW+30B YTM = 4.771 UNSOLICITED ACCRUED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "AIKEN CO SC CONS SCH SOUTH SR A BE/R/5 DUE 040133 DTD040126 INSRD FC 100126 2.870% YIELD TO MATURITY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "ALLEN TX INDPT SCH PERMA SR A BE/R/5 DUE 021534 DTD 120225 FC021526 3.132% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "ARIZONA ST TRANSN BRD RV BE/R/5 DUE 070127 DTD 040726 FC070126 2.170% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "ARIZONA ST TRANSN BRD RV BE/R/5 DUE 070129 DTD 040726 FC070126 2.250% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "BALTIMORE CNTY MD BE/R/5 DUE 030129 DTD 032426 FC 090126 2.310% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "CONROE TX INDEPT SCH ULT BE/R/5 DUE 021535 DTD 112025 FC 021526 3.328% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "EL PASO TX WTR & SWR RE RV BE/R/5 DUE 030136 DTD 042326 CALLABLE FC 090126 CALLABLE @ 100 030135 FC090",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-25",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "HUNTSVILLE AL BE/R/5 DUE 090134 DTD 032626 FC 090126 2.770% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "HUNTSVILLE AL SR A BE/R/5 DUE 090135 DTD 032626 FC 090126 2.890% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "ILLINOIS ST BE/R/5 DUE 040132 DTD 041426 FC 100126 3.280% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-25",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "ILLINOIS ST SR C BE/R/5 DUE 040128 DTD 041426 FC 100126 2.840% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-25",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "LAS VEGAS VALLEY WATER D SR A BE/R/5 DUE 060131 DTD 030426 FC 060126 2.170% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "LAS VEGAS VALLEY WATER D SR A BE/R/5 DUE 060131 DTD 030426 FC 060126 2.736% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-24",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "MANATEE CNTY FL SCH SR A RV BE/R/5 DUE 070135 DTD 040626 FC 070126 2.960% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "METROPOLITAN UTILS DIST RV BE/R/5 DUE 120126 DTD 032526 FC 060126 2.231% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "METROPOLITAN UTILS DIST RV BE/R/5 DUE 120128 DTD 032526 FC 060126 2.250% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-16",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "MINNESOTA ST FOR PREVIOUS BE/R/5 DUE 080126 DTD 082024 2.250% YIELD TO MATURITY UNSOLICITED ACCRUED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "OHIO ST UNIV GEN RCPTS SR A RV BE/R/5 DUE 060135 DTD 010626 FC 060126 2.950% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "PENNSYLVANIA ST TPK COMM SR A RV BE/R/5 DUE 120134 DTD 031226 FC 060126 2.600% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "PENNSYLVANIA ST TPK COMM SR A RV BE/R/5 DUE 120134 DTD 031226 FC 060126 3.196% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-24",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "RALEIGH NC BE/R/5 DUE 040130 DTD 031226 FC 040126 2.120% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "ROCKWALL TX INDPT SCH D BE/R/5 DUE 021529 DTD 081225 FC 081525 2.650% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "SAN JACINTO TX CMNTY CLG BE/R/5 DUE 021527 DTD 042126 FC 081526 2.630% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "SAN JACINTO TX CMNTY CLG BE/R/5 DUE 021528 DTD 042126 FC 081526 2.680% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 5101,
+    "outputTokens": 4165,
+    "estimatedCostUsd": 0.0778
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-4.20.2026-278T.pages5-5.pdf"
+}

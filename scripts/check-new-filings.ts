@@ -8,87 +8,44 @@
  * Usage: pnpm run check-filings
  */
 
-import { readFile, writeFile, mkdir } from "fs/promises";
-import { existsSync } from "fs";
+import { mkdir } from "fs/promises";
 import path from "path";
 import https from "https";
+import {
+  diffNewFilings,
+  fetchOgeRecords,
+  getTargetFilings,
+  loadKnownFilingUrlsFromData,
+  writeLastCheckState,
+  type TargetFiling,
+} from "../lib/oge-filings";
 
-const API_BASE =
-  "https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest";
 const DATA_DIR = path.join(process.cwd(), "data");
 const PDF_DIR = path.join(DATA_DIR, "pdfs");
-const LAST_CHECK_PATH = path.join(DATA_DIR, "meta", "last-check.json");
-
-// Earliest filing date we care about. The 30 days after Jan 20, 2025
-// inauguration are dominated by departing Biden-era cabinet members filing
-// their exit 278-T reports. Anything from Feb 2025 forward is overwhelmingly
-// Trump-2 administration. Bump this date if scope changes.
-const MIN_DOC_DATE = "2025-02-01";
-
-// OGE name format drifts: middle initials and trailing periods come and go
-// across filings. Map every variant we've seen back to the canonical name
-// used in our officials index, so count diffs don't get split across spellings.
-const NAME_ALIASES: Record<string, string> = {
-  "Trump, Donald J": "Trump, Donald J.",
-  "Wright, Christopher A": "Wright, Christopher",
-  "McMahon, Linda E": "McMahon, Linda",
-  "Sonderling, Keith": "Sonderling, Keith E",
-  "Lawrence, Paul": "Lawrence, Paul R",
-  "Miran, Stephen": "Miran, Stephen I",
-};
-
-function canonicalName(name: string): string {
-  return NAME_ALIASES[name] ?? name;
-}
-
-interface OGERecord {
-  type: string;
-  name: string;
-  agency: string;
-  title: string;
-  level: string;
-  docDate: string;
-  amended: string;
-}
-
-interface LastCheck {
-  lastChecked: string;
-  knownFilings: Record<string, number>;
-  newFilings: Array<{
-    name: string;
-    pdfUrl: string;
-    docDate: string;
-    status: string;
-  }>;
-}
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function fetchJSON(url: string): Promise<any> {
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, (res) => {
-        let data = "";
-        res.on("data", (chunk: string) => (data += chunk));
-        res.on("end", () => {
-          try {
-            resolve(JSON.parse(data));
-          } catch {
-            reject(new Error(`Failed to parse response from ${url}`));
-          }
-        });
-      })
-      .on("error", reject);
-  });
 }
 
 function downloadFile(url: string, dest: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const file = require("fs").createWriteStream(dest);
     https
-      .get(url, (res: any) => {
+      .get(url, { headers: { "User-Agent": "OpenCabinet/1.0" } }, (res: any) => {
+        if (res.statusCode === 301 || res.statusCode === 302) {
+          file.close();
+          if (res.headers.location) {
+            downloadFile(res.headers.location, dest).then(resolve, reject);
+          } else {
+            reject(new Error("Redirect with no location"));
+          }
+          return;
+        }
+        if (res.statusCode !== 200) {
+          file.close();
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
+        }
         res.pipe(file);
         file.on("finish", () => {
           file.close();
@@ -96,70 +53,28 @@ function downloadFile(url: string, dest: string): Promise<void> {
         });
       })
       .on("error", (err: Error) => {
-        require("fs").unlinkSync(dest);
+        try {
+          require("fs").unlinkSync(dest);
+        } catch {
+          // Nothing to remove.
+        }
         reject(err);
       });
   });
 }
 
-function extractPdfUrl(typeField: string): string | null {
-  const match = typeField.match(/href='([^']+\.pdf)'/);
-  return match ? match[1] : null;
-}
-
-function is278T(typeField: string): boolean {
-  return (
-    typeField.includes("278 Transaction") ||
-    typeField.includes("278T") ||
-    typeField.includes("278-T")
-  );
-}
-
-function isTargetLevel(record: OGERecord): boolean {
-  if (record.level === "Level I" || record.level === "Level II") return true;
-  if (record.name === "Trump, Donald J" || record.name === "Trump, Donald J.")
-    return true;
-  return false;
-}
-
-function isInScope(docDate: string): boolean {
-  // OGE docDate format is "YYYY-MM-DD"; lexicographic compare works.
-  return docDate >= MIN_DOC_DATE;
-}
-
 async function main() {
   console.log("Checking OGE API for new filings...\n");
 
-  // Load previous state
-  let lastCheck: LastCheck = {
-    lastChecked: "",
-    knownFilings: {},
-    newFilings: [],
-  };
-  const isFirstRun = !existsSync(LAST_CHECK_PATH);
-  if (!isFirstRun) {
-    const raw = await readFile(LAST_CHECK_PATH, "utf-8");
-    lastCheck = JSON.parse(raw);
-  }
+  const args = new Set(process.argv.slice(2));
+  const dryRun = args.has("--dry-run");
+  const noDownload = dryRun || args.has("--no-download");
 
-  // Fetch all records from OGE API
-  let allRecords: OGERecord[] = [];
-  let start = 0;
-  const pageSize = 1000;
-
+  let records;
   try {
-    while (true) {
-      const url = `${API_BASE}?start=${start}&length=${pageSize}`;
-      console.log(`  Fetching records ${start}...`);
-      const data = await fetchJSON(url);
-      const records: OGERecord[] = data.data || [];
-      if (records.length === 0) break;
-      allRecords = allRecords.concat(records);
-      const total = data.recordsTotal || 0;
-      start += pageSize;
-      if (start >= total) break;
-      await sleep(2000);
-    }
+    ({ records } = await fetchOgeRecords({
+      log: (message) => console.log(`  ${message}`),
+    }));
   } catch (err) {
     console.error(
       "OGE API unreachable — try again later.",
@@ -168,85 +83,16 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`  Total records fetched: ${allRecords.length}\n`);
+  console.log(`  Total records fetched: ${records.length}\n`);
 
-  // Filter for target officials with 278-T PDFs
-  const targetFilings: Array<{
-    name: string;
-    pdfUrl: string;
-    docDate: string;
-  }> = [];
-
-  for (const r of allRecords) {
-    if (!isTargetLevel(r)) continue;
-    if (!is278T(r.type)) continue;
-    if (!isInScope(r.docDate)) continue;
-    const pdfUrl = extractPdfUrl(r.type);
-    if (!pdfUrl) continue;
-    targetFilings.push({
-      name: canonicalName(r.name),
-      pdfUrl,
-      docDate: r.docDate,
-    });
-  }
-
-  // Count filings per official
-  const currentCounts: Record<string, number> = {};
-  for (const f of targetFilings) {
-    currentCounts[f.name] = (currentCounts[f.name] || 0) + 1;
-  }
-
-  if (isFirstRun) {
-    // First run — set baseline, don't flag anything as new
-    console.log("First run — establishing baseline.\n");
-    console.log(`  ${targetFilings.length} 278-T filings across ${Object.keys(currentCounts).length} officials.\n`);
-
-    lastCheck = {
-      lastChecked: new Date().toISOString(),
-      knownFilings: currentCounts,
-      newFilings: [],
-    };
-    await writeFile(LAST_CHECK_PATH, JSON.stringify(lastCheck, null, 2));
-    console.log("Baseline saved to data/meta/last-check.json");
-    return;
-  }
-
-  // Diff against known filings
-  const newFilings: Array<{
-    name: string;
-    pdfUrl: string;
-    docDate: string;
-    status: string;
-  }> = [];
-
-  for (const [name, count] of Object.entries(currentCounts)) {
-    const known = lastCheck.knownFilings[name] || 0;
-    if (count > known) {
-      // Find the new PDFs (ones we haven't seen)
-      const officialFilings = targetFilings
-        .filter((f) => f.name === name)
-        .sort(
-          (a, b) =>
-            new Date(b.docDate).getTime() - new Date(a.docDate).getTime()
-        );
-      const newCount = count - known;
-      for (let i = 0; i < newCount && i < officialFilings.length; i++) {
-        newFilings.push({ ...officialFilings[i], status: "pending" });
-      }
-    }
-  }
-
-  // Also check for entirely new officials
-  for (const [name, count] of Object.entries(currentCounts)) {
-    if (!(name in lastCheck.knownFilings)) {
-      const officialFilings = targetFilings.filter((f) => f.name === name);
-      for (const f of officialFilings) {
-        if (!newFilings.some((nf) => nf.pdfUrl === f.pdfUrl)) {
-          newFilings.push({ ...f, status: "pending" });
-        }
-      }
-    }
-  }
+  const targetFilings = getTargetFilings(records);
+  const knownUrls = await loadKnownFilingUrlsFromData();
+  const newFilings = diffNewFilings(targetFilings, knownUrls).map(
+    (filing): TargetFiling & { status: string } => ({
+      ...filing,
+      status: noDownload ? "pending" : "pending_download",
+    })
+  );
 
   if (newFilings.length === 0) {
     console.log("No new filings since last check.\n");
@@ -256,19 +102,23 @@ async function main() {
     );
 
     // Download new PDFs
-    await mkdir(PDF_DIR, { recursive: true });
-    for (const filing of newFilings) {
-      const filename = filing.pdfUrl.split("/").pop() || "unknown.pdf";
-      const dest = path.join(PDF_DIR, decodeURIComponent(filename));
-      try {
-        console.log(`  Downloading: ${filename}`);
-        await downloadFile(filing.pdfUrl, dest);
-        filing.status = "downloaded";
-        await sleep(1000);
-      } catch {
-        console.log(`  FAILED: ${filename}`);
-        filing.status = "download_failed";
+    if (!noDownload) {
+      await mkdir(PDF_DIR, { recursive: true });
+      for (const filing of newFilings) {
+        const filename = filing.pdfUrl.split("/").pop() || "unknown.pdf";
+        const dest = path.join(PDF_DIR, decodeURIComponent(filename));
+        try {
+          console.log(`  Downloading: ${filename}`);
+          await downloadFile(filing.pdfUrl, dest);
+          filing.status = "downloaded";
+          await sleep(1000);
+        } catch {
+          console.log(`  FAILED: ${filename}`);
+          filing.status = "download_failed";
+        }
       }
+    } else {
+      console.log("Download skipped.\n");
     }
 
     console.log("\nNew filings:");
@@ -278,13 +128,12 @@ async function main() {
   }
 
   // Save updated state
-  lastCheck = {
-    lastChecked: new Date().toISOString(),
-    knownFilings: currentCounts,
-    newFilings,
-  };
-  await writeFile(LAST_CHECK_PATH, JSON.stringify(lastCheck, null, 2));
-  console.log(`\nState saved. Last checked: ${lastCheck.lastChecked}`);
+  if (!dryRun) {
+    await writeLastCheckState({ filings: targetFilings, newFilings });
+    console.log("\nState saved to data/meta/last-check.json");
+  } else {
+    console.log("\nDry run — state not saved.");
+  }
 }
 
 main().catch((err) => {

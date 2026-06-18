@@ -89,27 +89,39 @@ export function getSourceFilingForTransaction(
   sourceFilings: SourceFiling[] | undefined
 ): SourceFiling | null {
   if (!sourceFilings || sourceFilings.length === 0) return null;
-  const periodics = sourceFilings.filter((f) => f.label.startsWith("278-T"));
+  const periodics = sourceFilings.filter((f) => f.url || f.label);
   if (periodics.length === 0) return null;
   const txTime = new Date(tx.date + "T00:00:00").getTime();
   const eligible = periodics.filter(
-    (f) => new Date(f.date + "T00:00:00").getTime() >= txTime
+    (f) => new Date(normalizeDateString(f.date) + "T00:00:00").getTime() >= txTime
   );
   if (eligible.length > 0) {
     return eligible.reduce((earliest, f) =>
-      new Date(f.date).getTime() < new Date(earliest.date).getTime() ? f : earliest
+      new Date(normalizeDateString(f.date)).getTime() <
+      new Date(normalizeDateString(earliest.date)).getTime()
+        ? f
+        : earliest
     );
   }
   return periodics.reduce((latest, f) =>
-    new Date(f.date).getTime() > new Date(latest.date).getTime() ? f : latest
+    new Date(normalizeDateString(f.date)).getTime() >
+    new Date(normalizeDateString(latest.date)).getTime()
+      ? f
+      : latest
   );
+}
+
+function normalizeDateString(dateStr: string): string {
+  return dateStr.includes("T") ? dateStr.slice(0, 10) : dateStr;
 }
 
 /**
  * Formats a date string (YYYY-MM-DD) as "Mon DD, YYYY".
  */
 export function formatDate(dateStr: string): string {
-  const date = new Date(dateStr + "T00:00:00");
+  const normalized = normalizeDateString(dateStr);
+  const date = new Date(normalized + "T00:00:00");
+  if (Number.isNaN(date.getTime())) return "Unknown date";
   return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",

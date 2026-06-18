@@ -9,10 +9,6 @@ import {
   getSourceFilingForTransaction,
 } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
-import {
-  getHoldingsForOfficial,
-  reconcileHoldingsAgainstTrades,
-} from "@/lib/holdings";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import MonthlyBars from "@/app/components/monthly-bars";
@@ -23,7 +19,6 @@ import Pagination from "@/app/components/pagination";
 import ViewToggle from "@/app/components/view-toggle";
 import type { ChartView } from "@/app/components/view-toggle";
 import OfficialAvatar from "@/app/components/official-avatar";
-import HoldingsReconciliation from "@/app/components/holdings-reconciliation";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
 import SourceDocuments from "@/app/components/source-documents";
 import {
@@ -31,6 +26,50 @@ import {
   buildPromiseEvidence,
 } from "@/lib/divestiture";
 import { getSourceDocuments } from "@/lib/source-docs";
+import type { SourceDocumentsData } from "@/lib/source-docs";
+
+function sourceDocumentsWithCurrentFilings(
+  sourceDocs: SourceDocumentsData | null,
+  official: NonNullable<Awaited<ReturnType<typeof getOfficialBySlug>>>
+): SourceDocumentsData | null {
+  const sourceFilings = official.sourceFilings ?? [];
+  if (!sourceDocs && sourceFilings.length === 0) return null;
+
+  const base: SourceDocumentsData =
+    sourceDocs ?? {
+      official: official.slug,
+      displayName: displayName(official.name),
+      documents: [],
+      propublicaCheck: {
+        url: null,
+        filingsListedThere: null,
+        discrepancies: "",
+      },
+      generatedAt: official.lastIngestedDate ?? official.mostRecentFilingDate,
+    };
+
+  const knownUrls = new Set(base.documents.map((doc) => doc.ogeUrl).filter(Boolean));
+  const sourceDocsFromFilings = sourceFilings
+    .filter((filing) => filing.url && !knownUrls.has(filing.url))
+    .map((filing) => ({
+      kind: "transaction_278t" as const,
+      title: "278-T Periodic Transaction Report",
+      label: filing.label,
+      filedDate: filing.date,
+      publiclyDownloadable: true,
+      pdfPath: filing.url,
+      ogeUrl: filing.url,
+      summary:
+        "Periodic transaction report (Form 278-T) disclosing individual securities transactions over $1,000 during the reporting window. See PDF for the itemized transaction list.",
+    }));
+
+  return {
+    ...base,
+    documents: [...sourceDocsFromFilings, ...base.documents].sort((a, b) =>
+      b.filedDate.localeCompare(a.filedDate)
+    ),
+  };
+}
 
 export async function generateStaticParams() {
   const slugs = await getAllOfficialSlugs();
@@ -142,23 +181,20 @@ export default async function OfficialPage({
     notFound();
   }
 
-  const [news, holdings, divestiture, sourceDocs, index] = await Promise.all([
+  const [news, divestiture, sourceDocs, index] = await Promise.all([
     getNewsForOfficial(slug),
-    getHoldingsForOfficial(slug),
     getDivestitureData(slug),
     getSourceDocuments(slug),
     getOfficialsIndex(),
   ]);
-  const reconciliation = holdings
-    ? reconcileHoldingsAgainstTrades(holdings, official.transactions)
-    : null;
+  const currentSourceDocs = sourceDocumentsWithCurrentFilings(
+    sourceDocs,
+    official
+  );
   const promiseEvidence = divestiture
     ? buildPromiseEvidence(divestiture, official.transactions)
     : null;
   const { transactions } = official;
-  const sorted = transactions.toSorted(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
 
   const totalTrades = transactions.length;
   const buys = transactions.filter((t) => t.type === "Purchase").length;
@@ -187,23 +223,11 @@ export default async function OfficialPage({
   const daysWithHundredPlus = Array.from(countsByDay.values()).filter(
     (n) => n >= 100
   ).length;
-  let peakMonthEntry: [string, number] | undefined;
-  for (const entry of countsByMonth.entries()) {
-    if (!peakMonthEntry || entry[1] > peakMonthEntry[1]) {
-      peakMonthEntry = entry;
-    }
-  }
-  const peakMonth = peakMonthEntry
-    ? { month: peakMonthEntry[0], count: peakMonthEntry[1] }
-    : null;
   const weeksSpan = Math.max(
     1,
     (latest.getTime() - earliest.getTime()) / (7 * 24 * 60 * 60 * 1000)
   );
   const tradesPerWeek = totalTrades / weeksSpan;
-  const uniqueAssets = new Set(
-    transactions.map((t) => t.description.trim().toUpperCase())
-  ).size;
   const maxMonthlyCount = Math.max(0, ...Array.from(countsByMonth.values()));
 
   // High-volume officials get the monthly bar chart as the dominant viz.
@@ -497,6 +521,13 @@ export default async function OfficialPage({
         <span className="text-neutral-300 mx-1.5">|</span>
         Transactions: {formatDate(earliest.toISOString().split("T")[0])} – {formatDate(latest.toISOString().split("T")[0])}
       </p>
+      {(official.sourceFilings?.length ?? 0) > 1 && (
+        <p className="text-xs text-neutral-400 mb-10">
+          This total aggregates every source filing listed below. Public
+          trackers focused on a single disclosure may report smaller counts for
+          the same official.
+        </p>
+      )}
       {HIGH_VOLUME && (
         <p className="text-xs text-neutral-400 mb-10">
           Trade-value totals (e.g. on the dashboard) sum the midpoints of OGE
@@ -675,7 +706,7 @@ export default async function OfficialPage({
         />
       )}
 
-      {sourceDocs && <SourceDocuments data={sourceDocs} />}
+      {currentSourceDocs && <SourceDocuments data={currentSourceDocs} />}
 
       {divestiture && promiseEvidence && (
         <DivestitureLedger data={divestiture} evidence={promiseEvidence} />

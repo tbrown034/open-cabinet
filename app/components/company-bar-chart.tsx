@@ -27,7 +27,6 @@ const CHART_MARGIN = { top: 10, right: 80, bottom: 10, left: 160 };
 
 export default function CompanyBarChart({
   officials,
-  ticker,
 }: {
   officials: OfficialBar[];
   ticker: string;

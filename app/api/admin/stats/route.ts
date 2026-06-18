@@ -6,9 +6,13 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { officials, transactions, newsCoverage, pipelineRuns } from "@/lib/schema";
-import { count, eq, desc, sql } from "drizzle-orm";
+import { count, eq, desc } from "drizzle-orm";
 import { auth, isAdmin } from "@/lib/auth";
 import { headers } from "next/headers";
+
+interface TokenUsage {
+  costUsd?: number;
+}
 
 export async function GET() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -41,7 +45,7 @@ export async function GET() {
 
   // Total cost from all pipeline runs
   const totalCost = allRuns.reduce((sum, r) => {
-    const usage = r.tokenUsage as any;
+    const usage = r.tokenUsage as TokenUsage | null;
     return sum + (usage?.costUsd || 0);
   }, 0);
 

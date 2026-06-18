@@ -1,0 +1,182 @@
+{
+  "transactions": [
+    {
+      "description": "Blue Owl Capital Inc. Class A Common Stock",
+      "ticker": "OWL",
+      "type": "Sale",
+      "date": "2025-06-20",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD Hospitality Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-30",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD Credit Opportunity Fund, L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD EIV Private, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RSL Football Holdings LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-16",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "26North Private Equity Fund I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Valence8 PE 2023 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Valence8 PE 2022 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Cotulla Aviation LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Arcadia Gameto Investors LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Highline Investors LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Cresta SC Fund I-A LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Cresta Royalty Partners LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Cresta Royalty Partners II LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "12 South Investor JV, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8374,
+    "outputTokens": 1631,
+    "estimatedCostUsd": 0.0496
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/John-Phelan-10.02.2025-278T.pdf"
+}

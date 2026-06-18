@@ -1,0 +1,299 @@
+{
+  "transactions": [
+    {
+      "description": "ARLINGTON TEX INDPT 5% DUE 02/15/31",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ENERGY NORTHWES 3.503% DUE 07/01/26 XTRO TAXBL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LOWER COLO RIV AUTH 5% DUE 05/15/35",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TEXAS WTR DEV BRD ST RVLVNG FD REV B/E 4.00% Due Aug 1, 2036",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MIAMI DADE CNTY FL HSG FIN AUTH MLTIFAM HSG IMPERIAL CLUB REV B/E 2.95% Due Oct 1, 2041",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "SPOKANE CNTY WA SCH DIST 081 SPOKANE RFOG SER B B/E PTC 4.00% Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WARREN MI CONS SCH DIST RFOG SER A QSBLF B/E PTC 5.00% Due May 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MICHIGAN FIN AUTH HOSP RFOG BRONSON HLTHCARE GRP INC SER A REV B/E 5.00% Due May 15, 2054",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ARIZONA BRD REGTS UNIV SYS REV SER B GREEN BD B/E PTC 5.00% Due Jun 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00% Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "JOHNSON CITY TN HLTH & EDL FACS BRD MLTIFAM REV COLLTZD HSG TAPESTRY B/E 3.60% Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00% Due Mar 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFOG A1 B/E 3.30% Due Oct 1, 2046",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PJ 7 REV SER C 1 B/E GTD 4.00% Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MICHIGAN FIN AUTH REV RFOG HOSP HENRY FORD HLTH SYS B/E 5.00% Due Nov 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MAIN GA STR NAT GAS INC GAS SPLY REV SER C B/E 5.00% Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LANCASTER EDL ASSIST INC SC INSTALL PUR REV RFOG SCH DIST B/E OID @97.815 3.00% Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MINIDOKA JEROME CNTY ID JT SCH DIST 331 RFOG SER B B/E BIQ SCH BD GTY 4.00% Due Apr 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "UNIVERSITY TX UNIV REV FIN SYS RFOG C B/E OID @96.261 3.28% 3.00% Due Apr 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLAIR NE HWY ALLOC FD PLG 2023 DB B/E BIQ 5.00% Due Jun 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "UPPER BEAR CREEK AL WTR SWR & FIRE PROTN DIST REV RFOG AGM B/E BIQ 3.00% Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CENTRAL FL EXPWY AUTH SR LIEN REV RFOG B B/E 5.00% Due Jul 1, 2033",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MONTGOMERY CNTY OH HOSP FACS DAYTON CHLORNS REV B/E 5.00% Due Apr 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRISTOL TN B/E BIQ 5.00% Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LOUISIANA PUB FACS AUTH REV OCHSNER CLINIC FNDTN PJ SER B B/E OID@95.766 5.50% Due May 15, 2032",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TIPPECANOE IN SCH CORP SER A ST INTRCPT B/E 5.00% Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SOUTH DAKOTA ST HLTH & EFA REV RFOG AVERA HEALTH B/E 5.00% Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CLARK CNTY NV SCH DIST BLDG & RFOG SER A B/E 5.00% Due Jun 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PRIVATE GA CLLGS & UNIVS AUTH REV MERCER UNIV PJ B/E 5.00% Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TARRANT CNTY TX CULTURAL ED FIN HOSP BAYLOR SCOTT & WHITE SER A REV B/E 4.00% Due Nov 15, 2036",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "OHIO ST HWY CAP IMPT DB SER S B/E 5.00% Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TARRANT CNTY TX CULTURAL ED FAC FIN CORP HOSP REV BAYLOR HLTH A B/E PTC 4.00% Due Nov 15, 2042",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4663,
+    "outputTokens": 3685,
+    "estimatedCostUsd": 0.0693
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-4.20.2026-278T.pages2-2.pdf"
+}
