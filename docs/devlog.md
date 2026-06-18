@@ -4,6 +4,22 @@ A chronological record of development sessions and significant changes.
 
 ---
 
+## 2026-06-18 - Visitor Capture and Referral Surface
+
+**Session Summary:**
+- Added database-backed filing-alert signups with source-page and official-page metadata.
+- Added a stronger homepage/footer cross-promo block for Capitol Releases and Delegation Decoded with UTM-tagged referral links.
+- Added reporter/researcher contact CTAs on About and Download, plus an authenticated admin alert-signup list and CSV export.
+
+**Notable Changes:**
+- New public signup route: `POST /api/alerts`; it creates the `alert_signups` table if needed, validates email/preference, rate-limits by IP and sends an admin notification.
+- New admin route: `GET /api/admin/alerts` and `GET /api/admin/alerts?format=csv`; both require admin auth.
+- Pushed in separate tested slices: `a2407cb`, `f317865`, `e769c08` and `71fe91b`.
+- Verification across slices: `pnpm exec tsc --noEmit`, `pnpm lint`, `pnpm run build`, `pnpm run test:data` and `git diff --check` passed. Runtime smoke checks covered `/api/alerts`, `/api/admin/alerts`, `/`, `/officials/trump-donald-j`, `/about`, `/download` and `/admin`.
+- Production checks confirmed the alert form, cross-promo links and contact CTA are live on `open-cabinet.org`.
+
+---
+
 ## 2026-06-18 - Post-Deploy Hardening and Regression Checks
 
 **Session Summary:**
