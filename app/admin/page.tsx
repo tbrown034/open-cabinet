@@ -30,6 +30,17 @@ interface ReviewItem {
   officialSlug: string;
 }
 
+interface AlertSignup {
+  id: number;
+  email: string;
+  alertType: string;
+  sourcePage: string | null;
+  officialSlug: string | null;
+  status: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 interface DbValidationReport {
   result: "PASS" | "FAIL";
   duration: string;
@@ -52,6 +63,8 @@ interface AdminState {
   runs: PipelineRun[];
   reviewItems: ReviewItem[];
   reviewCount: number;
+  alertSignups: AlertSignup[];
+  alertSignupCount: number;
   loading: boolean;
   validationReport: DbValidationReport | null;
   ogeReport: OgeCheckReport | null;
@@ -71,6 +84,8 @@ const INITIAL_ADMIN_STATE: AdminState = {
   runs: [],
   reviewItems: [],
   reviewCount: 0,
+  alertSignups: [],
+  alertSignupCount: 0,
   loading: false,
   validationReport: null,
   ogeReport: null,
@@ -93,6 +108,8 @@ export default function AdminPage() {
     runs,
     reviewItems,
     reviewCount,
+    alertSignups,
+    alertSignupCount,
     loading,
     validationReport,
     ogeReport,
@@ -108,10 +125,11 @@ export default function AdminPage() {
     if (!isAdmin) return;
     setAdminState({ loading: true });
     try {
-      const [pipelineRes, reviewRes, statsRes] = await Promise.all([
+      const [pipelineRes, reviewRes, statsRes, alertsRes] = await Promise.all([
         fetch("/api/admin/pipeline"),
         fetch("/api/admin/review"),
         fetch("/api/admin/stats"),
+        fetch("/api/admin/alerts"),
       ]);
       if (pipelineRes.ok) {
         const data = await pipelineRes.json();
@@ -126,6 +144,13 @@ export default function AdminPage() {
       }
       if (statsRes.ok) {
         setAdminState({ stats: await statsRes.json() });
+      }
+      if (alertsRes.ok) {
+        const data = await alertsRes.json();
+        setAdminState({
+          alertSignups: data.signups || [],
+          alertSignupCount: data.count || 0,
+        });
       }
     } catch (err) {
       console.error("Failed to fetch admin data:", err);
@@ -317,6 +342,72 @@ export default function AdminPage() {
           </div>
         </section>
       )}
+
+      {/* Alert Signups */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
+            Alert Signups
+            {alertSignupCount > 0 && (
+              <span className="ml-2 bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded-sm text-[10px]">
+                {alertSignupCount}
+              </span>
+            )}
+          </h2>
+          <a
+            href="/api/admin/alerts?format=csv"
+            className="text-xs border border-neutral-300 text-neutral-700 px-3 py-1.5 hover:bg-neutral-50 transition-colors"
+          >
+            Export CSV
+          </a>
+        </div>
+
+        {alertSignups.length > 0 ? (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left">
+              <thead>
+                <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
+                  <th className="pb-2 pr-3 font-medium">Email</th>
+                  <th className="pb-2 pr-3 font-medium">Preference</th>
+                  <th className="pb-2 pr-3 font-medium">Source</th>
+                  <th className="pb-2 pr-3 font-medium">Official</th>
+                  <th className="pb-2 font-medium text-right">Updated</th>
+                </tr>
+              </thead>
+              <tbody>
+                {alertSignups.map((signup) => (
+                  <tr key={signup.id} className="border-b border-neutral-100">
+                    <td className="py-2 pr-3 text-neutral-900">
+                      {signup.email}
+                    </td>
+                    <td className="py-2 pr-3 text-neutral-600">
+                      {signup.alertType === "all" ? "Every filing" : "Major updates"}
+                    </td>
+                    <td className="py-2 pr-3 text-neutral-500">
+                      {signup.sourcePage || ","}
+                    </td>
+                    <td className="py-2 pr-3 text-neutral-500">
+                      {signup.officialSlug || ","}
+                    </td>
+                    <td className="py-2 text-right tabular-nums text-neutral-400">
+                      {new Date(signup.updatedAt).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        hour: "numeric",
+                        minute: "2-digit",
+                      })}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <p className="text-sm text-neutral-400">
+            No filing-alert signups yet.
+          </p>
+        )}
+      </section>
 
       {/* Pipeline Status */}
       <section className="mb-12">
