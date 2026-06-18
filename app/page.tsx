@@ -9,6 +9,7 @@ import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
 import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
+import AlertSignupForm from "./components/alert-signup-form";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -289,6 +290,10 @@ export default async function Home() {
           transactions &mdash; not portfolio value, net worth or exposure.
           A single position bought and later sold counts twice.
         </p>
+
+        <div className="mt-6">
+          <AlertSignupForm sourcePage="home-stats" />
+        </div>
 
         {/* ── SWIM LANE PREVIEW ── */}
         <div className="mt-8">

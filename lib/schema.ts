@@ -148,3 +148,26 @@ export const validationResults = pgTable("validation_results", {
   flaggedForReview: integer("flagged_for_review"),
   report: jsonb("report"), // Full validation report object
 });
+
+// ── ALERT SIGNUPS ──
+// Public filing-alert subscriptions collected from the site.
+export const alertSignups = pgTable(
+  "alert_signups",
+  {
+    id: serial("id").primaryKey(),
+    email: text("email").notNull().unique(),
+    alertType: text("alert_type").default("major").notNull(), // "major" or "all"
+    sourcePage: text("source_page"),
+    officialSlug: text("official_slug"),
+    referrer: text("referrer"),
+    userAgent: text("user_agent"),
+    status: text("status").default("active").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("alert_signups_email_idx").on(table.email),
+    index("alert_signups_status_idx").on(table.status),
+    index("alert_signups_source_idx").on(table.sourcePage),
+  ]
+);

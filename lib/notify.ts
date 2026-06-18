@@ -11,6 +11,7 @@
  * - model_disagreement: cross-provider verification found differences
  * - new_filings: informational — new data was found and parsed
  * - feedback: public user submitted feedback/bug report
+ * - alert_signup: public user requested filing alerts
  */
 import { Resend } from "resend";
 
@@ -24,7 +25,8 @@ type AlertType =
   | "model_disagreement"
   | "new_filings"
   | "validation_failure"
-  | "feedback";
+  | "feedback"
+  | "alert_signup";
 
 const SUBJECT_MAP: Record<AlertType, string> = {
   pipeline_error: "Pipeline Error",
@@ -34,6 +36,7 @@ const SUBJECT_MAP: Record<AlertType, string> = {
   new_filings: "New Filings Parsed",
   validation_failure: "Validation Failed",
   feedback: "User Feedback",
+  alert_signup: "Alert Signup",
 };
 
 const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
@@ -44,6 +47,7 @@ const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
   new_filings: "low",
   validation_failure: "high",
   feedback: "normal",
+  alert_signup: "normal",
 };
 
 interface NotifyOptions {
