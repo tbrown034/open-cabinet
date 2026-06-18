@@ -10,6 +10,7 @@ import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
 import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
 import AlertSignupForm from "./components/alert-signup-form";
+import ProjectCrossPromo from "./components/project-cross-promo";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -406,6 +407,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
+
+      <ProjectCrossPromo />
 
       {/* ── EXPLAINER (scrollytelling) ── */}
       <div className="mx-auto max-w-5xl px-4">
