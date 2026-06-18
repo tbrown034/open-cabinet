@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import MobileNav from "./components/mobile-nav";
+import ProjectCrossPromo from "./components/project-cross-promo";
 import { Analytics } from "@vercel/analytics/next";
 
 const dmSans = DM_Sans({
@@ -138,31 +139,7 @@ export default function RootLayout({
 
             {/* Other projects by Trevor */}
             <div className="mt-8 pt-6 border-t border-neutral-200">
-              <p className="text-[11px] uppercase tracking-wider text-neutral-400 mb-2">
-                More government accountability tools
-              </p>
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-600">
-                <a
-                  href="https://capitolreleases.com"
-                  className="hover:text-neutral-900 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Capitol Releases
-                </a>
-                <span className="text-neutral-400">, Senate press-release archive, 100 senators, updated 4&times; daily</span>
-              </div>
-              <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-600 mt-1">
-                <a
-                  href="https://delegation-decoded.vercel.app"
-                  className="hover:text-neutral-900 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Delegation Decoded
-                </a>
-                <span className="text-neutral-400">, Congressional tracking by state delegation: trades, bills, committees</span>
-              </div>
+              <ProjectCrossPromo placement="footer" />
             </div>
 
             {/* Attribution + legal */}
