@@ -19,6 +19,7 @@ import Pagination from "@/app/components/pagination";
 import ViewToggle from "@/app/components/view-toggle";
 import type { ChartView } from "@/app/components/view-toggle";
 import OfficialAvatar from "@/app/components/official-avatar";
+import AlertSignupForm from "@/app/components/alert-signup-form";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
 import SourceDocuments from "@/app/components/source-documents";
 import {
@@ -550,6 +551,15 @@ export default async function OfficialPage({
           All transactions were purchases made while in office.
         </p>
       )}
+
+      <div className="mb-8">
+        <AlertSignupForm
+          sourcePage="official-profile"
+          officialSlug={official.slug}
+          title={`Get ${displayName(official.name)} filing alerts`}
+          description={`Get an email when Open Cabinet publishes an important update to ${displayName(official.name)}'s disclosure record.`}
+        />
+      </div>
 
       <section className="mb-6">
         <div className="flex items-baseline justify-between mb-3 gap-4 flex-wrap">
