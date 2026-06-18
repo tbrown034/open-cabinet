@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import FeedbackForm from "../components/feedback-form";
+import ResearchContactCta from "../components/research-contact-cta";
 
 export const metadata: Metadata = {
   title: "About, Open Cabinet",
@@ -19,7 +20,7 @@ export default function AboutPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           An accountability tool that parses executive branch financial
-          disclosure data into searchable, sortable and visual formats ,
+          disclosure data into searchable, sortable and visual formats,
           tracking stock trades and potential conflicts of interest.
         </p>
         <p className="text-xs text-neutral-400 mt-3">
@@ -137,6 +138,8 @@ export default function AboutPage() {
             </li>
           </ul>
         </section>
+
+        <ResearchContactCta context="about" />
 
         {/* Related resources */}
         <section className="border-t border-neutral-200 pt-8">
