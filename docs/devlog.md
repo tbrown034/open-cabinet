@@ -4,6 +4,69 @@ A chronological record of development sessions and significant changes.
 
 ---
 
+## 2026-06-18 - Post-Deploy Hardening and Regression Checks
+
+**Session Summary:**
+- Reduced Vercel deployment payload by excluding local PDF caches and mirrored source-document PDFs from production uploads.
+- Switched source-document links to prefer OGE URLs so public pages no longer depend on the excluded local PDF mirror.
+- Cleared the remaining ESLint warnings and added an explicit data regression check for the Trump single-disclosure versus aggregate-total counts.
+
+**Notable Changes:**
+- Added `.vercelignore` for `data/pdfs/**` and `public/data/source-docs/**`; follow-up production deploy uploaded 627 KB instead of roughly 213 MB.
+- Added `pnpm run test:data`, which verifies the May 8, 2026 Trump part-two parsed count is 3,642, the Trump aggregate profile count is 5,185 and the full export is 37 officials / 7,513 transactions.
+- Verified the OGE dry-run still reports no new filings and the GitHub Actions pipeline still runs ingest, rebuild-index, validate and generate-exports without the exact-count regression check blocking legitimate future data growth.
+- Verification: `pnpm run validate`, `pnpm run test:data`, `pnpm run check-filings -- --dry-run`, `pnpm exec tsc --noEmit`, `pnpm lint` and `pnpm run build` passed. Production checks returned 200 for key pages and data exports after redeploy.
+
+---
+
+## 2026-06-18 - Production Deploy and Public Stats Verification
+
+**Session Summary:**
+- Deployed the refreshed Open Cabinet dataset and clarity fixes to production with `vercel deploy . --prod -y`.
+- Verified `https://open-cabinet.org` now serves the updated data instead of the stale 33-official / 7,001-transaction build.
+- Confirmed public pages explain transaction-row counts, main-directory scope and single-disclosure versus aggregate-filing totals more clearly.
+
+**Notable Changes:**
+- Production homepage now shows 34 main-directory officials, 7,306 transactions, Sara Bailey and Jared Isaacman in the new-ingest banner and "late-filed transactions" wording.
+- Trump's production page now shows 5,185 transactions, 4,757 late-filed transactions and the note that totals aggregate every source filing listed below.
+- Methodology now shows 37 total officials, 34 in the main directory and 7,306 main-directory transactions.
+- Download page now shows the full exported dataset as 37 officials and 7,513 transactions.
+- Verification: local `pnpm exec tsc --noEmit` and `pnpm run build` passed before deploy; live checks returned HTTP 200 for `/`, `/officials/trump-donald-j`, `/methodology`, `/download`, `/late-filings`, `/all`, `/data/full-dataset.json`, `/data/officials-summary.csv` and `/data/all-transactions.csv`.
+
+---
+
+## 2026-06-18 - Live OGE Data Refresh and Ingest Hardening
+
+**Session Summary:**
+- Ran a live OGE URL-diff audit and found two untracked 278-T PDFs: Jared Isaacman and Sara Bailey.
+- Ingested Isaacman's May 27, 2026 filing and bootstrapped Sara Bailey from OGE metadata before parsing her April 1, 2026 filing.
+- Updated static JSON data, source filing metadata, generated exports and `data/meta/last-check.json`.
+
+**Notable Changes:**
+- `scripts/ingest-new-filings.ts` now carries OGE title/agency/level metadata through ingest, bootstraps newly discovered Level I/II officials, dedupes source filing URLs and recomputes summaries after merges.
+- `scripts/check-new-filings.ts` now handles redirects/status failures when downloading PDFs.
+- Follow-up site review fixed stale public counts/copy, ISO OGE timestamp formatting, per-transaction PDF source links and source-document sections that lagged newly ingested 278-T filings.
+- Current dataset is 37 officials, 7,513 transactions and 132 source-filing entries.
+- Verification: live `pnpm run check-filings -- --dry-run` now reports no new filings; `pnpm run validate`, `pnpm exec tsc --noEmit`, `pnpm lint` and `pnpm run build` passed. Lint still reports 24 pre-existing warnings.
+- Additional checks: extracted text from the two new PDFs matched parsed rows; 131 non-null source URLs returned OK.
+
+---
+
+## 2026-06-09 - OGE Pipeline Freshness Fix
+
+**Session Summary:**
+- Fixed the weekly filing monitor so it diffs exact OGE PDF URLs instead of comparing per-official counts.
+- Kept Vercel cron as a lightweight monitor and added a GitHub Actions workflow for static JSON ingest, validation and PR creation.
+- Centralized OGE fetch, filtering, URL extraction and last-check state handling in `lib/oge-filings.ts`.
+
+**Notable Changes:**
+- `scripts/check-new-filings.ts` now supports `--dry-run` and `--no-download`; dry runs do not advance `data/meta/last-check.json`.
+- `app/api/cron/route.ts` now fails closed when `CRON_SECRET` is missing, treats zero-record OGE responses as failures, and reports real new-filing counts.
+- `.github/workflows/oge-pipeline.yml` runs weekly and manually, then runs `pnpm run ingest-filings`, rebuilds the index, validates data and opens a PR for generated changes.
+- Verification: `pnpm run check-filings -- --dry-run` found the 10 missing OGE filings; `pnpm exec tsc --noEmit`, `pnpm run build`, `pnpm run validate`, and `git diff --check` passed.
+
+---
+
 ## 2026-04-11 - Full Build: MVP to Production
 
 **Session Summary:**

@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-12",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6468,
+    "outputTokens": 194,
+    "estimatedCostUsd": 0.0223
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Jared-Isaacman-05.27.2026-278T.pdf"
+}

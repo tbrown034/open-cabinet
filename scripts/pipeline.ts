@@ -17,7 +17,7 @@
  * Error handling: failed parses don't block the run — they're logged
  * and the pipeline continues with the next PDF.
  */
-import { readFile, writeFile, mkdir } from "fs/promises";
+import { mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
 import https from "https";
@@ -28,13 +28,18 @@ import { officials, transactions, pipelineRuns } from "../lib/schema";
 import { parsePdf, quickValidate } from "./parse-pdf";
 import type { ParsedTransaction } from "./parse-pdf";
 import { notify } from "../lib/notify";
+import {
+  diffNewFilings,
+  fetchOgeRecords,
+  getTargetFilings,
+  loadKnownFilingUrlsFromData,
+  writeLastCheckState,
+} from "../lib/oge-filings";
 import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
 
-const API_BASE = "https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest";
 const PDF_DIR = path.join(process.cwd(), "data", "pdfs");
-const LAST_CHECK_PATH = path.join(process.cwd(), "data", "meta", "last-check.json");
 
 // ── DB CONNECTION ──
 
@@ -52,21 +57,6 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function fetchJSON(url: string): Promise<any> {
-  return new Promise((resolve, reject) => {
-    https
-      .get(url, (res) => {
-        let data = "";
-        res.on("data", (chunk: string) => (data += chunk));
-        res.on("end", () => {
-          try { resolve(JSON.parse(data)); }
-          catch { reject(new Error(`Failed to parse response from ${url}`)); }
-        });
-      })
-      .on("error", reject);
-  });
-}
-
 function downloadFile(url: string, dest: string): Promise<void> {
   return new Promise((resolve, reject) => {
     const file = require("fs").createWriteStream(dest);
@@ -80,22 +70,6 @@ function downloadFile(url: string, dest: string): Promise<void> {
         reject(err);
       });
   });
-}
-
-function extractPdfUrl(typeField: string): string | null {
-  const match = typeField.match(/href='([^']+\.pdf)'/);
-  return match ? match[1] : null;
-}
-
-function is278T(typeField: string): boolean {
-  return typeField.includes("278 Transaction") ||
-    typeField.includes("278T") || typeField.includes("278-T");
-}
-
-function isTargetLevel(record: any): boolean {
-  if (record.level === "Level I" || record.level === "Level II") return true;
-  if (record.name === "Trump, Donald J") return true;
-  return false;
 }
 
 function slugify(name: string): string {
@@ -132,44 +106,18 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
   try {
     // 2. Poll OGE API
     console.log("Step 1: Checking OGE API for new filings...");
-    let allRecords: any[] = [];
-    let start = 0;
-    const pageSize = 1000;
-
-    while (true) {
-      const url = `${API_BASE}?start=${start}&length=${pageSize}`;
-      const data = await fetchJSON(url);
-      const records = data.data || [];
-      if (records.length === 0) break;
-      allRecords = allRecords.concat(records);
-      const total = data.recordsTotal || 0;
-      start += pageSize;
-      if (start >= total) break;
-      await sleep(2000);
-    }
+    const { records: allRecords } = await fetchOgeRecords({
+      log: (message) => console.log(`  ${message}`),
+    });
 
     console.log(`  ${allRecords.length} total OGE records`);
 
-    // Filter for target officials with 278-T PDFs
-    const targetFilings: Array<{ name: string; pdfUrl: string; docDate: string }> = [];
-    for (const r of allRecords) {
-      if (!isTargetLevel(r)) continue;
-      if (!is278T(r.type)) continue;
-      const pdfUrl = extractPdfUrl(r.type);
-      if (!pdfUrl) continue;
-      targetFilings.push({ name: r.name, pdfUrl, docDate: r.docDate });
-    }
+    const targetFilings = getTargetFilings(allRecords);
 
     console.log(`  ${targetFilings.length} target 278-T filings`);
 
-    // Load previous state to find new ones
-    let knownUrls = new Set<string>();
-    if (existsSync(LAST_CHECK_PATH)) {
-      const lastCheck = JSON.parse(await readFile(LAST_CHECK_PATH, "utf-8"));
-      knownUrls = new Set(Object.keys(lastCheck.knownFilings || {}));
-    }
-
-    const newFilings = targetFilings.filter((f) => !knownUrls.has(f.pdfUrl));
+    const knownUrls = await loadKnownFilingUrlsFromData();
+    const newFilings = diffNewFilings(targetFilings, knownUrls);
     newFilingsFound = newFilings.length;
     console.log(`  ${newFilings.length} new filings since last check\n`);
 
@@ -185,6 +133,9 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
           completedAt: new Date(),
         })
         .where(eq(pipelineRuns.id, run.id));
+      if (!options.dryRun) {
+        await writeLastCheckState({ filings: targetFilings, newFilings: [] });
+      }
       return;
     }
 
@@ -318,21 +269,17 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
     }
 
     // Save state for next run
-    const updatedKnown: Record<string, number> = {};
-    targetFilings.forEach((f) => { updatedKnown[f.pdfUrl] = Date.now(); });
-    await writeFile(
-      LAST_CHECK_PATH,
-      JSON.stringify({
-        lastChecked: new Date().toISOString(),
-        knownFilings: updatedKnown,
+    if (!options.dryRun) {
+      await writeLastCheckState({
+        filings: targetFilings,
         newFilings: newFilings.map((f) => ({
           name: f.name,
           pdfUrl: f.pdfUrl,
           docDate: f.docDate,
           status: "processed",
         })),
-      }, null, 2)
-    );
+      });
+    }
   } catch (err) {
     errors.push({ step: "pipeline", error: (err as Error).message });
   }

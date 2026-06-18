@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-05-31T23:57:52.097Z",
-  "officialCount": 36,
-  "transactionCount": 7208,
+  "exportedAt": "2026-06-18T23:14:42.541Z",
+  "officialCount": 37,
+  "transactionCount": 7513,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -1693,606 +1693,358 @@
       "level": "Cabinet",
       "confirmedDate": "2025-01-30",
       "departedDate": null,
-      "transactionCount": 124,
-      "mostRecentFilingDate": "2026-01-21",
+      "transactionCount": 143,
+      "mostRecentFilingDate": "2026-05-21T04:18:01",
       "transactions": [
         {
-          "description": "Arthur Ventures V, LP",
+          "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software)",
           "ticker": null,
           "type": "Purchase",
-          "date": "2025-01-15",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Causeway International Value Fund Institutional Class Shares",
-          "ticker": "CIVIX",
-          "type": "Purchase",
-          "date": "2025-01-16",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures V, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-01-21",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth I, LP - Protenus",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-01-24",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures I, LP - Protenus, Inc",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-01-24",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures GP I, LLC - Protenus, Inc.",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-01-24",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures I, LP - Protenus",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-01-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth I, LP - Protenus",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-01-27",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Microsoft Corp.",
-          "ticker": "MSFT",
-          "type": "Sale",
-          "date": "2025-01-31",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Atlassian Corporation Plc Class A Ordinary Shares",
-          "ticker": "TEAM",
-          "type": "Sale",
-          "date": "2025-01-31",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Atlassian Corporation Plc Class A Ordinary Shares",
-          "ticker": "TEAM",
-          "type": "Sale",
-          "date": "2025-01-31",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Purchase",
-          "date": "2025-02-03",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Duke Energy Corp.",
-          "ticker": "DUK",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Enterprise Products Partners L.P. Common Stock",
-          "ticker": "EPD",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Kinder Morgan, Inc.",
-          "ticker": "KMI",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "ONEOK, Inc.",
-          "ticker": "OKE",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Otter Tail Corp.",
-          "ticker": "OTTR",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Targa Resources Corp.",
-          "ticker": "TRGP",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Verizon Communications, Inc.",
-          "ticker": "VZ",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "VanEck Vectors Gold Miners ETF",
-          "ticker": "GDX",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Sale",
-          "date": "2025-02-04",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Meta Platforms Inc. Class A Common Stock",
-          "ticker": "META",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Netflix, Inc.",
-          "ticker": "NFLX",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Alphabet, Inc.",
-          "ticker": "GOOG",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "First Solar, Inc.",
-          "ticker": "FSLR",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Adobe, Inc.",
-          "ticker": "ADBE",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Apple, Inc.",
-          "ticker": "AAPL",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "JPMorgan Chase & Co.",
-          "ticker": "JPM",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Stryker Corp.",
-          "ticker": "SYK",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "UnitedHealth Group, Inc.",
-          "ticker": "UNH",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Visa, Inc.",
-          "ticker": "V",
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "iShares Russell Mid-Cap Growth ETF",
-          "ticker": "IWP",
-          "type": "Purchase",
-          "date": "2025-02-05",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "SPDR S&P 500 ETF Trust",
-          "ticker": "SPY",
-          "type": "Purchase",
-          "date": "2025-02-05",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "SPDR Portfolio S&P 500 Growth ETF",
-          "ticker": "SPYG",
-          "type": "Purchase",
-          "date": "2025-02-05",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "ARLINGTON HEIGHTS ILL",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "CALHOUN CNTY ALA BRD ED",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FLORESVILLE TEX INDPT SCH",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-05",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Purchase",
-          "date": "2025-02-05",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Xcel Energy, Inc.",
-          "ticker": "XEL",
-          "type": "Sale",
-          "date": "2025-02-06",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Purchase",
-          "date": "2025-02-07",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NAPA CALIF WTR REV REF",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-10",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Purchase",
-          "date": "2025-02-10",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
-          "type": "Purchase",
-          "date": "2025-02-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Microsoft Corp.",
-          "ticker": "MSFT",
-          "type": "Sale",
-          "date": "2025-02-21",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "iShares Russell Mid-Cap Growth ETF",
-          "ticker": "IWP",
-          "type": "Purchase",
-          "date": "2025-02-21",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "SPDR S&P 500 ETF Trust",
-          "ticker": "SPY",
-          "type": "Purchase",
-          "date": "2025-02-21",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "SPDR Portfolio S&P 500 Growth ETF",
-          "ticker": "SPYG",
-          "type": "Purchase",
-          "date": "2025-02-21",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures V, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-02-26",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures V, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-02-26",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Edgewood Growth Fund Institutional Class Shares",
-          "ticker": "EGFIX",
-          "type": "Purchase",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Fuller & Thaler Behavioral Small-Cap Equity Fund Institutional Class Shares",
-          "ticker": "FTHSX",
-          "type": "Purchase",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "iShares Core MSCI International Developed Markets ETF",
-          "ticker": "IDEV",
-          "type": "Purchase",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
-          "ticker": "PBDPX",
-          "type": "Purchase",
-          "date": "2025-03-12",
+          "date": "2026-01-27",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF",
-          "ticker": "USHY",
+          "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software) (Roth IRA)",
+          "ticker": null,
           "type": "Purchase",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "date": "2026-01-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
-          "ticker": "VONG",
+          "description": "Arthur Ventures V, LP - Aqua (Turnkey alternative investment platform)",
+          "ticker": null,
           "type": "Purchase",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "date": "2026-01-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
         },
         {
-          "description": "iShares US Treasury Bond ETF",
-          "ticker": "GOVT",
-          "type": "Sale",
-          "date": "2025-03-12",
+          "description": "Arthur Ventures V, LP - Aqua (Turnkey alternative investment platform)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "Oakmark International Fund Institutional Class Shares",
-          "ticker": "OANIX",
-          "type": "Sale",
-          "date": "2025-03-12",
+          "description": "Arthur Ventures V, LP - Circadian Risk (Security risk assessment software)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "Schwab US Small-Cap ETF",
-          "ticker": "SCHA",
-          "type": "Sale",
-          "date": "2025-03-12",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "description": "Arthur Ventures V, LP - CivicPlus (Software solutions)",
+          "ticker": null,
+          "type": "Exchange",
+          "date": "2026-01-27",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
-          "ticker": "VMBS",
-          "type": "Sale",
-          "date": "2025-03-12",
+          "description": "Arthur Ventures V, LP - CivicPlus (Software solutions)",
+          "ticker": null,
+          "type": "Exchange",
+          "date": "2026-01-27",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "FedFund Institutional Shares",
-          "ticker": "TFDXX",
+          "description": "Arthur Ventures V, LP - Opterrix (Risk intelligence platform)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Opterrix (Risk intelligence platform)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Payroll Integrations (employee benefits recordkeeper)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Payroll Integrations (employee benefits recordkeeper)",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-27",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Streamline (platform services)",
+          "ticker": null,
           "type": "Sale",
-          "date": "2025-03-13",
+          "date": "2026-01-27",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Streamline (platform services)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-27",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth III, LP - PureSpectrum (market research platform)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-22",
           "amount": "$250,001-$500,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "PIMCO Income Fund Institutional Class Shares",
-          "ticker": "PIMIX",
+          "description": "Arthur Ventures Growth III, LP - PureSpectrum (market research platform) (Roth IRA)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-22",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - PureSpectrum (market research platform)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-22",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - PureSpectrum (market research platform)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-22",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures III, LP - PureSpectrum (market research platform)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-22",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures IV, LP",
+          "ticker": null,
           "type": "Purchase",
-          "date": "2025-03-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
-          "ticker": "VBILX",
-          "type": "Purchase",
-          "date": "2025-03-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Vanguard Total International Bond Index Fund ETF Shares",
-          "ticker": "BNDX",
-          "type": "Sale",
-          "date": "2025-03-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "iShares US Treasury Bond ETF",
-          "ticker": "GOVT",
-          "type": "Sale",
-          "date": "2025-03-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
-          "ticker": "PBDPX",
-          "type": "Sale",
-          "date": "2025-03-24",
+          "date": "2025-12-22",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
         },
         {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF",
-          "ticker": "USHY",
+          "description": "Costco Wholesale Corp.",
+          "ticker": "COST",
           "type": "Sale",
-          "date": "2025-03-24",
+          "date": "2025-10-24",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
-          "ticker": "VMBS",
-          "type": "Sale",
-          "date": "2025-03-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
-          "ticker": "CDDRX",
-          "type": "Purchase",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
-          "ticker": "MGTIX",
-          "type": "Purchase",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Vanguard Equity Income Fund Admiral Shares",
-          "ticker": "VEIRX",
-          "type": "Purchase",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Causeway International Value Fund Institutional Class Shares",
-          "ticker": "CIVIX",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Edgewood Growth Fund Institutional Class Shares",
-          "ticker": "EGFIX",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "iShares Core MSCI International Developed Markets ETF",
-          "ticker": "IDEV",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
-          "ticker": "GQGIX",
-          "type": "Purchase",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
           "description": "iShares Russell 1000 Growth ETF",
           "ticker": "IWF",
           "type": "Purchase",
-          "date": "2025-03-25",
+          "date": "2025-10-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Schwab Treasury Obligations Money Fund Investor Class Shares",
+          "ticker": "SNOXX",
+          "type": "Sale",
+          "date": "2025-10-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-09-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-09-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-08-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-08-21",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+          "ticker": null,
+          "type": "Exchange",
+          "date": "2025-07-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+          "ticker": null,
+          "type": "Exchange",
+          "date": "2025-07-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures V, LP - Senior Sign",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures V, LP - Zizzle Health",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures II, LP - Jane Software, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-06-06",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SPDR S&P 500 ETF Trust",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2025-06-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures III, LP - Foundant Technologies",
+          "ticker": null,
+          "type": "Exchange",
+          "date": "2025-05-16",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures III, LP - GivingData Holdings, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-05-16",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+          "ticker": "GSIMX",
+          "type": "Purchase",
+          "date": "2025-05-02",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
+          "ticker": "GQGIX",
+          "type": "Purchase",
+          "date": "2025-05-02",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+          "ticker": "CDDRX",
+          "type": "Purchase",
+          "date": "2025-04-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Russell 1000 Growth ETF",
+          "ticker": "IWF",
+          "type": "Purchase",
+          "date": "2025-04-16",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
         },
@@ -2300,65 +2052,49 @@
           "description": "Janus Henderson Overseas Fund Class I Shares",
           "ticker": "JIGFX",
           "type": "Purchase",
-          "date": "2025-03-25",
+          "date": "2025-04-16",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "BlackRock Emerging Markets Fund, Inc Institutional Shares",
-          "ticker": "MADCX",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "BlackRock Equity Dividend Fund Institutional Shares",
-          "ticker": "MADVX",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "MFS Value Fund Class I Shares",
-          "ticker": "MEIIX",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
-          "ticker": "VONG",
-          "type": "Sale",
-          "date": "2025-03-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
-          "ticker": "MGTIX",
+          "description": "Vanguard Equity Income Fund Admiral Shares",
+          "ticker": "VEIRX",
           "type": "Purchase",
-          "date": "2025-03-26",
+          "date": "2025-04-16",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
         },
         {
-          "description": "T Rowe Price Mid-Cap Value Fund, Inc Class I Shares",
-          "ticker": "TRMIX",
-          "type": "Purchase",
-          "date": "2025-03-26",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Lamb Weston Holdings, Inc.",
-          "ticker": "LW",
+          "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
+          "ticker": "VBILX",
           "type": "Sale",
-          "date": "2025-03-26",
+          "date": "2025-04-16",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth III, LP - Threatlocker",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures III, LP - Threatlocker",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "LWO Fund II, LP - Glass Fab Holdings, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-07",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
         },
         {
           "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
@@ -2441,42 +2177,90 @@
           "lateFilingFlag": true
         },
         {
-          "description": "LWO Fund II, LP - Glass Fab Holdings, LLC",
-          "ticker": null,
+          "description": "Lamb Weston Holdings, Inc.",
+          "ticker": "LW",
           "type": "Sale",
-          "date": "2025-04-07",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Arthur Ventures Growth III, LP - Threatlocker",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-04-10",
+          "date": "2025-03-26",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures III, LP - Threatlocker",
-          "ticker": null,
+          "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
+          "ticker": "MGTIX",
+          "type": "Purchase",
+          "date": "2025-03-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "T Rowe Price Mid-Cap Value Fund, Inc Class I Shares",
+          "ticker": "TRMIX",
+          "type": "Purchase",
+          "date": "2025-03-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BlackRock Emerging Markets Fund, Inc Institutional Shares",
+          "ticker": "MADCX",
           "type": "Sale",
-          "date": "2025-04-10",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BlackRock Equity Dividend Fund Institutional Shares",
+          "ticker": "MADVX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Causeway International Value Fund Institutional Class Shares",
+          "ticker": "CIVIX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
         },
         {
           "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
           "ticker": "CDDRX",
           "type": "Purchase",
-          "date": "2025-04-16",
+          "date": "2025-03-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Edgewood Growth Fund Institutional Class Shares",
+          "ticker": "EGFIX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
+          "ticker": "GQGIX",
+          "type": "Purchase",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Core MSCI International Developed Markets ETF",
+          "ticker": "IDEV",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
         },
         {
           "description": "iShares Russell 1000 Growth ETF",
           "ticker": "IWF",
           "type": "Purchase",
-          "date": "2025-04-16",
+          "date": "2025-03-25",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
         },
@@ -2484,209 +2268,577 @@
           "description": "Janus Henderson Overseas Fund Class I Shares",
           "ticker": "JIGFX",
           "type": "Purchase",
-          "date": "2025-04-16",
+          "date": "2025-03-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
-          "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
-          "ticker": "VBILX",
-          "type": "Sale",
-          "date": "2025-04-16",
+          "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
+          "ticker": "MGTIX",
+          "type": "Purchase",
+          "date": "2025-03-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MFS Value Fund Class I Shares",
+          "ticker": "MEIIX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
         },
         {
           "description": "Vanguard Equity Income Fund Admiral Shares",
           "ticker": "VEIRX",
           "type": "Purchase",
-          "date": "2025-04-16",
+          "date": "2025-03-25",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
-          "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
-          "ticker": "GSIMX",
-          "type": "Purchase",
-          "date": "2025-05-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
-          "ticker": "GQGIX",
-          "type": "Purchase",
-          "date": "2025-05-02",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Arthur Ventures III, LP - GivingData Holdings, Inc.",
-          "ticker": null,
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+          "ticker": "VONG",
           "type": "Sale",
-          "date": "2025-05-16",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF",
+          "ticker": "USHY",
+          "type": "Sale",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares US Treasury Bond ETF",
+          "ticker": "GOVT",
+          "type": "Sale",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PIMCO Income Fund Institutional Class Shares",
+          "ticker": "PIMIX",
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
+          "ticker": "PBDPX",
+          "type": "Sale",
+          "date": "2025-03-24",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
+          "ticker": "VBILX",
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
+          "ticker": "VMBS",
+          "type": "Sale",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard Total International Bond Index Fund ETF Shares",
+          "ticker": "BNDX",
+          "type": "Sale",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Sale",
+          "date": "2025-03-13",
           "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Edgewood Growth Fund Institutional Class Shares",
+          "ticker": "EGFIX",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Fuller & Thaler Behavioral Small-Cap Equity Fund Institutional Class Shares",
+          "ticker": "FTHSX",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF",
+          "ticker": "USHY",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Core MSCI International Developed Markets ETF",
+          "ticker": "IDEV",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares US Treasury Bond ETF",
+          "ticker": "GOVT",
+          "type": "Sale",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Oakmark International Fund Institutional Class Shares",
+          "ticker": "OANIX",
+          "type": "Sale",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
+          "ticker": "PBDPX",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Arthur Ventures III, LP - Foundant Technologies",
+          "description": "Schwab US Small-Cap ETF",
+          "ticker": "SCHA",
+          "type": "Sale",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
+          "ticker": "VMBS",
+          "type": "Sale",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+          "ticker": "VONG",
+          "type": "Purchase",
+          "date": "2025-03-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures V, LP",
           "ticker": null,
-          "type": "Exchange",
-          "date": "2025-05-16",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
+          "type": "Purchase",
+          "date": "2025-02-26",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Arthur Ventures V, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-02-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Russell Mid-Cap Growth ETF",
+          "ticker": "IWP",
+          "type": "Purchase",
+          "date": "2025-02-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-02-21",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SPDR Portfolio S&P 500 Growth ETF",
+          "ticker": "SPYG",
+          "type": "Purchase",
+          "date": "2025-02-21",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
         },
         {
           "description": "SPDR S&P 500 ETF Trust",
           "ticker": "SPY",
           "type": "Purchase",
-          "date": "2025-06-03",
+          "date": "2025-02-21",
           "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures II, LP - Jane Software, Inc.",
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Purchase",
+          "date": "2025-02-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Purchase",
+          "date": "2025-02-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NAPA CALIF WTR REV REF",
           "ticker": null,
           "type": "Sale",
-          "date": "2025-06-06",
+          "date": "2025-02-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Purchase",
+          "date": "2025-02-07",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Xcel Energy, Inc.",
+          "ticker": "XEL",
+          "type": "Sale",
+          "date": "2025-02-06",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Adobe, Inc.",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Alphabet, Inc.",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Apple, Inc.",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ARLINGTON HEIGHTS ILL",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CALHOUN CNTY ALA BRD ED",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Purchase",
+          "date": "2025-02-05",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "First Solar, Inc.",
+          "ticker": "FSLR",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FLORESVILLE TEX INDPT SCH",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "iShares Russell Mid-Cap Growth ETF",
+          "ticker": "IWP",
+          "type": "Purchase",
+          "date": "2025-02-05",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Meta Platforms Inc. Class A Common Stock",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Netflix, Inc.",
+          "ticker": "NFLX",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SPDR Portfolio S&P 500 Growth ETF",
+          "ticker": "SPYG",
+          "type": "Purchase",
+          "date": "2025-02-05",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SPDR S&P 500 ETF Trust",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2025-02-05",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Stryker Corp.",
+          "ticker": "SYK",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UnitedHealth Group, Inc.",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Visa, Inc.",
+          "ticker": "V",
+          "type": "Sale",
+          "date": "2025-02-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Duke Energy Corp.",
+          "ticker": "DUK",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Enterprise Products Partners L.P. Common Stock",
+          "ticker": "EPD",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Kinder Morgan, Inc.",
+          "ticker": "KMI",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ONEOK, Inc.",
+          "ticker": "OKE",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Otter Tail Corp.",
+          "ticker": "OTTR",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Targa Resources Corp.",
+          "ticker": "TRGP",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "VanEck Vectors Gold Miners ETF",
+          "ticker": "GDX",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Verizon Communications, Inc.",
+          "ticker": "VZ",
+          "type": "Sale",
+          "date": "2025-02-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FedFund Institutional Shares",
+          "ticker": "TFDXX",
+          "type": "Purchase",
+          "date": "2025-02-03",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Atlassian Corporation Plc Class A Ordinary Shares",
+          "ticker": "TEAM",
+          "type": "Sale",
+          "date": "2025-01-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Atlassian Corporation Plc Class A Ordinary Shares",
+          "ticker": "TEAM",
+          "type": "Sale",
+          "date": "2025-01-31",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Arthur Ventures V, LP - Zizzle Health",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$15,001-$50,000",
           "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures V, LP - Senior Sign",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$1,001-$15,000",
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-01-31",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+          "description": "Arthur Ventures Growth I, LP - Protenus",
           "ticker": null,
           "type": "Sale",
-          "date": "2025-07-25",
-          "amount": "$1,001-$15,000",
+          "date": "2025-01-27",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
-          "ticker": null,
-          "type": "Exchange",
-          "date": "2025-07-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+          "description": "Arthur Ventures GP I, LLC - Protenus, Inc.",
           "ticker": null,
           "type": "Sale",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
+          "date": "2025-01-24",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+          "description": "Arthur Ventures Growth I, LP - Protenus",
           "ticker": null,
-          "type": "Exchange",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
+          "type": "Sale",
+          "date": "2025-01-24",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+          "description": "Arthur Ventures I, LP - Protenus",
           "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Arthur Ventures Growth IV, LP",
-          "ticker": null,
-          "type": "Purchase",
-          "date": "2025-08-21",
+          "type": "Sale",
+          "date": "2025-01-24",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
-          "description": "Arthur Ventures Growth IV, LP",
+          "description": "Arthur Ventures I, LP - Protenus, Inc",
           "ticker": null,
-          "type": "Purchase",
-          "date": "2025-08-21",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
+          "type": "Sale",
+          "date": "2025-01-24",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
         },
         {
           "description": "Arthur Ventures V, LP",
           "ticker": null,
           "type": "Purchase",
-          "date": "2025-09-04",
+          "date": "2025-01-21",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Causeway International Value Fund Institutional Class Shares",
+          "ticker": "CIVIX",
+          "type": "Purchase",
+          "date": "2025-01-16",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         },
         {
           "description": "Arthur Ventures V, LP",
           "ticker": null,
           "type": "Purchase",
-          "date": "2025-09-04",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Costco Wholesale Corp.",
-          "ticker": "COST",
-          "type": "Sale",
-          "date": "2025-10-24",
+          "date": "2025-01-15",
           "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Russell 1000 Growth ETF",
-          "ticker": "IWF",
-          "type": "Purchase",
-          "date": "2025-10-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Schwab Treasury Obligations Money Fund Investor Class Shares",
-          "ticker": "SNOXX",
-          "type": "Sale",
-          "date": "2025-10-24",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
+          "lateFilingFlag": true
         }
       ]
     },
@@ -5734,8 +5886,8 @@
     {
       "name": "Hegseth, Pete",
       "slug": "hegseth-pete",
-      "title": "Secretary of War",
-      "agency": "Department of War",
+      "title": "Secretary of Defense",
+      "agency": "Department of Defense",
       "level": "Cabinet",
       "confirmedDate": "2025-01-24",
       "departedDate": null,
@@ -5984,9 +6136,25 @@
       "level": "Level II",
       "confirmedDate": "2025-12-17",
       "departedDate": null,
-      "transactionCount": 145,
-      "mostRecentFilingDate": "2026-04-17",
+      "transactionCount": 147,
+      "mostRecentFilingDate": "2026-06-18",
       "transactions": [
+        {
+          "description": "Shift4 Payments Inc. Class A Common Stock",
+          "ticker": "FOUR",
+          "type": "Purchase",
+          "date": "2026-05-12",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Shift4 Payments Inc. Class A Common Stock",
+          "ticker": "FOUR",
+          "type": "Purchase",
+          "date": "2026-05-11",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "Shift4 Payments Inc. Class A Common Stock",
           "ticker": "FOUR",
@@ -13592,9 +13760,233 @@
       "level": "Cabinet",
       "confirmedDate": "2025-03-24",
       "departedDate": "2026-04-22",
-      "transactionCount": 71,
-      "mostRecentFilingDate": "2026-04-25",
+      "transactionCount": 176,
+      "mostRecentFilingDate": "2026-06-05T04:20:17",
       "transactions": [
+        {
+          "description": "Valence8 PE 2024 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-20",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2025 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Carriage House Investments LLP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 Cayman LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund L.P.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Special Investments Fund L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RCP GP Fund II, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-08",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Operating Partners (Non-Op Fund) LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-01",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Royalty Partners II LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-01",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bear Lake Operations LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-31",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Royalty Partners LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta SC Fund I-A LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RCG Ventures Fund VIII",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-31",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2025 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-30",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments V, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2026-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "26North BDC, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-20",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Double Mako Investments LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-17",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "White Tip Investments LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-17",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Capital, LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-13",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Partners, L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-13",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "26North BDC, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Special Investments Fund II, L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-11",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "MSD Hospitality Partners LP",
           "ticker": null,
@@ -13708,6 +14100,126 @@
           "lateFilingFlag": false
         },
         {
+          "description": "Cresta Royalty Partners II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vesper Muse LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-29",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GMF Group Fund II, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Turnbridge Equities Real Estate Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RMDC, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-26",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Special Investments Fund II, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2024 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Holdings, LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cotulla Aviation LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-09",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Purchase",
+          "date": "2026-01-08",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-05",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Dawson Portfolio Finance 5 LP",
           "ticker": null,
           "type": "Sale",
@@ -13809,6 +14321,150 @@
           "type": "Sale",
           "date": "2025-11-03",
           "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RCG Ventures Fund VIII",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Special Investments Fund II",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-27",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2022 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-20",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2023 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-20",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2024 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-17",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Caden Long Equity Fund",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-15",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RCP APM Holdings LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-15",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RM Atlantic Point Marina",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-15",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "26Nova Co-Invest",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-14",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ACG Cakes LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-14",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-14",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments VI, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-09",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Operating Partners LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-08",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-08",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Turnbridge Real Estate Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-08",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Two Roads Developments LLC loan",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-03",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-10-02",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
@@ -14036,11 +14692,155 @@
           "lateFilingFlag": false
         },
         {
+          "description": "Cresta SC Fund I-A LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-30",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-30",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Credit Opportunity Fund, L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-30",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD Hospitality Partners LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-30",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Royalty Partners LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-28",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-28",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MSD EIV Private, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-28",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "26North Private Equity Fund I",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Caden Long Equity Fund",
           "ticker": null,
           "type": "Sale",
           "date": "2025-07-22",
           "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2022 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-21",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Valence8 PE 2023 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-21",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cotulla Aviation LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-17",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cresta Royalty Partners II LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-16",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RSL Football Holdings LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-16",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-07-15",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arcadia Gameto Investors LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-14",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Highline Investors LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-10",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "12 South Investor JV, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-07-09",
+          "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
         {
@@ -14090,6 +14890,14 @@
           "date": "2025-06-23",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
+        },
+        {
+          "description": "Blue Owl Capital Inc. Class A Common Stock",
+          "ticker": "OWL",
+          "type": "Sale",
+          "date": "2025-06-20",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": true
         },
         {
           "description": "TMG Monument Investors LLC",
@@ -14162,6 +14970,259 @@
           "date": "2025-06-02",
           "amount": "$250,001-$500,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "Red Cell Incubation Fund LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Red Cell Partners",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-29",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-04-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RCP GP Fund II, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-04-21",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "RSL Football Holdings LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-17",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Cotulla Aviation LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-11",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Red Cell Incubation Fund, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-04-07",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-04",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TMG Monument Investors LCL",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Cresta SC Fund I-A LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MSD Hospitality Partners LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "26North Private Equity Fund I",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-28",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-28",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MSD Credit Opportunity Fund, L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-28",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MSD Special Investments Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-28",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "RCG Ventures Fund VIII, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-28",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Cresta Royalty Partners LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Kingfish Investments V, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-26",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Turnbridge Real Estate Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MSD EIV Private, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        }
+      ]
+    },
+    {
+      "name": "Bailey, Sara",
+      "slug": "sara-bailey",
+      "title": "Director",
+      "agency": "Office of National Drug Control Policy",
+      "level": "Level I",
+      "confirmedDate": null,
+      "departedDate": null,
+      "transactionCount": 5,
+      "mostRecentFilingDate": "2026-06-11",
+      "transactions": [
+        {
+          "description": "Byrna Technologies Inc. Common Stock",
+          "ticker": "BYRN",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fidelity Advisor Biotechnology Fund Class C Shares",
+          "ticker": "FBTCX",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GE Verona",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "TMC the metals company Inc. Common Stock",
+          "ticker": "TMC",
+          "type": "Sale",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "TMC the metals company Inc. Common Stock",
+          "ticker": "TMC",
+          "type": "Purchase",
+          "date": "2026-02-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
         }
       ]
     },
@@ -14450,9 +15511,17 @@
       "level": "Cabinet",
       "confirmedDate": null,
       "departedDate": null,
-      "transactionCount": 5011,
-      "mostRecentFilingDate": "2026-05-14",
+      "transactionCount": 5185,
+      "mostRecentFilingDate": "2026-05-14T04:20:28",
       "transactions": [
+        {
+          "description": "TARRANT REGL WTR DIST TE RV BE/R/ 5 DUE 030134 DTD 042826 FC 090126 3.060% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-31",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "AAR CORP",
           "ticker": null,
@@ -14526,6 +15595,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "AIKEN CO SC CONS SCH SOUTH SR A BE/R/5 DUE 040133 DTD040126 INSRD FC 100126 2.870% YIELD TO MATURITY",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-30",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "ALAMO GROUP INC",
           "ticker": null,
           "type": "Sale",
@@ -14548,6 +15625,14 @@
           "date": "2026-03-30",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ALLEN TX INDPT SCH PERMA SR A BE/R/5 DUE 021534 DTD 120225 FC021526 3.132% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-30",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
         },
         {
           "description": "AMENTUM HLDGS INC EQUITY",
@@ -16342,6 +17427,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "UNITED STATES TREAS BILL DUE 04/30/26 AGENCY SALE YTM = 3.689 UNSOLICITED AS AGENT - STEPOUT",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-30",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "UPBOUND GROUP INC",
           "ticker": null,
           "type": "Sale",
@@ -16886,6 +17979,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "CONROE TX INDEPT SCH ULT BE/R/5 DUE 021535 DTD 112025 FC 021526 3.328% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "D R Horton Inc Com Solicited Order Discretion Exercised",
           "ticker": null,
           "type": "Sale",
@@ -17126,6 +18227,46 @@
           "lateFilingFlag": true
         },
         {
+          "description": "ROCKWALL TX INDPT SCH D BE/R/5 DUE 021529 DTD 081225 FC 081525 2.650% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SAN JACINTO TX CMNTY CLG BE/R/ 5 DUE 021532 DTD 042126 FC 081526 3.050% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SAN JACINTO TX CMNTY CLG BE/R/ 5 DUE 021532 DTD 042126 FC 081526 3.100% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SAN JACINTO TX CMNTY CLG BE/R/5 DUE 021527 DTD 042126 FC 081526 2.630% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SAN JACINTO TX CMNTY CLG BE/R/5 DUE 021528 DTD 042126 FC 081526 2.680% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Sbvknr Com Common With Duo BIiia Solicited Order Discretion Exercised",
           "ticker": null,
           "type": "Sale",
@@ -17182,12 +18323,28 @@
           "lateFilingFlag": true
         },
         {
+          "description": "TRINITY RVR AUTH TX REG SR A RV BE/R/ 5 DUE 080132 DTD 041626 FC 080126 3.000% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Uber Technologies Inc Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-27",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "UNITED STATES TREAS BILL DUE 04/30/26 AGENCY PURCHASE YTM = 3.687 UNSOLICITED AS AGENT - STEPOUT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
         },
         {
           "description": "UnitedHealth Group Inc Com Average Unit Price Transaction Your Broker Acted As Agent",
@@ -17228,6 +18385,14 @@
           "date": "2026-03-26",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ABBVIE INC NTS B/E 04.800% 031529 DTD022624 FC091524 CALL@MW+10BP YTM = 4.265 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "ACCENTURE PLC IRELAND F CLASS A",
@@ -17284,6 +18449,14 @@
           "date": "2026-03-26",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "AMERICAN EXPRESS CO NTS 04.918% 072033 DTD072525 FC012026 CALL@MW+15BP YTM = 4.888 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
         },
         {
           "description": "AMERICAN INTL GROUP INC",
@@ -17452,6 +18625,14 @@
           "date": "2026-03-26",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "CANADIAN IMPERIAL BANK 04.862% 011328 DTD011325 FC071325 FIX-TO-FLOAT YTM = 4.698 UNSOLICITED ACCRUED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
         },
         {
           "description": "CAPITAL ONE FINL CORP",
@@ -17798,6 +18979,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "HCA INC B/E 05.450% 091534 DTD081224 FC031525 CALL@MW+25BP YTM = 5.261 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "HEICO CORP NEW",
           "ticker": null,
           "type": "Purchase",
@@ -18014,6 +19203,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "META PLATFORMS INC B/E 04.875% 111535 DTD110325 CALL@MW+15BP YTM = 5.126 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "META PLATFORMS INC CLASS A",
           "ticker": null,
           "type": "Sale",
@@ -18028,6 +19225,14 @@
           "date": "2026-03-26",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "MICROSOFT CORP B/E 03.300% 020627 DTD020617 FC080617 CALL@MW+15BP YTM = 3.988 UNSOLICITED ACCRUED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
         },
         {
           "description": "MOLINA HEALTHCARE INC",
@@ -18092,6 +19297,14 @@
           "date": "2026-03-26",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ORACLE CORP NTS B/E 05.200% 092635 DTD092625 CALL@MW+208P YTM = 5.999 UNSOLICITED VS* 0000000",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "OTIS WORLDWIDE CORP",
@@ -18414,6 +19627,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "TOYOTA MOTOR CREDIT CORP 05.100% 032131 DTD032124 FC092124 CALL@MW+15BP YTM = 4.590 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "TRANSUNION",
           "ticker": null,
           "type": "Sale",
@@ -18508,6 +19729,14 @@
           "date": "2026-03-26",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "WESTERN MIDSTREAM NTS 6.350% 011529 DTD092923 FC011524 B/E CALL@MW+30B YTM = 4.771 UNSOLICITED ACCRUED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-26",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "WILLIS TOWERS WATSON PF",
@@ -18782,6 +20011,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "EL PASO TX WTR & SWR RE RV BE/R/5 DUE 030136 DTD 042326 CALLABLE FC 090126 CALLABLE @ 100 030135 FC090",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-25",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "ELECTRONIC ARTS UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -18860,6 +20097,22 @@
           "date": "2026-03-25",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ILLINOIS ST BE/R/5 DUE 040132 DTD 041426 FC 100126 3.280% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-25",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ILLINOIS ST SR C BE/R/5 DUE 040128 DTD 041426 FC 100126 2.840% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-25",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
         },
         {
           "description": "INSULET CORP UNSOLICITED",
@@ -19276,6 +20529,78 @@
           "date": "2026-03-25",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ABBVIE INC NTS B/E 04.125% 031531 DTD030426 FC091526 CALL@MW+10BP YTM = 4.446 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "BANK OF AMER CORP NTS 04.948% 072228 DTD072222 FC012223 CALL@MW+30BP YTM = 4.636 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GENERAL MOTORS CO SENIOR UNSECURED DUE 10/01/2027 06.800%AO 01 DISCRETIONARY ORDER YIELD 4.519%",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "GEORGIA POWER CO B/E 05.250% 031534 DTD022324 FC091524 CALL@MW+20BP YTM = 4.921 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "LAS VEGAS VALLEY WATER D SR A BE/R/5 DUE 060131 DTD 030426 FC 060126 2.736% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-24",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MICROSOFT CORP B/E 03.300% 020627 DTD020617 FC080617 CALL@MW+15BP YTM = 3.942 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PENNSYLVANIA ST TPK COMM SR A RV BE/R/5 DUE 120134 DTD 031226 FC 060126 3.196% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-24",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "TEXAS ST RV BE/R/ 5 DUE 100135 DTD 110625 FC 040126 3.206% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-24",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WEYERHAEUSER CO SENIOR UNSECURED DUE 11/15/2029 04.000%MN 15 DISCRETIONARY ORDER YIELD 4.661 % TO MATURITY",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-24",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
         },
         {
           "description": "ABBOTT LABS",
@@ -22142,6 +23467,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "BANK OF AMERICA CORPORATION - BAC",
+          "ticker": "BAC",
+          "type": "Purchase",
+          "date": "2026-03-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "BAXTER INTL INC",
           "ticker": null,
           "type": "Purchase",
@@ -22356,6 +23689,14 @@
           "date": "2026-03-18",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "COREBRIDGE FINL INC PERP -A 6.8750% 12/31/49",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
         },
         {
           "description": "CORPAY INC",
@@ -23254,6 +24595,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "TEXAS WTR DEV BRD ST RVLVNG FD REV B/E 4.00% Due Aug 1, 2036",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "THE CAMPBELL'S CO",
           "ticker": null,
           "type": "Purchase",
@@ -23468,6 +24817,30 @@
           "date": "2026-03-18",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "WELLS FARGO & CO NEW - WFC",
+          "ticker": "WFC",
+          "type": "Purchase",
+          "date": "2026-03-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WELLS FARGO & CO NEW PERP 7.6250%",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WELLS FARGO & CO PERP NT 6.8500% 12/31/49",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
         },
         {
           "description": "WHIRLPOOL CORP",
@@ -26006,6 +27379,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "UNITED STATES TREAS BILL DUE 04/16/26 AGENCY SALE YTM = 3.688 UNSOLICITED AS AGENT - STEPOUT",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-17",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "UNITEDHEALTH GROUP INC",
           "ticker": null,
           "type": "Purchase",
@@ -26326,6 +27707,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "METROPOLITAN UTILS DIST RV BE/R/5 DUE 120128 DTD 032526 FC 060126 2.250% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-16",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "OLD NATL BANCORP IND",
           "ticker": null,
           "type": "Purchase",
@@ -26390,6 +27779,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "UNITED STATES TREAS BILL DUE 04/16/26 AGENCY SALE YTM = 3.696 UNSOLICITED AS AGENT - STEPOUT",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-16",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "WEYERHAEUSER CO REIT",
           "ticker": null,
           "type": "Purchase",
@@ -26406,12 +27803,28 @@
           "lateFilingFlag": true
         },
         {
+          "description": "WELLS FARGO & CO PERP A BB N 3.9000% 12/31/49",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-15",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "NVIDIA CORP UNSOLICITED",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-14",
           "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ABBOTT LABORATORIES NTS 04.300% 031533 DTD030926 FC091526 CALL@MW+10BP YTM = 4.671 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "ALBEMARLE CORP UNSOLICITED",
@@ -26422,12 +27835,156 @@
           "lateFilingFlag": true
         },
         {
+          "description": "BALTIMORE CNTY MD BE/R/5 DUE 030129 DTD 032426 FC 090126 2.310% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "BROADCOM INC NTS B/E 03.469% 041534 DTD101525 FC041526 CALL@MW+30BP YTM = 4.949 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CENTERPOINT ENERGY RES 05.250% 030128 DTD022323 FC090123 NTS CALL@MW+20BP YTM = 4.242 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CITIGROUP INC NTS B/E 4.643% 050728 DTD050725 CALL@MW+15BP FIX TO FLT YTM = 4.537 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "CONSTELLATION ENERGY 04.400% 011531 DTD010826 FC071526 CALL@MW+15BP YTM = 4.604 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HUNTSVILLE AL BE/R/5 DUE 090134 DTD 032626 FC 090126 2.770% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "HUNTSVILLE AL SR A BE/R/5 DUE 090135 DTD 032626 FC 090126 2.890% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "INTEL CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-13",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "JPMORGAN CHASE & CO B/E 05.766% 042235 FIX-TO-FL FC102224 CALL@MW+20BP YTM = 5.133 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ORACLE CORP NTS B/E 04.650% 092630 DTD092625 CALL@MW+15BP YTM = 5.217 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PACIFIC GAS & ELEC CO 04.550% 070130 DTD070120 FC010121 B/E YTM = 4.816 UNSOLICITED ACCRUED INT PAID $382",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PUBLIC SERVICE COLO NTS 04.150% 031329 DTD031326 FC091326 CALL@MW+10BP YTM = 4.317 UNSOLICITED VS*",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "T-MOBILE INC NTS B/E 04.625% 011533 DTD100925 CALL@MW+15BP YTM = 4.890 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "UNITED STATES TREAS BILL DUE 04/16/26 AGENCY PURCHASE YTM = 3.689 UNSOLICITED AS AGENT - STEPOUT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "UNIV PITTSBURGH BE/R/ 5 DUE 041532 DTD 120925 CALLABLE FC 041526 CALLABLE @ 100 021532 FC 041526",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WELLS FARGO & CO B/E 06.491% 102334 DTD102323 FC042324 CALL@MW+30BP YTM = 5.268 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "XCEL ENERGY INC NTS B/E 5.450% 081533 DTD080323 FC021524 CALL@MW+25BP YTM = 5.091 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "ABBOTT LABS UNSOLICITED",
@@ -26540,6 +28097,14 @@
           "date": "2026-03-12",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "ARIZONA BRD REGTS UNIV SYS REV SER B GREEN BD B/E PTC 5.00% Due Jun 1, 2029",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
         },
         {
           "description": "AUTODESK INC UNSOLICITED",
@@ -26958,12 +28523,44 @@
           "lateFilingFlag": true
         },
         {
+          "description": "METROPOLITAN UTILS DIST RV BE/R/5 DUE 120126 DTD 032526 FC 060126 2.231% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MIAMI DADE CNTY FL HSG FIN AUTH MLTIFAM HSG IMPERIAL CLUB REV B/E 2.95% Due Oct 1, 2041",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "MICHIGAN FIN AUTH HOSP RFOG BRONSON HLTHCARE GRP INC SER A REV B/E 5.00% Due May 15, 2054",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "MICRON TECHNOLOGY INC UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-12",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "MINNESOTA ST FOR PREVIOUS BE/R/5 DUE 080126 DTD 082024 2.250% YIELD TO MATURITY UNSOLICITED ACCRUED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
         },
         {
           "description": "MONOLITHIC POWER SYSTEMS INC UNSOLICITED",
@@ -27004,6 +28601,14 @@
           "date": "2026-03-12",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "OHIO ST UNIV GEN RCPTS SR A RV BE/R/5 DUE 060135 DTD 010626 FC 060126 2.950% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
         },
         {
           "description": "ON SEMICONDUCTOR CORP UNSOLICITED",
@@ -27150,6 +28755,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "SPOKANE CNTY WA SCH DIST 081 SPOKANE RFOG SER B B/E PTC 4.00% Due Dec 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "STARBUCKS CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -27180,6 +28793,14 @@
           "date": "2026-03-12",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "TEXAS ST RV BE/R/ 5 DUE 100135 DTD 110625 FC 040126 2.879% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
         },
         {
           "description": "TJX COS INC NEW UNSOLICITED",
@@ -27252,6 +28873,14 @@
           "date": "2026-03-12",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "WARREN MI CONS SCH DIST RFOG SER A QSBLF B/E PTC 5.00% Due May 1, 2029",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
         },
         {
           "description": "WELLS FARGO & CO NEW UNSOLICITED",
@@ -27974,6 +29603,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "PAYPAL HOLDINGS INC NTS 02.650% 100126 DTD092619 CALL@MW+15BP YTM = 3.949 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-11",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "PHILIP MORRIS INTL INC UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -28254,6 +29891,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-11",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "WORKDAY INC CL A UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -28267,6 +29912,22 @@
           "type": "Purchase",
           "date": "2026-03-11",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BLACK BELT ENERGY GAS DIST AL GAS PJ 7 REV SER C 1 B/E GTD 4.00% Due Oct 1, 2052",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00% Due Oct 1, 2052",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
@@ -28355,6 +30016,54 @@
           "type": "Purchase",
           "date": "2026-03-10",
           "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "JOHNSON CITY TN HLTH & EDL FACS BRD MLTIFAM REV COLLTZD HSG TAPESTRY B/E 3.60% Due Dec 1, 2027",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "LANCASTER EDL ASSIST INC SC INSTALL PUR REV RFOG SCH DIST B/E OID @97.815 3.00% Due Dec 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MAIN GA STR NAT GAS INC GAS SPLY REV SER C B/E 5.00% Due Dec 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00% Due Mar 1, 2050",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MICHIGAN FIN AUTH REV RFOG HOSP HENRY FORD HLTH SYS B/E 5.00% Due Nov 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFOG A1 B/E 3.30% Due Oct 1, 2046",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-10",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
@@ -28470,11 +30179,131 @@
           "lateFilingFlag": true
         },
         {
+          "description": "BLAIR NE HWY ALLOC FD PLG 2023 DB B/E BIQ 5.00% Due Jun 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BRISTOL TN B/E BIQ 5.00% Due Jun 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CENTRAL FL EXPWY AUTH SR LIEN REV RFOG B B/E 5.00% Due Jul 1, 2033",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CLARK CNTY NV SCH DIST BLDG & RFOG SER A B/E 5.00% Due Jun 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "Heidrick & Struggles Intl Inc Com Solicited Order Discretion Exercised",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-09",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "LOUISIANA PUB FACS AUTH REV OCHSNER CLINIC FNDTN PJ SER B B/E OID@95.766 5.50% Due May 15, 2032",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MINIDOKA JEROME CNTY ID JT SCH DIST 331 RFOG SER B B/E BIQ SCH BD GTY 4.00% Due Apr 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MONTGOMERY CNTY OH HOSP FACS DAYTON CHLORNS REV B/E 5.00% Due Apr 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "OHIO ST HWY CAP IMPT DB SER S B/E 5.00% Due May 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PRIVATE GA CLLGS & UNIVS AUTH REV MERCER UNIV PJ B/E 5.00% Due Oct 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SOUTH DAKOTA ST HLTH & EFA REV RFOG AVERA HEALTH B/E 5.00% Due Jul 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TARRANT CNTY TX CULTURAL ED FAC FIN CORP HOSP REV BAYLOR HLTH A B/E PTC 4.00% Due Nov 15, 2042",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TARRANT CNTY TX CULTURAL ED FIN HOSP BAYLOR SCOTT & WHITE SER A REV B/E 4.00% Due Nov 15, 2036",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TIPPECANOE IN SCH CORP SER A ST INTRCPT B/E 5.00% Due Jul 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UNIVERSITY TX UNIV REV FIN SYS RFOG C B/E OID @96.261 3.28% 3.00% Due Apr 15, 2035",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UPPER BEAR CREEK AL WTR SWR & FIRE PROTN DIST REV RFOG AGM B/E BIQ 3.00% Due Sep 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-09",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -28523,6 +30352,14 @@
           "type": "Sale",
           "date": "2026-03-06",
           "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ARLINGTON TEX INDPT 5% DUE 02/15/31",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-06",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
@@ -28579,6 +30416,14 @@
           "type": "Sale",
           "date": "2026-03-06",
           "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ENERGY NORTHWES 3.503% DUE 07/01/26 XTRO TAXBL",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-06",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -28814,6 +30659,30 @@
           "lateFilingFlag": true
         },
         {
+          "description": "WESTFIELD WA IN SCHS B/E ST INTRCPT 5.00% Due Jul 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-06",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "GADSDEN AL WTS SER B REV BAM B/E 5.00% Due Aug 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-05",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "HOUSTON CNTY AL BRD SPL TAX SCH WTS REV B/E BIQ OID @98.581 2.25% 2.10% Due Feb 1, 2027",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-05",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "ISHARES GOLD TRUST",
           "ticker": null,
           "type": "Purchase",
@@ -28835,6 +30704,30 @@
           "type": "Purchase",
           "date": "2026-03-05",
           "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00% Due Mar 1, 2050",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-05",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NORTH BALDWIN AL UTILS WTR SWR & GAS REV RFDG & IMPT B/E BIQ OID @98.585 2.20% Due Dec 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-05",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFDG A1 B/E 3.30% Due Oct 1, 2046",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-05",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -28974,6 +30867,30 @@
           "lateFilingFlag": true
         },
         {
+          "description": "ARIZONA BRD REGTS UNIV RFDG REV B/E OID @96.451 3.25% 3.00% Due Jun 1, 2035",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ARIZONA ST TRANSN BRD RV BE/R/5 DUE 070127 DTD 040726 FC070126 2.170% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ARIZONA ST TRANSN BRD RV BE/R/5 DUE 070129 DTD 040726 FC070126 2.250% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "ARMOUR RESIDENTIAL REIT",
           "ticker": null,
           "type": "Purchase",
@@ -29070,6 +30987,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "BANK OF AMERICA CORPORATION - BAC",
+          "ticker": "BAC",
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "BANNER CORP",
           "ticker": null,
           "type": "Purchase",
@@ -29119,6 +31044,14 @@
         },
         {
           "description": "BJS RESTAURANTS INC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00% Due Oct 1, 2052",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-04",
@@ -29254,6 +31187,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "CENTRAL DAUPHIN PA SCH DIST SER B B/E ST INTRCPT OID@97.904 3.45% 3.25% Due Nov 15, 2031",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "CHAMPION HOMES INC",
           "ticker": null,
           "type": "Purchase",
@@ -29287,6 +31228,14 @@
         },
         {
           "description": "CLEANSPARK INC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "COLUMBUS OH CITY SCH DIST SCH FAC CONSTR & IMPT RFDG SER A B/E 5.00% Due Dec 1, 2032",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-04",
@@ -29339,6 +31288,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CUBA RUSHFORD NY CENT SCH DIST BD ANTIC NT 2025A B/E BIQ CR ENH 4.00% Due Jul 23, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -29454,6 +31411,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "FLORIDA GULF COAST UNIV FING CORP FL CAP IMPT REV RFDG BD HSG PJ B/E 5.00% Due Aug 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "FORD MOTOR CO",
           "ticker": null,
           "type": "Sale",
@@ -29475,6 +31440,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "GARNER IA HAYFIELD VENTURA CMNTY SCH DIST B/E 5.00% Due Jun 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -29563,6 +31536,14 @@
           "type": "Sale",
           "date": "2026-03-04",
           "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "HUDSONVILLE MI PUB SCHS RFDG B/E QSBLF 5.00% Due May 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$250,001-$500,000",
           "lateFilingFlag": true
         },
         {
@@ -29702,6 +31683,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "KANE CNTY IL SCH DIST 131 AURORA EAST SIDE GENL LSE OBLIG C BAM B/E 5.00% Due Dec 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "KINETIK HLDGS INC CLASS A",
           "ticker": null,
           "type": "Purchase",
@@ -29718,6 +31707,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "LAS VEGAS VLY NV WTR DIST SER A DB B/E PTC 5.00% Due Jun 1, 2046",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "LIQUIDITY SVCS INC",
           "ticker": null,
           "type": "Purchase",
@@ -29731,6 +31728,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "LOWER COLO RIV AUTH 5% DUE 05/15/35",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -29758,11 +31763,35 @@
           "lateFilingFlag": true
         },
         {
+          "description": "MADISON IN CONS SCH BLDG CORP AD VALOREM PPTY TAX 1ST MTG REV B/E BIQ ENH 5.00% Due Jul 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "MAGNOLIA OIL & GAS CORP CLASS A",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00% Due Mar 1, 2050",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MANATEE CNTY FL SCH SR A RV BE/R/5 DUE 070135 DTD 040626 FC 070126 2.960% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -29998,6 +32027,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "PIMA CNTY AZ UN SCH DIST 20 VAIL SCH IMPT BAM B/E 5.00% Due Jul 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "PIPER SANDLER COMPANIES",
           "ticker": null,
           "type": "Purchase",
@@ -30083,6 +32120,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PUBLIC FIN AUTH WI HOSP REV RFDG RENOWN REGL MED CTR PJ SER A B/E 5.00% Due Jun 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
@@ -30230,6 +32275,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "ST JOHN BAPTIST PARISH LA REV RFDG MARATHON OIL CO SER B2 B/E 2.375% Due Jun 1, 2037",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "ST STR SPDR S&P GLOBAL NAT RES ETF",
           "ticker": null,
           "type": "Sale",
@@ -30374,6 +32427,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "TARRANT CNTY TX CULTURAL ED FACS FIN CORP HSP REV SER A B/E PTC 5.00% Due Nov 15, 2037",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "TELEFLEX INC",
           "ticker": null,
           "type": "Purchase",
@@ -30395,6 +32456,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TUCSON AZ WTR REV RFDG B/E PTC 3.00% Due Jul 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
@@ -30451,6 +32520,14 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UTAH CNTY HOSP IHC HLTH SVCS INC SER B 2 REV B/E 5.00% Due May 15, 2060",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": true
         },
         {
@@ -30534,6 +32611,22 @@
           "lateFilingFlag": true
         },
         {
+          "description": "WASHINGTON ST HLTHCARE REV TAX EXMP MLTICARE HLTH SYS SER B B/E 5.00% Due Aug 15, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "WELLS FARGO & CO NEW - WFC",
+          "ticker": "WFC",
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "WILLSCOT HOLDINGS CO A CLASS A",
           "ticker": null,
           "type": "Purchase",
@@ -30574,6 +32667,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "WPPI ENERGY WI PWR SPLY SYS REV SER A B/E 5.00% Due Jul 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "WSFS FINL CORP",
           "ticker": null,
           "type": "Purchase",
@@ -30587,6 +32688,222 @@
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "AMERICAN HONDA FIN NTS 04.450% 010831 DTD010826 FC070826 CALL@MW+15BP YTM = 4.295 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "BAKER HUGHES A GE CO LLC 03.138% 110729 DTD110719 FC050720 CALL@MW+25BP YTM = 3.933 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CADENCE DESIGN SYS INC 4.300% 091029 DTD091024 CALL@MW+12.5BP YTM = 4.072 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CADENCE DESIGN SYSTEMS 04.200% 091027 DTD091024 FC031025 CALL@MW+10BP YTM = 3.901 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CHENIERE ENERGY PARTNERS 03.250% 013132 DTD092721 FC073122 LP B/E YTM = 4.638 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CPTL ONE FINL CORP NTS 06.377% 060834 DTD060823 FC120823 B/E YTM = 5.188 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ELI LILLY & CO NTS B/E 05.100% 021235 DTD021225 FC081225 CALL@MW+10BP YTM = 4.557 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "EVERSOURCE ENERGY NTS 05.850% 041531 DTD041824 FC101524 CALL@MW+20BP YTM = 4.517 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "GENL MOTORS FINL CO INC 05.950% 040434 DTD040424 CALL@MW+25BP B/E YTM = 5.094 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "GOLDMAN SACHS GROUP INC 05.330% 072335 DTD072324 CALL@MW+20BP FIX-TO-FLT YTM = 4.979 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "JPMORGAN CHASE & CO NTS 05.571% 042228 FIX-TO-FL FC102224 CALL@MW+12.5BP YTM = 4.757 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MORGAN STANLEY 05.656% 041830 DTD041924 CALL@MW+20BP FIX-TO-FLT YTM = 4.527 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NATIONAL RURAL UTIL COOP 04.950% 020730 DTD020725 FC080725 CALL@MW+12.5BP YTM = 4.005 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NVIDIA CORP NTS B/E 02.000% 061531 DTD061621 FC121521 CALL@MW+10BP YTM = 3.939 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ORACLE CORP NTS B/E 05.200% 092635 DTD092625 CALL@MW+20BP YTM = 5.672 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ROYAL CARIBBEAN CRUISES 04.750% 051533 DTD022726 FC111526 CALL@MW+15BP YTM = 4.782 UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UNITEDHEALTH GROUP INC 05.350% 021533 DTD102822 FC021523 CALL@MW+20BP YTM = 4.572 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "VIRGINIA ELEC & PWR CO 05.000% 040133 DTD033023 FC100123 CALL@MW+25BP YTM = 4.611 UNSOLICITED ACCRUED INT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "WELLS FARGO & CO NTS B/E 05.574% 072529 DTD072523 FC012524 YTM = 4.509 UNSOLICITED ACCRUED INT PAID",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***AVIENT CORPORATION REG S DUE 08/01/2030 07.125%FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***CARNIVAL CORP REG S DUE 08/15/2029 07.000%FA 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***COREWEAVE INC REG S DUE 02/01/2031 09.000%FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***COTY INC SENIOR SECURED NOTES REG S DUE 01/15/2029 04.750%JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***NETFLIX INC REG S DUE 11/15/2029 05.375%JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***SIRIUS XM RADIO INC SENIOR NOTES REG S DUE 07/01/2029 05.500%JJ 01 DISCRETIONARY ORDER IF THIS CONFIRMATION",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***UNITED RENTALS NORTH AMER INC SENIOR SECURED NOTES REG S DUE 12/15/2029 06.000%JD 15 DISCRETIONARY ORDER",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "***VICTORIAS SECRET CO REG S DUE 07/15/2029 04.625%JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
@@ -30627,6 +32944,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ALLEGHENY VLY PA JT SWR AUTH SWR REV 2022 GREEN BD BAM B/E CR ENH 4.00% Due Aug 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
@@ -30766,6 +33091,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "BLOCK FINL LLC SENIOR UNSECURED NOTE DUE 08/15/2030 03.875%FA 15 DISCRETIONARY ORDER YIELD 5.146% TO MATURITY",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "BRISTOL MYERS SQUIBB CO UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -30822,6 +33155,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "CHAMBERS CNTY TX IMPT DIST 1 RD B/E 4.00% Due Sep 1, 2026",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "CHEVRON CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -30859,6 +33200,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "COLORADO HLTH FACS AUTH REV HOSP PARKVIEW MED CTR INC PJ B/E PTC 5.00% Due Sep 1, 2046",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -31046,6 +33395,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "FIRST HORIZON BK MEMPHIS TENN DUE 05/01/2030 05.750%MN 01 DISCRETIONARY ORDER YIELD 4.659 % TO PAR",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "FORD MOTOR CO COM UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -31222,6 +33579,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "LAS VEGAS VALLEY WATER D SR A BE/R/5 DUE 060131 DTD 030426 FC 060126 2.170% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "LOCKHEED MARTIN CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -31235,6 +33600,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MACYS RETAIL HOLDINGS LLC REG S DUE 03/15/2030 05.875%MS 15 DISCRETIONARY ORDER IF THIS CONFIRMATION",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {
@@ -31342,6 +33715,22 @@
           "lateFilingFlag": true
         },
         {
+          "description": "NEW YORK CMNTY BANCORP INC SUBORDINATED NOTE DUE 11/06/2028 06.707% MN 06 DISCRETIONARY ORDER",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NEWELL RUBBERMAID INC SENIOR UNSECURED NOTES DUE 09/15/2029 06.625%MS 15 DISCRETIONARY ORDER YIELD",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "NEWMONT CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -31382,6 +33771,22 @@
           "lateFilingFlag": true
         },
         {
+          "description": "OCCIDENTAL PETE SR DEBS-REG SENIOR NOTES DUE 09/01/2030 06.625%MS 01 DISCRETIONARY ORDER YIELD 4.32%",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "OLIN CORP DUE 08/01/2029 05.625%FA 01 DISCRETIONARY ORDER YIELD 5.627 % TO MATURITY YIELD 28.896% TO",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "ON SEMICONDUCTOR CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -31419,6 +33824,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "PENNSYLVANIA ST TPK COMM SR A RV BE/R/5 DUE 120134 DTD 031226 FC 060126 2.600% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -31483,6 +33896,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "RALEIGH NC BE/R/5 DUE 040130 DTD 031226 FC 040126 2.120% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true
         },
         {
@@ -31574,6 +33995,14 @@
           "lateFilingFlag": true
         },
         {
+          "description": "SPDR SERIES TRUST STATE STREET SPDR PORTFOLIO HIGH YIELD BOND ETF DISCRETIONARY ORDER J.P. MORGAN SECURITIES",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "STARBUCKS CORP UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
@@ -31643,6 +34072,22 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TEXAS ST RV BE/R/ 5 DUE 100135 DTD 110625 FC 040126 2.590% YIELD TO MATURITY UNSOLICITED",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THE BOEING COMPANY SENIOR UNSECURED NOTE DUE 05/01/2027 05.040%MN 01 DISCRETIONARY ORDER YIELD 3",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$250,001-$500,000",
           "lateFilingFlag": true
         },
         {
@@ -31747,6 +34192,14 @@
           "type": "Purchase",
           "date": "2026-03-02",
           "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "WHIRLPOOL CORP DEB SENIOR NOTES DUE 02/26/2029 04.750%FA 26 DISCRETIONARY ORDER YIELD 5.282 % TO MATURITY",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-03-02",
+          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true
         },
         {

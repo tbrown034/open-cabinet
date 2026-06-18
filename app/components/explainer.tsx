@@ -270,8 +270,8 @@ export default function Explainer() {
               </div>
               <p className="text-neutral-500">
                 Structured data powers timelines, company lookups and aggregate
-                analysis. Currently tracking 33 officials with 7,001
-                transactions.
+                analysis. The dataset is updated as new downloadable OGE
+                transaction reports are found and reviewed.
               </p>
             </div>
           </div>

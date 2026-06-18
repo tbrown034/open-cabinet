@@ -1,0 +1,56 @@
+{
+  "transactions": [
+    {
+      "description": "GE Verona",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fidelity Advisor Biotechnology Fund Class C Shares",
+      "ticker": "FBTCX",
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TMC the metals company Inc. Common Stock",
+      "ticker": "TMC",
+      "type": "Purchase",
+      "date": "2026-02-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TMC the metals company Inc. Common Stock",
+      "ticker": "TMC",
+      "type": "Sale",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Byrna Technologies Inc. Common Stock",
+      "ticker": "BYRN",
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6482,
+    "outputTokens": 293,
+    "estimatedCostUsd": 0.0238
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sara-Bailey-04.01.2026-278T.pdf"
+}

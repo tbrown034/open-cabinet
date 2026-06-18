@@ -33,6 +33,12 @@ interface TreemapEntry {
   value: number;
 }
 
+interface TreemapRoot {
+  name: string;
+  children: TreemapEntry[];
+  value?: number;
+}
+
 export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
   const [hovered, setHovered] = useState<string | null>(null);
@@ -53,15 +59,13 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
 
   // Build hierarchy from flat data. D3 hierarchy expects a root node
   // with children, so we wrap our data array in a parent object.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const root = hierarchy<any>({ name: "root", children: data })
-    .sum((d: any) => d.value || 0)
+  const root = hierarchy<TreemapEntry | TreemapRoot>({ name: "root", children: data })
+    .sum((d) => d.value || 0)
     .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
 
   // Compute the treemap layout, this mutates the hierarchy nodes,
   // adding x0, y0, x1, y1 properties to each leaf.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  treemap<any>()
+  treemap<TreemapEntry | TreemapRoot>()
     .size([width, height])
     .padding(2)
     .tile(treemapSquarify)(root);

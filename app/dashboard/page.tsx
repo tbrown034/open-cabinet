@@ -136,7 +136,7 @@ export default async function DashboardPage() {
           <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
             {lateCount.toLocaleString()}
           </span>
-          late filings
+          late-filed transactions
           <span className="text-neutral-400 ml-1">
             ({officials.find((o) => o.slug === "trump-donald-j")
               ? `${officials

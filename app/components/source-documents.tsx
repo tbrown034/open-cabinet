@@ -81,15 +81,16 @@ export default function SourceDocuments({ data }: Props) {
       <ul className="divide-y divide-neutral-200 border-t border-b border-neutral-200">
         {data.documents.map((doc) => {
           const displayTitle = doc.label ?? doc.title;
+          const documentHref = doc.ogeUrl ?? doc.pdfPath;
           return (
           <li key={`${doc.kind}-${doc.filedDate}-${doc.ogeUrl}`} className="py-4">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
               <span className="text-[10px] uppercase tracking-wider text-neutral-500 font-mono">
                 {KIND_LABEL[doc.kind] ?? KIND_LABEL.other}
               </span>
-              {doc.publiclyDownloadable && doc.pdfPath ? (
+              {doc.publiclyDownloadable && documentHref ? (
                 <a
-                  href={doc.pdfPath}
+                  href={documentHref}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-neutral-900 underline hover:text-neutral-700 font-medium"

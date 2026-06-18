@@ -50,19 +50,19 @@ const BUILD_STEPS = [
     id: "oge-api",
     label: "OGE API",
     title: "Start with the public records",
-    body: "The Office of Government Ethics maintains a public API listing all financial disclosure filers (5 U.S.C. \u00A713107). It returns 16,857 records, names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
+    body: "The Office of Government Ethics maintains a public API listing financial disclosure filers (5 U.S.C. \u00A713107). It returns more than 16,000 records, including names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
   },
   {
     id: "filter",
     label: "Filter officials",
     title: "Find the ones with transaction reports",
-    body: "We filter for 278-T Periodic Transaction Reports, the ongoing stock trade disclosures. The most senior officials (Level I and II) have PDFs directly downloadable from OGE. We currently track 34 of them. Hundreds more officials have filed reports that require individual written requests to access.",
+    body: "We filter for 278-T Periodic Transaction Reports, the ongoing stock trade disclosures. The most senior officials (Level I and II), cabinet officials and selected senior appointees have PDFs directly downloadable from OGE. Open Cabinet tracks the officials whose transaction reports can be independently checked through those source PDFs. Hundreds more officials have filed reports that require individual written requests to access.",
   },
   {
     id: "parse-pdfs",
     label: "Parse PDFs",
     title: "Extract structured data from government forms",
-    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. We use natural-pdf, an open-source Python library by data journalist Jonathan Soma (github.com/jsoma/natural-pdf), to extract text from every page, then send each page to Claude Opus for structured parsing. This page-by-page approach handles large filings and scanned documents without losing data.",
+    body: "Each 278-T is a PDF containing a table: asset description, transaction type (sale, purchase, exchange), date, amount range and whether the filing was late. For large or difficult filings, Open Cabinet splits PDFs into page chunks before structured parsing. That keeps oversized filings from failing as one giant document and preserves a source trail back to the original PDF.",
   },
   {
     id: "validate",
@@ -73,26 +73,26 @@ const BUILD_STEPS = [
   {
     id: "store",
     label: "Store",
-    title: "PostgreSQL database with deduplication",
-    body: "Parsed transactions go into a Neon PostgreSQL database with built-in duplicate detection that catches repeated entries from amended filings. Each transaction links to its source PDF, if bad data gets in, it can be traced and removed.",
+    title: "Static dataset with source trails",
+    body: "The public site is built from reviewed static JSON files and generated exports. Each official record keeps the OGE source filing URLs that produced the transaction rows, so bad data can be traced back to a specific PDF and corrected.",
   },
   {
     id: "build-viz",
     label: "Visualize",
     title: "Turn rows into timelines",
-    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing all 7,001 trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
+    body: "The structured data powers D3 visualizations: scatter-plot timelines for each official, a swim lane chart showing thousands of trades on one canvas, treemaps for asset categories and bar charts for company lookups. D3 computes the math; React renders the SVG.",
   },
   {
     id: "monitor",
     label: "Monitor",
     title: "Weekly checks with email alerts",
-    body: "A Vercel Cron job checks the OGE API weekly for new filings. The pipeline parses new PDFs, validates the data and inserts it into the database. Email alerts notify the admin of new filings, errors, credit exhaustion or low-confidence parses. A public feedback form lets anyone report data errors.",
+    body: "A Vercel Cron job checks the OGE API weekly and diffs exact PDF URLs against tracked source filings. GitHub Actions handles full ingest: download new PDFs, parse them, validate the static dataset, regenerate exports and prepare the update for review. A public feedback form lets anyone report data errors.",
   },
   {
     id: "ai-role",
     label: "AI usage",
     title: "Where AI is and isn't involved",
-    body: "Initial data extraction used Claude Opus for maximum accuracy on scanned documents. Ongoing parsing uses Claude Sonnet with OpenAI cross-verification. Official summaries are AI-generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with the assistance of Claude Code. All AI outputs are verified against source documents, no AI-generated data is presented without a human-verifiable source.",
+    body: "PDF parsing uses AI to convert OGE tables into structured transaction rows, followed by schema checks, regression samples and source-PDF review. Official summaries are generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with coding assistance. All data traces back to government-filed source documents.",
   },
 ];
 

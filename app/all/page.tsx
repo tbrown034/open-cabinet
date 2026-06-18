@@ -8,10 +8,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "All Executive Branch Trades, Open Cabinet",
   description:
-    "Every executive branch transaction on one canvas. 7,001 trades across 33 officials.",
+    "Every tracked executive branch transaction on one canvas.",
   openGraph: {
     title: "All Executive Branch Trades, Open Cabinet",
-    description: "Every reported transaction across 33 officials on one D3 visualization.",
+    description: "Every tracked reported transaction on one D3 visualization.",
     type: "website",
   },
 };
@@ -41,7 +41,7 @@ export default async function AllTradesPage() {
         ticker: tx.ticker,
         type: tx.type as string,
         date: tx.date,
-        amount: tx.amount as string,
+        amount: tx.amount as AmountRange,
         lateFilingFlag: tx.lateFilingFlag,
         isSale: isSale(tx.type),
       })),
@@ -55,10 +55,10 @@ export default async function AllTradesPage() {
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
   const salesValue = allTx
     .filter((tx) => tx.isSale)
-    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount as any), 0);
+    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
   const purchasesValue = allTx
     .filter((tx) => tx.type === "Purchase")
-    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount as any), 0);
+    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
@@ -82,7 +82,7 @@ export default async function AllTradesPage() {
           </span>
           <span>
             <span className="text-amber-700 font-semibold">{lateCount.toLocaleString()}</span>{" "}
-            late filings
+            late-filed transactions
           </span>
         </div>
       </header>

@@ -1,5 +1,10 @@
 import { getOfficialsIndex, getAllOfficials } from "@/lib/data";
-import { amountRangeToMidpoint, formatCompactCurrency, displayName } from "@/lib/format";
+import {
+  amountRangeToMidpoint,
+  formatCompactCurrency,
+  displayName,
+  formatDate,
+} from "@/lib/format";
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
@@ -116,7 +121,12 @@ export default async function Home() {
       })),
     }))
     .toSorted((a, b) => b.totalValue - a.totalValue)
-    .map(({ totalValue: _tv, ...rest }) => rest);
+    .map(({ name, slug, title, transactions }) => ({
+      name,
+      slug,
+      title,
+      transactions,
+    }));
 
   return (
     <div>
@@ -165,11 +175,7 @@ export default async function Home() {
                     {displayName(o.name)}
                   </Link>
                   <span className="text-neutral-500 text-xs">
-                    filed{" "}
-                    {new Date(o.filingDate + "T00:00:00").toLocaleDateString(
-                      "en-US",
-                      { month: "short", day: "numeric", year: "numeric" }
-                    )}
+                    filed {formatDate(o.filingDate)}
                   </span>
                   {o.newCount > 0 && (
                     <span className="text-neutral-400 text-xs">
@@ -216,10 +222,7 @@ export default async function Home() {
             </p>
             <p className="text-xs text-neutral-400 mt-3">
               Most recent OGE filing:{" "}
-              {new Date(mostRecentFiling + "T00:00:00").toLocaleDateString(
-                "en-US",
-                { month: "short", day: "numeric", year: "numeric" }
-              )}{" "}
+              {formatDate(mostRecentFiling)}{" "}
               · Data checked weekly
             </p>
           </header>
@@ -277,7 +280,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {lateCount.toLocaleString()}
             </span>
-            late filings<Link href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
+            late-filed transactions<Link href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
           </div>
         </div>
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
@@ -321,8 +324,10 @@ export default async function Home() {
             <strong className="text-neutral-700">*Why these officials?</strong>{" "}
             Open Cabinet tracks {totalOfficials} executive branch officials
             whose 278-T transaction reports are directly downloadable from
-            OGE{"'"}s public portal. Hundreds more have filed reports that
-            require individual{" "}
+            OGE{"'"}s public portal. The directory excludes prior-administration
+            holdovers but keeps recent former officials when their filings are
+            part of the current executive-branch record. Hundreds more have
+            filed reports that require individual{" "}
             <a href="https://extapps2.oge.gov/201/Presiden.nsf" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               Form 201 requests
             </a>

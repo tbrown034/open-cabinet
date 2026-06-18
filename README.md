@@ -45,15 +45,15 @@ All data comes from the U.S. Office of Government Ethics. Transaction reports (2
 
 ## Data pipeline
 
-The automated pipeline checks for new filings weekly:
+Open Cabinet uses two scheduled paths:
 
-1. **Check** — Vercel Cron polls the OGE API for new 278-T filings
-2. **Download** — New PDFs are downloaded from OGE's public portal
-3. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page
-4. **Parse** — Claude Opus/Sonnet structures each page into transaction data
-5. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection
-6. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback
-7. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend
+1. **Monitor** — Vercel Cron polls the OGE API weekly, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
+2. **Ingest** — GitHub Actions runs the static JSON ingest weekly or on demand, downloads new PDFs, parses them with Claude, validates the data, regenerates exports and opens a PR for review.
+3. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page.
+4. **Parse** — Claude Opus/Sonnet structures each page into transaction data.
+5. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection.
+6. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback.
+7. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend.
 
 ### Pipeline commands
 
@@ -61,6 +61,8 @@ The automated pipeline checks for new filings weekly:
 pnpm run pipeline              # Full run: check, download, parse, validate, insert
 pnpm run pipeline -- --dry-run # Check only, no inserts
 pnpm run pipeline -- --verify  # Parse then cross-check with OpenAI
+pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs
+pnpm run check-filings -- --dry-run # URL-diff OGE without writing state
 pnpm run validate              # Run validation suite against data
 pnpm run parse-pdf <file>      # Parse a single PDF
 pnpm run check-news            # News coverage search guidance
@@ -87,7 +89,8 @@ pnpm run seed                  # Seed database from JSON files
 - **Better Auth** with Google OAuth (admin panel)
 - **Anthropic SDK** + **OpenAI SDK** for PDF parsing
 - **Resend** for email notifications
-- **Vercel** (Pro) for hosting and cron
+- **Vercel** (Pro) for hosting and lightweight cron monitoring
+- **GitHub Actions** for weekly pipeline ingest and PR creation
 - **pnpm** for package management
 
 ## Setup

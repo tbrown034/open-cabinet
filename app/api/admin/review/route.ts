@@ -7,7 +7,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { transactions, officials } from "@/lib/schema";
-import { eq, and, or } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { auth, isAdmin } from "@/lib/auth";
 import { headers } from "next/headers";
 

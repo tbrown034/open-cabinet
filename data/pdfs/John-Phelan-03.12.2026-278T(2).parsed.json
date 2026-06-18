@@ -1,0 +1,146 @@
+{
+  "transactions": [
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RMDC, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Special Investments Fund II, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Holdings, LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vesper Muse LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-29",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Turnbridge Equities Real Estate Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Valence8 PE 2024 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cotulla Aviation LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cresta Royalty Partners II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Investment Corp. (BDC)",
+      "ticker": "BDC",
+      "type": "Purchase",
+      "date": "2026-01-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GMF Group Fund II, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6700,
+    "outputTokens": 1276,
+    "estimatedCostUsd": 0.0392
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/John-Phelan-03.12.2026-278T(2).pdf"
+}

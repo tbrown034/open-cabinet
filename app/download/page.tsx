@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { getAllOfficials, getOfficialsIndex } from "@/lib/data";
+import { readFile } from "fs/promises";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Download Data, Open Cabinet",
@@ -11,12 +12,18 @@ function fmt(n: number): string {
 }
 
 export default async function DownloadPage() {
-  const [officials, index] = await Promise.all([
-    getAllOfficials(),
-    getOfficialsIndex(),
-  ]);
-  const txCount = officials.reduce((s, o) => s + o.transactions.length, 0);
-  const officialCount = officials.length;
+  const fullDataset = JSON.parse(
+    await readFile(
+      path.join(process.cwd(), "public", "data", "full-dataset.json"),
+      "utf-8"
+    )
+  ) as {
+    exportedAt: string;
+    officialCount: number;
+    transactionCount: number;
+  };
+  const txCount = fullDataset.transactionCount;
+  const officialCount = fullDataset.officialCount;
 
   const exports = [
     {
@@ -88,7 +95,7 @@ export default async function DownloadPage() {
       </div>
 
       <p className="text-xs text-neutral-400 mt-8">
-        Data updated {index.lastUpdated}. Federal
+        Data exported {new Date(fullDataset.exportedAt).toISOString().slice(0, 10)}. Federal
         government documents carry no copyright (
         <a
           href="https://www.law.cornell.edu/uscode/text/17/105"

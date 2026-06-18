@@ -1,0 +1,5 @@
+# Local source-PDF caches are used for parsing and audit work, not runtime.
+data/pdfs/**
+
+# Source-document PDFs are mirrored locally, but public pages link to OGE.
+public/data/source-docs/**

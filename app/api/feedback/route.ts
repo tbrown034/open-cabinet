@@ -16,7 +16,6 @@ export async function POST(request: NextRequest) {
   // Rate limit by IP
   const ip = request.headers.get("x-forwarded-for") || "unknown";
   const now = Date.now();
-  const lastSubmission = recentSubmissions.get(ip) || 0;
   const submissions = Array.from(recentSubmissions.entries()).filter(
     ([key, time]) => key === ip && now - time < RATE_LIMIT_WINDOW
   ).length;
