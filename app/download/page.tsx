@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { readFile } from "fs/promises";
 import path from "path";
+import ResearchContactCta from "../components/research-contact-cta";
 
 export const metadata: Metadata = {
   title: "Download Data, Open Cabinet",
@@ -108,6 +109,10 @@ export default async function DownloadPage() {
         ). If you use this data, please credit Open Cabinet and link to the
         source.
       </p>
+
+      <div className="mt-8">
+        <ResearchContactCta context="download" />
+      </div>
     </div>
   );
 }
