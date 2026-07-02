@@ -9,21 +9,10 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { pipelineRuns } from "@/lib/schema";
 import { desc } from "drizzle-orm";
-import { auth, isAdmin } from "@/lib/auth";
-import { headers } from "next/headers";
-
-async function checkAdmin() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-  if (!session?.user?.email || !isAdmin(session.user.email)) {
-    return false;
-  }
-  return true;
-}
+import { requireAdmin } from "@/lib/auth";
 
 export async function GET() {
-  if (!(await checkAdmin())) {
+  if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -37,7 +26,7 @@ export async function GET() {
 }
 
 export async function POST() {
-  if (!(await checkAdmin())) {
+  if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

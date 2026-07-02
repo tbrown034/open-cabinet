@@ -151,17 +151,45 @@ export const validationResults = pgTable("validation_results", {
 
 // ── ALERT SIGNUPS ──
 // Public filing-alert subscriptions collected from the site.
+//
+// Lifecycle: pending -> active -> unsubscribed | suppressed
+//   "pending"      — signed up, confirmation email sent, not yet clicked
+//   "active"       — double-opt-in confirmed; eligible for digest sends
+//   "unsubscribed" — opted out via unsubscribe link
+//   "suppressed"   — removed due to bounce or spam complaint from Resend webhook
+//
+// Tokens (confirm/unsubscribe) are stateless HMAC signatures generated at
+// request time by lib/tokens.ts — they are never stored here. The old
+// confirmToken/unsubscribeToken columns are removed.
+//
+// confirmationSentAt is a durable anti-list-bombing throttle: the signup
+// route only sends (or re-sends) a confirmation if this field is null or
+// older than 15 minutes. The previous in-memory Map throttle was reset on
+// every serverless cold start.
 export const alertSignups = pgTable(
   "alert_signups",
   {
     id: serial("id").primaryKey(),
     email: text("email").notNull().unique(),
-    alertType: text("alert_type").default("major").notNull(), // "major" or "all"
+    alertType: text("alert_type").default("major").notNull(), // "major" | "all" — reserved for per-person targeting
     sourcePage: text("source_page"),
     officialSlug: text("official_slug"),
     referrer: text("referrer"),
     userAgent: text("user_agent"),
-    status: text("status").default("active").notNull(),
+    status: text("status").default("pending").notNull(),
+    confirmedAt: timestamp("confirmed_at"),
+    unsubscribedAt: timestamp("unsubscribed_at"),
+    // Timestamp of the last digest this address received (debugging/recency).
+    lastNotifiedAt: timestamp("last_notified_at"),
+    // "bounce" | "complaint" — populated by Resend webhook when suppressed.
+    suppressedReason: text("suppressed_reason"),
+    // Stamped when the one-time re-permission email was sent; prevents re-spam
+    // on subsequent script runs.
+    repermissionSentAt: timestamp("repermission_sent_at"),
+    // Stamped when the confirmation email is (re-)sent; null until first send.
+    // The signup route checks this before sending to enforce the 15-minute
+    // re-send window — serverless-safe, unlike an in-memory throttle.
+    confirmationSentAt: timestamp("confirmation_sent_at"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
   },
@@ -169,5 +197,99 @@ export const alertSignups = pgTable(
     index("alert_signups_email_idx").on(table.email),
     index("alert_signups_status_idx").on(table.status),
     index("alert_signups_source_idx").on(table.sourcePage),
+  ]
+);
+
+// ── DIGEST RUNS ──
+// One row per digest send attempt; models a write-ahead outbox so the
+// external Resend call is never assumed atomic with our DB writes.
+//
+// Lifecycle: draft -> sending -> sent | failed
+//   "draft"   — payload assembled, not yet sent; requires admin approval
+//   "sending" — chunks are being submitted to resend.emails.send (batch)
+//   "sent"    — all chunks accepted; notified_filings ledger rows written
+//   "failed"  — at least one chunk failed; errors field has details
+//
+// The send is chunked: frozenPayload drives resend.emails.send calls with
+// per-chunk idempotency keys derived deterministically from idempotencyKey
+// (e.g. "<idempotencyKey>:chunk:0"). Resend's idempotency window is 24h,
+// so a crash mid-send leaves status "sending" and recovery replays the
+// byte-identical frozenPayload with the same chunk keys — no duplicate sends.
+//
+// officialSlugs and filingUrls are derivable from frozenPayload and are NOT
+// stored here. frozenPayload is the authoritative, immutable send spec.
+// notified_filings rows are written only on transition to "sent".
+export const digestRuns = pgTable("digest_runs", {
+  id: serial("id").primaryKey(),
+  status: text("status").notNull(), // draft | sending | sent | failed
+  recipientCount: integer("recipient_count").default(0).notNull(),
+  // Unique guard: prevents a retry or double-click from starting a second
+  // concurrent send for the same logical digest window.
+  idempotencyKey: text("idempotency_key").unique(),
+  // Frozen, byte-identical send spec (digest items + recipient list).
+  // Must NOT be mutated after the first chunk is submitted — Resend
+  // idempotency requires the payload to be byte-identical on replay.
+  frozenPayload: jsonb("frozen_payload"),
+  // Per-chunk tracking: [{ n, idempotencyKey, status, recipientCount }].
+  // Written after each chunk to allow partial-failure recovery.
+  chunks: jsonb("chunks"),
+  approvedBy: text("approved_by"), // admin email that triggered the send
+  approvedAt: timestamp("approved_at"),
+  sentAt: timestamp("sent_at"),
+  errors: jsonb("errors"),
+  pipelineRunId: integer("pipeline_run_id").references(() => pipelineRuns.id, {
+    onDelete: "set null",
+  }),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+});
+
+// ── NOTIFIED FILINGS ──
+// Idempotency ledger: one row per filing URL that has gone out in a digest.
+// The UNIQUE filing_url is the hard guard against emailing the same filing
+// twice — even if the notified_filings 24h Resend window has expired.
+// Rows are written only when a digest_runs row transitions to "sent".
+export const notifiedFilings = pgTable(
+  "notified_filings",
+  {
+    id: serial("id").primaryKey(),
+    filingUrl: text("filing_url").notNull().unique(),
+    officialSlug: text("official_slug").notNull(),
+    digestRunId: integer("digest_run_id").references(() => digestRuns.id, {
+      onDelete: "set null",
+    }),
+    notifiedAt: timestamp("notified_at").defaultNow().notNull(),
+  },
+  (table) => [index("notified_filings_slug_idx").on(table.officialSlug)]
+);
+
+// ── EMAIL SENDS ──
+// Per-recipient deliverability and audit log. One row per send, inserted by
+// the send helpers in lib/email-send.ts. The Resend webhook updates
+// status (delivered | bounced | complained) keyed on resendMessageId.
+//
+// kind: confirmation | welcome | digest | repermission | admin
+//   All digest rows are per-recipient (resend.emails.send returns one
+//   message id per address in the batch) — there are no campaign-level
+//   broadcast rows here.
+export const emailSends = pgTable(
+  "email_sends",
+  {
+    id: serial("id").primaryKey(),
+    // Every row is per-recipient now; batch.send returns per-address ids.
+    email: text("email").notNull(),
+    kind: text("kind").notNull(), // confirmation | welcome | digest | repermission | admin
+    digestRunId: integer("digest_run_id").references(() => digestRuns.id, {
+      onDelete: "set null",
+    }),
+    // Resend's message id; the webhook uses this to key delivery events.
+    resendMessageId: text("resend_message_id"),
+    status: text("status").default("sent").notNull(), // sent | delivered | bounced | complained
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    // Updated by Resend webhook when delivery status changes.
+    updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("email_sends_email_idx").on(table.email),
+    index("email_sends_kind_idx").on(table.kind),
   ]
 );

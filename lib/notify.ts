@@ -12,11 +12,10 @@
  * - new_filings: informational — new data was found and parsed
  * - feedback: public user submitted feedback/bug report
  * - alert_signup: public user requested filing alerts
+ * - digest_sent: a subscriber digest send completed — admin receipt
  */
-import { Resend } from "resend";
-
-const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
-const FROM_EMAIL = "Open Cabinet <alerts@trevorthewebdeveloper.com>";
+import { ADMIN_EMAIL, ALERTS_FROM } from "@/lib/email-config";
+import { getResend } from "@/lib/email-send";
 
 type AlertType =
   | "pipeline_error"
@@ -26,7 +25,8 @@ type AlertType =
   | "new_filings"
   | "validation_failure"
   | "feedback"
-  | "alert_signup";
+  | "alert_signup"
+  | "digest_sent";
 
 const SUBJECT_MAP: Record<AlertType, string> = {
   pipeline_error: "Pipeline Error",
@@ -37,6 +37,7 @@ const SUBJECT_MAP: Record<AlertType, string> = {
   validation_failure: "Validation Failed",
   feedback: "User Feedback",
   alert_signup: "Alert Signup",
+  digest_sent: "Digest Sent",
 };
 
 const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
@@ -48,6 +49,7 @@ const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
   validation_failure: "high",
   feedback: "normal",
   alert_signup: "normal",
+  digest_sent: "normal",
 };
 
 interface NotifyOptions {
@@ -62,20 +64,18 @@ interface NotifyOptions {
 }
 
 export async function notify({ type, headline, summary, details, metadata }: NotifyOptions): Promise<boolean> {
-  const apiKey = process.env.RESEND_API_KEY;
   const priority = PRIORITY_MAP[type];
   const prefix = priority === "high" ? "[URGENT] " : "";
   const subject = headline
     ? `${prefix}Open Cabinet · ${headline}`
     : `${prefix}Open Cabinet · ${SUBJECT_MAP[type]}`;
 
-  if (!apiKey) {
-    console.warn("[notify] RESEND_API_KEY not set — skipping email");
+  const resend = getResend();
+  if (!resend) {
     console.warn(`[notify] Would have sent: ${subject}`);
     return false;
   }
 
-  const resend = new Resend(apiKey);
   const bodyTop = summary || details || "";
   const metaLines = metadata
     ? Object.entries(metadata)
@@ -95,7 +95,7 @@ Environment: ${process.env.VERCEL_ENV || "local"}
 
   try {
     const { error } = await resend.emails.send({
-      from: FROM_EMAIL,
+      from: ALERTS_FROM,
       to: [ADMIN_EMAIL],
       subject,
       text,

@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import { nextCookies } from "better-auth/next-js";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { headers } from "next/headers";
 import { db } from "./db";
 import * as schema from "./auth-schema";
 
@@ -34,4 +35,17 @@ export const auth = betterAuth({
  */
 export function isAdmin(email: string | undefined | null): boolean {
   return email === ADMIN_EMAIL;
+}
+
+/**
+ * Shared admin guard for API routes: resolves the current session and returns it
+ * only if it belongs to the whitelisted admin, else null. Replaces the
+ * copy-pasted per-route checkAdmin() helpers so the check lives in one place.
+ */
+export async function requireAdmin() {
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session?.user?.email || !isAdmin(session.user.email)) {
+    return null;
+  }
+  return session;
 }
