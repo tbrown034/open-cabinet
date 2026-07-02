@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "check-filings": "npx tsx scripts/check-new-filings.ts",
     "rebuild-index": "npx tsx scripts/rebuild-index.ts",
     "generate-exports": "npx tsx scripts/generate-exports.ts",
@@ -16,7 +18,9 @@
     "parse-pdf": "npx tsx scripts/parse-pdf.ts",
     "pipeline": "npx tsx scripts/pipeline.ts",
     "ingest-filings": "npx tsx scripts/ingest-new-filings.ts",
-    "check-news": "npx tsx scripts/check-news.ts"
+    "check-news": "npx tsx scripts/check-news.ts",
+    "repermission": "npx tsx scripts/repermission-alerts.ts",
+    "backfill-notified": "npx tsx scripts/backfill-notified.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.88.0",
@@ -34,7 +38,8 @@
     "pdf-parse": "^2.4.5",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "resend": "^6.10.0"
+    "resend": "^6.10.0",
+    "svix": "^1.95.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -53,6 +58,7 @@
     "pdf-lib": "^1.17.1",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.8"
   }
 }

@@ -1,8 +1,12 @@
-import { NextResponse } from "next/server";
-import { sql } from "drizzle-orm";
+import { NextResponse, after } from "next/server";
+import { eq, sql } from "drizzle-orm";
 import { db } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
 import { notify } from "@/lib/notify";
+import { mintToken, type TokenPurpose } from "@/lib/tokens";
+import { confirmPageUrl } from "@/lib/email-config";
+import { buildConfirmationEmail } from "@/lib/emails";
+import { sendTransactional } from "@/lib/email-send";
 
 type AlertType = "major" | "all";
 
@@ -12,20 +16,33 @@ const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX = 8;
 const recentRequests = new Map<string, number[]>();
 
+// Durable per-email throttle window. The real anti-list-bombing guard is the
+// alertSignups.confirmationSentAt column (survives restarts / works across
+// serverless instances) — the per-IP map above is just a cheap first line.
+const CONFIRM_THROTTLE_MS = 15 * 60 * 1000;
+
+// Cap the per-IP map so a churn of unique IPs can't grow it unbounded.
+const IP_MAP_MAX_KEYS = 1000;
+
 function getIp(req: Request): string {
   const forwarded = req.headers.get("x-forwarded-for");
   if (forwarded) return forwarded.split(",")[0]?.trim() || "unknown";
   return req.headers.get("x-real-ip") || "unknown";
 }
 
-function rateLimited(ip: string): boolean {
+function tooMany(map: Map<string, number[]>, key: string, windowMs: number, max: number): boolean {
   const now = Date.now();
-  const recent = (recentRequests.get(ip) ?? []).filter(
-    (ts) => now - ts < RATE_LIMIT_WINDOW_MS
-  );
+  const recent = (map.get(key) ?? []).filter((ts) => now - ts < windowMs);
   recent.push(now);
-  recentRequests.set(ip, recent);
-  return recent.length > RATE_LIMIT_MAX;
+  map.set(key, recent);
+  // Evict keys whose window has fully elapsed once the map gets large, so a
+  // stream of unique IPs can't leak memory.
+  if (map.size > IP_MAP_MAX_KEYS) {
+    for (const [k, times] of map) {
+      if (times.every((ts) => now - ts >= windowMs)) map.delete(k);
+    }
+  }
+  return recent.length > max;
 }
 
 function cleanText(value: unknown, maxLength: number): string | null {
@@ -35,38 +52,20 @@ function cleanText(value: unknown, maxLength: number): string | null {
   return trimmed.slice(0, maxLength);
 }
 
-async function ensureAlertSignupsTable() {
-  await db.execute(sql`
-    CREATE TABLE IF NOT EXISTS alert_signups (
-      id serial PRIMARY KEY,
-      email text NOT NULL UNIQUE,
-      alert_type text NOT NULL DEFAULT 'major',
-      source_page text,
-      official_slug text,
-      referrer text,
-      user_agent text,
-      status text NOT NULL DEFAULT 'active',
-      created_at timestamp NOT NULL DEFAULT now(),
-      updated_at timestamp NOT NULL DEFAULT now()
-    )
-  `);
-  await db.execute(sql`
-    CREATE INDEX IF NOT EXISTS alert_signups_email_idx
-    ON alert_signups (email)
-  `);
-  await db.execute(sql`
-    CREATE INDEX IF NOT EXISTS alert_signups_status_idx
-    ON alert_signups (status)
-  `);
-  await db.execute(sql`
-    CREATE INDEX IF NOT EXISTS alert_signups_source_idx
-    ON alert_signups (source_page)
-  `);
+// mintToken throws if ALERT_TOKEN_SECRET is unset; wrap so a config error becomes
+// a graceful send failure instead of an unhandled 500.
+function mintTokenSafe(id: number, purpose: TokenPurpose): string | null {
+  try {
+    return mintToken(id, purpose);
+  } catch (err) {
+    console.error("[alerts] mintToken failed:", err);
+    return null;
+  }
 }
 
 export async function POST(req: Request) {
   const ip = getIp(req);
-  if (rateLimited(ip)) {
+  if (tooMany(recentRequests, ip, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
     return NextResponse.json(
       { ok: false, error: "Too many submissions. Try again later." },
       { status: 429 }
@@ -83,7 +82,14 @@ export async function POST(req: Request) {
     );
   }
 
-  const data = body && typeof body === "object" ? body as Record<string, unknown> : {};
+  const data = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
+
+  // Honeypot: a hidden form field real users never fill. If it has a value, a
+  // bot submitted the form — silently pretend success so the bot learns nothing.
+  if (cleanText(data.company, 200)) {
+    return NextResponse.json({ ok: true });
+  }
+
   const email = cleanText(data.email, 254)?.toLowerCase() ?? "";
   const alertType = cleanText(data.alertType, 20) as AlertType | null;
   const sourcePage = cleanText(data.sourcePage, 200);
@@ -106,8 +112,10 @@ export async function POST(req: Request) {
   }
 
   try {
-    await ensureAlertSignupsTable();
-    await db
+    // Upsert: new rows start "pending" (must double-opt-in). On conflict we
+    // refresh preferences but DO NOT touch status here — that's decided below
+    // based on the existing state.
+    const [row] = await db
       .insert(alertSignups)
       .values({
         email,
@@ -116,7 +124,7 @@ export async function POST(req: Request) {
         officialSlug,
         referrer,
         userAgent,
-        status: "active",
+        status: "pending",
       })
       .onConflictDoUpdate({
         target: alertSignups.email,
@@ -126,23 +134,120 @@ export async function POST(req: Request) {
           officialSlug,
           referrer,
           userAgent,
-          status: "active",
           updatedAt: sql`now()`,
         },
+      })
+      .returning({
+        id: alertSignups.id,
+        status: alertSignups.status,
+        suppressedReason: alertSignups.suppressedReason,
+        confirmationSentAt: alertSignups.confirmationSentAt,
       });
 
-    await notify({
-      type: "alert_signup",
-      headline: "New filing-alert signup",
-      summary: `${email} requested ${alertType === "all" ? "all filing alerts" : "major update alerts"}.`,
-      metadata: {
-        email,
-        alertType,
-        sourcePage: sourcePage ?? "unknown",
-        officialSlug: officialSlug ?? "none",
-        ip,
-      },
-    });
+    const priorStatus = row.status;
+
+    // A hard bounce means the address is dead — never email it again, and don't
+    // resurrect it. (A spam complaint is different: we let them re-consent.)
+    const deadBounce =
+      priorStatus === "suppressed" && row.suppressedReason === "bounce";
+
+    // Durable anti-list-bombing throttle: only (re)send a confirmation if we
+    // haven't sent one to this address in the last 15 minutes.
+    const recentlySent =
+      row.confirmationSentAt != null &&
+      Date.now() - row.confirmationSentAt.getTime() < CONFIRM_THROTTLE_MS;
+
+    // Human-readable transition string for the admin notify. Reported AFTER any
+    // status flip below, so it reflects what actually happened (not a stale
+    // pre-update status).
+    let outcome: string;
+    let sendFailed = false;
+
+    if (deadBounce) {
+      outcome = "suppressed (bounce) — dead address, no email sent";
+    } else if (priorStatus === "active") {
+      // Already-confirmed addresses don't need another confirmation email.
+      outcome = "active — already confirmed, no email sent";
+    } else {
+      // Re-opt-in: an unsubscribed / complaint-suppressed address that signs up
+      // again goes back to pending, clears the suppression flag, and re-confirms.
+      if (priorStatus !== "pending") {
+        await db
+          .update(alertSignups)
+          .set({
+            status: "pending",
+            confirmedAt: null,
+            suppressedReason: null,
+            updatedAt: sql`now()`,
+          })
+          .where(eq(alertSignups.id, row.id));
+      }
+
+      if (recentlySent) {
+        outcome = `${priorStatus} -> pending (confirmation throttled — one sent in the last 15 min)`;
+      } else {
+        const confirmToken = mintTokenSafe(row.id, "confirm");
+        if (!confirmToken) {
+          sendFailed = true;
+          outcome = `${priorStatus} -> pending (confirmation NOT sent — token config error)`;
+        } else {
+          const mail = buildConfirmationEmail(confirmPageUrl(confirmToken));
+          const result = await sendTransactional({
+            to: email,
+            kind: "confirmation",
+            subject: mail.subject,
+            html: mail.html,
+            text: mail.text,
+          });
+          if (result.ok) {
+            // Stamp the send so the throttle above can gate the next attempt.
+            await db
+              .update(alertSignups)
+              .set({ confirmationSentAt: new Date(), updatedAt: sql`now()` })
+              .where(eq(alertSignups.id, row.id));
+            outcome =
+              priorStatus === "pending"
+                ? "pending (confirmation sent)"
+                : `${priorStatus} -> pending (re-opt-in, confirmation sent)`;
+          } else {
+            sendFailed = true;
+            outcome = `${priorStatus} -> pending (confirmation send FAILED: ${result.error ?? "unknown"})`;
+          }
+        }
+      }
+    }
+
+    // Admin notify is best-effort — defer past the response so it never adds
+    // latency to the user's request. Runs even when we return an error below.
+    after(() =>
+      notify({
+        type: "alert_signup",
+        headline: sendFailed
+          ? "Filing-alert signup — confirmation send FAILED"
+          : "New filing-alert signup (pending confirmation)",
+        summary: `${email} requested ${alertType === "all" ? "all filing alerts" : "major update alerts"}. ${outcome}.`,
+        metadata: {
+          email,
+          alertType,
+          sourcePage: sourcePage ?? "unknown",
+          officialSlug: officialSlug ?? "none",
+          ip,
+        },
+      })
+    );
+
+    // A send failure is not enumeration-sensitive (the lookup paths above stay
+    // generic), so tell the user plainly that the email didn't go out.
+    if (sendFailed) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error:
+            "Could not send the confirmation email. Please try again in a few minutes.",
+        },
+        { status: 502 }
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {

@@ -3,6 +3,7 @@
 import { useReducer, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "@/lib/auth-client";
+import type { DigestResult } from "@/lib/digest";
 
 interface PipelineRun {
   id: number;
@@ -41,6 +42,35 @@ interface AlertSignup {
   updatedAt: string;
 }
 
+// The digest item/trade shapes are the single source of truth in lib/digest.ts;
+// import them instead of re-declaring drifting copies here.
+interface DigestPreview {
+  draft: DigestResult;
+  recipientCount: number;
+  production: boolean;
+  inFlightRun: {
+    id: number;
+    status: string;
+    chunks: { total: number; ok: number; failed: number };
+  } | null;
+  lastSentAt: string | null;
+  warning: string | null;
+}
+
+interface DigestSendResult {
+  status?: "sent" | "failed" | "already-sent" | "no-recipients";
+  empty?: boolean;
+  recipientCount?: number;
+  filingCount?: number;
+  officialCount?: number;
+  runId?: number;
+  error?: string;
+  retry?: boolean;
+  warning?: string | null;
+  chunks?: { total: number; ok: number; failed: number };
+  message?: string;
+}
+
 interface DbValidationReport {
   result: "PASS" | "FAIL";
   duration: string;
@@ -65,6 +95,11 @@ interface AdminState {
   reviewCount: number;
   alertSignups: AlertSignup[];
   alertSignupCount: number;
+  digest: DigestPreview | null;
+  digestError: boolean;
+  digestConfirming: boolean;
+  digestSending: boolean;
+  digestResult: DigestSendResult | null;
   loading: boolean;
   validationReport: DbValidationReport | null;
   ogeReport: OgeCheckReport | null;
@@ -86,6 +121,11 @@ const INITIAL_ADMIN_STATE: AdminState = {
   reviewCount: 0,
   alertSignups: [],
   alertSignupCount: 0,
+  digest: null,
+  digestError: false,
+  digestConfirming: false,
+  digestSending: false,
+  digestResult: null,
   loading: false,
   validationReport: null,
   ogeReport: null,
@@ -110,6 +150,11 @@ export default function AdminPage() {
     reviewCount,
     alertSignups,
     alertSignupCount,
+    digest,
+    digestError,
+    digestConfirming,
+    digestSending,
+    digestResult,
     loading,
     validationReport,
     ogeReport,
@@ -125,11 +170,12 @@ export default function AdminPage() {
     if (!isAdmin) return;
     setAdminState({ loading: true });
     try {
-      const [pipelineRes, reviewRes, statsRes, alertsRes] = await Promise.all([
+      const [pipelineRes, reviewRes, statsRes, alertsRes, digestRes] = await Promise.all([
         fetch("/api/admin/pipeline"),
         fetch("/api/admin/review"),
         fetch("/api/admin/stats"),
         fetch("/api/admin/alerts"),
+        fetch("/api/admin/digest"),
       ]);
       if (pipelineRes.ok) {
         const data = await pipelineRes.json();
@@ -152,11 +198,33 @@ export default function AdminPage() {
           alertSignupCount: data.count || 0,
         });
       }
+      if (digestRes.ok) {
+        setAdminState({ digest: await digestRes.json(), digestError: false });
+      } else {
+        // Distinguish a failed load from an empty draft: the panel shows an
+        // error rather than a perpetual "Loading draft…".
+        setAdminState({ digest: null, digestError: true });
+      }
     } catch (err) {
       console.error("Failed to fetch admin data:", err);
+      setAdminState({ digestError: true });
     }
     setAdminState({ loading: false });
   }, [isAdmin]);
+
+  async function handleSendDigest() {
+    setAdminState({ digestSending: true, digestConfirming: false, digestResult: null });
+    try {
+      const res = await fetch("/api/admin/digest", { method: "POST" });
+      const data: DigestSendResult = await res.json();
+      setAdminState({ digestResult: data });
+      // On a successful send, refresh so the draft empties and run state updates.
+      if (res.ok && data.status === "sent") fetchData();
+    } catch (err) {
+      setAdminState({ digestResult: { status: "failed", error: (err as Error).message } });
+    }
+    setAdminState({ digestSending: false });
+  }
 
   useEffect(() => {
     fetchData();
@@ -343,6 +411,159 @@ export default function AdminPage() {
         </section>
       )}
 
+      {/* Filing Digest (draft preview) */}
+      <section className="mb-12">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
+            Filing Digest
+            {digest && (
+              <span className="ml-2 bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded-sm text-[10px]">
+                {digest.recipientCount} active subscriber{digest.recipientCount === 1 ? "" : "s"}
+              </span>
+            )}
+          </h2>
+        </div>
+        <div className="bg-stone-50 border border-neutral-200 p-4 text-sm">
+          {digestError ? (
+            <div className="text-xs">
+              <p className="text-red-700 mb-2">Could not load the digest draft.</p>
+              <button
+                type="button"
+                onClick={fetchData}
+                className="border border-neutral-300 text-neutral-700 px-3 py-1.5 hover:bg-neutral-50 transition-colors cursor-pointer"
+              >
+                Retry
+              </button>
+            </div>
+          ) : !digest ? (
+            <p className="text-neutral-500 text-xs">Loading draft…</p>
+          ) : (
+            <div className="space-y-4">
+              {/* An unfinished run means a prior send failed partway; the same
+                  Send button resumes it (idempotent per-chunk). */}
+              {digest.inFlightRun && (
+                <p className="text-[11px] text-amber-800 bg-amber-50 border border-amber-200 px-2 py-1">
+                  Run #{digest.inFlightRun.id} is {digest.inFlightRun.status} —{" "}
+                  {digest.inFlightRun.chunks.ok}/{digest.inFlightRun.chunks.total} chunks sent.
+                  Clicking Send resumes the remaining recipients.
+                </p>
+              )}
+              {digest.warning && (
+                <p className="text-[11px] text-amber-800">{digest.warning}</p>
+              )}
+
+              {digest.draft.empty ? (
+                <p className="text-neutral-500 text-xs">
+                  No new filings to send. Subscribers get nothing until a tracked official files new trades.
+                  {digest.lastSentAt && (
+                    <>
+                      {" "}Last digest sent {new Date(digest.lastSentAt).toLocaleString()}.
+                    </>
+                  )}
+                </p>
+              ) : (
+                <>
+                  <p className="text-neutral-600 text-xs">
+                    Draft ready: {digest.draft.items.length} official
+                    {digest.draft.items.length === 1 ? "" : "s"} →{" "}
+                    {digest.recipientCount} confirmed subscriber
+                    {digest.recipientCount === 1 ? "" : "s"}.
+                  </p>
+                  {digest.draft.items.map((item) => (
+                    <div key={item.slug} className="border-l-2 border-neutral-300 pl-3">
+                      <div className="text-neutral-900 font-medium">
+                        {item.name}{" "}
+                        <span className="text-neutral-400 font-normal">
+                          · {item.newCount} new trade{item.newCount === 1 ? "" : "s"}
+                        </span>
+                      </div>
+                      <div className="text-neutral-500 text-xs">
+                        {item.title} · {item.agency}
+                      </div>
+                      <ul className="mt-1 text-xs text-neutral-600 space-y-0.5">
+                        {item.trades.map((t, i) => (
+                          <li key={i}>
+                            <span
+                              className={
+                                t.type.startsWith("Sale")
+                                  ? "text-red-700"
+                                  : t.type === "Purchase"
+                                  ? "text-emerald-700"
+                                  : ""
+                              }
+                            >
+                              {t.type}
+                            </span>{" "}
+                            {t.description}
+                            {t.ticker ? ` (${t.ticker})` : ""} — {t.amount}
+                            {t.lateFilingFlag && (
+                              <span className="ml-1 bg-amber-200 text-amber-900 px-1 text-[9px]">
+                                LATE
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+
+                  {/* Send flow: result -> two-step confirm -> button. */}
+                  <div className="pt-2 border-t border-neutral-200">
+                    {digestResult ? (
+                      <DigestSendReport
+                        result={digestResult}
+                        onRetry={handleSendDigest}
+                        sending={digestSending}
+                      />
+                    ) : digestConfirming ? (
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-neutral-700">
+                          Send to {digest.recipientCount} subscriber
+                          {digest.recipientCount === 1 ? "" : "s"} now?
+                        </span>
+                        <button
+                          type="button"
+                          onClick={handleSendDigest}
+                          disabled={digestSending}
+                          className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
+                        >
+                          {digestSending ? "Sending…" : "Confirm send"}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setAdminState({ digestConfirming: false })}
+                          disabled={digestSending}
+                          className="text-xs text-neutral-500 hover:text-neutral-900 cursor-pointer disabled:opacity-50"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-3">
+                        <button
+                          type="button"
+                          onClick={() => setAdminState({ digestConfirming: true })}
+                          disabled={digest.recipientCount === 0}
+                          title={digest.recipientCount === 0 ? "No confirmed subscribers yet." : undefined}
+                          className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                        >
+                          {digest.inFlightRun ? "Resume send" : "Send digest"}
+                        </button>
+                        {!digest.production && (
+                          <span className="text-[10px] text-amber-700">
+                            Non-production: the server refuses to send here.
+                          </span>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Alert Signups */}
       <section className="mb-12">
         <div className="flex items-center justify-between mb-4">
@@ -418,7 +639,7 @@ export default function AdminPage() {
           <div>
             <div className="text-neutral-900 font-medium text-xs mb-1">Automated</div>
             <p className="text-neutral-500 text-xs">
-              Runs weekly (Monday 6 AM ET) via Vercel Cron. Can also be triggered from the{" "}
+              Runs daily (10 AM UTC) via Vercel Cron. Can also be triggered from the{" "}
               <a href="https://vercel.com/tbrown034s-projects/open-cabinet/settings/cron-jobs" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Vercel dashboard</a>{" "}
               or locally with the commands below.
             </p>
@@ -793,5 +1014,60 @@ export default function AdminPage() {
         </p>
       </section>
     </div>
+  );
+}
+
+/** Post-send outcome: success summary, or a failure with an inline resume retry. */
+function DigestSendReport({
+  result,
+  onRetry,
+  sending,
+}: {
+  result: DigestSendResult;
+  onRetry: () => void;
+  sending: boolean;
+}) {
+  if (result.status === "sent") {
+    return (
+      <div className="text-xs">
+        <p className="text-emerald-700 font-medium">
+          Sent to {result.recipientCount} subscriber
+          {result.recipientCount === 1 ? "" : "s"}
+          {typeof result.filingCount === "number" && ` · ${result.filingCount} filing${result.filingCount === 1 ? "" : "s"}`}.
+        </p>
+        {result.warning && <p className="text-amber-700 mt-1">{result.warning}</p>}
+      </div>
+    );
+  }
+
+  if (result.status === "failed") {
+    return (
+      <div className="text-xs">
+        <p className="text-red-700 font-medium">Send failed.</p>
+        {result.error && <p className="text-red-700 mt-0.5">{result.error}</p>}
+        {result.chunks && (
+          <p className="text-neutral-500 mt-0.5">
+            {result.chunks.ok}/{result.chunks.total} chunks delivered.
+          </p>
+        )}
+        {result.retry && (
+          <button
+            type="button"
+            onClick={onRetry}
+            disabled={sending}
+            className="mt-2 bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
+          >
+            {sending ? "Resuming…" : "Retry (resume)"}
+          </button>
+        )}
+      </div>
+    );
+  }
+
+  // already-sent / no-recipients / anything else with a message.
+  return (
+    <p className="text-xs text-neutral-600">
+      {result.message || result.error || "Nothing to send."}
+    </p>
   );
 }

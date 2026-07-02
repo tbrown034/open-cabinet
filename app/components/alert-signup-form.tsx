@@ -1,7 +1,7 @@
 "use client";
 
 import { track } from "@vercel/analytics";
-import { useId, useReducer } from "react";
+import { useId, useReducer, useRef } from "react";
 
 type AlertType = "major" | "all";
 type SignupStatus = "idle" | "sending" | "sent" | "error";
@@ -52,6 +52,9 @@ export default function AlertSignupForm({
   const [state, dispatch] = useReducer(signupReducer, INITIAL_STATE);
   const { email, alertType, status, error } = state;
   const canSubmit = email.trim().length > 3 && status !== "sending";
+  // Honeypot: a hidden field humans leave blank. Read at submit; bots that fill
+  // every field get silently dropped server-side.
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -75,6 +78,7 @@ export default function AlertSignupForm({
           sourcePage,
           officialSlug,
           referrer: typeof document !== "undefined" ? document.referrer : "",
+          company: honeypotRef.current?.value ?? "",
         }),
       });
       const payload = await res.json().catch(() => null);
@@ -105,7 +109,7 @@ export default function AlertSignupForm({
   if (status === "sent") {
     return (
       <div className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
-        You are on the filing-alert list.
+        Check your email to confirm your signup. The link arrives in a minute (check spam if not).
       </div>
     );
   }
@@ -121,11 +125,25 @@ export default function AlertSignupForm({
             {description}
           </p>
           <p className="mt-2 text-xs text-neutral-400">
-            No spam. Unsubscribe by replying to any alert.
+            Confirm via email. No spam, one-click unsubscribe anytime.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
+          {/* Honeypot — hidden from humans, catches naive bots. Not display:none
+              (some bots skip those); visually removed but focusable-blocked. */}
+          <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}>
+            <label htmlFor={`${id}-company`}>Company (leave blank)</label>
+            <input
+              id={`${id}-company`}
+              ref={honeypotRef}
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              defaultValue=""
+            />
+          </div>
           <div className="grid gap-2 sm:grid-cols-[1fr_auto]">
             <label htmlFor={`${id}-email`} className="sr-only">
               Email address

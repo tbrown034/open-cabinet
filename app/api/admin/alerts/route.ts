@@ -5,38 +5,10 @@
  * GET /api/admin/alerts?format=csv — Exports recent alert signups as CSV
  */
 import { NextResponse } from "next/server";
-import { count, desc, sql } from "drizzle-orm";
-import { headers } from "next/headers";
-import { auth, isAdmin } from "@/lib/auth";
+import { count, desc } from "drizzle-orm";
+import { requireAdmin } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
-
-async function checkAdmin() {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-  if (!session?.user?.email || !isAdmin(session.user.email)) {
-    return false;
-  }
-  return true;
-}
-
-async function ensureAlertSignupsTable() {
-  await db.execute(sql`
-    CREATE TABLE IF NOT EXISTS alert_signups (
-      id serial PRIMARY KEY,
-      email text NOT NULL UNIQUE,
-      alert_type text NOT NULL DEFAULT 'major',
-      source_page text,
-      official_slug text,
-      referrer text,
-      user_agent text,
-      status text NOT NULL DEFAULT 'active',
-      created_at timestamp NOT NULL DEFAULT now(),
-      updated_at timestamp NOT NULL DEFAULT now()
-    )
-  `);
-}
 
 function csvCell(value: unknown): string {
   if (value === null || value === undefined) return "";
@@ -46,11 +18,9 @@ function csvCell(value: unknown): string {
 }
 
 export async function GET(req: Request) {
-  if (!(await checkAdmin())) {
+  if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-
-  await ensureAlertSignupsTable();
 
   const url = new URL(req.url);
   const format = url.searchParams.get("format");

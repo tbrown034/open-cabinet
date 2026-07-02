@@ -1,5 +1,5 @@
 /**
- * Vercel Cron endpoint — weekly OGE filing monitor.
+ * Vercel Cron endpoint — daily OGE filing monitor.
  *
  * Vercel Pro: 300s (5 min) function timeout.
  * Typical run: fetch OGE API, diff PDF URLs, record and email the result.
@@ -7,7 +7,7 @@
  * Protected by CRON_SECRET to prevent unauthorized triggers.
  * Vercel Cron sends this automatically in the Authorization header.
  *
- * Config in vercel.json: { "crons": [{ "path": "/api/cron", "schedule": "0 10 * * 1" }] }
+ * Config in vercel.json: { "crons": [{ "path": "/api/cron", "schedule": "0 10 * * *" }] }
  */
 import { NextRequest, NextResponse } from "next/server";
 import { notify } from "@/lib/notify";
@@ -95,6 +95,19 @@ export async function GET(request: NextRequest) {
       .slice(0, 10)
       .map((filing) => `${filing.name} — ${filing.docDate.slice(0, 10)}`)
       .join("\n");
+
+    // Nudge: is there a subscriber digest ready to send? (Built from parsed JSON
+    // + the notifiedFilings ledger — sends nothing here, just reports.)
+    let digestNote = "";
+    try {
+      const { buildDigest } = await import("@/lib/digest");
+      const draft = await buildDigest();
+      if (!draft.empty) {
+        digestNote = `\n\n${draft.items.length} official${draft.items.length === 1 ? "" : "s"} with new trades are ready to send to subscribers — review and send at /admin.`;
+      }
+    } catch (e) {
+      console.warn("[cron] digest draft check failed:", (e as Error).message);
+    }
     await notify({
       type: "new_filings",
       headline:
@@ -102,9 +115,10 @@ export async function GET(request: NextRequest) {
           ? "OGE check OK · 0 new filings found"
           : `OGE check found ${newFilings.length} new filing${newFilings.length === 1 ? "" : "s"}`,
       summary:
-        newFilings.length === 0
+        (newFilings.length === 0
           ? `Polled the OGE public portal and found no new downloadable 278-T PDFs beyond the URLs already tracked by Open Cabinet.`
-          : `Polled the OGE public portal and found ${newFilings.length} downloadable 278-T PDF${newFilings.length === 1 ? "" : "s"} not yet tracked by Open Cabinet.\n\n${filingList}`,
+          : `Polled the OGE public portal and found ${newFilings.length} downloadable 278-T PDF${newFilings.length === 1 ? "" : "s"} not yet tracked by Open Cabinet.\n\n${filingList}`) +
+        digestNote,
       metadata: {
         "Total OGE records": totalRecords.toLocaleString(),
         "Tracked 278-T PDFs": targetFilings.length,

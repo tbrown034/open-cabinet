@@ -377,3 +377,69 @@ Infrastructure:
 **Next:** Security type filter on official pages. Respond to Jonathan Alpart email. Continue monitoring Reddit thread for new feedback.
 
 ---
+
+## 2026-06-20 - Email Alert System (Double Opt-In Subscriber Alerts)
+
+**Session Summary:**
+Built the subscriber-facing email alert system end-to-end (phases 0-4 of 5). Signups were being captured into Postgres but no email was ever sent to subscribers. Now: double opt-in, confirmation/welcome/digest emails, one-click unsubscribe, bounce/complaint suppression, daily cron nudge, and an admin draft-digest preview. Phase 5 (the gated "Send" button) is deliberately not built yet — it sends real mail and needs the env secrets set to test. The send endpoint is stubbed (501) so nothing can blast accidentally. Nothing committed or deployed; all in the working tree.
+
+**Key Strategy Decisions:**
+- **Resend domain swapped** trevorthewebdeveloper.com -> open-cabinet.org (free tier allows 1 domain). Verified safe: only lib/notify.ts sent from the old domain (now repointed to alerts@open-cabinet.org); the portfolio contact form uses onboarding@resend.dev and is unaffected.
+- **Transactional batch send, NOT Broadcasts/Segments.** Resend renamed Audiences->Segments and the account doesn't expose them; since we own the list/unsubscribe/suppression in our DB, resend.batch.send is simpler, gives per-recipient message ids, per-recipient List-Unsubscribe headers, and an idempotency key. No segment/topic/audience setup needed.
+- **Cadence: event-driven, checked daily** (cron 0 10 * * 1 -> 0 10 * * *). Digest sends only when a tracked official files new trades; quiet days send nothing. Window = "everything new since last sent digest"; dedupe via the notifiedFilings ledger (per filing URL).
+- **Digest source = parsed JSON sourceFilings**, not per-trade DB pdfSource (which `seed` wipes) and not the cron's URL diff.
+- **Human approval gate**: cron prepares a draft + nudges admin; a real send requires explicit admin action, hard-gated to VERCEL_ENV===production. Plus an admin "digest sent" receipt.
+- **Free tier ceiling**: 100 emails/day, each batch email counts. Fine under ~100 active subscribers; Pro ($20/mo) required past that.
+- **One-size-fits-all list** for v1 (drop major/all behavior, keep the column); per-person selection deferred.
+
+**Notable Changes:**
+- New: lib/tokens.ts (HMAC confirm/unsubscribe tokens, stateless), lib/email-config.ts, lib/emails.ts (deterministic HTML/text templates mirroring site), lib/email-send.ts, lib/digest.ts (pure selectDigestItems + buildDigest).
+- New routes: app/api/alerts/confirm, app/api/alerts/unsubscribe (GET + RFC 8058 one-click POST), app/api/webhooks/resend (svix raw-body verify), app/api/admin/digest (GET preview, POST 501 stub).
+- New pages: app/alerts/confirmed, app/alerts/unsubscribed.
+- Rewrote app/api/alerts/route.ts (pending status, honeypot, per-email throttle, confirmation send, re-opt-in logic). Added honeypot to alert-signup-form.tsx. Admin digest preview panel in app/admin/page.tsx. Cron nudge in app/api/cron/route.ts.
+- Schema: alertSignups lifecycle columns + digestRuns/notifiedFilings/emailSends tables. Migration drizzle/0002 hand-written to be idempotent (CREATE TABLE IF NOT EXISTS + ADD COLUMN IF NOT EXISTS) because the old runtime shim created alert_signups outside migrations. Removed both ensureAlertSignupsTable shims.
+- vitest added; lib/tokens.test.ts + lib/digest.test.ts (16 tests). Build passes, tsc clean, lint clean.
+
+**Adversarial Review Fixes (same session):**
+- C1: token verify guards against non-object payloads + restores base64 padding.
+- C4: removed buggy `since` date pre-filter that dropped same-day-ingested filings; rely solely on notifiedFilings ledger.
+- M3/M5: a hard-bounced address is no longer re-mailed or resurrected; confirm route only activates from `pending`; re-opt-in clears suppression only for unsubscribed/complaint (not bounce).
+- M2: webhook returns 500 (Resend retries) if a bounce/complaint DB write fails, and logs zero-match suppressions.
+- M4: corrected misleading "tokens stored for revocation" comment — verification is stateless.
+
+**Known TODO (not done tonight):**
+- Phase 5: gated send (outbox lifecycle, chunk <=100, frozen payload + per-chunk idempotency keys, notifiedFilings writes, admin receipt, reconciliation).
+- Launch backfill: seed notifiedFilings with all current filing URLs so the first digest doesn't email the historical backlog.
+- C3: per-email/IP rate limit is in-memory (ineffective across serverless instances) — move list-bombing protection to a DB check.
+- m3: digest preview shows newest-by-date trades, not necessarily the newly-ingested ones (editorial accuracy).
+- Route-level tests (confirm/unsubscribe/webhook/alerts/admin-digest).
+
+**What Trevor must do (env, then review):** set ALERT_TOKEN_SECRET (openssl rand -hex 32), RESEND_WEBHOOK_SECRET (after adding the Resend webhook -> /api/webhooks/resend), MAIL_POSTAL_ADDRESS (PO box recommended; kept out of public repo). Then apply migration 0002, run re-permission (dry-run first), backfill notifiedFilings, build phase 5, test sends to self. See docs/email-alerts-DO-THIS-NOW.md.
+
+**Next:** Phase 5 gated send + launch backfill + route tests. Overnight loop is hardening the above.
+
+---
+## 2026-07-02 - Phase 5 Send, Review Fixes, Prod Migration, Trump Q2 Ingest
+
+**Session goal:** full code review of the uncommitted email-alert work, fix everything found, finish phase 5, and get the system launch-ready.
+
+**Review (7 finder angles, ~40 candidates, every survivor independently verified):** 10 confirmed correctness findings. Top items: prod Neon DB was still unmigrated while the code hard-depended on migration 0002 (the removed runtime shims meant a push would have 500'd every signup); confirm/unsubscribe GETs mutated on fetch (link scanners would auto-confirm and auto-unsubscribe); the digest gate on lastIngestedNewCount silently dropped un-notified filings when a later ingest overwrote the count to 0; repermission script loaded dotenv after static imports, baking "[MAILING ADDRESS PENDING]" into CAN-SPAM footers; ignored sendTransactional result; verifyToken throwing outside try/catch; no confirmedAt guard on digest recipients; email_sends never inserted anywhere.
+
+**Fixes shipped (three parallel agents + reconciliation):**
+- Interstitial pages for confirm/unsubscribe (app/alerts/confirm, app/alerts/unsubscribe) — API routes are POST-only mutations now; GET redirects. List-Unsubscribe header still targets the API route for RFC 8058 one-click POSTs. Shared status-shell component for the four /alerts pages.
+- Durable anti-list-bombing throttle via new alertSignups.confirmationSentAt column (15-min window) replacing the ineffective in-memory per-email Map; per-IP limiter kept with key eviction. Send failures now surface to the user (502) and admin notify reports accurate lifecycle transitions.
+- Digest selection gates on un-notified sourceFilings, not the overwritable count; officials with count<=0 still get their URLs ledgered. WHERE IN query replaces the full-table notifiedFilings scan. Dead ?? fallbacks and stale JSDoc removed.
+- Phase 5 POST /api/admin/digest: requireAdmin (shared guard, replaces 4 copy-pasted checkAdmin), CAN-SPAM postal guard, consent guard (active AND confirmedAt), sha256 idempotency key over sorted filing URLs, frozen payload, chunked batch send with resume (skipChunks), atomic db.batch ledger+email_sends+lastNotifiedAt writes, admin receipt. Admin panel: typed via lib/digest imports, error state, two-step send confirm, quota warning >90 recipients.
+- getResend() extraction (3 divergent copies unified); sendTransactional writes its own email_sends audit row with explicit kind at all call sites; digest renders once with placeholder + per-recipient replace.
+- Schema cleanup: dropped never-written confirmToken/unsubscribeToken/resendContactId/resendBroadcastId/windowStart/windowEnd/officialSlugs/filingUrls columns; comments rewritten to match the batch-send design. Regenerated migrations: stale 0002/0003 deleted, single hand-audited idempotent 0002_loud_night_nurse.sql.
+- repermission-alerts.ts: dotenv-before-imports (dynamic import pattern) + hard refusal to send with placeholder postal address.
+
+**Prod operations (done tonight):** baselined drizzle journal (0000/0001 objects predate the migration system), applied 0002 to the live Neon DB (verified: 16 alert_signups columns, 3 new tables, 35 active rows intact — scripts/apply-migration-baseline.ts documents the bootstrap). Seeded notified_filings with 131 historical filing URLs (scripts/backfill-notified.ts, dry-run default). Ingested Trump's two new June 25 278-Ts (filed July 1) via targeted --from-file ingest so digest #1 has real, current content.
+
+**Verification:** tsc clean, 23/23 vitest, eslint clean, production build passes.
+
+**Known remaining:** pnpm audit shows 9 high (next/better-auth/kysely) — dependency bump pass recommended. Route-level integration tests still thin. alertType (major/all) still collected but unused (v1 decision stands).
+
+**Trevor's manual steps:** ALERT_TOKEN_SECRET + MAIL_POSTAL_ADDRESS in .env.local and Vercel; push to deploy; then Resend webhook (URL /api/webhooks/resend, events bounced/complained/delivered) -> RESEND_WEBHOOK_SECRET; self-test signup loop; pnpm repermission dry run then --send; send digest #1 from /admin.
+
+---
