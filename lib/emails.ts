@@ -159,6 +159,15 @@ ${POSTAL_ADDRESS}`;
 }
 
 /**
+ * OGE asset descriptions usually already carry the ticker, e.g.
+ * "Corning, Inc. (GLW)" — only append ours when the description doesn't,
+ * otherwise every line reads "(GLW) (GLW)".
+ */
+function showTicker(t: { description: string; ticker: string | null }): boolean {
+  return Boolean(t.ticker) && !t.description.includes(`(${t.ticker})`);
+}
+
+/**
  * The filing-alert digest. One section per official with a small trades table.
  * Deterministic output (no timestamps) so a crash-safe re-send is byte-identical
  * for Resend idempotency. Sale = red, Purchase = emerald (mirrors the site).
@@ -183,7 +192,7 @@ export function buildDigestEmail(
             ? ` <span style="background:#fcd34d;color:#451a03;font-size:10px;padding:1px 4px;">LATE</span>`
             : "";
           return `<tr>
-            <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:${SANS};font-size:13px;color:${COLORS.text};">${escapeHtml(t.description)}${t.ticker ? ` (${escapeHtml(t.ticker)})` : ""}${late}</td>
+            <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:${SANS};font-size:13px;color:${COLORS.text};">${escapeHtml(t.description)}${showTicker(t) ? ` (${escapeHtml(t.ticker as string)})` : ""}${late}</td>
             <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:${SANS};font-size:13px;color:${color};white-space:nowrap;">${escapeHtml(t.type)}</td>
             <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:'SF Mono',Consolas,monospace;font-size:12px;color:${COLORS.text};white-space:nowrap;">${escapeHtml(t.amount)}</td>
           </tr>`;
@@ -215,7 +224,7 @@ export function buildDigestEmail(
   const textSections = items
     .map((item) => {
       const lines = item.trades
-        .map((t) => `  - ${t.description}${t.ticker ? ` (${t.ticker})` : ""}: ${t.type}, ${t.amount}${t.lateFilingFlag ? " [LATE]" : ""}`)
+        .map((t) => `  - ${t.description}${showTicker(t) ? ` (${t.ticker})` : ""}: ${t.type}, ${t.amount}${t.lateFilingFlag ? " [LATE]" : ""}`)
         .join("\n");
       return `${item.name} — ${item.title}, ${item.agency} (${item.newCount} new)
 ${lines}
