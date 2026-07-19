@@ -138,6 +138,18 @@ function MonthlyBarsContent({
   const monthLabel = timeFormat("%b");
   const yearLabel = timeFormat("%Y");
 
+  // Because bar HEIGHT is sqrt-compressed, the tallest months can't be read
+  // off the axis by eye. Print the exact trade count above the 3 busiest
+  // months so the chart is honest and legible without hovering. We key by
+  // ISO month string for a cheap membership test in the bar loop below.
+  const topMonthKeys = new Set(
+    data.buckets
+      .toSorted((a, b) => b.total - a.total)
+      .slice(0, 3)
+      .filter((b) => b.total > 0)
+      .map((b) => b.month.toISOString())
+  );
+
   return (
     <div className="relative w-full">
       <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" role="img">
@@ -234,6 +246,21 @@ function MonthlyBarsContent({
                   fill="#f59e0b"
                 />
               )}
+              {/* Exact count label on the busiest months so the sqrt-scaled
+                  heights don't hide the true magnitudes. Sits just above the
+                  sales stack (top of the bar). */}
+              {topMonthKeys.has(b.month.toISOString()) && (
+                <text
+                  x={cx}
+                  y={midY - salesH - (b.late > 0 && b.sales > 0 ? 6 : 4)}
+                  textAnchor="middle"
+                  fontSize={9}
+                  fill="#525252"
+                  className="font-[family-name:var(--font-dm-mono)] tabular-nums"
+                >
+                  {b.total}
+                </text>
+              )}
             </g>
           );
         })}
@@ -290,7 +317,10 @@ function MonthlyBarsContent({
           <span className="inline-block w-3 h-[2px] bg-amber-500" /> Months
           with late-filed trades
         </span>
-        <span className="text-neutral-400">Bar height = trades that month</span>
+        <span className="text-neutral-400">
+          Bar height scales with the square root of monthly trades, so busy
+          months stay readable
+        </span>
       </div>
     </div>
   );

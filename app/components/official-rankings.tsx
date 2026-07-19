@@ -54,6 +54,16 @@ export default function OfficialRankings({
           );
         })}
       </div>
+
+      {/* Honesty caption: bar widths are log-transformed with a +10% floor
+          (see the pct math above), so a bar twice as long does NOT mean twice
+          the value. Disclose that so readers trust the exact labels, not the
+          bar lengths. */}
+      <p className="text-xs text-neutral-400 mt-4">
+        Bar lengths use a logarithmic scale so smaller traders stay visible —
+        values span three orders of magnitude. Bars are not proportional to
+        each other; read the dollar figures.
+      </p>
     </section>
   );
 }

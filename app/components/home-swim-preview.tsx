@@ -310,6 +310,19 @@ export default function HomeSwimPreview({
             const isHovered = (mk: string) =>
               tooltip?.officialName === o.name && tooltip?.monthLabel === mk;
 
+            // Because heights are sqrt-compressed, print the exact count above
+            // this lane's single busiest month so the tallest bar is readable
+            // without hovering. One anchor per lane keeps it uncluttered.
+            let busiestKey: string | null = null;
+            let busiestTotal = 0;
+            for (const b of months.values()) {
+              const t = b.sales + b.purchases;
+              if (t > busiestTotal) {
+                busiestTotal = t;
+                busiestKey = b.monthKey;
+              }
+            }
+
             return monthsAxis.map((monthStart) => {
               const key = monthKeyOf(monthStart);
               const bucket = months.get(key);
@@ -392,6 +405,18 @@ export default function HomeSwimPreview({
                       pointerEvents="none"
                     />
                   )}
+                  {key === busiestKey && (
+                    <text
+                      x={cx}
+                      y={midline - salesH - (bucket.late > 0 ? 5 : 3)}
+                      textAnchor="middle"
+                      fill="#525252"
+                      className="text-[9px] tabular-nums"
+                      pointerEvents="none"
+                    >
+                      {total}
+                    </text>
+                  )}
                 </g>
               );
             });
@@ -431,9 +456,10 @@ export default function HomeSwimPreview({
 
       <div className="mt-3 flex items-center justify-between border-t border-neutral-200 pt-3 gap-4 flex-wrap">
         <p className="text-xs text-neutral-500">
-          Showing the {TOP_COUNT} highest-volume officials. Bars are monthly
-          trade counts, the per-trade dot view (one circle per disclosure)
-          is on the full chart.{" "}
+          Showing the {TOP_COUNT} highest-volume officials. Bar height scales
+          with the square root of monthly trades, so busy months stay readable;
+          the per-trade dot view (one circle per disclosure) is on the full
+          chart.{" "}
           <span className="text-neutral-700 font-medium">
             {totalOfficials - TOP_COUNT} more
           </span>{" "}

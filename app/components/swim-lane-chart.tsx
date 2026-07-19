@@ -164,11 +164,21 @@ export default function SwimLaneChart({
     .range([0, chartHeight])
     .padding(0.15);
 
-  // Collect all transaction dates for the x-axis domain
+  // A group+period filter combo can select zero transactions. Because this
+  // view state is URL-shareable, a stale link could land here. d3 extent([])
+  // returns [undefined, undefined], so dateExtent[0].getTime() would throw and
+  // crash the page. Detect the empty case and render a quiet empty state
+  // instead of computing scales below.
+  const isEmpty = filtered.length === 0;
+
+  // Collect all transaction dates for the x-axis domain. Fall back to a fixed
+  // range when empty so the scale math below never dereferences undefined.
   const allDates = filtered.flatMap((o) =>
     o.transactions.map((tx) => new Date(tx.date + "T00:00:00"))
   );
-  const dateExtent = extent(allDates) as [Date, Date];
+  const dateExtent = (isEmpty
+    ? [new Date("2025-01-01"), new Date("2026-01-01")]
+    : extent(allDates)) as [Date, Date];
   const dayPad = 14 * 24 * 60 * 60 * 1000;
   const xScale = scaleTime()
     .domain([
@@ -181,7 +191,9 @@ export default function SwimLaneChart({
   const allAmounts = filtered.flatMap((o) =>
     o.transactions.map((tx) => amountRangeToMin(tx.amount))
   );
-  const amountExtent = extent(allAmounts) as [number, number];
+  // Same empty-guard as the date extent above: extent([]) is [undefined,
+  // undefined], so default to a 1..2 range the sqrt scale can accept.
+  const amountExtent = (isEmpty ? [1, 2] : extent(allAmounts)) as [number, number];
   const maxR = isMobile ? 10 : filter === "cabinet" ? 12 : 10;
   const minR = isMobile ? 3 : 2;
   const rScale = scaleSqrt()
@@ -260,8 +272,17 @@ export default function SwimLaneChart({
         </div>
       </div>
 
+      {/* Empty state: no official has trades in this group+period combo.
+          Render a quiet message (not the chart) so a stale shared URL can't
+          crash on undefined scale domains. */}
+      {isEmpty && (
+        <div className="border border-neutral-200 bg-neutral-50 py-16 text-center text-sm text-neutral-500">
+          No transactions match these filters.
+        </div>
+      )}
+
       {/* MOBILE: HTML cards with inline SVG dot strips */}
-      {isMobile && (
+      {!isEmpty && isMobile && (
         <div className="space-y-1">
           {filtered.map((o) => {
             const dotHeight = 30;
@@ -322,7 +343,7 @@ export default function SwimLaneChart({
       )}
 
       {/* Legend, above chart so readers see it first */}
-      {!isMobile && (
+      {!isEmpty && !isMobile && (
         <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3 text-xs text-neutral-400">
           <div className="flex items-center gap-1.5">
             <span className="inline-block size-2.5 rounded-full bg-red-600 opacity-60" />
@@ -337,12 +358,12 @@ export default function SwimLaneChart({
             Inauguration
           </div>
           <div className="text-neutral-300">|</div>
-          <div>Circle size = transaction amount</div>
+          <div>Circle size = reported amount range (minimum)</div>
         </div>
       )}
 
       {/* DESKTOP: Full SVG swim lane chart */}
-      {!isMobile && <><svg
+      {!isEmpty && !isMobile && <><svg
         width={svgWidth}
         height={height}
         role="img"
