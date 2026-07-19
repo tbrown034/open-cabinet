@@ -1,33 +1,44 @@
 /**
  * Admin API: filing-alert digest.
  *
- * GET  — assemble the draft digest (what WOULD be sent), the consent-filtered
- *        recipient counts (total / every-filing / major-only), and any
- *        in-flight/last-sent run state, for review in /admin. Read-only.
+ * GET  — assemble the draft digest (what WOULD be sent), the follows breakdown
+ *        (how many confirmed subscribers this digest reaches vs. excludes), and
+ *        any in-flight/last-sent run state, for review in /admin. Read-only.
  * POST — two actions on the same route (both admin-gated):
- *        action "test"  — send ONE copy of the current draft to the signed-in
- *                         admin. Writes an email_sends audit row and NOTHING
- *                         else (no ledger, no digest_runs, no lastNotifiedAt).
- *                         Bypasses the production gate (mails only the admin).
+ *        action "test"  — send ONE copy of the current draft (or a single-
+ *                         official preview) to the signed-in admin. Writes an
+ *                         email_sends audit row and NOTHING else (no ledger, no
+ *                         digest_runs, no lastNotifiedAt). Bypasses the
+ *                         production gate (mails only the admin).
  *        default (send) — the human approval gate that actually sends to
  *                         subscribers. Models a write-ahead outbox (digest_runs)
  *                         so the external Resend call is never assumed atomic
  *                         with our DB writes. Hard-gated to production + admin.
  *
+ * FOLLOWS MODEL: a signup follows either ALL officials (officialSlug null —
+ * home-page signups) or ONE official (officialSlug set — signed up on that
+ * official's page). A real digest reaches a confirmed recipient iff they follow
+ * all officials OR follow one of the officials present in the digest. The old
+ * major/all alertType preference is no longer read for send routing.
+ *
  * Real-send lifecycle (POST, non-test):
  *   1. guards: admin, production, CAN-SPAM postal address, confirmed recipients
- *   2. resolve audience ("major" = all subscribers; "routine" = every-filing
- *      subscribers only) and filter the confirmed list accordingly
- *   3. buildDigest; empty -> nothing to send
+ *   2. buildDigest; empty -> nothing to send
+ *   3. filter confirmed recipients by follows against the draft's official slugs
  *   4. idempotencyKey = sha256(sorted un-notified filing URLs)
  *      - existing run "sent"            -> 409 (already sent)
  *      - existing run "sending"/"failed"-> RESUME from its frozen payload
- *      - none                           -> freeze payload (incl. audience), "sending"
+ *      - none                           -> freeze payload (recipients + slugs),
+ *                                          "sending"
  *   5. send chunks (skipping any already confirmed), persist chunk state
  *   6. all chunks ok -> ONE atomic db.batch: write notified_filings ledger +
  *      per-recipient email_sends rows + bump recipients' lastNotifiedAt + flip
  *      run to "sent". Then email the admin a receipt.
  *   7. any chunk failed -> persist "failed"; the admin retries (retry = resume).
+ *
+ * One identical email body goes to every recipient — recipients are selected by
+ * follows, never by content-filtering the digest. (The test action can content-
+ * filter to preview a single-official digest; real sends never do.)
  *
  * neon-http has no interactive transactions, so the finalize uses db.batch,
  * which runs its statements as a single atomic request.
@@ -40,10 +51,9 @@ import { alertSignups, digestRuns, emailSends, notifiedFilings } from "@/lib/sch
 import {
   buildDigest,
   digestIdempotencyKey,
-  filterRecipientsByAudience,
-  recipientAudienceCounts,
-  type AudienceRecipient,
-  type DigestAudience,
+  filterRecipientsByFollows,
+  followsBreakdown,
+  type FollowsRecipient,
 } from "@/lib/digest";
 import {
   sendDigestBatch,
@@ -69,10 +79,11 @@ interface FrozenPayload {
   filings: { url: string; slug: string }[];
   recipients: DigestRecipient[];
   key: string;
-  /** The audience chosen at send time; replayed on resume so a retry never
-   * silently widens or narrows the recipient set. Optional for backward-compat
-   * with any run frozen before this field existed. */
-  audience?: DigestAudience;
+  /** The official slugs this digest covers, frozen at send time so resume
+   * replays the same follows-filtered recipient set (the frozen `recipients`
+   * IS the send list; slugs are kept for the receipt breakdown). Optional for
+   * backward-compat with any run frozen before this field existed. */
+  slugs?: string[];
 }
 
 function freeTierWarning(recipientCount: number): string | null {
@@ -100,31 +111,24 @@ function mergeChunks(
   return [...byN.values()].sort((a, b) => a.n - b.n);
 }
 
-/** Confirmed subscribers only, each carrying its alert_type preference so the
- * caller can filter by audience. Legacy never-consented rows are status 'active'
- * with a null confirmedAt — they must be excluded until re-permission stamps
- * confirmedAt via the confirm flow. */
-async function loadConfirmedRecipients(): Promise<AudienceRecipient[]> {
+/** Confirmed subscribers only, each carrying the single official they follow
+ * (officialSlug: null = follows all). Legacy never-consented rows are status
+ * 'active' with a null confirmedAt — they must be excluded until re-permission
+ * stamps confirmedAt via the confirm flow. */
+async function loadConfirmedRecipients(): Promise<FollowsRecipient[]> {
   return db
     .select({
       id: alertSignups.id,
       email: alertSignups.email,
-      alertType: alertSignups.alertType,
+      officialSlug: alertSignups.officialSlug,
     })
     .from(alertSignups)
     .where(and(eq(alertSignups.status, "active"), isNotNull(alertSignups.confirmedAt)));
 }
 
-/** Parse the requested audience from the POST body; defaults to the conservative
- * "routine" (every-filing subscribers only) so a major-only subscriber is never
- * mailed by accident when the field is omitted or malformed. */
-function parseAudience(value: unknown): DigestAudience {
-  return value === "major" ? "major" : "routine";
-}
-
-/** Strip alertType before freezing: the frozen recipient list is the send list,
- * already audience-filtered, so it only needs id + email. */
-function toSendRecipients(recipients: AudienceRecipient[]): DigestRecipient[] {
+/** Strip officialSlug before freezing: the frozen recipient list is the send
+ * list, already follows-filtered, so it only needs id + email. */
+function toSendRecipients(recipients: FollowsRecipient[]): DigestRecipient[] {
   return recipients.map(({ id, email }) => ({ id, email }));
 }
 
@@ -137,9 +141,10 @@ export async function GET() {
     const draft = await buildDigest();
     const recipients = await loadConfirmedRecipients();
     const recipientCount = recipients.length;
-    // Total confirmed, every-filing ("all"), and major-only counts so the UI can
-    // show "Routine reaches N; major reaches M."
-    const counts = recipientAudienceCounts(recipients);
+    // Follows breakdown computed against THIS draft's official slugs: how many
+    // confirmed subscribers the digest reaches (all-followers plus followers of
+    // officials in the draft) vs. how many it excludes.
+    const follows = followsBreakdown(recipients, draft.slugs);
 
     // Surface any unfinished run (so the admin sees a resume is pending) and the
     // most recent successful send timestamp.
@@ -160,9 +165,9 @@ export async function GET() {
     return NextResponse.json({
       draft,
       recipientCount,
-      // Audience breakdown: a "major" send reaches counts.total, a "routine"
-      // send reaches counts.all (the every-filing subscribers).
-      recipientCounts: counts,
+      // Follows breakdown for the draft: { total, allFollowers, reached,
+      // excluded, byOfficial } — how many this specific digest reaches.
+      follows,
       production: process.env.VERCEL_ENV === "production",
       inFlightRun: inFlight
         ? {
@@ -190,10 +195,20 @@ export async function GET() {
  * is safe anywhere a Resend key exists) but keeps the postal-address guard so
  * the CAN-SPAM footer renders real.
  *
+ * `onlyOfficial` (optional) content-filters the digest to a single official's
+ * items so the admin can PREVIEW what a narrower, single-official digest would
+ * look like. It must be a slug present in the current draft (else 400). NOTE:
+ * real sends NEVER content-filter — every recipient gets the identical full
+ * body, and audience is decided purely by follows. This filtering exists only
+ * for the admin preview.
+ *
  * Idempotency key is per-invocation (includes Date.now()) so a test never
  * collides with the real send's key and repeated tests always deliver.
  */
-async function handleTestSend(adminEmail: string): Promise<NextResponse> {
+async function handleTestSend(
+  adminEmail: string,
+  onlyOfficial?: string
+): Promise<NextResponse> {
   // CAN-SPAM: the footer must carry a real address even for a self-test.
   if (POSTAL_ADDRESS === "[MAILING ADDRESS PENDING]") {
     return NextResponse.json(
@@ -211,6 +226,21 @@ async function handleTestSend(adminEmail: string): Promise<NextResponse> {
     });
   }
 
+  // Optional single-official preview: narrow the CONTENT to one official's card.
+  // Reject a slug that isn't in the draft so the admin can't preview a phantom.
+  let items = digest.items;
+  if (onlyOfficial) {
+    items = digest.items.filter((i) => i.slug === onlyOfficial);
+    if (items.length === 0) {
+      return NextResponse.json(
+        {
+          error: `"${onlyOfficial}" is not an official in the current draft. Pick one from the draft or send the full digest.`,
+        },
+        { status: 400 }
+      );
+    }
+  }
+
   // Use the admin's own real unsubscribe link if they're a signup; otherwise
   // fall back to the site URL rather than minting a token for a nonexistent row.
   const [ownRow] = await db
@@ -222,7 +252,7 @@ async function handleTestSend(adminEmail: string): Promise<NextResponse> {
     ? unsubscribePageUrl(mintToken(ownRow.id, "unsubscribe"))
     : siteUrl();
 
-  const email = buildDigestEmail(digest.items, unsubscribeLink);
+  const email = buildDigestEmail(items, unsubscribeLink);
   const result = await sendTransactional({
     to: adminEmail,
     subject: `[TEST] ${email.subject}`,
@@ -245,7 +275,10 @@ async function handleTestSend(adminEmail: string): Promise<NextResponse> {
   return NextResponse.json({
     status: "test-sent",
     to: adminEmail,
-    officialCount: digest.items.length,
+    // Reflect what was actually mailed: the single-official preview count when
+    // onlyOfficial was passed, otherwise the full draft.
+    officialCount: items.length,
+    onlyOfficial: onlyOfficial ?? null,
     filingCount: digest.filingUrls.length,
   });
 }
@@ -258,9 +291,15 @@ export async function POST(req: Request) {
   const approvedBy = session.user.email;
 
   // Parse the body once (tolerate an empty/absent body: a bare send POST).
-  let body: { action?: string; audience?: string } = {};
+  // `audience` is accepted-and-ignored for stale clients; the follows model no
+  // longer routes by audience. `onlyOfficial` is a test-only preview filter.
+  let body: { action?: string; onlyOfficial?: string; audience?: string } = {};
   try {
-    body = (await req.json()) as { action?: string; audience?: string };
+    body = (await req.json()) as {
+      action?: string;
+      onlyOfficial?: string;
+      audience?: string;
+    };
   } catch {
     body = {};
   }
@@ -269,14 +308,16 @@ export async function POST(req: Request) {
   // Handled BEFORE the production gate — a self-test is safe anywhere.
   if (body.action === "test") {
     try {
-      return await handleTestSend(approvedBy);
+      const onlyOfficial =
+        typeof body.onlyOfficial === "string" && body.onlyOfficial.trim()
+          ? body.onlyOfficial.trim()
+          : undefined;
+      return await handleTestSend(approvedBy, onlyOfficial);
     } catch (err) {
       console.error("[admin/digest] test send failed:", err);
       return NextResponse.json({ error: "Test send failed." }, { status: 500 });
     }
   }
-
-  const audience = parseAudience(body.audience);
 
   // Hard gate: nothing reaches a real subscriber outside production.
   if (process.env.VERCEL_ENV !== "production") {
@@ -301,20 +342,25 @@ export async function POST(req: Request) {
       return NextResponse.json({ empty: true });
     }
 
-    // Filter the confirmed list to the chosen audience BEFORE freezing it, so
-    // the frozen recipient list IS the send list (resume replays it verbatim).
+    // Select recipients by FOLLOWS against the draft's official slugs (follow-all
+    // subscribers plus followers of an official in this digest). Filter BEFORE
+    // freezing so the frozen recipient list IS the send list (resume replays it
+    // verbatim). Every recipient gets the identical body — no content-filtering.
+    //
+    // `follows` is a display breakdown for the receipt/response. On resume it is
+    // recomputed against the current digest.slugs, which is safe: the run is keyed
+    // on the filing-URL set, so the same key implies the same officials/slugs.
     const confirmed = await loadConfirmedRecipients();
+    const follows = followsBreakdown(confirmed, digest.slugs);
     const recipients = toSendRecipients(
-      filterRecipientsByAudience(confirmed, audience)
+      filterRecipientsByFollows(confirmed, digest.slugs)
     );
     if (recipients.length === 0) {
       return NextResponse.json({
         status: "no-recipients",
         recipientCount: 0,
         message:
-          audience === "routine"
-            ? "No every-filing subscribers to send a routine update to — nothing sent."
-            : "No confirmed recipients yet — nothing sent.",
+          "No confirmed subscribers follow the officials in this digest — nothing sent.",
       });
     }
 
@@ -345,14 +391,14 @@ export async function POST(req: Request) {
       priorChunks = (existing.chunks as DigestChunkResult[] | null) ?? [];
     } else {
       // Freeze the send spec and open the outbox row before touching Resend.
-      // audience is recorded so resume replays the same list and the audit
-      // trail shows which cohort was targeted.
+      // The follows-filtered recipients ARE the send list; slugs are recorded so
+      // the receipt breakdown is stable on resume.
       payload = {
         items: digest.items,
         filings: digest.filings,
         recipients,
         key,
-        audience,
+        slugs: digest.slugs,
       };
       const [row] = await db
         .insert(digestRuns)
@@ -436,31 +482,39 @@ export async function POST(req: Request) {
         .where(eq(digestRuns.id, runId)),
     ]);
 
-    // The audience actually sent to — the frozen value on resume, or the
-    // just-parsed one on a fresh run (frozen preferred if both present).
-    const sentAudience: DigestAudience = payload.audience ?? audience;
-
     // Admin receipt (best-effort; a notify failure never fails the send).
     await notify({
       type: "digest_sent",
       headline: `Digest sent — ${sentRows.length} recipient${sentRows.length === 1 ? "" : "s"}, ${payload.filings.length} filing${payload.filings.length === 1 ? "" : "s"}`,
-      summary: `Digest run #${runId} (${sentAudience} audience) delivered to ${sentRows.length} confirmed subscriber${sentRows.length === 1 ? "" : "s"} covering ${payload.items.length} official${payload.items.length === 1 ? "" : "s"}.`,
+      summary: `Digest run #${runId} delivered to ${sentRows.length} confirmed subscriber${sentRows.length === 1 ? "" : "s"} following ${payload.items.length} official${payload.items.length === 1 ? "" : "s"} (${follows.allFollowers} follow all, ${follows.excluded} other-official followers excluded).`,
       metadata: {
         runId,
-        audience: sentAudience,
         recipients: sentRows.length,
         officials: payload.items.length,
         filings: payload.filings.length,
+        allFollowers: follows.allFollowers,
+        excluded: follows.excluded,
+        // notify metadata is scalar-only; serialize per-official follower counts.
+        byOfficial: Object.entries(follows.byOfficial)
+          .map(([slug, n]) => `${slug}:${n}`)
+          .join(", "),
       },
     });
 
     return NextResponse.json({
       status: "sent",
       runId,
-      audience: sentAudience,
       recipientCount: sentRows.length,
       filingCount: payload.filings.length,
       officialCount: payload.items.length,
+      // Follows breakdown so the admin sees who was reached vs. excluded.
+      follows: {
+        total: follows.total,
+        allFollowers: follows.allFollowers,
+        reached: follows.reached,
+        excluded: follows.excluded,
+        byOfficial: follows.byOfficial,
+      },
       warning: freeTierWarning(sentRows.length),
     });
   } catch (err) {

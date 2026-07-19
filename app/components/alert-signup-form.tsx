@@ -3,12 +3,17 @@
 import { track } from "@vercel/analytics";
 import { useId, useReducer, useRef } from "react";
 
-type AlertType = "major" | "all";
 type SignupStatus = "idle" | "sending" | "sent" | "error";
+
+// On an official page the subscriber chooses what to follow: just this official
+// (default) or all officials. Home/other pages have no toggle and follow all.
+type FollowScope = "official" | "all";
 
 interface AlertSignupFormProps {
   sourcePage: string;
   officialSlug?: string;
+  /** Display name for the official, used to label the "Only <Name>" toggle. */
+  officialName?: string;
   title?: string;
   description?: string;
   compact?: boolean;
@@ -16,20 +21,22 @@ interface AlertSignupFormProps {
 
 interface SignupState {
   email: string;
-  alertType: AlertType;
+  followScope: FollowScope;
   status: SignupStatus;
   error: string;
 }
 
 type SignupAction =
   | { key: "email" | "error"; value: string }
-  | { key: "alertType"; value: AlertType }
+  | { key: "followScope"; value: FollowScope }
   | { key: "status"; value: SignupStatus }
   | { key: "sent" };
 
 const INITIAL_STATE: SignupState = {
   email: "",
-  alertType: "major",
+  // Default to following just this official when the form is on an official
+  // page; the home form ignores this and always follows all.
+  followScope: "official",
   status: "idle",
   error: "",
 };
@@ -44,14 +51,21 @@ function signupReducer(state: SignupState, action: SignupAction): SignupState {
 export default function AlertSignupForm({
   sourcePage,
   officialSlug,
+  officialName,
   title = "Get filing alerts",
   description = "Get an email when Open Cabinet publishes important filing updates.",
   compact = false,
 }: AlertSignupFormProps) {
   const id = useId();
   const [state, dispatch] = useReducer(signupReducer, INITIAL_STATE);
-  const { email, alertType, status, error } = state;
+  const { email, followScope, status, error } = state;
   const canSubmit = email.trim().length > 3 && status !== "sending";
+  // The toggle only appears when this form is on an official's page.
+  const hasOfficial = Boolean(officialSlug);
+  // The slug actually followed: the official's slug when scoped to them, else
+  // undefined (= follow all officials).
+  const followedSlug =
+    hasOfficial && followScope === "official" ? officialSlug : undefined;
   // Honeypot: a hidden field humans leave blank. Read at submit; bots that fill
   // every field get silently dropped server-side.
   const honeypotRef = useRef<HTMLInputElement>(null);
@@ -65,18 +79,20 @@ export default function AlertSignupForm({
 
     try {
       track("Alert Signup Submitted", {
-        alertType,
+        followScope: hasOfficial ? followScope : "all",
         sourcePage,
-        hasOfficial: Boolean(officialSlug),
+        hasOfficial,
       });
       const res = await fetch("/api/alerts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
-          alertType,
+          // alertType kept for API/back-compat only; sends route by follows now.
+          alertType: "major",
           sourcePage,
-          officialSlug,
+          // Only send officialSlug when following a single official.
+          officialSlug: followedSlug,
           referrer: typeof document !== "undefined" ? document.referrer : "",
           company: honeypotRef.current?.value ?? "",
         }),
@@ -85,9 +101,9 @@ export default function AlertSignupForm({
 
       if (res.ok) {
         track("Alert Signup Saved", {
-          alertType,
+          followScope: hasOfficial ? followScope : "all",
           sourcePage,
-          hasOfficial: Boolean(officialSlug),
+          hasOfficial,
         });
         dispatch({ key: "sent" });
       } else {
@@ -113,6 +129,12 @@ export default function AlertSignupForm({
       </div>
     );
   }
+
+  // Label for the single-official option — falls back to a generic label if the
+  // display name wasn't passed.
+  const officialLabel = officialName
+    ? `Only ${officialName}`
+    : "Only this official";
 
   return (
     <section className="border border-neutral-200 bg-white px-4 py-4">
@@ -171,39 +193,43 @@ export default function AlertSignupForm({
             </button>
           </div>
 
-          <fieldset className="flex flex-wrap gap-2">
-            <legend className="sr-only">Alert frequency</legend>
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name={`${id}-alert-type`}
-                value="major"
-                checked={alertType === "major"}
-                onChange={() =>
-                  dispatch({ key: "alertType", value: "major" })
-                }
-                className="peer sr-only"
-              />
-              <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
-                Major updates
-              </span>
-            </label>
-            <label className="cursor-pointer">
-              <input
-                type="radio"
-                name={`${id}-alert-type`}
-                value="all"
-                checked={alertType === "all"}
-                onChange={() =>
-                  dispatch({ key: "alertType", value: "all" })
-                }
-                className="peer sr-only"
-              />
-              <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
-                Every new filing
-              </span>
-            </label>
-          </fieldset>
+          {/* Follow scope — only on official pages. "Only <Name>" (default,
+              sends officialSlug) vs. "All officials" (sends no officialSlug). */}
+          {hasOfficial && (
+            <fieldset className="flex flex-wrap gap-2">
+              <legend className="sr-only">What to follow</legend>
+              <label className="cursor-pointer">
+                <input
+                  type="radio"
+                  name={`${id}-follow-scope`}
+                  value="official"
+                  checked={followScope === "official"}
+                  onChange={() =>
+                    dispatch({ key: "followScope", value: "official" })
+                  }
+                  className="peer sr-only"
+                />
+                <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
+                  {officialLabel}
+                </span>
+              </label>
+              <label className="cursor-pointer">
+                <input
+                  type="radio"
+                  name={`${id}-follow-scope`}
+                  value="all"
+                  checked={followScope === "all"}
+                  onChange={() =>
+                    dispatch({ key: "followScope", value: "all" })
+                  }
+                  className="peer sr-only"
+                />
+                <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
+                  All officials
+                </span>
+              </label>
+            </fieldset>
+          )}
 
           {status === "error" && (
             <p role="alert" className="text-xs text-red-700">{error}</p>

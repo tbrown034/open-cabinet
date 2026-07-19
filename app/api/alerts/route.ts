@@ -91,7 +91,12 @@ export async function POST(req: Request) {
   }
 
   const email = cleanText(data.email, 254)?.toLowerCase() ?? "";
-  const alertType = cleanText(data.alertType, 20) as AlertType | null;
+  // alertType is retired from send routing (follows model routes by officialSlug
+  // now). Kept for backward compat: accept a valid value, else default to
+  // "major" — never reject a signup over it.
+  const rawAlertType = cleanText(data.alertType, 20) as AlertType | null;
+  const alertType: AlertType =
+    rawAlertType && ALERT_TYPES.has(rawAlertType) ? rawAlertType : "major";
   const sourcePage = cleanText(data.sourcePage, 200);
   const officialSlug = cleanText(data.officialSlug, 100);
   const referrer = cleanText(data.referrer, 500) ?? cleanText(req.headers.get("referer"), 500);
@@ -100,13 +105,6 @@ export async function POST(req: Request) {
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json(
       { ok: false, error: "Enter a valid email address." },
-      { status: 400 }
-    );
-  }
-
-  if (!alertType || !ALERT_TYPES.has(alertType)) {
-    return NextResponse.json(
-      { ok: false, error: "Choose a valid alert type." },
       { status: 400 }
     );
   }
@@ -225,10 +223,11 @@ export async function POST(req: Request) {
         headline: sendFailed
           ? "Filing-alert signup — confirmation send FAILED"
           : "New filing-alert signup (pending confirmation)",
-        summary: `${email} requested ${alertType === "all" ? "all filing alerts" : "major update alerts"}. ${outcome}.`,
+        summary: `${email} is following ${officialSlug ? officialSlug : "all officials"}. ${outcome}.`,
         metadata: {
           email,
           alertType,
+          follows: officialSlug ?? "all",
           sourcePage: sourcePage ?? "unknown",
           officialSlug: officialSlug ?? "none",
           ip,

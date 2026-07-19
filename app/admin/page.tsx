@@ -44,13 +44,22 @@ interface AlertSignup {
 
 // The digest item/trade shapes are the single source of truth in lib/digest.ts;
 // import them instead of re-declaring drifting copies here.
-type DigestAudience = "major" | "routine";
+
+// Follows breakdown for the current draft: how many confirmed subscribers this
+// digest reaches (follow-all plus followers of officials in the draft) vs.
+// excludes, with per-official follower counts.
+interface FollowsBreakdown {
+  total: number;
+  allFollowers: number;
+  reached: number;
+  excluded: number;
+  byOfficial: Record<string, number>;
+}
 
 interface DigestPreview {
   draft: DigestResult;
   recipientCount: number;
-  // Audience breakdown: total confirmed / every-filing ("all") / major-only.
-  recipientCounts: { total: number; all: number; major: number };
+  follows: FollowsBreakdown;
   production: boolean;
   inFlightRun: {
     id: number;
@@ -75,8 +84,10 @@ interface DigestSendResult {
   filingCount?: number;
   officialCount?: number;
   runId?: number;
-  audience?: DigestAudience;
+  follows?: FollowsBreakdown;
   to?: string;
+  // Set on a single-official test preview so the report can name it.
+  onlyOfficial?: string | null;
   error?: string;
   retry?: boolean;
   warning?: string | null;
@@ -113,11 +124,11 @@ interface AdminState {
   digestConfirming: boolean;
   digestSending: boolean;
   digestResult: DigestSendResult | null;
-  // Audience selector; "routine" (every-filing subscribers only) is the
-  // conservative default so major-only subscribers are never mailed by accident.
-  digestAudience: DigestAudience;
   digestTesting: boolean;
   digestTestResult: DigestSendResult | null;
+  // Which official the test preview is scoped to. "" = full draft (the default);
+  // a slug = preview the single-official digest for that official.
+  digestTestOfficial: string;
   loading: boolean;
   validationReport: DbValidationReport | null;
   ogeReport: OgeCheckReport | null;
@@ -144,9 +155,9 @@ const INITIAL_ADMIN_STATE: AdminState = {
   digestConfirming: false,
   digestSending: false,
   digestResult: null,
-  digestAudience: "routine",
   digestTesting: false,
   digestTestResult: null,
+  digestTestOfficial: "",
   loading: false,
   validationReport: null,
   ogeReport: null,
@@ -176,9 +187,9 @@ export default function AdminPage() {
     digestConfirming,
     digestSending,
     digestResult,
-    digestAudience,
     digestTesting,
     digestTestResult,
+    digestTestOfficial,
     loading,
     validationReport,
     ogeReport,
@@ -239,10 +250,11 @@ export default function AdminPage() {
   async function handleSendDigest() {
     setAdminState({ digestSending: true, digestConfirming: false, digestResult: null });
     try {
+      // No audience field — recipients are selected by follows server-side.
       const res = await fetch("/api/admin/digest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ audience: digestAudience }),
+        body: JSON.stringify({}),
       });
       const data: DigestSendResult = await res.json();
       setAdminState({ digestResult: data });
@@ -254,16 +266,21 @@ export default function AdminPage() {
     setAdminState({ digestSending: false });
   }
 
-  // "Send test to me": mails one copy of the current draft to the admin. The
-  // server writes only an email_sends audit row — no ledger, no run, no recency
-  // bump — so this consumes nothing and never affects a real send.
+  // "Send test to me": mails one copy of the draft to the admin. When a specific
+  // official is selected the server content-filters the preview to that official
+  // only (onlyOfficial). The server writes only an email_sends audit row — no
+  // ledger, no run, no recency bump — so this consumes nothing.
   async function handleTestDigest() {
     setAdminState({ digestTesting: true, digestTestResult: null });
     try {
       const res = await fetch("/api/admin/digest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "test" }),
+        body: JSON.stringify({
+          action: "test",
+          // Empty = full draft; a slug scopes the preview to one official.
+          onlyOfficial: digestTestOfficial || undefined,
+        }),
       });
       const data: DigestSendResult = await res.json();
       setAdminState({ digestTestResult: data });
@@ -467,8 +484,7 @@ export default function AdminPage() {
             Filing Digest
             {digest && (
               <span className="ml-2 bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded-sm text-[10px]">
-                {digest.recipientCount} confirmed · {digest.recipientCounts.all} every-filing ·{" "}
-                {digest.recipientCounts.major} major-only
+                {digest.recipientCount} confirmed · {digest.follows.allFollowers} follow all
               </span>
             )}
           </h2>
@@ -515,9 +531,29 @@ export default function AdminPage() {
                 <>
                   <p className="text-neutral-600 text-xs">
                     Draft ready: {digest.draft.items.length} official
-                    {digest.draft.items.length === 1 ? "" : "s"}. Routine send
-                    reaches {digest.recipientCounts.all}; major send reaches{" "}
-                    {digest.recipientCounts.total}.
+                    {digest.draft.items.length === 1 ? "" : "s"}. Reaches{" "}
+                    {digest.follows.reached} of {digest.follows.total} confirmed —{" "}
+                    {digest.follows.allFollowers} follow all officials
+                    {digest.draft.items.some(
+                      (i) => (digest.follows.byOfficial[i.slug] ?? 0) > 0
+                    ) && (
+                      <>
+                        {", plus "}
+                        {digest.draft.items
+                          .filter((i) => (digest.follows.byOfficial[i.slug] ?? 0) > 0)
+                          .map(
+                            (i) =>
+                              `${digest.follows.byOfficial[i.slug]} for ${i.name}`
+                          )
+                          .join(", ")}
+                      </>
+                    )}
+                    .{" "}
+                    {digest.follows.excluded > 0
+                      ? `${digest.follows.excluded} follower${
+                          digest.follows.excluded === 1 ? "" : "s"
+                        } of other officials excluded.`
+                      : "No followers of other officials to exclude."}
                   </p>
                   {digest.draft.items.map((item) => (
                     <div key={item.slug} className="border-l-2 border-neutral-300 pl-3">
@@ -561,9 +597,27 @@ export default function AdminPage() {
                   ))}
 
                   {/* Test send: mails one copy to the admin. Consumes nothing —
-                      no ledger, no run, no lastNotifiedAt bump. */}
+                      no ledger, no run, no lastNotifiedAt bump. The select scopes
+                      the PREVIEW to one official (a narrower digest); the real
+                      send never content-filters. */}
                   <div className="pt-2 border-t border-neutral-200 space-y-2">
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <select
+                        value={digestTestOfficial}
+                        onChange={(e) =>
+                          setAdminState({ digestTestOfficial: e.target.value })
+                        }
+                        disabled={digestTesting}
+                        aria-label="Test digest scope"
+                        className="border border-neutral-300 text-neutral-700 px-2 py-1.5 text-xs bg-white cursor-pointer disabled:opacity-50"
+                      >
+                        <option value="">Full digest</option>
+                        {digest.draft.items.map((item) => (
+                          <option key={item.slug} value={item.slug}>
+                            {item.name} only
+                          </option>
+                        ))}
+                      </select>
                       <button
                         type="button"
                         onClick={handleTestDigest}
@@ -579,48 +633,11 @@ export default function AdminPage() {
                     {digestTestResult && <DigestTestReport result={digestTestResult} />}
                   </div>
 
-                  {/* Audience selector: routine = every-filing subscribers only;
-                      major = all subscribers. Routine is the default. */}
-                  <fieldset className="pt-2 border-t border-neutral-200 space-y-1.5">
-                    <legend className="text-[10px] uppercase tracking-wider text-neutral-500 font-medium mb-1">
-                      Audience
-                    </legend>
-                    <label className="flex items-start gap-2 text-xs text-neutral-700 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="digest-audience"
-                        value="routine"
-                        checked={digestAudience === "routine"}
-                        onChange={() => setAdminState({ digestAudience: "routine" })}
-                        className="mt-0.5 accent-neutral-900"
-                      />
-                      <span>
-                        Routine filing update — goes to every-filing subscribers only
-                        ({digest.recipientCounts.all})
-                      </span>
-                    </label>
-                    <label className="flex items-start gap-2 text-xs text-neutral-700 cursor-pointer">
-                      <input
-                        type="radio"
-                        name="digest-audience"
-                        value="major"
-                        checked={digestAudience === "major"}
-                        onChange={() => setAdminState({ digestAudience: "major" })}
-                        className="mt-0.5 accent-neutral-900"
-                      />
-                      <span>
-                        Major update — goes to all subscribers ({digest.recipientCounts.total})
-                      </span>
-                    </label>
-                  </fieldset>
-
-                  {/* Send flow: result -> two-step confirm -> button. */}
+                  {/* Send flow: result -> two-step confirm -> button. Recipients
+                      are chosen by follows server-side (no audience choice). */}
                   {(() => {
-                    // The count the selected audience actually reaches.
-                    const targetCount =
-                      digestAudience === "major"
-                        ? digest.recipientCounts.total
-                        : digest.recipientCounts.all;
+                    // The count the real send actually reaches (follows-filtered).
+                    const targetCount = digest.follows.reached;
                     return (
                       <div className="pt-2 border-t border-neutral-200">
                         {digestResult ? (
@@ -632,7 +649,7 @@ export default function AdminPage() {
                         ) : digestConfirming ? (
                           <div className="flex items-center gap-3">
                             <span className="text-xs text-neutral-700">
-                              Send {digestAudience} update to {targetCount} subscriber
+                              Send to {targetCount} subscriber
                               {targetCount === 1 ? "" : "s"} now?
                             </span>
                             <button
@@ -658,7 +675,7 @@ export default function AdminPage() {
                               type="button"
                               onClick={() => setAdminState({ digestConfirming: true })}
                               disabled={targetCount === 0}
-                              title={targetCount === 0 ? "No subscribers in this audience yet." : undefined}
+                              title={targetCount === 0 ? "No subscribers follow these officials yet." : undefined}
                               className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               {digest.inFlightRun ? "Resume send" : "Send digest"}
@@ -705,7 +722,7 @@ export default function AdminPage() {
               <thead>
                 <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
                   <th className="pb-2 pr-3 font-medium">Email</th>
-                  <th className="pb-2 pr-3 font-medium">Preference</th>
+                  <th className="pb-2 pr-3 font-medium">Follows</th>
                   <th className="pb-2 pr-3 font-medium">Source</th>
                   <th className="pb-2 pr-3 font-medium">Official</th>
                   <th className="pb-2 font-medium text-right">Updated</th>
@@ -718,7 +735,7 @@ export default function AdminPage() {
                       {signup.email}
                     </td>
                     <td className="py-2 pr-3 text-neutral-600">
-                      {signup.alertType === "all" ? "Every filing" : "Major updates"}
+                      {signup.officialSlug ? "One official" : "All officials"}
                     </td>
                     <td className="py-2 pr-3 text-neutral-500">
                       {signup.sourcePage || "—"}
@@ -1147,11 +1164,21 @@ function DigestSendReport({
     return (
       <div className="text-xs">
         <p className="text-emerald-700 font-medium">
-          Sent {result.audience ? `${result.audience} update ` : ""}to{" "}
-          {result.recipientCount} subscriber
+          Sent to {result.recipientCount} subscriber
           {result.recipientCount === 1 ? "" : "s"}
           {typeof result.filingCount === "number" && ` · ${result.filingCount} filing${result.filingCount === 1 ? "" : "s"}`}.
         </p>
+        {result.follows && (
+          <p className="text-neutral-500 mt-0.5">
+            {result.follows.allFollowers} follow all
+            {result.follows.excluded > 0
+              ? ` · ${result.follows.excluded} other-official follower${
+                  result.follows.excluded === 1 ? "" : "s"
+                } excluded`
+              : ""}
+            .
+          </p>
+        )}
         {result.warning && <p className="text-amber-700 mt-1">{result.warning}</p>}
       </div>
     );
@@ -1195,7 +1222,10 @@ function DigestTestReport({ result }: { result: DigestSendResult }) {
   if (result.status === "test-sent") {
     return (
       <p className="text-xs text-emerald-700">
-        Test sent to {result.to}. Check your inbox.
+        {result.onlyOfficial
+          ? `Single-official preview sent to ${result.to}. `
+          : `Test sent to ${result.to}. `}
+        Check your inbox.
       </p>
     );
   }
