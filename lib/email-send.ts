@@ -25,8 +25,15 @@ import { mintToken } from "@/lib/tokens";
 import { buildDigestEmail } from "@/lib/emails";
 import { chunkKey, type DigestItem } from "@/lib/digest";
 
-/** Audit-log kinds; mirrors emailSends.kind (excludes "admin", which notify.ts owns). */
-export type EmailKind = "confirmation" | "welcome" | "digest" | "repermission";
+/** Audit-log kinds; mirrors emailSends.kind (excludes "admin", which notify.ts owns).
+ * "digest_test" is a one-off preview mailed only to the admin — it writes this
+ * audit row and NOTHING else (no ledger, no lastNotifiedAt). */
+export type EmailKind =
+  | "confirmation"
+  | "welcome"
+  | "digest"
+  | "digest_test"
+  | "repermission";
 
 let warnedMissingKey = false;
 
@@ -87,6 +94,12 @@ export interface TransactionalEmail {
    * kind so the audit log is accurate.
    */
   kind?: EmailKind;
+  /**
+   * Optional Resend idempotency key (SDK option, not a header — Resend only
+   * honors it via the request-options arg). A unique key per call means every
+   * send delivers; a repeated key dedupes within Resend's 24h window.
+   */
+  idempotencyKey?: string;
 }
 
 export interface SendResult {
@@ -104,15 +117,18 @@ export async function sendTransactional(
   }
 
   try {
-    const { data, error } = await resend.emails.send({
-      from: DIGEST_FROM,
-      to: [email.to],
-      replyTo: REPLY_TO,
-      subject: email.subject,
-      html: email.html,
-      text: email.text,
-      headers: email.headers,
-    });
+    const { data, error } = await resend.emails.send(
+      {
+        from: DIGEST_FROM,
+        to: [email.to],
+        replyTo: REPLY_TO,
+        subject: email.subject,
+        html: email.html,
+        text: email.text,
+        headers: email.headers,
+      },
+      email.idempotencyKey ? { idempotencyKey: email.idempotencyKey } : undefined
+    );
     if (error) {
       console.error("[email-send] Resend error:", error);
       return { ok: false, error: error.message };

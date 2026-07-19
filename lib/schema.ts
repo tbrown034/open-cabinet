@@ -267,7 +267,10 @@ export const notifiedFilings = pgTable(
 // the send helpers in lib/email-send.ts. The Resend webhook updates
 // status (delivered | bounced | complained) keyed on resendMessageId.
 //
-// kind: confirmation | welcome | digest | repermission | admin
+// kind: confirmation | welcome | digest | digest_test | repermission | admin
+//   digest_test — a preview mailed only to the admin (the "Send test to me"
+//   action). It writes ONLY this audit row: never the notified_filings ledger,
+//   a digest_runs row, or a lastNotifiedAt bump.
 //   All digest rows are per-recipient (resend.emails.send returns one
 //   message id per address in the batch) — there are no campaign-level
 //   broadcast rows here.
@@ -277,7 +280,7 @@ export const emailSends = pgTable(
     id: serial("id").primaryKey(),
     // Every row is per-recipient now; batch.send returns per-address ids.
     email: text("email").notNull(),
-    kind: text("kind").notNull(), // confirmation | welcome | digest | repermission | admin
+    kind: text("kind").notNull(), // confirmation | welcome | digest | digest_test | repermission | admin
     digestRunId: integer("digest_run_id").references(() => digestRuns.id, {
       onDelete: "set null",
     }),
