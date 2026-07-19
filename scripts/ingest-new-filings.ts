@@ -256,14 +256,27 @@ function summarizeTransactions(name: string, txs: ParsedTransaction[]): string {
   const exchanges = txs.filter((tx) => tx.type === "Exchange").length;
   const late = txs.filter((tx) => tx.lateFilingFlag).length;
   const parts: string[] = [];
-  if (sales) parts.push(`${sales} sale${sales === 1 ? "" : "s"}`);
-  if (purchases) parts.push(`${purchases} purchase${purchases === 1 ? "" : "s"}`);
-  if (exchanges) parts.push(`${exchanges} exchange${exchanges === 1 ? "" : "s"}`);
+  if (sales) parts.push(`${sales.toLocaleString()} sale${sales === 1 ? "" : "s"}`);
+  if (purchases) parts.push(`${purchases.toLocaleString()} purchase${purchases === 1 ? "" : "s"}`);
+  if (exchanges) parts.push(`${exchanges.toLocaleString()} exchange${exchanges === 1 ? "" : "s"}`);
   const actionSummary = parts.length ? parts.join(" and ") : "no reportable transactions";
   const lateSentence = late
-    ? ` ${late} transaction${late === 1 ? "" : "s"} were marked as filed late.`
+    ? ` ${late.toLocaleString()} transaction${late === 1 ? "" : "s"} were marked as filed late.`
     : "";
-  return `${lastName} reported ${actionSummary} across ${txs.length} transaction${txs.length === 1 ? "" : "s"} in the latest tracked 278-T filing.${lateSentence}`;
+  // These totals span every tracked filing, not just the newest one — saying
+  // "the latest filing" here once shipped a wrong claim to Trump's page.
+  return `${lastName} reported ${actionSummary} across ${txs.length.toLocaleString()} transactions in 278-T filings tracked by Open Cabinet.${lateSentence}`;
+}
+
+// OGE's raw Executive Schedule levels mapped to the site's editorial
+// groupings (lib/types.ts GovernmentLevel). Level I is cabinet rank;
+// Level II covers deputy-secretary and administrator posts.
+function normalizeLevel(raw: string | undefined): string {
+  if (!raw) return "Unknown";
+  const cleaned = raw.trim();
+  if (cleaned === "Level I") return "Cabinet";
+  if (cleaned === "Level II") return "Sub-Cabinet";
+  return cleaned;
 }
 
 async function ingestForOfficial(
@@ -280,7 +293,11 @@ async function ingestForOfficial(
         slug,
         title: firstFiling.title || "Unknown",
         agency: firstFiling.agency || "Unknown",
-        level: firstFiling.level || "Unknown",
+        // OGE reports Executive Schedule strings; the site's GovernmentLevel
+        // type uses editorial groupings, and the /all filter tabs match on
+        // them exactly — raw "Level I"/"Level II" values silently drop the
+        // official from every tab.
+        level: normalizeLevel(firstFiling.level),
         filingType: "278-T Periodic Transaction Report",
         mostRecentFilingDate: firstFiling.docDate.slice(0, 10),
         transactions: [],
