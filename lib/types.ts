@@ -15,7 +15,10 @@ export type AmountRange =
   | "$1,000,001-$5,000,000"
   | "$5,000,001-$25,000,000"
   | "$25,000,001-$50,000,000"
-  | "Over $50,000,000";
+  | "Over $50,000,000"
+  // OGE caps spouse- and dependent-held asset values at this open-ended
+  // range, so some filings report it instead of a bounded bracket.
+  | "Over $1,000,000";
 
 export type GovernmentLevel = "Cabinet" | "Sub-Cabinet" | "Senior Staff";
 

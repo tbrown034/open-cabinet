@@ -17,12 +17,12 @@ Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, 
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 34 |
-| Transactions | 7,306 |
-| Estimated value | ~$3.8B |
-| Late filings | 5,263 |
+| Transactions | 10,033 |
+| Estimated value | ~$4.2B |
+| Late filings | 6,843 |
 | Companies searchable | 405 |
 | News articles linked | 35 |
-| Source filing PDFs linked | 104 |
+| Source filing PDFs linked | 136 |
 
 ## Pages
 

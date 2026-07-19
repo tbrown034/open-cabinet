@@ -31,13 +31,13 @@ const STEPS = [
     id: "reporting",
     label: "Ongoing",
     title: "Every trade gets disclosed",
-    body: "Under the STOCK Act (5 U.S.C. \u00A713104), officials must report individual securities transactions over $1,000 within 30 days of notification, or 45 days of the trade, whichever comes first (5 U.S.C. \u00A713105(l)). Mutual funds and ETFs are exempt (5 CFR \u00A72640.201). These are filed as OGE Form 278-T reports, the core data that powers this tracker.",
+    body: "Under the STOCK Act (5 U.S.C. \u00A713104), officials must report individual securities transactions over $1,000 within 30 days of notification, or 45 days of the trade, whichever comes first (5 U.S.C. \u00A713105(l)). Mutual funds and ETFs are generally exempt from transaction reporting as excepted investment funds. These are filed as OGE Form 278-T reports, the core data that powers this tracker.",
   },
   {
     id: "compliance",
     label: "Compliance",
     title: "The ethics office certifies",
-    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags, criminal conflict of interest is covered by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
+    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags. Criminal conflict of interest is covered separately by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
   },
 ];
 
@@ -203,8 +203,8 @@ export default function Explainer() {
                   Purchases while in office
                 </div>
                 <p className="text-neutral-500 mt-1">
-                  Most officials sell holdings upon confirmation. New purchases
-                 , especially in sectors they regulate, warrant scrutiny.
+                  Most officials sell holdings upon confirmation. New purchases,
+                  especially in sectors they regulate, warrant scrutiny.
                 </p>
               </div>
             </div>

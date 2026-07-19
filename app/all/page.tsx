@@ -7,11 +7,11 @@ import SwimLaneChart from "../components/swim-lane-chart";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "All Executive Branch Trades, Open Cabinet",
+  title: "All Executive Branch Trades",
   description:
     "Every tracked executive branch transaction on one canvas.",
   openGraph: {
-    title: "All Executive Branch Trades, Open Cabinet",
+    title: "All Executive Branch Trades — Open Cabinet",
     description: "Every tracked reported transaction on one D3 visualization.",
     type: "website",
   },

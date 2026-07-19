@@ -4,7 +4,7 @@ import { displayName } from "@/lib/format";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Late Filings, Open Cabinet",
+  title: "Late Filings",
   description:
     "Late financial disclosures across executive branch officials. Who's missing deadlines and what it means.",
 };
@@ -170,15 +170,13 @@ export default async function LateFilingsPage() {
             <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
               5 U.S.C. Section 13106(a)
             </a>
-            , each late filing carries a $200 fee. It{"'"}s routinely waived.
-            No executive branch official has ever been meaningfully sanctioned
-            for late 278-T filings (
+            , a late 278-T carries a $200 fee, charged once per report, not per
+            transaction. The $200 fee is routinely waived, and OGE has no
+            authority to fine or prosecute (
             <a href="https://campaignlegal.org/update/stock-act-failed-effort-stop-insider-trading-congress" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
               Campaign Legal Center
             </a>
-            ). At {totalLate.toLocaleString()} late-filed transactions, the theoretical maximum penalty is $
-            {(totalLate * 200).toLocaleString()}, but that assumes one fee per
-            transaction. The actual fee is per report, not per transaction.
+            ).
           </p>
         </div>
       </section>
@@ -243,10 +241,10 @@ export default async function LateFilingsPage() {
                     </span>
                   </td>
                   <td className="py-2.5 pr-3 text-right tabular-nums text-red-700 hidden sm:table-cell">
-                    {o.lateSales || ","}
+                    {o.lateSales || "0"}
                   </td>
                   <td className="py-2.5 text-right tabular-nums text-emerald-700 hidden sm:table-cell">
-                    {o.latePurchases || ","}
+                    {o.latePurchases || "0"}
                   </td>
                 </tr>
               ))}
@@ -282,17 +280,18 @@ export default async function LateFilingsPage() {
                 The enforcement gap
               </div>
               <p>
-                A{" "}
+                Business Insider{"'"}s{" "}
                 <a href="https://www.businessinsider.com/conflicted-congress-key-findings-stock-act-violations-exposed-2021-12" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-                  2021 Business Insider investigation
+                  Conflicted Congress investigation
                 </a>{" "}
-                found at least 72 members of Congress violated the same deadline.
-                The{" "}
+                had identified at least 72 members of Congress violating the
+                same deadline by 2022. The{" "}
                 <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
                   penalty
                 </a>{" "}
-               , $200, routinely waived, has never deterred anyone. No criminal
-                prosecution has ever been brought under the STOCK Act.*
+                &mdash; a $200 fee, routinely waived &mdash; has never deterred
+                anyone. No criminal prosecution has ever been brought under the
+                STOCK Act.*
               </p>
               <p className="text-xs text-neutral-500 mt-2">
                 *Sources:{" "}

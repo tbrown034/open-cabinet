@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import StatusShell from "../status-shell";
 
 export const metadata: Metadata = {
-  title: "Unsubscribed, Open Cabinet",
+  title: "Unsubscribed",
   robots: { index: false },
 };
 

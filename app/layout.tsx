@@ -29,7 +29,10 @@ const SITE_URL = "https://open-cabinet.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Open Cabinet, Executive Branch Stock Tracker",
+  title: {
+    default: "Open Cabinet — Executive Branch Stock Tracker",
+    template: "%s — Open Cabinet",
+  },
   description:
     "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
   alternates: {
@@ -39,7 +42,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Open Cabinet, Executive Branch Stock Tracker",
+    title: "Open Cabinet — Executive Branch Stock Tracker",
     description:
       "An interactive financial disclosure and conflict-of-interest tracker for the executive branch, sourced from U.S. Office of Government Ethics filings.",
     type: "website",

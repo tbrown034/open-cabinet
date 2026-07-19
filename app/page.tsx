@@ -1,4 +1,4 @@
-import { getOfficialsIndex, getAllOfficials } from "@/lib/data";
+import { getOfficialsIndex, getAllOfficials, getTradesByTicker } from "@/lib/data";
 import {
   amountRangeToMidpoint,
   formatCompactCurrency,
@@ -17,7 +17,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Open Cabinet, Executive Branch Stock Tracker",
   description:
-    "The first interactive stock tracker for the executive branch. Search 7,300+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
+    "The first interactive stock tracker for the executive branch. Search 10,000+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
 };
 
 function isSale(type: string): boolean {
@@ -25,11 +25,16 @@ function isSale(type: string): boolean {
 }
 
 export default async function Home() {
-  const [index, allOfficials, news] = await Promise.all([
+  const [index, allOfficials, news, tickerMap] = await Promise.all([
     getOfficialsIndex(),
     getAllOfficials(),
     getNewsCoverage(),
+    getTradesByTicker(),
   ]);
+  // Real number of distinct tickers, computed the same way the Company
+  // Lookup page counts them (getTradesByTicker keys). Never hardcode this,
+  // the two pages must always agree.
+  const companyCount = tickerMap.size;
   // Drop prior-administration holdovers from the directory, counts and banner.
   const officials = index.officials.filter((o) => !o.formerOfficial);
   const officialsBySlug = new Map(allOfficials.map((o) => [o.slug, o]));
@@ -181,7 +186,7 @@ export default async function Home() {
                     {displayName(o.name)}
                   </Link>
                   <span className="text-neutral-500 text-xs">
-                    filed {formatDate(o.filingDate)}
+                    posted {formatDate(o.filingDate)}
                   </span>
                   {o.newCount > 0 && (
                     <span className="text-neutral-400 text-xs">
@@ -197,12 +202,12 @@ export default async function Home() {
                 <li className="text-neutral-400 text-xs pt-0.5">
                   + {bannerOverflow.length} more updated
                   {" "}({overflowTrades.toLocaleString()} additional trade
-                  {overflowTrades === 1 ? "" : "s"}) ,{" "}
+                  {overflowTrades === 1 ? "" : "s"}).{" "}
                   <Link
                     href="#directory"
                     className="underline hover:text-neutral-200"
                   >
-                    see directory
+                    See directory
                   </Link>
                 </li>
               )}
@@ -216,7 +221,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <header className="flex-1">
             <h1 className="font-[family-name:var(--font-source-serif)] text-4xl md:text-5xl text-neutral-900 mb-4 leading-tight">
-              What is Trump’s Cabinet
+              What Is Trump’s Cabinet
               <br />
               Buying and Selling?
             </h1>
@@ -238,7 +243,7 @@ export default async function Home() {
               .
             </p>
             <p className="text-xs text-neutral-400 mt-3">
-              Most recent OGE filing:{" "}
+              Latest filing posted to OGE:{" "}
               {formatDate(mostRecentFiling)}{" "}
               · Data checked weekly
             </p>
@@ -356,7 +361,7 @@ export default async function Home() {
             <a href="https://github.com/tbrown034/open-cabinet" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               open-source project
             </a>
-            {" "}, expanding coverage is an ongoing goal. For raw disclosure
+            {" "}&mdash; expanding coverage is an ongoing goal. For raw disclosure
             documents across 1,500+ appointees, see{" "}
             <a href="https://projects.propublica.org/trump-team-financial-disclosures/" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               ProPublica
@@ -399,7 +404,7 @@ export default async function Home() {
                 </div>
                 <p className="text-xs text-neutral-500 mt-1">
                   Search by ticker to see which officials traded each stock.
-                  620+ companies tracked.
+                  {" "}{companyCount.toLocaleString()} companies tracked.
                 </p>
               </div>
               <span className="text-neutral-300 group-hover:text-neutral-900 transition-colors text-lg mt-0.5 ml-3 shrink-0">&rarr;</span>
@@ -459,7 +464,7 @@ export default async function Home() {
                     {item.headline}
                   </a>
                   <div className="text-xs text-neutral-400 mt-1">
-                    {item.source} · {item.date}
+                    {item.source} · {formatDate(item.date)}
                     {item.official && (
                       <>
                         {" · "}

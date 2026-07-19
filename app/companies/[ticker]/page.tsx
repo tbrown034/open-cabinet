@@ -21,13 +21,13 @@ export async function generateMetadata({
     getTradesByTicker(),
   ]);
   const company = tickerMap.get(ticker.toUpperCase());
-  if (!company) return { title: "Not Found, Open Cabinet" };
+  if (!company) return { title: "Not Found" };
   const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
   return {
-    title: `${company.ticker}, Who in Government Trades This Stock, Open Cabinet`,
+    title: `${company.ticker}: Who in Government Trades This Stock`,
     description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
     openGraph: {
-      title: `${company.ticker}, Who in Government Trades This Stock`,
+      title: `${company.ticker}: Who in Government Trades This Stock — Open Cabinet`,
       description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
       type: "website",
     },

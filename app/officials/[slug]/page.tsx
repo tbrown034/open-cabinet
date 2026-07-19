@@ -84,13 +84,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const official = await getOfficialBySlug(slug);
-  if (!official) return { title: "Not Found, Open Cabinet" };
+  if (!official) return { title: "Not Found" };
   const displayName = official.name.split(",").reverse().join(" ").trim();
   return {
-    title: `${displayName} Financial Trades, Open Cabinet`,
+    title: `${displayName} Financial Trades`,
     description: official.summary || `Financial transaction data for ${displayName}, ${official.title}.`,
     openGraph: {
-      title: `${displayName} Financial Trades, Open Cabinet`,
+      title: `${displayName} Financial Trades — Open Cabinet`,
       description: `${official.transactions.length} transactions reported by ${displayName}, ${official.title}.`,
       type: "website",
     },
@@ -389,7 +389,7 @@ export default async function OfficialPage({
                 </span>{" "}
                 We added {newCount.toLocaleString()} trade
                 {newCount === 1 ? "" : "s"} from a 278-T posted to OGE on{" "}
-                {formatDate(ogeFilingDate)} (ingested {formatDate(ingestedDate!)}).
+                {formatDate(ogeFilingDate)} (added {formatDate(ingestedDate!)}).
               </>
             ) : newCount > 0 ? (
               <>
@@ -398,7 +398,7 @@ export default async function OfficialPage({
                   {newCount === 1 ? "" : "s"}
                 </span>{" "}
                 for {displayName(official.name)} from a 278-T posted to OGE on{" "}
-                {formatDate(ogeFilingDate)} (ingested {formatDate(ingestedDate!)}).
+                {formatDate(ogeFilingDate)} (added {formatDate(ingestedDate!)}).
               </>
             ) : (
               <>
@@ -570,7 +570,7 @@ export default async function OfficialPage({
             <p className="text-xs text-neutral-400 mt-1">
               {chartView === "bars"
                 ? "Click any month to zoom in. Sales above midline, purchases below. Amber tick = month with late-filed trades."
-                : "One dot per disclosed trade, sized by amount. Red = sale, green = purchase."}
+                : "One dot per disclosed trade, sized by reported amount range. Red = sale, green = purchase."}
             </p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
@@ -750,7 +750,7 @@ export default async function OfficialPage({
                     {item.headline}
                   </a>
                   <div className="text-xs text-neutral-400 mt-1">
-                    {item.source} · {item.date}
+                    {item.source} · {formatDate(item.date)}
                   </div>
                   <p className="text-neutral-500 mt-1">{item.relevance}</p>
                 </div>

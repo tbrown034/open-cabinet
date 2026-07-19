@@ -3,7 +3,7 @@ import StatusShell from "../status-shell";
 import { verifyToken } from "@/lib/tokens";
 
 export const metadata: Metadata = {
-  title: "Confirm your filing alerts, Open Cabinet",
+  title: "Confirm your filing alerts",
   robots: { index: false },
 };
 
