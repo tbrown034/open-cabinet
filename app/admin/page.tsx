@@ -39,6 +39,7 @@ interface AlertSignup {
   sourcePage: string | null;
   officialSlug: string | null;
   status: string;
+  confirmedAt: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -758,6 +759,7 @@ export default function AdminPage() {
               <thead>
                 <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
                   <th className="pb-2 pr-3 font-medium">Email</th>
+                  <th className="pb-2 pr-3 font-medium">Confirmed</th>
                   <th className="pb-2 pr-3 font-medium">Follows</th>
                   <th className="pb-2 pr-3 font-medium">Source</th>
                   <th className="pb-2 pr-3 font-medium">Official</th>
@@ -769,6 +771,19 @@ export default function AdminPage() {
                   <tr key={signup.id} className="border-b border-neutral-100">
                     <td className="py-2 pr-3 text-neutral-900">
                       {signup.email}
+                    </td>
+                    <td className="py-2 pr-3">
+                      {signup.confirmedAt ? (
+                        <span className="text-emerald-700">
+                          Confirmed{" "}
+                          {new Date(signup.confirmedAt).toLocaleDateString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                          })}
+                        </span>
+                      ) : (
+                        <span className="text-neutral-400">{signup.status}</span>
+                      )}
                     </td>
                     <td className="py-2 pr-3 text-neutral-600">
                       {signup.officialSlug ? "One official" : "All officials"}
