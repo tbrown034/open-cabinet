@@ -3,9 +3,9 @@ import {
   selectDigestItems,
   digestIdempotencyKey,
   chunkKey,
-  filterRecipientsByAudience,
-  recipientAudienceCounts,
-  type AudienceRecipient,
+  filterRecipientsByFollows,
+  followsBreakdown,
+  type FollowsRecipient,
 } from "./digest";
 import type { OfficialData, Transaction } from "./types";
 
@@ -171,89 +171,112 @@ describe("chunkKey", () => {
   });
 });
 
-// The audience routing rule is the security-relevant bit: a routine send must
-// NEVER reach a major-only subscriber. These exercise that filter directly.
-describe("filterRecipientsByAudience", () => {
-  const recipients: AudienceRecipient[] = [
-    { id: 1, email: "all-1@x.test", alertType: "all" },
-    { id: 2, email: "major-1@x.test", alertType: "major" },
-    { id: 3, email: "all-2@x.test", alertType: "all" },
-    { id: 4, email: "major-2@x.test", alertType: "major" },
+// The follows routing rule is the security-relevant bit: a digest must reach a
+// follow-all subscriber and any follower of an official IN the digest, and must
+// NOT reach a follower of some other official. These exercise the filter/
+// breakdown directly.
+describe("filterRecipientsByFollows", () => {
+  const recipients: FollowsRecipient[] = [
+    { id: 1, email: "all-1@x.test", officialSlug: null },
+    { id: 2, email: "bessent@x.test", officialSlug: "bessent-scott" },
+    { id: 3, email: "all-2@x.test", officialSlug: null },
+    { id: 4, email: "lutnick@x.test", officialSlug: "lutnick-howard" },
   ];
 
-  it("major reaches EVERY subscriber (both alert types)", () => {
-    const out = filterRecipientsByAudience(recipients, "major");
-    expect(out).toHaveLength(4);
-    expect(out.map((r) => r.id)).toEqual([1, 2, 3, 4]);
+  it("a null follow (follow-all) is reached by every digest", () => {
+    const out = filterRecipientsByFollows(recipients, ["bessent-scott"]);
+    expect(out.map((r) => r.id)).toContain(1);
+    expect(out.map((r) => r.id)).toContain(3);
   });
 
-  it("routine reaches ONLY every-filing ('all') subscribers", () => {
-    const out = filterRecipientsByAudience(recipients, "routine");
+  it("includes a follower whose official IS in the digest", () => {
+    const out = filterRecipientsByFollows(recipients, ["bessent-scott"]);
+    expect(out.map((r) => r.id)).toEqual([1, 2, 3]);
+  });
+
+  it("excludes a follower whose official is NOT in the digest", () => {
+    const out = filterRecipientsByFollows(recipients, ["bessent-scott"]);
+    expect(out.some((r) => r.id === 4)).toBe(false);
+  });
+
+  it("with empty digestSlugs, only follow-all subscribers are reached", () => {
+    const out = filterRecipientsByFollows(recipients, []);
     expect(out.map((r) => r.id)).toEqual([1, 3]);
-    expect(out.every((r) => r.alertType === "all")).toBe(true);
+    expect(out.every((r) => r.officialSlug === null)).toBe(true);
   });
 
-  it("routine excludes major-only subscribers entirely", () => {
-    const out = filterRecipientsByAudience(recipients, "routine");
-    expect(out.some((r) => r.alertType === "major")).toBe(false);
-  });
-
-  it("treats a legacy/blank alertType as major-only (excluded from routine)", () => {
-    const legacy: AudienceRecipient[] = [
-      { id: 5, email: "legacy@x.test", alertType: "" },
-      { id: 6, email: "all@x.test", alertType: "all" },
-    ];
-    expect(filterRecipientsByAudience(legacy, "routine").map((r) => r.id)).toEqual([6]);
-    // ...but a major send still reaches them.
-    expect(filterRecipientsByAudience(legacy, "major").map((r) => r.id)).toEqual([5, 6]);
+  it("reaches followers of multiple officials in the digest", () => {
+    const out = filterRecipientsByFollows(recipients, [
+      "bessent-scott",
+      "lutnick-howard",
+    ]);
+    expect(out.map((r) => r.id)).toEqual([1, 2, 3, 4]);
   });
 
   it("does not mutate the input array", () => {
     const copy = [...recipients];
-    filterRecipientsByAudience(recipients, "routine");
+    filterRecipientsByFollows(recipients, ["bessent-scott"]);
     expect(recipients).toEqual(copy);
   });
 
-  it("handles an empty list", () => {
-    expect(filterRecipientsByAudience([], "routine")).toEqual([]);
-    expect(filterRecipientsByAudience([], "major")).toEqual([]);
+  it("handles an empty recipient list", () => {
+    expect(filterRecipientsByFollows([], ["bessent-scott"])).toEqual([]);
+    expect(filterRecipientsByFollows([], [])).toEqual([]);
   });
 });
 
-describe("recipientAudienceCounts", () => {
-  it("splits total into every-filing and major-only", () => {
-    const counts = recipientAudienceCounts([
-      { id: 1, email: "a@x.test", alertType: "all" },
-      { id: 2, email: "b@x.test", alertType: "major" },
-      { id: 3, email: "c@x.test", alertType: "all" },
-    ]);
-    expect(counts).toEqual({ total: 3, all: 2, major: 1 });
+describe("followsBreakdown", () => {
+  const recipients: FollowsRecipient[] = [
+    { id: 1, email: "all-1@x.test", officialSlug: null },
+    { id: 2, email: "bessent-1@x.test", officialSlug: "bessent-scott" },
+    { id: 3, email: "all-2@x.test", officialSlug: null },
+    { id: 4, email: "lutnick@x.test", officialSlug: "lutnick-howard" },
+    { id: 5, email: "bessent-2@x.test", officialSlug: "bessent-scott" },
+  ];
+
+  it("computes total/allFollowers/reached/excluded for a digest", () => {
+    const b = followsBreakdown(recipients, ["bessent-scott"]);
+    // total = 5; reached = 2 follow-all + 2 bessent followers = 4; excluded = 1
+    // (the lutnick follower, whose official is not in the digest).
+    expect(b.total).toBe(5);
+    expect(b.allFollowers).toBe(2);
+    expect(b.reached).toBe(4);
+    expect(b.excluded).toBe(1);
   });
 
-  it("counts a blank/legacy alertType as major-only", () => {
-    const counts = recipientAudienceCounts([
-      { id: 1, email: "a@x.test", alertType: "" },
-      { id: 2, email: "b@x.test", alertType: "all" },
-    ]);
-    expect(counts).toEqual({ total: 2, all: 1, major: 1 });
+  it("counts followers per official in byOfficial (single-official only)", () => {
+    const b = followsBreakdown(recipients, ["bessent-scott"]);
+    expect(b.byOfficial).toEqual({
+      "bessent-scott": 2,
+      "lutnick-howard": 1,
+    });
   });
 
-  it("is all-zero for an empty list", () => {
-    expect(recipientAudienceCounts([])).toEqual({ total: 0, all: 0, major: 0 });
+  it("excluded + reached === total (math is consistent)", () => {
+    const b = followsBreakdown(recipients, ["lutnick-howard"]);
+    expect(b.reached + b.excluded).toBe(b.total);
   });
 
-  it("agrees with the filter: major count === total - routine count", () => {
-    const recipients: AudienceRecipient[] = [
-      { id: 1, email: "a@x.test", alertType: "all" },
-      { id: 2, email: "b@x.test", alertType: "major" },
-      { id: 3, email: "c@x.test", alertType: "all" },
-      { id: 4, email: "d@x.test", alertType: "major" },
-    ];
-    const counts = recipientAudienceCounts(recipients);
-    const routine = filterRecipientsByAudience(recipients, "routine").length;
-    const major = filterRecipientsByAudience(recipients, "major").length;
-    expect(counts.all).toBe(routine);
-    expect(counts.total).toBe(major);
-    expect(counts.major).toBe(counts.total - counts.all);
+  it("with empty digestSlugs, only follow-all subscribers are reached", () => {
+    const b = followsBreakdown(recipients, []);
+    expect(b.reached).toBe(b.allFollowers);
+    expect(b.reached).toBe(2);
+    expect(b.excluded).toBe(3);
+  });
+
+  it("is all-zero (empty byOfficial) for an empty list", () => {
+    expect(followsBreakdown([], ["bessent-scott"])).toEqual({
+      total: 0,
+      allFollowers: 0,
+      reached: 0,
+      excluded: 0,
+      byOfficial: {},
+    });
+  });
+
+  it("does not mutate the input array", () => {
+    const copy = [...recipients];
+    followsBreakdown(recipients, ["bessent-scott"]);
+    expect(recipients).toEqual(copy);
   });
 });

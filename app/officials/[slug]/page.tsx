@@ -556,6 +556,7 @@ export default async function OfficialPage({
         <AlertSignupForm
           sourcePage="official-profile"
           officialSlug={official.slug}
+          officialName={displayName(official.name)}
           title={`Get ${displayName(official.name)} filing alerts`}
           description={`Get an email when Open Cabinet publishes an important update to ${displayName(official.name)}'s disclosure record.`}
         />

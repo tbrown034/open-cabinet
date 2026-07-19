@@ -158,49 +158,76 @@ export function selectDigestItems(
 }
 
 /**
- * Audience for a digest send. Maps to the `alert_type` preference each signup
- * chose at opt-in:
- *   "major"   — a MAJOR update: reaches EVERY confirmed signup, regardless of
- *               their alert_type. Use sparingly.
- *   "routine" — a routine filing update: reaches ONLY signups with
- *               alert_type = "all" (the every-filing subscribers). "major"-only
- *               subscribers are deliberately spared. This is the conservative
- *               default so we never spam major-only subscribers by accident.
+ * A confirmed subscriber and the single official they follow.
+ *
+ * The follow signal is `officialSlug`:
+ *   - null  → a "follow all" subscriber (signed up on the home page). They
+ *             receive every digest.
+ *   - slug  → a single-official follower (signed up on that official's page,
+ *             where the form promised "Get <Name> filing alerts"). They receive
+ *             a digest only when it covers the official they follow.
+ *
+ * The legacy `alert_type` (major/all) preference is retired from send routing —
+ * the column is kept for backward compatibility but nothing reads it here.
  */
-export type DigestAudience = "major" | "routine";
-
-/** A candidate recipient plus the preference we filter on. */
-export interface AudienceRecipient {
+export interface FollowsRecipient {
   id: number;
   email: string;
-  alertType: string; // "major" | "all" (schema default is "major")
+  officialSlug: string | null;
 }
 
 /**
- * Pure audience filter (no DB) so the routing rule is unit-testable in isolation.
+ * Pure follows filter (no DB) so the routing rule is unit-testable in isolation.
  *
- * - "major"   → everyone (both "major" and "all" subscribers).
- * - "routine" → only the every-filing ("all") subscribers.
- *
- * Anything other than "all" (i.e. "major", or a legacy/blank value) is treated
- * as major-only and therefore excluded from a routine send.
+ * A recipient is reached iff they follow ALL officials (officialSlug is null) or
+ * they follow one of the officials present in THIS digest (officialSlug is in
+ * digestSlugs). Non-mutating — returns a new array.
  */
-export function filterRecipientsByAudience<T extends { alertType: string }>(
-  recipients: T[],
-  audience: DigestAudience
-): T[] {
-  if (audience === "major") return recipients;
-  return recipients.filter((r) => r.alertType === "all");
+export function filterRecipientsByFollows<
+  T extends { officialSlug: string | null }
+>(recipients: T[], digestSlugs: string[]): T[] {
+  const inDigest = new Set(digestSlugs);
+  return recipients.filter(
+    (r) => r.officialSlug === null || inDigest.has(r.officialSlug)
+  );
 }
 
-/** Recipient counts for the admin UI: total, every-filing ("all"), major-only. */
-export function recipientAudienceCounts(recipients: AudienceRecipient[]): {
+/**
+ * Follows breakdown for the admin UI and the send receipt.
+ *
+ * - total        — every confirmed recipient considered.
+ * - allFollowers — recipients following ALL officials (officialSlug null); they
+ *                  are reached by every digest.
+ * - reached      — how many recipients this specific digest reaches (=
+ *                  filterRecipientsByFollows(...).length).
+ * - excluded     — total - reached (followers of officials NOT in this digest).
+ * - byOfficial   — per-slug follower counts among the recipients, keyed by the
+ *                  slug they follow (only single-official followers appear here).
+ */
+export function followsBreakdown<
+  T extends { officialSlug: string | null }
+>(
+  recipients: T[],
+  digestSlugs: string[]
+): {
   total: number;
-  all: number;
-  major: number;
+  allFollowers: number;
+  reached: number;
+  excluded: number;
+  byOfficial: Record<string, number>;
 } {
-  const all = recipients.filter((r) => r.alertType === "all").length;
-  return { total: recipients.length, all, major: recipients.length - all };
+  const total = recipients.length;
+  let allFollowers = 0;
+  const byOfficial: Record<string, number> = {};
+  for (const r of recipients) {
+    if (r.officialSlug === null) {
+      allFollowers++;
+    } else {
+      byOfficial[r.officialSlug] = (byOfficial[r.officialSlug] ?? 0) + 1;
+    }
+  }
+  const reached = filterRecipientsByFollows(recipients, digestSlugs).length;
+  return { total, allFollowers, reached, excluded: total - reached, byOfficial };
 }
 
 /**
