@@ -13,7 +13,8 @@
  * system sans body. Email needs inline styles + table layout to render in Gmail.
  */
 import { POSTAL_ADDRESS, siteUrl } from "@/lib/email-config";
-import type { DigestItem } from "@/lib/digest";
+import { formatDate } from "@/lib/format";
+import type { AlsoNewOfficial, DigestItem } from "@/lib/digest";
 
 export interface BuiltEmail {
   subject: string;
@@ -171,12 +172,22 @@ function showTicker(t: { description: string; ticker: string | null }): boolean 
  * The filing-alert digest. One section per official with a small trades table.
  * Deterministic output (no timestamps) so a crash-safe re-send is byte-identical
  * for Resend idempotency. Sale = red, Purchase = emerald (mirrors the site).
+ *
+ * `extras.alsoNew` renders a muted "Also filed in the last two weeks" teaser
+ * below the main sections — officials with recent filings NOT in this digest —
+ * so single-official followers see what they're missing without extra emails.
+ * `extras.trackedOfficialCount` (current, non-former officials) powers the
+ * follow-all CTA under it. Both come from DigestResult / the frozen payload, so
+ * resends stay byte-identical; both optional for pre-existing frozen payloads.
  */
 export function buildDigestEmail(
   items: DigestItem[],
-  unsubscribeLink: string
+  unsubscribeLink: string,
+  extras?: { alsoNew?: AlsoNewOfficial[]; trackedOfficialCount?: number }
 ): BuiltEmail {
   const base = siteUrl();
+  const alsoNew = extras?.alsoNew ?? [];
+  const trackedCount = extras?.trackedOfficialCount ?? 0;
   const subject =
     items.length === 1
       ? `New filing: ${items[0].name}`
@@ -210,6 +221,32 @@ export function buildDigestEmail(
     })
     .join("");
 
+  // "Also filed recently" teaser: muted and clearly secondary to the main
+  // sections (styled like the footer). One line per official — linked name,
+  // en-dash, trade count when known, AP-style posted date — then a follow-all
+  // CTA with the computed tracked-officials count.
+  const alsoNewHtml =
+    alsoNew.length > 0
+      ? `<div style="margin:4px 0 0;padding-top:20px;border-top:1px solid ${COLORS.border};">
+        <div style="font-family:${SANS};font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:${COLORS.muted};margin:0 0 10px;">Also filed in the last two weeks</div>
+        <p style="font-family:${SANS};font-size:13px;line-height:1.8;color:${COLORS.muted};margin:0 0 12px;">
+          ${alsoNew
+            .map(
+              (o) =>
+                `<a href="${base}/officials/${encodeURIComponent(o.slug)}" style="color:${COLORS.muted};">${escapeHtml(o.name)}</a> &ndash; ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${escapeHtml(formatDate(o.postedDate))}`
+            )
+            .join("<br>\n          ")}
+        </p>${
+          trackedCount > 0
+            ? `
+        <p style="font-family:${SANS};font-size:12px;line-height:1.6;color:${COLORS.muted};margin:0;">
+          Open Cabinet tracks ${trackedCount} officials. <a href="${base}/#alerts" style="color:${COLORS.muted};">Follow all of them</a>.
+        </p>`
+            : ""
+        }
+      </div>`
+      : "";
+
   const unsubHtml = `You're getting this because you subscribed. <a href="${unsubscribeLink}" style="color:${COLORS.muted};">Unsubscribe</a>.`;
   const html = layout({
     heading: items.length === 1 ? "A new filing" : "New filings",
@@ -217,7 +254,7 @@ export function buildDigestEmail(
       <p style="font-family:${SANS};font-size:14px;line-height:1.6;color:${COLORS.muted};margin:0 0 24px;">
         New executive-branch financial disclosures, sourced from the U.S. Office of Government Ethics. Amounts are ranges, as filed.
       </p>
-      ${sections}`,
+      ${sections}${alsoNewHtml}`,
     footerExtra: unsubHtml,
   });
 
@@ -233,11 +270,25 @@ ${lines}
     })
     .join("\n\n");
 
+  const alsoNewText =
+    alsoNew.length > 0
+      ? `\n\nAlso filed in the last two weeks:\n${alsoNew
+          .map(
+            (o) =>
+              `  - ${o.name} – ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${formatDate(o.postedDate)}: ${base}/officials/${o.slug}`
+          )
+          .join("\n")}${
+          trackedCount > 0
+            ? `\n\nOpen Cabinet tracks ${trackedCount} officials. Follow all of them: ${base}/#alerts`
+            : ""
+        }`
+      : "";
+
   const text = `${subject}
 
 New executive-branch financial disclosures from the U.S. Office of Government Ethics.
 
-${textSections}
+${textSections}${alsoNewText}
 
 Unsubscribe: ${unsubscribeLink}
 

@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   selectDigestItems,
+  selectAlsoNew,
   digestIdempotencyKey,
   chunkKey,
   filterRecipientsByFollows,
@@ -131,6 +132,155 @@ describe("selectDigestItems", () => {
     const b = official({ slug: "b", lastIngestedNewCount: 5, sourceFilings: [{ date: "2026-06-10", url: "https://oge.gov/b.pdf", label: "x" }] });
     const result = selectDigestItems([a, b], { notifiedUrls: new Set() });
     expect(result.items.map((i) => i.slug)).toEqual(["b", "a"]);
+  });
+
+  it("returns empty alsoNew when no referenceDate is provided", () => {
+    const result = selectDigestItems([official()], { notifiedUrls: new Set() });
+    expect(result.alsoNew).toEqual([]);
+  });
+
+  // Integration: alsoNew excludes this digest's own items, and the follow-all
+  // CTA count comes from the same officials array (non-former only).
+  it("populates alsoNew excluding its own items and counts tracked officials", () => {
+    const inDigest = official({
+      slug: "in-digest",
+      lastIngestedDate: "2026-06-18",
+      sourceFilings: [{ date: "2026-06-17", url: "https://oge.gov/live.pdf", label: "x" }],
+    });
+    // Recently ingested but its only filing is already notified — no card, so
+    // it belongs in the alsoNew teaser instead.
+    const teaser = official({
+      slug: "teaser",
+      lastIngestedDate: "2026-06-18",
+      mostRecentFilingDate: "2026-06-16",
+      sourceFilings: [{ date: "2026-06-16", url: "https://oge.gov/sent.pdf", label: "x" }],
+    });
+    const former = official({
+      slug: "former",
+      formerOfficial: true,
+      sourceFilings: [],
+    });
+    const result = selectDigestItems([inDigest, teaser, former], {
+      notifiedUrls: new Set(["https://oge.gov/sent.pdf"]),
+      referenceDate: "2026-06-20",
+    });
+    expect(result.items.map((i) => i.slug)).toEqual(["in-digest"]);
+    expect(result.alsoNew.map((o) => o.slug)).toEqual(["teaser"]);
+    expect(result.trackedOfficialCount).toBe(2); // former excluded
+  });
+});
+
+// The "Also filed recently" teaser: officials our pipeline updated in the 14
+// days before referenceDate (the data index's lastUpdated stamp — never wall
+// clock) who are NOT in this digest's items.
+describe("selectAlsoNew", () => {
+  const REF = "2026-06-20";
+
+  it("includes a recently-ingested official with its posting date and count", () => {
+    const o = official({
+      slug: "fresh",
+      lastIngestedDate: "2026-06-18",
+      mostRecentFilingDate: "2026-06-17",
+      lastIngestedNewCount: 3,
+    });
+    const out = selectAlsoNew([o], { excludeSlugs: [], referenceDate: REF });
+    expect(out).toEqual([
+      {
+        name: "Test Official",
+        slug: "fresh",
+        title: "Secretary",
+        agency: "Test Agency",
+        newTradeCount: 3,
+        postedDate: "2026-06-17",
+      },
+    ]);
+  });
+
+  it("excludes officials already in the digest (excludeSlugs)", () => {
+    const o = official({ slug: "covered", lastIngestedDate: "2026-06-18" });
+    const out = selectAlsoNew([o], {
+      excludeSlugs: ["covered"],
+      referenceDate: REF,
+    });
+    expect(out).toEqual([]);
+  });
+
+  it("excludes ingests older than the 14-day window", () => {
+    const stale = official({ slug: "stale", lastIngestedDate: "2026-05-20" });
+    const fresh = official({ slug: "fresh", lastIngestedDate: "2026-06-18" });
+    const out = selectAlsoNew([stale, fresh], {
+      excludeSlugs: [],
+      referenceDate: REF,
+    });
+    expect(out.map((o) => o.slug)).toEqual(["fresh"]);
+  });
+
+  it("excludes officials with no lastIngestedDate", () => {
+    const o = official({ slug: "undated", lastIngestedDate: undefined });
+    expect(
+      selectAlsoNew([o], { excludeSlugs: [], referenceDate: REF })
+    ).toEqual([]);
+  });
+
+  it("excludes former officials", () => {
+    const o = official({
+      slug: "former",
+      formerOfficial: true,
+      lastIngestedDate: "2026-06-18",
+    });
+    expect(
+      selectAlsoNew([o], { excludeSlugs: [], referenceDate: REF })
+    ).toEqual([]);
+  });
+
+  it("omits newTradeCount when the ingest delta is 0 (amended/restated)", () => {
+    const o = official({
+      slug: "amended",
+      lastIngestedDate: "2026-06-18",
+      lastIngestedNewCount: 0,
+    });
+    const out = selectAlsoNew([o], { excludeSlugs: [], referenceDate: REF });
+    expect(out).toHaveLength(1);
+    expect(out[0].newTradeCount).toBeUndefined();
+  });
+
+  it("sorts newest posted first and caps at 5", () => {
+    const officials = [3, 1, 7, 5, 2, 6, 4].map((day) =>
+      official({
+        slug: `o-${day}`,
+        lastIngestedDate: "2026-06-18",
+        mostRecentFilingDate: `2026-06-0${day}`,
+      })
+    );
+    const out = selectAlsoNew(officials, {
+      excludeSlugs: [],
+      referenceDate: REF,
+    });
+    expect(out).toHaveLength(5);
+    expect(out.map((o) => o.postedDate)).toEqual([
+      "2026-06-07",
+      "2026-06-06",
+      "2026-06-05",
+      "2026-06-04",
+      "2026-06-03",
+    ]);
+  });
+
+  it("breaks posting-date ties by slug for determinism", () => {
+    const a = official({ slug: "b-second", lastIngestedDate: "2026-06-18" });
+    const b = official({ slug: "a-first", lastIngestedDate: "2026-06-18" });
+    const out = selectAlsoNew([a, b], { excludeSlugs: [], referenceDate: REF });
+    expect(out.map((o) => o.slug)).toEqual(["a-first", "b-second"]);
+  });
+
+  it("does not mutate the input array", () => {
+    const officials = [
+      official({ slug: "x", lastIngestedDate: "2026-06-18" }),
+      official({ slug: "y", lastIngestedDate: "2026-06-19" }),
+    ];
+    const copy = [...officials];
+    selectAlsoNew(officials, { excludeSlugs: [], referenceDate: REF });
+    expect(officials).toEqual(copy);
   });
 });
 

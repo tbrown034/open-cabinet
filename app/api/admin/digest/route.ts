@@ -65,7 +65,7 @@ import { buildDigestEmail } from "@/lib/emails";
 import { mintToken } from "@/lib/tokens";
 import { notify } from "@/lib/notify";
 import { POSTAL_ADDRESS, siteUrl, unsubscribePageUrl } from "@/lib/email-config";
-import type { DigestItem } from "@/lib/digest";
+import type { AlsoNewOfficial, DigestItem } from "@/lib/digest";
 
 // Resend's free tier caps at 100 emails/day shared across every send; warn the
 // admin before they approach it so a digest isn't silently truncated.
@@ -84,6 +84,11 @@ interface FrozenPayload {
    * IS the send list; slugs are kept for the receipt breakdown). Optional for
    * backward-compat with any run frozen before this field existed. */
   slugs?: string[];
+  /** "Also filed recently" teaser + follow-all CTA count, frozen so a resumed
+   * send renders the byte-identical body (Resend idempotency requires it).
+   * Optional for runs frozen before these fields existed (block simply absent). */
+  alsoNew?: AlsoNewOfficial[];
+  trackedOfficialCount?: number;
 }
 
 function freeTierWarning(recipientCount: number): string | null {
@@ -252,7 +257,13 @@ async function handleTestSend(
     ? unsubscribePageUrl(mintToken(ownRow.id, "unsubscribe"))
     : siteUrl();
 
-  const email = buildDigestEmail(items, unsubscribeLink);
+  // The test mirrors what recipients get, including the "Also filed recently"
+  // teaser and follow-all CTA (also shown on the single-official preview, since
+  // a real narrower digest would carry them too).
+  const email = buildDigestEmail(items, unsubscribeLink, {
+    alsoNew: digest.alsoNew,
+    trackedOfficialCount: digest.trackedOfficialCount,
+  });
   const result = await sendTransactional({
     to: adminEmail,
     subject: `[TEST] ${email.subject}`,
@@ -355,7 +366,21 @@ export async function POST(req: Request) {
     const recipients = toSendRecipients(
       filterRecipientsByFollows(confirmed, digest.slugs)
     );
-    if (recipients.length === 0) {
+
+    const key = digestIdempotencyKey(digest.filingUrls);
+
+    // Look up any existing run for THIS filing set. This must happen BEFORE any
+    // empty-recipient early return: a resume sends to the run's FROZEN recipient
+    // list, so the freshly recomputed filter must not be allowed to strand a
+    // partial send (which would leave the ledger unwritten and re-trigger these
+    // filings in the next digest — a double send for everyone already mailed).
+    const [existing] = await db
+      .select()
+      .from(digestRuns)
+      .where(eq(digestRuns.idempotencyKey, key))
+      .limit(1);
+
+    if (!existing && recipients.length === 0) {
       return NextResponse.json({
         status: "no-recipients",
         recipientCount: 0,
@@ -363,15 +388,6 @@ export async function POST(req: Request) {
           "No confirmed subscribers follow the officials in this digest — nothing sent.",
       });
     }
-
-    const key = digestIdempotencyKey(digest.filingUrls);
-
-    // Look up any existing run for THIS filing set.
-    const [existing] = await db
-      .select()
-      .from(digestRuns)
-      .where(eq(digestRuns.idempotencyKey, key))
-      .limit(1);
 
     let runId: number;
     let payload: FrozenPayload;
@@ -392,13 +408,16 @@ export async function POST(req: Request) {
     } else {
       // Freeze the send spec and open the outbox row before touching Resend.
       // The follows-filtered recipients ARE the send list; slugs are recorded so
-      // the receipt breakdown is stable on resume.
+      // the receipt breakdown is stable on resume. alsoNew + trackedOfficialCount
+      // are frozen too so a resumed send renders the byte-identical body.
       payload = {
         items: digest.items,
         filings: digest.filings,
         recipients,
         key,
         slugs: digest.slugs,
+        alsoNew: digest.alsoNew,
+        trackedOfficialCount: digest.trackedOfficialCount,
       };
       const [row] = await db
         .insert(digestRuns)
@@ -415,10 +434,14 @@ export async function POST(req: Request) {
       runId = row.id;
     }
 
-    // Send only the chunks not already confirmed on a prior run.
+    // Send only the chunks not already confirmed on a prior run. The teaser
+    // fields come from the FROZEN payload (never rebuilt) so resume bodies
+    // match the original byte-for-byte.
     const doneChunks = priorChunks.filter((c) => c.ok).map((c) => c.n);
     const batch = await sendDigestBatch(payload.recipients, payload.items, key, {
       skipChunks: doneChunks,
+      alsoNew: payload.alsoNew,
+      trackedOfficialCount: payload.trackedOfficialCount,
     });
     const mergedChunks = mergeChunks(priorChunks, batch.chunks);
 

@@ -23,7 +23,7 @@ import {
 } from "@/lib/email-config";
 import { mintToken } from "@/lib/tokens";
 import { buildDigestEmail } from "@/lib/emails";
-import { chunkKey, type DigestItem } from "@/lib/digest";
+import { chunkKey, type AlsoNewOfficial, type DigestItem } from "@/lib/digest";
 
 /** Audit-log kinds; mirrors emailSends.kind (excludes "admin", which notify.ts owns).
  * "digest_test" is a one-off preview mailed only to the admin — it writes this
@@ -202,7 +202,13 @@ export async function sendDigestBatch(
   recipients: DigestRecipient[],
   items: DigestItem[],
   sendKey: string,
-  opts: { skipChunks?: number[] } = {}
+  opts: {
+    skipChunks?: number[];
+    /** "Also filed recently" teaser + follow-all CTA count, from the frozen
+     * payload so a resume renders the identical body. */
+    alsoNew?: AlsoNewOfficial[];
+    trackedOfficialCount?: number;
+  } = {}
 ): Promise<DigestBatchResult> {
   const resend = getResend();
   if (!resend) {
@@ -211,7 +217,10 @@ export async function sendDigestBatch(
   }
 
   // Render once; only the unsubscribe link differs between recipients.
-  const template = buildDigestEmail(items, UNSUB_PLACEHOLDER);
+  const template = buildDigestEmail(items, UNSUB_PLACEHOLDER, {
+    alsoNew: opts.alsoNew,
+    trackedOfficialCount: opts.trackedOfficialCount,
+  });
   const skip = new Set(opts.skipChunks ?? []);
   const groups = chunk(recipients, BATCH_MAX);
   const chunks: DigestChunkResult[] = [];
