@@ -443,3 +443,35 @@ Built the subscriber-facing email alert system end-to-end (phases 0-4 of 5). Sig
 **Trevor's manual steps:** ALERT_TOKEN_SECRET + MAIL_POSTAL_ADDRESS in .env.local and Vercel; push to deploy; then Resend webhook (URL /api/webhooks/resend, events bounced/complained/delivered) -> RESEND_WEBHOOK_SECRET; self-test signup loop; pnpm repermission dry run then --send; send digest #1 from /admin.
 
 ---
+
+## July 19, 2026 - Full audit, Trump Q2 ingest, follows model, email system live
+
+**Session Summary:**
+- Pre-job-application full audit (10 parallel review agents): data freshness, ProPublica cross-check, viz, perf, security, database, OGE pipeline, copy/journalism, email state, Form 201 research.
+- Headline audit finding: Trump's two June 25 278-Ts were downloaded July 2 but never merged — site was missing all Q2 2026. Ingested both (+2,514 trades, 10/10 PDF spot-checks) plus Kratsios 6/10 and McMaster 6/11. Dataset now 37 officials / 10,033 transactions.
+- Copy sweep: 19 summaries rewritten (banned "consistent with ethics agreement" claims per methodology), comma artifacts, computed company count, AP dates, honest late-fee box, title template. Lutnick LFA corrected to "Over $1,000,000" per OGE's revised PDF (added as new AmountRange — OGE's spouse-asset cap); Molinaro FBVVNX -> SPY.
+- Security: better-auth 1.6.2 -> 1.6.23 (critical CVE), Next 16.2.3 -> 16.2.10; audit 28 -> 6 vulns (0 crit/high). Removed open email/password signup; fixed no-op feedback limiter; security headers.
+- Viz honesty: log-scale disclosure, sqrt legend wording + peak labels, size legend "reported amount range (minimum)", swim-lane empty-filter crash guard. Levels normalized (Level I/II -> Cabinet/Sub-Cabinet) fixing /all tabs.
+- Admin OAuth NEVER worked on custom domain (state_mismatch): pinned better-auth baseURL to open-cabinet.org + added console redirect URIs. Works now.
+- EMAIL SYSTEM SHIPPED AND LIVE: env vars set, deployed. Self-tested every path on prod with real emails: signup, confirm interstitial, welcome, unsubscribe interstitial, RFC 8058 one-click, repermission round-trip.
+- Product decision (Trevor): retired major/every-filing tiers for FOLLOWS — official_slug null = all officials; slug = that official only (matches per-official promise on official-page forms, "Only <Name>" / "All officials" toggle). Digest recipients filtered by follows; one identical email body (frozen payload intact). Digest emails gained "Also filed in the last two weeks" teaser + follow-all CTA (#alerts anchor).
+- Admin digest flow: Send-test-to-me (ledgers nothing, full or single-official preview), follows breakdown, Confirmed column in signups table.
+- Adversarial review caught two real bugs pre-blast: confirmed subscribers could be silently narrowed by re-signup (SQL CASE guard + honest alreadyActive response); empty-recipient check could strand a resumable run (moved below resume lookup).
+- Dry run caught a third: repermission would have re-emailed already-confirmed rows (added confirmed_at IS NULL to selection).
+- REPERMISSION BLAST SENT: 54/54 delivered, 0 failures; one address bounced and was auto-suppressed by the new Resend webhook (created via browser automation; secret in Vercel; verified end-to-end with a live delivered event). Repermission copy rewritten (apologetic thank-you + latest-filings teaser).
+- Digest #1 staged: Trump June 25 x2 + McMaster (Kratsios ledgered, appears in also-new). Awaiting Trevor's Send in /admin; goes to confirmed only.
+- Hero stat asterisk-links replaced with dotted-underline label links.
+
+**Notable Changes:**
+- data/officials: trump-donald-j 5,185 -> 7,699; index 10,033; exports regenerated; check-data-regressions constants updated.
+- lib/digest.ts: FollowsRecipient, filterRecipientsByFollows, followsBreakdown, selectAlsoNew (14-day window, cap 5, deterministic via index lastUpdated).
+- app/api/admin/digest/route.ts: test action (onlyOfficial), follows-filtered frozen recipients, resume-safe empty check.
+- app/api/alerts/route.ts: never narrows active follows (SQL CASE); alreadyActive/followsAll response; alertType optional.
+- scripts/repermission-alerts.ts: skips confirmed_at rows.
+- scripts/ingest-new-filings.ts: chunk parse cache; normalizeLevel; cumulative summary wording.
+- DB state end of day: 57 signups — 5 confirmed active, 52 pending (blast), 1 suppressed (bounce), 1 unsubscribed (test). email_sends: 55 repermission, 6 digest_test, 4 confirmation, 5 welcome. 70/100 daily budget used.
+- Deploys: 12 pushes, all READY. CLAUDE.md session log updated (gitignored, local).
+
+**Known remaining:** digest #1 send (Trevor's button); watch confirmations in admin Confirmed column; perf items deferred (officials/[slug] accidental dynamic rendering, 1.16MB home swim payload, colorblind-safe palette decision); Form 201 playbook researched and ready (Pirro, US Marshal Thomas E. Brown with 134 278-Ts, Loeffler, Kenny, Scharf, Oz, Makary).
+
+---
