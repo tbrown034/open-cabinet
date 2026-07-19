@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer } from "react";
+import { useReducer, useRef } from "react";
 
 type FeedbackStatus = "idle" | "sending" | "sent" | "error";
 
@@ -48,6 +48,9 @@ export default function FeedbackForm() {
     INITIAL_FEEDBACK_STATE
   );
   const { type, message, email, official, status } = state;
+  // Honeypot: a hidden field real users never fill. Bots that autofill every
+  // input trip it; the server silently drops those submissions.
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -58,7 +61,13 @@ export default function FeedbackForm() {
       const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type, message, email, official }),
+        body: JSON.stringify({
+          type,
+          message,
+          email,
+          official,
+          company: honeypotRef.current?.value ?? "",
+        }),
       });
 
       if (res.ok) {
@@ -81,6 +90,23 @@ export default function FeedbackForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Honeypot — hidden from humans, catches naive bots. Not display:none
+          (some bots skip those); visually removed but focusable-blocked. */}
+      <div
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", height: 0, overflow: "hidden" }}
+      >
+        <label htmlFor="feedback-company">Company (leave blank)</label>
+        <input
+          id="feedback-company"
+          ref={honeypotRef}
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </div>
       <div>
         <label
           htmlFor="feedback-type"

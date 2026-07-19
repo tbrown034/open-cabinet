@@ -10,6 +10,7 @@
  * Config in vercel.json: { "crons": [{ "path": "/api/cron", "schedule": "0 10 * * *" }] }
  */
 import { NextRequest, NextResponse } from "next/server";
+import { timingSafeEqual } from "node:crypto";
 import { notify } from "@/lib/notify";
 import {
   diffNewFilings,
@@ -30,7 +31,15 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     );
   }
-  if (authHeader !== `Bearer ${cronSecret}`) {
+  // Constant-time comparison so an attacker can't recover the secret byte by
+  // byte from response-timing differences. The length guard is required because
+  // timingSafeEqual throws on mismatched buffer lengths.
+  const expected = Buffer.from(`Bearer ${cronSecret}`);
+  const provided = Buffer.from(authHeader ?? "");
+  if (
+    provided.length !== expected.length ||
+    !timingSafeEqual(provided, expected)
+  ) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
