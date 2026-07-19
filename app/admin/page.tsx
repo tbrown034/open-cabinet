@@ -545,7 +545,10 @@ export default function AdminPage() {
                               {t.type}
                             </span>{" "}
                             {t.description}
-                            {t.ticker ? ` (${t.ticker})` : ""} — {t.amount}
+                            {t.ticker && !t.description.includes(`(${t.ticker})`)
+                              ? ` (${t.ticker})`
+                              : ""}{" "}
+                            — {t.amount}
                             {t.lateFilingFlag && (
                               <span className="ml-1 bg-amber-200 text-amber-900 px-1 text-[9px]">
                                 LATE
@@ -718,10 +721,10 @@ export default function AdminPage() {
                       {signup.alertType === "all" ? "Every filing" : "Major updates"}
                     </td>
                     <td className="py-2 pr-3 text-neutral-500">
-                      {signup.sourcePage || ","}
+                      {signup.sourcePage || "—"}
                     </td>
                     <td className="py-2 pr-3 text-neutral-500">
-                      {signup.officialSlug || ","}
+                      {signup.officialSlug || "—"}
                     </td>
                     <td className="py-2 text-right tabular-nums text-neutral-400">
                       {new Date(signup.updatedAt).toLocaleDateString("en-US", {
@@ -832,12 +835,12 @@ export default function AdminPage() {
                     <td className="py-2 pr-3 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-500">
                       {run.tokenUsage
                         ? `$${run.tokenUsage.costUsd?.toFixed(3) || "0"}`
-                        : ","}
+                        : "—"}
                     </td>
                     <td className="py-2 text-right tabular-nums text-neutral-500">
                       {run.duration
                         ? `${(run.duration / 1000).toFixed(0)}s`
-                        : ","}
+                        : "—"}
                     </td>
                   </tr>
                 ))}
