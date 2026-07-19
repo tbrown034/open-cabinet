@@ -133,6 +133,9 @@ export function buildRepermissionEmail(
       <p style="font-family:${SANS};font-size:15px;line-height:1.6;color:${COLORS.text};margin:0 0 20px;">
         Alerts are ready to go now. Confirm your address and you'll start getting an email when officials report new trades.
       </p>
+      <p style="font-family:${SANS};font-size:13px;line-height:1.6;color:${COLORS.muted};margin:0 0 20px;">
+        (Some of the latest: President Trump's two newest filings added 2,514 trades, and the head of the Federal Highway Administration reported new stock purchases. Browse it all at <a href="${siteUrl()}" style="color:${COLORS.muted};">open-cabinet.org</a>.)
+      </p>
       ${button(confirmLink, "Yes, keep me subscribed")}
       <p style="font-family:${SANS};font-size:13px;line-height:1.6;color:${COLORS.muted};margin:0;">
         If you don't confirm, you simply won't get any more emails — no action needed.
@@ -149,6 +152,8 @@ You signed up for email alerts about executive-branch stock trades, and it took 
 Alerts are ready to go now. Confirm your address to start getting an email when officials report new trades:
 
 ${confirmLink}
+
+(Some of the latest: President Trump's two newest filings added 2,514 trades, and the head of the Federal Highway Administration reported new stock purchases. Browse it all at ${siteUrl()}.)
 
 If you don't confirm, you won't get any more emails. No action needed.
 
