@@ -43,8 +43,21 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const body = await request.json();
-  const { id, action, updates } = body;
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { error: "Invalid request body" },
+      { status: 400 }
+    );
+  }
+
+  const { id, action, updates } = (body ?? {}) as {
+    id?: unknown;
+    action?: unknown;
+    updates?: unknown;
+  };
 
   if (!id || !action) {
     return NextResponse.json(
@@ -57,23 +70,40 @@ export async function PATCH(request: NextRequest) {
     await db
       .update(transactions)
       .set({ needsReview: false })
-      .where(eq(transactions.id, id));
+      .where(eq(transactions.id, id as number));
     return NextResponse.json({ success: true, action: "approved" });
   }
 
-  if (action === "edit" && updates) {
+  if (action === "edit" && updates && typeof updates === "object") {
+    // Only these columns are admin-editable. Spreading raw `updates` straight
+    // into set() would let a caller write any column (officialId, batchId,
+    // confidence, createdAt, …); whitelist the data fields explicitly.
+    const EDITABLE = [
+      "description",
+      "ticker",
+      "type",
+      "date",
+      "amount",
+      "lateFilingFlag",
+      "notes",
+    ] as const;
+    const raw = updates as Record<string, unknown>;
+    const safe: Record<string, unknown> = {};
+    for (const key of EDITABLE) {
+      if (key in raw) safe[key] = raw[key];
+    }
     await db
       .update(transactions)
       .set({
-        ...updates,
+        ...safe,
         needsReview: false,
       })
-      .where(eq(transactions.id, id));
+      .where(eq(transactions.id, id as number));
     return NextResponse.json({ success: true, action: "edited" });
   }
 
   if (action === "delete") {
-    await db.delete(transactions).where(eq(transactions.id, id));
+    await db.delete(transactions).where(eq(transactions.id, id as number));
     return NextResponse.json({ success: true, action: "deleted" });
   }
 

@@ -12,7 +12,10 @@ import { alertSignups } from "@/lib/schema";
 
 function csvCell(value: unknown): string {
   if (value === null || value === undefined) return "";
-  const text = String(value);
+  let text = String(value);
+  // Formula-injection guard: a cell a spreadsheet reads as a formula starts with
+  // =, +, -, or @. Prefix a single quote so Excel/Sheets render it as text.
+  if (/^[=+\-@]/.test(text)) text = `'${text}`;
   if (!/[",\n\r]/.test(text)) return text;
   return `"${text.replaceAll("\"", "\"\"")}"`;
 }

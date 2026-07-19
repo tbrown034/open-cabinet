@@ -9,7 +9,9 @@ const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
 
 export const auth = betterAuth({
   trustedOrigins: [
-    "http://localhost:*",
+    // localhost is only trusted outside production so a prod deploy can't be
+    // tricked into treating a localhost origin as same-site.
+    ...(process.env.NODE_ENV !== "production" ? ["http://localhost:*"] : []),
     "https://open-cabinet.org",
     "https://www.open-cabinet.org",
     ...(process.env.VERCEL_URL ? [`https://${process.env.VERCEL_URL}`] : []),
@@ -18,9 +20,10 @@ export const auth = betterAuth({
     provider: "pg",
     schema,
   }),
-  emailAndPassword: {
-    enabled: true,
-  },
+  // No email/password auth: admin access is Google-OAuth-only, gated to the
+  // whitelisted ADMIN_EMAIL below. Leaving password signup enabled would allow
+  // anyone to self-register an account (no email verification was configured),
+  // so the whole block is removed rather than merely disabled.
   socialProviders: {
     google: {
       clientId: process.env.GOOGLE_CLIENT_ID as string,
