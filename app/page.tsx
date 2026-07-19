@@ -15,9 +15,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Cabinet",
+  title: "Open Cabinet, Executive Branch Stock Tracker",
   description:
-    "Search and analyze executive branch financial transaction disclosures.",
+    "The first interactive stock tracker for the executive branch. Search 7,300+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
 };
 
 function isSale(type: string): boolean {
@@ -46,6 +46,10 @@ export default async function Home() {
     0
   );
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
+  // Headline accountability finding, surfaced on the hero: the share of all
+  // disclosed trades reported after the STOCK Act deadline.
+  const latePct =
+    allTx.length > 0 ? Math.round((lateCount / allTx.length) * 100) : 0;
 
   // Most recent OGE filing/posting date across all officials.
   const mostRecentFiling = officials.reduce(
@@ -212,7 +216,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <header className="flex-1">
             <h1 className="font-[family-name:var(--font-source-serif)] text-4xl md:text-5xl text-neutral-900 mb-4 leading-tight">
-              What is Trump{"'"}s Cabinet
+              What is Trump’s Cabinet
               <br />
               Buying and Selling?
             </h1>
@@ -221,6 +225,17 @@ export default async function Home() {
               Ethics &mdash; the slice of executive financial activity the
               public is allowed to see. Open Cabinet makes the filings
               sortable, searchable and visual.
+            </p>
+            <p className="mt-5 text-base text-neutral-800 leading-relaxed max-w-xl">
+              And most of it arrives late:{" "}
+              <Link
+                href="/late-filings"
+                className="font-semibold text-amber-700 underline decoration-amber-700/30 underline-offset-2 hover:decoration-amber-700 transition-colors"
+              >
+                {latePct}% of disclosed trades were reported after the STOCK Act
+                deadline
+              </Link>
+              .
             </p>
             <p className="text-xs text-neutral-400 mt-3">
               Most recent OGE filing:{" "}

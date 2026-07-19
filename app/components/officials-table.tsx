@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import type { OfficialIndexEntry } from "@/lib/types";
@@ -19,6 +20,7 @@ export default function OfficialsTable({
   // YYYY-MM-DD; officials whose mostRecentFilingDate >= this get a "New" badge
   newIngestedCutoff?: string;
 }) {
+  const router = useRouter();
   const [sortKey, setSortKey] = useState<SortKey>("transactionCount");
   const [sortDir, setSortDir] = useState<SortDirection>("desc");
   const [showAll, setShowAll] = useState(!initialLimit);
@@ -83,7 +85,7 @@ export default function OfficialsTable({
       <table className="w-full text-left">
         <thead>
           <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
-            <th className="pb-2 pr-4 font-medium">
+            <th scope="col" className="pb-2 pr-4 font-medium">
               <button
                 type="button"
                 onClick={() => handleSort("name")}
@@ -92,7 +94,7 @@ export default function OfficialsTable({
                 Name{showSortArrow && sortKey === "name" ? arrow : ""}
               </button>
             </th>
-            <th className="pb-2 pr-4 font-medium hidden md:table-cell">
+            <th scope="col" className="pb-2 pr-4 font-medium hidden md:table-cell">
               <button
                 type="button"
                 onClick={() => handleSort("agency")}
@@ -101,7 +103,7 @@ export default function OfficialsTable({
                 Agency{showSortArrow && sortKey === "agency" ? arrow : ""}
               </button>
             </th>
-            <th className="pb-2 pr-4 font-medium text-right">
+            <th scope="col" className="pb-2 pr-4 font-medium text-right">
               <button
                 type="button"
                 onClick={() => handleSort("transactionCount")}
@@ -110,7 +112,7 @@ export default function OfficialsTable({
                 Trades{showSortArrow && sortKey === "transactionCount" ? arrow : ""}
               </button>
             </th>
-            <th className="pb-2 font-medium text-right hidden sm:table-cell">
+            <th scope="col" className="pb-2 font-medium text-right hidden sm:table-cell">
               <button
                 type="button"
                 onClick={() => handleSort("mostRecentFilingDate")}
@@ -129,9 +131,7 @@ export default function OfficialsTable({
               className={`border-b border-neutral-100 cursor-pointer transition-colors hover:bg-neutral-100 ${
                 i % 2 === 1 ? "bg-neutral-50/50" : ""
               }`}
-              onClick={() => {
-                window.location.href = `/officials/${official.slug}`;
-              }}
+              onClick={() => router.push(`/officials/${official.slug}`)}
             >
               <td className="py-3 pr-4">
                 <div className="flex items-center gap-3">

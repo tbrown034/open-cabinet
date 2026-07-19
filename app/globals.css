@@ -5,3 +5,16 @@
   --font-mono: var(--font-dm-mono);
   --font-serif: var(--font-source-serif);
 }
+
+/* Honor users who ask the OS for reduced motion. Near-zero durations rather
+   than `none` so transitionend/animationend handlers still fire. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

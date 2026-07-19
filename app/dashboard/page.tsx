@@ -19,15 +19,74 @@ function isSale(type: string): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
 }
 
-const CATEGORY_PATTERNS = {
-  funds: /\b(?:etf|index fund|vanguard|ishares|spdr)\b/,
-  preferred: /\b(?:perp|tier|preferred|pfd)\b/,
-  realEstate: /\breal estate\b/,
-  propertyEntity: /\bllc\b(?=.*\b(?:property|land)\b)/,
-  crypto: /\b(?:bitcoin|ethereum|crypto|solana|polygon|polkadot)\b/,
-  bonds: /\b(?:bond|treasury|muni|fixed income)\b/,
-  retirement: /\b(?:retirement|401k|ira)\b/,
-};
+// Asset class is inferred from each filing's free-text description (OGE does
+// not provide a structured asset type). Order matters: the first pattern that
+// matches wins, so the most specific tests run first. Bonds and untickered
+// equities used to fall into a single catch-all that swallowed ~64% of volume;
+// these patterns pull them out so the treemap reflects the real asset mix.
+function classifyAsset(description: string, hasTicker: boolean): string {
+  const d = description.toLowerCase();
+
+  if (/\b(?:bitcoin|ethereum|crypto|solana|polygon|polkadot)\b/.test(d))
+    return "Cryptocurrency";
+
+  // Municipal, revenue and corporate bonds. Beyond the literal word "bond",
+  // catch the coupon + maturity signature ("5.00% Due Oct 1, 2049") and the
+  // muni markers (REV, G.O., GAS DIST, SCH DIST, bond anticipation notes).
+  if (
+    /\b(?:treasury|muni|municipal|fixed income)\b/.test(d) ||
+    /\bbond\b/.test(d) ||
+    /\bdue\b\s*(?:\w+\s+)?\d/.test(d) ||
+    /\d(?:\.\d+)?\s*%.*due/.test(d) ||
+    /\b(?:rev|g\.?o\.?|gas dist|gas sply|gen oblig|sch dist|anticipation)\b/.test(d)
+  )
+    return "Bonds & Fixed Income";
+
+  if (/\b(?:perp|tier|preferred|pfd)\b/.test(d)) return "Preferred Securities";
+
+  if (/\b(?:etf|index fund|vanguard|ishares|spdr)\b/.test(d))
+    return "ETFs & Index Funds";
+
+  if (
+    /\b(?:pimco|franklin|invesco|brandywine|allspring|blackrock|fidelity|schwab|dodge & cox|nuveen)\b/.test(d) ||
+    /\btax[- ]free\b/.test(d) ||
+    /\b(?:income|municipal|tax|bond|mutual)\s+fund\b/.test(d) ||
+    /\bfund\b.*\bclass [abc]\b/.test(d)
+  )
+    return "Mutual Funds";
+
+  if (
+    /\breal estate\b/.test(d) ||
+    /\bmarina\b/.test(d) ||
+    /\bllc\b(?=.*\b(?:property|land)\b)/.test(d)
+  )
+    return "Real Estate";
+
+  if (/\b(?:retirement|401k|ira)\b/.test(d)) return "Retirement Accounts";
+
+  // Hedge funds, LPs and LLCs (Key Square, Cantor Fitzgerald, MSD, and the like).
+  if (
+    /\b(?:l\.?p\.?|llc|llp|partners|capital|ventures|associates|master fund)\b/.test(d) ||
+    /\bfund\b/.test(d)
+  )
+    return "Private Funds & Partnerships";
+
+  // Individual equities: a captured ticker, a corporate form, or a broker-style
+  // "COM" / "UNSOLICITED" / share-class suffix.
+  if (
+    hasTicker ||
+    /\b(?:inc|corp|plc|n\.?v\.?|ltd|companies|company)\b/.test(d) ||
+    /\bcom\b/.test(d) ||
+    /\bunsolicited\b/.test(d) ||
+    /\bclass [abc]\b/.test(d) ||
+    /\b(?:bancshares|bancorp|labs|technologies)\b/.test(d)
+  )
+    return "Individual Stocks";
+
+  // Named holdings whose filing lists no ticker or fund identifier and can't be
+  // classified from the description alone (e.g. a large untickered Fiserv position).
+  return "Other";
+}
 
 export default async function DashboardPage() {
   const officials = await getAllOfficials();
@@ -72,34 +131,15 @@ export default async function DashboardPage() {
     .sort((a, b) => b.totalValue - a.totalValue)
     .slice(0, 15);
 
-  // Sector/category data for treemap
+  // Sector/category data for treemap. Categories are inferred from each
+  // filing's free-text asset description (see classifyAsset above).
   const categories = new Map<string, number>();
   for (const tx of allTx) {
-    const desc = tx.description.toLowerCase();
-    let category: string;
-    if (CATEGORY_PATTERNS.funds.test(desc)) {
-      category = "ETFs & Index Funds";
-    } else if (CATEGORY_PATTERNS.preferred.test(desc)) {
-      category = "Preferred Securities";
-    } else if (
-      CATEGORY_PATTERNS.realEstate.test(desc) ||
-      CATEGORY_PATTERNS.propertyEntity.test(desc)
-    ) {
-      category = "Real Estate";
-    } else if (CATEGORY_PATTERNS.crypto.test(desc)) {
-      category = "Cryptocurrency";
-    } else if (CATEGORY_PATTERNS.bonds.test(desc)) {
-      category = "Bonds & Fixed Income";
-    } else if (CATEGORY_PATTERNS.retirement.test(desc)) {
-      category = "Retirement Accounts";
-    } else if (tx.ticker) {
-      category = "Individual Stocks";
-    } else {
-      category = "Private & Other";
-    }
+    const category = classifyAsset(tx.description, Boolean(tx.ticker));
     categories.set(
       category,
-      (categories.get(category) || 0) + amountRangeToMidpoint(tx.amount as AmountRange)
+      (categories.get(category) || 0) +
+        amountRangeToMidpoint(tx.amount as AmountRange)
     );
   }
 
@@ -155,7 +195,10 @@ export default async function DashboardPage() {
           purchasesValue={purchasesValue}
         />
 
-        <SectorTreemap data={treemapData} />
+        <SectorTreemap
+          data={treemapData}
+          note="Asset classes are inferred from each filing's free-text description; OGE does not report a structured asset type. 'Other' is mostly named holdings whose filings list no ticker or fund identifier — led by a large untickered Fiserv position."
+        />
 
         <OfficialRankings rankings={rankings} />
       </div>

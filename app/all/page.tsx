@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getAllOfficials } from "@/lib/data";
 import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
@@ -87,7 +88,11 @@ export default async function AllTradesPage() {
         </div>
       </header>
 
-      <SwimLaneChart officials={ranked} />
+      {/* Suspense: the chart reads its group/sort/period from the URL via
+          useSearchParams, which requires a boundary on a static route. */}
+      <Suspense fallback={<div className="min-h-96" />}>
+        <SwimLaneChart officials={ranked} />
+      </Suspense>
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics. Red = sale, green = purchase.

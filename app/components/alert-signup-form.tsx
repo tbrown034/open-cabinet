@@ -108,7 +108,7 @@ export default function AlertSignupForm({
 
   if (status === "sent") {
     return (
-      <div className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+      <div role="status" className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
         Check your email to confirm your signup. The link arrives in a minute (check spam if not).
       </div>
     );
@@ -151,13 +151,16 @@ export default function AlertSignupForm({
             <input
               id={`${id}-email`}
               type="email"
+              name="email"
+              autoComplete="email"
+              spellCheck={false}
               value={email}
               onChange={(e) =>
                 dispatch({ key: "email", value: e.target.value })
               }
               placeholder="you@example.com"
               required
-              className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900"
+              className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900"
             />
             <button
               type="submit"
@@ -203,7 +206,7 @@ export default function AlertSignupForm({
           </fieldset>
 
           {status === "error" && (
-            <p className="text-xs text-red-700">{error}</p>
+            <p role="alert" className="text-xs text-red-700">{error}</p>
           )}
         </form>
       </div>
