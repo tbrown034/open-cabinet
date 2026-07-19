@@ -561,7 +561,7 @@ export default function AdminPage() {
                       <div className="text-neutral-900 font-medium">
                         {item.name}{" "}
                         <span className="text-neutral-400 font-normal">
-                          · {item.newCount} new trade{item.newCount === 1 ? "" : "s"}
+                          · {item.newCount.toLocaleString()} new trade{item.newCount === 1 ? "" : "s"}
                         </span>
                       </div>
                       <div className="text-neutral-500 text-xs">

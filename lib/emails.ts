@@ -212,7 +212,7 @@ export function buildDigestEmail(
 
       return `<div style="margin:0 0 28px;">
         <div style="font-family:${SERIF};font-size:18px;color:${COLORS.text};margin:0 0 2px;">${escapeHtml(item.name)}</div>
-        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(item.title)} · ${escapeHtml(item.agency)} · ${item.newCount} new trade${item.newCount === 1 ? "" : "s"}</div>
+        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(item.title)} · ${escapeHtml(item.agency)} · ${item.newCount.toLocaleString("en-US")} new trade${item.newCount === 1 ? "" : "s"}</div>
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid ${COLORS.border};margin-bottom:8px;">${rows}</table>
         <a href="${base}/officials/${encodeURIComponent(item.slug)}" style="font-family:${SANS};font-size:13px;color:${COLORS.text};">View on Open Cabinet</a>
         &nbsp;·&nbsp;
@@ -263,7 +263,7 @@ export function buildDigestEmail(
       const lines = item.trades
         .map((t) => `  - ${t.description}${showTicker(t) ? ` (${t.ticker})` : ""}: ${t.type}, ${t.amount}${t.lateFilingFlag ? " [LATE]" : ""}`)
         .join("\n");
-      return `${item.name} — ${item.title}, ${item.agency} (${item.newCount} new)
+      return `${item.name} — ${item.title}, ${item.agency} (${item.newCount.toLocaleString("en-US")} new)
 ${lines}
   ${base}/officials/${item.slug}
   Filing: ${item.primaryFilingUrl}`;
