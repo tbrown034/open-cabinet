@@ -76,7 +76,13 @@ async function main() {
     .select({ id: alertSignups.id, email: alertSignups.email })
     .from(alertSignups)
     .where(
-      and(eq(alertSignups.status, "active"), isNull(alertSignups.repermissionSentAt))
+      and(
+        eq(alertSignups.status, "active"),
+        isNull(alertSignups.repermissionSentAt),
+        // Rows with confirmed_at already re-consented through the double
+        // opt-in flow — re-permissioning them would revoke real consent.
+        isNull(alertSignups.confirmedAt)
+      )
     );
 
   console.log(`=== Re-permission ${DRY_RUN ? "(DRY RUN)" : "(SENDING)"} ===`);
