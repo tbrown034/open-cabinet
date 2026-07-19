@@ -10,6 +10,7 @@ import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
 import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
 import AlertSignupForm from "./components/alert-signup-form";
+import OfficialAvatar from "./components/official-avatar";
 import ProjectCrossPromo from "./components/project-cross-promo";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -172,8 +173,14 @@ export default async function Home() {
               {bannerVisible.map((o) => (
                 <li
                   key={o.slug}
-                  className="flex flex-wrap items-baseline gap-x-2"
+                  className="flex flex-wrap items-center gap-x-2"
                 >
+                  <OfficialAvatar
+                    name={o.name}
+                    slug={o.slug}
+                    size={20}
+                    showParty={false}
+                  />
                   {o.isFirstAppearance && (
                     <span className="bg-amber-300 text-amber-950 text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 shrink-0">
                       New official
@@ -189,7 +196,7 @@ export default async function Home() {
                     posted {formatDate(o.filingDate)}
                   </span>
                   {o.newCount > 0 && (
-                    <span className="text-neutral-400 text-xs">
+                    <span className="text-amber-300 text-xs font-medium">
                       &middot;{" "}
                       {o.isFirstAppearance
                         ? `${o.newCount.toLocaleString()} trade${o.newCount === 1 ? "" : "s"}`
