@@ -1,6 +1,7 @@
 "use client";
 
-import { useReducer } from "react";
+import { useState } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { scaleTime, scaleSqrt, scaleBand } from "d3-scale";
 import { extent } from "d3-array";
 import { timeFormat } from "d3-time-format";
@@ -56,6 +57,12 @@ interface SwimOfficial {
 }
 
 type FilterTab = "all" | "cabinet" | "sub-cabinet";
+type SortKey = "volume" | "name" | "recent";
+type TimeRange = "inaug" | "2025" | "2026" | "all";
+
+const FILTER_TABS: readonly FilterTab[] = ["all", "cabinet", "sub-cabinet"];
+const SORT_KEYS: readonly SortKey[] = ["volume", "name", "recent"];
+const TIME_RANGES: readonly TimeRange[] = ["inaug", "2025", "2026", "all"];
 
 interface TooltipData {
   tx: SwimTransaction;
@@ -64,25 +71,14 @@ interface TooltipData {
   y: number;
 }
 
-interface SwimLaneState {
-  tooltip: TooltipData | null;
-  filter: FilterTab;
-  sortBy: "volume" | "name" | "recent";
-  timeRange: "inaug" | "2025" | "2026" | "all";
-}
-
-const INITIAL_SWIM_LANE_STATE: SwimLaneState = {
-  tooltip: null,
-  filter: "all",
-  sortBy: "volume",
-  timeRange: "inaug",
-};
-
-function swimLaneReducer(
-  state: SwimLaneState,
-  patch: Partial<SwimLaneState>
-): SwimLaneState {
-  return { ...state, ...patch };
+// Read a query param against an allow-list, falling back to a default so a
+// hand-edited or stale URL can't push the chart into an invalid state.
+function parseParam<T extends string>(
+  value: string | null,
+  allowed: readonly T[],
+  fallback: T
+): T {
+  return value && allowed.includes(value as T) ? (value as T) : fallback;
 }
 
 export default function SwimLaneChart({
@@ -91,13 +87,26 @@ export default function SwimLaneChart({
   officials: SwimOfficial[];
 }) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(1000);
-  const [state, setSwimLaneState] = useReducer(
-    swimLaneReducer,
-    INITIAL_SWIM_LANE_STATE
-  );
-  const { tooltip, filter, sortBy, timeRange } = state;
-  const setTooltip = (tooltip: TooltipData | null) =>
-    setSwimLaneState({ tooltip });
+  const [tooltip, setTooltip] = useState<TooltipData | null>(null);
+
+  // The chart's view state (group / sort / period) lives in the URL, so any
+  // filtered view is shareable and bookmarkable. Default values are omitted
+  // from the query string, so the pristine chart stays at a clean /all.
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const filter = parseParam(searchParams.get("group"), FILTER_TABS, "all");
+  const sortBy = parseParam(searchParams.get("sort"), SORT_KEYS, "volume");
+  const timeRange = parseParam(searchParams.get("period"), TIME_RANGES, "inaug");
+
+  function setParam(key: string, value: string, isDefault: boolean) {
+    const params = new URLSearchParams(searchParams.toString());
+    if (isDefault) params.delete(key);
+    else params.set(key, value);
+    const qs = params.toString();
+    // replace(), not push(), so filtering doesn't pile up back-button history.
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+  }
 
   // Time range cutoffs
   const timeRangeStart = timeRange === "inaug" ? "2025-01-20"
@@ -200,7 +209,7 @@ export default function SwimLaneChart({
           <button
             type="button"
             key={tab.key}
-            onClick={() => setSwimLaneState({ filter: tab.key })}
+            onClick={() => setParam("group", tab.key, tab.key === "all")}
             className={`px-3 py-1.5 transition-colors cursor-pointer ${
               filter === tab.key
                 ? "bg-neutral-900 text-white"
@@ -225,7 +234,7 @@ export default function SwimLaneChart({
             <button
               type="button"
               key={t.key}
-              onClick={() => setSwimLaneState({ timeRange: t.key })}
+              onClick={() => setParam("period", t.key, t.key === "inaug")}
               className={`cursor-pointer ${timeRange === t.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
             >
               {t.label}
@@ -242,7 +251,7 @@ export default function SwimLaneChart({
             <button
               type="button"
               key={s.key}
-              onClick={() => setSwimLaneState({ sortBy: s.key })}
+              onClick={() => setParam("sort", s.key, s.key === "volume")}
               className={`cursor-pointer ${sortBy === s.key ? "text-neutral-900 font-medium" : "hover:text-neutral-600"}`}
             >
               {s.label}

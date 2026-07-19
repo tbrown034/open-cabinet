@@ -87,6 +87,7 @@ export default function RootLayout({
                 width={32}
                 height={32}
                 className="h-8 w-auto"
+                priority
               />
             </Link>
 

@@ -73,7 +73,7 @@ export default function FeedbackForm() {
 
   if (status === "sent") {
     return (
-      <div className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+      <div role="status" className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
         Thanks for the feedback. We review every submission.
       </div>
     );
@@ -94,7 +94,7 @@ export default function FeedbackForm() {
           onChange={(e) =>
             dispatch({ key: "type", value: e.target.value })
           }
-          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 bg-white"
+          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 bg-white"
         >
           <option value="data-error">Data error (wrong transaction, amount, date)</option>
           <option value="missing-official">Missing official or filing</option>
@@ -119,7 +119,7 @@ export default function FeedbackForm() {
             dispatch({ key: "official", value: e.target.value })
           }
           placeholder="e.g., Scott Bessent"
-          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900"
+          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900"
         />
       </div>
 
@@ -140,7 +140,7 @@ export default function FeedbackForm() {
           rows={4}
           required
           minLength={5}
-          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 resize-none"
+          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900 resize-none"
         />
       </div>
 
@@ -154,12 +154,14 @@ export default function FeedbackForm() {
         <input
           id="feedback-email"
           type="email"
+          name="email"
+          autoComplete="email"
           value={email}
           onChange={(e) =>
             dispatch({ key: "email", value: e.target.value })
           }
           placeholder="you@example.com"
-          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900"
+          className="w-full border border-neutral-300 px-3 py-2 text-sm focus:outline-none focus:border-neutral-900 focus-visible:ring-2 focus-visible:ring-neutral-900"
         />
       </div>
 
@@ -172,7 +174,7 @@ export default function FeedbackForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-xs text-red-700">
+        <p role="alert" className="text-xs text-red-700">
           Something went wrong. Try again or email trevorbrown.web@gmail.com.
         </p>
       )}

@@ -4,7 +4,7 @@ An interactive financial disclosure and conflict-of-interest tracker for the exe
 
 Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, same 30/45-day filing requirements — has had no comparable public tool. Open Cabinet fills that gap.
 
-**Live:** [open-cabinet.vercel.app](https://open-cabinet.vercel.app)
+**Live:** [open-cabinet.org](https://open-cabinet.org)
 
 ## What it does
 
@@ -17,12 +17,12 @@ Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, 
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 34 |
-| Transactions | 3,332 |
-| Estimated value | ~$2.7B |
-| Late filings | 1,339 |
-| Companies searchable | 620+ |
-| News articles linked | 34 |
-| Source filing PDFs linked | 111 |
+| Transactions | 7,306 |
+| Estimated value | ~$3.8B |
+| Late filings | 5,263 |
+| Companies searchable | 405 |
+| News articles linked | 35 |
+| Source filing PDFs linked | 104 |
 
 ## Pages
 
@@ -150,11 +150,11 @@ For informational and journalism purposes only. Not investment advice.
 - **Codebase**: Built by Trevor Brown with the assistance of Claude Code
 - **What AI does NOT do**: No fabricated data, no editorial judgments, no decisions about who to track
 
-See the [About page](https://open-cabinet.vercel.app/about) for full AI transparency disclosure.
+See the [About page](https://open-cabinet.org/about) for full AI transparency disclosure.
 
 ## Contributing
 
-Found a data error? [Open an issue](https://github.com/tbrown034/open-cabinet/issues) or use the [feedback form](https://open-cabinet.vercel.app/about) on the site.
+Found a data error? [Open an issue](https://github.com/tbrown034/open-cabinet/issues) or use the [feedback form](https://open-cabinet.org/about) on the site.
 
 ## License
 

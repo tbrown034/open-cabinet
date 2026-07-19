@@ -39,7 +39,13 @@ interface TreemapRoot {
   value?: number;
 }
 
-export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
+export default function SectorTreemap({
+  data,
+  note,
+}: {
+  data: TreemapEntry[];
+  note?: string;
+}) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
   const [hovered, setHovered] = useState<string | null>(null);
 
@@ -195,6 +201,12 @@ export default function SectorTreemap({ data }: { data: TreemapEntry[] }) {
           </div>
         )}
       </div>
+
+      {note && (
+        <p className="text-xs text-neutral-400 mt-4 leading-relaxed max-w-2xl">
+          {note}
+        </p>
+      )}
     </section>
   );
 }
