@@ -16,6 +16,7 @@ export function amountRangeToMin(range: AmountRange): number {
     "$5,000,001-$25,000,000": 5000001,
     "$25,000,001-$50,000,000": 25000001,
     "Over $50,000,000": 50000001,
+    "Over $1,000,000": 1000001,
   };
   return map[range];
 }
@@ -35,6 +36,7 @@ export function amountRangeLabel(range: AmountRange): string {
     "$5,000,001-$25,000,000": "$5M-$25M",
     "$25,000,001-$50,000,000": "$25M-$50M",
     "Over $50,000,000": "$50M+",
+    "Over $1,000,000": "$1M+",
   };
   return map[range];
 }
@@ -54,7 +56,10 @@ export function amountRangeToMidpoint(range: AmountRange): number {
     "$1,000,001-$5,000,000": 3000000,
     "$5,000,001-$25,000,000": 15000000,
     "$25,000,001-$50,000,000": 37500000,
+    // Open-ended ranges have no true midpoint; both use 1.5x the floor,
+    // an assumption disclosed on the methodology page.
     "Over $50,000,000": 75000000,
+    "Over $1,000,000": 1500000,
   };
   return map[range];
 }
@@ -115,16 +120,31 @@ function normalizeDateString(dateStr: string): string {
   return dateStr.includes("T") ? dateStr.slice(0, 10) : dateStr;
 }
 
+// AP style month names: Jan., Feb., Aug., Sept., Oct., Nov. and Dec. are
+// abbreviated (with a period); March, April, May, June and July are spelled
+// out. Indexed by JavaScript month number (0 = January).
+const AP_MONTHS = [
+  "Jan.",
+  "Feb.",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "Aug.",
+  "Sept.",
+  "Oct.",
+  "Nov.",
+  "Dec.",
+];
+
 /**
- * Formats a date string (YYYY-MM-DD) as "Mon DD, YYYY".
+ * Formats a date string (YYYY-MM-DD) as "Month DD, YYYY" using AP style
+ * month names (e.g. "Sept. 4, 2026", "June 4, 2026").
  */
 export function formatDate(dateStr: string): string {
   const normalized = normalizeDateString(dateStr);
   const date = new Date(normalized + "T00:00:00");
   if (Number.isNaN(date.getTime())) return "Unknown date";
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  return `${AP_MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }

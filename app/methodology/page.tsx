@@ -4,7 +4,7 @@ import AboutScrolly from "../components/about-scrolly";
 import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Methodology, Open Cabinet",
+  title: "Methodology",
   description:
     "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",
 };
@@ -45,15 +45,15 @@ export default async function MethodologyPage() {
         </p>
       </div>
 
-      {/* What we ingest, and what we don't */}
-      <div id="what-we-ingest" className="mx-auto max-w-3xl px-4 pb-16 scroll-mt-24">
+      {/* What we add, and what we don't */}
+      <div id="what-we-add" className="mx-auto max-w-3xl px-4 pb-16 scroll-mt-24">
         <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
-          What we ingest, and what we don{"'"}t
+          What we add, and what we don{"'"}t
         </h2>
         <p className="text-neutral-600 leading-relaxed mb-4">
           Senior executive branch officials file three different financial
           disclosure documents with the Office of Government Ethics. Open
-          Cabinet ingests one of them today, and is in the process of adding a
+          Cabinet imports one of them today, and is in the process of adding a
           second.
         </p>
         <ul className="space-y-3 text-neutral-600 leading-relaxed mb-4">
@@ -67,7 +67,7 @@ export default async function MethodologyPage() {
             <strong className="text-neutral-900">OGE Form 278 (Nominee/Entry Report).</strong>{" "}
             Filed once, before Senate confirmation, listing every asset the
             official held going in. This is the baseline against which
-            divestitures should be measured. Nominee 278 ingestion is in
+            divestitures should be measured. Adding Nominee 278 data is in
             progress; until it is complete, this site cannot tell you whether
             an official has fully divested a holding &mdash; only what they
             have traded.
@@ -75,9 +75,8 @@ export default async function MethodologyPage() {
           <li>
             <strong className="text-neutral-900">OGE Form 278e (Annual Report).</strong>{" "}
             Filed every May 15 by every covered official, restating holdings
-            and transactions for the prior year. Open Cabinet will ingest
-            annual reports as they become available in public, downloadable
-            form.
+            and transactions for the prior year. Open Cabinet will add annual
+            reports as they become available in public, downloadable form.
           </li>
         </ul>
         <p className="text-neutral-600 leading-relaxed">
@@ -175,6 +174,22 @@ export default async function MethodologyPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
+                Open-ended top range is valued at $75 million.
+              </strong>{" "}
+              The largest reporting range, &ldquo;Over $50,000,000,&rdquo; has
+              no upper bound. In estimated trade-volume totals, Open Cabinet
+              values each of these transactions at $75 million.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
+                Unascertainable values default to the minimum range.
+              </strong>{" "}
+              When a filing reports a transaction value as &ldquo;not readily
+              ascertainable,&rdquo; Open Cabinet treats it as the smallest
+              reporting range ($1,001 to $15,000).
+            </li>
+            <li>
+              <strong className="text-neutral-900">
                 Coverage is limited to officials with publicly downloadable filings.
               </strong>{" "}
               Open Cabinet tracks {totalOfficials} officials overall,
@@ -211,10 +226,10 @@ export default async function MethodologyPage() {
               <strong className="text-neutral-900">
                 PDF parsing is automated with human review.
               </strong>{" "}
-              Transaction data is extracted from OGE filings using AI and
-              validated against a regression test suite of hand-verified
-              reference files. Source PDFs are linked from each official{"'"}s
-              page for independent verification.
+              Transaction data is extracted from OGE filings using AI, then
+              checked automatically against hand-verified reference files that
+              re-verify the parsed data on every update. Source PDFs are linked
+              from each official{"'"}s page for independent verification.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -240,9 +255,9 @@ export default async function MethodologyPage() {
               <div className="font-medium text-neutral-900">PDF parsing</div>
               <p className="text-neutral-500 mt-0.5">
                 We use{" "}
-                <a href="https://github.com/jsoma/natural-pdf" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">natural-pdf</a>
+                <a href="https://github.com/jsoma/natural-pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">natural-pdf</a>
                 {" "}(by data journalist{" "}
-                <a href="https://github.com/jsoma" className="underline hover:text-neutral-300" target="_blank" rel="noopener noreferrer">Jonathan Soma</a>)
+                <a href="https://github.com/jsoma" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Jonathan Soma</a>)
                 {" "}to extract text from PDF pages, then an AI parser turns
                 the disclosure tables into structured data. Large filings are
                 split into page chunks before parsing. All parsed data is

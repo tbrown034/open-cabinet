@@ -5,7 +5,7 @@ import CompanySearch from "../components/company-search";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Company Lookup, Open Cabinet",
+  title: "Company Lookup",
   description:
     "Search which executive branch officials traded a specific stock or asset.",
 };

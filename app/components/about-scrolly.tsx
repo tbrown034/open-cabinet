@@ -21,7 +21,7 @@ const LAW_STEPS = [
     id: "divestiture",
     label: "90-day divestiture",
     title: "Sell your conflicts within 90 days",
-    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. Divestitures may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043). This only covers conflicting assets, officials can keep and trade non-conflicting stocks.",
+    body: "Before confirmation, nominees sign an ethics agreement pledging to divest holdings that conflict with their new role. They have 90 days from confirmation to complete the sales. Divestitures may qualify for tax deferral under a Certificate of Divestiture (26 U.S.C. \u00A71043). This only covers conflicting assets. Officials can keep and trade non-conflicting stocks.",
   },
   {
     id: "extensions",
@@ -33,7 +33,7 @@ const LAW_STEPS = [
     id: "late-filings",
     label: "Late filings",
     title: "Missing the deadline is common",
-    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)), routinely waived. A 2021 Business Insider investigation found at least 72 members of Congress violated the same deadline. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
+    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)), routinely waived. Business Insider's Conflicted Congress investigation had identified at least 72 members of Congress violating the same deadline by 2022. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
   },
   {
     id: "consequences",

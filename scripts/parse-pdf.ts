@@ -70,6 +70,7 @@ Extract every transaction from the table. For each transaction, return a JSON ob
   "$5,000,001-$25,000,000"
   "$25,000,001-$50,000,000"
   "Over $50,000,000"
+  "Over $1,000,000" (only when the PDF shows this exact open-ended range, used for spouse/dependent-held assets)
 - lateFilingFlag: true if "Notification Received Over 30 Days Ago" column shows "Yes" or a checkmark, false otherwise
 - confidence: your confidence in this extraction (0.0 to 1.0). Use below 0.8 if:
   - The PDF scan quality is poor
@@ -242,6 +243,7 @@ const VALID_AMOUNTS = [
   "$5,000,001-$25,000,000",
   "$25,000,001-$50,000,000",
   "Over $50,000,000",
+  "Over $1,000,000",
 ];
 
 function quickValidate(tx: ParsedTransaction, index: number): string[] {

@@ -4,7 +4,7 @@ import path from "path";
 import ResearchContactCta from "../components/research-contact-cta";
 
 export const metadata: Metadata = {
-  title: "Download Data, Open Cabinet",
+  title: "Download Data",
   description: "Download executive branch financial transaction data as CSV or JSON.",
 };
 
@@ -94,6 +94,11 @@ export default async function DownloadPage() {
           </div>
         ))}
       </div>
+
+      <p className="text-xs text-neutral-400 mt-6">
+        Asset values and transaction amounts are reported in ranges as required
+        by federal law. Exact values are not disclosed.
+      </p>
 
       <p className="text-xs text-neutral-400 mt-8">
         Data exported {new Date(fullDataset.exportedAt).toISOString().slice(0, 10)}. Federal
