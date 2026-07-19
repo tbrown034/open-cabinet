@@ -79,6 +79,9 @@ export default function HomeSwimPreview({
 }) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(1000);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
+  // Hovered lane (by slug) tints the whole row so readers discover the
+  // lanes are clickable — every lane links to that official's page.
+  const [hoveredLane, setHoveredLane] = useState<string | null>(null);
   const top = officials.slice(0, TOP_COUNT);
 
   const isMobile = width > 0 && width < 640;
@@ -200,17 +203,33 @@ export default function HomeSwimPreview({
           {top.map((o, i) => {
             const y = yScale(o.name) ?? 0;
             const bandHeight = yScale.bandwidth();
+            const cy = y + bandHeight / 2;
+            const laneHovered = hoveredLane === o.slug;
+            const initials = displayName(o.name)
+              .split(" ")
+              .filter(Boolean)
+              .map((p, idx, arr) => (idx === 0 || idx === arr.length - 1 ? p[0] : ""))
+              .join("")
+              .toUpperCase();
+            const shortTitle =
+              o.title.length > 26 ? `${o.title.slice(0, 25)}…` : o.title;
             return (
               <g key={`lane-${o.slug}`}>
-                {i % 2 === 0 && (
-                  <rect
-                    x={0}
-                    y={y}
-                    width={chartWidth}
-                    height={bandHeight}
-                    fill="#fafaf9"
-                  />
-                )}
+                <rect
+                  x={0}
+                  y={y}
+                  width={chartWidth}
+                  height={bandHeight}
+                  fill={
+                    laneHovered ? "#f5f5f4" : i % 2 === 0 ? "#fafaf9" : "transparent"
+                  }
+                  onMouseEnter={() => setHoveredLane(o.slug)}
+                  onMouseLeave={() => setHoveredLane(null)}
+                  onClick={() => {
+                    window.location.href = `/officials/${o.slug}`;
+                  }}
+                  style={{ cursor: "pointer" }}
+                />
                 {isMobile ? (
                   <a href={`/officials/${o.slug}`}>
                     <text
@@ -225,17 +244,62 @@ export default function HomeSwimPreview({
                     </text>
                   </a>
                 ) : (
-                  <a href={`/officials/${o.slug}`}>
+                  <a
+                    href={`/officials/${o.slug}`}
+                    onMouseEnter={() => setHoveredLane(o.slug)}
+                    onMouseLeave={() => setHoveredLane(null)}
+                  >
+                    {/* Avatar: initials circle renders underneath; the photo
+                        drops on top when it loads, so a missing file simply
+                        leaves the initials showing (no broken-image state). */}
+                    <clipPath id={`preview-avatar-${o.slug}`}>
+                      <circle cx={-margin.left + 26} cy={cy} r={13} />
+                    </clipPath>
+                    <circle
+                      cx={-margin.left + 26}
+                      cy={cy}
+                      r={13}
+                      fill="#e7e5e4"
+                    />
+                    <text
+                      x={-margin.left + 26}
+                      y={cy}
+                      textAnchor="middle"
+                      dominantBaseline="central"
+                      fill="#78716c"
+                      className="text-[10px]"
+                      fontWeight="500"
+                    >
+                      {initials}
+                    </text>
+                    <image
+                      href={`/photos/${o.slug}.jpg`}
+                      x={-margin.left + 13}
+                      y={cy - 13}
+                      width={26}
+                      height={26}
+                      preserveAspectRatio="xMidYMid slice"
+                      clipPath={`url(#preview-avatar-${o.slug})`}
+                    />
                     <text
                       x={-8}
-                      y={y + bandHeight / 2}
+                      y={cy - 2}
                       textAnchor="end"
-                      dominantBaseline="middle"
                       fill="#292524"
                       className="text-[12px]"
                       fontWeight="500"
+                      textDecoration={laneHovered ? "underline" : "none"}
                     >
                       {displayName(o.name)}
+                    </text>
+                    <text
+                      x={-8}
+                      y={cy + 12}
+                      textAnchor="end"
+                      fill="#a8a29e"
+                      className="text-[9px]"
+                    >
+                      {shortTitle}
                     </text>
                   </a>
                 )}
@@ -284,16 +348,29 @@ export default function HomeSwimPreview({
             const x = xScale(new Date("2025-01-20T00:00:00"));
             if (x < 0 || x > chartWidth) return null;
             return (
-              <line
-                x1={x}
-                y1={0}
-                x2={x}
-                y2={chartHeight}
-                stroke="#525252"
-                strokeWidth={1}
-                strokeDasharray="4,3"
-                opacity={0.5}
-              />
+              <g>
+                <line
+                  x1={x}
+                  y1={0}
+                  x2={x}
+                  y2={chartHeight}
+                  stroke="#525252"
+                  strokeWidth={1}
+                  strokeDasharray="4,3"
+                  opacity={0.5}
+                />
+                {/* Without a label this reads as a mystery deadline; it marks
+                    the start of the administration, same as on the full chart. */}
+                <text
+                  x={x + 4}
+                  y={-8}
+                  textAnchor="start"
+                  fill="#737373"
+                  className="text-[9px]"
+                >
+                  Inauguration
+                </text>
+              </g>
             );
           })()}
 
@@ -362,15 +439,26 @@ export default function HomeSwimPreview({
 
               return (
                 <g key={`${o.slug}-${key}`}>
-                  {/* Wider invisible hover target covering the full band. */}
+                  {/* Wider invisible hover target covering the full band.
+                      Clicking a bar goes to the official's page — same
+                      destination as the lane itself. */}
                   <rect
                     x={x}
                     y={y}
                     width={barWidth}
                     height={bandHeight}
                     fill="transparent"
-                    onMouseEnter={onEnter}
-                    onMouseLeave={onLeave}
+                    onMouseEnter={() => {
+                      onEnter();
+                      setHoveredLane(o.slug);
+                    }}
+                    onMouseLeave={() => {
+                      onLeave();
+                      setHoveredLane(null);
+                    }}
+                    onClick={() => {
+                      window.location.href = `/officials/${o.slug}`;
+                    }}
                     style={{ cursor: "pointer" }}
                   />
                   {bucket.sales > 0 && (
