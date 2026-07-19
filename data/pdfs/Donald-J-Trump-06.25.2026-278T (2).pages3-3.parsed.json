@@ -1,0 +1,308 @@
+{
+  "transactions": [
+    {
+      "description": "Yum Brands Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CARNIVAL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CARNIVAL CORP LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HIDALGO CNTY TX CTF OBLIG DB B/E 4.00% Due Aug 15, 2033",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AKAMAI TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALBEMARLE CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALTRIA GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN ELECTRIC POWER COMPANY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN INTERNATIONAL GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMGEN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMPHENOL CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AON PLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARCH CAPITAL GROUP LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARCHER-DANIELS-MIDLAND CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARES MANAGEMENT CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARISTA NETWORKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ATMOS ENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUTODESK INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUTOMATIC DATA PROCESSING INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUTOZONE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AVALONBAY COMMUNITIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AXON ENTERPRISE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BAKER HUGHES COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BANK OF AMERICA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BERKSHIRE HATHAWAY INC DEL CL B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BIOGEN INC J.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOOKING HOLDINGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BRISTOL MYERS SQUIBB CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROADRIDGE FINANCIAL SOLUTIONS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CH ROBINSON WORLDWIDE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3416,
+    "outputTokens": 2770,
+    "estimatedCostUsd": 0.0518
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-06.25.2026-278T (2).pages3-3.pdf"
+}

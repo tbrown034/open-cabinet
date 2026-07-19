@@ -5,8 +5,16 @@
   "agency": "Office of Science and Technology Policy",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-04-17",
+  "mostRecentFilingDate": "2026-07-11",
   "transactions": [
+    {
+      "description": "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)",
+      "ticker": "LQD",
+      "type": "Purchase",
+      "date": "2026-05-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "iShares National Muni Bond ETF (MUB)",
       "ticker": "MUB",
@@ -496,10 +504,15 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kratsios reported 25 sales (est. $18.7M) and 36 purchases (est. $3.7M).",
+  "summary": "Kratsios reported 25 sales and 37 purchases across 62 transactions in the latest tracked 278-T filing.",
   "confirmedDate": "2025-03-25",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-07-11",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F4060C7CB31DC8DA85258E31002DCF6A/$FILE/Michael-Kratsios-06.10.2026-278T.pdf",
+      "label": "Michael-Kratsios-06.10.2026-278T"
+    },
     {
       "date": "2026-04-17",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C4BF8463CF0AE7AE85258DDC002DBBFB/$FILE/Michael-J-Kratsios-03.29.2026-278T.pdf",
@@ -551,6 +564,6 @@
       "label": "278-T"
     }
   ],
-  "lastIngestedDate": "2026-05-14",
-  "lastIngestedNewCount": 6
+  "lastIngestedDate": "2026-07-19",
+  "lastIngestedNewCount": 1
 }

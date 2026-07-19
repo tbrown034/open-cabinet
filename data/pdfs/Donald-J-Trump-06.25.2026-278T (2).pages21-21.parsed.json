@@ -1,0 +1,308 @@
+{
+  "transactions": [
+    {
+      "description": "ALPHABET INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALPHABET INC CLASS CLASS C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMAZON COM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMCOR PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMDOCS LTD F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN TOWER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN TOWER CORP NEW REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN TOWER CORP NEW REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN WTR WKS CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMGEN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMKOR TECHNOLOGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMPHENOL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMPHENOL CORP NEW CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AON PLC F CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AON PLC SHS CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "APPLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "APPLOVIN CORP COM CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARES MGMT CORP CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARISTA NETWORKS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARISTA NETWORKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AST SPACEMOBILE INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUTODESK INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUTOMATIC DATA PROCESSIN",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "AUTOMATIC DATA PROCESSING INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AVERY DENNISON CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AXON ENTERPRISE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AZENTA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BAXTER INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BERKLEY W R CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BERKSHIRE HATHAWAY CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3530,
+    "outputTokens": 2766,
+    "estimatedCostUsd": 0.0521
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-06.25.2026-278T (2).pages21-21.pdf"
+}

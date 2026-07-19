@@ -40,9 +40,9 @@ async function main() {
     3642,
     "Trump May 8, 2026 part-two transaction rows"
   );
-  assertEqual(trump.transactions.length, 5185, "Trump aggregate profile transaction count");
+  assertEqual(trump.transactions.length, 7699, "Trump aggregate profile transaction count");
   assertEqual(fullDataset.officialCount, 37, "Full dataset official count");
-  assertEqual(fullDataset.transactionCount, 7513, "Full dataset transaction count");
+  assertEqual(fullDataset.transactionCount, 10033, "Full dataset transaction count");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {
@@ -50,7 +50,7 @@ async function main() {
   }
   assertEqual(
     exportedTrump.transactions.length,
-    5185,
+    7699,
     "Full dataset Trump aggregate transaction count"
   );
 }
