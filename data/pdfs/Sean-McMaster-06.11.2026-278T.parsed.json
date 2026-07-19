@@ -1,0 +1,56 @@
+{
+  "transactions": [
+    {
+      "description": "Forgent Power Solution (FPS)",
+      "ticker": "FPS",
+      "type": "Purchase",
+      "date": "2026-05-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Corning, Inc. (GLW)",
+      "ticker": "GLW",
+      "type": "Purchase",
+      "date": "2026-05-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fluence Energy Inc. Class A Common Stock (FLNC)",
+      "ticker": "FLNC",
+      "type": "Purchase",
+      "date": "2026-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Akamai Technologies, Inc. (AKAM)",
+      "ticker": "AKAM",
+      "type": "Purchase",
+      "date": "2026-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "QUALCOMM, Inc. (QCOM)",
+      "ticker": "QCOM",
+      "type": "Purchase",
+      "date": "2026-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6502,
+    "outputTokens": 455,
+    "estimatedCostUsd": 0.0263
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sean-McMaster-06.11.2026-278T.pdf"
+}

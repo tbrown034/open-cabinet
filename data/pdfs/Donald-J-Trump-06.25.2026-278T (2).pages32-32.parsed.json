@@ -1,0 +1,308 @@
+{
+  "transactions": [
+    {
+      "description": "WASHINGTON ST HEALT 5% DUE 10/01/35",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CSG SYS INTL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ECOLAB INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GREAT LAKES WTR AUT 5% DUE 07/01/46",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GWINNETT CNTY GA WTR & SWR AUTH REV B/E 3.00 % Due Aug 1 2031",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "IBM CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ILLINOIS TOOL WKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MCDONALDS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEDTRONIC PLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PENNSYLVANIA ECONOM 5% DUE 12/15/56",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "STATE STREET SPDR S&P DIVIDEND ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "TRINITY RIVER AUTH 5% DUE 08/01/51",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "UTAH ST MUN PWR AGY 5% DUE 07/01/47",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "VIRGINIA ST RES AUTH INFRA VA POOL FING PG SER C REV B/E PTC 4.00 % Due Nov 1 2033",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Amazon Com Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Apple Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GENUINE PARTS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Invesco Exchange-traded Fd Tr S&p 500 Equal Weight",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Iqvia Hldgs Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ISHARES INTERNATIONAL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Ishares Tr Msci Eafe Value",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ISHARES U.S. TREASURY BOND ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Microsoft Corp",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "NIKE INC CLASS CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-21",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Nvidia Corp",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PHILADELPHIA PA S 5.5% DUE 09/01/51",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Pultegroup Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "State Street SPDR Bloomberg International Treasury Bond ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "State Street SPDR S/t Corp Bd ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3681,
+    "outputTokens": 2947,
+    "estimatedCostUsd": 0.0552
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "data/pdfs/Donald-J-Trump-06.25.2026-278T (2).pages32-32.pdf"
+}

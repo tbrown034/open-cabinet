@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)",
+      "ticker": "LQD",
+      "type": "Purchase",
+      "date": "2026-05-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6379,
+    "outputTokens": 72,
+    "estimatedCostUsd": 0.0202
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Kratsios-06.10.2026-278T.pdf"
+}

@@ -148,6 +148,25 @@ async function splitPdfIfNeeded(pdfPath: string): Promise<string[]> {
 }
 
 async function parsePdfWithRetry(pdfPath: string): Promise<ParsedTransaction[]> {
+  // Reuse a prior parse if one already exists on disk. Splitting is
+  // deterministic (same chunk boundaries every run), so a cached
+  // .parsed.json for a chunk is safe to trust — this avoids paying to
+  // re-parse pages that were already extracted in an earlier run.
+  const cachedPath = pdfPath.replace(/\.pdf$/i, ".parsed.json");
+  if (existsSync(cachedPath)) {
+    try {
+      const cached = JSON.parse(await readFile(cachedPath, "utf-8"));
+      if (Array.isArray(cached?.transactions)) {
+        console.log(
+          `           cached ${cached.transactions.length} txns (${path.basename(cachedPath)})`
+        );
+        return cached.transactions as ParsedTransaction[];
+      }
+    } catch {
+      // Corrupt cache — fall through and re-parse.
+    }
+  }
+
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const result = await parsePdf(pdfPath);
