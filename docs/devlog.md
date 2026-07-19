@@ -475,3 +475,19 @@ Built the subscriber-facing email alert system end-to-end (phases 0-4 of 5). Sig
 **Known remaining:** digest #1 send (Trevor's button); watch confirmations in admin Confirmed column; perf items deferred (officials/[slug] accidental dynamic rendering, 1.16MB home swim payload, colorblind-safe palette decision); Form 201 playbook researched and ready (Pirro, US Marshal Thomas E. Brown with 134 278-Ts, Loeffler, Kenny, Scharf, Oz, Makary).
 
 ---
+
+## July 19, 2026 (evening) - Homepage polish round
+
+**Session Summary:**
+- Post-launch visual review pass with Trevor; five homepage fixes shipped in two commits (347408d, b793775).
+- Hero stats: replaced three ambiguous asterisk-links (which read as footnote markers for a note that only explained trade volume) with dotted-underline links on the stat labels themselves.
+- New-filings banner: official mugshots (20px, initials fallback) beside each name; "+N new trades" now amber/medium so the news outranks the posted date.
+- Home swim preview: avatars + truncated titles under lane names (mirrors /all), lane tint + name underline on hover, lanes AND bar stacks click through to the official's page, dashed line finally labeled "Inauguration".
+- Design questions answered and closed: no light/dark mode (per design doc — one editorial palette; Terminal/Tribune reskins remain the someday version); dots-for-small/bars-for-Trump split kept as deliberate density-aware encoding.
+
+**Notable Changes:**
+- app/components/home-swim-preview.tsx: hoveredLane state; SVG avatar pattern (initials circle under <image> so missing photos degrade gracefully); bar hover targets also set lane hover and navigate on click.
+- app/page.tsx: OfficialAvatar in banner; amber trade counts; dotted-underline stat links.
+- Verified locally on a prod build before push; all 5 top-lane photos present in public/photos.
+
+---
