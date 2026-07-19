@@ -121,13 +121,16 @@ export function buildRepermissionEmail(
   confirmLink: string,
   unsubscribeLink: string
 ): BuiltEmail {
-  const subject = "Confirm you still want Open Cabinet filing alerts";
+  const subject = "Sorry this took a minute — confirm your Open Cabinet alerts";
   const unsubHtml = `Don't want these? <a href="${unsubscribeLink}" style="color:${COLORS.muted};">Unsubscribe</a>.`;
   const html = layout({
-    heading: "Still want filing alerts?",
+    heading: "Thanks for signing up — one quick step",
     bodyHtml: `
       <p style="font-family:${SANS};font-size:15px;line-height:1.6;color:${COLORS.text};margin:0 0 20px;">
-        You signed up for Open Cabinet alerts about executive-branch stock trades. We've added a confirmation step, so please confirm to keep receiving them.
+        You signed up for Open Cabinet email alerts about executive-branch stock trades, and it took a minute to get the first one ready. Sorry about that, and thanks for your patience.
+      </p>
+      <p style="font-family:${SANS};font-size:15px;line-height:1.6;color:${COLORS.text};margin:0 0 20px;">
+        Alerts are ready to go now. Confirm your address and you'll start getting an email when officials report new trades.
       </p>
       ${button(confirmLink, "Yes, keep me subscribed")}
       <p style="font-family:${SANS};font-size:13px;line-height:1.6;color:${COLORS.muted};margin:0;">
@@ -138,9 +141,11 @@ export function buildRepermissionEmail(
       </p>`,
     footerExtra: unsubHtml,
   });
-  const text = `Still want Open Cabinet filing alerts?
+  const text = `Thanks for signing up for Open Cabinet filing alerts — one quick step
 
-You signed up for alerts about executive-branch stock trades. We've added a confirmation step — confirm to keep receiving them:
+You signed up for email alerts about executive-branch stock trades, and it took a minute to get the first one ready. Sorry about that, and thanks for your patience.
+
+Alerts are ready to go now. Confirm your address to start getting an email when officials report new trades:
 
 ${confirmLink}
 

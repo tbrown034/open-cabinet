@@ -44,9 +44,13 @@ interface AlertSignup {
 
 // The digest item/trade shapes are the single source of truth in lib/digest.ts;
 // import them instead of re-declaring drifting copies here.
+type DigestAudience = "major" | "routine";
+
 interface DigestPreview {
   draft: DigestResult;
   recipientCount: number;
+  // Audience breakdown: total confirmed / every-filing ("all") / major-only.
+  recipientCounts: { total: number; all: number; major: number };
   production: boolean;
   inFlightRun: {
     id: number;
@@ -58,12 +62,21 @@ interface DigestPreview {
 }
 
 interface DigestSendResult {
-  status?: "sent" | "failed" | "already-sent" | "no-recipients";
+  status?:
+    | "sent"
+    | "failed"
+    | "already-sent"
+    | "no-recipients"
+    | "test-sent"
+    | "test-failed"
+    | "test-empty";
   empty?: boolean;
   recipientCount?: number;
   filingCount?: number;
   officialCount?: number;
   runId?: number;
+  audience?: DigestAudience;
+  to?: string;
   error?: string;
   retry?: boolean;
   warning?: string | null;
@@ -100,6 +113,11 @@ interface AdminState {
   digestConfirming: boolean;
   digestSending: boolean;
   digestResult: DigestSendResult | null;
+  // Audience selector; "routine" (every-filing subscribers only) is the
+  // conservative default so major-only subscribers are never mailed by accident.
+  digestAudience: DigestAudience;
+  digestTesting: boolean;
+  digestTestResult: DigestSendResult | null;
   loading: boolean;
   validationReport: DbValidationReport | null;
   ogeReport: OgeCheckReport | null;
@@ -126,6 +144,9 @@ const INITIAL_ADMIN_STATE: AdminState = {
   digestConfirming: false,
   digestSending: false,
   digestResult: null,
+  digestAudience: "routine",
+  digestTesting: false,
+  digestTestResult: null,
   loading: false,
   validationReport: null,
   ogeReport: null,
@@ -155,6 +176,9 @@ export default function AdminPage() {
     digestConfirming,
     digestSending,
     digestResult,
+    digestAudience,
+    digestTesting,
+    digestTestResult,
     loading,
     validationReport,
     ogeReport,
@@ -215,7 +239,11 @@ export default function AdminPage() {
   async function handleSendDigest() {
     setAdminState({ digestSending: true, digestConfirming: false, digestResult: null });
     try {
-      const res = await fetch("/api/admin/digest", { method: "POST" });
+      const res = await fetch("/api/admin/digest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ audience: digestAudience }),
+      });
       const data: DigestSendResult = await res.json();
       setAdminState({ digestResult: data });
       // On a successful send, refresh so the draft empties and run state updates.
@@ -224,6 +252,27 @@ export default function AdminPage() {
       setAdminState({ digestResult: { status: "failed", error: (err as Error).message } });
     }
     setAdminState({ digestSending: false });
+  }
+
+  // "Send test to me": mails one copy of the current draft to the admin. The
+  // server writes only an email_sends audit row — no ledger, no run, no recency
+  // bump — so this consumes nothing and never affects a real send.
+  async function handleTestDigest() {
+    setAdminState({ digestTesting: true, digestTestResult: null });
+    try {
+      const res = await fetch("/api/admin/digest", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "test" }),
+      });
+      const data: DigestSendResult = await res.json();
+      setAdminState({ digestTestResult: data });
+    } catch (err) {
+      setAdminState({
+        digestTestResult: { status: "test-failed", error: (err as Error).message },
+      });
+    }
+    setAdminState({ digestTesting: false });
   }
 
   useEffect(() => {
@@ -418,7 +467,8 @@ export default function AdminPage() {
             Filing Digest
             {digest && (
               <span className="ml-2 bg-neutral-100 text-neutral-700 px-2 py-0.5 rounded-sm text-[10px]">
-                {digest.recipientCount} active subscriber{digest.recipientCount === 1 ? "" : "s"}
+                {digest.recipientCount} confirmed · {digest.recipientCounts.all} every-filing ·{" "}
+                {digest.recipientCounts.major} major-only
               </span>
             )}
           </h2>
@@ -465,9 +515,9 @@ export default function AdminPage() {
                 <>
                   <p className="text-neutral-600 text-xs">
                     Draft ready: {digest.draft.items.length} official
-                    {digest.draft.items.length === 1 ? "" : "s"} →{" "}
-                    {digest.recipientCount} confirmed subscriber
-                    {digest.recipientCount === 1 ? "" : "s"}.
+                    {digest.draft.items.length === 1 ? "" : "s"}. Routine send
+                    reaches {digest.recipientCounts.all}; major send reaches{" "}
+                    {digest.recipientCounts.total}.
                   </p>
                   {digest.draft.items.map((item) => (
                     <div key={item.slug} className="border-l-2 border-neutral-300 pl-3">
@@ -507,56 +557,119 @@ export default function AdminPage() {
                     </div>
                   ))}
 
-                  {/* Send flow: result -> two-step confirm -> button. */}
-                  <div className="pt-2 border-t border-neutral-200">
-                    {digestResult ? (
-                      <DigestSendReport
-                        result={digestResult}
-                        onRetry={handleSendDigest}
-                        sending={digestSending}
+                  {/* Test send: mails one copy to the admin. Consumes nothing —
+                      no ledger, no run, no lastNotifiedAt bump. */}
+                  <div className="pt-2 border-t border-neutral-200 space-y-2">
+                    <div className="flex items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={handleTestDigest}
+                        disabled={digestTesting}
+                        className="border border-neutral-300 text-neutral-700 px-3 py-1.5 text-xs hover:bg-neutral-100 transition-colors cursor-pointer disabled:opacity-50"
+                      >
+                        {digestTesting ? "Sending test…" : "Send test to me"}
+                      </button>
+                      <span className="text-[10px] text-neutral-500">
+                        Sends only to you. Does not mark filings as notified.
+                      </span>
+                    </div>
+                    {digestTestResult && <DigestTestReport result={digestTestResult} />}
+                  </div>
+
+                  {/* Audience selector: routine = every-filing subscribers only;
+                      major = all subscribers. Routine is the default. */}
+                  <fieldset className="pt-2 border-t border-neutral-200 space-y-1.5">
+                    <legend className="text-[10px] uppercase tracking-wider text-neutral-500 font-medium mb-1">
+                      Audience
+                    </legend>
+                    <label className="flex items-start gap-2 text-xs text-neutral-700 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="digest-audience"
+                        value="routine"
+                        checked={digestAudience === "routine"}
+                        onChange={() => setAdminState({ digestAudience: "routine" })}
+                        className="mt-0.5 accent-neutral-900"
                       />
-                    ) : digestConfirming ? (
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs text-neutral-700">
-                          Send to {digest.recipientCount} subscriber
-                          {digest.recipientCount === 1 ? "" : "s"} now?
-                        </span>
-                        <button
-                          type="button"
-                          onClick={handleSendDigest}
-                          disabled={digestSending}
-                          className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
-                        >
-                          {digestSending ? "Sending…" : "Confirm send"}
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => setAdminState({ digestConfirming: false })}
-                          disabled={digestSending}
-                          className="text-xs text-neutral-500 hover:text-neutral-900 cursor-pointer disabled:opacity-50"
-                        >
-                          Cancel
-                        </button>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-3">
-                        <button
-                          type="button"
-                          onClick={() => setAdminState({ digestConfirming: true })}
-                          disabled={digest.recipientCount === 0}
-                          title={digest.recipientCount === 0 ? "No confirmed subscribers yet." : undefined}
-                          className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                          {digest.inFlightRun ? "Resume send" : "Send digest"}
-                        </button>
-                        {!digest.production && (
-                          <span className="text-[10px] text-amber-700">
-                            Non-production: the server refuses to send here.
-                          </span>
+                      <span>
+                        Routine filing update — goes to every-filing subscribers only
+                        ({digest.recipientCounts.all})
+                      </span>
+                    </label>
+                    <label className="flex items-start gap-2 text-xs text-neutral-700 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="digest-audience"
+                        value="major"
+                        checked={digestAudience === "major"}
+                        onChange={() => setAdminState({ digestAudience: "major" })}
+                        className="mt-0.5 accent-neutral-900"
+                      />
+                      <span>
+                        Major update — goes to all subscribers ({digest.recipientCounts.total})
+                      </span>
+                    </label>
+                  </fieldset>
+
+                  {/* Send flow: result -> two-step confirm -> button. */}
+                  {(() => {
+                    // The count the selected audience actually reaches.
+                    const targetCount =
+                      digestAudience === "major"
+                        ? digest.recipientCounts.total
+                        : digest.recipientCounts.all;
+                    return (
+                      <div className="pt-2 border-t border-neutral-200">
+                        {digestResult ? (
+                          <DigestSendReport
+                            result={digestResult}
+                            onRetry={handleSendDigest}
+                            sending={digestSending}
+                          />
+                        ) : digestConfirming ? (
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs text-neutral-700">
+                              Send {digestAudience} update to {targetCount} subscriber
+                              {targetCount === 1 ? "" : "s"} now?
+                            </span>
+                            <button
+                              type="button"
+                              onClick={handleSendDigest}
+                              disabled={digestSending}
+                              className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
+                            >
+                              {digestSending ? "Sending…" : "Confirm send"}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setAdminState({ digestConfirming: false })}
+                              disabled={digestSending}
+                              className="text-xs text-neutral-500 hover:text-neutral-900 cursor-pointer disabled:opacity-50"
+                            >
+                              Cancel
+                            </button>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-3">
+                            <button
+                              type="button"
+                              onClick={() => setAdminState({ digestConfirming: true })}
+                              disabled={targetCount === 0}
+                              title={targetCount === 0 ? "No subscribers in this audience yet." : undefined}
+                              className="bg-neutral-900 text-white px-4 py-2 text-xs hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                            >
+                              {digest.inFlightRun ? "Resume send" : "Send digest"}
+                            </button>
+                            {!digest.production && (
+                              <span className="text-[10px] text-amber-700">
+                                Non-production: the server refuses to send here.
+                              </span>
+                            )}
+                          </div>
                         )}
                       </div>
-                    )}
-                  </div>
+                    );
+                  })()}
                 </>
               )}
             </div>
@@ -1031,7 +1144,8 @@ function DigestSendReport({
     return (
       <div className="text-xs">
         <p className="text-emerald-700 font-medium">
-          Sent to {result.recipientCount} subscriber
+          Sent {result.audience ? `${result.audience} update ` : ""}to{" "}
+          {result.recipientCount} subscriber
           {result.recipientCount === 1 ? "" : "s"}
           {typeof result.filingCount === "number" && ` · ${result.filingCount} filing${result.filingCount === 1 ? "" : "s"}`}.
         </p>
@@ -1068,6 +1182,31 @@ function DigestSendReport({
   return (
     <p className="text-xs text-neutral-600">
       {result.message || result.error || "Nothing to send."}
+    </p>
+  );
+}
+
+/** Outcome of a "Send test to me" click. No retry — a test is cheap; just click
+ * the button again. */
+function DigestTestReport({ result }: { result: DigestSendResult }) {
+  if (result.status === "test-sent") {
+    return (
+      <p className="text-xs text-emerald-700">
+        Test sent to {result.to}. Check your inbox.
+      </p>
+    );
+  }
+  if (result.status === "test-empty") {
+    return (
+      <p className="text-xs text-neutral-600">
+        {result.message || "Nothing to send — the draft is empty."}
+      </p>
+    );
+  }
+  // test-failed / anything else.
+  return (
+    <p className="text-xs text-red-700">
+      {result.error || "Test send failed."}
     </p>
   );
 }

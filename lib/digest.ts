@@ -158,6 +158,52 @@ export function selectDigestItems(
 }
 
 /**
+ * Audience for a digest send. Maps to the `alert_type` preference each signup
+ * chose at opt-in:
+ *   "major"   — a MAJOR update: reaches EVERY confirmed signup, regardless of
+ *               their alert_type. Use sparingly.
+ *   "routine" — a routine filing update: reaches ONLY signups with
+ *               alert_type = "all" (the every-filing subscribers). "major"-only
+ *               subscribers are deliberately spared. This is the conservative
+ *               default so we never spam major-only subscribers by accident.
+ */
+export type DigestAudience = "major" | "routine";
+
+/** A candidate recipient plus the preference we filter on. */
+export interface AudienceRecipient {
+  id: number;
+  email: string;
+  alertType: string; // "major" | "all" (schema default is "major")
+}
+
+/**
+ * Pure audience filter (no DB) so the routing rule is unit-testable in isolation.
+ *
+ * - "major"   → everyone (both "major" and "all" subscribers).
+ * - "routine" → only the every-filing ("all") subscribers.
+ *
+ * Anything other than "all" (i.e. "major", or a legacy/blank value) is treated
+ * as major-only and therefore excluded from a routine send.
+ */
+export function filterRecipientsByAudience<T extends { alertType: string }>(
+  recipients: T[],
+  audience: DigestAudience
+): T[] {
+  if (audience === "major") return recipients;
+  return recipients.filter((r) => r.alertType === "all");
+}
+
+/** Recipient counts for the admin UI: total, every-filing ("all"), major-only. */
+export function recipientAudienceCounts(recipients: AudienceRecipient[]): {
+  total: number;
+  all: number;
+  major: number;
+} {
+  const all = recipients.filter((r) => r.alertType === "all").length;
+  return { total: recipients.length, all, major: recipients.length - all };
+}
+
+/**
  * Deterministic idempotency key for a digest send: sha256 over the sorted,
  * de-duplicated set of filing URLs. Same filing set -> same key, regardless of
  * order, so a retry maps to the same digest_runs row (which carries the frozen

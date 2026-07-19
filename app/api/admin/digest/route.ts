@@ -2,24 +2,32 @@
  * Admin API: filing-alert digest.
  *
  * GET  — assemble the draft digest (what WOULD be sent), the consent-filtered
- *        recipient count, and any in-flight/last-sent run state, for review in
- *        /admin. Read-only; sends nothing.
- * POST — the human approval gate that actually sends. Models a write-ahead
- *        outbox (digest_runs) so the external Resend call is never assumed
- *        atomic with our DB writes. Hard-gated to production + admin.
+ *        recipient counts (total / every-filing / major-only), and any
+ *        in-flight/last-sent run state, for review in /admin. Read-only.
+ * POST — two actions on the same route (both admin-gated):
+ *        action "test"  — send ONE copy of the current draft to the signed-in
+ *                         admin. Writes an email_sends audit row and NOTHING
+ *                         else (no ledger, no digest_runs, no lastNotifiedAt).
+ *                         Bypasses the production gate (mails only the admin).
+ *        default (send) — the human approval gate that actually sends to
+ *                         subscribers. Models a write-ahead outbox (digest_runs)
+ *                         so the external Resend call is never assumed atomic
+ *                         with our DB writes. Hard-gated to production + admin.
  *
- * Lifecycle (POST):
+ * Real-send lifecycle (POST, non-test):
  *   1. guards: admin, production, CAN-SPAM postal address, confirmed recipients
- *   2. buildDigest; empty -> nothing to send
- *   3. idempotencyKey = sha256(sorted un-notified filing URLs)
+ *   2. resolve audience ("major" = all subscribers; "routine" = every-filing
+ *      subscribers only) and filter the confirmed list accordingly
+ *   3. buildDigest; empty -> nothing to send
+ *   4. idempotencyKey = sha256(sorted un-notified filing URLs)
  *      - existing run "sent"            -> 409 (already sent)
  *      - existing run "sending"/"failed"-> RESUME from its frozen payload
- *      - none                           -> freeze payload, insert "sending"
- *   4. send chunks (skipping any already confirmed), persist chunk state
- *   5. all chunks ok -> ONE atomic db.batch: write notified_filings ledger +
+ *      - none                           -> freeze payload (incl. audience), "sending"
+ *   5. send chunks (skipping any already confirmed), persist chunk state
+ *   6. all chunks ok -> ONE atomic db.batch: write notified_filings ledger +
  *      per-recipient email_sends rows + bump recipients' lastNotifiedAt + flip
  *      run to "sent". Then email the admin a receipt.
- *   6. any chunk failed -> persist "failed"; the admin retries (retry = resume).
+ *   7. any chunk failed -> persist "failed"; the admin retries (retry = resume).
  *
  * neon-http has no interactive transactions, so the finalize uses db.batch,
  * which runs its statements as a single atomic request.
@@ -29,14 +37,24 @@ import { and, desc, eq, inArray, isNotNull } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { alertSignups, digestRuns, emailSends, notifiedFilings } from "@/lib/schema";
-import { buildDigest, digestIdempotencyKey } from "@/lib/digest";
+import {
+  buildDigest,
+  digestIdempotencyKey,
+  filterRecipientsByAudience,
+  recipientAudienceCounts,
+  type AudienceRecipient,
+  type DigestAudience,
+} from "@/lib/digest";
 import {
   sendDigestBatch,
+  sendTransactional,
   type DigestChunkResult,
   type DigestRecipient,
 } from "@/lib/email-send";
+import { buildDigestEmail } from "@/lib/emails";
+import { mintToken } from "@/lib/tokens";
 import { notify } from "@/lib/notify";
-import { POSTAL_ADDRESS } from "@/lib/email-config";
+import { POSTAL_ADDRESS, siteUrl, unsubscribePageUrl } from "@/lib/email-config";
 import type { DigestItem } from "@/lib/digest";
 
 // Resend's free tier caps at 100 emails/day shared across every send; warn the
@@ -51,6 +69,10 @@ interface FrozenPayload {
   filings: { url: string; slug: string }[];
   recipients: DigestRecipient[];
   key: string;
+  /** The audience chosen at send time; replayed on resume so a retry never
+   * silently widens or narrows the recipient set. Optional for backward-compat
+   * with any run frozen before this field existed. */
+  audience?: DigestAudience;
 }
 
 function freeTierWarning(recipientCount: number): string | null {
@@ -78,14 +100,32 @@ function mergeChunks(
   return [...byN.values()].sort((a, b) => a.n - b.n);
 }
 
-/** Confirmed subscribers only. Legacy never-consented rows are status 'active'
+/** Confirmed subscribers only, each carrying its alert_type preference so the
+ * caller can filter by audience. Legacy never-consented rows are status 'active'
  * with a null confirmedAt — they must be excluded until re-permission stamps
  * confirmedAt via the confirm flow. */
-async function loadConfirmedRecipients(): Promise<DigestRecipient[]> {
+async function loadConfirmedRecipients(): Promise<AudienceRecipient[]> {
   return db
-    .select({ id: alertSignups.id, email: alertSignups.email })
+    .select({
+      id: alertSignups.id,
+      email: alertSignups.email,
+      alertType: alertSignups.alertType,
+    })
     .from(alertSignups)
     .where(and(eq(alertSignups.status, "active"), isNotNull(alertSignups.confirmedAt)));
+}
+
+/** Parse the requested audience from the POST body; defaults to the conservative
+ * "routine" (every-filing subscribers only) so a major-only subscriber is never
+ * mailed by accident when the field is omitted or malformed. */
+function parseAudience(value: unknown): DigestAudience {
+  return value === "major" ? "major" : "routine";
+}
+
+/** Strip alertType before freezing: the frozen recipient list is the send list,
+ * already audience-filtered, so it only needs id + email. */
+function toSendRecipients(recipients: AudienceRecipient[]): DigestRecipient[] {
+  return recipients.map(({ id, email }) => ({ id, email }));
 }
 
 export async function GET() {
@@ -97,6 +137,9 @@ export async function GET() {
     const draft = await buildDigest();
     const recipients = await loadConfirmedRecipients();
     const recipientCount = recipients.length;
+    // Total confirmed, every-filing ("all"), and major-only counts so the UI can
+    // show "Routine reaches N; major reaches M."
+    const counts = recipientAudienceCounts(recipients);
 
     // Surface any unfinished run (so the admin sees a resume is pending) and the
     // most recent successful send timestamp.
@@ -117,6 +160,9 @@ export async function GET() {
     return NextResponse.json({
       draft,
       recipientCount,
+      // Audience breakdown: a "major" send reaches counts.total, a "routine"
+      // send reaches counts.all (the every-filing subscribers).
+      recipientCounts: counts,
       production: process.env.VERCEL_ENV === "production",
       inFlightRun: inFlight
         ? {
@@ -134,12 +180,103 @@ export async function GET() {
   }
 }
 
-export async function POST() {
+/**
+ * "Send test to me": mail exactly ONE copy of the current draft to the admin.
+ *
+ * Deliberately isolated from the real-send path: it NEVER touches
+ * notified_filings, digest_runs, or lastNotifiedAt — a test consumes nothing.
+ * The only DB write is the email_sends audit row that sendTransactional logs
+ * (kind "digest_test"). It bypasses the production gate (mailing only the admin
+ * is safe anywhere a Resend key exists) but keeps the postal-address guard so
+ * the CAN-SPAM footer renders real.
+ *
+ * Idempotency key is per-invocation (includes Date.now()) so a test never
+ * collides with the real send's key and repeated tests always deliver.
+ */
+async function handleTestSend(adminEmail: string): Promise<NextResponse> {
+  // CAN-SPAM: the footer must carry a real address even for a self-test.
+  if (POSTAL_ADDRESS === "[MAILING ADDRESS PENDING]") {
+    return NextResponse.json(
+      { error: "MAIL_POSTAL_ADDRESS is not set — required in the email footer (CAN-SPAM). Set it before sending." },
+      { status: 409 }
+    );
+  }
+
+  const digest = await buildDigest();
+  if (digest.empty) {
+    return NextResponse.json({
+      status: "test-empty",
+      empty: true,
+      message: "Nothing to send — no un-notified filings in the current draft.",
+    });
+  }
+
+  // Use the admin's own real unsubscribe link if they're a signup; otherwise
+  // fall back to the site URL rather than minting a token for a nonexistent row.
+  const [ownRow] = await db
+    .select({ id: alertSignups.id })
+    .from(alertSignups)
+    .where(eq(alertSignups.email, adminEmail))
+    .limit(1);
+  const unsubscribeLink = ownRow
+    ? unsubscribePageUrl(mintToken(ownRow.id, "unsubscribe"))
+    : siteUrl();
+
+  const email = buildDigestEmail(digest.items, unsubscribeLink);
+  const result = await sendTransactional({
+    to: adminEmail,
+    subject: `[TEST] ${email.subject}`,
+    html: email.html,
+    text: email.text,
+    kind: "digest_test",
+    headers: { "List-Unsubscribe": `<${unsubscribeLink}>` },
+    // Per-invocation idempotency key so repeated tests all deliver (Resend
+    // dedupes identical keys within 24h; the real send uses filing-set keys).
+    idempotencyKey: `digest-test-${Date.now()}`,
+  });
+
+  if (!result.ok) {
+    return NextResponse.json(
+      { status: "test-failed", error: result.error ?? "Test send failed." },
+      { status: 502 }
+    );
+  }
+
+  return NextResponse.json({
+    status: "test-sent",
+    to: adminEmail,
+    officialCount: digest.items.length,
+    filingCount: digest.filingUrls.length,
+  });
+}
+
+export async function POST(req: Request) {
   const session = await requireAdmin();
   if (!session) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const approvedBy = session.user.email;
+
+  // Parse the body once (tolerate an empty/absent body: a bare send POST).
+  let body: { action?: string; audience?: string } = {};
+  try {
+    body = (await req.json()) as { action?: string; audience?: string };
+  } catch {
+    body = {};
+  }
+
+  // Test action: mail only the admin, no ledger/run/lastNotifiedAt writes.
+  // Handled BEFORE the production gate — a self-test is safe anywhere.
+  if (body.action === "test") {
+    try {
+      return await handleTestSend(approvedBy);
+    } catch (err) {
+      console.error("[admin/digest] test send failed:", err);
+      return NextResponse.json({ error: "Test send failed." }, { status: 500 });
+    }
+  }
+
+  const audience = parseAudience(body.audience);
 
   // Hard gate: nothing reaches a real subscriber outside production.
   if (process.env.VERCEL_ENV !== "production") {
@@ -164,12 +301,20 @@ export async function POST() {
       return NextResponse.json({ empty: true });
     }
 
-    const recipients = await loadConfirmedRecipients();
+    // Filter the confirmed list to the chosen audience BEFORE freezing it, so
+    // the frozen recipient list IS the send list (resume replays it verbatim).
+    const confirmed = await loadConfirmedRecipients();
+    const recipients = toSendRecipients(
+      filterRecipientsByAudience(confirmed, audience)
+    );
     if (recipients.length === 0) {
       return NextResponse.json({
         status: "no-recipients",
         recipientCount: 0,
-        message: "No confirmed recipients yet — nothing sent.",
+        message:
+          audience === "routine"
+            ? "No every-filing subscribers to send a routine update to — nothing sent."
+            : "No confirmed recipients yet — nothing sent.",
       });
     }
 
@@ -200,11 +345,14 @@ export async function POST() {
       priorChunks = (existing.chunks as DigestChunkResult[] | null) ?? [];
     } else {
       // Freeze the send spec and open the outbox row before touching Resend.
+      // audience is recorded so resume replays the same list and the audit
+      // trail shows which cohort was targeted.
       payload = {
         items: digest.items,
         filings: digest.filings,
         recipients,
         key,
+        audience,
       };
       const [row] = await db
         .insert(digestRuns)
@@ -288,13 +436,18 @@ export async function POST() {
         .where(eq(digestRuns.id, runId)),
     ]);
 
+    // The audience actually sent to — the frozen value on resume, or the
+    // just-parsed one on a fresh run (frozen preferred if both present).
+    const sentAudience: DigestAudience = payload.audience ?? audience;
+
     // Admin receipt (best-effort; a notify failure never fails the send).
     await notify({
       type: "digest_sent",
       headline: `Digest sent — ${sentRows.length} recipient${sentRows.length === 1 ? "" : "s"}, ${payload.filings.length} filing${payload.filings.length === 1 ? "" : "s"}`,
-      summary: `Digest run #${runId} delivered to ${sentRows.length} confirmed subscriber${sentRows.length === 1 ? "" : "s"} covering ${payload.items.length} official${payload.items.length === 1 ? "" : "s"}.`,
+      summary: `Digest run #${runId} (${sentAudience} audience) delivered to ${sentRows.length} confirmed subscriber${sentRows.length === 1 ? "" : "s"} covering ${payload.items.length} official${payload.items.length === 1 ? "" : "s"}.`,
       metadata: {
         runId,
+        audience: sentAudience,
         recipients: sentRows.length,
         officials: payload.items.length,
         filings: payload.filings.length,
@@ -304,6 +457,7 @@ export async function POST() {
     return NextResponse.json({
       status: "sent",
       runId,
+      audience: sentAudience,
       recipientCount: sentRows.length,
       filingCount: payload.filings.length,
       officialCount: payload.items.length,

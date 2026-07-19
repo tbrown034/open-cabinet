@@ -1,5 +1,12 @@
 import { describe, it, expect } from "vitest";
-import { selectDigestItems, digestIdempotencyKey, chunkKey } from "./digest";
+import {
+  selectDigestItems,
+  digestIdempotencyKey,
+  chunkKey,
+  filterRecipientsByAudience,
+  recipientAudienceCounts,
+  type AudienceRecipient,
+} from "./digest";
 import type { OfficialData, Transaction } from "./types";
 
 function trade(over: Partial<Transaction> = {}): Transaction {
@@ -161,5 +168,92 @@ describe("chunkKey", () => {
     const key = "deadbeef";
     const keys = [0, 1, 2].map((n) => chunkKey(key, n));
     expect(new Set(keys).size).toBe(3);
+  });
+});
+
+// The audience routing rule is the security-relevant bit: a routine send must
+// NEVER reach a major-only subscriber. These exercise that filter directly.
+describe("filterRecipientsByAudience", () => {
+  const recipients: AudienceRecipient[] = [
+    { id: 1, email: "all-1@x.test", alertType: "all" },
+    { id: 2, email: "major-1@x.test", alertType: "major" },
+    { id: 3, email: "all-2@x.test", alertType: "all" },
+    { id: 4, email: "major-2@x.test", alertType: "major" },
+  ];
+
+  it("major reaches EVERY subscriber (both alert types)", () => {
+    const out = filterRecipientsByAudience(recipients, "major");
+    expect(out).toHaveLength(4);
+    expect(out.map((r) => r.id)).toEqual([1, 2, 3, 4]);
+  });
+
+  it("routine reaches ONLY every-filing ('all') subscribers", () => {
+    const out = filterRecipientsByAudience(recipients, "routine");
+    expect(out.map((r) => r.id)).toEqual([1, 3]);
+    expect(out.every((r) => r.alertType === "all")).toBe(true);
+  });
+
+  it("routine excludes major-only subscribers entirely", () => {
+    const out = filterRecipientsByAudience(recipients, "routine");
+    expect(out.some((r) => r.alertType === "major")).toBe(false);
+  });
+
+  it("treats a legacy/blank alertType as major-only (excluded from routine)", () => {
+    const legacy: AudienceRecipient[] = [
+      { id: 5, email: "legacy@x.test", alertType: "" },
+      { id: 6, email: "all@x.test", alertType: "all" },
+    ];
+    expect(filterRecipientsByAudience(legacy, "routine").map((r) => r.id)).toEqual([6]);
+    // ...but a major send still reaches them.
+    expect(filterRecipientsByAudience(legacy, "major").map((r) => r.id)).toEqual([5, 6]);
+  });
+
+  it("does not mutate the input array", () => {
+    const copy = [...recipients];
+    filterRecipientsByAudience(recipients, "routine");
+    expect(recipients).toEqual(copy);
+  });
+
+  it("handles an empty list", () => {
+    expect(filterRecipientsByAudience([], "routine")).toEqual([]);
+    expect(filterRecipientsByAudience([], "major")).toEqual([]);
+  });
+});
+
+describe("recipientAudienceCounts", () => {
+  it("splits total into every-filing and major-only", () => {
+    const counts = recipientAudienceCounts([
+      { id: 1, email: "a@x.test", alertType: "all" },
+      { id: 2, email: "b@x.test", alertType: "major" },
+      { id: 3, email: "c@x.test", alertType: "all" },
+    ]);
+    expect(counts).toEqual({ total: 3, all: 2, major: 1 });
+  });
+
+  it("counts a blank/legacy alertType as major-only", () => {
+    const counts = recipientAudienceCounts([
+      { id: 1, email: "a@x.test", alertType: "" },
+      { id: 2, email: "b@x.test", alertType: "all" },
+    ]);
+    expect(counts).toEqual({ total: 2, all: 1, major: 1 });
+  });
+
+  it("is all-zero for an empty list", () => {
+    expect(recipientAudienceCounts([])).toEqual({ total: 0, all: 0, major: 0 });
+  });
+
+  it("agrees with the filter: major count === total - routine count", () => {
+    const recipients: AudienceRecipient[] = [
+      { id: 1, email: "a@x.test", alertType: "all" },
+      { id: 2, email: "b@x.test", alertType: "major" },
+      { id: 3, email: "c@x.test", alertType: "all" },
+      { id: 4, email: "d@x.test", alertType: "major" },
+    ];
+    const counts = recipientAudienceCounts(recipients);
+    const routine = filterRecipientsByAudience(recipients, "routine").length;
+    const major = filterRecipientsByAudience(recipients, "major").length;
+    expect(counts.all).toBe(routine);
+    expect(counts.total).toBe(major);
+    expect(counts.major).toBe(counts.total - counts.all);
   });
 });
