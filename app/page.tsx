@@ -284,7 +284,7 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {totalOfficials}
             </span>
-            officials<Link href="#coverage-note" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
+            <Link href="#coverage-note" className="underline decoration-dotted underline-offset-2 hover:text-neutral-700">officials</Link>
           </div>
           <div>
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
@@ -296,13 +296,13 @@ export default async function Home() {
             <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               ~{formatCompactCurrency(estimatedTotal)}
             </span>
-            trade volume (est.)<Link href="/methodology#known-limitations" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
+            <Link href="/methodology#known-limitations" className="underline decoration-dotted underline-offset-2 hover:text-neutral-700">trade volume (est.)</Link>
           </div>
           <div>
             <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
               {lateCount.toLocaleString()}
             </span>
-            late-filed transactions<Link href="/late-filings" className="text-blue-500 hover:text-blue-700 ml-0.5 text-base font-bold no-underline">*</Link>
+            <Link href="/late-filings" className="underline decoration-dotted underline-offset-2 hover:text-neutral-700">late-filed transactions</Link>
           </div>
         </div>
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
