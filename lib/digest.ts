@@ -47,6 +47,22 @@ export interface DigestItem {
   trades: DigestTrade[];
 }
 
+/**
+ * An official with a recently-posted filing who is NOT in this digest's items —
+ * the "Also filed recently" teaser that lets single-official followers see what
+ * they're missing without extra emails.
+ */
+export interface AlsoNewOfficial {
+  name: string;
+  slug: string;
+  title?: string;
+  agency?: string;
+  /** New trades from the latest ingest, when known (> 0). */
+  newTradeCount?: number;
+  /** OGE posting date of the most recent filing (YYYY-MM-DD). */
+  postedDate: string;
+}
+
 export interface DigestResult {
   empty: boolean;
   items: DigestItem[];
@@ -60,9 +76,20 @@ export interface DigestResult {
   filings: { url: string; slug: string }[];
   /** Slugs of officials that produced a display card. */
   slugs: string[];
+  /**
+   * "Also filed recently" teaser: officials updated in the last 14 days who are
+   * NOT in items. Derived purely from the data files (no wall clock), so it is
+   * deterministic per build and freezes into the payload like everything else.
+   * Empty when no referenceDate was supplied to selectDigestItems.
+   */
+  alsoNew: AlsoNewOfficial[];
+  /** Count of current (non-former) tracked officials, for the follow-all CTA. */
+  trackedOfficialCount: number;
 }
 
 const MAX_TRADES_SHOWN = 6;
+const ALSO_NEW_MAX = 5;
+const ALSO_NEW_WINDOW_DAYS = 14;
 
 function toTrade(t: Transaction): DigestTrade {
   return {
@@ -73,6 +100,59 @@ function toTrade(t: Transaction): DigestTrade {
     date: t.date,
     lateFilingFlag: t.lateFilingFlag,
   };
+}
+
+/**
+ * Pure "Also filed recently" selection, mirroring the home page's new-filings
+ * banner (app/page.tsx): an official qualifies when our pipeline ingested their
+ * data within the 14 days before `referenceDate` (lastIngestedDate — when WE
+ * added it, not the OGE posting date, which can be weeks older on a backlog
+ * ingest). `referenceDate` is the data files' index lastUpdated stamp, NOT the
+ * wall clock, so the result is deterministic per build.
+ *
+ * Excludes officials already covered by this digest's items (excludeSlugs) and
+ * prior-administration holdovers. Sorted by posting date newest first (slug
+ * tiebreak for determinism), capped at 5.
+ */
+export function selectAlsoNew(
+  officials: OfficialData[],
+  opts: { excludeSlugs: Iterable<string>; referenceDate: string }
+): AlsoNewOfficial[] {
+  const exclude = new Set(opts.excludeSlugs);
+  // Same cutoff arithmetic as the home banner: referenceDate minus 14 days.
+  const refDate = new Date(opts.referenceDate + "T00:00:00");
+  const cutoffStr = new Date(
+    refDate.getTime() - ALSO_NEW_WINDOW_DAYS * 24 * 60 * 60 * 1000
+  )
+    .toISOString()
+    .split("T")[0];
+
+  return officials
+    .filter(
+      (o) =>
+        !o.formerOfficial &&
+        !exclude.has(o.slug) &&
+        Boolean(o.lastIngestedDate) &&
+        (o.lastIngestedDate as string) >= cutoffStr
+    )
+    .map((o) => {
+      const newCount = o.lastIngestedNewCount ?? 0;
+      return {
+        name: o.name,
+        slug: o.slug,
+        title: o.title,
+        agency: o.agency,
+        // Only assert a count we can substantiate (amended/restated ingests
+        // clobber the delta to 0 — omit rather than claim "0 new trades").
+        ...(newCount > 0 ? { newTradeCount: newCount } : {}),
+        postedDate: o.mostRecentFilingDate,
+      };
+    })
+    .sort(
+      (a, b) =>
+        b.postedDate.localeCompare(a.postedDate) || a.slug.localeCompare(b.slug)
+    )
+    .slice(0, ALSO_NEW_MAX);
 }
 
 /**
@@ -91,12 +171,16 @@ function toTrade(t: Transaction): DigestTrade {
  * filing, or a delta clobbered by a later same-official ingest) we still surface
  * the filing URLs so a confirmed send clears the ledger, but render no card —
  * rather than assert a "new trade" count we cannot substantiate.
+ *
+ * `referenceDate` (the data index's lastUpdated stamp) enables the alsoNew
+ * teaser; when omitted alsoNew is empty. Never pass wall-clock time — the
+ * result must be deterministic per build.
  */
 export function selectDigestItems(
   officials: OfficialData[],
-  opts: { notifiedUrls: Set<string> }
+  opts: { notifiedUrls: Set<string>; referenceDate?: string }
 ): DigestResult {
-  const { notifiedUrls } = opts;
+  const { notifiedUrls, referenceDate } = opts;
   const items: DigestItem[] = [];
   const filings: { url: string; slug: string }[] = [];
 
@@ -146,6 +230,8 @@ export function selectDigestItems(
     seen.has(f.url) ? false : (seen.add(f.url), true)
   );
 
+  const slugs = items.map((i) => i.slug);
+
   return {
     // Emptiness is about displayable content: an all-amended day sends nothing
     // (and therefore ledgers nothing — we never emailed those filings).
@@ -153,7 +239,13 @@ export function selectDigestItems(
     items,
     filingUrls: dedupedFilings.map((f) => f.url),
     filings: dedupedFilings,
-    slugs: items.map((i) => i.slug),
+    slugs,
+    alsoNew: referenceDate
+      ? selectAlsoNew(officials, { excludeSlugs: slugs, referenceDate })
+      : [],
+    // The follow-all CTA count. getAllOfficials already excludes former
+    // officials, but re-filter here so the pure function is honest about it.
+    trackedOfficialCount: officials.filter((o) => !o.formerOfficial).length,
   };
 }
 
@@ -252,12 +344,15 @@ export function chunkKey(sendKey: string, n: number): string {
  * stays cheap as the ledger history grows).
  */
 export async function buildDigest(): Promise<DigestResult> {
-  const { getAllOfficials } = await import("@/lib/data");
+  const { getAllOfficials, getOfficialsIndex } = await import("@/lib/data");
   const { db } = await import("@/lib/db");
   const { notifiedFilings } = await import("@/lib/schema");
   const { inArray } = await import("drizzle-orm");
 
-  const officials = await getAllOfficials();
+  const [officials, index] = await Promise.all([
+    getAllOfficials(),
+    getOfficialsIndex(),
+  ]);
 
   // Candidate URLs = every source-filing URL we might announce. We ask the ledger
   // about THESE only (WHERE filing_url IN (...)) rather than scanning the whole
@@ -280,5 +375,10 @@ export async function buildDigest(): Promise<DigestResult> {
     : [];
   const notifiedUrls = new Set(notifiedRows.map((r) => r.url));
 
-  return selectDigestItems(officials, { notifiedUrls });
+  // referenceDate = the data files' own lastUpdated stamp (not wall clock), so
+  // the alsoNew teaser is deterministic per build — same data, same digest.
+  return selectDigestItems(officials, {
+    notifiedUrls,
+    referenceDate: index.lastUpdated,
+  });
 }

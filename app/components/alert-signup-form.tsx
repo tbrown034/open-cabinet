@@ -3,7 +3,7 @@
 import { track } from "@vercel/analytics";
 import { useId, useReducer, useRef } from "react";
 
-type SignupStatus = "idle" | "sending" | "sent" | "error";
+type SignupStatus = "idle" | "sending" | "sent" | "already" | "error";
 
 // On an official page the subscriber chooses what to follow: just this official
 // (default) or all officials. Home/other pages have no toggle and follow all.
@@ -24,13 +24,16 @@ interface SignupState {
   followScope: FollowScope;
   status: SignupStatus;
   error: string;
+  /** Set on the "already subscribed" response so the message can name their scope. */
+  alreadyFollowsAll: boolean;
 }
 
 type SignupAction =
   | { key: "email" | "error"; value: string }
   | { key: "followScope"; value: FollowScope }
   | { key: "status"; value: SignupStatus }
-  | { key: "sent" };
+  | { key: "sent" }
+  | { key: "already"; value: { followsAll: boolean } };
 
 const INITIAL_STATE: SignupState = {
   email: "",
@@ -39,11 +42,21 @@ const INITIAL_STATE: SignupState = {
   followScope: "official",
   status: "idle",
   error: "",
+  alreadyFollowsAll: false,
 };
 
 function signupReducer(state: SignupState, action: SignupAction): SignupState {
   if (action.key === "sent") {
     return { ...state, email: "", status: "sent", error: "" };
+  }
+  if (action.key === "already") {
+    return {
+      ...state,
+      email: "",
+      status: "already",
+      alreadyFollowsAll: action.value.followsAll,
+      error: "",
+    };
   }
   return { ...state, [action.key]: action.value };
 }
@@ -105,7 +118,16 @@ export default function AlertSignupForm({
           sourcePage,
           hasOfficial,
         });
-        dispatch({ key: "sent" });
+        if (payload?.alreadyActive) {
+          // No email goes out for an already-confirmed address — saying
+          // "check your email" here would leave them waiting forever.
+          dispatch({
+            key: "already",
+            value: { followsAll: Boolean(payload?.followsAll) },
+          });
+        } else {
+          dispatch({ key: "sent" });
+        }
       } else {
         dispatch({
           key: "error",
@@ -126,6 +148,16 @@ export default function AlertSignupForm({
     return (
       <div role="status" className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
         Check your email to confirm your signup. The link arrives in a minute (check spam if not).
+      </div>
+    );
+  }
+
+  if (status === "already") {
+    return (
+      <div role="status" className="border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+        {state.alreadyFollowsAll
+          ? "You're already subscribed and follow all officials — no confirmation needed."
+          : "You're already subscribed — no confirmation needed. Your existing alert scope is unchanged."}
       </div>
     );
   }

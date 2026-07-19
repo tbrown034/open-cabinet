@@ -485,7 +485,7 @@ function Legend() {
         Late filing
       </div>
       <div className="text-neutral-300">|</div>
-      <div>Circle size = transaction amount</div>
+      <div>Circle size = reported amount range (minimum)</div>
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useReducer, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useSession, signIn, signOut } from "@/lib/auth-client";
+import { formatDate } from "@/lib/format";
 import type { DigestResult } from "@/lib/digest";
 
 interface PipelineRun {
@@ -595,6 +596,41 @@ export default function AdminPage() {
                       </ul>
                     </div>
                   ))}
+
+                  {/* "Also filed recently" teaser — mirrors what the email
+                      renders below the main sections, so the admin sees exactly
+                      what recipients will. */}
+                  {digest.draft.alsoNew.length > 0 && (
+                    <div className="pt-2 border-t border-neutral-200">
+                      <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-medium mb-1">
+                        Also filed in the last two weeks
+                      </div>
+                      <ul className="text-xs text-neutral-500 space-y-0.5">
+                        {digest.draft.alsoNew.map((o) => (
+                          <li key={o.slug}>
+                            <Link
+                              href={`/officials/${o.slug}`}
+                              className="underline hover:text-neutral-900"
+                            >
+                              {o.name}
+                            </Link>{" "}
+                            –{" "}
+                            {o.newTradeCount
+                              ? `${o.newTradeCount.toLocaleString()} new trade${
+                                  o.newTradeCount === 1 ? "" : "s"
+                                }, `
+                              : ""}
+                            posted {formatDate(o.postedDate)}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-[10px] text-neutral-400 mt-1">
+                        Rendered below the main sections in the email, with a
+                        follow-all CTA ({digest.draft.trackedOfficialCount}{" "}
+                        officials tracked).
+                      </p>
+                    </div>
+                  )}
 
                   {/* Test send: mails one copy to the admin. Consumes nothing —
                       no ledger, no run, no lastNotifiedAt bump. The select scopes

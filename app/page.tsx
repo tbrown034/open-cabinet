@@ -15,7 +15,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Open Cabinet, Executive Branch Stock Tracker",
+  title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
     "The first interactive stock tracker for the executive branch. Search 10,000+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
 };
@@ -312,7 +312,8 @@ export default async function Home() {
           A single position bought and later sold counts twice.
         </p>
 
-        <div className="mt-6">
+        {/* id="alerts" is the anchor target for the digest email's follow-all CTA. */}
+        <div id="alerts" className="mt-6 scroll-mt-20">
           <AlertSignupForm sourcePage="home-stats" />
         </div>
 

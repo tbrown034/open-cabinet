@@ -129,7 +129,16 @@ export async function POST(req: Request) {
         set: {
           alertType,
           sourcePage,
-          officialSlug,
+          // Never NARROW a confirmed subscriber's follow. A follow-all reader
+          // who taps "Get alerts" on one official's page (where the toggle
+          // defaults to only-that-official) must not be silently downgraded to
+          // a single official. Widening (slug -> all) and any change while
+          // still unconfirmed are fine.
+          officialSlug: sql`CASE
+            WHEN ${alertSignups.status} = 'active' AND ${officialSlug ?? null}::text IS NOT NULL
+              THEN ${alertSignups.officialSlug}
+            ELSE ${officialSlug ?? null}::text
+          END`,
           referrer,
           userAgent,
           updatedAt: sql`now()`,
@@ -140,6 +149,7 @@ export async function POST(req: Request) {
         status: alertSignups.status,
         suppressedReason: alertSignups.suppressedReason,
         confirmationSentAt: alertSignups.confirmationSentAt,
+        officialSlug: alertSignups.officialSlug,
       });
 
     const priorStatus = row.status;
@@ -246,6 +256,18 @@ export async function POST(req: Request) {
         },
         { status: 502 }
       );
+    }
+
+    // Already-confirmed subscribers get no email, so the form must not tell
+    // them to check their inbox. followsAll lets it describe their (possibly
+    // just-widened) scope honestly. Dead-bounce rows intentionally still get
+    // the generic response — suppression state is not enumerable.
+    if (priorStatus === "active" && !deadBounce) {
+      return NextResponse.json({
+        ok: true,
+        alreadyActive: true,
+        followsAll: row.officialSlug == null,
+      });
     }
 
     return NextResponse.json({ ok: true });
