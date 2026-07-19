@@ -8,6 +8,16 @@ import * as schema from "./auth-schema";
 const ADMIN_EMAIL = "trevorbrown.web@gmail.com";
 
 export const auth = betterAuth({
+  // Explicit baseURL so the Google OAuth redirect_uri is always built on the
+  // canonical domain. Without it better-auth falls back to BETTER_AUTH_URL,
+  // which predated the custom domain — sign-in started on open-cabinet.org but
+  // Google called back to open-cabinet.vercel.app, and the state cookie can't
+  // cross origins (error=state_mismatch). Admin sign-in is prod + localhost
+  // only; preview deployments are not supported for auth.
+  baseURL:
+    process.env.NODE_ENV === "production"
+      ? "https://open-cabinet.org"
+      : process.env.BETTER_AUTH_URL || "http://localhost:3003",
   trustedOrigins: [
     // localhost is only trusted outside production so a prod deploy can't be
     // tricked into treating a localhost origin as same-site.
