@@ -96,11 +96,15 @@ export default async function Home() {
     });
   }
   recentFilers
-    // New officials first (biggest news), then most recently filed
+    // New officials first (biggest news), then by how much data the ingest
+    // actually added. Sorting updates by filing date instead would bury the
+    // largest ingest whenever OGE posts a big backlog filing a few days
+    // before a small fresh one — a 2,514-trade update outranks a 4-trade one.
     .sort((a, b) => {
       if (a.isFirstAppearance !== b.isFirstAppearance) {
         return a.isFirstAppearance ? -1 : 1;
       }
+      if (b.newCount !== a.newCount) return b.newCount - a.newCount;
       return b.filingDate.localeCompare(a.filingDate);
     });
 

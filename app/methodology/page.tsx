@@ -342,6 +342,21 @@ export default async function MethodologyPage() {
           </p>
         </section>
 
+        {/* Photographs */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            Photographs
+          </h2>
+          <p className="text-sm text-neutral-600 leading-relaxed">
+            Official portraits are U.S. government works in the public domain,
+            retrieved from agency press pages and Wikimedia Commons. Where an
+            official has no released portrait, we crop a headshot from another
+            public-domain federal photograph &mdash; Sara Bailey{"'"}s is taken
+            from a U.S. Senate photo released by the office of Sen. John
+            Cornyn.
+          </p>
+        </section>
+
         {/* Corrections */}
         <section className="border-t border-neutral-200 pt-8">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
