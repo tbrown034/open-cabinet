@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6470,
+    "outputTokens": 192,
+    "estimatedCostUsd": 0.0223
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-06.22.2026-278T.pdf"
+}

@@ -5,8 +5,40 @@
   "agency": "Office of Personnel Management",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-05-01",
+  "mostRecentFilingDate": "2026-07-25",
   "transactions": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "Airbnb Inc. Class A Common Stock (ABNB)",
       "ticker": "ABNB",
@@ -600,10 +632,20 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kupor reported 73 sales (est. $28.8M) and 1 purchase (est. $3.0M).",
+  "summary": "Kupor reported 77 sales and 1 purchase across 78 transactions in 278-T filings tracked by Open Cabinet.",
   "confirmedDate": "2025-07-09",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-07-25",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
+      "label": "Scott-A-Kupor-06.22.2026-278T(1)"
+    },
+    {
+      "date": "2026-07-25",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/73A4FAE1704F806F85258E3F002DA96E/$FILE/Scott-A-Kupor-06.22.2026-278T.pdf",
+      "label": "Scott-A-Kupor-06.22.2026-278T"
+    },
     {
       "date": "2026-05-01",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf",
@@ -645,6 +687,6 @@
       "label": "278-T"
     }
   ],
-  "lastIngestedDate": "2026-05-14",
-  "lastIngestedNewCount": 2
+  "lastIngestedDate": "2026-07-25",
+  "lastIngestedNewCount": 4
 }

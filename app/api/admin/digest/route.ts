@@ -62,6 +62,7 @@ import {
   type DigestRecipient,
 } from "@/lib/email-send";
 import { buildDigestEmail } from "@/lib/emails";
+import { getDigestLede } from "@/lib/digest-lede";
 import { mintToken } from "@/lib/tokens";
 import { notify } from "@/lib/notify";
 import { POSTAL_ADDRESS, siteUrl, unsubscribePageUrl } from "@/lib/email-config";
@@ -89,6 +90,9 @@ interface FrozenPayload {
    * Optional for runs frozen before these fields existed (block simply absent). */
   alsoNew?: AlsoNewOfficial[];
   trackedOfficialCount?: number;
+  /** Editorial lede (LLM-drafted, admin-reviewed), frozen so resumed sends
+   * render the byte-identical body. Optional for older frozen runs. */
+  lede?: string;
 }
 
 function freeTierWarning(recipientCount: number): string | null {
@@ -144,6 +148,9 @@ export async function GET() {
 
   try {
     const draft = await buildDigest();
+    const lede = draft.empty
+      ? null
+      : await getDigestLede(digestIdempotencyKey(draft.filingUrls));
     const recipients = await loadConfirmedRecipients();
     const recipientCount = recipients.length;
     // Follows breakdown computed against THIS draft's official slugs: how many
@@ -169,6 +176,9 @@ export async function GET() {
 
     return NextResponse.json({
       draft,
+      // LLM-drafted lede for this exact filing set (null if none generated) —
+      // shown on /admin for review; frozen into the payload on send.
+      lede,
       recipientCount,
       // Follows breakdown for the draft: { total, allFollowers, reached,
       // excluded, byOfficial } — how many this specific digest reaches.
@@ -263,6 +273,7 @@ async function handleTestSend(
   const email = buildDigestEmail(items, unsubscribeLink, {
     alsoNew: digest.alsoNew,
     trackedOfficialCount: digest.trackedOfficialCount,
+    lede: (await getDigestLede(digestIdempotencyKey(digest.filingUrls))) ?? undefined,
   });
   const result = await sendTransactional({
     to: adminEmail,
@@ -418,6 +429,7 @@ export async function POST(req: Request) {
         slugs: digest.slugs,
         alsoNew: digest.alsoNew,
         trackedOfficialCount: digest.trackedOfficialCount,
+        lede: (await getDigestLede(key)) ?? undefined,
       };
       const [row] = await db
         .insert(digestRuns)
@@ -442,6 +454,7 @@ export async function POST(req: Request) {
       skipChunks: doneChunks,
       alsoNew: payload.alsoNew,
       trackedOfficialCount: payload.trackedOfficialCount,
+      lede: payload.lede,
     });
     const mergedChunks = mergeChunks(priorChunks, batch.chunks);
 

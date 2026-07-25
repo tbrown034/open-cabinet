@@ -208,6 +208,8 @@ export async function sendDigestBatch(
      * payload so a resume renders the identical body. */
     alsoNew?: AlsoNewOfficial[];
     trackedOfficialCount?: number;
+    /** Editorial lede, from the frozen payload for the same reason. */
+    lede?: string;
   } = {}
 ): Promise<DigestBatchResult> {
   const resend = getResend();
@@ -220,6 +222,7 @@ export async function sendDigestBatch(
   const template = buildDigestEmail(items, UNSUB_PLACEHOLDER, {
     alsoNew: opts.alsoNew,
     trackedOfficialCount: opts.trackedOfficialCount,
+    lede: opts.lede,
   });
   const skip = new Set(opts.skipChunks ?? []);
   const groups = chunk(recipients, BATCH_MAX);

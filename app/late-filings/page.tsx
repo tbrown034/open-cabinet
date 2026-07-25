@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getAllOfficials } from "@/lib/data";
-import { displayName } from "@/lib/format";
+import { getFeePayments } from "@/lib/fee-payments";
+import { displayName, formatDate } from "@/lib/format";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ function isSale(type: string): boolean {
 
 export default async function LateFilingsPage() {
   const officials = await getAllOfficials();
+  const feePayments = await getFeePayments();
 
   // Calculate late filing stats per official
   const officialStats = officials
@@ -389,13 +391,94 @@ export default async function LateFilingsPage() {
                 filings. OGE reviewer annotations on President Trump{"'"}s May
                 and June 2026 reports read {"\""}Filer paid late fee{"\""}{" "}
                 &mdash; confirmation the fee was assessed, with no dollar
-                amount attached. Beyond notations like these, no data exists
-                on how often the fee is assessed, collected or waived. That
-                gap is itself part of the story: enforcement, when it happens,
-                happens mostly out of public view.
+                amount attached &mdash; and a note on one of Navy Secretary
+                John Phelan{"'"}s reports records the fee being waived for an
+                accidental omission. Beyond notations like these, no data
+                exists on how often the fee is assessed, collected or waived.
+                That gap is itself part of the story: enforcement, when it
+                happens, happens mostly out of public view.
               </p>
             </div>
           </div>
+
+          {feePayments.length > 0 && (
+            <div className="mt-8">
+              <h3 className="font-medium text-neutral-900 text-sm mb-3">
+                Every recorded fee outcome
+              </h3>
+              <p className="text-xs text-neutral-500 mb-3 max-w-2xl">
+                Each row is an OGE reviewer annotation found on a filing in
+                Open Cabinet{"'"}s archive &mdash; payments and waivers alike.
+                This is the complete public record we are aware of; no agency
+                publishes fee statistics.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-neutral-300 text-xs uppercase tracking-wider text-neutral-500">
+                      <th className="pb-2 pr-3 font-medium">Official</th>
+                      <th className="pb-2 pr-3 font-medium">Outcome</th>
+                      <th className="pb-2 pr-3 font-medium">Filing</th>
+                      <th className="pb-2 pr-3 font-medium">Reviewer note</th>
+                      <th className="pb-2 font-medium">Noted</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {feePayments.map((p) => (
+                      <tr
+                        key={p.pdfFile}
+                        className="border-b border-neutral-200/60"
+                      >
+                        <td className="py-2 pr-3">
+                          {p.officialSlug ? (
+                            <Link
+                              href={`/officials/${p.officialSlug}`}
+                              className="text-neutral-900 hover:underline font-medium"
+                            >
+                              {displayName(p.officialName)}
+                            </Link>
+                          ) : (
+                            displayName(p.officialName)
+                          )}
+                        </td>
+                        <td className="py-2 pr-3">
+                          <span
+                            className={
+                              p.outcome === "paid"
+                                ? "text-amber-700 font-medium"
+                                : "text-neutral-500"
+                            }
+                          >
+                            {p.outcome === "paid" ? "Paid" : "Waived"}
+                          </span>
+                        </td>
+                        <td className="py-2 pr-3 text-neutral-600">
+                          {p.pdfUrl ? (
+                            <a
+                              href={p.pdfUrl}
+                              className="underline hover:text-neutral-900"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {p.filingLabel || p.pdfFile}
+                            </a>
+                          ) : (
+                            p.filingLabel || p.pdfFile
+                          )}
+                        </td>
+                        <td className="py-2 pr-3 text-neutral-600">
+                          {"\""}{p.annotationCleaned}{"\""}
+                        </td>
+                        <td className="py-2 text-neutral-500 whitespace-nowrap">
+                          {p.reviewerDate ? formatDate(p.reviewerDate) : "—"}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

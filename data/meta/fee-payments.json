@@ -1,0 +1,50 @@
+{
+  "generated": "2026-07-25",
+  "method": "pdftotext scan of local OGE filing PDFs for reviewer fee annotations; annotations are OGE reviewing officials' notes on the certification/comments page. Scanned the 43 deduplicated whole-filing PDFs in data/pdfs/ (page-chunk .pagesN-N.pdf files for the 5 large Trump filings were skipped as duplicates of content already present in the corresponding whole PDF). Searched full extracted text (all pages) for: 'late fee', 'late filing fee', 'paid late', 'filer paid', OCR-fuzzy variants ('lale fee', 'late foe', 'lato fee'), plus 'civil penalty', 'fee assessed', 'fee paid', '$200 fee', 'late payment', 'penalty assessed', 'waived'/'waiver', and manually reviewed every 'Comments of Reviewing Official(s)' / 'OGE Received' block found anywhere in the corpus. Records carry an 'outcome' field: 'paid' (fee payment noted) or 'waived' (reviewer noted a waiver).",
+  "payments": [
+    {
+      "officialSlug": "trump-donald-j",
+      "officialName": "Trump, Donald J.",
+      "pdfFile": "Donald-J-Trump-06.25.2026-278T.pdf",
+      "filingLabel": "Donald-J-Trump-06.25.2026-278T",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+      "annotationRaw": "Filer paid late fee - HAJ 6/29/26\nOGE Received: 6/29/2026",
+      "annotationCleaned": "Filer paid late fee. Reviewer initials HAJ, dated 6/29/2026.",
+      "reviewerDate": "2026-06-29",
+      "outcome": "paid"
+    },
+    {
+      "officialSlug": "trump-donald-j",
+      "officialName": "Trump, Donald J.",
+      "pdfFile": "Trump, Donald J.-05.08.2026-278T.pdf",
+      "filingLabel": "Trump 2026-05-08 278T part 1",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf",
+      "annotationRaw": "Comments of Rovlcwln Officials:\n\nFiler paid late fee - HAJ (5/13/26)\n\nOGE RECEIVED 5/12/2026",
+      "annotationCleaned": "Filer paid late fee. Reviewer initials HAJ, dated 5/13/2026. (OCR mangled the section header 'Comments of Reviewing Officials' as 'Rovlcwln Officials'; the fee-payment sentence itself extracted cleanly.)",
+      "reviewerDate": "2026-05-13",
+      "outcome": "paid"
+    },
+    {
+      "officialSlug": "phelan-john",
+      "officialName": "Phelan, John",
+      "pdfFile": "John-Phelan-03.12.2026-278T(1).pdf",
+      "filingLabel": "John-Phelan-03.12.2026-278T(1)",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3BE4EA1BA0AC06885258E0D002DCD71/$FILE/John-Phelan-03.12.2026-278T(1).pdf",
+      "annotationRaw": "(05/21/2026, Bartek-Santiago, Alice): Late filing fee was waived due to filer's accidental error in omitting this transaction from a previous timely filed report.",
+      "annotationCleaned": "Reviewer Alice Bartek-Santiago noted on 5/21/2026 that a late filing fee was WAIVED for this transaction, not paid.",
+      "reviewerDate": "2026-05-21",
+      "note": "This is a fee annotation but explicitly states the fee was waived, not paid or assessed. Excluded from the payments array per the task's payment/assessed-only criterion; included here for visibility since it is a real reviewer fee annotation.",
+      "outcome": "waived"
+    }
+  ],
+  "uncertain": [],
+  "unscannable": [],
+  "counts": {
+    "pdfsScanned": 43,
+    "note": "43 deduplicated whole-filing PDFs scanned (out of 164 total .pdf files in data/pdfs/; the other 121 are page-chunk copies of 5 of these 43 filings — all Trump filings — and were not scanned separately to avoid double-counting).",
+    "filingsDeduped": 43,
+    "paymentHits": 2,
+    "uncertainHits": 1,
+    "unscannablePdfs": 0
+  }
+}

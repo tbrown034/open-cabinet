@@ -1,8 +1,10 @@
 {
-  "lastChecked": "2026-07-19T19:10:15.260Z",
+  "lastChecked": "2026-07-25T17:37:15.181Z",
   "knownFilingUrls": [
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/038F222E7B084F8C85258E3F002DB296/$FILE/Markwayne-Mullin-06.24.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/056ABAA54A1FAC1585258D8600344DDF/$FILE/Douglas-J-Burgum-11.13.2025-278T.pdf",
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf",
@@ -50,6 +52,7 @@
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/687996565E337F3385258DAB00346FB5/$FILE/John-Phelan-11.17.2025-278T(1).pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6FD7FCF61FFBC2E585258C36003206A2/$FILE/Michael-Whitaker-01.02.2025-278T.pdf",
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/73A4FAE1704F806F85258E3F002DA96E/$FILE/Scott-A-Kupor-06.22.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7ADAE025CB4460B285258C8A002C85CE/$FILE/Keith-Sonderling-04.21.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7C0B79B66E94715885258D4F00317C5D/$FILE/Doug-Burgum-09.18.2025-278T.pdf",
@@ -94,6 +97,7 @@
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3BE4EA1BA0AC06885258E0D002DCD71/$FILE/John-Phelan-03.12.2026-278T(1).pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E7B021C3112F2B3485258CFD002C03E5/$FILE/Katharine-MacGregor-08.07.2025-278T.pdf",
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E856C1C9F19C67C785258E3F002DB290/$FILE/Markwayne-Mullin-06.26.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf",
@@ -110,6 +114,8 @@
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
   ],
   "knownFilingsByOfficial": {
+    "Mullin, Markwayne": 2,
+    "Kupor, Scott A": 10,
     "McMaster, Sean": 6,
     "Kratsios, Michael J": 11,
     "Trump, Donald J.": 17,
@@ -117,7 +123,6 @@
     "Bailey, Sara": 1,
     "Phelan, John": 13,
     "Burgum, Douglas J": 5,
-    "Kupor, Scott A": 8,
     "Miran, Stephen I": 3,
     "Vaden, Stephen A": 1,
     "Mody, Arjun": 1,
@@ -148,21 +153,21 @@
   },
   "newFilings": [
     {
-      "name": "McMaster, Sean",
-      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/ADE89624CD8D7F1D85258E35002DD6B1/$FILE/Sean-McMaster-06.11.2026-278T.pdf",
-      "docDate": "2026-07-15T04:20:40",
-      "agency": "Department of Transportation",
-      "title": "Administrator, Federal Highway Administration",
-      "level": "Level II",
+      "name": "Mullin, Markwayne",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/038F222E7B084F8C85258E3F002DB296/$FILE/Markwayne-Mullin-06.24.2026-278T.pdf",
+      "docDate": "2026-07-25T04:19:08",
+      "agency": "Department of Homeland Security",
+      "title": "Secretary",
+      "level": "Level I",
       "status": "processed"
     },
     {
-      "name": "Kratsios, Michael J",
-      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F4060C7CB31DC8DA85258E31002DCF6A/$FILE/Michael-Kratsios-06.10.2026-278T.pdf",
-      "docDate": "2026-07-11T04:20:22",
-      "agency": "Office of Science and Technology Policy",
-      "title": "Director",
-      "level": "Level II",
+      "name": "Mullin, Markwayne",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E856C1C9F19C67C785258E3F002DB290/$FILE/Markwayne-Mullin-06.26.2026-278T.pdf",
+      "docDate": "2026-07-25T04:19:08",
+      "agency": "Department of Homeland Security",
+      "title": "Secretary",
+      "level": "Level I",
       "status": "processed"
     }
   ]

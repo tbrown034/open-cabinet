@@ -117,6 +117,59 @@ async function ensurePdf(url: string): Promise<string> {
   return dest;
 }
 
+/**
+ * OGE reviewers annotate the certification page when a filer pays the $200
+ * late-filing fee (e.g. "Filer paid late fee - HAJ 6/29/26"). Scan each
+ * newly ingested PDF's text layer so payments are caught the day they post.
+ * Hits go to data/meta/fee-annotations-pending.json for human review before
+ * promotion into data/meta/fee-payments.json (which drives the site UI) —
+ * OCR noise makes auto-publishing unsafe.
+ */
+async function scanPdfForFeeAnnotation(
+  pdfPath: string,
+  pdfUrl: string,
+  slug: string
+): Promise<void> {
+  try {
+    const { execFileSync } = require("node:child_process") as
+      typeof import("node:child_process");
+    const text = execFileSync("pdftotext", [pdfPath, "-"], {
+      encoding: "utf-8",
+      timeout: 30_000,
+    });
+    // "Filer paid ..." / "... paid late fee(s)" are reviewer-annotation
+    // phrasings; the form's printed instructions say "late filing fee" and
+    // never "filer paid", so boilerplate does not trip this. "filing
+    // extension" catches Integrity.gov's signature-block notice ("Filer
+    // received a 45 day filing extension") — an extension changes whether a
+    // late-looking filing actually missed its deadline, so it must surface
+    // for review the day it posts.
+    const pattern = /filer\s+paid|paid\s+late|filing\s+extension/i;
+    const hit = pattern.test(text);
+    if (!hit) return;
+    const snippetMatch = text.match(/.{0,80}(?:filer\s+paid|paid\s+late|filing\s+extension).{0,80}/i);
+    const pendingPath = path.resolve("data/meta/fee-annotations-pending.json");
+    const pending: Array<Record<string, string>> = existsSync(pendingPath)
+      ? JSON.parse(await readFile(pendingPath, "utf-8"))
+      : [];
+    const entry = {
+      slug,
+      pdfFile: path.basename(pdfPath),
+      pdfUrl,
+      snippet: (snippetMatch?.[0] ?? "").replace(/\s+/g, " ").trim(),
+      detected: new Date().toISOString().slice(0, 10),
+    };
+    if (pending.some((p) => p.pdfFile === entry.pdfFile)) return;
+    pending.push(entry);
+    await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n");
+    console.warn(
+      `  [${slug}] POSSIBLE FEE ANNOTATION in ${entry.pdfFile}: "${entry.snippet}" — review data/meta/fee-annotations-pending.json`
+    );
+  } catch {
+    // pdftotext missing or unreadable PDF — the sweep script covers gaps.
+  }
+}
+
 async function splitPdfIfNeeded(pdfPath: string): Promise<string[]> {
   const buf = await readFile(pdfPath);
   if (buf.length <= 500_000) return [pdfPath];
@@ -315,6 +368,7 @@ async function ingestForOfficial(
 
   for (const filing of newPdfs) {
     const pdfPath = await ensurePdf(filing.pdfUrl);
+    await scanPdfForFeeAnnotation(pdfPath, filing.pdfUrl, slug);
     const sizeKb = (statSync(pdfPath).size / 1024).toFixed(0);
     console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
 
