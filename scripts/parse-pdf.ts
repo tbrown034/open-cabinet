@@ -135,29 +135,36 @@ async function parsePdf(
   // - opus: Highest accuracy, use for verification ($5/$25 per MTok)
   // Batch API halves all costs (50% discount)
   const model = modelOverride || "claude-sonnet-4-6";
-  const response = await client.messages.create({
-    model,
-    max_tokens: 16000, // Trump has 389 transactions — needs room
-    messages: [
-      {
-        role: "user",
-        content: [
-          {
-            type: "document",
-            source: {
-              type: "base64",
-              media_type: "application/pdf",
-              data: pdfBase64,
+  // Streamed rather than a plain create: a filing with dozens of rows takes
+  // minutes of generation, and idle non-streaming connections get reset by
+  // the network mid-response ("Connection error" after ~2 min, reproducible
+  // on Mullin's 68-row filing). Streaming keeps bytes flowing; finalMessage()
+  // returns the same shape create() would.
+  const response = await client.messages
+    .stream({
+      model,
+      max_tokens: 16000, // Trump has 389 transactions — needs room
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "document",
+              source: {
+                type: "base64",
+                media_type: "application/pdf",
+                data: pdfBase64,
+              },
             },
-          },
-          {
-            type: "text",
-            text: EXTRACTION_PROMPT,
-          },
-        ],
-      },
-    ],
-  });
+            {
+              type: "text",
+              text: EXTRACTION_PROMPT,
+            },
+          ],
+        },
+      ],
+    })
+    .finalMessage();
 
   // Extract the text response
   // Note: if credits run out, the SDK throws an Anthropic.BadRequestError

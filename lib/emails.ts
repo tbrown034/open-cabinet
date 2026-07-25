@@ -188,11 +188,21 @@ function showTicker(t: { description: string; ticker: string | null }): boolean 
 export function buildDigestEmail(
   items: DigestItem[],
   unsubscribeLink: string,
-  extras?: { alsoNew?: AlsoNewOfficial[]; trackedOfficialCount?: number }
+  extras?: {
+    alsoNew?: AlsoNewOfficial[];
+    trackedOfficialCount?: number;
+    /** Optional editorial lede rendered above the per-official sections.
+     * Comes from the frozen payload so resumed sends stay byte-identical. */
+    lede?: string;
+  }
 ): BuiltEmail {
   const base = siteUrl();
   const alsoNew = extras?.alsoNew ?? [];
   const trackedCount = extras?.trackedOfficialCount ?? 0;
+  const lede = extras?.lede?.trim() ?? "";
+  const ledeHtml = lede
+    ? `<p style="font-family:${SANS};font-size:14px;line-height:1.7;color:${COLORS.text};margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid ${COLORS.border};">${escapeHtml(lede)}</p>`
+    : "";
   const subject =
     items.length === 1
       ? `New filing: ${items[0].name}`
@@ -259,7 +269,7 @@ export function buildDigestEmail(
       <p style="font-family:${SANS};font-size:14px;line-height:1.6;color:${COLORS.muted};margin:0 0 24px;">
         New executive-branch financial disclosures, sourced from the U.S. Office of Government Ethics. Amounts are ranges, as filed.
       </p>
-      ${sections}${alsoNewHtml}`,
+      ${ledeHtml}${sections}${alsoNewHtml}`,
     footerExtra: unsubHtml,
   });
 
@@ -292,7 +302,7 @@ ${lines}
   const text = `${subject}
 
 New executive-branch financial disclosures from the U.S. Office of Government Ethics.
-
+${lede ? `\n${lede}\n` : ""}
 ${textSections}${alsoNewText}
 
 Unsubscribe: ${unsubscribeLink}

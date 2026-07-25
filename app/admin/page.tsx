@@ -60,6 +60,8 @@ interface FollowsBreakdown {
 
 interface DigestPreview {
   draft: DigestResult;
+  /** LLM-drafted lede for this exact filing set; null when none generated. */
+  lede: string | null;
   recipientCount: number;
   follows: FollowsBreakdown;
   production: boolean;
@@ -557,6 +559,26 @@ export default function AdminPage() {
                         } of other officials excluded.`
                       : "No followers of other officials to exclude."}
                   </p>
+                  {digest.lede ? (
+                    <div className="border border-neutral-200 bg-stone-50 px-3 py-2">
+                      <div className="text-[10px] uppercase tracking-wider text-neutral-500 font-medium mb-1">
+                        Lede (AI-drafted — review before sending)
+                      </div>
+                      <p className="text-xs text-neutral-700 leading-relaxed">
+                        {digest.lede}
+                      </p>
+                      <p className="text-[10px] text-neutral-400 mt-1">
+                        Regenerate: npx tsx scripts/generate-digest-lede.ts ·
+                        Drop it: delete data/meta/digest-lede.json (both need a
+                        redeploy to take effect).
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="text-[11px] text-neutral-400">
+                      No lede generated for this filing set. Optional: run
+                      scripts/generate-digest-lede.ts locally and redeploy.
+                    </p>
+                  )}
                   {digest.draft.items.map((item) => (
                     <div key={item.slug} className="border-l-2 border-neutral-300 pl-3">
                       <div className="text-neutral-900 font-medium">

@@ -9,6 +9,7 @@ import {
   getSourceFilingForTransaction,
 } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
+import { getFeePaymentsBySlug } from "@/lib/fee-payments";
 import type { Transaction } from "@/lib/types";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import MonthlyBars from "@/app/components/monthly-bars";
@@ -182,11 +183,12 @@ export default async function OfficialPage({
     notFound();
   }
 
-  const [news, divestiture, sourceDocs, index] = await Promise.all([
+  const [news, divestiture, sourceDocs, index, feePayments] = await Promise.all([
     getNewsForOfficial(slug),
     getDivestitureData(slug),
     getSourceDocuments(slug),
     getOfficialsIndex(),
+    getFeePaymentsBySlug(slug),
   ]);
   const currentSourceDocs = sourceDocumentsWithCurrentFilings(
     sourceDocs,
@@ -522,6 +524,47 @@ export default async function OfficialPage({
         <span className="text-neutral-300 mx-1.5">|</span>
         Transactions: {formatDate(earliest.toISOString().split("T")[0])} – {formatDate(latest.toISOString().split("T")[0])}
       </p>
+      {feePayments.length > 0 && (
+        <div className="bg-stone-50 border border-neutral-200 px-4 py-3 mb-6 text-sm text-neutral-600">
+          <span className="font-medium text-neutral-900">
+            {feePayments.every((p) => p.outcome === "waived")
+              ? "Late-filing fee waived."
+              : feePayments.every((p) => p.outcome === "paid")
+              ? "Late-filing fee paid."
+              : "Late-filing fee outcomes on record."}
+          </span>{" "}
+          OGE reviewer notes on{" "}
+          {feePayments.length === 1
+            ? "one of these filings record"
+            : `${feePayments.length} of these filings record`}{" "}
+          {feePayments.every((p) => p.outcome === "waived")
+            ? "that the STOCK Act's $200-per-report late fee was waived"
+            : feePayments.every((p) => p.outcome === "paid")
+            ? "payment of the STOCK Act's $200-per-report late fee"
+            : "outcomes of the STOCK Act's $200-per-report late fee"}
+          :{" "}
+          {feePayments.map((p, i) => (
+            <span key={p.pdfFile}>
+              {i > 0 && "; "}
+              {p.pdfUrl ? (
+                <a
+                  href={p.pdfUrl}
+                  className="underline hover:text-neutral-900"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {"\""}{p.annotationCleaned}{"\""}
+                </a>
+              ) : (
+                <>{"\""}{p.annotationCleaned}{"\""}</>
+              )}
+            </span>
+          ))}
+          .
+          {feePayments.some((p) => p.outcome === "paid") &&
+            " The amount paid is not disclosed in the filing."}
+        </div>
+      )}
       {(official.sourceFilings?.length ?? 0) > 1 && (
         <p className="text-xs text-neutral-400 mb-10">
           This total aggregates every source filing listed below. Public

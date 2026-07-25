@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-07-19T19:11:15.208Z",
-  "officialCount": 37,
-  "transactionCount": 10033,
+  "exportedAt": "2026-07-25T17:38:16.895Z",
+  "officialCount": 38,
+  "transactionCount": 10126,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -6133,7 +6133,7 @@
       "slug": "isaacman-jared",
       "title": "Administrator",
       "agency": "National Aeronautics and Space Administration",
-      "level": "Level II",
+      "level": "Sub-Cabinet",
       "confirmedDate": "2025-12-17",
       "departedDate": null,
       "transactionCount": 147,
@@ -7919,9 +7919,41 @@
       "level": "Sub-Cabinet",
       "confirmedDate": "2025-07-09",
       "departedDate": null,
-      "transactionCount": 74,
-      "mostRecentFilingDate": "2026-05-01",
+      "transactionCount": 78,
+      "mostRecentFilingDate": "2026-07-25",
       "transactions": [
+        {
+          "description": "Okta, Inc. (OKTA)",
+          "ticker": "OKTA",
+          "type": "Sale",
+          "date": "2026-06-18",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Okta, Inc. (OKTA)",
+          "ticker": "OKTA",
+          "type": "Sale",
+          "date": "2026-06-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "date": "2026-06-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "date": "2026-06-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "Airbnb Inc. Class A Common Stock (ABNB)",
           "ticker": "ABNB",
@@ -9414,7 +9446,7 @@
           "ticker": null,
           "type": "Sale",
           "date": "2025-10-06",
-          "amount": "Over $50,000,000",
+          "amount": "Over $1,000,000",
           "lateFilingFlag": false
         },
         {
@@ -9637,6 +9669,731 @@
           "date": "2020-04-14",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
+        }
+      ]
+    },
+    {
+      "name": "Mullin, Markwayne",
+      "slug": "markwayne-mullin",
+      "title": "Secretary",
+      "agency": "Department of Homeland Security",
+      "level": "Cabinet",
+      "confirmedDate": "2026-03-24",
+      "departedDate": null,
+      "transactionCount": 89,
+      "mostRecentFilingDate": "2026-07-25",
+      "transactions": [
+        {
+          "description": "Alphabet Inc CL A",
+          "ticker": "GOOGL",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Amazon.com",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "American Express Co Com",
+          "ticker": "AXP",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Apple Inc.",
+          "ticker": "APPL",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Applied Materials Inc.,",
+          "ticker": "AMAT",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Blackrock",
+          "ticker": "BLK",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Caterpillar Inc Com",
+          "ticker": "CAT",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Chevron Corp New Com",
+          "ticker": "CVX",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Coca Cola Co Com",
+          "ticker": "KO",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Conocophillips",
+          "ticker": "COP",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Costco",
+          "ticker": "COST",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Deere and Co.",
+          "ticker": "DE",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Emerson Elec Co Com",
+          "ticker": "EMR",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Goldman Sachs Group Inc Com",
+          "ticker": "GS",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Hilton Worldwide Hldgs Inc Com New",
+          "ticker": "HLT",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Intercontinental Exchange Group",
+          "ticker": "ICE",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "JP Morgan Chase & Co Com",
+          "ticker": "JPM",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "KLA corp Com",
+          "ticker": "KLAC",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "L3Harris Technologies Inc Com",
+          "ticker": "LHX",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "LAM Resh Corp Com New",
+          "ticker": "LRCX",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Lily Eli & Co Com",
+          "ticker": "LLY",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Meta Platforms Inc CL A",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Nvidia Corp Com",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ONEOK INC",
+          "ticker": "OKE",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Palo Alto Networks Inc Com",
+          "ticker": "PANW",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Parker-Hannifin Corp Com",
+          "ticker": "PH",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Phillip Morris Intl Inc Com",
+          "ticker": "PM",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "RTX Corp Com",
+          "ticker": "RTX",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "S&P Global Inc Com",
+          "ticker": "SPGI",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Sherwin Williams",
+          "ticker": "SHW",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Thermo Fisher Scientific Inc Com",
+          "ticker": "TMO",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TJX Cos Inc New Com",
+          "ticker": "TJX",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Union Pacific Corp",
+          "ticker": "UNP",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Valero Energy Corp New Com",
+          "ticker": "VLO",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard World FDS Vanguard Utils ETF",
+          "ticker": "VPU",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Visa Inc Com CL A",
+          "ticker": "V",
+          "type": "Sale",
+          "date": "2026-06-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "UNIVERSITY HOUSTON TEX UNIV REVS CONS AND REF BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ALAMOGORDO N MEX MUN SCH DIST NO 001 GO BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "AUSTIN TEX CTFS OBLIG",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CLEAR CREEK TEX INDPT SCH DIST UNLTD TAX REF BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "COOK CNTY ILL CMNTY CONS SCH DIST NO 015",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "CORSICANA TEX COMBINATION TAX AND REV CTFS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FLORIDA ST DEPT GEN SVCS DIV MGMT REV POOL BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FORT LAUDERDALE FLA WTR & SWR REV BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FORT SMITH ARK WTR & SWR REV REF CONSTR BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "IPS MULTI-SCH BLDG CORP IND UNLTD ADVALRM PPTY TAX BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "KENTUCKY ST PPTY & BLDGS COMMN REVS BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MACOMB INTER SCH DIST MICH UNLTD TAX GO BLDG SITE BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MASSACHUSETTS ST DEV FIN AGY REV BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "METROPOLITAN TRANSN AUTH N Y DED TAX FD",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NEVADA ST LTD TAX GO CAP IMPT BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SALEM N H GO BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "SEATTLE WASH DRAIN & WASTEWATER REV REF REV BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "WEST PALM BEACH FLA CMNTY REDEV AGY TAX REV REF BDS",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-19",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Boston Scientific Corp Com",
+          "ticker": "BSX",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Capital One Financial Corp",
+          "ticker": "COF",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Elevance Health Inc",
+          "ticker": "ELV",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Home Depot Inc",
+          "ticker": "HD",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Intuitive Surgical Inc",
+          "ticker": "ISRG",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Iqvia Holdings Inc",
+          "ticker": "IQV",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "LPL Financial Holdings Inc",
+          "ticker": "LPLA",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Mastercard Inc",
+          "ticker": "MA",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Microsoft Corp Com",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Pentair PLC SHS",
+          "ticker": "PNR",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Proctor & Gamble Co",
+          "ticker": "PG",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Salesforce Inc",
+          "ticker": "CRM",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Service Now Inc",
+          "ticker": "NOW",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "United Health Group Inc",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2026-05-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Adobe Inc (ADBE)",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Adobe Inc (ADBE)",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Amkor Technology Inc (AMKR)",
+          "ticker": "AMKR",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "API Group Corp (APG)",
+          "ticker": "APG",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Carpenter Technology Corp (CRS)",
+          "ticker": "CRS",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Citigroup Inc (C)",
+          "ticker": "C",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Firstcash Holdings Inc (FCFS)",
+          "ticker": "FCFS",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Mckesson Corp (MCK)",
+          "ticker": "MCK",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Monolithic Power System (MPWR)",
+          "ticker": "MPWR",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Stride Inc (LRN)",
+          "ticker": "LRN",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "VSE Corp (VSEC)",
+          "ticker": "VSEC",
+          "type": "Sale",
+          "date": "2026-04-16",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Adobe Inc (ADBE)",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Amkor Technology Inc (AMKR)",
+          "ticker": "AMKR",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "API Group Corp (APG)",
+          "ticker": "APG",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Carpenter Technology Corp (CRS)",
+          "ticker": "CRS",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Citigroup, Inc. (C)",
+          "ticker": "C",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Firstcash Holdings Inc (FCFS)",
+          "ticker": "FCFS",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Mckesson Corp (MCK)",
+          "ticker": "MCK",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Monolithic Power System (MPWR)",
+          "ticker": "MPWR",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Stride Inc (LRN)",
+          "ticker": "LRN",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "VSE Corp (VSEC)",
+          "ticker": "VSEC",
+          "type": "Sale",
+          "date": "2026-04-15",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true
         }
       ]
     },
@@ -13755,7 +14512,7 @@
       "transactions": [
         {
           "description": "State Street SPDR S&P 500 ETF Trust",
-          "ticker": "FBVVNX",
+          "ticker": "SPY",
           "type": "Purchase",
           "date": "2025-06-20",
           "amount": "$15,001-$50,000",
@@ -15226,7 +15983,7 @@
       "slug": "sara-bailey",
       "title": "Director",
       "agency": "Office of National Drug Control Policy",
-      "level": "Level I",
+      "level": "Cabinet",
       "confirmedDate": null,
       "departedDate": null,
       "transactionCount": 5,
@@ -75923,7 +76680,7 @@
       "slug": "vaden-stephen-a",
       "title": "Deputy Secretary",
       "agency": "Department of Agriculture",
-      "level": "Level II",
+      "level": "Sub-Cabinet",
       "confirmedDate": "2025-06-10",
       "departedDate": null,
       "transactionCount": 6,
