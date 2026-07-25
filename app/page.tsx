@@ -8,7 +8,12 @@ import {
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
-import HomeSwimPreview, { type PreviewOfficial } from "./components/home-swim-preview";
+import HeroMonthlyChart from "./components/hero-monthly-chart";
+import {
+  buildMonthAxis,
+  bucketByMonth,
+  type MonthBucket,
+} from "@/lib/monthly-activity";
 import AlertSignupForm from "./components/alert-signup-form";
 import OfficialAvatar from "./components/official-avatar";
 import ProjectCrossPromo from "./components/project-cross-promo";
@@ -20,10 +25,6 @@ export const metadata: Metadata = {
   description:
     "The first interactive stock tracker for the executive branch. Search 10,000+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
 };
-
-function isSale(type: string): boolean {
-  return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
-}
 
 export default async function Home() {
   const [index, allOfficials, news, tickerMap] = await Promise.all([
@@ -117,32 +118,21 @@ export default async function Home() {
 
   const recentNews = news.slice(0, 4);
 
-  const swimPreview: PreviewOfficial[] = allOfficials
-    .map((o) => ({
-      name: o.name,
-      slug: o.slug,
-      title: o.title,
-      totalValue: o.transactions.reduce(
-        (sum, tx) => sum + amountRangeToMidpoint(tx.amount),
-        0
-      ),
-      transactions: o.transactions.map((tx) => ({
-        description: tx.description,
-        ticker: tx.ticker,
-        type: tx.type,
-        date: tx.date,
-        amount: tx.amount,
-        isSale: isSale(tx.type),
-        lateFiled: tx.lateFilingFlag,
-      })),
-    }))
-    .toSorted((a, b) => b.totalValue - a.totalValue)
-    .map(({ name, slug, title, transactions }) => ({
-      name,
-      slug,
-      title,
-      transactions,
-    }));
+  // Monthly activity, aggregated here on the server rather than shipping raw
+  // transactions to the client. The hero thumbnail and every row sparkline
+  // read from this one rollup against one shared month axis, so the two are
+  // always the same arithmetic. Roughly 630 small counts replace the ~10,000
+  // full transaction objects the old swim preview sent down the wire.
+  const monthAxis = buildMonthAxis(allTx);
+  const heroBuckets = bucketByMonth(allTx, monthAxis);
+  const activityBySlug: Record<string, MonthBucket[]> = {};
+  for (const official of officials) {
+    const full = officialsBySlug.get(official.slug);
+    activityBySlug[official.slug] = bucketByMonth(
+      full?.transactions ?? [],
+      monthAxis
+    );
+  }
 
   return (
     <div>
@@ -259,33 +249,9 @@ export default async function Home() {
             </p>
           </header>
 
-          {/* Hero graphic, abstract swim lane preview */}
-          <div className="hidden md:flex items-center justify-center size-48 shrink-0">
-            <svg
-              viewBox="0 0 200 200"
-              className="w-full h-full"
-              aria-hidden="true"
-            >
-              {/* Abstract trade dots evoking the swim lane chart */}
-              {[
-                { y: 25, dots: [{ x: 35, r: 5, s: true }, { x: 55, r: 3, s: false }, { x: 70, r: 7, s: true }, { x: 95, r: 4, s: false }, { x: 120, r: 3, s: true }, { x: 145, r: 6, s: true }, { x: 165, r: 4, s: false }] },
-                { y: 53, dots: [{ x: 40, r: 4, s: false }, { x: 60, r: 6, s: true }, { x: 80, r: 3, s: true }, { x: 110, r: 5, s: false }] },
-                { y: 81, dots: [{ x: 32, r: 7, s: true }, { x: 50, r: 5, s: true }, { x: 68, r: 4, s: true }, { x: 85, r: 3, s: true }, { x: 100, r: 6, s: true }] },
-                { y: 109, dots: [{ x: 45, r: 3, s: false }, { x: 75, r: 8, s: true }, { x: 130, r: 5, s: false }, { x: 155, r: 4, s: true }] },
-                { y: 137, dots: [{ x: 38, r: 4, s: true }, { x: 55, r: 3, s: false }, { x: 90, r: 5, s: true }] },
-                { y: 165, dots: [{ x: 50, r: 6, s: false }, { x: 80, r: 3, s: true }, { x: 105, r: 4, s: false }, { x: 140, r: 7, s: true }, { x: 170, r: 3, s: false }] },
-              ].map((row, i) => (
-                <g key={i}>
-                  <line x1="10" y1={row.y} x2="190" y2={row.y} stroke="#e5e5e5" strokeWidth="0.5" />
-                  {row.dots.map((d, j) => (
-                    <circle key={j} cx={d.x} cy={row.y} r={d.r} fill={d.s ? "#dc2626" : "#16a34a"} opacity={0.7} />
-                  ))}
-                </g>
-              ))}
-              {/* Vertical line evoking inauguration marker */}
-              <line x1="45" y1="12" x2="45" y2="180" stroke="#525252" strokeWidth="1" strokeDasharray="3,3" opacity="0.5" />
-            </svg>
-          </div>
+          {/* Hero graphic: real monthly trade counts across the whole roster,
+              the same form as the sparklines in the directory below. */}
+          <HeroMonthlyChart buckets={heroBuckets} />
         </div>
 
         {/* Stats bar */}
@@ -327,13 +293,6 @@ export default async function Home() {
           <AlertSignupForm sourcePage="home-stats" />
         </div>
 
-        {/* ── SWIM LANE PREVIEW ── */}
-        <div className="mt-8">
-          <HomeSwimPreview
-            officials={swimPreview}
-            totalOfficials={totalOfficials}
-          />
-        </div>
       </div>
 
       {/* ── DIRECTORY PREVIEW ── */}
@@ -352,9 +311,20 @@ export default async function Home() {
 
         <OfficialsTable
           officials={officials}
-          initialLimit={10}
+          initialLimit={15}
           newIngestedCutoff={newCutoffStr}
+          activityBySlug={activityBySlug}
+          months={monthAxis}
         />
+
+        <div className="mt-4 flex justify-end">
+          <Link
+            href="/all"
+            className="text-xs font-medium text-neutral-900 underline underline-offset-4 decoration-2 hover:decoration-red-600"
+          >
+            See every trade &rarr;
+          </Link>
+        </div>
 
         <div id="coverage-note" className="bg-stone-50 border border-neutral-200 px-4 py-3 text-xs text-neutral-500 leading-relaxed scroll-mt-24 mt-6">
           <p>
