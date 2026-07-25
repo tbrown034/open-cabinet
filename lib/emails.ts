@@ -13,7 +13,8 @@
  * system sans body. Email needs inline styles + table layout to render in Gmail.
  */
 import { POSTAL_ADDRESS, siteUrl } from "@/lib/email-config";
-import { formatDate } from "@/lib/format";
+import { formatDate, displayName } from "@/lib/format";
+import { officeLine } from "@/lib/office-line";
 import type { AlsoNewOfficial, DigestItem } from "@/lib/digest";
 
 export interface BuiltEmail {
@@ -200,12 +201,21 @@ export function buildDigestEmail(
   const alsoNew = extras?.alsoNew ?? [];
   const trackedCount = extras?.trackedOfficialCount ?? 0;
   const lede = extras?.lede?.trim() ?? "";
-  const ledeHtml = lede
-    ? `<p style="font-family:${SANS};font-size:14px;line-height:1.7;color:${COLORS.text};margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid ${COLORS.border};">${escapeHtml(lede)}</p>`
+  // Blank lines in the stored lede become separate paragraphs. A single
+  // block of five sentences is a wall in an inbox; the rule everywhere else
+  // on this project is one to three sentences a paragraph.
+  const ledeParas = lede ? lede.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean) : [];
+  const ledeHtml = ledeParas.length
+    ? `<div style="margin:0 0 24px;padding-bottom:20px;border-bottom:1px solid ${COLORS.border};">${ledeParas
+        .map(
+          (p, i) =>
+            `<p style="font-family:${SANS};font-size:14px;line-height:1.7;color:${COLORS.text};margin:${i === 0 ? "0" : "14px"} 0 0;">${escapeHtml(p)}</p>`
+        )
+        .join("")}</div>`
     : "";
   const subject =
     items.length === 1
-      ? `New filing: ${items[0].name}`
+      ? `New filing: ${displayName(items[0].name)}`
       : `${items.length} new executive-branch filings`;
 
   const sections = items
@@ -225,11 +235,19 @@ export function buildDigestEmail(
         })
         .join("");
 
+      // A big filing shows only a sample of its trades. Saying so matters:
+      // Trump's June filing lists 2,514 and the table shows six, which a
+      // reader would otherwise take for the whole disclosure.
+      const sampled = item.trades.length < item.newCount;
+      const sampleNote = sampled
+        ? `<div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">Showing ${item.trades.length} of ${item.newCount.toLocaleString("en-US")} new trades.</div>`
+        : "";
+
       return `<div style="margin:0 0 28px;">
-        <div style="font-family:${SERIF};font-size:18px;color:${COLORS.text};margin:0 0 2px;">${escapeHtml(item.name)}</div>
-        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(item.title)} · ${escapeHtml(item.agency)} · ${item.newCount.toLocaleString("en-US")} new trade${item.newCount === 1 ? "" : "s"}</div>
+        <div style="font-family:${SERIF};font-size:18px;color:${COLORS.text};margin:0 0 2px;">${escapeHtml(displayName(item.name))}</div>
+        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(officeLine(item.title, item.agency))} · ${item.newCount.toLocaleString("en-US")} new trade${item.newCount === 1 ? "" : "s"}</div>
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid ${COLORS.border};margin-bottom:8px;">${rows}</table>
-        <a href="${base}/officials/${encodeURIComponent(item.slug)}" style="font-family:${SANS};font-size:13px;color:${COLORS.text};">View on Open Cabinet</a>
+        ${sampleNote}<a href="${base}/officials/${encodeURIComponent(item.slug)}" style="font-family:${SANS};font-size:13px;color:${COLORS.text};">View on Open Cabinet</a>
         &nbsp;·&nbsp;
         <a href="${escapeHtml(item.primaryFilingUrl)}" style="font-family:${SANS};font-size:13px;color:${COLORS.muted};">OGE filing (PDF)</a>
       </div>`;
@@ -248,7 +266,7 @@ export function buildDigestEmail(
           ${alsoNew
             .map(
               (o) =>
-                `<a href="${base}/officials/${encodeURIComponent(o.slug)}" style="color:${COLORS.muted};">${escapeHtml(o.name)}</a> &ndash; ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${escapeHtml(formatDate(o.postedDate))}`
+                `<a href="${base}/officials/${encodeURIComponent(o.slug)}" style="color:${COLORS.muted};">${escapeHtml(displayName(o.name))}</a> &ndash; ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${escapeHtml(formatDate(o.postedDate))}`
             )
             .join("<br>\n          ")}
         </p>${
@@ -278,8 +296,12 @@ export function buildDigestEmail(
       const lines = item.trades
         .map((t) => `  - ${t.description}${showTicker(t) ? ` (${t.ticker})` : ""}: ${t.type}, ${t.amount}${t.lateFilingFlag ? " [LATE]" : ""}`)
         .join("\n");
-      return `${item.name} — ${item.title}, ${item.agency} (${item.newCount.toLocaleString("en-US")} new)
-${lines}
+      const sampleNote =
+        item.trades.length < item.newCount
+          ? `\n  Showing ${item.trades.length} of ${item.newCount.toLocaleString("en-US")} new trades.`
+          : "";
+      return `${displayName(item.name)} — ${officeLine(item.title, item.agency)} (${item.newCount.toLocaleString("en-US")} new)
+${lines}${sampleNote}
   ${base}/officials/${item.slug}
   Filing: ${item.primaryFilingUrl}`;
     })
@@ -290,7 +312,7 @@ ${lines}
       ? `\n\nAlso filed in the last two weeks:\n${alsoNew
           .map(
             (o) =>
-              `  - ${o.name} – ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${formatDate(o.postedDate)}: ${base}/officials/${o.slug}`
+              `  - ${displayName(o.name)} – ${o.newTradeCount ? `${o.newTradeCount.toLocaleString("en-US")} new trade${o.newTradeCount === 1 ? "" : "s"}, ` : ""}posted ${formatDate(o.postedDate)}: ${base}/officials/${o.slug}`
           )
           .join("\n")}${
           trackedCount > 0
