@@ -244,10 +244,9 @@ export default async function Home() {
                 href="/late-filings"
                 className="font-semibold text-amber-700 underline decoration-amber-700/30 underline-offset-2 hover:decoration-amber-700 transition-colors"
               >
-                {latePct}% of disclosed trades were reported after the STOCK Act
-                deadline
-              </Link>
-              .
+                {latePct}% of disclosed trades were reported late
+              </Link>{" "}
+              &mdash; by the officials{"'"} own certification.
             </p>
             <p className="text-xs text-neutral-400 mt-3">
               Latest filing posted to OGE:{" "}

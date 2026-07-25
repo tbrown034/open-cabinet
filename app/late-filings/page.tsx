@@ -6,7 +6,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Late Filings",
   description:
-    "Late financial disclosures across executive branch officials. Who's missing deadlines and what it means.",
+    "Late financial disclosures across executive branch officials. How the deadlines work, who missed them and what the law actually does about it.",
 };
 
 function isSale(type: string): boolean {
@@ -81,6 +81,14 @@ export default async function LateFilingsPage() {
     (o) => o.lateRate > 50 && o.lateRate < 100
   );
 
+  // The $200 fee is charged per report, not per transaction, so the maximum
+  // possible fee exposure is report count x $200. Trump's report count makes
+  // the flat-fee math concrete against thousands of late-flagged trades.
+  const trump = officials.find((o) => o.slug === "trump-donald-j");
+  const trumpReports = trump?.sourceFilings?.length ?? 0;
+  const trumpLate =
+    trump?.transactions.filter((t) => t.lateFilingFlag).length ?? 0;
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
       <header className="mb-12">
@@ -92,36 +100,117 @@ export default async function LateFilingsPage() {
           <a href="https://www.law.cornell.edu/uscode/text/5/13105" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
             STOCK Act
           </a>{" "}
-          requires officials to disclose stock trades within 30
-          days of notification, 45 days from the transaction at most. When that
-          deadline passes, the filing is late. The penalty is a{" "}
+          requires officials to disclose stock trades within 30 days of
+          learning of them &mdash; never more than 45 days after the trade
+          itself. When that deadline passes, the filing is late. A{" "}
           <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
             $200 fee
           </a>{" "}
-          that is routinely waived.
+          applies only once a report runs more than 30 days past due, and the
+          filer{"'"}s own agency can waive it.
         </p>
       </header>
 
+      {/* How the system works */}
+      <section className="mb-12 bg-stone-50 -mx-4 px-4 py-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            How the system works
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-neutral-600">
+            <div>
+              <div className="font-medium text-neutral-900 mb-1">
+                Two clocks
+              </div>
+              <p>
+                A 278-T is due 30 days after the official is notified of a
+                trade &mdash; a broker confirmation, a statement &mdash; and
+                never later than 45 days after the trade itself (
+                <a href="https://www.law.cornell.edu/uscode/text/5/13105" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  5 U.S.C. Section 13105(l)
+                </a>
+                ). Whichever deadline comes first governs. Past it, the filing
+                is late.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900 mb-1">
+                The self-certification
+              </div>
+              <p>
+                Each{" "}
+                <a href="https://www.oge.gov/web/OGE.nsf/0/78E3B27A68F437DC852585B6005A23E9/$FILE/OGE%20Form%20278-T%20Dec%202023.pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  278-T form
+                </a>{" "}
+                has a column asking whether notification of the trade was
+                received more than 30 days ago. A {"\""}Yes{"\""}{" "}means the
+                official certified they learned of the trade more than 30 days
+                before reporting it &mdash; the form{"'"}s own late-disclosure
+                marker. Open Cabinet repeats that certification; it computes
+                nothing.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900 mb-1">
+                The $200 fee
+              </div>
+              <p>
+                Under{" "}
+                <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
+                  5 U.S.C. Section 13106(d)
+                </a>
+                , a report filed more than 30 days past its deadline carries a
+                $200 fee &mdash; once per report, not per transaction, and
+                flat no matter how late. A report a year overdue costs the
+                same as one 31 days overdue. The filer{"'"}s agency collects
+                the fee and can waive it for {"\""}extraordinary
+                circumstances.{"\""} Larger penalties exist only for knowing
+                and willful violations, and require the Justice Department.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900 mb-1">
+                How a good-faith filer can look late
+              </div>
+              <p>
+                A late filing is not proof of wrongdoing. A slow broker can
+                blow the 45-day cap through no fault of the filer. Amended
+                reports re-list old trades. Agencies can extend deadlines by
+                up to 90 days, and extensions are not visible in this data.
+                Patterns across many trades tell the story &mdash; not any
+                single flag.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
-      <div className="flex flex-wrap gap-x-8 gap-y-2 mb-12 text-sm text-neutral-500 border-b border-neutral-200 pb-6">
-        <div>
-          <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {totalLate.toLocaleString()}
-          </span>
-          late-filed transactions
+      <div className="mb-12 border-b border-neutral-200 pb-6">
+        <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500">
+          <div>
+            <span className="text-2xl font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
+              {totalLate.toLocaleString()}
+            </span>
+            late-filed transactions
+          </div>
+          <div>
+            <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
+              {overallRate}%
+            </span>
+            of all transactions
+          </div>
+          <div>
+            <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
+              {officialsWithLate}
+            </span>
+            officials with late-filed transactions
+          </div>
         </div>
-        <div>
-          <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {overallRate}%
-          </span>
-          of all transactions
-        </div>
-        <div>
-          <span className="text-2xl font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1.5">
-            {officialsWithLate}
-          </span>
-          officials with late-filed transactions
-        </div>
+        <p className="text-xs text-neutral-400 mt-3">
+          All counts come from the officials{"'"} own certifications on OGE
+          Form 278-T.
+        </p>
       </div>
 
       {/* Key findings */}
@@ -137,8 +226,8 @@ export default async function LateFilingsPage() {
             </div>
             <p className="text-amber-800">
               {allLate.map((o) => displayName(o.name)).join(", ")}{" "}
-              {allLate.length === 1 ? "filed" : "each filed"} every single
-              transaction late.{" "}
+              {allLate.length === 1 ? "disclosed" : "each disclosed"} every
+              single transaction late, by their own certification.{" "}
               {allLate.map((o) => `${displayName(o.name)}: ${o.late} of ${o.total}`).join("; ")}
               .
             </p>
@@ -161,24 +250,22 @@ export default async function LateFilingsPage() {
           </div>
         )}
 
-        <div className="bg-stone-50 border border-neutral-200 px-4 py-3 text-sm">
-          <div className="font-medium text-neutral-900 mb-1">
-            The $200 question
+        {trumpReports > 0 && trumpLate > 0 && (
+          <div className="bg-stone-50 border border-neutral-200 px-4 py-3 text-sm">
+            <div className="font-medium text-neutral-900 mb-1">
+              The $200 question
+            </div>
+            <p className="text-neutral-600">
+              Because the fee is charged per report, the math barely registers.
+              President Trump{"'"}s {trumpLate.toLocaleString()} late-flagged
+              trades arrived in {trumpReports}{" "}reports &mdash; a maximum
+              possible exposure of ${(trumpReports * 200).toLocaleString()},
+              before any waivers or extensions. He did pay: OGE reviewer notes
+              on his May and June 2026 filings read {"\""}Filer paid late
+              fee.{"\""} The total amount is not disclosed.
+            </p>
           </div>
-          <p className="text-neutral-600">
-            Under{" "}
-            <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-              5 U.S.C. Section 13106(a)
-            </a>
-            , a late 278-T carries a $200 fee, charged once per report, not per
-            transaction. The $200 fee is routinely waived, and OGE has no
-            authority to fine or prosecute (
-            <a href="https://campaignlegal.org/update/stock-act-failed-effort-stop-insider-trading-congress" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-              Campaign Legal Center
-            </a>
-            ).
-          </p>
-        </div>
+        )}
       </section>
 
       {/* Officials table */}
@@ -253,45 +340,30 @@ export default async function LateFilingsPage() {
         </div>
       </section>
 
-      {/* Context */}
+      {/* The enforcement record */}
       <section className="mt-12 bg-stone-50 -mx-4 px-4 py-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
-            What does {"\""}late{"\""} mean?
+            The enforcement record
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-neutral-600">
             <div>
               <div className="font-medium text-neutral-900 mb-1">
-                The self-certification
-              </div>
-              <p>
-                Each{" "}
-                <a href="https://www.oge.gov/web/OGE.nsf/0/78E3B27A68F437DC852585B6005A23E9/$FILE/OGE%20Form%20278-T%20Dec%202023.pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-                  278-T form
-                </a>{" "}
-                has a column: {"\""}Notification Received Over 30 Days Ago.{"\""}
-                {" "}Officials mark Yes or No. A {"\""}Yes{"\""} is a
-                self-admission that they reported late. Open Cabinet reads this
-                field directly from the OGE filings.
-              </p>
-            </div>
-            <div>
-              <div className="font-medium text-neutral-900 mb-1">
-                The enforcement gap
+                In Congress
               </div>
               <p>
                 Business Insider{"'"}s{" "}
                 <a href="https://www.businessinsider.com/conflicted-congress-key-findings-stock-act-violations-exposed-2021-12" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
                   Conflicted Congress investigation
                 </a>{" "}
-                had identified at least 72 members of Congress violating the
-                same deadline by 2022. The{" "}
+                identified at least 72 members of Congress violating the same
+                deadline by 2022, and found the{" "}
                 <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">
-                  penalty
+                  $200 fee
                 </a>{" "}
-                &mdash; a $200 fee, routinely waived &mdash; has never deterred
-                anyone. No criminal prosecution has ever been brought under the
-                STOCK Act.*
+                routinely waived by House and Senate ethics officials. No one
+                has ever been criminally prosecuted for a STOCK Act disclosure
+                violation.*
               </p>
               <p className="text-xs text-neutral-500 mt-2">
                 *Sources:{" "}
@@ -308,13 +380,30 @@ export default async function LateFilingsPage() {
                 </a>
               </p>
             </div>
+            <div>
+              <div className="font-medium text-neutral-900 mb-1">
+                In the executive branch
+              </div>
+              <p>
+                The only public traces of enforcement are notes on individual
+                filings. OGE reviewer annotations on President Trump{"'"}s May
+                and June 2026 reports read {"\""}Filer paid late fee{"\""}{" "}
+                &mdash; confirmation the fee was assessed, with no dollar
+                amount attached. Beyond notations like these, no data exists
+                on how often the fee is assessed, collected or waived. That
+                gap is itself part of the story: enforcement, when it happens,
+                happens mostly out of public view.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics, 278-T Periodic Transaction
-        Reports. Late filing status is self-reported by filers on each form.{" "}
+        Reports. Late filing status is self-reported by filers on each form.
+        Agencies may grant filing extensions of up to 90 days; extensions are
+        not visible in this data.{" "}
         <Link href="/methodology" className="underline hover:text-neutral-600">
           Read more about methodology
         </Link>
