@@ -312,10 +312,17 @@ export default async function OfficialPage({
       })
     : null;
 
-  // Chart view toggle. Default to monthly bars for high-volume officials
-  // (the dot view at 5K trades is a smear); default to dots for everyone
-  // else (where individual transactions still resolve). Either way the
-  // user can override with ?view=.
+  // Chart view toggle, offered on every official's page rather than only the
+  // dense ones. The two views answer different questions — one dot per trade
+  // sized by amount says how big, one bar per month says when — and leaving
+  // the choice visible everywhere is what makes that legible.
+  //
+  // Dots are the default, because the per-trade view carries the amount and
+  // is what the rest of the site is built around. The exception is the
+  // handful of filers above HIGH_VOLUME: at Trump's 7,699 trades the dot
+  // view is a solid band of overlap that resolves nothing, so defaulting
+  // them to bars shows a reader something rather than nothing. Either way
+  // the toggle is right above the chart and ?view= overrides.
   const rawView = (search.view ?? "").toLowerCase();
   const chartView: ChartView =
     rawView === "dots" || rawView === "bars"
@@ -618,7 +625,12 @@ export default async function OfficialPage({
             </p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">
-            {HIGH_VOLUME && <ViewToggle selected={chartView} />}
+            {totalTrades > 0 && (
+              <ViewToggle
+                selected={chartView}
+                defaultView={HIGH_VOLUME ? "bars" : "dots"}
+              />
+            )}
             <RangeFilter selected={range} />
           </div>
         </div>

@@ -9,7 +9,86 @@ import Link from "next/link";
 import Image from "next/image";
 import { amountRangeToMin, amountRangeLabel, formatDate, displayName } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
+import {
+  buildMonthAxis,
+  bucketByMonth,
+  peakMonthlyCount,
+  formatMonthLong,
+  type MonthBucket,
+} from "@/lib/monthly-activity";
 import { useContainerWidth } from "./use-container-width";
+
+function monthKeyToDate(monthKey: string): Date {
+  return new Date(`${monthKey}-01T00:00:00`);
+}
+
+/**
+ * One lane's monthly bars: sales above the midline, purchases below.
+ *
+ * Each lane scales to its own busiest month. A scale shared across officials
+ * would put Trump's 2,342-trade month at full height and flatten the other
+ * 34 lanes into a line — the exact failure the old homepage preview had. The
+ * legend says so, because otherwise height reads as volume.
+ */
+function LaneMonthBars({
+  buckets,
+  xOf,
+  barWidth,
+  midlineY,
+  maxBarH,
+}: {
+  buckets: MonthBucket[];
+  xOf: (monthKey: string) => number;
+  barWidth: number;
+  midlineY: number;
+  maxBarH: number;
+}) {
+  const peak = peakMonthlyCount(buckets);
+  if (peak === 0) return null;
+  // Any month with a trade stays visible, however quiet against the peak.
+  const heightOf = (count: number) =>
+    count <= 0
+      ? 0
+      : Math.max((Math.sqrt(count) / Math.sqrt(peak)) * maxBarH, 1);
+
+  return (
+    <>
+      {buckets.map((bucket) => {
+        if (bucket.sales + bucket.purchases === 0) return null;
+        const x = xOf(bucket.monthKey);
+        const salesH = heightOf(bucket.sales);
+        const purchasesH = heightOf(bucket.purchases);
+        return (
+          <g key={bucket.monthKey}>
+            {bucket.sales > 0 && (
+              <rect
+                x={x}
+                y={midlineY - salesH}
+                width={barWidth}
+                height={salesH}
+                fill="#dc2626"
+                opacity={0.85}
+              />
+            )}
+            {bucket.purchases > 0 && (
+              <rect
+                x={x}
+                y={midlineY}
+                width={barWidth}
+                height={purchasesH}
+                fill="#16a34a"
+                opacity={0.85}
+              />
+            )}
+            <title>
+              {`${formatMonthLong(bucket.monthKey)}: ${bucket.sales} sales, ${bucket.purchases} purchases`}
+            </title>
+          </g>
+        );
+      })}
+    </>
+  );
+}
 
 /**
  * SWIM LANE CHART, All Officials, All Trades, One Canvas
@@ -59,10 +138,19 @@ interface SwimOfficial {
 type FilterTab = "all" | "cabinet" | "sub-cabinet";
 type SortKey = "volume" | "name" | "recent";
 type TimeRange = "inaug" | "2025" | "2026" | "all";
+/**
+ * The two marks answer different questions. "trade" draws one dot per
+ * disclosure sized by amount — how big was each trade. "month" draws one bar
+ * per month sized by count — when did the trading happen. Trump's 7,699 dots
+ * smear into a band no reader can parse, which is the case the month view
+ * exists for, but dots stay the default because they carry the amount.
+ */
+type ViewMode = "trade" | "month";
 
 const FILTER_TABS: readonly FilterTab[] = ["all", "cabinet", "sub-cabinet"];
 const SORT_KEYS: readonly SortKey[] = ["volume", "name", "recent"];
 const TIME_RANGES: readonly TimeRange[] = ["inaug", "2025", "2026", "all"];
+const VIEW_MODES: readonly ViewMode[] = ["trade", "month"];
 
 interface TooltipData {
   tx: SwimTransaction;
@@ -98,6 +186,7 @@ export default function SwimLaneChart({
   const filter = parseParam(searchParams.get("group"), FILTER_TABS, "all");
   const sortBy = parseParam(searchParams.get("sort"), SORT_KEYS, "volume");
   const timeRange = parseParam(searchParams.get("period"), TIME_RANGES, "inaug");
+  const viewMode = parseParam(searchParams.get("view"), VIEW_MODES, "trade");
 
   function setParam(key: string, value: string, isDefault: boolean) {
     const params = new URLSearchParams(searchParams.toString());
@@ -203,6 +292,20 @@ export default function SwimLaneChart({
   const ticks = xScale.ticks(Math.max(Math.floor(chartWidth / 140), 3));
   const formatTick = timeFormat("%b %Y");
 
+  // Month buckets for the "By month" view, built on the same shared axis the
+  // homepage uses so the two surfaces are the same arithmetic. Derived from
+  // the already period-filtered transactions, and positioned with the same
+  // xScale as the dots, so switching views moves the marks and never the
+  // timeline underneath them.
+  const monthAxis = buildMonthAxis(filtered.flatMap((o) => o.transactions));
+  const monthSlotWidth =
+    monthAxis.length > 1
+      ? xScale(monthKeyToDate(monthAxis[1])) - xScale(monthKeyToDate(monthAxis[0]))
+      : chartWidth;
+  const monthBarWidth = Math.max(monthSlotWidth * 0.72, 1);
+  const monthXOf = (monthKey: string) =>
+    xScale(monthKeyToDate(monthKey)) + (monthSlotWidth - monthBarWidth) / 2;
+
   if (width <= 0) {
     return <div ref={containerRef} style={{ height }} />;
   }
@@ -231,6 +334,43 @@ export default function SwimLaneChart({
             {tab.label}
           </button>
         ))}
+      </div>
+
+      {/* View: what each mark means. Labelled with the mark, not just the
+          unit, so the control reads as two different questions rather than
+          two skins. */}
+      <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
+        <span className="text-[10px] text-neutral-400">Show:</span>
+        <div className="inline-flex border border-neutral-200" role="tablist" aria-label="Chart view">
+          {([
+            {
+              key: "trade" as ViewMode,
+              label: "Every trade",
+              hint: "One dot per disclosure, sized by reported amount",
+            },
+            {
+              key: "month" as ViewMode,
+              label: "By month",
+              hint: "One bar per month, sized by number of trades",
+            },
+          ]).map((v) => (
+            <button
+              type="button"
+              key={v.key}
+              role="tab"
+              aria-selected={viewMode === v.key}
+              title={v.hint}
+              onClick={() => setParam("view", v.key, v.key === "trade")}
+              className={`px-2.5 py-1 transition-colors cursor-pointer ${
+                viewMode === v.key
+                  ? "bg-neutral-900 text-white"
+                  : "bg-white text-neutral-600 hover:text-neutral-900"
+              }`}
+            >
+              {v.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Time range + sort */}
@@ -310,21 +450,31 @@ export default function SwimLaneChart({
                   </div>
                 </Link>
                 <svg width={chartWidth} height={dotHeight} className="overflow-visible">
-                  {o.transactions.map((tx, i) => {
-                    const cx = xScale(new Date(tx.date + "T00:00:00"));
-                    const r = rScale(amountRangeToMin(tx.amount));
-                    return (
-                      <circle
-                        key={i}
-                        cx={cx}
-                        cy={dotHeight / 2}
-                        r={r}
-                        fill={tx.isSale ? "#dc2626" : "#16a34a"}
-                        opacity={0.85}
-                        stroke="none"
-                      />
-                    );
-                  })}
+                  {viewMode === "month" ? (
+                    <LaneMonthBars
+                      buckets={bucketByMonth(o.transactions, monthAxis)}
+                      xOf={monthXOf}
+                      barWidth={monthBarWidth}
+                      midlineY={dotHeight / 2}
+                      maxBarH={dotHeight / 2 - 2}
+                    />
+                  ) : (
+                    o.transactions.map((tx, i) => {
+                      const cx = xScale(new Date(tx.date + "T00:00:00"));
+                      const r = rScale(amountRangeToMin(tx.amount));
+                      return (
+                        <circle
+                          key={i}
+                          cx={cx}
+                          cy={dotHeight / 2}
+                          r={r}
+                          fill={tx.isSale ? "#dc2626" : "#16a34a"}
+                          opacity={0.85}
+                          stroke="none"
+                        />
+                      );
+                    })
+                  )}
                 </svg>
               </div>
             );
@@ -358,7 +508,20 @@ export default function SwimLaneChart({
             Inauguration
           </div>
           <div className="text-neutral-300">|</div>
-          <div>Circle size = reported amount range (minimum)</div>
+          {/* The size key belongs to dots and the normalization caveat
+              belongs to bars. Showing the wrong one is worse than none. */}
+          {viewMode === "trade" ? (
+            <div>Circle size = reported amount range (minimum)</div>
+          ) : (
+            <div>
+              Sales above the line, purchases below &middot;{" "}
+              <span className="text-neutral-600 font-medium">
+                each lane is scaled to its own busiest month
+              </span>
+              , so height shows when an official traded, not how much
+              relative to others
+            </div>
+          )}
         </div>
       )}
 
@@ -533,8 +696,26 @@ export default function SwimLaneChart({
             });
           })()}
 
-          {/* Transaction dots, render all 3,200+ circles */}
-          {filtered.flatMap((o) =>
+          {/* By month: one bar per month per lane, on the same x-axis. */}
+          {viewMode === "month" &&
+            filtered.map((o) => {
+              const y = yScale(o.name) ?? 0;
+              const bandHeight = yScale.bandwidth();
+              return (
+                <LaneMonthBars
+                  key={`bars-${o.slug}`}
+                  buckets={bucketByMonth(o.transactions, monthAxis)}
+                  xOf={monthXOf}
+                  barWidth={monthBarWidth}
+                  midlineY={y + bandHeight / 2}
+                  maxBarH={bandHeight / 2 - 2}
+                />
+              );
+            })}
+
+          {/* Every trade: one circle per disclosure, sized by amount. */}
+          {viewMode === "trade" &&
+            filtered.flatMap((o) =>
             o.transactions.map((tx, i) => {
               const y = yScale(o.name) ?? 0;
               const bandHeight = yScale.bandwidth();
