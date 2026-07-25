@@ -37,7 +37,7 @@ const STEPS = [
     id: "compliance",
     label: "Compliance",
     title: "The ethics office certifies",
-    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Late filings carry a $200 fee (5 U.S.C. \u00A713106(a)). Missed deadlines and new purchases in regulated sectors all raise flags. Criminal conflict of interest is covered separately by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
+    body: "OGE reviews whether the official met their divestiture deadline and continues to comply with ethics agreements. Reports more than 30 days overdue carry a flat $200 fee (5 U.S.C. \u00A713106(d)). Missed deadlines and new purchases in regulated sectors all raise flags. Criminal conflict of interest is covered separately by 18 U.S.C. \u00A7208. Open Cabinet shows transactions filed while in office; it does not have access to OGE's compliance determinations and currently lacks the entry-holdings baseline needed to verify divestiture independently.",
   },
 ];
 

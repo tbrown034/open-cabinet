@@ -15,7 +15,7 @@ const LAW_STEPS = [
     id: "30-day",
     label: "30-day window",
     title: "Report every trade within 30 days",
-    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself, whichever comes first (5 U.S.C. \u00A713105(l)). The 45-day mark is the hard backstop. If both deadlines pass, the filing is late.",
+    body: "Officials must file a 278-T Periodic Transaction Report within 30 days of being notified of a trade or 45 days after the transaction itself, whichever comes first (5 U.S.C. \u00A713105(l)). The 45-day mark is the hard backstop. Whichever deadline comes first governs; past it, the filing is late.",
   },
   {
     id: "divestiture",
@@ -33,13 +33,13 @@ const LAW_STEPS = [
     id: "late-filings",
     label: "Late filings",
     title: "Missing the deadline is common",
-    body: "A \"late filing\" means the official knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(a)), routinely waived. Business Insider's Conflicted Congress investigation had identified at least 72 members of Congress violating the same deadline by 2022. No executive branch official has ever been meaningfully sanctioned for late 278-T filings.",
+    body: "A \"late filing\" means the official certified they knew about a trade for more than 30 days before reporting it. The penalty is a $200 fee (5 U.S.C. \u00A713106(d)) that attaches only when a report runs more than 30 days past due \u2014 flat, once per report, and waivable by the filer's agency. Business Insider's Conflicted Congress investigation identified at least 72 members of Congress violating the same deadline by 2022 and found the fee routinely waived there. In the executive branch, assessments surface only as reviewer notes on individual filings — President Trump's 2026 reports carry the annotation \"Filer paid late fee.\" Aggregate data is not published.",
   },
   {
     id: "consequences",
     label: "Consequences",
     title: "What happens when officials don't comply",
-    body: "Late disclosure carries a $200 fee (5 U.S.C. \u00A713106(a)). But taking official action on matters affecting your financial holdings is a potential criminal violation under 18 U.S.C. \u00A7208. The distinction matters: late reporting is a paperwork problem; participating in decisions while financially conflicted is a federal crime carrying up to five years in prison.",
+    body: "Late disclosure carries a $200 fee (5 U.S.C. \u00A713106(d)). But taking official action on matters affecting your financial holdings is a potential criminal violation under 18 U.S.C. \u00A7208. The distinction matters: late reporting is a paperwork problem; participating in decisions while financially conflicted is a federal crime carrying up to five years in prison.",
   },
 ];
 

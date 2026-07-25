@@ -107,11 +107,12 @@ export default async function MethodologyPage() {
                 $200
               </div>
               <div className="text-sm text-neutral-300 mb-2">
-                The penalty for filing a stock trade disclosure late. It{"'"}s
-                routinely waived.
+                The fee for a disclosure more than 30 days overdue. Flat, once
+                per report, waivable by the filer{"'"}s agency. Aggregate data
+                on how often it is assessed is not published.
               </div>
               <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                5 U.S.C. Section 13106(a)
+                5 U.S.C. Section 13106(d)
               </a>
             </div>
 
@@ -120,8 +121,8 @@ export default async function MethodologyPage() {
                 0
               </div>
               <div className="text-sm text-neutral-300 mb-2">
-                Criminal prosecutions ever brought under the STOCK Act{"'"}s
-                insider trading provisions.
+                Criminal prosecutions ever brought for STOCK Act disclosure
+                violations.
               </div>
               <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
                 Campaign Legal Center; Georgetown Law (2021)
@@ -213,6 +214,18 @@ export default async function MethodologyPage() {
               transactions. Across all other main-directory officials, Open
               Cabinet counts {nonTrumpLateTransactions.toLocaleString()}{" "}
               late-filed transactions.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
+                &ldquo;Late&rdquo; means self-certified late.
+              </strong>{" "}
+              A transaction counts as late only when the filer marked the
+              278-T column indicating notification was received more than 30
+              days before filing &mdash; the official{"'"}s own certification,
+              not our computation. Agencies can grant filing extensions of up
+              to 90 days that are not visible in public filings, and $200
+              late-fee assessments surface publicly only when OGE reviewers
+              note them on an individual filing.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -326,6 +339,22 @@ export default async function MethodologyPage() {
             </Link>
             . Includes all transactions, official metadata and ticker
             mappings. Federal government data carries no copyright.
+          </p>
+        </section>
+
+        {/* Corrections */}
+        <section className="border-t border-neutral-200 pt-8">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            Corrections
+          </h2>
+          <p className="text-sm text-neutral-600 leading-relaxed">
+            <strong className="text-neutral-900">July 25, 2026</strong> &mdash;
+            Corrected the statutory citation for the $200 late-filing fee from
+            5 U.S.C. Section 13106(a) to Section 13106(d), and clarified that
+            the fee attaches only when a report runs more than 30 days past
+            its deadline, not at the deadline itself. Claims about how often
+            the fee is waived are now attributed to reporting on Congress;
+            comparable data for the executive branch is not public.
           </p>
         </section>
 
