@@ -8,25 +8,39 @@
  *
  * URL param: ?view=bars | dots. Persists so a link is deterministic.
  */
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
 export type ChartView = "bars" | "dots";
 
+/**
+ * Hints name what the mark IS, not just the unit. Without that the toggle
+ * reads as a skin swap, when in fact the two views answer different
+ * questions: how big was each trade, versus when did the trading happen.
+ */
 const VIEW_OPTIONS: { value: ChartView; label: string; hint: string }[] = [
-  {
-    value: "bars",
-    label: "Monthly bars",
-    hint: "Density at a glance",
-  },
   {
     value: "dots",
     label: "Every trade",
-    hint: "One dot per transaction",
+    hint: "One dot per disclosure, sized by reported amount",
+  },
+  {
+    value: "bars",
+    label: "By month",
+    hint: "One bar per month, sized by number of trades",
   },
 ];
 
-export default function ViewToggle(props: { selected: ChartView }) {
+export default function ViewToggle(props: {
+  selected: ChartView;
+  /**
+   * The view this page falls back to with no ?view= param. Dots for most
+   * officials, bars for the high-volume ones. The toggle has to know it:
+   * clearing the param on a page that defaults to bars would bounce the
+   * reader straight back to bars and make the control look broken.
+   */
+  defaultView: ChartView;
+}) {
   return (
     <Suspense fallback={null}>
       <ViewToggleContent {...props} />
@@ -34,16 +48,27 @@ export default function ViewToggle(props: { selected: ChartView }) {
   );
 }
 
-function ViewToggleContent({ selected }: { selected: ChartView }) {
+function ViewToggleContent({
+  selected,
+  defaultView,
+}: {
+  selected: ChartView;
+  defaultView: ChartView;
+}) {
   const router = useRouter();
   const search = useSearchParams();
+  const pathname = usePathname();
 
   function pick(v: ChartView) {
     const params = new URLSearchParams(search.toString());
-    if (v === "bars") params.delete("view");
+    // Only the page's own default can be left implicit.
+    if (v === defaultView) params.delete("view");
     else params.set("view", v);
     const qs = params.toString();
-    router.replace(qs ? `?${qs}` : "?", { scroll: false });
+    // Replace with a full path, not a bare "?query". The relative form
+    // silently no-ops on this dynamic route, which left the toggle looking
+    // hydrated but inert — clicking it changed neither URL nor chart.
+    router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
   }
 
   return (
