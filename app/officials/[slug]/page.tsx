@@ -152,6 +152,9 @@ function getCareerEvents(official: {
   return events;
 }
 
+/** Absolute origin for JSON-LD URLs, which must not be relative. */
+const SITE_ORIGIN = "https://open-cabinet.org";
+
 export default async function OfficialPage({
   params,
   searchParams,
@@ -370,8 +373,46 @@ export default async function OfficialPage({
   const isFirstAppearance =
     isRecentlyIngested && newCount > 0 && newCount === totalTrades;
 
+  /**
+   * Person + Dataset markup for the page.
+   *
+   * These pages are the site's front door — search sends most visitors
+   * straight to an official rather than the homepage — but the only
+   * structured data was a single WebSite object at the root. Naming the
+   * person as an entity, and the trade record as a Dataset, is what lets a
+   * search engine connect this page to the official it is about and lets it
+   * surface in Google Dataset Search.
+   */
+  const personJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@type": "Person",
+      name: displayName(official.name),
+      jobTitle: official.title,
+      worksFor: { "@type": "GovernmentOrganization", name: official.agency },
+      url: `${SITE_ORIGIN}/officials/${official.slug}`,
+    },
+    about: {
+      "@type": "Dataset",
+      name: `${displayName(official.name)} financial disclosure transactions`,
+      description: `Stock and asset transactions reported by ${displayName(official.name)}, ${official.title}, in periodic transaction reports filed with the U.S. Office of Government Ethics.`,
+      creator: { "@type": "GovernmentOrganization", name: "U.S. Office of Government Ethics" },
+      isAccessibleForFree: true,
+      license: "https://www.usa.gov/government-works",
+      variableMeasured: ["transaction date", "asset", "transaction type", "reported amount range", "late-filing flag"],
+      distribution: [
+        { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${SITE_ORIGIN}/download` },
+      ],
+    },
+  };
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <Link
         href="/"
         className="text-sm text-neutral-400 hover:text-neutral-600 transition-colors"
