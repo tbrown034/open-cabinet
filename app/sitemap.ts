@@ -11,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/companies`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/dashboard`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/late-filings`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${base}/filings`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/methodology`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${base}/download`, lastModified: now, changeFrequency: "weekly", priority: 0.6 },
@@ -33,7 +34,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.5,
     }));
 
-    return [...staticRoutes, ...officialRoutes, ...companyRoutes];
+    // Each sent digest is a dated page. These are the only URLs on the site
+    // that are genuinely new rather than updated, so they carry the freshness
+    // signal — worth listing even though the set starts empty.
+    let updateRoutes: MetadataRoute.Sitemap = [];
+    try {
+      const { getPublicUpdates } = await import("@/lib/updates");
+      const updates = await getPublicUpdates();
+      updateRoutes = updates.map((u) => ({
+        url: `${base}/filings/${u.date}`,
+        lastModified: new Date(u.date),
+        changeFrequency: "never" as const,
+        priority: 0.7,
+      }));
+    } catch {
+      // No database reachable at build time; the log still renders on demand.
+    }
+
+    return [...staticRoutes, ...officialRoutes, ...companyRoutes, ...updateRoutes];
   } catch {
     return staticRoutes;
   }
