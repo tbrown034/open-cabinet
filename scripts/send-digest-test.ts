@@ -33,7 +33,8 @@ async function main() {
     throw new Error("Refusing to send: MAIL_POSTAL_ADDRESS is unset");
   }
 
-  const digest = await buildDigest();
+  const scope = process.env.DIGEST_SINCE || undefined;
+  const digest = await buildDigest(scope ? { ingestedOnOrAfter: scope } : {});
   if (digest.items.length === 0) {
     console.log("Nothing pending. No email built.");
     return;

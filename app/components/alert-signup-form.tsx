@@ -37,9 +37,19 @@ type SignupAction =
 
 const INITIAL_STATE: SignupState = {
   email: "",
-  // Default to following just this official when the form is on an official
-  // page; the home form ignores this and always follows all.
-  followScope: "official",
+  /**
+   * Follow every official by default, even on a single official's page.
+   *
+   * This used to default to the official whose page you were on. In practice
+   * that narrowed most signups to one person — and readers who arrive on a
+   * high-traffic page like Trump's are generally interested in the whole
+   * beat, not that page alone. A single-official subscriber also hears
+   * nothing for months at a time, since most officials file rarely.
+   *
+   * The narrow option is still one click away; it is just no longer the
+   * assumption we make for someone.
+   */
+  followScope: "all",
   status: "idle",
   error: "",
   alreadyFollowsAll: false,
@@ -225,26 +235,12 @@ export default function AlertSignupForm({
             </button>
           </div>
 
-          {/* Follow scope — only on official pages. "Only <Name>" (default,
-              sends officialSlug) vs. "All officials" (sends no officialSlug). */}
+          {/* Follow scope — only on official pages. "All officials" is the
+              default and leads, so the option a reader lands on is the one
+              stated first. Choosing the narrow option sends officialSlug. */}
           {hasOfficial && (
             <fieldset className="flex flex-wrap gap-2">
               <legend className="sr-only">What to follow</legend>
-              <label className="cursor-pointer">
-                <input
-                  type="radio"
-                  name={`${id}-follow-scope`}
-                  value="official"
-                  checked={followScope === "official"}
-                  onChange={() =>
-                    dispatch({ key: "followScope", value: "official" })
-                  }
-                  className="peer sr-only"
-                />
-                <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
-                  {officialLabel}
-                </span>
-              </label>
               <label className="cursor-pointer">
                 <input
                   type="radio"
@@ -258,6 +254,21 @@ export default function AlertSignupForm({
                 />
                 <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
                   All officials
+                </span>
+              </label>
+              <label className="cursor-pointer">
+                <input
+                  type="radio"
+                  name={`${id}-follow-scope`}
+                  value="official"
+                  checked={followScope === "official"}
+                  onChange={() =>
+                    dispatch({ key: "followScope", value: "official" })
+                  }
+                  className="peer sr-only"
+                />
+                <span className="block border border-neutral-300 px-3 py-1.5 text-xs text-neutral-600 peer-checked:border-neutral-900 peer-checked:bg-neutral-900 peer-checked:text-white">
+                  {officialLabel}
                 </span>
               </label>
             </fieldset>

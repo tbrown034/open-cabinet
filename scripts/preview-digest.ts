@@ -14,7 +14,8 @@ async function main() {
   const { buildDigestEmail } = await import("@/lib/emails");
   const { getDigestLede } = await import("@/lib/digest-lede");
 
-  const digest = await buildDigest();
+  const scope = process.env.DIGEST_SINCE || undefined;
+  const digest = await buildDigest(scope ? { ingestedOnOrAfter: scope } : {});
   // Same resolution the admin send uses: the lede only attaches when its
   // stored sendKey still matches this digest's filing set.
   const sendKey = digestIdempotencyKey(digest.filingUrls);

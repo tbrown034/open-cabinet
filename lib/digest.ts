@@ -178,13 +178,38 @@ export function selectAlsoNew(
  */
 export function selectDigestItems(
   officials: OfficialData[],
-  opts: { notifiedUrls: Set<string>; referenceDate?: string }
+  opts: {
+    notifiedUrls: Set<string>;
+    referenceDate?: string;
+    /**
+     * Restrict the digest to officials the pipeline picked up on or after this
+     * date (YYYY-MM-DD), matched against `lastIngestedDate`.
+     *
+     * Without it the digest announces the entire un-notified backlog, which
+     * after a quiet stretch means mailing filings that went up weeks ago as
+     * though they were news. Scoping to a day's catch keeps the email about
+     * what actually just landed.
+     *
+     * Officials filtered out here contribute NO filing URLs, so a send can
+     * never ledger a filing it did not announce — they stay pending for a
+     * later digest. They still surface in the "also filed" teaser, which
+     * mentions without claiming to have covered them.
+     */
+    ingestedOnOrAfter?: string;
+  }
 ): DigestResult {
-  const { notifiedUrls, referenceDate } = opts;
+  const { notifiedUrls, referenceDate, ingestedOnOrAfter } = opts;
   const items: DigestItem[] = [];
   const filings: { url: string; slug: string }[] = [];
 
   for (const o of officials) {
+    if (
+      ingestedOnOrAfter &&
+      (o.lastIngestedDate ?? "") < ingestedOnOrAfter
+    ) {
+      continue;
+    }
+
     // Un-notified source filings, newest first.
     const newFilings = (o.sourceFilings ?? [])
       .filter((f): f is { date: string; url: string; label: string } =>
@@ -343,7 +368,9 @@ export function chunkKey(sendKey: string, n: number): string {
  * notifiedFilings ledger (queried only for the URLs we might announce, so it
  * stays cheap as the ledger history grows).
  */
-export async function buildDigest(): Promise<DigestResult> {
+export async function buildDigest(
+  opts: { ingestedOnOrAfter?: string } = {}
+): Promise<DigestResult> {
   const { getAllOfficials, getOfficialsIndex } = await import("@/lib/data");
   const { db } = await import("@/lib/db");
   const { notifiedFilings } = await import("@/lib/schema");
@@ -380,5 +407,6 @@ export async function buildDigest(): Promise<DigestResult> {
   return selectDigestItems(officials, {
     notifiedUrls,
     referenceDate: index.lastUpdated,
+    ingestedOnOrAfter: opts.ingestedOnOrAfter,
   });
 }

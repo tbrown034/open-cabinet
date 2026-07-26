@@ -1,7 +1,7 @@
 {
-  "sendKey": "282ed833c26811261c3c5204c52f72356e2967304c24505482ab79aae4f6329b",
-  "lede": "President Donald J. Trump's two June 25 filings add 2,514 trades. His record now runs to 7,699 transactions dated between Jan. 1, 2025 and May 29, 2026.\n\nOf those, 6,337 — 82 percent — carry a late-filing flag, meaning he certified knowing about the trade more than 30 days before reporting it. The newest purchases include New York City municipal bonds valued at up to $5 million.\n\nHomeland Security Secretary Markwayne Mullin reported 89 transactions, all sales and all flagged late. His filings carry an Integrity.gov notice of a 45-day extension, so trades flagged late may still have been reported within his deadline.\n\nFederal Highway Administrator Sean McMaster disclosed five purchases dated May 13 and 14, including Qualcomm and Corning. Office of Personnel Management Director Scott A. Kupor reported four sales dated June 18, in Robinhood and Okta, valued at up to $5 million.\n\nOffice of Science and Technology Policy Director Michael J. Kratsios added a single purchase: an investment-grade corporate bond ETF valued at up to $15,000.",
+  "sendKey": "09e85a32a2d4ccc23b03e7dec4e761e7eb9f5ef43fdcb7158d0dcd19781a3fd6",
+  "lede": "Homeland Security Secretary Markwayne Mullin is new to Open Cabinet. His first tracked filings report 89 transactions — all sales, every one flagged as filed late.\n\nThe sales are dated between April 15 and June 10, 2026, the months after his March 24 confirmation. His filings also carry an Integrity.gov notice of a 45-day extension, so trades flagged late may still have been reported within his deadline.\n\nOffice of Personnel Management Director Scott A. Kupor reported four sales dated June 18, in Robinhood and Okta, valued at up to $5 million.",
   "generated": "2026-07-25",
-  "model": "claude-opus-4-8",
-  "edited": "2026-07-25 — broken into paragraphs, facts unchanged and re-verified against the dataset"
+  "model": "hand-written",
+  "note": "Scoped to the filings ingested 2026-07-25 (Mullin, Kupor). Every figure verified against the dataset: Mullin 89 transactions, all sales, all late-flagged, 2026-04-15 to 2026-06-10, confirmed 2026-03-24; Kupor four sales dated 2026-06-18."
 }
