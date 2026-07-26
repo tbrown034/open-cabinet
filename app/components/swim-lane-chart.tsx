@@ -17,6 +17,7 @@ import {
   type MonthBucket,
 } from "@/lib/monthly-activity";
 import { useContainerWidth } from "./use-container-width";
+import TradeMark, { TradeMarkSwatch } from "./trade-mark";
 
 function monthKeyToDate(monthKey: string): Date {
   return new Date(`${monthKey}-01T00:00:00`);
@@ -346,7 +347,7 @@ export default function SwimLaneChart({
             {
               key: "trade" as ViewMode,
               label: "Every trade",
-              hint: "One dot per disclosure, sized by reported amount",
+              hint: "One mark per disclosure, sized by reported amount",
             },
             {
               key: "month" as ViewMode,
@@ -463,8 +464,9 @@ export default function SwimLaneChart({
                       const cx = xScale(new Date(tx.date + "T00:00:00"));
                       const r = rScale(amountRangeToMin(tx.amount));
                       return (
-                        <circle
+                        <TradeMark
                           key={i}
+                          isSale={tx.isSale}
                           cx={cx}
                           cy={dotHeight / 2}
                           r={r}
@@ -481,11 +483,11 @@ export default function SwimLaneChart({
           })}
           <div className="flex gap-3 mt-2 text-[10px] text-neutral-400">
             <div className="flex items-center gap-1">
-              <span className="inline-block size-2 rounded-full bg-red-600 opacity-60" />
+              <TradeMarkSwatch isSale size={9} />
               Sale
             </div>
             <div className="flex items-center gap-1">
-              <span className="inline-block size-2 rounded-full bg-emerald-600 opacity-60" />
+              <TradeMarkSwatch isSale={false} size={9} />
               Purchase
             </div>
           </div>
@@ -496,11 +498,11 @@ export default function SwimLaneChart({
       {!isEmpty && !isMobile && (
         <div className="flex flex-wrap gap-x-4 gap-y-2 mb-3 text-xs text-neutral-400">
           <div className="flex items-center gap-1.5">
-            <span className="inline-block size-2.5 rounded-full bg-red-600 opacity-60" />
+            <TradeMarkSwatch isSale />
             Sale
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="inline-block size-2.5 rounded-full bg-emerald-600 opacity-60" />
+            <TradeMarkSwatch isSale={false} />
             Purchase
           </div>
           <div className="flex items-center gap-1.5">
@@ -511,7 +513,7 @@ export default function SwimLaneChart({
           {/* The size key belongs to dots and the normalization caveat
               belongs to bars. Showing the wrong one is worse than none. */}
           {viewMode === "trade" ? (
-            <div>Circle size = reported amount range (minimum)</div>
+            <div>Mark size = reported amount range (minimum)</div>
           ) : (
             <div>
               Sales above the line, purchases below &middot;{" "}
@@ -727,8 +729,9 @@ export default function SwimLaneChart({
               const r = rScale(amountRangeToMin(tx.amount));
 
               return (
-                <circle
+                <TradeMark
                   key={`${o.slug}-${tx.date}-${i}`}
+                  isSale={tx.isSale}
                   cx={cx}
                   cy={cy}
                   r={r}

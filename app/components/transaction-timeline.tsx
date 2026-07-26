@@ -7,6 +7,7 @@ import { extent } from "d3-array";
 import type { Transaction } from "@/lib/types";
 import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
 import { useContainerWidth } from "./use-container-width";
+import TradeMark, { TradeMarkSwatch } from "./trade-mark";
 
 /**
  * TRANSACTION TIMELINE, D3 + React Integration
@@ -193,8 +194,9 @@ function CompactGrid({
           {positions.map((pos) => {
             const d = parsedData[pos.idx];
             return (
-              <circle
+              <TradeMark
                 key={`${d.tx.description}-${pos.idx}`}
+                isSale={isSale(d.tx.type)}
                 cx={pos.x}
                 cy={pos.y}
                 r={pos.r}
@@ -390,8 +392,9 @@ function TimelineView({
               const r = rScale(d.amount);
 
               return (
-                <circle
+                <TradeMark
                   key={`${d.tx.date}-${d.tx.description}-${i}`}
+                  isSale={isSale(d.tx.type)}
                   cx={cx}
                   cy={cy}
                   r={r}
@@ -470,11 +473,11 @@ function Legend() {
   return (
     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs text-neutral-400">
       <div className="flex items-center gap-1.5">
-        <span className="inline-block size-2.5 rounded-full bg-red-600 opacity-70" />
+        <TradeMarkSwatch isSale />
         Sale
       </div>
       <div className="flex items-center gap-1.5">
-        <span className="inline-block size-2.5 rounded-full bg-emerald-600 opacity-70" />
+        <TradeMarkSwatch isSale={false} />
         Purchase
       </div>
       <div className="flex items-center gap-1.5">
@@ -485,7 +488,7 @@ function Legend() {
         Late filing
       </div>
       <div className="text-neutral-300">|</div>
-      <div>Circle size = reported amount range (minimum)</div>
+      <div>Mark size = reported amount range (minimum)</div>
     </div>
   );
 }
