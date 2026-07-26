@@ -170,7 +170,7 @@ ${POSTAL_ADDRESS}`;
  * "Corning, Inc. (GLW)" — only append ours when the description doesn't,
  * otherwise every line reads "(GLW) (GLW)".
  */
-function showTicker(t: { description: string; ticker: string | null }): boolean {
+export function showTicker(t: { description: string; ticker: string | null }): boolean {
   return Boolean(t.ticker) && !t.description.includes(`(${t.ticker})`);
 }
 
