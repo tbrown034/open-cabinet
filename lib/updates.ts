@@ -1,95 +1,96 @@
 /**
- * Public web versions of the subscriber digests.
+ * The public filing log at /filings.
  *
- * Every digest that goes out to subscribers becomes a page here. Nothing
- * separate triggers it: the send writes a `digest_runs` row with a frozen
- * payload, and these readers render from that row, so the archive shows what
- * was actually mailed rather than a re-derivation. A digest cannot be
- * reconstructed after the fact anyway — it is computed from un-notified
- * filings, and sending marks them notified.
+ * Each entry is a committed JSON file under data/filings-log/, written by
+ * scripts/publish-filing-log.ts. Publishing is deliberately separate from
+ * mailing: the web version can go up the moment a batch is parsed, while the
+ * email waits for a sensible hour. One entry per date, and the file is the
+ * only source of truth.
  *
- * SAFETY: the frozen payload also holds the recipient list. Nothing in this
- * module may return it. `toPublicUpdate` picks fields explicitly for exactly
- * that reason — never spread the payload.
+ * Files rather than the digest_runs table, for three reasons. The pages
+ * render statically, so the log costs no database call. The entry survives
+ * independently of send state, which is what lets it publish first. And a
+ * file built from public disclosure data cannot carry a subscriber address
+ * the way the send's frozen payload does.
  */
-import { desc, eq } from "drizzle-orm";
+import { readdir, readFile } from "fs/promises";
+import path from "path";
 import type { AlsoNewOfficial, DigestItem } from "@/lib/digest";
 
 export interface PublicUpdate {
   /** YYYY-MM-DD, and the URL slug. */
   date: string;
-  runId: number;
   lede?: string;
   items: DigestItem[];
   alsoNew: AlsoNewOfficial[];
   trackedOfficialCount: number;
   /** Officials covered, for the index summary line. */
   officialCount: number;
-  /** New trades announced across all officials in this digest. */
+  /** New trades announced across all officials in this entry. */
   tradeCount: number;
 }
 
-interface FrozenPayload {
-  items?: DigestItem[];
+interface FilingLogFile {
+  date: string;
+  lede?: string;
+  items: DigestItem[];
   alsoNew?: AlsoNewOfficial[];
   trackedOfficialCount?: number;
-  lede?: string;
-  // recipients also lives here. Deliberately not read.
 }
 
-function isoDate(d: Date): string {
-  return d.toISOString().slice(0, 10);
-}
+export const FILING_LOG_DIR = path.join(process.cwd(), "data", "filings-log");
 
-function toPublicUpdate(row: {
-  id: number;
-  sentAt: Date | null;
-  createdAt: Date;
-  frozenPayload: unknown;
-}): PublicUpdate | null {
-  const payload = (row.frozenPayload ?? {}) as FrozenPayload;
-  const items = payload.items ?? [];
+function toPublicUpdate(file: FilingLogFile): PublicUpdate | null {
+  const items = file.items ?? [];
   if (items.length === 0) return null;
-
   return {
-    date: isoDate(row.sentAt ?? row.createdAt),
-    runId: row.id,
-    lede: payload.lede,
+    date: file.date,
+    lede: file.lede,
     items,
-    alsoNew: payload.alsoNew ?? [],
-    trackedOfficialCount: payload.trackedOfficialCount ?? 0,
+    alsoNew: file.alsoNew ?? [],
+    trackedOfficialCount: file.trackedOfficialCount ?? 0,
     officialCount: items.length,
     tradeCount: items.reduce((sum, i) => sum + i.newCount, 0),
   };
 }
 
-/** Every sent digest, newest first. */
+/** Every published entry, newest first. */
 export async function getPublicUpdates(): Promise<PublicUpdate[]> {
-  const { db } = await import("@/lib/db");
-  const { digestRuns } = await import("@/lib/schema");
+  let names: string[];
+  try {
+    names = await readdir(FILING_LOG_DIR);
+  } catch {
+    return []; // no log yet
+  }
 
-  const rows = await db
-    .select({
-      id: digestRuns.id,
-      sentAt: digestRuns.sentAt,
-      createdAt: digestRuns.createdAt,
-      frozenPayload: digestRuns.frozenPayload,
-    })
-    .from(digestRuns)
-    .where(eq(digestRuns.status, "sent"))
-    .orderBy(desc(digestRuns.sentAt));
+  const entries: PublicUpdate[] = [];
+  for (const name of names) {
+    if (!name.endsWith(".json")) continue;
+    try {
+      const raw = await readFile(path.join(FILING_LOG_DIR, name), "utf-8");
+      const parsed = toPublicUpdate(JSON.parse(raw) as FilingLogFile);
+      if (parsed) entries.push(parsed);
+    } catch {
+      // A malformed entry must not take down the whole log.
+      continue;
+    }
+  }
 
-  return rows.map(toPublicUpdate).filter((u): u is PublicUpdate => u !== null);
+  return entries.sort((a, b) => b.date.localeCompare(a.date));
 }
 
-/**
- * One update by date. Two sends on the same day would collide on the slug;
- * the newer one wins the URL and both remain listed on the index, which is
- * the honest ordering when a day genuinely had two mailings.
- */
+/** One entry by date, or null. */
 export async function getPublicUpdate(
   date: string
 ): Promise<PublicUpdate | null> {
-  const all = await getPublicUpdates();
-  return all.find((u) => u.date === date) ?? null;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return null;
+  try {
+    const raw = await readFile(
+      path.join(FILING_LOG_DIR, `${date}.json`),
+      "utf-8"
+    );
+    return toPublicUpdate(JSON.parse(raw) as FilingLogFile);
+  } catch {
+    return null;
+  }
 }

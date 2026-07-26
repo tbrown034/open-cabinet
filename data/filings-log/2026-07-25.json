@@ -1,0 +1,141 @@
+{
+  "date": "2026-07-25",
+  "lede": "Homeland Security Secretary Markwayne Mullin is new to Open Cabinet. His first tracked filings report 89 transactions — all sales, every one flagged as filed late.\n\nThe sales are dated between April 15 and June 10, 2026, the months after his March 24 confirmation. His filings also carry an Integrity.gov notice of a 45-day extension, so trades flagged late may still have been reported within his deadline.\n\nOffice of Personnel Management Director Scott A. Kupor reported four sales dated June 18, in Robinhood and Okta, valued at up to $5 million.",
+  "items": [
+    {
+      "slug": "markwayne-mullin",
+      "name": "Mullin, Markwayne",
+      "title": "Secretary",
+      "agency": "Department of Homeland Security",
+      "newCount": 89,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E856C1C9F19C67C785258E3F002DB290/$FILE/Markwayne-Mullin-06.26.2026-278T.pdf",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E856C1C9F19C67C785258E3F002DB290/$FILE/Markwayne-Mullin-06.26.2026-278T.pdf",
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/038F222E7B084F8C85258E3F002DB296/$FILE/Markwayne-Mullin-06.24.2026-278T.pdf"
+      ],
+      "trades": [
+        {
+          "description": "Visa Inc Com CL A",
+          "ticker": "V",
+          "type": "Sale",
+          "amount": "$50,001-$100,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Vanguard World FDS Vanguard Utils ETF",
+          "ticker": "VPU",
+          "type": "Sale",
+          "amount": "$50,001-$100,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Valero Energy Corp New Com",
+          "ticker": "VLO",
+          "type": "Sale",
+          "amount": "$100,001-$250,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Union Pacific Corp",
+          "ticker": "UNP",
+          "type": "Sale",
+          "amount": "$50,001-$100,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "TJX Cos Inc New Com",
+          "ticker": "TJX",
+          "type": "Sale",
+          "amount": "$50,001-$100,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "Thermo Fisher Scientific Inc Com",
+          "ticker": "TMO",
+          "type": "Sale",
+          "amount": "$15,001-$50,000",
+          "date": "2026-06-10",
+          "lateFilingFlag": true
+        }
+      ]
+    },
+    {
+      "slug": "kupor-scott-a",
+      "name": "Kupor, Scott A",
+      "title": "Director, Office of Personnel Management",
+      "agency": "Office of Personnel Management",
+      "newCount": 4,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/73A4FAE1704F806F85258E3F002DA96E/$FILE/Scott-A-Kupor-06.22.2026-278T.pdf",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/73A4FAE1704F806F85258E3F002DA96E/$FILE/Scott-A-Kupor-06.22.2026-278T.pdf",
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+      ],
+      "trades": [
+        {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "amount": "$500,001-$1,000,000",
+          "date": "2026-06-18",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "amount": "$100,001-$250,000",
+          "date": "2026-06-18",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Okta, Inc. (OKTA)",
+          "ticker": "OKTA",
+          "type": "Sale",
+          "amount": "$500,001-$1,000,000",
+          "date": "2026-06-18",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Okta, Inc. (OKTA)",
+          "ticker": "OKTA",
+          "type": "Sale",
+          "amount": "$1,000,001-$5,000,000",
+          "date": "2026-06-18",
+          "lateFilingFlag": false
+        }
+      ]
+    }
+  ],
+  "alsoNew": [
+    {
+      "name": "McMaster, Sean",
+      "slug": "mcmaster-sean",
+      "title": "Administrator, Federal Highway Administration",
+      "agency": "Department of Transportation",
+      "newTradeCount": 5,
+      "postedDate": "2026-07-15"
+    },
+    {
+      "name": "Kratsios, Michael J",
+      "slug": "kratsios-michael-j",
+      "title": "Director, Office of Science and Technology Policy",
+      "agency": "Office of Science and Technology Policy",
+      "newTradeCount": 1,
+      "postedDate": "2026-07-11"
+    },
+    {
+      "name": "Trump, Donald J.",
+      "slug": "trump-donald-j",
+      "title": "President of the United States",
+      "agency": "Executive Office of the President",
+      "newTradeCount": 2514,
+      "postedDate": "2026-07-01"
+    }
+  ],
+  "trackedOfficialCount": 35
+}

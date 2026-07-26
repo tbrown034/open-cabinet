@@ -6,8 +6,6 @@ import { officeLine } from "@/lib/office-line";
 import { showTicker } from "@/lib/emails";
 import { getPublicUpdate, getPublicUpdates } from "@/lib/updates";
 
-export const revalidate = 300;
-
 function isSale(type: string): boolean {
   return type.startsWith("Sale");
 }
@@ -34,15 +32,10 @@ export async function generateMetadata({
   };
 }
 
+/** Every committed entry is prerendered at build time. */
 export async function generateStaticParams() {
-  try {
-    const updates = await getPublicUpdates();
-    return updates.map((u) => ({ date: u.date }));
-  } catch {
-    // No database at build time is not a build failure — the pages render
-    // on demand and revalidate.
-    return [];
-  }
+  const updates = await getPublicUpdates();
+  return updates.map((u) => ({ date: u.date }));
 }
 
 export default async function FilingUpdatePage({
