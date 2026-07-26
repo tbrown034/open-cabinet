@@ -5,9 +5,9 @@ import CompanySearch from "../components/company-search";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Company Lookup",
+  title: "Which Government Officials Trade This Stock",
   description:
-    "Search which executive branch officials traded a specific stock or asset.",
+    "Search any ticker to see which Trump administration officials bought or sold it, when, and in what reported amount range.",
 };
 
 function isSale(type: string): boolean {

@@ -4,10 +4,18 @@ import { getFeePayments } from "@/lib/fee-payments";
 import { displayName, formatDate } from "@/lib/format";
 import Link from "next/link";
 
+/**
+ * Title carries the search terms, not just the section name.
+ *
+ * This is the page nothing else on the internet has — no other tracker
+ * computes late-filing rates for the executive branch — and "Late Filings"
+ * matched none of the language a reader would actually type. The ticker
+ * pages already do this well ("NVDA: Who in Government Trades This Stock").
+ */
 export const metadata: Metadata = {
-  title: "Late Filings",
+  title: "Late-Filed Stock Trades by Executive Branch Officials",
   description:
-    "Late financial disclosures across executive branch officials. How the deadlines work, who missed them and what the law actually does about it.",
+    "Which Trump administration officials reported stock trades after the STOCK Act deadline, how the 30-day rule works, and what the law actually does about it.",
 };
 
 function isSale(type: string): boolean {
