@@ -22,7 +22,7 @@ const VIEW_OPTIONS: { value: ChartView; label: string; hint: string }[] = [
   {
     value: "dots",
     label: "Every trade",
-    hint: "One dot per disclosure, sized by reported amount",
+    hint: "One mark per disclosure, sized by reported amount",
   },
   {
     value: "bars",

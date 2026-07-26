@@ -662,7 +662,7 @@ export default async function OfficialPage({
             <p className="text-xs text-neutral-400 mt-1">
               {chartView === "bars"
                 ? "Click any month to zoom in. Sales above midline, purchases below. Amber tick = month with late-filed trades."
-                : "One dot per disclosed trade, sized by reported amount range. Red = sale, green = purchase."}
+                : "One mark per disclosed trade, sized by reported amount range. Circle = sale, square = purchase."}
             </p>
           </div>
           <div className="flex items-center gap-2 flex-wrap">

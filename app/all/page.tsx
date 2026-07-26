@@ -95,7 +95,7 @@ export default async function AllTradesPage() {
       </Suspense>
 
       <p className="text-xs text-neutral-400 mt-8">
-        Source: U.S. Office of Government Ethics. Red = sale, green = purchase.
+        Source: U.S. Office of Government Ethics. Circle = sale, square = purchase.
         Circle size = transaction amount range. Dollar values are estimates
         based on range midpoints.{" "}
         <Link
