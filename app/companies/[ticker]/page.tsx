@@ -25,7 +25,10 @@ export async function generateMetadata({
   const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
   return {
     title: `${company.ticker}: Who in Government Trades This Stock`,
-    description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
+    // Many company names already end in a period ("NVIDIA Corp.", "Apple,
+    // Inc."), so appending one produced "NVIDIA Corp.." in every search
+    // result for those tickers.
+    description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName.replace(/\.$/, "")}.`,
     openGraph: {
       title: `${company.ticker}: Who in Government Trades This Stock — Open Cabinet`,
       description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
