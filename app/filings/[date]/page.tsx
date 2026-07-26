@@ -95,7 +95,11 @@ export default async function FilingUpdatePage({
             {item.newCount === 1 ? "" : "s"}
           </p>
 
-          <table className="w-full text-left text-sm border-t border-neutral-200">
+          {/* Asset descriptions run long ("Vanguard World FDS Vanguard Utils
+              ETF"), so the table scrolls inside its own box rather than
+              pushing the page sideways on a phone. */}
+          <div className="overflow-x-auto -mx-4 px-4">
+          <table className="w-full min-w-[20rem] text-left text-sm border-t border-neutral-200">
             <tbody>
               {item.trades.map((t, i) => (
                 <tr key={i} className="border-b border-neutral-100">
@@ -122,6 +126,7 @@ export default async function FilingUpdatePage({
               ))}
             </tbody>
           </table>
+          </div>
 
           {item.trades.length < item.newCount && (
             <p className="text-xs text-neutral-500 mt-2">
