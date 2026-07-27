@@ -79,6 +79,25 @@ export async function getPublicUpdates(): Promise<PublicUpdate[]> {
   return entries.sort((a, b) => b.date.localeCompare(a.date));
 }
 
+/**
+ * The scope a subscriber send should use, derived from the log.
+ *
+ * The web version is published first, then the email goes out during
+ * daylight hours. Both must describe the same filings, and the way to
+ * guarantee that is to derive one from the other rather than trusting two
+ * hand-set values to agree — they already diverged once, when the admin
+ * panel would have mailed the full 2,613-trade backlog while /filings
+ * showed 93 trades.
+ *
+ * Returns the newest published entry's date, to be passed as
+ * `ingestedOnOrAfter`. Null when nothing is published, which leaves the
+ * send unscoped exactly as before.
+ */
+export async function getSendScope(): Promise<string | null> {
+  const updates = await getPublicUpdates();
+  return updates[0]?.date ?? null;
+}
+
 /** One entry by date, or null. */
 export async function getPublicUpdate(
   date: string
