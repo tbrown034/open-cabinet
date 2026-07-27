@@ -71,7 +71,11 @@ async function main() {
     subject: `[TEST] ${email.subject}`,
     html: email.html,
     text: email.text,
-    kind: "digest",
+    // digest_test, not digest. The schema reserves this kind for admin
+    // previews precisely so the audit log cannot be mistaken for a real
+    // subscriber send — which is exactly what happened when this said
+    // "digest": three admin tests showed up as delivered digests.
+    kind: "digest_test",
     // Unique per run so repeat tests are never deduped by Resend, and so this
     // can never collide with the real digest's idempotency key.
     idempotencyKey: `test-${sendKey}-${process.pid}`,
