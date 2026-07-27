@@ -63,6 +63,17 @@ import {
 } from "@/lib/email-send";
 import { buildDigestEmail } from "@/lib/emails";
 import { getDigestLede } from "@/lib/digest-lede";
+import { getSendScope } from "@/lib/updates";
+
+/**
+ * Scope every digest action — draft preview, admin test and real send — to
+ * the filings covered by the newest published /filings entry, so the email
+ * and the web version can never describe different sets.
+ */
+async function sendScopeOpts(): Promise<{ ingestedOnOrAfter?: string }> {
+  const since = await getSendScope();
+  return since ? { ingestedOnOrAfter: since } : {};
+}
 import { mintToken } from "@/lib/tokens";
 import { notify } from "@/lib/notify";
 import { POSTAL_ADDRESS, siteUrl, unsubscribePageUrl } from "@/lib/email-config";
@@ -147,7 +158,7 @@ export async function GET() {
   }
 
   try {
-    const draft = await buildDigest();
+    const draft = await buildDigest(await sendScopeOpts());
     const lede = draft.empty
       ? null
       : await getDigestLede(digestIdempotencyKey(draft.filingUrls));
@@ -232,7 +243,7 @@ async function handleTestSend(
     );
   }
 
-  const digest = await buildDigest();
+  const digest = await buildDigest(await sendScopeOpts());
   if (digest.empty) {
     return NextResponse.json({
       status: "test-empty",
@@ -359,7 +370,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const digest = await buildDigest();
+    const digest = await buildDigest(await sendScopeOpts());
     if (digest.empty) {
       return NextResponse.json({ empty: true });
     }
