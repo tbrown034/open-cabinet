@@ -491,3 +491,40 @@ Built the subscriber-facing email alert system end-to-end (phases 0-4 of 5). Sig
 - Verified locally on a prod build before push; all 5 top-lane photos present in public/photos.
 
 ---
+
+## July 25-27, 2026 - Homepage consolidation, filing log, digest #1 sent
+
+**Session Summary:**
+- Fourteen commits (a6efc8f..79b6013). The headline: **digest #1 finally went out** — run #1, 9 recipients, 9/9 delivered, 4 filings ledgered, 1:26 PM EDT July 27. First subscriber email in the project's life.
+- Homepage had two adjacent sections saying overlapping things (a 5-official swim chart ranked by dollar volume, a directory table ranked by trade count). A reader saw Lutnick headlining one and absent from the other and read it as a bug. Merged into one table where every listed official carries a monthly sparkline.
+- Killed the fabricated hero graphic. It was 28 hand-placed circles with invented coordinates, rendered convincingly enough (gridlines, reference line, size-varied dots) that a reader would take it for data — on a site whose whole premise is "here are the real filings." Now draws real monthly counts across the roster.
+- Added `/filings`: a public web version of every subscriber digest. Publishing is deliberately decoupled from mailing, so the page can go up the moment a batch is parsed while the email waits for daylight hours.
+- Accessibility: buy/sell was encoded in hue alone on every dot view (#dc2626 vs #16a34a, ~1.4:1 for a deuteranope). Sales are now circles, purchases squares.
+
+**Key decisions:**
+- **Dropped the recency pinning from the directory table.** It left the Trades column reading 7,699 / 89 / 78 / 62 / 25 / 306 — non-monotonic in the table's own headline column — and forced the sort arrow to be suppressed because the order matched no column. The banner already names recent filers with trade deltas; New badges still mark them in place.
+- **Sparkline heights use sqrt with a 1px floor.** Plain proportional heights erased every month that wasn't an official's peak: Mody drew a single bar despite trading in two months, Wright's four quiet months vanished — in a chart captioned as showing *when* an official traded.
+- **Shape over fill-vs-hollow for buy/sell**, because the stroke already carries the late-filing flag. Square sized to equal area (side = r·√π) so the scaleSqrt radius still means what it claims.
+- **Digest send scope derives from the published filing log**, not a second hand-set value. Caught this the hard way: the admin panel called `buildDigest()` unscoped and would have mailed the full 2,613-trade backlog while /filings showed 93 trades. Publish first, mail exactly what's published.
+- **Alert signups default to following all officials**, even on an official's page. Scoping someone to one person means months of silence, and a reader landing on a high-traffic page is generally interested in the beat.
+- Route named `/filings` over `/updates` — the site's own noun; search terms live in titles where they count.
+
+**Notable Changes:**
+- lib/monthly-activity.ts (new): the single monthly aggregation. Previously an inline IIFE inside a client component running on 5 officials. Now server-side and shared by the hero rollup and all 35 sparklines. **Homepage HTML dropped from 2,000,243 bytes to ~203,000** — the old code shipped every transaction of every official to draw five lanes.
+- lib/office-line.ts + tests (new): collapses an agency the role already names, so half the roster stopped reading "Secretary of Energy · Department of Energy". Extended the abbreviation map after checking all 35 rows against the 296px column; longest line now 42 chars.
+- lib/updates.ts (new): reads committed JSON entries from data/filings-log/. Files rather than digest_runs because the page must survive independently of send state — and because a file built from public disclosure data cannot leak a subscriber address the way the frozen payload can.
+- app/components/trade-mark.tsx (new), activity-sparkline.tsx (new), hero-monthly-chart.tsx (new); home-swim-preview.tsx deleted.
+- SEO: Person + Dataset JSON-LD on official pages (they take 76% of landings — Hegseth alone outdraws the homepage 321 to 244 with 29 trades and no filing since June 2025). Fixed doubled period in all 428 ticker descriptions. Retitled /late-filings and /companies, which had matched nothing anyone searches.
+- Analytics reality check: google.com sent 490 of 885 weekly visitors (55%); /all got 18. ChatGPT and Copilot are sending real traffic, so the AI-crawler allowlist is paying off.
+- scripts/: publish-filing-log.ts, send-digest-test.ts, preview-digest.ts, verify-send-scope.ts (all new).
+
+**Mistakes worth remembering:**
+- Claimed 46 subscribers were never sent a confirmation email, inferring from a null `confirmationSentAt`. That column was added *after* those sends and never backfilled — the email_sends log showed 55 repermission sends. Check the audit log, not a schema artifact.
+- Spent several turns diagnosing a "hydration bug" where admin controls didn't respond to clicks. There was no bug: the Chrome tab was backgrounded, so layout was suspended, elements measured 0×0, and clicks landed nowhere. Verify the harness before blaming the code.
+- The test script tagged its sends `kind: "digest"` instead of `digest_test`, so three admin previews appeared in the audit log as delivered subscriber digests. Fixed; the three historical rows keep the wrong label.
+
+**DB state after digest #1:** 65 signups — 16 confirmed active (9 follow-all, 7 Trump-only), 48 pending, 1 unsubscribed. notified_filings 135 rows, 4 attached to run #1 (Mullin 2, Kupor 2). Still pending: Trump (2,514), McMaster (5), Kratsios (1). Subscribers include two warren.senate.gov addresses and a Thomson Reuters reporter.
+
+**Known remaining:** Postgres copy drifted from the JSON files (36 officials / 7,208 tx vs 35 / 9,919) — didn't affect the send since the digest reads JSON. Mobile unverified at phone width for official pages, /all and /filings index (couldn't resize Chrome). docs/how-i-built-it.md still unpublished — the pipeline story an employer can't currently see. Google Search Console verification status unknown.
+
+---
