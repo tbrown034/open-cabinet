@@ -117,25 +117,29 @@ export async function GET(request: NextRequest) {
     } catch (e) {
       console.warn("[cron] digest draft check failed:", (e as Error).message);
     }
-    await notify({
-      type: "new_filings",
-      headline:
-        newFilings.length === 0
-          ? "OGE check OK · 0 new filings found"
-          : `OGE check found ${newFilings.length} new filing${newFilings.length === 1 ? "" : "s"}`,
-      summary:
-        (newFilings.length === 0
-          ? `Polled the OGE public portal and found no new downloadable 278-T PDFs beyond the URLs already tracked by Open Cabinet.`
-          : `Polled the OGE public portal and found ${newFilings.length} downloadable 278-T PDF${newFilings.length === 1 ? "" : "s"} not yet tracked by Open Cabinet.\n\n${filingList}`) +
-        digestNote,
-      metadata: {
-        "Total OGE records": totalRecords.toLocaleString(),
-        "Tracked 278-T PDFs": targetFilings.length,
-        "New filing URLs": newFilings.length,
-        "Run duration": `${elapsed}s`,
-        "Pipeline run #": run.id,
-      },
-    });
+    // Quiet on all-clear runs: the pipelineRuns row is the record. Email only
+    // when there are new filings or a subscriber digest is waiting on /admin.
+    if (newFilings.length > 0 || digestNote) {
+      await notify({
+        type: "new_filings",
+        headline:
+          newFilings.length === 0
+            ? "OGE check OK · subscriber digest ready"
+            : `OGE check found ${newFilings.length} new filing${newFilings.length === 1 ? "" : "s"}`,
+        summary:
+          (newFilings.length === 0
+            ? `Polled the OGE public portal and found no new downloadable 278-T PDFs beyond the URLs already tracked by Open Cabinet.`
+            : `Polled the OGE public portal and found ${newFilings.length} downloadable 278-T PDF${newFilings.length === 1 ? "" : "s"} not yet tracked by Open Cabinet.\n\n${filingList}`) +
+          digestNote,
+        metadata: {
+          "Total OGE records": totalRecords.toLocaleString(),
+          "Tracked 278-T PDFs": targetFilings.length,
+          "New filing URLs": newFilings.length,
+          "Run duration": `${elapsed}s`,
+          "Pipeline run #": run.id,
+        },
+      });
+    }
 
     return NextResponse.json({
       status: "completed",
