@@ -7,12 +7,10 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { officials, transactions } from "@/lib/schema";
 import { count, eq, sql } from "drizzle-orm";
-import { auth, isAdmin } from "@/lib/auth";
-import { headers } from "next/headers";
+import { requireAdmin } from "@/lib/auth";
 
 export async function POST() {
-  const session = await auth.api.getSession({ headers: await headers() });
-  if (!session?.user?.email || !isAdmin(session.user.email)) {
+  if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

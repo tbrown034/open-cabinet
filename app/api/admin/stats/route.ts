@@ -7,16 +7,14 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { officials, transactions, newsCoverage, pipelineRuns } from "@/lib/schema";
 import { count, eq, desc } from "drizzle-orm";
-import { auth, isAdmin } from "@/lib/auth";
-import { headers } from "next/headers";
+import { requireAdmin } from "@/lib/auth";
 
 interface TokenUsage {
   costUsd?: number;
 }
 
 export async function GET() {
-  const session = await auth.api.getSession({ headers: await headers() });
-  if (!session?.user?.email || !isAdmin(session.user.email)) {
+  if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
