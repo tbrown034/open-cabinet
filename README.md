@@ -2,7 +2,7 @@
 
 An interactive financial disclosure and conflict-of-interest tracker for the executive branch.
 
-Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, same 30/45-day filing requirements — has had no comparable public tool. Open Cabinet fills that gap.
+Congress has well-known stock trackers like Capitol Trades and Quiver Quantitative. Executive branch officials file under the same STOCK Act rules — 30 to 45 days per trade — but their filings get far less scrutiny. Open Cabinet turns those filings into searchable timelines, compliance flags and company-level lookups.
 
 **Live:** [open-cabinet.org](https://open-cabinet.org)
 
@@ -16,13 +16,15 @@ Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, 
 
 | Metric | Value |
 |--------|-------|
-| Officials tracked | 34 |
-| Transactions | 10,033 |
+| Officials tracked | 38 |
+| Transactions | 10,126 |
 | Estimated value | ~$4.2B |
-| Late filings | 6,843 |
-| Companies searchable | 405 |
+| Late filings | 6,932 |
+| Companies searchable | 430 |
 | News articles linked | 35 |
-| Source filing PDFs linked | 136 |
+| Source filing PDFs linked | 189 |
+
+Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
 ## Pages
 
@@ -43,17 +45,34 @@ Congress has 19+ stock trackers. The executive branch — same STOCK Act rules, 
 
 All data comes from the U.S. Office of Government Ethics. Transaction reports (278-T Periodic Transaction Reports) are filed under the STOCK Act and the Ethics in Government Act ([5 U.S.C. Section 13107](https://www.law.cornell.edu/uscode/text/5/13107)). Federal government documents carry no copyright ([17 U.S.C. Section 105](https://www.law.cornell.edu/uscode/text/17/105)).
 
+## Architecture
+
+```
+OGE API ──▶ scripts/ingest-new-filings.ts ──▶ data/officials/*.json   (source of truth)
+                     │
+                     ├─▶ scripts/rebuild-index.ts    ──▶ data/meta/officials-index.json
+                     └─▶ scripts/generate-exports.ts ──▶ public/data/*.json, *.csv
+
+Next.js App Router reads data/ at build time ──▶ static pages (650+ prerendered)
+Neon PostgreSQL + Better Auth ──▶ /admin panel, email alerts (Resend)
+```
+
+The public site is served entirely from static JSON committed to this repo — no live database reads on public pages. The database backs the admin panel, pipeline run history and the email alert system.
+
 ## Data pipeline
 
 Open Cabinet uses two scheduled paths:
 
 1. **Monitor** — Vercel Cron polls the OGE API weekly, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
 2. **Ingest** — GitHub Actions runs the static JSON ingest weekly or on demand, downloads new PDFs, parses them with Claude, validates the data, regenerates exports and opens a PR for review.
-3. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page.
-4. **Parse** — Claude Opus/Sonnet structures each page into transaction data.
-5. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection.
-6. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback.
-7. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend.
+
+The ingest path runs these stages:
+
+1. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page.
+2. **Parse** — Claude Opus/Sonnet structures each page into transaction data.
+3. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection.
+4. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback.
+5. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend.
 
 ### Pipeline commands
 
@@ -127,6 +146,17 @@ The `research/` directory contains six internally sourced research briefs (180+ 
 6. The divestiture process
 
 All briefs follow SPJ Code of Ethics standards with inline citations. See `research/README.md` for the index.
+
+## Tests and CI
+
+```bash
+pnpm test             # Vitest unit tests (digest scoping, alert tokens,
+                      # office-line formatting, README stats vs dataset)
+pnpm lint             # ESLint (app and lib; scripts/ excluded by design)
+pnpm typecheck        # tsc --noEmit across app, lib and scripts
+```
+
+GitHub Actions runs all three on every push and pull request (`.github/workflows/ci.yml`). A second workflow (`oge-pipeline.yml`) runs the weekly OGE ingest and opens a data PR when new filings appear.
 
 ## Quality assurance
 
