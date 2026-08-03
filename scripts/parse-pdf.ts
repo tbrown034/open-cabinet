@@ -1,8 +1,9 @@
 /**
  * PDF Parser — Extracts transaction data from OGE 278-T filing PDFs.
  *
- * Uses Claude API (Haiku for cost efficiency) to read PDF table rows
- * and output structured JSON. Each transaction gets a confidence score.
+ * Uses the Claude API (Sonnet by default, Haiku available via --model for
+ * cheaper runs) to read PDF table rows and output structured JSON. Each
+ * transaction gets a confidence score.
  *
  * How it works:
  * 1. Read the PDF file from disk
@@ -11,7 +12,7 @@
  * 4. Parse the JSON response into our Transaction format
  * 5. Return structured data with confidence scores and token usage
  *
- * Cost: ~$0.02-0.06 per PDF with Haiku (1-3 page filings)
+ * Cost: ~$0.02-0.06 per PDF with Sonnet (1-3 page filings)
  *
  * Usage:
  *   npx tsx scripts/parse-pdf.ts <path-to-pdf>
@@ -96,7 +97,8 @@ type ModelChoice =
   | "gpt-5.4-mini"
   | "gpt-5.4-nano";
 
-// Cost per million tokens by model
+// Cost per million tokens by model. Hardcoded, so it drifts when providers
+// change pricing — Anthropic rates verified correct as of Aug 3, 2026.
 const MODEL_COSTS: Record<ModelChoice, { input: number; output: number; provider: "anthropic" | "openai" }> = {
   "claude-sonnet-4-6": { input: 3.0, output: 15.0, provider: "anthropic" },
   "claude-haiku-4-5": { input: 1.0, output: 5.0, provider: "anthropic" },
