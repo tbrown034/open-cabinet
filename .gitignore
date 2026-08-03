@@ -52,3 +52,10 @@ sqlite.db
 *.tsbuildinfo
 next-env.d.ts
 .env*.local
+
+# Working notes, plans and drafts — never public (Aug 3, 2026).
+# Planning, job-search and launch material stays out of git; files live on disk only.
+/docs/
+
+# Holdings pipeline intermediate artifacts — per holdings-plan guardrail.
+/data/holdings-staging/
