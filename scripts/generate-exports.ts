@@ -146,8 +146,19 @@ async function main() {
   console.log(`  officials-summary.csv: ${sumRows.length} rows`);
 
   // 3. Full Dataset JSON
+  // Reuse the previous exportedAt when the data itself is unchanged, so a
+  // no-new-filings pipeline run produces no diff (and no pull request).
+  const fullPath = path.join(outDir, "full-dataset.json");
+  const exportedAt = new Date().toISOString();
+  let previousDataset: Record<string, unknown> | null = null;
+  try {
+    previousDataset = JSON.parse(await readFile(fullPath, "utf-8"));
+  } catch {
+    // No previous export — stamp fresh.
+  }
+
   const fullJson = {
-    exportedAt: new Date().toISOString(),
+    exportedAt,
     officialCount: allOfficials.length,
     transactionCount: allOfficials.reduce(
       (sum, o) => sum + o.transactions.length,
@@ -166,10 +177,17 @@ async function main() {
       transactions: o.transactions,
     })),
   };
-  await writeFile(
-    path.join(outDir, "full-dataset.json"),
-    JSON.stringify(fullJson, null, 2)
-  );
+  if (previousDataset) {
+    const { exportedAt: prevStamp, ...prevRest } = previousDataset;
+    const { exportedAt: _stamp, ...nextRest } = fullJson;
+    if (
+      typeof prevStamp === "string" &&
+      JSON.stringify(prevRest) === JSON.stringify(nextRest)
+    ) {
+      fullJson.exportedAt = prevStamp;
+    }
+  }
+  await writeFile(fullPath, JSON.stringify(fullJson, null, 2));
   console.log(`  full-dataset.json: ${fullJson.transactionCount} transactions`);
 
   console.log("\nExports generated in public/data/");

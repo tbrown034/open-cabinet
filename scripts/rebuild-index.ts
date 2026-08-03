@@ -67,6 +67,20 @@ async function main() {
     officials: officials.sort((a, b) => a.name.localeCompare(b.name)),
   };
 
+  // Keep the previous lastUpdated when the officials list is unchanged, so a
+  // no-new-filings pipeline run produces no diff (and no pull request).
+  try {
+    const previous = JSON.parse(await readFile(indexPath, "utf-8"));
+    if (
+      typeof previous.lastUpdated === "string" &&
+      JSON.stringify(previous.officials) === JSON.stringify(index.officials)
+    ) {
+      index.lastUpdated = previous.lastUpdated;
+    }
+  } catch {
+    // No previous index — stamp fresh.
+  }
+
   await writeFile(indexPath, JSON.stringify(index, null, 2));
   console.log(
     `\nIndex rebuilt: ${officials.length} officials, ${totalTx} transactions`
