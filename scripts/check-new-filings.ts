@@ -8,7 +8,7 @@
  * Usage: pnpm run check-filings
  */
 
-import { mkdir } from "fs/promises";
+import { mkdir, readdir, readFile } from "fs/promises";
 import path from "path";
 import https from "https";
 import {
@@ -17,6 +17,7 @@ import {
   getTargetFilings,
   loadKnownFilingUrlsFromData,
   writeLastCheckState,
+  MIN_DOC_DATE,
   type TargetFiling,
 } from "../lib/oge-filings";
 
@@ -61,6 +62,83 @@ function downloadFile(url: string, dest: string): Promise<void> {
         reject(err);
       });
   });
+}
+
+interface CadenceProjection {
+  name: string;
+  filingCount: number;
+  medianGapDays: number;
+  lastFiling: string;
+  projectedNext: string;
+  daysPastProjection: number;
+}
+
+/**
+ * Internal monitoring only — never publish these projections. A filer who
+ * blows past their historical cadence has usually just stopped trading
+ * (divestiture complete), not missed a deadline. Forward-looking "expected"
+ * dates would be misleading on the public site.
+ */
+async function projectFilingCadence(): Promise<CadenceProjection[]> {
+  const officialsDir = path.join(DATA_DIR, "officials");
+  const projections: CadenceProjection[] = [];
+  const DAY_MS = 24 * 60 * 60 * 1000;
+
+  for (const file of await readdir(officialsDir)) {
+    if (!file.endsWith(".json")) continue;
+    const official = JSON.parse(
+      await readFile(path.join(officialsDir, file), "utf-8")
+    ) as { name: string; sourceFilings?: Array<{ date?: string }> };
+
+    // Restrict to the current administration's window so pre-2025 annual
+    // filings from holdover officials don't distort the gap statistics.
+    const dates = [
+      ...new Set(
+        (official.sourceFilings || [])
+          .map((f) => f.date?.slice(0, 10))
+          .filter((d): d is string => Boolean(d) && d! >= MIN_DOC_DATE)
+      ),
+    ].sort();
+
+    // Below 4 filings a "median gap" is noise, not a pattern.
+    if (dates.length < 4) continue;
+
+    const gaps = dates
+      .slice(1)
+      .map((d, i) => Math.round((Date.parse(d) - Date.parse(dates[i])) / DAY_MS))
+      .filter((g) => g > 0)
+      .sort((a, b) => a - b);
+    if (gaps.length === 0) continue;
+
+    const medianGapDays = gaps[Math.floor(gaps.length / 2)];
+    const lastFiling = dates[dates.length - 1];
+    const projectedMs = Date.parse(lastFiling) + medianGapDays * DAY_MS;
+    projections.push({
+      name: official.name,
+      filingCount: dates.length,
+      medianGapDays,
+      lastFiling,
+      projectedNext: new Date(projectedMs).toISOString().slice(0, 10),
+      daysPastProjection: Math.floor((Date.now() - projectedMs) / DAY_MS),
+    });
+  }
+
+  return projections.sort((a, b) => b.daysPastProjection - a.daysPastProjection);
+}
+
+function printCadenceProjections(projections: CadenceProjection[]) {
+  if (projections.length === 0) return;
+  console.log("\nFiling cadence projections (internal only — do not publish):");
+  for (const p of projections) {
+    const status =
+      p.daysPastProjection > 0
+        ? `${p.daysPastProjection}d past pattern — likely stopped trading, or a filing is coming`
+        : `in ~${-p.daysPastProjection}d`;
+    console.log(
+      `  ${p.name}: ${p.filingCount} filings, median gap ${p.medianGapDays}d, ` +
+        `last ${p.lastFiling}, next ~${p.projectedNext} (${status})`
+    );
+  }
 }
 
 async function main() {
@@ -126,6 +204,8 @@ async function main() {
       console.log(`  ${f.name} — ${f.docDate} [${f.status}]`);
     }
   }
+
+  printCadenceProjections(await projectFilingCadence());
 
   // Save updated state
   if (!dryRun) {

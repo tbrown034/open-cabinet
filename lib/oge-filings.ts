@@ -4,7 +4,7 @@ import path from "path";
 export const OGE_API_BASE =
   "https://extapps2.oge.gov/201/Presiden.nsf/API.xsp/v2/rest";
 
-const MIN_DOC_DATE = "2025-02-01";
+export const MIN_DOC_DATE = "2025-02-01";
 
 const NAME_ALIASES: Record<string, string> = {
   "Trump, Donald J": "Trump, Donald J.",
