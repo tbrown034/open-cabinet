@@ -221,6 +221,16 @@ export function buildDigestEmail(
       ? `Open Cabinet · New filing: ${displayName(items[0].name)}`
       : `Open Cabinet · ${items.length} new executive-branch filings`;
 
+  // Why-now context, up top. The trades inside a filing are routinely weeks
+  // or months older than the email (Burgum's May 12 filing posted Aug. 5
+  // with April 8 trades) — without the posting date first, a reader's
+  // reaction is "why am I getting this now?".
+  const postedDates = [...new Set(items.map((i) => i.postedDate))].sort();
+  const postedLine =
+    postedDates.length === 1
+      ? `New executive-branch financial disclosures, posted by the U.S. Office of Government Ethics on ${formatDate(postedDates[0])}.`
+      : `New executive-branch financial disclosures, posted by the U.S. Office of Government Ethics between ${formatDate(postedDates[0])} and ${formatDate(postedDates[postedDates.length - 1])}.`;
+
   const sections = items
     .map((item) => {
       const rows = item.trades
@@ -288,7 +298,7 @@ export function buildDigestEmail(
     heading: items.length === 1 ? "A new filing" : "New filings",
     bodyHtml: `
       <p style="font-family:${SANS};font-size:14px;line-height:1.6;color:${COLORS.muted};margin:0 0 24px;">
-        New executive-branch financial disclosures, sourced from the U.S. Office of Government Ethics. Amounts are ranges, as filed.
+        ${postedLine} Officials have up to 45 days to report a trade, and OGE reviews filings before posting them, so trade dates run earlier than today. Amounts are ranges, as filed.
       </p>
       ${ledeHtml}${sections}${alsoNewHtml}`,
     footerExtra: unsubHtml,
@@ -326,7 +336,7 @@ ${lines}${sampleNote}
 
   const text = `${subject}
 
-New executive-branch financial disclosures from the U.S. Office of Government Ethics.
+${postedLine} Officials have up to 45 days to report a trade, and OGE reviews filings before posting them, so trade dates run earlier than today.
 ${lede ? `\n${lede}\n` : ""}
 ${textSections}${alsoNewText}
 

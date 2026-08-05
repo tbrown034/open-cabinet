@@ -43,7 +43,7 @@ async function main() {
         )
         .join("\n");
       const context = summaryBySlug.get(item.slug);
-      return `- ${item.name} (${item.title}, ${item.agency}): ${item.newCount} new trades disclosed.${context ? `\n  Site summary (curated context — respect any caveats in it): ${context}` : ""}\n  Sample of most recent trades:\n${trades}`;
+      return `- ${item.name} (${item.title}, ${item.agency}): ${item.newCount} new trades disclosed. Filing posted by OGE on ${item.postedDate}.${context ? `\n  Site summary (curated context — respect any caveats in it): ${context}` : ""}\n  Sample of most recent trades:\n${trades}`;
     })
     .join("\n");
 
@@ -54,6 +54,7 @@ ${itemSummaries}
 
 Write 2-4 sentences summarizing what is new, in a factual newspaper voice. Rules:
 - Lead with the most newsworthy fact (largest trades, a new official appearing for the first time, notable patterns like all-sales or late flags).
+- Readers get this email the day the filing posts, but the trades inside are often weeks or months older. When there is a meaningful gap, establish the timeline in the FIRST sentence — the filing just posted, the trades date from earlier — so no reader wonders why April trades arrive in August. Use "posted" for the OGE date; never call it the filing or trade date.
 - Only state facts present in the data above. Never speculate about motive or legality.
 - Dollar amounts are ranges as filed; say "up to" or the range, never exact figures.
 - "Flagged late" means the filer's own certification that notification came more than 30 days before filing; if you mention lateness, keep that framing and do not call it a violation.
