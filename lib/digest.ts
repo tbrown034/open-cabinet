@@ -41,6 +41,13 @@ export interface DigestItem {
   newCount: number;
   /** Newest un-notified source filing URL — the primary link + dedupe key. */
   primaryFilingUrl: string;
+  /**
+   * OGE posting date (YYYY-MM-DD) of that newest filing — when the PDF went
+   * up on the OGE portal, NOT when the filer signed it. The distinction
+   * matters: Burgum's May 12 filing posted August 5. Say "posted", never
+   * "filed", when rendering this.
+   */
+  postedDate: string;
   /** All un-notified source filing URLs for this official (for the ledger). */
   filingUrls: string[];
   /** A few most-recent trades to preview (proxy for "the new ones"). */
@@ -241,6 +248,7 @@ export function selectDigestItems(
       agency: o.agency,
       newCount,
       primaryFilingUrl: newFilings[0].url,
+      postedDate: newFilings[0].date,
       filingUrls: urls,
       trades,
     });

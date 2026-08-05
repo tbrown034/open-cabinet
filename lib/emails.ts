@@ -213,10 +213,13 @@ export function buildDigestEmail(
         )
         .join("")}</div>`
     : "";
+  // "Open Cabinet · " prefix matches the admin-notify subjects; the sender
+  // name also says Open Cabinet, but the prefix survives forwards and
+  // notification previews where the sender column is dropped.
   const subject =
     items.length === 1
-      ? `New filing: ${displayName(items[0].name)}`
-      : `${items.length} new executive-branch filings`;
+      ? `Open Cabinet · New filing: ${displayName(items[0].name)}`
+      : `Open Cabinet · ${items.length} new executive-branch filings`;
 
   const sections = items
     .map((item) => {
@@ -245,7 +248,7 @@ export function buildDigestEmail(
 
       return `<div style="margin:0 0 28px;">
         <div style="font-family:${SERIF};font-size:18px;color:${COLORS.text};margin:0 0 2px;">${escapeHtml(displayName(item.name))}</div>
-        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(officeLine(item.title, item.agency))} · ${item.newCount.toLocaleString("en-US")} new trade${item.newCount === 1 ? "" : "s"}</div>
+        <div style="font-family:${SANS};font-size:12px;color:${COLORS.muted};margin:0 0 10px;">${escapeHtml(officeLine(item.title, item.agency))} · ${item.newCount.toLocaleString("en-US")} new trade${item.newCount === 1 ? "" : "s"} · posted by OGE ${escapeHtml(formatDate(item.postedDate))}</div>
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid ${COLORS.border};margin-bottom:8px;">${rows}</table>
         ${sampleNote}<a href="${base}/officials/${encodeURIComponent(item.slug)}" style="font-family:${SANS};font-size:13px;color:${COLORS.text};">View on Open Cabinet</a>
         &nbsp;·&nbsp;
@@ -300,7 +303,7 @@ export function buildDigestEmail(
         item.trades.length < item.newCount
           ? `\n  Showing ${item.trades.length} of ${item.newCount.toLocaleString("en-US")} new trades.`
           : "";
-      return `${displayName(item.name)} — ${officeLine(item.title, item.agency)} (${item.newCount.toLocaleString("en-US")} new)
+      return `${displayName(item.name)} — ${officeLine(item.title, item.agency)} (${item.newCount.toLocaleString("en-US")} new, posted by OGE ${formatDate(item.postedDate)})
 ${lines}${sampleNote}
   ${base}/officials/${item.slug}
   Filing: ${item.primaryFilingUrl}`;
