@@ -20,6 +20,22 @@
       "ticker": "OKTA",
       "type": "Sale",
       "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
       "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
@@ -29,6 +45,30 @@
       "type": "Sale",
       "date": "2026-06-18",
       "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
@@ -632,7 +672,7 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kupor reported 77 sales and 1 purchase across 78 transactions in 278-T filings tracked by Open Cabinet.",
+  "summary": "Kupor reported 82 sales and 1 purchase across 83 transactions in 278-T filings tracked by Open Cabinet.",
   "confirmedDate": "2025-07-09",
   "party": "R",
   "sourceFilings": [

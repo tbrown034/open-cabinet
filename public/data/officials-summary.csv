@@ -1,10 +1,10 @@
 name,slug,title,agency,level,confirmed_date,departed_date,transaction_count,sales_count,purchases_count,late_filing_count,estimated_total_value,most_recent_oge_filing_date
-"Bedford, Bryan",bedford-bryan,FAA Administrator,Department of Transportation,Sub-Cabinet,2025-07-09,,76,67,8,2,73415000,2026-04-09
+"Bedford, Bryan",bedford-bryan,FAA Administrator,Department of Transportation,Sub-Cabinet,2025-07-09,,92,78,13,2,73641000,2026-04-09
 "Bessent, Scott",bessent-scott,Secretary of the Treasury,Department of the Treasury,Cabinet,2025-01-27,,26,26,0,0,3276500,2025-12-31
-"Bisignano, Frank J",bisignano-frank-j,Commissioner,Social Security Administration,Cabinet,2025-05-06,,95,29,66,1,983288500,2026-03-06
+"Bisignano, Frank J",bisignano-frank-j,Commissioner,Social Security Administration,Cabinet,2025-05-06,,116,38,78,1,969563500,2026-03-06
 "Blanche, Todd",blanche-todd,Acting Attorney General,Department of Justice,Sub-Cabinet,2025-03-05,,15,15,0,1,360500,2025-07-12
 "Bondi, Pam",bondi-pam,Attorney General,Department of Justice,Cabinet,2025-02-04,2026-04-02,2,2,0,0,3375000,2025-05-14
-"Burgum, Douglas J",burgum-douglas-j,Secretary,Department of the Interior,Cabinet,2025-01-30,,149,70,74,104,16687500,2026-08-05
+"Burgum, Douglas J",burgum-douglas-j,Secretary,Department of the Interior,Cabinet,2025-01-30,,153,71,77,106,16744000,2026-08-05
 "Chavez-DeRemer, Lori",chavez-deremer-lori,Secretary of Labor,Department of Labor,Cabinet,2025-03-10,2026-04-20,98,98,0,0,906500,2025-09-09
 "Criswell, Deanne",criswell-deanne,"Administrator, Federal Emergency Management Agency",Department of Homeland Security,Sub-Cabinet,,2025-01-20,80,39,41,0,1295000,2025-01-25
 "Dixon, Stacey",dixon-stacey,Principal Deputy Director of National Intelligence,Office of the Director of National Intelligence,Sub-Cabinet,,2025-01-25,112,53,59,0,1159000,2025-03-25
@@ -15,14 +15,14 @@ name,slug,title,agency,level,confirmed_date,departed_date,transaction_count,sale
 "Hegseth, Pete",hegseth-pete,Secretary of Defense,Department of Defense,Cabinet,2025-01-24,,29,29,0,0,428000,2025-06-07
 "Isaacman, Jared",isaacman-jared,Administrator,National Aeronautics and Space Administration,Sub-Cabinet,2025-12-17,,147,126,21,128,288191000,2026-06-18
 "Kennedy, Robert F",kennedy-robert-f,Secretary,Department of Health and Human Services,Cabinet,2025-02-13,,9,7,2,7,96500,2025-05-17
-"Kratsios, Michael J",kratsios-michael-j,"Director, Office of Science and Technology Policy",Office of Science and Technology Policy,Sub-Cabinet,2025-03-25,,62,25,37,0,22426500,2026-07-11
-"Kupor, Scott A",kupor-scott-a,"Director, Office of Personnel Management",Office of Personnel Management,Sub-Cabinet,2025-07-09,,78,77,1,0,36501000,2026-07-25
+"Kratsios, Michael J",kratsios-michael-j,"Director, Office of Science and Technology Policy",Office of Science and Technology Policy,Sub-Cabinet,2025-03-25,,65,27,38,0,22450500,2026-07-11
+"Kupor, Scott A",kupor-scott-a,"Director, Office of Personnel Management",Office of Personnel Management,Sub-Cabinet,2025-07-09,,83,82,1,0,41926000,2026-07-25
 "Landau, Christopher",landau-christopher,Deputy Secretary of State,Department of State,Sub-Cabinet,2025-03-24,,89,89,0,0,7793500,2025-07-16
 "Lawrence, Paul R",lawrence-paul,Deputy Secretary,Department of Veterans Affairs,Sub-Cabinet,2025-03-27,,3,3,0,0,97500,2025-07-11
 "Lutnick, Howard",lutnick-howard,Secretary of Commerce,Department of Commerce,Cabinet,2025-02-18,,20,20,0,0,399906500,2025-12-10
-"MacGregor, Katharine",macgregor-katharine,Deputy Secretary,Department of the Interior,Sub-Cabinet,2025-05-14,,22,12,10,0,2345000,2025-09-06
-"Mullin, Markwayne",markwayne-mullin,Secretary,Department of Homeland Security,Cabinet,2026-03-24,,89,89,0,89,9638500,2026-07-25
-"McMahon, Linda",mcmahon-linda,Secretary of Education,Department of Education,Cabinet,2025-03-03,,156,144,12,153,272449000,2026-04-01
+"MacGregor, Katharine",macgregor-katharine,Deputy Secretary,Department of the Interior,Sub-Cabinet,2025-05-14,,23,13,10,0,2520000,2025-09-06
+"Mullin, Markwayne",markwayne-mullin,Secretary,Department of Homeland Security,Cabinet,2026-03-24,,98,98,0,98,9931000,2026-07-25
+"McMahon, Linda",mcmahon-linda,Secretary of Education,Department of Education,Cabinet,2025-03-03,,156,144,12,153,269449000,2026-04-01
 "McMaster, Sean",mcmaster-sean,"Administrator, Federal Highway Administration",Department of Transportation,Sub-Cabinet,2025-09-18,,25,7,18,15,1129000,2026-07-15
 "Miran, Stephen I",miran-stephen,"Member, Board of Governors",Board of Governors of the Federal Reserve System,Sub-Cabinet,2025-09-15,2026-05-22,77,70,7,0,7983500,2026-04-25
 "Mody, Arjun",mody-arjun,"Deputy Commissioner, Social Security Administration",Social Security Administration,Sub-Cabinet,2025-12-18,,306,283,23,0,4410000,2026-04-10
@@ -31,7 +31,7 @@ name,slug,title,agency,level,confirmed_date,departed_date,transaction_count,sale
 "Phelan, John",phelan-john,Secretary of the Navy,Department of Defense - Department of the Navy,Cabinet,2025-03-24,2026-04-22,176,97,79,20,211900500,2026-06-05T04:20:17
 "Bailey, Sara",sara-bailey,Director,Office of National Drug Control Policy,Cabinet,,,5,1,4,0,40000,2026-06-11
 "Sonderling, Keith E",sonderling-keith,Acting Secretary of Labor,Department of Labor,Sub-Cabinet,2025-03-12,,33,33,0,0,264000,2025-05-14
-"Trump, Donald J.",trump-donald-j,President of the United States,Executive Office of the President,Cabinet,,,7699,2673,5026,6337,1648508000,2026-07-01
+"Trump, Donald J.",trump-donald-j,President of the United States,Executive Office of the President,Cabinet,,,7727,2678,5049,6359,1653324000,2026-07-01
 "Turner, Eric Scott",turner-eric-scott,Secretary of Housing and Urban Development,Department of Housing and Urban Development,Cabinet,2025-02-05,,8,7,1,0,211000,2026-04-01
 "Vaden, Stephen A",vaden-stephen-a,Deputy Secretary,Department of Agriculture,Sub-Cabinet,2025-06-10,,6,6,0,0,48000,2026-04-17
 "Whitaker, Michael",whitaker-michael,"Administrator, Federal Aviation Administration",Department of Transportation,Sub-Cabinet,,2025-01-20,15,15,0,0,456500,2025-02-19

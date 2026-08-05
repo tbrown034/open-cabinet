@@ -24,6 +24,14 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
       "ticker": "VTEB",
       "type": "Purchase",
@@ -440,9 +448,25 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "iShares National Muni Bond ETF",
       "ticker": "MUB",
       "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
       "date": "2025-03-10",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
@@ -504,7 +528,7 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kratsios reported 25 sales (estimated at $18.7M) and 37 purchases (estimated at $3.8M) across 62 transactions between February 24, 2025 and May 14, 2026, an estimated $22.4M in total volume. None of the transactions were flagged as filed late.",
+  "summary": "Kratsios reported 27 sales (estimated at $18.7M) and 38 purchases (estimated at $3.8M) across 65 transactions between February 24, 2025 and May 14, 2026, an estimated $22.5M in total volume. None of the transactions were flagged as filed late.",
   "confirmedDate": "2025-03-25",
   "party": "R",
   "sourceFilings": [

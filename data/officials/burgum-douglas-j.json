@@ -208,6 +208,14 @@
       "lateFilingFlag": true
     },
     {
+      "description": "Arthur Ventures IV, LP (Roth IRA)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true
+    },
+    {
       "description": "Costco Wholesale Corp.",
       "ticker": "COST",
       "type": "Sale",
@@ -400,12 +408,28 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+      "ticker": "CDDRX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "iShares Russell 1000 Growth ETF",
       "ticker": "IWF",
       "type": "Purchase",
       "date": "2025-04-16",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": true
+    },
+    {
+      "description": "Janus Henderson Overseas Fund Class I Shares",
+      "ticker": "JIGFX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
     },
     {
       "description": "Janus Henderson Overseas Fund Class I Shares",
@@ -438,6 +462,14 @@
       "date": "2025-04-10",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures Growth III, LP - Threatlocker",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
     },
     {
       "description": "Arthur Ventures III, LP - Threatlocker",
@@ -1200,7 +1232,7 @@
       "lateFilingFlag": true
     }
   ],
-  "summary": "Burgum reported 70 sales and 74 purchases and 5 exchanges across 149 transactions in 278-T filings tracked by Open Cabinet. 104 transactions were marked as filed late.",
+  "summary": "Burgum reported 71 sales and 77 purchases and 5 exchanges across 153 transactions in 278-T filings tracked by Open Cabinet. 106 transactions were marked as filed late.",
   "confirmedDate": "2025-01-30",
   "party": "R",
   "sourceFilings": [

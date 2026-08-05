@@ -361,9 +361,7 @@ async function ingestForOfficial(
     console.log(`  [${slug}] bootstrapping new official from OGE metadata`);
   }
 
-  const existingKeys = new Set(official.transactions.map(txKey));
-
-  let allNew: ParsedTransaction[] = [];
+  const perFilingParses: ParsedTransaction[][] = [];
   const newSourceEntries: SourceFiling[] = [];
 
   for (const filing of newPdfs) {
@@ -372,14 +370,16 @@ async function ingestForOfficial(
     const sizeKb = (statSync(pdfPath).size / 1024).toFixed(0);
     console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
 
+    const filingTxs: ParsedTransaction[] = [];
     const chunks = await splitPdfIfNeeded(pdfPath);
     for (const chunk of chunks) {
       if (chunk !== pdfPath) {
         console.log(`           parsing chunk ${path.basename(chunk)}`);
       }
-      allNew.push(...(await parsePdfWithRetry(chunk)));
+      filingTxs.push(...(await parsePdfWithRetry(chunk)));
       await sleep(1500);
     }
+    perFilingParses.push(filingTxs);
 
     // Build a label from the filename (e.g. "Trump-05.08.2026-278T(2)")
     const label = path
@@ -395,15 +395,35 @@ async function ingestForOfficial(
     await sleep(2000); // rate limit
   }
 
-  // Dedupe against existing + within-batch
+  // Amendment-aware dedupe, NOT row-unique dedupe. A filing that prints the
+  // same description/date/type/amount on several numbered rows is disclosing
+  // several real transactions (multi-lot and multi-account trades — the
+  // Aug 2026 re-audit restored 76 rows a Set-based dedupe had collapsed).
+  // Each key's final multiplicity is the largest count any single source
+  // asserts: the existing data or ONE new filing. Re-filed amendments repeat
+  // rows and add nothing; genuine intra-filing multiples top the count up.
+  const countKeys = (txs: ParsedTransaction[]): Map<string, number> => {
+    const c = new Map<string, number>();
+    for (const tx of txs) c.set(txKey(tx), (c.get(txKey(tx)) ?? 0) + 1);
+    return c;
+  };
+  const current = countKeys(official.transactions as ParsedTransaction[]);
+  const target = new Map(current);
+  for (const filingTxs of perFilingParses) {
+    for (const [key, n] of countKeys(filingTxs)) {
+      target.set(key, Math.max(target.get(key) ?? 0, n));
+    }
+  }
   const addedTxs: ParsedTransaction[] = [];
-  for (const tx of allNew) {
-    const key = txKey(tx);
-    if (existingKeys.has(key)) continue;
-    existingKeys.add(key);
-    // Strip confidence — not in stored schema
-    const { confidence, ...rest } = tx as ParsedTransaction & { confidence?: number };
-    addedTxs.push(rest as ParsedTransaction);
+  for (const filingTxs of perFilingParses) {
+    for (const tx of filingTxs) {
+      const key = txKey(tx);
+      if ((current.get(key) ?? 0) >= (target.get(key) ?? 0)) continue;
+      current.set(key, (current.get(key) ?? 0) + 1);
+      // Strip confidence — not in stored schema
+      const { confidence, ...rest } = tx as ParsedTransaction & { confidence?: number };
+      addedTxs.push(rest as ParsedTransaction);
+    }
   }
 
   const existingSourceUrls = new Set(
