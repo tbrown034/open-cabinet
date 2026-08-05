@@ -1,0 +1,77 @@
+{
+  "date": "2026-08-05",
+  "items": [
+    {
+      "slug": "burgum-douglas-j",
+      "name": "Burgum, Douglas J",
+      "title": "Secretary",
+      "agency": "Department of the Interior",
+      "newCount": 5,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf"
+      ],
+      "trades": [
+        {
+          "description": "Arthur Ventures V, LP - zizzl Health",
+          "ticker": null,
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
+          "ticker": null,
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "amount": "$100,001-$250,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        }
+      ]
+    }
+  ],
+  "alsoNew": [
+    {
+      "name": "Kupor, Scott A",
+      "slug": "kupor-scott-a",
+      "title": "Director, Office of Personnel Management",
+      "agency": "Office of Personnel Management",
+      "newTradeCount": 4,
+      "postedDate": "2026-07-25"
+    },
+    {
+      "name": "Mullin, Markwayne",
+      "slug": "markwayne-mullin",
+      "title": "Secretary",
+      "agency": "Department of Homeland Security",
+      "newTradeCount": 89,
+      "postedDate": "2026-07-25"
+    }
+  ],
+  "trackedOfficialCount": 35
+}

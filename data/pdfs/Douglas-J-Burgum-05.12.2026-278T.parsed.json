@@ -1,0 +1,65 @@
+{
+  "transactions": [
+    {
+      "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - zizzl Health",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6828,
+    "outputTokens": 536,
+    "estimatedCostUsd": 0.0285
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Douglas-J-Burgum-05.12.2026-278T.pdf"
+}

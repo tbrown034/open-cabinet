@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-08-04T23:37:23.312Z",
+  "lastChecked": "2026-08-05T14:51:08.073Z",
   "knownFilingUrls": [
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/038F222E7B084F8C85258E3F002DB296/$FILE/Markwayne-Mullin-06.24.2026-278T.pdf",
@@ -72,6 +72,7 @@
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/ADE89624CD8D7F1D85258E35002DD6B1/$FILE/Sean-McMaster-06.11.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AF83B6CFCFDD7C7985258D00002BFE32/$FILE/Michael-W-Faulkender-06.26.2025-278T.pdf",
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B30D247EB32A424585258D0A002C189C/$FILE/Christopher-A-Wright-07.01.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf",
@@ -114,6 +115,7 @@
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
   ],
   "knownFilingsByOfficial": {
+    "Burgum, Douglas J": 6,
     "Mullin, Markwayne": 2,
     "Kupor, Scott A": 10,
     "McMaster, Sean": 6,
@@ -122,7 +124,6 @@
     "Isaacman, Jared": 2,
     "Bailey, Sara": 1,
     "Phelan, John": 13,
-    "Burgum, Douglas J": 5,
     "Miran, Stephen I": 3,
     "Vaden, Stephen A": 1,
     "Mody, Arjun": 1,
@@ -151,5 +152,15 @@
     "Dixon, Stacey": 1,
     "Whitaker, Michael": 1
   },
-  "newFilings": []
+  "newFilings": [
+    {
+      "name": "Burgum, Douglas J",
+      "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
+      "docDate": "2026-08-05T04:17:31",
+      "agency": "Department of The Interior",
+      "title": "Secretary",
+      "level": "Level I",
+      "status": "processed"
+    }
+  ]
 }

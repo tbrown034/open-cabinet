@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-07-25T17:50:59.816Z",
+  "exportedAt": "2026-08-05T14:52:04.793Z",
   "officialCount": 38,
-  "transactionCount": 10126,
+  "transactionCount": 10131,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -1693,9 +1693,49 @@
       "level": "Cabinet",
       "confirmedDate": "2025-01-30",
       "departedDate": null,
-      "transactionCount": 143,
-      "mostRecentFilingDate": "2026-05-21T04:18:01",
+      "transactionCount": 148,
+      "mostRecentFilingDate": "2026-08-05",
       "transactions": [
+        {
+          "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-08",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures V, LP - zizzl Health",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software)",
           "ticker": null,

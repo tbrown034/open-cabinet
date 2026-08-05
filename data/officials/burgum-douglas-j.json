@@ -5,8 +5,48 @@
   "agency": "Department of the Interior",
   "level": "Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-05-21T04:18:01",
+  "mostRecentFilingDate": "2026-08-05",
   "transactions": [
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Arthur Ventures V, LP - zizzl Health",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software)",
       "ticker": null,
@@ -1152,10 +1192,15 @@
       "lateFilingFlag": true
     }
   ],
-  "summary": "Burgum reported 68 sales (estimated at $13.4M), 70 purchases (estimated at $2.5M) and 5 exchanges across 143 transactions between January 15, 2025 and January 27, 2026, an estimated $16.5M in total volume. 104 of the 143 transactions, or 73 percent, were flagged as filed late.",
+  "summary": "Burgum reported 69 sales and 74 purchases and 5 exchanges across 148 transactions in 278-T filings tracked by Open Cabinet. 104 transactions were marked as filed late.",
   "confirmedDate": "2025-01-30",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-08-05",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
+      "label": "Douglas-J-Burgum-05.12.2026-278T"
+    },
     {
       "date": "2026-05-21T04:18:01",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4AFD3C0AAAA300E285258DFE002D984E/$FILE/Douglas-J-Burgum-02.27.2026-278T.pdf",
@@ -1182,6 +1227,6 @@
       "label": "278-T"
     }
   ],
-  "lastIngestedDate": "2026-06-09",
-  "lastIngestedNewCount": 19
+  "lastIngestedDate": "2026-08-05",
+  "lastIngestedNewCount": 5
 }
