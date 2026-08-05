@@ -17,9 +17,9 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 38 |
-| Transactions | 10,219 |
+| Transactions | 10,381 |
 | Estimated value | ~$4.2B |
-| Late filings | 6,965 |
+| Late filings | 7,049 |
 | Companies searchable | 430 |
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |

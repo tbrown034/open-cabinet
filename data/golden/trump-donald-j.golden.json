@@ -1,44 +1,49 @@
 {
   "slug": "trump-donald-j",
-  "transactionCount": 1315,
-  "sales": 10,
-  "purchases": 1305,
-  "lateFilings": 980,
+  "transactionCount": 7889,
+  "sales": 2693,
+  "purchases": 5196,
+  "lateFilings": 6443,
   "sampleTransactions": [
     {
-      "description": "METROPOLITAN COUNCIL MIN SR A BE/RI 5 DUE 030135 OTO 021226 FC 090126 2.640% YIELD TO MATURITY UNSOLICITED",
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
       "type": "Purchase",
-      "date": "2026-01-21",
-      "amount": "$15,001-$50,000",
+      "date": "2025-07-22",
+      "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "LONE STAR CLGSY S TX RFOG B/E 5.00 % Due Feb 15, 2028",
+      "description": "TRIBOROUGH BRDG & T 5% DUE ON 12/01/50",
+      "ticker": null,
       "type": "Purchase",
-      "date": "2026-01-21",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
+      "date": "2025-01-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true
     },
     {
-      "description": "PHILADELPHIA PA AUTH INDL DEV MLTI FAM REV HSG B/E OID dl/07.106 4.00 % Due Dec 1, 2047",
-      "type": "Purchase",
-      "date": "2026-01-21",
+      "description": "3M COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
       "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
+      "lateFilingFlag": true
     },
     {
-      "description": "FORT LUPTON CO CTF PARTN REV B/E 5.00 % Due Dec 1, 2026",
+      "description": "ABBVIE INC",
+      "ticker": null,
       "type": "Purchase",
-      "date": "2026-01-21",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true
     },
     {
-      "description": "LEHIGH CNTY PA GENL PURP AUTH REV RFOG CLG CARBON CMNTY PJ BAM B/E 5.00 % Due Nov 1, 2028",
+      "description": "MISSOURI ST HWYS & TRANS COMMN ST RD REV APPROP MEGA PJS SER A B/E 5.00 % Due May 1, 2026",
+      "ticker": null,
       "type": "Purchase",
-      "date": "2026-01-21",
+      "date": "2025-12-10",
       "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
+      "lateFilingFlag": true
     }
   ]
 }
