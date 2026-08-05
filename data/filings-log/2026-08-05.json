@@ -1,12 +1,13 @@
 {
   "date": "2026-08-05",
+  "lede": "Interior Secretary Douglas J. Burgum disclosed five new trades, the largest a purchase of Nucleus Security, Inc. through Arthur Ventures Growth IV, LP valued at up to $250,000, dated April 8, 2026. The remaining transactions, all also dated April 8, involved purchases and one sale of holdings tied to several Arthur Ventures funds, each ranging from $1,001 to $15,000. Across all filings tracked by Open Cabinet, Burgum has reported 148 transactions, 104 of which were flagged as filed late under the filer's own certification.",
   "items": [
     {
       "slug": "burgum-douglas-j",
       "name": "Burgum, Douglas J",
       "title": "Secretary",
       "agency": "Department of the Interior",
-      "newCount": 5,
+      "newCount": 6,
       "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
       "filingUrls": [
         "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf"
@@ -24,6 +25,14 @@
           "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
           "ticker": null,
           "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-04-08",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc. (IRA)",
+          "ticker": null,
+          "type": "Sale",
           "amount": "$1,001-$15,000",
           "date": "2026-04-08",
           "lateFilingFlag": false

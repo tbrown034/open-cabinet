@@ -32,6 +32,14 @@
       "lateFilingFlag": false
     },
     {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc. (IRA)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
       "ticker": null,
       "type": "Purchase",
@@ -1192,7 +1200,7 @@
       "lateFilingFlag": true
     }
   ],
-  "summary": "Burgum reported 69 sales and 74 purchases and 5 exchanges across 148 transactions in 278-T filings tracked by Open Cabinet. 104 transactions were marked as filed late.",
+  "summary": "Burgum reported 70 sales and 74 purchases and 5 exchanges across 149 transactions in 278-T filings tracked by Open Cabinet. 104 transactions were marked as filed late.",
   "confirmedDate": "2025-01-30",
   "party": "R",
   "sourceFilings": [
@@ -1228,5 +1236,5 @@
     }
   ],
   "lastIngestedDate": "2026-08-05",
-  "lastIngestedNewCount": 5
+  "lastIngestedNewCount": 6
 }

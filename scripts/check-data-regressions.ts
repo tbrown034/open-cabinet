@@ -42,7 +42,7 @@ async function main() {
   );
   assertEqual(trump.transactions.length, 7699, "Trump aggregate profile transaction count");
   assertEqual(fullDataset.officialCount, 38, "Full dataset official count");
-  assertEqual(fullDataset.transactionCount, 10131, "Full dataset transaction count");
+  assertEqual(fullDataset.transactionCount, 10132, "Full dataset transaction count");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {

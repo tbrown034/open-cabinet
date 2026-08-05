@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-08-05T14:52:04.793Z",
+  "exportedAt": "2026-08-05T15:21:07.149Z",
   "officialCount": 38,
-  "transactionCount": 10131,
+  "transactionCount": 10132,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -1693,7 +1693,7 @@
       "level": "Cabinet",
       "confirmedDate": "2025-01-30",
       "departedDate": null,
-      "transactionCount": 148,
+      "transactionCount": 149,
       "mostRecentFilingDate": "2026-08-05",
       "transactions": [
         {
@@ -1714,6 +1714,14 @@
         },
         {
           "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc. (IRA)",
           "ticker": null,
           "type": "Sale",
           "date": "2026-04-08",
