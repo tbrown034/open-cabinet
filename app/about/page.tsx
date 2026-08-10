@@ -88,7 +88,8 @@ export default function AboutPage() {
             real estate, private equity not actively traded, or anything that
             falls below the statutory $1,000 reporting threshold.
             Entry-disclosure holdings (Nominee 278) are being added next;
-            annual reports (278e) follow in May. See the{" "}
+            annual reports (278e) will be added as they become available
+            each year. See the{" "}
             <Link href="/methodology#what-we-add" className="underline hover:text-neutral-900">
               methodology
             </Link>{" "}

@@ -84,6 +84,13 @@ const TICKER_NAME_OVERRIDES: Record<string, string> = {
   SPY: "SPDR S&P 500 ETF Trust",
 };
 
+// Tickers that appear in filings with a symbol that doesn't match the named
+// company. The trade rows keep the as-filed symbol; aggregation groups them
+// under the real ticker so one company doesn't show up twice.
+const TICKER_ALIASES: Record<string, string> = {
+  APPL: "AAPL", // "Apple Inc." filed with symbol APPL (Mullin, 6/24/2026)
+};
+
 export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   const officials = await getAllOfficials();
   const tickerMap = new Map<string, CompanyData>();
@@ -91,7 +98,8 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   for (const official of officials) {
     for (const tx of official.transactions) {
       if (!tx.ticker) continue;
-      const ticker = tx.ticker.toUpperCase();
+      const rawTicker = tx.ticker.toUpperCase();
+      const ticker = TICKER_ALIASES[rawTicker] ?? rawTicker;
       if (!tickerMap.has(ticker)) {
         let name = tx.description.replace(/\s*\([^)]*\)\s*$/, "").trim();
         if (name.toUpperCase() === ticker || TICKER_NAME_OVERRIDES[ticker]) {

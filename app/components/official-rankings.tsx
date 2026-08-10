@@ -7,6 +7,7 @@ interface RankingEntry {
   name: string;
   slug: string;
   title: string;
+  formerOfficial?: boolean;
   totalValue: number;
   tradeCount: number;
 }
@@ -39,7 +40,10 @@ export default function OfficialRankings({
                 className="w-52 shrink-0 text-right hover:underline truncate"
               >
                 <span className="text-xs text-neutral-700">{displayName(r.name)}</span>
-                <span className="text-[10px] text-neutral-400 ml-1 hidden sm:inline">{r.title}</span>
+                <span className="text-[10px] text-neutral-400 ml-1 hidden sm:inline">
+                  {r.formerOfficial ? "Former " : ""}
+                  {r.title}
+                </span>
               </Link>
               <div className="flex-1 h-5 bg-neutral-100">
                 <div

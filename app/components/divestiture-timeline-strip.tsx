@@ -64,9 +64,7 @@ export default function DivestitureTimelineStrip({
       <div className="border border-neutral-200 bg-white p-3">
         <svg
           viewBox={`0 0 ${W} ${H}`}
-          width="100%"
-          height="auto"
-          className="block"
+          className="block w-full h-auto"
           role="img"
           aria-label="Per-promise timeline of disclosed sales"
         >

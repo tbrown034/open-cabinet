@@ -122,6 +122,7 @@ export default async function DashboardPage() {
       name: o.name,
       slug: o.slug,
       title: o.title,
+      formerOfficial: Boolean(o.formerOfficial || o.departedDate),
       totalValue: o.transactions.reduce(
         (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
         0
