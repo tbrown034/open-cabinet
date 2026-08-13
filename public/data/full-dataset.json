@@ -1,7 +1,7 @@
 {
-  "exportedAt": "2026-08-05T18:40:59.265Z",
-  "officialCount": 38,
-  "transactionCount": 10381,
+  "exportedAt": "2026-08-13T17:34:36.502Z",
+  "officialCount": 39,
+  "transactionCount": 10445,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -981,9 +981,25 @@
       "level": "Cabinet",
       "confirmedDate": "2025-05-06",
       "departedDate": null,
-      "transactionCount": 116,
-      "mostRecentFilingDate": "2026-03-06",
+      "transactionCount": 118,
+      "mostRecentFilingDate": "2026-08-08",
       "transactions": [
+        {
+          "description": "SPDR S&P 500 ETF Trust (SPY)",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2026-06-16",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "SPDR S&P 500 ETF Trust (SPY)",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2026-06-16",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "Humana, Inc. (HUM)",
           "type": "Sale",
@@ -992,34 +1008,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-          "type": "Sale",
-          "date": "2025-12-09",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-          "type": "Sale",
-          "date": "2025-12-09",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-          "type": "Sale",
-          "date": "2025-12-09",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-          "type": "Sale",
-          "date": "2025-12-09",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
           "type": "Sale",
           "date": "2025-12-09",
@@ -1073,6 +1061,34 @@
           "type": "Sale",
           "date": "2025-12-09",
           "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+          "type": "Sale",
+          "date": "2025-12-09",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+          "type": "Sale",
+          "date": "2025-12-09",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+          "type": "Sale",
+          "date": "2025-12-09",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+          "type": "Sale",
+          "date": "2025-12-09",
+          "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
         {
@@ -1097,21 +1113,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Invesco New Jersey Municipal A (ONJAX)",
-          "type": "Purchase",
-          "date": "2025-08-04",
-          "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PIMCO Income Fund Class A Shares (PONAX)",
-          "type": "Purchase",
-          "date": "2025-08-04",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+          "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)",
           "type": "Purchase",
           "date": "2025-08-04",
           "amount": "$1,000,001-$5,000,000",
@@ -1125,21 +1127,14 @@
           "lateFilingFlag": false
         },
         {
-          "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)",
+          "description": "Franklin NJ Tax Free Income A (FNJQX)",
           "type": "Purchase",
           "date": "2025-08-04",
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": false
         },
         {
-          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-          "type": "Purchase",
-          "date": "2025-08-04",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "description": "Invesco New Jersey Municipal A (ONJAX)",
           "type": "Purchase",
           "date": "2025-08-04",
           "amount": "$5,000,001-$25,000,000",
@@ -1153,7 +1148,21 @@
           "lateFilingFlag": false
         },
         {
+          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+          "type": "Purchase",
+          "date": "2025-08-04",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Janus Henderson AAA CLO ETF (JAAA)",
+          "type": "Purchase",
+          "date": "2025-08-04",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
           "type": "Purchase",
           "date": "2025-08-04",
           "amount": "$1,000,001-$5,000,000",
@@ -1174,10 +1183,17 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Franklin NJ Tax Free Income A (FNJQX)",
+          "description": "PIMCO Income Fund Class A Shares (PONAX)",
           "type": "Purchase",
           "date": "2025-08-04",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "type": "Purchase",
+          "date": "2025-08-04",
+          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1195,24 +1211,10 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Invesco New Jersey Municipal A (ONJAX)",
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PIMCO Income Fund Class A Shares (PONAX)",
+          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
           "type": "Purchase",
           "date": "2025-07-25",
           "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1223,21 +1225,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-          "type": "Purchase",
-          "date": "2025-07-25",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "description": "Invesco New Jersey Municipal A (ONJAX)",
           "type": "Purchase",
           "date": "2025-07-25",
           "amount": "$5,000,001-$25,000,000",
@@ -1251,10 +1239,24 @@
           "lateFilingFlag": false
         },
         {
+          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF (JAAA)",
           "type": "Purchase",
           "date": "2025-07-25",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1269,6 +1271,20 @@
           "type": "Purchase",
           "date": "2025-07-25",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PIMCO Income Fund Class A Shares (PONAX)",
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "type": "Purchase",
+          "date": "2025-07-25",
+          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1279,24 +1295,10 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Invesco New Jersey Municipal A (ONJAX)",
+          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
           "type": "Purchase",
           "date": "2025-07-07",
-          "amount": "$25,000,001-$50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PIMCO Income Fund Class A Shares (PONAX)",
-          "type": "Purchase",
-          "date": "2025-07-07",
-          "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-          "type": "Purchase",
-          "date": "2025-07-07",
-          "amount": "$5,000,001-$25,000,000",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1307,21 +1309,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-          "type": "Purchase",
-          "date": "2025-07-07",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-          "type": "Purchase",
-          "date": "2025-07-07",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "description": "Invesco New Jersey Municipal A (ONJAX)",
           "type": "Purchase",
           "date": "2025-07-07",
           "amount": "$25,000,001-$50,000,000",
@@ -1335,10 +1323,24 @@
           "lateFilingFlag": false
         },
         {
+          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF (JAAA)",
           "type": "Purchase",
           "date": "2025-07-07",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1353,6 +1355,20 @@
           "type": "Purchase",
           "date": "2025-07-07",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "PIMCO Income Fund Class A Shares (PONAX)",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$25,000,001-$50,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1398,24 +1414,17 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Invesco New Jersey Municipal A (ONJAX)",
+          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
           "type": "Purchase",
+          "date": "2025-06-23",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fiserv",
+          "type": "Sale",
           "date": "2025-06-23",
           "amount": "$25,000,001-$50,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "PIMCO Income Fund Class A Shares (PONAX)",
-          "type": "Purchase",
-          "date": "2025-06-23",
-          "amount": "$5,000,001-$25,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-          "type": "Purchase",
-          "date": "2025-06-23",
-          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1426,21 +1435,7 @@
           "lateFilingFlag": false
         },
         {
-          "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-          "type": "Purchase",
-          "date": "2025-06-23",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-          "type": "Purchase",
-          "date": "2025-06-23",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "description": "Invesco New Jersey Municipal A (ONJAX)",
           "type": "Purchase",
           "date": "2025-06-23",
           "amount": "$25,000,001-$50,000,000",
@@ -1454,10 +1449,24 @@
           "lateFilingFlag": false
         },
         {
+          "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+          "type": "Purchase",
+          "date": "2025-06-23",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
           "description": "Janus Henderson AAA CLO ETF (JAAA)",
           "type": "Purchase",
           "date": "2025-06-23",
           "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+          "type": "Purchase",
+          "date": "2025-06-23",
+          "amount": "$5,000,001-$25,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1475,8 +1484,15 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Fiserv",
-          "type": "Sale",
+          "description": "PIMCO Income Fund Class A Shares (PONAX)",
+          "type": "Purchase",
+          "date": "2025-06-23",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "type": "Purchase",
           "date": "2025-06-23",
           "amount": "$25,000,001-$50,000,000",
           "lateFilingFlag": false
@@ -1485,6 +1501,153 @@
           "description": "Fiserv",
           "type": "Sale",
           "date": "2025-06-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "type": "Purchase",
+          "date": "2025-06-18",
           "amount": "$250,001-$500,000",
           "lateFilingFlag": false
         },
@@ -1503,150 +1666,10 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares National Muni Bond ETF (MUB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares National Muni Bond ETF (MUB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares National Muni Bond ETF (MUB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
           "type": "Purchase",
           "date": "2025-06-18",
           "amount": "Over $1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$500,001-$1,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1657,17 +1680,24 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
           "type": "Purchase",
           "date": "2025-06-18",
-          "amount": "$250,001-$500,000",
+          "amount": "Over $1,000,000",
           "lateFilingFlag": false
         },
         {
-          "description": "iShares National Muni Bond ETF (MUB)",
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
           "type": "Purchase",
           "date": "2025-06-18",
-          "amount": "$50,001-$100,000",
+          "amount": "Over $1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "type": "Purchase",
+          "date": "2025-06-18",
+          "amount": "Over $1,000,000",
           "lateFilingFlag": false
         },
         {
@@ -1675,20 +1705,6 @@
           "type": "Purchase",
           "date": "2025-06-18",
           "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-          "type": "Purchase",
-          "date": "2025-06-18",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": false
         },
         {
@@ -5274,36 +5290,44 @@
       "level": "Cabinet",
       "confirmedDate": "2025-01-28",
       "departedDate": null,
-      "transactionCount": 38,
-      "mostRecentFilingDate": "2025-05-14",
+      "transactionCount": 39,
+      "mostRecentFilingDate": "2026-08-08",
       "transactions": [
         {
-          "description": "Microsoft Corp.",
-          "ticker": "MSFT",
-          "type": "Purchase",
-          "date": "2025-02-07",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Vertex Pharmaceuticals, Inc.",
-          "ticker": "VRTX",
+          "description": "Blackstone Private Credit Fund (BCRED)",
+          "ticker": "BCRED",
           "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
+          "date": "2025-03-31",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
         {
-          "description": "UnitedHealth Group, Inc.",
-          "ticker": "UNH",
+          "description": "K-INFRA - Class S Hedge Fund",
+          "ticker": null,
           "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
+          "date": "2025-02-14",
+          "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Oracle Corp.",
-          "ticker": "ORCL",
+          "description": "KKR Private Equity Conglomerate LLC (K-PEC)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-14",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Blue Owl Capital Corporation",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-02-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Alphabet, Inc.",
+          "ticker": "GOOG",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5318,24 +5342,96 @@
           "lateFilingFlag": false
         },
         {
-          "description": "NVIDIA Corp.",
-          "ticker": "NVDA",
+          "description": "American Tower Corporation (REIT)",
+          "ticker": "AMT",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Taiwan Semiconductor Manufacturing Company Ltd.",
-          "ticker": "TSM",
+          "description": "Apple, Inc.",
+          "ticker": "AAPL",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Las Vegas Sands Corp.",
-          "ticker": "LVS",
+          "description": "Ares Capital Corporation Common Stock",
+          "ticker": "ARCC",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "argenx SE American Depositary Shares",
+          "ticker": "ARGX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "ASML Holding N.V. New York Registry Shares",
+          "ticker": "ASML",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Blackstone Inc. Common Stock",
+          "ticker": "BX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Broadcom, Inc.",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Danaher Corp.",
+          "ticker": "DHR",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Datadog Inc. Class A Common Stock",
+          "ticker": "DDOG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Deere & Co.",
+          "ticker": "DE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "DoorDash Inc. Class A Common Stock",
+          "ticker": "DASH",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "DraftKings Inc. Class A Common Stock",
+          "ticker": "DKNG",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5350,24 +5446,48 @@
           "lateFilingFlag": false
         },
         {
-          "description": "argenx SE American Depositary Shares",
-          "ticker": "ARGX",
+          "description": "Eli Lilly & Co.",
+          "ticker": "LLY",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "American Tower Corporation (REIT)",
-          "ticker": "AMT",
+          "description": "Hilton Worldwide Holdings, Inc.",
+          "ticker": "HLT",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "ASML Holding N.V. New York Registry Shares",
-          "ticker": "ASML",
+          "description": "Howmet Aerospace Inc. Common Stock",
+          "ticker": "HWM",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Intercontinental Exchange, Inc.",
+          "ticker": "ICE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Las Vegas Sands Corp.",
+          "ticker": "LVS",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Marvell Technology Group Ltd.",
+          "ticker": "MRVL",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5390,11 +5510,11 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Intercontinental Exchange, Inc.",
-          "ticker": "ICE",
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
           "type": "Sale",
           "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         },
         {
@@ -5406,40 +5526,24 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Alphabet, Inc.",
-          "ticker": "GOOG",
+          "description": "NVIDIA Corp.",
+          "ticker": "NVDA",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Hilton Worldwide Holdings, Inc.",
-          "ticker": "HLT",
+          "description": "Oracle Corp.",
+          "ticker": "ORCL",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Blackstone Inc. Common Stock",
-          "ticker": "BX",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Marvell Technology Group Ltd.",
-          "ticker": "MRVL",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Broadcom, Inc.",
-          "ticker": "AVGO",
+          "description": "Progressive Corp.",
+          "ticker": "PGR",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5454,24 +5558,16 @@
           "lateFilingFlag": false
         },
         {
-          "description": "DraftKings Inc. Class A Common Stock",
-          "ticker": "DKNG",
+          "description": "Taiwan Semiconductor Manufacturing Company Ltd.",
+          "ticker": "TSM",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Datadog Inc. Class A Common Stock",
-          "ticker": "DDOG",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "DoorDash Inc. Class A Common Stock",
-          "ticker": "DASH",
+          "description": "UnitedHealth Group, Inc.",
+          "ticker": "UNH",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5486,40 +5582,8 @@
           "lateFilingFlag": false
         },
         {
-          "description": "Howmet Aerospace Inc. Common Stock",
-          "ticker": "HWM",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Apple, Inc.",
-          "ticker": "AAPL",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Danaher Corp.",
-          "ticker": "DHR",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Deere & Co.",
-          "ticker": "DE",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Eli Lilly & Co.",
-          "ticker": "LLY",
+          "description": "Vertex Pharmaceuticals, Inc.",
+          "ticker": "VRTX",
           "type": "Sale",
           "date": "2025-02-11",
           "amount": "$1,001-$15,000",
@@ -5528,58 +5592,18 @@
         {
           "description": "Microsoft Corp.",
           "ticker": "MSFT",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Progressive Corp.",
-          "ticker": "PGR",
-          "type": "Sale",
-          "date": "2025-02-11",
+          "type": "Purchase",
+          "date": "2025-02-07",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false
         },
         {
-          "description": "Ares Capital Corporation Common Stock",
-          "ticker": "ARCC",
-          "type": "Sale",
-          "date": "2025-02-11",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Blue Owl Capital Corporation",
+          "description": "Rumble Inc",
           "ticker": null,
           "type": "Sale",
-          "date": "2025-02-13",
-          "amount": "$15,001-$50,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "KKR Private Equity Conglomerate LLC (K-PEC)",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-14",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "K-INFRA - Class S Hedge Fund",
-          "ticker": null,
-          "type": "Sale",
-          "date": "2025-02-14",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "Blackstone Private Credit Fund (BCRED)",
-          "ticker": "BCRED",
-          "type": "Sale",
-          "date": "2025-03-31",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": false
+          "date": "2025-02-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
         }
       ]
     },
@@ -7765,9 +7789,17 @@
       "level": "Sub-Cabinet",
       "confirmedDate": "2025-03-25",
       "departedDate": null,
-      "transactionCount": 65,
-      "mostRecentFilingDate": "2026-07-11",
+      "transactionCount": 66,
+      "mostRecentFilingDate": "2026-08-08",
       "transactions": [
+        {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Purchase",
+          "date": "2026-07-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
         {
           "description": "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)",
           "ticker": "LQD",
@@ -80066,6 +80098,499 @@
           "type": "Sale (Partial)",
           "date": "2026-02-10",
           "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        }
+      ]
+    },
+    {
+      "name": "Warsh, Kevin",
+      "slug": "warsh-kevin",
+      "title": "Chairman",
+      "agency": "Federal Reserve System Board of Governors",
+      "level": "Cabinet",
+      "confirmedDate": "2026-05-13",
+      "departedDate": null,
+      "transactionCount": 60,
+      "mostRecentFilingDate": "2026-08-13",
+      "transactions": [
+        {
+          "description": "THSDFS LLC - Series 02",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 21",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 29",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 33",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 40",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 41",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 43",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 44",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 45",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 46",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 49",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 51",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 55",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 59",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 63",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 64",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-23",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Aven",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-04",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Aven",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-06-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Hebbia Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-04",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "DCM Investments 09",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 03",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 04",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 07",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 08",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 09",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 18",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 22",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 38",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 50",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 61",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 72",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-06-03",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Lansing Management Onshore LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-31",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bessemer Venture Associates XI, L.P.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-29",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bessemer Ventures Associates VIII LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Bessemer Ventures Associates XII LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 13",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 16",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 19",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 23",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 24",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 26",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 27",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 28",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 30",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 31",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 32",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 34",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 35",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 37",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 39",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 42",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 47",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 48",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 53",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 54",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 56",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 57",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 60",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 66",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 67",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-05-27",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
       ]

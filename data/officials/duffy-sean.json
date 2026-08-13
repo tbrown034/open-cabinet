@@ -5,35 +5,43 @@
   "agency": "Department of Transportation",
   "level": "Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2025-05-14",
+  "mostRecentFilingDate": "2026-08-08",
   "transactions": [
     {
-      "description": "Microsoft Corp.",
-      "ticker": "MSFT",
-      "type": "Purchase",
-      "date": "2025-02-07",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vertex Pharmaceuticals, Inc.",
-      "ticker": "VRTX",
+      "description": "Blackstone Private Credit Fund (BCRED)",
+      "ticker": "BCRED",
       "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
+      "date": "2025-03-31",
+      "amount": "$50,001-$100,000",
       "lateFilingFlag": false
     },
     {
-      "description": "UnitedHealth Group, Inc.",
-      "ticker": "UNH",
+      "description": "K-INFRA - Class S Hedge Fund",
+      "ticker": null,
       "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
+      "date": "2025-02-14",
+      "amount": "$50,001-$100,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Oracle Corp.",
-      "ticker": "ORCL",
+      "description": "KKR Private Equity Conglomerate LLC (K-PEC)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Blue Owl Capital Corporation",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet, Inc.",
+      "ticker": "GOOG",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -48,24 +56,96 @@
       "lateFilingFlag": false
     },
     {
-      "description": "NVIDIA Corp.",
-      "ticker": "NVDA",
+      "description": "American Tower Corporation (REIT)",
+      "ticker": "AMT",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Taiwan Semiconductor Manufacturing Company Ltd.",
-      "ticker": "TSM",
+      "description": "Apple, Inc.",
+      "ticker": "AAPL",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Las Vegas Sands Corp.",
-      "ticker": "LVS",
+      "description": "Ares Capital Corporation Common Stock",
+      "ticker": "ARCC",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "argenx SE American Depositary Shares",
+      "ticker": "ARGX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "ASML Holding N.V. New York Registry Shares",
+      "ticker": "ASML",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Blackstone Inc. Common Stock",
+      "ticker": "BX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Broadcom, Inc.",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Danaher Corp.",
+      "ticker": "DHR",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Datadog Inc. Class A Common Stock",
+      "ticker": "DDOG",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Deere & Co.",
+      "ticker": "DE",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DoorDash Inc. Class A Common Stock",
+      "ticker": "DASH",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DraftKings Inc. Class A Common Stock",
+      "ticker": "DKNG",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -80,24 +160,48 @@
       "lateFilingFlag": false
     },
     {
-      "description": "argenx SE American Depositary Shares",
-      "ticker": "ARGX",
+      "description": "Eli Lilly & Co.",
+      "ticker": "LLY",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "American Tower Corporation (REIT)",
-      "ticker": "AMT",
+      "description": "Hilton Worldwide Holdings, Inc.",
+      "ticker": "HLT",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "ASML Holding N.V. New York Registry Shares",
-      "ticker": "ASML",
+      "description": "Howmet Aerospace Inc. Common Stock",
+      "ticker": "HWM",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Intercontinental Exchange, Inc.",
+      "ticker": "ICE",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Las Vegas Sands Corp.",
+      "ticker": "LVS",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Marvell Technology Group Ltd.",
+      "ticker": "MRVL",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -120,11 +224,11 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Intercontinental Exchange, Inc.",
-      "ticker": "ICE",
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
       "type": "Sale",
       "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
+      "amount": "$15,001-$50,000",
       "lateFilingFlag": false
     },
     {
@@ -136,40 +240,24 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Alphabet, Inc.",
-      "ticker": "GOOG",
+      "description": "NVIDIA Corp.",
+      "ticker": "NVDA",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Hilton Worldwide Holdings, Inc.",
-      "ticker": "HLT",
+      "description": "Oracle Corp.",
+      "ticker": "ORCL",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Blackstone Inc. Common Stock",
-      "ticker": "BX",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Marvell Technology Group Ltd.",
-      "ticker": "MRVL",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Broadcom, Inc.",
-      "ticker": "AVGO",
+      "description": "Progressive Corp.",
+      "ticker": "PGR",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -184,24 +272,16 @@
       "lateFilingFlag": false
     },
     {
-      "description": "DraftKings Inc. Class A Common Stock",
-      "ticker": "DKNG",
+      "description": "Taiwan Semiconductor Manufacturing Company Ltd.",
+      "ticker": "TSM",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Datadog Inc. Class A Common Stock",
-      "ticker": "DDOG",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "DoorDash Inc. Class A Common Stock",
-      "ticker": "DASH",
+      "description": "UnitedHealth Group, Inc.",
+      "ticker": "UNH",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -216,40 +296,8 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Howmet Aerospace Inc. Common Stock",
-      "ticker": "HWM",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Apple, Inc.",
-      "ticker": "AAPL",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Danaher Corp.",
-      "ticker": "DHR",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Deere & Co.",
-      "ticker": "DE",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Eli Lilly & Co.",
-      "ticker": "LLY",
+      "description": "Vertex Pharmaceuticals, Inc.",
+      "ticker": "VRTX",
       "type": "Sale",
       "date": "2025-02-11",
       "amount": "$1,001-$15,000",
@@ -258,68 +306,45 @@
     {
       "description": "Microsoft Corp.",
       "ticker": "MSFT",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Progressive Corp.",
-      "ticker": "PGR",
-      "type": "Sale",
-      "date": "2025-02-11",
+      "type": "Purchase",
+      "date": "2025-02-07",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false
     },
     {
-      "description": "Ares Capital Corporation Common Stock",
-      "ticker": "ARCC",
-      "type": "Sale",
-      "date": "2025-02-11",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Blue Owl Capital Corporation",
+      "description": "Rumble Inc",
       "ticker": null,
       "type": "Sale",
-      "date": "2025-02-13",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "KKR Private Equity Conglomerate LLC (K-PEC)",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-02-14",
-      "amount": "$100,001-$250,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "K-INFRA - Class S Hedge Fund",
-      "ticker": null,
-      "type": "Sale",
-      "date": "2025-02-14",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Blackstone Private Credit Fund (BCRED)",
-      "ticker": "BCRED",
-      "type": "Sale",
-      "date": "2025-03-31",
-      "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
+      "date": "2025-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
     }
   ],
-  "summary": "Duffy reported 37 sales (est. $695K) and 1 purchase (est. $8K). Holdings included MSFT, VRTX, UNH, ORCL, AMZN, among others.",
+  "summary": "Duffy disclosed 39 transactions dated Feb. 3, 2025 to March 31, 2025, consisting of 38 sales (estimated $703K) and one purchase (estimated $8K), for an estimated cumulative total of $711K across all tracked filings. The largest single transaction was a sale of KKR Private Equity Conglomerate LLC (K-PEC), reported in a range with an estimated midpoint in the $100,001 to $250,000 bracket. Microsoft (MSFT) was the most-traded asset, appearing in two transactions. One of the 39 transactions, or 3 percent, was filed late, meaning OGE was notified more than 30 days after Duffy was notified of the trade.",
   "confirmedDate": "2025-01-28",
   "party": "R",
   "sourceFilings": [
     {
+      "date": "2026-08-08",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/890743E0467213D285258E4D002D98F0/$FILE/Sean-Duffy-06.09.2026-278T.pdf",
+      "label": "Sean-Duffy-06.09.2026-278T"
+    },
+    {
       "date": "2025-05-14",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf",
       "label": "278-T"
+    }
+  ],
+  "lastIngestedDate": "2026-08-13",
+  "lastIngestedNewCount": 1,
+  "lastIngestedTrades": [
+    {
+      "description": "Rumble Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true
     }
   ]
 }

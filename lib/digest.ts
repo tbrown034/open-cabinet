@@ -236,9 +236,17 @@ export function selectDigestItems(
     const newCount = o.lastIngestedNewCount ?? 0;
     if (newCount <= 0) continue; // ledger-only; no card (see JSDoc)
 
-    const trades = [...o.transactions]
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .slice(0, Math.min(newCount, MAX_TRADES_SHOWN))
+    // Prefer the exact rows the ingest added; fall back to the newest-date
+    // proxy for officials ingested before lastIngestedTrades existed. The
+    // proxy is wrong whenever a filing discloses old-dated trades (late
+    // filings), which is why the exact list wins when present.
+    const trades = (
+      o.lastIngestedTrades ??
+      [...o.transactions]
+        .sort((a, b) => (a.date < b.date ? 1 : -1))
+        .slice(0, Math.min(newCount, MAX_TRADES_SHOWN))
+    )
+      .slice(0, MAX_TRADES_SHOWN)
       .map(toTrade);
 
     items.push({

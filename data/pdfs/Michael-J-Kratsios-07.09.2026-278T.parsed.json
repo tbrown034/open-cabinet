@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-07-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6414,
+    "outputTokens": 74,
+    "estimatedCostUsd": 0.0204
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-07.09.2026-278T.pdf"
+}

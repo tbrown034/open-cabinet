@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-05",
+  "lastUpdated": "2026-08-13",
   "officials": [
     {
       "name": "Bailey, Sara",
@@ -48,9 +48,11 @@
       "agency": "Social Security Administration",
       "level": "Cabinet",
       "party": "R",
-      "transactionCount": 116,
-      "mostRecentFilingDate": "2026-03-06",
+      "transactionCount": 118,
+      "mostRecentFilingDate": "2026-08-08",
       "confirmedDate": "2025-05-06",
+      "lastIngestedDate": "2026-08-13",
+      "lastIngestedNewCount": 2,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -143,9 +145,11 @@
       "agency": "Department of Transportation",
       "level": "Cabinet",
       "party": "R",
-      "transactionCount": 38,
-      "mostRecentFilingDate": "2025-05-14",
+      "transactionCount": 39,
+      "mostRecentFilingDate": "2026-08-08",
       "confirmedDate": "2025-01-28",
+      "lastIngestedDate": "2026-08-13",
+      "lastIngestedNewCount": 1,
       "departedDate": null,
       "dataStatus": "parsed"
     },
@@ -236,10 +240,10 @@
       "agency": "Office of Science and Technology Policy",
       "level": "Sub-Cabinet",
       "party": "R",
-      "transactionCount": 65,
-      "mostRecentFilingDate": "2026-07-11",
+      "transactionCount": 66,
+      "mostRecentFilingDate": "2026-08-08",
       "confirmedDate": "2025-03-25",
-      "lastIngestedDate": "2026-07-19",
+      "lastIngestedDate": "2026-08-13",
       "lastIngestedNewCount": 1,
       "departedDate": null,
       "dataStatus": "parsed"
@@ -476,6 +480,21 @@
       "confirmedDate": "2025-06-10",
       "lastIngestedDate": "2026-05-14",
       "lastIngestedNewCount": 6,
+      "departedDate": null,
+      "dataStatus": "parsed"
+    },
+    {
+      "name": "Warsh, Kevin",
+      "slug": "warsh-kevin",
+      "title": "Chairman",
+      "agency": "Federal Reserve System Board of Governors",
+      "level": "Cabinet",
+      "party": "R",
+      "transactionCount": 60,
+      "mostRecentFilingDate": "2026-08-13",
+      "confirmedDate": "2026-05-13",
+      "lastIngestedDate": "2026-08-13",
+      "lastIngestedNewCount": 60,
       "departedDate": null,
       "dataStatus": "parsed"
     },

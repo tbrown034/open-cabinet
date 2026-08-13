@@ -56,6 +56,11 @@ export interface OfficialData {
   // Number of transactions added in the most recent ingest (0 if no
   // additions this round — surfaces a per-filing delta on the page banner).
   lastIngestedNewCount?: number;
+  // The rows the most recent ingest actually added, date-descending. The
+  // digest previews these instead of guessing by transaction date — a late
+  // filing can disclose an old-dated trade, so "newest rows" is not "new rows"
+  // (Duffy's Feb 2025 Rumble sale surfaced in a June 2026 filing).
+  lastIngestedTrades?: Transaction[];
   party?: "R" | "D" | "I";
   photoUrl?: string;
   ogeProfileUrl?: string;

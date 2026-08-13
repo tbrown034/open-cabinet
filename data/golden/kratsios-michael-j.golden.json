@@ -5,8 +5,16 @@
   "agency": "Office of Science and Technology Policy",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-07-11",
+  "mostRecentFilingDate": "2026-08-08",
   "transactions": [
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-07-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)",
       "ticker": "LQD",
@@ -528,10 +536,15 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Verified: 27 sales and 38 purchases across 65 transactions. 0 filed late.",
+  "summary": "Kratsios reported 27 sales and 39 purchases across 66 transactions in 278-T filings tracked by Open Cabinet.",
   "confirmedDate": "2025-03-25",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-08-08",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/24F079312783534385258E4D002DAB10/$FILE/Michael-J-Kratsios-07.09.2026-278T.pdf",
+      "label": "Michael-J-Kratsios-07.09.2026-278T"
+    },
     {
       "date": "2026-07-11",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F4060C7CB31DC8DA85258E31002DCF6A/$FILE/Michael-Kratsios-06.10.2026-278T.pdf",
@@ -587,5 +600,7 @@
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C168F84EC148EDC785258C67002C8092/$FILE/Michael-J-Kratsios-03.18.2025-278T.pdf",
       "label": "278-T"
     }
-  ]
+  ],
+  "lastIngestedDate": "2026-08-13",
+  "lastIngestedNewCount": 1
 }

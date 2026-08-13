@@ -5,8 +5,24 @@
   "agency": "Social Security Administration",
   "level": "Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-03-06",
+  "mostRecentFilingDate": "2026-08-08",
   "transactions": [
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "Humana, Inc. (HUM)",
       "type": "Sale",
@@ -15,34 +31,6 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-      "type": "Sale",
-      "date": "2025-12-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-      "type": "Sale",
-      "date": "2025-12-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-      "type": "Sale",
-      "date": "2025-12-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
-      "type": "Sale",
-      "date": "2025-12-09",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
       "type": "Sale",
       "date": "2025-12-09",
@@ -96,6 +84,34 @@
       "type": "Sale",
       "date": "2025-12-09",
       "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
       "lateFilingFlag": false
     },
     {
@@ -120,21 +136,7 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Invesco New Jersey Municipal A (ONJAX)",
-      "type": "Purchase",
-      "date": "2025-08-04",
-      "amount": "$5,000,001-$25,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "PIMCO Income Fund Class A Shares (PONAX)",
-      "type": "Purchase",
-      "date": "2025-08-04",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+      "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)",
       "type": "Purchase",
       "date": "2025-08-04",
       "amount": "$1,000,001-$5,000,000",
@@ -148,21 +150,14 @@
       "lateFilingFlag": false
     },
     {
-      "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)",
+      "description": "Franklin NJ Tax Free Income A (FNJQX)",
       "type": "Purchase",
       "date": "2025-08-04",
       "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-      "type": "Purchase",
-      "date": "2025-08-04",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "description": "Invesco New Jersey Municipal A (ONJAX)",
       "type": "Purchase",
       "date": "2025-08-04",
       "amount": "$5,000,001-$25,000,000",
@@ -176,7 +171,21 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Janus Henderson AAA CLO ETF (JAAA)",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
       "type": "Purchase",
       "date": "2025-08-04",
       "amount": "$1,000,001-$5,000,000",
@@ -197,10 +206,17 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Franklin NJ Tax Free Income A (FNJQX)",
+      "description": "PIMCO Income Fund Class A Shares (PONAX)",
       "type": "Purchase",
       "date": "2025-08-04",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -218,24 +234,10 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Invesco New Jersey Municipal A (ONJAX)",
-      "type": "Purchase",
-      "date": "2025-07-25",
-      "amount": "$5,000,001-$25,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "PIMCO Income Fund Class A Shares (PONAX)",
+      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
       "type": "Purchase",
       "date": "2025-07-25",
       "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-      "type": "Purchase",
-      "date": "2025-07-25",
-      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -246,21 +248,7 @@
       "lateFilingFlag": false
     },
     {
-      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-      "type": "Purchase",
-      "date": "2025-07-25",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-      "type": "Purchase",
-      "date": "2025-07-25",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "description": "Invesco New Jersey Municipal A (ONJAX)",
       "type": "Purchase",
       "date": "2025-07-25",
       "amount": "$5,000,001-$25,000,000",
@@ -274,10 +262,24 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF (JAAA)",
       "type": "Purchase",
       "date": "2025-07-25",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -292,6 +294,20 @@
       "type": "Purchase",
       "date": "2025-07-25",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "PIMCO Income Fund Class A Shares (PONAX)",
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -302,24 +318,10 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Invesco New Jersey Municipal A (ONJAX)",
+      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
       "type": "Purchase",
       "date": "2025-07-07",
-      "amount": "$25,000,001-$50,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "PIMCO Income Fund Class A Shares (PONAX)",
-      "type": "Purchase",
-      "date": "2025-07-07",
-      "amount": "$5,000,001-$25,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-      "type": "Purchase",
-      "date": "2025-07-07",
-      "amount": "$5,000,001-$25,000,000",
+      "amount": "$1,000,001-$5,000,000",
       "lateFilingFlag": false
     },
     {
@@ -330,21 +332,7 @@
       "lateFilingFlag": false
     },
     {
-      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-      "type": "Purchase",
-      "date": "2025-07-07",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-      "type": "Purchase",
-      "date": "2025-07-07",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "description": "Invesco New Jersey Municipal A (ONJAX)",
       "type": "Purchase",
       "date": "2025-07-07",
       "amount": "$25,000,001-$50,000,000",
@@ -358,10 +346,24 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF (JAAA)",
       "type": "Purchase",
       "date": "2025-07-07",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -376,6 +378,20 @@
       "type": "Purchase",
       "date": "2025-07-07",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "PIMCO Income Fund Class A Shares (PONAX)",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$25,000,001-$50,000,000",
       "lateFilingFlag": false
     },
     {
@@ -421,24 +437,17 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Invesco New Jersey Municipal A (ONJAX)",
+      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
       "type": "Purchase",
+      "date": "2025-06-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Fiserv",
+      "type": "Sale",
       "date": "2025-06-23",
       "amount": "$25,000,001-$50,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "PIMCO Income Fund Class A Shares (PONAX)",
-      "type": "Purchase",
-      "date": "2025-06-23",
-      "amount": "$5,000,001-$25,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
-      "type": "Purchase",
-      "date": "2025-06-23",
-      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -449,21 +458,7 @@
       "lateFilingFlag": false
     },
     {
-      "description": "BrandywineGLOBAL High Yield A (BGHAX)",
-      "type": "Purchase",
-      "date": "2025-06-23",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
-      "type": "Purchase",
-      "date": "2025-06-23",
-      "amount": "$1,000,001-$5,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "description": "Invesco New Jersey Municipal A (ONJAX)",
       "type": "Purchase",
       "date": "2025-06-23",
       "amount": "$25,000,001-$50,000,000",
@@ -477,10 +472,24 @@
       "lateFilingFlag": false
     },
     {
+      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+      "type": "Purchase",
+      "date": "2025-06-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
       "description": "Janus Henderson AAA CLO ETF (JAAA)",
       "type": "Purchase",
       "date": "2025-06-23",
       "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+      "type": "Purchase",
+      "date": "2025-06-23",
+      "amount": "$5,000,001-$25,000,000",
       "lateFilingFlag": false
     },
     {
@@ -498,8 +507,15 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Fiserv",
-      "type": "Sale",
+      "description": "PIMCO Income Fund Class A Shares (PONAX)",
+      "type": "Purchase",
+      "date": "2025-06-23",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "type": "Purchase",
       "date": "2025-06-23",
       "amount": "$25,000,001-$50,000,000",
       "lateFilingFlag": false
@@ -508,6 +524,153 @@
       "description": "Fiserv",
       "type": "Sale",
       "date": "2025-06-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "type": "Purchase",
+      "date": "2025-06-18",
       "amount": "$250,001-$500,000",
       "lateFilingFlag": false
     },
@@ -526,150 +689,10 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF (MUB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF (MUB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares National Muni Bond ETF (MUB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$250,001-$500,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
       "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
       "type": "Purchase",
       "date": "2025-06-18",
       "amount": "Over $1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$500,001-$1,000,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$500,001-$1,000,000",
       "lateFilingFlag": false
     },
     {
@@ -680,17 +703,24 @@
       "lateFilingFlag": false
     },
     {
-      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
       "type": "Purchase",
       "date": "2025-06-18",
-      "amount": "$250,001-$500,000",
+      "amount": "Over $1,000,000",
       "lateFilingFlag": false
     },
     {
-      "description": "iShares National Muni Bond ETF (MUB)",
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
       "type": "Purchase",
       "date": "2025-06-18",
-      "amount": "$50,001-$100,000",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "Over $1,000,000",
       "lateFilingFlag": false
     },
     {
@@ -698,20 +728,6 @@
       "type": "Purchase",
       "date": "2025-06-18",
       "amount": "$50,001-$100,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares Broad USD High Yield Corporate Bond ETF (USHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$15,001-$50,000",
-      "lateFilingFlag": false
-    },
-    {
-      "description": "iShares 1-3 Year Treasury Bond ETF (SHY)",
-      "type": "Purchase",
-      "date": "2025-06-18",
-      "amount": "$100,001-$250,000",
       "lateFilingFlag": false
     },
     {
@@ -820,10 +836,15 @@
       "lateFilingFlag": true
     }
   ],
-  "summary": "38 sales and 78 purchases across 116 transactions. 1 transaction was flagged as filed late.",
+  "summary": "Bisignano disclosed 118 transactions between May 16, 2025, and June 16, 2026, consisting of 80 purchases (estimated $535.9 million) and 38 sales (estimated $434.4 million), for a cumulative estimated total of $970.4 million across all tracked filings. The largest single transaction was a trade in Franklin NJ Tax Free Income A (FNJQX), with an estimated value between $25,000,001 and $50,000,000. The most-traded asset was Fiserv, appearing in 20 transactions, followed by several Vanguard exchange-traded funds. One of the 118 transactions, or 1 percent, was filed late.",
   "confirmedDate": "2025-05-06",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-08-08",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2DC3DD386173222E85258E4D002D8CD0/$FILE/Frank-J-Bisignano-07.07.2026-278T.pdf",
+      "label": "Frank-J-Bisignano-07.07.2026-278T"
+    },
     {
       "date": "2026-03-06",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCD5083EB618F35085258DB200344824/$FILE/Frank-J-Bisignano-02.10.2026-278T.pdf",
@@ -848,6 +869,26 @@
       "date": "2025-07-15",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9A2C2ECDD1FAECA185258CC8002C7D03/$FILE/Frank-J-Bisignano-06.26.2025-278T.pdf",
       "label": "278-T"
+    }
+  ],
+  "lastIngestedDate": "2026-08-13",
+  "lastIngestedNewCount": 2,
+  "lastIngestedTrades": [
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
     }
   ]
 }

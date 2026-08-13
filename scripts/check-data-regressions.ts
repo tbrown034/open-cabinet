@@ -41,8 +41,9 @@ async function main() {
     "Trump May 8, 2026 part-two transaction rows"
   );
   assertEqual(trump.transactions.length, 7889, "Trump aggregate profile transaction count");
-  assertEqual(fullDataset.officialCount, 38, "Full dataset official count");
-  assertEqual(fullDataset.transactionCount, 10381, "Full dataset transaction count");
+  // Aug 13, 2026 ingest: Warsh (new official, 60), Kratsios (+1), Duffy (+1), Bisignano (+2)
+  assertEqual(fullDataset.officialCount, 39, "Full dataset official count");
+  assertEqual(fullDataset.transactionCount, 10445, "Full dataset transaction count");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {

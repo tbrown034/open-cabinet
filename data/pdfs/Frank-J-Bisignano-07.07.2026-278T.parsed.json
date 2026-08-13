@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6487,
+    "outputTokens": 194,
+    "estimatedCostUsd": 0.0224
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Frank-J-Bisignano-07.07.2026-278T.pdf"
+}

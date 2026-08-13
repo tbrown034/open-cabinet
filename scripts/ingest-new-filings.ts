@@ -465,6 +465,14 @@ async function ingestForOfficial(
     summary: summarizeTransactions(official.name, merged),
     lastIngestedDate: new Date().toISOString().slice(0, 10),
     lastIngestedNewCount: addedTxs.length,
+    // The actual added rows (date-desc), so the digest can preview the new
+    // trades exactly instead of proxying by newest transaction date — the
+    // proxy breaks on late filings that disclose old-dated trades.
+    lastIngestedTrades: [...addedTxs].sort((a, b) => {
+      const d = (b.date || "").localeCompare(a.date || "");
+      if (d !== 0) return d;
+      return (a.description || "").localeCompare(b.description || "");
+    }),
   };
 
   await writeFile(filePath, JSON.stringify(updated, null, 2) + "\n");
