@@ -164,6 +164,16 @@ async function main() {
   console.log(`  Total records fetched: ${records.length}\n`);
 
   const targetFilings = getTargetFilings(records);
+  // Same guard as /api/cron: a healthy portal always has ~100+ in-scope
+  // 278-Ts. Zero means a malformed response, and continuing would overwrite
+  // last-check.json's known-URL list with an empty one (every filing would
+  // re-flag as "new" on the next healthy run).
+  if (targetFilings.length === 0) {
+    console.error(
+      `OGE response had ${records.length} records but zero target 278-T filings — response likely malformed. First record: ${JSON.stringify(records[0] ?? null).slice(0, 400)}`
+    );
+    process.exit(1);
+  }
   const knownUrls = await loadKnownFilingUrlsFromData();
   const newFilings = diffNewFilings(targetFilings, knownUrls).map(
     (filing): TargetFiling & { status: string } => ({

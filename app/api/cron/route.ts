@@ -78,6 +78,18 @@ export async function GET(request: NextRequest) {
 
     const { records, totalRecords } = await fetchOgeRecords();
     const targetFilings = getTargetFilings(records);
+    // A healthy OGE portal always carries ~100+ in-scope 278-Ts. Zero from a
+    // full record list means the response was malformed (the API intermittently
+    // returns records with empty type/level fields — the Aug 11 and Aug 13,
+    // 2026 runs), and diffing against it would report "no news" on a broken
+    // fetch. Fail loudly so the admin gets a pipeline_error email instead of
+    // silence.
+    if (targetFilings.length === 0) {
+      const sample = JSON.stringify(records[0] ?? null).slice(0, 400);
+      throw new Error(
+        `OGE response had ${records.length} records but zero target 278-T filings — response likely malformed. First record: ${sample}`
+      );
+    }
     const knownUrls = await loadKnownFilingUrlsFromData();
     const newFilings = diffNewFilings(targetFilings, knownUrls);
 
