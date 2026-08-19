@@ -57,7 +57,7 @@ export default async function OGImage() {
             letterSpacing: -2,
           }}
         >
-          The first executive branch stock tracker
+          What is Trump&apos;s Cabinet buying and selling?
         </div>
         <div
           style={{
