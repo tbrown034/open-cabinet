@@ -191,7 +191,9 @@ export default async function CompanyPage({
 
       <p className="text-xs text-neutral-400 mt-8">
         Source: U.S. Office of Government Ethics. Values reported in ranges per
-        federal law.
+        federal law. Not comprehensive: only trades whose filings print a
+        ticker symbol appear here — officials whose filings list securities by
+        name alone (including President Trump) are not represented.
       </p>
     </div>
   );

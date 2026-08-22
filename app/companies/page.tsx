@@ -51,6 +51,12 @@ export default async function CompaniesPage() {
           Search by ticker or company name to see which executive branch
           officials traded that asset.
         </p>
+        <p className="text-sm text-neutral-500 max-w-xl leading-relaxed mt-3">
+          Not comprehensive: this lookup includes only trades whose filings
+          print a ticker symbol. Officials whose filings list securities by
+          name alone — including President Trump — do not appear here; their
+          trades are on their official pages.
+        </p>
       </header>
 
       <div className="mb-10">
