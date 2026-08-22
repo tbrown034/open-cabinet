@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Omada Common Stock (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6434,
+    "outputTokens": 191,
+    "estimatedCostUsd": 0.0222
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-07.15.2026-278T.pdf"
+}

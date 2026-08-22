@@ -5,8 +5,48 @@
   "agency": "Office of Personnel Management",
   "level": "Sub-Cabinet",
   "filingType": "278-T Periodic Transaction Report",
-  "mostRecentFilingDate": "2026-07-25",
+  "mostRecentFilingDate": "2026-08-21",
   "transactions": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Omada Common Stock (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
     {
       "description": "Okta, Inc. (OKTA)",
       "ticker": "OKTA",
@@ -672,10 +712,20 @@
       "lateFilingFlag": false
     }
   ],
-  "summary": "Kupor reported 82 sales and 1 purchase across 83 transactions in 278-T filings tracked by Open Cabinet.",
+  "summary": "Kupor reported 87 sales and 1 purchase across 88 transactions in 278-T filings tracked by Open Cabinet. His two most recent filings, posted in August 2026, report five July 2026 sales totaling between $3.6 million and $16.3 million in reported ranges, including two Okta sales the filing attributes to the exercise of covered call options, plus sales of Robinhood, Omada and Samsara stock.",
   "confirmedDate": "2025-07-09",
   "party": "R",
   "sourceFilings": [
+    {
+      "date": "2026-08-21",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7B58D078A7F838FE85258E5A002DB8C1/$FILE/Scott-A-Kupor-07.20.2026-278T.pdf",
+      "label": "Scott-A-Kupor-07.20.2026-278T"
+    },
+    {
+      "date": "2026-08-21",
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C98F5D124FF9D62785258E5A002DB8E2/$FILE/Scott-A-Kupor-07.15.2026-278T.pdf",
+      "label": "Scott-A-Kupor-07.15.2026-278T"
+    },
     {
       "date": "2026-07-25",
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
@@ -727,6 +777,48 @@
       "label": "278-T"
     }
   ],
-  "lastIngestedDate": "2026-07-25",
-  "lastIngestedNewCount": 4
+  "lastIngestedDate": "2026-08-22",
+  "lastIngestedNewCount": 5,
+  "lastIngestedTrades": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Omada Common Stock (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    }
+  ]
 }

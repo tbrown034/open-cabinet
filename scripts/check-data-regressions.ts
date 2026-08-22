@@ -40,10 +40,11 @@ async function main() {
     3642,
     "Trump May 8, 2026 part-two transaction rows"
   );
-  assertEqual(trump.transactions.length, 7889, "Trump aggregate profile transaction count");
-  // Aug 13, 2026 ingest: Warsh (new official, 60), Kratsios (+1), Duffy (+1), Bisignano (+2)
+  assertEqual(trump.transactions.length, 8940, "Trump aggregate profile transaction count");
+  // Aug 22, 2026 ingest: Trump 08.12.2026 filing (+1,051, rows 1-1051 visually
+  // reconciled against printed row numbers), Kupor 07.15 + 07.20 (+5)
   assertEqual(fullDataset.officialCount, 39, "Full dataset official count");
-  assertEqual(fullDataset.transactionCount, 10445, "Full dataset transaction count");
+  assertEqual(fullDataset.transactionCount, 11501, "Full dataset transaction count");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {
@@ -51,7 +52,7 @@ async function main() {
   }
   assertEqual(
     exportedTrump.transactions.length,
-    7889,
+    8940,
     "Full dataset Trump aggregate transaction count"
   );
 }

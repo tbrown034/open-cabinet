@@ -1,0 +1,308 @@
+{
+  "transactions": [
+    {
+      "description": "US BANCORP TIER I PERP GLBL 3.7000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MORGAN STANLEY PERP JR GLBL 8750%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WELLS FARGO & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "QNITY ELECTRONICS INC MON STOCK",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "VERTIV HOLDINGS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Crh Plc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMCOR PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INTERNATIONAL PAPER",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AT & T INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LULULEMON ATHLETICA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "FIDELITY NATL INFORMATION SVCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TRIMBLE NAV LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BUNGE GLOBAL SA SHS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MOLSON COORS BEVERAGE PANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GARTNER GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HENRY JACK & ASSOC INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GLOBAL PMTS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CONSTELLATION ENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SBA COMMUNICATION CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VICI Properties Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "EQT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "COINBASE GLOBAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Paypal Hldgs Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JPMORGAN CHASE & CO ALT TIER 3.6500%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "THE HERSHEY COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "THERMO FISHER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "EQUIFAX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2148,
+    "outputTokens": 2799,
+    "estimatedCostUsd": 0.0484
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-08.12.2026-278T.pages9-9.pdf"
+}
