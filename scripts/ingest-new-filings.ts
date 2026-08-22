@@ -15,6 +15,7 @@ import path from "path";
 import https from "https";
 import { PDFDocument } from "pdf-lib";
 import { parsePdf, type ParsedTransaction } from "./parse-pdf.js";
+import { crossCheckParsedFiling } from "./text-layer-crosscheck.js";
 import dotenv from "dotenv";
 import {
   diffNewFilings,
@@ -380,6 +381,35 @@ async function ingestForOfficial(
       await sleep(1500);
     }
     perFilingParses.push(filingTxs);
+
+    // Independent verification lane: the PDF's own text layer, parsed
+    // deterministically, must agree with the AI parse on row count, types,
+    // dates, amounts, and late flags. The two lanes fail differently, so a
+    // mismatch means one of them is wrong — halt before merging rather than
+    // publish an unverified parse. Scans have no text layer; those fall back
+    // to the standing manual rule (visual row-number reconciliation).
+    const check = crossCheckParsedFiling(pdfPath, filingTxs);
+    if (check.status === "ok") {
+      console.log(
+        `           text-layer cross-check OK (${check.rowCount} rows agree)`
+      );
+    } else if (check.status === "scan") {
+      console.warn(
+        `           SCAN — no text layer to cross-check. Do NOT commit until the parse is visually reconciled against printed row numbers.`
+      );
+    } else if (check.status === "error") {
+      throw new Error(
+        `text-layer cross-check could not run on ${path.basename(pdfPath)} (${check.message}) — ingest halted before merge`
+      );
+    } else {
+      console.error(
+        `  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`
+      );
+      for (const p of check.problems) console.error(`    - ${p}`);
+      throw new Error(
+        `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
+      );
+    }
 
     // Build a label from the filename (e.g. "Trump-05.08.2026-278T(2)")
     const label = path
