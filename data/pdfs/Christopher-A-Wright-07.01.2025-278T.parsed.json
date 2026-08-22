@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "REOFF XXVII, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "REOFF XXV, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6512,
+    "outputTokens": 178,
+    "estimatedCostUsd": 0.0222
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Christopher-A-Wright-07.01.2025-278T.pdf"
+}

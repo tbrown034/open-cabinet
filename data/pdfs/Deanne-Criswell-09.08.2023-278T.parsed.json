@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Palantir Technologies Inc. Class A Common Stock (PLTR)",
+      "ticker": "PLTR",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NIO Inc. American depositary shares each representing one Class A ordinary share (NIO)",
+      "ticker": "NIO",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6561,
+    "outputTokens": 294,
+    "estimatedCostUsd": 0.0241
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-09.08.2023-278T.pdf"
+}

@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Etsy, Inc. (ETSY)",
+      "ticker": "ETSY",
+      "type": "Sale",
+      "date": "2021-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Peloton Interactive Inc. (PTON)",
+      "ticker": "PTON",
+      "type": "Sale",
+      "date": "2021-08-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6523,
+    "outputTokens": 185,
+    "estimatedCostUsd": 0.0223
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-09.06.2021-278T.pdf"
+}

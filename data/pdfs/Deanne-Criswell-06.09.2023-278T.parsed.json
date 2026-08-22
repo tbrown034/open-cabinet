@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2023-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6486,
+    "outputTokens": 63,
+    "estimatedCostUsd": 0.0204
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-06.09.2023-278T.pdf"
+}

@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "State Street SPDR S&P 500 ETF Trust (FBVVNX)",
+      "ticker": "FBVVNX",
+      "type": "Purchase",
+      "date": "2025-06-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 20052,
+    "outputTokens": 289,
+    "estimatedCostUsd": 0.0645
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Marcus-Molinaro-2026-278TERM.pdf"
+}

@@ -1,0 +1,182 @@
+{
+  "transactions": [
+    {
+      "description": "DASH - DOORDASH INC CL A",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPOT - SPOTIFY TECHNOLOGY SA",
+      "ticker": "SPOT",
+      "type": "Sale",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RBLX - ROBLOX CORP CL A",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VEEV - VEEVA SYS INC CL A",
+      "ticker": "VEEV",
+      "type": "Sale",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "OKTA - OKTA, INC CL A",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2021-07-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNOW - SNOWFLAKE INC CL A",
+      "ticker": "SNOW",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RPRX - ROYALTY PHARMA PLC SHS CLASS A",
+      "ticker": "RPRX",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHWY - CHEWY INC CL A",
+      "ticker": "CHWY",
+      "type": "Sale",
+      "date": "2021-06-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNOW - SNOWFLAKE INC CL A",
+      "ticker": "SNOW",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RPRX - ROYALTY PHARMA PLC SHS CLASS A",
+      "ticker": "RPRX",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UBER - UBER TECHNOLOGIES INC",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2021-05-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NFLX - NETFLIX INC",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": "2021-05-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NET - CLOUDFLARE INC CL A",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NET - CLOUDFLARE INC CL A",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "FB - FACEBOOK INC CL-A",
+      "ticker": "FB",
+      "type": "Sale",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DASH - DOORDASH INC CL A",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8664,
+    "outputTokens": 1747,
+    "estimatedCostUsd": 0.0522
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Stacy-Dixon-08.12.2021-278T.pdf"
+}

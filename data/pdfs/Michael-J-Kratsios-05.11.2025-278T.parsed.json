@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Schwab US TIPS ETF (SCHP)",
+      "ticker": "SCHP",
+      "type": "Sale",
+      "date": "2025-04-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6448,
+    "outputTokens": 193,
+    "estimatedCostUsd": 0.0222
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-05.11.2025-278T.pdf"
+}

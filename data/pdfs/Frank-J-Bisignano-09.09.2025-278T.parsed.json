@@ -1,0 +1,137 @@
+{
+  "transactions": [
+    {
+      "description": "Fiserv, Inc.",
+      "ticker": "FISV",
+      "type": "Sale",
+      "date": "2025-08-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Allspring Short-Term Hi Inc A",
+      "ticker": "SSTHX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Invesco New Jersey Municipal A",
+      "ticker": "ONJAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PIMCO Income Fund Class A Shares",
+      "ticker": "PONAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A",
+      "ticker": "NNJAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Franklin NJ Tax Free Income A",
+      "ticker": "FNJQX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A",
+      "ticker": "BGHAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Fallen Angels USD Bond ETF",
+      "ticker": "FALN",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares 0-5 Year High Yield Corporate Bond ETF",
+      "ticker": "SHYG",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Janus Henderson AAA CLO ETF",
+      "ticker": "JAAA",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nuveen Short Duration Hi Yld Muni Bd A",
+      "ticker": "NVHAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PGIM Ultra Short Bond ETF",
+      "ticker": "PULS",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Travelers Companies, Inc.",
+      "ticker": "TRV",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8398,
+    "outputTokens": 1308,
+    "estimatedCostUsd": 0.0448
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Frank-J-Bisignano-09.09.2025-278T.pdf"
+}

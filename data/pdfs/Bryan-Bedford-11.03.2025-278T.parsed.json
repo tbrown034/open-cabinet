@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Total return swap contract with JPMorgan (value not readily ascertainable) - JPM Put Writing Index JPUSPRU6, writes puts based on the SPX index, pays fixed 0.60% rate, $5MM notional principal, expires 10/22/30",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.5
+    },
+    {
+      "description": "Total return swap contract with JPMorgan (value not readily ascertainable) - JPM Dynamic Put Writing Index JPOSPWUT, writes puts based on the SPX index, pays fixed 0.60% rate, $5MM notional principal, expires 10/22/30",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.5
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6646,
+    "outputTokens": 281,
+    "estimatedCostUsd": 0.0242
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Bryan-Bedford-11.03.2025-278T.pdf"
+}

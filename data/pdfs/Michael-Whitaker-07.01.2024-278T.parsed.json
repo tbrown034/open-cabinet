@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2024-06-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6473,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.0204
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Whitaker-07.01.2024-278T.pdf"
+}

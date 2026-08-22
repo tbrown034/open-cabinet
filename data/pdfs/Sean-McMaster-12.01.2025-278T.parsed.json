@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "ETHZilla Corp",
+      "ticker": "ETHZ",
+      "type": "Purchase",
+      "date": "2025-10-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MicroStrategy, Inc.",
+      "ticker": "MSTR",
+      "type": "Sale",
+      "date": "2025-10-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amcor plc",
+      "ticker": "AMCR",
+      "type": "Purchase",
+      "date": "2025-10-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amcor plc",
+      "ticker": "AMCR",
+      "type": "Sale",
+      "date": "2025-10-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amkor Technology, Inc.",
+      "ticker": "AMKR",
+      "type": "Purchase",
+      "date": "2025-10-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amkor Technology, Inc.",
+      "ticker": "AMKR",
+      "type": "Purchase",
+      "date": "2025-10-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6582,
+    "outputTokens": 606,
+    "estimatedCostUsd": 0.0288
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sean-McMaster-12.01.2025-278T.pdf"
+}

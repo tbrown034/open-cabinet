@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6407,
+    "outputTokens": 69,
+    "estimatedCostUsd": 0.0203
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-07.15.2025-278T.pdf"
+}

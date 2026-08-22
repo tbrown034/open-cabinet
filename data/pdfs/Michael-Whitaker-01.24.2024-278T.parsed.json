@@ -1,0 +1,47 @@
+{
+  "transactions": [
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet, Inc. Class A (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6566,
+    "outputTokens": 342,
+    "estimatedCostUsd": 0.0248
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Whitaker-01.24.2024-278T.pdf"
+}

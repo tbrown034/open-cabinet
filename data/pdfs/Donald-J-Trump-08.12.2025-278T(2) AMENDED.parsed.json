@@ -1,0 +1,1350 @@
+{
+  "transactions": [
+    {
+      "description": "WISCONSIN ST HLTH & EFA REV ADVOCATE HLTH HOSP CORP SER 82 B/E 5.00% Duo Aue 15, 2054",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00% Duo Oct 1 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLLIZD HSG DGA GROSVENSOR B/E 4.00% Duo D",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.75
+    },
+    {
+      "description": "BASTROP TX INOPT SCH DIST BLOG PSF GTD B/E 4.00% Duo Feb 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "ILLINOIS ST 5.25% DUE ON 05/01/2042",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROWARD CNTY FL HSG FIN AUTH MLTIFAM HSG REV ST JOSEPH MANOR II B/E 3.50 % Due Apr 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "KENTUCKY HSG CORP MLTIFAM HSG REV BEECHER TERRACE PHASE IV PJ B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLLTZD HSG DGA GROSVENSOR B/E 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00 % Due Mar 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "HOUSTON TX HSG FIN CORP MLTIFAM HSG REV ALCOTT VLG SER A B/E 3.20 % Due Apr 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WAUKESHA CNTY WI PROM NT SER A B/E 3.00 % Due Apr 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOURDANTON TX COMB TAX LTD PLG REV CTF OBLIG 2025 DB BAM B/E B/Q 6.00 % Due Fob 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 5 SER A 1 B/E 4.00 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "NORFOLK VA REDEV & HSG AUTH MULTI FAM HSG REV BRAYWOOD MANOR APTS B/E 5.00 % Due May 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFDG A1 B/E 3.30 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MONROEVILLE PA FIN AUTH UPMC REV B/E 5.00 % Due Feb 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WASHINGTON ST HLTHCARE FACS AUTH REV SER B COMMONSPIRIT HLTH B/E 5.00 % Due Aug 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "FORT BEND CNTY TX MUD 118 RFDG 2017 BAM B/E B/Q CR ENH 4.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "INTERSTATE MUD TX PK RFDG HARRIS CNTY 2019 B/E B/Q CR ENH 4.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV WILLOW PLACE B/E 3.75 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV HOSP ADVENTIST HLTH SYS SER B B/E 5.00 % Due Nov 15, 2048",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLL HSG WILLOW PJ B/E 3.75 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PEFA INC IA GAS PJ REV B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FORT WAYNE IN REDEV AUTH LSE RENT REV SER A B/E PTC 3.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOHNSON CITY TN HLTH & EDL FACS BRD MLTIFAM REV COLLTZD HSG TAPESTRY B/E 3.60 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "SOUTH ADAMS CNTY CO WTR & SANTN DIST WTR &WSTWTR REV B/E 3.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00 % Due Mar 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GEORGIA ST HSG & FIN AUTH REV SNGL FAM MTG SER A B/E 3.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WISCONSIN ST HLTH & EFA REV ADVOCATE HLTH HOSP CORP SER B2 B/E 5.00 % Due Aug 15, 2054",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CENTRAL STHWST MO CMNTY CLLG DIST COP OZARKS TECHNICAL LSE REV B/E 4.00 % Due Mar 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "KENTUCKY INC KY PUB ENERGY AUTH GAS SPLY REV SER A B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "COLORADO HSG & FIN AUTH MLTIFAM HSG RENDEZVOUS VOA SR HSG REV B/E 3.05 % Due Oct 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "VIRGINIA ST RES AUTH INFRA REV SER C CR ENH POOL FING PG B/E 4.00 % Due Nov 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BRAZORIA CNTY TX MUD 53 AGM B/E 4.00 % Due Apr 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KING CNTY WA SCH DIST 414 LK WA B/E SCH BD GTY 4.00 % Due Dec 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BIRMINGHAM AL CONV SER A1 B/E CAB @87.829 4.04% 5.00 % Due Mar 1, 2045",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "VIRGINIA CLLG BLDG AUTH VA EDL FACS REV PUB HIGH ED FING B B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "RICHLAND WI SCH DIST PROM NT AGI B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PHILADELPHIA PA SCH DIST SER D B/E ST INTRCPT 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MARYLAND ST ST & LOC FACS LN 1ST SER B/E PTC 4.00 % Due Jun 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MIAMI DADE CNTY FL HSG FIN AUTH MLTIFAM QUAIL ROOST TRAN VLG I REV B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MIAMI UNIV OH GENL RCPTS RFDG REV B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "NORTH HAYS CNTY TX MUD 1 RFDG AGI B/E 4.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ATHENS CLARKE CNTY GA UNI GOVT DEV AUTH REV RFDG UNIV GA SER A B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "NORTH CAROLINA CAP FACS FIN AGY REV DUKE UNIV PJ SER B B/E PTC 5.00 % Due Oct 1, 2055",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "LAKELAND FL ENERGY SYS RFDG REV B/E 5.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "JACKSONVILLE FL SPL REV RFDG SER A B/E 5.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALASKA ST INTL ARPT REV RFDG GOVTL SER B B/E PTC 5.00 % Due Oct 1, 2032",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "LA PORTE TX INDPT SCH DIST SCH BLDG PSF GTD B/E PTC 3.00 % Due Feb 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WILLIAMSON CNTY TN SCH SER A B/E OID @98.000 3.521% 3.375 % Due Apr 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CUYAHOGA CNTY OH SALES TAX REV VARIOUS PURP B/E OID @96.300 3.3% 3.00 % Due Dec 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "SAN ANTONIO TX GENL IMPT B/E 4.00 % Due Aug 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WASHOE CNTY NV SCH DIST IMPT A DB B/E 4.00 % Due Oct 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CLIFTON TX HIGH ED FIN CORP REV IDEA PUB SCH B/E PSF GTD PTC 5.00 % Due Aug 15, 2036",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HAYS TX CONS INDPT SCH DIST RFDG B/E PSF GTD 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SOCORRO TX INDPT SCH DIST RFDG SER B B/E PSF GTD 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TALLAHASSEE FL ENERGY SYS RFDG REV B/E PTC 5.00 % Due Oct 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VAUXMONT MET DIST CO SR SR SPL REV RFDG DB AGM B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "YUMA AZ IDA HOSP REV YUMA REGL MED CTR B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MC KINNEY TX B/E PTC 5.00 % Due Aug 15, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALABAMA HSG FIN AUTH MLTIFAM HSG REV FOREST HLS VLG SER A B/E PTC 5.00 % Due Nov 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MOOSE LK MN ISD 097 SCH BLDG SER A B/E STAND APPROP OID @97.449 3.18% 3.00 % Due Fob 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ARLINGTON TX WTR & WSTWTR SYS REV SER A B/E OID @98.407 3.38% 3.25 % Due Jun 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "DES MOINES IA SER A B/E SBJ ST TAX OID @98.965 3.45% 3.375 % Due Jun 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WACO TX CTF OBLIG DB B/E OID @98.360 3.12% 3.00 % Due Fob 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "RACINE WI RFDG SER B B/E 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MISSISSIPPI ST GAMING TAX REV SER A B/E 5.00 % Due Oct 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AUSTIN BERGSTROM LANDHST ENTRPRS INC TX ARPT HOTL REV SR RFDG & IMPT B/E 5.00 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MUNICIPAL ELEC AUTH GA SUB PJ 1 SER A REV B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TENNERGY CORP TN GAS REV SPLY SER A B/E GTD 4.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HENRICO CNTY VA PUB IMPT B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLLTZD HSG DGA GROSVENSOR B/E 4.00 % Due Dec 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HOPKINSVILLE KY 2017 B/E OID @97.286 3.2% B/Q 3.00 % Due Dec 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SEATTLE WA IMPT SER A B/E PTC 4.00 % Due May 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ANDERSON CNTY SC SCH DIST 001 B/E ENH PG 4.00 % Due Mar 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LOUISIANA ST SER B B/E PTC 4.00 % Due Oct 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MISSOURI CITY TX RFDG B/E PTC 3.00 % Due Jun 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 500 CNTRCT REV RD FACS SER A BAM B/E PTC 4.00 % Due Dec 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WOOD CNTY WI RFDG B/E PTC 3.00 % Due Oct 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SAN ANTONIO TX GENL IMPT B/E 4.00 % Due Aug 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 495 AGI B/E 4.00 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 495 AGI B/E 4.00 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NORTH CAROLINA HSG FIN AGY HMOWNRSHP REV SER 55C B/E 3.20 % Due Jul 1, 2056",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VOLUSIA CNTY FL SCH BRD CTF PARTN SER A REV B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LAKE CNTY OH NT CNTY CORRTL FACS BANS B/E 4.00 % Due Sep 24, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NEW HOPE TX CULTURAL ED FIN CORP STDNT HSG CHF COLL A REV B/E PTC 5.00 % Due Apr 1, 2048",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WASHINGTON ST VARIOUS PURP SER 2017A B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INDIANA ST FIN AUTH REV RFDG LSE APPROP STAD PJ SER A B/E PTC 5.25 % Due Feb 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SEWARD CNTY KS UNI SCH DIST 480 RFDG SER B B/E 5.00 % Due Sep 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SAN ANTONIO TX GENL IMPT RFDG B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEDINA OH CITY SCH DIST CTF PARTN REV SCH FACS PJ B/E PTC 4.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MIAMIDADE CNTY FL AVIATION REV RFDG SER B B/E 5.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TENNESSEE ENERGY ACQ CORP GAS REV B/E 4.00 % Due Nov 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JERSEY CITY NJ REDEV AGY PJ NT BAYFRONT REDEV PJ A DB B/E GTD 4.50 % Due Dec 11, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "EASLEY SC UTIL REV COMB SYS RFDG AGM B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NORTHSIDE TX INDPT SCH DIST SCH BLDG B/E PSF GTD 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TALLAHASSEE FL ENERGY SYS REV RFDG B/E PTC 5.00 % Due Oct 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CLARK PLEASANT IN MIDDLE SCH BLDG CORP 1ST MTG RFDG SER B REV B/E 4.00 % Due Jan 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "COLONY TX RFDG B/E PTC 3.00 % Due Aug 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HILLSBOROUGH CNTY FL SCH DIST SLS TAX REV RFDG B AGM B/E OID@98.323 3.18% 3.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HARRIS CNTY TX CULTURAL ED FIN CORP REV RFDG HOSP CHLDRNS 1 B/E PTC 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "THURSTON CNTY WA SCH DIST 33 TUMWTR B/E 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "TUCSON AZ SER B B/E OID @99.000 3.1% 3.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CONNECTICUT ST SER B B/E PTC 5.00 % Due Jun 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLUFFTON OH HOSP FACS REV RFDG BLANCHARD VLY REGL HLTH CTR B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HARRIS MONTGOMERY CNTYS TX MUD 386 SER A BAM B/E OID @98.846 2.75% 2.625 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "OSNABURG OH LOC SCH DIST RFDG B/E B/Q ST INTRCPT PTC 3.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BUCKS CNTY PA INDL DEV AUTH REV RFDG GEORGE SCH B/E 5.00 % Due Sep 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MONTGOMERY CNTY PA IDA CLLG REV BRYN MAWR CLLG B/E OID @98.553 3.36% 3.25 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ELEVON MUD 1 A TX BAM B/E 4.00 % Due Sep 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALABAMA CMNTY CLLG SYS BRD TRUSTEES SPL FEE REV AGM B/E PTC 4.00 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ONSLOW CNTY NC LTD OBLIG REV B/E 4.00 % Due Dec 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "2004 PLAINFIELD IN CMNTY HIGH SCH BLDG CORP MTG REV B/E ST INTRCPT PTC 3.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MINNESOTA ST MUN PWR AGY ELEC REV B/E PTC 3.00 % Due Oct 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SUNFIELD TX MUD 3 AGM B/E OID @96.897 3.5% 3.25 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MAINE ST HSG AUTH MTG PUR SER A 3 REV B/E 3.50 % Due Nov 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SAN ANTONIO TX GENL IMPT B/E 4.00 % Due Aug 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GUNTERSVILLE AL PUB BLDG AUTH BLDG REV DHR PJ B/E OID @98.763 3.19% 3.10 % Due Jul 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "OLD SPANISH TRAIL ALEMDA CORRIDR REDEV REV TX TAX INCRMT CNTRCT BAM B/E 3.00 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "DERRY TWP PA DAUPHIN CNTY 2019 B/E OID @98.163 3.27% 3.125 % Due Dec 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SPOKANE WA RFDG B/E OID @98.538 3.2% 3.10 % Due Dec 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JEFFERSON PARISH LA CONS SEW DIST 1 SWR REV BAM B/E PTC 4.00 % Due Feb 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INDIANA ST FIN AUTH WSTWTR UTIL REV 1ST LIEN RFDG CWA AUTH SER 1 B/E 4.00 % Due Oct 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BASTROP TX INDPT SCH DIST BLDG PSF GTD B/E 4.00 % Due Feb 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PORT TACOMA WA RFDG SER A B/E PTC 4.00 % Due Dec 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PORT HOUSTON AUTH TX HARRIS CNTY REV 1ST LIEN B/E 4.00 % Due Oct 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GEORGETOWN TX B/E PTC 4.00 % Due Aug 15, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMMN REV PJ 124 SER A AGM B/E 3.00 % Due Nov 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "OREM UT WTR SWR & STORM SWR REV SER A B/E PTC 4.00 % Due Jul 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BARBERS HILL TX INDPT SCH DIST BLDG B/E PSF GTD 4.00 % Due Feb 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PAINESVILLE OH SPL OBLIG INCM TAX STR IMPT PJ REV B/E OID @98.119 3.12% 3.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CINCINNATI OH ECON DEV REV RFDG BALDWIN 300 PJ SER D B/E 3.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MADISON WI PROM NT SER A B/E 4.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "UNIVERSITY CITY MO SCH DIST RFDG B/E PTC 4.00 % Due Feb 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SPARTA WI AREA SCH DIST RFDG B/E PTC 4.00 % Due Mar 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LOWER AL GAS DIST GAS GAS DIST PJ 2 REV B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALLEN PARK MI PUB SCH DIST RFDG B/E QSBLF PTC 5.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PENNSYLVANIA ST RFDG 1ST SER B/E 5.00 % Due Sep 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INDIANA ST FIN AUTH REV RFDG LSE APPROP STDM PJ A B/E PTC 5.25 % Due Feb 1, 2037",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV COMSPIRIT HLTH SER A2 B/E 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MILWAUKEE CNTY WI CORP PURP SER A B/E PTC 3.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "FRANKLIN IN CMNTY MULT SCH BLDG CORP REV RFDG 1ST MTG SER A NPFG B/E 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "FRANKLIN IN CMNTY MULT SCH BLDG CORP REV RFDG 1ST MTG SER A NPFG B/E 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV HOSP ADVENTIST HLTH SUNBELT SER B B/E PTC 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERMONT HSG FIN AGY MULTIPLE PURP 2024 E 2 REV B/E GUAR CR ENH 3.50 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "pdfPath": "data/pdfs/Donald-J-Trump-08.12.2025-278T(2) AMENDED.pdf",
+  "model": "chunked",
+  "tokenUsage": {
+    "estimatedCostUsd": "0.3936"
+  }
+}

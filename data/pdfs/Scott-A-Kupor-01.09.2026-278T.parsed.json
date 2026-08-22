@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Omada Health Inc. (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2025-12-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock (COIN)",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-12-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2025-12-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6494,
+    "outputTokens": 281,
+    "estimatedCostUsd": 0.0237
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-01.09.2026-278T.pdf"
+}

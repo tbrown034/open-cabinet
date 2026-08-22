@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Costco Wholesale Corp. (COST)",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2021-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Teladoc Health, Inc. (TDOC)",
+      "ticker": "TDOC",
+      "type": "Sale",
+      "date": "2021-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Costco Wholesale Corp. (COST)",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2021-06-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6544,
+    "outputTokens": 273,
+    "estimatedCostUsd": 0.0237
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Chriswell-08.05.2021-278T.pdf"
+}

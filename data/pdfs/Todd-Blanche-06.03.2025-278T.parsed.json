@@ -1,0 +1,146 @@
+{
+  "transactions": [
+    {
+      "description": "Bitcoin",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Solana",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ethereum classic",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "polygon",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "polkadot",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Quant",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock (COIN)",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Delta Air Lines, Inc. (DAL)",
+      "ticker": "DAL",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Peloton Interactive Inc. Class A Common Stock (PTON)",
+      "ticker": "PTON",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Pfizer Inc. (PFE)",
+      "ticker": "PFE",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2025-05-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI Japan ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Financial Select Sector SPDR Fund (XLF)",
+      "ticker": "XLF",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Health Care Select Sector SPDR Fund (XLV)",
+      "ticker": "XLV",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Ethereum",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8373,
+    "outputTokens": 1269,
+    "estimatedCostUsd": 0.0442
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Todd-Blanche-06.03.2025-278T.pdf"
+}

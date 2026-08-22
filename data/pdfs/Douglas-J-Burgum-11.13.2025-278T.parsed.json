@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Costco Wholesale Corp.",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Schwab Treasury Obligations Money Fund Investor Class Shares",
+      "ticker": "SNOXX",
+      "type": "Sale",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6509,
+    "outputTokens": 273,
+    "estimatedCostUsd": 0.0236
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Douglas-J-Burgum-11.13.2025-278T.pdf"
+}

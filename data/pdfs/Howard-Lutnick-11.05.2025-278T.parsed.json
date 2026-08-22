@@ -1,0 +1,101 @@
+{
+  "transactions": [
+    {
+      "description": "Cantor Fitzgerald, L.P",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CF Group Management, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BGC Group, Inc. (BGC) Class B",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Tangible Benefits, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "KBCR Management Partners, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LFA, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (BGC)",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (NMRK)",
+      "ticker": "NMRK",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (BGC)",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (NMRK)",
+      "ticker": "NMRK",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8738,
+    "outputTokens": 877,
+    "estimatedCostUsd": 0.0394
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Howard-Lutnick-11.05.2025-278T.pdf"
+}

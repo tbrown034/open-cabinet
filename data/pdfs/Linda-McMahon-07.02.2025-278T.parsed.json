@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Trump Media & Tech Group Corp (DJT)",
+      "ticker": "DJT",
+      "type": "Sale",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6460,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.0204
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Linda-McMahon-07.02.2025-278T.pdf"
+}

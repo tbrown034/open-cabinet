@@ -1,0 +1,92 @@
+{
+  "transactions": [
+    {
+      "description": "ASML Holding NV",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Uber Technologies, Inc. (UBER)",
+      "ticker": "UBER",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Uber Technologies, Inc. (UBER)",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Zscaler, Inc. (ZS)",
+      "ticker": "ZS",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CRISPR Therapeutics AG Common Shares (CRSP)",
+      "ticker": "CRSP",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NIKE, Inc. (NKE)",
+      "ticker": "NKE",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NIKE, Inc. (NKE)",
+      "ticker": "NKE",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6618,
+    "outputTokens": 801,
+    "estimatedCostUsd": 0.0319
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf"
+}

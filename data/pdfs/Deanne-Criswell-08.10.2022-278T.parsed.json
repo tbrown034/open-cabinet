@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "vanguard S&P 500 (VOO)",
+      "ticker": "VOO",
+      "type": "Purchase",
+      "date": "2022-07-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+      "ticker": "QQQ",
+      "type": "Purchase",
+      "date": "2022-07-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Purchase",
+      "date": "2022-07-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6597,
+    "outputTokens": 279,
+    "estimatedCostUsd": 0.024
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-08.10.2022-278T.pdf"
+}

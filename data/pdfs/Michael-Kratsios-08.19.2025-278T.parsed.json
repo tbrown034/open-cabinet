@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Schwab S&P 500 Index Fund (SWPPX)",
+      "ticker": "SWPPX",
+      "type": "Purchase",
+      "date": "2025-08-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Sale",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Real Estate Index Fund ETF Shares (VNQ)",
+      "ticker": "VNQ",
+      "type": "Purchase",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6475,
+    "outputTokens": 298,
+    "estimatedCostUsd": 0.0239
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Kratsios-08.19.2025-278T.pdf"
+}

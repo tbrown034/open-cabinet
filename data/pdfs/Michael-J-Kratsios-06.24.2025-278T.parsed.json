@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Scale AI, Inc. Stock",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6398,
+    "outputTokens": 62,
+    "estimatedCostUsd": 0.0201
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-06.24.2025-278T.pdf"
+}

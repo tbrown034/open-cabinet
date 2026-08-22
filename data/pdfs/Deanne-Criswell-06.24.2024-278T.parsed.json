@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Advanced Micro Devices, Inc. (AMD)",
+      "ticker": "AMD",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Meta Financial Group, Inc. (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6512,
+    "outputTokens": 265,
+    "estimatedCostUsd": 0.0235
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-06.24.2024-278T.pdf"
+}

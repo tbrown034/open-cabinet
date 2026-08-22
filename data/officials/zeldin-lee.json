@@ -13,7 +13,8 @@
       "type": "Purchase",
       "date": "2025-08-01",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": true
+      "lateFilingFlag": true,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1F2CA5D27DDE1D9085258D460031984D/$FILE/Lee-Zeldin-09-24-2025-278T.pdf"
     },
     {
       "description": "NeuroSense Therapeutics Ltd. Ordinary Shares",
@@ -21,7 +22,8 @@
       "type": "Sale",
       "date": "2025-05-13",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
     },
     {
       "description": "Datavault",
@@ -29,7 +31,8 @@
       "type": "Purchase",
       "date": "2025-05-13",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
     },
     {
       "description": "Datavault",
@@ -37,7 +40,8 @@
       "type": "Sale",
       "date": "2025-05-16",
       "amount": "$1,001-$15,000",
-      "lateFilingFlag": false
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
     }
   ],
   "summary": "Zeldin reported 2 sales (est. $16K) and 2 purchases (est. $16K). Holdings included NRSN, DVLT. One transaction was flagged as a late filing.",

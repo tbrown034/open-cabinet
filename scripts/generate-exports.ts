@@ -75,6 +75,7 @@ async function main() {
     "amount_range",
     "amount_midpoint",
     "late_filing",
+    "source_filing_url",
   ];
   const txRows = allOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
@@ -90,6 +91,7 @@ async function main() {
         tx.amount,
         String(MIDPOINTS[tx.amount] || 0),
         tx.lateFilingFlag ? "yes" : "no",
+        (tx as { sourceUrl?: string }).sourceUrl || "",
       ].join(",")
     )
   );

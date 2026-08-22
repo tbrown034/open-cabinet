@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Dominion Energy, Inc. (D)",
+      "ticker": "D",
+      "type": "Sale",
+      "date": "2025-05-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fidelity Software and IT Services Portfolio (FSCSX)",
+      "ticker": "FSCSX",
+      "type": "Sale",
+      "date": "2025-04-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "T Rowe Price Health Sciences Fund, Inc Class I Shares (THISX)",
+      "ticker": "THISX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6514,
+    "outputTokens": 283,
+    "estimatedCostUsd": 0.0238
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Paul-R-Lawrence-06.11.2025-278T.pdf"
+}

@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Sea Limited (SE)",
+      "ticker": "SE",
+      "type": "Purchase",
+      "date": "2021-12-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Roblox Corporation (RBLX)",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2021-12-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6525,
+    "outputTokens": 177,
+    "estimatedCostUsd": 0.0222
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-12.01.2021-278T.pdf"
+}

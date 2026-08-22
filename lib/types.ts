@@ -32,6 +32,10 @@ export interface Transaction {
   amount: AmountRange;
   lateFilingFlag: boolean;
   notes?: string;
+  /** URL of the filing that actually disclosed this row (stamped at ingest
+   * or by backfill-tx-source.ts). When absent the UI falls back to the
+   * date heuristic in getSourceFilingForTransaction. */
+  sourceUrl?: string;
 }
 
 export interface SourceFiling {

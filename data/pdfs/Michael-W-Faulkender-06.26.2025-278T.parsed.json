@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Global Accountability Corporation",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6458,
+    "outputTokens": 56,
+    "estimatedCostUsd": 0.0202
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-W-Faulkender-06.26.2025-278T.pdf"
+}

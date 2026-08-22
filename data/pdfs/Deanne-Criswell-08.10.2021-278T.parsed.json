@@ -1,0 +1,47 @@
+{
+  "transactions": [
+    {
+      "description": "CrowdStrike Holdings (CRWD)",
+      "ticker": "CRWD",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ford Motor Company (F)",
+      "ticker": "F",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Autodesk, Inc. (ADSK)",
+      "ticker": "ADSK",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6562,
+    "outputTokens": 357,
+    "estimatedCostUsd": 0.025
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-08.10.2021-278T.pdf"
+}

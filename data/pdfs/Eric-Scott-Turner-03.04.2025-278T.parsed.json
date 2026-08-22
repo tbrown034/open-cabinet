@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Zillow Group, Inc. (Z)",
+      "ticker": "Z",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-02-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6607,
+    "outputTokens": 633,
+    "estimatedCostUsd": 0.0293
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Eric-Scott-Turner-03.04.2025-278T.pdf"
+}

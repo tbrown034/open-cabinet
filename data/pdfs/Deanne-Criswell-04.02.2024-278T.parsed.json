@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "Advanced Micro Devices, Inc.",
+      "ticker": "AMD",
+      "type": "Sale (Partial)",
+      "date": "2024-03-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NVIDIA Corp.",
+      "ticker": "NVDA",
+      "type": "Sale (Partial)",
+      "date": "2024-03-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2024-03-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6572,
+    "outputTokens": 271,
+    "estimatedCostUsd": 0.0238
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-04.02.2024-278T.pdf"
+}

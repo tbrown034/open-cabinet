@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6443,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.0203
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-09.02.2025-278T.pdf"
+}

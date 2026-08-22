@@ -1,0 +1,65 @@
+{
+  "transactions": [
+    {
+      "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+      "ticker": "GSIMX",
+      "type": "Purchase",
+      "date": "2025-05-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
+      "ticker": "GQGIX",
+      "type": "Purchase",
+      "date": "2025-05-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures II, LP - Jane Software, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - GivingData Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-05-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8404,
+    "outputTokens": 558,
+    "estimatedCostUsd": 0.0336
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Douglas-J-Burgum-06.12.2025-278T.pdf"
+}

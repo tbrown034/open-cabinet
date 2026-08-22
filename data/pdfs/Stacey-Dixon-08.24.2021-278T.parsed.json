@@ -1,0 +1,407 @@
+{
+  "transactions": [
+    {
+      "description": "AMERICAN CAP INC BUILDER F2 CONFIRM NBR (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 CONFIRM NBR (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GW FD OF AMERICA F2 CONFIRM NBR (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BALANCED F2 CONFIRM NBR (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN SMALL CAP WORLD F2 CONFIRM NBR (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN INV CO OF AMER F2 CONFIRM NBR (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN WA MUTUAL F2 CONFIRM NBR (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 CONFIRM NBR (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "STRATEGIC BOND F2 CONFIRM NBR (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "10X GENOMICS INC CL A (TXG)",
+      "ticker": "TXG",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AIRBNB INC CL A (ABNB)",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CARVANA CO CL A (CVNA)",
+      "ticker": "CVNA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CLOUDFLARE INC CL A (NET)",
+      "ticker": "NET",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "COUPA SOFTWARE INC (COUP)",
+      "ticker": "COUP",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CROWDSTRIKE HLDGS INC CL A (CRWD)",
+      "ticker": "CRWD",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DATADOG INC CL A (DDOG)",
+      "ticker": "DDOG",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DEXCOM INC (DXCM)",
+      "ticker": "DXCM",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOCUSIGN INC (DOCU)",
+      "ticker": "DOCU",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOORDASH INC CL A (DASH)",
+      "ticker": "DASH",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ILLUMINA INC (ILMN)",
+      "ticker": "ILMN",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MODERNA INC (MRNA)",
+      "ticker": "MRNA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MONGODB INC CL A (MDB)",
+      "ticker": "MDB",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NVIDIA CORPORATION (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "OKTA, INC CL A (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PINTEREST INC CL A (PINS)",
+      "ticker": "PINS",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ROBLOX CORP CL A (RBLX)",
+      "ticker": "RBLX",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ROYALTY PHARMA PLC SHS CLASS A (RPRX)",
+      "ticker": "RPRX",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SEA LIMITED ADR (SE)",
+      "ticker": "SE",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SHOPIFY INC (SHOP)",
+      "ticker": "SHOP",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNAP INC. CL A (SNAP)",
+      "ticker": "SNAP",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNOWFLAKE INC CL A (SNOW)",
+      "ticker": "SNOW",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPOTIFY TECHNOLOGY SA (SPOT)",
+      "ticker": "SPOT",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SQUARE INC CLASS A (SQ)",
+      "ticker": "SQ",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TRADE DESK INC CLASS A (TTD)",
+      "ticker": "TTD",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TWILIO INC CL A (TWLO)",
+      "ticker": "TWLO",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TWITTER INC (TSTR)",
+      "ticker": "TSTR",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UBER TECHNOLOGIES INC (UBER)",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UNITY SOFTWARE INC (U)",
+      "ticker": "U",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VEEVA SYS INC CL A (VEEV)",
+      "ticker": "VEEV",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "WAYFAIR INC (W)",
+      "ticker": "W",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ZILLOW GROUP INC CL C CAP STK (Z)",
+      "ticker": "Z",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ZOOM VIDEO COMMUNICATIONS-A (ZM)",
+      "ticker": "ZM",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC (ISRG)",
+      "ticker": "ISRG",
+      "type": "Sale",
+      "date": "2021-08-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UNITY SOFTWARE INC (U)",
+      "ticker": "U",
+      "type": "Purchase",
+      "date": "2021-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 14463,
+    "outputTokens": 4035,
+    "estimatedCostUsd": 0.1039
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Stacey-Dixon-08.24.2021-278T.pdf"
+}

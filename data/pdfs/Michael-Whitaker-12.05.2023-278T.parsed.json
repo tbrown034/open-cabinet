@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2023-11-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan Chase & Co. (JPM)",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "The PNC Financial Services Group, Inc. (PNC)",
+      "ticker": "PNC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Target Corp. (TGT)",
+      "ticker": "TGT",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Truist Financial Corporation Common Stock (TFC)",
+      "ticker": "TFC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Pfizer Inc. (PFE)",
+      "ticker": "PFE",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6661,
+    "outputTokens": 627,
+    "estimatedCostUsd": 0.0294
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Whitaker-12.05.2023-278T.pdf"
+}

@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-23",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-24",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-26",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-27",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-01",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6533,
+    "outputTokens": 590,
+    "estimatedCostUsd": 0.0284
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Frank-J-Bisignano-07.03.2025-278T.pdf"
+}

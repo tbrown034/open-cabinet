@@ -1,0 +1,101 @@
+{
+  "transactions": [
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-05-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-05-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Purchase",
+      "date": "2025-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6681,
+    "outputTokens": 919,
+    "estimatedCostUsd": 0.0338
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-06.09.2025-278T.pdf"
+}

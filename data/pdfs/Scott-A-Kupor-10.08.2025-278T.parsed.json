@@ -1,0 +1,29 @@
+{
+  "transactions": [
+    {
+      "description": "Alphabet, Inc. (GOOG) (sale of stock per required CD)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Southern Company (SO) (required sale pursuant to CD)",
+      "ticker": "SO",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6486,
+    "outputTokens": 190,
+    "estimatedCostUsd": 0.0223
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Scott-A-Kupor-10.08.2025-278T.pdf"
+}

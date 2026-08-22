@@ -1,0 +1,434 @@
+{
+  "transactions": [
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2025-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2025-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2025-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
+      "ticker": "AOA",
+      "type": "Purchase",
+      "date": "2024-12-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BALANCED F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GLOBAL INSIGHT F2 (AGVGX)",
+      "ticker": "AGVGX",
+      "type": "Purchase",
+      "date": "2024-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN SMALL CAP WORLD F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN WA MUTUAL F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BALANCED F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BALANCED F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN WA MUTUAL F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN SMALL CAP WORLD F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN SMALL CAP WORLD F2 (SMCFX)",
+      "ticker": "SMCFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN MULTI SECTOR INC F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN MULTI SECTOR INC F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GLOBAL INSIGHT F2 (AGVGX)",
+      "ticker": "AGVGX",
+      "type": "Purchase",
+      "date": "2024-11-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN MULTI SECTOR INC F2 (MIAYX)",
+      "ticker": "MIAYX",
+      "type": "Purchase",
+      "date": "2024-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
+      "ticker": "ICAFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
+      "ticker": "AOA",
+      "type": "Purchase",
+      "date": "2024-01-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN WA MUTUAL F2 (WMFFX)",
+      "ticker": "WMFFX",
+      "type": "Purchase",
+      "date": "2024-12-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
+      "ticker": "GFFFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
+      "ticker": "CAIFX",
+      "type": "Purchase",
+      "date": "2024-12-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BALANCED F2 (AMBFX)",
+      "ticker": "AMBFX",
+      "type": "Purchase",
+      "date": "2024-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2024-01-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
+      "ticker": "ABNFX",
+      "type": "Sale",
+      "date": "2024-12-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
+      "ticker": "ANBFX",
+      "type": "Sale",
+      "date": "2024-12-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
+      "ticker": "WGIFX",
+      "type": "Sale",
+      "date": "2024-05-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
+      "ticker": "AOA",
+      "type": "Sale",
+      "date": "2024-01-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 10894,
+    "outputTokens": 4507,
+    "estimatedCostUsd": 0.1003
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Stacey-Dixon-02.10.2025-278T.pdf"
+}

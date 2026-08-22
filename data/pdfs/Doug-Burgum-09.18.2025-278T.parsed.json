@@ -1,0 +1,137 @@
+{
+  "transactions": [
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Zizzle Health",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Senior Sign",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8995,
+    "outputTokens": 1225,
+    "estimatedCostUsd": 0.0454
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Doug-Burgum-09.18.2025-278T.pdf"
+}

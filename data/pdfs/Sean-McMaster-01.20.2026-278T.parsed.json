@@ -1,0 +1,47 @@
+{
+  "transactions": [
+    {
+      "description": "One Stop Systems Inc. Common Stock (OSS)",
+      "ticker": "OSS",
+      "type": "Purchase",
+      "date": "2026-01-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2025-12-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6525,
+    "outputTokens": 368,
+    "estimatedCostUsd": 0.0251
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sean-McMaster-01.20.2026-278T.pdf"
+}

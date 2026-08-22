@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Alibaba Group Holding Limited (BABA)",
+      "ticker": "BABA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6499,
+    "outputTokens": 66,
+    "estimatedCostUsd": 0.0205
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-08.23.2021-278T.pdf"
+}

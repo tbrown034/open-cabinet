@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Scale AI vested stock options",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-21",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6398,
+    "outputTokens": 62,
+    "estimatedCostUsd": 0.0201
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-J-Kratsios-07.25.2025-278T.pdf"
+}

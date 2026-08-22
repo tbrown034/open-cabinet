@@ -1,0 +1,74 @@
+{
+  "transactions": [
+    {
+      "description": "Semler Scientific Inc. Common Stock",
+      "ticker": "SMLR",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Global X MSCI Argentina ETF",
+      "ticker": "ARGT",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "bitmine immersion technology",
+      "ticker": "BMNR",
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-08-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "180 Life Sciences Corp. Common Stock",
+      "ticker": "ATNF",
+      "type": "Purchase",
+      "date": "2025-08-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "bitmine immersion technology",
+      "ticker": "BMNR",
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6617,
+    "outputTokens": 608,
+    "estimatedCostUsd": 0.029
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sean-McMaster-09.29.2025-278T.pdf"
+}

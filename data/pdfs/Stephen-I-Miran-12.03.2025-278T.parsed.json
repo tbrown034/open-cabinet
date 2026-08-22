@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "ISHARES S&P 500 INDEX FUND - IVV",
+      "ticker": "IVV",
+      "type": "Purchase",
+      "date": "2025-11-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6455,
+    "outputTokens": 72,
+    "estimatedCostUsd": 0.0204
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Stephen-I-Miran-12.03.2025-278T.pdf"
+}

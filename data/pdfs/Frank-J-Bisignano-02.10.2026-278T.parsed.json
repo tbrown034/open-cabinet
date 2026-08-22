@@ -1,0 +1,137 @@
+{
+  "transactions": [
+    {
+      "description": "SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "type": "Sale",
+      "date": "2025-12-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Humana, Inc.",
+      "ticker": "HUM",
+      "type": "Sale",
+      "date": "2025-12-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6876,
+    "outputTokens": 1307,
+    "estimatedCostUsd": 0.0402
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Frank-J-Bisignano-02.10.2026-278T.pdf"
+}

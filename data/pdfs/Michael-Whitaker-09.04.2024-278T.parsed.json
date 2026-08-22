@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Texas Instruments Incorporated (TXN)",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2024-08-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6463,
+    "outputTokens": 64,
+    "estimatedCostUsd": 0.0203
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Michael-Whitaker-09.04.2024-278T.pdf"
+}

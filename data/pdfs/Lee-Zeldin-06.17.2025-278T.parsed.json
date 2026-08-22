@@ -1,0 +1,38 @@
+{
+  "transactions": [
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares (NRSN)",
+      "ticker": "NRSN",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Datavault (DVLT)",
+      "ticker": "DVLT",
+      "type": "Purchase",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Datavault (DVLT)",
+      "ticker": "DVLT",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6499,
+    "outputTokens": 279,
+    "estimatedCostUsd": 0.0237
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Lee-Zeldin-06.17.2025-278T.pdf"
+}

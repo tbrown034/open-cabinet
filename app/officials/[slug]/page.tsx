@@ -7,6 +7,7 @@ import {
   amountRangeLabel,
   displayName,
   getSourceFilingForTransaction,
+  disclosureLagDays,
 } from "@/lib/format";
 import { getNewsForOfficial } from "@/lib/news";
 import { getFeePaymentsBySlug } from "@/lib/fee-payments";
@@ -307,6 +308,10 @@ export default async function OfficialPage({
   const visibleSorted = visibleTransactions.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
+  // The client chart components never use per-row source attribution, and
+  // sourceUrl is ~90 bytes per row — on an 8,900-row official that is real
+  // serialized-payload weight. Strip it before the props cross to the client.
+  const stripSourceUrl = ({ sourceUrl, ...rest }: Transaction) => rest;
 
   const monthLabel = monthFilter
     ? new Date(monthFilter + "-01T00:00:00").toLocaleDateString("en-US", {
@@ -677,13 +682,13 @@ export default async function OfficialPage({
         </div>
         {chartView === "bars" ? (
           <MonthlyBars
-            transactions={chartTransactions}
+            transactions={chartTransactions.map(stripSourceUrl)}
             selectedMonth={monthFilter}
             clickToZoom
           />
         ) : (
           <TransactionTimeline
-            transactions={visibleTransactions}
+            transactions={visibleTransactions.map(stripSourceUrl)}
             careerEvents={getCareerEvents(official)}
           />
         )}
@@ -724,6 +729,12 @@ export default async function OfficialPage({
               </th>
               <th className="pb-2 pr-4 font-medium">Type</th>
               <th className="pb-2 pr-4 font-medium text-right">Amount</th>
+              <th
+                className="pb-2 pr-4 font-medium text-right hidden md:table-cell"
+                title="When OGE posted the filing that disclosed this trade, and how many days after the trade that was"
+              >
+                Disclosed
+              </th>
               <th className="pb-2 font-medium text-right">Source</th>
             </tr>
           </thead>
@@ -769,6 +780,30 @@ export default async function OfficialPage({
                 </td>
                 <td className="py-2.5 pr-4 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
                   {amountRangeLabel(tx.amount)}
+                </td>
+                <td className="py-2.5 pr-4 text-right tabular-nums text-neutral-500 whitespace-nowrap hidden md:table-cell">
+                  {(() => {
+                    if (!sourceFiling) return <span className="text-neutral-300">—</span>;
+                    const lag = disclosureLagDays(tx.date, sourceFiling.date);
+                    return (
+                      <span
+                        title={`Posted to OGE ${formatDate(sourceFiling.date)}${
+                          lag !== null ? `, ${lag} days after the trade` : ""
+                        }`}
+                      >
+                        {formatDate(sourceFiling.date)}
+                        {lag !== null && (
+                          <span
+                            className={`ml-1.5 text-xs ${
+                              lag > 45 ? "text-amber-700" : "text-neutral-400"
+                            }`}
+                          >
+                            {lag}d
+                          </span>
+                        )}
+                      </span>
+                    );
+                  })()}
                 </td>
                 <td className="py-2.5 text-right whitespace-nowrap">
                   {sourceFiling?.url ? (

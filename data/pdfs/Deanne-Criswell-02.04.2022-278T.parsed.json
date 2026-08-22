@@ -1,0 +1,101 @@
+{
+  "transactions": [
+    {
+      "description": "Robolox Corp. (RBLX)",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Facebook, Inc. (FB)",
+      "ticker": "FB",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Crowdstrike Holding's Inc. (CRWD)",
+      "ticker": "CRWD",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "salesforce.com, inc. (CRM)",
+      "ticker": "CRM",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Autodesk, Inc. (ADSK)",
+      "ticker": "ADSK",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shopify Inc. (SHOP)",
+      "ticker": "SHOP",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Sea Limited (SE)",
+      "ticker": "SE",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PayPal Holdings, Inc. (PYPL)",
+      "ticker": "PYPL",
+      "type": "Sale",
+      "date": "2022-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Starbucks Corp. (SBUX)",
+      "ticker": "SBUX",
+      "type": "Sale",
+      "date": "2022-02-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6684,
+    "outputTokens": 887,
+    "estimatedCostUsd": 0.0334
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Deanne-Criswell-02.04.2022-278T.pdf"
+}

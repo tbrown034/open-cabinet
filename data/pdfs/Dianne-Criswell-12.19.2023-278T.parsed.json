@@ -1,0 +1,83 @@
+{
+  "transactions": [
+    {
+      "description": "Ford Motor Co. (F)",
+      "ticker": "F",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Target Corp. (TGT)",
+      "ticker": "TGT",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Walmart, Inc. (WMT)",
+      "ticker": "WMT",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Intuit, Inc. (INTU)",
+      "ticker": "INTU",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)",
+      "ticker": "VBR",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Purchase",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Purchase",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6652,
+    "outputTokens": 716,
+    "estimatedCostUsd": 0.0307
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Dianne-Criswell-12.19.2023-278T.pdf"
+}

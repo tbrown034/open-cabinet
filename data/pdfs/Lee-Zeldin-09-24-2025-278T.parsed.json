@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares (NRSN)",
+      "ticker": "NRSN",
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6477,
+    "outputTokens": 75,
+    "estimatedCostUsd": 0.0206
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Lee-Zeldin-09-24-2025-278T.pdf"
+}

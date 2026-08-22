@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6444,
+    "outputTokens": 63,
+    "estimatedCostUsd": 0.0203
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "/Users/home/Desktop/dev/open-cabinet/data/pdfs/Sean-McMaster-02.27.2026-278T.pdf"
+}
