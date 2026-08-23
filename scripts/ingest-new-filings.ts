@@ -453,13 +453,14 @@ async function ingestForOfficial(
       current.set(key, (current.get(key) ?? 0) + 1);
       // Strip confidence — not in stored schema
       const { confidence, ...rest } = tx as ParsedTransaction & { confidence?: number };
+      // Exact attribution: which filing disclosed this row. Powers the
+      // Disclosed column/lag and the per-row PDF link without the date
+      // heuristic. (confidence was destructured away, so go through
+      // unknown — the stored schema intentionally drops it.)
       addedTxs.push({
         ...rest,
-        // Exact attribution: which filing disclosed this row. Powers the
-        // Disclosed column/lag and the per-row PDF link without the date
-        // heuristic.
         sourceUrl: newPdfs[fi].pdfUrl,
-      } as ParsedTransaction);
+      } as unknown as ParsedTransaction);
     }
   }
 
