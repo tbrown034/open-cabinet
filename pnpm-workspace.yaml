@@ -3,3 +3,9 @@ packages:
 
 minimumReleaseAge: 10080
 trustPolicy: no-downgrade
+# Allowlist for already-locked dev-tooling versions that npm now reports as
+# trust downgrades (published without provenance after earlier versions had
+# it). Exact versions only, all present in pnpm-lock.yaml before this change.
+# Reviewed 2026-08-31.
+trustPolicyExclude:
+  - "semver@6.3.1"

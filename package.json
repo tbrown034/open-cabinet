@@ -24,7 +24,7 @@
     "backfill-notified": "npx tsx scripts/backfill-notified.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.88.0",
+    "@anthropic-ai/sdk": "^0.120.0",
     "@neondatabase/serverless": "^1.0.2",
     "@vercel/analytics": "^2.0.1",
     "better-auth": "^1.6.23",
@@ -34,7 +34,7 @@
     "d3-time": "^3.1.0",
     "d3-time-format": "^4.1.0",
     "drizzle-orm": "^0.45.2",
-    "next": "16.2.10",
+    "next": "16.2.11",
     "openai": "^6.34.0",
     "pdf-parse": "^2.4.5",
     "react": "19.2.4",
@@ -61,5 +61,10 @@
     "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^4.1.8"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/node@^20": "20.19.39"
+    }
   }
 }
