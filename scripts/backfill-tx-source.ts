@@ -163,10 +163,16 @@ async function main() {
       // shared between the uncached filing and a cached one was already
       // consumed by the cache pass; only cross-filing amendment duplicates
       // could mis-order that, and those are deduped at ingest.)
+      // A filing cannot disclose a trade that happened after it was posted,
+      // so the inference is only valid for rows dated on or before the
+      // uncached filing's date. Rows after it stay unstamped (the UI's
+      // date heuristic covers them) — stamping them produced the Aug 2026
+      // Trump misattribution, where OCR drift in descriptions kept 384
+      // later-dated rows from matching their real filing's cache.
       const uncached = ordered.filter((f, i) => f.url && budgets[i] === null);
       if (uncached.length === 1) {
         for (const tx of txs) {
-          if (!tx.sourceUrl) {
+          if (!tx.sourceUrl && tx.date <= uncached[0].date) {
             tx.sourceUrl = uncached[0].url;
             officialStamped++;
           }

@@ -88,7 +88,7 @@ async function main() {
         tx.ticker || "",
         tx.type,
         tx.date,
-        tx.amount,
+        escapeCsv(tx.amount),
         String(MIDPOINTS[tx.amount] || 0),
         tx.lateFilingFlag ? "yes" : "no",
         (tx as { sourceUrl?: string }).sourceUrl || "",
