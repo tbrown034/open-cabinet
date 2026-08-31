@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   },
   description:
     "Track financial transactions of cabinet secretaries, agency heads and senior government officials. Data from the U.S. Office of Government Ethics.",
-  alternates: {
-    canonical: SITE_URL,
-  },
   icons: {
     icon: "/favicon.svg",
   },

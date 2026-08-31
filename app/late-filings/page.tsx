@@ -13,6 +13,7 @@ import Link from "next/link";
  * pages already do this well ("NVDA: Who in Government Trades This Stock").
  */
 export const metadata: Metadata = {
+  alternates: { canonical: "/late-filings" },
   title: "Late-Filed Stock Trades by Executive Branch Officials",
   description:
     "Which Trump administration officials reported stock trades after the STOCK Act deadline, how the 30-day rule works, and what the law actually does about it.",

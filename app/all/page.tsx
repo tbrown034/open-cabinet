@@ -7,6 +7,7 @@ import SwimLaneChart from "../components/swim-lane-chart";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/all" },
   title: "All Executive Branch Trades",
   description:
     "Every tracked executive branch transaction on one canvas.",

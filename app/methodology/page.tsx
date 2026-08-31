@@ -4,6 +4,7 @@ import AboutScrolly from "../components/about-scrolly";
 import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/methodology" },
   title: "Methodology",
   description:
     "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",

@@ -4,6 +4,7 @@ import path from "path";
 import ResearchContactCta from "../components/research-contact-cta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/download" },
   title: "Download Data",
   description: "Download executive branch financial transaction data as CSV or JSON.",
 };

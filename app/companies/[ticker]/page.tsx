@@ -24,6 +24,9 @@ export async function generateMetadata({
   if (!company) return { title: "Not Found" };
   const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
   return {
+    // Lowercase self-canonical also collapses /companies/AAPL and
+    // /companies/aapl (both serve identical content) into one indexed URL.
+    alternates: { canonical: `/companies/${company.ticker.toLowerCase()}` },
     title: `${company.ticker}: Who in Government Trades This Stock`,
     // Many company names already end in a period ("NVIDIA Corp.", "Apple,
     // Inc."), so appending one produced "NVIDIA Corp.." in every search

@@ -4,6 +4,7 @@ import { displayName, formatDate } from "@/lib/format";
 import { getPublicUpdates } from "@/lib/updates";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/filings" },
   title: "New Executive Branch Stock Filings, Logged as They Post",
   description:
     "A dated log of every new financial disclosure Open Cabinet has picked up from the U.S. Office of Government Ethics — who filed, what they traded and when.",

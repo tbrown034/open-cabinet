@@ -5,6 +5,7 @@ import FeedbackForm from "../components/feedback-form";
 import ResearchContactCta from "../components/research-contact-cta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About",
   description:
     "About Open Cabinet and the journalist-developer who built it. Open source executive branch financial disclosure tracker.",

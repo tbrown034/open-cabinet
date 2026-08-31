@@ -10,6 +10,7 @@ import BuySellRatio from "../components/buy-sell-ratio";
 import SectorTreemap from "../components/sector-treemap";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/dashboard" },
   title: "Overview",
   description:
     "Aggregate analysis of executive branch financial transactions.",

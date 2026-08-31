@@ -89,6 +89,7 @@ export async function generateMetadata({
   if (!official) return { title: "Not Found" };
   const displayName = official.name.split(",").reverse().join(" ").trim();
   return {
+    alternates: { canonical: `/officials/${slug}` },
     title: `${displayName} Financial Trades`,
     description: official.summary || `Financial transaction data for ${displayName}, ${official.title}.`,
     openGraph: {
