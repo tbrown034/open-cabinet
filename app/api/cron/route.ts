@@ -122,7 +122,12 @@ export async function GET(request: NextRequest) {
     let digestNote = "";
     try {
       const { buildDigest } = await import("@/lib/digest");
-      const draft = await buildDigest();
+      // Scope the draft exactly like /admin's send path (newest published
+      // /filings entry), so this nudge can never claim a digest is ready
+      // for filings the admin panel would not actually offer.
+      const { getSendScope } = await import("@/lib/updates");
+      const since = await getSendScope();
+      const draft = await buildDigest(since ? { ingestedOnOrAfter: since } : {});
       if (!draft.empty) {
         digestNote = `\n\n${draft.items.length} official${draft.items.length === 1 ? "" : "s"} with new trades are ready to send to subscribers — review and send at /admin.`;
       }

@@ -189,14 +189,7 @@ export default function AdminPage() {
   async function runCronCheck() {
     setAdminState({ checkingOge: true });
     try {
-      const secret = prompt("Enter CRON_SECRET to trigger OGE check:");
-      if (!secret) {
-        setAdminState({ checkingOge: false });
-        return;
-      }
-      const res = await fetch("/api/cron", {
-        headers: { Authorization: `Bearer ${secret}` },
-      });
+      const res = await fetch("/api/admin/oge-check", { method: "POST" });
       const data = await res.json();
       setAdminState({
         ogeReport: {

@@ -7,6 +7,7 @@ import { mintToken, type TokenPurpose } from "@/lib/tokens";
 import { confirmPageUrl } from "@/lib/email-config";
 import { buildConfirmationEmail } from "@/lib/emails";
 import { sendTransactional } from "@/lib/email-send";
+import { isAllowedOrigin } from "@/lib/origin-check";
 
 type AlertType = "major" | "all";
 
@@ -64,6 +65,13 @@ function mintTokenSafe(id: number, purpose: TokenPurpose): string | null {
 }
 
 export async function POST(req: Request) {
+  // Same-site Origin gate: rejects direct-to-API bot POSTs before they can
+  // burn a confirmation send. Mirror the honeypot's silent-success so the
+  // bot learns nothing.
+  if (!isAllowedOrigin(req)) {
+    return NextResponse.json({ ok: true });
+  }
+
   const ip = getIp(req);
   if (tooMany(recentRequests, ip, RATE_LIMIT_WINDOW_MS, RATE_LIMIT_MAX)) {
     return NextResponse.json(

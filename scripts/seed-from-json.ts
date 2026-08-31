@@ -93,6 +93,9 @@ async function seedOfficials() {
         lateFilingFlag: tx.lateFilingFlag,
         rowIndex: i + j, // Global position distinguishes duplicate lots
         notes: tx.notes || null,
+        // sourceUrl was stamped into the JSON layer in Aug 2026; carry it
+        // through so the DB matches the published attribution.
+        pdfSource: (tx as { sourceUrl?: string }).sourceUrl || null,
       }));
 
       await db

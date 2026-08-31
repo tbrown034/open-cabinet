@@ -6,6 +6,7 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { notify } from "@/lib/notify";
+import { isAllowedOrigin } from "@/lib/origin-check";
 
 // Simple in-memory per-IP rate limit (resets on redeploy). Mirrors the working
 // limiter in app/api/alerts/route.ts: each IP maps to an array of request
@@ -37,6 +38,12 @@ function tooMany(ip: string): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  // Same-site Origin gate: rejects direct-to-API bot POSTs. Silent success,
+  // matching the honeypot, so the bot learns nothing.
+  if (!isAllowedOrigin(request)) {
+    return NextResponse.json({ success: true });
+  }
+
   // Rate limit by IP
   const ip = request.headers.get("x-forwarded-for") || "unknown";
   if (tooMany(ip)) {

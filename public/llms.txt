@@ -13,13 +13,14 @@ Built and maintained by Trevor Brown, a journalist and developer (https://trevor
 
 ## Primary pages
 
-- /: Overview and dashboard
-- /officials: Index of tracked officials
+- /: Overview and directory of tracked officials
 - /officials/[slug]: Per-official detail — transactions, holdings, late filings
+- /all: Every tracked transaction on one timeline
 - /companies: Tickers held across officials
 - /companies/[ticker]: Per-company exposure across officials
 - /dashboard: Aggregate trade flow and disclosure activity
 - /late-filings: Officials with overdue PTR filings
+- /filings: Dated log of new filings as OGE posts them
 - /methodology: How the data is collected, normalized, and updated
 - /download: Bulk data export
 
