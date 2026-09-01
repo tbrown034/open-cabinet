@@ -403,7 +403,10 @@ export default async function OfficialPage({
       "@type": "Dataset",
       name: `${displayName(official.name)} financial disclosure transactions`,
       description: `Stock and asset transactions reported by ${displayName(official.name)}, ${official.title}, in periodic transaction reports filed with the U.S. Office of Government Ethics.`,
-      creator: { "@type": "GovernmentOrganization", name: "U.S. Office of Government Ethics" },
+      // Google's Dataset validator only accepts plain Organization/Person for
+      // creator — GovernmentOrganization (a valid schema.org subtype) gets
+      // flagged as "invalid object type" in Search Console.
+      creator: { "@type": "Organization", name: "U.S. Office of Government Ethics", url: "https://www.oge.gov" },
       isAccessibleForFree: true,
       license: "https://www.usa.gov/government-works",
       variableMeasured: ["transaction date", "asset", "transaction type", "reported amount range", "late-filing flag"],
