@@ -3,7 +3,11 @@ export type TransactionType =
   | "Sale (Partial)"
   | "Sale (Full)"
   | "Purchase"
-  | "Exchange";
+  | "Exchange"
+  /** The filing's type column did not state a type (for example "See
+   * Endnote"). Allowed only with typeNote carrying the filing's wording.
+   * Counted as neither a sale nor a purchase. */
+  | "Unstated";
 
 import type { AmountRange } from "./amounts";
 export type { AmountRange } from "./amounts";
@@ -23,6 +27,8 @@ export interface Transaction {
   amount: AmountRange | null;
   /** The filing's own wording when amount is null. */
   amountNote?: string;
+  /** The filing's own wording when type is "Unstated". */
+  typeNote?: string;
   lateFilingFlag: boolean;
   notes?: string;
   /** URL of the filing that actually disclosed this row (stamped at ingest

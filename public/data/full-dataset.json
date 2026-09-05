@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-08-31T15:00:58.764Z",
+  "exportedAt": "2026-09-05T23:10:18.913Z",
   "officialCount": 39,
   "transactionCount": 11501,
   "officials": [
@@ -743,18 +743,22 @@
         },
         {
           "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
-          "ticker": "JPM",
-          "type": "Purchase",
+          "ticker": null,
+          "type": "Unstated",
+          "typeNote": "See Endnote",
           "date": "2025-10-22",
-          "amount": "$1,001-$15,000",
+          "amount": null,
+          "amountNote": "Value not readily ascertainable",
           "lateFilingFlag": false
         },
         {
           "description": "Total return swap contract with JPMorgan (value not readily ascertainable) (JPM Dynamic Put Writing Index)",
-          "ticker": "JPM",
-          "type": "Purchase",
+          "ticker": null,
+          "type": "Unstated",
+          "typeNote": "See Endnote",
           "date": "2025-10-22",
-          "amount": "$1,001-$15,000",
+          "amount": null,
+          "amountNote": "Value not readily ascertainable",
           "lateFilingFlag": false
         },
         {
@@ -37751,7 +37755,7 @@
         },
         {
           "description": "KROGER CO (THE)",
-          "ticker": "THE",
+          "ticker": null,
           "type": "Purchase",
           "date": "2026-05-11",
           "amount": "$100,001-$250,000",
@@ -42053,7 +42057,7 @@
         },
         {
           "description": "CIGNA GROUP (THE)",
-          "ticker": "THE",
+          "ticker": null,
           "type": "Sale",
           "date": "2026-04-27",
           "amount": "$15,001-$50,000",
@@ -42125,7 +42129,7 @@
         },
         {
           "description": "COCA COLA COMPANY (THE)",
-          "ticker": "THE",
+          "ticker": null,
           "type": "Sale",
           "date": "2026-04-27",
           "amount": "$1,001-$15,000",
@@ -42638,7 +42642,7 @@
         },
         {
           "description": "HARTFORD INSURANCE GROUP INC (THE)",
-          "ticker": "THE",
+          "ticker": null,
           "type": "Sale",
           "date": "2026-04-27",
           "amount": "$15,001-$50,000",
@@ -42656,7 +42660,7 @@
         },
         {
           "description": "HERSHEY COMPANY (THE)",
-          "ticker": "THE",
+          "ticker": null,
           "type": "Sale",
           "date": "2026-04-27",
           "amount": "$15,001-$50,000",

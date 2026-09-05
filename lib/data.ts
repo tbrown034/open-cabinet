@@ -93,7 +93,7 @@ export { TICKER_NAME_OVERRIDES };
 // Tickers that appear in filings with a symbol that doesn't match the named
 // company. The trade rows keep the as-filed symbol; aggregation groups them
 // under the real ticker so one company doesn't show up twice.
-const TICKER_ALIASES: Record<string, string> = {
+export const TICKER_ALIASES: Record<string, string> = {
   APPL: "AAPL", // "Apple Inc." filed with symbol APPL (Mullin, 6/24/2026)
 };
 

@@ -32,7 +32,9 @@ dotenv.config({ path: ".env.local" });
 interface ParsedTransaction {
   description: string;
   ticker: string | null;
-  type: "Sale" | "Purchase" | "Sale (Partial)" | "Sale (Full)" | "Exchange";
+  type: "Sale" | "Purchase" | "Sale (Partial)" | "Sale (Full)" | "Exchange" | "Unstated";
+  /** The filing's own wording when type is "Unstated". */
+  typeNote?: string;
   date: string; // YYYY-MM-DD
   /** Exact OGE range string, or null when the filing states no value. */
   amount: AmountRange | null;
@@ -48,7 +50,7 @@ interface ParsedTransaction {
  * in a way that should invalidate cached parses. The cache key in
  * lib/parse-cache.ts hashes this together with the prompt text and model.
  */
-const PARSER_VERSION = "2026-09-05.1";
+const PARSER_VERSION = "2026-09-05.2";
 
 
 // The PDF is a third-party document. This system prompt draws the trust
@@ -83,7 +85,8 @@ Extract every transaction from the table. For each transaction, return a JSON ob
 
 - description: the full asset name as written (e.g., "BANK OF AMERICA CORPORATION CONV PFD SER L 7.250%")
 - ticker: the stock ticker if present in parentheses like "(AAPL)", otherwise null
-- type: exactly one of "Sale", "Purchase", "Sale (Partial)", "Sale (Full)", "Exchange"
+- type: exactly one of "Sale", "Purchase", "Sale (Partial)", "Sale (Full)", "Exchange", or "Unstated" when the type column does not state one of those (e.g., it says "See Endnote")
+- typeNote: omit unless type is "Unstated"; then the filing's exact wording from the type column
 - date: the transaction date in YYYY-MM-DD format
 - amount: the exact amount range string from this list, or null (see the rules below):
   "$1,001-$15,000"
@@ -110,7 +113,7 @@ Rules:
 - If the amount column says "Value Not Readily Ascertainable", is blank, or cannot be read, set amount to null and put the filing's exact wording in amountNote. Never substitute a range the filing did not state.
 - If a ticker is embedded in the description like "Apple, Inc. (AAPL)", extract "AAPL" as the ticker
 - Dates should be in YYYY-MM-DD format regardless of how they appear in the PDF
-- Transaction type must be EXACTLY one of the five valid types listed above
+- Transaction type must be EXACTLY one of the six values listed above; never guess Purchase or Sale when the column says something else
 - Use only the field names listed above. Never add other fields.
 
 Return ONLY a JSON array of transaction objects. No markdown, no explanation, no wrapping.`;
@@ -278,6 +281,7 @@ const VALID_TYPES = [
   "Sale (Partial)",
   "Sale (Full)",
   "Exchange",
+  "Unstated",
 ];
 
 // The legal range strings live in lib/amounts.ts; this is the same list.

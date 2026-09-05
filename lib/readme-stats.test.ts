@@ -11,9 +11,12 @@ import { readdirSync } from "fs";
 import path from "path";
 import { describe, expect, it } from "vitest";
 import { sumAmountEstimates, formatCompactCurrency } from "@/lib/format";
+import { resolveTicker } from "@/lib/assets";
+import { TICKER_ALIASES } from "@/lib/data";
 import type { AmountRange } from "@/lib/types";
 
 interface DatasetTransaction {
+  description: string;
   ticker: string | null;
   amount: AmountRange | null;
   lateFilingFlag: boolean;
@@ -67,10 +70,14 @@ describe("README current-data table matches the published dataset", () => {
   });
 
   it("companies searchable", () => {
-    // Same definition the site uses: unique upper-cased tickers.
-    const tickers = new Set(
-      allTx.filter((t) => t.ticker).map((t) => t.ticker!.toUpperCase())
-    );
+    // Same definition the site uses: a stored symbol counts only if the
+    // resolver accepts it (lib/assets.ts), after aliasing. A withheld
+    // suffix like "THE" is not a company.
+    const tickers = new Set<string>();
+    for (const t of allTx) {
+      const r = resolveTicker(t.description, t.ticker);
+      if (r.ticker) tickers.add(TICKER_ALIASES[r.ticker] ?? r.ticker);
+    }
     expect(readmeStat("Companies searchable")).toBe(formatCount(tickers.size));
   });
 

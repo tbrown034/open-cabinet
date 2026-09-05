@@ -736,18 +736,22 @@
     },
     {
       "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
-      "ticker": "JPM",
-      "type": "Purchase",
+      "ticker": null,
+      "type": "Unstated",
+      "typeNote": "See Endnote",
       "date": "2025-10-22",
-      "amount": "$1,001-$15,000",
+      "amount": null,
+      "amountNote": "Value not readily ascertainable",
       "lateFilingFlag": false
     },
     {
       "description": "Total return swap contract with JPMorgan (value not readily ascertainable) (JPM Dynamic Put Writing Index)",
-      "ticker": "JPM",
-      "type": "Purchase",
+      "ticker": null,
+      "type": "Unstated",
+      "typeNote": "See Endnote",
       "date": "2025-10-22",
-      "amount": "$1,001-$15,000",
+      "amount": null,
+      "amountNote": "Value not readily ascertainable",
       "lateFilingFlag": false
     },
     {

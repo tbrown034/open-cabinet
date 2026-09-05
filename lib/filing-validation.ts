@@ -33,6 +33,7 @@ export const VALID_TRANSACTION_TYPES = [
   "Sale (Partial)",
   "Sale (Full)",
   "Exchange",
+  "Unstated",
 ] as const;
 
 export type ValidTransactionType = (typeof VALID_TRANSACTION_TYPES)[number];
@@ -45,6 +46,7 @@ export interface ParsedRow {
   date: string;
   amount: AmountRange | null;
   amountNote?: string;
+  typeNote?: string;
   lateFilingFlag: boolean;
   confidence: number;
 }
@@ -56,6 +58,7 @@ const KNOWN_KEYS = new Set([
   "date",
   "amount",
   "amountNote",
+  "typeNote",
   "lateFilingFlag",
   "confidence",
 ]);
@@ -139,6 +142,8 @@ export function validateParsedRows(
 
     if (!VALID_TRANSACTION_TYPES.includes(r.type as ValidTransactionType)) {
       errors.push(`${at}: invalid type ${JSON.stringify(r.type)}`);
+    } else if (r.type === "Unstated" && (typeof r.typeNote !== "string" || r.typeNote.trim() === "")) {
+      errors.push(`${at}: type is Unstated but typeNote is missing`);
     }
 
     if (r.amount === null) {
@@ -176,6 +181,7 @@ export function validateParsedRows(
       date: String(r.date ?? ""),
       amount: (r.amount ?? null) as AmountRange | null,
       ...(typeof r.amountNote === "string" ? { amountNote: r.amountNote } : {}),
+      ...(typeof r.typeNote === "string" ? { typeNote: r.typeNote } : {}),
       lateFilingFlag: Boolean(r.lateFilingFlag),
       confidence: Number(r.confidence),
     });
