@@ -1,0 +1,35 @@
+{
+  "key": "3e63321d3b897422",
+  "pdfSha256": "90c274f9606865f41a1766a802798af12d32da268f8b0954123217d615c7e2aa",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-05T23:14:58.525Z",
+  "transactions": [
+    {
+      "description": "Totem Management Seed",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-23",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GreenGage Global Holdings",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6699,
+    "outputTokens": 170,
+    "estimatedCostUsd": 0.0226
+  }
+}

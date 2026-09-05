@@ -17,6 +17,12 @@
  * --force-reparse ignores every cache for the listed filings and pays for a
  * fresh parse. Use it only with a plan from scripts/plan-reparse.ts and an
  * approved cost; the weekly job never passes it.
+ *
+ * --parse-only runs find, fetch, read and check, records the cross-check
+ * verdict and the cache, and stops before merge. Nothing in data/officials
+ * changes. This is how a published filing is re-read to test the path; the
+ * merge stage adds rows and is not a way to replace them (see
+ * scripts/reverify.ts for that).
  */
 import { readFile, writeFile, mkdir, readdir } from "fs/promises";
 import { existsSync, statSync } from "fs";
@@ -69,6 +75,7 @@ dotenv.config({ path: ".env.local" });
 
 const PDF_DIR = path.resolve("data/pdfs");
 const FORCE_REPARSE = process.argv.includes("--force-reparse");
+const PARSE_ONLY = process.argv.includes("--parse-only");
 
 interface SourceFiling {
   date: string;
@@ -191,6 +198,10 @@ async function scanPdfForFeeAnnotation(
     const pattern = /filer\s+paid|paid\s+late|filing\s+extension/i;
     const hit = pattern.test(text);
     if (!hit) return;
+    // Integrity.gov prints "Filer received a 0 day filing extension" on
+    // every e-filed form. A zero-day extension changes nothing; skip it
+    // rather than queue a review item for every filing.
+    if (/received a 0 day filing extension/i.test(text) && !/filer\s+paid|paid\s+late/i.test(text)) return;
     const snippetMatch = text.match(/.{0,80}(?:filer\s+paid|paid\s+late|filing\s+extension).{0,80}/i);
     const pendingPath = path.resolve("data/meta/fee-annotations-pending.json");
     const pending: Array<Record<string, string>> = existsSync(pendingPath)
@@ -452,6 +463,7 @@ function recordCrosscheck(
       rowsCompared: check.status === "ok" ? check.rowCount : null,
       publishedRows: rows.length,
       ...(problems ? { problems } : {}),
+      parseRecord: "current",
       checkedAt: new Date().toISOString(),
     },
     CHECKER_VERSION
@@ -700,6 +712,10 @@ async function ingestForOfficial(
     const { pdfPath, sha256 } = await fetchFiling(slug, filing);
     const rows = await readFiling(pdfPath, sha256, filing.pdfUrl);
     await checkFiling(slug, official.name, filing, pdfPath, sha256, rows);
+    if (PARSE_ONLY) {
+      console.log(`  [${slug}] --parse-only: ${rows.length} rows read and checked; not merged`);
+      continue;
+    }
     perFilingParses.push(rows);
     newSourceEntries.push({
       date: filing.docDate.slice(0, 10),
@@ -710,6 +726,7 @@ async function ingestForOfficial(
     await sleep(2000); // rate limit
   }
 
+  if (PARSE_ONLY) return { added: 0, total: official.transactions.length };
   const addedTxs = mergeRows(official, perFilingParses, newPdfs);
   return writeOfficial(slug, filePath, official, addedTxs, newSourceEntries);
 }
@@ -790,6 +807,10 @@ async function main() {
     throw new Error(`${failures} official ingest(s) failed`);
   }
 
+  if (PARSE_ONLY) {
+    console.log("\n--parse-only: skipped validate and publish; no data file changed.");
+    return;
+  }
   validateDataset();
   await handOffForPublish(targetFilings, newFilings);
 }

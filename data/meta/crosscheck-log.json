@@ -1,7 +1,7 @@
 {
   "version": 1,
   "checkerVersion": "2026-09-05.2",
-  "generatedAt": "2026-09-05T19:10:16.217Z",
+  "generatedAt": "2026-09-05T23:15:24.658Z",
   "entries": [
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
@@ -94,7 +94,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf",
       "slug": "bessent-scott",
       "filingDate": "2025-12-31",
+      "pdfFile": "Scott-Bessent-12.05.2025-278T.pdf",
+      "pdfSha256": "90c274f9606865f41a1766a802798af12d32da268f8b0954123217d615c7e2aa",
+      "candidateSha256": "b73faac14c355ead4443cd5dd060691aa4b805cc00863e28402c9a350b9cab7c",
       "checkerVersion": "2026-09-05.2",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -103,20 +107,19 @@
         "rowCount",
         "printedRowContinuity"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-05T19:10:12.977Z",
-      "pdfFile": "Scott-Bessent-12.05.2025-278T.pdf",
-      "pdfSha256": "90c274f9606865f41a1766a802798af12d32da268f8b0954123217d615c7e2aa",
-      "candidateSha256": "b73faac14c355ead4443cd5dd060691aa4b805cc00863e28402c9a350b9cab7c",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "legacy"
+      "publishedRows": 2,
+      "checkedAt": "2026-09-05T23:15:00.045Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BA716BA5B423A76685258CE6002C8303/$FILE/Scott-Bessent-07.14.2025-278T.pdf",
       "slug": "bessent-scott",
       "filingDate": "2025-08-14",
+      "pdfFile": "Scott-Bessent-07.14.2025-278T.pdf",
+      "pdfSha256": "e5ea5435bb6f16bc189ba42db5af03f6d5199a103301ced5799f00b044135fdb",
+      "candidateSha256": "e7616f1b48e7febb1583466a91a024f9f67241671ed1c5a0805abf6d8f593360",
       "checkerVersion": "2026-09-05.2",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -125,14 +128,9 @@
         "rowCount",
         "printedRowContinuity"
       ],
-      "publishedRows": 24,
-      "checkedAt": "2026-09-05T19:10:12.977Z",
-      "pdfFile": "Scott-Bessent-07.14.2025-278T.pdf",
-      "pdfSha256": "e5ea5435bb6f16bc189ba42db5af03f6d5199a103301ced5799f00b044135fdb",
-      "candidateSha256": "e7616f1b48e7febb1583466a91a024f9f67241671ed1c5a0805abf6d8f593360",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 24,
-      "parseRecord": "legacy"
+      "publishedRows": 24,
+      "checkedAt": "2026-09-05T23:15:24.658Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2DC3DD386173222E85258E4D002D8CD0/$FILE/Frank-J-Bisignano-07.07.2026-278T.pdf",
