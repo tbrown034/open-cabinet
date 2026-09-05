@@ -14,6 +14,7 @@
     "rebuild-index": "npx tsx scripts/rebuild-index.ts",
     "generate-exports": "npx tsx scripts/generate-exports.ts",
     "seed": "npx tsx scripts/seed-from-json.ts",
+    "seed-assets": "npx tsx scripts/seed-asset-registry.ts",
     "validate": "npx tsx scripts/validate.ts",
     "test:data": "npx tsx scripts/check-data-regressions.ts",
     "parse-pdf": "npx tsx scripts/parse-pdf.ts",

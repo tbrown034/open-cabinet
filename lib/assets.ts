@@ -94,6 +94,11 @@ export const SHORT_SYMBOL_ISSUERS: Record<string, RegExp> = {
   SR: /\bspire\b/i,
   US: /\bu\.?s\.? bancorp\b/i,
   NA: /\bnano-x\b/i,
+  // Three-letter symbols that are also instrument abbreviations. "MSD
+  // Investment Corp. (BDC)" is a business development company, not Belden;
+  // the registry seed surfaced it when the SEC name shared no word with the
+  // filed description.
+  BDC: /\bbelden\b/i,
 };
 
 export const SYMBOL_SHAPE = /^[A-Z]{1,5}(?:\.[A-Z]{1,2})?$/;

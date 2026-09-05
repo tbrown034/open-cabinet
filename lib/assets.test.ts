@@ -8,7 +8,7 @@ import {
   companyGroupName,
   resolveTicker,
 } from "./assets";
-import { TICKER_NAME_OVERRIDES } from "./data";
+import { loadAssetRegistry } from "./asset-registry";
 
 describe("resolveTicker", () => {
   it("keeps an ordinary filed symbol", () => {
@@ -126,9 +126,14 @@ describe("published data: ticker hygiene", () => {
     expect(bad).toEqual([]);
   });
 
-  it("every display-name override shares a word with a filed description for that ticker", () => {
+  it("every registry display name shares a word with a filed description for that ticker", () => {
     const bad: string[] = [];
-    for (const [ticker, name] of Object.entries(TICKER_NAME_OVERRIDES)) {
+    const { registry, pending } = loadAssetRegistry();
+    const named = [...Object.values(registry.assets), ...Object.values(pending.pending)]
+      .filter((e) => e.displayName)
+      .map((e) => [e.symbol, e.displayName as string] as const);
+    expect(named.length).toBeGreaterThan(0);
+    for (const [ticker, name] of named) {
       const filed = rows.filter((r) => r.ticker?.toUpperCase() === ticker).map((r) => r.description.toLowerCase());
       if (filed.length === 0) continue;
       const words = name.toLowerCase().split(/\W+/).filter((w) => w.length > 3);

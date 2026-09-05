@@ -2,6 +2,7 @@ import { readFile } from "fs/promises";
 import path from "path";
 import type { AmountRange, OfficialData, OfficialsIndex } from "./types";
 import { companyGroupName, resolveTicker } from "./assets";
+import { lookupAsset, registryDisplayName, resolveSymbol, type AssetLookup } from "./asset-registry";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -55,6 +56,10 @@ export interface CompanyData {
   ticker: string;
   companyName: string;
   trades: CompanyTrade[];
+  /** What the asset registry knows about this symbol: the SEC entry, a
+   * pending record, or nothing. Never "unknown" for a symbol on a company
+   * page; lib/asset-registry.test.ts fails first. */
+  registry: AssetLookup;
 }
 
 // Regulatory context for key companies
@@ -76,26 +81,10 @@ export const COMPANY_CONTEXT: Record<string, string> = {
   NVDA: "NVIDIA supplies AI chips subject to Commerce Department export controls and is a major government AI contractor.",
 };
 
-// Display names for tickers whose filings only ever print the bare symbol.
-// Used only when no filed description supplies a name; a filed full name
-// always wins. Two earlier entries here named the wrong funds (GAJPX,
-// GGLPX) and overrode the filing's own text, which is why the rule is now
-// "fallback only" and every entry must match a filed description in tests.
-const TICKER_NAME_OVERRIDES: Record<string, string> = {
-  DODFX: "Dodge & Cox International Stock Fund",
-  GAJPX: "Goldman Sachs Dynamic Municipal Income Fund",
-  GGLPX: "Goldman Sachs High Yield Municipal Fund",
-  SPMD: "SPDR Portfolio S&P 400 Mid Cap ETF",
-  SPY: "SPDR S&P 500 ETF Trust",
-};
-export { TICKER_NAME_OVERRIDES };
-
-// Tickers that appear in filings with a symbol that doesn't match the named
-// company. The trade rows keep the as-filed symbol; aggregation groups them
-// under the real ticker so one company doesn't show up twice.
-export const TICKER_ALIASES: Record<string, string> = {
-  APPL: "AAPL", // "Apple Inc." filed with symbol APPL (Mullin, 6/24/2026)
-};
+// Display names for bare symbols and filed-symbol aliases (APPL for AAPL,
+// BRKB for BRK.B) live in the asset registry, data/meta/asset-mappings.json,
+// seeded by scripts/seed-asset-registry.ts. Nothing here names a company
+// from a hand-written table.
 
 export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   const officials = await getAllOfficials();
@@ -109,9 +98,11 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
       // never become a company page. The stored row is untouched.
       const resolved = resolveTicker(tx.description, tx.ticker);
       if (!resolved.ticker) continue;
-      const ticker = TICKER_ALIASES[resolved.ticker] ?? resolved.ticker;
+      // The registry folds filed variants (APPL, BRKB, BRK-B) into one
+      // symbol, each with recorded evidence.
+      const ticker = resolveSymbol(resolved.ticker);
       if (!tickerMap.has(ticker)) {
-        tickerMap.set(ticker, { ticker, companyName: ticker, trades: [] });
+        tickerMap.set(ticker, { ticker, companyName: ticker, trades: [], registry: lookupAsset(ticker) });
         descriptionsByTicker.set(ticker, []);
       }
       descriptionsByTicker.get(ticker)!.push(tx.description);
@@ -131,11 +122,12 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   }
 
   // Name each group from what was filed, never from a swap, bond or
-  // preferred line; the override table is a fallback for bare symbols.
+  // preferred line; the registry's display name, then its SEC name, is the
+  // fallback for a symbol whose filings print only the symbol.
   for (const [ticker, group] of tickerMap) {
     const filed = companyGroupName(descriptionsByTicker.get(ticker) ?? [], ticker);
     group.companyName =
-      filed.toUpperCase() === ticker ? (TICKER_NAME_OVERRIDES[ticker] ?? filed) : filed;
+      filed.toUpperCase() === ticker ? (registryDisplayName(ticker) ?? filed) : filed;
   }
 
   return tickerMap;

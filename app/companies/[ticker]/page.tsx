@@ -4,6 +4,8 @@ import Link from "next/link";
 import { getTradesByTicker, getAllTickers, COMPANY_CONTEXT } from "@/lib/data";
 import { formatDate, amountRangeLabel, formatCompactCurrency, displayName, sumAmountEstimates, transactionEstimate } from "@/lib/format";
 import CompanyBarChart from "@/app/components/company-bar-chart";
+import { INSTRUMENT_TYPE_LABEL } from "@/lib/asset-registry";
+import type { AssetLookup } from "@/lib/asset-registry";
 
 export async function generateStaticParams() {
   const tickers = await getAllTickers();
@@ -41,6 +43,56 @@ export async function generateMetadata({
 
 function isSale(type: string): boolean {
   return type === "Sale" || type === "Sale (Partial)" || type === "Sale (Full)";
+}
+
+/**
+ * What the registry knows about this symbol, and what the filings called
+ * it. The SEC line is provenance (name, CIK, fetch date); the filed-as line
+ * is every distinct description on the rows below, so a reader can see when
+ * a brokerage string and the SEC name differ, as they do for LOWES
+ * COMPANIES INC and "Lowe's Cos., Inc."
+ */
+function RegistryLine({ registry }: { registry: AssetLookup }) {
+  if (registry.kind === "unknown") return null;
+  const entry = registry.entry;
+  const typeLabel = INSTRUMENT_TYPE_LABEL[entry.instrumentType];
+  const typeNote = entry.instrumentTypeSource === "reviewed" ? "" : " (inferred from the name, not yet reviewed)";
+  const filedAs = entry.filedAs;
+  const shown = filedAs.slice(0, 6);
+  const more = filedAs.length - shown.length;
+  return (
+    <div className="text-sm text-neutral-500 mt-3 max-w-2xl space-y-1">
+      {registry.kind === "sec" ? (
+        <p>
+          SEC registrant: {registry.entry.secName}, CIK {registry.entry.cik}
+          {registry.entry.secSymbol !== registry.entry.symbol ? `, listed as ${registry.entry.secSymbol}` : ""}.{" "}
+          {typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1)}
+          {typeNote}. From the SEC company list fetched {registry.entry.source.fetchedAt.slice(0, 10)}.
+        </p>
+      ) : (
+        <p>
+          Not in the SEC company list (funds registered under the 1940 Act and over-the-counter
+          receipts are not on it). Identity pending review. {typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1)}
+          {typeNote}.
+        </p>
+      )}
+      {entry.aliases.length > 0 && (
+        <p>
+          Also filed under the symbol{entry.aliases.length === 1 ? "" : "s"}{" "}
+          {entry.aliases.map((a) => a.filedSymbol).join(", ")}, folded here with the evidence recorded in the registry.
+        </p>
+      )}
+      <p>
+        Filed as: {shown.map((d, i) => (
+          <span key={d}>
+            {i > 0 ? "; " : ""}
+            <span className="text-neutral-700">{d}</span>
+          </span>
+        ))}
+        {more > 0 ? ` and ${more} more` : ""}.
+      </p>
+    </div>
+  );
 }
 
 export default async function CompanyPage({
@@ -110,6 +162,7 @@ export default async function CompanyPage({
             {COMPANY_CONTEXT[company.ticker]}
           </p>
         )}
+        <RegistryLine registry={company.registry} />
       </header>
 
       <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-10">
