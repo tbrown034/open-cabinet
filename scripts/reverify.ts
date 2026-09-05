@@ -7,6 +7,7 @@
  *   pnpm reverify bessent-scott --apply       replace the official's rows
  *                                             with the fresh set in the report
  *   pnpm reverify --all --skip-scans          leave scanned filings alone
+ *   pnpm reverify --all --exclude trump-donald-j   everyone but one official
  *
  * What one run does, per official:
  *   1. read    every filing goes through the same fetch/read stages the
@@ -165,10 +166,12 @@ async function main() {
   const skipScans = args.includes("--skip-scans");
   const dryCost = args.includes("--dry-cost");
   const all = args.includes("--all");
-  const slugs = args.filter((a) => !a.startsWith("--"));
+  const excluded = new Set<string>();
+  for (let i = 0; i < args.length; i++) if (args[i] === "--exclude" && args[i + 1]) excluded.add(args[++i]);
+  const slugs = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--exclude");
   stageOptions.forceReparse = args.includes("--force-reparse");
   if (!all && slugs.length === 0) {
-    console.log("usage: reverify.ts <slug> [--apply] [--skip-scans] [--dry-cost] | --all [--skip-scans]");
+    console.log("usage: reverify.ts <slug> [--apply] [--skip-scans] [--dry-cost] | --all [--skip-scans] [--exclude <slug>]...");
     process.exit(1);
   }
   if (all && apply) throw new Error("--apply is per official; read each report first");
@@ -176,6 +179,10 @@ async function main() {
     ? (await import("fs")).readdirSync(path.resolve("data/officials")).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, ""))
     : slugs;
   for (const slug of targets) {
+    if (excluded.has(slug)) {
+      console.log(`${slug}: excluded`);
+      continue;
+    }
     if (!existsSync(path.resolve(`data/officials/${slug}.json`))) throw new Error(`no official ${slug}`);
     await reverifyOfficial(slug, apply, skipScans, dryCost);
   }
