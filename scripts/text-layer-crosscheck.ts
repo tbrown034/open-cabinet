@@ -54,7 +54,7 @@ export type CrossCheckResult =
   | { status: "error"; message: string } // tooling/extraction failure — halt
   | { status: "mismatch"; problems: string[] };
 
-type Extraction =
+export type Extraction =
   | {
       kind: "rows";
       rows: CrossCheckRow[];
@@ -272,8 +272,21 @@ export function crossCheckParsedFiling(
   if (isTerminationForm(pdfPath)) {
     return { status: "error", message: "unsupported form: 278-TERM termination report; the column parser reads 278-T only" };
   }
+  return compareExtraction(extractTextLayerRows(pdfPath), parsed);
+}
 
-  const extraction = extractTextLayerRows(pdfPath);
+/**
+ * The comparison itself, over an extraction from any lane. The text lane
+ * passes pdftotext output through parseTextLayer(); the OCR lane
+ * (lib/ocr-lane.ts) passes tesseract output through the same parser, so the
+ * two lanes differ only in how the characters were read, never in how the
+ * rows are compared.
+ */
+export function compareExtraction(
+  extraction: Extraction,
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>,
+  lane: "text layer" | "OCR" = "text layer"
+): CrossCheckResult {
   if (extraction.kind === "no-text") return { status: "scan" };
   if (extraction.kind === "tool-error")
     return { status: "error", message: extraction.message };
@@ -297,7 +310,7 @@ export function crossCheckParsedFiling(
   for (let n = 1; n <= maxNum; n++) {
     if (!seen.has(n))
       problems.push(
-        `printed row ${n} missing from text-layer extraction (rows run 1..${maxNum})`
+        `printed row ${n} missing from ${lane} extraction (rows run 1..${maxNum})`
       );
   }
 
@@ -308,7 +321,7 @@ export function crossCheckParsedFiling(
 
   if (textRows.length !== parsed.length) {
     problems.push(
-      `row count: text layer has ${textRows.length}, AI parse has ${parsed.length}`
+      `row count: ${lane} has ${textRows.length}, AI parse has ${parsed.length}`
     );
   } else {
     const normalizedParsed = parsed.map((t) => ({
@@ -322,7 +335,7 @@ export function crossCheckParsedFiling(
       const got = tupleOf(normalizedParsed[i]);
       if (want !== got) {
         problems.push(
-          `row ${textRows[i].rowNumber}: text layer [${want}] vs AI parse [${got}]`
+          `row ${textRows[i].rowNumber}: ${lane} [${want}] vs AI parse [${got}]`
         );
         if (problems.length > 20) {
           problems.push("(further differences suppressed)");

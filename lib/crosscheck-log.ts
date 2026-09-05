@@ -23,6 +23,10 @@ export type CrosscheckState =
   | "checked_tuple_agreement"
   /** Text lane ran and at least one checked field or the row count disagreed. Needs a person. */
   | "checked_tuple_mismatch"
+  /** OCR lane ran on the page images and every checked field agreed, row for row. */
+  | "ocr_tuple_agreement"
+  /** OCR lane ran and at least one checked field or the row count disagreed. Needs a person; OCR errs more than a text layer. */
+  | "ocr_tuple_mismatch"
   /** No text layer to read. A scan. Not compared. */
   | "no_usable_text"
   /** A text layer exists and looks like a table, but the column parser cannot read this layout. */
@@ -67,6 +71,23 @@ export interface CrosscheckEntry {
   /** Which parse record the lane compared against: a current keyed cache,
    * current chunk caches, or the legacy path-keyed cache. */
   parseRecord?: "current" | "current-chunks" | "legacy";
+  /** Which lane produced the verdict. Absent means the text lane. */
+  lane?: "text" | "ocr";
+  /** How the OCR lane read the pages, when it ran. */
+  ocr?: {
+    engine: "tesseract";
+    version: string;
+    dpi: number;
+    psm: number;
+    laneVersion: string;
+    pages: number;
+    textFile: string;
+    textSha256: string;
+    /** What the text lane had said before OCR ran. */
+    textLaneState: CrosscheckState;
+    /** OCR ran but its output could not be parsed or compared. */
+    problem?: string;
+  };
   checkedAt: string;
 }
 
@@ -127,6 +148,8 @@ export interface CrosscheckSummary {
 const STATES: CrosscheckState[] = [
   "checked_tuple_agreement",
   "checked_tuple_mismatch",
+  "ocr_tuple_agreement",
+  "ocr_tuple_mismatch",
   "no_usable_text",
   "unsupported_layout",
   "unsupported_form",

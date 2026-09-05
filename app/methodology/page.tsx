@@ -50,6 +50,10 @@ export default async function MethodologyPage() {
   const scanRows = coverage?.rows.no_usable_text ?? 0;
   const layoutRows =
     (coverage?.rows.unsupported_layout ?? 0) + (coverage?.rows.unsupported_form ?? 0);
+  const ocrAgreedRows = coverage?.rows.ocr_tuple_agreement ?? 0;
+  const ocrMismatchRows = coverage?.rows.ocr_tuple_mismatch ?? 0;
+  const ocrFilings =
+    (coverage?.filings.ocr_tuple_agreement ?? 0) + (coverage?.filings.ocr_tuple_mismatch ?? 0);
   const totals = sumAmountEstimates(allRows);
   const openEnded = sumAmountEstimates(
     allRows.filter((t) => t.amount === "Over $50,000,000" || t.amount === "Over $1,000,000")
@@ -331,12 +335,26 @@ export default async function MethodologyPage() {
                   {coverage.filings.checked_tuple_mismatch} filings are in
                   disagreement and awaiting a person&rsquo;s review. {fmt(scanRows)}{" "}
                   rows are in scanned filings with no text layer, where the
-                  comparison cannot run. {fmt(layoutRows)} rows are in layouts
+                  text comparison cannot run. {fmt(layoutRows)} rows are in layouts
                   the comparison program cannot yet read.{" "}
                   {fmt(coverage.unstampedRows)} rows are not yet attributed to
                   a specific filing. The comparison covers type, date, amount,
                   late flag and row count; it does not compare asset names or
                   ticker symbols.
+                </p>
+              ) : null}
+              {coverage && ocrFilings > 0 ? (
+                <p className="text-neutral-500 mt-2">
+                  For scanned filings, a second program renders each page to
+                  an image, runs optical character recognition on it
+                  (tesseract, locally, ignoring any text the scanner
+                  embedded) and compares the result the same way. That OCR
+                  comparison agreed on {fmt(ocrAgreedRows)} rows across{" "}
+                  {coverage.filings.ocr_tuple_agreement} scanned filings.{" "}
+                  {fmt(ocrMismatchRows)} rows in{" "}
+                  {coverage.filings.ocr_tuple_mismatch} scanned filings are in
+                  disagreement and awaiting a person, who decides whether the
+                  OCR or the model misread the page.
                 </p>
               ) : null}
             </div>

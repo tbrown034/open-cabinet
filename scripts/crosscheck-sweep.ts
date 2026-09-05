@@ -12,6 +12,14 @@
  * are sorted by date and cannot be paired with PDF order.
  *
  * Usage: npx tsx scripts/crosscheck-sweep.ts            (pnpm crosscheck-sweep)
+ *        --ocr            also run the OCR lane (lib/ocr-lane.ts) on every
+ *                         filing the text lane cannot read: scans and the
+ *                         garbage-text-layer scans. Slow the first time
+ *                         (minutes per hundred pages); OCR text is cached
+ *                         under data/ocr/ and reruns are free.
+ *        --only <text>    restrict the OCR lane to filings whose file name
+ *                         or slug contains the text. The text lane still
+ *                         runs over everything so the log stays whole.
  */
 import { readdirSync, readFileSync, existsSync } from "fs";
 import path from "path";
@@ -31,6 +39,7 @@ import {
   type CrosscheckState,
 } from "../lib/crosscheck-log";
 import { findParseRecord, isTerminationForm, promptHash, sha256File } from "../lib/parse-cache";
+import { crossCheckByOcr, ocrEngine } from "../lib/ocr-lane";
 import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
 
 const PDF_DIR = path.resolve("data/pdfs");
@@ -48,7 +57,24 @@ function stateFromExtractionError(message: string, pdfFile: string): CrosscheckS
 
 const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
 
+const args = process.argv.slice(2);
+const OCR = args.includes("--ocr");
+const ONLY = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
+
+/** The text lane could not read this filing; the OCR lane may. */
+function ocrCandidate(state: CrosscheckState): boolean {
+  return state === "no_usable_text" || state === "unsupported_layout";
+}
+
 function main() {
+  if (OCR) {
+    const engine = ocrEngine();
+    if (!engine.available) {
+      console.error(engine.reason);
+      process.exit(2);
+    }
+    console.log(`OCR lane on: tesseract ${engine.version}${ONLY ? `, only "${ONLY}"` : ""}\n`);
+  }
   let log: CrosscheckLog | null = null;
   const allRows: Array<{ sourceUrl?: string | null }> = [];
   const now = new Date().toISOString();
@@ -88,37 +114,70 @@ function main() {
         } else {
           const pdfSha256 = sha256File(pdfPath);
           const extraction = extractTextLayerRows(pdfPath);
+          const record = findParseRecord(pdfPath, {
+            pdfSha256,
+            sourceUrl: filing.url,
+            parserVersion: PARSER_VERSION,
+            promptSha256: PROMPT_SHA256,
+            model: DEFAULT_MODEL,
+          });
+          const rows = record ? (record.transactions as Parameters<typeof crossCheckParsedFiling>[1]) : null;
           if (extraction.kind === "no-text") {
-            entry = { ...base, pdfFile, pdfSha256, candidateSha256: null, state: "no_usable_text", rowsCompared: null };
+            entry = { ...base, pdfFile, pdfSha256, candidateSha256: rows ? hashRows(rows) : null, state: "no_usable_text", rowsCompared: null };
           } else if (extraction.kind === "tool-error") {
             entry = {
-              ...base, pdfFile, pdfSha256, candidateSha256: null,
+              ...base, pdfFile, pdfSha256, candidateSha256: rows ? hashRows(rows) : null,
               state: stateFromExtractionError(extraction.message, pdfFile),
               rowsCompared: null, problems: [extraction.message],
             };
+          } else if (!rows) {
+            entry = { ...base, pdfFile, pdfSha256, candidateSha256: null, state: "not_checked", rowsCompared: extraction.rows.length, problems: ["no parse record on disk"] };
           } else {
-            const record = findParseRecord(pdfPath, {
-              pdfSha256,
-              sourceUrl: filing.url,
-              parserVersion: PARSER_VERSION,
-              promptSha256: PROMPT_SHA256,
-              model: DEFAULT_MODEL,
+            const result = crossCheckParsedFiling(pdfPath, rows);
+            entry = {
+              ...base, pdfFile, pdfSha256, candidateSha256: hashRows(rows),
+              state: result.status === "ok" ? "checked_tuple_agreement" : "checked_tuple_mismatch",
+              rowsCompared: extraction.rows.length,
+              ...(result.status === "mismatch" ? { problems: result.problems } : {}),
+              ...(result.status === "error" ? { problems: [result.message] } : {}),
+              parseRecord: record!.source,
+            };
+            if (result.status === "error") entry.state = stateFromExtractionError(result.message, pdfFile);
+            if (result.status === "scan") entry.state = "no_usable_text";
+          }
+          if (record) entry.parseRecord = record.source;
+
+          // The OCR lane, where the text lane could not read the filing.
+          const wanted = !ONLY || pdfFile.includes(ONLY) || official.slug.includes(ONLY);
+          if (OCR && wanted && rows && ocrCandidate(entry.state)) {
+            const textLaneState = entry.state;
+            process.stdout.write(`  ocr ${official.slug} ${pdfFile} `);
+            const started = Date.now();
+            const ocr = crossCheckByOcr(pdfPath, pdfSha256, rows, {
+              // One dot per ten pages so a long filing shows it is moving.
+              log: (line) => {
+                const m = line.match(/page (\d+)\/(\d+)$/);
+                if (m && (Number(m[1]) % 10 === 0 || m[1] === m[2])) process.stdout.write(".");
+              },
             });
-            if (!record) {
-              entry = { ...base, pdfFile, pdfSha256, candidateSha256: null, state: "not_checked", rowsCompared: extraction.rows.length, problems: ["no parse record on disk"] };
+            if (ocr.ran) {
+              const seconds = Math.round((Date.now() - started) / 1000);
+              const base = { engine: ocr.run.engine, version: ocr.run.version, dpi: ocr.run.dpi, psm: ocr.run.psm, laneVersion: ocr.run.laneVersion, pages: ocr.run.pages, textFile: ocr.run.textFile, textSha256: ocr.run.textSha256, textLaneState };
+              if (ocr.result.status === "ok") {
+                entry = { ...entry, state: "ocr_tuple_agreement", lane: "ocr", rowsCompared: ocr.result.rowCount, ocr: base };
+                delete entry.problems;
+                console.log(`agree on ${ocr.result.rowCount} rows (${ocr.run.pages} pages, ${ocr.run.cached ? "cached" : `${seconds}s`})`);
+              } else if (ocr.result.status === "mismatch") {
+                const rowsRead = ocr.extraction.kind === "rows" ? ocr.extraction.rows.length : null;
+                entry = { ...entry, state: "ocr_tuple_mismatch", lane: "ocr", rowsCompared: rowsRead, problems: ocr.result.problems, ocr: base };
+                console.log(`mismatch, ${ocr.result.problems.length} problems (${ocr.run.pages} pages, ${ocr.run.cached ? "cached" : `${seconds}s`})`);
+              } else {
+                const problem = ocr.result.status === "error" ? ocr.result.message : "ocr: no rows";
+                entry = { ...entry, ocr: { ...base, problem } };
+                console.log(`could not compare: ${problem}`);
+              }
             } else {
-              const rows = record.transactions as Parameters<typeof crossCheckParsedFiling>[1];
-              const result = crossCheckParsedFiling(pdfPath, rows);
-              entry = {
-                ...base, pdfFile, pdfSha256, candidateSha256: hashRows(rows),
-                state: result.status === "ok" ? "checked_tuple_agreement" : "checked_tuple_mismatch",
-                rowsCompared: extraction.rows.length,
-                ...(result.status === "mismatch" ? { problems: result.problems } : {}),
-                ...(result.status === "error" ? { problems: [result.message] } : {}),
-                parseRecord: record.source,
-              };
-              if (result.status === "error") entry.state = stateFromExtractionError(result.message, pdfFile);
-              if (result.status === "scan") entry.state = "no_usable_text";
+              console.log(ocr.reason);
             }
           }
         }

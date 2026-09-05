@@ -44,6 +44,8 @@ export interface ReviewProblem {
   location: ReviewLocation;
   /** What the model read. */
   modelSaid: string | null;
+  /** Which deterministic lane disagreed. Absent means the text layer. */
+  lane?: "text layer" | "OCR";
   /** What the text layer (or OCR) read. */
   textLayerSaid: string | null;
   /** The problem in one line, as the checker phrased it. */
@@ -120,7 +122,7 @@ export function problemsFromCrosscheck(
   return problems.map((p) => {
     const rowMatch = p.match(/^(?:printed )?row (\d+)/);
     const printedRow = rowMatch ? Number(rowMatch[1]) : null;
-    const lanes = p.match(/text layer \[([^\]]*)\] vs AI parse \[([^\]]*)\]/);
+    const lanes = p.match(/(text layer|OCR) \[([^\]]*)\] vs AI parse \[([^\]]*)\]/);
     const parsedRow = printedRow;
     const description = parsedRow && parsedRows[parsedRow - 1] ? parsedRows[parsedRow - 1].description : null;
     return {
@@ -130,8 +132,9 @@ export function problemsFromCrosscheck(
         parsedRow,
         description,
       },
-      modelSaid: lanes ? lanes[2] : null,
-      textLayerSaid: lanes ? lanes[1] : null,
+      ...(lanes && lanes[1] === "OCR" ? { lane: "OCR" as const } : {}),
+      modelSaid: lanes ? lanes[3] : null,
+      textLayerSaid: lanes ? lanes[2] : null,
       detail: p,
     };
   });
@@ -159,8 +162,8 @@ export function renderReviewRequest(item: ReviewItem): { subject: string; body: 
       lines.push(`${where ? `Look at ${where}` : "Row"}${p.location.description ? `: "${p.location.description}"` : ""}`);
     }
     if (p.textLayerSaid && p.modelSaid) {
-      lines.push(`  The text layer reads: ${p.textLayerSaid}`);
-      lines.push(`  The model read:       ${p.modelSaid}`);
+      lines.push(`  The ${p.lane === "OCR" ? "OCR" : "text layer"} reads: ${p.textLayerSaid}`);
+      lines.push(`  The model read:${p.lane === "OCR" ? "        " : "       "}${p.modelSaid}`);
     } else {
       lines.push(`  ${p.detail}`);
     }

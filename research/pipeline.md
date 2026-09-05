@@ -34,9 +34,11 @@ All seven stages are functions with these exact names: fetch, read, check and me
 
 **What stops it.** Any disagreement. A text layer the column parser cannot read. Enforced. The whole filing stops, not one row: a shifted column would misalign every row after it.
 
-**What does not stop it.** A scan. A PDF with no text layer cannot be compared. It is recorded as `no_usable_text` and the ingest continues. Advisory: a warning says to reconcile the parse against the printed row numbers by eye before committing.
+**What does not stop it.** A scan. A PDF with no text layer cannot be compared by the text lane. It is recorded as `no_usable_text` and the ingest continues. Advisory: a warning says to reconcile the parse against the printed row numbers by eye before committing.
 
-**What a person does.** Adjudicates every disagreement against the PDF, because the checker can be wrong too (it has read a year as 2225 and an amount as "$57"). Reconciles scans by eye. Both are recorded in the log's states; a signed review record is Gate 2 work.
+**The OCR lane, for scans (`lib/ocr-lane.ts`).** When the text lane cannot read a filing (a scan, or a scan whose embedded text is garbage from the scanner, which the text lane records as `unsupported_layout`), a third program renders each page to an image with `pdftoppm`, runs our own optical character recognition on the image with `tesseract`, and hands the result to the same column parser and the same row-for-row comparison. The embedded text is ignored. The verdict is recorded as `ocr_tuple_agreement` or `ocr_tuple_mismatch`, with the OCR engine version, settings and the raw OCR text under `data/ocr/`. Recorded. An OCR disagreement opens a review item but does not stop the ingest on its own: OCR misreads more often than a real text layer, and a person still reconciles every scan. If `tesseract` is not installed the lane says so and is skipped; the sweep (`pnpm crosscheck-sweep --ocr`) runs it over every scan already published.
+
+**What a person does.** Adjudicates every disagreement against the PDF, because the checker can be wrong too (it has read a year as 2225 and an amount as "$57"), and OCR can be wrong more often. Reconciles scans by eye. Both are recorded in the log's states; a signed review record is Gate 2 work.
 
 ## 5. Merge (`mergeRows`)
 
@@ -64,7 +66,7 @@ All seven stages are functions with these exact names: fetch, read, check and me
 
 ## What a reader sees
 
-Every row shows the range the filing reported, or "Not ascertainable" with the filing's words. Every row links to the filing PDF. The methodology page states, from the log, how many rows the deterministic check agreed on, how many are in disagreement awaiting a person, how many are scans it could not read, and how many are in layouts it cannot yet parse. The summary on each official's page is either a labeled template or model prose a person approved against the computed facts.
+Every row shows the range the filing reported, or "Not ascertainable" with the filing's words. Every row links to the filing PDF. The methodology page states, from the log, how many rows the deterministic check agreed on, how many are in disagreement awaiting a person, how many are scans it could not read, how many of those the OCR lane agreed on or disputes, and how many are in layouts it cannot yet parse. The summary on each official's page is either a labeled template or model prose a person approved against the computed facts.
 
 ## What stays with a person
 

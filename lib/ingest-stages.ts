@@ -39,8 +39,10 @@ import {
   readCrosscheckLog,
   upsertCrosscheckEntry,
   writeCrosscheckLog,
+  type CrosscheckEntry,
   type CrosscheckState,
 } from "./crosscheck-log";
+import { crossCheckByOcr, type OcrCheck } from "./ocr-lane";
 import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
 import type { TargetFiling } from "./oge-filings";
 
@@ -405,6 +407,36 @@ export async function checkFiling(
 ): Promise<void> {
   const check = crossCheckParsedFiling(pdfPath, rows);
   recordCrosscheck(slug, filing, pdfPath, sha256, rows, check);
+  if (check.status === "scan" || (check.status === "error" && /no rows were extracted/i.test(check.message))) {
+    // The text lane could not read the filing. The OCR lane reads the page
+    // images and compares the same way. Recorded; a disagreement opens a
+    // review item like a text disagreement does, but does not halt the
+    // ingest on its own: OCR misreads more often than a text layer, and a
+    // scan today publishes with no check at all. A person still reconciles.
+    const ocr = crossCheckByOcr(pdfPath, sha256, rows, {
+      log: (line) => { if (/page (?:\d*0|1)\//.test(line)) process.stdout.write("."); },
+    });
+    if (!ocr.ran) {
+      console.warn(`           OCR lane skipped: ${ocr.reason}`);
+    } else {
+      recordOcrCheck(filing, slug, check, ocr);
+      if (ocr.result.status === "ok") {
+        console.log(`           OCR cross-check agrees on ${ocr.result.rowCount} rows (${ocr.run.pages} pages)`);
+      } else if (ocr.result.status === "mismatch") {
+        console.warn(`           OCR cross-check disagrees (${ocr.result.problems.length} problems); review item opened, ingest continues`);
+        await openReviewItem({
+          kind: "lane_disagreement",
+          slug,
+          officialName,
+          filing: { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) },
+          problems: problemsFromCrosscheck(pdfPath, ocr.result.problems, rows),
+          holding: `nothing; OCR disagreement on ${path.basename(pdfPath)} is recorded and advisory. Reconcile by eye before committing.`,
+        });
+      } else {
+        console.warn(`           OCR lane could not compare: ${ocr.result.status === "error" ? ocr.result.message : ocr.result.status}`);
+      }
+    }
+  }
   if (check.status === "mismatch") {
     // A person decides. Write the item, with page and printed row where
     // the text layer shows them, and send it before halting.
@@ -434,6 +466,36 @@ export async function checkFiling(
       `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
     );
   }
+}
+
+/** Overlay the OCR lane's verdict on the entry the text lane just wrote. */
+export function recordOcrCheck(
+  filing: FilingForIngest,
+  slug: string,
+  textCheck: ReturnType<typeof crossCheckParsedFiling>,
+  ocr: OcrCheck
+): void {
+  if (!ocr.ran) return;
+  const log = readCrosscheckLog();
+  const entry = log?.entries.find((e) => e.sourceUrl === filing.pdfUrl && e.slug === slug);
+  if (!log || !entry) return;
+  const textLaneState: CrosscheckState = textCheck.status === "scan" ? "no_usable_text" : "unsupported_layout";
+  const base = {
+    engine: ocr.run.engine, version: ocr.run.version, dpi: ocr.run.dpi, psm: ocr.run.psm,
+    laneVersion: ocr.run.laneVersion, pages: ocr.run.pages, textFile: ocr.run.textFile,
+    textSha256: ocr.run.textSha256, textLaneState,
+  };
+  let next: CrosscheckEntry;
+  if (ocr.result.status === "ok") {
+    next = { ...entry, state: "ocr_tuple_agreement", lane: "ocr", rowsCompared: ocr.result.rowCount, ocr: base };
+    delete next.problems;
+  } else if (ocr.result.status === "mismatch") {
+    const rowsRead = ocr.extraction.kind === "rows" ? ocr.extraction.rows.length : null;
+    next = { ...entry, state: "ocr_tuple_mismatch", lane: "ocr", rowsCompared: rowsRead, problems: ocr.result.problems, ocr: base };
+  } else {
+    next = { ...entry, ocr: { ...base, problem: ocr.result.status === "error" ? ocr.result.message : "ocr: no rows" } };
+  }
+  writeCrosscheckLog(upsertCrosscheckEntry(log, next, CHECKER_VERSION));
 }
 
 /** MERGE. Add the new rows to the official's existing rows. Amendment-aware,
