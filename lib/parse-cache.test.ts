@@ -123,10 +123,12 @@ describe("chunked filings", () => {
     // Missing tail: manifest says 30 pages, chunks stop at 20.
     writeChunkManifest(pdf, noChunk, 30, [{ first: 1, last: 10 }, { first: 11, last: 20 }]);
     expect(readChunkedRecord(pdf, noChunk)).toBeNull();
-    // Gap.
+    // Gap: caches exist for 1-9 and 11-20, page 10 is covered by nothing.
+    write(1, 9, [{ r: "a" }]);
     writeChunkManifest(pdf, noChunk, 20, [{ first: 1, last: 9 }, { first: 11, last: 20 }]);
     expect(readChunkedRecord(pdf, noChunk)).toBeNull();
-    // Overlap.
+    // Overlap: caches exist for 1-11 and 11-20, page 11 is covered twice.
+    write(1, 11, [{ r: "b" }]);
     writeChunkManifest(pdf, noChunk, 20, [{ first: 1, last: 11 }, { first: 11, last: 20 }]);
     expect(readChunkedRecord(pdf, noChunk)).toBeNull();
     // A chunk cached under a different PDF hash does not count.
@@ -134,7 +136,13 @@ describe("chunked filings", () => {
     write(11, 20, [{ r: "other" }], { pdfSha256: "d".repeat(64) });
     // (the correctly keyed 11-20 cache still exists, so this still passes)
     expect(readChunkedRecord(pdf, noChunk)?.transactions).toEqual([{ r: 1 }, { r: 2 }]);
-    // Now remove the correct one by pointing the manifest at a prompt that has no caches.
-    expect(readChunkedRecord(pdf, { ...noChunk, promptSha256: promptHash("s", "v2") })).toBeNull();
+    // A manifest whose recorded chunk key does not match the expected key is rejected
+    // even when the chunk caches exist.
+    const wholeKey = parseCacheKey({ ...noChunk, chunk: null });
+    const manifestFile = pdf.replace(/\.pdf$/i, `.${wholeKey}.chunks.json`);
+    const forged = JSON.parse(require("fs").readFileSync(manifestFile, "utf-8"));
+    forged.chunks[1].key = "0000000000000000";
+    require("fs").writeFileSync(manifestFile, JSON.stringify(forged));
+    expect(readChunkedRecord(pdf, noChunk)).toBeNull();
   });
 });

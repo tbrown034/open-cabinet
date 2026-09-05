@@ -326,7 +326,7 @@ async function main() {
       report.schemaFailures += errors.length;
     });
 
-    // Layer 3: suffix tickers (review)
+    // Layer 3: suffix tickers (fatal)
     data.transactions.forEach((tx, i) => {
       if (tx.ticker && !checkTicker(tx.ticker)) {
         report.suffixTickers.push(`[${data.slug}][${i}] "${tx.ticker}" in "${tx.description}"`);
