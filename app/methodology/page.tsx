@@ -37,7 +37,12 @@ export default async function MethodologyPage() {
   // What the deterministic lane has actually compared, from the log the
   // ingest and the sweep write. Rendered as numbers so this page cannot
   // drift from the code the way an earlier sentence here did.
-  const allRows = currentOfficials.flatMap((o) => o.transactions);
+  // Every official in the index, former ones included: the log covers all
+  // published filings, so the denominator must too.
+  const everyOfficial = (
+    await Promise.all(index.officials.map((o) => getOfficialBySlug(o.slug)))
+  ).filter((o) => o !== null);
+  const allRows = everyOfficial.flatMap((o) => o.transactions);
   const log = readCrosscheckLog();
   const coverage = log ? summarizeCrosscheckLog(log, allRows) : null;
   const agreedRows = coverage?.rows.checked_tuple_agreement ?? 0;

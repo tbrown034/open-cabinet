@@ -1,7 +1,11 @@
 /**
  * Ingest new downloadable OGE 278-T filings into the static JSON dataset.
- * For each PDF: download if missing, parse with Sonnet, merge into the
- * official's JSON, dedupe, append to sourceFilings, and write back.
+ *
+ * Seven stages: find, fetch, read, check, merge, validate, publish. The
+ * first five are functions in this file, named as such. Validate is
+ * scripts/validate.ts and publish is the pull request the workflow opens.
+ * research/pipeline.md describes each stage in three lines: what happens,
+ * what stops it, what a person does. A test asserts the names match.
  *
  * Officials without existing JSON are treated as failures; those need metadata
  * bootstrapped before an automated ingest can safely update the public site.
@@ -325,7 +329,10 @@ async function loadOfficialSlugMap(): Promise<Map<string, string>> {
   return map;
 }
 
-async function loadNewFilings(): Promise<NewFilingsLoadResult> {
+/** FIND. Ask the OGE API for filings and diff their PDF URLs against the
+ *  ones already tracked in data/officials. Stops on: API failure. With
+ *  --from-file, the list comes from a plan instead of the API. */
+async function findNewFilings(): Promise<NewFilingsLoadResult> {
   const args = process.argv.slice(2);
   const fromFileIndex = args.indexOf("--from-file");
 
@@ -447,6 +454,189 @@ function recordCrosscheck(
   writeCrosscheckLog(log);
 }
 
+// ── THE SEVEN STAGES ──
+//
+// find -> fetch -> read -> check -> merge -> validate -> publish
+//
+// The first five run here, per official, per filing. Validate is
+// scripts/validate.ts and publish is the pull request the workflow opens;
+// both are named below so the file reads the same way research/pipeline.md
+// describes it. Each stage says what stops it.
+
+/** FETCH. Download the filing PDF (or reuse the local copy) and hash it.
+ *  Stops on: HTTP error. Also scans the certification page for a
+ *  reviewer's late-fee note, which goes to a pending file for a person. */
+async function fetchFiling(
+  slug: string,
+  filing: FilingForIngest
+): Promise<{ pdfPath: string; sha256: string }> {
+  const pdfPath = await ensurePdf(filing.pdfUrl);
+  await scanPdfForFeeAnnotation(pdfPath, filing.pdfUrl, slug);
+  const sizeKb = (statSync(pdfPath).size / 1024).toFixed(0);
+  console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
+  return { pdfPath, sha256: sha256File(pdfPath) };
+}
+
+/** READ. The model proposes rows for the whole PDF, or for each page
+ *  range when the filing is large. Every unit is validated for shape and
+ *  enums whether it came from the model or from a keyed cache.
+ *  Stops on: a row that fails validation; a truncated response; three
+ *  failed attempts. */
+async function readFiling(
+  pdfPath: string,
+  sha256: string,
+  sourceUrl: string
+): Promise<ParsedTransaction[]> {
+  const rows: ParsedTransaction[] = [];
+  const units = await splitPdfIfNeeded(pdfPath);
+  for (const unit of units) {
+    if (unit.chunk) console.log(`           parsing chunk ${path.basename(unit.path)}`);
+    rows.push(...(await parseUnitWithRetry(unit, sha256, sourceUrl)));
+    await sleep(1500);
+  }
+  return rows;
+}
+
+/** CHECK. A second program that never sees the model's output reads the
+ *  PDF's text layer and compares type, date, amount, late flag and printed
+ *  row numbers, row for row. Every verdict is recorded in the log.
+ *  Stops on: any disagreement; a text layer the parser cannot read.
+ *  Does not stop on: a scan (no text layer). That is recorded as
+ *  no_usable_text and depends on a person's visual check. */
+function checkFiling(
+  slug: string,
+  filing: FilingForIngest,
+  pdfPath: string,
+  sha256: string,
+  rows: ParsedTransaction[]
+): void {
+  const check = crossCheckParsedFiling(pdfPath, rows);
+  recordCrosscheck(slug, filing, pdfPath, sha256, rows, check);
+  if (check.status === "ok") {
+    console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
+  } else if (check.status === "scan") {
+    console.warn(
+      `           SCAN — no text layer to cross-check. Recorded as no_usable_text. Do NOT commit until the parse is visually reconciled against printed row numbers.`
+    );
+  } else if (check.status === "error") {
+    throw new Error(
+      `text-layer cross-check could not run on ${path.basename(pdfPath)} (${check.message}) — ingest halted before merge`
+    );
+  } else {
+    console.error(`  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`);
+    for (const p of check.problems) console.error(`    - ${p}`);
+    throw new Error(
+      `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
+    );
+  }
+}
+
+/** MERGE. Add the new rows to the official's existing rows. Amendment-aware,
+ *  not row-unique: a filing that prints the same description, date, type
+ *  and amount on several numbered rows is disclosing several trades, and an
+ *  amended filing that repeats rows adds nothing. Each key's multiplicity
+ *  is the largest count any single source asserts. (The Aug 2026 re-audit
+ *  restored 76 rows a Set-based dedupe had collapsed.) Every added row is
+ *  stamped with the filing that disclosed it. Stops on: nothing; a genuine
+ *  repeat disclosed in a later filing is the known limit, and
+ *  scripts/validate.ts reports cross-filing repeats for a person. */
+function mergeRows(
+  official: OfficialFile,
+  perFilingParses: ParsedTransaction[][],
+  newPdfs: FilingForIngest[]
+): ParsedTransaction[] {
+  const countKeys = (txs: ParsedTransaction[]): Map<string, number> => {
+    const c = new Map<string, number>();
+    for (const tx of txs) c.set(txKey(tx), (c.get(txKey(tx)) ?? 0) + 1);
+    return c;
+  };
+  const current = countKeys(official.transactions as ParsedTransaction[]);
+  const target = new Map(current);
+  for (const filingTxs of perFilingParses) {
+    for (const [key, n] of countKeys(filingTxs)) {
+      target.set(key, Math.max(target.get(key) ?? 0, n));
+    }
+  }
+  const addedTxs: ParsedTransaction[] = [];
+  for (let fi = 0; fi < perFilingParses.length; fi++) {
+    for (const tx of perFilingParses[fi]) {
+      const key = txKey(tx);
+      if ((current.get(key) ?? 0) >= (target.get(key) ?? 0)) continue;
+      current.set(key, (current.get(key) ?? 0) + 1);
+      // confidence is self-reported by the model and not part of the
+      // published row. It stays in the parse cache for review (Gate 2 will
+      // carry it into a review file).
+      const { confidence: _confidence, ...rest } = tx as ParsedTransaction & { confidence?: number };
+      addedTxs.push({ ...rest, sourceUrl: newPdfs[fi].pdfUrl } as unknown as ParsedTransaction);
+    }
+  }
+  return addedTxs;
+}
+
+/** WRITE the official's JSON. Never overwrites an existing summary.
+ *  Validate (scripts/validate.ts) and publish (the workflow's pull request)
+ *  happen after this script exits. */
+async function writeOfficial(
+  slug: string,
+  filePath: string,
+  official: OfficialFile,
+  addedTxs: ParsedTransaction[],
+  newSourceEntries: SourceFiling[]
+): Promise<{ added: number; total: number }> {
+  const existingSourceUrls = new Set((official.sourceFilings || []).map((f) => f.url));
+  const uniqueNewSourceEntries = newSourceEntries.filter((f) => {
+    if (existingSourceUrls.has(f.url)) return false;
+    existingSourceUrls.add(f.url);
+    return true;
+  });
+
+  if (addedTxs.length === 0 && uniqueNewSourceEntries.length === 0) {
+    console.log(`  [${slug}] nothing to add`);
+    return { added: 0, total: official.transactions.length };
+  }
+
+  const byDateDesc = (a: ParsedTransaction, b: ParsedTransaction) => {
+    const d = (b.date || "").localeCompare(a.date || "");
+    if (d !== 0) return d;
+    return (a.description || "").localeCompare(b.description || "");
+  };
+  const merged = [...addedTxs, ...official.transactions].sort(byDateDesc);
+  const sourceFilings = [...uniqueNewSourceEntries, ...(official.sourceFilings || [])].sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
+  const updated: OfficialFile = {
+    ...official,
+    transactions: merged,
+    sourceFilings,
+    mostRecentFilingDate: sourceFilings[0]?.date || official.mostRecentFilingDate,
+    lastIngestedDate: new Date().toISOString().slice(0, 10),
+    lastIngestedNewCount: addedTxs.length,
+    // The actual added rows (date-desc), so the digest can preview the new
+    // trades exactly instead of proxying by newest transaction date — the
+    // proxy breaks on late filings that disclose old-dated trades.
+    lastIngestedTrades: [...addedTxs].sort(byDateDesc),
+  };
+
+  // An existing summary is never overwritten. A missing one gets the
+  // deterministic template, labeled as such. A published summary whose
+  // facts just changed is marked stale so a person regenerates it.
+  const reconciled = reconcileSummaryAfterIngest(
+    updated as Parameters<typeof reconcileSummaryAfterIngest>[0],
+    summarizeTransactions(official.name, merged)
+  ) as OfficialFile;
+  if (reconciled.summaryStaleSince && !official.summaryStaleSince) {
+    console.warn(
+      `  [${slug}] summary is now STALE (facts changed): run refresh-summaries.ts --candidate ${slug}`
+    );
+  }
+
+  await writeFile(filePath, JSON.stringify(reconciled, null, 2) + "\n");
+  console.log(
+    `  [${slug}] +${addedTxs.length} txns (total ${merged.length}), +${uniqueNewSourceEntries.length} sourceFilings`
+  );
+  return { added: addedTxs.length, total: merged.length };
+}
+
 async function ingestForOfficial(
   slug: string,
   newPdfs: FilingForIngest[]
@@ -471,187 +661,34 @@ async function ingestForOfficial(
         transactions: [],
         sourceFilings: [],
       };
-
   if (!existingOfficial) {
     console.log(`  [${slug}] bootstrapping new official from OGE metadata`);
   }
 
   const perFilingParses: ParsedTransaction[][] = [];
   const newSourceEntries: SourceFiling[] = [];
-
   for (const filing of newPdfs) {
-    const pdfPath = await ensurePdf(filing.pdfUrl);
-    await scanPdfForFeeAnnotation(pdfPath, filing.pdfUrl, slug);
-    const sizeKb = (statSync(pdfPath).size / 1024).toFixed(0);
-    console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
-
-    const filingTxs: ParsedTransaction[] = [];
-    const filingSha256 = sha256File(pdfPath);
-    const units = await splitPdfIfNeeded(pdfPath);
-    for (const unit of units) {
-      if (unit.chunk) {
-        console.log(`           parsing chunk ${path.basename(unit.path)}`);
-      }
-      filingTxs.push(...(await parseUnitWithRetry(unit, filingSha256, filing.pdfUrl)));
-      await sleep(1500);
-    }
-    perFilingParses.push(filingTxs);
-
-    // Independent verification lane: the PDF's own text layer, parsed
-    // deterministically, must agree with the AI parse on row count, types,
-    // dates, amounts, and late flags. The two lanes fail differently, so a
-    // mismatch means one of them is wrong — halt before merging rather than
-    // publish an unverified parse. Scans have no text layer; those fall back
-    // to the standing manual rule (visual row-number reconciliation).
-    const check = crossCheckParsedFiling(pdfPath, filingTxs);
-    recordCrosscheck(slug, filing, pdfPath, filingSha256, filingTxs, check);
-    if (check.status === "ok") {
-      console.log(
-        `           text-layer cross-check OK (${check.rowCount} rows agree)`
-      );
-    } else if (check.status === "scan") {
-      console.warn(
-        `           SCAN — no text layer to cross-check. Do NOT commit until the parse is visually reconciled against printed row numbers.`
-      );
-    } else if (check.status === "error") {
-      throw new Error(
-        `text-layer cross-check could not run on ${path.basename(pdfPath)} (${check.message}) — ingest halted before merge`
-      );
-    } else {
-      console.error(
-        `  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`
-      );
-      for (const p of check.problems) console.error(`    - ${p}`);
-      throw new Error(
-        `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
-      );
-    }
-
-    // Build a label from the filename (e.g. "Trump-05.08.2026-278T(2)")
-    const label = path
-      .basename(pdfPath)
-      .replace(/\.pdf$/i, "")
-      .replace(/[_]+/g, " ");
+    const { pdfPath, sha256 } = await fetchFiling(slug, filing);
+    const rows = await readFiling(pdfPath, sha256, filing.pdfUrl);
+    checkFiling(slug, filing, pdfPath, sha256, rows);
+    perFilingParses.push(rows);
     newSourceEntries.push({
       date: filing.docDate.slice(0, 10),
       url: filing.pdfUrl,
-      label,
+      // Label from the filename (e.g. "Trump-05.08.2026-278T(2)")
+      label: path.basename(pdfPath).replace(/\.pdf$/i, "").replace(/[_]+/g, " "),
     });
-
     await sleep(2000); // rate limit
   }
 
-  // Amendment-aware dedupe, NOT row-unique dedupe. A filing that prints the
-  // same description/date/type/amount on several numbered rows is disclosing
-  // several real transactions (multi-lot and multi-account trades — the
-  // Aug 2026 re-audit restored 76 rows a Set-based dedupe had collapsed).
-  // Each key's final multiplicity is the largest count any single source
-  // asserts: the existing data or ONE new filing. Re-filed amendments repeat
-  // rows and add nothing; genuine intra-filing multiples top the count up.
-  const countKeys = (txs: ParsedTransaction[]): Map<string, number> => {
-    const c = new Map<string, number>();
-    for (const tx of txs) c.set(txKey(tx), (c.get(txKey(tx)) ?? 0) + 1);
-    return c;
-  };
-  const current = countKeys(official.transactions as ParsedTransaction[]);
-  const target = new Map(current);
-  for (const filingTxs of perFilingParses) {
-    for (const [key, n] of countKeys(filingTxs)) {
-      target.set(key, Math.max(target.get(key) ?? 0, n));
-    }
-  }
-  const addedTxs: ParsedTransaction[] = [];
-  for (let fi = 0; fi < perFilingParses.length; fi++) {
-    const filingTxs = perFilingParses[fi];
-    for (const tx of filingTxs) {
-      const key = txKey(tx);
-      if ((current.get(key) ?? 0) >= (target.get(key) ?? 0)) continue;
-      current.set(key, (current.get(key) ?? 0) + 1);
-      // Strip confidence — not in stored schema
-      const { confidence, ...rest } = tx as ParsedTransaction & { confidence?: number };
-      // Exact attribution: which filing disclosed this row. Powers the
-      // Disclosed column/lag and the per-row PDF link without the date
-      // heuristic. (confidence was destructured away, so go through
-      // unknown — the stored schema intentionally drops it.)
-      addedTxs.push({
-        ...rest,
-        sourceUrl: newPdfs[fi].pdfUrl,
-      } as unknown as ParsedTransaction);
-    }
-  }
-
-  const existingSourceUrls = new Set(
-    (official.sourceFilings || []).map((filing) => filing.url)
-  );
-  const uniqueNewSourceEntries = newSourceEntries.filter((filing) => {
-    if (existingSourceUrls.has(filing.url)) return false;
-    existingSourceUrls.add(filing.url);
-    return true;
-  });
-
-  if (addedTxs.length === 0 && uniqueNewSourceEntries.length === 0) {
-    console.log(`  [${slug}] nothing to add`);
-    return { added: 0, total: official.transactions.length };
-  }
-
-  // Merge and re-sort descending by date
-  const merged = [...addedTxs, ...official.transactions];
-  merged.sort((a, b) => {
-    const d = (b.date || "").localeCompare(a.date || "");
-    if (d !== 0) return d;
-    return (a.description || "").localeCompare(b.description || "");
-  });
-
-  // Source filings: prepend new entries, keep existing
-  const sourceFilings = [
-    ...uniqueNewSourceEntries,
-    ...(official.sourceFilings || []),
-  ].sort((a, b) => b.date.localeCompare(a.date));
-
-  const mostRecentFilingDate =
-    sourceFilings[0]?.date || official.mostRecentFilingDate;
-
-  const updated: OfficialFile = {
-    ...official,
-    transactions: merged,
-    sourceFilings,
-    mostRecentFilingDate,
-    lastIngestedDate: new Date().toISOString().slice(0, 10),
-    lastIngestedNewCount: addedTxs.length,
-    // The actual added rows (date-desc), so the digest can preview the new
-    // trades exactly instead of proxying by newest transaction date — the
-    // proxy breaks on late filings that disclose old-dated trades.
-    lastIngestedTrades: [...addedTxs].sort((a, b) => {
-      const d = (b.date || "").localeCompare(a.date || "");
-      if (d !== 0) return d;
-      return (a.description || "").localeCompare(b.description || "");
-    }),
-  };
-
-  // An existing summary is never overwritten by the ingest. A missing one
-  // gets the deterministic template, labeled as such. A published summary
-  // whose facts just changed is marked stale so a person regenerates it.
-  const reconciled = reconcileSummaryAfterIngest(
-    updated as Parameters<typeof reconcileSummaryAfterIngest>[0],
-    summarizeTransactions(official.name, merged)
-  ) as OfficialFile;
-  if (reconciled.summaryStaleSince && !official.summaryStaleSince) {
-    console.warn(
-      `  [${slug}] summary is now STALE (facts changed): run refresh-summaries.ts --candidate ${slug}`
-    );
-  }
-
-  await writeFile(filePath, JSON.stringify(reconciled, null, 2) + "\n");
-  console.log(
-    `  [${slug}] +${addedTxs.length} txns (total ${merged.length}), +${uniqueNewSourceEntries.length} sourceFilings`
-  );
-  return { added: addedTxs.length, total: merged.length };
+  const addedTxs = mergeRows(official, perFilingParses, newPdfs);
+  return writeOfficial(slug, filePath, official, addedTxs, newSourceEntries);
 }
 
 async function main() {
   console.log("\n=== Ingest New Filings ===\n");
 
-  const { filingsBySlug, targetFilings } = await loadNewFilings();
+  const { filingsBySlug, targetFilings } = await findNewFilings();
   const newFilings = filingsBySlug;
   const slugs = Object.keys(newFilings);
   if (slugs.length === 0) {

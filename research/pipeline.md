@@ -1,0 +1,71 @@
+# How a filing becomes a row on the site
+
+Seven stages. Each one says what happens, what stops it, and what a person does. Three words are used for every check and nothing fuzzier: **enforced** means the pipeline stops; **recorded** means a verdict is written to a file a person reviews; **advisory** means a line is printed and nothing else.
+
+The first five stages are functions in `scripts/ingest-new-filings.ts` with these exact names. Stage six is `scripts/validate.ts`. Stage seven is the pull request `.github/workflows/oge-pipeline.yml` opens. A test (`lib/pipeline-doc.test.ts`) fails if a stage named here is missing from the code.
+
+## 1. Find (`findNewFilings`)
+
+**What happens.** Every Monday the workflow asks the Office of Government Ethics API for 278-T filings and compares each PDF URL against the filings already tracked in `data/officials/*.json`. New URLs are grouped by official. With `--from-file`, the list comes from a plan file instead, which is how a deliberate re-read of published filings is run.
+
+**What stops it.** An API failure. Enforced.
+
+**What a person does.** Nothing, unless re-reading published filings: then a person runs `pnpm plan-reparse`, reads the estimated cost, and approves it before the ingest runs with `--force-reparse`.
+
+## 2. Fetch (`fetchFiling`)
+
+**What happens.** The PDF is downloaded to `data/pdfs/` and hashed with SHA-256. The certification page is scanned for a reviewer's late-fee note; a hit goes to `data/meta/fee-annotations-pending.json`.
+
+**What stops it.** An HTTP error. Enforced.
+
+**What a person does.** Reviews the fee-annotation file before anything in it reaches the site. Recorded.
+
+## 3. Read (`readFiling`)
+
+**What happens.** The whole PDF, or each page range for a large filing, goes to a vision model as a document with a prompt that fixes the output contract: five transaction types, eleven dollar ranges or an explicit unknown, dates as YYYY-MM-DD, a late flag, a self-reported confidence. The PDF is declared third-party data in the system prompt; text inside it is never an instruction. A ticker is taken from a parenthetical only when it is symbol-shaped and not a name suffix. Every row, from the model or from a cache, passes `lib/filing-validation.ts`. Caches are keyed on the PDF bytes, the source URL, the page range, the prompt, the parser version and the model (`lib/parse-cache.ts`); a prompt change never reuses an old parse.
+
+**What stops it.** A row that fails validation. A response cut off at the token limit. Three failed attempts. Enforced.
+
+**What a person does.** Nothing at this stage. The confidence the model reports is a review signal, not a measurement; carrying it into a review file is Gate 2 work.
+
+## 4. Check (`checkFiling`)
+
+**What happens.** A second program that never sees the model's output runs `pdftotext` on the same PDF, parses the columns, and compares type, date, amount, late flag and printed row numbers, row for row, in document order. The verdict, whatever it is, is written to `data/meta/crosscheck-log.json` with the PDF hash, the hash of the compared rows and the checker version. The methodology page renders the counts from that file.
+
+**What stops it.** Any disagreement. A text layer the column parser cannot read. Enforced. The whole filing stops, not one row: a shifted column would misalign every row after it.
+
+**What does not stop it.** A scan. A PDF with no text layer cannot be compared. It is recorded as `no_usable_text` and the ingest continues. Advisory: a warning says to reconcile the parse against the printed row numbers by eye before committing.
+
+**What a person does.** Adjudicates every disagreement against the PDF, because the checker can be wrong too (it has read a year as 2225 and an amount as "$57"). Reconciles scans by eye. Both are recorded in the log's states; a signed review record is Gate 2 work.
+
+## 5. Merge (`mergeRows`)
+
+**What happens.** New rows are added to the official's rows. The count for each description, date, type and amount is the largest any single filing asserts, so a filing that prints the same trade on three numbered rows adds three, and an amended filing that repeats rows adds none. Every added row is stamped with the URL of the filing that disclosed it.
+
+**What stops it.** Nothing. Advisory.
+
+**What a person does.** Reviews cross-filing repeats that stage six reports: the same trade in two different filings is either an amendment or a real second trade, and only a person can tell.
+
+## 6. Validate (`scripts/validate.ts`)
+
+**What happens.** The whole dataset is checked. Fatal: a row with an illegal type, amount or date, or a golden file (hand-verified rows for five officials) that no longer matches. Review-required: a stored ticker that is a name suffix, or a trade repeated across two filings. Informative: same-filing lots, unusual volumes, single-day clusters.
+
+**What stops it.** Fatal exits 1 and the workflow stops. Review-required exits 2 and, today, also stops the workflow. Enforced.
+
+**What a person does.** Fixes a fatal problem at its source. Decides each review-required item and, for a data change, approves the exact patch.
+
+## 7. Publish (`.github/workflows/oge-pipeline.yml`)
+
+**What happens.** The index and the exports are rebuilt, and a pull request is opened on the `automation/oge-filing-updates` branch with the changed JSON. Merging it deploys the site; every public page and every download is built from the same JSON files.
+
+**What stops it.** Nothing in code. The pull request is the stop. Enforced only as far as a person honors it: one pull request has been opened this way, and two ingests were committed directly. That is the honest state.
+
+**What a person does.** Reads the diff and merges. This is the publication decision.
+
+## What a reader sees
+
+Every row shows the range the filing reported, or "Not ascertainable" with the filing's words. Every row links to the filing PDF. The methodology page states, from the log, how many rows the deterministic check agreed on, how many are in disagreement awaiting a person, how many are scans it could not read, and how many are in layouts it cannot yet parse. The summary on each official's page is either a labeled template or model prose a person approved against the computed facts.
+
+## What stays with a person
+
+Whether a trade broke a rule. Whether a disagreement between the model and the checker is the model's error or the checker's. Whether a scanned filing was read correctly. Whether a mapping from a brokerage string to a company is right. Whether a correction is warranted. Which summary goes live. Whether to merge.
