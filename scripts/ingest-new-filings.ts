@@ -14,8 +14,9 @@ import { existsSync, statSync } from "fs";
 import path from "path";
 import https from "https";
 import { PDFDocument } from "pdf-lib";
-import { parsePdf, type ParsedTransaction } from "./parse-pdf.js";
+import { parsePdf, ParseTruncatedError, type ParsedTransaction } from "./parse-pdf.js";
 import { crossCheckParsedFiling } from "./text-layer-crosscheck.js";
+import { assertParsedRows } from "../lib/filing-validation";
 import dotenv from "dotenv";
 import {
   diffNewFilings,
@@ -208,31 +209,39 @@ async function parsePdfWithRetry(pdfPath: string): Promise<ParsedTransaction[]> 
   // re-parse pages that were already extracted in an earlier run.
   const cachedPath = pdfPath.replace(/\.pdf$/i, ".parsed.json");
   if (existsSync(cachedPath)) {
+    let cached: { transactions?: unknown } | null = null;
     try {
-      const cached = JSON.parse(await readFile(cachedPath, "utf-8"));
-      if (Array.isArray(cached?.transactions)) {
-        console.log(
-          `           cached ${cached.transactions.length} txns (${path.basename(cachedPath)})`
-        );
-        return cached.transactions as ParsedTransaction[];
-      }
+      cached = JSON.parse(await readFile(cachedPath, "utf-8"));
     } catch {
-      // Corrupt cache — fall through and re-parse.
+      cached = null; // Corrupt cache — fall through and re-parse.
+    }
+    if (cached && Array.isArray(cached.transactions)) {
+      // A cached parse is validated exactly like a fresh one. A bad row
+      // that was cached before the gate existed must not slip through
+      // because it came from disk instead of the model.
+      const rows = assertParsedRows(cached.transactions, path.basename(cachedPath));
+      console.log(`           cached ${rows.length} txns (${path.basename(cachedPath)})`);
+      return rows as ParsedTransaction[];
     }
   }
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const result = await parsePdf(pdfPath);
+      // Enum and shape gate before anything is cached or merged.
+      const rows = assertParsedRows(result.transactions, path.basename(pdfPath));
       console.log(
-        `           ${result.transactions.length} txns, $${result.tokenUsage.estimatedCostUsd}`
+        `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
       );
       await writeFile(
         pdfPath.replace(/\.pdf$/i, ".parsed.json"),
-        JSON.stringify(result, null, 2)
+        JSON.stringify({ ...result, transactions: rows }, null, 2)
       );
-      return result.transactions;
+      return rows as ParsedTransaction[];
     } catch (err: any) {
+      // A response cut off at the token cap will be cut off again on a
+      // retry. Surface it so the operator splits the PDF instead.
+      if (err instanceof ParseTruncatedError) throw err;
       console.warn(`           attempt ${attempt}/3 failed: ${err.message}`);
       if (attempt === 3) throw err;
       await sleep(5000 * attempt);

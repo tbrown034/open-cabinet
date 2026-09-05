@@ -225,7 +225,8 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
               ticker: tx.ticker || null,
               type: tx.type,
               date: tx.date,
-              amount: tx.amount,
+              // The DB mirror stores the filing's wording for an unknown value.
+              amount: tx.amount ?? "Value not readily ascertainable",
               lateFilingFlag: tx.lateFilingFlag,
               confidence: tx.confidence,
               needsReview: tx.confidence < 0.8,

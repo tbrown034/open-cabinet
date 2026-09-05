@@ -71,7 +71,13 @@ function isoDate(mmddyyyy: string): string {
 /** Normalize "$500,001 - $1,000,000" (possibly wrapped) to the dataset's
  * "$500,001-$1,000,000"; "Over $50,000,000" and "Over $1,000,000" pass
  * through as-is (they are real OGE range labels, not parse errors). */
+/** Token both lanes use when a filing states no value for a row. */
+export const UNKNOWN_AMOUNT_TOKEN = "unknown";
+
 function normalizeAmount(raw: string): string {
+  // The filing's own phrase for "no value stated". The AI lane stores these
+  // rows as amount null; both sides compare as the same token.
+  if (/not\s+readily\s+ascertainable/i.test(raw)) return UNKNOWN_AMOUNT_TOKEN;
   const overs = raw.match(/Over\s+\$[\d,]+/i);
   if (overs) return overs[0].replace(/\s+/g, " ").replace(/over/i, "Over");
   const m = raw.match(/\$[\d,]+\s*-\s*\$[\d,]+/);
@@ -198,12 +204,13 @@ export function extractTextLayerRows(pdfPath: string): Extraction {
 function tupleOf(r: {
   type: string;
   date: string;
-  amount: string;
+  amount: string | null;
   lateFilingFlag: boolean | null;
 }): string {
   const late =
     r.lateFilingFlag === null ? "unreadable" : r.lateFilingFlag ? "late" : "ontime";
-  return `${r.type}|${r.date}|${r.amount}|${late}`;
+  const amount = r.amount === null ? UNKNOWN_AMOUNT_TOKEN : r.amount;
+  return `${r.type}|${r.date}|${amount}|${late}`;
 }
 
 /**
@@ -214,7 +221,7 @@ function tupleOf(r: {
  */
 export function crossCheckParsedFiling(
   pdfPath: string,
-  parsed: Array<{ type: string; date: string; amount: string; lateFilingFlag?: boolean }>
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
 ): CrossCheckResult {
   const extraction = extractTextLayerRows(pdfPath);
   if (extraction.kind === "no-text") return { status: "scan" };
