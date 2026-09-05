@@ -1,0 +1,484 @@
+/**
+ * The ingest stages as importable functions: fetch, read, check, merge,
+ * plus the helpers they share. scripts/ingest-new-filings.ts wires them
+ * into the weekly run; scripts/reverify.ts wires the same functions into
+ * a deliberate re-read of published filings. One implementation, two
+ * callers, so a fix in a stage reaches both.
+ */
+import { readFile, writeFile, mkdir } from "fs/promises";
+import { createWriteStream, existsSync, statSync } from "fs";
+import { execFileSync } from "node:child_process";
+import path from "path";
+import https from "https";
+import { PDFDocument } from "pdf-lib";
+import {
+  parsePdf,
+  ParseTruncatedError,
+  EXTRACTION_PROMPT,
+  SYSTEM_PROMPT,
+  PARSER_VERSION,
+  DEFAULT_MODEL,
+  type ParsedTransaction,
+} from "../scripts/parse-pdf.js";
+import { CHECKER_VERSION, crossCheckParsedFiling } from "../scripts/text-layer-crosscheck.js";
+import { assertParsedRows } from "./filing-validation";
+import {
+  describeCacheKey,
+  hasLegacyCacheOnly,
+  isTerminationForm,
+  promptHash,
+  readParseCache,
+  sha256File,
+  writeChunkManifest,
+  writeParseCache,
+  type ParseCacheKeyInput,
+} from "./parse-cache";
+import {
+  COMPARED_FIELDS,
+  hashRows,
+  readCrosscheckLog,
+  upsertCrosscheckEntry,
+  writeCrosscheckLog,
+  type CrosscheckState,
+} from "./crosscheck-log";
+import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
+import type { TargetFiling } from "./oge-filings";
+
+export type { ParsedTransaction };
+
+export const PDF_DIR = path.resolve("data/pdfs");
+/** Runtime switches the CLI sets; libraries never read process.argv. */
+export const stageOptions = { forceReparse: false };
+
+export interface SourceFiling {
+  date: string;
+  url: string;
+  label: string;
+}
+
+export interface OfficialFile {
+  name: string;
+  slug: string;
+  title?: string;
+  agency?: string;
+  level?: string;
+  filingType?: string;
+  mostRecentFilingDate?: string;
+  transactions: Array<ParsedTransaction & { confidence?: number }>;
+  summary?: string;
+  summarySource?: "template" | "model";
+  summaryFactSha256?: string;
+  summaryStaleSince?: string;
+  tookOfficeDate?: string;
+  party?: string;
+  sourceFilings?: SourceFiling[];
+  [k: string]: unknown;
+}
+
+export type FilingForIngest = TargetFiling;
+
+
+export function sleep(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function downloadFile(url: string, dest: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const file = createWriteStream(dest);
+    https
+      .get(url, { headers: { "User-Agent": "OpenCabinet/1.0" } }, (res) => {
+        if (res.statusCode === 301 || res.statusCode === 302) {
+          file.close();
+          if (res.headers.location) {
+            downloadFile(res.headers.location, dest).then(resolve, reject);
+          } else {
+            reject(new Error("Redirect with no location"));
+          }
+          return;
+        }
+        if (res.statusCode !== 200) {
+          file.close();
+          reject(new Error(`HTTP ${res.statusCode}`));
+          return;
+        }
+        res.pipe(file);
+        file.on("finish", () => {
+          file.close();
+          resolve();
+        });
+      })
+      .on("error", reject);
+  });
+}
+
+export function pdfFilenameFromUrl(url: string): string {
+  // The URL ends with /$FILE/<filename>
+  const tail = url.split("/").pop() || "filing.pdf";
+  return decodeURIComponent(tail);
+}
+
+
+export async function ensurePdf(url: string): Promise<string> {
+  await mkdir(PDF_DIR, { recursive: true });
+  const filename = pdfFilenameFromUrl(url);
+  const dest = path.join(PDF_DIR, filename);
+  if (existsSync(dest) && statSync(dest).size > 5000) return dest;
+  console.log(`    Downloading ${filename}...`);
+  await downloadFile(url, dest);
+  return dest;
+}
+
+/**
+ * OGE reviewers annotate the certification page when a filer pays the $200
+ * late-filing fee (e.g. "Filer paid late fee - HAJ 6/29/26"). Scan each
+ * newly ingested PDF's text layer so payments are caught the day they post.
+ * Hits go to data/meta/fee-annotations-pending.json for human review before
+ * promotion into data/meta/fee-payments.json (which drives the site UI) —
+ * OCR noise makes auto-publishing unsafe.
+ */
+export async function scanPdfForFeeAnnotation(
+  pdfPath: string,
+  pdfUrl: string,
+  slug: string
+): Promise<void> {
+  try {
+    const text = execFileSync("pdftotext", [pdfPath, "-"], {
+      encoding: "utf-8",
+      timeout: 30_000,
+    });
+    // "Filer paid ..." / "... paid late fee(s)" are reviewer-annotation
+    // phrasings; the form's printed instructions say "late filing fee" and
+    // never "filer paid", so boilerplate does not trip this. "filing
+    // extension" catches Integrity.gov's signature-block notice ("Filer
+    // received a 45 day filing extension") — an extension changes whether a
+    // late-looking filing actually missed its deadline, so it must surface
+    // for review the day it posts.
+    const pattern = /filer\s+paid|paid\s+late|filing\s+extension/i;
+    const hit = pattern.test(text);
+    if (!hit) return;
+    // Integrity.gov prints "Filer received a 0 day filing extension" on
+    // every e-filed form. A zero-day extension changes nothing; skip it
+    // rather than queue a review item for every filing.
+    if (/received a 0 day filing extension/i.test(text) && !/filer\s+paid|paid\s+late/i.test(text)) return;
+    const snippetMatch = text.match(/.{0,80}(?:filer\s+paid|paid\s+late|filing\s+extension).{0,80}/i);
+    const pendingPath = path.resolve("data/meta/fee-annotations-pending.json");
+    const pending: Array<Record<string, string>> = existsSync(pendingPath)
+      ? JSON.parse(await readFile(pendingPath, "utf-8"))
+      : [];
+    const entry = {
+      slug,
+      pdfFile: path.basename(pdfPath),
+      pdfUrl,
+      snippet: (snippetMatch?.[0] ?? "").replace(/\s+/g, " ").trim(),
+      detected: new Date().toISOString().slice(0, 10),
+    };
+    if (pending.some((p) => p.pdfFile === entry.pdfFile)) return;
+    pending.push(entry);
+    await writeFile(pendingPath, JSON.stringify(pending, null, 2) + "\n");
+    console.warn(
+      `  [${slug}] POSSIBLE FEE ANNOTATION in ${entry.pdfFile}: "${entry.snippet}" — review data/meta/fee-annotations-pending.json`
+    );
+  } catch {
+    // pdftotext missing or unreadable PDF — the sweep script covers gaps.
+  }
+}
+
+/** One piece of a filing to parse: the whole PDF, or a page-range chunk. */
+export interface ParseUnit {
+  path: string;
+  chunk: { first: number; last: number } | null;
+}
+
+export async function splitPdfIfNeeded(
+  pdfPath: string
+): Promise<{ units: ParseUnit[]; pageCount: number | null }> {
+  const buf = await readFile(pdfPath);
+  if (buf.length <= 500_000) return { units: [{ path: pdfPath, chunk: null }], pageCount: null };
+
+  const doc = await PDFDocument.load(buf);
+  const pageCount = doc.getPageCount();
+  const bytesPerPage = buf.length / pageCount;
+  const pagesPerChunk = Math.max(1, Math.floor(500_000 / bytesPerPage));
+  const chunks: ParseUnit[] = [];
+
+  for (let i = 0; i < pageCount; i += pagesPerChunk) {
+    const end = Math.min(i + pagesPerChunk, pageCount);
+    const newDoc = await PDFDocument.create();
+    const pages = await newDoc.copyPages(
+      doc,
+      Array.from({ length: end - i }, (_, k) => i + k)
+    );
+    pages.forEach((p) => newDoc.addPage(p));
+    const bytes = await newDoc.save();
+    const chunkPath = pdfPath.replace(/\.pdf$/i, `.pages${i + 1}-${end}.pdf`);
+    await writeFile(chunkPath, bytes);
+    chunks.push({ path: chunkPath, chunk: { first: i + 1, last: end } });
+  }
+
+  console.log(
+    `           split ${path.basename(pdfPath)} into ${chunks.length} chunks`
+  );
+  return { units: chunks, pageCount };
+}
+
+export const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
+
+/**
+ * Read stage. Returns the rows for one parse unit, from the cache when
+ * every input matches (PDF bytes, source URL, chunk, prompt, parser
+ * version, model) and from the model otherwise. Both paths run the same
+ * validation gate before anything is cached or merged.
+ */
+export async function parseUnitWithRetry(
+  unit: ParseUnit,
+  filingPdfSha256: string,
+  sourceUrl: string
+): Promise<ParsedTransaction[]> {
+  const keyInput: ParseCacheKeyInput = {
+    pdfSha256: filingPdfSha256,
+    sourceUrl,
+    chunk: unit.chunk,
+    parserVersion: PARSER_VERSION,
+    promptSha256: PROMPT_SHA256,
+    model: DEFAULT_MODEL,
+  };
+
+  const cached = stageOptions.forceReparse ? null : readParseCache(unit.path, keyInput);
+  if (cached) {
+    // A cached parse is validated exactly like a fresh one. A bad row
+    // that was cached before the gate existed must not slip through
+    // because it came from disk instead of the model.
+    const rows = assertParsedRows(cached.transactions, path.basename(unit.path));
+    console.log(`           cached ${rows.length} txns (${describeCacheKey(keyInput)})`);
+    return rows as ParsedTransaction[];
+  }
+  if (hasLegacyCacheOnly(unit.path, keyInput)) {
+    console.log(
+      `           legacy cache ignored for ${path.basename(unit.path)}: made under an earlier prompt or parser; re-parsing`
+    );
+  }
+
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const result = await parsePdf(unit.path);
+      // Enum and shape gate before anything is cached or merged.
+      const rows = assertParsedRows(result.transactions, path.basename(unit.path));
+      console.log(
+        `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
+      );
+      writeParseCache(unit.path, { ...keyInput, model: result.model }, {
+        transactions: rows,
+        tokenUsage: result.tokenUsage,
+      });
+      return rows as ParsedTransaction[];
+    } catch (err: unknown) {
+      // A response cut off at the token cap will be cut off again on a
+      // retry. Surface it so the operator splits the PDF instead.
+      if (err instanceof ParseTruncatedError) throw err;
+      console.warn(`           attempt ${attempt}/3 failed: ${(err as Error).message}`);
+      if (attempt === 3) throw err;
+      await sleep(5000 * attempt);
+    }
+  }
+
+  return [];
+}
+
+
+export function txKey(tx: ParsedTransaction): string {
+  return `${tx.description.trim().toLowerCase()}|${tx.date}|${tx.type.toLowerCase()}|${tx.amount}`;
+}
+
+
+export function recordCrosscheck(
+  slug: string,
+  filing: FilingForIngest,
+  pdfPath: string,
+  pdfSha256: string,
+  rows: ParsedTransaction[],
+  check: ReturnType<typeof crossCheckParsedFiling>
+): void {
+  let state: CrosscheckState;
+  let problems: string[] | undefined;
+  if (check.status === "ok") state = "checked_tuple_agreement";
+  else if (check.status === "scan") state = "no_usable_text";
+  else if (check.status === "mismatch") {
+    state = "checked_tuple_mismatch";
+    problems = check.problems;
+  } else {
+    state = /pdftotext failed/i.test(check.message)
+      ? "tool_unavailable"
+      : isTerminationForm(pdfPath) || /unsupported form/i.test(check.message)
+        ? "unsupported_form"
+        : "unsupported_layout";
+    problems = [check.message];
+  }
+  const log = upsertCrosscheckEntry(
+    readCrosscheckLog(),
+    {
+      sourceUrl: filing.pdfUrl,
+      slug,
+      filingDate: filing.docDate.slice(0, 10),
+      pdfFile: path.basename(pdfPath),
+      pdfSha256,
+      candidateSha256: hashRows(rows),
+      checkerVersion: CHECKER_VERSION,
+      state,
+      comparedFields: COMPARED_FIELDS,
+      rowsCompared: check.status === "ok" ? check.rowCount : null,
+      publishedRows: rows.length,
+      ...(problems ? { problems } : {}),
+      parseRecord: "current",
+      checkedAt: new Date().toISOString(),
+    },
+    CHECKER_VERSION
+  );
+  writeCrosscheckLog(log);
+}
+
+// ── THE SEVEN STAGES ──
+//
+// find -> fetch -> read -> check -> merge -> validate -> publish
+//
+// The first five run here, per official, per filing. Validate is
+// scripts/validate.ts and publish is the pull request the workflow opens;
+// both are named below so the file reads the same way research/pipeline.md
+// describes it. Each stage says what stops it.
+
+/** FETCH. Download the filing PDF (or reuse the local copy) and hash it.
+ *  Stops on: HTTP error. Also scans the certification page for a
+ *  reviewer's late-fee note, which goes to a pending file for a person. */
+export async function fetchFiling(
+  slug: string,
+  filing: FilingForIngest
+): Promise<{ pdfPath: string; sha256: string }> {
+  const pdfPath = await ensurePdf(filing.pdfUrl);
+  await scanPdfForFeeAnnotation(pdfPath, filing.pdfUrl, slug);
+  const sizeKb = (statSync(pdfPath).size / 1024).toFixed(0);
+  console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
+  return { pdfPath, sha256: sha256File(pdfPath) };
+}
+
+/** READ. The model proposes rows for the whole PDF, or for each page
+ *  range when the filing is large. Every unit is validated for shape and
+ *  enums whether it came from the model or from a keyed cache.
+ *  Stops on: a row that fails validation; a truncated response; three
+ *  failed attempts. */
+export async function readFiling(
+  pdfPath: string,
+  sha256: string,
+  sourceUrl: string
+): Promise<ParsedTransaction[]> {
+  const rows: ParsedTransaction[] = [];
+  const { units, pageCount } = await splitPdfIfNeeded(pdfPath);
+  for (const unit of units) {
+    if (unit.chunk) console.log(`           parsing chunk ${path.basename(unit.path)}`);
+    rows.push(...(await parseUnitWithRetry(unit, sha256, sourceUrl)));
+    await sleep(1500);
+  }
+  if (pageCount !== null) {
+    // Record which chunk caches compose this filing, so a later comparison
+    // can only assemble the complete, contiguous set under the same key.
+    writeChunkManifest(
+      pdfPath,
+      { pdfSha256: sha256, sourceUrl, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL },
+      pageCount,
+      units.map((u) => u.chunk!).filter(Boolean)
+    );
+  }
+  return rows;
+}
+
+/** CHECK. A second program that never sees the model's output reads the
+ *  PDF's text layer and compares type, date, amount, late flag and printed
+ *  row numbers, row for row. Every verdict is recorded in the log.
+ *  Stops on: any disagreement; a text layer the parser cannot read.
+ *  Does not stop on: a scan (no text layer). That is recorded as
+ *  no_usable_text and depends on a person's visual check. */
+export async function checkFiling(
+  slug: string,
+  officialName: string,
+  filing: FilingForIngest,
+  pdfPath: string,
+  sha256: string,
+  rows: ParsedTransaction[]
+): Promise<void> {
+  const check = crossCheckParsedFiling(pdfPath, rows);
+  recordCrosscheck(slug, filing, pdfPath, sha256, rows, check);
+  if (check.status === "mismatch") {
+    // A person decides. Write the item, with page and printed row where
+    // the text layer shows them, and send it before halting.
+    await openReviewItem({
+      kind: "lane_disagreement",
+      slug,
+      officialName,
+      filing: { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) },
+      problems: problemsFromCrosscheck(pdfPath, check.problems, rows),
+      holding: `every row of ${path.basename(pdfPath)}; nothing from it is published until this is decided`,
+    });
+  }
+  if (check.status === "ok") {
+    console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
+  } else if (check.status === "scan") {
+    console.warn(
+      `           SCAN — no text layer to cross-check. Recorded as no_usable_text. Do NOT commit until the parse is visually reconciled against printed row numbers.`
+    );
+  } else if (check.status === "error") {
+    throw new Error(
+      `text-layer cross-check could not run on ${path.basename(pdfPath)} (${check.message}) — ingest halted before merge`
+    );
+  } else {
+    console.error(`  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`);
+    for (const p of check.problems) console.error(`    - ${p}`);
+    throw new Error(
+      `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
+    );
+  }
+}
+
+/** MERGE. Add the new rows to the official's existing rows. Amendment-aware,
+ *  not row-unique: a filing that prints the same description, date, type
+ *  and amount on several numbered rows is disclosing several trades, and an
+ *  amended filing that repeats rows adds nothing. Each key's multiplicity
+ *  is the largest count any single source asserts. (The Aug 2026 re-audit
+ *  restored 76 rows a Set-based dedupe had collapsed.) Every added row is
+ *  stamped with the filing that disclosed it. Stops on: nothing; a genuine
+ *  repeat disclosed in a later filing is the known limit, and
+ *  scripts/validate.ts reports cross-filing repeats for a person. */
+export function mergeRows(
+  official: OfficialFile,
+  perFilingParses: ParsedTransaction[][],
+  newPdfs: FilingForIngest[]
+): ParsedTransaction[] {
+  const countKeys = (txs: ParsedTransaction[]): Map<string, number> => {
+    const c = new Map<string, number>();
+    for (const tx of txs) c.set(txKey(tx), (c.get(txKey(tx)) ?? 0) + 1);
+    return c;
+  };
+  const current = countKeys(official.transactions as ParsedTransaction[]);
+  const target = new Map(current);
+  for (const filingTxs of perFilingParses) {
+    for (const [key, n] of countKeys(filingTxs)) {
+      target.set(key, Math.max(target.get(key) ?? 0, n));
+    }
+  }
+  const addedTxs: ParsedTransaction[] = [];
+  for (let fi = 0; fi < perFilingParses.length; fi++) {
+    for (const tx of perFilingParses[fi]) {
+      const key = txKey(tx);
+      if ((current.get(key) ?? 0) >= (target.get(key) ?? 0)) continue;
+      current.set(key, (current.get(key) ?? 0) + 1);
+      // confidence is self-reported by the model and not part of the
+      // published row. It stays in the parse cache for review (Gate 2 will
+      // carry it into a review file).
+      const rest: Partial<ParsedTransaction> & { confidence?: number } = { ...tx };
+      delete rest.confidence;
+      addedTxs.push({ ...rest, sourceUrl: newPdfs[fi].pdfUrl } as unknown as ParsedTransaction);
+    }
+  }
+  return addedTxs;
+}
+
+/** WRITE the official's JSON. Never overwrites an existing summary.
+ *  Validate (scripts/validate.ts) and publish (the workflow's pull request)
+ *  happen after this script exits. */

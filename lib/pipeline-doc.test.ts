@@ -10,7 +10,10 @@ import path from "path";
  */
 describe("research/pipeline.md matches the code", () => {
   const doc = readFileSync(path.join(process.cwd(), "research", "pipeline.md"), "utf-8");
-  const ingest = readFileSync(path.join(process.cwd(), "scripts", "ingest-new-filings.ts"), "utf-8");
+  // The stages live in two files: the shared library and the CLI that wires them.
+  const ingest =
+    readFileSync(path.join(process.cwd(), "scripts", "ingest-new-filings.ts"), "utf-8") +
+    readFileSync(path.join(process.cwd(), "lib", "ingest-stages.ts"), "utf-8");
 
   it("names all seven stages and each exists as a function in the ingest", () => {
     for (const fn of [

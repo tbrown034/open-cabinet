@@ -2,7 +2,7 @@
 
 Seven stages. Each one says what happens, what stops it, and what a person does. Three words are used for every check and nothing fuzzier: **enforced** means the pipeline stops; **recorded** means a verdict is written to a file a person reviews; **advisory** means a line is printed and nothing else.
 
-All seven stages are functions in `scripts/ingest-new-filings.ts` with these exact names. Stage six runs `scripts/validate.ts` and stops on its exit code. Stage seven hands off to the pull request `.github/workflows/oge-pipeline.yml` opens; the script cannot publish. A test (`lib/pipeline-doc.test.ts`) fails if a stage named here is missing from the code.
+All seven stages are functions with these exact names: fetch, read, check and merge in `lib/ingest-stages.ts` (shared with the re-read tool), find, validate and publish in `scripts/ingest-new-filings.ts`. Stage six runs `scripts/validate.ts` and stops on its exit code. Stage seven hands off to the pull request `.github/workflows/oge-pipeline.yml` opens; the script cannot publish. A test (`lib/pipeline-doc.test.ts`) fails if a stage named here is missing from the code.
 
 ## 1. Find (`findNewFilings`)
 
