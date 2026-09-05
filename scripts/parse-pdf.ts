@@ -23,6 +23,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import dotenv from "dotenv";
 import { AMOUNT_RANGE_KEYS, type AmountRange } from "../lib/amounts";
+import { resolveTicker } from "../lib/assets";
 
 dotenv.config({ path: ".env.local" });
 
@@ -245,15 +246,14 @@ async function parsePdf(
     (inputTokens / 1_000_000) * pricing.input +
     (outputTokens / 1_000_000) * pricing.output;
 
-  // Post-processing: programmatic ticker extraction as fallback
-  // AI sometimes misses tickers that are clearly in the description
+  // Post-processing: the same resolver the site uses at read time decides
+  // whether a filed or parenthetical symbol may be called a ticker. The old
+  // regex took any trailing capitals in parentheses and turned "(THE)" into
+  // a company. Withheld symbols are logged; descriptions are never changed.
   for (const tx of parsed) {
-    if (!tx.ticker) {
-      const match = tx.description.match(/\(([A-Z]{1,6})\)\s*$/);
-      if (match) {
-        tx.ticker = match[1];
-      }
-    }
+    const resolved = resolveTicker(tx.description, tx.ticker, { fillFromParenthetical: true });
+    if (resolved.warning) console.warn(`  ticker: ${resolved.warning} [${tx.description}]`);
+    tx.ticker = resolved.ticker;
   }
 
   const result: ParseResult = {

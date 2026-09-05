@@ -1,6 +1,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
 import type { AmountRange, OfficialData, OfficialsIndex } from "./types";
+import { companyGroupName, resolveTicker } from "./assets";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -75,14 +76,19 @@ export const COMPANY_CONTEXT: Record<string, string> = {
   NVDA: "NVIDIA supplies AI chips subject to Commerce Department export controls and is a major government AI contractor.",
 };
 
-// Mapping for tickers where the description is just the ticker symbol
+// Display names for tickers whose filings only ever print the bare symbol.
+// Used only when no filed description supplies a name; a filed full name
+// always wins. Two earlier entries here named the wrong funds (GAJPX,
+// GGLPX) and overrode the filing's own text, which is why the rule is now
+// "fallback only" and every entry must match a filed description in tests.
 const TICKER_NAME_OVERRIDES: Record<string, string> = {
   DODFX: "Dodge & Cox International Stock Fund",
-  GAJPX: "American Funds Growth Fund of America",
-  GGLPX: "Goldman Sachs GQG Partners Intl Opps Fund",
+  GAJPX: "Goldman Sachs Dynamic Municipal Income Fund",
+  GGLPX: "Goldman Sachs High Yield Municipal Fund",
   SPMD: "SPDR Portfolio S&P 400 Mid Cap ETF",
   SPY: "SPDR S&P 500 ETF Trust",
 };
+export { TICKER_NAME_OVERRIDES };
 
 // Tickers that appear in filings with a symbol that doesn't match the named
 // company. The trade rows keep the as-filed symbol; aggregation groups them
@@ -95,22 +101,20 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   const officials = await getAllOfficials();
   const tickerMap = new Map<string, CompanyData>();
 
+  const descriptionsByTicker = new Map<string, string[]>();
   for (const official of officials) {
     for (const tx of official.transactions) {
-      if (!tx.ticker) continue;
-      const rawTicker = tx.ticker.toUpperCase();
-      const ticker = TICKER_ALIASES[rawTicker] ?? rawTicker;
+      // Resolve at read time. A filed symbol that is a name suffix ("THE")
+      // or an unreviewed ambiguous short symbol is withheld here, so it can
+      // never become a company page. The stored row is untouched.
+      const resolved = resolveTicker(tx.description, tx.ticker);
+      if (!resolved.ticker) continue;
+      const ticker = TICKER_ALIASES[resolved.ticker] ?? resolved.ticker;
       if (!tickerMap.has(ticker)) {
-        let name = tx.description.replace(/\s*\([^)]*\)\s*$/, "").trim();
-        if (name.toUpperCase() === ticker || TICKER_NAME_OVERRIDES[ticker]) {
-          name = TICKER_NAME_OVERRIDES[ticker] || name;
-        }
-        tickerMap.set(ticker, {
-          ticker,
-          companyName: name,
-          trades: [],
-        });
+        tickerMap.set(ticker, { ticker, companyName: ticker, trades: [] });
+        descriptionsByTicker.set(ticker, []);
       }
+      descriptionsByTicker.get(ticker)!.push(tx.description);
       tickerMap.get(ticker)!.trades.push({
         officialName: official.name,
         officialSlug: official.slug,
@@ -124,6 +128,14 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
         lateFilingFlag: tx.lateFilingFlag,
       });
     }
+  }
+
+  // Name each group from what was filed, never from a swap, bond or
+  // preferred line; the override table is a fallback for bare symbols.
+  for (const [ticker, group] of tickerMap) {
+    const filed = companyGroupName(descriptionsByTicker.get(ticker) ?? [], ticker);
+    group.companyName =
+      filed.toUpperCase() === ticker ? (TICKER_NAME_OVERRIDES[ticker] ?? filed) : filed;
   }
 
   return tickerMap;
