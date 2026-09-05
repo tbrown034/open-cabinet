@@ -115,8 +115,17 @@ describe("ingest reconciliation", () => {
         { description: "New Co", ticker: null, type: "Sale", date: "2025-06-01", amount: "$1,001-$15,000" as const, lateFilingFlag: false },
       ],
     };
-    const stale = reconcileSummaryAfterIngest(changed, "New template.", "2026-09-05");
+    const stale = reconcileSummaryAfterIngest(changed, "New template.", { today: "2026-09-05" });
     expect(stale.summary).toBe("Approved prose.");
+    expect(stale.summaryStaleSince).toBe("2026-09-05");
+  });
+
+  it("a legacy summary with no fact hash goes stale when an ingest adds rows", () => {
+    const legacy = { ...official(), summary: "Old prose from before hashes." };
+    const untouched = reconcileSummaryAfterIngest(legacy, "T.", { rowsAdded: 0, today: "2026-09-05" });
+    expect(untouched.summaryStaleSince).toBeUndefined();
+    const stale = reconcileSummaryAfterIngest(legacy, "T.", { rowsAdded: 3, today: "2026-09-05" });
+    expect(stale.summary).toBe("Old prose from before hashes.");
     expect(stale.summaryStaleSince).toBe("2026-09-05");
   });
 });

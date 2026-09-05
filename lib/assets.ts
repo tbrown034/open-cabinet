@@ -26,6 +26,9 @@
 
 /** Tokens that appear in a parenthetical after a name and are never a symbol. */
 export const NEVER_A_SYMBOL = new Set([
+  // Each of these was checked against listed symbols: none is a ticker.
+  // A token that IS a ticker somewhere (CL, AG, SA, DE, CO) is never here;
+  // it goes in SHORT_SYMBOL_ISSUERS with the issuer that owns it.
   "THE",
   "REIT",
   "ETF",
@@ -42,16 +45,11 @@ export const NEVER_A_SYMBOL = new Set([
   "INC",
   "CORP",
   "PLC",
-  "NV",
-  "SA",
-  "AG",
-  "CD",
   "JR",
   "SR",
   "NEW",
   "OLD",
   "COM",
-  "CL",
   "SER",
   "PFD",
 ]);
@@ -61,23 +59,39 @@ export const NEVER_A_SYMBOL = new Set([
  * description names the issuer. Small on purpose; grows by review.
  */
 export const SHORT_SYMBOL_ISSUERS: Record<string, RegExp> = {
-  DE: /\bdeere\b/i,
-  CO: /\bglobal cord\b/i,
+  // Every single-letter NYSE symbol, with the issuer that owns it. A
+  // single letter in a parenthetical is far more often a share class, so a
+  // single letter is a ticker only when the description names its issuer.
   A: /\bagilent\b/i,
-  F: /\bford\b/i,
-  T: /\bat&t\b|\bat & t\b/i,
+  B: /\bbarrick\b|\bbarnes group\b/i,
   C: /\bcitigroup\b/i,
+  D: /\bdominion\b/i,
+  E: /\beni\b/i,
+  F: /\bford\b/i,
+  G: /\bgenpact\b/i,
+  H: /\bhyatt\b/i,
+  J: /\bjacobs\b/i,
   K: /\bkellanova\b|\bkellogg\b/i,
-  V: /\bvisa\b/i,
-  X: /\bunited states steel\b|\bu\.?s\.? steel\b/i,
-  B: /\bbarrick\b/i,
+  L: /\bloews\b/i,
   M: /\bmacy/i,
   O: /\brealty income\b/i,
-  S: /\bsentinelone\b/i,
-  D: /\bdominion\b/i,
-  L: /\bloews\b/i,
   R: /\bryder\b/i,
+  S: /\bsentinelone\b/i,
+  T: /\bat&t\b|\bat & t\b/i,
+  U: /\bunity software\b/i,
+  V: /\bvisa\b/i,
+  W: /\bwayfair\b/i,
+  X: /\bunited states steel\b|\bu\.?s\.? steel\b/i,
+  Y: /\balleghany\b/i,
   Z: /\bzillow\b/i,
+  // Two-letter symbols that collide with legal forms, state codes or suffixes.
+  DE: /\bdeere\b/i,
+  CO: /\bglobal cord\b/i,
+  AG: /\bfirst majestic\b/i,
+  SA: /\bseabridge\b/i,
+  CL: /\bcolgate\b/i,
+  NV: /\bnovonix\b/i,
+  CD: /\bchindata\b/i,
   US: /\bu\.?s\.? bancorp\b/i,
   NA: /\bnano-x\b/i,
 };
@@ -105,7 +119,9 @@ function acceptSymbol(candidate: string, description: string): { ok: boolean; wh
     return { ok: false, why: `"${sym}" is ambiguous and the description does not name its issuer` };
   }
   if (!issuer && sym.length === 1) {
-    return { ok: false, why: `single letter "${sym}" is a share-class marker unless reviewed` };
+    // Every real single-letter symbol is listed above, so an unlisted one
+    // is a share-class marker, not a ticker.
+    return { ok: false, why: `single letter "${sym}" is not a listed symbol; read as a share-class marker` };
   }
   return { ok: true };
 }
@@ -172,7 +188,9 @@ export function companyGroupName(descriptions: string[], ticker: string): string
   const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].length - b[0].length);
   const plain = ranked.find(([name]) => !INSTRUMENT_LINE.test(name));
   if (plain) return plain[0];
-  if (ranked[0]) return ranked[0][0];
+  // Only instrument lines (a preferred series, a bond, a swap) were filed
+  // under this symbol. None of them is the company's name, so the group is
+  // titled by its symbol until a reviewed mapping supplies the issuer.
   // Inverted form "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)":
   // the parenthetical is the name.
   for (const d of descriptions) {

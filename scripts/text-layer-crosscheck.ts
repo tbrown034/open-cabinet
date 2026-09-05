@@ -34,6 +34,8 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 
+import { isTerminationForm } from "../lib/parse-cache";
+
 /** Bump when the comparison changes. Recorded in data/meta/crosscheck-log.json. */
 export const CHECKER_VERSION = "2026-09-05.2";
 
@@ -267,7 +269,7 @@ export function crossCheckParsedFiling(
   // A 278-TERM termination report is a different form: no notification
   // column, different sections. The column parser does not read it. Say so
   // by name rather than reporting every row as a mismatch.
-  if (/278-?TERM/i.test(pdfPath)) {
+  if (isTerminationForm(pdfPath)) {
     return { status: "error", message: "unsupported form: 278-TERM termination report; the column parser reads 278-T only" };
   }
 

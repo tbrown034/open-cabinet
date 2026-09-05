@@ -18,7 +18,7 @@
  * (see scripts/plan-reparse.ts); the weekly job visits new filings only.
  */
 import { createHash } from "crypto";
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "fs";
 import path from "path";
 
 export interface ParseCacheKeyInput {
@@ -124,6 +124,61 @@ export function hasLegacyCacheOnly(pdfPath: string, input: ParseCacheKeyInput): 
     existsSync(legacyParseCachePath(pdfPath)) &&
     !existsSync(parseCachePath(pdfPath, parseCacheKey(input)))
   );
+}
+
+/** Is this filing a 278-TERM termination report, by file name? Shared by
+ *  the sweep, the ingest and the comparator so all three agree. */
+export function isTerminationForm(fileName: string): boolean {
+  return /278-?TERM/i.test(fileName);
+}
+
+/**
+ * The parse record to compare a filing against, newest first: a current
+ * keyed cache for the whole file, else current keyed caches for every
+ * chunk assembled in page order, else the legacy path-keyed cache, else
+ * nothing. Reports which it found so a log entry can say.
+ */
+export function findParseRecord(
+  pdfPath: string,
+  inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">
+): { source: "current" | "current-chunks" | "legacy"; transactions: unknown[] } | null {
+  const whole = readParseCache(pdfPath, { ...inputWithoutChunk, chunk: null });
+  if (whole) return { source: "current", transactions: whole.transactions };
+
+  // Chunk caches live beside the PDF as <base>.pages<a>-<b>.<key>.parsed.json.
+  const dir = path.dirname(pdfPath);
+  const base = path.basename(pdfPath).replace(/\.pdf$/i, "");
+  const chunkRe = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.pages(\\d+)-(\\d+)\\.([0-9a-f]{16})\\.parsed\\.json$`);
+  const chunks: Array<{ first: number; last: number; file: string }> = [];
+  for (const name of readdirSync(dir)) {
+    const m = name.match(chunkRe);
+    if (!m) continue;
+    const first = Number(m[1]);
+    const last = Number(m[2]);
+    const expected = parseCacheKey({ ...inputWithoutChunk, chunk: { first, last } });
+    if (m[3] === expected) chunks.push({ first, last, file: path.join(dir, name) });
+  }
+  if (chunks.length) {
+    chunks.sort((a, b) => a.first - b.first);
+    const transactions: unknown[] = [];
+    for (const c of chunks) {
+      const env = JSON.parse(readFileSync(c.file, "utf-8")) as ParseCacheEnvelope;
+      transactions.push(...env.transactions);
+    }
+    return { source: "current-chunks", transactions };
+  }
+
+  const legacy = legacyParseCachePath(pdfPath);
+  if (existsSync(legacy)) {
+    try {
+      const c = JSON.parse(readFileSync(legacy, "utf-8"));
+      const transactions = c.transactions ?? c;
+      if (Array.isArray(transactions)) return { source: "legacy", transactions };
+    } catch {
+      /* unreadable */
+    }
+  }
+  return null;
 }
 
 export function describeCacheKey(input: ParseCacheKeyInput): string {

@@ -161,6 +161,14 @@ async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
   const publishIdx = args.indexOf("--publish");
+  // --dry-run only means something in deterministic mode. Refuse it with
+  // --candidate (which pays) and --publish (which writes) rather than
+  // silently ignoring it.
+  if (dryRun && (args.includes("--candidate") || publishIdx >= 0)) {
+    throw new Error(
+      "--dry-run applies to --deterministic only. --candidate makes a paid call and --publish writes; neither has a dry run."
+    );
+  }
   if (publishIdx >= 0) {
     const id = args[publishIdx + 1];
     if (!id) throw new Error("--publish requires a candidate id");

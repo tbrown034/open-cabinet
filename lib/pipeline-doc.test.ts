@@ -12,8 +12,16 @@ describe("research/pipeline.md matches the code", () => {
   const doc = readFileSync(path.join(process.cwd(), "research", "pipeline.md"), "utf-8");
   const ingest = readFileSync(path.join(process.cwd(), "scripts", "ingest-new-filings.ts"), "utf-8");
 
-  it("names the five in-script stages and each exists as a function", () => {
-    for (const fn of ["findNewFilings", "fetchFiling", "readFiling", "checkFiling", "mergeRows"]) {
+  it("names all seven stages and each exists as a function in the ingest", () => {
+    for (const fn of [
+      "findNewFilings",
+      "fetchFiling",
+      "readFiling",
+      "checkFiling",
+      "mergeRows",
+      "validateDataset",
+      "handOffForPublish",
+    ]) {
       expect(doc, `doc names ${fn}`).toContain(`\`${fn}\``);
       expect(ingest, `code defines ${fn}`).toMatch(new RegExp(`function ${fn}\\(`));
     }

@@ -168,14 +168,20 @@ export function rejectCandidate(candidateId: string, decidedBy: string, file = C
 export function reconcileSummaryAfterIngest(
   official: OfficialFileForSummary,
   template: string,
-  today = new Date().toISOString().slice(0, 10)
+  options: { rowsAdded?: number; today?: string } = {}
 ): OfficialFileForSummary {
+  const today = options.today ?? new Date().toISOString().slice(0, 10);
+  const rowsAdded = options.rowsAdded ?? 0;
   const { sha256 } = currentFacts(official);
   if (!official.summary) {
     return { ...official, summary: template, summarySource: "template", summaryFactSha256: sha256 };
   }
-  if (official.summaryFactSha256 && official.summaryFactSha256 !== sha256 && !official.summaryStaleSince) {
-    return { ...official, summaryStaleSince: today };
-  }
+  if (official.summaryStaleSince) return official;
+  // A summary written before fact hashes existed has no hash to compare.
+  // If this ingest added rows, its facts changed by definition.
+  const factsMoved = official.summaryFactSha256
+    ? official.summaryFactSha256 !== sha256
+    : rowsAdded > 0;
+  if (factsMoved) return { ...official, summaryStaleSince: today };
   return official;
 }

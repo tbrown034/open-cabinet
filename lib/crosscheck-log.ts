@@ -64,6 +64,9 @@ export interface CrosscheckEntry {
   /** Rows in the published dataset stamped to this URL. */
   publishedRows: number;
   problems?: string[];
+  /** Which parse record the lane compared against: a current keyed cache,
+   * current chunk caches, or the legacy path-keyed cache. */
+  parseRecord?: "current" | "current-chunks" | "legacy";
   checkedAt: string;
 }
 

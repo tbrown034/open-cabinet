@@ -2,7 +2,7 @@
 
 Seven stages. Each one says what happens, what stops it, and what a person does. Three words are used for every check and nothing fuzzier: **enforced** means the pipeline stops; **recorded** means a verdict is written to a file a person reviews; **advisory** means a line is printed and nothing else.
 
-The first five stages are functions in `scripts/ingest-new-filings.ts` with these exact names. Stage six is `scripts/validate.ts`. Stage seven is the pull request `.github/workflows/oge-pipeline.yml` opens. A test (`lib/pipeline-doc.test.ts`) fails if a stage named here is missing from the code.
+All seven stages are functions in `scripts/ingest-new-filings.ts` with these exact names. Stage six runs `scripts/validate.ts` and stops on its exit code. Stage seven hands off to the pull request `.github/workflows/oge-pipeline.yml` opens; the script cannot publish. A test (`lib/pipeline-doc.test.ts`) fails if a stage named here is missing from the code.
 
 ## 1. Find (`findNewFilings`)
 
@@ -46,7 +46,7 @@ The first five stages are functions in `scripts/ingest-new-filings.ts` with thes
 
 **What a person does.** Reviews cross-filing repeats that stage six reports: the same trade in two different filings is either an amendment or a real second trade, and only a person can tell.
 
-## 6. Validate (`scripts/validate.ts`)
+## 6. Validate (`validateDataset`, running `scripts/validate.ts`)
 
 **What happens.** The whole dataset is checked. Fatal: a row with an illegal type, amount or date, or a golden file (hand-verified rows for five officials) that no longer matches. Review-required: a stored ticker that is a name suffix, or a trade repeated across two filings. Informative: same-filing lots, unusual volumes, single-day clusters.
 
@@ -54,9 +54,9 @@ The first five stages are functions in `scripts/ingest-new-filings.ts` with thes
 
 **What a person does.** Fixes a fatal problem at its source. Decides each review-required item and, for a data change, approves the exact patch.
 
-## 7. Publish (`.github/workflows/oge-pipeline.yml`)
+## 7. Publish (`handOffForPublish`, then `.github/workflows/oge-pipeline.yml`)
 
-**What happens.** The index and the exports are rebuilt, and a pull request is opened on the `automation/oge-filing-updates` branch with the changed JSON. Merging it deploys the site; every public page and every download is built from the same JSON files.
+**What happens.** The script records which filings it processed in `data/meta/last-check.json` and stops. The workflow rebuilds the index and the exports, and a pull request is opened on the `automation/oge-filing-updates` branch with the changed JSON. Merging it deploys the site; every public page and every download is built from the same JSON files.
 
 **What stops it.** Nothing in code. The pull request is the stop. Enforced only as far as a person honors it: one pull request has been opened this way, and two ingests were committed directly. That is the honest state.
 

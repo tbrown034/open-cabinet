@@ -508,9 +508,19 @@ export default async function OfficialPage({
       </header>
 
       {official.summary && (
-        <p className="text-sm text-neutral-600 leading-relaxed border-l-2 border-neutral-200 pl-4 mb-10">
-          {official.summary}
-        </p>
+        <div className="border-l-2 border-neutral-200 pl-4 mb-10">
+          <p className="text-sm text-neutral-600 leading-relaxed">{official.summary}</p>
+          {official.summaryStaleSince && (
+            <p className="mt-2 text-xs text-amber-700">
+              This summary was written before filings added on{" "}
+              {formatDate(official.summaryStaleSince)} and has not yet been
+              updated. The table below is current.
+            </p>
+          )}
+          {official.summarySource === "template" && (
+            <p className="mt-1 text-xs text-neutral-400">Generated from the counts, not written prose.</p>
+          )}
+        </div>
       )}
 
       <div className="flex flex-wrap gap-x-8 gap-y-2 text-sm text-neutral-500 border-b border-neutral-200 pb-6 mb-10">

@@ -30,7 +30,8 @@ import {
   type CrosscheckLog,
   type CrosscheckState,
 } from "../lib/crosscheck-log";
-import { legacyParseCachePath, sha256File } from "../lib/parse-cache";
+import { findParseRecord, isTerminationForm, promptHash, sha256File } from "../lib/parse-cache";
+import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
 
 const PDF_DIR = path.resolve("data/pdfs");
 const OFFICIALS_DIR = path.resolve("data/officials");
@@ -40,10 +41,12 @@ function pdfFilenameFromUrl(url: string): string {
 }
 
 function stateFromExtractionError(message: string, pdfFile: string): CrosscheckState {
-  if (/278TERM/i.test(pdfFile)) return "unsupported_form";
+  if (isTerminationForm(pdfFile) || /unsupported form/i.test(message)) return "unsupported_form";
   if (/pdftotext failed/i.test(message)) return "tool_unavailable";
   return "unsupported_layout";
 }
+
+const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
 
 function main() {
   let log: CrosscheckLog | null = null;
@@ -74,6 +77,14 @@ function main() {
         const pdfPath = path.join(PDF_DIR, pdfFile);
         if (!existsSync(pdfPath)) {
           entry = { ...base, pdfFile, pdfSha256: null, candidateSha256: null, state: "missing_local_document", rowsCompared: null };
+        } else if (isTerminationForm(pdfFile)) {
+          // Decide the form before extraction so a scanned termination
+          // report is not recorded as a scan of a form we do read.
+          entry = {
+            ...base, pdfFile, pdfSha256: sha256File(pdfPath), candidateSha256: null,
+            state: "unsupported_form", rowsCompared: null,
+            problems: ["278-TERM termination report; the column parser reads 278-T only"],
+          };
         } else {
           const pdfSha256 = sha256File(pdfPath);
           const extraction = extractTextLayerRows(pdfPath);
@@ -86,12 +97,17 @@ function main() {
               rowsCompared: null, problems: [extraction.message],
             };
           } else {
-            const cachePath = legacyParseCachePath(pdfPath);
-            if (!existsSync(cachePath)) {
+            const record = findParseRecord(pdfPath, {
+              pdfSha256,
+              sourceUrl: filing.url,
+              parserVersion: PARSER_VERSION,
+              promptSha256: PROMPT_SHA256,
+              model: DEFAULT_MODEL,
+            });
+            if (!record) {
               entry = { ...base, pdfFile, pdfSha256, candidateSha256: null, state: "not_checked", rowsCompared: extraction.rows.length, problems: ["no parse record on disk"] };
             } else {
-              const cache = JSON.parse(readFileSync(cachePath, "utf-8"));
-              const rows = cache.transactions ?? cache;
+              const rows = record.transactions as Parameters<typeof crossCheckParsedFiling>[1];
               const result = crossCheckParsedFiling(pdfPath, rows);
               entry = {
                 ...base, pdfFile, pdfSha256, candidateSha256: hashRows(rows),
@@ -99,6 +115,7 @@ function main() {
                 rowsCompared: extraction.rows.length,
                 ...(result.status === "mismatch" ? { problems: result.problems } : {}),
                 ...(result.status === "error" ? { problems: [result.message] } : {}),
+                parseRecord: record.source,
               };
               if (result.status === "error") entry.state = stateFromExtractionError(result.message, pdfFile);
               if (result.status === "scan") entry.state = "no_usable_text";

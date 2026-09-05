@@ -46,6 +46,7 @@ import { reconcileSummaryAfterIngest } from "../lib/summary-review";
 import {
   describeCacheKey,
   hasLegacyCacheOnly,
+  isTerminationForm,
   promptHash,
   readParseCache,
   sha256File,
@@ -427,7 +428,7 @@ function recordCrosscheck(
   } else {
     state = /pdftotext failed/i.test(check.message)
       ? "tool_unavailable"
-      : /278TERM/i.test(pdfPath)
+      : isTerminationForm(pdfPath) || /unsupported form/i.test(check.message)
         ? "unsupported_form"
         : "unsupported_layout";
     problems = [check.message];
@@ -622,7 +623,8 @@ async function writeOfficial(
   // facts just changed is marked stale so a person regenerates it.
   const reconciled = reconcileSummaryAfterIngest(
     updated as Parameters<typeof reconcileSummaryAfterIngest>[0],
-    summarizeTransactions(official.name, merged)
+    summarizeTransactions(official.name, merged),
+    { rowsAdded: addedTxs.length }
   ) as OfficialFile;
   if (reconciled.summaryStaleSince && !official.summaryStaleSince) {
     console.warn(
@@ -685,6 +687,45 @@ async function ingestForOfficial(
   return writeOfficial(slug, filePath, official, addedTxs, newSourceEntries);
 }
 
+/** VALIDATE. Run scripts/validate.ts over the whole dataset after the
+ *  merges. Exit 1 is fatal and stops here. Exit 2 is review-required and,
+ *  until a staging area exists, also stops here: nothing reaches the
+ *  publish stage with an open review item. Enforced. */
+function validateDataset(): void {
+  const { spawnSync } = require("node:child_process") as typeof import("node:child_process");
+  console.log("\n=== Validate ===");
+  const run = spawnSync("npx", ["tsx", "scripts/validate.ts"], { stdio: "inherit" });
+  if (run.status === 1) throw new Error("validation failed (fatal); nothing will be published");
+  if (run.status === 2) {
+    throw new Error(
+      "validation found review-required items; resolve them (a person decides) before publishing"
+    );
+  }
+  if (run.status !== 0) throw new Error(`validate.ts exited ${run.status}`);
+}
+
+/** PUBLISH, handed off. This script cannot publish: it records which
+ *  filings were processed in data/meta/last-check.json and stops. The
+ *  workflow rebuilds the index and exports and opens a pull request; a
+ *  person merges it. The merge is the publication decision. */
+async function handOffForPublish(
+  targetFilings: TargetFiling[] | undefined,
+  newFilings: Record<string, FilingForIngest[]>
+): Promise<void> {
+  if (!targetFilings) return;
+  await writeLastCheckState({
+    filings: targetFilings,
+    newFilings: targetFilings
+      .filter((filing) =>
+        Object.values(newFilings).some((group) =>
+          group.some((newFiling) => newFiling.pdfUrl === filing.pdfUrl)
+        )
+      )
+      .map((filing) => ({ ...filing, status: "processed" })),
+  });
+  console.log("\nUpdated data/meta/last-check.json. Publication is the pull request a person merges.");
+}
+
 async function main() {
   console.log("\n=== Ingest New Filings ===\n");
 
@@ -722,19 +763,8 @@ async function main() {
     throw new Error(`${failures} official ingest(s) failed`);
   }
 
-  if (targetFilings) {
-    await writeLastCheckState({
-      filings: targetFilings,
-      newFilings: targetFilings
-        .filter((filing) =>
-          Object.values(newFilings).some((group) =>
-            group.some((newFiling) => newFiling.pdfUrl === filing.pdfUrl)
-          )
-        )
-        .map((filing) => ({ ...filing, status: "processed" })),
-    });
-    console.log("\nUpdated data/meta/last-check.json");
-  }
+  validateDataset();
+  await handOffForPublish(targetFilings, newFilings);
 }
 
 main().catch((err) => {

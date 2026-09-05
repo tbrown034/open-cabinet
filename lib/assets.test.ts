@@ -69,6 +69,20 @@ describe("companyGroupName", () => {
     expect(companyGroupName(["SPY"], "SPY")).toBe("SPY");
   });
 
+  it("titles a group by its symbol when only instrument lines were filed", () => {
+    expect(companyGroupName(["KEYCORP DP SH PFD H - KEY", "KEYCORP DP SH PFD H"], "KEY")).toBe("KEY");
+    expect(companyGroupName(["Total return swap contract with JPMorgan"], "JPM")).toBe("JPM");
+  });
+
+  it("keeps real symbols that look like suffixes when the issuer is named", () => {
+    expect(resolveTicker("Colgate-Palmolive Co (CL)", "CL").ticker).toBe("CL");
+    expect(resolveTicker("First Majestic Silver Corp (AG)", "AG").ticker).toBe("AG");
+    expect(resolveTicker("Seabridge Gold Inc (SA)", "SA").ticker).toBe("SA");
+    expect(resolveTicker("Some Holdings SA", "SA").ticker).toBeNull();
+    expect(resolveTicker("Ford Motor Co (F)", "F").ticker).toBe("F");
+    expect(resolveTicker("Growth Fund Class (F)", "F").ticker).toBeNull();
+  });
+
   it("strips a trailing parenthetical and share-class boilerplate", () => {
     expect(cleanCompanyName("Liberty Energy Inc. (LBRT)")).toBe("Liberty Energy Inc.");
     expect(cleanCompanyName("Alphabet Inc. Class A")).toBe("Alphabet Inc.");
