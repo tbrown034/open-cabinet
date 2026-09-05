@@ -35,7 +35,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 
 /** Bump when the comparison changes. Recorded in data/meta/crosscheck-log.json. */
-export const CHECKER_VERSION = "2026-09-05.1";
+export const CHECKER_VERSION = "2026-09-05.2";
 
 export interface CrossCheckRow {
   rowNumber: number;
@@ -53,9 +53,20 @@ export type CrossCheckResult =
   | { status: "mismatch"; problems: string[] };
 
 type Extraction =
-  | { kind: "rows"; rows: CrossCheckRow[] }
+  | {
+      kind: "rows";
+      rows: CrossCheckRow[];
+      /** Printed row numbers that carry no transaction: account headers
+       * ("Spouse Investment Account #1") and "Line is intentionally left
+       * blank". The form numbers them; the model rightly omits them. */
+      placeholderRows: number[];
+    }
   | { kind: "no-text" }
   | { kind: "tool-error"; message: string };
+
+/** Numbered lines the form prints that are not transactions. */
+const PLACEHOLDER_LINE =
+  /line is (?:intentionally left|left intentionally) blank|\baccount\s*#?\s*\d*\s*(?:No|Yes)?\s*$/i;
 
 /** "Sale (Partial)" and "Sale (Full)" count as Sale for comparison; the AI
  * lane normalizes subtypes the same way at parse time. */
@@ -102,6 +113,11 @@ export function extractTextLayerRows(pdfPath: string): Extraction {
     // "scan" — that path skips verification entirely.
     return { kind: "tool-error", message: `pdftotext failed: ${err?.message ?? err}` };
   }
+  return parseTextLayer(text);
+}
+
+/** Pure: the column parser over pdftotext -layout output. Tested on strings. */
+export function parseTextLayer(text: string): Extraction {
 
   // Walk all lines and treat "row-number + 2+ spaces + content" as a row
   // start; the transactions table is the only numbered wide-row table whose
@@ -131,9 +147,14 @@ export function extractTextLayerRows(pdfPath: string): Extraction {
   if (current) blocks.push(current);
 
   const rows: CrossCheckRow[] = [];
+  const placeholderRows: number[] = [];
   for (const block of blocks) {
     const blockText = block.lines.join("\n");
     const date = blockText.match(/\b(\d{2}\/\d{2}\/\d{4})\b/);
+    if (!date && PLACEHOLDER_LINE.test(blockText)) {
+      placeholderRows.push(block.num);
+      continue;
+    }
     // The TYPE column sits between the description and the date, but type
     // words also appear inside company names ("Intercontinental Exchange
     // Group"). Take the LAST type token before the date, which is the
@@ -154,14 +175,31 @@ export function extractTextLayerRows(pdfPath: string): Extraction {
     // block rather than requiring adjacency.
     let amountRaw: string | null = null;
     const over = blockText.match(/Over\s+\$[\d,]+/i);
-    if (over) {
+    const notAscertainable = blockText.match(/value\s+not\s+readily\s+ascertainable/i);
+    if (notAscertainable) {
+      // The filing states no value. Both lanes compare this as "unknown".
+      amountRaw = notAscertainable[0];
+    } else if (over) {
       amountRaw = over[0];
     } else {
       const low = blockText.match(/(\$[\d,]+)\s*-/);
       if (low) {
         const rest = blockText.slice(low.index! + low[0].length);
-        const high = rest.match(/\$[\d,]+/);
-        if (high) amountRaw = `${low[1]}-${high[0]}`;
+        // The upper bound is a whole-dollar token larger than the lower
+        // bound. A wrapped description can put an option strike price
+        // ("$57.27)") between the two, which once produced "$50,001-$57".
+        // Skip any dollar token followed by a decimal point and any token
+        // that is not larger than the low bound.
+        const lowValue = Number(low[1].replace(/[$,]/g, ""));
+        let high: string | null = null;
+        for (const m of rest.matchAll(/\$[\d,]+(?![\d.])/g)) {
+          const value = Number(m[0].replace(/[$,]/g, ""));
+          if (Number.isFinite(value) && value > lowValue) {
+            high = m[0];
+            break;
+          }
+        }
+        if (high) amountRaw = `${low[1]}-${high}`;
       }
     }
     if (!type || !date || !amountRaw) continue; // not a transaction row
@@ -201,7 +239,7 @@ export function extractTextLayerRows(pdfPath: string): Extraction {
     }
     return { kind: "no-text" };
   }
-  return { kind: "rows", rows };
+  return { kind: "rows", rows, placeholderRows };
 }
 
 function tupleOf(r: {
@@ -226,6 +264,13 @@ export function crossCheckParsedFiling(
   pdfPath: string,
   parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
 ): CrossCheckResult {
+  // A 278-TERM termination report is a different form: no notification
+  // column, different sections. The column parser does not read it. Say so
+  // by name rather than reporting every row as a mismatch.
+  if (/278-?TERM/i.test(pdfPath)) {
+    return { status: "error", message: "unsupported form: 278-TERM termination report; the column parser reads 278-T only" };
+  }
+
   const extraction = extractTextLayerRows(pdfPath);
   if (extraction.kind === "no-text") return { status: "scan" };
   if (extraction.kind === "tool-error")
@@ -236,13 +281,16 @@ export function crossCheckParsedFiling(
 
   // Printed row numbers must run 1..N contiguously. A gap means the
   // extractor dropped a row it couldn't read — which would otherwise turn
-  // a real discrepancy into a false OK.
+  // a real discrepancy into a false OK. Placeholder rows the form numbers
+  // but that hold no transaction count toward continuity, not toward the
+  // comparison.
   const nums = textRows.map((r) => r.rowNumber);
   const seen = new Set<number>();
   for (const n of nums) {
     if (seen.has(n)) problems.push(`printed row number ${n} appears twice`);
     seen.add(n);
   }
+  for (const n of extraction.placeholderRows) seen.add(n);
   const maxNum = Math.max(...nums);
   for (let n = 1; n <= maxNum; n++) {
     if (!seen.has(n))
