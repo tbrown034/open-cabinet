@@ -24,7 +24,8 @@
     "backfill-notified": "npx tsx scripts/backfill-notified.ts",
     "plan-reparse": "npx tsx scripts/plan-reparse.ts",
     "crosscheck-sweep": "npx tsx scripts/crosscheck-sweep.ts",
-    "review": "npx tsx scripts/review.ts"
+    "review": "npx tsx scripts/review.ts",
+    "reverify": "npx tsx scripts/reverify.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",
