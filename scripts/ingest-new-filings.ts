@@ -28,7 +28,15 @@ import {
   DEFAULT_MODEL,
   type ParsedTransaction,
 } from "./parse-pdf.js";
-import { crossCheckParsedFiling } from "./text-layer-crosscheck.js";
+import { CHECKER_VERSION, crossCheckParsedFiling } from "./text-layer-crosscheck.js";
+import {
+  COMPARED_FIELDS,
+  hashRows,
+  readCrosscheckLog,
+  upsertCrosscheckEntry,
+  writeCrosscheckLog,
+  type CrosscheckState,
+} from "../lib/crosscheck-log";
 import { assertParsedRows } from "../lib/filing-validation";
 import { reconcileSummaryAfterIngest } from "../lib/summary-review";
 import {
@@ -389,6 +397,56 @@ function normalizeLevel(raw: string | undefined): string {
   return cleaned;
 }
 
+/**
+ * Check stage, recorded. Every verdict, including "scan", lands in
+ * data/meta/crosscheck-log.json so the methodology page can state what the
+ * deterministic lane actually compared.
+ */
+function recordCrosscheck(
+  slug: string,
+  filing: FilingForIngest,
+  pdfPath: string,
+  pdfSha256: string,
+  rows: ParsedTransaction[],
+  check: ReturnType<typeof crossCheckParsedFiling>
+): void {
+  let state: CrosscheckState;
+  let problems: string[] | undefined;
+  if (check.status === "ok") state = "checked_tuple_agreement";
+  else if (check.status === "scan") state = "no_usable_text";
+  else if (check.status === "mismatch") {
+    state = "checked_tuple_mismatch";
+    problems = check.problems;
+  } else {
+    state = /pdftotext failed/i.test(check.message)
+      ? "tool_unavailable"
+      : /278TERM/i.test(pdfPath)
+        ? "unsupported_form"
+        : "unsupported_layout";
+    problems = [check.message];
+  }
+  const log = upsertCrosscheckEntry(
+    readCrosscheckLog(),
+    {
+      sourceUrl: filing.pdfUrl,
+      slug,
+      filingDate: filing.docDate.slice(0, 10),
+      pdfFile: path.basename(pdfPath),
+      pdfSha256,
+      candidateSha256: hashRows(rows),
+      checkerVersion: CHECKER_VERSION,
+      state,
+      comparedFields: COMPARED_FIELDS,
+      rowsCompared: check.status === "ok" ? check.rowCount : null,
+      publishedRows: rows.length,
+      ...(problems ? { problems } : {}),
+      checkedAt: new Date().toISOString(),
+    },
+    CHECKER_VERSION
+  );
+  writeCrosscheckLog(log);
+}
+
 async function ingestForOfficial(
   slug: string,
   newPdfs: FilingForIngest[]
@@ -446,6 +504,7 @@ async function ingestForOfficial(
     // publish an unverified parse. Scans have no text layer; those fall back
     // to the standing manual rule (visual row-number reconciliation).
     const check = crossCheckParsedFiling(pdfPath, filingTxs);
+    recordCrosscheck(slug, filing, pdfPath, filingSha256, filingTxs, check);
     if (check.status === "ok") {
       console.log(
         `           text-layer cross-check OK (${check.rowCount} rows agree)`

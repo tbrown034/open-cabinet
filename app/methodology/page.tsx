@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
 import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
+import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log";
+import { sumAmountEstimates } from "@/lib/amounts";
+
+const fmt = (n: number) => n.toLocaleString("en-US");
+const pct = (part: number, whole: number) => (whole ? Math.round((part / whole) * 1000) / 10 : 0);
 
 export const metadata: Metadata = {
   alternates: { canonical: "/methodology" },
@@ -28,6 +33,22 @@ export default async function MethodologyPage() {
     0
   );
   const trumpTransactions = trump?.transactions.length ?? 0;
+
+  // What the deterministic lane has actually compared, from the log the
+  // ingest and the sweep write. Rendered as numbers so this page cannot
+  // drift from the code the way an earlier sentence here did.
+  const allRows = currentOfficials.flatMap((o) => o.transactions);
+  const log = readCrosscheckLog();
+  const coverage = log ? summarizeCrosscheckLog(log, allRows) : null;
+  const agreedRows = coverage?.rows.checked_tuple_agreement ?? 0;
+  const mismatchRows = coverage?.rows.checked_tuple_mismatch ?? 0;
+  const scanRows = coverage?.rows.no_usable_text ?? 0;
+  const layoutRows =
+    (coverage?.rows.unsupported_layout ?? 0) + (coverage?.rows.unsupported_form ?? 0);
+  const totals = sumAmountEstimates(allRows);
+  const openEnded = sumAmountEstimates(
+    allRows.filter((t) => t.amount === "Over $50,000,000" || t.amount === "Over $1,000,000")
+  );
   const trumpLateTransactions =
     trump?.transactions.filter((tx) => tx.lateFilingFlag).length ?? 0;
   const nonTrumpLateTransactions =
@@ -176,19 +197,30 @@ export default async function MethodologyPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
-                Open-ended top range is valued at $75 million.
+                Two ranges have no upper bound, and they carry a large share of the estimate.
               </strong>{" "}
-              The largest reporting range, &ldquo;Over $50,000,000,&rdquo; has
-              no upper bound. In estimated trade-volume totals, Open Cabinet
-              values each of these transactions at $75 million.
+              &ldquo;Over $50,000,000&rdquo; is valued at $75 million and
+              &ldquo;Over $1,000,000&rdquo; (used for spouse- and
+              dependent-held assets) at $1.5 million in estimated totals. That
+              is a policy, not a midpoint. Today {fmt(openEnded.knownCount)}{" "}
+              such rows, {pct(openEnded.knownCount, totals.knownCount)} percent
+              of transactions, supply{" "}
+              {pct(openEnded.estimate, totals.estimate)} percent of the
+              estimated total. The sum of every range&rsquo;s minimum is{" "}
+              ${fmt(Math.round(totals.floor / 1_000_000))} million; the estimate
+              is ${fmt(Math.round(totals.estimate / 1_000_000))} million.
             </li>
             <li>
               <strong className="text-neutral-900">
-                Unascertainable values default to the minimum range.
+                Unascertainable values stay unknown.
               </strong>{" "}
               When a filing reports a transaction value as &ldquo;not readily
-              ascertainable,&rdquo; Open Cabinet treats it as the smallest
-              reporting range ($1,001 to $15,000).
+              ascertainable,&rdquo; Open Cabinet records no range for it. The
+              row appears in the table with the filing&rsquo;s wording and is
+              left out of every dollar total.
+              {totals.unknownCount > 0
+                ? ` ${fmt(totals.unknownCount)} rows are in that state today.`
+                : " No rows are in that state today."}
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -238,12 +270,18 @@ export default async function MethodologyPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
-                PDF parsing is automated with human review.
+                Parsing is automated; checking is partly automated and partly by hand.
               </strong>{" "}
-              Transaction data is extracted from OGE filings using AI, then
-              checked automatically against hand-verified reference files that
-              re-verify the parsed data on every update. Source PDFs are linked
-              from each official{"'"}s page for independent verification.
+              A vision model reads each filing PDF and proposes rows. A second
+              program that never sees the model&rsquo;s output reads the same
+              PDF&rsquo;s text layer and compares type, date, amount, late
+              flag and printed row numbers, row for row. Where the two
+              disagree, nothing is published until a person decides. Scanned
+              filings have no text layer, so that comparison cannot run; those
+              rows depend on a visual check against the printed row numbers
+              and are the largest share of the dataset. The current state of
+              that comparison is below under AI transparency. Source PDFs are
+              linked from each official{"'"}s page.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -268,15 +306,34 @@ export default async function MethodologyPage() {
             <div>
               <div className="font-medium text-neutral-900">PDF parsing</div>
               <p className="text-neutral-500 mt-0.5">
-                We use{" "}
-                <a href="https://github.com/jsoma/natural-pdf" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">natural-pdf</a>
-                {" "}(by data journalist{" "}
-                <a href="https://github.com/jsoma" className="underline hover:text-neutral-900" target="_blank" rel="noopener noreferrer">Jonathan Soma</a>)
-                {" "}to extract text from PDF pages, then an AI parser turns
-                the disclosure tables into structured data. Large filings are
-                split into page chunks before parsing. All parsed data is
-                validated against source PDFs through automated checks.
+                Each filing PDF is sent whole to a vision model (Claude), which
+                returns the transaction table as structured rows. There is no
+                separate text-extraction step in front of the model. Large
+                filings are split into page ranges first. Every returned row
+                passes a shape check: only the five legal transaction types,
+                the eleven legal dollar ranges or an explicit unknown, real
+                calendar dates, and no extra fields. Where the PDF has a text
+                layer, an independent program (pdftotext plus a column parser)
+                reads the same table and the two are compared row for row.
               </p>
+              {coverage ? (
+                <p className="text-neutral-500 mt-2">
+                  As of the last check, that comparison agreed on{" "}
+                  {fmt(agreedRows)} of {fmt(coverage.totalRows)} published
+                  rows ({pct(agreedRows, coverage.totalRows)} percent), across{" "}
+                  {coverage.filings.checked_tuple_agreement} of{" "}
+                  {coverage.totalFilings} filings. {fmt(mismatchRows)} rows in{" "}
+                  {coverage.filings.checked_tuple_mismatch} filings are in
+                  disagreement and awaiting a person&rsquo;s review. {fmt(scanRows)}{" "}
+                  rows are in scanned filings with no text layer, where the
+                  comparison cannot run. {fmt(layoutRows)} rows are in layouts
+                  the comparison program cannot yet read.{" "}
+                  {fmt(coverage.unstampedRows)} rows are not yet attributed to
+                  a specific filing. The comparison covers type, date, amount,
+                  late flag and row count; it does not compare asset names or
+                  ticker symbols.
+                </p>
+              ) : null}
             </div>
             <div>
               <div className="font-medium text-neutral-900">
@@ -284,9 +341,16 @@ export default async function MethodologyPage() {
               </div>
               <p className="text-neutral-500 mt-0.5">
                 The plain-English summary on each official{"'"}s page is
-                AI-generated from their parsed transaction data. Summaries
-                describe what the data shows, they do not make editorial
-                judgments. Each is reviewed for factual accuracy.
+                either a fixed template built from the counts, or prose a
+                model wrote from a block of facts computed in code. The model
+                never sees the transactions, only the computed facts. Since
+                September 2026, model-written prose is published only after a
+                person reads and approves it, and only if every number in it
+                appears in the facts it was given. Summaries published before
+                that gate existed were not individually approved. When new
+                filings change an official&rsquo;s facts, the existing summary
+                is kept and marked as behind the data until a new one is
+                approved. Summaries do not make editorial judgments.
               </p>
             </div>
             <div>

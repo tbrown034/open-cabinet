@@ -25,7 +25,7 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { eq } from "drizzle-orm";
 import { officials, transactions, pipelineRuns } from "../lib/schema";
-import { parsePdf, quickValidate } from "./parse-pdf";
+import { parsePdf, parseWithOpenAI, diffParseResults, quickValidate } from "./parse-pdf";
 import type { ParsedTransaction } from "./parse-pdf";
 import { notify } from "../lib/notify";
 import {
@@ -181,6 +181,28 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
           validationErrors.forEach((e) => console.log(`    ${e}`));
         }
 
+        // --verify: a second provider reads the same PDF and any row where
+        // the two disagree is marked for review. Agreement between two
+        // models is not proof of correctness; disagreement is a reason to
+        // look. Before this was wired, the flag was parsed and ignored.
+        const disagreeingRows = new Set<number>();
+        if (options.verify) {
+          console.log(`  Verifying with a second provider...`);
+          const verification = await parseWithOpenAI(pdfPath, "gpt-5.4-mini");
+          totalTokenUsage.inputTokens += verification.tokenUsage.inputTokens;
+          totalTokenUsage.outputTokens += verification.tokenUsage.outputTokens;
+          totalTokenUsage.costUsd += verification.tokenUsage.estimatedCostUsd;
+          const diff = diffParseResults(result, verification);
+          console.log(
+            `  Cross-provider agreement: ${diff.matches}/${diff.total} fields; ${diff.differences.length} differences`
+          );
+          for (const d of diff.differences) {
+            const m = d.match(/^\[(\d+)\]/);
+            if (m) disagreeingRows.add(Number(m[1]));
+            else result.transactions.forEach((_, i) => disagreeingRows.add(i));
+          }
+        }
+
         // Find or create the official in DB
         const slug = slugify(filing.name);
         let [official] = await db
@@ -229,7 +251,7 @@ async function runPipeline(options: { verify?: boolean; dryRun?: boolean }) {
               amount: tx.amount ?? "Value not readily ascertainable",
               lateFilingFlag: tx.lateFilingFlag,
               confidence: tx.confidence,
-              needsReview: tx.confidence < 0.8,
+              needsReview: tx.confidence < 0.8 || disagreeingRows.has(i + j),
               pdfSource: filing.pdfUrl,
               rowIndex: i + j,
               batchId: run.id,

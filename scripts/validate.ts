@@ -1,19 +1,38 @@
 /**
- * Validation Suite — Trust backbone for Open Cabinet data.
+ * Validation of the published dataset, data/officials/*.json.
  *
- * Six validation layers:
- * 1. Schema: every transaction has valid type, amount, date, etc.
- * 2. Ticker: flag unknown tickers for review
- * 3. Count: compare our data against OGE API filing counts
- * 4. Golden files: regression test against manually verified data
- * 5. Confidence: flag low-confidence parser output
- * 6. Anomaly: flag unusual patterns (100+ tx per PDF, future dates)
+ * Four layers, three severities:
+ *
+ *   FATAL, exit 1, the run stops and nothing publishes:
+ *     1. Schema: every row has a legal type, a legal amount (or an explicit
+ *        unknown with the filing's wording), a real date, a boolean late
+ *        flag and a symbol-shaped ticker or null.
+ *     2. Golden files: hand-verified reference rows for five officials
+ *        still match the dataset.
+ *
+ *   REVIEW REQUIRED, exit 2, a person must look before the next publish:
+ *     3. Tickers: a stored symbol that is a name suffix (THE, REIT, DEL)
+ *        or otherwise not a symbol.
+ *     4. Cross-filing repeats: the same description, date, type and amount
+ *        stamped to two different filings. That is either an amendment
+ *        that should not double-count or a genuine second trade; only a
+ *        person can tell.
+ *
+ *   INFORMATIVE, exit 0, printed and nothing more:
+ *        Same-filing repeats (separate lots, expected), unusual volumes,
+ *        single-day clusters.
+ *
+ * What this file does not do: it does not read model confidence, which is
+ * not stored in the published rows, and it does not compare against the
+ * OGE API. An earlier docstring listed both as layers. Neither existed.
  *
  * Run: pnpm run validate
  */
 import { readdir, readFile } from "fs/promises";
 import { join } from "path";
-import { VALID_TYPES, VALID_AMOUNTS } from "./parse-pdf";
+import { VALID_TYPES } from "./parse-pdf";
+import { isAmountRange } from "../lib/amounts";
+import { NEVER_A_SYMBOL, SYMBOL_SHAPE } from "../lib/assets";
 import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
@@ -23,10 +42,10 @@ interface Transaction {
   ticker: string | null;
   type: string;
   date: string;
-  amount: string;
+  amount: string | null;
+  amountNote?: string;
   lateFilingFlag: boolean;
-  confidence?: number;
-  needsReview?: boolean;
+  sourceUrl?: string;
   notes?: string;
 }
 
@@ -49,14 +68,13 @@ interface ValidationReport {
   totalTransactions: number;
   schemaFailures: number;
   schemaErrors: string[];
-  unknownTickers: number;
-  unknownTickerList: string[];
+  suffixTickers: string[];
   goldenFilesPassed: number;
   goldenFilesTotal: number;
   goldenFileErrors: string[];
-  lowConfidence: number;
+  crossFilingRepeats: string[];
   anomalies: string[];
-  result: "PASS" | "FAIL";
+  result: "PASS" | "REVIEW" | "FAIL";
 }
 
 // ── LAYER 1: SCHEMA VALIDATION ──
@@ -71,7 +89,9 @@ function validateSchema(tx: Transaction, official: string, index: number): strin
   if (!VALID_TYPES.includes(tx.type)) {
     errors.push(`${prefix} Invalid type: "${tx.type}"`);
   }
-  if (!VALID_AMOUNTS.includes(tx.amount)) {
+  if (tx.amount === null) {
+    if (!tx.amountNote) errors.push(`${prefix} Unknown amount without the filing's wording (amountNote)`);
+  } else if (!isAmountRange(tx.amount)) {
     errors.push(`${prefix} Invalid amount: "${tx.amount}"`);
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(tx.date)) {
@@ -91,33 +111,23 @@ function validateSchema(tx: Transaction, official: string, index: number): strin
   if (typeof tx.lateFilingFlag !== "boolean") {
     errors.push(`${prefix} lateFilingFlag not boolean`);
   }
-  // Tickers can include dots and lowercase for preferred shares (BRK.B, KEYpI, T.PR.A)
-  if (tx.ticker && !/^[A-Za-z.]{1,10}$/.test(tx.ticker)) {
-    errors.push(`${prefix} Suspicious ticker: "${tx.ticker}"`);
+  // Symbol shape only. Whether a symbol is right is layer 3 and a person.
+  if (tx.ticker && !SYMBOL_SHAPE.test(tx.ticker)) {
+    errors.push(`${prefix} Ticker is not symbol-shaped: "${tx.ticker}"`);
   }
 
   return errors;
 }
 
-// ── LAYER 2: TICKER VALIDATION ──
-// Known major tickers — not exhaustive, just catches obvious errors
+// ── LAYER 3: TICKER REVIEW ──
+// A stored symbol that is a name suffix ("(THE)" after an inverted company
+// name) is not a ticker. It cannot be fixed here; it needs a data patch a
+// person approves. Review-required, not fatal, so the report is loud and
+// the patch is deliberate. The read-time resolver in lib/assets.ts already
+// withholds these from company pages.
 
-const KNOWN_TICKERS = new Set([
-  "AAPL", "AMZN", "MSFT", "GOOGL", "GOOG", "META", "TSLA", "NVDA",
-  "JPM", "BAC", "WFC", "GS", "MS", "C", "USB", "PNC", "TFC",
-  "UNH", "JNJ", "PFE", "MRK", "ABBV", "LLY", "BMY", "AMGN",
-  "XOM", "CVX", "COP", "SLB", "EOG", "MPC", "VLO", "PSX",
-  "DIS", "NFLX", "CMCSA", "T", "VZ", "TMUS",
-  "HD", "LOW", "TGT", "WMT", "COST", "AMZN",
-  "V", "MA", "PYPL", "SQ", "AXP",
-  "SPY", "QQQ", "IWM", "DIA", "VOO", "VTI", "BND",
-  "BA", "LMT", "RTX", "GD", "NOC",
-  "DJT", "LBRT", "OKLO", "FISV",
-]);
-
-function checkTicker(ticker: string | null): boolean {
-  if (!ticker) return true; // null is fine
-  return KNOWN_TICKERS.has(ticker);
+function checkTicker(ticker: string): boolean {
+  return !NEVER_A_SYMBOL.has(ticker.toUpperCase());
 }
 
 // ── LAYER 4: GOLDEN FILE REGRESSION ──
@@ -230,16 +240,22 @@ function detectAnomalies(data: OfficialData): string[] {
     );
   }
 
-  // Check for duplicate transactions
-  const seen = new Set<string>();
-  let dupeCount = 0;
+  // Repeated business tuples. Within one filing they are separate lots the
+  // form printed on separate numbered rows: expected, informative only.
+  // Across two filings they need a person: an amendment the merge should
+  // not have double-counted, or a genuine second trade of the same size on
+  // the same day disclosed later.
+  const byKey = new Map<string, Set<string>>();
+  let sameFilingRepeats = 0;
   for (const tx of data.transactions) {
     const key = `${tx.description}|${tx.date}|${tx.amount}|${tx.type}`;
-    if (seen.has(key)) dupeCount++;
-    seen.add(key);
+    const filings = byKey.get(key) ?? new Set<string>();
+    if (byKey.has(key)) sameFilingRepeats++;
+    filings.add(tx.sourceUrl ?? "");
+    byKey.set(key, filings);
   }
-  if (dupeCount > 0) {
-    anomalies.push(`${data.slug}: ${dupeCount} duplicate transactions`);
+  if (sameFilingRepeats > 0) {
+    anomalies.push(`${data.slug}: ${sameFilingRepeats} repeated rows (separate lots within a filing; expected)`);
   }
 
   // Check for all-same-day filings (not anomalous, but notable)
@@ -251,6 +267,23 @@ function detectAnomalies(data: OfficialData): string[] {
   }
 
   return anomalies;
+}
+
+// ── LAYER 4: CROSS-FILING REPEATS (review required) ──
+
+function crossFilingRepeats(data: OfficialData): string[] {
+  const byKey = new Map<string, Set<string>>();
+  for (const tx of data.transactions) {
+    const key = `${tx.description}|${tx.date}|${tx.amount}|${tx.type}`;
+    const filings = byKey.get(key) ?? new Set<string>();
+    filings.add(tx.sourceUrl ?? "(unstamped)");
+    byKey.set(key, filings);
+  }
+  const out: string[] = [];
+  for (const [key, filings] of byKey) {
+    if (filings.size > 1) out.push(`${data.slug}: "${key}" appears in ${filings.size} filings`);
+  }
+  return out;
 }
 
 // ── MAIN ──
@@ -268,12 +301,11 @@ async function main() {
     totalTransactions: 0,
     schemaFailures: 0,
     schemaErrors: [],
-    unknownTickers: 0,
-    unknownTickerList: [],
+    suffixTickers: [],
     goldenFilesPassed: 0,
     goldenFilesTotal: 0,
     goldenFileErrors: [],
-    lowConfidence: 0,
+    crossFilingRepeats: [],
     anomalies: [],
     result: "PASS",
   };
@@ -293,35 +325,31 @@ async function main() {
       report.schemaFailures += errors.length;
     });
 
-    // Layer 2: Tickers
-    data.transactions.forEach((tx) => {
+    // Layer 3: suffix tickers (review)
+    data.transactions.forEach((tx, i) => {
       if (tx.ticker && !checkTicker(tx.ticker)) {
-        if (!report.unknownTickerList.includes(tx.ticker)) {
-          report.unknownTickerList.push(tx.ticker);
-          report.unknownTickers++;
-        }
+        report.suffixTickers.push(`[${data.slug}][${i}] "${tx.ticker}" in "${tx.description}"`);
       }
     });
 
-    // Layer 5: Confidence
-    data.transactions.forEach((tx) => {
-      if (tx.confidence !== undefined && tx.confidence < 0.8) {
-        report.lowConfidence++;
-      }
-    });
+    // Layer 4: cross-filing repeats (review)
+    report.crossFilingRepeats.push(...crossFilingRepeats(data));
 
-    // Layer 6: Anomalies
+    // Informative
     report.anomalies.push(...detectAnomalies(data));
   }
 
-  // Layer 4: Golden files
+  // Layer 2: Golden files (fatal)
   console.log("Golden file regression tests:");
   const goldenResult = await validateGoldenFiles(dataDir);
   report.goldenFilesPassed = goldenResult.passed;
   report.goldenFilesTotal = goldenResult.total;
   report.goldenFileErrors = goldenResult.errors;
 
-  // Determine pass/fail
+  // Severity. FAIL beats REVIEW beats PASS.
+  if (report.suffixTickers.length > 0 || report.crossFilingRepeats.length > 0) {
+    report.result = "REVIEW";
+  }
   if (report.schemaFailures > 0) report.result = "FAIL";
   if (
     report.goldenFilesTotal > 0 &&
@@ -335,13 +363,11 @@ async function main() {
   console.log(`Transactions validated: ${report.totalTransactions}`);
   console.log(`Schema failures: ${report.schemaFailures}`);
   console.log(
-    `Unknown tickers: ${report.unknownTickers} (flagged for review)`
-  );
-  console.log(
     `Golden files: ${report.goldenFilesPassed}/${report.goldenFilesTotal} passed`
   );
-  console.log(`Low-confidence transactions: ${report.lowConfidence}`);
-  console.log(`Anomalies: ${report.anomalies.length}`);
+  console.log(`Suffix tickers (review): ${report.suffixTickers.length}`);
+  console.log(`Cross-filing repeats (review): ${report.crossFilingRepeats.length}`);
+  console.log(`Informative anomalies: ${report.anomalies.length}`);
 
   if (report.schemaErrors.length > 0) {
     console.log(`\nSchema errors:`);
@@ -351,8 +377,17 @@ async function main() {
     }
   }
 
-  if (report.unknownTickerList.length > 0) {
-    console.log(`\nUnknown tickers: ${report.unknownTickerList.join(", ")}`);
+  if (report.suffixTickers.length > 0) {
+    console.log(`\nSuffix tickers, review required (data patch needs approval):`);
+    report.suffixTickers.forEach((e) => console.log(`  ${e}`));
+  }
+
+  if (report.crossFilingRepeats.length > 0) {
+    console.log(`\nCross-filing repeats, review required:`);
+    report.crossFilingRepeats.slice(0, 20).forEach((e) => console.log(`  ${e}`));
+    if (report.crossFilingRepeats.length > 20) {
+      console.log(`  ... and ${report.crossFilingRepeats.length - 20} more`);
+    }
   }
 
   if (report.goldenFileErrors.length > 0) {
@@ -368,9 +403,11 @@ async function main() {
   console.log(`\nResult: ${report.result}`);
   console.log(`${"=".repeat(45)}`);
 
-  if (report.result === "FAIL") {
-    process.exit(1);
-  }
+  // Exit codes: 0 pass, 1 fatal, 2 review required. The pipeline workflow
+  // treats anything non-zero as a stop, which is the conservative reading
+  // until a staging area for review-required filings exists.
+  if (report.result === "FAIL") process.exit(1);
+  if (report.result === "REVIEW") process.exit(2);
 }
 
 export { validateSchema, checkTicker, detectAnomalies, validateGoldenFiles };

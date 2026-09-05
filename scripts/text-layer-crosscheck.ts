@@ -34,6 +34,9 @@
 import { execFileSync } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 
+/** Bump when the comparison changes. Recorded in data/meta/crosscheck-log.json. */
+export const CHECKER_VERSION = "2026-09-05.1";
+
 export interface CrossCheckRow {
   rowNumber: number;
   type: string;

@@ -63,24 +63,29 @@ The public site is served entirely from static JSON committed to this repo — n
 
 Open Cabinet uses two scheduled paths:
 
-1. **Monitor** — Vercel Cron polls the OGE API weekly, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
-2. **Ingest** — GitHub Actions runs the static JSON ingest weekly or on demand, downloads new PDFs, parses them with Claude, validates the data, regenerates exports and opens a PR for review.
+1. **Monitor** — Vercel Cron polls the OGE API daily, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
+2. **Ingest** — GitHub Actions runs the static JSON ingest weekly (Mondays) or on demand, downloads new PDFs, parses them with Claude, checks them, regenerates exports and opens a PR for review.
 
-The ingest path runs these stages:
+The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages, described stage by stage with what stops each one in [`research/pipeline.md`](research/pipeline.md):
 
-1. **Extract** — natural-pdf (by Jonathan Soma) extracts text page by page.
-2. **Parse** — Claude Opus/Sonnet structures each page into transaction data.
-3. **Validate** — Automated checks: schema, tickers, regression tests, anomaly detection.
-4. **Store** — Neon PostgreSQL with UNIQUE deduplication and batchId for rollback.
-5. **Alert** — Email notifications for errors, credit exhaustion or new filings via Resend.
+1. **Find** — the OGE API is diffed against the filings already tracked.
+2. **Fetch** — the PDF is downloaded and hashed.
+3. **Read** — the whole PDF goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/filing-validation.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
+4. **Check** — where the PDF has a text layer, `pdftotext` plus a column parser reads the same table and the two lanes are compared row for row on type, date, amount, late flag and printed row numbers (`scripts/text-layer-crosscheck.ts`). A mismatch stops the filing. A scan cannot be compared and is recorded as such. Every verdict is written to `data/meta/crosscheck-log.json`, which the methodology page renders.
+5. **Merge** — rows are added to the official's JSON; identical rows an amendment repeats are not double-counted.
+6. **Validate** — `scripts/validate.ts` checks schema and golden files and reports anomalies.
+7. **Publish** — a pull request is opened for a person to merge; the site and exports rebuild from the JSON.
+
+The Neon database is a mirror of the JSON used by the admin panel and alerts, not the source of what readers see. `scripts/pipeline.ts` writes to it and is not part of the scheduled ingest.
 
 ### Pipeline commands
 
 ```bash
-pnpm run pipeline              # Full run: check, download, parse, validate, insert
-pnpm run pipeline -- --dry-run # Check only, no inserts
-pnpm run pipeline -- --verify  # Parse then cross-check with OpenAI
-pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs
+pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs (the scheduled path)
+pnpm run plan-reparse          # List published filings a prompt change would re-read, with cost; never parses
+pnpm run crosscheck-sweep      # Re-run the text-layer comparison over every filing; writes the log
+pnpm run pipeline              # DB mirror path (not scheduled): check, download, parse, insert
+pnpm run pipeline -- --dry-run # Check only; still records a run row
 pnpm run check-filings -- --dry-run # URL-diff OGE without writing state
 pnpm run validate              # Run validation suite against data
 pnpm run parse-pdf <file>      # Parse a single PDF
@@ -192,6 +197,6 @@ Found a data error? [Open an issue](https://github.com/tbrown034/open-cabinet/is
 
 ## Built by
 
-[Trevor Brown](https://trevorthewebdeveloper.com) — investigative data journalist turned web developer. 15 years of political reporting including six years covering elections, dark money, financial disclosures and government accountability at Oklahoma Watch. Built Oklahoma's first statewide financial disclosure database.
+[Trevor Brown](https://trevorthewebdeveloper.com) — investigative data journalist turned web developer. 15 years of political reporting including six years covering elections, dark money, financial disclosures and government accountability at Oklahoma Watch. Built a statewide financial disclosure database for Oklahoma.
 
 [GitHub](https://github.com/tbrown034) · [Portfolio](https://trevorthewebdeveloper.com) · [Email](mailto:trevorbrown.web@gmail.com)

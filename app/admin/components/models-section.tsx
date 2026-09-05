@@ -46,6 +46,15 @@ export function ModelsSection() {
             </tr>
             <tr className="border-b border-neutral-100">
               <td className="py-2 pr-3 font-[family-name:var(--font-dm-mono)] text-neutral-900">
+                claude-opus-4-8
+              </td>
+              <td className="py-2 pr-3">Anthropic</td>
+              <td className="py-2 pr-3">Official summaries and digest lede (prose from computed facts; candidates reviewed before publish)</td>
+              <td className="py-2 pr-3 text-right tabular-nums">see provider</td>
+              <td className="py-2 text-right tabular-nums">see provider</td>
+            </tr>
+            <tr className="border-b border-neutral-100">
+              <td className="py-2 pr-3 font-[family-name:var(--font-dm-mono)] text-neutral-900">
                 gpt-5.4-mini
               </td>
               <td className="py-2 pr-3">OpenAI</td>
