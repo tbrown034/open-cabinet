@@ -62,6 +62,16 @@ export interface OfficialData {
   photoUrl?: string;
   ogeProfileUrl?: string;
   summary?: string;
+  /** Who wrote the summary: the deterministic template, or a model whose
+   * candidate a person approved (see lib/summary-review.ts). */
+  summarySource?: "template" | "model";
+  summaryModel?: string;
+  /** Hash of the fact block the summary was written from. */
+  summaryFactSha256?: string;
+  summaryPublishedAt?: string;
+  /** Set by the ingest when new rows changed the facts under a published
+   * summary. The prose is behind the data until a new candidate is approved. */
+  summaryStaleSince?: string;
   confirmedDate?: string;
   tookOfficeDate?: string; // For President (inaugurated, not confirmed)
   ethicsAgreementDate?: string;

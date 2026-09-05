@@ -1,12 +1,14 @@
 /**
  * Re-derive the `summary` line for one or more officials.
  *
- * Two modes:
- *   1. Claude generation (default) — sends the official's computed stats to
- *      Claude with a hardened, journalism-standards prompt and writes the
- *      returned 2–4 sentence summary. This is the mode the site relies on.
- *   2. Deterministic template (`--deterministic`) — builds the count sentence
- *      from the data with zero model calls. Useful offline / as a fallback.
+ * Three modes:
+ *   1. --candidate: sends the official's computed facts to Claude once and
+ *      saves the result to data/meta/summary-candidates.json for review.
+ *      Nothing the model writes goes into data/officials/ from this mode.
+ *   2. --publish <id>: copies an approved candidate's exact text into the
+ *      official file. No model call. Refuses if the facts changed since.
+ *   3. --deterministic: builds the count sentence from the data with zero
+ *      model calls and writes it. The fallback when no prose is approved.
  *
  * Whichever mode runs, the numbers come from the data file, not the model:
  * counts, buy/sell split, estimated totals (range midpoints), date range,
@@ -16,9 +18,10 @@
  * drawing compliance/ethics conclusions the data cannot support.
  *
  * Usage:
- *   npx tsx scripts/refresh-summaries.ts <slug1> [slug2 ...]
- *   npx tsx scripts/refresh-summaries.ts --deterministic <slug1> [slug2 ...]
- *   npx tsx scripts/refresh-summaries.ts --dry-run <slug1> [slug2 ...]
+ *   npx tsx scripts/refresh-summaries.ts --candidate <slug1> [slug2 ...]
+ *   npx tsx scripts/refresh-summaries.ts --publish <candidateId>
+ *   npx tsx scripts/refresh-summaries.ts --deterministic [--dry-run] <slug1> ...
+ *   npx tsx scripts/refresh-summaries.ts --list
  */
 import { readFile, writeFile } from "fs/promises";
 import path from "path";
@@ -27,120 +30,19 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
 
-import { sumAmountEstimates, transactionEstimate } from "../lib/amounts";
-
-// AP-style month names (Jan., Feb., March, April, May, June, July, Aug.,
-// Sept., Oct., Nov., Dec.). Mirrors lib/format.ts formatDate.
-const AP_MONTHS = [
-  "Jan.", "Feb.", "March", "April", "May", "June",
-  "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec.",
-];
-
-function apDate(iso: string): string {
-  const d = new Date(iso.slice(0, 10) + "T00:00:00");
-  if (Number.isNaN(d.getTime())) return "Unknown date";
-  return `${AP_MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
-}
-
-// Numbers in summaries must carry thousands separators (3,000 not 3000).
-function withCommas(n: number): string {
-  return n.toLocaleString("en-US");
-}
-
-function fmtMoney(n: number): string {
-  if (n >= 1_000_000_000) return `$${(n / 1_000_000_000).toFixed(1)}B`;
-  if (n >= 1_000_000) return `$${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `$${(n / 1_000).toFixed(0)}K`;
-  return `$${withCommas(n)}`;
-}
-
-interface Stats {
-  last: string;
-  total: number;
-  sales: number;
-  purchases: number;
-  exchanges: number;
-  late: number;
-  latePct: number;
-  estTotal: string;
-  estSales: string;
-  estPurchases: string;
-  firstDate: string | null;
-  lastDate: string | null;
-  topAssets: { label: string; count: number }[];
-  largest: string;
-}
-
-function computeStats(d: any): Stats {
-  const txs: any[] = d.transactions || [];
-  const sales = txs.filter((t) => t.type?.startsWith("Sale"));
-  const purchases = txs.filter((t) => t.type === "Purchase");
-  const exchanges = txs.filter((t) => t.type === "Exchange");
-  const late = txs.filter((t) => t.lateFilingFlag).length;
-  const sum = (arr: any[]) => sumAmountEstimates(arr).estimate;
-
-  const dates = txs.map((t) => t.date).filter(Boolean).sort();
-  const byAsset: Record<string, number> = {};
-  for (const t of txs) {
-    const key = t.ticker || t.description;
-    byAsset[key] = (byAsset[key] || 0) + 1;
-  }
-  const topAssets = Object.entries(byAsset)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 5)
-    .map(([label, count]) => ({ label, count }));
-
-  // Largest single transaction by range midpoint.
-  let largest = "n/a";
-  let largestVal = -1;
-  for (const t of txs) {
-    const v = transactionEstimate(t) ?? -1;
-    if (v > largestVal) {
-      largestVal = v;
-      largest = `${t.description} (${t.amount})`;
-    }
-  }
-
-  return {
-    last: d.name.split(",")[0].trim(),
-    total: txs.length,
-    sales: sales.length,
-    purchases: purchases.length,
-    exchanges: exchanges.length,
-    late,
-    latePct: txs.length ? Math.round((late / txs.length) * 100) : 0,
-    estTotal: fmtMoney(sum(txs)),
-    estSales: fmtMoney(sum(sales)),
-    estPurchases: fmtMoney(sum(purchases)),
-    firstDate: dates[0] || null,
-    lastDate: dates[dates.length - 1] || null,
-    topAssets,
-    largest,
-  };
-}
-
-// ── DETERMINISTIC MODE ──
-function buildDeterministic(s: Stats): string {
-  const parts: string[] = [];
-  const segments: string[] = [];
-  if (s.sales)
-    segments.push(
-      `${withCommas(s.sales)} sale${s.sales === 1 ? "" : "s"} (est. ${s.estSales})`
-    );
-  if (s.purchases)
-    segments.push(
-      `${withCommas(s.purchases)} purchase${s.purchases === 1 ? "" : "s"} (est. ${s.estPurchases})`
-    );
-  if (s.exchanges)
-    segments.push(`${withCommas(s.exchanges)} exchange${s.exchanges === 1 ? "" : "s"}`);
-  parts.push(`${s.last} reported ${segments.join(" and ")}.`);
-  if (s.late > 0) {
-    parts.push(
-      `${withCommas(s.late)} of ${withCommas(s.total)} transactions were filed late.`
-    );
-  }
-  return parts.join(" ");
-}
+import {
+  buildDeterministic,
+  buildFactBlock,
+  computeStats,
+  factHash,
+  unwitnessedNumbers,
+  type Stats,
+} from "../lib/summary-facts";
+import {
+  addCandidate,
+  listCandidates,
+  publishSummary,
+} from "../lib/summary-review";
 
 // ── CLAUDE GENERATION MODE ──
 //
@@ -177,31 +79,6 @@ STOCK ACT FRAMING (only if you mention lateness):
 
 Return ONLY the summary text — no preamble, no quotation marks, no trailing commentary.`;
 
-function buildFactBlock(s: Stats, d: any, extra?: string): string {
-  const lines: string[] = [];
-  lines.push(`Official: ${d.name} — ${d.title}, ${d.agency}`);
-  lines.push(`Last name to use in prose: ${s.last}`);
-  lines.push(`Total transactions: ${withCommas(s.total)}`);
-  lines.push(`Sales (all Sale types): ${withCommas(s.sales)} (estimated ${s.estSales})`);
-  lines.push(`Purchases: ${withCommas(s.purchases)} (estimated ${s.estPurchases})`);
-  if (s.exchanges) lines.push(`Exchanges: ${withCommas(s.exchanges)}`);
-  lines.push(`Estimated total value (all transactions, cumulative): ${s.estTotal}`);
-  lines.push(
-    `Late-filed transactions: ${withCommas(s.late)} of ${withCommas(s.total)} (${s.latePct} percent)`
-  );
-  if (s.firstDate && s.lastDate) {
-    lines.push(
-      `Transaction date range: ${apDate(s.firstDate)} to ${apDate(s.lastDate)}`
-    );
-  }
-  lines.push(`Largest single transaction (by range midpoint): ${s.largest}`);
-  lines.push(
-    `Most-traded assets: ${s.topAssets.map((a) => `${a.label} (${a.count})`).join(", ")}`
-  );
-  if (extra) lines.push(`Additional verified context you MAY use: ${extra}`);
-  return lines.join("\n");
-}
-
 async function generateWithClaude(
   s: Stats,
   d: any,
@@ -231,46 +108,93 @@ async function generateWithClaude(
   return textBlock.text.trim();
 }
 
-async function refresh(
-  slug: string,
-  mode: "claude" | "deterministic",
-  dryRun: boolean
-) {
+const MODEL = "claude-opus-4-8";
+
+async function loadOfficial(slug: string) {
   const p = path.resolve(`data/officials/${slug}.json`);
-  const d = JSON.parse(await readFile(p, "utf-8"));
+  return { p, d: JSON.parse(await readFile(p, "utf-8")) };
+}
+
+/** --deterministic: template text, no model, written directly. */
+async function writeDeterministic(slug: string, dryRun: boolean) {
+  const { p, d } = await loadOfficial(slug);
   const s = computeStats(d);
+  const text = buildDeterministic(s);
+  console.log(`\n[${slug}]\n  was: ${d.summary || ""}\n  now: ${text}`);
+  if (dryRun) return;
+  const block = buildFactBlock(s, d);
+  d.summary = text;
+  d.summarySource = "template";
+  d.summaryFactSha256 = factHash(block);
+  delete d.summaryStaleSince;
+  await writeFile(p, JSON.stringify(d, null, 2) + "\n");
+}
 
-  const newSummary =
-    mode === "deterministic"
-      ? buildDeterministic(s)
-      : await generateWithClaude(s, d);
-
-  const oldSummary = d.summary || "";
-  console.log(`\n[${slug}]`);
-  console.log(`  was: ${oldSummary}`);
-  console.log(`  now: ${newSummary}`);
-
-  if (!dryRun) {
-    d.summary = newSummary;
-    await writeFile(p, JSON.stringify(d, null, 2) + "\n");
+/** --candidate: one paid call, saved to the review store, never to data/officials. */
+async function writeCandidate(slug: string) {
+  const { d } = await loadOfficial(slug);
+  const s = computeStats(d);
+  const text = await generateWithClaude(s, d);
+  const c = addCandidate(d, text, MODEL);
+  console.log(`\n[${slug}] candidate ${c.id}`);
+  console.log(`  was: ${d.summary || ""}`);
+  console.log(`  now: ${c.text}`);
+  if (c.unwitnessed.length) {
+    console.log(`  REJECT: numbers not in the facts: ${c.unwitnessed.join(", ")}`);
+  } else {
+    console.log(`  numbers check: clean. Publish with --publish ${c.id}`);
   }
+}
+
+/** --publish <id>: copies approved bytes into the official file. No model call. */
+async function publish(candidateId: string, decidedBy: string) {
+  const slug = listCandidates().find((c) => c.id === candidateId)?.slug;
+  if (!slug) throw new Error(`no candidate ${candidateId}`);
+  const { p, d } = await loadOfficial(slug);
+  const result = publishSummary(d, candidateId, decidedBy);
+  if (!result.ok || !result.official) throw new Error(`cannot publish: ${result.reason}`);
+  await writeFile(p, JSON.stringify(result.official, null, 2) + "\n");
+  console.log(`[${slug}] published ${candidateId}`);
 }
 
 async function main() {
   const args = process.argv.slice(2);
-  const mode = args.includes("--deterministic") ? "deterministic" : "claude";
   const dryRun = args.includes("--dry-run");
+  const publishIdx = args.indexOf("--publish");
+  if (publishIdx >= 0) {
+    const id = args[publishIdx + 1];
+    if (!id) throw new Error("--publish requires a candidate id");
+    await publish(id, process.env.USER || "operator");
+    return;
+  }
+  if (args.includes("--list")) {
+    for (const c of listCandidates()) {
+      console.log(`${c.status.padEnd(9)} ${c.id}  ${c.unwitnessed.length ? "UNWITNESSED " + c.unwitnessed.join(",") : "clean"}`);
+      console.log(`  ${c.text}`);
+    }
+    return;
+  }
   const slugs = args.filter((a) => !a.startsWith("--"));
   if (slugs.length === 0) {
     console.log(
-      "Usage: npx tsx scripts/refresh-summaries.ts [--deterministic] [--dry-run] <slug> [slug ...]"
+      "Usage:\n  refresh-summaries.ts --deterministic [--dry-run] <slug> ...   template, no model\n  refresh-summaries.ts --candidate <slug> ...                     one paid call each, saved for review\n  refresh-summaries.ts --publish <candidateId>                    copy approved text, no model\n  refresh-summaries.ts --list"
     );
     process.exit(1);
   }
-  for (const slug of slugs) await refresh(slug, mode as any, dryRun);
+  if (args.includes("--candidate")) {
+    for (const slug of slugs) await writeCandidate(slug);
+    return;
+  }
+  if (args.includes("--deterministic")) {
+    for (const slug of slugs) await writeDeterministic(slug, dryRun);
+    return;
+  }
+  throw new Error(
+    "A model-written summary is never written directly. Use --candidate, review, then --publish."
+  );
 }
 
-export { computeStats, buildDeterministic, SYSTEM_PROMPT };
+export { computeStats, buildDeterministic, SYSTEM_PROMPT, type Stats };
 
 main().catch((e) => {
   console.error(e);

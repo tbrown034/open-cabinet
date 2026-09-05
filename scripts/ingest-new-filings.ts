@@ -30,6 +30,7 @@ import {
 } from "./parse-pdf.js";
 import { crossCheckParsedFiling } from "./text-layer-crosscheck.js";
 import { assertParsedRows } from "../lib/filing-validation";
+import { reconcileSummaryAfterIngest } from "../lib/summary-review";
 import {
   describeCacheKey,
   hasLegacyCacheOnly,
@@ -70,6 +71,9 @@ interface OfficialFile {
   mostRecentFilingDate?: string;
   transactions: Array<ParsedTransaction & { confidence?: number }>;
   summary?: string;
+  summarySource?: "template" | "model";
+  summaryFactSha256?: string;
+  summaryStaleSince?: string;
   tookOfficeDate?: string;
   party?: string;
   sourceFilings?: SourceFiling[];
@@ -553,7 +557,6 @@ async function ingestForOfficial(
     transactions: merged,
     sourceFilings,
     mostRecentFilingDate,
-    summary: summarizeTransactions(official.name, merged),
     lastIngestedDate: new Date().toISOString().slice(0, 10),
     lastIngestedNewCount: addedTxs.length,
     // The actual added rows (date-desc), so the digest can preview the new
@@ -566,7 +569,20 @@ async function ingestForOfficial(
     }),
   };
 
-  await writeFile(filePath, JSON.stringify(updated, null, 2) + "\n");
+  // An existing summary is never overwritten by the ingest. A missing one
+  // gets the deterministic template, labeled as such. A published summary
+  // whose facts just changed is marked stale so a person regenerates it.
+  const reconciled = reconcileSummaryAfterIngest(
+    updated as Parameters<typeof reconcileSummaryAfterIngest>[0],
+    summarizeTransactions(official.name, merged)
+  ) as OfficialFile;
+  if (reconciled.summaryStaleSince && !official.summaryStaleSince) {
+    console.warn(
+      `  [${slug}] summary is now STALE (facts changed): run refresh-summaries.ts --candidate ${slug}`
+    );
+  }
+
+  await writeFile(filePath, JSON.stringify(reconciled, null, 2) + "\n");
   console.log(
     `  [${slug}] +${addedTxs.length} txns (total ${merged.length}), +${uniqueNewSourceEntries.length} sourceFilings`
   );
