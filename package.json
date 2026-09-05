@@ -21,7 +21,8 @@
     "ingest-filings": "npx tsx scripts/ingest-new-filings.ts",
     "check-news": "npx tsx scripts/check-news.ts",
     "repermission": "npx tsx scripts/repermission-alerts.ts",
-    "backfill-notified": "npx tsx scripts/backfill-notified.ts"
+    "backfill-notified": "npx tsx scripts/backfill-notified.ts",
+    "plan-reparse": "npx tsx scripts/plan-reparse.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

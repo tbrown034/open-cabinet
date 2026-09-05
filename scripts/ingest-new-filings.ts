@@ -8,15 +8,37 @@
  *
  * Usage: npx tsx scripts/ingest-new-filings.ts
  *        npx tsx scripts/ingest-new-filings.ts --from-file /tmp/new-filings.json
+ *        npx tsx scripts/ingest-new-filings.ts --from-file plan.json --force-reparse
+ *
+ * --force-reparse ignores every cache for the listed filings and pays for a
+ * fresh parse. Use it only with a plan from scripts/plan-reparse.ts and an
+ * approved cost; the weekly job never passes it.
  */
 import { readFile, writeFile, mkdir, readdir } from "fs/promises";
 import { existsSync, statSync } from "fs";
 import path from "path";
 import https from "https";
 import { PDFDocument } from "pdf-lib";
-import { parsePdf, ParseTruncatedError, type ParsedTransaction } from "./parse-pdf.js";
+import {
+  parsePdf,
+  ParseTruncatedError,
+  EXTRACTION_PROMPT,
+  SYSTEM_PROMPT,
+  PARSER_VERSION,
+  DEFAULT_MODEL,
+  type ParsedTransaction,
+} from "./parse-pdf.js";
 import { crossCheckParsedFiling } from "./text-layer-crosscheck.js";
 import { assertParsedRows } from "../lib/filing-validation";
+import {
+  describeCacheKey,
+  hasLegacyCacheOnly,
+  promptHash,
+  readParseCache,
+  sha256File,
+  writeParseCache,
+  type ParseCacheKeyInput,
+} from "../lib/parse-cache";
 import dotenv from "dotenv";
 import {
   diffNewFilings,
@@ -30,6 +52,7 @@ import { loadKnownFilingUrlsFromData } from "../lib/oge-filings";
 dotenv.config({ path: ".env.local" });
 
 const PDF_DIR = path.resolve("data/pdfs");
+const FORCE_REPARSE = process.argv.includes("--force-reparse");
 
 interface SourceFiling {
   date: string;
@@ -172,15 +195,21 @@ async function scanPdfForFeeAnnotation(
   }
 }
 
-async function splitPdfIfNeeded(pdfPath: string): Promise<string[]> {
+/** One piece of a filing to parse: the whole PDF, or a page-range chunk. */
+interface ParseUnit {
+  path: string;
+  chunk: { first: number; last: number } | null;
+}
+
+async function splitPdfIfNeeded(pdfPath: string): Promise<ParseUnit[]> {
   const buf = await readFile(pdfPath);
-  if (buf.length <= 500_000) return [pdfPath];
+  if (buf.length <= 500_000) return [{ path: pdfPath, chunk: null }];
 
   const doc = await PDFDocument.load(buf);
   const pageCount = doc.getPageCount();
   const bytesPerPage = buf.length / pageCount;
   const pagesPerChunk = Math.max(1, Math.floor(500_000 / bytesPerPage));
-  const chunks: string[] = [];
+  const chunks: ParseUnit[] = [];
 
   for (let i = 0; i < pageCount; i += pagesPerChunk) {
     const end = Math.min(i + pagesPerChunk, pageCount);
@@ -193,7 +222,7 @@ async function splitPdfIfNeeded(pdfPath: string): Promise<string[]> {
     const bytes = await newDoc.save();
     const chunkPath = pdfPath.replace(/\.pdf$/i, `.pages${i + 1}-${end}.pdf`);
     await writeFile(chunkPath, bytes);
-    chunks.push(chunkPath);
+    chunks.push({ path: chunkPath, chunk: { first: i + 1, last: end } });
   }
 
   console.log(
@@ -202,41 +231,55 @@ async function splitPdfIfNeeded(pdfPath: string): Promise<string[]> {
   return chunks;
 }
 
-async function parsePdfWithRetry(pdfPath: string): Promise<ParsedTransaction[]> {
-  // Reuse a prior parse if one already exists on disk. Splitting is
-  // deterministic (same chunk boundaries every run), so a cached
-  // .parsed.json for a chunk is safe to trust — this avoids paying to
-  // re-parse pages that were already extracted in an earlier run.
-  const cachedPath = pdfPath.replace(/\.pdf$/i, ".parsed.json");
-  if (existsSync(cachedPath)) {
-    let cached: { transactions?: unknown } | null = null;
-    try {
-      cached = JSON.parse(await readFile(cachedPath, "utf-8"));
-    } catch {
-      cached = null; // Corrupt cache — fall through and re-parse.
-    }
-    if (cached && Array.isArray(cached.transactions)) {
-      // A cached parse is validated exactly like a fresh one. A bad row
-      // that was cached before the gate existed must not slip through
-      // because it came from disk instead of the model.
-      const rows = assertParsedRows(cached.transactions, path.basename(cachedPath));
-      console.log(`           cached ${rows.length} txns (${path.basename(cachedPath)})`);
-      return rows as ParsedTransaction[];
-    }
+const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
+
+/**
+ * Read stage. Returns the rows for one parse unit, from the cache when
+ * every input matches (PDF bytes, source URL, chunk, prompt, parser
+ * version, model) and from the model otherwise. Both paths run the same
+ * validation gate before anything is cached or merged.
+ */
+async function parseUnitWithRetry(
+  unit: ParseUnit,
+  filingPdfSha256: string,
+  sourceUrl: string
+): Promise<ParsedTransaction[]> {
+  const keyInput: ParseCacheKeyInput = {
+    pdfSha256: filingPdfSha256,
+    sourceUrl,
+    chunk: unit.chunk,
+    parserVersion: PARSER_VERSION,
+    promptSha256: PROMPT_SHA256,
+    model: DEFAULT_MODEL,
+  };
+
+  const cached = FORCE_REPARSE ? null : readParseCache(unit.path, keyInput);
+  if (cached) {
+    // A cached parse is validated exactly like a fresh one. A bad row
+    // that was cached before the gate existed must not slip through
+    // because it came from disk instead of the model.
+    const rows = assertParsedRows(cached.transactions, path.basename(unit.path));
+    console.log(`           cached ${rows.length} txns (${describeCacheKey(keyInput)})`);
+    return rows as ParsedTransaction[];
+  }
+  if (hasLegacyCacheOnly(unit.path, keyInput)) {
+    console.log(
+      `           legacy cache ignored for ${path.basename(unit.path)}: made under an earlier prompt or parser; re-parsing`
+    );
   }
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const result = await parsePdf(pdfPath);
+      const result = await parsePdf(unit.path);
       // Enum and shape gate before anything is cached or merged.
-      const rows = assertParsedRows(result.transactions, path.basename(pdfPath));
+      const rows = assertParsedRows(result.transactions, path.basename(unit.path));
       console.log(
         `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
       );
-      await writeFile(
-        pdfPath.replace(/\.pdf$/i, ".parsed.json"),
-        JSON.stringify({ ...result, transactions: rows }, null, 2)
-      );
+      writeParseCache(unit.path, { ...keyInput, model: result.model }, {
+        transactions: rows,
+        tokenUsage: result.tokenUsage,
+      });
       return rows as ParsedTransaction[];
     } catch (err: any) {
       // A response cut off at the token cap will be cut off again on a
@@ -381,12 +424,13 @@ async function ingestForOfficial(
     console.log(`  [${slug}] parsing ${path.basename(pdfPath)} (${sizeKb} KB)`);
 
     const filingTxs: ParsedTransaction[] = [];
-    const chunks = await splitPdfIfNeeded(pdfPath);
-    for (const chunk of chunks) {
-      if (chunk !== pdfPath) {
-        console.log(`           parsing chunk ${path.basename(chunk)}`);
+    const filingSha256 = sha256File(pdfPath);
+    const units = await splitPdfIfNeeded(pdfPath);
+    for (const unit of units) {
+      if (unit.chunk) {
+        console.log(`           parsing chunk ${path.basename(unit.path)}`);
       }
-      filingTxs.push(...(await parsePdfWithRetry(chunk)));
+      filingTxs.push(...(await parseUnitWithRetry(unit, filingSha256, filing.pdfUrl)));
       await sleep(1500);
     }
     perFilingParses.push(filingTxs);
