@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mkdtempSync, writeFileSync, existsSync } from "fs";
+import { mkdtempSync, writeFileSync, existsSync, readFileSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
 import {
@@ -140,9 +140,9 @@ describe("chunked filings", () => {
     // even when the chunk caches exist.
     const wholeKey = parseCacheKey({ ...noChunk, chunk: null });
     const manifestFile = pdf.replace(/\.pdf$/i, `.${wholeKey}.chunks.json`);
-    const forged = JSON.parse(require("fs").readFileSync(manifestFile, "utf-8"));
+    const forged = JSON.parse(readFileSync(manifestFile, "utf-8"));
     forged.chunks[1].key = "0000000000000000";
-    require("fs").writeFileSync(manifestFile, JSON.stringify(forged));
+    writeFileSync(manifestFile, JSON.stringify(forged));
     expect(readChunkedRecord(pdf, noChunk)).toBeNull();
   });
 });
