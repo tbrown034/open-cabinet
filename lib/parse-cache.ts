@@ -18,7 +18,7 @@
  * (see scripts/plan-reparse.ts); the weekly job visits new filings only.
  */
 import { createHash } from "crypto";
-import { existsSync, readFileSync, readdirSync, writeFileSync } from "fs";
+import { existsSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 
 export interface ParseCacheKeyInput {
@@ -132,10 +132,82 @@ export function isTerminationForm(fileName: string): boolean {
   return /278-?TERM/i.test(fileName);
 }
 
+/** A chunked filing's record of which chunk caches compose it. */
+export interface ChunkManifest {
+  key: string;
+  pageCount: number;
+  chunks: Array<{ first: number; last: number; key: string }>;
+  writtenAt: string;
+}
+
+/** `<pdf basename>.<whole-file key>.chunks.json`, beside the PDF. */
+export function chunkManifestPath(pdfPath: string, wholeKey: string): string {
+  return pdfPath.replace(/\.pdf$/i, `.${wholeKey}.chunks.json`);
+}
+
+export function writeChunkManifest(
+  pdfPath: string,
+  inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">,
+  pageCount: number,
+  chunks: Array<{ first: number; last: number }>
+): string {
+  const wholeKey = parseCacheKey({ ...inputWithoutChunk, chunk: null });
+  const manifest: ChunkManifest = {
+    key: wholeKey,
+    pageCount,
+    chunks: chunks.map((c) => ({
+      first: c.first,
+      last: c.last,
+      key: parseCacheKey({ ...inputWithoutChunk, chunk: { first: c.first, last: c.last } }),
+    })),
+    writtenAt: new Date().toISOString(),
+  };
+  const file = chunkManifestPath(pdfPath, wholeKey);
+  writeFileSync(file, JSON.stringify(manifest, null, 2) + "\n");
+  return file;
+}
+
+/**
+ * Assemble a chunked filing's rows from its manifest. Returns null unless
+ * the manifest names chunks that cover pages 1..pageCount contiguously
+ * with no overlap, every chunk cache exists, and every envelope's key and
+ * PDF hash match. A partial or mismatched set never passes as a filing.
+ */
+export function readChunkedRecord(
+  pdfPath: string,
+  inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">
+): { transactions: unknown[]; pageCount: number } | null {
+  const wholeKey = parseCacheKey({ ...inputWithoutChunk, chunk: null });
+  const file = chunkManifestPath(pdfPath, wholeKey);
+  if (!existsSync(file)) return null;
+  let manifest: ChunkManifest;
+  try {
+    manifest = JSON.parse(readFileSync(file, "utf-8")) as ChunkManifest;
+  } catch {
+    return null;
+  }
+  if (manifest.key !== wholeKey || !Array.isArray(manifest.chunks) || manifest.chunks.length === 0) return null;
+  const chunks = [...manifest.chunks].sort((a, b) => a.first - b.first);
+  let expectedFirst = 1;
+  const transactions: unknown[] = [];
+  for (const c of chunks) {
+    if (c.first !== expectedFirst || c.last < c.first) return null; // gap or overlap
+    const expectedKey = parseCacheKey({ ...inputWithoutChunk, chunk: { first: c.first, last: c.last } });
+    if (c.key !== expectedKey) return null;
+    const chunkPath = pdfPath.replace(/\.pdf$/i, `.pages${c.first}-${c.last}.pdf`);
+    const env = readParseCache(chunkPath, { ...inputWithoutChunk, chunk: { first: c.first, last: c.last } });
+    if (!env || env.pdfSha256 !== inputWithoutChunk.pdfSha256) return null;
+    transactions.push(...env.transactions);
+    expectedFirst = c.last + 1;
+  }
+  if (expectedFirst !== manifest.pageCount + 1) return null; // tail missing
+  return { transactions, pageCount: manifest.pageCount };
+}
+
 /**
  * The parse record to compare a filing against, newest first: a current
- * keyed cache for the whole file, else current keyed caches for every
- * chunk assembled in page order, else the legacy path-keyed cache, else
+ * keyed cache for the whole file, else a complete manifest-verified set
+ * of current chunk caches, else the legacy path-keyed cache, else
  * nothing. Reports which it found so a log entry can say.
  */
 export function findParseRecord(
@@ -145,28 +217,8 @@ export function findParseRecord(
   const whole = readParseCache(pdfPath, { ...inputWithoutChunk, chunk: null });
   if (whole) return { source: "current", transactions: whole.transactions };
 
-  // Chunk caches live beside the PDF as <base>.pages<a>-<b>.<key>.parsed.json.
-  const dir = path.dirname(pdfPath);
-  const base = path.basename(pdfPath).replace(/\.pdf$/i, "");
-  const chunkRe = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.pages(\\d+)-(\\d+)\\.([0-9a-f]{16})\\.parsed\\.json$`);
-  const chunks: Array<{ first: number; last: number; file: string }> = [];
-  for (const name of readdirSync(dir)) {
-    const m = name.match(chunkRe);
-    if (!m) continue;
-    const first = Number(m[1]);
-    const last = Number(m[2]);
-    const expected = parseCacheKey({ ...inputWithoutChunk, chunk: { first, last } });
-    if (m[3] === expected) chunks.push({ first, last, file: path.join(dir, name) });
-  }
-  if (chunks.length) {
-    chunks.sort((a, b) => a.first - b.first);
-    const transactions: unknown[] = [];
-    for (const c of chunks) {
-      const env = JSON.parse(readFileSync(c.file, "utf-8")) as ParseCacheEnvelope;
-      transactions.push(...env.transactions);
-    }
-    return { source: "current-chunks", transactions };
-  }
+  const chunked = readChunkedRecord(pdfPath, inputWithoutChunk);
+  if (chunked) return { source: "current-chunks", transactions: chunked.transactions };
 
   const legacy = legacyParseCachePath(pdfPath);
   if (existsSync(legacy)) {

@@ -80,6 +80,8 @@ describe("companyGroupName", () => {
     expect(resolveTicker("Seabridge Gold Inc (SA)", "SA").ticker).toBe("SA");
     expect(resolveTicker("Some Holdings SA", "SA").ticker).toBeNull();
     expect(resolveTicker("Ford Motor Co (F)", "F").ticker).toBe("F");
+    expect(resolveTicker("Spire Inc. (SR)", "SR").ticker).toBe("SR");
+    expect(resolveTicker("John Smith Jr. Trust (SR)", "SR").ticker).toBeNull();
     expect(resolveTicker("Growth Fund Class (F)", "F").ticker).toBeNull();
   });
 

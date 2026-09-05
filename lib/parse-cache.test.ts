@@ -3,12 +3,15 @@ import { mkdtempSync, writeFileSync, existsSync } from "fs";
 import { tmpdir } from "os";
 import path from "path";
 import {
+  findParseRecord,
   hasLegacyCacheOnly,
   legacyParseCachePath,
   parseCacheKey,
   parseCachePath,
   promptHash,
+  readChunkedRecord,
   readParseCache,
+  writeChunkManifest,
   writeParseCache,
   type ParseCacheKeyInput,
 } from "./parse-cache";
@@ -83,5 +86,55 @@ describe("parse cache files", () => {
       JSON.stringify({ key: "0000000000000000", transactions: [] })
     );
     expect(readParseCache(pdf, base)).toBeNull();
+  });
+});
+
+describe("chunked filings", () => {
+  const input = { ...base };
+  const { chunk: _c, ...noChunk } = input;
+  void _c;
+
+  function setup() {
+    const dir = mkdtempSync(path.join(tmpdir(), "oc-chunks-"));
+    const pdf = path.join(dir, "big.pdf");
+    writeFileSync(pdf, "%PDF-1.4 big");
+    const write = (first: number, last: number, rows: unknown[], override?: Partial<ParseCacheKeyInput>) =>
+      writeParseCache(
+        path.join(dir, `big.pages${first}-${last}.pdf`),
+        { ...noChunk, ...override, chunk: { first, last } },
+        { transactions: rows }
+      );
+    return { dir, pdf, write };
+  }
+
+  it("assembles a complete contiguous set in page order", () => {
+    const { pdf, write } = setup();
+    write(1, 10, [{ r: 1 }]);
+    write(11, 20, [{ r: 2 }]);
+    writeChunkManifest(pdf, noChunk, 20, [{ first: 11, last: 20 }, { first: 1, last: 10 }]);
+    expect(readChunkedRecord(pdf, noChunk)?.transactions).toEqual([{ r: 1 }, { r: 2 }]);
+    expect(findParseRecord(pdf, noChunk)?.source).toBe("current-chunks");
+  });
+
+  it("rejects a set with a missing tail, a gap, an overlap, or a wrong key", () => {
+    const { pdf, write } = setup();
+    write(1, 10, [{ r: 1 }]);
+    write(11, 20, [{ r: 2 }]);
+    // Missing tail: manifest says 30 pages, chunks stop at 20.
+    writeChunkManifest(pdf, noChunk, 30, [{ first: 1, last: 10 }, { first: 11, last: 20 }]);
+    expect(readChunkedRecord(pdf, noChunk)).toBeNull();
+    // Gap.
+    writeChunkManifest(pdf, noChunk, 20, [{ first: 1, last: 9 }, { first: 11, last: 20 }]);
+    expect(readChunkedRecord(pdf, noChunk)).toBeNull();
+    // Overlap.
+    writeChunkManifest(pdf, noChunk, 20, [{ first: 1, last: 11 }, { first: 11, last: 20 }]);
+    expect(readChunkedRecord(pdf, noChunk)).toBeNull();
+    // A chunk cached under a different PDF hash does not count.
+    writeChunkManifest(pdf, noChunk, 20, [{ first: 1, last: 10 }, { first: 11, last: 20 }]);
+    write(11, 20, [{ r: "other" }], { pdfSha256: "d".repeat(64) });
+    // (the correctly keyed 11-20 cache still exists, so this still passes)
+    expect(readChunkedRecord(pdf, noChunk)?.transactions).toEqual([{ r: 1 }, { r: 2 }]);
+    // Now remove the correct one by pointing the manifest at a prompt that has no caches.
+    expect(readChunkedRecord(pdf, { ...noChunk, promptSha256: promptHash("s", "v2") })).toBeNull();
   });
 });

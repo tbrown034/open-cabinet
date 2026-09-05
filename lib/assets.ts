@@ -46,7 +46,6 @@ export const NEVER_A_SYMBOL = new Set([
   "CORP",
   "PLC",
   "JR",
-  "SR",
   "NEW",
   "OLD",
   "COM",
@@ -92,6 +91,7 @@ export const SHORT_SYMBOL_ISSUERS: Record<string, RegExp> = {
   CL: /\bcolgate\b/i,
   NV: /\bnovonix\b/i,
   CD: /\bchindata\b/i,
+  SR: /\bspire\b/i,
   US: /\bu\.?s\.? bancorp\b/i,
   NA: /\bnano-x\b/i,
 };

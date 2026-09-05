@@ -10,9 +10,11 @@
  *     2. Golden files: hand-verified reference rows for five officials
  *        still match the dataset.
  *
+ *     3. Tickers: a stored symbol that is a name suffix (THE, REIT, DEL).
+ *        Fatal: it can only be fixed by an approved data patch, and until
+ *        then nothing publishes.
+ *
  *   REVIEW REQUIRED, exit 2, a person must look before the next publish:
- *     3. Tickers: a stored symbol that is a name suffix (THE, REIT, DEL)
- *        or otherwise not a symbol.
  *     4. Cross-filing repeats: the same description, date, type and amount
  *        stamped to two different filings. That is either an amendment
  *        that should not double-count or a genuine second trade; only a
@@ -119,12 +121,11 @@ function validateSchema(tx: Transaction, official: string, index: number): strin
   return errors;
 }
 
-// ── LAYER 3: TICKER REVIEW ──
+// ── LAYER 3: SUFFIX TICKERS (fatal) ──
 // A stored symbol that is a name suffix ("(THE)" after an inverted company
 // name) is not a ticker. It cannot be fixed here; it needs a data patch a
-// person approves. Review-required, not fatal, so the report is loud and
-// the patch is deliberate. The read-time resolver in lib/assets.ts already
-// withholds these from company pages.
+// person approves, and until that lands nothing publishes. The read-time
+// resolver in lib/assets.ts already withholds these from company pages.
 
 function checkTicker(ticker: string): boolean {
   return !NEVER_A_SYMBOL.has(ticker.toUpperCase());
@@ -347,10 +348,8 @@ async function main() {
   report.goldenFileErrors = goldenResult.errors;
 
   // Severity. FAIL beats REVIEW beats PASS.
-  if (report.suffixTickers.length > 0 || report.crossFilingRepeats.length > 0) {
-    report.result = "REVIEW";
-  }
-  if (report.schemaFailures > 0) report.result = "FAIL";
+  if (report.crossFilingRepeats.length > 0) report.result = "REVIEW";
+  if (report.schemaFailures > 0 || report.suffixTickers.length > 0) report.result = "FAIL";
   if (
     report.goldenFilesTotal > 0 &&
     report.goldenFilesPassed < report.goldenFilesTotal
@@ -365,7 +364,7 @@ async function main() {
   console.log(
     `Golden files: ${report.goldenFilesPassed}/${report.goldenFilesTotal} passed`
   );
-  console.log(`Suffix tickers (review): ${report.suffixTickers.length}`);
+  console.log(`Suffix tickers (fatal until patched): ${report.suffixTickers.length}`);
   console.log(`Cross-filing repeats (review): ${report.crossFilingRepeats.length}`);
   console.log(`Informative anomalies: ${report.anomalies.length}`);
 
@@ -378,7 +377,7 @@ async function main() {
   }
 
   if (report.suffixTickers.length > 0) {
-    console.log(`\nSuffix tickers, review required (data patch needs approval):`);
+    console.log(`\nSuffix tickers, fatal (an approved data patch is the only fix):`);
     report.suffixTickers.forEach((e) => console.log(`  ${e}`));
   }
 

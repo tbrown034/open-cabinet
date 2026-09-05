@@ -50,6 +50,7 @@ import {
   promptHash,
   readParseCache,
   sha256File,
+  writeChunkManifest,
   writeParseCache,
   type ParseCacheKeyInput,
 } from "../lib/parse-cache";
@@ -218,9 +219,11 @@ interface ParseUnit {
   chunk: { first: number; last: number } | null;
 }
 
-async function splitPdfIfNeeded(pdfPath: string): Promise<ParseUnit[]> {
+async function splitPdfIfNeeded(
+  pdfPath: string
+): Promise<{ units: ParseUnit[]; pageCount: number | null }> {
   const buf = await readFile(pdfPath);
-  if (buf.length <= 500_000) return [{ path: pdfPath, chunk: null }];
+  if (buf.length <= 500_000) return { units: [{ path: pdfPath, chunk: null }], pageCount: null };
 
   const doc = await PDFDocument.load(buf);
   const pageCount = doc.getPageCount();
@@ -245,7 +248,7 @@ async function splitPdfIfNeeded(pdfPath: string): Promise<ParseUnit[]> {
   console.log(
     `           split ${path.basename(pdfPath)} into ${chunks.length} chunks`
   );
-  return chunks;
+  return { units: chunks, pageCount };
 }
 
 const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
@@ -489,11 +492,21 @@ async function readFiling(
   sourceUrl: string
 ): Promise<ParsedTransaction[]> {
   const rows: ParsedTransaction[] = [];
-  const units = await splitPdfIfNeeded(pdfPath);
+  const { units, pageCount } = await splitPdfIfNeeded(pdfPath);
   for (const unit of units) {
     if (unit.chunk) console.log(`           parsing chunk ${path.basename(unit.path)}`);
     rows.push(...(await parseUnitWithRetry(unit, sha256, sourceUrl)));
     await sleep(1500);
+  }
+  if (pageCount !== null) {
+    // Record which chunk caches compose this filing, so a later comparison
+    // can only assemble the complete, contiguous set under the same key.
+    writeChunkManifest(
+      pdfPath,
+      { pdfSha256: sha256, sourceUrl, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL },
+      pageCount,
+      units.map((u) => u.chunk!).filter(Boolean)
+    );
   }
   return rows;
 }
