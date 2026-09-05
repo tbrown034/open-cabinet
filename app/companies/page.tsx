@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTradesByTicker } from "@/lib/data";
-import { amountRangeToMidpoint } from "@/lib/format";
+import { sumAmountEstimates } from "@/lib/format";
 import CompanySearch from "../components/company-search";
 import Link from "next/link";
 
@@ -26,14 +26,7 @@ export default async function CompaniesPage() {
       buyCount: c.trades.filter((t) => t.type === "Purchase").length,
       sellCount: c.trades.filter((t) => isSale(t.type)).length,
       officialCount: new Set(c.trades.map((t) => t.officialSlug)).size,
-      estimatedValue: c.trades.reduce(
-        (sum, t) =>
-          sum +
-          amountRangeToMidpoint(
-            t.amount as Parameters<typeof amountRangeToMidpoint>[0]
-          ),
-        0
-      ),
+      estimatedValue: sumAmountEstimates(c.trades).estimate,
     }))
     .toSorted((a, b) => b.tradeCount - a.tradeCount);
 

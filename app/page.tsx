@@ -1,10 +1,8 @@
 import { getOfficialsIndex, getAllOfficials, getTradesByTicker } from "@/lib/data";
 import {
-  amountRangeToMidpoint,
   formatCompactCurrency,
   displayName,
-  formatDate,
-} from "@/lib/format";
+  formatDate, sumAmountEstimates } from "@/lib/format";
 import { getNewsCoverage } from "@/lib/news";
 import OfficialsTable from "./components/officials-table";
 import Explainer from "./components/explainer";
@@ -49,10 +47,7 @@ export default async function Home() {
   );
 
   const allTx = allOfficials.flatMap((o) => o.transactions);
-  const estimatedTotal = allTx.reduce(
-    (sum, tx) => sum + amountRangeToMidpoint(tx.amount),
-    0
-  );
+  const estimatedTotal = sumAmountEstimates(allTx).estimate;
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
   // Headline accountability finding, surfaced on the hero: the share of all
   // disclosed trades reported after the STOCK Act deadline.

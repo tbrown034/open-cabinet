@@ -89,7 +89,9 @@ async function seedOfficials() {
         ticker: tx.ticker || null,
         type: tx.type,
         date: tx.date,
-        amount: tx.amount,
+        // Unknown amounts (filing says not ascertainable) are stored as the
+        // literal note so the DB mirror keeps the fact rather than a range.
+        amount: tx.amount ?? "Value not readily ascertainable",
         lateFilingFlag: tx.lateFilingFlag,
         rowIndex: i + j, // Global position distinguishes duplicate lots
         notes: tx.notes || null,

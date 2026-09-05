@@ -5,20 +5,8 @@ export type TransactionType =
   | "Purchase"
   | "Exchange";
 
-export type AmountRange =
-  | "$1,001-$15,000"
-  | "$15,001-$50,000"
-  | "$50,001-$100,000"
-  | "$100,001-$250,000"
-  | "$250,001-$500,000"
-  | "$500,001-$1,000,000"
-  | "$1,000,001-$5,000,000"
-  | "$5,000,001-$25,000,000"
-  | "$25,000,001-$50,000,000"
-  | "Over $50,000,000"
-  // OGE caps spouse- and dependent-held asset values at this open-ended
-  // range, so some filings report it instead of a bounded bracket.
-  | "Over $1,000,000";
+import type { AmountRange } from "./amounts";
+export type { AmountRange } from "./amounts";
 
 export type GovernmentLevel = "Cabinet" | "Sub-Cabinet" | "Senior Staff";
 
@@ -29,7 +17,12 @@ export interface Transaction {
   ticker: string | null;
   type: TransactionType;
   date: string; // ISO date string YYYY-MM-DD
-  amount: AmountRange;
+  /** The disclosed dollar range, or null when the filing states the value
+   * could not be determined ("Value not readily ascertainable"). Unknown
+   * rows are excluded from every dollar total and counted separately. */
+  amount: AmountRange | null;
+  /** The filing's own wording when amount is null. */
+  amountNote?: string;
   lateFilingFlag: boolean;
   notes?: string;
   /** URL of the filing that actually disclosed this row (stamped at ingest

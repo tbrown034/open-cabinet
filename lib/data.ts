@@ -1,6 +1,6 @@
 import { readFile } from "fs/promises";
 import path from "path";
-import type { OfficialData, OfficialsIndex } from "./types";
+import type { AmountRange, OfficialData, OfficialsIndex } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -46,7 +46,7 @@ export interface CompanyTrade {
   ticker: string;
   type: string;
   date: string;
-  amount: string;
+  amount: AmountRange | null;
   lateFilingFlag: boolean;
 }
 

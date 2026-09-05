@@ -30,7 +30,7 @@ async function main() {
     console.log(`     ${item.title} · ${item.agency}`);
     for (const t of item.trades.slice(0, 4)) {
       console.log(
-        `       ${t.type.padEnd(14)} ${t.amount.padEnd(22)} ${t.lateFilingFlag ? "LATE " : "     "}${t.description.slice(0, 44)}`
+        `       ${t.type.padEnd(14)} ${(t.amount ?? "Not ascertainable").padEnd(22)} ${t.lateFilingFlag ? "LATE " : "     "}${t.description.slice(0, 44)}`
       );
     }
     if (item.trades.length > 4) {

@@ -243,7 +243,7 @@ export function buildDigestEmail(
           return `<tr>
             <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:${SANS};font-size:13px;color:${COLORS.text};">${escapeHtml(t.description)}${showTicker(t) ? ` (${escapeHtml(t.ticker as string)})` : ""}${late}</td>
             <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:${SANS};font-size:13px;color:${color};white-space:nowrap;">${escapeHtml(t.type)}</td>
-            <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:'SF Mono',Consolas,monospace;font-size:12px;color:${COLORS.text};white-space:nowrap;">${escapeHtml(t.amount)}</td>
+            <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.border};font-family:'SF Mono',Consolas,monospace;font-size:12px;color:${COLORS.text};white-space:nowrap;">${escapeHtml(t.amount ?? "Not ascertainable")}</td>
           </tr>`;
         })
         .join("");

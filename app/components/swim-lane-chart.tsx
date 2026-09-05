@@ -120,7 +120,7 @@ interface SwimTransaction {
   ticker: string | null;
   type: string;
   date: string;
-  amount: AmountRange;
+  amount: AmountRange | null;
   lateFilingFlag: boolean;
   isSale: boolean;
 }
@@ -279,7 +279,7 @@ export default function SwimLaneChart({
 
   // Collect all amounts for radius scale
   const allAmounts = filtered.flatMap((o) =>
-    o.transactions.map((tx) => amountRangeToMin(tx.amount))
+    o.transactions.flatMap((tx) => (tx.amount ? [amountRangeToMin(tx.amount)] : []))
   );
   // Same empty-guard as the date extent above: extent([]) is [undefined,
   // undefined], so default to a 1..2 range the sqrt scale can accept.
@@ -462,7 +462,9 @@ export default function SwimLaneChart({
                   ) : (
                     o.transactions.map((tx, i) => {
                       const cx = xScale(new Date(tx.date + "T00:00:00"));
-                      const r = rScale(amountRangeToMin(tx.amount));
+                      if (!tx.amount) return null;
+                      if (!tx.amount) return null;
+              const r = rScale(amountRangeToMin(tx.amount));
                       return (
                         <TradeMark
                           key={i}
@@ -726,6 +728,7 @@ export default function SwimLaneChart({
               const cy = isMobile
                 ? y + bandHeight * 0.72
                 : y + bandHeight / 2;
+              if (!tx.amount) return null;
               const r = rScale(amountRangeToMin(tx.amount));
 
               return (
@@ -783,7 +786,7 @@ export default function SwimLaneChart({
             >
               {tooltip.tx.type}
             </span>{" "}
-            · {amountRangeLabel(tooltip.tx.amount)}
+            · {tooltip.tx.amount ? amountRangeLabel(tooltip.tx.amount) : "Not ascertainable"}
             {tooltip.tx.ticker && ` · ${tooltip.tx.ticker}`}
           </div>
           {tooltip.tx.lateFilingFlag && (

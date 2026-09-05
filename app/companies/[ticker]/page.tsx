@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTradesByTicker, getAllTickers, COMPANY_CONTEXT } from "@/lib/data";
-import { formatDate, amountRangeLabel, amountRangeToMidpoint, formatCompactCurrency, displayName } from "@/lib/format";
-import type { AmountRange } from "@/lib/types";
+import { formatDate, amountRangeLabel, formatCompactCurrency, displayName, sumAmountEstimates, transactionEstimate } from "@/lib/format";
 import CompanyBarChart from "@/app/components/company-bar-chart";
 
 export async function generateStaticParams() {
@@ -80,7 +79,7 @@ export default async function CompanyPage({
       });
     }
     const g = officialGroups.get(t.officialSlug)!;
-    g.totalValue += amountRangeToMidpoint(t.amount as AmountRange);
+    g.totalValue += transactionEstimate(t) ?? 0;
     g.tradeCount += 1;
   }
 
@@ -88,10 +87,7 @@ export default async function CompanyPage({
     (a, b) => b.totalValue - a.totalValue
   );
 
-  const totalValue = trades.reduce(
-    (sum, t) => sum + amountRangeToMidpoint(t.amount as AmountRange),
-    0
-  );
+  const totalValue = sumAmountEstimates(trades).estimate;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
@@ -184,7 +180,7 @@ export default async function CompanyPage({
                   </span>
                 </td>
                 <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
-                  {amountRangeLabel(t.amount as AmountRange)}
+                  {t.amount ? amountRangeLabel(t.amount) : "Not ascertainable"}
                 </td>
               </tr>
             ))}

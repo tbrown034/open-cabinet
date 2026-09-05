@@ -22,6 +22,7 @@ import { readFile, writeFile } from "fs/promises";
 import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import dotenv from "dotenv";
+import { AMOUNT_RANGE_KEYS } from "../lib/amounts";
 
 dotenv.config({ path: ".env.local" });
 
@@ -241,19 +242,8 @@ const VALID_TYPES = [
   "Exchange",
 ];
 
-const VALID_AMOUNTS = [
-  "$1,001-$15,000",
-  "$15,001-$50,000",
-  "$50,001-$100,000",
-  "$100,001-$250,000",
-  "$250,001-$500,000",
-  "$500,001-$1,000,000",
-  "$1,000,001-$5,000,000",
-  "$5,000,001-$25,000,000",
-  "$25,000,001-$50,000,000",
-  "Over $50,000,000",
-  "Over $1,000,000",
-];
+// The legal range strings live in lib/amounts.ts; this is the same list.
+const VALID_AMOUNTS: readonly string[] = AMOUNT_RANGE_KEYS;
 
 function quickValidate(tx: ParsedTransaction, index: number): string[] {
   const errors: string[] = [];

@@ -7,13 +7,19 @@
 
 import { readFile, writeFile, readdir, mkdir } from "fs/promises";
 import path from "path";
+import {
+  transactionEstimate,
+  sumAmountEstimates,
+  type AmountRange,
+} from "../lib/amounts";
 
 interface Transaction {
   description: string;
   ticker: string | null;
   type: string;
   date: string;
-  amount: string;
+  amount: AmountRange | null;
+  amountNote?: string;
   lateFilingFlag: boolean;
 }
 
@@ -29,18 +35,9 @@ interface OfficialData {
   transactions: Transaction[];
 }
 
-const MIDPOINTS: Record<string, number> = {
-  "$1,001-$15,000": 8000,
-  "$15,001-$50,000": 32500,
-  "$50,001-$100,000": 75000,
-  "$100,001-$250,000": 175000,
-  "$250,001-$500,000": 375000,
-  "$500,001-$1,000,000": 750000,
-  "$1,000,001-$5,000,000": 3000000,
-  "$5,000,001-$25,000,000": 15000000,
-  "$25,000,001-$50,000,000": 37500000,
-  "Over $50,000,000": 75000000,
-};
+// Amount policy lives in lib/amounts.ts; an unknown range throws so a
+// stale local copy can never put $0 into a public download again.
+
 
 function escapeCsv(val: string): string {
   if (val.includes(",") || val.includes('"') || val.includes("\n")) {
@@ -76,6 +73,8 @@ async function main() {
     "amount_midpoint",
     "late_filing",
     "source_filing_url",
+    // Trailing so existing positional parsers of this file are unaffected.
+    "amount_note",
   ];
   const txRows = allOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
@@ -88,10 +87,13 @@ async function main() {
         tx.ticker || "",
         tx.type,
         tx.date,
-        escapeCsv(tx.amount),
-        String(MIDPOINTS[tx.amount] || 0),
+        escapeCsv(tx.amount ?? ""),
+        // The site's labeled estimate (midpoint, or 1.5x the floor for an
+        // open-ended range). Blank, not zero, when the filing gave no value.
+        tx.amount === null ? "" : String(transactionEstimate(tx)),
         tx.lateFilingFlag ? "yes" : "no",
         (tx as { sourceUrl?: string }).sourceUrl || "",
+        escapeCsv(tx.amountNote ?? ""),
       ].join(",")
     )
   );
@@ -123,10 +125,7 @@ async function main() {
       (t) => t.type === "Purchase"
     ).length;
     const late = o.transactions.filter((t) => t.lateFilingFlag).length;
-    const totalValue = o.transactions.reduce(
-      (sum, t) => sum + (MIDPOINTS[t.amount] || 0),
-      0
-    );
+    const totalValue = sumAmountEstimates(o.transactions).estimate;
     return [
       escapeCsv(o.name),
       o.slug,

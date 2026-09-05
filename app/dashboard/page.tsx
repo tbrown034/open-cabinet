@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { getAllOfficials } from "@/lib/data";
 import {
-  amountRangeToMidpoint,
-  formatCompactCurrency,
-} from "@/lib/format";
-import type { AmountRange } from "@/lib/types";
+  formatCompactCurrency, sumAmountEstimates, transactionEstimate } from "@/lib/format";
 import OfficialRankings from "../components/official-rankings";
 import BuySellRatio from "../components/buy-sell-ratio";
 import SectorTreemap from "../components/sector-treemap";
@@ -96,22 +93,11 @@ export default async function DashboardPage() {
     o.transactions.map((tx) => ({ ...tx, officialName: o.name, officialSlug: o.slug }))
   );
 
-  const totalValue = allTx.reduce(
-    (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
-    0
-  );
-  const salesValue = allTx
-    .filter((tx) => isSale(tx.type))
-    .reduce(
-      (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
-      0
-    );
-  const purchasesValue = allTx
-    .filter((tx) => tx.type === "Purchase")
-    .reduce(
-      (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
-      0
-    );
+  const totalValue = sumAmountEstimates(allTx).estimate;
+  const salesValue = sumAmountEstimates(allTx.filter((tx) => isSale(tx.type))).estimate;
+  const purchasesValue = sumAmountEstimates(
+    allTx.filter((tx) => tx.type === "Purchase")
+  ).estimate;
 
   const salesCount = allTx.filter((tx) => isSale(tx.type)).length;
   const purchasesCount = allTx.filter((tx) => tx.type === "Purchase").length;
@@ -124,10 +110,7 @@ export default async function DashboardPage() {
       slug: o.slug,
       title: o.title,
       formerOfficial: Boolean(o.formerOfficial || o.departedDate),
-      totalValue: o.transactions.reduce(
-        (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
-        0
-      ),
+      totalValue: sumAmountEstimates(o.transactions).estimate,
       tradeCount: o.transactions.length,
     }))
     .sort((a, b) => b.totalValue - a.totalValue)
@@ -141,7 +124,7 @@ export default async function DashboardPage() {
     categories.set(
       category,
       (categories.get(category) || 0) +
-        amountRangeToMidpoint(tx.amount as AmountRange)
+        (transactionEstimate(tx) ?? 0)
     );
   }
 

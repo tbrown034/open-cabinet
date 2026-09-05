@@ -22,13 +22,13 @@
  * genuinely new filings appear.
  */
 import { createHash } from "crypto";
-import type { OfficialData, Transaction } from "@/lib/types";
+import type { AmountRange, OfficialData, Transaction } from "@/lib/types";
 
 export interface DigestTrade {
   description: string;
   ticker: string | null;
   type: string;
-  amount: string;
+  amount: AmountRange | null;
   date: string;
   lateFilingFlag: boolean;
 }

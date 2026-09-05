@@ -783,7 +783,13 @@ export default async function OfficialPage({
                   </span>
                 </td>
                 <td className="py-2.5 pr-4 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
-                  {amountRangeLabel(tx.amount)}
+                  {tx.amount ? (
+                    amountRangeLabel(tx.amount)
+                  ) : (
+                    <span title={tx.amountNote ?? "The filing did not state a value"}>
+                      Not ascertainable
+                    </span>
+                  )}
                 </td>
                 <td className="py-2.5 pr-4 text-right tabular-nums text-neutral-500 whitespace-nowrap hidden md:table-cell">
                   {(() => {

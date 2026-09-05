@@ -114,10 +114,13 @@ function CompactGrid({
   const margin = COMPACT_GRID_MARGIN;
   const chartWidth = width - margin.left - margin.right;
 
+  // Rows with an unknown amount have no position on an amount axis; they
+  // stay in the table below and are counted there, not drawn here.
   const parsedData = transactions
+    .filter((tx) => tx.amount !== null)
     .map((tx) => ({
       tx,
-      amount: amountRangeToMin(tx.amount),
+      amount: amountRangeToMin(tx.amount as NonNullable<typeof tx.amount>),
     }))
     .sort((a, b) => b.amount - a.amount);
 
@@ -261,11 +264,13 @@ function TimelineView({
   const chartWidth = width - margin.left - margin.right;
   const chartHeight = height - margin.top - margin.bottom;
 
-  const parsedData = transactions.map((tx) => ({
-    tx,
-    date: new Date(tx.date + "T00:00:00"),
-    amount: amountRangeToMin(tx.amount),
-  }));
+  const parsedData = transactions
+    .filter((tx) => tx.amount !== null)
+    .map((tx) => ({
+      tx,
+      date: new Date(tx.date + "T00:00:00"),
+      amount: amountRangeToMin(tx.amount as NonNullable<typeof tx.amount>),
+    }));
 
   // scaleTime maps dates to x-pixel positions.
   // We deliberately pin the domain to the visible transactions, NOT the
@@ -458,7 +463,7 @@ function Tooltip({
           >
             {tooltip.tx.type}
           </span>{" "}
-          · {amountRangeLabel(tooltip.tx.amount)}
+          · {tooltip.tx.amount ? amountRangeLabel(tooltip.tx.amount) : "Not ascertainable"}
         </div>
         {tooltip.tx.ticker && <div>Ticker: {tooltip.tx.ticker}</div>}
         {tooltip.tx.lateFilingFlag && (

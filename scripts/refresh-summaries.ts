@@ -27,21 +27,7 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: ".env.local" });
 
-// Range midpoints must match lib/format.ts amountRangeToMidpoint. "Over
-// $50,000,000" is scored at $75M there, so we mirror that here — the summary
-// total must equal what the site displays.
-const AMOUNT_MIDPOINTS: Record<string, number> = {
-  "$1,001-$15,000": 8_000,
-  "$15,001-$50,000": 32_500,
-  "$50,001-$100,000": 75_000,
-  "$100,001-$250,000": 175_000,
-  "$250,001-$500,000": 375_000,
-  "$500,001-$1,000,000": 750_000,
-  "$1,000,001-$5,000,000": 3_000_000,
-  "$5,000,001-$25,000,000": 15_000_000,
-  "$25,000,001-$50,000,000": 37_500_000,
-  "Over $50,000,000": 75_000_000,
-};
+import { sumAmountEstimates, transactionEstimate } from "../lib/amounts";
 
 // AP-style month names (Jan., Feb., March, April, May, June, July, Aug.,
 // Sept., Oct., Nov., Dec.). Mirrors lib/format.ts formatDate.
@@ -91,8 +77,7 @@ function computeStats(d: any): Stats {
   const purchases = txs.filter((t) => t.type === "Purchase");
   const exchanges = txs.filter((t) => t.type === "Exchange");
   const late = txs.filter((t) => t.lateFilingFlag).length;
-  const sum = (arr: any[]) =>
-    arr.reduce((s, t) => s + (AMOUNT_MIDPOINTS[t.amount] || 0), 0);
+  const sum = (arr: any[]) => sumAmountEstimates(arr).estimate;
 
   const dates = txs.map((t) => t.date).filter(Boolean).sort();
   const byAsset: Record<string, number> = {};
@@ -109,7 +94,7 @@ function computeStats(d: any): Stats {
   let largest = "n/a";
   let largestVal = -1;
   for (const t of txs) {
-    const v = AMOUNT_MIDPOINTS[t.amount] || 0;
+    const v = transactionEstimate(t) ?? -1;
     if (v > largestVal) {
       largestVal = v;
       largest = `${t.description} (${t.amount})`;

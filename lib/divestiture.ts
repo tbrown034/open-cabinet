@@ -13,7 +13,7 @@
 import { readFile } from "fs/promises";
 import path from "path";
 import type { Transaction } from "./types";
-import { amountRangeToMidpoint } from "./format";
+import { sumAmountEstimates } from "./format";
 
 export interface SourceDocument {
   kind:
@@ -130,10 +130,7 @@ export function buildPromiseEvidence(
       earliestSaleDate: matchingSales[0]?.date ?? null,
       latestSaleDate:
         matchingSales[matchingSales.length - 1]?.date ?? null,
-      saleVolumeMidpoint: matchingSales.reduce(
-        (sum, t) => sum + amountRangeToMidpoint(t.amount),
-        0
-      ),
+      saleVolumeMidpoint: sumAmountEstimates(matchingSales).estimate,
       status: matchingSales.length > 0 ? "sales-on-file" : "no-sales-on-file",
     };
   });

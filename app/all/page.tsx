@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getAllOfficials } from "@/lib/data";
-import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
-import type { AmountRange } from "@/lib/types";
+import { formatCompactCurrency, sumAmountEstimates } from "@/lib/format";
 import SwimLaneChart from "../components/swim-lane-chart";
 import Link from "next/link";
 
@@ -34,16 +33,13 @@ export default async function AllTradesPage() {
       agency: o.agency,
       level: o.level,
       departedDate: o.departedDate ?? null,
-      totalValue: o.transactions.reduce(
-        (sum, tx) => sum + amountRangeToMidpoint(tx.amount as AmountRange),
-        0
-      ),
+      totalValue: sumAmountEstimates(o.transactions).estimate,
       transactions: o.transactions.map((tx) => ({
         description: tx.description,
         ticker: tx.ticker,
         type: tx.type as string,
         date: tx.date,
-        amount: tx.amount as AmountRange,
+        amount: tx.amount,
         lateFilingFlag: tx.lateFilingFlag,
         isSale: isSale(tx.type),
       })),
@@ -55,12 +51,10 @@ export default async function AllTradesPage() {
   const salesCount = allTx.filter((tx) => tx.isSale).length;
   const purchasesCount = allTx.filter((tx) => tx.type === "Purchase").length;
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
-  const salesValue = allTx
-    .filter((tx) => tx.isSale)
-    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
-  const purchasesValue = allTx
-    .filter((tx) => tx.type === "Purchase")
-    .reduce((sum, tx) => sum + amountRangeToMidpoint(tx.amount), 0);
+  const salesValue = sumAmountEstimates(allTx.filter((tx) => tx.isSale)).estimate;
+  const purchasesValue = sumAmountEstimates(
+    allTx.filter((tx) => tx.type === "Purchase")
+  ).estimate;
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">

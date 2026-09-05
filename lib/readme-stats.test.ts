@@ -10,12 +10,12 @@ import { readFileSync } from "fs";
 import { readdirSync } from "fs";
 import path from "path";
 import { describe, expect, it } from "vitest";
-import { amountRangeToMidpoint, formatCompactCurrency } from "@/lib/format";
+import { sumAmountEstimates, formatCompactCurrency } from "@/lib/format";
 import type { AmountRange } from "@/lib/types";
 
 interface DatasetTransaction {
   ticker: string | null;
-  amount: string;
+  amount: AmountRange | null;
   lateFilingFlag: boolean;
 }
 
@@ -75,10 +75,7 @@ describe("README current-data table matches the published dataset", () => {
   });
 
   it("estimated value", () => {
-    const total = allTx.reduce(
-      (sum, t) => sum + amountRangeToMidpoint(t.amount as AmountRange),
-      0
-    );
+    const total = sumAmountEstimates(allTx).estimate;
     expect(readmeStat("Estimated value")).toBe(
       `~${formatCompactCurrency(total)}`
     );
