@@ -23,7 +23,8 @@
     "repermission": "npx tsx scripts/repermission-alerts.ts",
     "backfill-notified": "npx tsx scripts/backfill-notified.ts",
     "plan-reparse": "npx tsx scripts/plan-reparse.ts",
-    "crosscheck-sweep": "npx tsx scripts/crosscheck-sweep.ts"
+    "crosscheck-sweep": "npx tsx scripts/crosscheck-sweep.ts",
+    "review": "npx tsx scripts/review.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

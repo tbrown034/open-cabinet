@@ -43,6 +43,7 @@ import {
 } from "../lib/crosscheck-log";
 import { assertParsedRows } from "../lib/filing-validation";
 import { reconcileSummaryAfterIngest } from "../lib/summary-review";
+import { openReviewItem, problemsFromCrosscheck } from "../lib/review-queue";
 import {
   describeCacheKey,
   hasLegacyCacheOnly,
@@ -517,15 +518,28 @@ async function readFiling(
  *  Stops on: any disagreement; a text layer the parser cannot read.
  *  Does not stop on: a scan (no text layer). That is recorded as
  *  no_usable_text and depends on a person's visual check. */
-function checkFiling(
+async function checkFiling(
   slug: string,
+  officialName: string,
   filing: FilingForIngest,
   pdfPath: string,
   sha256: string,
   rows: ParsedTransaction[]
-): void {
+): Promise<void> {
   const check = crossCheckParsedFiling(pdfPath, rows);
   recordCrosscheck(slug, filing, pdfPath, sha256, rows, check);
+  if (check.status === "mismatch") {
+    // A person decides. Write the item, with page and printed row where
+    // the text layer shows them, and send it before halting.
+    await openReviewItem({
+      kind: "lane_disagreement",
+      slug,
+      officialName,
+      filing: { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) },
+      problems: problemsFromCrosscheck(pdfPath, check.problems, rows),
+      holding: `every row of ${path.basename(pdfPath)}; nothing from it is published until this is decided`,
+    });
+  }
   if (check.status === "ok") {
     console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
   } else if (check.status === "scan") {
@@ -685,7 +699,7 @@ async function ingestForOfficial(
   for (const filing of newPdfs) {
     const { pdfPath, sha256 } = await fetchFiling(slug, filing);
     const rows = await readFiling(pdfPath, sha256, filing.pdfUrl);
-    checkFiling(slug, filing, pdfPath, sha256, rows);
+    await checkFiling(slug, official.name, filing, pdfPath, sha256, rows);
     perFilingParses.push(rows);
     newSourceEntries.push({
       date: filing.docDate.slice(0, 10),

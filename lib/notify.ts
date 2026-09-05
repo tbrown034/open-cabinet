@@ -24,6 +24,7 @@ type AlertType =
   | "model_disagreement"
   | "new_filings"
   | "validation_failure"
+  | "review_request"
   | "feedback"
   | "alert_signup"
   | "digest_sent";
@@ -35,6 +36,7 @@ const SUBJECT_MAP: Record<AlertType, string> = {
   model_disagreement: "Model Disagreement",
   new_filings: "New Filings Parsed",
   validation_failure: "Validation Failed",
+  review_request: "Review Needed",
   feedback: "User Feedback",
   alert_signup: "Alert Signup",
   digest_sent: "Digest Sent",
@@ -47,6 +49,7 @@ const PRIORITY_MAP: Record<AlertType, "high" | "normal" | "low"> = {
   model_disagreement: "normal",
   new_filings: "low",
   validation_failure: "high",
+  review_request: "high",
   feedback: "normal",
   alert_signup: "normal",
   digest_sent: "normal",

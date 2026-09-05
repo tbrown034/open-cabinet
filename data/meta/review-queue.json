@@ -1,0 +1,30 @@
+[
+  {
+    "id": "kennedy-robert-f-lane_disagreement-2026-09-05-001",
+    "status": "open",
+    "createdAt": "2026-09-05T23:13:32.059Z",
+    "kind": "lane_disagreement",
+    "slug": "kennedy-robert-f",
+    "officialName": "Robert F Kennedy",
+    "filing": {
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
+      "pdfFile": "Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
+      "date": "2025-05-17"
+    },
+    "problems": [
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 9,
+          "parsedRow": 9,
+          "description": "NIKE, Inc. (NKE)"
+        },
+        "modelSaid": "Sale|2025-04-04|$1,001-$15,000|ontime",
+        "textLayerSaid": "Sale|2225-04-04|$1,001-$15,000|ontime",
+        "detail": "row 9: text layer [Sale|2225-04-04|$1,001-$15,000|ontime] vs AI parse [Sale|2025-04-04|$1,001-$15,000|ontime]"
+      }
+    ],
+    "holding": "every row of Robert-F-Kennedy-Jr-05.09.2025-278T.pdf; nothing from it would publish until this is decided",
+    "emailSentAt": "2026-09-05T23:13:32.305Z"
+  }
+]
