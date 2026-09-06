@@ -141,6 +141,15 @@ describe("compareSecondRead", () => {
     expect(r.differences[0]).toMatch(/^row 2: second model/);
   });
 
+  it("pairs a unique trade tuple across differently worded names, never across different assets", () => {
+    const p = [tx({ description: "ISHARES US TREASURY BOND ETF" }), tx({ description: "Apple Inc", amount: "$15,001-$50,000" })];
+    const s = [tx({ description: "iShares U.S. Treasury Bond ETF (GOVT)" }), tx({ description: "Microsoft Corp", amount: "$15,001-$50,000" })];
+    const r = compareSecondRead(p, s);
+    expect(r.agreedIndexes).toEqual([0]);
+    expect(r.unreadIndexes).toEqual([1]);
+    expect(r.extraRows.map((x) => x.description)).toEqual(["Microsoft Corp"]);
+  });
+
   it("never pairs by position: a skipped row is unread and an invented one is extra", () => {
     const p = [tx({ description: "A" }), tx({ description: "B" }), tx({ description: "C" })];
     const s = [tx({ description: "A" }), tx({ description: "C" }), tx({ description: "D" })];

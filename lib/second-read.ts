@@ -23,7 +23,7 @@
 import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
 import { comparedTuple } from "./row-verification";
-import { normalizedDescription } from "./reverify-diff";
+import { normalizedDescription, sharesAssetWord } from "./reverify-diff";
 import { validateParsedRows } from "./filing-validation";
 import { promptHash, readParseCache, writeParseCache, type ParseCacheKeyInput } from "./parse-cache";
 import type { Transaction } from "./types";
@@ -101,11 +101,12 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
     const k = normalizedDescription(r.description);
     (byDesc.get(k) ?? byDesc.set(k, []).get(k)!).push(i);
   });
+  const leftover: number[] = [];
   primary.forEach((p, i) => {
     const want = comparedTuple(p);
     const bucket = (byDesc.get(normalizedDescription(p.description)) ?? []).filter((j) => !usedSecond.has(j));
     if (bucket.length === 0) {
-      unreadIndexes.push(i);
+      leftover.push(i);
       return;
     }
     const exact = bucket.find((j) => comparedTuple(second[j]) === want);
@@ -117,6 +118,28 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
       if (differences.length < 60) differences.push(`row ${i + 1}: second model [${comparedTuple(second[j])}] vs primary [${want}] for "${p.description}"`);
     }
   });
+  // Second pass for rows whose names did not match exactly: pair on the
+  // trade tuple when that tuple is unique among the leftovers on both
+  // sides AND the names still share a distinctive word (so Apple never
+  // pairs with Microsoft). Wording differences are then wording, not an
+  // unread row plus an extra one.
+  const leftoverSecond = second.map((_, j) => j).filter((j) => !usedSecond.has(j));
+  const countP = new Map<string, number>();
+  for (const i of leftover) countP.set(comparedTuple(primary[i]), (countP.get(comparedTuple(primary[i])) ?? 0) + 1);
+  const countS = new Map<string, number>();
+  for (const j of leftoverSecond) countS.set(comparedTuple(second[j]), (countS.get(comparedTuple(second[j])) ?? 0) + 1);
+  for (const i of leftover) {
+    const t = comparedTuple(primary[i]);
+    const j = countP.get(t) === 1 && countS.get(t) === 1 ? leftoverSecond.find((x) => !usedSecond.has(x) && comparedTuple(second[x]) === t) : undefined;
+    if (j !== undefined && sharesAssetWord(primary[i].description, second[j].description)) {
+      usedSecond.add(j);
+      agreedIndexes.push(i);
+    } else {
+      unreadIndexes.push(i);
+    }
+  }
+  agreedIndexes.sort((a, b) => a - b);
+  unreadIndexes.sort((a, b) => a - b);
   const extraRows = second
     .map((r, j) => ({ r, j }))
     .filter(({ j }) => !usedSecond.has(j))
