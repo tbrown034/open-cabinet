@@ -40,6 +40,13 @@ function main() {
   if (!log) throw new Error("no cross-check log; run pnpm crosscheck-sweep first");
   const decisions = readReviewDecisions();
   const secondRead = readSecondReadLog();
+  // A read by a person or by the Claude Code session looking at page
+  // images (scripts/session-read.ts): a second independent read, merged
+  // with the second model's verdicts. Agreement from either counts;
+  // a dispute from either disputes.
+  const sessionPath = path.resolve("data/meta/session-read-log.json");
+  const sessionRead: { filings: Record<string, { candidateSha256: string; agreedIndexes: number[]; disputedIndexes: number[] }> } | null =
+    existsSync(sessionPath) ? JSON.parse(readFileSync(sessionPath, "utf-8")) : null;
   const audit = readGrokAuditLog();
   const rows: Record<string, RowVerification> = {};
 
@@ -62,9 +69,17 @@ function main() {
       });
       if (!record) continue;
       parseRecordByUrl.set(url, record.transactions as Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>);
-      if (second && second.candidateSha256 === e.candidateSha256) {
-        model2ByUrl.set(url, { agreedIndexes: new Set(second.agreedIndexes), disputedIndexes: new Set(second.disputedIndexes) });
+      const agreed = new Set<number>();
+      const disputed = new Set<number>();
+      let anySecond = false;
+      for (const src of [second, sessionRead?.filings[url]]) {
+        if (!src || src.candidateSha256 !== e.candidateSha256) continue;
+        anySecond = true;
+        for (const i of src.agreedIndexes) agreed.add(i);
+        for (const i of src.disputedIndexes) disputed.add(i);
       }
+      for (const i of disputed) agreed.delete(i);
+      if (anySecond) model2ByUrl.set(url, { agreedIndexes: agreed, disputedIndexes: disputed });
       if (audited && audited.candidateSha256 === e.candidateSha256) {
         auditByUrl.set(url, { confirmed: new Set(audited.confirmedIndexes), disputed: new Set(audited.disputedIndexes), notFound: new Set(audited.notFoundIndexes) });
       }
