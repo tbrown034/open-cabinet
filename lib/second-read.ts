@@ -109,8 +109,13 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
       leftover.push(i);
       return;
     }
-    const exact = bucket.find((j) => comparedTuple(second[j]) === want);
-    const j = exact ?? bucket[0];
+    // Prefer the row at the same position when it is in the bucket: a
+    // read that keeps the filing's row order (a person reading page by
+    // page) then pairs row for row, and a repeated asset name never
+    // steals a later row's partner.
+    const exactAll = bucket.filter((j) => comparedTuple(second[j]) === want);
+    const exact = exactAll.includes(i) ? i : exactAll[0];
+    const j = exact ?? (bucket.includes(i) ? i : bucket[0]);
     usedSecond.add(j);
     if (exact !== undefined) agreedIndexes.push(i);
     else {
@@ -130,6 +135,18 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
   for (const j of leftoverSecond) countS.set(comparedTuple(second[j]), (countS.get(comparedTuple(second[j])) ?? 0) + 1);
   for (const i of leftover) {
     const t = comparedTuple(primary[i]);
+    // Same position, name shares a word: the wording differs but it is
+    // the same printed row. Agree on the tuple or dispute it; never
+    // count it as unread plus extra.
+    if (i < second.length && !usedSecond.has(i) && sharesAssetWord(primary[i].description, second[i].description)) {
+      usedSecond.add(i);
+      if (comparedTuple(second[i]) === t) agreedIndexes.push(i);
+      else {
+        disputedIndexes.push(i);
+        if (differences.length < 60) differences.push(`row ${i + 1}: second model [${comparedTuple(second[i])}] vs primary [${t}] for "${primary[i].description}"`);
+      }
+      continue;
+    }
     const j = countP.get(t) === 1 && countS.get(t) === 1 ? leftoverSecond.find((x) => !usedSecond.has(x) && comparedTuple(second[x]) === t) : undefined;
     if (j !== undefined && sharesAssetWord(primary[i].description, second[j].description)) {
       usedSecond.add(j);
@@ -138,6 +155,7 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
       unreadIndexes.push(i);
     }
   }
+  disputedIndexes.sort((a, b) => a - b);
   agreedIndexes.sort((a, b) => a - b);
   unreadIndexes.sort((a, b) => a - b);
   const extraRows = second

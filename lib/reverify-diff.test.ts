@@ -89,6 +89,15 @@ describe("diffRows", () => {
     expect(sharesAssetWord("HP INC COM", "GE AEROSPACE")).toBe(false);
   });
 
+  it("reads a name through the form's spacing accidents", async () => {
+    const { sharesAssetWord } = await import("./reverify-diff");
+    expect(sharesAssetWord("FIRST BANCORP PR F", "FIRST BANCORP P R F")).toBe(true);
+    expect(sharesAssetWord("LAZ BOY INC", "LA Z BOY INC")).toBe(true);
+    expect(sharesAssetWord("RLICORP", "RLI CORP")).toBe(true);
+    expect(sharesAssetWord("LEGAL ZOOM COM INC", "LEGALZOOM COM INC")).toBe(true);
+    expect(sharesAssetWord("RLI CORP", "RPM INTL INC")).toBe(false);
+  });
+
   it("pairs a same-trade leftover only when the pairing is unambiguous", () => {
     const pub = [row({ description: "A", ticker: null }), row({ description: "B", ticker: null })];
     const fresh = [row({ description: "C", ticker: null }), row({ description: "D", ticker: null })];

@@ -4,7 +4,7 @@
 {"rowNumber":4,"description":"NVIDIA CORP","type":"purchase","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
 {"rowNumber":5,"description":"Invesco Exchange-traded Fd Tr S&p 500 Equal Weight Etf Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker","type":"purchase","date":"2/20/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
 {"rowNumber":6,"description":"ADOBE INC","type":"purchase","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
-{"rowNumber":7,"description":"WORKDAY INCCL A","type":"purchase","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":7,"description":"WORKDAY INC CL A","type":"purchase","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
 {"rowNumber":8,"description":"ORACLE CORPORATION COM","type":"purchase","date":"3/17/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
 {"rowNumber":9,"description":"MICROSOFT CORP UNSOLICITED","type":"purchase","date":"3/19/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
 {"rowNumber":10,"description":"BROADCOM INC COM","type":"purchase","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
@@ -3395,3 +3395,248 @@
 {"rowNumber":3395,"description":"WAYSTAR HLDG CORP","type":"sale","date":"3/30/2026","amount":"$50,001 - $100,000","late":"Yes"}
 {"rowNumber":3396,"description":"Alphabet Inc Cap Stk Cl C Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$50,001 - $100,000","late":"Yes"}
 {"rowNumber":3397,"description":"CRH PUBLIC LIMITED CO F","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3398,"description":"UNITED RENTALS INC","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3399,"description":"MARKETAXESS HLDGS INC","type":"sale","date":"3/30/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3400,"description":"PALO ALTO NETWORKS INC","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3401,"description":"THERMO FISHER SCIENTIFIC","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3402,"description":"LENNAR CORP CLASS A","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3403,"description":"PRUDENTIAL FINL INC","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3404,"description":"OKTA INC CLASS A","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3405,"description":"VICOR CORP","type":"sale","date":"3/23/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3406,"description":"TARGA RES CORP","type":"sale","date":"1/6/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3407,"description":"ALARM COM HLDGS INC","type":"sale","date":"3/30/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3408,"description":"OLD DOMINION FGHT LINE INC","type":"sale","date":"1/6/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3409,"description":"ATLASSIAN CORP CLASS A","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3410,"description":"MERIT MED SYS INC","type":"sale","date":"2/26/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3411,"description":"HOME DEPOT INC COM","type":"sale","date":"2/10/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3412,"description":"ACI WORLDWIDE INC","type":"sale","date":"2/26/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3413,"description":"PULTE GROUP INC","type":"sale","date":"3/17/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3414,"description":"Alphabet Inc Cap Stk Cl C With Due Bills Solicited Order Discretion Exercised","type":"sale","date":"3/6/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3415,"description":"BERKSHIRE HATHAWAY CLASS B","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3416,"description":"PROGRESSIVE CORP OH","type":"sale","date":"2/12/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3417,"description":"NETFLIX INC","type":"sale","date":"3/18/2026","amount":"$50,001 - $100,000","late":"Yes"}
+{"rowNumber":3418,"description":"Jpmorgan Chase & Co Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3419,"description":"GENERAL MILLS INC","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3420,"description":"AUTODESK INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3421,"description":"VERIZON COMMUNICATIONS I","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3422,"description":"CINCINNATI FINL CORP","type":"sale","date":"2/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3423,"description":"MOHAWK INDS INC","type":"sale","date":"3/30/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3424,"description":"T-MOBILE US INC","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3425,"description":"NXP SEMICONDUCTORS N V F","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3426,"description":"CASELLA WASTE SYS INC CLASS A","type":"sale","date":"2/26/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3427,"description":"ZSCALER INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3428,"description":"DYNATRACE INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3429,"description":"AMERICAN TOWER CORP NEW REIT","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3430,"description":"IDEXX LABS INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3431,"description":"Broadcom Inc Com Solicited Order Discretion Exercised","type":"sale","date":"3/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3432,"description":"SERVICENOW INC","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3433,"description":"Alphabet Inc Cl A Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3434,"description":"Berkshire Hathaway Inc Del Cl B New Solicited Order Discretion Exercised","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3435,"description":"NORWEGIAN CRUISE L COM USD0.001","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3436,"description":"DOLLAR TREE INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3437,"description":"UBER TECHNOLOGIES INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3438,"description":"NIKE INC CLASS B","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3439,"description":"PAYCHEX INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3440,"description":"NETAPP INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3441,"description":"TRANSDIGM GROUP INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3442,"description":"Interactive Brokers Group Inc Class","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3443,"description":"REGIONS FINL CORP NEW","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3444,"description":"DANAHER CORP","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3445,"description":"AUTOMATIC DATA PROCESSIN","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3446,"description":"SHERWIN-WILLIAMS CO","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3447,"description":"HOME DEPOT INC","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3448,"description":"Alphabet Inc Cl A With Due Bills Solicited Order Discretion Exercised","type":"sale","date":"3/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3449,"description":"COOPER COS INC COM","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3450,"description":"WATERS CORP","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3451,"description":"WALMART INC","type":"sale","date":"2/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3452,"description":"UNITED RENTALS INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3453,"description":"BOOKING HLDGS INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3454,"description":"STRYKER CORP","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3455,"description":"INTUIT","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3456,"description":"INSULET CORP","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3457,"description":"CINCINNATI FINL CORP","type":"sale","date":"2/24/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3458,"description":"Tesla Inc Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3459,"description":"WATERS CORP","type":"sale","date":"2/11/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3460,"description":"IQVIA HLDGS INC COM","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3461,"description":"BRINKER INTL INC","type":"sale","date":"3/30/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3462,"description":"ADOBE INC","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3463,"description":"BLACKSTONE INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3464,"description":"FIRST SOLAR INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3465,"description":"DISNEY WALT CO","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3466,"description":"TRIMBLE NAV LTD","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3467,"description":"ROYAL CARIBBEAN GROUP","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3468,"description":"CAPITAL ONE FINL CORP","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3469,"description":"QUALCOMM INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3470,"description":"BANK OF AMERICA CORP","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3471,"description":"Amazon Com Inc Com Solicited Order Discretion Exercised","type":"sale","date":"3/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3472,"description":"MICROSOFT CORP","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3473,"description":"WYNN RESORTS LTD","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3474,"description":"ABBOTT LABS","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3475,"description":"ORACLE CORP","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3476,"description":"ADOBE INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3477,"description":"BOSTON SCIENTIFIC CORP","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3478,"description":"RESMED INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3479,"description":"VERALTO CORP COM SHS","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3480,"description":"Microsoft Corp Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3481,"description":"XYLEM INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3482,"description":"EOG RESOURCES INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3483,"description":"Meta Platforms Inc Cl A E1774634275029-00560 Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3484,"description":"ROPER TECHNOLOGIES INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3485,"description":"S&P GLOBAL INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3486,"description":"NIKE INC CLASS B COM","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3487,"description":"NRG ENERGY INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3488,"description":"METTLER-TOLEDO INTL INC COM","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3489,"description":"SMURFIT WESTROCK PLC SHS","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3490,"description":"DEXCOM INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3491,"description":"GLOBAL PMTS INC","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3492,"description":"VERIZON COMMUNICATIONS I","type":"sale","date":"2/24/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3493,"description":"HUMANA INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3494,"description":"BROWN FORMAN CORP CLASS B","type":"sale","date":"1/13/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3495,"description":"AMERICAN EXPRESS CO","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3496,"description":"DATADOG INC CL A COM","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3497,"description":"RAYMOND JAMES FINL INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3498,"description":"MARSH & MCLENNAN COS INC","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3499,"description":"PALANTIR TECHNOLOGIES IN CLASS A","type":"sale","date":"2/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3500,"description":"FIDELITY NATL INFORMATION SVCS INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3501,"description":"WORKDAY INC CLASS A","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3502,"description":"LULULEMON ATHLETICA INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3503,"description":"SITIME CORP","type":"sale","date":"3/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3504,"description":"WILLIS TOWERS WATSON PUB LTDCO","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3505,"description":"TRIMBLE INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3506,"description":"AON PLC SHS CL A","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3507,"description":"KROGER","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3508,"description":"NASDAQ INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3509,"description":"COGNIZANT TECHNOLOGY SOLUTIONS CL A","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3510,"description":"KKR & CO INC","type":"sale","date":"3/18/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3511,"description":"Broadcom Inc Com Solicited Order Discretion Exercised","type":"sale","date":"3/27/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3512,"description":"VERISK ANALYTICS, INC.","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3513,"description":"NXP SEMICONDUCTORS N V","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3514,"description":"Godaddy Inc","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3515,"description":"META PLATFORMS INC CLASS A","type":"sale","date":"1/12/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3516,"description":"Apple Inc Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3517,"description":"FAIR ISAAC CORP","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3518,"description":"MOOG INC CLASS A","type":"sale","date":"3/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3519,"description":"BROADCOM INC COM","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3520,"description":"TYLER TECHNOLOGIES INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3521,"description":"ARROWHEAD PHARMACEUTICAL","type":"sale","date":"2/9/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3522,"description":"CARVANA CO CL A","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3523,"description":"VULCAN MATLS CO","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3524,"description":"GALLAGHER ARTHUR J & CO","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3525,"description":"CARETRUST REIT INC REIT","type":"sale","date":"3/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3526,"description":"JACOBS SOLUTIONS INC COM","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3527,"description":"INTERDIGITAL INC","type":"sale","date":"3/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3528,"description":"SOLSTICE ADVANCED MATLS","type":"sale","date":"3/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3529,"description":"GARTNER GROUP INC NEW","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3530,"description":"SKYWORKS SOLUTIONS INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3531,"description":"CARRIER GLOBAL CORPORATION COM","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3532,"description":"ZOETIS INC","type":"sale","date":"3/17/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3533,"description":"PUBLIC STORAGE","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3534,"description":"CROWN CASTLE INC","type":"sale","date":"1/6/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3535,"description":"VERIZON COMMUNICATIONS I","type":"sale","date":"2/23/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3536,"description":"APOLLO GLOBAL MGMT INC COM","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3537,"description":"FACTSET RESH SYS INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3538,"description":"BROWN FORMAN CORP CLASS B","type":"sale","date":"1/14/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3539,"description":"TAKE-TWO INTERACTIVE SOFTWARE INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3540,"description":"TESLA INC UNSOLICITED","type":"sale","date":"3/2/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3541,"description":"ADVANCED ENERGY INDS INC","type":"sale","date":"2/2/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3542,"description":"FISERV INC","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3543,"description":"TTM TECHNOLOGIES INC","type":"sale","date":"1/30/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3544,"description":"ARES MANAGEMENT CORPORATION CL A COM","type":"sale","date":"2/10/2026","amount":"$100,001 - $250,000","late":"Yes"}
+{"rowNumber":3545,"description":"FORTINET INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3546,"description":"HUNTINGTON BANCSHARES IN","type":"sale","date":"1/26/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3547,"description":"NETFLIX INC","type":"sale","date":"1/12/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3548,"description":"ACCENTURE PLC IRELAND F CLASS A","type":"sale","date":"2/12/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3549,"description":"META PLATFORMS INC CLASS A","type":"sale","date":"3/18/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3550,"description":"GENUINE PARTS CO","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3551,"description":"Amazon Com Inc Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3552,"description":"WALMART INC","type":"sale","date":"2/24/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3553,"description":"PROGRESSIVE CORP OHIO","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3554,"description":"BECTON DICKINSON & CO","type":"sale","date":"3/17/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3555,"description":"LENNAR CORP CLASS A COM","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3556,"description":"PUBLIC SVC ENTERPRISE GROUP INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3557,"description":"Nvidia Corp Com Solicited Order Discretion Exercised","type":"sale","date":"3/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3558,"description":"SALESFORCE INC","type":"sale","date":"2/12/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3559,"description":"SYSCO CORP","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3560,"description":"DIGITAL RLTY TR INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3561,"description":"HUNTINGTON BANCSHARES IN","type":"sale","date":"1/22/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3562,"description":"ROPER TECHNOLOGIES, INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3563,"description":"AUTODESK INC","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3564,"description":"MICROSOFT CORP","type":"sale","date":"2/12/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3565,"description":"BROADCOM INC UNSOLICITED","type":"sale","date":"3/2/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3566,"description":"AUTOZONE INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3567,"description":"HUNTINGTON BANCSHARES IN","type":"sale","date":"1/23/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3568,"description":"ULTA BEAUTY, INC","type":"sale","date":"3/17/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3569,"description":"AMAZON.COM INC","type":"sale","date":"2/12/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3570,"description":"BERKLEY W R CORP","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3571,"description":"KKR & CO INC CL A","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3572,"description":"STE SRT CNSR STPLS SLCT SEC SPDR ETF","type":"sale","date":"1/29/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3573,"description":"DOORDASH INC CL A","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3574,"description":"Microsoft Corp Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3575,"description":"D R HORTON INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3576,"description":"METLIFE INC","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3577,"description":"PRUDENTIAL FINANCIAL INC","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3578,"description":"INVITATION HOMES INC COM","type":"sale","date":"3/17/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3579,"description":"CONSTELLATION ENERGY CORP COM","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3580,"description":"HOME DEPOT INC","type":"sale","date":"3/18/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3581,"description":"AMAZON.COM INC UNSOLICITED","type":"sale","date":"2/13/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3582,"description":"CADENCE DESIGN SYS INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3583,"description":"INTUIT","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3584,"description":"ROBINHOOD MKTS INC COM CL A","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3585,"description":"MASTERCARD INC CLASS A","type":"sale","date":"3/18/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3586,"description":"Blackstone Inc.","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3587,"description":"TRANE TECHNOLOGIES PLC SHS","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3588,"description":"O REILLY AUTOMOTIVE INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3589,"description":"CROWDSTRIKE HLDGS INC CL A","type":"sale","date":"2/10/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3590,"description":"VISA INC CLASS A","type":"sale","date":"3/18/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3591,"description":"ECOLAB INC","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3592,"description":"Elevance Health, Inc.","type":"sale","date":"3/17/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3593,"description":"BOSTON SCIENTIFIC CORP COM","type":"sale","date":"1/6/2026","amount":"$250,001 - $500,000","late":"Yes"}
+{"rowNumber":3594,"description":"Apple Inc Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3595,"description":"DANAHER CORP","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3596,"description":"SOUTHERN CO COM","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3597,"description":"MOODYS CORP COM","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3598,"description":"Nvidia Corp Com Average Unit Price Transaction Your Broker Acted As Agent","type":"sale","date":"3/27/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3599,"description":"EMCOR GROUP INC","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3600,"description":"PALO ALTO NETWORKS INC","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3601,"description":"APPLOVIN CORP COM CL A","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3602,"description":"S&P GLOBAL INC","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3603,"description":"DEERE & CO.","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3604,"description":"Blackstone Inc Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent","type":"sale","date":"1/26/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3605,"description":"CAPITAL ONE FINL CORP","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3606,"description":"OMNICOM GROUP, INC.","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3607,"description":"MICROSOFT CORP UNSOLICITED","type":"sale","date":"2/13/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3608,"description":"NVIDIA CORP","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3609,"description":"STRYKER CORP COM","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3610,"description":"CHIPOTLE MEXICAN GRILL INC","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3611,"description":"ZEBRA TECHNOLOGIES CORP CL A","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3612,"description":"BOOKING HLDGS INC COM","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3613,"description":"EATON CORP PLC","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3614,"description":"ALTRIA GROUP INC","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3615,"description":"QUALCOMM INC COM","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3616,"description":"NVR INC","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3617,"description":"UBER TECHNOLOGIES INC COM","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3618,"description":"MICROCHIP TECHNOLOGY INC","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3619,"description":"Salesforce Inc.","type":"sale","date":"2/10/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3620,"description":"META PLATFORMS INC CL A UNSOLICITED","type":"sale","date":"3/25/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3621,"description":"NVIDIA CORP UNSOLICITED","type":"sale","date":"3/2/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3622,"description":"ABBOTT LABS INC COM","type":"sale","date":"1/6/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3623,"description":"BOEING COMPANY COM","type":"sale","date":"3/17/2026","amount":"$500,001 - $1,000,000","late":"Yes"}
+{"rowNumber":3624,"description":"WALT DISNEY COMPANY COM","type":"sale","date":"3/17/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3625,"description":"UNITEDHEALTH GROUP INC","type":"sale","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3626,"description":"ORACLE CORPORATION COM","type":"sale","date":"1/6/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3627,"description":"CDW CORP","type":"sale","date":"3/17/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3628,"description":"NETFLIX COM INC","type":"sale","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3629,"description":"PALANTIR TECHNOLOGIES INC CL A","type":"sale","date":"2/10/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3630,"description":"STATE STREET COMMUNICATION SERVICES SELECT SECTOR SPDR ETF","type":"sale","date":"3/5/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3631,"description":"VANGUARD HIGH DIVIDEND YIELD ETF","type":"sale","date":"1/23/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3632,"description":"ACCENTURE PLC","type":"sale","date":"3/17/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3633,"description":"ISHARES CORE S&P 500 ETF","type":"sale","date":"1/23/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3634,"description":"STATE STREET SPDR S&P 500 ETF TRUST","type":"sale","date":"3/5/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3635,"description":"STATE STREET SPDR S&P 500 TRUST ETF","type":"sale","date":"1/29/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3636,"description":"VANGUARD S&P 500 ETF UNSOLICITED","type":"sale","date":"1/6/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3637,"description":"VANGUARD S&P 500 ETF UNSOLICITED","type":"sale","date":"3/19/2026","amount":"$1,000,001 - $5,000,000","late":"Yes"}
+{"rowNumber":3638,"description":"VANGUARD DIVIDEND APPRECIATION ETF","type":"sale","date":"1/12/2026","amount":"$5,000,001 - $25,000,000","late":"Yes"}
+{"rowNumber":3639,"description":"Meta Platforms, Inc","type":"sale","date":"2/10/2026","amount":"$5,000,001 - $25,000,000","late":"Yes"}
+{"rowNumber":3640,"description":"AMAZON COM INC","type":"sale","date":"2/10/2026","amount":"$5,000,001 - $25,000,000","late":"Yes"}
+{"rowNumber":3641,"description":"MICROSOFT CORP COM","type":"sale","date":"2/10/2026","amount":"$5,000,001 - $25,000,000","late":"Yes"}
+{"rowNumber":3642,"description":"ADVANCED MICRO DEVICES INC UNSOLICITED","type":"purchase","date":"1/6/2026","amount":"$50,001 - $100,000","late":"Yes"}

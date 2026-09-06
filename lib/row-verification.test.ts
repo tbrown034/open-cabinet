@@ -159,3 +159,25 @@ describe("compareSecondRead", () => {
     expect(r.extraRows.map((x) => x.description)).toEqual(["D"]);
   });
 });
+
+describe("compareSecondRead pairing", () => {
+  it("pairs row for row when a repeated name appears many times", () => {
+    const w = (date: string, amount: string) => tx({ description: "WORKDAY INC CL A", date, amount, type: "Purchase" });
+    const primary = [w("2026-02-10", "$1,000,001-$5,000,000"), tx({ description: "OTHER CO" }), w("2026-01-23", "$1,001-$15,000"), w("2026-02-19", "$1,001-$15,000")];
+    // The second read has the same rows in the same order; every one agrees.
+    const r = compareSecondRead(primary, primary.map((p) => ({ ...p })));
+    expect(r.agreedIndexes).toEqual([0, 1, 2, 3]);
+    expect(r.disputedIndexes).toEqual([]);
+    expect(r.extraRows).toEqual([]);
+  });
+
+  it("treats a same-position row with a differently spaced name as the same row", () => {
+    const primary = [tx({ description: "FIRST BANCORP PR F", date: "2026-03-04" }), tx({ description: "RLICORP", date: "2026-01-12" })];
+    const second = [tx({ description: "FIRST BANCORP P R F", date: "2026-03-04" }), tx({ description: "RLI CORP", date: "2026-01-14" })];
+    const r = compareSecondRead(primary, second);
+    expect(r.agreedIndexes).toEqual([0]);
+    expect(r.disputedIndexes).toEqual([1]);
+    expect(r.unreadIndexes).toEqual([]);
+    expect(r.extraRows).toEqual([]);
+  });
+});

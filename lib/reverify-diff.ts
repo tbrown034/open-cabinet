@@ -135,6 +135,13 @@ const NAME_STOP = new Set([
  * NextEra Energy and Duke Energy are different companies.
  */
 export function sharesAssetWord(a: string, b: string): boolean {
+  // Spacing is a typesetting accident on these forms: "LEGAL ZOOM" and
+  // "LEGALZOOM", "PR F" and "P R F", "RLICORP" and "RLI CORP" are one
+  // name. Compare with the spaces removed before anything else.
+  const flat = (d: string) => normalizedDescription(d.replace(/\bsee endnote\b/gi, " ")).replace(/ /g, "");
+  const fa0 = flat(a);
+  const fb0 = flat(b);
+  if (fa0 === fb0 || (fa0.length >= 6 && fb0.length >= 6 && (fa0.startsWith(fb0) || fb0.startsWith(fa0)))) return true;
   // "See Endnote" is the form's cross-reference, not part of a name.
   const words = (d: string) =>
     normalizedDescription(d.replace(/\bsee endnote\b/gi, " ")).split(" ").filter((w) => w.length >= 2 && !NAME_STOP.has(w));
