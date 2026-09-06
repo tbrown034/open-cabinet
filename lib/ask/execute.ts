@@ -310,7 +310,19 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       result.rows = shown.map(toResultRow);
       result.shownRows = shown.length;
       addNumber(shown.length);
-      for (const row of shown) if (row.date) addDate(row.date);
+      for (const row of shown) {
+        if (row.date) addDate(row.date);
+        // A listed row's disclosed range is a figure the sentence may quote.
+        if (row.amount) {
+          // Both the filing's range and the site's short label; the model
+          // may quote either.
+          displayStrings.add(row.amount);
+          displayStrings.add(amountRangeLabel(row.amount));
+        }
+        // Figures inside an asset name (a bond coupon, a maturity year) are
+        // the row's own and may be quoted.
+        displayStrings.add(row.description);
+      }
       break;
     }
     case "top_officials": {

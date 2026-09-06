@@ -7,7 +7,7 @@
  *                It never sees a trade row and it is never asked for a fact.
  *   2. Validate. The plan is checked field by field and its names resolved to
  *                slugs that exist. An unresolvable name ends the request.
- *   3. Execute.  Ordinary code filters and counts the verified rows.
+ *   3. Execute.  Ordinary code filters and counts the checked rows.
  *   4. Phrase.   A second model call sees the result JSON and nothing else,
  *                and writes at most two sentences.
  *   5. Check.    Every number in that sentence must match a figure the
@@ -268,7 +268,7 @@ function planSystemPrompt(
 }
 
 /**
- * The phraser writes about verified rows, which are a minority of the rows on
+ * The phraser writes about checked rows, which may be a minority of the rows on
  * the site. A sentence that drops that qualifier reads as a claim about the
  * whole record, so the qualifier is required and the completeness words are
  * banned. checkAnswerLanguage enforces both.
@@ -279,8 +279,9 @@ const PHRASE_SYSTEM_PROMPT = [
   "Use only figures that appear in the JSON you are given, exactly as they appear there.",
   "Do not round, do not add a figure, do not describe anything the JSON does not contain.",
   "",
-  "These rows are only the ones an independent check has confirmed. They are a subset of the site's records.",
-  "Always call the rows or trades you are counting 'verified'. The word 'verified' must appear in your answer.",
+  "These rows are only the ones that passed every check: an independent read agreed and a page audit confirmed them. They are a subset of the site's records.",
+  "Always call the rows or trades you are counting 'checked'. The word 'checked' must appear in your answer. Never write 'verified'.",
+  "Write every dollar figure and range exactly as the JSON prints it, character for character. Never abbreviate a range (write $1,000,001-$5,000,000, never $1M-$5M).",
   "Never write: all, every, total, on file, complete, entire, or 'disclosure records show'.",
   "Never call any row recent, latest, newest or oldest, and never characterize the ordering of a list.",
   "",

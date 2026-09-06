@@ -134,6 +134,13 @@ describe("execute", () => {
     expect(result.totals?.estimateDisplay).toBe("$3,107,500");
   });
 
+  it("vouches for a listed row's own range and asset-name figures", () => {
+    const result = execute(plan({ aggregate: "list" }), DATA);
+    expect(result.displayStrings).toContain("$15,001-$50,000");
+    expect(result.displayStrings).toContain("$15K-$50K");
+    expect(result.displayStrings).toContain("NVIDIA Corporation");
+  });
+
   it("never returns a row the source did not publish", () => {
     // Rows under review are already absent from PublishedRowsData; the
     // executor has no path to them and the excluded counts survive.
