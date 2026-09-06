@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T23:04:36.664Z",
+  "generatedAt": "2026-09-06T23:21:45.182Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
-      "checked": 11254,
-      "human_verified": 90,
+      "checked": 11250,
+      "human_verified": 119,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 29,
-      "implausible": 48,
+      "implausible": 23,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
       "1": 29,
-      "2": 141,
-      "3": 11344
+      "2": 116,
+      "3": 11369
     }
   },
   "rows": {
@@ -92840,50 +92840,50 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR read printed row 7 differently; the page audit confirmed it"
     },
-    "ee90efd7e0157fe4ff986373": {
-      "id": "ee90efd7e0157fe4ff986373",
+    "b8175e54ab62e165d1f8c78d": {
+      "id": "b8175e54ab62e165d1f8c78d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "9de68b4a62950563d2c1fe20": {
-      "id": "9de68b4a62950563d2c1fe20",
+    "701824950acc7b6ee2da2b45": {
+      "id": "701824950acc7b6ee2da2b45",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR read printed row 8 differently; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "13422d86d7d6caa27f67b04f": {
-      "id": "13422d86d7d6caa27f67b04f",
+    "8e88c27916758621ab71509a": {
+      "id": "8e88c27916758621ab71509a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "d3af944b3850d89ebc60fc92": {
-      "id": "d3af944b3850d89ebc60fc92",
+    "deae14d56ec9f11c252f769d": {
+      "id": "deae14d56ec9f11c252f769d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "450e443700e206d54bba36f9": {
-      "id": "450e443700e206d54bba36f9",
+    "7cfe6866b94ce7c66555028c": {
+      "id": "7cfe6866b94ce7c66555028c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "5804eebf36ef843593838285": {
       "id": "5804eebf36ef843593838285",
@@ -92894,14 +92894,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "76abeb14cc769121817cb0b2": {
-      "id": "76abeb14cc769121817cb0b2",
+    "7ecae7cd8bff1df6101ca323": {
+      "id": "7ecae7cd8bff1df6101ca323",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "a20186bed656dab5f4f0bdd7": {
       "id": "a20186bed656dab5f4f0bdd7",
@@ -92912,14 +92912,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "060bf65cf872d5abda7856d0": {
-      "id": "060bf65cf872d5abda7856d0",
+    "1da830407eafffaa717d512c": {
+      "id": "1da830407eafffaa717d512c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "28cb351d5631fd2611193a24": {
       "id": "28cb351d5631fd2611193a24",
@@ -92930,41 +92930,41 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "55c5d8e800ffe8fe7871f23d": {
-      "id": "55c5d8e800ffe8fe7871f23d",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "b544a2a6022db6bea6c57345": {
-      "id": "b544a2a6022db6bea6c57345",
+    "3f2d66b7a86bbcb444938946": {
+      "id": "3f2d66b7a86bbcb444938946",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
       "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "efd53ca002ed4bd3158ceec0": {
-      "id": "efd53ca002ed4bd3158ceec0",
+    "eb68854850e84a9c7ed8e853": {
+      "id": "eb68854850e84a9c7ed8e853",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "7ed4ea273a9aca29b083a461": {
-      "id": "7ed4ea273a9aca29b083a461",
+    "641ffc58ec3bb2b7230671bd": {
+      "id": "641ffc58ec3bb2b7230671bd",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "d99cf1df09c372073808875b": {
+      "id": "d99cf1df09c372073808875b",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "f96b7b7ef7214e41b31bea14": {
       "id": "f96b7b7ef7214e41b31bea14",
@@ -92975,59 +92975,59 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "cf78cd85197a62035738ed89": {
-      "id": "cf78cd85197a62035738ed89",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "914b38279769b9e020f18c63": {
-      "id": "914b38279769b9e020f18c63",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "ad03ee56460dfce4535fa438": {
-      "id": "ad03ee56460dfce4535fa438",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "75640a19a8192599bf97fe30": {
-      "id": "75640a19a8192599bf97fe30",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "a9f9b7e89deed7bb2fd3e656": {
-      "id": "a9f9b7e89deed7bb2fd3e656",
+    "d5dbb88d79f728c16cbe1ae2": {
+      "id": "d5dbb88d79f728c16cbe1ae2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
       "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "67e3e9b61b61a902e13dbe9e": {
-      "id": "67e3e9b61b61a902e13dbe9e",
+    "3c47a45dc981fce063ef3e68": {
+      "id": "3c47a45dc981fce063ef3e68",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "00c214eab1355e4abba00525": {
+      "id": "00c214eab1355e4abba00525",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "869a1c0df60293babfedeb3a": {
+      "id": "869a1c0df60293babfedeb3a",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "5ec247e233a9ba533264a3d4": {
+      "id": "5ec247e233a9ba533264a3d4",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "dda413723332ce5b18d99353": {
+      "id": "dda413723332ce5b18d99353",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "8d25a6f0ec141927c8ab707e": {
       "id": "8d25a6f0ec141927c8ab707e",
@@ -93038,41 +93038,41 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "5e916fab7b19e8c4ce9552a5": {
-      "id": "5e916fab7b19e8c4ce9552a5",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "45895a056e45acf131057c47": {
-      "id": "45895a056e45acf131057c47",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
-    },
-    "42135164d8498751f8a000af": {
-      "id": "42135164d8498751f8a000af",
+    "7e22cc6b7d2ee44bde96bd22": {
+      "id": "7e22cc6b7d2ee44bde96bd22",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
       "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "12667731c80647d2826d8a17": {
-      "id": "12667731c80647d2826d8a17",
+    "a83ee2b5ef406a5b6e26d76a": {
+      "id": "a83ee2b5ef406a5b6e26d76a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "7c4f48feef8c758ce74b00a1": {
+      "id": "7c4f48feef8c758ce74b00a1",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
+    },
+    "ba5060165bbec41534fd8677": {
+      "id": "ba5060165bbec41534fd8677",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "2d32ea106e1a1a1c5cae9906": {
       "id": "2d32ea106e1a1a1c5cae9906",
@@ -93083,23 +93083,23 @@
       "lane": "human",
       "note": "Decided by trevor on 2026-09-06"
     },
-    "7b70d89e2521cf979002bdf6": {
-      "id": "7b70d89e2521cf979002bdf6",
+    "45daabf4a9fd2a572d0a669c": {
+      "id": "45daabf4a9fd2a572d0a669c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "888834f3612f6f1290da64a0": {
-      "id": "888834f3612f6f1290da64a0",
+    "d96c15c580a57d98bdb45dd6": {
+      "id": "d96c15c580a57d98bdb45dd6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "37f4ae77a14c9a43136d9642": {
       "id": "37f4ae77a14c9a43136d9642",
@@ -93110,32 +93110,32 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "1be1a96584285dbc0e764a4a": {
-      "id": "1be1a96584285dbc0e764a4a",
+    "972a2a53dedfc3a793ff523d": {
+      "id": "972a2a53dedfc3a793ff523d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "c524413047294a2176f04dee": {
-      "id": "c524413047294a2176f04dee",
+    "42dcd15742f211593931d173": {
+      "id": "42dcd15742f211593931d173",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "7f8cfe89964f9566551366a4": {
-      "id": "7f8cfe89964f9566551366a4",
+    "beac063a6d221cfdb8f468b1": {
+      "id": "beac063a6d221cfdb8f468b1",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "3c3a70a3d85055a3c2876ab6": {
       "id": "3c3a70a3d85055a3c2876ab6",
@@ -93335,14 +93335,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "23cd32646e6dcfae8ded8f99": {
-      "id": "23cd32646e6dcfae8ded8f99",
+    "c6e6b7e7e2c2604cd504a710": {
+      "id": "c6e6b7e7e2c2604cd504a710",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR read printed row 2 differently; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "e4e53ce8537f58756e2f3783": {
       "id": "e4e53ce8537f58756e2f3783",
@@ -93470,14 +93470,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "a7e8ddeef596c0954d2d6b0e": {
-      "id": "a7e8ddeef596c0954d2d6b0e",
+    "3955acf14432b664dff0e1eb": {
+      "id": "3955acf14432b664dff0e1eb",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
       "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "fc1aa98a514deb6f0086ff59": {
       "id": "fc1aa98a514deb6f0086ff59",
@@ -93902,14 +93902,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "acc1db46b0aeff0bdfdcc7b6": {
-      "id": "acc1db46b0aeff0bdfdcc7b6",
+    "8aaf16a84a22c2712cc5bb12": {
+      "id": "8aaf16a84a22c2712cc5bb12",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "c71b0706b15b80b732ac6165": {
       "id": "c71b0706b15b80b732ac6165",

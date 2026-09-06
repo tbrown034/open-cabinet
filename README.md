@@ -29,7 +29,7 @@ Transaction counts, estimated value and late-filing totals exclude score-0 rows 
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
-Rows by verification state: 11,254 checked; 90 human_verified; 0 deterministic_agree; 0 two_models_agree; 93 audit_only; 29 single_read; 48 implausible; 0 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
+Rows by verification state: 11,250 checked; 119 human_verified; 0 deterministic_agree; 0 two_models_agree; 93 audit_only; 29 single_read; 23 implausible; 0 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
 
 ## Pages
 
