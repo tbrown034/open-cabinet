@@ -51,7 +51,7 @@ Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Arjun-Mody-02.27.202
 Look at: the rejected read at data/pdfs/Arjun-Mody-02.27.2026-278T.pages1-8.*.parsed.rejected.json names row 36 (type Unstated, no note) and row 48 (no date). Find those two rows on the pages.
 Do: tell me what the page shows for each ("6 row 36 says X, row 48 says Y") and I patch and re-run the read.
 
-## 7. MacGregor, filing removed from OGE
+## 7. CLOSED. MacGregor: OGE served the PDF again on Sep 6 (HTTP 200); last night's 404 was transient. No decision needed.
 
 OGE now returns 404 for Katharine-MacGregor-08.07.2025-278T.pdf. Our copy is intact: [local PDF](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Katharine-MacGregor-08.07.2025-278T.pdf>).
 Do: "7 keep" keeps the rows with a note that the source was withdrawn (my recommendation). "7 withdraw" removes them.
