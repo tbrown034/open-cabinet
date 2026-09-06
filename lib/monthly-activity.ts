@@ -7,6 +7,8 @@
  * reader comparing the two is comparing identical arithmetic.
  */
 
+import { isChartableDate } from "./chart-dates";
+
 /** One month of activity for one series (an official, or the whole roster). */
 export interface MonthBucket {
   monthKey: string; // YYYY-MM
@@ -62,10 +64,14 @@ function nextMonth(monthKey: string): string {
  */
 export function buildMonthAxis(
   transactions: DatedTransaction[],
-  startMonth: string = ACTIVITY_START_MONTH
+  startMonth: string = ACTIVITY_START_MONTH,
+  today: Date = new Date()
 ): string[] {
   let endMonth = startMonth;
   for (const tx of transactions) {
+    // A date the filing prints that cannot be real (see lib/chart-dates.ts)
+    // stays in the table and never extends the axis.
+    if (!isChartableDate(tx.date, today)) continue;
     const key = monthKeyOf(tx.date);
     if (key && key > endMonth) endMonth = key;
   }

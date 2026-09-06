@@ -7,6 +7,7 @@ import { extent } from "d3-array";
 import type { DatedTransaction as Transaction } from "@/lib/types";
 import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
 import { useContainerWidth } from "./use-container-width";
+import { chartableRows } from "@/lib/chart-dates";
 import TradeMark, { TradeMarkSwatch } from "./trade-mark";
 
 /**
@@ -54,12 +55,16 @@ function getDotColor(tx: Transaction): string {
 }
 
 export default function TransactionTimeline({
-  transactions,
+  transactions: allTransactions,
   careerEvents = EMPTY_CAREER_EVENTS,
 }: TimelineProps) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
   const [tooltip, setTooltip] = useState<TooltipData | null>(null);
 
+  // A date the filing prints that cannot be real (a 2225 sale, published
+  // as printed with a note) stays in the table; it is not drawn, so it
+  // never stretches the axis. See lib/chart-dates.ts.
+  const transactions = chartableRows(allTransactions);
   if (transactions.length === 0) {
     return <div ref={containerRef} className="relative mb-10" />;
   }

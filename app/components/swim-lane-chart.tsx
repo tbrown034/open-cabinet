@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { scaleTime, scaleSqrt, scaleBand } from "d3-scale";
+import { chartableRows, isChartableDate } from "@/lib/chart-dates";
 import { extent } from "d3-array";
 import { timeFormat } from "d3-time-format";
 import Link from "next/link";
@@ -263,8 +264,10 @@ export default function SwimLaneChart({
 
   // Collect all transaction dates for the x-axis domain. Fall back to a fixed
   // range when empty so the scale math below never dereferences undefined.
+  // A printed date that cannot be real (see lib/chart-dates.ts) is not
+  // drawn and never stretches the axis.
   const allDates = filtered.flatMap((o) =>
-    o.transactions.map((tx) => new Date(tx.date + "T00:00:00"))
+    chartableRows(o.transactions).map((tx) => new Date(tx.date + "T00:00:00"))
   );
   const dateExtent = (isEmpty
     ? [new Date("2025-01-01"), new Date("2026-01-01")]
@@ -461,6 +464,7 @@ export default function SwimLaneChart({
                     />
                   ) : (
                     o.transactions.map((tx, i) => {
+                      if (!isChartableDate(tx.date)) return null;
                       const cx = xScale(new Date(tx.date + "T00:00:00"));
                       if (!tx.amount) return null;
                       if (!tx.amount) return null;
@@ -721,6 +725,7 @@ export default function SwimLaneChart({
           {viewMode === "trade" &&
             filtered.flatMap((o) =>
             o.transactions.map((tx, i) => {
+              if (!isChartableDate(tx.date)) return null;
               const y = yScale(o.name) ?? 0;
               const bandHeight = yScale.bandwidth();
               const cx = xScale(new Date(tx.date + "T00:00:00"));

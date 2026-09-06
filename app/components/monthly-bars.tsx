@@ -3,6 +3,7 @@
 import { Suspense, useMemo, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { scaleTime, scaleSqrt } from "d3-scale";
+import { isChartableDate } from "@/lib/chart-dates";
 import { timeMonth } from "d3-time";
 import { timeFormat } from "d3-time-format";
 import type { DatedTransaction as Transaction } from "@/lib/types";
@@ -78,6 +79,8 @@ function MonthlyBarsContent({
     const parsed = [];
     const times = [];
     for (const t of transactions) {
+      // A printed date that cannot be real stays in the table, not here.
+      if (!isChartableDate(t.date)) continue;
       const dt = new Date(t.date + "T00:00:00");
       if (isNaN(dt.getTime())) continue;
       parsed.push({ ...t, dt });
@@ -265,29 +268,37 @@ function MonthlyBarsContent({
           );
         })}
 
-        {/* Year ticks under the midline */}
-        {data.buckets.map((b, i) =>
-          i === 0 || b.month.getMonth() === 0 ? (
-            <g key={`yr-${b.month.toISOString()}`}>
-              <line
-                x1={x(b.month)}
-                x2={x(b.month)}
-                y1={margin.top}
-                y2={margin.top + innerH}
-                stroke="#e5e5e5"
-                strokeDasharray="2 2"
-              />
-              <text
-                x={x(b.month) + 4}
-                y={height - 8}
-                fontSize={10}
-                fill="#737373"
-              >
-                {yearLabel(b.month)}
-              </text>
-            </g>
-          ) : null
-        )}
+        {/* Month labels under the midline, thinned so they never collide:
+            every month when there is room for a 3-letter label, otherwise
+            every 2nd, 3rd or 6th. January carries the year and a dashed
+            year line. (Trevor, Sep 6: a chart with only "2026" under it
+            told readers nothing about which months they were looking at.) */}
+        {(() => {
+          const step = monthWidth >= 26 ? 1 : monthWidth >= 14 ? 2 : monthWidth >= 9 ? 3 : 6;
+          return data.buckets.map((b, i) => {
+            const isJan = b.month.getMonth() === 0;
+            const showLabel = i === 0 || isJan || i % step === 0;
+            if (!showLabel) return null;
+            const label = i === 0 || isJan ? `${monthLabel(b.month)} ${yearLabel(b.month)}` : monthLabel(b.month);
+            return (
+              <g key={`mo-${b.month.toISOString()}`}>
+                {(i === 0 || isJan) && (
+                  <line
+                    x1={x(b.month)}
+                    x2={x(b.month)}
+                    y1={margin.top}
+                    y2={margin.top + innerH}
+                    stroke="#e5e5e5"
+                    strokeDasharray="2 2"
+                  />
+                )}
+                <text x={x(b.month) + 2} y={height - 8} fontSize={10} fill="#737373">
+                  {label}
+                </text>
+              </g>
+            );
+          });
+        })()}
 
         {/* Hover label */}
         {hover && (
