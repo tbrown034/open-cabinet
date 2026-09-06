@@ -1,0 +1,128 @@
+{
+  "key": "ccfb11417ee2c103",
+  "pdfSha256": "191e89135107fee06ea7655d071d92eee5e266cdf4d6001e3527c3da79b97af0",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
+  "chunk": {
+    "first": 7,
+    "last": 7
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:27:08.397Z",
+  "transactions": [
+    {
+      "description": "***MACYS RETAIL HOLDINGS LLC REG S DUE 03/15/2030 05.875%MS 15 DISCRETIONARY ORDER IF THIS CONFIRMA",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.61
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION - BAC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "COREBRIDGE FINL INC PERP -A 6.8750% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "WELLS FARGO & CO NEW - WFC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "WELLS FARGO & CO NEW PERP 7.6250%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.78
+    },
+    {
+      "description": "WELLS FARGO & CO PERP NT 6.8500% 12/31/49",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.78
+    },
+    {
+      "description": "WELLS FARGO & CO PERP A BB N 3.9000% 12/31/49",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.78
+    },
+    {
+      "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.78
+    },
+    {
+      "description": "WELLS FARGO & CO PERP GG NT 6.1250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION - BAC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.79
+    },
+    {
+      "description": "WELLS FARGO & CO NEW - WFC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.79
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2525,
+    "outputTokens": 1178,
+    "estimatedCostUsd": 0.0842
+  }
+}

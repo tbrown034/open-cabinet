@@ -1,0 +1,23 @@
+{
+  "pdfSha256": "95919236a2422304a07f801f3aaca73f147a90058e47d2d66088a498c3309be3",
+  "first": 1,
+  "last": 3,
+  "rowsSha256": "0518bd4371e41dc0b3782b8e96e35d46f3112881bfe61b0925528021d4c4270c",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T03:27:16.390Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 7470,
+    "outputTokens": 19,
+    "estimatedCostUsd": 0.0151
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"}],\"missing\":[]}"
+}

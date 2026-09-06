@@ -1,0 +1,101 @@
+{
+  "key": "7cba5426c8d586f6",
+  "pdfSha256": "460e19fa82ef26ce297f52868a688d321a372b2117df260d990d3764c3778091",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
+  "chunk": {
+    "first": 7,
+    "last": 7
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:30:06.215Z",
+  "transactions": [
+    {
+      "description": "AT&T INC 5 DEP RP PFD A - TpA",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "AIR LEASE CORP PERP GLBL D N 6.0000% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.78
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION - BACpl",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.75
+    },
+    {
+      "description": "BK OF AMERICA CORP PERP TT N 6.1250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "BANK AMERICA CORP PERP GLBL 6.6250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.78
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.78
+    },
+    {
+      "description": "MORGAN STANLEY DEP SHS REPST 6.6250% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "PNC FINL SVCS GROUP INC TIER 6.2000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.78
+    },
+    {
+      "description": "WELLS FARGO & CO PERP NT 6.8500% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.78
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2226,
+    "outputTokens": 1019,
+    "estimatedCostUsd": 0.0732
+  }
+}

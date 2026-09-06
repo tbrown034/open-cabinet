@@ -1,0 +1,171 @@
+{
+  "pdfSha256": "08994ec70a46ad69214398f7940a38db8bda7f6b1b289c304cd8f13de361a786",
+  "first": 1,
+  "last": 4,
+  "rowsSha256": "8647798a21904bab3c93595acc81640646d44c4f8351ae23b8151b51ea48ec2d",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T03:26:22.685Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "match"
+    },
+    {
+      "i": 17,
+      "verdict": "match"
+    },
+    {
+      "i": 18,
+      "verdict": "match"
+    },
+    {
+      "i": 19,
+      "verdict": "match"
+    },
+    {
+      "i": 20,
+      "verdict": "match"
+    },
+    {
+      "i": 21,
+      "verdict": "match"
+    },
+    {
+      "i": 22,
+      "verdict": "match"
+    },
+    {
+      "i": 23,
+      "verdict": "match"
+    },
+    {
+      "i": 24,
+      "verdict": "match"
+    },
+    {
+      "i": 25,
+      "verdict": "match"
+    },
+    {
+      "i": 26,
+      "verdict": "match"
+    },
+    {
+      "i": 27,
+      "verdict": "match"
+    },
+    {
+      "i": 28,
+      "verdict": "match"
+    },
+    {
+      "i": 29,
+      "verdict": "match"
+    },
+    {
+      "i": 30,
+      "verdict": "match"
+    },
+    {
+      "i": 31,
+      "verdict": "match"
+    },
+    {
+      "i": 32,
+      "verdict": "match"
+    },
+    {
+      "i": 33,
+      "verdict": "match"
+    },
+    {
+      "i": 34,
+      "verdict": "match"
+    },
+    {
+      "i": 35,
+      "verdict": "match"
+    },
+    {
+      "i": 36,
+      "verdict": "match"
+    },
+    {
+      "i": 37,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 10899,
+    "outputTokens": 426,
+    "estimatedCostUsd": 0.0244
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"match\"},{\"i\":17,\"verdict\":\"match\"},{\"i\":18,\"verdict\":\"match\"},{\"i\":19,\"verdict\":\"match\"},{\"i\":20,\"verdict\":\"match\"},{\"i\":21,\"verdict\":\"match\"},{\"i\":22,\"verdict\":\"match\"},{\"i\":23,\"verdict\":\"match\"},{\"i\":24,\"verdict\":\"match\"},{\"i\":25,\"verdict\":\"match\"},{\"i\":26,\"verdict\":\"match\"},{\"i\":27,\"verdict\":\"match\"},{\"i\":28,\"verdict\":\"match\"},{\"i\":29,\"verdict\":\"match\"},{\"i\":30,\"verdict\":\"match\"},{\"i\":31,\"verdict\":\"match\"},{\"i\":32,\"verdict\":\"match\"},{\"i\":33,\"verdict\":\"match\"},{\"i\":34,\"verdict\":\"match\"},{\"i\":35,\"verdict\":\"match\"},{\"i\":36,\"verdict\":\"match\"},{\"i\":37,\"verdict\":\"match\"}],\"missing\":[]}"
+}

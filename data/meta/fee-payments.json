@@ -20,9 +20,10 @@
       "filingLabel": "Trump 2026-05-08 278T part 1",
       "pdfUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf",
       "annotationRaw": "Comments of Rovlcwln Officials:\n\nFiler paid late fee - HAJ (5/13/26)\n\nOGE RECEIVED 5/12/2026",
-      "annotationCleaned": "Filer paid late fee. Reviewer initials HAJ, dated 5/13/2026. (OCR mangled the section header 'Comments of Reviewing Officials' as 'Rovlcwln Officials'; the fee-payment sentence itself extracted cleanly.)",
+      "annotationCleaned": "Filer paid late fee. Reviewer initials HAJ, dated 5/13/2026.",
       "reviewerDate": "2026-05-13",
-      "outcome": "paid"
+      "outcome": "paid",
+      "extractionNote": "Internal: OCR read the section header 'Comments of Reviewing Officials' as 'Rovlcwln Officials'; the fee sentence extracted cleanly. Not rendered."
     },
     {
       "officialSlug": "phelan-john",
@@ -41,7 +42,7 @@
   "unscannable": [],
   "counts": {
     "pdfsScanned": 43,
-    "note": "43 deduplicated whole-filing PDFs scanned (out of 164 total .pdf files in data/pdfs/; the other 121 are page-chunk copies of 5 of these 43 filings — all Trump filings — and were not scanned separately to avoid double-counting).",
+    "note": "43 deduplicated whole-filing PDFs scanned (out of 164 total .pdf files in data/pdfs/; the other 121 are page-chunk copies of 5 of these 43 filings \u2014 all Trump filings \u2014 and were not scanned separately to avoid double-counting).",
     "filingsDeduped": 43,
     "paymentHits": 2,
     "uncertainHits": 1,

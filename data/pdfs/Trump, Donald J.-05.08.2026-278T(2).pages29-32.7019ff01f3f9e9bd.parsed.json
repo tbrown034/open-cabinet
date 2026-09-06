@@ -1,0 +1,1208 @@
+{
+  "key": "7019ff01f3f9e9bd",
+  "pdfSha256": "00e56352e83731329841caedaa09328cd87ed02ec235c07058a3b351407479be",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
+  "chunk": {
+    "first": 29,
+    "last": 32
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T03:27:20.067Z",
+  "transactions": [
+    {
+      "description": "CUMMINS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MARTIN MARIETTA MATERIALS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "DATADOG INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TELEDYNE TECHNOLOGIES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GENERAC HLDGS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "FRANKLIN RESOURCES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CARRIER GLOBAL CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AMER EXPRESS CO UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CATERPILLAR INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "NORFOLK STHN CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TE CONNECTIVITY PLC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "STEEL DYNAMICS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOEING COMPANY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WALT DISNEY CO (HOLDING CO) DISNEY COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MORGAN STANLEY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "KIMBERLY CLARK CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WALMART INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TARGET CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "NUCOR CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TRUIST FINL CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CISCO SYSTEMS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "NTHN TRUST CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EVERGY INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BANK OF AMER CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ARCH CAPITAL GROUP LTD /BERMUDA/ UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ADVANCED MICRO DEVICES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BIO TECHNE CORP COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MERCK & CO INC COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PAYCHEX INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ANALOG DEVICES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PNC FINANCIAL SERVICES GROUP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "STATE STREET CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PHILLIPS 66 UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AMERIPRISE FINANCIAL INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "US BANCORP DEL (NEW) UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WELLTOWER INC REIT UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TARGA RESOURCES CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AMEREN CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ALLSTATE CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "FEDEX CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "DIAMONDBACK ENERGY INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "IDEXX LABS UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SEAGATE TECHNOLOGY HLDGS UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "VENTAS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AGILENT TECHNOLOGIES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EXXON MOBIL CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SCHWAB CHARLES CORP NEW UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MOTOROLA SOLUTIONS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EQUINIX INC REIT UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "IQVIA HLDGS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "FIDELITY NATL INFORMATION SVCS UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GALLAGHER ARTHUR J & CO UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "XYLEM INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PEPSICO INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "Meta Platforms, Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GILEAD SCIENCES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "T-MOBILE US INC COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BERKSHIRE HATHAWAY INC NEW CL B UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "COINBASE GLOBAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "STRYKER CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "VALERO ENERGY CORP NEW UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "OCCIDENTAL PETROLEUM CRP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "DELL TECHNOLOGIES INC CL C UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LIFE TIME GROUP HLDGS IN",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WSTN DIGITAL CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WORKDAY INC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EOG RESOURCES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WALT DISNEY CO (HOLDING CO) DISNEY COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PARKER HANNIFIN CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HIGHWOODS PPTYS INC REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "COSTAR GROUP INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SBA COMMUNICATIONS CORP NEW REIT UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "WALKER & DUNLOP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "QUALCOMM INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ALPHABET INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CINEMARK HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MICROCHIP TECHNOLOGY INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "DIODES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "QUANTA SERVICES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GIBRALTAR INDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ASBURY AUTOMOTIVE GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ABBOTT LABS UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "UNITEDHEALTH GROUP INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "INSPIRE MED SYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "QNITY ELECTRONICS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HAWAIIAN ELEC INDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AMPHENOL CORP NEW CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GE VERNOVA LLC COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MGE ENERGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "RYMAN HOSPITALITY PPTYS REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ADT INC DEL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EXTREME NETWORKS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "J & J SNACK FOODS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ZOOMINFO TECHNOLOGIES IN",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "IAC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "KKR REAL ESTATE FIN TR I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "COCA COLA CO COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ARBOR RLTY TR INC REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CATALYST PHARMACEUTICALS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRINKER INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CERTARA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LOWES COMPANIES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SALESFORCE, INC. UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CME GROUP INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LINDE PLC NEW EUR UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ABBVIE INC COM UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HA SUSTAINABLE INFRA REI",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EXPEDITORS INTL WASH INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "SOUTHERN CO UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "OSI SYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GENERAL MOTORS CO UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "HP INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "GOOSEHEAD INS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PALANTIR TECHNOLOGIES INC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "YUM! BRANDS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PALO ALTO NETWORKS INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "EVERGY INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CONS EDISON CO (HOLDING CO) UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "LOCKHEED MARTIN CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "NISOURCE INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "FORTINET INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "CONSTELLATION ENERGY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "MUELLER WATER PRODUC CLASS SERIES A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "UBER TECHNOLOGIES INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ENPHASE ENERGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "VERISIGN INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "ASGN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "AON PLC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 13172,
+    "outputTokens": 7576,
+    "estimatedCostUsd": 0.1532
+  }
+}
