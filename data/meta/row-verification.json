@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T22:24:51.112Z",
+  "generatedAt": "2026-09-06T22:27:09.308Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
       "checked": 11318,
-      "human_verified": 75,
+      "human_verified": 77,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 14,
-      "disputed": 14
+      "disputed": 12
     },
     "byScore": {
-      "0": 14,
+      "0": 12,
       "1": 14,
       "2": 93,
-      "3": 11393
+      "3": 11395
     }
   },
   "rows": {
@@ -3950,10 +3950,10 @@
       "id": "250d188506ca548fce388dcc",
       "slug": "chavez-deremer-lori",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "c79938c527be2c0ed1abc25f": {
       "id": "c79938c527be2c0ed1abc25f",
@@ -4562,10 +4562,10 @@
       "id": "3bc22a74370091b76c61878f",
       "slug": "chavez-deremer-lori",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "52e4ef77011d6a4fe46880db": {
       "id": "52e4ef77011d6a4fe46880db",
