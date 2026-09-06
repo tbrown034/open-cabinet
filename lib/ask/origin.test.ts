@@ -91,3 +91,26 @@ describe("item 9: client identity", () => {
   });
 });
 
+describe("preview deployments", () => {
+  it("trusts only the deployment's own Vercel hosts", () => {
+    const hosts = allowedAskHosts({
+      NODE_ENV: "production",
+      VERCEL_ENV: "preview",
+      VERCEL_URL: "open-cabinet-abc123-tbrown034s-projects.vercel.app",
+      VERCEL_BRANCH_URL: "open-cabinet-git-ask-the-record-tbrown034s-projects.vercel.app",
+    } as NodeJS.ProcessEnv);
+    expect(hosts.has("open-cabinet-abc123-tbrown034s-projects.vercel.app")).toBe(true);
+    expect(hosts.has("open-cabinet-git-ask-the-record-tbrown034s-projects.vercel.app")).toBe(true);
+    expect(hosts.has("attacker.vercel.app")).toBe(false);
+    expect(hosts.has("localhost")).toBe(false);
+  });
+
+  it("ignores Vercel hosts in production", () => {
+    const hosts = allowedAskHosts({
+      NODE_ENV: "production",
+      VERCEL_ENV: "production",
+      VERCEL_URL: "open-cabinet-abc123-tbrown034s-projects.vercel.app",
+    } as NodeJS.ProcessEnv);
+    expect(hosts.has("open-cabinet-abc123-tbrown034s-projects.vercel.app")).toBe(false);
+  });
+});

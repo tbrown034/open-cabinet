@@ -23,6 +23,13 @@ export function allowedAskHosts(
     }
   }
   if (env.NODE_ENV !== "production") hosts.push("localhost", "127.0.0.1");
+  // A Vercel preview serves from its own generated hostnames. Only that
+  // deployment's own hosts are trusted, never *.vercel.app as a whole.
+  if (env.VERCEL_ENV === "preview") {
+    for (const h of [env.VERCEL_URL, env.VERCEL_BRANCH_URL]) {
+      if (h) hosts.push(h);
+    }
+  }
   return new Set(hosts);
 }
 
