@@ -53,6 +53,7 @@ interface AskResult {
   topOfficials?: RankedOfficial[];
   topAssets?: RankedAsset[];
   byMonth?: Array<{ month: string; count: number }>;
+  lateShare?: { late: number; total: number; percent: number; display: string };
   firstDate?: string | null;
   lastDate?: string | null;
 }
@@ -238,6 +239,33 @@ export default function AskTheData({
                     </td>
                     <td className="px-3 py-2 text-right font-[family-name:var(--font-dm-mono)] tabular-nums text-neutral-900">
                       {result.totals.unknownCount.toLocaleString()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
+
+          {result?.lateShare && result.lateShare.total > 0 && (
+            <div className="mt-4 border border-neutral-200">
+              <table className="w-full text-sm">
+                <tbody>
+                  <tr className="border-b border-neutral-100">
+                    <td className="px-3 py-2 text-neutral-500">Flagged late</td>
+                    <td className="px-3 py-2 text-right font-[family-name:var(--font-dm-mono)] tabular-nums text-amber-700">
+                      {result.lateShare.late.toLocaleString()}
+                    </td>
+                  </tr>
+                  <tr className="border-b border-neutral-100">
+                    <td className="px-3 py-2 text-neutral-500">Verified rows in the query</td>
+                    <td className="px-3 py-2 text-right font-[family-name:var(--font-dm-mono)] tabular-nums text-neutral-900">
+                      {result.lateShare.total.toLocaleString()}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-3 py-2 text-neutral-500">Share</td>
+                    <td className="px-3 py-2 text-right font-[family-name:var(--font-dm-mono)] tabular-nums text-neutral-900">
+                      {result.lateShare.percent}%
                     </td>
                   </tr>
                 </tbody>

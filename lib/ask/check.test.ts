@@ -2,12 +2,14 @@ import { describe, it, expect } from "vitest";
 import {
   extractNumberTokens,
   canonicalizeToken,
+  extractDateTokens,
   checkAnswerNumbers,
   checkAnswerLanguage,
   templateAnswer,
   pendingAnswer,
+  outOfScopeAnswer,
 } from "./check";
-import { stripDashes } from "./decline";
+import { stripDashes, declineText, DECLINE_CATEGORIES } from "./decline";
 import type { ExecuteResult } from "./execute";
 
 const COUNT_RESULT: ExecuteResult = {
@@ -42,24 +44,19 @@ describe("extractNumberTokens", () => {
     ]);
   });
 
-  it("finds the parts of an ISO date", () => {
-    expect(extractNumberTokens("between 2025-01-01 and 2025-06-30")).toEqual([
-      "2025",
-      "01",
-      "01",
-      "2025",
-      "06",
-      "30",
+  it("does not treat a date's digits as figures", () => {
+    // A date is matched whole, elsewhere. Splitting it into 2025, 01 and 01
+    // let a result containing one date vouch for unrelated counts.
+    expect(extractNumberTokens("between 2025-01-01 and 2025-06-30")).toEqual([]);
+    expect(extractDateTokens("between 2025-01-01 and 2025-06-30")).toEqual([
+      "2025-01-01",
+      "2025-06-30",
     ]);
   });
 
   it("does not swallow the comma after a figure", () => {
-    expect(extractNumberTokens("On 2026-12-31, the count was 227.")).toEqual([
-      "2026",
-      "12",
-      "31",
-      "227",
-    ]);
+    expect(extractNumberTokens("On 2026-12-31, the count was 227.")).toEqual(["227"]);
+    expect(extractNumberTokens("The count was 1,364, up from 41.")).toEqual(["1,364", "41"]);
   });
 
   it("returns nothing for a sentence with no figures", () => {
@@ -185,7 +182,7 @@ describe("checkAnswerLanguage", () => {
       ["This is the complete verified set.", "complete"],
       ["The entire verified record shows 41.", "entire"],
       ["Disclosure records show 299 verified trades.", "disclosure records show"],
-      ["The most recent verified rows are listed.", "most recent"],
+      ["The most recent verified rows are listed.", "recent"],
     ] as const) {
       const check = checkAnswerLanguage(text);
       expect(check.ok, text).toBe(false);
@@ -244,5 +241,262 @@ describe("pendingAnswer", () => {
       notYetChecked: 3,
     });
     expect(answer).toContain("5 rows matching this query are still being checked");
+  });
+});
+
+describe("decline text", () => {
+  it("has no dash of any kind in any category", () => {
+    for (const category of DECLINE_CATEGORIES) {
+      const text = declineText(category);
+      expect(text, category).not.toMatch(/[—–]/);
+      expect(text.length, category).toBeGreaterThan(20);
+    }
+  });
+
+  it("explains why an average is unsupported", () => {
+    expect(declineText("unsupported_computation")).toBe(
+      "This box counts, totals and lists verified trades. It does not compute averages " +
+        "or medians because filings disclose ranges, not amounts."
+    );
+  });
+
+  it("asks for explicit dates rather than guessing a period", () => {
+    expect(declineText("needs_date_range")).toContain("2026-01-01 to 2026-03-31");
+  });
+
+  it("falls back to the general sentence for an unknown category", () => {
+    expect(declineText("nonsense")).toBe(declineText("other"));
+  });
+});
+
+describe("templateAnswer for late_share", () => {
+  const LATE_RESULT: ExecuteResult = {
+    aggregate: "late_share",
+    matchedRows: 299,
+    lateShare: {
+      late: 41,
+      total: 299,
+      percent: 13.7,
+      display: "41 of 299 verified trades (13.7%) were flagged late",
+    },
+    numbers: [41, 299],
+    displayStrings: ["41", "299", "13.7%", "41 of 299 verified trades (13.7%) were flagged late"],
+  };
+
+  it("uses the executor's own arithmetic verbatim", () => {
+    expect(
+      templateAnswer(
+        { filters: {}, aggregate: "late_share" },
+        "Trades, measured for the share flagged late.",
+        LATE_RESULT
+      )
+    ).toBe(
+      "Trades, measured for the share flagged late. 41 of 299 verified trades (13.7%) were flagged late."
+    );
+  });
+
+  it("passes both of its own checks", () => {
+    const answer = templateAnswer(
+      { filters: {}, aggregate: "late_share" },
+      "Trades, measured for the share flagged late.",
+      LATE_RESULT
+    );
+    expect(checkAnswerNumbers(answer, LATE_RESULT).ok).toBe(true);
+    expect(checkAnswerLanguage(answer).ok).toBe(true);
+  });
+
+  it("rejects a percentage the executor did not compute", () => {
+    const check = checkAnswerNumbers("About 14% of verified trades were late.", LATE_RESULT);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toEqual(["14%"]);
+  });
+});
+
+describe("word numbers", () => {
+  const RANKED: ExecuteResult = {
+    aggregate: "top_officials",
+    matchedRows: 11,
+    shownRows: 3,
+    groupCount: 3,
+    numbers: [11, 3, 8, 2, 1],
+    displayStrings: ["11", "3", "8", "2", "1"],
+  };
+
+  it("accepts a spelled-out count the result vouches for", () => {
+    // Three officials, and groupCount is 3.
+    expect(checkAnswerNumbers("11 verified trades involved three officials.", RANKED).ok).toBe(true);
+  });
+
+  it("rejects a spelled-out count the result does not vouch for", () => {
+    // The live failure mode: the model counts the rows it can see in a
+    // truncated ranking and states that as the number of officials.
+    const check = checkAnswerNumbers("11 verified trades involved five officials.", RANKED);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toEqual(["five"]);
+  });
+
+  it("leaves 'one' alone, because it is usually a pronoun", () => {
+    expect(checkAnswerNumbers("Only one of them was late.", RANKED).ok).toBe(true);
+  });
+});
+
+describe("recency language", () => {
+  it("rejects the phrasing that slipped through live testing", () => {
+    const check = checkAnswerLanguage(
+      "122 verified trades, including sales dated as recently as June 23, 2026."
+    );
+    expect(check.ok).toBe(false);
+    expect(check.problems).toContain("recent");
+  });
+
+  it("rejects latest, newest and oldest", () => {
+    for (const word of ["latest", "newest", "oldest"]) {
+      const check = checkAnswerLanguage(`The ${word} verified row was in June.`);
+      expect(check.ok, word).toBe(false);
+      expect(check.problems, word).toContain(word);
+    }
+  });
+});
+
+describe("templateAnswer for a comparison", () => {
+  const COMPARISON: ExecuteResult = {
+    aggregate: "top_officials",
+    matchedRows: 234,
+    shownRows: 1,
+    groupCount: 1,
+    topOfficials: [
+      {
+        name: "Christopher Wright",
+        slug: "wright-christopher",
+        count: 234,
+        estimate: 91_183_500,
+        estimateDisplay: "$91,183,500",
+      },
+    ],
+    missingOfficials: ["Scott Bessent"],
+    numbers: [234, 91_183_500, 1],
+    displayStrings: ["234", "$91,183,500", "1"],
+  };
+
+  it("states the zero side, which is half of what was asked", () => {
+    const answer = templateAnswer(
+      { filters: {}, aggregate: "top_officials" },
+      "Purchase rows by Scott Bessent and Christopher Wright, ranked by official.",
+      COMPARISON
+    );
+    expect(answer).toBe(
+      "Purchase rows by Scott Bessent and Christopher Wright, ranked by official. " +
+        "Christopher Wright leads with 234 verified rows estimated at $91,183,500. " +
+        "Scott Bessent has no verified row matching it."
+    );
+    expect(checkAnswerNumbers(answer, COMPARISON).ok).toBe(true);
+    expect(checkAnswerLanguage(answer).ok).toBe(true);
+  });
+
+  it("handles a comparison where nobody named has a verified row", () => {
+    const answer = templateAnswer(
+      { filters: {}, aggregate: "top_officials" },
+      "Purchase rows by A and B, ranked by official.",
+      { ...COMPARISON, topOfficials: [], missingOfficials: ["A", "B"] }
+    );
+    expect(answer).toContain("None of them has a verified row");
+  });
+});
+
+// Every case below is a defect Codex reproduced against commit 9721812.
+describe("Codex findings, Sept. 6", () => {
+  const R: ExecuteResult = {
+    aggregate: "sum_estimate",
+    matchedRows: 31,
+    shownRows: 1,
+    numbers: [31, 4_500_000, 28, 3, 1],
+    displayStrings: [
+      "31",
+      "$4,500,000",
+      "$4.5M",
+      "$4.5 million",
+      "28",
+      "3",
+      "1",
+      "2025-10-21",
+      "Oct. 21, 2025",
+    ],
+  };
+
+  it("rejects a quantity spelled out with no numeral", () => {
+    const check = checkAnswerNumbers("There were one billion verified trades.", R);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toContain("a quantity written as words");
+  });
+
+  it("rejects a vague magnitude", () => {
+    expect(checkAnswerNumbers("Hundreds of verified trades.", R).ok).toBe(false);
+  });
+
+  it("rejects a compact figure stripped of its suffix", () => {
+    expect(checkAnswerNumbers("The verified trades estimate to $4.5.", R).ok).toBe(false);
+  });
+
+  it("rejects a thousandfold magnitude error", () => {
+    const check = checkAnswerNumbers("The verified trades estimate to $4.5B.", R);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toEqual(["$4.5B"]);
+  });
+
+  it("still accepts the compact figure the executor produced", () => {
+    expect(checkAnswerNumbers("The verified trades estimate to $4.5M.", R).ok).toBe(true);
+    expect(checkAnswerNumbers("The verified trades estimate to $4.5 million.", R).ok).toBe(true);
+  });
+
+  it("does not let a date's year authorize a count", () => {
+    const check = checkAnswerNumbers("2026 verified trades were found.", R);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toEqual(["2026"]);
+  });
+
+  it("does not let a date's month authorize a count", () => {
+    // The result carries Oct. 21, 2025 and lists one row.
+    const check = checkAnswerNumbers("10 verified rows shown.", R);
+    expect(check.ok).toBe(false);
+    expect(check.unmatched).toEqual(["10"]);
+  });
+
+  it("accepts a date the result actually carries, and refuses one it does not", () => {
+    expect(checkAnswerNumbers("31 verified rows, the earliest on Oct. 21, 2025.", R).ok).toBe(true);
+    const wrong = checkAnswerNumbers("31 verified rows, the earliest on Oct. 22, 2025.", R);
+    expect(wrong.ok).toBe(false);
+    expect(wrong.unmatched).toEqual(["Oct. 22, 2025"]);
+  });
+
+  it("accepts a correct count of what is shown", () => {
+    expect(checkAnswerNumbers("1 verified result is shown.", R).ok).toBe(true);
+  });
+
+  it("has no category for declaring a person absent", () => {
+    // Only the resolver, which holds the roster, may say a name is untracked.
+    expect(DECLINE_CATEGORIES).not.toContain("unknown_person");
+  });
+});
+
+describe("outOfScopeAnswer", () => {
+  it("says a holdover is out of scope rather than reporting zero", () => {
+    expect(outOfScopeAnswer(["Deanne Criswell"])).toBe(
+      "Deanne Criswell is a prior-administration holdover. Open Cabinet keeps their filings " +
+        "on the site but out of current-roster totals, so this box does not query them. " +
+        "Their pages carry the full record."
+    );
+  });
+
+  it("has no dash", () => {
+    expect(outOfScopeAnswer(["A", "B"])).not.toMatch(/[—–]/);
+  });
+});
+
+describe("stripDashes on templated output", () => {
+  it("cleans a dash a reader's own question carried into the restatement", () => {
+    // descriptionContains echoes the question, so a dash can reach a template.
+    expect(stripDashes('Trades whose description mentions "Bonds—test", counted.')).toBe(
+      'Trades whose description mentions "Bonds, test", counted.'
+    );
   });
 });

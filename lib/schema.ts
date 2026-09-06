@@ -296,3 +296,20 @@ export const emailSends = pgTable(
     index("email_sends_kind_idx").on(table.kind),
   ]
 );
+
+// ── ASK QUOTA ──
+// One row per UTC day, counting questions the "Ask the data" box has sent to
+// a model. The counter lives here rather than in memory because an in-memory
+// cap cannot bound spending: every serverless instance gets its own copy, and
+// a restart resets it, so a scaled-out deployment keeps replenishing the
+// budget (Codex review, Sept. 6, 2026).
+//
+// The route increments this row before either model call and refuses when the
+// new count would pass the cap, so the reservation happens ahead of the spend
+// rather than after it.
+export const askQuota = pgTable("ask_quota", {
+  // The UTC date being counted, "YYYY-MM-DD". One row per day.
+  day: date("day").primaryKey(),
+  count: integer("count").default(0).notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});

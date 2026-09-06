@@ -13,7 +13,12 @@
  * those two lists, so a rounded figure is allowed only when this file produced
  * the rounding.
  */
-import { amountRangeToMin, sumAmountEstimates, amountRangeLabel } from "../amounts";
+import {
+  amountRangeToMin,
+  amountRangeToMax,
+  sumAmountEstimates,
+  amountRangeLabel,
+} from "../amounts";
 import { formatCompactCurrency, formatDate } from "../format";
 import type { PendingRow, PublishedRow, PublishedRowsData } from "../published-rows";
 import type { Aggregate, QueryPlan } from "./plan";
@@ -55,12 +60,29 @@ export interface MonthCount {
   count: number;
 }
 
+export interface LateShare {
+  /** Rows the filer certified as reported late. */
+  late: number;
+  /** Rows the filters matched, the denominator. */
+  total: number;
+  /** Rounded to one decimal place. Computed here, never by a model. */
+  percent: number;
+  /** The sentence fragment, preformatted so no model has to divide. */
+  display: string;
+}
+
 export interface ExecuteResult {
   aggregate: Aggregate;
   /** Rows the filters matched, before any display cap. */
   matchedRows: number;
   /** Rows shown, when the aggregate lists or ranks. */
   shownRows?: number;
+  /**
+   * Distinct groups the ranking found before the limit cut it. A sentence
+   * that says "three officials" needs this figure, not the length of the
+   * truncated list, and the number check will not accept it otherwise.
+   */
+  groupCount?: number;
   count?: number;
   totals?: {
     estimate: number;
@@ -74,6 +96,13 @@ export interface ExecuteResult {
   topOfficials?: RankedOfficial[];
   topAssets?: RankedAsset[];
   byMonth?: MonthCount[];
+  /**
+   * Officials the question named that matched no verified row. On a
+   * comparison this is the answer, not a footnote: "Bessent has none" is
+   * what the reader asked about half of.
+   */
+  missingOfficials?: string[];
+  lateShare?: LateShare;
   firstDate?: string | null;
   lastDate?: string | null;
   /** Every raw figure in this result. */
@@ -112,11 +141,18 @@ export function filterRows(plan: QueryPlan, rows: PublishedRow[]): PublishedRow[
     if (f.dateFrom && row.date < f.dateFrom) return false;
     if (f.dateTo && row.date > f.dateTo) return false;
     if (f.lateOnly && !row.lateFilingFlag) return false;
+    // A filing discloses a band, not a figure, so a dollar bound is a
+    // statement about the band: the whole disclosed range has to sit inside
+    // the window. An unknown amount clears no bound, and an open-ended range
+    // has no ceiling to test, so both drop out when a ceiling is set.
     if (f.amountAtLeast !== undefined) {
-      // An unknown amount cannot clear a dollar floor, so it is excluded here
-      // the same way it is excluded from every total.
       if (row.amount === null) return false;
       if (amountRangeToMin(row.amount) < f.amountAtLeast) return false;
+    }
+    if (f.amountAtMost !== undefined) {
+      if (row.amount === null) return false;
+      const max = amountRangeToMax(row.amount);
+      if (max === null || max > f.amountAtMost) return false;
     }
     return true;
   });
@@ -203,6 +239,7 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
   if (plan.filters.dateFrom) addDate(plan.filters.dateFrom);
   if (plan.filters.dateTo) addDate(plan.filters.dateTo);
   if (plan.filters.amountAtLeast !== undefined) addMoney(plan.filters.amountAtLeast);
+  if (plan.filters.amountAtMost !== undefined) addMoney(plan.filters.amountAtMost);
 
   const limit = Math.min(
     plan.limit ??
@@ -265,6 +302,15 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
         .slice(0, limit);
       result.topOfficials = ranked;
       result.shownRows = ranked.length;
+      result.groupCount = groups.size;
+      const named = plan.filters.officials ?? [];
+      if (named.length > 1) {
+        const nameBySlug = new Map(data.officials.map((o) => [o.slug, o.name]));
+        result.missingOfficials = named
+          .filter((slug) => !groups.has(slug))
+          .map((slug) => nameBySlug.get(slug) ?? slug);
+      }
+      addNumber(groups.size);
       for (const r of ranked) {
         addNumber(r.count);
         addMoney(r.estimate);
@@ -298,6 +344,8 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
         .slice(0, limit);
       result.topAssets = ranked;
       result.shownRows = ranked.length;
+      result.groupCount = groups.size;
+      addNumber(groups.size);
       for (const r of ranked) {
         addNumber(r.count);
         addMoney(r.estimate);
@@ -314,10 +362,26 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
         .map(([month, count]) => ({ month, count }))
         .sort((a, b) => a.month.localeCompare(b.month));
       result.byMonth = byMonth;
+      result.groupCount = byMonth.length;
+      addNumber(byMonth.length);
       for (const m of byMonth) {
         addNumber(m.count);
         displayStrings.add(m.month);
       }
+      break;
+    }
+    case "late_share": {
+      const late = matched.filter((r) => r.lateFilingFlag).length;
+      const total = matched.length;
+      const percent = total === 0 ? 0 : Math.round((late / total) * 1000) / 10;
+      const display =
+        `${late.toLocaleString("en-US")} of ${total.toLocaleString("en-US")} verified ` +
+        `trades (${percent}%) were flagged late`;
+      result.lateShare = { late, total, percent, display };
+      addNumber(late);
+      addNumber(total);
+      displayStrings.add(`${percent}%`);
+      displayStrings.add(display);
       break;
     }
     case "first_last_dates": {
@@ -329,6 +393,12 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       break;
     }
   }
+
+  // Every count a sentence could legitimately cite has to be in the vouched
+  // set, including how many rows are on screen (Codex, Sept. 6: a correct
+  // "2 verified results shown" was being refused).
+  if (result.shownRows !== undefined) addNumber(result.shownRows);
+  if (result.groupCount !== undefined) addNumber(result.groupCount);
 
   result.numbers = Array.from(numbers);
   result.displayStrings = Array.from(displayStrings);

@@ -29,6 +29,7 @@ export const AGGREGATES = [
   "top_assets",
   "by_month",
   "first_last_dates",
+  "late_share",
 ] as const;
 
 export type Aggregate = (typeof AGGREGATES)[number];
@@ -44,6 +45,12 @@ export const TRANSACTION_TYPES: readonly TransactionType[] = [
 
 export const MAX_LIMIT = 25;
 
+/**
+ * A comparison across a handful of named officials is a ranking. Past five
+ * it is a table nobody asked for, and the box declines instead of guessing.
+ */
+export const MAX_OFFICIALS = 5;
+
 export interface QueryPlanFilters {
   /** Official slugs, after resolution. The model emits names; code resolves. */
   officials?: string[];
@@ -55,6 +62,13 @@ export interface QueryPlanFilters {
   lateOnly?: boolean;
   /** Keep rows whose disclosed range floor is at least this many dollars. */
   amountAtLeast?: number;
+  /**
+   * Keep rows whose disclosed range ceiling is at most this many dollars.
+   * With amountAtLeast this reads as "the whole disclosed range sits inside
+   * the window," which is the only reading a range can support. An
+   * open-ended range has no ceiling and is excluded whenever this is set.
+   */
+  amountAtMost?: number;
 }
 
 export interface QueryPlan {
@@ -76,6 +90,7 @@ const FILTER_KEYS = new Set([
   "dateTo",
   "lateOnly",
   "amountAtLeast",
+  "amountAtMost",
 ]);
 
 const PLAN_KEYS = new Set(["filters", "aggregate", "limit"]);
@@ -195,13 +210,21 @@ export function parseQueryPlan(input: unknown): PlanParse {
         filters.lateOnly = true;
       }
     }
-    if (rawFilters.amountAtLeast !== undefined) {
-      const value = rawFilters.amountAtLeast;
+    for (const field of ["amountAtLeast", "amountAtMost"] as const) {
+      const value = rawFilters[field];
+      if (value === undefined) continue;
       if (typeof value !== "number" || !Number.isFinite(value) || value < 0) {
-        errors.push("amountAtLeast must be a number of dollars, zero or more");
+        errors.push(`${field} must be a number of dollars, zero or more`);
       } else {
-        filters.amountAtLeast = value;
+        filters[field] = value;
       }
+    }
+    if (
+      filters.amountAtLeast !== undefined &&
+      filters.amountAtMost !== undefined &&
+      filters.amountAtLeast > filters.amountAtMost
+    ) {
+      errors.push("amountAtLeast must not be above amountAtMost");
     }
   }
 
@@ -220,7 +243,8 @@ export function hasNoFilters(plan: QueryPlan): boolean {
     !f.dateFrom &&
     !f.dateTo &&
     !f.lateOnly &&
-    f.amountAtLeast === undefined
+    f.amountAtLeast === undefined &&
+    f.amountAtMost === undefined
   );
 }
 
@@ -233,6 +257,13 @@ export function hasNoFilters(plan: QueryPlan): boolean {
 export function normalizePlan(plan: QueryPlan): QueryPlan {
   if (plan.aggregate === "list" && hasNoFilters(plan)) {
     return { ...plan, aggregate: "count", limit: undefined };
+  }
+  // A share of late filings needs the whole set as its denominator. A
+  // lateOnly filter would make the answer 100% by construction, so it goes.
+  if (plan.aggregate === "late_share" && plan.filters.lateOnly) {
+    const { lateOnly, ...rest } = plan.filters;
+    void lateOnly;
+    return { ...plan, filters: rest };
   }
   return plan;
 }
@@ -373,12 +404,19 @@ const AGGREGATE_PHRASE: Record<Aggregate, string> = {
   top_assets: "ranked by asset",
   by_month: "counted by month",
   first_last_dates: "reduced to the first and last dates",
+  late_share: "measured for the share flagged late",
 };
 
 /**
  * Restate the plan in a sentence, built in code from the validated fields.
  * The model never writes this line, so a reader can always see what was run.
  */
+function joinNames(names: string[]): string {
+  if (names.length <= 1) return names[0] ?? "";
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
 export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string {
   const nameBySlug = new Map(officials.map((o) => [o.slug, o.name]));
   const f = plan.filters;
@@ -388,7 +426,8 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   parts.push(f.lateOnly ? `${typeText} flagged late` : typeText);
 
   if (f.officials && f.officials.length > 0) {
-    parts.push(`by ${f.officials.map((s) => nameBySlug.get(s) ?? s).join(", ")}`);
+    const names = f.officials.map((s) => nameBySlug.get(s) ?? s);
+    parts.push(`by ${joinNames(names)}`);
   }
   if (f.tickers && f.tickers.length > 0) {
     parts.push(`in ${f.tickers.join(", ")}`);
@@ -396,8 +435,17 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   if (f.descriptionContains) {
     parts.push(`whose description mentions "${f.descriptionContains}"`);
   }
-  if (f.amountAtLeast !== undefined) {
-    parts.push(`with a disclosed range starting at $${f.amountAtLeast.toLocaleString("en-US")} or more`);
+  // Both bounds are named, and the wording says what a bound means against a
+  // range: the disclosed range has to sit inside the window, not overlap it.
+  const dollars = (n: number) => `$${n.toLocaleString("en-US")}`;
+  if (f.amountAtLeast !== undefined && f.amountAtMost !== undefined) {
+    parts.push(
+      `whose disclosed range falls entirely between ${dollars(f.amountAtLeast)} and ${dollars(f.amountAtMost)}`
+    );
+  } else if (f.amountAtLeast !== undefined) {
+    parts.push(`whose disclosed range starts at ${dollars(f.amountAtLeast)} or more`);
+  } else if (f.amountAtMost !== undefined) {
+    parts.push(`whose disclosed range tops out at ${dollars(f.amountAtMost)} or less`);
   }
   if (f.dateFrom && f.dateTo) parts.push(`between ${f.dateFrom} and ${f.dateTo}`);
   else if (f.dateFrom) parts.push(`on or after ${f.dateFrom}`);

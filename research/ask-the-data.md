@@ -65,8 +65,8 @@ the number.
 ## What the AI is allowed to do
 
 - Choose filters: officials, symbols, a description substring, transaction
-  types, a date range, late-only, a dollar floor.
-- Choose one aggregate from a fixed list of seven.
+  types, a date range, late-only, and a dollar floor or ceiling.
+- Choose one aggregate from a fixed list of eight.
 - Decline.
 - Write two sentences about a result it is shown.
 
@@ -85,7 +85,13 @@ the number.
   the response.
 - Widen a query. On an official's page the plan is pre-filtered to that slug
   after validation, so the model cannot reach past the person whose page it is.
-- Say a number the executor did not produce.
+- Say a number the executor did not produce, in digits or spelled out. "Three
+  officials", "one billion" and "hundreds of" are checked the same as digits.
+- Say a date the result does not carry.
+- Say a person is not tracked. Only the resolver, which holds the roster, makes
+  an absence claim.
+- Approximate. If any part of a question cannot be represented in the plan, the
+  model declines rather than dropping the part it cannot express.
 
 ## The numbers check
 
@@ -99,6 +105,62 @@ A figure the code never produced fails. So does a share, a percentage or a
 comparison the query never asked for. On a failure the response still answers
 the question; it just answers in a sentence built by `templateAnswer`.
 
+## Answering a different question is the failure that matters
+
+The second round of adversarial testing found one failure repeated in five
+shapes. The plan could not express the question, so the box quietly answered a
+narrower one and looked confident doing it.
+
+| Asked | Was answered as |
+| --- | --- |
+| What percentage were late | A plain count |
+| Average trade size | A sum |
+| Compare two officials | One official |
+| What did he buy last week | No date filter at all |
+| Between $250K and $500K | Only the floor |
+
+Each fix is structural, not a nicer prompt. There is now a `late_share`
+aggregate that computes the share in code and hands the phraser a finished
+string. There is an `amountAtMost` filter, and the plain-English restatement
+prints both bounds so a dropped one is visible. The planner is given today's
+date and told to turn relative periods into explicit ones. Averages and medians
+decline with a reason: a filing discloses a range, so there is no figure to
+average. A comparison becomes one ranking with every named official in it, and
+the answer names anyone who turned out to have nothing.
+
+Above all of it, one instruction the planner is given before any other: if any
+part of the question cannot be represented, do not approximate, decline.
+
+## What a review found in the check itself
+
+Codex reviewed this feature on Sept. 6 and found the numbers check was looser
+than it read. Three holes, all of the same shape: a token that looked like a
+figure was matched against something that was not one.
+
+- **Dates were being split into digits.** A result carrying Oct. 21, 2025
+  vouched for 2025, 10 and 21, so "10 verified rows shown" passed on a result
+  that listed one. Dates are now matched whole, against the whole dates the
+  result carries, and removed before anything counts numbers.
+- **Compact money lost its suffix.** "$4.5M" tokenized as "$4.5", which meant
+  a sentence could say "$4.5" or "$4.5B" and pass. K, M and B are part of the
+  token now.
+- **Spelled-out quantities carried no digits at all.** "One billion verified
+  trades" had nothing for the tokenizer to catch. Counts written as words are
+  checked, and any magnitude word a numeral does not account for fails.
+
+Four other findings were about the endpoint rather than the check. The origin
+gate for this route no longer trusts every `*.vercel.app` host, because a paid
+endpoint that any Vercel tenant can call is a budget anyone can spend. Client
+identity for the quota comes from the platform's own forwarded header rather
+than the caller-settable one. A rejected request is no longer recorded, so
+hammering a 429 cannot grow the limiter. And a phrasing call that fails no
+longer discards an answer the code had already computed.
+
+The daily spending cap is still per instance. An in-memory counter cannot
+bound spending across serverless instances or restarts, and a scaled-out
+deployment replenishes it. That is the known limit of this control; the
+durable version belongs on the project's existing database.
+
 ## Rate limits and cost
 
 Thirty questions per hour per hashed IP, and 300 per day across the site. Both
@@ -111,7 +173,7 @@ traffic.
 Two model calls per question. The plan call sends a short system prompt plus
 the roster of names, and the phrase call sends one result payload. At Sonnet
 pricing that is roughly a tenth of a cent per question, so the daily cap is
-well under a dollar a day. The model is set by `ASK_MODEL` and defaults to
+well under a dollar a day. Live runs answer in about three seconds. The model is set by `ASK_MODEL` and defaults to
 `claude-sonnet-5`.
 
 Every question is logged as one JSON line to `data/meta/ask-log.jsonl` when the
@@ -135,6 +197,16 @@ The executor cannot reach them. `getPublishedRows()` filters on verification
 state before any plan runs, so an unverified row is not in the array the query
 touches.
 
+**What if the question is one your query language cannot express?**
+It declines and says which kind of thing it cannot do. That is the rule the
+planner is given first, because the alternative is worse than a refusal: a
+confident answer to a question nobody asked.
+
+**What about an official the site tracks but keeps out of its totals?**
+Prior-administration holdovers resolve by name and then get told they are out
+of scope, with a pointer to their page. Reporting zero for them would read as
+"this person traded nothing," which is a different and false statement.
+
 **What if it picks the wrong person?**
 The resolver only accepts an exact slug, an exact full name, or a last name
 held by exactly one official. Two Smiths return `not_in_data` with both names,
@@ -144,9 +216,12 @@ and the reader picks.
 Coverage, mostly. Most rows are still one model's read, so a question about the
 full record gets an answer about a slice of it. Live testing caught the box
 saying "all 41 disclosed sale transactions" when it meant 41 verified ones, and
-telling a reader Trump was not in a dataset he is the largest official in. Both
-are now blocked in code rather than asked for in a prompt. That is the pattern:
-a prompt is a request, a check is a guarantee.
+telling a reader Trump was not in a dataset he is the largest official in. A
+code review then caught the numbers check itself passing figures it should
+have refused. All of it is now blocked in code rather than asked for in a
+prompt. That is the pattern, and it is the honest summary of building this:
+every guarantee that survived was one a program enforced. Every rule that only
+lived in a prompt eventually broke.
 
 **Would you publish this?**
 As it stands, next to the excluded counts, yes. Without them, no.

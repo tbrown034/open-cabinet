@@ -82,6 +82,12 @@ export interface PublishedRowsData {
   officials: OfficialRef[];
   /** Every symbol present in the published rows, sorted. */
   tickers: string[];
+  /**
+   * Symbols in any row the site holds, verified or not. Resolution uses this
+   * so a question about a symbol only pending rows mention reaches the
+   * pending count instead of dying at the resolver (Codex, Sept. 6).
+   */
+  allTickers: string[];
 }
 
 /** A row is answerable only when an independent check agreed with it. */
@@ -115,6 +121,7 @@ async function build(): Promise<PublishedRowsData> {
   };
   const publishedBySlug = new Map<string, number>();
   const tickers = new Set<string>();
+  const allTickers = new Set<string>();
 
   for (const official of officials) {
     const ids = recordIdsFor(official.transactions);
@@ -123,6 +130,7 @@ async function build(): Promise<PublishedRowsData> {
       const record = verification?.rows[id] ?? null;
       const resolved = resolveTicker(tx.description, tx.ticker ?? null);
       const ticker = resolved.ticker ? resolveSymbol(resolved.ticker) : null;
+      if (ticker) allTickers.add(ticker);
 
       const base: PublishedRow = {
         id,
@@ -172,5 +180,12 @@ async function build(): Promise<PublishedRowsData> {
   }));
   roster.sort((a, b) => a.name.localeCompare(b.name));
 
-  return { rows, pendingRows, summary, officials: roster, tickers: Array.from(tickers).sort() };
+  return {
+    rows,
+    pendingRows,
+    summary,
+    officials: roster,
+    tickers: Array.from(tickers).sort(),
+    allTickers: Array.from(allTickers).sort(),
+  };
 }

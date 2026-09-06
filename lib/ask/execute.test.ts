@@ -69,6 +69,7 @@ const DATA: PublishedRowsData = {
     { slug: "burgum-doug", name: "Doug Burgum", filedName: "Burgum, Doug", title: "Secretary of the Interior", agency: "Interior" },
   ],
   tickers: ["AAPL", "NVDA"],
+  allTickers: ["AAPL", "DJT", "NVDA"],
 };
 
 const plan = (p: Partial<QueryPlan>): QueryPlan => ({
@@ -228,5 +229,97 @@ describe("countPending", () => {
       underReview: 0,
       notYetChecked: 0,
     });
+  });
+});
+
+describe("late_share", () => {
+  it("computes the share in code and preformats the sentence fragment", () => {
+    // One of four fixture rows carries the late flag.
+    const result = execute(plan({ aggregate: "late_share" }), DATA);
+    expect(result.lateShare).toEqual({
+      late: 1,
+      total: 4,
+      percent: 25,
+      display: "1 of 4 verified trades (25%) were flagged late",
+    });
+  });
+
+  it("rounds to one decimal place", () => {
+    const three = { ...DATA, rows: ROWS.slice(0, 3) };
+    const result = execute(plan({ aggregate: "late_share" }), three);
+    expect(result.lateShare?.percent).toBe(33.3);
+  });
+
+  it("vouches for the percentage so a sentence may state it", () => {
+    const result = execute(plan({ aggregate: "late_share" }), DATA);
+    expect(result.displayStrings).toContain("25%");
+  });
+
+  it("reports zero rather than dividing by zero", () => {
+    const result = execute(
+      plan({ filters: { tickers: ["AAPL"], types: ["Purchase"] }, aggregate: "late_share" }),
+      DATA
+    );
+    expect(result.lateShare).toEqual({
+      late: 0,
+      total: 0,
+      percent: 0,
+      display: "0 of 0 verified trades (0%) were flagged late",
+    });
+  });
+});
+
+describe("amountAtMost", () => {
+  it("keeps only ranges that sit entirely under the ceiling", () => {
+    // Row b is $50,001-$100,000; row d is $1,000,001-$5,000,000.
+    const rows = filterRows(plan({ filters: { amountAtMost: 100_000 } }), ROWS);
+    expect(rows.map((r) => r.id).sort()).toEqual(["a", "b"]);
+  });
+
+  it("reads a window as both bounds, not one", () => {
+    const rows = filterRows(
+      plan({ filters: { amountAtLeast: 50_000, amountAtMost: 100_000 } }),
+      ROWS
+    );
+    expect(rows.map((r) => r.id)).toEqual(["b"]);
+  });
+
+  it("excludes an unknown amount from a ceiling", () => {
+    const rows = filterRows(plan({ filters: { amountAtMost: 10_000_000 } }), ROWS);
+    expect(rows.map((r) => r.id)).not.toContain("c");
+  });
+
+  it("excludes an open-ended range, which has no ceiling to test", () => {
+    const openEnded = [row({ id: "open", amount: "Over $50,000,000" })];
+    expect(filterRows(plan({ filters: { amountAtMost: 100_000_000 } }), openEnded)).toHaveLength(0);
+  });
+});
+
+describe("comparisons", () => {
+  it("names an official the question asked about who has no verified row", () => {
+    const result = execute(
+      plan({
+        filters: { officials: ["bessent-scott", "burgum-doug"], types: ["Purchase"] },
+        aggregate: "top_officials",
+      }),
+      DATA
+    );
+    expect(result.topOfficials?.map((o) => o.slug)).toEqual(["bessent-scott"]);
+    expect(result.missingOfficials).toEqual(["Doug Burgum"]);
+  });
+
+  it("does not compute missing officials for a single-official query", () => {
+    const result = execute(
+      plan({ filters: { officials: ["bessent-scott"] }, aggregate: "top_officials" }),
+      DATA
+    );
+    expect(result.missingOfficials).toBeUndefined();
+  });
+
+  it("counts distinct groups, not the truncated list", () => {
+    const result = execute(plan({ aggregate: "top_officials", limit: 1 }), DATA);
+    expect(result.shownRows).toBe(1);
+    expect(result.groupCount).toBe(2);
+    expect(result.numbers).toContain(2);
   });
 });

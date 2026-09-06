@@ -7,6 +7,7 @@ import {
   describePlan,
   normalizePlan,
   hasNoFilters,
+  MAX_OFFICIALS,
 } from "./plan";
 import type { OfficialRef } from "../published-rows";
 
@@ -225,5 +226,78 @@ describe("resolveOfficials against the full roster", () => {
     const r = resolveOfficials(["Nancy Pelosi"], ROSTER);
     expect(r.ok).toBe(false);
     if (!r.ok) expect(r.candidates).toEqual([]);
+  });
+});
+
+describe("dollar windows", () => {
+  it("accepts both bounds", () => {
+    const parsed = parseQueryPlan({
+      filters: { amountAtLeast: 250_000, amountAtMost: 500_000 },
+      aggregate: "count",
+    });
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    expect(parsed.plan.filters.amountAtMost).toBe(500_000);
+  });
+
+  it("rejects an inverted window", () => {
+    expect(
+      parseQueryPlan({
+        filters: { amountAtLeast: 500_000, amountAtMost: 250_000 },
+        aggregate: "count",
+      }).ok
+    ).toBe(false);
+  });
+
+  it("names both bounds in the restatement, so neither can go missing", () => {
+    const text = describePlan(
+      { filters: { amountAtLeast: 250_000, amountAtMost: 500_000 }, aggregate: "count" },
+      OFFICIALS
+    );
+    expect(text).toBe(
+      "Trades whose disclosed range falls entirely between $250,000 and $500,000, counted."
+    );
+  });
+
+  it("names a lone ceiling", () => {
+    const text = describePlan({ filters: { amountAtMost: 500_000 }, aggregate: "count" }, OFFICIALS);
+    expect(text).toContain("tops out at $500,000 or less");
+  });
+});
+
+describe("comparisons", () => {
+  it("resolves both named officials into one ranking plan", () => {
+    const parsed = parseQueryPlan({
+      filters: { officials: ["Bessent", "Burgum"], types: ["Purchase"] },
+      aggregate: "top_officials",
+    });
+    expect(parsed.ok).toBe(true);
+    if (!parsed.ok) return;
+    const resolved = resolvePlan(parsed.plan, OFFICIALS, []);
+    expect(resolved.ok).toBe(true);
+    if (!resolved.ok) return;
+    expect(resolved.value.filters.officials).toEqual(["bessent-scott", "burgum-doug"]);
+    expect(resolved.value.aggregate).toBe("top_officials");
+  });
+
+  it("caps a comparison at five officials", () => {
+    expect(MAX_OFFICIALS).toBe(5);
+  });
+});
+
+describe("late_share normalization", () => {
+  it("drops lateOnly, which would make the share 100 percent by construction", () => {
+    const p = normalizePlan({
+      filters: { officials: ["wright-christopher"], lateOnly: true },
+      aggregate: "late_share",
+    });
+    expect(p.filters.lateOnly).toBeUndefined();
+    expect(p.filters.officials).toEqual(["wright-christopher"]);
+  });
+
+  it("leaves lateOnly alone on other aggregates", () => {
+    expect(normalizePlan({ filters: { lateOnly: true }, aggregate: "count" }).filters.lateOnly).toBe(
+      true
+    );
   });
 });

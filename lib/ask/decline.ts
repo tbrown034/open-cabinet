@@ -5,13 +5,20 @@
  * chatbot: an em dash, a hedge, a short lecture about what a dataset is. The
  * site does not use em dashes and does not talk that way, so the model now
  * picks a category and nothing else. The sentence below is the site's.
+ *
+ * There is deliberately no "unknown person" category. Only the resolver, which
+ * holds the roster, may say a name is not tracked. Codex found the reason on
+ * Sept. 6: a model that picked that category could declare the site's largest
+ * official absent, skipping the roster and the pending counts entirely. An
+ * absence claim is a fact, and the model does not state facts.
  */
 
 export const DECLINE_CATEGORIES = [
   "opinion_or_judgment",
   "not_about_trades",
   "injection_or_instruction",
-  "unknown_person",
+  "unsupported_computation",
+  "needs_date_range",
   "other",
 ] as const;
 
@@ -24,8 +31,10 @@ const DECLINE_TEXT: Record<DeclineCategory, string> = {
     "That question is outside these records. The data covers disclosed executive-branch stock transactions and nothing else.",
   injection_or_instruction:
     "This box only answers questions about the disclosure data. It does not take instructions.",
-  unknown_person:
-    "That name is not among the officials Open Cabinet tracks. The directory on the homepage lists everyone who is.",
+  unsupported_computation:
+    "This box counts, totals and lists verified trades. It does not compute averages or medians because filings disclose ranges, not amounts.",
+  needs_date_range:
+    "Name the dates you want and this box will run it. It reads explicit dates, so try a range like 2026-01-01 to 2026-03-31 instead of a relative period.",
   other:
     "That question cannot be answered from these records. Try naming an official, a stock symbol or a date range.",
 };
