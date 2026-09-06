@@ -1,32 +1,32 @@
 # Reverify: Trump, Donald J. (trump-donald-j), 2026-09-06
 
 Filings read: 18. Skipped: 0. Published rows in scope: 8940. Fresh rows: 8944.
-Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 150). Would be removed: 372. Would be added: 376.
+Matched exactly: 8145. Changed: 424 (trade fields: 274; wording or ticker only: 150). Would be removed: 371. Would be added: 375.
 
 ## Lane verdicts
-- Donald-J-Trump-08.12.2026-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-06.25.2026-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-06.25.2026-278T (2).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Trump, Donald J.-05.08.2026-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Trump, Donald J.-05.08.2026-278T(2).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-4.20.2026-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 2.26.2026 278-T (1).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 2.26.2026 278-T (2).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump 1.14.2026-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 12.18.2025 278-T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 11.14.2025 278-T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 10.20.2025 278-T (2).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 10.20.2025 278-T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 10.17.2025 278-T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald J. Trump 9.3.25 278-T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-08.12.2025-278T(2) AMENDED.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-08.12.2025-278T(3).pdf: NOT CONFIRMED, no program could confirm the read; second read not run
-- Donald-J-Trump-08.12.2025-278T.pdf: NOT CONFIRMED, no program could confirm the read; second read not run
+- Donald-J-Trump-08.12.2026-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (1046 agree, 3 differ); page audit checked them (1047 confirmed, 4 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-06.25.2026-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (1374 agree, 1 differ); page audit checked them (1374 confirmed, 1 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-06.25.2026-278T (2).pdf: gate held (no program could confirm the read; second read not run); second model read them (1150 agree, 0 differ); page audit checked them (1150 confirmed, 0 disputed); disputed rows publish marked disputed
+- Trump, Donald J.-05.08.2026-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (68 agree, 1 differ); page audit checked them (69 confirmed, 0 disputed); disputed rows publish marked disputed
+- Trump, Donald J.-05.08.2026-278T(2).pdf: gate held (no program could confirm the read; second read not run); second model read them (3605 agree, 36 differ); claude-code-session read them (3608 agree, 34 differ); page audit checked them (3609 confirmed, 33 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-4.20.2026-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (170 agree, 5 differ); page audit checked them (174 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 2.26.2026 278-T (1).pdf: gate held (no program could confirm the read; second read not run); second model read them (147 agree, 25 differ); page audit checked them (151 confirmed, 23 disputed); disputed rows publish marked disputed
+- Donald J. Trump 2.26.2026 278-T (2).pdf: gate held (no program could confirm the read; second read not run); second model read them (83 agree, 0 differ); page audit checked them (76 confirmed, 7 disputed); disputed rows publish marked disputed
+- Donald-J-Trump 1.14.2026-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (189 agree, 2 differ); page audit checked them (189 confirmed, 2 disputed); disputed rows publish marked disputed
+- Donald J. Trump 12.18.2025 278-T.pdf: gate held (no program could confirm the read; second read not run); second model read them (107 agree, 1 differ); page audit checked them (108 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 11.14.2025 278-T.pdf: gate held (no program could confirm the read; second read not run); second model read them (32 agree, 0 differ); page audit checked them (32 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 10.20.2025 278-T (2).pdf: gate held (no program could confirm the read; second read not run); second model read them (57 agree, 0 differ); page audit checked them (57 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 10.20.2025 278-T.pdf: gate held (no program could confirm the read; second read not run); second model read them (79 agree, 0 differ); page audit checked them (79 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 10.17.2025 278-T.pdf: gate held (no program could confirm the read; second read not run); second model read them (39 agree, 0 differ); page audit checked them (39 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald J. Trump 9.3.25 278-T.pdf: gate held (no program could confirm the read; second read not run); second model read them (25 agree, 0 differ); page audit checked them (25 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-08.12.2025-278T(2) AMENDED.pdf: gate held (no program could confirm the read; second read not run); second model read them (148 agree, 1 differ); page audit checked them (149 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-08.12.2025-278T(3).pdf: gate held (no program could confirm the read; second read not run); second model read them (38 agree, 0 differ); page audit checked them (38 confirmed, 0 disputed); disputed rows publish marked disputed
+- Donald-J-Trump-08.12.2025-278T.pdf: gate held (no program could confirm the read; second read not run); second model read them (507 agree, 0 differ); page audit checked them (505 confirmed, 0 disputed); disputed rows publish marked disputed
 
 ## Changed: the trade itself reads differently (a person decides)
 - amount
-  before: 2026-06-03 Sale           $1,001-$15,000                  PROCTER & GAMBLE CO
-  after:  2026-06-03 Sale           $15,001-$50,000                 PROCTER & GAMBLE CO
+  before: 2026-06-18 Sale           $1,000,001-$5,000,000           MOTOROLA SOLUTIONS INC
+  after:  2026-06-18 Sale           $500,001-$1,000,000             MOTOROLA SOLUTIONS INC
 - date
   before: 2026-03-21 Purchase       $1,000,001-$5,000,000           VANGUARD S&P 500 ETF UNSOLICITED
   after:  2026-03-02 Purchase       $1,000,001-$5,000,000           VANGUARD S&P 500 ETF UNSOLICITED
@@ -40,6 +40,12 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-21 Purchase       $100,001-$250,000               LILLY ELI & CO UNSOLICITED
   after:  2026-03-02 Purchase       $100,001-$250,000               LILLY ELI & CO UNSOLICITED
 - date
+  before: 2026-01-06 Purchase       $100,001-$250,000               BRISTOL MYERS SQUIBB CO COM
+  after:  2026-01-08 Purchase       $100,001-$250,000               BRISTOL MYERS SQUIBB CO COM
+- date
+  before: 2026-02-26 Purchase       $100,001-$250,000               TELEFLEX INC
+  after:  2026-02-28 Purchase       $100,001-$250,000               TELEFLEX INC
+- date
   before: 2026-03-16 Purchase       $50,001-$100,000                SYNCHRONY FINL
   after:  2026-03-18 Purchase       $50,001-$100,000                SYNCHRONY FINL
 - date, amount
@@ -49,8 +55,14 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-01-08 Purchase       $50,001-$100,000                TEXAS INSTRUMENTS COM
   after:  2026-01-06 Purchase       $50,001-$100,000                TEXAS INSTRUMENTS COM
 - date
+  before: 2026-01-06 Purchase       $50,001-$100,000                ORACLE CORP UNSOLICITED
+  after:  2026-01-08 Purchase       $50,001-$100,000                ORACLE CORP UNSOLICITED
+- date
   before: 2026-03-21 Purchase       $50,001-$100,000                PROCTER & GAMBLE CO UNSOLICITED
   after:  2026-03-02 Purchase       $50,001-$100,000                PROCTER & GAMBLE CO UNSOLICITED
+- date
+  before: 2026-03-18 Purchase       $50,001-$100,000                REPUBLIC SVCS INC
+  after:  2026-03-16 Purchase       $50,001-$100,000                REPUBLIC SVCS INC
 - date
   before: 2026-03-16 Purchase       $50,001-$100,000                APOLLO GLOBAL MGMT INC N CLASS A
   after:  2026-03-18 Purchase       $50,001-$100,000                APOLLO GLOBAL MGMT INC N CLASS A
@@ -60,6 +72,9 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - date
   before: 2026-02-28 Purchase       $50,001-$100,000                EVERTEC INC F
   after:  2026-02-26 Purchase       $50,001-$100,000                EVERTEC INC F
+- date
+  before: 2026-02-26 Purchase       $50,001-$100,000                TG THERAPEUTICS INC
+  after:  2026-02-28 Purchase       $50,001-$100,000                TG THERAPEUTICS INC
 - date
   before: 2026-03-21 Purchase       $15,001-$50,000                 JOHNSON CTLS INTL PLC UNSOLICITED
   after:  2026-03-25 Purchase       $15,001-$50,000                 JOHNSON CTLS INTL PLC UNSOLICITED
@@ -85,6 +100,9 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-16 Purchase       $15,001-$50,000                 WEYERHAEUSER CO REIT
   after:  2026-03-18 Purchase       $15,001-$50,000                 WEYERHAEUSER CO REIT
 - date
+  before: 2026-01-06 Purchase       $15,001-$50,000                 EDISON INTERNATIONAL COM
+  after:  2026-01-08 Purchase       $15,001-$50,000                 EDISON INTERNATIONAL COM
+- date
   before: 2026-03-16 Purchase       $15,001-$50,000                 BLOCK H & R INC
   after:  2026-03-18 Purchase       $15,001-$50,000                 BLOCK H & R INC
 - date
@@ -93,6 +111,9 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - date
   before: 2026-03-21 Purchase       $15,001-$50,000                 PARKER HANNIFIN CORP UNSOLICITED
   after:  2026-03-02 Purchase       $15,001-$50,000                 PARKER HANNIFIN CORP UNSOLICITED
+- date
+  before: 2026-01-26 Purchase       $15,001-$50,000                 HIGHWOODS PPTYS INC REIT
+  after:  2026-01-25 Purchase       $15,001-$50,000                 HIGHWOODS PPTYS INC REIT
 - date
   before: 2026-03-21 Purchase       $15,001-$50,000                 MICROCHIP TECHNOLOGY INC UNSOLICITED
   after:  2026-03-02 Purchase       $15,001-$50,000                 MICROCHIP TECHNOLOGY INC UNSOLICITED
@@ -108,6 +129,12 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - date
   before: 2026-03-21 Purchase       $15,001-$50,000                 LOWES COMPANIES INC UNSOLICITED
   after:  2026-03-02 Purchase       $15,001-$50,000                 LOWES COMPANIES INC UNSOLICITED
+- date
+  before: 2026-01-06 Purchase       $15,001-$50,000                 PALANTIR TECHNOLOGIES INC CL A
+  after:  2025-01-06 Purchase       $15,001-$50,000                 PALANTIR TECHNOLOGIES INC CL A
+- date
+  before: 2026-03-11 Purchase       $15,001-$50,000                 TE CONNECTIVITY PLC UNSOLICITED
+  after:  2025-03-11 Purchase       $15,001-$50,000                 TE CONNECTIVITY PLC UNSOLICITED
 - date, description
   before: 2026-03-02 Purchase       $15,001-$50,000                 AMETEK INC /NEW/ UNSOLICITED
   after:  2026-03-12 Purchase       $15,001-$50,000                 AMETEK INC (NEW) UNSOLICITED
@@ -178,7 +205,7 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-21 Purchase       $15,001-$50,000                 UNION PACIFIC CORP UNSOLICITED
   after:  2026-03-02 Purchase       $15,001-$50,000                 UNION PACIFIC CORP UNSOLICITED
 - date
-  before: 2026-02-15 Purchase       $15,001-$50,000                 SHUTTERSTOCK INC MERGER ELECTION EXP: 03/31/26
+  before: 2026-02-26 Purchase       $15,001-$50,000                 SHUTTERSTOCK INC MERGER ELECTION EXP: 03/31/26
   after:  2026-02-25 Purchase       $15,001-$50,000                 SHUTTERSTOCK INC MERGER ELECTION EXP: 03/31/26
 - date
   before: 2026-03-21 Purchase       $15,001-$50,000                 ACCENTURE PLC IRELAND CL A UNSOLICITED
@@ -220,6 +247,21 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-01 Purchase       $1,001-$15,000                  T ROWE PRICE GROUP INC
   after:  2026-03-04 Purchase       $1,001-$15,000                  T ROWE PRICE GROUP INC
 - date
+  before: 2026-03-26 Purchase       $1,001-$15,000                  ROBLOX CORP CLASS A
+  after:  2026-03-28 Purchase       $1,001-$15,000                  ROBLOX CORP CLASS A
+- date
+  before: 2026-03-26 Purchase       $1,001-$15,000                  MID-AMER APT CMNTYS INC REIT
+  after:  2026-03-28 Purchase       $1,001-$15,000                  MID-AMER APT CMNTYS INC REIT
+- date
+  before: 2026-03-26 Purchase       $1,001-$15,000                  CBRE GROUP INC CLASS A
+  after:  2026-03-28 Purchase       $1,001-$15,000                  CBRE GROUP INC CLASS A
+- date
+  before: 2026-03-26 Purchase       $1,001-$15,000                  COOPER COS INC
+  after:  2026-03-28 Purchase       $1,001-$15,000                  COOPER COS INC
+- date
+  before: 2026-03-26 Purchase       $1,001-$15,000                  KINSALE CAP GROUP INC
+  after:  2026-03-28 Purchase       $1,001-$15,000                  KINSALE CAP GROUP INC
+- date
   before: 2026-03-25 Purchase       $1,001-$15,000                  SS&C TECHNOLOGIES HLDGS
   after:  2026-03-26 Purchase       $1,001-$15,000                  SS&C TECHNOLOGIES HLDGS
 - date
@@ -250,6 +292,15 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-28 Sale           $1,001-$15,000                  AMERICAN TOWER CORP NEW REIT
   after:  2026-03-26 Sale           $1,001-$15,000                  AMERICAN TOWER CORP NEW REIT
 - date
+  before: 2026-03-18 Sale           $1,001-$15,000                  GE HEALTHCARE TECHNOLOGI
+  after:  2026-03-16 Sale           $1,001-$15,000                  GE HEALTHCARE TECHNOLOGI
+- date
+  before: 2026-03-18 Sale           $1,001-$15,000                  AVERY DENNISON CORP
+  after:  2026-03-16 Sale           $1,001-$15,000                  AVERY DENNISON CORP
+- date
+  before: 2026-03-18 Sale           $1,001-$15,000                  ULTA BEAUTY INC
+  after:  2026-03-16 Sale           $1,001-$15,000                  ULTA BEAUTY INC
+- date
   before: 2026-03-06 Sale           $1,001-$15,000                  ASTRANA HEALTH INC
   after:  2026-02-26 Sale           $1,001-$15,000                  ASTRANA HEALTH INC
 - date
@@ -268,8 +319,26 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-08 Sale           $15,001-$50,000                 Wells Fargo & Co New Com Solicited Order Discretion Exercised
   after:  2026-03-06 Sale           $15,001-$50,000                 Wells Fargo & Co New Com Solicited Order Discretion Exercised
 - date
+  before: 2026-03-18 Sale           $15,001-$50,000                 FORTINET INC
+  after:  2026-03-16 Sale           $15,001-$50,000                 FORTINET INC
+- date
+  before: 2026-03-18 Sale           $15,001-$50,000                 SEAGATE TECHNOLOGY H F
+  after:  2026-03-16 Sale           $15,001-$50,000                 SEAGATE TECHNOLOGY H F
+- date
+  before: 2026-02-26 Sale           $15,001-$50,000                 WALKER & DUNLOP INC
+  after:  2026-02-28 Sale           $15,001-$50,000                 WALKER & DUNLOP INC
+- date
   before: 2026-01-29 Sale           $15,001-$50,000                 CALIFORNIA WTR SVC GROUP
   after:  2026-01-26 Sale           $15,001-$50,000                 CALIFORNIA WTR SVC GROUP
+- date
+  before: 2026-02-26 Sale           $15,001-$50,000                 STEPSTONE GROUP INC CLASS A
+  after:  2026-02-28 Sale           $15,001-$50,000                 STEPSTONE GROUP INC CLASS A
+- date
+  before: 2026-02-26 Sale           $15,001-$50,000                 CORVEL CORP
+  after:  2026-02-28 Sale           $15,001-$50,000                 CORVEL CORP
+- date
+  before: 2026-02-26 Sale           $15,001-$50,000                 GROUP 1 AUTOMOTIVE INC
+  after:  2026-02-28 Sale           $15,001-$50,000                 GROUP 1 AUTOMOTIVE INC
 - date
   before: 2026-01-28 Sale           $50,001-$100,000                BOX INC CLASS A
   after:  2026-01-26 Sale           $50,001-$100,000                BOX INC CLASS A
@@ -280,8 +349,23 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-01-28 Sale           $50,001-$100,000                PTC THERAPEUTICS INC
   after:  2026-01-26 Sale           $50,001-$100,000                PTC THERAPEUTICS INC
 - date
+  before: 2026-03-06 Sale           $50,001-$100,000                Meta Platforms Inc Cl A Solicited Order Discretion Exercised
+  after:  2026-03-11 Sale           $50,001-$100,000                Meta Platforms Inc Cl A Solicited Order Discretion Exercised
+- date
   before: 2026-01-28 Sale           $50,001-$100,000                TELEFLEX INC
   after:  2026-01-26 Sale           $50,001-$100,000                TELEFLEX INC
+- date
+  before: 2026-01-06 Sale           $100,001-$250,000               KROGER
+  after:  2026-01-08 Sale           $100,001-$250,000               KROGER
+- date
+  before: 2026-01-06 Sale           $250,001-$500,000               SYSCO CORP
+  after:  2026-01-08 Sale           $250,001-$500,000               SYSCO CORP
+- date
+  before: 2026-01-06 Sale           $250,001-$500,000               AUTOZONE INC
+  after:  2026-01-08 Sale           $250,001-$500,000               AUTOZONE INC
+- date
+  before: 2026-01-06 Sale           $250,001-$500,000               TRANE TECHNOLOGIES PLC SHS
+  after:  2026-01-08 Sale           $250,001-$500,000               TRANE TECHNOLOGIES PLC SHS
 - lateFilingFlag
   before: 2026-03-27 Sale           $500,001-$1,000,000             Apple Inc Com Average Unit Price Transaction Your Broker Acted As Agent
   after:  2026-03-27 Sale           $500,001-$1,000,000             Apple Inc Com Average Unit Price Transaction Your Broker Acted As Agent
@@ -391,6 +475,9 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-05-14 Sale           $250,001-$500,000               STATE STREET SPDR S&P GLOBAL NATURAL RESOURCESETF
   after:  2026-05-14 Sale           $250,001-$500,000               STATE STREET SPDR S&P GLOBAL NATURAL RESOURCES ETF
 - description
+  before: 2026-05-15 Sale           $15,001-$50,000                 ENVIRI CORP
+  after:  2026-05-15 Sale           $15,001-$50,000                 ENVIRICORP
+- description
   before: 2026-05-18 Purchase       $100,001-$250,000               GRAINGER W W INC
   after:  2026-05-18 Purchase       $100,001-$250,000               GRAINGER WW INC
 - description
@@ -454,17 +541,14 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   before: 2026-03-11 Purchase       $15,001-$50,000                 UNITY ELECTRONICS INC UNSOLICITED
   after:  2026-03-11 Purchase       $15,001-$50,000                 QNITY ELECTRONICS INC UNSOLICITED
 - description
+  before: 2026-02-02 Purchase       $15,001-$50,000                 LEGALZOOM COM INC
+  after:  2026-02-02 Purchase       $15,001-$50,000                 LEGAL ZOOM COM INC
+- description
   before: 2026-01-30 Purchase       $15,001-$50,000                 IRIDIUM COMMUNICATIONS INC
   after:  2026-01-30 Purchase       $15,001-$50,000                 IRIDIUM COMMUNICATIONS I
 - description
   before: 2026-02-23 Purchase       $1,001-$15,000                  ELASTIC NV F
   after:  2026-02-23 Purchase       $1,001-$15,000                  ELASTIC N V F
-- description
-  before: 2026-02-26 Sale           $1,001-$15,000                  WORLD ACCEP CORPS C NEW
-  after:  2026-02-26 Sale           $1,001-$15,000                  WORLD ACCEP CORP S C NEW
-- description
-  before: 2026-02-28 Sale           $1,001-$15,000                  ETHAN ALLEN INTERIORS INC
-  after:  2026-02-28 Sale           $1,001-$15,000                  ETHAN ALLEN INTERIORS IN
 - description
   before: 2026-02-23 Sale           $1,001-$15,000                  PALANTIR TECHNOLOGIES INC CLASS A
   after:  2026-02-23 Sale           $1,001-$15,000                  PALANTIR TECHNOLOGIES IN CLASS A
@@ -492,6 +576,9 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - description
   before: 2026-02-24 Sale           $100,001-$250,000               VERIZON COMMUNICATIONS INC
   after:  2026-02-24 Sale           $100,001-$250,000               VERIZON COMMUNICATIONS I
+- description
+  before: 2026-03-23 Sale           $100,001-$250,000               SITIMECORP
+  after:  2026-03-23 Sale           $100,001-$250,000               SITIME CORP
 - description
   before: 2026-03-06 Sale           $100,001-$250,000               Adobe Inc Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent
   after:  2026-03-06 Sale           $100,001-$250,000               Apple Inc Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent
@@ -1213,7 +1300,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
   after:  2025-07-08 Purchase       $100,001-$250,000               HARRIS CNTY TX CULTURAL ED FIN CORP REV RFDG HOSP CHLDRNS 1 B/E PTC 5.00 % Due Oct 1, 20
 
 ## Would be removed (published, not in the fresh reading)
-- 2026-05-15 Sale           $15,001-$50,000                 ENVIRI CORP
 - 2026-04-07 Sale           $500,001-$1,000,000             ALLEN TX INDPT SCH PERMA SR A BE/R/ 5 DUE 021527 DTD 120225 FC 021526 2.556%
 - 2026-04-07 Sale           $500,001-$1,000,000             AUSTIN TX ELEC UTIL SYS RV BE/R/ 5 DUE 111534 DTD 120325 FC 051526 3.132%
 - 2026-04-07 Sale           $500,001-$1,000,000             NORTH CAROLINA ST SR C BE/R/ 5 DUE 060128 DTD 111925 FC 060126 2.416%
@@ -1266,7 +1352,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-03-23 Purchase       $1,001-$15,000                  GRAINGER WW INC
 - 2026-03-23 Purchase       $1,001-$15,000                  RIXCORP
 - 2026-03-23 Purchase       $1,001-$15,000                  ROYAL CARIBBEAN GROUP F
-- 2026-03-23 Sale           $100,001-$250,000               SITIMECORP
 - 2026-03-23 Purchase       $15,001-$50,000                 UNITED RENTALS INC UNSOLICITED
 - 2026-03-23 Purchase       $1,001-$15,000                  WILLIS TOWERS WATSON PF
 - 2026-03-23 Purchase       $15,001-$50,000                 ZOOMINFO TECHNOLOGIES INC
@@ -1325,6 +1410,7 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-03-02 Purchase       $500,001-$1,000,000             ***NETFLIX INC REG S DUE 11/15/2029 05.375%JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT
 - 2026-03-02 Purchase       $500,001-$1,000,000             ***VICTORIAS SECRET CO REG S DUE 07/15/2029 04.625%JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONFLICT
 - 2026-03-02 Purchase       $15,001-$50,000                 WILLIAMS COS INC IDEL UNSOLICITED
+- 2026-02-26 Sale           $1,001-$15,000                  ETHAN ALLEN INTERIORS INC
 - 2026-02-28 Sale           $50,001-$100,000                INNOM OR PHARMACEUTICALS
 - 2026-02-28 Sale           $50,001-$100,000                O2HLOGSINC
 - 2026-02-28 Sale           $50,001-$100,000                SPSCOMM INC
@@ -1332,6 +1418,7 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-02-26 Purchase       $15,001-$50,000                 CSN INDUSTRIALS INC
 - 2026-02-26 Sale           $15,001-$50,000                 TWO HARBORS INVESTMENT
 - 2026-02-26 Purchase       $15,001-$50,000                 WILLSCOT HOLDINGS CO CLASS A
+- 2026-02-26 Sale           $1,001-$15,000                  WORLD ACCEP CORPS C NEW
 - 2026-02-23 Purchase       $50,001-$100,000                MARYLAND ST HLTH & HIGH EDL FACS AUTH REV LOYOLA UNIV SER A B/E 5.40% Due Oct 1, 2026
 - 2026-02-23 Purchase       $50,001-$100,000                MONTANA ST SER G B/E 5.00% Due Aug 1, 2026
 - 2026-02-12 Purchase       $50,001-$100,000                AMDOCS LTD OF
@@ -1359,7 +1446,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-02-04 Purchase       $250,001-$500,000               FIRST HORIZON INC MEMPHIS TENN DUE 05/01/2030 05.750%MN 01 DISCRETIONARY ORDER YIELD 4.768% TO PAR CALL YIELD 4.818% TO MATURITY CALLABLE 02/01/30 AT 100.000 TIME OF EXECUTION 15:29:08
 - 2026-02-04 Purchase       $250,001-$500,000               OCCIDENTAL PETE SR DEBS-REG SENIOR NOTES DUE 09/01/2030 06.625%MS 01 DISCRETIONARY ORDER YIELD 4.554% TO PAR CALL YIELD 4.751% TO MATURITY CALLABLE 03/01/30 AT 100.000
 - 2026-02-02 Purchase       $100,001-$250,000               General Electric Co Com New Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent
-- 2026-02-02 Purchase       $15,001-$50,000                 LEGALZOOM COM INC
 - 2026-02-02 Purchase       $100,001-$250,000               Martin Marietta Materials Inc Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent
 - 2026-02-02 Purchase       $100,001-$250,000               Newmont Com Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent
 - 2026-01-22 Purchase       $1,000,001-$5,000,000           CONNECTICUT ST HEAL 5%42SYST HLTH DUE 07/01/42XTRO ASSURED GUARANTY IN
@@ -1590,7 +1676,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-04-07 Sale           $500,001-$1,000,000             ALLEN TX INDPT SCH PERMA SR A BE/R/ 5 DUE 021527 DTD 120225 FC 021526 2556%
 - 2026-04-07 Sale           $500,001-$1,000,000             AUSTIN TX ELEC UTIL SYS RVBEIR/ 5 DUE 111534 OTO 120325 FC 0515263.132%
 - 2026-04-07 Sale           $500,001-$1,000,000             NORTH CAROLINA ST SR C BE/R/ 5 DUE 060128 OTO 111925 FC 060126 2.416%
-- 2026-05-15 Sale           $15,001-$50,000                 ENVIRICORP
 - 2026-02-23 Purchase       $50,001-$100,000                MONTANA ST SER G B/C 5.00% Due Aug 1, 2026
 - 2026-02-23 Purchase       $50,001-$100,000                MARYLAND ST HLTH & HIGH EDL FACS AUTH REV LOYOLA UNIV SER A B/E 5.00% Due Oct 1, 2026
 - 2026-02-04 Purchase       $250,001-$500,000               FIRST HORIZON BK MEMPHIS TENN DUE 05/01/2030 05.750%MN 01 DISCRETIONARY ORDER YIELD 4.768% TO PAR CALL YIELD 4.818% TO MATURITY CALLABLE 02/01/30 AT 100.000 TIME OF EXECUTION 15:29:08
@@ -1642,7 +1727,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-03-02 Purchase       $15,001-$50,000                 AMETEK INC (NEW) UNSOLICITED
 - 2026-03-04 Purchase       $15,001-$50,000                 SITIME CORP
 - 2026-03-04 Purchase       $15,001-$50,000                 VICOR CORP
-- 2026-02-02 Purchase       $15,001-$50,000                 LEGAL ZOOM COM INC
 - 2026-03-04 Purchase       $15,001-$50,000                 WD 40 CO
 - 2026-02-26 Purchase       $15,001-$50,000                 WILLSCOT HOLDINGS CO A CLASS A
 - 2026-03-17 Purchase       $1,001-$15,000                  PALANTIR TECHNOLOGIES IN CLASS A
@@ -1664,6 +1748,7 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-02-12 Purchase       $1,001-$15,000                  CROWN CASTLE INC REIT REIT
 - 2026-03-26 Purchase       $1,001-$15,000                  BLOCK INC A CLASS A
 - 2026-01-21 Sale           $1,001-$15,000                  GARMIN LTD F
+- 2026-02-26 Sale           $1,001-$15,000                  WORLD ACCEP CORP S C NEW
 - 2026-03-26 Sale           $1,001-$15,000                  ROCKET COMPANIES CLA A CLASS A
 - 2026-03-26 Sale           $1,001-$15,000                  ELASTIC N V F
 - 2026-03-26 Sale           $1,001-$15,000                  UDR INC REIT
@@ -1673,6 +1758,7 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-02-12 Sale           $1,001-$15,000                  AMERICAN HOMES 4 RENT REIT
 - 2026-01-12 Sale           $1,001-$15,000                  VERIZON COMMUNICATIONS I
 - 2026-02-12 Sale           $1,001-$15,000                  AUTOMATIC DATA PROCESSIN
+- 2026-02-28 Sale           $1,001-$15,000                  ETHAN ALLEN INTERIORS IN
 - 2026-03-06 Sale           $1,001-$15,000                  Invesco Premier U.s. Government Money Market Portfolio Investor Class 5 - Frac.0000 Solicited Order Discretion Exercised
 - 2026-01-12 Sale           $1,001-$15,000                  CHARTER COMMUNICATIONS I CLASS A
 - 2026-03-26 Sale           $1,001-$15,000                  BROADRIDGE FINL SOLUTION
@@ -1728,7 +1814,6 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2026-03-27 Sale           $100,001-$250,000               Tesla Inc Com Average Unit Price Transaction Your Broker Acted As Agent
 - 2026-03-27 Sale           $100,001-$250,000               Meta Platforms Inc Cl A E17774634275029-00560 Average Unit Price Transaction Your Broker Acted As Agent
 - 2026-02-12 Sale           $100,001-$250,000               PALANTIR TECHNOLOGIES IN CLASS A
-- 2026-03-23 Sale           $100,001-$250,000               SITIME CORP
 - 2026-03-17 Sale           $100,001-$250,000               WILLIS TOWERS WATSON PUB LTDCO
 - 2026-03-27 Sale           $500,001-$1,000,000             Nvidia Corp Com Average Unit Price Transaction Your Broker Acted As Agent
 - 2026-03-09 Purchase       $100,001-$250,000               UPPER BEAR CREEK AL WTR SWR & FIRE PROTN DIST REV RFOG AGM B/E B/Q 3.00 % Due Sep 1, 2026
@@ -1964,4 +2049,4 @@ Matched exactly: 8173. Changed: 395 (trade fields: 245; wording or ticker only: 
 - 2025-06-02 Purchase       $500,001-$1,000,000             NEW YORK NY GO BDS FISCAL 5.0000% 08/01/29
 - 2025-06-02 Purchase       $500,001-$1,000,000             MICHIGAN ST HOSP FIN AUTH REV ASCENSION HLTH SR CR GRP 2010F 6 8/E 4.00 % Due Nov 15, 2047
 
-Not applicable: 18 filing(s) were not confirmed by a second read (Donald-J-Trump-08.12.2026-278T.pdf, Donald-J-Trump-06.25.2026-278T.pdf, Donald-J-Trump-06.25.2026-278T (2).pdf, Trump, Donald J.-05.08.2026-278T.pdf, Trump, Donald J.-05.08.2026-278T(2).pdf, Donald-J-Trump-4.20.2026-278T.pdf, Donald J. Trump 2.26.2026 278-T (1).pdf, Donald J. Trump 2.26.2026 278-T (2).pdf, Donald-J-Trump 1.14.2026-278T.pdf, Donald J. Trump 12.18.2025 278-T.pdf, Donald J. Trump 11.14.2025 278-T.pdf, Donald J. Trump 10.20.2025 278-T (2).pdf, Donald J. Trump 10.20.2025 278-T.pdf, Donald J. Trump 10.17.2025 278-T.pdf, Donald J. Trump 9.3.25 278-T.pdf, Donald-J-Trump-08.12.2025-278T(2) AMENDED.pdf, Donald-J-Trump-08.12.2025-278T(3).pdf, Donald-J-Trump-08.12.2025-278T.pdf). A person decides before anything is applied.
+Apply with: pnpm reverify trump-donald-j --apply

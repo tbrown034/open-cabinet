@@ -31,7 +31,7 @@
  */
 import { SpendCeilingError, spend } from "../lib/ingest-stages";
 import { readFile, writeFile, mkdir } from "fs/promises";
-import { existsSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import {
@@ -46,7 +46,9 @@ import {
   type ParsedTransaction,
 } from "../lib/ingest-stages";
 import { computeStats, buildFactBlock, factHash } from "../lib/summary-facts";
-import { readCrosscheckLog } from "../lib/crosscheck-log";
+import { readCrosscheckLog, hashRows } from "../lib/crosscheck-log";
+import { readSecondReadLog } from "../lib/second-read";
+import { readGrokAuditLog } from "../lib/grok-audit";
 import { isTerminationForm } from "../lib/parse-cache";
 import { diffRows, type RowLike } from "../lib/reverify-diff";
 
@@ -57,6 +59,28 @@ const HISTORY_DIR = path.resolve("data/meta/reverify-history");
 
 function fmtRow(r: RowLike): string {
   return `${r.date} ${r.type.padEnd(14)} ${(r.amount ?? "unknown").padEnd(24)} ${(r.ticker ?? "").padEnd(6)} ${r.description}`;
+}
+
+/**
+ * Names the independent reads on disk of exactly these rows (same candidate
+ * hash): the second model's read, a person's or the session's read, and
+ * the page audit. Empty string when no second reader has seen these rows.
+ */
+function independentReadsOf(sourceUrl: string, rows: unknown): string {
+  const candidate = hashRows(rows);
+  const parts: string[] = [];
+  const second = readSecondReadLog()?.filings[sourceUrl];
+  if (second && second.candidateSha256 === candidate) parts.push(`second model read them (${second.agreedIndexes.length} agree, ${second.disputedIndexes.length} differ)`);
+  const sessionPath = path.resolve("data/meta/session-read-log.json");
+  if (existsSync(sessionPath)) {
+    const session = JSON.parse(readFileSync(sessionPath, "utf-8")).filings?.[sourceUrl];
+    if (session && session.candidateSha256 === candidate) parts.push(`${session.reader} read them (${session.agreedIndexes.length} agree, ${session.disputedIndexes.length} differ)`);
+  }
+  const audit = readGrokAuditLog()?.filings[sourceUrl];
+  if (audit && audit.candidateSha256 === candidate && !audit.differences.some((d) => d.startsWith("audit incomplete"))) parts.push(`page audit checked them (${audit.confirmedIndexes.length} confirmed, ${audit.disputedIndexes.length} disputed)`);
+  // A second independent reading is required; the audit alone is not one.
+  const hasSecondRead = parts.some((p) => !p.startsWith("page audit"));
+  return hasSecondRead ? parts.join("; ") : "";
 }
 
 async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean, dryCost: boolean) {
@@ -93,13 +117,21 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
     const rows = await readFiling(pdfPath, sha256, f.url);
     try {
       const gate = await checkFiling(slug, official.name, filing, pdfPath, sha256, rows, { secondRead: false });
-      if (gate.verdict === "held") notConfirmed.push(pdfFile);
+      // The ingest gate holds a whole filing when any row disagrees. For a
+      // re-read of published rows the unit is the row: a filing whose exact
+      // rows a second company's model (or a person) has read, and the page
+      // audit has checked, may be applied; its disputed rows publish marked
+      // disputed and stay on the review list. (Trevor, Sep 6.)
+      const independent = independentReadsOf(f.url, rows);
+      if (gate.verdict === "held" && !independent) notConfirmed.push(pdfFile);
       laneVerdicts.push(
         gate.verdict === "two_lane"
           ? `${pdfFile}: ${gate.lane === "text" ? "text layer" : "OCR"} agrees (${rows.length} rows)`
           : gate.verdict === "two_models"
             ? `${pdfFile}: second model agrees (${rows.length} rows)`
-            : `${pdfFile}: NOT CONFIRMED, ${gate.reason}`
+            : independent
+              ? `${pdfFile}: gate held (${gate.reason.split("\n")[0]}); ${independent}; disputed rows publish marked disputed`
+              : `${pdfFile}: NOT CONFIRMED, ${gate.reason}`
       );
     } catch (err) {
       notConfirmed.push(pdfFile);
