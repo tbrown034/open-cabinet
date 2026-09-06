@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "fs";
 import path from "path";
-import { extractOcrRows, repairOcrText, OCR_LANE_VERSION } from "./ocr-lane";
+import { alignByPrintedRow, columnizeOcrRows, extractOcrRows, repairOcrText, repairRowSequence, OCR_LANE_VERSION } from "./ocr-lane";
 import { compareExtraction } from "../scripts/text-layer-crosscheck";
 
 const header = `
@@ -24,6 +24,8 @@ describe("OCR repairs", () => {
     const line = " 34        Goldman Sachs Group Inc                    purchase        6/15/2026        Yes $250,001 - $500,000";
     const fixed = repairOcrText(line);
     expect(fixed).toContain("Purchase        06/15/2026");
+    // The e-filed form scans print "no" in lowercase.
+    expect(repairOcrText("1 BLACK BELT ENERGY 4.00 % Due Oct 1, 2052 purchase 2/23/2026 no | $100,001 - $250,000")).toContain("02/23/2026 no".replace("no", "No"));
     // A type word inside a description is left alone.
     expect(repairOcrText(" 2         Wholesale purchase club (BJ)   Sale    04/01/2026   No   $1,001 - $15,000")).toContain("purchase club");
   });
@@ -75,6 +77,50 @@ describe("OCR lane through the shared parser and comparator", () => {
     expect(r.kind).toBe("tool-error");
     if (r.kind !== "tool-error") return;
     expect(r.message).toMatch(/ocr: no transaction rows/);
+  });
+});
+
+describe("OCR row handling", () => {
+  const row = (rowNumber: number) => ({ rowNumber, type: "Sale", date: "2026-06-18", amount: "$1,001-$15,000", lateFilingFlag: true });
+
+  it("repairs a misread row number only when sandwiched between rows that agree on its place", () => {
+    // Trump Aug 2026: 297, 1298, 299 (gridline as a leading 1) and 848, 349, 850.
+    const r = repairRowSequence([row(297), row(1298), row(299), row(848), row(349), row(850)]);
+    expect(r.rows.map((x) => x.rowNumber)).toEqual([297, 298, 299, 848, 849, 850]);
+    expect(r.repaired).toBe(2);
+  });
+
+  it("repairs the leading-1 gridline artifact by its exact offset when the next row cannot vouch", () => {
+    const r = repairRowSequence([row(283), row(1284), row(1286)]);
+    expect(r.rows.map((x) => x.rowNumber)).toEqual([283, 284, 1286]);
+    expect(r.repaired).toBe(1);
+  });
+
+  it("leaves a real gap alone", () => {
+    const r = repairRowSequence([row(11), row(14), row(15)]);
+    expect(r.rows.map((x) => x.rowNumber)).toEqual([11, 14, 15]);
+    expect(r.repaired).toBe(0);
+  });
+
+  it("rebuilds column gaps from a mode-4 line and keeps wrapped text with its row", () => {
+    const text = "34 Goldman Sachs Group Inc Purchase 06/15/2026 Yes $250,001 - $500,000\nwrapped tail\n35 Broadcom Inc Purchase 06/15/2026 Yes $100,001 - $250,000";
+    const out = columnizeOcrRows(text);
+    const r = extractOcrRows(out);
+    if (r.kind !== "rows") throw new Error(r.kind);
+    expect(r.rows.map((x) => x.rowNumber)).toEqual([34, 35]);
+    expect(r.rows[0].amount).toBe("$250,001-$500,000");
+  });
+
+  it("aligns readable rows by printed number when the count differs, and counts the unread", () => {
+    const extraction = { kind: "rows" as const, rows: [row(1), row(3)], placeholderRows: [] };
+    const parsed = [
+      { type: "Sale", date: "2026-06-18", amount: "$1,001-$15,000", lateFilingFlag: true },
+      { type: "Sale", date: "2026-06-18", amount: "$1,001-$15,000", lateFilingFlag: true },
+      { type: "Sale", date: "2026-06-18", amount: "$15,001-$50,000", lateFilingFlag: true },
+    ];
+    const a = alignByPrintedRow(extraction, parsed)!;
+    expect(a).toMatchObject({ compared: 2, agree: 1, differ: 1, unread: 1 });
+    expect(a.differences[0]).toMatch(/^row 3: OCR \[Sale\|2026-06-18\|\$1,001-\$15,000\|late\] vs AI parse \[Sale\|2026-06-18\|\$15,001-\$50,000\|late\]/);
   });
 });
 

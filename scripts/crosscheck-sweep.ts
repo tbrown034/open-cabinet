@@ -31,6 +31,7 @@ import {
 import {
   COMPARED_FIELDS,
   hashRows,
+  readCrosscheckLog,
   summarizeCrosscheckLog,
   upsertCrosscheckEntry,
   writeCrosscheckLog,
@@ -39,7 +40,7 @@ import {
   type CrosscheckState,
 } from "../lib/crosscheck-log";
 import { findParseRecord, isTerminationForm, promptHash, sha256File } from "../lib/parse-cache";
-import { crossCheckByOcr, ocrEngine } from "../lib/ocr-lane";
+import { crossCheckByOcr, extractOcrRows, ocrEngine, ocrPdfToText } from "../lib/ocr-lane";
 import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
 
 const PDF_DIR = path.resolve("data/pdfs");
@@ -67,6 +68,11 @@ function ocrCandidate(state: CrosscheckState): boolean {
 }
 
 function main() {
+  // OCR verdicts are expensive to produce and carry forward unchanged as
+  // long as the PDF and the parse record are the same bytes, so a sweep
+  // that does not run OCR (or runs it on a subset) never erases them.
+  const previous = new Map<string, CrosscheckEntry>();
+  for (const e of readCrosscheckLog()?.entries ?? []) previous.set(`${e.slug}|${e.sourceUrl}`, e);
   if (OCR) {
     const engine = ocrEngine();
     if (!engine.available) {
@@ -149,6 +155,38 @@ function main() {
 
           // The OCR lane, where the text lane could not read the filing.
           const wanted = !ONLY || pdfFile.includes(ONLY) || official.slug.includes(ONLY);
+          const runOcrNow = OCR && wanted && ocrCandidate(entry.state);
+          const prior = previous.get(`${official.slug}|${filing.url}`);
+          if (!runOcrNow && prior?.ocr && prior.pdfSha256 === entry.pdfSha256 && prior.candidateSha256 === entry.candidateSha256) {
+            entry = {
+              ...entry,
+              state: prior.state,
+              ...(prior.lane ? { lane: prior.lane } : {}),
+              ocr: prior.ocr,
+              rowsCompared: prior.rowsCompared,
+              ...(prior.problems ? { problems: prior.problems } : {}),
+              checkedAt: prior.checkedAt,
+            };
+          }
+          if (OCR && wanted && !rows && ocrCandidate(entry.state)) {
+            // Nothing to compare against, but the OCR read itself is worth
+            // recording: it says how legible the scan is before money is
+            // spent re-reading it with a model.
+            process.stdout.write(`  ocr ${official.slug} ${pdfFile} (no parse record) `);
+            const { text, run } = ocrPdfToText(pdfPath, pdfSha256);
+            const ex = extractOcrRows(text);
+            const rowsRead = ex.kind === "rows" ? ex.rows.length : 0;
+            entry = {
+              ...entry,
+              ocr: {
+                engine: run.engine, version: run.version, dpi: run.dpi, psm: run.psm, laneVersion: run.laneVersion,
+                pages: run.pages, textFile: run.textFile, textSha256: run.textSha256, textLaneState: entry.state,
+                rowsRead, rowNumbersRepaired: ex.rowNumbersRepaired ?? 0,
+                problem: "no parse record on disk to compare against",
+              },
+            };
+            console.log(`read ${rowsRead} rows of ${publishedRows} published (${run.pages} pages, ${run.cached ? "cached" : "fresh"})`);
+          }
           if (OCR && wanted && rows && ocrCandidate(entry.state)) {
             const textLaneState = entry.state;
             process.stdout.write(`  ocr ${official.slug} ${pdfFile} `);
@@ -162,15 +200,25 @@ function main() {
             });
             if (ocr.ran) {
               const seconds = Math.round((Date.now() - started) / 1000);
-              const base = { engine: ocr.run.engine, version: ocr.run.version, dpi: ocr.run.dpi, psm: ocr.run.psm, laneVersion: ocr.run.laneVersion, pages: ocr.run.pages, textFile: ocr.run.textFile, textSha256: ocr.run.textSha256, textLaneState };
+              const rowsRead = ocr.extraction.kind === "rows" ? ocr.extraction.rows.length : 0;
+              const base = {
+                engine: ocr.run.engine, version: ocr.run.version, dpi: ocr.run.dpi, psm: ocr.run.psm,
+                laneVersion: ocr.run.laneVersion, pages: ocr.run.pages, textFile: ocr.run.textFile,
+                textSha256: ocr.run.textSha256, textLaneState, rowsRead, rowNumbersRepaired: ocr.rowNumbersRepaired,
+                ...(ocr.aligned ? { aligned: ocr.aligned } : {}),
+              };
               if (ocr.result.status === "ok") {
                 entry = { ...entry, state: "ocr_tuple_agreement", lane: "ocr", rowsCompared: ocr.result.rowCount, ocr: base };
                 delete entry.problems;
                 console.log(`agree on ${ocr.result.rowCount} rows (${ocr.run.pages} pages, ${ocr.run.cached ? "cached" : `${seconds}s`})`);
               } else if (ocr.result.status === "mismatch") {
-                const rowsRead = ocr.extraction.kind === "rows" ? ocr.extraction.rows.length : null;
                 entry = { ...entry, state: "ocr_tuple_mismatch", lane: "ocr", rowsCompared: rowsRead, problems: ocr.result.problems, ocr: base };
-                console.log(`mismatch, ${ocr.result.problems.length} problems (${ocr.run.pages} pages, ${ocr.run.cached ? "cached" : `${seconds}s`})`);
+                const a = ocr.aligned;
+                console.log(
+                  `mismatch, ${ocr.result.problems.length} problems; read ${rowsRead} of ${rows.length} rows` +
+                    (a ? `, by printed row ${a.agree} agree / ${a.differ} differ / ${a.unread} unread` : "") +
+                    ` (${ocr.run.pages} pages, ${ocr.run.cached ? "cached" : `${seconds}s`})`
+                );
               } else {
                 const problem = ocr.result.status === "error" ? ocr.result.message : "ocr: no rows";
                 entry = { ...entry, ocr: { ...base, problem } };

@@ -18,7 +18,7 @@
  * (see scripts/plan-reparse.ts); the weekly job visits new filings only.
  */
 import { createHash } from "crypto";
-import { existsSync, readFileSync, writeFileSync } from "fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 
 export interface ParseCacheKeyInput {
@@ -204,16 +204,54 @@ export function readChunkedRecord(
   return { transactions, pageCount: manifest.pageCount };
 }
 
+export type ParseRecordSource = "current" | "current-chunks" | "legacy" | "legacy-chunks";
+
+/**
+ * Legacy chunk caches: <base>.pages{a}-{b}.parsed.json written by the old
+ * ingest for large filings, with no manifest. Accepted only as a complete
+ * run: the first chunk starts at page 1 and every next chunk starts where
+ * the previous one ended. Rows are concatenated in page order, which is
+ * document order, as the positional comparator needs.
+ */
+export function readLegacyChunkedRecord(pdfPath: string): unknown[] | null {
+  const dir = path.dirname(pdfPath);
+  const base = path.basename(pdfPath, path.extname(pdfPath));
+  const re = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.pages(\\d+)-(\\d+)\\.parsed\\.json$`);
+  const chunks: Array<{ first: number; last: number; file: string }> = [];
+  for (const f of readdirSync(dir)) {
+    const m = f.match(re);
+    if (m) chunks.push({ first: Number(m[1]), last: Number(m[2]), file: path.join(dir, f) });
+  }
+  if (chunks.length === 0) return null;
+  chunks.sort((a, b) => a.first - b.first);
+  let expected = 1;
+  const rows: unknown[] = [];
+  for (const c of chunks) {
+    if (c.first !== expected || c.last < c.first) return null;
+    try {
+      const parsed = JSON.parse(readFileSync(c.file, "utf-8"));
+      const transactions = parsed.transactions ?? parsed;
+      if (!Array.isArray(transactions)) return null;
+      rows.push(...transactions);
+    } catch {
+      return null;
+    }
+    expected = c.last + 1;
+  }
+  return rows;
+}
+
 /**
  * The parse record to compare a filing against, newest first: a current
  * keyed cache for the whole file, else a complete manifest-verified set
- * of current chunk caches, else the legacy path-keyed cache, else
- * nothing. Reports which it found so a log entry can say.
+ * of current chunk caches, else the legacy path-keyed cache, else a
+ * complete contiguous run of legacy chunk caches, else nothing. Reports
+ * which it found so a log entry can say.
  */
 export function findParseRecord(
   pdfPath: string,
   inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">
-): { source: "current" | "current-chunks" | "legacy"; transactions: unknown[] } | null {
+): { source: ParseRecordSource; transactions: unknown[] } | null {
   const whole = readParseCache(pdfPath, { ...inputWithoutChunk, chunk: null });
   if (whole) return { source: "current", transactions: whole.transactions };
 
@@ -230,6 +268,8 @@ export function findParseRecord(
       /* unreadable */
     }
   }
+  const legacyChunks = readLegacyChunkedRecord(pdfPath);
+  if (legacyChunks) return { source: "legacy-chunks", transactions: legacyChunks };
   return null;
 }
 

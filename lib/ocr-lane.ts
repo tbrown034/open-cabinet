@@ -27,15 +27,26 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { compareExtraction, parseTextLayer, type CrossCheckResult, type Extraction } from "../scripts/text-layer-crosscheck";
+import {
+  compareExtraction,
+  parseTextLayer,
+  UNKNOWN_AMOUNT_TOKEN,
+  type CrossCheckResult,
+  type CrossCheckRow,
+  type Extraction,
+} from "../scripts/text-layer-crosscheck";
 
 /** Bump when rendering or OCR settings change. Part of the cache key. */
-export const OCR_LANE_VERSION = "2026-09-05.1";
-export const OCR_DPI = 300;
-/** tesseract page segmentation 6: one uniform block of text, which keeps
- * table rows as lines. preserve_interword_spaces keeps the column gaps the
- * parser relies on. */
-export const OCR_PSM = 6;
+export const OCR_LANE_VERSION = "2026-09-05.2";
+/** The scans are 150 to 200 ppi; rendering at 400 upsamples them, which
+ * on Trump's Aug 2026 filing took a page from 26 complete rows to 31 of
+ * 33. 600 was worse. */
+export const OCR_DPI = 400;
+/** tesseract page segmentation 4: a single column of text of variable
+ * sizes. On these gridded tables it keeps each printed row on one line
+ * with single spaces between the columns; mode 6 breaks on the gridlines.
+ * Column gaps are rebuilt afterwards by columnizeOcrRows(). */
+export const OCR_PSM = 4;
 
 export const OCR_DIR = path.resolve("data/ocr");
 export const INSTALL_HINT = "tesseract is not installed. Install it with: brew install tesseract";
@@ -122,7 +133,7 @@ export function ocrPdfToText(
       options.log?.(`ocr page ${i + 1}/${pages.length}`);
       const out = execFileSync(
         "tesseract",
-        [path.join(work, png), "-", "--psm", String(OCR_PSM), "-c", "preserve_interword_spaces=1"],
+        [path.join(work, png), "-", "--psm", String(OCR_PSM)],
         { encoding: "utf-8", stdio: ["ignore", "pipe", "ignore"], timeout: 5 * 60_000, maxBuffer: 64 * 1024 * 1024 }
       );
       texts.push(out);
@@ -145,47 +156,189 @@ export function ocrPdfToText(
 /**
  * OCR output has systematic defects a real text layer never has. These
  * repairs are narrow, apply only inside the tokens the column parser reads
- * (row numbers, dates, dollar ranges, Yes/No), and are tested on strings.
- * They never touch description text.
+ * (row numbers, dates, dollar ranges, type words, Yes/No), and are tested
+ * on strings. They never touch description text.
  */
 export function repairOcrText(text: string): string {
   return text
     .split("\n")
     .map((line) => {
       let l = line;
+      // Table gridlines come through as | [ ] { } and runs of underscores.
+      l = l.replace(/[|\[\]{}]/g, " ").replace(/\s_{2,}\s/g, " ");
       // Dollar amounts: "$1,001 - $15,000" with O/o for 0, l/I for 1, S for $.
       l = l.replace(/(?<=^|\s)S(?=\d[\d,]*\b)/g, "$");
       l = l.replace(/\$[\dOoIl,]+/g, (m) => m.replace(/[Oo]/g, "0").replace(/[Il]/g, "1"));
       // Dates: MM/DD/YYYY with the same substitutions.
-      l = l.replace(/\b[\dOoIl]{2}\/[\dOoIl]{2}\/[\dOoIl]{4}\b/g, (m) => m.replace(/[Oo]/g, "0").replace(/[Il]/g, "1"));
-      // A leading row number read with an O.
-      l = l.replace(/^(\s{0,4})([\dO]{1,4})(?=\s{2,})/, (_m, sp: string, n: string) => sp + n.replace(/O/g, "0"));
+      l = l.replace(/\b[\dOoIl]{1,2}\/[\dOoIl]{1,2}\/[\dOoIl]{4}\b/g, (m) => m.replace(/[Oo]/g, "0").replace(/[Il]/g, "1"));
+      // A leading row number read with O, S, l or I for a digit.
+      l = l.replace(/^(\s{0,4})([\dOSlI]{1,4})(?=[.,]?\s)/, (_m, sp: string, n: string) =>
+        sp + n.replace(/O/g, "0").replace(/S/g, "5").replace(/[lI]/g, "1")
+      );
       // Hand-typed forms (Trump's) print "6/15/2026" and "purchase". The
       // e-filed form prints "06/15/2026" and "Purchase", which is what the
-      // parser reads. Pad the date; capitalize a type word that sits alone
-      // in a column (gaps of two or more spaces on both sides), never one
-      // inside a description.
+      // parser reads. Pad the date; fix the low-resolution misreads of the
+      // type and notification words ("purchaso", "Yos"); capitalize a type
+      // word only when it sits before a date, never one inside a description.
       l = l.replace(/\b(\d{1,2})\/(\d{1,2})\/(\d{4})\b/g, (_m, mm: string, dd: string, yy: string) => `${mm.padStart(2, "0")}/${dd.padStart(2, "0")}/${yy}`);
-      l = l.replace(/(\s{2,})(purchase|sale|exchange)(?=\s{2,}|\s*$)/g, (_m, sp: string, t: string) => sp + t[0].toUpperCase() + t.slice(1));
+      l = l.replace(/\b(purch[aeo]s[aeo]|purchase)(?=\s+\d{2}\/\d{2}\/\d{4})/gi, "Purchase");
+      l = l.replace(/\b(sale|sole|salo)(?=\s+\d{2}\/\d{2}\/\d{4})/gi, "Sale");
+      l = l.replace(/\b(exchange)(?=\s+\d{2}\/\d{2}\/\d{4})/gi, "Exchange");
+      l = l.replace(/(?<=\d{4}\s+)y[eo]s\b/gi, "Yes");
+      l = l.replace(/(?<=\d{4}\s+)n[o0]\b/gi, "No");
       return l;
     })
     .join("\n");
 }
 
+/** A printed row as segmentation mode 4 emits it: single spaces between columns. */
+const OCR_ROW =
+  /^\s{0,4}(\d{1,4})[.,]?\s+(.*?)\s+(Purchase|Sale \(Partial\)|Sale \(Full\)|Sale|Exchange)\s+(\d{2}\/\d{2}\/\d{4})\s+(Yes|No)\s+(.*)$/;
+
+/**
+ * Rebuild the column gaps the shared parser keys on. A line that reads as
+ * a complete printed row becomes its own block: a blank line, then the row
+ * number, description, type, date, notification and amount separated by
+ * runs of spaces. Any other line is indented as a continuation of the row
+ * above it, so a wrapped description or a wrapped amount still attaches
+ * to its row, exactly as pdftotext -layout output does.
+ */
+export function columnizeOcrRows(text: string): string {
+  const out: string[] = [];
+  for (const raw of text.split("\n")) {
+    const m = raw.match(OCR_ROW);
+    if (m) {
+      const [, num, desc, type, date, yn, amount] = m;
+      out.push("");
+      out.push(` ${num}${" ".repeat(Math.max(2, 10 - num.length))}${desc}      ${type}      ${date}      ${yn}      ${amount}`);
+    } else if (/^\s{0,4}\d{1,4}[.,]?\s+\S/.test(raw)) {
+      // Numbered but not a transaction: an account header or "Line is
+      // intentionally left blank". Its own block, so the parser can count
+      // it as a placeholder toward row continuity.
+      out.push("");
+      out.push(raw.replace(/^\s{0,4}(\d{1,4})[.,]?\s+/, (_m, num: string) => ` ${num}${" ".repeat(Math.max(2, 10 - num.length))}`));
+    } else if (raw.trim() === "") {
+      out.push("");
+    } else {
+      out.push(`           ${raw.trim()}`);
+    }
+  }
+  return out.join("\n");
+}
+
+/**
+ * A printed row number the OCR misread while its neighbors read cleanly.
+ * On Trump's Aug 2026 filing the gridline under a row number comes through
+ * as a leading "1" (297, 1298, 299) and an 8 as a 3 (848, 349, 850). The
+ * rule is narrow: a row whose number is out of sequence is repaired to
+ * previous+1 only when the row after it reads previous+2, so the misread
+ * is sandwiched between two rows that agree on where it sits. A dropped
+ * row stays a gap, and the comparator reports it. Repairs are counted.
+ */
+export function repairRowSequence(rows: CrossCheckRow[]): { rows: CrossCheckRow[]; repaired: number } {
+  const out = rows.map((r) => ({ ...r }));
+  let repaired = 0;
+  for (let i = 1; i < out.length; i++) {
+    const prev = out[i - 1].rowNumber;
+    const n = out[i].rowNumber;
+    if (n === prev + 1) continue;
+    const next = out[i + 1]?.rowNumber;
+    if (next === prev + 2) {
+      out[i].rowNumber = prev + 1;
+      repaired += 1;
+    } else if (n === prev + 1 + 1000 && n >= 1000) {
+      // The gridline under the row number read as a leading "1": 284 came
+      // through as 1284. An exact offset of 1000 from the expected number
+      // is that artifact and nothing else.
+      out[i].rowNumber = prev + 1;
+      repaired += 1;
+    }
+  }
+  return { rows: out, repaired };
+}
+
 /** Extract comparison rows from the OCR text, through the shared parser. */
-export function extractOcrRows(text: string): Extraction {
-  const extraction = parseTextLayer(repairOcrText(text));
+export function extractOcrRows(text: string): Extraction & { rowNumbersRepaired?: number } {
+  const extraction = parseTextLayer(columnizeOcrRows(repairOcrText(text)));
   if (extraction.kind === "no-text") {
     // The image was OCRed and still no rows came out: not a scan we could
     // not see, a scan the parser could not read. Say that.
     return { kind: "tool-error", message: "ocr: no transaction rows could be parsed from the OCR text" };
   }
+  if (extraction.kind === "rows") {
+    const { rows, repaired } = repairRowSequence(extraction.rows);
+    return { ...extraction, rows, rowNumbersRepaired: repaired };
+  }
   return extraction;
+}
+
+export interface AlignedComparison {
+  /** OCR rows whose printed number maps to a parsed row. */
+  compared: number;
+  agree: number;
+  differ: number;
+  /** Printed rows the OCR lane did not read at all. */
+  unread: number;
+  differences: string[];
+}
+
+/**
+ * Advisory, never a state. When the OCR lane read fewer rows than the
+ * model, the positional comparison stops at the row count, which says
+ * nothing about the rows it did read. This pairs each OCR row with the
+ * parsed row at the same printed position (parsed rows are in document
+ * order; placeholder rows the form numbers but the model omits are
+ * skipped) and counts agreement on the same tuple. A person reads the
+ * differences; the state stays ocr_tuple_mismatch.
+ */
+export function alignByPrintedRow(
+  extraction: Extraction,
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
+): AlignedComparison | null {
+  if (extraction.kind !== "rows") return null;
+  const placeholders = new Set(extraction.placeholderRows);
+  // printed row number -> index into parsed, skipping placeholders
+  const maxPrinted = Math.max(...extraction.rows.map((r) => r.rowNumber), ...extraction.placeholderRows, 0);
+  const indexOfPrinted = new Map<number, number>();
+  let idx = 0;
+  for (let n = 1; n <= maxPrinted; n++) {
+    if (placeholders.has(n)) continue;
+    indexOfPrinted.set(n, idx++);
+  }
+  const tuple = (r: { type: string; date: string; amount: string | null; lateFilingFlag?: boolean | null }) => {
+    const t = /^sale/i.test(r.type) ? "Sale" : /^purchase/i.test(r.type) ? "Purchase" : /^exchange/i.test(r.type) ? "Exchange" : r.type;
+    const late = r.lateFilingFlag === null ? "unreadable" : r.lateFilingFlag ? "late" : "ontime";
+    return `${t}|${r.date}|${r.amount ?? UNKNOWN_AMOUNT_TOKEN}|${late}`;
+  };
+  let compared = 0, agree = 0;
+  const differences: string[] = [];
+  const seen = new Set<number>();
+  for (const r of extraction.rows) {
+    const i = indexOfPrinted.get(r.rowNumber);
+    if (i === undefined || i >= parsed.length || seen.has(r.rowNumber)) continue;
+    seen.add(r.rowNumber);
+    compared += 1;
+    const want = tuple(r);
+    const got = tuple(parsed[i]);
+    if (want === got) agree += 1;
+    else if (differences.length < 40) differences.push(`row ${r.rowNumber}: OCR [${want}] vs AI parse [${got}]`);
+  }
+  const differ = compared - agree;
+  const unread = Math.max(0, parsed.length - compared);
+  return { compared, agree, differ, unread, differences };
 }
 
 export type OcrCheck =
   | { ran: false; reason: string }
-  | { ran: true; run: OcrRun; extraction: Extraction; result: CrossCheckResult };
+  | {
+      ran: true;
+      run: OcrRun;
+      extraction: Extraction;
+      result: CrossCheckResult;
+      rowNumbersRepaired: number;
+      /** Advisory pairing by printed row, filled only on a mismatch. */
+      aligned: AlignedComparison | null;
+    };
 
 /**
  * Run the OCR lane on one filing against the model's rows for the same
@@ -201,5 +354,13 @@ export function crossCheckByOcr(
   if (!engine.available) return { ran: false, reason: engine.reason };
   const { text, run } = ocrPdfToText(pdfPath, pdfSha256, options);
   const extraction = extractOcrRows(text);
-  return { ran: true, run, extraction, result: compareExtraction(extraction, parsed, "OCR") };
+  const result = compareExtraction(extraction, parsed, "OCR");
+  return {
+    ran: true,
+    run,
+    extraction,
+    result,
+    rowNumbersRepaired: extraction.rowNumbersRepaired ?? 0,
+    aligned: result.status === "mismatch" ? alignByPrintedRow(extraction, parsed) : null,
+  };
 }

@@ -70,7 +70,7 @@ export interface CrosscheckEntry {
   problems?: string[];
   /** Which parse record the lane compared against: a current keyed cache,
    * current chunk caches, or the legacy path-keyed cache. */
-  parseRecord?: "current" | "current-chunks" | "legacy";
+  parseRecord?: "current" | "current-chunks" | "legacy" | "legacy-chunks";
   /** Which lane produced the verdict. Absent means the text lane. */
   lane?: "text" | "ocr";
   /** How the OCR lane read the pages, when it ran. */
@@ -85,6 +85,12 @@ export interface CrosscheckEntry {
     textSha256: string;
     /** What the text lane had said before OCR ran. */
     textLaneState: CrosscheckState;
+    /** Rows the OCR lane read, and printed row numbers repaired by sequence. */
+    rowsRead?: number;
+    rowNumbersRepaired?: number;
+    /** Advisory: OCR rows paired with parsed rows by printed row number.
+     * Filled only on a mismatch. Not a state; a person reads it. */
+    aligned?: { compared: number; agree: number; differ: number; unread: number; differences: string[] };
     /** OCR ran but its output could not be parsed or compared. */
     problem?: string;
   };

@@ -484,6 +484,9 @@ export function recordOcrCheck(
     engine: ocr.run.engine, version: ocr.run.version, dpi: ocr.run.dpi, psm: ocr.run.psm,
     laneVersion: ocr.run.laneVersion, pages: ocr.run.pages, textFile: ocr.run.textFile,
     textSha256: ocr.run.textSha256, textLaneState,
+    rowsRead: ocr.extraction.kind === "rows" ? ocr.extraction.rows.length : 0,
+    rowNumbersRepaired: ocr.rowNumbersRepaired,
+    ...(ocr.aligned ? { aligned: ocr.aligned } : {}),
   };
   let next: CrosscheckEntry;
   if (ocr.result.status === "ok") {

@@ -1,3 +1,4 @@
+import { readLegacyChunkedRecord } from "./parse-cache";
 import { describe, expect, it } from "vitest";
 import { mkdtempSync, writeFileSync, existsSync, readFileSync } from "fs";
 import { tmpdir } from "os";
@@ -144,5 +145,20 @@ describe("chunked filings", () => {
     forged.chunks[1].key = "0000000000000000";
     writeFileSync(manifestFile, JSON.stringify(forged));
     expect(readChunkedRecord(pdf, noChunk)).toBeNull();
+  });
+});
+
+describe("readLegacyChunkedRecord", () => {
+  it("assembles a contiguous run of legacy chunk caches in page order and rejects a gap", () => {
+    const dir = mkdtempSync(path.join(tmpdir(), "legacy-chunks-"));
+    const pdf = path.join(dir, "Some-Filing-278T.pdf");
+    writeFileSync(pdf, "not really a pdf");
+    const chunk = (a: number, b: number, rows: string[]) =>
+      writeFileSync(path.join(dir, `Some-Filing-278T.pages${a}-${b}.parsed.json`), JSON.stringify({ transactions: rows.map((description) => ({ description })) }));
+    chunk(3, 4, ["c"]);
+    chunk(1, 2, ["a", "b"]);
+    expect((readLegacyChunkedRecord(pdf) as Array<{ description: string }>).map((r) => r.description)).toEqual(["a", "b", "c"]);
+    chunk(6, 6, ["e"]);
+    expect(readLegacyChunkedRecord(pdf)).toBeNull();
   });
 });
