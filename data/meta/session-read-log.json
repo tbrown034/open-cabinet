@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T16:43:08.054Z",
+  "generatedAt": "2026-09-06T16:54:40.577Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf": {
       "slug": "trump-donald-j",
@@ -9,7 +9,7 @@
       "candidateSha256": "32b07b803de1adf668600ad7e2671e29855dff4671ef89e1db8cbe10fb27bd1c",
       "model": "gpt-6-astra",
       "rowsPrimary": 3642,
-      "rowsSecond": 1285,
+      "rowsSecond": 1780,
       "agreedIndexes": [
         0,
         1,
@@ -17,7 +17,6 @@
         3,
         4,
         5,
-        6,
         7,
         8,
         9,
@@ -858,6 +857,7 @@
         850,
         851,
         852,
+        853,
         854,
         855,
         856,
@@ -1285,22 +1285,7 @@
         1281,
         1282,
         1283,
-        1284
-      ],
-      "disputedIndexes": [
-        264,
-        332,
-        503,
-        510,
-        627,
-        841,
-        960,
-        1066,
-        1067,
-        1492
-      ],
-      "unreadIndexes": [
-        853,
+        1284,
         1285,
         1286,
         1287,
@@ -1343,7 +1328,6 @@
         1324,
         1325,
         1326,
-        1327,
         1328,
         1329,
         1330,
@@ -1472,7 +1456,6 @@
         1453,
         1454,
         1455,
-        1456,
         1457,
         1458,
         1459,
@@ -1508,6 +1491,7 @@
         1489,
         1490,
         1491,
+        1492,
         1493,
         1494,
         1495,
@@ -1519,7 +1503,6 @@
         1501,
         1502,
         1503,
-        1504,
         1505,
         1506,
         1507,
@@ -1686,7 +1669,6 @@
         1668,
         1669,
         1670,
-        1671,
         1672,
         1673,
         1674,
@@ -1732,7 +1714,6 @@
         1714,
         1715,
         1716,
-        1717,
         1718,
         1719,
         1720,
@@ -1794,7 +1775,27 @@
         1776,
         1777,
         1778,
-        1779,
+        1779
+      ],
+      "disputedIndexes": [
+        6,
+        264,
+        332,
+        503,
+        510,
+        627,
+        841,
+        960,
+        1066,
+        1067,
+        1327,
+        2929
+      ],
+      "unreadIndexes": [
+        1456,
+        1504,
+        1671,
+        1717,
         1780,
         1781,
         1782,
@@ -2944,7 +2945,6 @@
         2926,
         2927,
         2928,
-        2929,
         2930,
         2931,
         2932,
@@ -3658,8 +3658,31 @@
         3640,
         3641
       ],
-      "extraRows": [],
+      "extraRows": [
+        {
+          "description": "WORKDAY INCCL A",
+          "type": "Purchase",
+          "date": "2026-02-10",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "FIRST BANCORP P R F",
+          "type": "Purchase",
+          "date": "2026-03-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "MC CORMICK & CO INC NON VOTING",
+          "type": "Purchase",
+          "date": "2026-03-17",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        }
+      ],
       "differences": [
+        "row 7: second model [Purchase|2026-01-23|$1,001-$15,000|late] vs primary [Purchase|2026-02-10|$1,000,001-$5,000,000|late] for \"WORKDAY INC CL A\"",
         "row 265: second model [Purchase|2026-01-06|$100,001-$250,000|late] vs primary [Purchase|2026-01-08|$100,001-$250,000|late] for \"BRISTOL MYERS SQUIBB CO COM\"",
         "row 333: second model [Purchase|2026-02-26|$100,001-$250,000|late] vs primary [Purchase|2026-02-28|$100,001-$250,000|late] for \"TELEFLEX INC\"",
         "row 504: second model [Purchase|2026-01-06|$50,001-$100,000|late] vs primary [Purchase|2026-01-08|$50,001-$100,000|late] for \"ORACLE CORP UNSOLICITED\"",
@@ -3669,12 +3692,13 @@
         "row 961: second model [Purchase|2026-01-26|$15,001-$50,000|late] vs primary [Purchase|2026-01-25|$15,001-$50,000|late] for \"HIGHWOODS PPTYS INC REIT\"",
         "row 1067: second model [Purchase|2026-01-06|$15,001-$50,000|late] vs primary [Purchase|2025-01-06|$15,001-$50,000|late] for \"PALANTIR TECHNOLOGIES INC CL A\"",
         "row 1068: second model [Purchase|2026-03-11|$15,001-$50,000|late] vs primary [Purchase|2025-03-11|$15,001-$50,000|late] for \"TE CONNECTIVITY PLC UNSOLICITED\"",
-        "row 1493: second model [Purchase|2026-03-30|$15,001-$50,000|late] vs primary [Purchase|2026-03-04|$15,001-$50,000|late] for \"COMMUNITY FINL SYS INC\""
+        "row 1328: second model [Purchase|2026-02-26|$15,001-$50,000|late] vs primary [Purchase|2026-02-25|$15,001-$50,000|late] for \"SHUTTERSTOCK INC MERGER ELECTION EXP: 03/31/26\"",
+        "row 2930: second model [Purchase|2026-02-02|$15,001-$50,000|late] vs primary [Sale|2026-02-26|$15,001-$50,000|late] for \"LEGALZOOM COM INC\""
       ],
       "costUsd": 0,
-      "checkedAt": "2026-09-06T16:43:08.053Z",
+      "checkedAt": "2026-09-06T16:54:40.576Z",
       "reader": "claude-code-session",
-      "printedRowsRead": 1285,
+      "printedRowsRead": 1780,
       "printedRowGaps": []
     }
   }
