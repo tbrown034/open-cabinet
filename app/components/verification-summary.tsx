@@ -1,10 +1,14 @@
 import { STATE_LABEL, type RowVerificationFile, type VerificationState } from "@/lib/row-verification";
 
 export default function VerificationSummary({
-  summary,
+  summary: storedSummary,
 }: {
   summary: RowVerificationFile["summary"] | null;
 }) {
+  // Older files predate the audit gate and give score 3 to program-only
+  // agreements. They cannot support the current coverage claim.
+  const summary = storedSummary && (Object.keys(STATE_LABEL) as VerificationState[])
+    .every((state) => typeof storedSummary.byState[state] === "number") ? storedSummary : null;
   // "Checked" here means all three gates: an independent program (or a
   // second company's model), the model read, and the page audit; or a
   // person's decision.
@@ -38,7 +42,9 @@ export default function VerificationSummary({
           </p>
         </>
       ) : (
-        <p className="text-neutral-600 leading-relaxed">Row verification counts are not yet available.</p>
+        <p className="text-neutral-600 leading-relaxed">{storedSummary
+          ? "Row verification counts need rebuilding for the current checks."
+          : "Row verification counts are not yet available."}</p>
       )}
     </section>
   );
