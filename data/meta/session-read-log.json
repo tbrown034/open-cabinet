@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T16:54:40.577Z",
+  "generatedAt": "2026-09-06T16:59:39.296Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf": {
       "slug": "trump-donald-j",
@@ -9,7 +9,7 @@
       "candidateSha256": "32b07b803de1adf668600ad7e2671e29855dff4671ef89e1db8cbe10fb27bd1c",
       "model": "gpt-6-astra",
       "rowsPrimary": 3642,
-      "rowsSecond": 1780,
+      "rowsSecond": 2044,
       "agreedIndexes": [
         0,
         1,
@@ -1775,27 +1775,7 @@
         1776,
         1777,
         1778,
-        1779
-      ],
-      "disputedIndexes": [
-        6,
-        264,
-        332,
-        503,
-        510,
-        627,
-        841,
-        960,
-        1066,
-        1067,
-        1327,
-        2929
-      ],
-      "unreadIndexes": [
-        1456,
-        1504,
-        1671,
-        1717,
+        1779,
         1780,
         1781,
         1782,
@@ -1840,7 +1820,6 @@
         1821,
         1822,
         1823,
-        1824,
         1825,
         1826,
         1827,
@@ -1854,14 +1833,12 @@
         1835,
         1836,
         1837,
-        1838,
         1839,
         1840,
         1841,
         1842,
         1843,
         1844,
-        1845,
         1846,
         1847,
         1848,
@@ -1934,7 +1911,6 @@
         1915,
         1916,
         1917,
-        1918,
         1919,
         1920,
         1921,
@@ -2059,7 +2035,33 @@
         2040,
         2041,
         2042,
-        2043,
+        2043
+      ],
+      "disputedIndexes": [
+        6,
+        264,
+        332,
+        503,
+        510,
+        627,
+        841,
+        960,
+        1066,
+        1067,
+        1327,
+        1671,
+        2400,
+        2634,
+        2929
+      ],
+      "unreadIndexes": [
+        1456,
+        1504,
+        1717,
+        1824,
+        1838,
+        1845,
+        1918,
         2044,
         2045,
         2046,
@@ -2416,7 +2418,6 @@
         2397,
         2398,
         2399,
-        2400,
         2401,
         2402,
         2403,
@@ -2650,7 +2651,6 @@
         2631,
         2632,
         2633,
-        2634,
         2635,
         2636,
         2637,
@@ -3679,6 +3679,13 @@
           "date": "2026-03-17",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "INSMED INC PAR $.01",
+          "type": "Purchase",
+          "date": "2026-02-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
         }
       ],
       "differences": [
@@ -3693,12 +3700,15 @@
         "row 1067: second model [Purchase|2026-01-06|$15,001-$50,000|late] vs primary [Purchase|2025-01-06|$15,001-$50,000|late] for \"PALANTIR TECHNOLOGIES INC CL A\"",
         "row 1068: second model [Purchase|2026-03-11|$15,001-$50,000|late] vs primary [Purchase|2025-03-11|$15,001-$50,000|late] for \"TE CONNECTIVITY PLC UNSOLICITED\"",
         "row 1328: second model [Purchase|2026-02-26|$15,001-$50,000|late] vs primary [Purchase|2026-02-25|$15,001-$50,000|late] for \"SHUTTERSTOCK INC MERGER ELECTION EXP: 03/31/26\"",
+        "row 1672: second model [Purchase|2026-02-19|$1,001-$15,000|late] vs primary [Purchase|2026-01-23|$1,001-$15,000|late] for \"WORKDAY INC CL A\"",
+        "row 2401: second model [Purchase|2026-03-17|$1,001-$15,000|late] vs primary [Sale|2026-02-23|$1,001-$15,000|late] for \"IQVIA HLDGS INC\"",
+        "row 2635: second model [Purchase|2026-01-23|$1,001-$15,000|late] vs primary [Sale|2026-02-19|$1,001-$15,000|late] for \"TRADE DESK INC (THE) CL A\"",
         "row 2930: second model [Purchase|2026-02-02|$15,001-$50,000|late] vs primary [Sale|2026-02-26|$15,001-$50,000|late] for \"LEGALZOOM COM INC\""
       ],
       "costUsd": 0,
-      "checkedAt": "2026-09-06T16:54:40.576Z",
+      "checkedAt": "2026-09-06T16:59:39.295Z",
       "reader": "claude-code-session",
-      "printedRowsRead": 1780,
+      "printedRowsRead": 2044,
       "printedRowGaps": []
     }
   }
