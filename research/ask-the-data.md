@@ -119,7 +119,7 @@ filesystem is writable, and to the console when it is not. The line records the
 question, the plan, the row count, whether the model's sentence survived the
 check, and any figures it was rejected for.
 
-## What a panel would ask
+## Questions a reader would ask
 
 **Where does the AI actually sit?**
 At the two ends. It turns English into a query, and it turns a result into a
