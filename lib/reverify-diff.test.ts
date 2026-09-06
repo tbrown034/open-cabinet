@@ -82,6 +82,13 @@ describe("diffRows", () => {
     expect(n.changed[0]?.fields).toEqual(["amountNote"]);
   });
 
+  it("a two-letter company name is a name, and See Endnote is not part of one", async () => {
+    const { sharesAssetWord } = await import("./reverify-diff");
+    expect(sharesAssetWord("HP INC COM See Endnote", "HP INC COM")).toBe(true);
+    expect(sharesAssetWord("GE Aerospace", "GE AEROSPACE (GE)")).toBe(true);
+    expect(sharesAssetWord("HP INC COM", "GE AEROSPACE")).toBe(false);
+  });
+
   it("pairs a same-trade leftover only when the pairing is unambiguous", () => {
     const pub = [row({ description: "A", ticker: null }), row({ description: "B", ticker: null })];
     const fresh = [row({ description: "C", ticker: null }), row({ description: "D", ticker: null })];

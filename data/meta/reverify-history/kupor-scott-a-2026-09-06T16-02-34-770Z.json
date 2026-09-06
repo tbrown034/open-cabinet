@@ -1,19 +1,733 @@
 {
   "slug": "kupor-scott-a",
-  "stamp": "2026-09-06",
-  "laneVerdicts": [
-    "Scott-A-Kupor-07.20.2026-278T.pdf: text layer agrees (3 rows)",
-    "Scott-A-Kupor-07.15.2026-278T.pdf: text layer agrees (2 rows)",
-    "Scott-A-Kupor-06.22.2026-278T(1).pdf: text layer agrees (9 rows)",
-    "Scott-A-Kupor-06.22.2026-278T.pdf: text layer agrees (2 rows)",
-    "Scott-A-Kupor-04.20.2026-278T.pdf: text layer agrees (2 rows)",
-    "Scott-A-Kupor-02.06.2026-278T.pdf: text layer agrees (1 rows)",
-    "Scott-A-Kupor-01.09.2026-278T.pdf: text layer agrees (3 rows)",
-    "Scott-A-Kupor-10.08.2025-278T.pdf: text layer agrees (2 rows)",
-    "Scott-A-Kupor-07.28.2025-278T.pdf: text layer agrees (10 rows)",
-    "Scott-A-Kupor-09.26.2025-278T.pdf: text layer agrees (1 rows)",
-    "Scott-A-Kupor-09.12.2025-278T.pdf: text layer agrees (54 rows)",
-    "Scott-A-Kupor-09.02.2025-278T.pdf: text layer agrees (1 rows)"
+  "replacedAt": "2026-09-06T16:02:34.770Z",
+  "previousTransactions": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7B58D078A7F838FE85258E5A002DB8C1/$FILE/Scott-A-Kupor-07.20.2026-278T.pdf"
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7B58D078A7F838FE85258E5A002DB8C1/$FILE/Scott-A-Kupor-07.20.2026-278T.pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7B58D078A7F838FE85258E5A002DB8C1/$FILE/Scott-A-Kupor-07.20.2026-278T.pdf"
+    },
+    {
+      "description": "Omada Common Stock (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C98F5D124FF9D62785258E5A002DB8E2/$FILE/Scott-A-Kupor-07.15.2026-278T.pdf"
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C98F5D124FF9D62785258E5A002DB8E2/$FILE/Scott-A-Kupor-07.15.2026-278T.pdf"
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf"
+    },
+    {
+      "description": "Airbnb Inc. Class A Common Stock (ABNB)",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+    },
+    {
+      "description": "Airbnb Inc. Class A Common Stock",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2026-01-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf"
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2025-12-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-12-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+    },
+    {
+      "description": "Omada Health Inc.",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2025-12-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+    },
+    {
+      "description": "Alphabet, Inc. (sale of stock per required CD)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Southern Company (required sale pursuant to CD)",
+      "ticker": "SO",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-09-25",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf"
+    },
+    {
+      "description": "Adobe Inc.",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Akamai Technologies",
+      "ticker": "AKAM",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet Inc. Class A",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet Inc. Class C",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Amazon.com Inc.",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Apple Inc.",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "AT&T Inc.",
+      "ticker": "T",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Best Buy Co Inc.",
+      "ticker": "BBY",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Booz Allen Hamilton Holding Corp. Class A",
+      "ticker": "BAH",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "CACI International Inc.",
+      "ticker": "CACI",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Cisco Systems Inc.",
+      "ticker": "CSCO",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Citigroup Inc.",
+      "ticker": "C",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dell Technologies Inc. Class C",
+      "ticker": "DELL",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DocuSign Inc.",
+      "ticker": "DOCU",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Fox Corp. Class A",
+      "ticker": "FOXA",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Fox Corp. Class B",
+      "ticker": "FOX",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Gartner Inc.",
+      "ticker": "IT",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "General Dynamics Corp.",
+      "ticker": "GD",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Hewlett Packard Enterprise Co.",
+      "ticker": "HPE",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Host Hotels & Resorts Inc.",
+      "ticker": "HST",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "HP Inc.",
+      "ticker": "HPQ",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "International Business Machines Corp.",
+      "ticker": "IBM",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Lockheed Martin Corp.",
+      "ticker": "LMT",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "NetApp Inc.",
+      "ticker": "NTAP",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Northrop Grumman Corp.",
+      "ticker": "NOC",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Open Text Corp.",
+      "ticker": "OTEX",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Salesforce Inc.",
+      "ticker": "CRM",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "SAP ADR",
+      "ticker": "SAP",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Science Applications International Corp.",
+      "ticker": "SAIC",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Southern Co.",
+      "ticker": "SO",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Thomson Reuters Corp.",
+      "ticker": "TRI",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Tyler Technologies Inc.",
+      "ticker": "TYL",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "United Parcel Service Inc. Class B",
+      "ticker": "UPS",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Verizon Communications Inc.",
+      "ticker": "VZ",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Walt Disney Co.",
+      "ticker": "DIS",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Workday Inc. Class A",
+      "ticker": "WDAY",
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet Inc. Class A",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Alphabet Inc. Class C",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Amazon.com Inc.",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Apple Inc.",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "AT&T Inc.",
+      "ticker": "T",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Cisco Systems Inc.",
+      "ticker": "CSCO",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Citigroup Inc.",
+      "ticker": "C",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Dell Technologies Inc. Class C",
+      "ticker": "DELL",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "DocuSign Inc.",
+      "ticker": "DOCU",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Informatica Inc. Class A",
+      "ticker": "INFA",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Lockheed Martin Corp.",
+      "ticker": "LMT",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Northrop Grumman Corp.",
+      "ticker": "NOC",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Oracle Corp.",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Southern Co.",
+      "ticker": "SO",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Tyler Technologies Inc.",
+      "ticker": "TYL",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Verizon Communications Inc.",
+      "ticker": "VZ",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Walt Disney Co.",
+      "ticker": "DIS",
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Apple, Inc.",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf"
+    },
+    {
+      "description": "Airbnb Inc. call option exercise 1",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Airbnb Inc. call option exercise 2",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Airbnb Inc. call option exercise 3",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 1",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 2",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 3",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 4",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 5",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Coinbase Global Inc. call option exercise 6",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Wise plc distribution",
+      "ticker": "WISE",
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false
+    }
   ],
   "diff": {
     "published": 88,

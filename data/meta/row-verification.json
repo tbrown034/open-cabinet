@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T15:40:13.007Z",
+  "generatedAt": "2026-09-06T16:02:47.445Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11500,
     "byState": {
-      "checked": 4652,
+      "checked": 4731,
       "human_verified": 6,
-      "deterministic_agree": 1523,
+      "deterministic_agree": 1518,
       "two_models_agree": 13,
       "audit_only": 165,
-      "single_read": 4016,
+      "single_read": 3942,
       "disputed": 1125
     },
     "byScore": {
       "0": 1125,
-      "1": 4016,
-      "2": 1701,
-      "3": 4658
+      "1": 3942,
+      "2": 1696,
+      "3": 4737
     }
   },
   "rows": {
@@ -9670,8 +9670,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ae2acea904ef3b80306e4b59": {
-      "id": "ae2acea904ef3b80306e4b59",
+    "4d33c3a18c424788ce57087f": {
+      "id": "4d33c3a18c424788ce57087f",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
       "score": 3,
@@ -9679,8 +9679,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4d33c3a18c424788ce57087f": {
-      "id": "4d33c3a18c424788ce57087f",
+    "ae2acea904ef3b80306e4b59": {
+      "id": "ae2acea904ef3b80306e4b59",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
       "score": 3,
@@ -9706,671 +9706,671 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "25fb30584de54ab8772ae74f": {
-      "id": "25fb30584de54ab8772ae74f",
+    "62cf0a8f8c7b8d8a02e97ba4": {
+      "id": "62cf0a8f8c7b8d8a02e97ba4",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "36744efe04ee780c187c51ca": {
-      "id": "36744efe04ee780c187c51ca",
+    "303eb8c93dfc32043adfb287": {
+      "id": "303eb8c93dfc32043adfb287",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "9f5f48b70a2b48afc77568d4": {
-      "id": "9f5f48b70a2b48afc77568d4",
+    "c2cb1d9507a0b012fb3e9266": {
+      "id": "c2cb1d9507a0b012fb3e9266",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8d7b1b17428ebabcfe3ba115": {
-      "id": "8d7b1b17428ebabcfe3ba115",
+    "69886e02117521f762a0c260": {
+      "id": "69886e02117521f762a0c260",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4d5a3ed98d9a49293f50e05e": {
-      "id": "4d5a3ed98d9a49293f50e05e",
+    "7ae757a2117c42fb9895ff7e": {
+      "id": "7ae757a2117c42fb9895ff7e",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "f19d47a934eb9afde4660ba0": {
-      "id": "f19d47a934eb9afde4660ba0",
+    "51c41067feb2633cd2fb76b4": {
+      "id": "51c41067feb2633cd2fb76b4",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0aab65598f10eb93aeddf0fe": {
-      "id": "0aab65598f10eb93aeddf0fe",
+    "f496b845ca6d5db1746c93ca": {
+      "id": "f496b845ca6d5db1746c93ca",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "eaa60fd083a8381fcd404c06": {
-      "id": "eaa60fd083a8381fcd404c06",
+    "cbaf54b408ac829d9de296bf": {
+      "id": "cbaf54b408ac829d9de296bf",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "b989a3cb65816f66fb335fcd": {
-      "id": "b989a3cb65816f66fb335fcd",
+    "2fba9f3ff31bef5a1a713826": {
+      "id": "2fba9f3ff31bef5a1a713826",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "14e8b23d55d3d6bca25ac9d2": {
-      "id": "14e8b23d55d3d6bca25ac9d2",
+    "9b1d9a9fa84704757304ec2f": {
+      "id": "9b1d9a9fa84704757304ec2f",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "821f84dc6a796a0335547b84": {
-      "id": "821f84dc6a796a0335547b84",
+    "2ff5225ab2de8f2151c47b55": {
+      "id": "2ff5225ab2de8f2151c47b55",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6a68b022f2817d29d0a21749": {
-      "id": "6a68b022f2817d29d0a21749",
+    "c35065f756bc23f161e9ae37": {
+      "id": "c35065f756bc23f161e9ae37",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "060654ade4748d62275e4975": {
-      "id": "060654ade4748d62275e4975",
+    "9a84f456b7802daafec6feb8": {
+      "id": "9a84f456b7802daafec6feb8",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4dc283f8963978e53313f26b": {
-      "id": "4dc283f8963978e53313f26b",
+    "2628e602837c8a45b632b816": {
+      "id": "2628e602837c8a45b632b816",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c48d651b8206e68581c627db": {
-      "id": "c48d651b8206e68581c627db",
+    "e2129b9290cb018ffdb2a257": {
+      "id": "e2129b9290cb018ffdb2a257",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3bfafcb8f4eb2f7034767e39": {
-      "id": "3bfafcb8f4eb2f7034767e39",
+    "2fe70787f36fb0138af172d6": {
+      "id": "2fe70787f36fb0138af172d6",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0225a93b7a366708777a693f": {
-      "id": "0225a93b7a366708777a693f",
+    "566e7b3266431c85898e00fa": {
+      "id": "566e7b3266431c85898e00fa",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "5209d991329cde50a9b6ec1f": {
-      "id": "5209d991329cde50a9b6ec1f",
+    "dc9e6ba840e3724efa6d6a8e": {
+      "id": "dc9e6ba840e3724efa6d6a8e",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "95a08dcd85c63e4657cced8d": {
-      "id": "95a08dcd85c63e4657cced8d",
+    "4313dcb7eb737d08e37dafec": {
+      "id": "4313dcb7eb737d08e37dafec",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7d4a40add3aa6f41d0f7159c": {
-      "id": "7d4a40add3aa6f41d0f7159c",
+    "64091d04f4172664b9e75862": {
+      "id": "64091d04f4172664b9e75862",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "abbe67af9ba66877d78d2335": {
-      "id": "abbe67af9ba66877d78d2335",
+    "62faf223e555ba6077b9fa3b": {
+      "id": "62faf223e555ba6077b9fa3b",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6e4520d8805e5616d61023ef": {
-      "id": "6e4520d8805e5616d61023ef",
+    "97cbe074fd49163dd8d8261a": {
+      "id": "97cbe074fd49163dd8d8261a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d501043e928ff4a7445e95bf": {
-      "id": "d501043e928ff4a7445e95bf",
+    "99e9eb58844116eda44c18cb": {
+      "id": "99e9eb58844116eda44c18cb",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2f1f5a067f9d6e50218c1f32": {
-      "id": "2f1f5a067f9d6e50218c1f32",
+    "c4d8cb0956f1427b72fb764a": {
+      "id": "c4d8cb0956f1427b72fb764a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "84ef697ea2d1e1fb6817523b": {
-      "id": "84ef697ea2d1e1fb6817523b",
+    "bb9a22de59d731faef750547": {
+      "id": "bb9a22de59d731faef750547",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "bec028ab85c3c236ca126691": {
-      "id": "bec028ab85c3c236ca126691",
+    "b896c52f6b873132eb997bc2": {
+      "id": "b896c52f6b873132eb997bc2",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "64b620d8ffe6d03aa33e3fbc": {
-      "id": "64b620d8ffe6d03aa33e3fbc",
+    "2807a19d1ce318f12f683d32": {
+      "id": "2807a19d1ce318f12f683d32",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "bdf849be41b0c4d208f7bcc8": {
-      "id": "bdf849be41b0c4d208f7bcc8",
+    "2fd48b417921ca077dd69e58": {
+      "id": "2fd48b417921ca077dd69e58",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c1789537a2ec8b91409c12ef": {
-      "id": "c1789537a2ec8b91409c12ef",
+    "78f5710e6f3b6830855b78ac": {
+      "id": "78f5710e6f3b6830855b78ac",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "07fb6b76d65c23023fa8863f": {
-      "id": "07fb6b76d65c23023fa8863f",
+    "11655bdd117fe2d829ff6333": {
+      "id": "11655bdd117fe2d829ff6333",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "83a0a2269cf2b1913dac9a21": {
-      "id": "83a0a2269cf2b1913dac9a21",
+    "331a6224ddbd2b8367f6e97a": {
+      "id": "331a6224ddbd2b8367f6e97a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "868bcf6cdd0ce40f67d7313d": {
-      "id": "868bcf6cdd0ce40f67d7313d",
+    "4cd376c6aedc4411cdef858e": {
+      "id": "4cd376c6aedc4411cdef858e",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7c224c6a7d8735c5bfec77fb": {
-      "id": "7c224c6a7d8735c5bfec77fb",
+    "e1cb9a2361881671264dce61": {
+      "id": "e1cb9a2361881671264dce61",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ac2afea9d69dbd0a3457a68b": {
-      "id": "ac2afea9d69dbd0a3457a68b",
+    "c172af82dc3b5217a63ba7f0": {
+      "id": "c172af82dc3b5217a63ba7f0",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0afef20cd47324f87ae93821": {
-      "id": "0afef20cd47324f87ae93821",
+    "886a8fa8fc9b7f8fdd9e5afe": {
+      "id": "886a8fa8fc9b7f8fdd9e5afe",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8506b98e717670ec6bc2b20c": {
-      "id": "8506b98e717670ec6bc2b20c",
+    "00443d6443a3c2622b812c94": {
+      "id": "00443d6443a3c2622b812c94",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "565986e56434d18524cd6c8d": {
-      "id": "565986e56434d18524cd6c8d",
+    "fda14dd2a6c4360faa9c722e": {
+      "id": "fda14dd2a6c4360faa9c722e",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d651b7c0040181413230ab4d": {
-      "id": "d651b7c0040181413230ab4d",
+    "2b0fae86dcc26b3c4bd61ca4": {
+      "id": "2b0fae86dcc26b3c4bd61ca4",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8f554759357d8bd863ed4071": {
-      "id": "8f554759357d8bd863ed4071",
+    "d534166afefa235f85fd43f9": {
+      "id": "d534166afefa235f85fd43f9",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "aa67de60eb659b76383b70ab": {
-      "id": "aa67de60eb659b76383b70ab",
+    "948f6285c87e7e063aaf328d": {
+      "id": "948f6285c87e7e063aaf328d",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "51b33a7d8b7cbc046220daed": {
-      "id": "51b33a7d8b7cbc046220daed",
+    "621ded4650f593ff00a254c7": {
+      "id": "621ded4650f593ff00a254c7",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "fabfd9576b4dba7e8ec66b86": {
-      "id": "fabfd9576b4dba7e8ec66b86",
+    "ca7c0aeb024ecf1522ea2537": {
+      "id": "ca7c0aeb024ecf1522ea2537",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "b9b988c273cd97927d3fa5d6": {
-      "id": "b9b988c273cd97927d3fa5d6",
+    "3585029a6014506142f4b5c4": {
+      "id": "3585029a6014506142f4b5c4",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "86832db07ccee5f2a2f44412": {
-      "id": "86832db07ccee5f2a2f44412",
+    "d2c2aa98b998f2fd0a2a4611": {
+      "id": "d2c2aa98b998f2fd0a2a4611",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7370812ada8f76528d7b14a6": {
-      "id": "7370812ada8f76528d7b14a6",
+    "89867d0a845ed2b7c7856f9b": {
+      "id": "89867d0a845ed2b7c7856f9b",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4b4ddfbc99cac6a335b5f1eb": {
-      "id": "4b4ddfbc99cac6a335b5f1eb",
+    "7448f7db781fd560344caac8": {
+      "id": "7448f7db781fd560344caac8",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "b90149600a701e2d3e79606f": {
-      "id": "b90149600a701e2d3e79606f",
+    "f1fb317a1dc50b0ce7a3cadf": {
+      "id": "f1fb317a1dc50b0ce7a3cadf",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "19d32a0e7941dc487ba15ab3": {
-      "id": "19d32a0e7941dc487ba15ab3",
+    "0b0fb9cd98edd121f78201aa": {
+      "id": "0b0fb9cd98edd121f78201aa",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "91aa96075447a21a9fb7b2ac": {
-      "id": "91aa96075447a21a9fb7b2ac",
+    "a8e5008f8522230b08e5440c": {
+      "id": "a8e5008f8522230b08e5440c",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "75a5f7e81fd14d6ec895aaa7": {
-      "id": "75a5f7e81fd14d6ec895aaa7",
+    "01ba4c7a183a8d26584a7ffe": {
+      "id": "01ba4c7a183a8d26584a7ffe",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "56b58479109879ddb98eb2cb": {
-      "id": "56b58479109879ddb98eb2cb",
+    "c072cef088d241c0e29bea79": {
+      "id": "c072cef088d241c0e29bea79",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "fc704df05263d532904cf96b": {
-      "id": "fc704df05263d532904cf96b",
+    "f5049a4af679ca31718bd183": {
+      "id": "f5049a4af679ca31718bd183",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "25c741a047c028081c0c724d": {
-      "id": "25c741a047c028081c0c724d",
+    "f496bbefde07ccdd6889f376": {
+      "id": "f496bbefde07ccdd6889f376",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "cc1d8120b8c0548cabe991c2": {
-      "id": "cc1d8120b8c0548cabe991c2",
+    "065dc68cb1a454b610571b30": {
+      "id": "065dc68cb1a454b610571b30",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d7946140f97a9afc345af38c": {
-      "id": "d7946140f97a9afc345af38c",
+    "5366319122fa4d56ccaea5e9": {
+      "id": "5366319122fa4d56ccaea5e9",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "307788cdb00b099f62ec0bb4": {
-      "id": "307788cdb00b099f62ec0bb4",
+    "32b76a2893810308a03ac2e5": {
+      "id": "32b76a2893810308a03ac2e5",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "1f0edbb3ed17a4cd2af7f3ef": {
-      "id": "1f0edbb3ed17a4cd2af7f3ef",
+    "62d0dc7ce340dbb50bf51c0c": {
+      "id": "62d0dc7ce340dbb50bf51c0c",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "da8fbf5aaa5ce86810c98ab5": {
-      "id": "da8fbf5aaa5ce86810c98ab5",
+    "f170dd5ffa2f3823c18a7e55": {
+      "id": "f170dd5ffa2f3823c18a7e55",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d86c4a1de943f47b42b5eb8a": {
-      "id": "d86c4a1de943f47b42b5eb8a",
+    "5dfce2cf62039b142531de2f": {
+      "id": "5dfce2cf62039b142531de2f",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0c702f7b138c2ce2a976699b": {
-      "id": "0c702f7b138c2ce2a976699b",
+    "33e713718fb702c40e5a837a": {
+      "id": "33e713718fb702c40e5a837a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6f32131f6dbff4c08eeca76f": {
-      "id": "6f32131f6dbff4c08eeca76f",
+    "09804de9a896c92e90af99f5": {
+      "id": "09804de9a896c92e90af99f5",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "56bb6f714b061009050ea098": {
-      "id": "56bb6f714b061009050ea098",
+    "d1c5c0806ead329168f7ec1a": {
+      "id": "d1c5c0806ead329168f7ec1a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6bb4d017d106397bd32638ba": {
-      "id": "6bb4d017d106397bd32638ba",
+    "2c4c52d9c4dfc32532528c64": {
+      "id": "2c4c52d9c4dfc32532528c64",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c00c70c42e9212506a6c50d7": {
-      "id": "c00c70c42e9212506a6c50d7",
+    "4cb86a5cc9470ac34db5f790": {
+      "id": "4cb86a5cc9470ac34db5f790",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "5fb98f2a51cc704f1ec92156": {
-      "id": "5fb98f2a51cc704f1ec92156",
+    "a33b215898709975ab6386b2": {
+      "id": "a33b215898709975ab6386b2",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "dec673c8f3a228112c81e74a": {
-      "id": "dec673c8f3a228112c81e74a",
+    "da8cae35683bed28abf2b05d": {
+      "id": "da8cae35683bed28abf2b05d",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "aa5e9a7353180da1b8139dea": {
-      "id": "aa5e9a7353180da1b8139dea",
+    "27745b9e2e36cd4b6d9e689b": {
+      "id": "27745b9e2e36cd4b6d9e689b",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "04235151ce02093fba1e64f2": {
-      "id": "04235151ce02093fba1e64f2",
+    "48d1c7f898c3fdacf9997d7a": {
+      "id": "48d1c7f898c3fdacf9997d7a",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "446148c86408680347ebe90a": {
-      "id": "446148c86408680347ebe90a",
+    "9c7ee4af5be79cb6051b0359": {
+      "id": "9c7ee4af5be79cb6051b0359",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3774265b6f7044e9d76bfd56": {
-      "id": "3774265b6f7044e9d76bfd56",
+    "2cf40cef9d6e5bd9b7542368": {
+      "id": "2cf40cef9d6e5bd9b7542368",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d260fa48c78688547743b484": {
-      "id": "d260fa48c78688547743b484",
+    "d2cf0cfb2ce0ce5cd3534656": {
+      "id": "d2cf0cfb2ce0ce5cd3534656",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "79e52913bba7093794816734": {
-      "id": "79e52913bba7093794816734",
+    "97733f38de9c8a6fe075ca76": {
+      "id": "97733f38de9c8a6fe075ca76",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "207cd628f3089991813291de": {
-      "id": "207cd628f3089991813291de",
+    "76ac6446d8bd2a46c4dd61f1": {
+      "id": "76ac6446d8bd2a46c4dd61f1",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "9356bcef7d9a872196b433c4": {
-      "id": "9356bcef7d9a872196b433c4",
+    "1f63f90fc13d45e23538e756": {
+      "id": "1f63f90fc13d45e23538e756",
       "slug": "kupor-scott-a",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "ea75c846b47b4d2b52680ec6": {
       "id": "ea75c846b47b4d2b52680ec6",
@@ -10385,19 +10385,19 @@
       "id": "d16b410be07d433fcb05c97d",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 2,
-      "state": "deterministic_agree",
+      "score": 3,
+      "state": "checked",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row"
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "6e40504d811af0bce7f4e6d6": {
       "id": "6e40504d811af0bce7f4e6d6",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 2,
-      "state": "deterministic_agree",
+      "score": 3,
+      "state": "checked",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row"
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "6af1617bcd4d0607e378d99a": {
       "id": "6af1617bcd4d0607e378d99a",
@@ -10430,19 +10430,19 @@
       "id": "a2d0893dc0af5b36f24ac7c3",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 2,
-      "state": "deterministic_agree",
+      "score": 3,
+      "state": "checked",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row"
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "27a7a2667281ec2b8b38b438": {
       "id": "27a7a2667281ec2b8b38b438",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 2,
-      "state": "deterministic_agree",
+      "score": 3,
+      "state": "checked",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row"
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "5a49d5bb6c2f4f2619aaa056": {
       "id": "5a49d5bb6c2f4f2619aaa056",
@@ -10610,10 +10610,10 @@
       "id": "abd99616b49436b75678aedf",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 2,
-      "state": "deterministic_agree",
+      "score": 3,
+      "state": "checked",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row"
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "4a72d15a4dc705e594be5381": {
       "id": "4a72d15a4dc705e594be5381",

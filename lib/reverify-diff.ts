@@ -135,7 +135,9 @@ const NAME_STOP = new Set([
  * NextEra Energy and Duke Energy are different companies.
  */
 export function sharesAssetWord(a: string, b: string): boolean {
-  const words = (d: string) => normalizedDescription(d).split(" ").filter((w) => w.length >= 3 && !NAME_STOP.has(w));
+  // "See Endnote" is the form's cross-reference, not part of a name.
+  const words = (d: string) =>
+    normalizedDescription(d.replace(/\bsee endnote\b/gi, " ")).split(" ").filter((w) => w.length >= 2 && !NAME_STOP.has(w));
   const wa = words(a);
   const wb = words(b);
   if (wa.length === 0 || wb.length === 0) return normalizedDescription(a) === normalizedDescription(b);

@@ -147601,5 +147601,33 @@
     ],
     "holding": "nothing; OCR disagreement on Donald J. Trump 2.26.2026 278-T (1).pdf is recorded and advisory. Reconcile by eye before committing.",
     "emailSentAt": "2026-09-06T04:42:26.847Z"
+  },
+  {
+    "id": "kupor-scott-a-lane_disagreement-2026-09-06-010",
+    "status": "open",
+    "createdAt": "2026-09-06T16:01:49.623Z",
+    "kind": "lane_disagreement",
+    "slug": "kupor-scott-a",
+    "officialName": "Kupor, Scott A",
+    "filing": {
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+      "pdfFile": "Scott-A-Kupor-09.12.2025-278T.pdf",
+      "date": "2025-10-01"
+    },
+    "problems": [
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 20,
+          "parsedRow": 20,
+          "description": "HP INC COM"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row 20: name differs: text layer read \"HP INC COM See Endnote\", AI parse \"HP INC COM\""
+      }
+    ],
+    "holding": "every row of Scott-A-Kupor-09.12.2025-278T.pdf; nothing from it is published until this is decided",
+    "emailSentAt": "2026-09-06T16:01:49.807Z"
   }
 ]
