@@ -35,7 +35,7 @@ export interface ResultRow {
   description: string;
   ticker: string | null;
   type: string;
-  date: string;
+  date: string | null;
   dateDisplay: string;
   amount: string | null;
   amountLabel: string | null;
@@ -143,8 +143,10 @@ export function filterRows(plan: QueryPlan, rows: PublishedRow[]): PublishedRow[
     if (tickers && (!row.ticker || !tickers.has(row.ticker))) return false;
     if (needle && !row.description.toLowerCase().includes(needle)) return false;
     if (f.types && f.types.length > 0 && !typeMatches(row.type, f.types)) return false;
-    if (f.dateFrom && row.date < f.dateFrom) return false;
-    if (f.dateTo && row.date > f.dateTo) return false;
+    // A row with no printed date never satisfies a date filter.
+    if ((f.dateFrom || f.dateTo) && row.date === null) return false;
+    if (f.dateFrom && row.date !== null && row.date < f.dateFrom) return false;
+    if (f.dateTo && row.date !== null && row.date > f.dateTo) return false;
     if (f.lateOnly && !row.lateFilingFlag) return false;
     // A filing discloses a band, not a figure, so a dollar bound is a
     // statement about the band: the whole disclosed range has to sit inside
@@ -221,7 +223,7 @@ function toResultRow(row: PublishedRow): ResultRow {
     ticker: row.ticker,
     type: row.type,
     date: row.date,
-    dateDisplay: formatDate(row.date),
+    dateDisplay: row.date === null ? "No date printed" : formatDate(row.date),
     amount: row.amount,
     amountLabel: row.amount ? amountRangeLabel(row.amount) : null,
     lateFilingFlag: row.lateFilingFlag,
@@ -301,14 +303,14 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
               // they are excluded from every total.
               const av = a.amount === null ? -1 : amountRangeToMidpoint(a.amount);
               const bv = b.amount === null ? -1 : amountRangeToMidpoint(b.amount);
-              return bv - av || b.date.localeCompare(a.date);
+              return bv - av || (b.date ?? "").localeCompare(a.date ?? "");
             })
           : matched;
       const shown = ordered.slice(0, limit);
       result.rows = shown.map(toResultRow);
       result.shownRows = shown.length;
       addNumber(shown.length);
-      for (const row of shown) addDate(row.date);
+      for (const row of shown) if (row.date) addDate(row.date);
       break;
     }
     case "top_officials": {
@@ -390,6 +392,7 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
     case "by_month": {
       const counts = new Map<string, number>();
       for (const row of matched) {
+        if (row.date === null) continue;
         const month = row.date.slice(0, 7);
         counts.set(month, (counts.get(month) ?? 0) + 1);
       }
@@ -423,7 +426,7 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       break;
     }
     case "first_last_dates": {
-      const dates = matched.map((r) => r.date).sort();
+      const dates = matched.map((r) => r.date).filter((d): d is string => d !== null).sort();
       result.firstDate = dates[0] ?? null;
       result.lastDate = dates[dates.length - 1] ?? null;
       if (result.firstDate) addDate(result.firstDate);

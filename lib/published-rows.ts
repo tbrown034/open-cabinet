@@ -46,7 +46,8 @@ export interface PublishedRow {
   ticker: string | null;
   type: TransactionType;
   /** ISO date, YYYY-MM-DD. */
-  date: string;
+  /** ISO date, or null when the filing prints no date for the row. */
+  date: string | null;
   amount: AmountRange | null;
   lateFilingFlag: boolean;
   sourceUrl: string | null;
@@ -208,7 +209,8 @@ async function build(): Promise<PublishedRowsData> {
     });
   }
 
-  rows.sort((a, b) => b.date.localeCompare(a.date));
+  // Newest first; rows with no printed date sort last.
+  rows.sort((a, b) => (b.date ?? "").localeCompare(a.date ?? ""));
 
   // The roster the planner is shown: everyone the site tracks, including
   // prior-administration holdovers, so a tracked name is never reported as
