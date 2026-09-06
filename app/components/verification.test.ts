@@ -58,4 +58,14 @@ describe("row verification display", () => {
     expect(renderToStaticMarkup(createElement(VerificationSummary, { summary })))
       .toContain("0 of 0 rows (0 percent)");
   });
+
+  it("does not crash or claim audit coverage from a pre-audit summary", () => {
+    const summary = {
+      rows: 20, byScore: { "3": 5, "2": 0, "1": 13, "0": 2 },
+      byState: { deterministic_agree: 5, human_verified: 0, two_models_agree: 0, single_read: 13, disputed: 2 },
+    } as RowVerificationFile["summary"];
+    const html = renderToStaticMarkup(createElement(VerificationSummary, { summary }));
+    expect(html).toContain("Row verification counts need rebuilding for the current checks");
+    expect(html).not.toContain("have passed every check");
+  });
 });
