@@ -12,7 +12,7 @@ Look at: printed row 276, MOTOROLA SOLUTIONS INC, amount column.
 Site says: $500,001 - $1,000,000. Page shows (my eye, OCR and the fresh model read agree): $1,000,001 - $5,000,000.
 Do: if the page says $1,000,001 - $5,000,000, reply "1 apply".
 
-## 2. Trump, Procter & Gamble sale, June 3, 2026
+## 2. DONE. Trump, Procter & Gamble sale, June 3, 2026 (applied Sep 6 on your yes)
 
 Open: [local PDF, page 25](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-08.12.2026-278T.pdf#page=25>) or the OGE link above.
 Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-08.12.2026-278T.pdf#page=25
@@ -20,7 +20,7 @@ Look at: printed row 781, PROCTER & GAMBLE CO, amount column.
 Site says: $1,001 - $15,000. Page shows (my eye, OCR and the fresh model read agree): $15,001 - $50,000.
 Do: if the page says $15,001 - $50,000, reply "2 apply".
 
-## 3. Trump, Apple purchase, May 5, 2026 (no change expected)
+## 3. DONE. Trump, Apple purchase, May 5, 2026 (confirmed as published, Sep 6)
 
 Open: [local PDF, page 2](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-06.25.2026-278T (2).pdf#page=2>)
 Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-06.25.2026-278T (2).pdf#page=2
@@ -28,7 +28,7 @@ Look at: printed row 4, Apple Inc, amount column.
 Site says: $1,000,001 - $5,000,000. OCR read something else; my eye says the site is right.
 Do: confirm the row on the review page, or reply "3 confirm".
 
-## 4. Kennedy, NIKE sale with a 2225 date
+## 4. DONE. Kennedy, NIKE sale with a 2225 date (published as printed with a note, Sep 6)
 
 Open: [local PDF, page 2](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf#page=2>) or [OGE](<https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf>)
 Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf#page=2

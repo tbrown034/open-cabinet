@@ -29,6 +29,9 @@ export interface Transaction {
   amountNote?: string;
   /** The filing's own wording when type is "Unstated". */
   typeNote?: string;
+  /** A person's note when the date is published as printed on the filing
+   * although it cannot be right (a filing that prints the year 2225). */
+  dateNote?: string;
   lateFilingFlag: boolean;
   notes?: string;
   /** URL of the filing that actually disclosed this row (stamped at ingest

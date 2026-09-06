@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T15:18:19.690Z",
+  "generatedAt": "2026-09-06T15:22:32.606Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11501,
     "byState": {
       "checked": 4652,
-      "human_verified": 3,
+      "human_verified": 4,
       "deterministic_agree": 1523,
       "two_models_agree": 13,
       "audit_only": 165,
-      "single_read": 4019,
+      "single_read": 4018,
       "disputed": 1126
     },
     "byScore": {
       "0": 1126,
-      "1": 4019,
+      "1": 4018,
       "2": 1701,
-      "3": 4655
+      "3": 4656
     }
   },
   "rows": {
@@ -8986,14 +8986,14 @@
       "lane": null,
       "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
-    "4c53dbf40d7a60ee8a354066": {
-      "id": "4c53dbf40d7a60ee8a354066",
+    "f8c073af47ebba41afc79227": {
+      "id": "f8c073af47ebba41afc79227",
       "slug": "kennedy-robert-f",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by home on 2026-09-06"
     },
     "4df0047bc6c02f9c5eba013c": {
       "id": "4df0047bc6c02f9c5eba013c",

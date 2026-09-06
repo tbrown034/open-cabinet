@@ -791,7 +791,13 @@ export default async function OfficialPage({
                 }`}
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
-                  {formatDate(tx.date)}
+                  {tx.dateNote ? (
+                    <span title={tx.dateNote} className="underline decoration-dotted">
+                      {formatDate(tx.date)} (as printed)
+                    </span>
+                  ) : (
+                    formatDate(tx.date)
+                  )}
                 </td>
                 <td className="py-2.5 pr-4 text-neutral-900">
                   {tx.description}

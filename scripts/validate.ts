@@ -46,6 +46,7 @@ interface Transaction {
   date: string;
   amount: string | null;
   amountNote?: string;
+  dateNote?: string;
   lateFilingFlag: boolean;
   sourceUrl?: string;
   notes?: string;
@@ -103,7 +104,8 @@ function validateSchema(tx: Transaction, official: string, index: number): strin
     if (isNaN(d.getTime())) {
       errors.push(`${prefix} Unparseable date: "${tx.date}"`);
     }
-    if (d > new Date()) {
+    if (d > new Date() && !(typeof tx.dateNote === "string" && tx.dateNote.trim())) {
+      // A future date is allowed only as printed, with a person's dateNote.
       errors.push(`${prefix} Future date: "${tx.date}"`);
     }
     if (d < new Date("2019-01-01")) {

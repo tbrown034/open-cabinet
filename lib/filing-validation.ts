@@ -47,6 +47,10 @@ export interface ParsedRow {
   amount: AmountRange | null;
   amountNote?: string;
   typeNote?: string;
+  /** A person's note when the date is published as the filing prints it
+   * even though it cannot be right (Kennedy's 04/04/2225). Allows an
+   * otherwise impossible date, and only on a person's decision. */
+  dateNote?: string;
   lateFilingFlag: boolean;
   confidence: number;
 }
@@ -59,6 +63,7 @@ const KNOWN_KEYS = new Set([
   "amount",
   "amountNote",
   "typeNote",
+  "dateNote",
   "lateFilingFlag",
   "confidence",
 ]);
@@ -158,7 +163,10 @@ export function validateParsedRows(
       errors.push(`${at}: date is not a string`);
     } else {
       const problem = isRealCalendarDate(r.date, today);
-      if (problem) errors.push(`${at}: date ${problem}`);
+      // A future date is allowed only with a person's dateNote saying the
+      // filing prints it that way. The model never writes dateNote.
+      const asPrinted = typeof r.dateNote === "string" && r.dateNote.trim() !== "" && /in the future/.test(problem ?? "");
+      if (problem && !asPrinted) errors.push(`${at}: date ${problem}`);
     }
 
     if (typeof r.lateFilingFlag !== "boolean") {
