@@ -1,0 +1,317 @@
+{
+  "key": "93e9e9ac16fb47cf",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 7,
+    "last": 7
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:10:01.122Z",
+  "transactions": [
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "S&P GLOBAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SALESFORCE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SEMPRA",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SERVICENOW INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SHERWIN WILLIAMS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SOLVENTUM CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SOUTHWEST AIRLINES CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "STEEL DYNAMICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "STRYKER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SYSCO CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TAPESTRY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TESLA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS PACIFIC LAND CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TRADE DESK INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TRANSDIGM GROUP INCORPORATED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED PARCEL SVC INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VEEVA SYSTEMS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERISK ANALYTICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VICI PROPERTIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VULCAN MATERIALS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WABTEC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WASTE MANAGEMENT INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WILLIS TOWERS WATSON PUBLIC LIMITED COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WORKDAY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "XCEL ENERGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "XYLEM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "YUM BRANDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2744,
+    "outputTokens": 1737,
+    "estimatedCostUsd": 0.1143
+  }
+}

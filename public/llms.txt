@@ -1,35 +1,37 @@
 # Open Cabinet
 
-> Open Cabinet tracks financial disclosures and stock transactions of U.S. executive branch officials — cabinet secretaries, agency heads, and senior appointees. Data is sourced from the U.S. Office of Government Ethics (OGE) and structured for accountability research.
+> Open Cabinet tracks the stock and securities transactions that U.S. executive branch officials report on OGE Form 278-T periodic transaction reports: cabinet secretaries, agency heads and senior appointees. Every row comes from a filing published by the U.S. Office of Government Ethics, and every row links to that filing.
 
-Built and maintained by Trevor Brown, a journalist and developer (https://trevorthewebdeveloper.com). The project surfaces officials' stock trades, asset holdings, and late filings in a public-interest, conflict-of-interest context.
+Built and maintained by Trevor Brown, a journalist and developer (https://trevorthewebdeveloper.com).
 
-## What's in the data
+## What is in the data
 
-- Federal executive branch officials covered by OGE Form 278e disclosures
-- Itemized stock transactions: ticker, date, amount range, asset class
-- Reported asset holdings and income
-- Late-filing flags where periodic transaction reports (PTRs) miss the 45-day deadline
+- Transactions from OGE Form 278-T periodic transaction reports only. Not the annual 278e, not asset holdings, not income.
+- Per transaction: the description as filed, a ticker where the filing prints one, transaction type (purchase, sale, exchange, or unstated when the filing states none), transaction date, the dollar range the filing reports (or "not readily ascertainable" when the filing says so), and the filing's own notification flag (whether the filer told the agency more than 30 days after the trade).
+- A verification state per row: checked by an independent program and a page audit, checked by two models, not yet independently checked, or under review. The methodology page explains each.
+- Which filing disclosed each row, with a link to the PDF.
+
+## How rows are checked
+
+Each filing is read by a vision model. Where the PDF has a text layer, a program that never saw the model's output reads the same table and the two are compared row for row. Scans are read again by OCR and compared the same way. Where no program can read the page, a second company's model reads it. A third company's model then audits the rows against the page images. A new filing is published only when the reads agree on every row; anything else is held for a person. Details: /methodology.
 
 ## Primary pages
 
-- /: Overview and directory of tracked officials
-- /officials/[slug]: Per-official detail — transactions, holdings, late filings
-- /all: Every tracked transaction on one timeline
-- /companies: Tickers held across officials
-- /companies/[ticker]: Per-company exposure across officials
-- /dashboard: Aggregate trade flow and disclosure activity
-- /late-filings: Officials with overdue PTR filings
-- /filings: Dated log of new filings as OGE posts them
-- /methodology: How the data is collected, normalized, and updated
-- /download: Bulk data export
+- /: overview and directory of tracked officials
+- /officials/[slug]: one official's transactions, with the filings that disclosed them
+- /all: every tracked transaction
+- /companies and /companies/[ticker]: transactions by symbol, with what the SEC calls the registrant and what the filings called it
+- /dashboard: aggregate trade flow and disclosure activity
+- /late-filings: transactions whose filings carried the late-notification flag
+- /filings: dated log of filings as OGE posts them
+- /methodology: how the data is collected, checked and updated
+- /download: bulk data export (CSV and JSON), with a verification state per row
 
 ## Sources
 
-- U.S. Office of Government Ethics (OGE) — Form 278e financial disclosures
-- Periodic Transaction Reports (PTRs) filed under the STOCK Act
-- Public agency rosters for official appointment dates
+- U.S. Office of Government Ethics, OGE Form 278-T periodic transaction reports, https://extapps2.oge.gov
+- The SEC's company list (company_tickers.json) for symbol identities
 
 ## Citation
 
-When citing Open Cabinet, please link to https://open-cabinet.org and credit the underlying OGE filings.
+When citing Open Cabinet, link to https://open-cabinet.org and credit the underlying OGE filing, which every row links to.

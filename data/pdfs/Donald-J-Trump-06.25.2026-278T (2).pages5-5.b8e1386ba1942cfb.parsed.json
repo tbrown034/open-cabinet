@@ -1,0 +1,317 @@
+{
+  "key": "b8e1386ba1942cfb",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 5,
+    "last": 5
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:09:20.796Z",
+  "transactions": [
+    {
+      "description": "EXTRA SPACE STORAGE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EXXON MOBIL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FAIR ISAAC INC FORMERLY FAIR ISAAC & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FIRSTENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FISERV INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FORTIVE CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GALLAGHER ARTHUR J & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GARMIN LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GE AEROSPACE",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GE HEALTHCARE TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HARTFORD INSURANCE GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HCA HEALTHCARE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HENRY SCHEIN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUNTINGTON BANCSHARES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUNTINGTON INGALLS INDUSTRIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "IDEXX LABORATORIES CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ILLINOIS TOOL WORKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INGERSOLL RAND INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INTL FLAVORS & FRAGRANCES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "JOHNSON CONTROLS INTERNATIONAL PLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "KROGER CO (THE)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "L3HARRIS TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LABCORP HOLDINGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LINDE PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LOCKHEED MARTIN CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LOEWS CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LULULEMON ATHLETICA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LUMENTUM HOLDINGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "M & T BANK CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2802,
+    "outputTokens": 1802,
+    "estimatedCostUsd": 0.1181
+  }
+}

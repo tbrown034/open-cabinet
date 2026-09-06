@@ -35871,5 +35871,1084 @@
     ],
     "holding": "nothing; OCR disagreement on Donald-J-Trump-06.25.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
     "emailSentAt": "2026-09-06T02:54:42.457Z"
+  },
+  {
+    "id": "trump-donald-j-lane_disagreement-2026-09-06-005",
+    "status": "open",
+    "createdAt": "2026-09-06T03:11:20.436Z",
+    "kind": "lane_disagreement",
+    "slug": "trump-donald-j",
+    "officialName": "Trump, Donald J.",
+    "filing": {
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+      "pdfFile": "Donald-J-Trump-06.25.2026-278T (2).pdf",
+      "date": "2026-07-01"
+    },
+    "problems": [
+      {
+        "location": {
+          "page": null,
+          "printedRow": null,
+          "parsedRow": null,
+          "description": null
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row number 4 appears twice"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 1,
+          "parsedRow": 1,
+          "description": "Abbott Labs"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 10,
+          "parsedRow": 10,
+          "description": "Costco Whsl Corp New"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 10 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 11,
+          "parsedRow": 11,
+          "description": "Cummins Inc"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 11 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 20,
+          "parsedRow": 20,
+          "description": "Howmet Aerospace Inc"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 20 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 43,
+          "parsedRow": 43,
+          "description": "AMERICAN INTERNATIONAL GROUP INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 43 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 48,
+          "parsedRow": 48,
+          "description": "ARCHER-DANIELS-MIDLAND CO"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 48 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 51,
+          "parsedRow": 51,
+          "description": "ATMOS ENERGY CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 51 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 53,
+          "parsedRow": 53,
+          "description": "AUTOMATIC DATA PROCESSING INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 53 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 55,
+          "parsedRow": 55,
+          "description": "AVALONBAY COMMUNITIES INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 55 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 60,
+          "parsedRow": 60,
+          "description": "BIOGEN INC J."
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 60 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 69,
+          "parsedRow": 69,
+          "description": "CDW CORPORATION"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 69 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 73,
+          "parsedRow": 73,
+          "description": "CHEVRON CORPORATION"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 73 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 77,
+          "parsedRow": 77,
+          "description": "CINTAS CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 77 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 80,
+          "parsedRow": 80,
+          "description": "COINBASE GLOBAL INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 80 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 82,
+          "parsedRow": 82,
+          "description": "COMCAST CORP CL A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 82 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 86,
+          "parsedRow": 86,
+          "description": "COSTCO WHOLESALE CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 86 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 90,
+          "parsedRow": 90,
+          "description": "DR HORTON INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 90 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 4,
+          "printedRow": 98,
+          "parsedRow": 98,
+          "description": "EXPAND ENERGY CORPORATION"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 98 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 5,
+          "printedRow": 100,
+          "parsedRow": 100,
+          "description": "EXTRA SPACE STORAGE INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 100 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 8,
+          "printedRow": 207,
+          "parsedRow": 207,
+          "description": "TRUIST FINL CORP PERP -S NT 6.2500%"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 207 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 8,
+          "printedRow": 210,
+          "parsedRow": 210,
+          "description": "Kura Sushi Usa Inc Cl A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 210 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 9,
+          "printedRow": 247,
+          "parsedRow": 247,
+          "description": "ADEIA INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 247 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 11,
+          "printedRow": 329,
+          "parsedRow": 329,
+          "description": "CONOCOPHILLIPS"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 329 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 12,
+          "printedRow": 337,
+          "parsedRow": 337,
+          "description": "CROWDSTRIKE HOLDINGS INC CL A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 337 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 12,
+          "printedRow": 342,
+          "parsedRow": 342,
+          "description": "CYTEK BIOSCIENCES INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 342 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 14,
+          "printedRow": 429,
+          "parsedRow": 429,
+          "description": "KINDER MORGAN INC DE"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 429 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 15,
+          "printedRow": 444,
+          "parsedRow": 444,
+          "description": "LOCKHEED MARTIN CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 444 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 15,
+          "printedRow": 450,
+          "parsedRow": 450,
+          "description": "MAGNOLIA OIL & GAS CORP CLASS A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 450 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 15,
+          "printedRow": 451,
+          "parsedRow": 451,
+          "description": "MANPOWERGROUP INC WIS"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 451 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 17,
+          "printedRow": 502,
+          "parsedRow": 502,
+          "description": "PAYCHEX INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 502 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 17,
+          "printedRow": 506,
+          "parsedRow": 506,
+          "description": "PEPSICO INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 506 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 18,
+          "printedRow": 529,
+          "parsedRow": 529,
+          "description": "QUINSTREET INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 529 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 18,
+          "printedRow": 530,
+          "parsedRow": 530,
+          "description": "RADNET INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 530 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 18,
+          "printedRow": 532,
+          "parsedRow": 532,
+          "description": "REGIONS FINANCIAL CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 532 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 18,
+          "printedRow": 533,
+          "parsedRow": 533,
+          "description": "REMITLY GLOBAL INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 533 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 20,
+          "printedRow": 612,
+          "parsedRow": 612,
+          "description": "WSFS FINL CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 612 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 20,
+          "printedRow": 614,
+          "parsedRow": 614,
+          "description": "ZIFF DAVIS INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 614 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 20,
+          "printedRow": 615,
+          "parsedRow": 615,
+          "description": "ZOOMINFO TECHNOLOGIES IN"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 615 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 21,
+          "printedRow": 633,
+          "parsedRow": 633,
+          "description": "AMDOCS LTD F"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 633 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 21,
+          "printedRow": 646,
+          "parsedRow": 646,
+          "description": "ARES MGMT CORP CLASS CLASS A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 646 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 21,
+          "printedRow": 656,
+          "parsedRow": 656,
+          "description": "AXON ENTERPRISE INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 656 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 22,
+          "printedRow": 666,
+          "parsedRow": 666,
+          "description": "BOEING CO"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 666 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 23,
+          "printedRow": 713,
+          "parsedRow": 713,
+          "description": "CONSTELLATION ENERGY COR"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 713 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 27,
+          "printedRow": 844,
+          "parsedRow": 844,
+          "description": "MCCORMICK & CO INC CLASS CLASS N"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 844 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 27,
+          "printedRow": 849,
+          "parsedRow": 849,
+          "description": "MCKESSON CORP"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 849 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 29,
+          "printedRow": 908,
+          "parsedRow": 908,
+          "description": "ROYAL GOLD INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 908 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 29,
+          "printedRow": 925,
+          "parsedRow": 925,
+          "description": "SOMNIGROUP INTERNTNL"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 925 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 30,
+          "printedRow": 943,
+          "parsedRow": 943,
+          "description": "TRACTOR SUPPLY CO"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 943 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 994,
+          "parsedRow": 994,
+          "description": "ECOLAB INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 994 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 995,
+          "parsedRow": 995,
+          "description": "GREAT LAKES WTRAUT 5% DUE 07/01/46"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 995 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 996,
+          "parsedRow": 996,
+          "description": "GWINNETT CNTY GA WTR & SWR AUTH REV B/E 3.00 % Due Aug 1 2031"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 996 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 1004,
+          "parsedRow": 1004,
+          "description": "UTAH ST MUN PWR AGY 5% DUE 07/01/47"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1004 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 1005,
+          "parsedRow": 1005,
+          "description": "VIRGINIA ST RES AUTH INFRA VA POOL FING PG SER C REV B/E PTC 4.00 % Due Nov 1 2033"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1005 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 1007,
+          "parsedRow": 1007,
+          "description": "ACCENTURE PLC IRELAND F CLASS A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1007 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 1009,
+          "parsedRow": 1009,
+          "description": "Apple Inc"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1009 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 32,
+          "printedRow": 1017,
+          "parsedRow": 1017,
+          "description": "ISHARES U.S. TREASURY BOND ETF"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1017 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 33,
+          "printedRow": 1030,
+          "parsedRow": 1030,
+          "description": "ALBERTSONS CO SHS CL A CLASS A"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1030 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 33,
+          "printedRow": 1032,
+          "parsedRow": 1032,
+          "description": "AMERICAN EXPRESS CO"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1032 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 33,
+          "printedRow": 1041,
+          "parsedRow": 1041,
+          "description": "BENTLEY SYS INC CLASS B"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1041 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 34,
+          "printedRow": 1064,
+          "parsedRow": 1064,
+          "description": "DOCUSIGN INC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1064 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 34,
+          "printedRow": 1079,
+          "parsedRow": 1079,
+          "description": "GRAPHIC PACKAGING HLDG C"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1079 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 34,
+          "printedRow": 1087,
+          "parsedRow": 1087,
+          "description": "INTERCONTINENTAL EXCHANG"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1087 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 36,
+          "printedRow": 1136,
+          "parsedRow": 1136,
+          "description": "WELLS FARGO & CO"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 1136 missing from OCR extraction (rows run 1..1150)"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 6,
+          "parsedRow": 6,
+          "description": "Cardinal Health Inc"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row 6: notification (Yes/No) column unreadable"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": null,
+          "parsedRow": null,
+          "description": null
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row count: OCR has 1088, AI parse has 1150"
+      }
+    ],
+    "holding": "nothing; OCR disagreement on Donald-J-Trump-06.25.2026-278T (2).pdf is recorded and advisory. Reconcile by eye before committing.",
+    "emailSentAt": "2026-09-06T03:11:20.585Z"
+  },
+  {
+    "id": "trump-donald-j-lane_disagreement-2026-09-06-006",
+    "status": "open",
+    "createdAt": "2026-09-06T03:13:29.285Z",
+    "kind": "lane_disagreement",
+    "slug": "trump-donald-j",
+    "officialName": "Trump, Donald J.",
+    "filing": {
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf",
+      "pdfFile": "Trump, Donald J.-05.08.2026-278T.pdf",
+      "date": "2026-05-14"
+    },
+    "problems": [
+      {
+        "location": {
+          "page": null,
+          "printedRow": null,
+          "parsedRow": null,
+          "description": null
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row number 7 appears twice"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 14,
+          "parsedRow": 14,
+          "description": "COLUMBUS OH CITY SCH DIST RFDG VARIOUS PURP SER B B/E PTC 5.00% Due Dec 1, 2028"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 14 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 15,
+          "parsedRow": 15,
+          "description": "WISCONSIN CTR DIST WI APPROP REV MILW ARENA B/E OID @99.500 3.034% 3.00% Due Dec 15, 2035"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 15 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 16,
+          "parsedRow": 16,
+          "description": "SOUTH CAROLINA ST ST ECON SER A B/E PTC 3.00% Due Apr 1, 2029"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 16 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": 2,
+          "printedRow": 17,
+          "parsedRow": 17,
+          "description": "EL PASO TX COMB TAX REV CTF OBLIG DB B/E 4.00% Due Aug 15, 2037"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 17 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 34,
+          "parsedRow": 34,
+          "description": "GEORGIA ST PORT AUTH REV B/E 5.00% Due Jul 1, 2026"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 34 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 36,
+          "parsedRow": 36,
+          "description": "WENTZVILLE MO R IV SCH DIST LSE CTF PARTN RFDG & IMPT REV B/E PTC 4.00% Due Apr 1, 2026"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 36 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 44,
+          "parsedRow": 44,
+          "description": "ROUND ROCK TDC MUN 4% Due 09/01/42"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 44 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 46,
+          "parsedRow": 46,
+          "description": "***AVIENT CORPORATION REG S DUE 08/01/2030 07.125%FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 46 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 48,
+          "parsedRow": 48,
+          "description": "GENERAL MTRS FINL CO INC DUE 03/01/2026 05.250%MS 01 DISCRETIONARY ORDER YIELD 2.828% TO MATURITY TIME OF EXECUTION 15:29:04 FINRA LINK FOLLOWS >>> HTTP:// BONDFACTS.FINRA.ORG/37045X8G0"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 48 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 49,
+          "parsedRow": 49,
+          "description": "NEWELL RUBBERMAID INC SENIOR UNSECURED NOTES DUE 09/15/2029 06.625%MS 15 DISCRETIONARY ORDER YIELD 6.540% TO PAR CALL YIELD 6.542% TO MATURITY CALLABLE 06/15/29 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 49 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 50,
+          "parsedRow": 50,
+          "description": "***UNITED RENTALS NORTH AMER INC SENIOR SECURED NOTES REG S DUE 12/15/2029 06.000%JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 50 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 51,
+          "parsedRow": 51,
+          "description": "WHIRLPOOL CORP DEB SENIOR NOTES DUE 02/26/2029 04.750%FA 26 DISCRETIONARY ORDER YIELD 5.016% TO MATURITY YIELD 5.041% TO PAR CALL CALLABLE 11/26/28 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 51 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 52,
+          "parsedRow": 52,
+          "description": "***NETFLIX INC REG S DUE 11/15/2029 05.375%JD 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 52 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 53,
+          "parsedRow": 53,
+          "description": "***SIRIUS XM RADIO INC SENIOR NOTES REG S DUE 07/01/2029 05.500%JD 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 53 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 54,
+          "parsedRow": 54,
+          "description": "***CARNIVAL CORP REG S DUE 08/15/2029 07.000%FA 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 54 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 55,
+          "parsedRow": 55,
+          "description": "OLIN CORP DUE 08/01/2029 05.625%FA 01 DISCRETIONARY ORDER YIELD 5.000% TO PAR CALL YIELD 16.605% TO CALL YIELD 5.343% TO MATURITY CALLABLE 08/01/27 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 55 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 56,
+          "parsedRow": 56,
+          "description": "FIRST HORIZON BK MEMPHIS TENN DUE 05/01/2030 05.750%MN 01 DISCRETIONARY ORDER YIELD 4.768% TO PAR CALL YIELD 4.818% TO MATURITY CALLABLE 02/01/30 AT 100.000 TIME OF EXECUTION 15:29:08"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 56 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 57,
+          "parsedRow": 57,
+          "description": "THE BOEING COMPANY SENIOR UNSECURED NOTE DUE 05/01/2027 05.040%MN 01 DISCRETIONARY ORDER YIELD 3.981% TO PAR CALL YIELD 4.115% TO MATURITY CALLABLE 03/01/27 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 57 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 58,
+          "parsedRow": 58,
+          "description": "BLOCK FINL LLC SENIOR UNSECURED NOTE DUE 08/15/2030 03.875%FA 15 DISCRETIONARY ORDER YIELD 4.890% TO MATURITY YIELD 4.945% TO PAR CALL CALLABLE 05/15/30 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 58 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 59,
+          "parsedRow": 59,
+          "description": "OCCIDENTAL PTR SR DEBS-REG SENIOR NOTES DUE 09/01/2030 06.625%MS 01 DISCRETIONARY ORDER YIELD 4.554% TO PAR CALL YIELD 4.751% TO MATURITY CALLABLE 03/01/30 AT 100.000"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 59 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 60,
+          "parsedRow": 60,
+          "description": "***VICTORIAS SECRET CO REG S DUE 07/15/2029 04.625%JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 60 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 61,
+          "parsedRow": 61,
+          "description": "***COREWEAVE INC REG S DUE 02/01/2031 09.000%FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 61 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": 3,
+          "printedRow": 62,
+          "parsedRow": 62,
+          "description": "***COTY INC SENIOR SECURED NOTES REG S DUE 01/15/2029 04.750%AJJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 62 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 63,
+          "parsedRow": 63,
+          "description": "***MACYS RETAIL HOLDINGS LLC REG S DUE 03/15/2030 05.875%MS 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 63 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 64,
+          "parsedRow": 64,
+          "description": "KEYCORP DP SH PFD H"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 64 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 65,
+          "parsedRow": 65,
+          "description": "BANK OF AMERICA CORPORATION - BAC"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "printed row 65 missing from OCR extraction (rows run 1..68)"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": 45,
+          "parsedRow": 45,
+          "description": "WASHINGTON ST HEALT 5% SYST HLTH DUE 10/01/35"
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row 45: notification (Yes/No) column unreadable"
+      },
+      {
+        "location": {
+          "page": null,
+          "printedRow": null,
+          "parsedRow": null,
+          "description": null
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row count: OCR has 43, AI parse has 69"
+      }
+    ],
+    "holding": "nothing; OCR disagreement on Trump, Donald J.-05.08.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
+    "emailSentAt": "2026-09-06T03:13:29.434Z"
   }
 ]

@@ -1,0 +1,317 @@
+{
+  "key": "a4058b25a9c7566a",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 26,
+    "last": 26
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:17:19.964Z",
+  "transactions": [
+    {
+      "description": "ILLINOIS TOOL WKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ILLINOIS TOOL WKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ILLINOIS TOOL WKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INGERSOLL RAND INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INGERSOLL RAND INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INGREDION INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INSULET CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTEL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTERCONTINENTALEXCHANGE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "INTERNATIONAL BUSINESS MACHS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTERNTNL PAPER CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTERNTNL PAPER CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTUIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENVUE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENVUE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KIMBERLY CLARK CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KIMBERLY CLARK CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KIMCO REALTY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KRAFT HEINZ CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KROGER CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KROGER CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "L3HARRIS TECHNOLOGIES IN",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "LAS VEGAS SANDS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "LEIDOS HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "LENNAR CORP CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "LENNAR CORP CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2744,
+    "outputTokens": 1787,
+    "estimatedCostUsd": 0.1168
+  }
+}

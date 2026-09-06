@@ -1,0 +1,317 @@
+{
+  "key": "9ca7248660bf9e16",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 14,
+    "last": 14
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:12:49.461Z",
+  "transactions": [
+    {
+      "description": "HAWKINS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HAYWARD HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HERITAGE FINL CORP WASH",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HERSHEY COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HNI CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HONEYWELL INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "HORMEL FOODS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUB GROUP INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUNTINGTON BANCSHARES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "IAC INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "IBM CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ICHOR HLDGS LTD F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ILLINOIS TOOL WKS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "IMPINJ INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "INDIVIOR PHARMACEUTICALS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INNOVATIVE INDL PPTYS IN REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INNOVEX INTL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "INSPIRE MED SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "INTERNTNL SEAWAYS IN F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "INTL PAPER COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "INTUIT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ITRON INC EQUITY CLASS EQUITY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "J & J SNACK FOODS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JACKSON FINL INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JBG SMITH PPTYS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KAISER ALUM CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KAYNE ANDERSON BDC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENVUE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KEURIG DR PEPPER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "KIMBERLY CLARK CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KINDER MORGAN INC DE",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2753,
+    "outputTokens": 1826,
+    "estimatedCostUsd": 0.1188
+  }
+}

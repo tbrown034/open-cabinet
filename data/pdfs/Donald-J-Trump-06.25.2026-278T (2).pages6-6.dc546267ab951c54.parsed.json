@@ -1,0 +1,317 @@
+{
+  "key": "dc546267ab951c54",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 6,
+    "last": 6
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:09:41.458Z",
+  "transactions": [
+    {
+      "description": "MARSH COMMON STOCK",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MASTERCARD INCORPORATED",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MCDONALDS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MCKESSON CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MEDTRONIC PLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "META PLATFORMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "METLIFE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "METTLER-TOLEDO INTERNATIONAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MOTOROLA SOLUTIONS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NEWMONT CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NISOURCE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "NRG ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "O REILLY AUTOMOTIVE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "OLD DOMINION FREIGHT LINES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "OMNICOM GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "OTIS WORLDWIDE CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PALANTIR TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PARKER HANNIFIN CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PAYCHEX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PAYPAL HOLDINGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PFIZER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PHILIP MORRIS INTERNATIONAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PPL CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PROGRESSIVE CORP-OHIO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PULTEGROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "QUEST DIAGNOSTICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "REGENERON PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "REPUBLIC SERVICES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "RESMED INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ROBINHOOD MARKETS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2805,
+    "outputTokens": 1752,
+    "estimatedCostUsd": 0.1157
+  }
+}

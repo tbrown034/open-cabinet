@@ -1,0 +1,263 @@
+{
+  "key": "b8a173dbcd3e5ea3",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 36,
+    "last": 36
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:21:33.103Z",
+  "transactions": [
+    {
+      "description": "THE TRADE DESK INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "TRACTOR SUPPLY CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "TREX CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "UBER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "UPSTART HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "VEEVA SYS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "VERISK ANALYTICS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.94
+    },
+    {
+      "description": "VISA INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.94
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "WATSCO INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "WELLS FARGO & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "WEYERHAEUSER CO REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "WINGSTOP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "WORKDAY INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "XYLEM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ZIMMER BIOMET HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Kura Sushi Usa Inc Cl A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-26",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALBUQUERQUE NM STORM SWR SER B B/E 3.00 % Due Jul 1, 2033",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "ARIZONA BRD REGENTS 5% DUE 06/01/46",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "TRI POINTE HOMES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "JPMORGAN CHASE & CO PERP NN 6.8750%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "JPMORGAN CHASE & CO PERP NT 6.5000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NEW YORK N Y 5% DUE 08/01/26",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NEW YORK N Y CITY 5.5% DUE 11/01/54",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NEW YORK N Y CITY 5.5% DUE 11/01/54",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-29",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2729,
+    "outputTokens": 2144,
+    "estimatedCostUsd": 0.1345
+  }
+}

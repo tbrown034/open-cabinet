@@ -1,0 +1,317 @@
+{
+  "key": "589af8ff76197264",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 35,
+    "last": 35
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:21:07.761Z",
+  "transactions": [
+    {
+      "description": "KBR INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "LENNAR CORP CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MASTERCARD INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MCDONALDS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "META PLATFORMS INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MOODYS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MSA SAFETY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PILGRIMS PRIDE CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PLANET FITNESS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "POOL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PROGRESSIVE CORP OH",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "REPLIGEN CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "RESMED INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "RITHM CAPITAL CORP REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROBINHOOD MKTS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROBLOX CORP CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "RYAN SPECIALTY HOLDINGS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SALESFORCE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SERVICETITAN INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SHIFT4 PMTS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SMURFIT WESTROCK PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SNOWFLAKE INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "STERIS PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "T-MOBILE US INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEMPUS AI INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TESLA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "THE CAMPBELL'S CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "THE MOSAIC CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2882,
+    "outputTokens": 1763,
+    "estimatedCostUsd": 0.117
+  }
+}

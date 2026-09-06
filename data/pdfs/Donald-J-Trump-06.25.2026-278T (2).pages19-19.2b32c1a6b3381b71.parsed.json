@@ -1,0 +1,317 @@
+{
+  "key": "2b32c1a6b3381b71",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 19,
+    "last": 19
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:14:42.075Z",
+  "transactions": [
+    {
+      "description": "SYSCO CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "T ROWE PRICE GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TANDEM DIABETES CARE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TANGER INC REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TARGET CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TARGET CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TELEPHONE & DATA SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TERRENO RLTY CORP REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TESLA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS INSTRUMENTS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS INSTRUMENTS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TG THERAPEUTICS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TRANSMEDICS GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "TRIPADVISOR INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "TRUIST FINANCIAL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "U S PHYSICAL THERAPY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ULTRA CLEAN HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIFIRST CORP MASS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED PARCEL SERVICE INC CL B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED PARCEL SERVICE INC CL B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITEDHEALTH GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIVERSAL CORP VA",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UPBOUND GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "UPWORK INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VALERO ENERGY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VEECO INSTRS INC DEL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERICEL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERIS RESIDENTIAL IN",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERRA MOBILITY CORP CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VIASAT INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VICTORIAS SECRET & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2750,
+    "outputTokens": 1793,
+    "estimatedCostUsd": 0.1172
+  }
+}

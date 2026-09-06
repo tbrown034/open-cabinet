@@ -558,6 +558,12 @@ export async function checkFiling(
   // disputes or cannot find holds the filing.
   const audited = async (verdict: GateVerdict): Promise<GateVerdict> => {
     if (!secondReadAllowed) return verdict; // report-only runs leave the audit to pnpm grok-audit
+    if (!process.env.GROK_API_KEY) {
+      console.warn(`           page audit unavailable (no GROK_API_KEY); holding ${path.basename(pdfPath)} for a person`);
+      return hold("the page audit could not run (no GROK_API_KEY); two of three gates passed", [
+        `two of three gates passed (${verdict.verdict === "two_lane" ? verdict.lane : "second model"}); the page audit did not run because GROK_API_KEY is not set`,
+      ]);
+    }
     const record = findParseRecord(pdfPath, {
       pdfSha256: sha256, sourceUrl: filing.pdfUrl, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL,
     });

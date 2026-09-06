@@ -7,8 +7,8 @@
  * research/pipeline.md describes each stage in three lines: what happens,
  * what stops it, what a person does. A test asserts the names match.
  *
- * Officials without existing JSON are treated as failures; those need metadata
- * bootstrapped before an automated ingest can safely update the public site.
+ * A new official is bootstrapped from OGE metadata only when OGE supplies a
+ * title and an agency; otherwise the official is held for a person.
  *
  * Usage: npx tsx scripts/ingest-new-filings.ts
  *        npx tsx scripts/ingest-new-filings.ts --from-file /tmp/new-filings.json
@@ -237,13 +237,20 @@ async function ingestForOfficial(
   const filePath = path.resolve(`data/officials/${slug}.json`);
   const existingOfficial = existsSync(filePath);
   const firstFiling = newPdfs[0];
+  if (!existingOfficial && (!firstFiling.title || !firstFiling.agency)) {
+    // A new official with no title or agency from OGE would publish a page
+    // that says "Unknown". Held for a person to add the metadata first.
+    console.warn(`  [${slug}] new official with no title or agency from OGE; held for a person, nothing ingested`);
+    heldForAPerson.push(`${slug}: new official, OGE metadata lacks title or agency; add data/officials/${slug}.json by hand`);
+    return null;
+  }
   const official: OfficialFile = existingOfficial
     ? JSON.parse(await readFile(filePath, "utf-8"))
     : {
         name: firstFiling.name,
         slug,
-        title: firstFiling.title || "Unknown",
-        agency: firstFiling.agency || "Unknown",
+        title: firstFiling.title,
+        agency: firstFiling.agency,
         // OGE reports Executive Schedule strings; the site's GovernmentLevel
         // type uses editorial groupings, and the /all filter tabs match on
         // them exactly — raw "Level I"/"Level II" values silently drop the
@@ -260,6 +267,9 @@ async function ingestForOfficial(
 
   const perFilingParses: ParsedTransaction[][] = [];
   const newSourceEntries: SourceFiling[] = [];
+  /** Filings that passed the gate, in step with perFilingParses. A held
+   * filing is in neither, so mergeRows stamps rows with the right URL. */
+  const mergedFilings: typeof newPdfs = [];
   const heldFilings = heldForAPerson;
   for (const filing of newPdfs) {
     const { pdfPath, sha256 } = await fetchFiling(slug, filing);
@@ -283,6 +293,7 @@ async function ingestForOfficial(
       continue;
     }
     perFilingParses.push(rows);
+    mergedFilings.push(filing);
     newSourceEntries.push({
       date: filing.docDate.slice(0, 10),
       url: filing.pdfUrl,
@@ -293,7 +304,7 @@ async function ingestForOfficial(
   }
 
   if (PARSE_ONLY) return { added: 0, total: official.transactions.length };
-  const addedTxs = mergeRows(official, perFilingParses, newPdfs);
+  const addedTxs = mergeRows(official, perFilingParses, mergedFilings);
   return writeOfficial(slug, filePath, official, addedTxs, newSourceEntries);
 }
 

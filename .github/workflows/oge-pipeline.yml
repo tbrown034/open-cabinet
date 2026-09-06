@@ -31,6 +31,9 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      # The audit lane (third gate). Without it checkFiling holds every
+      # filing for a person rather than publishing unaudited.
+      GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
 
     steps:
       - name: Check out repository
@@ -49,6 +52,11 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      # The deterministic lanes: pdftotext and pdfinfo (poppler) for the
+      # text layer, pdftoppm plus tesseract for the OCR lane.
+      - name: Install poppler and tesseract
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr
 
       - name: Ingest OGE filings into static data
         run: |

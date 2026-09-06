@@ -1,0 +1,317 @@
+{
+  "key": "3dd723e55d38a027",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 16,
+    "last": 16
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:13:39.981Z",
+  "transactions": [
+    {
+      "description": "MERCHANTS BANCORP IND",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MERCK & COMPANY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MERIT MED SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MERITAGE HOMES CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "META PLATFORMS INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MGE ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MICRON TECHNOLOGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MIDDLESEX WTR CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MILLERKNOLL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MILLROSE PPTYS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MISTER CAR WASH INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MOELIS & CO CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MOHAWK INDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MONDELEZ INTERNATIONAL INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MONRO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MUELLER WATER PRODUC CLASS SERIES A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NAPCO SEC TECHNOLOGIES I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "NATERA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NBT BANCORP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NEOGENOMICS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NEXTERA ENERGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NMI HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NORTHERN OIL & GAS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NTNL VISION HLDGS IN",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "O-I GLASS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "OHIO ST PUB FACS COMMSN INFRA IMPT 2026A B/E 3.00 % Due Mar 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "OMNICOM GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ONEOK INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ONESPAWORLD HLDGS LTD F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ORGANON & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "OSI SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "OTTER TAIL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2820,
+    "outputTokens": 1839,
+    "estimatedCostUsd": 0.1202
+  }
+}

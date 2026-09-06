@@ -1,0 +1,317 @@
+{
+  "key": "9228fcf1901c78e9",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 17,
+    "last": 17
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:14:00.458Z",
+  "transactions": [
+    {
+      "description": "OUTFRONT MEDIA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PALOMAR HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PAR PAC HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PARK NATL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PATHWARD FINL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PATTERSON-UTI ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PAYCHEX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PAYCHEX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PC CONNECTION INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PEDIATRIX MEDICAL GR",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PERDOCEO ED CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PERRIGO CO PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PFIZER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PHIBRO ANIMAL HEALTH COR CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "PHILIP MORRIS INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PHILLIPS 66",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PIPER SANDLER COS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PLEXUS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PNC FINANCIAL SERVICES GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "POWELL INDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PPL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRA GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRESTIGE CONSUMER HEALTH",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRIMORIS SVCS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRIVIA HEALTH GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PROTAGONIST THERAPEUTICS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRUDENTIAL FINANCIAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PUBLIC SERVICE ENTERPRISE GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "QORVO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "QUALCOMM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2786,
+    "outputTokens": 1755,
+    "estimatedCostUsd": 0.1156
+  }
+}
