@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T23:21:45.182Z",
+  "generatedAt": "2026-09-06T23:30:51.809Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
       "checked": 11250,
-      "human_verified": 119,
+      "human_verified": 142,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 29,
-      "implausible": 23,
+      "implausible": 0,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
       "1": 29,
-      "2": 116,
-      "3": 11369
+      "2": 93,
+      "3": 11392
     }
   },
   "rows": {
@@ -2349,10 +2349,10 @@
       "id": "4d0c7a30fb6b58521c9c6d3a",
       "slug": "blanche-todd",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-05-31); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "b0cc6baeffe1e34de47f4e8e": {
       "id": "b0cc6baeffe1e34de47f4e8e",
@@ -7857,19 +7857,19 @@
       "id": "e8995299b0d887bb057b6d30",
       "slug": "isaacman-jared",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D566015C161DDA885258DDC002DB5D1/$FILE/Jared-Isaacman-03.16.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2026-02-07); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "ab39fca42f17445a33232e01": {
       "id": "ab39fca42f17445a33232e01",
       "slug": "isaacman-jared",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D566015C161DDA885258DDC002DB5D1/$FILE/Jared-Isaacman-03.16.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2026-02-07); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "ed2ee3514b2316a49b8e36f3": {
       "id": "ed2ee3514b2316a49b8e36f3",
@@ -9036,10 +9036,10 @@
       "id": "5e53fbbe7a1859ee239abdf5",
       "slug": "kennedy-robert-f",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the trade is dated a Saturday (2025-01-04); markets are closed. Before this check: A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "fd9027437fe01732ea753175": {
       "id": "fd9027437fe01732ea753175",
@@ -9072,10 +9072,10 @@
       "id": "ce2359efc7b79ee4719ac677",
       "slug": "kennedy-robert-f",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the trade is dated a Saturday (2025-01-04); markets are closed. Before this check: A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "f8c073af47ebba41afc79227": {
       "id": "f8c073af47ebba41afc79227",
@@ -10386,82 +10386,82 @@
       "id": "a33b215898709975ab6386b2",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "da8cae35683bed28abf2b05d": {
       "id": "da8cae35683bed28abf2b05d",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "27745b9e2e36cd4b6d9e689b": {
       "id": "27745b9e2e36cd4b6d9e689b",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "48d1c7f898c3fdacf9997d7a": {
       "id": "48d1c7f898c3fdacf9997d7a",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "9c7ee4af5be79cb6051b0359": {
       "id": "9c7ee4af5be79cb6051b0359",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "2cf40cef9d6e5bd9b7542368": {
       "id": "2cf40cef9d6e5bd9b7542368",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "d2cf0cfb2ce0ce5cd3534656": {
       "id": "d2cf0cfb2ce0ce5cd3534656",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "97733f38de9c8a6fe075ca76": {
       "id": "97733f38de9c8a6fe075ca76",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "76ac6446d8bd2a46c4dd61f1": {
       "id": "76ac6446d8bd2a46c4dd61f1",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "1f63f90fc13d45e23538e756": {
       "id": "1f63f90fc13d45e23538e756",
@@ -19269,46 +19269,46 @@
       "id": "8705c28dd237f39113a88e8e",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "2cc7ac7b8f40859c6ebd2d76": {
       "id": "2cc7ac7b8f40859c6ebd2d76",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "aa70f3280746e30205dc1a08": {
       "id": "aa70f3280746e30205dc1a08",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "1060e025567074fd3017fd61": {
       "id": "1060e025567074fd3017fd61",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "944c788ccfd44015dd585d96": {
       "id": "944c788ccfd44015dd585d96",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-02-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "7f0a10c469c86df234d6a130": {
       "id": "7f0a10c469c86df234d6a130",
@@ -65367,10 +65367,10 @@
       "id": "de26d16749521582bafed09f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "ocr",
-      "note": "Needs a person: the trade is dated a Sunday (2026-03-15); markets are closed. Before this check: OCR of printed row 170 agrees; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "f9012fc4588463fa406dded1": {
       "id": "f9012fc4588463fa406dded1",
@@ -89339,14 +89339,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR read printed row 66 differently; the page audit confirmed it"
     },
-    "89e0fab4237ad032237adf63": {
-      "id": "89e0fab4237ad032237adf63",
+    "1aeb1a628908520bf30f668c": {
+      "id": "1aeb1a628908520bf30f668c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "ocr",
-      "note": "Needs a person: the trade is dated a Saturday (2025-11-08); markets are closed. Before this check: OCR of printed row 68 agrees; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "3f17213946d6037c3603eb71": {
       "id": "3f17213946d6037c3603eb71",
@@ -90644,14 +90644,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "9b3e7cff978c9270bfcb48e0": {
-      "id": "9b3e7cff978c9270bfcb48e0",
+    "248604edd8d925e3ca6f0ccb": {
+      "id": "248604edd8d925e3ca6f0ccb",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/18353894FE440B3685258D430031A337/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T%20(2).pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "model2",
-      "note": "Needs a person: the bond matures in 2021, before the 2025 trade. Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "336e85e940759599ee8dc657": {
       "id": "336e85e940759599ee8dc657",
@@ -100512,10 +100512,10 @@
       "id": "55d85b55f295c77b94570538",
       "slug": "warsh-kevin",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0933B220C51FFFB485258E52002DD2D9/$FILE/Kevin-Warsh-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "implausible",
-      "lane": "text",
-      "note": "Needs a person: the trade is dated a Sunday (2026-05-31); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "0ba29a7455eb547cfce8e0e9": {
       "id": "0ba29a7455eb547cfce8e0e9",
