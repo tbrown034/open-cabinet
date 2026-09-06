@@ -1,0 +1,107 @@
+{
+  "key": "06506cf9c4b336fc",
+  "pdfSha256": "2a5fe1c4fe602306735c88fb7de9aec17262d37344996b4873f9fb222fea9f51",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8C12E5475578E84385258D5C00345940/$FILE/Howard-Lutnick-11.05.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:12:31.678Z",
+  "transactions": [
+    {
+      "description": "Cantor Fitzgerald, L.P",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CF Group Management, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BGC Group, Inc. (BGC) Class B",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Tangible Benefits, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "KBCR Management Partners, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LFA, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "Over $1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (BGC)",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (NMRK)",
+      "ticker": "NMRK",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (BGC)",
+      "ticker": "BGC",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shares in Retirement Accounts (NMRK)",
+      "ticker": "NMRK",
+      "type": "Sale",
+      "date": "2025-10-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8970,
+    "outputTokens": 877,
+    "estimatedCostUsd": 0.0401
+  }
+}

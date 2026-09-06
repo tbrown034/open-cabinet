@@ -1,0 +1,26 @@
+{
+  "key": "625ba07e374d273d",
+  "pdfSha256": "7358213723c4daf165dfba0bf0da563b337db059f0a72388f7e233cc53722a90",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:18:31.251Z",
+  "transactions": [
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2025-12-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6669,
+    "outputTokens": 63,
+    "estimatedCostUsd": 0.021
+  }
+}

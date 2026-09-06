@@ -1,0 +1,179 @@
+{
+  "key": "8ce3ac05cba311aa",
+  "pdfSha256": "353456fff07d69092fbb1985ba456814fd789df0a61defcd7c49c2ebfaf347d2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8FC040FFB2095EC685258E0C002DCF26/$FILE/John-Phelan-05.12.2026-278T(1).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:23:26.567Z",
+  "transactions": [
+    {
+      "description": "Bear Lake Operations LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-31",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments V, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Double Mako Investments LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "White Tip Investments LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Capital, LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Special Investments Fund II, L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Valence8 PE 2025 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cresta SC Fund I-A LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cresta Royalty Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Investment Corp. (BDC)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "26North BDC, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "26North BDC, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Ventures Fund VIII",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Partners, L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8608,
+    "outputTokens": 1540,
+    "estimatedCostUsd": 0.0489
+  }
+}

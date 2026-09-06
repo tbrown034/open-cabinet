@@ -1,0 +1,26 @@
+{
+  "key": "63799bd1d61a8700",
+  "pdfSha256": "5a6a0c26b1fd2cdfe2faec1c85f0d5ad991532e95560f0f731e0d48643d5898f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B62CBA20DBEA2EF85258CDA002C951F/$FILE/Kristi-Noem-07.23.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:22:39.434Z",
+  "transactions": [
+    {
+      "description": "Granite Falls Energy LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6681,
+    "outputTokens": 57,
+    "estimatedCostUsd": 0.0209
+  }
+}

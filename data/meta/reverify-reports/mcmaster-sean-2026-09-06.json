@@ -1,0 +1,321 @@
+{
+  "slug": "mcmaster-sean",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Sean-McMaster-06.11.2026-278T.pdf: lanes agree (5 rows)",
+    "Sean-McMaster-02.27.2026-278T.pdf: lanes agree (1 rows)",
+    "Sean-McMaster-01.20.2026-278T.pdf: lanes agree (4 rows)",
+    "Sean-McMaster-12.01.2025-278T.pdf: lanes agree (7 rows)",
+    "Sean-McMaster-12.11.2025-278T.pdf: lanes agree (1 rows)",
+    "Sean-McMaster-09.29.2025-278T.pdf: lanes agree (7 rows)"
+  ],
+  "diff": {
+    "published": 24,
+    "fresh": 25,
+    "matched": 12,
+    "changed": [
+      {
+        "before": {
+          "description": "One Stop Systems Inc. Common Stock",
+          "ticker": "OSS",
+          "type": "Purchase",
+          "date": "2026-01-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "One Stop Systems Inc. Common Stock (OSS)",
+          "ticker": "OSS",
+          "type": "Purchase",
+          "date": "2026-01-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Robinhood Markets Inc. Class A Common Stock",
+          "ticker": "HOOD",
+          "type": "Purchase",
+          "date": "2026-01-09",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Purchase",
+          "date": "2026-01-09",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2026-01-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2026-01-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2025-12-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2025-12-18",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "ETHZilla Corp",
+          "ticker": "ETHZ",
+          "type": "Purchase",
+          "date": "2025-10-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "ETHZilla Corp (ETHZ)",
+          "ticker": "ETHZ",
+          "type": "Purchase",
+          "date": "2025-10-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MicroStrategy, Inc.",
+          "ticker": "MSTR",
+          "type": "Sale",
+          "date": "2025-10-09",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "MicroStrategy, Inc. (MSTR)",
+          "ticker": "MSTR",
+          "type": "Sale",
+          "date": "2025-10-09",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amcor plc",
+          "ticker": "AMCR",
+          "type": "Purchase",
+          "date": "2025-10-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amcor plc (AMCR)",
+          "ticker": "AMCR",
+          "type": "Purchase",
+          "date": "2025-10-09",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amcor plc",
+          "ticker": "AMCR",
+          "type": "Sale",
+          "date": "2025-10-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amcor plc (AMCR)",
+          "ticker": "AMCR",
+          "type": "Sale",
+          "date": "2025-10-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amkor Technology, Inc.",
+          "ticker": "AMKR",
+          "type": "Purchase",
+          "date": "2025-10-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amkor Technology, Inc. (AMKR)",
+          "ticker": "AMKR",
+          "type": "Purchase",
+          "date": "2025-10-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amkor Technology, Inc.",
+          "ticker": "AMKR",
+          "type": "Purchase",
+          "date": "2025-10-14",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amkor Technology, Inc. (AMKR)",
+          "ticker": "AMKR",
+          "type": "Purchase",
+          "date": "2025-10-14",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2025-11-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+          "ticker": "GRAB",
+          "type": "Purchase",
+          "date": "2025-11-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Tesla, Inc.",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-12-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Tesla, Inc. (TSLA)",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-12-10",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [
+      {
+        "description": "180 Life Sciences Corp. Common Stock",
+        "ticker": "ATNF",
+        "type": "Purchase",
+        "date": "2025-08-13",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": true,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B716301C2D9B9D585258D7700345AA8/$FILE/Sean-McMaster-09.29.2025-278T.pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 12
+  }
+}

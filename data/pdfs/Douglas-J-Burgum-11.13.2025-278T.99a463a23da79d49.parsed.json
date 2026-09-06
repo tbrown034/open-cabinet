@@ -1,0 +1,44 @@
+{
+  "key": "99a463a23da79d49",
+  "pdfSha256": "cf0c0015ea46063dc322ca5306688ddd26bff3ce8e354b42f63dc5cb8c72f7e8",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/056ABAA54A1FAC1585258D8600344DDF/$FILE/Douglas-J-Burgum-11.13.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:52:55.961Z",
+  "transactions": [
+    {
+      "description": "Costco Wholesale Corp.",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Schwab Treasury Obligations Money Fund Investor Class Shares",
+      "ticker": "SNOXX",
+      "type": "Sale",
+      "date": "2025-10-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6741,
+    "outputTokens": 273,
+    "estimatedCostUsd": 0.0243
+  }
+}

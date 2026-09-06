@@ -1,0 +1,44 @@
+{
+  "key": "94acbf0d7b4236b3",
+  "pdfSha256": "130c187c3d4a5395bb9d56a0ef03aa4b4050f7cd850c2c12749f73f852bba8e2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5B8B5CEB2359CA1D85258CC4002C8A8E/$FILE/Paul-R-Lawrence-06.11.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:12:18.072Z",
+  "transactions": [
+    {
+      "description": "Dominion Energy, Inc. (D)",
+      "ticker": "D",
+      "type": "Sale",
+      "date": "2025-05-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fidelity Software and IT Services Portfolio (FSCSX)",
+      "ticker": "FSCSX",
+      "type": "Sale",
+      "date": "2025-04-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "T Rowe Price Health Sciences Fund, Inc Class I Shares (THISX)",
+      "ticker": "THISX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6746,
+    "outputTokens": 283,
+    "estimatedCostUsd": 0.0245
+  }
+}

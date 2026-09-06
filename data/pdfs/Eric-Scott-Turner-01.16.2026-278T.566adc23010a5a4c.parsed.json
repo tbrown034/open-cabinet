@@ -1,0 +1,26 @@
+{
+  "key": "566adc23010a5a4c",
+  "pdfSha256": "890ece088abe439a2998484ae070e56462922cab32931dc14e376bce14ddfc75",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3A9FB168C78ABC2885258DCC002DDC8D/$FILE/Eric-Scott-Turner-01.16.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:27:21.352Z",
+  "transactions": [
+    {
+      "description": "Bitmine Immersion Technologies (BMNR)",
+      "ticker": "BMNR",
+      "type": "Purchase",
+      "date": "2025-11-19",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6685,
+    "outputTokens": 68,
+    "estimatedCostUsd": 0.0211
+  }
+}

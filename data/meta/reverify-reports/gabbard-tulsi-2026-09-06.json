@@ -1,0 +1,210 @@
+{
+  "slug": "gabbard-tulsi",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Tulsi-Gabbard-05.21.2025-278T.pdf: lanes agree (13 rows)"
+  ],
+  "diff": {
+    "published": 13,
+    "fresh": 13,
+    "matched": 5,
+    "changed": [
+      {
+        "before": {
+          "description": "Apple",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Apple",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "NVIDIA Corp.",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "NVIDIA Corp. (NVDA)",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "RumbleOn Inc. Class B Common Stock",
+          "ticker": "RMBL",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "RumbleOn Inc. Class B Common Stock (RMBL)",
+          "ticker": "RMBL",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Tesla, Inc.",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Tesla, Inc. (TSLA)",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard 500 Index Fund ETF Shares",
+          "ticker": "VOO",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard 500 Index Fund ETF Shares (VOO)",
+          "ticker": "VOO",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Extended Market Index Fund ETF Shares",
+          "ticker": "VXF",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Extended Market Index Fund ETF Shares (VXF)",
+          "ticker": "VXF",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total International Stock Index Fund ETF Shares",
+          "ticker": "VXUS",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+          "ticker": "VXUS",
+          "type": "Purchase",
+          "date": "2025-05-14",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 8
+  }
+}

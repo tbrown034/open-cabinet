@@ -190,6 +190,16 @@ export function validateParsedRows(
 }
 
 /** Throws with every problem listed, for callers that must halt. */
+/** Thrown when the model's rows fail the shape gate. Deterministic: the
+ * same document read the same way fails the same way, so callers must not
+ * retry it, and a batch should record it and move on. */
+export class ParsedRowsInvalidError extends Error {
+  constructor(context: string, public readonly problems: string[]) {
+    super(`${context}: parsed rows failed validation:\n  ${problems.join("\n  ")}`);
+    this.name = "ParsedRowsInvalidError";
+  }
+}
+
 export function assertParsedRows(
   input: unknown,
   context: string,
@@ -197,10 +207,6 @@ export function assertParsedRows(
 ): ParsedRow[] {
   const result = validateParsedRows(input);
   for (const w of result.warnings) log(`${context}: ${w}`);
-  if (!result.ok) {
-    throw new Error(
-      `${context}: parsed rows failed validation:\n  ${result.errors.join("\n  ")}`
-    );
-  }
+  if (!result.ok) throw new ParsedRowsInvalidError(context, result.errors);
   return result.rows;
 }

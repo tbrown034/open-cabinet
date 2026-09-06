@@ -1,0 +1,278 @@
+{
+  "key": "dadf2bc502b13047",
+  "pdfSha256": "3294082f5072d67a379b543afb9157f1275e6014cd617e4e19d48531f2e38f3e",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1D97817A20B559D085258CA2002C8C51/$FILE/Pete-Hegseth-04.11.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:03:04.026Z",
+  "transactions": [
+    {
+      "description": "Walmart, Inc. (WMT)",
+      "ticker": "WMT",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Thermo Fisher Scientific, Inc. (TMO)",
+      "ticker": "TMO",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PepsiCo, Inc. (PEP)",
+      "ticker": "PEP",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The PNC Financial Services Group, Inc. (PNC)",
+      "ticker": "PNC",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lowe's Cos., Inc. (LOW)",
+      "ticker": "LOW",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "International Business Machines Corp. (IBM)",
+      "ticker": "IBM",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Danaher Corp. (DHR)",
+      "ticker": "DHR",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Advanced Micro Devices, Inc. (AMD)",
+      "ticker": "AMD",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Trane Technologies plc (TT)",
+      "ticker": "TT",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Laboratory Corp. of America Holdings (LH)",
+      "ticker": "LH",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Chubb Ltd. (CB)",
+      "ticker": "CB",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Mastercard, Inc. (MA)",
+      "ticker": "MA",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Mondelez International, Inc. (MDLZ)",
+      "ticker": "MDLZ",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "T-Mobile US, Inc. (TMUS)",
+      "ticker": "TMUS",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JPMorgan Chase & Co. (JPM)",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ares Capital Corporation Common Stock (ARCC)",
+      "ticker": "ARCC",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Oracle Corp. (ORCL)",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Costco Wholesale Corp. (COST)",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Visa, Inc. (V)",
+      "ticker": "V",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Northrop Grumman Corp. (NOC)",
+      "ticker": "NOC",
+      "type": "Sale",
+      "date": "2025-02-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KKR & Co., Inc. (KKR)",
+      "ticker": "KKR",
+      "type": "Sale",
+      "date": "2025-02-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Blackstone Inc. Common Stock (BX)",
+      "ticker": "BX",
+      "type": "Sale",
+      "date": "2025-02-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Honeywell International, Inc. (HON)",
+      "ticker": "HON",
+      "type": "Sale",
+      "date": "2025-02-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lockheed Martin Corp. (LMT)",
+      "ticker": "LMT",
+      "type": "Sale",
+      "date": "2025-02-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Morgan Stanley (MS)",
+      "ticker": "MS",
+      "type": "Sale",
+      "date": "2025-04-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8923,
+    "outputTokens": 2560,
+    "estimatedCostUsd": 0.0652
+  }
+}

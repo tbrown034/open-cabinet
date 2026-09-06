@@ -1,0 +1,35 @@
+{
+  "key": "2acdf8f3520d3089",
+  "pdfSha256": "2069ff7b3c7360a7065806a1f0f2dcc8592ae026e31e7cd7ac0892f3ae7c6d98",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:09:22.470Z",
+  "transactions": [
+    {
+      "description": "Alphabet, Inc. (GOOG) (sale of stock per required CD)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Southern Company (SO) (required sale pursuant to CD)",
+      "ticker": "SO",
+      "type": "Sale",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6718,
+    "outputTokens": 190,
+    "estimatedCostUsd": 0.023
+  }
+}

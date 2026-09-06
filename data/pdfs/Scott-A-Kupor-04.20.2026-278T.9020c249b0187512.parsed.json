@@ -1,0 +1,35 @@
+{
+  "key": "9020c249b0187512",
+  "pdfSha256": "c939b028b9c08d134e30b59be87c5902c2ae614ce13f052d9ba212e2fa34c9d2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:09:02.955Z",
+  "transactions": [
+    {
+      "description": "Airbnb Inc. Class A Common Stock",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6712,
+    "outputTokens": 184,
+    "estimatedCostUsd": 0.0229
+  }
+}

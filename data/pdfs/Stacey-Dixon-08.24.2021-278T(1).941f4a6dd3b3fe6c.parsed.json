@@ -1,0 +1,26 @@
+{
+  "key": "941f4a6dd3b3fe6c",
+  "pdfSha256": "890cb40888804b27378afebdce354682c2e002845196bec913d68cf5785f03ce",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E19691CF6317598D85258742002E54E1/$FILE/Stacey-Dixon-08.24.2021-278T(1).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:00:02.490Z",
+  "transactions": [
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6725,
+    "outputTokens": 67,
+    "estimatedCostUsd": 0.0212
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "key": "9706068e68aae9c7",
+  "pdfSha256": "eaeffae8e77e32ad987041e4dbd104d9bfe206d016c491bbf856e1ab0edcb356",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1F2CA5D27DDE1D9085258D460031984D/$FILE/Lee-Zeldin-09-24-2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:33:17.543Z",
+  "transactions": [
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares",
+      "ticker": "NRSN",
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6709,
+    "outputTokens": 69,
+    "estimatedCostUsd": 0.0212
+  }
+}

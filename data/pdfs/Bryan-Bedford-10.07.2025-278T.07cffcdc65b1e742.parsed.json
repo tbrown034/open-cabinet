@@ -1,0 +1,692 @@
+{
+  "key": "07cffcdc65b1e742",
+  "pdfSha256": "ff1bf7eddcd0f604187b6fe4dec55a0b3f7d83d85afc0d2302877d873cffd6ae",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:49:29.094Z",
+  "transactions": [
+    {
+      "description": "JPMorgan Liquid Assets Money Market Fund Institutional Shares (IJLXX)",
+      "ticker": "IJLXX",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan Equity Premium Income ETF (JEPI)",
+      "ticker": "JEPI",
+      "type": "Purchase",
+      "date": "2025-09-10",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan Nasdaq Equity Premium Income ETF (JEPQ)",
+      "ticker": "JEPQ",
+      "type": "Purchase",
+      "date": "2025-09-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "WESCO International, Inc. (WCC)",
+      "ticker": "WCC",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Wynn Resorts Ltd. (WYNN)",
+      "ticker": "WYNN",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Workday, Inc. (WDAY)",
+      "ticker": "WDAY",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Waste Connections Inc. Common Shares (WCN)",
+      "ticker": "WCN",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "The Walt Disney Co. (DIS)",
+      "ticker": "DIS",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Union Pacific Corp. (UNP)",
+      "ticker": "UNP",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cigna Corp. (CI)",
+      "ticker": "CI",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schlumberger NV (SLB)",
+      "ticker": "SLB",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Roche Holdings AG Basel ADR Common Stock (RHHBY)",
+      "ticker": "RHHBY",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Regeneron Pharmaceuticals, Inc. (REGN)",
+      "ticker": "REGN",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Procter & Gamble Co (PG)",
+      "ticker": "PG",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Morgan Stanley (MS)",
+      "ticker": "MS",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Medtronic Plc (MDT)",
+      "ticker": "MDT",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Jazz Pharmaceuticals Plc (JAZZ)",
+      "ticker": "JAZZ",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "lululemon athletica, Inc. (LULU)",
+      "ticker": "LULU",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Inspire Medical Systems, Inc. (INSP)",
+      "ticker": "INSP",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Infineon Technologies AG (IFNNY)",
+      "ticker": "IFNNY",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Entergy Corp. (ETR)",
+      "ticker": "ETR",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Chevron Corp. (CVX)",
+      "ticker": "CVX",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fortinet, Inc. (FTNT)",
+      "ticker": "FTNT",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Danaher Corp. (DHR)",
+      "ticker": "DHR",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ASML Holding N.V. New York Registry Shares (ASML)",
+      "ticker": "ASML",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Adobe, Inc. (ADBE)",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Global Healthcare ETF (IXJ)",
+      "ticker": "IXJ",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCIPacific ex Japan ETF (EPP)",
+      "ticker": "EPP",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet Inc Class A (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCIPacific ETF (IPAC)",
+      "ticker": "IPAC",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Abercrombie & Fitch Co. (ANF)",
+      "ticker": "ANF",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE Growth ETF (EFG)",
+      "ticker": "EFG",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI International Developed Markets ETF (IDEV)",
+      "ticker": "IDEV",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Consumer Staples Select Sector SPDR Fund (XLP)",
+      "ticker": "XLP",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Utilities Select Sector SPDR Fund (XLU)",
+      "ticker": "XLU",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Health Care Select Sector SPDR Fund (XLV)",
+      "ticker": "XLV",
+      "type": "Sale",
+      "date": "2025-09-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-09-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI Canada ETF (EWC)",
+      "ticker": "EWC",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Communication Services Select Sector SPDR Fund (XLC)",
+      "ticker": "XLC",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Energy Select Sector SPDR Fund (XLE)",
+      "ticker": "XLE",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Motorola Solutions, Inc. (MSI)",
+      "ticker": "MSI",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet, Inc. Class C (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Eaton Corp. Plc (ETN)",
+      "ticker": "ETN",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CrowdStrike Holdings Inc. Class A Common Stock (CRWD)",
+      "ticker": "CRWD",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Trimble, Inc. (TRMB)",
+      "ticker": "TRMB",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Franklin FTSE Canada ETF (FLCA)",
+      "ticker": "FLCA",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Marvell Technology Group Ltd. (MRVL)",
+      "ticker": "MRVL",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Valero Energy Corp. (VLO)",
+      "ticker": "VLO",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI Japan ETF (EWJ)",
+      "ticker": "EWJ",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ServiceNow, Inc. (NOW)",
+      "ticker": "NOW",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Financial Select Sector SPDR Fund (XLF)",
+      "ticker": "XLF",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+      "ticker": "BBAX",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+      "ticker": "BBJP",
+      "type": "Sale",
+      "date": "2025-09-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+      "ticker": "BBCA",
+      "type": "Sale",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+      "ticker": "BBCA",
+      "type": "Sale",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares MSCI EAFE ETF (EFA)",
+      "ticker": "EFA",
+      "type": "Purchase",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+      "ticker": "BBCA",
+      "type": "Sale",
+      "date": "2025-09-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 14973,
+    "outputTokens": 6920,
+    "estimatedCostUsd": 0.1487
+  }
+}

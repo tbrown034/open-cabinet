@@ -1,0 +1,482 @@
+{
+  "slug": "phelan-john",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "John-Phelan-03.12.2026-278T(2).pdf: lanes agree (15 rows)",
+    "John-Phelan-03.12.2026-278T(1).pdf: lanes agree (2 rows)",
+    "John-Phelan-05.12.2026-278T(1).pdf: lanes agree (18 rows)",
+    "John-Phelan-05.12.2026-278T.pdf: lanes agree (10 rows)",
+    "John-Phelan-03.12.2026-278T(3).pdf: lanes agree (15 rows)",
+    "John-Phelan-10.02.2025-278T.pdf: lanes agree (19 rows)",
+    "John-Phelan-11.17.2025-278T(2).pdf: lanes agree (18 rows)",
+    "John-Phelan-05.20.2025-278T.pdf: lanes agree (23 rows)",
+    "John-Phelan-03.12.2026-278T.pdf: lanes agree (14 rows)",
+    "John-Phelan-01.09.2026-278T.pdf: lanes agree (13 rows)",
+    "John-Phelan-10.02.2025-278T(2).pdf: lanes agree (8 rows)",
+    "John-Phelan-07.28.2025-278T(2).pdf: lanes agree (15 rows)",
+    "John-Phelan-11.17.2025-278T(1).pdf: lanes agree (21 rows)"
+  ],
+  "diff": {
+    "published": 176,
+    "fresh": 176,
+    "matched": 157,
+    "changed": [
+      {
+        "before": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2026-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8FC040FFB2095EC685258E0C002DCF26/$FILE/John-Phelan-05.12.2026-278T(1).pdf"
+        },
+        "after": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8FC040FFB2095EC685258E0C002DCF26/$FILE/John-Phelan-05.12.2026-278T(1).pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DC3783D3D22CADA585258DFF002DCC65/$FILE/John-Phelan-05.20.2025-278T.pdf"
+        },
+        "after": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DC3783D3D22CADA585258DFF002DCC65/$FILE/John-Phelan-05.20.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2025-06-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DFA1DC5E6B4CE0BF85258DAB00346FD8/$FILE/John-Phelan-07.28.2025-278T(2).pdf"
+        },
+        "after": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-06-27",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DFA1DC5E6B4CE0BF85258DAB00346FD8/$FILE/John-Phelan-07.28.2025-278T(2).pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": "BDC",
+          "type": "Sale",
+          "date": "2025-09-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/687996565E337F3385258DAB00346FB5/$FILE/John-Phelan-11.17.2025-278T(1).pdf"
+        },
+        "after": {
+          "description": "MSD Investment Corp. (BDC)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-09-26",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/687996565E337F3385258DAB00346FB5/$FILE/John-Phelan-11.17.2025-278T(1).pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "RMDC, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "RMDC, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-26",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Kingfish Investments II, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-26",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MSD Special Investments Fund II, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "MSD Special Investments Fund II, LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "MSD Holdings, LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "MSD Holdings, LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-05",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Kingfish Investments X, LLC",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-05",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vesper Muse LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-29",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Vesper Muse LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-29",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Turnbridge Equities Real Estate Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Turnbridge Equities Real Estate Fund II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Valence8 PE 2024 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Valence8 PE 2024 Fund",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-20",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "HealthQuest Tactical Opportunities LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "HealthQuest Tactical Opportunities LP",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-13",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Cotulla Aviation LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-09",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Cotulla Aviation LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-09",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Cresta Royalty Partners II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Cresta Royalty Partners II",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-30",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "Dawson Portfolio Finance 5 LP",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2026-01-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "GMF Group Fund II, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+        },
+        "after": {
+          "description": "GMF Group Fund II, LLC",
+          "ticker": null,
+          "type": "Purchase",
+          "date": "2026-01-28",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [
+      {
+        "description": "MSD Investment Corp. (BDC)",
+        "ticker": "BDC",
+        "type": "Purchase",
+        "date": "2026-01-08",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DF33C1065800EF1785258E0C002DCF2D/$FILE/John-Phelan-03.12.2026-278T(3).pdf"
+      }
+    ],
+    "added": [
+      {
+        "description": "MSD Investment Corp. (BDC)",
+        "ticker": null,
+        "type": "Purchase",
+        "date": "2026-01-08",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/20DBB4C97563F8DE85258E0D002DCD7A/$FILE/John-Phelan-03.12.2026-278T(2).pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 18
+  }
+}

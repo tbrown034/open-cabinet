@@ -1,0 +1,35 @@
+{
+  "key": "e02c75d584e95987",
+  "pdfSha256": "9a9902e2f2da5648cc5822ea353c02fe860d79b398bf62dc282bd8cad54b394d",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FD54C77633EEF27385258750002E5457/$FILE/Deanne-Criswell-09.06.2021-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:58:19.967Z",
+  "transactions": [
+    {
+      "description": "Etsy, Inc. (ETSY)",
+      "ticker": "ETSY",
+      "type": "Sale",
+      "date": "2021-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Peloton Interactive Inc. (PTON)",
+      "ticker": "PTON",
+      "type": "Sale",
+      "date": "2021-08-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6755,
+    "outputTokens": 185,
+    "estimatedCostUsd": 0.023
+  }
+}

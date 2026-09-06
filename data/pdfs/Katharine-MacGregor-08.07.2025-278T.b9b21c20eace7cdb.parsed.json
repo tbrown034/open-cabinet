@@ -1,0 +1,197 @@
+{
+  "key": "b9b21c20eace7cdb",
+  "pdfSha256": "e51f4c8b18006502acf5aef6ce9a604cbdc093f9bf1ddb93a1fcee8445cc607b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E7B021C3112F2B3485258CFD002C03E5/$FILE/Katharine-MacGregor-08.07.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:13:10.550Z",
+  "transactions": [
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-07-14",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE) (option strike price $57.27)",
+      "ticker": "NEE",
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-07-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE) (option strike price $73.12)",
+      "ticker": "NEE",
+      "type": "Purchase",
+      "date": "2025-07-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-07-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE) (option strike price $75.38)",
+      "ticker": "NEE",
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE) (option strike price $75.69)",
+      "ticker": "NEE",
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NextEra Energy Stock ESOP Units; Vested balance",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Target Retirement 2045 Fund Investor Class Shares (VTIVX)",
+      "ticker": "VTIVX",
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "XPLR Infrastructure LP (XIFR - Formerly NextEra Energy Partners - NEP)",
+      "ticker": "XIFR",
+      "type": "Sale",
+      "date": "2025-07-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fidelity 500 Index Fund (FXAIX)",
+      "ticker": "FXAIX",
+      "type": "Purchase",
+      "date": "2025-07-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard 500 Index Fund Admiral Shares (VFIAX)",
+      "ticker": "VFIAX",
+      "type": "Purchase",
+      "date": "2025-07-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard 500 Index Fund Admiral Shares (VFIAX)",
+      "ticker": "VFIAX",
+      "type": "Purchase",
+      "date": "2025-07-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-07-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fidelity 500 Index Fund (FXAIX)",
+      "ticker": "FXAIX",
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-08-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Netflix, Inc. (NFLX)",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": "2025-08-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fidelity 500 Index Fund (FXAIX)",
+      "ticker": "FXAIX",
+      "type": "Purchase",
+      "date": "2025-08-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 10620,
+    "outputTokens": 1879,
+    "estimatedCostUsd": 0.06
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "089cd9f3cdb0dfd2",
+  "pdfSha256": "c980d3f88312c6ddd4f38c272eb386f968317e79c32e1d4da4407f1a179db93b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/651911337FC85C0085258A54002EEBC8/$FILE/Deanne-Criswell-09.08.2023-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:56:56.314Z",
+  "transactions": [
+    {
+      "description": "Palantir Technologies Inc. Class A Common Stock",
+      "ticker": "PLTR",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NIO Inc. American depositary shares each representing one Class A ordinary share",
+      "ticker": "NIO",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Schwab Value Advantage Money Fund Investor Class Shares",
+      "ticker": "SWVXX",
+      "type": "Purchase",
+      "date": "2023-08-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6793,
+    "outputTokens": 282,
+    "estimatedCostUsd": 0.0246
+  }
+}

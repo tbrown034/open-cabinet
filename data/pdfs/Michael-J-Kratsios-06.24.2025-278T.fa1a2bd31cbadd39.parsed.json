@@ -1,0 +1,26 @@
+{
+  "key": "fa1a2bd31cbadd39",
+  "pdfSha256": "1100aadef45b1399b695fc23fb1939935c7007abdaacd74bc059ff2e49b83a0d",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/25B7D3B2253E46BB85258CC9002C84A3/$FILE/Michael-J-Kratsios-06.24.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:07:21.314Z",
+  "transactions": [
+    {
+      "description": "Scale AI, Inc. Stock",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-23",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6630,
+    "outputTokens": 62,
+    "estimatedCostUsd": 0.0208
+  }
+}

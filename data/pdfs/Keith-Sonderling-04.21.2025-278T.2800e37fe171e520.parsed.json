@@ -1,0 +1,314 @@
+{
+  "key": "2800e37fe171e520",
+  "pdfSha256": "3fc2ac6ede6e2892be4b40146a6fa50382457cda8e6118e7c3c0e3fd8d8fe865",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7ADAE025CB4460B285258C8A002C85CE/$FILE/Keith-Sonderling-04.21.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:27:15.724Z",
+  "transactions": [
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Abbott Laboratories (ABT)",
+      "ticker": "ABT",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "AbbVie, Inc. (ABBV)",
+      "ticker": "ABBV",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amgen Inc. (AMGN)",
+      "ticker": "AMGN",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Altria Group, Inc. (MO)",
+      "ticker": "MO",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Automatic Data Processing, Inc. (ADP)",
+      "ticker": "ADP",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Avita Medical Inc. Common Stock (RCEL)",
+      "ticker": "RCEL",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Bank of America Corp. (BAC)",
+      "ticker": "BAC",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Broadcom Limited Shares (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Energy Select Sector SPDR Fund (XLE)",
+      "ticker": "XLE",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Chevron Corp. (CVX)",
+      "ticker": "CVX",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fifth Third Bancorp (FITB)",
+      "ticker": "FITB",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Cummins, Inc. (CMI)",
+      "ticker": "CMI",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "General Dynamics Corp. (GD)",
+      "ticker": "GD",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Home Depot, Inc. (HD)",
+      "ticker": "HD",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Johnson Controls International Plc (JCI)",
+      "ticker": "JCI",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JPMorgan Chase & Co. (JPM)",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KLA Corp. (KLAC)",
+      "ticker": "KLAC",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "L3Harris Technologies, Inc. (LHX)",
+      "ticker": "LHX",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lam Research Corp. (LRCX)",
+      "ticker": "LRCX",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Linde Plc (LIN)",
+      "ticker": "LIN",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lockheed Martin Corp. (LMT)",
+      "ticker": "LMT",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lowe's Cos., Inc. (LOW)",
+      "ticker": "LOW",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "McDonald's Corp. (MCD)",
+      "ticker": "MCD",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Procter & Gamble Co. (PG)",
+      "ticker": "PG",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Sherwin-Williams Co. (SHW)",
+      "ticker": "SHW",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Tractor Supply Co. (TSCO)",
+      "ticker": "TSCO",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Watsco, Inc. (WSO)",
+      "ticker": "WSO",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Williams Cos., Inc. (WMB)",
+      "ticker": "WMB",
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8981,
+    "outputTokens": 1961,
+    "estimatedCostUsd": 0.0564
+  }
+}

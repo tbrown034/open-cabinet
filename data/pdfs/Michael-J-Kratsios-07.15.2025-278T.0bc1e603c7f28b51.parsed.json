@@ -1,0 +1,26 @@
+{
+  "key": "0bc1e603c7f28b51",
+  "pdfSha256": "4a29d817d81fefd1cda5171c6b53f4a0f55ffe5efda166e9dd7fd34ac618b69d",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DB50C7FE9979CB3885258CCC002C8B0A/$FILE/Michael-J-Kratsios-07.15.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:07:16.042Z",
+  "transactions": [
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6639,
+    "outputTokens": 69,
+    "estimatedCostUsd": 0.021
+  }
+}

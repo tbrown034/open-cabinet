@@ -68,4 +68,20 @@ describe("review queue", () => {
     expect(listOpenReviews(f)).toEqual([]);
     expect(decideReview(item.id, "again", "trevor", f)).toBeNull();
   });
+
+  it("does not open a second item for a filing that already has one open", async () => {
+    const f = file();
+    const input = {
+      kind: "lane_disagreement" as const,
+      slug: "chavez-deremer-lori",
+      officialName: "Lori Chavez-DeRemer",
+      filing: { url: "https://example.gov/c.pdf", pdfFile: "c.pdf", date: "2025-07-02" },
+      problems: [],
+      holding: "every row of c.pdf",
+    };
+    const first = await openReviewItem(input, { send: false, file: f });
+    const second = await openReviewItem(input, { send: false, file: f });
+    expect(second.id).toBe(first.id);
+    expect(listOpenReviews(f)).toHaveLength(1);
+  });
 });

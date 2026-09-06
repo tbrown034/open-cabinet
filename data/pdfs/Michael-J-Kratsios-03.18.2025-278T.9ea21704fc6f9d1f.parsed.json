@@ -1,0 +1,197 @@
+{
+  "key": "9ea21704fc6f9d1f",
+  "pdfSha256": "2ba72452d5bbd67dab8aeba4f69fd66a82efd76ef6f70a9a363760995d2e6dff",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C168F84EC148EDC785258C67002C8092/$FILE/Michael-J-Kratsios-03.18.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:08:24.151Z",
+  "transactions": [
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-02-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+      "ticker": "VTEB",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF",
+      "ticker": "ITOT",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares National Muni Bond ETF",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8824,
+    "outputTokens": 1836,
+    "estimatedCostUsd": 0.054
+  }
+}

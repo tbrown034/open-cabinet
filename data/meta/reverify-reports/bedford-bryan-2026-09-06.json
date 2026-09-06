@@ -1,0 +1,2151 @@
+{
+  "slug": "bedford-bryan",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Bryan-Bedford-02.27.2026-278T.pdf: lanes agree (10 rows)",
+    "Bryan-Bedford-10.07.2025-278T.pdf: lanes agree (75 rows)",
+    "Bryan-Bedford-09.02.2025-278T.pdf: lanes agree (5 rows)"
+  ],
+  "diff": {
+    "published": 88,
+    "fresh": 90,
+    "matched": 0,
+    "changed": [
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2025-10-21",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-10-21",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Exchange",
+          "date": "2026-01-20",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Exchange",
+          "date": "2026-01-20",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-13",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-18",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-18",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-19",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-19",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-20",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-20",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Republic Airways Holdings Inc.",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-20",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Republic Airways Holdings Inc. (RJET)",
+          "ticker": "RJET",
+          "type": "Sale",
+          "date": "2026-02-20",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan Liquid Assets Money Market Fund Institutional Shares",
+          "ticker": "IJLXX",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan Liquid Assets Money Market Fund Institutional Shares (IJLXX)",
+          "ticker": "IJLXX",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan Equity Premium Income ETF",
+          "ticker": "JEPI",
+          "type": "Purchase",
+          "date": "2025-09-10",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan Equity Premium Income ETF (JEPI)",
+          "ticker": "JEPI",
+          "type": "Purchase",
+          "date": "2025-09-10",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan Nasdaq Equity Premium Income ETF",
+          "ticker": "JEPQ",
+          "type": "Purchase",
+          "date": "2025-09-10",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan Nasdaq Equity Premium Income ETF (JEPQ)",
+          "ticker": "JEPQ",
+          "type": "Purchase",
+          "date": "2025-09-10",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "WESCO International, Inc.",
+          "ticker": "WCC",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "WESCO International, Inc. (WCC)",
+          "ticker": "WCC",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Wynn Resorts Ltd.",
+          "ticker": "WYNN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Wynn Resorts Ltd. (WYNN)",
+          "ticker": "WYNN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Workday, Inc.",
+          "ticker": "WDAY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Workday, Inc. (WDAY)",
+          "ticker": "WDAY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Waste Connections Inc. Common Shares",
+          "ticker": "WCN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Waste Connections Inc. Common Shares (WCN)",
+          "ticker": "WCN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "The Walt Disney Co.",
+          "ticker": "DIS",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "The Walt Disney Co. (DIS)",
+          "ticker": "DIS",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Union Pacific Corp.",
+          "ticker": "UNP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Union Pacific Corp. (UNP)",
+          "ticker": "UNP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Cigna Corp.",
+          "ticker": "CI",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Cigna Corp. (CI)",
+          "ticker": "CI",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Schlumberger NV",
+          "ticker": "SLB",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Schlumberger NV (SLB)",
+          "ticker": "SLB",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Roche Holdings AG Basel ADR Common Stock",
+          "ticker": "RHHBY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Roche Holdings AG Basel ADR Common Stock (RHHBY)",
+          "ticker": "RHHBY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Regeneron Pharmaceuticals, Inc.",
+          "ticker": "REGN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Regeneron Pharmaceuticals, Inc. (REGN)",
+          "ticker": "REGN",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Procter & Gamble Co",
+          "ticker": "PG",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Procter & Gamble Co (PG)",
+          "ticker": "PG",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Morgan Stanley",
+          "ticker": "MS",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Morgan Stanley (MS)",
+          "ticker": "MS",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Medtronic Plc",
+          "ticker": "MDT",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Medtronic Plc (MDT)",
+          "ticker": "MDT",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Jazz Pharmaceuticals Plc",
+          "ticker": "JAZZ",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Jazz Pharmaceuticals Plc (JAZZ)",
+          "ticker": "JAZZ",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "lululemon athletica, Inc.",
+          "ticker": "LULU",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "lululemon athletica, Inc. (LULU)",
+          "ticker": "LULU",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Inspire Medical Systems, Inc.",
+          "ticker": "INSP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Inspire Medical Systems, Inc. (INSP)",
+          "ticker": "INSP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Infineon Technologies AG",
+          "ticker": "IFNNY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Infineon Technologies AG (IFNNY)",
+          "ticker": "IFNNY",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Entergy Corp.",
+          "ticker": "ETR",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Entergy Corp. (ETR)",
+          "ticker": "ETR",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Chevron Corp.",
+          "ticker": "CVX",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Chevron Corp. (CVX)",
+          "ticker": "CVX",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Fortinet, Inc.",
+          "ticker": "FTNT",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Fortinet, Inc. (FTNT)",
+          "ticker": "FTNT",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Danaher Corp.",
+          "ticker": "DHR",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Danaher Corp. (DHR)",
+          "ticker": "DHR",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "ASML Holding N.V. New York Registry Shares",
+          "ticker": "ASML",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "ASML Holding N.V. New York Registry Shares (ASML)",
+          "ticker": "ASML",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Adobe, Inc.",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Adobe, Inc. (ADBE)",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Global Healthcare ETF",
+          "ticker": "IXJ",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Global Healthcare ETF (IXJ)",
+          "ticker": "IXJ",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Alphabet Inc Class A",
+          "ticker": "GOOGL",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Alphabet Inc Class A (GOOGL)",
+          "ticker": "GOOGL",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Abercrombie & Fitch Co.",
+          "ticker": "ANF",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Abercrombie & Fitch Co. (ANF)",
+          "ticker": "ANF",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE Growth ETF",
+          "ticker": "EFG",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE Growth ETF (EFG)",
+          "ticker": "EFG",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core MSCI International Developed Markets ETF",
+          "ticker": "IDEV",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core MSCI International Developed Markets ETF (IDEV)",
+          "ticker": "IDEV",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Consumer Staples Select Sector SPDR Fund",
+          "ticker": "XLP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Consumer Staples Select Sector SPDR Fund (XLP)",
+          "ticker": "XLP",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Utilities Select Sector SPDR Fund",
+          "ticker": "XLU",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Utilities Select Sector SPDR Fund (XLU)",
+          "ticker": "XLU",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Health Care Select Sector SPDR Fund",
+          "ticker": "XLV",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Health Care Select Sector SPDR Fund (XLV)",
+          "ticker": "XLV",
+          "type": "Sale",
+          "date": "2025-09-10",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "SPDR S&P 500 ETF Trust",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "SPDR S&P 500 ETF Trust (SPY)",
+          "ticker": "SPY",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI Canada ETF",
+          "ticker": "EWC",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI Canada ETF (EWC)",
+          "ticker": "EWC",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Communication Services Select Sector SPDR Fund",
+          "ticker": "XLC",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Communication Services Select Sector SPDR Fund (XLC)",
+          "ticker": "XLC",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Energy Select Sector SPDR Fund",
+          "ticker": "XLE",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Energy Select Sector SPDR Fund (XLE)",
+          "ticker": "XLE",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Motorola Solutions, Inc.",
+          "ticker": "MSI",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Motorola Solutions, Inc. (MSI)",
+          "ticker": "MSI",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Alphabet, Inc. Class C",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Alphabet, Inc. Class C (GOOG)",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Broadcom, Inc.",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Broadcom, Inc. (AVGO)",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Eaton Corp. Plc",
+          "ticker": "ETN",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Eaton Corp. Plc (ETN)",
+          "ticker": "ETN",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "CrowdStrike Holdings Inc. Class A Common Stock",
+          "ticker": "CRWD",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "CrowdStrike Holdings Inc. Class A Common Stock (CRWD)",
+          "ticker": "CRWD",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Microsoft Corp. (MSFT)",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Trimble, Inc.",
+          "ticker": "TRMB",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Trimble, Inc. (TRMB)",
+          "ticker": "TRMB",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Franklin FTSE Canada ETF",
+          "ticker": "FLCA",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Franklin FTSE Canada ETF (FLCA)",
+          "ticker": "FLCA",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Marvell Technology Group Ltd.",
+          "ticker": "MRVL",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Marvell Technology Group Ltd. (MRVL)",
+          "ticker": "MRVL",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Valero Energy Corp.",
+          "ticker": "VLO",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Valero Energy Corp. (VLO)",
+          "ticker": "VLO",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI Japan ETF",
+          "ticker": "EWJ",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI Japan ETF (EWJ)",
+          "ticker": "EWJ",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "ServiceNow, Inc.",
+          "ticker": "NOW",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "ServiceNow, Inc. (NOW)",
+          "ticker": "NOW",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Financial Select Sector SPDR Fund",
+          "ticker": "XLF",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Financial Select Sector SPDR Fund (XLF)",
+          "ticker": "XLF",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)",
+          "ticker": "BBAX",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Japan ETF",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Japan ETF (BBJP)",
+          "ticker": "BBJP",
+          "type": "Sale",
+          "date": "2025-09-12",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Canada ETF",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Canada ETF",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares MSCI EAFE ETF",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares MSCI EAFE ETF (EFA)",
+          "ticker": "EFA",
+          "type": "Purchase",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan BetaBuilders Canada ETF",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan BetaBuilders Canada ETF (BBCA)",
+          "ticker": "BBCA",
+          "type": "Sale",
+          "date": "2025-09-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Medtronic Plc",
+          "ticker": "MDT",
+          "type": "Purchase",
+          "date": "2025-07-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Medtronic Plc (MDT)",
+          "ticker": "MDT",
+          "type": "Purchase",
+          "date": "2025-07-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Regeneron Pharmaceuticals, Inc.",
+          "ticker": "REGN",
+          "type": "Purchase",
+          "date": "2025-07-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Regeneron Pharmaceuticals, Inc. (REGN)",
+          "ticker": "REGN",
+          "type": "Purchase",
+          "date": "2025-07-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "e.l.f. Beauty, Inc.",
+          "ticker": "ELF",
+          "type": "Sale",
+          "date": "2025-07-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "e.l.f. Beauty, Inc. (ELF)",
+          "ticker": "ELF",
+          "type": "Sale",
+          "date": "2025-07-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Alaska Air Group, Inc.",
+          "ticker": "ALK",
+          "type": "Sale",
+          "date": "2025-08-07",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Alaska Air Group, Inc. (ALK)",
+          "ticker": "ALK",
+          "type": "Sale",
+          "date": "2025-08-07",
+          "amount": "$50,001-$100,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amazon Com Inc Com",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2025-08-07",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amazon Com Inc Com",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-08-07",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [
+      {
+        "description": "iShares MSCIPacific ex Japan ETF (EPP)",
+        "ticker": "EPP",
+        "type": "Sale",
+        "date": "2025-09-10",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+      },
+      {
+        "description": "iShares Core MSCIPacific ETF (IPAC)",
+        "ticker": "IPAC",
+        "type": "Sale",
+        "date": "2025-09-10",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 88
+  }
+}

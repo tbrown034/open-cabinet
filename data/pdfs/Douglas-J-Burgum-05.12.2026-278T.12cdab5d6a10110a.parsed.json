@@ -1,0 +1,71 @@
+{
+  "key": "12cdab5d6a10110a",
+  "pdfSha256": "1a5ae8936c686cf5cddf3c7bb3c12d4107c16b613e15538358fa67536b8331ca",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:52:22.117Z",
+  "transactions": [
+    {
+      "description": "Arthur Ventures V, LP - Hudu Technologies, Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - zizzl Health",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Nucleus Security, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Decimal Technologies, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 7060,
+    "outputTokens": 536,
+    "estimatedCostUsd": 0.0292
+  }
+}

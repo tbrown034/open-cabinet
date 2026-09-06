@@ -185,6 +185,12 @@ export async function openReviewItem(
 ): Promise<ReviewItem> {
   const file = options.file ?? REVIEW_QUEUE_PATH;
   const items = readQueue(file);
+  // One open item per filing and kind. A re-read that trips the same gate
+  // again returns the item already waiting, and sends nothing.
+  const existing = items.find(
+    (i) => i.status === "open" && i.slug === input.slug && i.kind === input.kind && i.filing.url === input.filing.url
+  );
+  if (existing) return existing;
   const stamp = new Date().toISOString();
   const id = `${input.slug}-${input.kind}-${stamp.slice(0, 10)}-${String(items.length + 1).padStart(3, "0")}`;
   const item: ReviewItem = { id, status: "open", createdAt: stamp, ...input };

@@ -1,0 +1,186 @@
+{
+  "slug": "blanche-todd",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Todd-Blanche-06.03.2025-278T.pdf: lanes agree (15 rows)"
+  ],
+  "diff": {
+    "published": 15,
+    "fresh": 15,
+    "matched": 8,
+    "changed": [
+      {
+        "before": {
+          "description": "Coinbase Global Inc. Class A Common Stock",
+          "ticker": "COIN",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Coinbase Global Inc. Class A Common Stock (COIN)",
+          "ticker": "COIN",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Delta Air Lines, Inc.",
+          "ticker": "DAL",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Delta Air Lines, Inc. (DAL)",
+          "ticker": "DAL",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Peloton Interactive Inc. Class A Common Stock",
+          "ticker": "PTON",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Peloton Interactive Inc. Class A Common Stock (PTON)",
+          "ticker": "PTON",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Pfizer Inc.",
+          "ticker": "PFE",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Pfizer Inc. (PFE)",
+          "ticker": "PFE",
+          "type": "Sale",
+          "date": "2025-05-29",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Tesla, Inc.",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-05-28",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Tesla, Inc. (TSLA)",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-05-28",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Financial Select Sector SPDR Fund",
+          "ticker": "XLF",
+          "type": "Sale",
+          "date": "2025-03-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Financial Select Sector SPDR Fund (XLF)",
+          "ticker": "XLF",
+          "type": "Sale",
+          "date": "2025-03-05",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Health Care Select Sector SPDR Fund",
+          "ticker": "XLV",
+          "type": "Sale",
+          "date": "2025-03-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Health Care Select Sector SPDR Fund (XLV)",
+          "ticker": "XLV",
+          "type": "Sale",
+          "date": "2025-03-05",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 7
+  }
+}

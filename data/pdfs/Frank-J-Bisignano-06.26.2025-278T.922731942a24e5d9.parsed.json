@@ -1,0 +1,152 @@
+{
+  "key": "922731942a24e5d9",
+  "pdfSha256": "f8c11f59863a6b708840ebf2e941d1ecdbc47bf126b98c30db386976bb767569",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9A2C2ECDD1FAECA185258CC8002C7D03/$FILE/Frank-J-Bisignano-06.26.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:51:45.692Z",
+  "transactions": [
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-19",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv Option contract sale",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-20",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-30",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-04",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-05",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-06",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv Option contract sale",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-16",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-17",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8480,
+    "outputTokens": 1266,
+    "estimatedCostUsd": 0.0444
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "key": "fa7fdaa9f08f112c",
+  "pdfSha256": "c6eb08c043740cfbc8b5325143d40ba085792a50e139224db475d67de4ff3a81",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:33:25.802Z",
+  "transactions": [
+    {
+      "description": "NeuroSense Therapeutics Ltd. Ordinary Shares (NRSN)",
+      "ticker": "NRSN",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Datavault (DVLT)",
+      "ticker": "DVLT",
+      "type": "Purchase",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Datavault (DVLT)",
+      "ticker": "DVLT",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6731,
+    "outputTokens": 279,
+    "estimatedCostUsd": 0.0244
+  }
+}

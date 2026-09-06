@@ -118,13 +118,19 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
   lines.push(`# Reverify: ${official.name} (${slug}), ${stamp}`);
   lines.push("");
   lines.push(`Filings read: ${filingsRead.length}. Skipped: ${skipped}. Published rows in scope: ${diff.published}. Fresh rows: ${diff.fresh}.`);
-  lines.push(`Matched exactly: ${diff.matched}. Changed: ${diff.changed.length}. Would be removed: ${diff.removed.length}. Would be added: ${diff.added.length}.`);
+  lines.push(`Matched exactly: ${diff.matched}. Changed: ${diff.changed.length} (trade fields: ${diff.tradeChanged}; wording or ticker only: ${diff.wordingChanged}). Would be removed: ${diff.removed.length}. Would be added: ${diff.added.length}.`);
   lines.push("");
   lines.push("## Lane verdicts");
   for (const v of laneVerdicts) lines.push(`- ${v}`);
-  if (diff.changed.length) {
-    lines.push("", "## Changed (same trade, different words)");
-    for (const c of diff.changed) lines.push(`- before: ${fmtRow(c.before)}`, `  after:  ${fmtRow(c.after)}`);
+  const trade = diff.changed.filter((c) => !c.wordingOnly);
+  const wording = diff.changed.filter((c) => c.wordingOnly);
+  if (trade.length) {
+    lines.push("", "## Changed: the trade itself reads differently (a person decides)");
+    for (const c of trade) lines.push(`- ${c.fields.join(", ")}`, `  before: ${fmtRow(c.before)}`, `  after:  ${fmtRow(c.after)}`);
+  }
+  if (wording.length) {
+    lines.push("", "## Changed: same trade, ticker or wording only");
+    for (const c of wording) lines.push(`- before: ${fmtRow(c.before)}`, `  after:  ${fmtRow(c.after)}`);
   }
   if (diff.removed.length) {
     lines.push("", "## Would be removed (published, not in the fresh reading)");
@@ -184,9 +190,25 @@ async function main() {
       continue;
     }
     if (!existsSync(path.resolve(`data/officials/${slug}.json`))) throw new Error(`no official ${slug}`);
-    await reverifyOfficial(slug, apply, skipScans, dryCost);
+    try {
+      await reverifyOfficial(slug, apply, skipScans, dryCost);
+    } catch (err) {
+      if (all && !apply) {
+        // One official's failure is a finding for a person, not a reason
+        // to leave the rest of the batch unread. Record it and go on.
+        held.push(`${slug}: ${(err as Error).message.split("\n")[0]}`);
+        console.error(`${slug}: HELD FOR A PERSON: ${(err as Error).message}`);
+        continue;
+      }
+      throw err;
+    }
+  }
+  if (held.length) {
+    console.log(`\nHeld for a person (${held.length}):`);
+    for (const h of held) console.log(`  ${h}`);
   }
 }
+const held: string[] = [];
 
 main().catch((e) => {
   console.error(e);

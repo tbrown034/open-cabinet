@@ -1,0 +1,26 @@
+{
+  "key": "b555ffe24d2b65cf",
+  "pdfSha256": "78047b9539c3f8b9675960d330b26f09fc0e473fead814e4143d7c5d265fc858",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:10:35.997Z",
+  "transactions": [
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6675,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.021
+  }
+}

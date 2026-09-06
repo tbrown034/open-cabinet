@@ -1,0 +1,26 @@
+{
+  "key": "e410b94fc8f95743",
+  "pdfSha256": "0e06173565cffbace82d6ee75da2dad392a0722788e34235e8a86048293838ba",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/890743E0467213D285258E4D002D98F0/$FILE/Sean-Duffy-06.09.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:00:39.341Z",
+  "transactions": [
+    {
+      "description": "Rumble Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6674,
+    "outputTokens": 56,
+    "estimatedCostUsd": 0.0209
+  }
+}

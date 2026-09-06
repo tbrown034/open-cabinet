@@ -1,0 +1,53 @@
+{
+  "key": "deea7bc4be9be305",
+  "pdfSha256": "9e4d9717fc2d3f4b5ad2dbd4a295f152b9c7de9316d06f16c43aceead4084253",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:18:14.558Z",
+  "transactions": [
+    {
+      "description": "One Stop Systems Inc. Common Stock (OSS)",
+      "ticker": "OSS",
+      "type": "Purchase",
+      "date": "2026-01-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares (GRAB)",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2025-12-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6757,
+    "outputTokens": 368,
+    "estimatedCostUsd": 0.0258
+  }
+}

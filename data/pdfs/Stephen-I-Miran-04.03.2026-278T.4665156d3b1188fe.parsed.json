@@ -1,0 +1,80 @@
+{
+  "key": "4665156d3b1188fe",
+  "pdfSha256": "929019c094c9b9d3a291422cfa087b06871629a6d1b9821313589723c18b98ef",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:18:54.412Z",
+  "transactions": [
+    {
+      "description": "BBH Wealth Strategies, LLC - SILVER POINT DISTRESSED OPPORTUNITY II SERIES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH LIMITED DURATION FUND CL I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 7053,
+    "outputTokens": 701,
+    "estimatedCostUsd": 0.0317
+  }
+}

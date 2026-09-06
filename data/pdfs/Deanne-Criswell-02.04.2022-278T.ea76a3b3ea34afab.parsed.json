@@ -1,0 +1,107 @@
+{
+  "key": "ea76a3b3ea34afab",
+  "pdfSha256": "eb1776ae128f57d79356de810f725ab8d43a6ab8821f948c4891b7d59bdc137e",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9B1EEC36309D0956852588030033C13A/$FILE/Deanne-Criswell-02.04.2022-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:57:57.617Z",
+  "transactions": [
+    {
+      "description": "Robolox Corp. (RBLX)",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Facebook, Inc. (FB)",
+      "ticker": "FB",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Crowdstrike Holding's Inc. (CRWD)",
+      "ticker": "CRWD",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "salesforce.com, inc. (CRM)",
+      "ticker": "CRM",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Autodesk, Inc. (ADSK)",
+      "ticker": "ADSK",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Shopify Inc. (SHOP)",
+      "ticker": "SHOP",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Sea Limited (SE)",
+      "ticker": "SE",
+      "type": "Purchase",
+      "date": "2022-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PayPal Holdings, Inc. (PYPL)",
+      "ticker": "PYPL",
+      "type": "Sale",
+      "date": "2022-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Starbucks Corp. (SBUX)",
+      "ticker": "SBUX",
+      "type": "Sale",
+      "date": "2022-02-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6916,
+    "outputTokens": 887,
+    "estimatedCostUsd": 0.0341
+  }
+}

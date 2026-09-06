@@ -1,0 +1,26 @@
+{
+  "key": "2fbc841e118b3a69",
+  "pdfSha256": "aa7a964f08b2510ba1f63da85e19cead38ec5106d0ffbd008c778d5c1c8fd7cd",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B60B3A50D1966CA58525874A002E54D5/$FILE/Deanne-Criswell-08.23.2021-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:58:25.367Z",
+  "transactions": [
+    {
+      "description": "Alibaba Group Holding Limited (BABA)",
+      "ticker": "BABA",
+      "type": "Sale",
+      "date": "2021-08-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6731,
+    "outputTokens": 66,
+    "estimatedCostUsd": 0.0212
+  }
+}

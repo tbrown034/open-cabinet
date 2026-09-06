@@ -1,0 +1,107 @@
+{
+  "key": "d9793b60484ecf66",
+  "pdfSha256": "373854537a93c222118f6f5e131ec588abcf46183100e391d7c36af17228c8c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:09:35.319Z",
+  "transactions": [
+    {
+      "description": "Wise plc (WISE) distribution",
+      "ticker": "WISE",
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Airbnb Inc. (ABNB) call option exercise 1",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Airbnb Inc. (ABNB) call option exercise 2",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Airbnb Inc. (ABNB) call option exercise 3",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 1",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 2",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 3",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 4",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 5",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Coinbase Global Inc. (COIN) call option exercise 6",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-07-19",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6918,
+    "outputTokens": 940,
+    "estimatedCostUsd": 0.0349
+  }
+}

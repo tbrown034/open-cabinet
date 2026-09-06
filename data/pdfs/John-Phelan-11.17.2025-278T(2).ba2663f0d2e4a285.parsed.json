@@ -1,0 +1,179 @@
+{
+  "key": "ba2663f0d2e4a285",
+  "pdfSha256": "fbe7e2d78d4947c2d7d67861d48fe57bc4975f86e67f81ee1009f78192efca38",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/54391EB52FBB07E285258DFF002DCC5D/$FILE/John-Phelan-11.17.2025-278T(2).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:24:43.790Z",
+  "transactions": [
+    {
+      "description": "MSD Special Investments Fund II",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Kingfish Investments VI, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 PE 2024 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 PE 2023 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 PE 2022 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "26Nova Co-Invest",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "ACG Cakes LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Turnbridge Real Estate Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Cresta Operating Partners LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Two Roads Developments LLC loan",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "RCG Ventures Fund VIII",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "RM Atlantic Point Marina",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "RCP APM Holdings LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Caden Long Equity Fund",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8588,
+    "outputTokens": 1533,
+    "estimatedCostUsd": 0.0488
+  }
+}

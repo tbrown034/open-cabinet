@@ -1,0 +1,953 @@
+{
+  "key": "111c9bfd0cd0da60",
+  "pdfSha256": "3f467fcff16d5540d1ea1770dba84494ae0c67bc2b5f0736b09ccfe64e827c92",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E15FC684C226F64785258C8A002C72AC/$FILE/Douglas-J-Burgum-04.30.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:55:07.812Z",
+  "transactions": [
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Netflix, Inc.",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Alphabet, Inc.",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "First Solar, Inc.",
+      "ticker": "FSLR",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Adobe, Inc.",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Apple, Inc.",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "JPMorgan Chase & Co.",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Stryker Corp.",
+      "ticker": "SYK",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "UnitedHealth Group, Inc.",
+      "ticker": "UNH",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Visa, Inc.",
+      "ticker": "V",
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth III, LP - Threatlocker",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth I, LP - Protenus",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-01-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell Mid-Cap Growth ETF",
+      "ticker": "IWP",
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR Portfolio S&P 500 Growth ETF",
+      "ticker": "SPYG",
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell Mid-Cap Growth ETF",
+      "ticker": "IWP",
+      "type": "Purchase",
+      "date": "2025-02-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR Portfolio S&P 500 Growth ETF",
+      "ticker": "SPYG",
+      "type": "Purchase",
+      "date": "2025-02-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures GP I, LLC - Protenus, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-01-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures I, LP - Protenus, Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-01-24",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth III, LP - Threatlocker",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Causeway International Value Fund Institutional Class Shares",
+      "ticker": "CIVIX",
+      "type": "Purchase",
+      "date": "2025-01-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Edgewood Growth Fund Institutional Class Shares",
+      "ticker": "EGFIX",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fuller & Thaler Behavioral Small-Cap Equity Fund Institutional Class Shares",
+      "ticker": "FTHSX",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI International Developed Markets ETF",
+      "ticker": "IDEV",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
+      "ticker": "PBDPX",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF",
+      "ticker": "USHY",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares US Treasury Bond ETF",
+      "ticker": "GOVT",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Oakmark International Fund Institutional Class Shares",
+      "ticker": "OANIX",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schwab US Small-Cap ETF",
+      "ticker": "SCHA",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
+      "ticker": "VMBS",
+      "type": "Sale",
+      "date": "2025-03-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+      "ticker": "CDDRX",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
+      "ticker": "MGTIX",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
+      "ticker": "MGTIX",
+      "type": "Purchase",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PIMCO Income Fund Institutional Class Shares",
+      "ticker": "PIMIX",
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
+      "ticker": "VBILX",
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Equity Income Fund Admiral Shares",
+      "ticker": "VEIRX",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Total International Bond Index Fund ETF Shares",
+      "ticker": "BNDX",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Causeway International Value Fund Institutional Class Shares",
+      "ticker": "CIVIX",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Edgewood Growth Fund Institutional Class Shares",
+      "ticker": "EGFIX",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI International Developed Markets ETF",
+      "ticker": "IDEV",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+      "ticker": "CDDRX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GQG PartnersEmerging Markets Equity Fund Institutional Class Shares",
+      "ticker": "GQGIX",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Janus Henderson Overseas Fund Class I Shares",
+      "ticker": "JIGFX",
+      "type": "Purchase",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Janus Henderson Overseas Fund Class I Shares",
+      "ticker": "JIGFX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares US Treasury Bond ETF",
+      "ticker": "GOVT",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BlackRockEmerging Markets Fund, Inc Institutional Shares",
+      "ticker": "MADCX",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BlackRock Equity Dividend Fund Institutional Shares",
+      "ticker": "MADVX",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MFS Value Fund Class I Shares",
+      "ticker": "MEIIX",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PIMCO Investment Grade Credit Bond Fund Class I-2 Shares",
+      "ticker": "PBDPX",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Broad USD High Yield Corporate Bond ETF",
+      "ticker": "USHY",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
+      "ticker": "VBILX",
+      "type": "Sale",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
+      "ticker": "VMBS",
+      "type": "Sale",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-03-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures I, LP - Protenus",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-01-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Atlassian Corporation Plc Class A Ordinary Shares",
+      "ticker": "TEAM",
+      "type": "Sale",
+      "date": "2025-01-31",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-01-31",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth I, LP - Protenus",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-01-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - Threatlocker",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LWO Fund II, LP - Glass Fab Holdings, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ARLINGTON HEIGHTS ILL -- (--)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Atlassian Corporation Plc Class A Ordinary Shares",
+      "ticker": "TEAM",
+      "type": "Sale",
+      "date": "2025-01-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CALHOUN CNTY ALA BRD ED -- (--)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Duke Energy Corp.",
+      "ticker": "DUK",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Enterprise Products Partners L.P. Common Stock",
+      "ticker": "EPD",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FLORESVILLE TEX INDPT SCH -- (--)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kinder Morgan, Inc.",
+      "ticker": "KMI",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NAPA CALIF WTR REV REF -- (--)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ONEOK, Inc.",
+      "ticker": "OKE",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Otter Tail Corp.",
+      "ticker": "OTTR",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Targa Resources Corp.",
+      "ticker": "TRGP",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Verizon Communications, Inc.",
+      "ticker": "VZ",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VanEck Vectors Gold Miners ETF",
+      "ticker": "GDX",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Xcel Energy, Inc.",
+      "ticker": "XEL",
+      "type": "Sale",
+      "date": "2025-02-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Purchase",
+      "date": "2025-02-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Purchase",
+      "date": "2025-02-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Purchase",
+      "date": "2025-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Sale",
+      "date": "2025-02-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FedFund Institutional Shares",
+      "ticker": "TFDXX",
+      "type": "Sale",
+      "date": "2025-03-13",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+      "ticker": "CDDRX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Columbia Dividend Income Fund Institutional 2 Class Shares",
+      "ticker": "CDDRX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+      "ticker": "GSIMX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GQG PartnersEmerging Markets Equity Fund Institutional Class Shares",
+      "ticker": "GQGIX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Janus Henderson Enterprise Fund Class I Shares",
+      "ticker": "JMGRX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Janus Henderson Overseas Fund Class I Shares",
+      "ticker": "JIGFX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Janus Henderson Overseas Fund Class I Shares",
+      "ticker": "JIGFX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Massachusetts Investors Growth Stock Fund Class I Shares",
+      "ticker": "MGTIX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "T Rowe Price Mid-Cap Value Fund, Inc Class I Shares",
+      "ticker": "TRMIX",
+      "type": "Purchase",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "T Rowe Price Mid-Cap Value Fund, Inc Class I Shares",
+      "ticker": "TRMIX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Equity Income Fund Admiral Shares",
+      "ticker": "VEIRX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Equity Income Fund Admiral Shares",
+      "ticker": "VEIRX",
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard High-Yield Tax-Exempt Fund Admiral Shares",
+      "ticker": "VWALX",
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Lamb Weston Holdings, Inc.",
+      "ticker": "LW",
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-26",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 21099,
+    "outputTokens": 9315,
+    "estimatedCostUsd": 0.203
+  }
+}

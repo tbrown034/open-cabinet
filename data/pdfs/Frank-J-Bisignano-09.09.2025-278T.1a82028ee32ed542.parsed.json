@@ -1,0 +1,143 @@
+{
+  "key": "1a82028ee32ed542",
+  "pdfSha256": "a6b5c154fdc16b15c5cbc8dfa419cd4ad5e9dbbaa038528c9f0179540522a574",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA16C26F767256C285258D5F00343F7B/$FILE/Frank-J-Bisignano-09.09.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:50:26.683Z",
+  "transactions": [
+    {
+      "description": "Fiserv, Inc. (FISV)",
+      "ticker": "FISV",
+      "type": "Sale",
+      "date": "2025-08-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Allspring Short-Term Hi Inc A (SSTHX)",
+      "ticker": "SSTHX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Invesco New Jersey Municipal A (ONJAX)",
+      "ticker": "ONJAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PIMCO Income Fund Class A Shares (PONAX)",
+      "ticker": "PONAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nuveen NJ Municipal Bond A (NNJAX)",
+      "ticker": "NNJAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Franklin NJ Tax Free Income A (FNJQX)",
+      "ticker": "FNJQX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)",
+      "ticker": "BGHAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Fallen Angels USD Bond ETF (FALN)",
+      "ticker": "FALN",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "anguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares 0-5 Year High Yield Corporate Bond ETF (SHYG)",
+      "ticker": "SHYG",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Janus Henderson AAA CLO ETF (JAAA)",
+      "ticker": "JAAA",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nuveen Short Duration Hi Yld Muni Bd A (NVHAX)",
+      "ticker": "NVHAX",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PGIM Ultra Short Bond ETF (PULS)",
+      "ticker": "PULS",
+      "type": "Purchase",
+      "date": "2025-08-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Travelers Companies, Inc. (TRV)",
+      "ticker": "TRV",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8630,
+    "outputTokens": 1373,
+    "estimatedCostUsd": 0.0465
+  }
+}

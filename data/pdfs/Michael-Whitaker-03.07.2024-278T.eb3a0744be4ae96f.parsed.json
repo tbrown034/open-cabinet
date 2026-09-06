@@ -1,0 +1,26 @@
+{
+  "key": "eb3a0744be4ae96f",
+  "pdfSha256": "ad71e651ab5c42db559e13570cc4cee1d47646b4767d4c5d881947952f07e272",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0B06315BB4E757EE85258B0B002F0FC4/$FILE/Michael-Whitaker-03.07.2024-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:39.079Z",
+  "transactions": [
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2024-02-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6750,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.0212
+  }
+}

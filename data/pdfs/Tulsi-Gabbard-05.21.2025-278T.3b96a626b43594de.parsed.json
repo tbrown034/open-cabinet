@@ -1,0 +1,134 @@
+{
+  "key": "3b96a626b43594de",
+  "pdfSha256": "506c65da204d62421c1e713bb2aa51cb75b88bbe9c659776e727e7ebbbf9e075",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B4CE0F89A53C856485258C9E002C8AF2/$FILE/Tulsi-Gabbard-05.21.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:02:27.472Z",
+  "transactions": [
+    {
+      "description": "Crypto: CRO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Crypto: SOL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Crypto: ETH",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Crypto: BTC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Apple",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "BTC ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RumbleOn Inc. Class B Common Stock (RMBL)",
+      "ticker": "RMBL",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2025-05-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard 500 Index Fund ETF Shares (VOO)",
+      "ticker": "VOO",
+      "type": "Purchase",
+      "date": "2025-05-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Extended Market Index Fund ETF Shares (VXF)",
+      "ticker": "VXF",
+      "type": "Purchase",
+      "date": "2025-05-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-05-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2025-05-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6946,
+    "outputTokens": 1139,
+    "estimatedCostUsd": 0.0379
+  }
+}

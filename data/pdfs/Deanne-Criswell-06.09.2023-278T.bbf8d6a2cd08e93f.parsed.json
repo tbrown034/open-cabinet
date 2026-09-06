@@ -1,0 +1,26 @@
+{
+  "key": "bbf8d6a2cd08e93f",
+  "pdfSha256": "b27994c065f212b416b364a47b3822c40024ca13240e51a870c76f7e0086a952",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9186734EDFB39F6085258A0C002EF245/$FILE/Deanne-Criswell-06.09.2023-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:57:01.588Z",
+  "transactions": [
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2023-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6718,
+    "outputTokens": 63,
+    "estimatedCostUsd": 0.0211
+  }
+}

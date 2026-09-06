@@ -1,0 +1,44 @@
+{
+  "key": "a25dd34296a53ed7",
+  "pdfSha256": "225926ded7a8c82bbb9023f561bb4152827769f979d961b814e51d238ee223ac",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E17EF5BDAB771EB385258B86002DDD08/$FILE/Deanne-Criswell-06.24.2024-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:56:28.097Z",
+  "transactions": [
+    {
+      "description": "Advanced Micro Devices, Inc. (AMD)",
+      "ticker": "AMD",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Meta Financial Group, Inc. (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2024-06-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6744,
+    "outputTokens": 265,
+    "estimatedCostUsd": 0.0242
+  }
+}

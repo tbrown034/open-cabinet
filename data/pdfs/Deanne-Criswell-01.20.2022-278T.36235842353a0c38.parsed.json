@@ -1,0 +1,62 @@
+{
+  "key": "36235842353a0c38",
+  "pdfSha256": "db4897e5d59a90f5ea195a1d891dbddaee5cd7fdcfd191115778f60d779d18ac",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3909A58D046FDEEA852587DC0033C377/$FILE/Deanne-Criswell-01.20.2022-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:58:07.152Z",
+  "transactions": [
+    {
+      "description": "Vanguard Total Bond Market Index Fund ETF Shares (BND)",
+      "ticker": "BND",
+      "type": "Sale",
+      "date": "2022-01-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Broad USD Investment Grade Corporate Bond ETF (USIG)",
+      "ticker": "USIG",
+      "type": "Sale",
+      "date": "2022-01-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2022-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2022-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2022-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6833,
+    "outputTokens": 461,
+    "estimatedCostUsd": 0.0274
+  }
+}

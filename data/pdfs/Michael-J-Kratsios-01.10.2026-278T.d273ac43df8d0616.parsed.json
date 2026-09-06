@@ -1,0 +1,35 @@
+{
+  "key": "d273ac43df8d0616",
+  "pdfSha256": "533d6af2b4429eed807883782ceb35dec2bc7bbe4a644b8b6cf9bd11936e0b17",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:06:57.278Z",
+  "transactions": [
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-12-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2025-12-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6681,
+    "outputTokens": 200,
+    "estimatedCostUsd": 0.023
+  }
+}

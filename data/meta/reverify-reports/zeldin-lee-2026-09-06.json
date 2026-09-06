@@ -1,0 +1,91 @@
+{
+  "slug": "zeldin-lee",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Lee-Zeldin-09-24-2025-278T.pdf: lanes agree (1 rows)",
+    "Lee-Zeldin-06.17.2025-278T.pdf: lanes agree (3 rows)"
+  ],
+  "diff": {
+    "published": 4,
+    "fresh": 4,
+    "matched": 1,
+    "changed": [
+      {
+        "before": {
+          "description": "NeuroSense Therapeutics Ltd. Ordinary Shares",
+          "ticker": "NRSN",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "after": {
+          "description": "NeuroSense Therapeutics Ltd. Ordinary Shares (NRSN)",
+          "ticker": "NRSN",
+          "type": "Sale",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Datavault",
+          "ticker": "DVLT",
+          "type": "Purchase",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Datavault (DVLT)",
+          "ticker": "DVLT",
+          "type": "Purchase",
+          "date": "2025-05-13",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Datavault",
+          "ticker": "DVLT",
+          "type": "Sale",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Datavault (DVLT)",
+          "ticker": "DVLT",
+          "type": "Sale",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BFB742EED1C86DA85258CC8002C8F28/$FILE/Lee-Zeldin-06.17.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 3
+  }
+}

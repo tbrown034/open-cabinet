@@ -1,0 +1,114 @@
+{
+  "slug": "sara-bailey",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Sara-Bailey-04.01.2026-278T.pdf: lanes agree (5 rows)"
+  ],
+  "diff": {
+    "published": 5,
+    "fresh": 5,
+    "matched": 1,
+    "changed": [
+      {
+        "before": {
+          "description": "Fidelity Advisor Biotechnology Fund Class C Shares",
+          "ticker": "FBTCX",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Fidelity Advisor Biotechnology Fund Class C Shares (FBTCX)",
+          "ticker": "FBTCX",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "TMC the metals company Inc. Common Stock",
+          "ticker": "TMC",
+          "type": "Purchase",
+          "date": "2026-02-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "after": {
+          "description": "TMC the metals company Inc. Common Stock (TMC)",
+          "ticker": "TMC",
+          "type": "Purchase",
+          "date": "2026-02-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "TMC the metals company Inc. Common Stock",
+          "ticker": "TMC",
+          "type": "Sale",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "after": {
+          "description": "TMC the metals company Inc. Common Stock (TMC)",
+          "ticker": "TMC",
+          "type": "Sale",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Byrna Technologies Inc. Common Stock",
+          "ticker": "BYRN",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Byrna Technologies Inc. Common Stock (BYRN)",
+          "ticker": "BYRN",
+          "type": "Purchase",
+          "date": "2026-03-01",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 4
+  }
+}

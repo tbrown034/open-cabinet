@@ -1,0 +1,35 @@
+{
+  "key": "0a2a899b96743ad5",
+  "pdfSha256": "f3f83220ed894d22838c74571323035b3c8604cbfabba075ee6cb667c2b48d9b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C98F5D124FF9D62785258E5A002DB8E2/$FILE/Scott-A-Kupor-07.15.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:08:38.279Z",
+  "transactions": [
+    {
+      "description": "Omada Common Stock (OMDA)",
+      "ticker": "OMDA",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Samsara Inc. Class A Common Stock (IOT)",
+      "ticker": "IOT",
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6666,
+    "outputTokens": 191,
+    "estimatedCostUsd": 0.0229
+  }
+}

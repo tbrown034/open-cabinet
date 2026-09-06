@@ -1,0 +1,821 @@
+{
+  "slug": "duffy-sean",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Sean-Duffy-06.09.2026-278T.pdf: lanes agree (1 rows)",
+    "Sean-Duffy-04.23.2025-278T.pdf: lanes agree (38 rows)"
+  ],
+  "diff": {
+    "published": 38,
+    "fresh": 39,
+    "matched": 5,
+    "changed": [
+      {
+        "before": {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Purchase",
+          "date": "2025-02-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Microsoft Corp. (MSFT)",
+          "ticker": "MSFT",
+          "type": "Purchase",
+          "date": "2025-02-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vertex Pharmaceuticals, Inc.",
+          "ticker": "VRTX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
+          "ticker": "VRTX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "UnitedHealth Group, Inc.",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "UnitedHealth Group, Inc. (UNH)",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Oracle Corp.",
+          "ticker": "ORCL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Oracle Corp. (ORCL)",
+          "ticker": "ORCL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amazon.com, Inc.",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "NVIDIA Corp.",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "NVIDIA Corp. (NVDA)",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Taiwan Semiconductor Manufacturing Company Ltd.",
+          "ticker": "TSM",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
+          "ticker": "TSM",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Las Vegas Sands Corp.",
+          "ticker": "LVS",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Las Vegas Sands Corp. (LVS)",
+          "ticker": "LVS",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Eaton Corp. Plc",
+          "ticker": "ETN",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Eaton Corp. Plc (ETN)",
+          "ticker": "ETN",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "argenx SE American Depositary Shares",
+          "ticker": "ARGX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "argenx SE American Depositary Shares (ARGX)",
+          "ticker": "ARGX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "ASML Holding N.V. New York Registry Shares",
+          "ticker": "ASML",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "ASML Holding N.V. New York Registry Shares (ASML)",
+          "ticker": "ASML",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Mastercard, Inc.",
+          "ticker": "MA",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Mastercard, Inc. (MA)",
+          "ticker": "MA",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Meta Platforms Inc. Class A Common Stock",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Intercontinental Exchange, Inc.",
+          "ticker": "ICE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Intercontinental Exchange, Inc. (ICE)",
+          "ticker": "ICE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Monster Beverage Corp.",
+          "ticker": "MNST",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Monster Beverage Corp. (MNST)",
+          "ticker": "MNST",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Alphabet, Inc.",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Alphabet, Inc. (GOOG)",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Hilton Worldwide Holdings, Inc.",
+          "ticker": "HLT",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Hilton Worldwide Holdings, Inc. (HLT)",
+          "ticker": "HLT",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Blackstone Inc. Common Stock",
+          "ticker": "BX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Blackstone Inc. Common Stock (BX)",
+          "ticker": "BX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Marvell Technology Group Ltd.",
+          "ticker": "MRVL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Marvell Technology Group Ltd. (MRVL)",
+          "ticker": "MRVL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Broadcom, Inc.",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Broadcom, Inc. (AVGO)",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Shopify Inc. Class A Subordinate Voting Shares",
+          "ticker": "SHOP",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Shopify Inc. Class A Subordinate Voting Shares (SHOP)",
+          "ticker": "SHOP",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "DraftKings Inc. Class A Common Stock",
+          "ticker": "DKNG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "DraftKings Inc. Class A Common Stock (DKNG)",
+          "ticker": "DKNG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Datadog Inc. Class A Common Stock",
+          "ticker": "DDOG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Datadog Inc. Class A Common Stock (DDOG)",
+          "ticker": "DDOG",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "DoorDash Inc. Class A Common Stock",
+          "ticker": "DASH",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "DoorDash Inc. Class A Common Stock (DASH)",
+          "ticker": "DASH",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vaxcyte Inc. Common Stock",
+          "ticker": "PCVX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vaxcyte Inc. Common Stock (PCVX)",
+          "ticker": "PCVX",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Howmet Aerospace Inc. Common Stock",
+          "ticker": "HWM",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Howmet Aerospace Inc. Common Stock (HWM)",
+          "ticker": "HWM",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Apple, Inc.",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Apple, Inc. (AAPL)",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Danaher Corp.",
+          "ticker": "DHR",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Danaher Corp. (DHR)",
+          "ticker": "DHR",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Deere & Co.",
+          "ticker": "DE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Deere & Co. (DE)",
+          "ticker": "DE",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Eli Lilly & Co.",
+          "ticker": "LLY",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Eli Lilly & Co. (LLY)",
+          "ticker": "LLY",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Microsoft Corp. (MSFT)",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Progressive Corp.",
+          "ticker": "PGR",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Progressive Corp. (PGR)",
+          "ticker": "PGR",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Ares Capital Corporation Common Stock",
+          "ticker": "ARCC",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Ares Capital Corporation Common Stock (ARCC)",
+          "ticker": "ARCC",
+          "type": "Sale",
+          "date": "2025-02-11",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [
+      {
+        "description": "American Tower Corporation (REIT) (AMT)",
+        "ticker": "AMT",
+        "type": "Sale",
+        "date": "2025-02-11",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 33
+  }
+}

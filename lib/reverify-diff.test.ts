@@ -29,12 +29,56 @@ describe("diffRows", () => {
     expect(d.added).toEqual([]);
   });
 
-  it("reports a lost lot as removed and a new trade as added", () => {
+  it("pairs the same asset whose trade reads differently as a trade change, for a person", () => {
     const d = diffRows([row(), row()], [row(), row({ date: "2025-04-01", amount: "$1,001-$15,000" })]);
     expect(d.matched).toBe(1);
+    expect(d.changed).toHaveLength(1);
+    expect(d.changed[0].fields).toEqual(["date", "amount"]);
+    expect(d.changed[0].wordingOnly).toBe(false);
+    expect(d.tradeChanged).toBe(1);
+    expect(d.removed).toEqual([]);
+    expect(d.added).toEqual([]);
+  });
+
+  it("reports a different asset on a new date as removed plus added, never a random pairing", () => {
+    const d = diffRows([row()], [row({ description: "Apple Inc. (AAPL)", ticker: "AAPL", date: "2025-04-01" })]);
+    expect(d.changed).toEqual([]);
     expect(d.removed).toHaveLength(1);
     expect(d.added).toHaveLength(1);
+  });
+
+  it("never pairs many identical trades at random: a symbol appended to each description is wording only", () => {
+    // Edgar 05.01.2025: 63 sales, same day, same range. The old matcher
+    // paired IBM with Accenture.
+    const names = ["International Business Machines Corp.", "Wells Fargo & Co.", "Walmart, Inc.", "Visa, Inc."];
+    const syms = ["IBM", "WFC", "WMT", "V"];
+    const pub = names.map((description, i) => row({ description, ticker: syms[i] }));
+    const fresh = names.map((description, i) => row({ description: `${description} (${syms[i]})`, ticker: syms[i] }));
+    const d = diffRows(pub, fresh);
+    expect(d.changed).toHaveLength(4);
+    expect(d.changed.every((c) => c.wordingOnly)).toBe(true);
+    expect(d.changed.map((c) => c.before.ticker)).toEqual(d.changed.map((c) => c.after.ticker));
+    expect(d.wordingChanged).toBe(4);
+    expect(d.tradeChanged).toBe(0);
+  });
+
+  it("pairs a same-trade leftover only when the pairing is unambiguous", () => {
+    const pub = [row({ description: "A", ticker: null }), row({ description: "B", ticker: null })];
+    const fresh = [row({ description: "C", ticker: null }), row({ description: "D", ticker: null })];
+    const d = diffRows(pub, fresh);
     expect(d.changed).toEqual([]);
+    expect(d.removed).toHaveLength(2);
+    expect(d.added).toHaveLength(2);
+    const one = diffRows([row({ description: "A", ticker: null })], [row({ description: "C", ticker: null })]);
+    expect(one.changed).toHaveLength(1);
+  });
+
+  it("pairs an identical row attributed to a different same-day filing as an attribution change", () => {
+    const d = diffRows([row({ sourceUrl: "https://x/f(3).pdf" })], [row({ sourceUrl: "https://x/f(2).pdf" })]);
+    expect(d.changed).toHaveLength(1);
+    expect(d.changed[0].fields).toEqual(["sourceUrl"]);
+    expect(d.changed[0].wordingOnly).toBe(true);
+    expect(d.removed).toEqual([]);
   });
 
   it("an unknown amount compares as unknown on both sides", () => {

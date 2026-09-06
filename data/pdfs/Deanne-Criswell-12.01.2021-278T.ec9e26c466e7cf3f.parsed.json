@@ -1,0 +1,35 @@
+{
+  "key": "ec9e26c466e7cf3f",
+  "pdfSha256": "37db3dc0e5e8d597f5b5814816d413012725e78ba5675165c36e9e17b35c4525",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E85AB5CBC0931285852587AC0033CDC5/$FILE/Deanne-Criswell-12.01.2021-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:58:13.484Z",
+  "transactions": [
+    {
+      "description": "Sea Limited (SE)",
+      "ticker": "SE",
+      "type": "Purchase",
+      "date": "2021-12-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Roblox Corporation (RBLX)",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2021-12-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6757,
+    "outputTokens": 177,
+    "estimatedCostUsd": 0.0229
+  }
+}

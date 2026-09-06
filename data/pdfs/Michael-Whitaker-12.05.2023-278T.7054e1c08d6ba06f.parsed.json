@@ -1,0 +1,80 @@
+{
+  "key": "7054e1c08d6ba06f",
+  "pdfSha256": "d6663d21eb76d6baf77e88e7a61d194ddcc8b636c5033ee1247048c69f071ace",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9AA54EBCD9524B2785258AA2003493CD/$FILE/Michael-Whitaker-12.05.2023-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:57.389Z",
+  "transactions": [
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2023-11-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JPMorgan Chase & Co. (JPM)",
+      "ticker": "JPM",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The PNC Financial Services Group, Inc. (PNC)",
+      "ticker": "PNC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Target Corp. (TGT)",
+      "ticker": "TGT",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Truist Financial Corporation Common Stock (TFC)",
+      "ticker": "TFC",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Pfizer Inc. (PFE)",
+      "ticker": "PFE",
+      "type": "Sale",
+      "date": "2023-11-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6893,
+    "outputTokens": 627,
+    "estimatedCostUsd": 0.0301
+  }
+}

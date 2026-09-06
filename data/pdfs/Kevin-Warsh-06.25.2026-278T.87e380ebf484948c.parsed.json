@@ -1,0 +1,557 @@
+{
+  "key": "87e380ebf484948c",
+  "pdfSha256": "a7ec25526fc3b7f6aff99a2ee44eb4031302f9e429d071047fc77dae94de5694",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0933B220C51FFFB485258E52002DD2D9/$FILE/Kevin-Warsh-06.25.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:17.619Z",
+  "transactions": [
+    {
+      "description": "THSDFS LLC - Series 13",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 16",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 19",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 23",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 24",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 26",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 27",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 28",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 30",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 31",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 32",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 34",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 35",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 37",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 39",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 42",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 47",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 48",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 53",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 54",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 56",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 57",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 60",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 66",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 67",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Bessemer Venture Associates XI, L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Bessemer Ventures Associates VIII LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Bessemer Ventures Associates XII LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Lansing Management Onshore LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-31",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DCM Investments 09",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 03",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 04",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 07",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 08",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 09",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 18",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 22",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 38",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 50",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 61",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 72",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Aven",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Aven",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Hebbia Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 02",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 21",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 29",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 33",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 40",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 41",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 43",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 44",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 45",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 46",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 49",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 51",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 55",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 59",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 63",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 64",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 14269,
+    "outputTokens": 3402,
+    "estimatedCostUsd": 0.0938
+  }
+}

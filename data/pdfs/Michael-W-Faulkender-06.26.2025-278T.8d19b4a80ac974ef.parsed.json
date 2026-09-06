@@ -1,0 +1,26 @@
+{
+  "key": "8d19b4a80ac974ef",
+  "pdfSha256": "95919236a2422304a07f801f3aaca73f147a90058e47d2d66088a498c3309be3",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AF83B6CFCFDD7C7985258D00002BFE32/$FILE/Michael-W-Faulkender-06.26.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:02:10.242Z",
+  "transactions": [
+    {
+      "description": "Global Accountability Corporation",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6690,
+    "outputTokens": 56,
+    "estimatedCostUsd": 0.0209
+  }
+}

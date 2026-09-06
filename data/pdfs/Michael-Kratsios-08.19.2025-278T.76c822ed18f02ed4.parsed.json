@@ -1,0 +1,44 @@
+{
+  "key": "76c822ed18f02ed4",
+  "pdfSha256": "2313f6ca1ba847f33d80c9d1e1b1333a25f6a28c15873c26a61fe8c917bc951d",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:07:04.896Z",
+  "transactions": [
+    {
+      "description": "Schwab S&P 500 Index Fund (SWPPX)",
+      "ticker": "SWPPX",
+      "type": "Purchase",
+      "date": "2025-08-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Sale",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Real Estate Index Fund ETF Shares (VNQ)",
+      "ticker": "VNQ",
+      "type": "Purchase",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6707,
+    "outputTokens": 298,
+    "estimatedCostUsd": 0.0246
+  }
+}

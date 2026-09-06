@@ -1,0 +1,134 @@
+{
+  "key": "367699beeb41db0f",
+  "pdfSha256": "17f4259b31cf681a662b33de7236085fa1466092bffaf537fdc96ad956728239",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/68666D69BEFB693D85258DC6002DC641/$FILE/John-Phelan-01.09.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:25:44.889Z",
+  "transactions": [
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-26",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD Capital, LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-26",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD EIV Private LLC - Series B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Double Mako Investments, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-03",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "White Tip Investments, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "AAG KP LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RCP GP Fund II LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-26",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "SRP Continuation Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "NFP Continuation Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RCG Momentum LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-11-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6921,
+    "outputTokens": 1104,
+    "estimatedCostUsd": 0.0373
+  }
+}

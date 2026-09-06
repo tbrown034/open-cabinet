@@ -1,0 +1,107 @@
+{
+  "key": "dc47fdeb1d05bdc7",
+  "pdfSha256": "7fd93cc4fc3086f4c8e38e08429c2ac0f7286b3ac5674cde7fd6682cefb708ef",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D17D53F736AD393B85258E0C002DCF1F/$FILE/John-Phelan-05.12.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:23:41.088Z",
+  "transactions": [
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "MSD Special Investments Fund L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 PE 2025 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 PE 2024 Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Valence8 Cayman LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund L.P.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "RCP GP Fund II, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Cresta Operating Partners (Non-Op Fund) LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Cresta Royalty Partners II LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "Carriage House Investments LLP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6875,
+    "outputTokens": 864,
+    "estimatedCostUsd": 0.0336
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "key": "a5e33f6668f29ce4",
+  "pdfSha256": "14bedb8d94097a8dd7c203912a2c308aa2209eff97e15932601f979d187a7df9",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4570FD57E16F594E85258CC8002C7DA3/$FILE/Douglas-J-Burgum-06.12.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:53:27.906Z",
+  "transactions": [
+    {
+      "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+      "ticker": "GSIMX",
+      "type": "Purchase",
+      "date": "2025-05-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GQG Partners Emerging Markets Equity Fund Institutional Class Shares",
+      "ticker": "GQGIX",
+      "type": "Purchase",
+      "date": "2025-05-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures II, LP - Jane Software, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-06",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - GivingData Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-05-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust",
+      "ticker": "SPY",
+      "type": "Purchase",
+      "date": "2025-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8636,
+    "outputTokens": 558,
+    "estimatedCostUsd": 0.0343
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "key": "dc2defa20da540b1",
+  "pdfSha256": "ec6902cc3f85335263ce6745cf5fb42d035c625f66a1b0b2468b9665265f5276",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5869AEBEFF9021F185258BB3002DE6F6/$FILE/Michael-Whitaker-09.04.2024-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:28.822Z",
+  "transactions": [
+    {
+      "description": "Texas Instruments Incorporated (TXN)",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2024-08-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6695,
+    "outputTokens": 64,
+    "estimatedCostUsd": 0.021
+  }
+}

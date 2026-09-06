@@ -1,0 +1,26 @@
+{
+  "key": "c8cebef6fe393cbc",
+  "pdfSha256": "fcbe4183d6864a6199daaddf4c6c97642d22cf1691a9326a545101763bb47a03",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F4060C7CB31DC8DA85258E31002DCF6A/$FILE/Michael-Kratsios-06.10.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:06:38.760Z",
+  "transactions": [
+    {
+      "description": "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)",
+      "ticker": "LQD",
+      "type": "Purchase",
+      "date": "2026-05-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6644,
+    "outputTokens": 72,
+    "estimatedCostUsd": 0.021
+  }
+}

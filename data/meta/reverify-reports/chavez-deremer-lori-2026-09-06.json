@@ -1,0 +1,78 @@
+{
+  "slug": "chavez-deremer-lori",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Lori-Chavez-DeRemer-07.02.2025-278T.pdf: text-layer cross-check failed for Lori-Chavez-DeRemer-07.02.2025-278T.pdf — ingest halted before merge"
+  ],
+  "diff": {
+    "published": 98,
+    "fresh": 97,
+    "matched": 94,
+    "changed": [],
+    "removed": [
+      {
+        "description": "BRIGHT HORIZONS FAMILY SOLUTIONS INC",
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      },
+      {
+        "description": "BROADRIDGE FINANCIAL",
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      },
+      {
+        "description": "SOLUTIONS INC",
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      },
+      {
+        "description": "ZSCALER INC",
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      }
+    ],
+    "added": [
+      {
+        "description": "BRIGHT HORIZONS FAMILY SOLUTIONSINC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      },
+      {
+        "description": "BROADRIDGE FINANCIAL SOLUTIONS INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      },
+      {
+        "description": "ZSCALERINC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-04-28",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 0
+  }
+}

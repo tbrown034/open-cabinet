@@ -1,0 +1,143 @@
+{
+  "key": "ddd1e282ece199ef",
+  "pdfSha256": "828efbc456097acb8f9536bc66431efb4392d177944eeeee40ccb968c1df6b77",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCD5083EB618F35085258DB200344824/$FILE/Frank-J-Bisignano-02.10.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:50:06.357Z",
+  "transactions": [
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Sale",
+      "date": "2025-12-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)",
+      "ticker": "VONG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
+      "ticker": "VYM",
+      "type": "Sale",
+      "date": "2025-12-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Humana, Inc. (HUM)",
+      "ticker": "HUM",
+      "type": "Sale",
+      "date": "2025-12-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 7108,
+    "outputTokens": 1358,
+    "estimatedCostUsd": 0.0417
+  }
+}

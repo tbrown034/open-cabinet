@@ -1,0 +1,197 @@
+{
+  "key": "cf9ab2a4ddde6c86",
+  "pdfSha256": "d0cb1340b1532574f33e928509c6fcfb98e12f7986044c84065f0ef223626c9e",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4AFD3C0AAAA300E285258DFE002D984E/$FILE/Douglas-J-Burgum-02.27.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:52:46.376Z",
+  "transactions": [
+    {
+      "description": "Arthur Ventures IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures III, LP - PureSpectrum (market research platform)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - PureSpectrum (market research platform)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth III, LP - PureSpectrum (market research platform)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-22",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth III, LP - PureSpectrum (market research platform) (Roth IRA)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - PureSpectrum (market research platform)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Opterrix (Risk intelligence platform)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Opterrix (Risk intelligence platform)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Aqua (Turnkey alternative investment platform)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Aqua (Turnkey alternative investment platform)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Streamline (platform services)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Streamline (platform services)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - CivicPlus (Software solutions)",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2026-01-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - CivicPlus (Software solutions)",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Payroll Integrations (employee benefits recordkeeper)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Payroll Integrations (employee benefits recordkeeper)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Circadian Risk (Security risk assessment software)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures IV, LP - Gridbase (formerly IamGIS) (software) (Roth IRA)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 12962,
+    "outputTokens": 1850,
+    "estimatedCostUsd": 0.0666
+  }
+}

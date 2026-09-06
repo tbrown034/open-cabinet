@@ -1,0 +1,152 @@
+{
+  "key": "4ab062ec811fa1a9",
+  "pdfSha256": "cf2f0543a6364c7a033f2554eae70b54dd2162cf4ca2fa0d10724d41e83fc3e1",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DFA1DC5E6B4CE0BF85258DAB00346FD8/$FILE/John-Phelan-07.28.2025-278T(2).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:26:16.387Z",
+  "transactions": [
+    {
+      "description": "MSD Special Investments Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "TMG Haynesville Investors, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "TMG VCLR Investor, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD Investment Corp. (BDC)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Cresta Royalty Partners LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-23",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "TMG Monument Investors LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "26North BDC, Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "SRP Continuation Partners, LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "RCG Ventures Fund VIII",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RCG Momentum, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MSD EIV Private, LLC (JRK Investments III)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "RCG Momentum, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8554,
+    "outputTokens": 1272,
+    "estimatedCostUsd": 0.0447
+  }
+}

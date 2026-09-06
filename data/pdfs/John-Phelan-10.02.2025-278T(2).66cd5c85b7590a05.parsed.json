@@ -1,0 +1,89 @@
+{
+  "key": "66cd5c85b7590a05",
+  "pdfSha256": "7eb2846e2334cc5ba566d79d14ec735decd781788722cdff3513c16b96bd63b7",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F6D5E76DFD84296785258DC6002DC61D/$FILE/John-Phelan-10.02.2025-278T(2).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:25:56.673Z",
+  "transactions": [
+    {
+      "description": "MSD Real Estate Credit Opportunity Fund II",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCP GP Fund II LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-14",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Turnbridge Real Estate Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-29",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SRP Continuation Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Momentum LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Ventures Fund VIII",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6828,
+    "outputTokens": 673,
+    "estimatedCostUsd": 0.0306
+  }
+}

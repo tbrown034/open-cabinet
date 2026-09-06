@@ -1,0 +1,35 @@
+{
+  "key": "d191470561aeedb7",
+  "pdfSha256": "23a3f8982b558edcd32e6b61fe4fcb089e95e6eb7c4846d8c6c45a6b7005047b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:07:41.979Z",
+  "transactions": [
+    {
+      "description": "Schwab US TIPS ETF (SCHP)",
+      "ticker": "SCHP",
+      "type": "Sale",
+      "date": "2025-04-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6680,
+    "outputTokens": 193,
+    "estimatedCostUsd": 0.0229
+  }
+}

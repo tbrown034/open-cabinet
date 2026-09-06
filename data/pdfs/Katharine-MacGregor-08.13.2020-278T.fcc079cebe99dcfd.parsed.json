@@ -1,0 +1,26 @@
+{
+  "key": "fcc079cebe99dcfd",
+  "pdfSha256": "ce557a4c76e112678c18b7eeef54731252e7f8759d94b7ac212a28bbd1274898",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/294765D0509B1112852585E10027E9D3/$FILE/Katharine-MacGregor-08.13.2020-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:13:16.876Z",
+  "transactions": [
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2020-08-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6782,
+    "outputTokens": 67,
+    "estimatedCostUsd": 0.0214
+  }
+}

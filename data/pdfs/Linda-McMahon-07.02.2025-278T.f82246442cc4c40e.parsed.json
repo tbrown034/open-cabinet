@@ -1,0 +1,26 @@
+{
+  "key": "f82246442cc4c40e",
+  "pdfSha256": "60abbd4b74c17668d9d30d277020e12447ef8b3a334dc9a378ef350234239c50",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6439C8BBFB85065585258DCC002DC69B/$FILE/Linda-McMahon-07.02.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:14:45.084Z",
+  "transactions": [
+    {
+      "description": "Trump Media & Tech Group Corp (DJT)",
+      "ticker": "DJT",
+      "type": "Sale",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6692,
+    "outputTokens": 65,
+    "estimatedCostUsd": 0.0211
+  }
+}

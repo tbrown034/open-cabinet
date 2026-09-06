@@ -1,0 +1,816 @@
+{
+  "slug": "kupor-scott-a",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Scott-A-Kupor-07.20.2026-278T.pdf: lanes agree (3 rows)",
+    "Scott-A-Kupor-07.15.2026-278T.pdf: lanes agree (2 rows)",
+    "Scott-A-Kupor-06.22.2026-278T(1).pdf: lanes agree (9 rows)",
+    "Scott-A-Kupor-06.22.2026-278T.pdf: lanes agree (2 rows)",
+    "Scott-A-Kupor-04.20.2026-278T.pdf: lanes agree (2 rows)",
+    "Scott-A-Kupor-02.06.2026-278T.pdf: lanes agree (1 rows)",
+    "Scott-A-Kupor-01.09.2026-278T.pdf: lanes agree (3 rows)",
+    "Scott-A-Kupor-10.08.2025-278T.pdf: lanes agree (2 rows)",
+    "Scott-A-Kupor-07.28.2025-278T.pdf: lanes agree (10 rows)",
+    "Scott-A-Kupor-09.26.2025-278T.pdf: lanes agree (1 rows)",
+    "Scott-A-Kupor-09.12.2025-278T.pdf: lanes agree (54 rows)",
+    "Scott-A-Kupor-09.02.2025-278T.pdf: lanes agree (1 rows)"
+  ],
+  "diff": {
+    "published": 22,
+    "fresh": 88,
+    "matched": 14,
+    "changed": [
+      {
+        "before": {
+          "description": "Airbnb Inc. Class A Common Stock (ABNB)",
+          "ticker": "ABNB",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Airbnb Inc. Class A Common Stock",
+          "ticker": "ABNB",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Robinhood Markets Inc. Class A Common Stock",
+          "ticker": "HOOD",
+          "type": "Sale",
+          "date": "2026-04-17",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/574C5AAD33A157FE85258DEA002DB4F0/$FILE/Scott-A-Kupor-04.20.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Airbnb Inc. Class A Common Stock",
+          "ticker": "ABNB",
+          "type": "Sale",
+          "date": "2026-01-16",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Airbnb Inc. Class A Common Stock (ABNB)",
+          "ticker": "ABNB",
+          "type": "Sale",
+          "date": "2026-01-16",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Omada Health Inc.",
+          "ticker": "OMDA",
+          "type": "Sale",
+          "date": "2025-12-19",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Omada Health Inc. (OMDA)",
+          "ticker": "OMDA",
+          "type": "Sale",
+          "date": "2025-12-19",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Coinbase Global Inc. Class A Common Stock",
+          "ticker": "COIN",
+          "type": "Sale",
+          "date": "2025-12-19",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Coinbase Global Inc. Class A Common Stock (COIN)",
+          "ticker": "COIN",
+          "type": "Sale",
+          "date": "2025-12-19",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Samsara Inc. Class A Common Stock",
+          "ticker": "IOT",
+          "type": "Sale",
+          "date": "2025-12-23",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Samsara Inc. Class A Common Stock (IOT)",
+          "ticker": "IOT",
+          "type": "Sale",
+          "date": "2025-12-23",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3B5D301E5EACE5C885258DB300345F78/$FILE/Scott-A-Kupor-01.09.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-09-25",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Microsoft Corp. (MSFT)",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-09-25",
+          "amount": "$5,000,001-$25,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Apple, Inc.",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-08-22",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Apple, Inc. (AAPL)",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-08-22",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CE7BF167A72A316885258D16002C0DE0/$FILE/Scott-A-Kupor-09.02.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [
+      {
+        "description": "Alphabet, Inc. (GOOG) (sale of stock per required CD)",
+        "ticker": "GOOG",
+        "type": "Sale",
+        "date": "2025-10-01",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf"
+      },
+      {
+        "description": "Southern Company (SO) (required sale pursuant to CD)",
+        "ticker": "SO",
+        "type": "Sale",
+        "date": "2025-10-01",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E0F6CD03D5B35F9785258D8F003461CE/$FILE/Scott-A-Kupor-10.08.2025-278T.pdf"
+      },
+      {
+        "description": "Wise plc (WISE) distribution",
+        "ticker": "WISE",
+        "type": "Purchase",
+        "date": "2025-07-17",
+        "amount": "$1,000,001-$5,000,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Airbnb Inc. (ABNB) call option exercise 1",
+        "ticker": "ABNB",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Airbnb Inc. (ABNB) call option exercise 2",
+        "ticker": "ABNB",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Airbnb Inc. (ABNB) call option exercise 3",
+        "ticker": "ABNB",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 1",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 2",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 3",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 4",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 5",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "Coinbase Global Inc. (COIN) call option exercise 6",
+        "ticker": "COIN",
+        "type": "Sale",
+        "date": "2025-07-19",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf"
+      },
+      {
+        "description": "APPLE INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ADOBE INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "AKAMAI TECHNOLOGIES COM USD0.01",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "AMAZON.COM INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "BOOZ ALLEN HAMILTON HLDG CORP CL A",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "BEST BUY CO INC COM USD0.10",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "CITIGROUP INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "CACI INTERNATIONAL INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "SALESFORCE INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "CISCO SYSTEMS INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DELL TECHNOLOGIES INC CL C",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DISNEY WALT CO COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DOCUSIGN INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "FOX CORP CL B COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "FOX CORP CL A COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "GENERAL DYNAMICS CORP COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ALPHABET INC CAP STK CL C",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ALPHABET INC CAP STK CL A",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "HEWLETT PACKARD ENTERPRISE CO COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "HP INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "HOST HOTELS & RESORTS INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "INTERNATIONAL BUS MACH CORP COM USD0.20",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "GARTNER INC COM USD0.0005",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "LOCKHEED MARTIN CORP COM USD1.00",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "MICROSOFT CORP",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "NORTHROP GRUMMAN CORP COM USD1",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "NETAPP INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "OPEN TEXT CORP COM ISIN #CA6837151068 SEDOL #2260824",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "SCIENCE APPLICATIONS INTL CORP COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "SAP ADR REP 1 ORD",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "SOUTHERN CO",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "AT&T INC COM USD1",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "THOMSON-REUTERS CORP COM NPV( POST REV SPLIT) ISIN #CA8849038085 SEDOL #BPLLTY3",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "TYLER TECHNOLOGIES INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "UNITED PARCEL SERVICE INC CL B",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "VERIZON COMMUNICATIONS INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "WORKDAY INC COM USD0.001 CL A",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-09-02",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "APPLE INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$500,001-$1,000,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "AMAZON.COM INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$500,001-$1,000,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "CITIGROUP INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "CISCO SYSTEMS INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DELL TECHNOLOGIES INC CL C",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$1,001-$15,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DISNEY WALT CO COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "DOCUSIGN INC COM",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ALPHABET INC CAP STK CL C",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ALPHABET INC CAP STK CL A",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$250,001-$500,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "INFORMATICA INC COM CL A",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "LOCKHEED MARTIN CORP COM USD1.00",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "NORTHROP GRUMMAN CORP COM USD1",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "ORACLE CORP",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "SOUTHERN CO",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "AT&T INC COM USD1",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "TYLER TECHNOLOGIES INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$50,001-$100,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      },
+      {
+        "description": "VERIZON COMMUNICATIONS INC",
+        "ticker": null,
+        "type": "Sale",
+        "date": "2025-08-27",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false,
+        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf"
+      }
+    ],
+    "tradeChanged": 0,
+    "wordingChanged": 8
+  }
+}

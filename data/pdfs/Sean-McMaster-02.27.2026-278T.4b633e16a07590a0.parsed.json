@@ -1,0 +1,26 @@
+{
+  "key": "4b633e16a07590a0",
+  "pdfSha256": "9a7aacbca34f060129b1b998689ada521b148f6c5861563ea69f2f08194fcd79",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6669428412F0329885258DCC002DC6FF/$FILE/Sean-McMaster-02.27.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:18:05.914Z",
+  "transactions": [
+    {
+      "description": "Grab Holdings Limited Class A Ordinary Shares",
+      "ticker": "GRAB",
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6676,
+    "outputTokens": 63,
+    "estimatedCostUsd": 0.021
+  }
+}

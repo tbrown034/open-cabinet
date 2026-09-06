@@ -1,0 +1,359 @@
+{
+  "key": "80fbb4e980aafce9",
+  "pdfSha256": "08994ec70a46ad69214398f7940a38db8bda7f6b1b289c304cd8f13de361a786",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:01:19.412Z",
+  "transactions": [
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Purchase",
+      "date": "2025-02-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
+      "ticker": "VRTX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UnitedHealth Group, Inc. (UNH)",
+      "ticker": "UNH",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Oracle Corp. (ORCL)",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
+      "ticker": "TSM",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Las Vegas Sands Corp. (LVS)",
+      "ticker": "LVS",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Eaton Corp. Plc (ETN)",
+      "ticker": "ETN",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "argenx SE American Depositary Shares (ARGX)",
+      "ticker": "ARGX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "American Tower Corporation (REIT) (AMT)",
+      "ticker": "AMT",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ASML Holding N.V. New York Registry Shares (ASML)",
+      "ticker": "ASML",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Mastercard, Inc. (MA)",
+      "ticker": "MA",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Intercontinental Exchange, Inc. (ICE)",
+      "ticker": "ICE",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Monster Beverage Corp. (MNST)",
+      "ticker": "MNST",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Hilton Worldwide Holdings, Inc. (HLT)",
+      "ticker": "HLT",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Blackstone Inc. Common Stock (BX)",
+      "ticker": "BX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Marvell Technology Group Ltd. (MRVL)",
+      "ticker": "MRVL",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Broadcom, Inc. (AVGO)",
+      "ticker": "AVGO",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Shopify Inc. Class A Subordinate Voting Shares (SHOP)",
+      "ticker": "SHOP",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "DraftKings Inc. Class A Common Stock (DKNG)",
+      "ticker": "DKNG",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Datadog Inc. Class A Common Stock (DDOG)",
+      "ticker": "DDOG",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "DoorDash Inc. Class A Common Stock (DASH)",
+      "ticker": "DASH",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vaxcyte Inc. Common Stock (PCVX)",
+      "ticker": "PCVX",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Howmet Aerospace Inc. Common Stock (HWM)",
+      "ticker": "HWM",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Danaher Corp. (DHR)",
+      "ticker": "DHR",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Deere & Co. (DE)",
+      "ticker": "DE",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Eli Lilly & Co. (LLY)",
+      "ticker": "LLY",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Progressive Corp. (PGR)",
+      "ticker": "PGR",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ares Capital Corporation Common Stock (ARCC)",
+      "ticker": "ARCC",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Blue Owl Capital Corporation",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "KKR Private Equity Conglomerate LLC (K-PEC)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "K-INFRA - Class S Hedge Fund",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-02-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Blackstone Private Credit Fund (BCRED)",
+      "ticker": "BCRED",
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 9111,
+    "outputTokens": 3415,
+    "estimatedCostUsd": 0.0786
+  }
+}

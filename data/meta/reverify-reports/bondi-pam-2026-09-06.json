@@ -1,0 +1,66 @@
+{
+  "slug": "bondi-pam",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Pam-Bondi-05.05.2025-278T.pdf: lanes agree (2 rows)"
+  ],
+  "diff": {
+    "published": 2,
+    "fresh": 2,
+    "matched": 0,
+    "changed": [
+      {
+        "before": {
+          "description": "Trump Media & Technology Group",
+          "ticker": "DJT",
+          "type": "Sale",
+          "date": "2025-04-02",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Trump Media & Technology Group",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-02",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Trump Media & Technology Group Warrants",
+          "ticker": "DJT",
+          "type": "Sale",
+          "date": "2025-04-02",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Trump Media & Technology Group Warrants",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-04-02",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/102E39A4A731A68785258C8A002C7208/$FILE/Pam-Bondi-05.05.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 2
+  }
+}

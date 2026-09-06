@@ -1,0 +1,26 @@
+{
+  "key": "d5a9755f18473e26",
+  "pdfSha256": "7021e5b5839c309c78d928867774a3d6a37ecff713d0b142fe324fac84d21496",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2DA8F217908CB8BC85258CDB002C8F7D/$FILE/Michael-J-Kratsios-07.25.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:07:10.540Z",
+  "transactions": [
+    {
+      "description": "Scale AI vested stock options",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-21",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6630,
+    "outputTokens": 62,
+    "estimatedCostUsd": 0.0208
+  }
+}

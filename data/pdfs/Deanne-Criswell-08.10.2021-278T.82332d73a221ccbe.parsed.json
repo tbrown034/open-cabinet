@@ -1,0 +1,53 @@
+{
+  "key": "82332d73a221ccbe",
+  "pdfSha256": "7a0ffd5a8c86e77a6d62e9531ac6b8227846b4877548163b971edf5a796e4081",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/93FDEB99F2A1DF7E85258742002E548A/$FILE/Deanne-Criswell-08.10.2021-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:58:32.925Z",
+  "transactions": [
+    {
+      "description": "CrowdStrike Holdings (CRWD)",
+      "ticker": "CRWD",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ford Motor Company (F)",
+      "ticker": "F",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Autodesk, Inc. (ADSK)",
+      "ticker": "ADSK",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6794,
+    "outputTokens": 357,
+    "estimatedCostUsd": 0.0257
+  }
+}

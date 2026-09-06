@@ -1,0 +1,26 @@
+{
+  "key": "6bbb56ca7091acb3",
+  "pdfSha256": "eb4b16b0f68f3caf3e7391e9f3806d894c96020fd544c47fdbe5efa9197bb227",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F3E4FE48A7ADA0E285258D4F00319101/$FILE/Scott-A-Kupor-09.26.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:09:40.498Z",
+  "transactions": [
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-09-25",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6675,
+    "outputTokens": 66,
+    "estimatedCostUsd": 0.021
+  }
+}

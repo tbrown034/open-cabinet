@@ -1,0 +1,35 @@
+{
+  "key": "f14813e9cac4c5a0",
+  "pdfSha256": "a0615d308f18f2feba99fb7aa30912d92b94963a65f622520a5ec5bea84cd381",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3BE4EA1BA0AC06885258E0D002DCD71/$FILE/John-Phelan-03.12.2026-278T(1).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:23:05.178Z",
+  "transactions": [
+    {
+      "description": "Red Cell Partners",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Red Cell Incubation Fund LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6773,
+    "outputTokens": 175,
+    "estimatedCostUsd": 0.0229
+  }
+}

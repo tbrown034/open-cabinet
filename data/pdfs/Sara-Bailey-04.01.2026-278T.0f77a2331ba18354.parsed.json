@@ -1,0 +1,62 @@
+{
+  "key": "0f77a2331ba18354",
+  "pdfSha256": "06cbe788308083198ba078b321606b71738f3f41c264adc3134298a74483502b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:26:52.070Z",
+  "transactions": [
+    {
+      "description": "GE Verona",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fidelity Advisor Biotechnology Fund Class C Shares (FBTCX)",
+      "ticker": "FBTCX",
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TMC the metals company Inc. Common Stock (TMC)",
+      "ticker": "TMC",
+      "type": "Purchase",
+      "date": "2026-02-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TMC the metals company Inc. Common Stock (TMC)",
+      "ticker": "TMC",
+      "type": "Sale",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Byrna Technologies Inc. Common Stock (BYRN)",
+      "ticker": "BYRN",
+      "type": "Purchase",
+      "date": "2026-03-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6747,
+    "outputTokens": 459,
+    "estimatedCostUsd": 0.0271
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "key": "553b2d95b3a3185a",
+  "pdfSha256": "47a44f646309c5612168cca4c8f7626f64c3bf3b14e69072da939f25b24796c5",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BF782DF3A2A5684F85258C58002C87DB/$FILE/Eric-Scott-Turner-03.04.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:27:31.595Z",
+  "transactions": [
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Zillow Group, Inc. (Z)",
+      "ticker": "Z",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-02-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-02-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6839,
+    "outputTokens": 633,
+    "estimatedCostUsd": 0.03
+  }
+}

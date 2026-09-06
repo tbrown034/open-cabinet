@@ -1,0 +1,26 @@
+{
+  "key": "8bcf3c24dedde0f1",
+  "pdfSha256": "a93f851b3b64673ff1377d6ac2f13b4e1df819f1be53bf10a1ba149bcc57bf8d",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/24F079312783534385258E4D002DAB10/$FILE/Michael-J-Kratsios-07.09.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:06:33.380Z",
+  "transactions": [
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-07-01",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6646,
+    "outputTokens": 74,
+    "estimatedCostUsd": 0.021
+  }
+}

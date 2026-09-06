@@ -1,0 +1,98 @@
+{
+  "key": "bbfba7931fd11a4d",
+  "pdfSha256": "364f89b967939a77a05d154c9cbecc3e2b91a5a72677689ff27a5448acc6ce4e",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0CC139F3C2A2CB1985258E3F002DA973/$FILE/Scott-A-Kupor-06.22.2026-278T(1).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:08:50.437Z",
+  "transactions": [
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Okta, Inc. (OKTA)",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+      "ticker": "HOOD",
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8573,
+    "outputTokens": 840,
+    "estimatedCostUsd": 0.0383
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "key": "6688c745bd338857",
+  "pdfSha256": "ba631c1551161f138a5deb1a93548dc8fc68156ed7690ae5baf0268eaf50348b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C4BF8463CF0AE7AE85258DDC002DBBFB/$FILE/Michael-J-Kratsios-03.29.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:06:50.048Z",
+  "transactions": [
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Sale",
+      "date": "2026-03-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF (DGRO)",
+      "ticker": "DGRO",
+      "type": "Purchase",
+      "date": "2026-03-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Sale",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+      "ticker": "VTEB",
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6820,
+    "outputTokens": 669,
+    "estimatedCostUsd": 0.0305
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "key": "a580924d0aacb431",
+  "pdfSha256": "a0120e608c5a8adfb57797015dbe830dd63f1957b79938246f769f87c80362d8",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AE01276632D6DB948525873F002E548E/$FILE/Stacy-Dixon-08.12.2021-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:00:31.624Z",
+  "transactions": [
+    {
+      "description": "DASH - DOORDASH INC CL A UNSOLICITED TRADE",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPOT - SPOTIFY TECHNOLOGY SA UNSOLICITED TRADE",
+      "ticker": "SPOT",
+      "type": "Sale",
+      "date": "2021-08-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RBLX - ROBLOX CORP CL A UNSOLICITED TRADE",
+      "ticker": "RBLX",
+      "type": "Purchase",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VEEV - VEEVA SYS INC CL A UNSOLICITED TRADE",
+      "ticker": "VEEV",
+      "type": "Sale",
+      "date": "2021-08-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "OKTA - OKTA, INC CL A UNSOLICITED TRADE",
+      "ticker": "OKTA",
+      "type": "Sale",
+      "date": "2021-07-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNOW - SNOWFLAKE INC CL A UNSOLICITED TRADE",
+      "ticker": "SNOW",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RPRX - ROYALTY PHARMA PLC SHS CLASS A UNSOLICITED TRADE",
+      "ticker": "RPRX",
+      "type": "Purchase",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF UNSOLICITED TRADE",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-07-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHWY - CHEWY INC CL A UNSOLICITED TRADE",
+      "ticker": "CHWY",
+      "type": "Sale",
+      "date": "2021-06-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SNOW - SNOWFLAKE INC CL A UNSOLICITED TRADE",
+      "ticker": "SNOW",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RPRX - ROYALTY PHARMA PLC SHS CLASS A UNSOLICITED TRADE",
+      "ticker": "RPRX",
+      "type": "Sale",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF UNSOLICITED TRADE",
+      "ticker": "IWF",
+      "type": "Purchase",
+      "date": "2021-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UBER - UBER TECHNOLOGIES INC UNSOLICITED TRADE",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2021-05-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NFLX - NETFLIX INC UNSOLICITED TRADE",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": "2021-05-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NET - CLOUDFLARE INC CL A UNSOLICITED TRADE",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NET - CLOUDFLARE INC CL A UNSOLICITED TRADE",
+      "ticker": "NET",
+      "type": "Purchase",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "FB - FACEBOOK INC CL-A UNSOLICITED TRADE",
+      "ticker": "FB",
+      "type": "Sale",
+      "date": "2021-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DASH - DOORDASH INC CL A UNSOLICITED TRADE",
+      "ticker": "DASH",
+      "type": "Purchase",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "IWF - ISHARES RUSSELL 1000 GRW ETF UNSOLICITED TRADE",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2021-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8896,
+    "outputTokens": 1861,
+    "estimatedCostUsd": 0.0546
+  }
+}

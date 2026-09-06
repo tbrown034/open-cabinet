@@ -1,0 +1,48 @@
+{
+  "slug": "whitaker-michael",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Michael-Whitaker-01.02.2025-278T.pdf: lanes agree (1 rows)",
+    "Michael-Whitaker-09.04.2024-278T.pdf: lanes agree (1 rows)",
+    "Michael-Whitaker-07.01.2024-278T.pdf: lanes agree (1 rows)",
+    "Michael-Whitaker-03.07.2024-278T.pdf: lanes agree (1 rows)",
+    "Michael-Whitaker-01.24.2024-278T.pdf: lanes agree (4 rows)",
+    "Michael-Whitaker-12.05.2023-278T.pdf: lanes agree (7 rows)"
+  ],
+  "diff": {
+    "published": 15,
+    "fresh": 15,
+    "matched": 14,
+    "changed": [
+      {
+        "before": {
+          "description": "AT&T Inc (T)",
+          "ticker": "T",
+          "type": "Sale",
+          "date": "2024-12-18",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6FD7FCF61FFBC2E585258C36003206A2/$FILE/Michael-Whitaker-01.02.2025-278T.pdf"
+        },
+        "after": {
+          "description": "AT&T Inc",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2024-12-18",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6FD7FCF61FFBC2E585258C36003206A2/$FILE/Michael-Whitaker-01.02.2025-278T.pdf"
+        },
+        "fields": [
+          "ticker",
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 1
+  }
+}

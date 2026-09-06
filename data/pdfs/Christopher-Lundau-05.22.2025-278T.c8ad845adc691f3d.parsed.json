@@ -1,0 +1,818 @@
+{
+  "key": "c8ad845adc691f3d",
+  "pdfSha256": "c45f4166dd0f8d40b626119f69941e08bbd28c20f6963b3da77f846f32fee5a1",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:12:09.196Z",
+  "transactions": [
+    {
+      "description": "Danone S.A. (DANOY)",
+      "ticker": "DANOY",
+      "type": "Sale",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Unilever PLC Common Stock (UL)",
+      "ticker": "UL",
+      "type": "Sale",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
+      "ticker": "VEA",
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Municipal Total Return Managed Accounts Portfolio Common Shares (NMTRX)",
+      "ticker": "NMTRX",
+      "type": "Sale",
+      "date": "2025-04-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nestlé S.A. (NSRGY)",
+      "ticker": "NSRGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "WELLS FARGO & CO 4.75% SER-Z",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED STATES TREASURY BILL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED STATES TREASURY BILL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED STATES TREASURY BILL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED STATES TREASURY BILL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Royalty Pharma plc Class A Ordinary Shares (RPRX)",
+      "ticker": "RPRX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "AGNC Investment Corp. Depositary Shares Each Representing a 1/1000th Interest in a Share of 7.00% Series C Fixed-To-Floating Rate Cumulative Redeemable Preferred Stock (AGNCN)",
+      "ticker": "AGNCN",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Power Corporation of Canada (PWCDF)",
+      "ticker": "PWCDF",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Newmont Corp. (NEM)",
+      "ticker": "NEM",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nestlé S.A. (NSRGY)",
+      "ticker": "NSRGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Mitsubishi Electric Corporation (MIELY)",
+      "ticker": "MIELY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Berkeley Group Holdings plc (BKGFY)",
+      "ticker": "BKGFY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Haleon plc American Depositary Shares (Each representing two Ordinary Shares) (HLN)",
+      "ticker": "HLN",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Shimano Inc. (SMNNY)",
+      "ticker": "SMNNY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Shell plc (SHEL)",
+      "ticker": "SHEL",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "WELLS FARGO CO DEP PFD 4.7 C-A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Sompo Holdings, Inc. (SMPNY)",
+      "ticker": "SMPNY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Athene Holding Ltd. (ATH)",
+      "ticker": "ATH",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Merck KGaA (MKKGY)",
+      "ticker": "MKKGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SMC Corporation (SMCAY)",
+      "ticker": "SMCAY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Equitable Holdings, Inc. (EQH)",
+      "ticker": "EQH",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Suzuki Motor Corporation (SZKMY)",
+      "ticker": "SZKMY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Blackstone Inc. (BX)",
+      "ticker": "BX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Legrand SA (LGRDY)",
+      "ticker": "LGRDY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nutrien Ltd. (NTR)",
+      "ticker": "NTR",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Enbridge Inc. (EBBGF)",
+      "ticker": "EBBGF",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Westwood Salient MLP & Engy Infras Inst (SMLPX)",
+      "ticker": "SMLPX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Diamondback Energy, Inc. (FANG)",
+      "ticker": "FANG",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ambev S.A. (ABEV)",
+      "ticker": "ABEV",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Reckitt Benckiser Group plc (RBGLY)",
+      "ticker": "RBGLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Heineken N.V. (HEINY)",
+      "ticker": "HEINY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fuchs SE (FUPBY)",
+      "ticker": "FUPBY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Brenntag SE (BNTGY)",
+      "ticker": "BNTGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Berkshire Hathaway Inc. (BRKB)",
+      "ticker": "BRKB",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Compagnie Financière Richemont SA (CFRUY)",
+      "ticker": "CFRUY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Svenska Handelsbanken AB (publ) (SVNLY)",
+      "ticker": "SVNLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Danone S.A. (DANOY)",
+      "ticker": "DANOY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fanuc Corporation (FANUY)",
+      "ticker": "FANUY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Bangkok Bank Public Company Limited (BKKLY)",
+      "ticker": "BKKLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Mastercard Incorporated (MA)",
+      "ticker": "MA",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UOL Group Limited (UOLGY)",
+      "ticker": "UOLGY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "AIA Group Limited (AAGIY)",
+      "ticker": "AAGIY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Prosus N.V. (PROSY)",
+      "ticker": "PROSY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Itaú Unibanco Holding S.A. (ITUB)",
+      "ticker": "ITUB",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nihon Kohden Corporation (NHNKY)",
+      "ticker": "NHNKY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Wheaton Precious Metals Corp. (WPM)",
+      "ticker": "WPM",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Willis Towers Watson Public Limited Company (WTW)",
+      "ticker": "WTW",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Sanofi (SNY)",
+      "ticker": "SNY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SGS SA (SGSOY)",
+      "ticker": "SGSOY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "adidas AG (ADDYY)",
+      "ticker": "ADDYY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MS&AD Insurance Group Holdings, Inc. (MSADY)",
+      "ticker": "MSADY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Lloyds Banking Group plc (LYG)",
+      "ticker": "LYG",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Taiwan Semiconductor Manufacturing Company Limited (TSM)",
+      "ticker": "TSM",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "LVMH Moët Hennessy - Louis Vuitton, Société Européenne (LVMUY)",
+      "ticker": "LVMUY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Jardine Matheson Holdings Limited (JMHLY)",
+      "ticker": "JMHLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Hongkong Land Holdings Limited (HNGKY)",
+      "ticker": "HNGKY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Komatsu Ltd. (KMTUY)",
+      "ticker": "KMTUY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "British American Tobacco p.l.c. (BTI)",
+      "ticker": "BTI",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Henkel AG & Co. KGaA (HENKY)",
+      "ticker": "HENKY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Unilever PLC (UL)",
+      "ticker": "UL",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BAE Systems plc (BAESY)",
+      "ticker": "BAESY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Compañía Cervecerías Unidas S.A. (CCU)",
+      "ticker": "CCU",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Barrick Gold Corporation Common Stock (BC) (GOLD)",
+      "ticker": "GOLD",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Westinghouse Air Brake Technologies Corporation (WAB)",
+      "ticker": "WAB",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Orkla ASA (ORKLY)",
+      "ticker": "ORKLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SECOM CO., LTD. (SOMLY)",
+      "ticker": "SOMLY",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Fomento Económico Mexicano, S.A.B. de C.V. (FMX)",
+      "ticker": "FMX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Philip Morris International Inc. (PM)",
+      "ticker": "PM",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Imperial Oil Limited (IMO)",
+      "ticker": "IMO",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Visa Inc. (V)",
+      "ticker": "V",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Union Pacific Corporation (UNP)",
+      "ticker": "UNP",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Bunge Global SA (BG)",
+      "ticker": "BG",
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "GOLDMAN SACHS GROUP INC/THE FXD TO 022029 VAR THRAFTR 7.5%RATE:BA1/BB+ 7.500% DUE:2065-04-14",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BANK OF AMERICA CORP FXD TO 032026 VAR THRAFTR 6.3000%RATE:BAA2/BBB- 6.300% DUE:2065-04-14",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-14",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "WELLS FARGO & COM 4.25% SER-DD VPF20250408094013390625",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Westinghouse Air Brake Technologies Corporation (WAB)",
+      "ticker": "WAB",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Becton, Dickinson and Company (BDX)",
+      "ticker": "BDX",
+      "type": "Sale",
+      "date": "2025-04-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "JPMORGAN CHASE & CO FXD TO 112022 VAR THRAFTR 7.1323%RATE:BAA2/BBB 7.132% DUE:2065-05-01",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ALLY FINANCIAL INC FXD TO 052026 VAR THRAFTR 4.7000%RATE:BA2/BB- 4.700% DUE:2065-05-01",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BUILDERS FIRSTSOURCE INC REGS RATE:BA2/BB- 4.250% DUE:2032-02-01",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ALLY FINANCIAL INC FXD TO 052026 VAR THRAFTR 4.7000%RATE:BA2/BB- 4.700% DUE:2065-05-01",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 17015,
+    "outputTokens": 8338,
+    "estimatedCostUsd": 0.1761
+  }
+}

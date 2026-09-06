@@ -1,0 +1,80 @@
+{
+  "key": "5b1898de799b80a7",
+  "pdfSha256": "d9222c496071d4d35a82e4392cb1b38c4784c6af60dc5b49e04aa714cac0e293",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B716301C2D9B9D585258D7700345AA8/$FILE/Sean-McMaster-09.29.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:18:42.399Z",
+  "transactions": [
+    {
+      "description": "Semler Scientific Inc. Common Stock",
+      "ticker": "SMLR",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "Global X MSCI Argentina ETF",
+      "ticker": "ARGT",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "Microsoft Corp.",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "bitmine immersion technology",
+      "ticker": "BMNR",
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-08-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "180 Life Sciences Corp. Common Stock",
+      "ticker": "ATNF",
+      "type": "Purchase",
+      "date": "2025-08-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "bitmine immersion technology",
+      "ticker": "BMNR",
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6849,
+    "outputTokens": 608,
+    "estimatedCostUsd": 0.0297
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "key": "60ce1ff799d4609a",
+  "pdfSha256": "865fe597943a66066ba12490a0efcc1bc31c5d36ee2b5886b4e6b7007c4edfaa",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9FE9B64160567BA585258AE8002F0EEE/$FILE/Michael-Whitaker-01.24.2024-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:46.830Z",
+  "transactions": [
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. Class A (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2024-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ANRA Technologies",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-01-08",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6798,
+    "outputTokens": 342,
+    "estimatedCostUsd": 0.0255
+  }
+}

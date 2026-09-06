@@ -1,0 +1,224 @@
+{
+  "key": "7c5abbda56450fd1",
+  "pdfSha256": "88bc32a4d07a0ab286afef84fbb4cf6dbdc6580319a20c41b816e132dc54943f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DC3783D3D22CADA585258DFF002DCC65/$FILE/John-Phelan-05.20.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:25:10.643Z",
+  "transactions": [
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Turnbridge Real Estate Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-26",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "26North Private Equity Fund I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Red Cell Incubation Fund, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cotulla Aviation LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-11",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCP GP Fund II, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HealthQuest Tactical Opportunities Fund, L.P.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-04-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "RCG Ventures Fund VIII, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cresta Royalty Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Investment Corp. (BDC)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cresta SC Fund I-A LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "TMG Monument Investors LCL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Dawson Portfolio Finance 5 LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-29",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD EIV Private, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments V, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-26",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Special Investments Fund II",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Credit Opportunity Fund, L.P.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments X, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MSD Hospitality Partners LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Kingfish Investments II, LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "RSL Football Holdings LLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-04-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 10701,
+    "outputTokens": 1970,
+    "estimatedCostUsd": 0.0617
+  }
+}

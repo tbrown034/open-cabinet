@@ -1,0 +1,35 @@
+{
+  "key": "71bb580f9ce7b810",
+  "pdfSha256": "2f43ebfc9eb46bdc01d1c2d183f5018f641ede9257f8881080e1d1b3e45e51d3",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B30D247EB32A424585258D0A002C189C/$FILE/Christopher-A-Wright-07.01.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:29:10.109Z",
+  "transactions": [
+    {
+      "description": "REOFF XXVII, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "REOFF XXV, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6744,
+    "outputTokens": 178,
+    "estimatedCostUsd": 0.0229
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "key": "0acd31a069d26f0f",
+  "pdfSha256": "be646d40c1c95bada0bbf40046bebee88f6d2ca65db8b832b4bfe8b68615d10a",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7C0B79B66E94715885258D4F00317C5D/$FILE/Doug-Burgum-09.18.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:53:12.529Z",
+  "transactions": [
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Zizzle Health",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures V, LP - Senior Sign",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Giving Data Holdings, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Foundant Technologies",
+      "ticker": null,
+      "type": "Exchange",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - Office Puzzle Holdings, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arthur Ventures Growth IV, LP - CertifID, Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 9227,
+    "outputTokens": 1225,
+    "estimatedCostUsd": 0.0461
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "key": "d3ed38ba11519003",
+  "pdfSha256": "af80c8ef4e071ef016d676e36d17fbb7bc75b2b3c5453f3f6f6afe547d32efc2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:08:02.710Z",
+  "transactions": [
+    {
+      "description": "iShares National Muni Bond ETF (MUB)",
+      "ticker": "MUB",
+      "type": "Purchase",
+      "date": "2025-03-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF (ITOT)",
+      "ticker": "ITOT",
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-03-31",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-04-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF (DGRO)",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core MSCI Emerging Markets ETF (IEMG)",
+      "ticker": "IEMG",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core MSCI Emerging Markets ETF (IEMG)",
+      "ticker": "IEMG",
+      "type": "Sale",
+      "date": "2025-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core Dividend Growth ETF (DGRO)",
+      "ticker": "DGRO",
+      "type": "Sale",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+      "ticker": "VIG",
+      "type": "Purchase",
+      "date": "2025-04-08",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "iShares Core S&P Total US Stock Market ETF (ITOT)",
+      "ticker": "ITOT",
+      "type": "Sale",
+      "date": "2025-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2025-03-31",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8726,
+    "outputTokens": 1636,
+    "estimatedCostUsd": 0.0507
+  }
+}

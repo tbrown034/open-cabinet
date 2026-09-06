@@ -1,0 +1,89 @@
+{
+  "key": "4a33e709fd85d0df",
+  "pdfSha256": "49ce5d3a2994f3bc1886bf1fdc0e5c9c0123ae685a91e1152cee530665ab4fcc",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5050D101570BB0D085258ACA00347878/$FILE/Dianne-Criswell-12.19.2023-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:56:48.062Z",
+  "transactions": [
+    {
+      "description": "Ford Motor Co. (F)",
+      "ticker": "F",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Target Corp. (TGT)",
+      "ticker": "TGT",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Walmart, Inc. (WMT)",
+      "ticker": "WMT",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Intuit, Inc. (INTU)",
+      "ticker": "INTU",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)",
+      "ticker": "VBR",
+      "type": "Sale",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Purchase",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Purchase",
+      "date": "2023-12-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6884,
+    "outputTokens": 716,
+    "estimatedCostUsd": 0.0314
+  }
+}

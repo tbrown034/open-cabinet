@@ -1,0 +1,80 @@
+{
+  "key": "9a97779a2c9e7e43",
+  "pdfSha256": "667219f435e9867f8745bec3322c6b5a2fc87b03ad4ff54a7cd33b73512536e9",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FB264D7E3496773E85258CCC002C7F4A/$FILE/Frank-J-Bisignano-07.03.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:51:29.962Z",
+  "transactions": [
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-23",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-24",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-26",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-27",
+      "amount": "$25,000,001-$50,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-30",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Fiserv",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-07-01",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6765,
+    "outputTokens": 590,
+    "estimatedCostUsd": 0.0291
+  }
+}

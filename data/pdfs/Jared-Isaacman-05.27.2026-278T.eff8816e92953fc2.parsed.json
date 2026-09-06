@@ -1,0 +1,35 @@
+{
+  "key": "eff8816e92953fc2",
+  "pdfSha256": "5778d741596d59fdc3064a5a225515f9caf4f936dc91ff64864daaddd6e92da7",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/A30668A7B4A01CB685258E1A002DBF7B/$FILE/Jared-Isaacman-05.27.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:03:10.885Z",
+  "transactions": [
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Shift4 Payments Inc. Class A Common Stock",
+      "ticker": "FOUR",
+      "type": "Purchase",
+      "date": "2026-05-12",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6733,
+    "outputTokens": 194,
+    "estimatedCostUsd": 0.0231
+  }
+}

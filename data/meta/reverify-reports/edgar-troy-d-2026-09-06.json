@@ -1,0 +1,1530 @@
+{
+  "slug": "edgar-troy-d",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Troy-D-Edgar-05.01.2025-278T.pdf: lanes agree (63 rows)"
+  ],
+  "diff": {
+    "published": 63,
+    "fresh": 63,
+    "matched": 0,
+    "changed": [
+      {
+        "before": {
+          "description": "Accenture Plc",
+          "ticker": "ACN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Accenture Plc (ACN)",
+          "ticker": "ACN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Linde Plc",
+          "ticker": "LIN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Linde Plc (LIN)",
+          "ticker": "LIN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Abbott Laboratories",
+          "ticker": "ABT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Abbott Laboratories (ABT)",
+          "ticker": "ABT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "AbbVie, Inc.",
+          "ticker": "ABBV",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "AbbVie, Inc. (ABBV)",
+          "ticker": "ABBV",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Adobe, Inc.",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Adobe, Inc. (ADBE)",
+          "ticker": "ADBE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Alphabet, Inc.",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Alphabet, Inc. (GOOG)",
+          "ticker": "GOOG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amazon.com, Inc.",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amazon.com, Inc. (AMZN)",
+          "ticker": "AMZN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "American Express Co",
+          "ticker": "AXP",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "American Express Co (AXP)",
+          "ticker": "AXP",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Amgen Inc.",
+          "ticker": "AMGN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Amgen Inc. (AMGN)",
+          "ticker": "AMGN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Apple, Inc.",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Apple, Inc. (AAPL)",
+          "ticker": "AAPL",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Bank of America Corp.",
+          "ticker": "BAC",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Bank of America Corp. (BAC)",
+          "ticker": "BAC",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Berkshire Hathaway Inc.",
+          "ticker": "BRKB",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Berkshire Hathaway Inc. (BRKB)",
+          "ticker": "BRKB",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Booking Holdings Inc.",
+          "ticker": "BKNG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Booking Holdings Inc. (BKNG)",
+          "ticker": "BKNG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Boston Scientific Corp.",
+          "ticker": "BSX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Boston Scientific Corp. (BSX)",
+          "ticker": "BSX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Bristol-Myers Squibb",
+          "ticker": "BMY",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Bristol-Myers Squibb (BMY)",
+          "ticker": "BMY",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Broadcom, Inc.",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Broadcom, Inc. (AVGO)",
+          "ticker": "AVGO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Caterpillar, Inc.",
+          "ticker": "CAT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Caterpillar, Inc. (CAT)",
+          "ticker": "CAT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Chevron Corp.",
+          "ticker": "CVX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Chevron Corp. (CVX)",
+          "ticker": "CVX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Cisco Systems, Inc.",
+          "ticker": "CSCO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Cisco Systems, Inc. (CSCO)",
+          "ticker": "CSCO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Citigroup, Inc.",
+          "ticker": "C",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Citigroup, Inc. (C)",
+          "ticker": "C",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "The Coca-Cola Co.",
+          "ticker": "KO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "The Coca-Cola Co. (KO)",
+          "ticker": "KO",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Costco Wholesale Corp.",
+          "ticker": "COST",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Costco Wholesale Corp. (COST)",
+          "ticker": "COST",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "The Walt Disney Co.",
+          "ticker": "DIS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "The Walt Disney Co. (DIS)",
+          "ticker": "DIS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Exxon Mobil Corp.",
+          "ticker": "XOM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Exxon Mobil Corp. (XOM)",
+          "ticker": "XOM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Meta Platforms Inc. Class A Common Stock",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Meta Platforms Inc. Class A Common Stock (META)",
+          "ticker": "META",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "GE Aerospace Com New",
+          "ticker": "GE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "GE Aerospace Com New (GE)",
+          "ticker": "GE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Goldman Sachs Group Inc",
+          "ticker": "GS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Goldman Sachs Group Inc (GS)",
+          "ticker": "GS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "The Home Depot, Inc.",
+          "ticker": "HD",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "The Home Depot, Inc. (HD)",
+          "ticker": "HD",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Honeywell International, Inc.",
+          "ticker": "HON",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Honeywell International, Inc. (HON)",
+          "ticker": "HON",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "International Business Machines Corp.",
+          "ticker": "IBM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "International Business Machines Corp. (IBM)",
+          "ticker": "IBM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Intuitive Surgical, Inc.",
+          "ticker": "ISRG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Intuitive Surgical, Inc. (ISRG)",
+          "ticker": "ISRG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Intuit, Inc.",
+          "ticker": "INTU",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Intuit, Inc. (INTU)",
+          "ticker": "INTU",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "JPMorgan Chase & Co.",
+          "ticker": "JPM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "JPMorgan Chase & Co. (JPM)",
+          "ticker": "JPM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Eli Lilly & Co.",
+          "ticker": "LLY",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Eli Lilly & Co. (LLY)",
+          "ticker": "LLY",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Lowe's Cos., Inc.",
+          "ticker": "LOW",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Lowe's Cos., Inc. (LOW)",
+          "ticker": "LOW",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Mastercard, Inc.",
+          "ticker": "MA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Mastercard, Inc. (MA)",
+          "ticker": "MA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "McDonald's Corp.",
+          "ticker": "MCD",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "McDonald's Corp. (MCD)",
+          "ticker": "MCD",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Merck & Co., Inc.",
+          "ticker": "MRK",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Merck & Co., Inc. (MRK)",
+          "ticker": "MRK",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Microsoft Corp.",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Microsoft Corp. (MSFT)",
+          "ticker": "MSFT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Morgan Stanley",
+          "ticker": "MS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Morgan Stanley (MS)",
+          "ticker": "MS",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Netflix, Inc.",
+          "ticker": "NFLX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Netflix, Inc. (NFLX)",
+          "ticker": "NFLX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "NextEra Energy, Inc.",
+          "ticker": "NEE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "NextEra Energy, Inc. (NEE)",
+          "ticker": "NEE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "NVIDIA Corp.",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "NVIDIA Corp. (NVDA)",
+          "ticker": "NVDA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Oracle Corp.",
+          "ticker": "ORCL",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Oracle Corp. (ORCL)",
+          "ticker": "ORCL",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Palantir Technologies Inc. Class A Common Stock",
+          "ticker": "PLTR",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Palantir Technologies Inc. Class A Common Stock (PLTR)",
+          "ticker": "PLTR",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Pfizer Inc.",
+          "ticker": "PFE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Pfizer Inc. (PFE)",
+          "ticker": "PFE",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Philip Morris International, Inc.",
+          "ticker": "PM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Philip Morris International, Inc. (PM)",
+          "ticker": "PM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Procter & Gamble Co.",
+          "ticker": "PG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Procter & Gamble Co. (PG)",
+          "ticker": "PG",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "QUALCOMM, Inc.",
+          "ticker": "QCOM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "QUALCOMM, Inc. (QCOM)",
+          "ticker": "QCOM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Raytheon Technologies Corporation Common Stock",
+          "ticker": "RTX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Raytheon Technologies Corporation Common Stock (RTX)",
+          "ticker": "RTX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "S&P Global, Inc.",
+          "ticker": "SPGI",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "S&P Global, Inc. (SPGI)",
+          "ticker": "SPGI",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Salesforce.com, inc.",
+          "ticker": "CRM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Salesforce.com, inc. (CRM)",
+          "ticker": "CRM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "ServiceNow, Inc.",
+          "ticker": "NOW",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "ServiceNow, Inc. (NOW)",
+          "ticker": "NOW",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "The TJX Cos., Inc.",
+          "ticker": "TJX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "The TJX Cos., Inc. (TJX)",
+          "ticker": "TJX",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Tesla, Inc.",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Tesla, Inc. (TSLA)",
+          "ticker": "TSLA",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Texas Instruments Incorporated",
+          "ticker": "TXN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Texas Instruments Incorporated (TXN)",
+          "ticker": "TXN",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Union Pacific Corp.",
+          "ticker": "UNP",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Union Pacific Corp. (UNP)",
+          "ticker": "UNP",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "UnitedHealth Group, Inc.",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "UnitedHealth Group, Inc. (UNH)",
+          "ticker": "UNH",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Verizon Communications, Inc.",
+          "ticker": "VZ",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Verizon Communications, Inc. (VZ)",
+          "ticker": "VZ",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Visa, Inc.",
+          "ticker": "V",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Visa, Inc. (V)",
+          "ticker": "V",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Walmart, Inc.",
+          "ticker": "WMT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Walmart, Inc. (WMT)",
+          "ticker": "WMT",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Wells Fargo & Co.",
+          "ticker": "WFC",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Wells Fargo & Co. (WFC)",
+          "ticker": "WFC",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "International Business Machines Corp.",
+          "ticker": "IBM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "after": {
+          "description": "International Business Machines Corp. (IBM)",
+          "ticker": "IBM",
+          "type": "Sale",
+          "date": "2025-03-25",
+          "amount": "$100,001-$250,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 63
+  }
+}

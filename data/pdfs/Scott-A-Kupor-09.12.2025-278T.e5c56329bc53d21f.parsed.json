@@ -1,0 +1,503 @@
+{
+  "key": "e5c56329bc53d21f",
+  "pdfSha256": "dc3135bd5e3d4473cebea048f432db01a519711690147e38411a12c2f8451603",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/689E88A6FDFF4BE885258D16002C0DD7/$FILE/Scott-A-Kupor-09.12.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:10:30.679Z",
+  "transactions": [
+    {
+      "description": "APPLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ADOBE INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AKAMAI TECHNOLOGIES COM USD0.01",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BOOZ ALLEN HAMILTON HLDG CORP CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BEST BUY CO INC COM USD0.10",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CITIGROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CACI INTERNATIONAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SALESFORCE INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CISCO SYSTEMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DELL TECHNOLOGIES INC CL C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DISNEY WALT CO COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOCUSIGN INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "FOX CORP CL B COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "FOX CORP CL A COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GENERAL DYNAMICS CORP COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALPHABET INC CAP STK CL C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALPHABET INC CAP STK CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HEWLETT PACKARD ENTERPRISE CO COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HP INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HOST HOTELS & RESORTS INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INTERNATIONAL BUS MACH CORP COM USD0.20",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "GARTNER INC COM USD0.0005",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOCKHEED MARTIN CORP COM USD1.00",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NORTHROP GRUMMAN CORP COM USD1",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NETAPP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "OPEN TEXT CORP COM ISIN #CA6837151068 SEDOL #2260824",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SCIENCE APPLICATIONS INTL CORP COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SAP ADR REP 1 ORD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AT&T INC COM USD1",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THOMSON-REUTERS CORP COM NPV( POST REV SPLIT) ISIN #CA8849038085 SEDOL #BPLLTY3",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UNITED PARCEL SERVICE INC CL B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "WORKDAY INC COM USD0.001 CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-09-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "APPLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CITIGROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CISCO SYSTEMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DELL TECHNOLOGIES INC CL C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DISNEY WALT CO COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOCUSIGN INC COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALPHABET INC CAP STK CL C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALPHABET INC CAP STK CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INFORMATICA INC COM CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOCKHEED MARTIN CORP COM USD1.00",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NORTHROP GRUMMAN CORP COM USD1",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ORACLE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "AT&T INC COM USD1",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 16924,
+    "outputTokens": 4606,
+    "estimatedCostUsd": 0.1199
+  }
+}

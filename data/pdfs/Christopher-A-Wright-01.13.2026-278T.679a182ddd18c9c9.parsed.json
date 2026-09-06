@@ -1,0 +1,35 @@
+{
+  "key": "679a182ddd18c9c9",
+  "pdfSha256": "5ab084646441d56424f9d3730a5a9aac00f6167190010d4e7225b20218fbc40f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22F95E0EAFBF6F1D85258DCC002DDF75/$FILE/Christopher-A-Wright-01.13.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:29:03.809Z",
+  "transactions": [
+    {
+      "description": "GS Three, LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Westside Link LLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6741,
+    "outputTokens": 168,
+    "estimatedCostUsd": 0.0227
+  }
+}

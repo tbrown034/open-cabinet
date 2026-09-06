@@ -21,7 +21,7 @@ import {
   type ParsedTransaction,
 } from "../scripts/parse-pdf.js";
 import { CHECKER_VERSION, crossCheckParsedFiling } from "../scripts/text-layer-crosscheck.js";
-import { assertParsedRows } from "./filing-validation";
+import { assertParsedRows, ParsedRowsInvalidError } from "./filing-validation";
 import {
   describeCacheKey,
   hasLegacyCacheOnly,
@@ -277,6 +277,11 @@ export async function parseUnitWithRetry(
       // A response cut off at the token cap will be cut off again on a
       // retry. Surface it so the operator splits the PDF instead.
       if (err instanceof ParseTruncatedError) throw err;
+      // A validation failure is deterministic: the model read the page
+      // the same way it will read it again (Kennedy's filing prints
+      // 04/04/2225 and a faithful read fails the future-date check three
+      // times at three times the cost). It goes to a person, not a retry.
+      if (err instanceof ParsedRowsInvalidError) throw err;
       console.warn(`           attempt ${attempt}/3 failed: ${(err as Error).message}`);
       if (attempt === 3) throw err;
       await sleep(5000 * attempt);

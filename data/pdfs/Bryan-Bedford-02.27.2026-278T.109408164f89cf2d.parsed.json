@@ -1,0 +1,107 @@
+{
+  "key": "109408164f89cf2d",
+  "pdfSha256": "706794753054c5fd56401dfc4b48a59c9ccca8f5e9403956cc2ceedf478c537f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:48:19.407Z",
+  "transactions": [
+    {
+      "description": "Republic Airways Holdings Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-10-21",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Exchange",
+      "date": "2026-01-20",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Republic Airways Holdings Inc. (RJET)",
+      "ticker": "RJET",
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6917,
+    "outputTokens": 890,
+    "estimatedCostUsd": 0.0341
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "key": "b8dc4758ea9d687f",
+  "pdfSha256": "76fa2cc48a04053c1d1913ccfefaff19d54dd473c6d016501905089f7a18800f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6FD7FCF61FFBC2E585258C36003206A2/$FILE/Michael-Whitaker-01.02.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:28:23.601Z",
+  "transactions": [
+    {
+      "description": "AT&T Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2024-12-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6676,
+    "outputTokens": 56,
+    "estimatedCostUsd": 0.0209
+  }
+}

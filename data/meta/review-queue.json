@@ -26,5 +26,33 @@
     ],
     "holding": "every row of Robert-F-Kennedy-Jr-05.09.2025-278T.pdf; nothing from it would publish until this is decided",
     "emailSentAt": "2026-09-05T23:13:32.305Z"
+  },
+  {
+    "id": "chavez-deremer-lori-lane_disagreement-2026-09-06-002",
+    "status": "open",
+    "createdAt": "2026-09-06T00:56:07.618Z",
+    "kind": "lane_disagreement",
+    "slug": "chavez-deremer-lori",
+    "officialName": "Chavez-DeRemer, Lori",
+    "filing": {
+      "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
+      "pdfFile": "Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
+      "date": "2025-09-09"
+    },
+    "problems": [
+      {
+        "location": {
+          "page": null,
+          "printedRow": null,
+          "parsedRow": null,
+          "description": null
+        },
+        "modelSaid": null,
+        "textLayerSaid": null,
+        "detail": "row count: text layer has 100, AI parse has 97"
+      }
+    ],
+    "holding": "every row of Lori-Chavez-DeRemer-07.02.2025-278T.pdf; nothing from it is published until this is decided",
+    "emailSentAt": "2026-09-06T00:56:07.809Z"
   }
 ]

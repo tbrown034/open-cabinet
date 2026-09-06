@@ -1,0 +1,152 @@
+{
+  "key": "352890153fa39403",
+  "pdfSha256": "580c5c53539fe733d2e9d2c770781d694984ea6fd9656b1218decd4b574ce0a7",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T00:52:02.900Z",
+  "transactions": [
+    {
+      "description": "Bitcoin",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Solana",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "ethereum classic",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "polygon",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "polkadot",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Quant",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Coinbase Global Inc. Class A Common Stock (COIN)",
+      "ticker": "COIN",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Delta Air Lines, Inc. (DAL)",
+      "ticker": "DAL",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Peloton Interactive Inc. Class A Common Stock (PTON)",
+      "ticker": "PTON",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Pfizer Inc. (PFE)",
+      "ticker": "PFE",
+      "type": "Sale",
+      "date": "2025-05-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2025-05-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "iShares MSCI Japan ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Financial Select Sector SPDR Fund (XLF)",
+      "ticker": "XLF",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Health Care Select Sector SPDR Fund (XLV)",
+      "ticker": "XLV",
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "Ethereum",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8605,
+    "outputTokens": 1269,
+    "estimatedCostUsd": 0.0449
+  }
+}

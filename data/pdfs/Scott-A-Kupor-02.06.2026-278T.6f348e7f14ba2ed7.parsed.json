@@ -1,0 +1,26 @@
+{
+  "key": "6f348e7f14ba2ed7",
+  "pdfSha256": "4bb6e2fbe0d7243f6f6dee7202eb76a53080bd0d6d25be95d8a667f4748b192c",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7593B0EA0A3AF52085258DBA002EE4AC/$FILE/Scott-A-Kupor-02.06.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:09:08.366Z",
+  "transactions": [
+    {
+      "description": "Airbnb Inc. Class A Common Stock (ABNB)",
+      "ticker": "ABNB",
+      "type": "Sale",
+      "date": "2026-01-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6672,
+    "outputTokens": 99,
+    "estimatedCostUsd": 0.0215
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "key": "9d895ba32f16094e",
+  "pdfSha256": "c9b43fa518cb59f2018f101b6937c0e25cfbdbcdaafe692c966a4f895c7af84e",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E856C1C9F19C67C785258E3F002DB290/$FILE/Markwayne-Mullin-06.26.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T01:14:38.490Z",
+  "transactions": [
+    {
+      "description": "Adobe Inc (ADBE)",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amkor Technology Inc (AMKR)",
+      "ticker": "AMKR",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "API Group Corp (APG)",
+      "ticker": "APG",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Citigroup, Inc. (C)",
+      "ticker": "C",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Carpenter Technology Corp (CRS)",
+      "ticker": "CRS",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Firstcash Holdings Inc (FCFS)",
+      "ticker": "FCFS",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Stride Inc (LRN)",
+      "ticker": "LRN",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Mckesson Corp (MCK)",
+      "ticker": "MCK",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Monolithic Power System (MPWR)",
+      "ticker": "MPWR",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VSE Corp (VSEC)",
+      "ticker": "VSEC",
+      "type": "Sale",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Adobe Inc (ADBE)",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amkor Technology Inc (AMKR)",
+      "ticker": "AMKR",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "API Group Corp (APG)",
+      "ticker": "APG",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Citigroup Inc (C)",
+      "ticker": "C",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Carpenter Technology Corp (CRS)",
+      "ticker": "CRS",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Firstcash Holdings Inc (FCFS)",
+      "ticker": "FCFS",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Stride Inc (LRN)",
+      "ticker": "LRN",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Mckesson Corp (MCK)",
+      "ticker": "MCK",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Monolithic Power System (MPWR)",
+      "ticker": "MPWR",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VSE Corp (VSEC)",
+      "ticker": "VSEC",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Adobe Inc (ADBE)",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Amkor Technology Inc (AMKR)",
+      "ticker": "AMKR",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "API Group Corp (APG)",
+      "ticker": "APG",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Citigroup Inc (C)",
+      "ticker": "C",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Carpenter Technology Corp (CRS)",
+      "ticker": "CRS",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Firstcash Holdings Inc (FCFS)",
+      "ticker": "FCFS",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Stride Inc (LRN)",
+      "ticker": "LRN",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Mckesson Corp (MCK)",
+      "ticker": "MCK",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "Monolithic Power System (MPWR)",
+      "ticker": "MPWR",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VSE Corp (VSEC)",
+      "ticker": "VSEC",
+      "type": "Sale",
+      "date": "2026-04-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 8840,
+    "outputTokens": 2597,
+    "estimatedCostUsd": 0.0655
+  }
+}

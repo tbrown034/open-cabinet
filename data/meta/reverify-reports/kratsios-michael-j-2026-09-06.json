@@ -1,0 +1,869 @@
+{
+  "slug": "kratsios-michael-j",
+  "stamp": "2026-09-06",
+  "laneVerdicts": [
+    "Michael-J-Kratsios-07.09.2026-278T.pdf: lanes agree (1 rows)",
+    "Michael-Kratsios-06.10.2026-278T.pdf: lanes agree (1 rows)",
+    "Michael-J-Kratsios-03.29.2026-278T.pdf: lanes agree (7 rows)",
+    "Michael-J-Kratsios-01.10.2026-278T.pdf: lanes agree (2 rows)",
+    "Michael-Kratsios-08.19.2025-278T.pdf: lanes agree (3 rows)",
+    "Michael-J-Kratsios-07.25.2025-278T.pdf: lanes agree (1 rows)",
+    "Michael-J-Kratsios-07.15.2025-278T.pdf: lanes agree (1 rows)",
+    "Michael-J-Kratsios-06.24.2025-278T.pdf: lanes agree (1 rows)",
+    "Michael-J-Kratsios-06.09.2025-278T.pdf: lanes agree (10 rows)",
+    "Michael-J-Kratsios-05.11.2025-278T.pdf: lanes agree (2 rows)",
+    "Michael-J-Kratsios-04.18.2025-278T.pdf: lanes agree (17 rows)",
+    "Michael-J-Kratsios-03.18.2025-278T.pdf: lanes agree (20 rows)"
+  ],
+  "diff": {
+    "published": 66,
+    "fresh": 66,
+    "matched": 31,
+    "changed": [
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-12-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-12-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+          "ticker": "VTEB",
+          "type": "Purchase",
+          "date": "2025-12-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Purchase",
+          "date": "2025-12-26",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D7C2637F0A46A2D985258D8C003460DE/$FILE/Michael-J-Kratsios-01.10.2026-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Schwab S&P 500 Index Fund",
+          "ticker": "SWPPX",
+          "type": "Purchase",
+          "date": "2025-08-18",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Schwab S&P 500 Index Fund (SWPPX)",
+          "ticker": "SWPPX",
+          "type": "Purchase",
+          "date": "2025-08-18",
+          "amount": "$1,000,001-$5,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Sale",
+          "date": "2025-08-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Sale",
+          "date": "2025-08-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Real Estate Index Fund ETF Shares",
+          "ticker": "VNQ",
+          "type": "Purchase",
+          "date": "2025-08-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Real Estate Index Fund ETF Shares (VNQ)",
+          "ticker": "VNQ",
+          "type": "Purchase",
+          "date": "2025-08-11",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DE32094599FF7A85258D09002C0B42/$FILE/Michael-Kratsios-08.19.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DB50C7FE9979CB3885258CCC002C8B0A/$FILE/Michael-J-Kratsios-07.15.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-07-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/DB50C7FE9979CB3885258CCC002C8B0A/$FILE/Michael-J-Kratsios-07.15.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-15",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-15",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-15",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-15",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-16",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-19",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Sale",
+          "date": "2025-05-22",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Sale",
+          "date": "2025-05-22",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-22",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-05-22",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core Dividend Growth ETF",
+          "ticker": "DGRO",
+          "type": "Purchase",
+          "date": "2025-05-22",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core Dividend Growth ETF (DGRO)",
+          "ticker": "DGRO",
+          "type": "Purchase",
+          "date": "2025-05-22",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+          "ticker": "VTEB",
+          "type": "Sale",
+          "date": "2025-05-23",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B50015413EC02B9085258CC9002C84A8/$FILE/Michael-J-Kratsios-06.09.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Schwab US TIPS ETF",
+          "ticker": "SCHP",
+          "type": "Sale",
+          "date": "2025-04-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Schwab US TIPS ETF (SCHP)",
+          "ticker": "SCHP",
+          "type": "Sale",
+          "date": "2025-04-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-21",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/369A503ADD28202C85258C8C002C7CE7/$FILE/Michael-J-Kratsios-05.11.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares National Muni Bond ETF",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares National Muni Bond ETF (MUB)",
+          "ticker": "MUB",
+          "type": "Purchase",
+          "date": "2025-03-24",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core S&P Total US Stock Market ETF",
+          "ticker": "ITOT",
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core S&P Total US Stock Market ETF (ITOT)",
+          "ticker": "ITOT",
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-03-31",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-03-31",
+          "amount": "$250,001-$500,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-04-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-04-03",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core Dividend Growth ETF",
+          "ticker": "DGRO",
+          "type": "Sale",
+          "date": "2025-04-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core Dividend Growth ETF (DGRO)",
+          "ticker": "DGRO",
+          "type": "Sale",
+          "date": "2025-04-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-03",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core MSCI Emerging Markets ETF",
+          "ticker": "IEMG",
+          "type": "Sale",
+          "date": "2025-04-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core MSCI Emerging Markets ETF (IEMG)",
+          "ticker": "IEMG",
+          "type": "Sale",
+          "date": "2025-04-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-04",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core MSCI Emerging Markets ETF",
+          "ticker": "IEMG",
+          "type": "Sale",
+          "date": "2025-04-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core MSCI Emerging Markets ETF (IEMG)",
+          "ticker": "IEMG",
+          "type": "Sale",
+          "date": "2025-04-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-07",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core Dividend Growth ETF",
+          "ticker": "DGRO",
+          "type": "Sale",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core Dividend Growth ETF (DGRO)",
+          "ticker": "DGRO",
+          "type": "Sale",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)",
+          "ticker": "VWO",
+          "type": "Purchase",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+          "ticker": "VIG",
+          "type": "Purchase",
+          "date": "2025-04-08",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "iShares Core S&P Total US Stock Market ETF",
+          "ticker": "ITOT",
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "iShares Core S&P Total US Stock Market ETF (ITOT)",
+          "ticker": "ITOT",
+          "type": "Sale",
+          "date": "2025-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "after": {
+          "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+          "ticker": "VTI",
+          "type": "Purchase",
+          "date": "2025-03-31",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf"
+        },
+        "fields": [
+          "description"
+        ],
+        "wordingOnly": true
+      }
+    ],
+    "removed": [],
+    "added": [],
+    "tradeChanged": 0,
+    "wordingChanged": 35
+  }
+}
