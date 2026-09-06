@@ -1,40 +1,65 @@
-# Adjudication notes, prepared Sep 6, 2026 (night build)
+# Your decisions, Sep 6, 2026
 
-Findings a person must decide. Nothing here has been applied. Each item names the PDF page and printed row so the decision takes a minute, not a reading.
+How this works. Each item below is one thing to look at. Click the local link, which opens the PDF on the right page in your browser. Find the printed row number in the left column. Compare what the page shows with what the site says. Then do the one action listed. Nothing on the site changes until you say so; my recommendation is only a recommendation.
 
-## Chavez-DeRemer, Lori-Chavez-DeRemer-07.02.2025-278T.pdf (text lane 100 rows, model 97, site 98)
+Where to click decisions: run `pnpm dev` in the open-cabinet folder and open http://localhost:3003/admin/review. Every held filing and every disputed row is listed there with Confirm and Reject buttons. Confirm means "the site is right as published." Reject means "the site is wrong; patch it." For the patches themselves, tell me the item number and "apply" and I make the exact change in one commit with the original recorded.
 
-The government filing prints three wrapped company names as two numbered rows each, and each half carries the full trade columns (Sale, 04/28/2025, No, $1,001 - $15,000):
+## 1. Trump, Motorola Solutions sale, June 18, 2026
 
-- page 2, rows 17 and 18: "BRIGHT HORIZONS FAMILY" / "SOLUTIONSINC"
-- page 2, rows 21 and 22: "BROADRIDGE FINANCIAL" / "SOLUTIONS INC"
-- page 6, rows 90 and 91: "WEST PHARMACEUTICAL" / "SERVICES INC"
+Open: [local PDF, page 10](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-08.12.2026-278T.pdf#page=10) or [OGE](https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf)
+Look at: printed row 276, MOTOROLA SOLUTIONS INC, amount column.
+Site says: $500,001 - $1,000,000. Page shows (my eye, OCR and the fresh model read agree): $1,000,001 - $5,000,000.
+Do: if the page says $1,000,001 - $5,000,000, reply "1 apply".
 
-The model reads each pair as one trade (97). The text layer counts each printed row (100). The site has 98, so one pair is currently counted twice. Decision needed: one trade per pair (97) or two. Recommendation: one trade per pair; the split is a name wrap in the filer's upload, and the amount range is identical on both halves. If accepted, the site drops one row (the double-counted half) and the review item chavez-deremer-lori-lane_disagreement-2026-09-06-002 closes with that reason.
+## 2. Trump, Procter & Gamble sale, June 3, 2026
 
-## Trump, Donald-J-Trump-08.12.2026-278T.pdf (OCR lane)
+Open: [local PDF, page 25](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-08.12.2026-278T.pdf#page=25) or the OGE link above.
+Look at: printed row 781, PROCTER & GAMBLE CO, amount column.
+Site says: $1,001 - $15,000. Page shows (my eye, OCR and the fresh model read agree): $15,001 - $50,000.
+Do: if the page says $15,001 - $50,000, reply "2 apply".
 
-Checked by eye against the page image on Sep 5:
+## 3. Trump, Apple purchase, May 5, 2026 (no change expected)
 
-- page 10, printed row 276, MOTOROLA SOLUTIONS INC, sale 6/18/2026: filing prints $1,000,001 - $5,000,000. Site publishes $500,001 - $1,000,000. Model wrong. Patch: amount to "$1,000,001-$5,000,000".
-- page 25, printed row 781, PROCTER & GAMBLE CO, sale 6/3/2026: filing prints $15,001 - $50,000. Site publishes $1,001 - $15,000. Model wrong. Patch: amount to "$15,001-$50,000".
+Open: [local PDF, page 2](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Donald-J-Trump-06.25.2026-278T%20(2).pdf#page=2)
+Look at: printed row 4, Apple Inc, amount column.
+Site says: $1,000,001 - $5,000,000. OCR read something else; my eye says the site is right.
+Do: confirm the row on the review page, or reply "3 confirm".
 
-## Trump, Donald-J-Trump-06.25.2026-278T (2).pdf (OCR lane)
+## 4. Kennedy, NIKE sale with a 2225 date
 
-- page 2, printed row 4, Apple Inc, purchase 5/5/2026: filing prints $1,000,001 - $5,000,000, as published. OCR wrong. No change.
+Open: [local PDF, page 2](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf#page=2) or [OGE](https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf)
+Look at: printed row 9, NIKE, Inc. (NKE), date column. The page prints 04/04/2225. Four checks read it that way.
+Site says: 2025-04-04 (the old model silently corrected it).
+Do: pick one. "4 keep 2025 with a note" publishes 2025-04-04 and a note that the filing prints 2225 (my recommendation: the filing was posted May 2025 and row 7 above it is 04/04/2025). "4 as printed" publishes 2225 with a note.
 
-## Kennedy, Robert-F-Kennedy-Jr-05.09.2025-278T.pdf
+## 5. Chavez-DeRemer, three company names printed as two rows each
 
-- page 2, printed row 9, NIKE: the filing prints 04/04/2225. The model reads 2225 faithfully now and validation refuses a future date, so the filing is held. Decision: publish the row with the date as printed and a note, or as 2025-04-04 with a note that the filing's year is a typo. Recommendation: 2025-04-04 with dateNote "Filing prints 04/04/2225", because the filing was posted 2025-05-17 and the row sits among April 2025 trades.
+Open: [local PDF, page 2](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Lori-Chavez-DeRemer-07.02.2025-278T.pdf#page=2) and [page 6](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Lori-Chavez-DeRemer-07.02.2025-278T.pdf#page=6) or [OGE](https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf)
+Look at: page 2 rows 17 and 18 (BRIGHT HORIZONS FAMILY / SOLUTIONSINC), rows 21 and 22 (BROADRIDGE FINANCIAL / SOLUTIONS INC), page 6 rows 90 and 91 (WEST PHARMACEUTICAL / SERVICES INC). Each half carries the full trade columns: Sale, 04/28/2025, No, $1,001 - $15,000.
+Site says: 98 rows; one of the three pairs is counted as two trades.
+Do: "5 one trade per pair" (my recommendation: it is a name wrap in the filer's upload) drops the double-counted half and closes the review item. "5 two trades per pair" keeps both halves for all three.
 
-## Mody, Arjun-Mody-02.27.2026-278T.pdf
+## 6. Mody, two rows the model could not type or date
 
-- pages 1-8 chunk: one row typed "Unstated" with no note, one row with no date. The rejected read is kept at data/pdfs/Arjun-Mody-02.27.2026-278T.pages1-8.*.parsed.rejected.json. Decision needed on those two rows against the PDF.
+Open: [local PDF, pages 1 to 8](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Arjun-Mody-02.27.2026-278T.pdf#page=1) or [OGE](https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf)
+Look at: the rejected read at data/pdfs/Arjun-Mody-02.27.2026-278T.pages1-8.*.parsed.rejected.json names row 36 (type Unstated, no note) and row 48 (no date). Find those two rows on the pages.
+Do: tell me what the page shows for each ("6 row 36 says X, row 48 says Y") and I patch and re-run the read.
 
-## MacGregor, Katharine-MacGregor-08.07.2025-278T.pdf
+## 7. MacGregor, filing removed from OGE
 
-- OGE now returns 404 for this PDF. The local copy is intact and unchanged (hash in the cross-check log). Decision: keep publishing from the local copy with a note that the source was removed, or withdraw. Recommendation: keep, note it on the source-documents line.
+OGE now returns 404 for Katharine-MacGregor-08.07.2025-278T.pdf. Our copy is intact: [local PDF](file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Katharine-MacGregor-08.07.2025-278T.pdf).
+Do: "7 keep" keeps the rows with a note that the source was withdrawn (my recommendation). "7 withdraw" removes them.
 
-## Follow-up, not built tonight: a fourth, low-weight lane
+## 8. Missing rows the re-read found (no PDF check needed to start)
 
-Cross-reference Trump's rows against other trackers that parse the same OGE filings (Capitol Markets, Quiver Quantitative, Tracefour). None publishes a downloadable dataset; it would be a scrape, Trump-only, and internal confidence only, never a publication gate. ProPublica's Trump Team disclosure project publishes the documents, not parsed rows.
+The re-read of each official is a report at data/meta/reverify-reports/<slug>-2026-09-06.md. Rows the site is missing: Kupor 66, Bisignano 12, Criswell 5, Miran 5, McMahon 4, Burgum 2, Wright 2, Bedford 2, Duffy 1, McMaster 1. Each report lists them.
+Do: "8 apply kupor" (and so on per official) replaces that official's rows with the fresh read, keeping the old set in data/meta/reverify-history/. Or "8 show kupor" and I print the added rows first.
+
+## 9. Trump re-read (the big one, read the report before deciding)
+
+Report: data/meta/reverify-reports/trump-donald-j-2026-09-06.md. 8,173 of 8,940 rows reproduce exactly. 245 differ on trade fields, mostly in the May 14, 2026 scan, which reads poorly. 372 would be removed, 376 added.
+Do: nothing today. I recommend applying only after the May 14 scan has its second read and audit, so the disagreements are narrowed to a list you can check.
+
+## Follow-up, not built: a fourth, low-weight lane
+
+Cross-reference Trump's rows against other trackers that parse the same OGE filings (Capitol Markets, Quiver Quantitative, Tracefour). None publishes a dataset; it would be a scrape, Trump-only, internal confidence only, never a publication gate.
