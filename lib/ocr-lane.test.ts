@@ -53,7 +53,7 @@ describe("OCR lane through the shared parser and comparator", () => {
     expect(r.kind).toBe("rows");
     if (r.kind !== "rows") return;
     expect(r.rows.map((x) => x.rowNumber)).toEqual([1, 2, 4]);
-    expect(r.rows[0]).toEqual({ rowNumber: 1, type: "Purchase", date: "2026-05-11", amount: "$100,001-$250,000", lateFilingFlag: true });
+    expect(r.rows[0]).toEqual({ rowNumber: 1, type: "Purchase", date: "2026-05-11", amount: "$100,001-$250,000", lateFilingFlag: true, description: "KROGER CO (THE)" });
     expect(r.placeholderRows).toEqual([3]);
   });
 

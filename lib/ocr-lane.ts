@@ -27,6 +27,7 @@ import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, 
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { createHash } from "node:crypto";
+import { sharesAssetWord } from "./reverify-diff";
 import {
   compareExtraction,
   parseTextLayer,
@@ -321,7 +322,7 @@ export interface AlignedComparison {
  */
 export function alignByPrintedRow(
   extraction: Extraction & { repairedRowNumbers?: number[] },
-  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean; description?: string }>
 ): AlignedComparison | null {
   if (extraction.kind !== "rows") return null;
   const repairedSet = new Set(extraction.repairedRowNumbers ?? []);
@@ -356,12 +357,20 @@ export function alignByPrintedRow(
     compared += 1;
     const want = tuple(r);
     const got = tuple(parsed[i]);
-    if (want === got) {
+    // The asset name too, softly: same leading word or two shared words.
+    const nameOk = !r.description || !parsed[i].description || sharesAssetWord(r.description, parsed[i].description);
+    if (want === got && nameOk) {
       agree += 1;
       agreedPrintedRows.push(r.rowNumber);
     } else {
       disputedPrintedRows.push(r.rowNumber);
-      if (differences.length < 40) differences.push(`row ${r.rowNumber}: OCR [${want}] vs AI parse [${got}]`);
+      if (differences.length < 40) {
+        differences.push(
+          want === got
+            ? `row ${r.rowNumber}: name differs: OCR read "${r.description}", AI parse "${parsed[i].description}"`
+            : `row ${r.rowNumber}: OCR [${want}] vs AI parse [${got}]`
+        );
+      }
     }
   }
   const differ = compared - agree;

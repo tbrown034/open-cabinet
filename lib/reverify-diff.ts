@@ -110,13 +110,41 @@ function makeChange(before: RowLike, after: RowLike): Change {
   return { before, after, fields, wordingOnly };
 }
 
-/** Two descriptions name the same asset when a distinctive word is shared. */
+/** Edit distance, for OCR-garbled first words ("Broadcorn" for "Broadcom"). */
+function editDistance(a: string, b: string): number {
+  const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++)
+    for (let j = 1; j <= b.length; j++)
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+  return dp[a.length][b.length];
+}
+
+const NAME_STOP = new Set([
+  "inc", "corp", "corporation", "co", "company", "companies", "cos", "ltd", "plc", "llc", "lp", "fund", "trust", "class",
+  "common", "stock", "shares", "the", "new", "com", "group", "holdings", "holding", "energy", "financial", "capital",
+  "international", "global", "technologies", "technology", "systems", "services", "partners", "bank", "bancorp", "etf",
+  "index", "income", "growth", "value", "equity", "american", "national", "united", "first", "general",
+]);
+
+/**
+ * Two descriptions name the same asset when their leading distinctive
+ * words match (exactly, or within two edits for words of five letters or
+ * more, which absorbs OCR slips), or when they share two distinctive
+ * words. One shared sector word ("Energy", "Financial") is not enough:
+ * NextEra Energy and Duke Energy are different companies.
+ */
 export function sharesAssetWord(a: string, b: string): boolean {
-  const stop = new Set(["inc", "corp", "corporation", "co", "company", "ltd", "plc", "llc", "lp", "fund", "trust", "class", "common", "stock", "shares", "the", "new", "com"]);
-  const words = (d: string) => new Set(normalizedDescription(d).split(" ").filter((w) => w.length >= 3 && !stop.has(w)));
+  const words = (d: string) => normalizedDescription(d).split(" ").filter((w) => w.length >= 3 && !NAME_STOP.has(w));
   const wa = words(a);
-  for (const w of words(b)) if (wa.has(w)) return true;
-  return false;
+  const wb = words(b);
+  if (wa.length === 0 || wb.length === 0) return normalizedDescription(a) === normalizedDescription(b);
+  const fa = wa[0];
+  const fb = wb[0];
+  if (fa === fb) return true;
+  if (fa.length >= 5 && fb.length >= 5 && editDistance(fa, fb) <= 2) return true;
+  const setB = new Set(wb);
+  return wa.filter((w) => setB.has(w)).length >= 2;
 }
 
 export function diffRows(published: RowLike[], fresh: RowLike[]): Diff {

@@ -1,0 +1,317 @@
+{
+  "key": "23e2df49de4dc6ab",
+  "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:51:42.850Z",
+  "transactions": [
+    {
+      "description": "UNITEDHEALTH GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERISK ANALYTICS, INC.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VICI Properties Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VISA INC-CLASS A SHARES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WASTE MGMT INC DEL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WORKDAY INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "3M CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "3M COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABORATORIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABORATORIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "Abbvie Inc Com",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ABM INDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Accenture Plc Ireland Shs Cl A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND SHS CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACUSHNET HLDGS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADDUS HOMECARE CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADMA BIOLOGICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADOBE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADOBE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADOBE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADOBE INC. (DELAWARE)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Adobe Sys Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ADT INC DEL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADVANCED MICRO DEVICES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2845,
+    "outputTokens": 1824,
+    "estimatedCostUsd": 0.1197
+  }
+}

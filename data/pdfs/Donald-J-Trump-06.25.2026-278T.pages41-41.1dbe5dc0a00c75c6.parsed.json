@@ -1,0 +1,317 @@
+{
+  "key": "1dbe5dc0a00c75c6",
+  "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+  "chunk": {
+    "first": 41,
+    "last": 41
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:47:41.943Z",
+  "transactions": [
+    {
+      "description": "VERISK ANALYTICS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERRA MOBILITY CORP CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERSIGENT LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTIV HLDG CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERTIV HOLDINGS CO COM CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VIRGINIA COLLEGE BLDG AU RV BE/R/ 5 DUE 020130 DTD 122117 CALLABLE CALLABLE @ 100 020128 2.638%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "VIRTUS INVT PARTNERS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Visa Inc Com Cl A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Visa Inc Com Cl A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VITAL FARMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VOLUSIA CNTY FLA ED 5% DUE 10/15/27",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VSE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VULCAN MATERIALS CO (HOLDING CO)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VULCAN MATERIALS CO (HOLDING CO)",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "W W GRAINGER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3916,
+    "outputTokens": 2811,
+    "estimatedCostUsd": 0.0539
+  }
+}

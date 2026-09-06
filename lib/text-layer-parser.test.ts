@@ -14,7 +14,7 @@ describe("text-layer column parser", () => {
     expect(r.kind).toBe("rows");
     if (r.kind !== "rows") return;
     expect(r.rows).toEqual([
-      { rowNumber: 1, type: "Sale", date: "2025-03-04", amount: "$50,001-$100,000", lateFilingFlag: false },
+      { rowNumber: 1, type: "Sale", date: "2025-03-04", amount: "$50,001-$100,000", lateFilingFlag: false, description: "SPDR Gold Shares (GLD)" },
     ]);
   });
 
@@ -75,5 +75,20 @@ describe("text-layer column parser", () => {
 
   it("calls a page with no table text a scan", () => {
     expect(parseTextLayer("").kind).toBe("no-text");
+  });
+
+  it("reads a wrapped description across lines and flags a different asset name softly", async () => {
+    const { compareExtraction } = await import("../scripts/text-layer-crosscheck");
+    const r = parseTextLayer(`${header}
+ 1         NextEra Energy, Inc. (NEE) (option strike price                   Purchase               07/10/2025             No                     $50,001 -
+           $57.27)                                                                                                                                $100,000
+`);
+    if (r.kind !== "rows") throw new Error(r.kind);
+    expect(r.rows[0].description).toBe("NextEra Energy, Inc. (NEE) (option strike price");
+    const same = compareExtraction(r, [{ type: "Purchase", date: "2025-07-10", amount: "$50,001-$100,000", lateFilingFlag: false, description: "NEXTERA ENERGY INC" }]);
+    expect(same.status).toBe("ok");
+    const other = compareExtraction(r, [{ type: "Purchase", date: "2025-07-10", amount: "$50,001-$100,000", lateFilingFlag: false, description: "Duke Energy Corp" }]);
+    expect(other.status).toBe("mismatch");
+    if (other.status === "mismatch") expect(other.problems[0]).toMatch(/name differs/);
   });
 });

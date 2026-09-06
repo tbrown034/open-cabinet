@@ -35,9 +35,10 @@ import { execFileSync } from "node:child_process";
 import { readFileSync, existsSync } from "node:fs";
 
 import { isTerminationForm } from "../lib/parse-cache";
+import { sharesAssetWord } from "../lib/reverify-diff";
 
 /** Bump when the comparison changes. Recorded in data/meta/crosscheck-log.json. */
-export const CHECKER_VERSION = "2026-09-05.2";
+export const CHECKER_VERSION = "2026-09-06.1";
 
 export interface CrossCheckRow {
   rowNumber: number;
@@ -46,6 +47,11 @@ export interface CrossCheckRow {
   amount: string;
   /** true/false when the Yes/No column was read; null when unreadable */
   lateFilingFlag: boolean | null;
+  /** The description column as the lane read it: the text between the
+   * row number and the type token, plus any wrapped continuation before a
+   * dollar token. Compared softly (a shared distinctive word), never for
+   * equality, because wraps and OCR change spelling. */
+  description?: string;
 }
 
 export type CrossCheckResult =
@@ -162,6 +168,7 @@ export function parseTextLayer(text: string): Extraction {
     // Group"). Take the LAST type token before the date, which is the
     // column value, not a description word.
     let type: string | null = null;
+    let description: string | undefined;
     if (date) {
       const beforeDate = blockText.slice(0, date.index!);
       const typeTokens = [
@@ -169,7 +176,16 @@ export function parseTextLayer(text: string): Extraction {
           /\b(Purchase|Sale \(Partial\)|Sale \(Full\)|Sale|Exchange)\b/g
         ),
       ];
-      type = typeTokens.length ? typeTokens[typeTokens.length - 1][1] : null;
+      const last = typeTokens.length ? typeTokens[typeTokens.length - 1] : null;
+      type = last ? last[1] : null;
+      if (last) {
+        // First line: between the row number and the type token. Wrapped
+        // lines: their text before any dollar token.
+        const firstLine = block.lines[0].replace(/^\s{0,4}\d{1,4}\s{2,}/, (m) => " ".repeat(m.length));
+        const head = last.index! < firstLine.length ? firstLine.slice(0, last.index!) : firstLine;
+        const tail = block.lines.slice(1).map((l) => l.replace(/\$.*$/, "").trim()).filter(Boolean);
+        description = [head.trim(), ...tail].join(" ").replace(/\s+/g, " ").trim() || undefined;
+      }
     }
     // Amount ranges wrap unpredictably: the upper bound can land on the next
     // line AFTER wrapped description text ("$100,001 -\n  (HOOD)   $250,000"),
@@ -223,6 +239,7 @@ export function parseTextLayer(text: string): Extraction {
       date: isoDate(date[1]),
       amount: normalizeAmount(amountRaw),
       lateFilingFlag: late,
+      ...(description ? { description } : {}),
     });
   }
 
@@ -264,7 +281,7 @@ function tupleOf(r: {
  */
 export function crossCheckParsedFiling(
   pdfPath: string,
-  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean; description?: string }>
 ): CrossCheckResult {
   // A 278-TERM termination report is a different form: no notification
   // column, different sections. The column parser does not read it. Say so
@@ -284,7 +301,7 @@ export function crossCheckParsedFiling(
  */
 export function compareExtraction(
   extraction: Extraction,
-  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>,
+  parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean; description?: string }>,
   lane: "text layer" | "OCR" = "text layer"
 ): CrossCheckResult {
   if (extraction.kind === "no-text") return { status: "scan" };
@@ -358,6 +375,19 @@ export function compareExtraction(
         problems.push(
           `row ${textRows[i].rowNumber}: ${lane} [${want}] vs AI parse [${got}]`
         );
+        if (problems.length > 20) {
+          problems.push("(further differences suppressed)");
+          break;
+        }
+        continue;
+      }
+      // The asset name, softly: the lane's reading and the model's must
+      // share a distinctive word. Same numbers on the wrong company is
+      // the failure this catches (review, Sep 6).
+      const laneName = textRows[i].description;
+      const modelName = parsed[i].description;
+      if (laneName && modelName && !sharesAssetWord(laneName, modelName)) {
+        problems.push(`row ${textRows[i].rowNumber}: name differs: ${lane} read "${laneName}", AI parse "${modelName}"`);
         if (problems.length > 20) {
           problems.push("(further differences suppressed)");
           break;

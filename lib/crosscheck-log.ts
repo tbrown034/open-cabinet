@@ -50,6 +50,7 @@ export const COMPARED_FIELDS = [
   "lateFilingFlag",
   "rowCount",
   "printedRowContinuity",
+  "assetNameSharedWord",
 ] as const;
 
 export interface CrosscheckEntry {
