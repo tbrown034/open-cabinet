@@ -66,6 +66,8 @@ All seven stages are functions with these exact names: fetch, read, check and me
 
 ## What a reader sees
 
+Each transaction row on an official's page has a visible text marker: "Checked", "Checked by two models", "Not yet checked" or "Under review", with its full note available in an expandable detail. The marker comes from the recorded per-row verdict in `data/meta/row-verification.json`, loaded by `verificationForOfficial`; it reports recorded evidence, not an enforced publication gate or an advisory console warning.
+
 Every row shows the range the filing reported, or "Not ascertainable" with the filing's words. Every row links to the filing PDF. The methodology page states, from the log, how many rows the deterministic check agreed on, how many are in disagreement awaiting a person, how many are scans it could not read, how many of those the OCR lane agreed on or disputes, and how many are in layouts it cannot yet parse. The summary on each official's page is either a labeled template or model prose a person approved against the computed facts.
 
 ## What stays with a person
