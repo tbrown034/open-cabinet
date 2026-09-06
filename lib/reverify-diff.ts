@@ -111,7 +111,7 @@ function makeChange(before: RowLike, after: RowLike): Change {
 }
 
 /** Edit distance, for OCR-garbled first words ("Broadcorn" for "Broadcom"). */
-function editDistance(a: string, b: string): number {
+export function editDistance(a: string, b: string): number {
   const dp = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
   for (let j = 1; j <= b.length; j++) dp[0][j] = j;
   for (let i = 1; i <= a.length; i++)

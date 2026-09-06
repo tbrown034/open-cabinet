@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T23:00:38.155Z",
+  "generatedAt": "2026-09-06T23:04:36.664Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
-      "checked": 11269,
+      "checked": 11254,
       "human_verified": 90,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
-      "single_read": 14,
+      "single_read": 29,
       "implausible": 48,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
-      "1": 14,
+      "1": 29,
       "2": 141,
-      "3": 11359
+      "3": 11344
     }
   },
   "rows": {
@@ -10521,10 +10521,10 @@
       "id": "8f76c67efe34311b31b78308",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "a2d0893dc0af5b36f24ac7c3": {
       "id": "a2d0893dc0af5b36f24ac7c3",
@@ -10620,10 +10620,10 @@
       "id": "6d8260cf5b1730aa964a7a31",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "27ac1775870e6698558e5edb": {
       "id": "27ac1775870e6698558e5edb",
@@ -10647,10 +10647,10 @@
       "id": "b22c790ae136120f2e239dfa",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "2b70a0d4aaf4e708dd7a804b": {
       "id": "2b70a0d4aaf4e708dd7a804b",
@@ -10809,10 +10809,10 @@
       "id": "c21614457831d64a0d42b09a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "4cb2ab45a73b40c462ed1104": {
       "id": "4cb2ab45a73b40c462ed1104",
@@ -10962,10 +10962,10 @@
       "id": "44c658fe388650af90db30a0",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "ad8f099ffe467cbf0b6243c3": {
       "id": "ad8f099ffe467cbf0b6243c3",
@@ -11052,10 +11052,10 @@
       "id": "2e78ad50a6de101d6a2b5256",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "02802bf12ad78255a569cc6b": {
       "id": "02802bf12ad78255a569cc6b",
@@ -11223,10 +11223,10 @@
       "id": "0e85ef5c8330436c613153f6",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "68393034ad5859f16eaf6b16": {
       "id": "68393034ad5859f16eaf6b16",
@@ -11241,37 +11241,37 @@
       "id": "e41d6a682166be906ad2ac65",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "60d24942985bd6ff8ea86228": {
       "id": "60d24942985bd6ff8ea86228",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "30fb6f0233756a36cc8a6e2b": {
       "id": "30fb6f0233756a36cc8a6e2b",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "f458ef68d867451d4a5325c0": {
       "id": "f458ef68d867451d4a5325c0",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "dcba28d66b2e2fd5941bd377": {
       "id": "dcba28d66b2e2fd5941bd377",
@@ -68355,10 +68355,10 @@
       "id": "c47e5ec29407c1378a5bf0c0",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "c63b1134d45aaaa37ee9085f": {
       "id": "c63b1134d45aaaa37ee9085f",
@@ -69669,10 +69669,10 @@
       "id": "f17b2d2be0c645119cc935a7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 76 differently; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "73306b316d6344df2d876dc0": {
       "id": "73306b316d6344df2d876dc0",
@@ -70425,10 +70425,10 @@
       "id": "4786501e8a85a807877e4c8f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 98 differently; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "1768b837af51944b67db2981": {
       "id": "1768b837af51944b67db2981",
@@ -79362,10 +79362,10 @@
       "id": "e8b5e34870e97f53a31cee2a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "71be84ccb2339ec2757f3f95": {
       "id": "71be84ccb2339ec2757f3f95",
@@ -80793,10 +80793,10 @@
       "id": "9a8c0ae373a9bab15a75bd1b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 20 differently; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "5bc842ab59f33caa330e6893": {
       "id": "5bc842ab59f33caa330e6893",
@@ -85626,10 +85626,10 @@
       "id": "c1abd61f822650adf7c8d8a8",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 16 differently; the page audit confirmed it"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "65007fcc57d638af66643c98": {
       "id": "65007fcc57d638af66643c98",

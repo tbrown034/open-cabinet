@@ -40,7 +40,7 @@ import { existsSync, readFileSync } from "fs";
 import path from "path";
 import type { Transaction } from "./types";
 import type { CrosscheckEntry } from "./crosscheck-log";
-import { normalizedDescription, sharesAssetWord } from "./reverify-diff";
+import { editDistance, normalizedDescription, sharesAssetWord } from "./reverify-diff";
 
 export const ROW_VERIFICATION_PATH = path.join(process.cwd(), "data", "meta", "row-verification.json");
 export const REVIEW_DECISIONS_PATH = path.join(process.cwd(), "data", "review", "decisions.json");
@@ -183,6 +183,33 @@ export interface DeriveInput {
 }
 
 /**
+ * Two descriptions are one asset with different wording: a ticker
+ * appended, a spacing accident, one misread word ("Duo" for "Due"). Not
+ * two bonds from the same issuer. sharesAssetWord accepts a shared first
+ * word, which is right for a diff report and wrong for a locator: two
+ * Harris County MUD bonds with the same trade values would pair, and one
+ * would inherit the other's audit verdict (Codex, Sep 6). Here the word
+ * sets must mostly overlap.
+ */
+export function sameAssetWording(a: string, b: string): boolean {
+  const flat = (d: string) => normalizedDescription(d).replace(/ /g, "");
+  const fa = flat(a);
+  const fb = flat(b);
+  if (fa === fb || (fa.length >= 6 && fb.length >= 6 && (fa.startsWith(fb) || fb.startsWith(fa)))) return true;
+  // One or two characters off across the whole name is a misread letter
+  // ("Progressive Corp On" for "Oh"), not another asset.
+  if (fa.length >= 8 && fb.length >= 8 && editDistance(fa, fb) <= 2) return true;
+  const words = (d: string) => new Set(normalizedDescription(d).split(" ").filter((w) => w.length >= 2));
+  const wa = words(a);
+  const wb = words(b);
+  if (wa.size === 0 || wb.size === 0) return false;
+  let shared = 0;
+  for (const w of wa) if (wb.has(w)) shared += 1;
+  const union = wa.size + wb.size - shared;
+  return sharesAssetWord(a, b) && shared / union >= 0.6;
+}
+
+/**
  * Locate each published row in the parse record for its filing by the
  * full tuple, consuming matches so lots pair one to one. Returns the
  * parsed index per published row, or -1.
@@ -223,7 +250,7 @@ export function locateInParseRecord(
   rows.forEach((tx, k) => {
     if (out[k] >= 0) return;
     const t = comparedTuple(tx);
-    const candidates = leftover.filter((i) => !used.has(i) && comparedTuple(record[i]) === t && sharesAssetWord(tx.description, record[i].description));
+    const candidates = leftover.filter((i) => !used.has(i) && comparedTuple(record[i]) === t && sameAssetWording(tx.description, record[i].description));
     if (candidates.length === 1) {
       used.add(candidates[0]);
       out[k] = candidates[0];

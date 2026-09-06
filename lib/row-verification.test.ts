@@ -36,6 +36,21 @@ describe("locating a published row in the parse record", () => {
     expect(locateInParseRecord([tx(), tx(), tx()], record)).toEqual([1, 2, -1]);
   });
 
+  it("never pairs two bonds from one issuer by a shared first word (Codex, Sep 6)", () => {
+    const mud495 = tx({ description: "HARRIS CNTY TX MUD 495 AGI B/E 4.00 % Due Sep 1, 2035", date: "2025-07-09", amount: "$15,001-$50,000" });
+    const mud500 = tx({ description: "HARRIS CNTY TX MUD 500 CNTRCT REV RD FACS SER A BAM B/E PTC 4.00 % Due Dec 1, 2035", date: "2025-07-09", amount: "$15,001-$50,000" });
+    const hosp = tx({ description: "HARRIS CNTY TX HOSP DIST REV RFDG SER A B/E 5.00 % Due Oct 1, 2030", date: "2025-07-09", amount: "$15,001-$50,000" });
+    // The site holds the 495 bond and the hospital bond; the record has
+    // the 495 and 500 bonds. The hospital row must not take the 500 slot.
+    expect(locateInParseRecord([mud495, hosp], [mud495, mud500])).toEqual([0, -1]);
+    // Wording-only differences still locate: a ticker appended, "Duo" for "Due".
+    const apple = tx({ description: "Apple Inc." });
+    expect(locateInParseRecord([apple], [tx({ description: "Apple Inc. (AAPL)" })])).toEqual([0]);
+    expect(locateInParseRecord([tx({ description: "Progressive Corp Oh" })], [tx({ description: "Progressive Corp On" })])).toEqual([0]);
+    const duo = tx({ description: "MONROEVILLE PA FIN AUTH UPMC REV B/E 5.00 % Duo Feb 15, 2026" });
+    expect(locateInParseRecord([duo], [tx({ description: "MONROEVILLE PA FIN AUTH UPMC REV B/E 5.00 % Due Feb 15, 2026" })])).toEqual([0]);
+  });
+
   it("maps parsed indexes back to printed rows across placeholders", () => {
     // Printed rows 1, 3, 4 are transactions; 2 is "Line is intentionally left blank".
     expect([0, 1, 2].map((i) => printedRowForIndex(i, [2]))).toEqual([1, 3, 4]);
