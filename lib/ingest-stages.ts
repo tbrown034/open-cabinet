@@ -307,28 +307,35 @@ export async function parseUnitWithRetry(
         throw new SpendCeilingError(spend.usd, stageOptions.ceilingUsd);
       }
       const result = await parsePdf(unit.path);
-      await recordSpend(result.tokenUsage.estimatedCostUsd);
-      // Enum and shape gate before anything is cached or merged.
-      let rows: ReturnType<typeof assertParsedRows>;
+      // The call is paid for now, whatever happens next: the result is
+      // cached (or kept as a rejected read) before the spend is counted,
+      // so a ceiling trip never discards a read that was paid for, and a
+      // rejected read still counts toward the ceiling (review, Sep 6).
       try {
-        rows = assertParsedRows(result.transactions, path.basename(unit.path));
-      } catch (err) {
-        if (err instanceof ParsedRowsInvalidError) {
-          const file = writeRejectedParse(unit.path, keyInput, {
-            transactions: result.transactions, problems: err.problems, tokenUsage: result.tokenUsage,
-          });
-          console.warn(`           rejected read kept for a person: ${path.basename(file)}`);
+        // Enum and shape gate before anything is cached or merged.
+        let rows: ReturnType<typeof assertParsedRows>;
+        try {
+          rows = assertParsedRows(result.transactions, path.basename(unit.path));
+        } catch (err) {
+          if (err instanceof ParsedRowsInvalidError) {
+            const file = writeRejectedParse(unit.path, keyInput, {
+              transactions: result.transactions, problems: err.problems, tokenUsage: result.tokenUsage,
+            });
+            console.warn(`           rejected read kept for a person: ${path.basename(file)}`);
+          }
+          throw err;
         }
-        throw err;
+        console.log(
+          `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
+        );
+        writeParseCache(unit.path, { ...keyInput, model: result.model }, {
+          transactions: rows,
+          tokenUsage: result.tokenUsage,
+        });
+        return rows as ParsedTransaction[];
+      } finally {
+        await recordSpend(result.tokenUsage.estimatedCostUsd);
       }
-      console.log(
-        `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
-      );
-      writeParseCache(unit.path, { ...keyInput, model: result.model }, {
-        transactions: rows,
-        tokenUsage: result.tokenUsage,
-      });
-      return rows as ParsedTransaction[];
     } catch (err: unknown) {
       // A response cut off at the token cap will be cut off again on a
       // retry. Surface it so the operator splits the PDF instead.
