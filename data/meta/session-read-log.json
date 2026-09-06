@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T16:25:11.157Z",
+  "generatedAt": "2026-09-06T16:33:36.323Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf": {
       "slug": "trump-donald-j",
@@ -9,7 +9,7 @@
       "candidateSha256": "32b07b803de1adf668600ad7e2671e29855dff4671ef89e1db8cbe10fb27bd1c",
       "model": "gpt-6-astra",
       "rowsPrimary": 3642,
-      "rowsSecond": 460,
+      "rowsSecond": 790,
       "agreedIndexes": [
         0,
         1,
@@ -391,6 +391,7 @@
         379,
         380,
         381,
+        382,
         383,
         384,
         385,
@@ -405,6 +406,7 @@
         394,
         395,
         396,
+        397,
         398,
         399,
         400,
@@ -466,15 +468,7 @@
         456,
         457,
         458,
-        459
-      ],
-      "disputedIndexes": [
-        264,
-        332
-      ],
-      "unreadIndexes": [
-        382,
-        397,
+        459,
         460,
         461,
         462,
@@ -518,14 +512,12 @@
         500,
         501,
         502,
-        503,
         504,
         505,
         506,
         507,
         508,
         509,
-        510,
         511,
         512,
         513,
@@ -642,7 +634,6 @@
         624,
         625,
         626,
-        627,
         628,
         629,
         630,
@@ -804,7 +795,16 @@
         786,
         787,
         788,
-        789,
+        789
+      ],
+      "disputedIndexes": [
+        264,
+        332,
+        503,
+        510,
+        627
+      ],
+      "unreadIndexes": [
         790,
         791,
         792,
@@ -3658,30 +3658,18 @@
         3640,
         3641
       ],
-      "extraRows": [
-        {
-          "description": "ISHARES CRRNCY HDG MSCI EURZN ETF",
-          "type": "Purchase",
-          "date": "2026-03-04",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NXP SEMICONDUCTORS N V COM EUR UNSOLICITED",
-          "type": "Purchase",
-          "date": "2026-03-02",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        }
-      ],
+      "extraRows": [],
       "differences": [
         "row 265: second model [Purchase|2026-01-06|$100,001-$250,000|late] vs primary [Purchase|2026-01-08|$100,001-$250,000|late] for \"BRISTOL MYERS SQUIBB CO COM\"",
-        "row 333: second model [Purchase|2026-02-26|$100,001-$250,000|late] vs primary [Purchase|2026-02-28|$100,001-$250,000|late] for \"TELEFLEX INC\""
+        "row 333: second model [Purchase|2026-02-26|$100,001-$250,000|late] vs primary [Purchase|2026-02-28|$100,001-$250,000|late] for \"TELEFLEX INC\"",
+        "row 504: second model [Purchase|2026-01-06|$50,001-$100,000|late] vs primary [Purchase|2026-01-08|$50,001-$100,000|late] for \"ORACLE CORP UNSOLICITED\"",
+        "row 511: second model [Purchase|2026-03-18|$50,001-$100,000|late] vs primary [Purchase|2026-03-16|$50,001-$100,000|late] for \"REPUBLIC SVCS INC\"",
+        "row 628: second model [Purchase|2026-02-26|$50,001-$100,000|late] vs primary [Purchase|2026-02-28|$50,001-$100,000|late] for \"TG THERAPEUTICS INC\""
       ],
       "costUsd": 0,
-      "checkedAt": "2026-09-06T16:25:11.156Z",
+      "checkedAt": "2026-09-06T16:33:36.322Z",
       "reader": "claude-code-session",
-      "printedRowsRead": 460,
+      "printedRowsRead": 790,
       "printedRowGaps": []
     }
   }
