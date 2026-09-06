@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T15:17:18.702Z",
+  "generatedAt": "2026-09-06T15:18:19.690Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11501,
     "byState": {
-      "checked": 4653,
-      "human_verified": 2,
+      "checked": 4652,
+      "human_verified": 3,
       "deterministic_agree": 1523,
       "two_models_agree": 13,
       "audit_only": 165,
@@ -39050,13 +39050,22 @@
       "id": "3ab392a0381fe82224d41937",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by home on 2026-09-06"
+    },
+    "8b8a60be373fac31937c8fd8": {
+      "id": "8b8a60be373fac31937c8fd8",
+      "slug": "trump-donald-j",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 0,
       "state": "disputed",
       "lane": "ocr",
       "note": "OCR read printed row 4 differently; a person decides"
     },
-    "8b8a60be373fac31937c8fd8": {
-      "id": "8b8a60be373fac31937c8fd8",
+    "7d7b8ee0b9c3be79e3c88c1e": {
+      "id": "7d7b8ee0b9c3be79e3c88c1e",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 3,
@@ -39064,23 +39073,14 @@
       "lane": "ocr",
       "note": "OCR of printed row 5 agrees; the page audit confirmed it"
     },
-    "7d7b8ee0b9c3be79e3c88c1e": {
-      "id": "7d7b8ee0b9c3be79e3c88c1e",
+    "cdf929d0bd947e859be471ea": {
+      "id": "cdf929d0bd947e859be471ea",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 0,
       "state": "disputed",
       "lane": "ocr",
       "note": "OCR read printed row 6 differently; a person decides"
-    },
-    "cdf929d0bd947e859be471ea": {
-      "id": "cdf929d0bd947e859be471ea",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "ocr",
-      "note": "OCR of printed row 7 agrees; the page audit confirmed it"
     },
     "b78aa85c0fded6f3fb5c4cfa": {
       "id": "b78aa85c0fded6f3fb5c4cfa",
@@ -39089,7 +39089,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 8 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 7 agrees; the page audit confirmed it"
     },
     "a8c43f5d1ba3989e1c049d34": {
       "id": "a8c43f5d1ba3989e1c049d34",
@@ -39098,7 +39098,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 9 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 8 agrees; the page audit confirmed it"
     },
     "81f53532a10a7600571099bd": {
       "id": "81f53532a10a7600571099bd",
@@ -39106,8 +39106,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "lane": "ocr",
+      "note": "OCR of printed row 9 agrees; the page audit confirmed it"
     },
     "99cc49220518929b43b6f75d": {
       "id": "99cc49220518929b43b6f75d",
@@ -39122,10 +39122,10 @@
       "id": "c897772977b5ed37b412a19e",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "ocr",
-      "note": "OCR read printed row 12 differently; a person decides"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "0f394af45ce6863bd9f59990": {
       "id": "0f394af45ce6863bd9f59990",
@@ -39134,16 +39134,16 @@
       "score": 0,
       "state": "disputed",
       "lane": "ocr",
-      "note": "OCR read printed row 13 differently; a person decides"
+      "note": "OCR read printed row 12 differently; a person decides"
     },
     "6e2cd34874a7af029597b462": {
       "id": "6e2cd34874a7af029597b462",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 0,
+      "state": "disputed",
       "lane": "ocr",
-      "note": "OCR of printed row 14 agrees; the page audit confirmed it"
+      "note": "OCR read printed row 13 differently; a person decides"
     },
     "09ce52f2f296d4ced8405b38": {
       "id": "09ce52f2f296d4ced8405b38",
@@ -39152,7 +39152,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 15 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 14 agrees; the page audit confirmed it"
     },
     "b0294ea656aabd52baa6be14": {
       "id": "b0294ea656aabd52baa6be14",
@@ -39161,7 +39161,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 16 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 15 agrees; the page audit confirmed it"
     },
     "5adac1951fd87b80220e49d4": {
       "id": "5adac1951fd87b80220e49d4",
@@ -39170,7 +39170,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 17 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 16 agrees; the page audit confirmed it"
     },
     "8bfb6e077facaa2d0dc84716": {
       "id": "8bfb6e077facaa2d0dc84716",
@@ -39179,7 +39179,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 18 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 17 agrees; the page audit confirmed it"
     },
     "fee030e8b09c132a7d291ec4": {
       "id": "fee030e8b09c132a7d291ec4",
@@ -39188,7 +39188,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 19 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 18 agrees; the page audit confirmed it"
     },
     "49b7d7a5309b44d60454ad35": {
       "id": "49b7d7a5309b44d60454ad35",
@@ -39196,8 +39196,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "lane": "ocr",
+      "note": "OCR of printed row 19 agrees; the page audit confirmed it"
     },
     "b27b8bfbf2e56472f8d1fbaf": {
       "id": "b27b8bfbf2e56472f8d1fbaf",
@@ -39205,8 +39205,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
       "score": 3,
       "state": "checked",
-      "lane": "ocr",
-      "note": "OCR of printed row 21 agrees; the page audit confirmed it"
+      "lane": "model2",
+      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "8b84210153c1c86959833b32": {
       "id": "8b84210153c1c86959833b32",
@@ -39215,7 +39215,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 22 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 21 agrees; the page audit confirmed it"
     },
     "a91b3aef39c31e651f2ceeaa": {
       "id": "a91b3aef39c31e651f2ceeaa",
@@ -39224,7 +39224,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 23 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 22 agrees; the page audit confirmed it"
     },
     "601b627ed57543af032e0fb8": {
       "id": "601b627ed57543af032e0fb8",
@@ -39233,7 +39233,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 24 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 23 agrees; the page audit confirmed it"
     },
     "ab1ba372788b4dcc97d4b858": {
       "id": "ab1ba372788b4dcc97d4b858",
@@ -39242,7 +39242,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 25 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 24 agrees; the page audit confirmed it"
     },
     "01163fed5b796773ddc9b538": {
       "id": "01163fed5b796773ddc9b538",
@@ -39251,7 +39251,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 26 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 25 agrees; the page audit confirmed it"
     },
     "aa02a3536dc2a73a67a3ebbe": {
       "id": "aa02a3536dc2a73a67a3ebbe",
@@ -39260,7 +39260,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 27 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 26 agrees; the page audit confirmed it"
     },
     "494f940b834a0bbc23e744a6": {
       "id": "494f940b834a0bbc23e744a6",
@@ -39269,7 +39269,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 28 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 27 agrees; the page audit confirmed it"
     },
     "815a2e46e40438b80bb7edf7": {
       "id": "815a2e46e40438b80bb7edf7",
@@ -39278,7 +39278,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 29 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 28 agrees; the page audit confirmed it"
     },
     "ec99b43bdf5ff6de4d1502b1": {
       "id": "ec99b43bdf5ff6de4d1502b1",
@@ -39287,7 +39287,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 30 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 29 agrees; the page audit confirmed it"
     },
     "d1d1438e173270ee5953a1c6": {
       "id": "d1d1438e173270ee5953a1c6",
@@ -39296,7 +39296,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 31 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 30 agrees; the page audit confirmed it"
     },
     "4ad170c66b0ffd08afda3838": {
       "id": "4ad170c66b0ffd08afda3838",
@@ -39305,7 +39305,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 32 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 31 agrees; the page audit confirmed it"
     },
     "e30700a57f9c2af6299d747b": {
       "id": "e30700a57f9c2af6299d747b",
@@ -39314,7 +39314,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 33 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 32 agrees; the page audit confirmed it"
     },
     "d91e4e708aa09b5fabd2a340": {
       "id": "d91e4e708aa09b5fabd2a340",
@@ -39323,7 +39323,7 @@
       "score": 3,
       "state": "checked",
       "lane": "ocr",
-      "note": "OCR of printed row 34 agrees; the page audit confirmed it"
+      "note": "OCR of printed row 33 agrees; the page audit confirmed it"
     },
     "86759bcef3667f27589189a8": {
       "id": "86759bcef3667f27589189a8",
