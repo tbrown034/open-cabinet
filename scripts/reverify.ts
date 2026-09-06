@@ -89,8 +89,14 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
     const { pdfPath, sha256 } = await fetchFiling(slug, filing);
     const rows = await readFiling(pdfPath, sha256, f.url);
     try {
-      await checkFiling(slug, official.name, filing, pdfPath, sha256, rows);
-      laneVerdicts.push(`${pdfFile}: lanes agree (${rows.length} rows)`);
+      const gate = await checkFiling(slug, official.name, filing, pdfPath, sha256, rows, { secondRead: false });
+      laneVerdicts.push(
+        gate.verdict === "two_lane"
+          ? `${pdfFile}: ${gate.lane === "text" ? "text layer" : "OCR"} agrees (${rows.length} rows)`
+          : gate.verdict === "two_models"
+            ? `${pdfFile}: second model agrees (${rows.length} rows)`
+            : `${pdfFile}: ${gate.reason}`
+      );
     } catch (err) {
       laneVerdicts.push(`${pdfFile}: ${(err as Error).message}`);
     }

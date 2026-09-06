@@ -39,6 +39,7 @@ import { loadKnownFilingUrlsFromData } from "../lib/oge-filings";
 import { reconcileSummaryAfterIngest } from "../lib/summary-review";
 import {
   checkFiling,
+  FilingHeldError,
   fetchFiling,
   mergeRows,
   readFiling,
@@ -54,6 +55,8 @@ dotenv.config({ path: ".env.local" });
 
 stageOptions.forceReparse = process.argv.includes("--force-reparse");
 const PARSE_ONLY = process.argv.includes("--parse-only");
+/** Filings the publication gate held for a person this run. Reported at the end. */
+const heldForAPerson: string[] = [];
 
 interface NewFilingsLoadResult {
   filingsBySlug: Record<string, FilingForIngest[]>;
@@ -257,10 +260,24 @@ async function ingestForOfficial(
 
   const perFilingParses: ParsedTransaction[][] = [];
   const newSourceEntries: SourceFiling[] = [];
+  const heldFilings = heldForAPerson;
   for (const filing of newPdfs) {
     const { pdfPath, sha256 } = await fetchFiling(slug, filing);
     const rows = await readFiling(pdfPath, sha256, filing.pdfUrl);
-    await checkFiling(slug, official.name, filing, pdfPath, sha256, rows);
+    let gate;
+    try {
+      gate = await checkFiling(slug, official.name, filing, pdfPath, sha256, rows);
+    } catch (err) {
+      if (err instanceof FilingHeldError) {
+        // Held for a person. The review item and email are already out.
+        // The filing stays out of the merge; the rest of the run goes on.
+        console.warn(`  [${slug}] ${err.message}`);
+        heldFilings.push(`${slug}: ${err.pdfFile} (${err.reason})`);
+        continue;
+      }
+      throw err;
+    }
+    console.log(`  [${slug}] publication gate: ${gate.verdict}${gate.verdict === "two_lane" ? ` (${gate.lane})` : ""}`);
     if (PARSE_ONLY) {
       console.log(`  [${slug}] --parse-only: ${rows.length} rows read and checked; not merged`);
       continue;
@@ -361,6 +378,10 @@ async function main() {
     return;
   }
   validateDataset();
+  if (heldForAPerson.length) {
+    console.log(`\nHeld for a person (${heldForAPerson.length}), not merged:`);
+    for (const h of heldForAPerson) console.log(`  ${h}`);
+  }
   await handOffForPublish(targetFilings, newFilings);
 }
 

@@ -1,0 +1,317 @@
+{
+  "key": "5d0578acdddc190f",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 28,
+    "last": 28
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:26:18.717Z",
+  "transactions": [
+    {
+      "description": "MONRO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ADVANCE AUTO PTS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARGAN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BEACON FINL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FORMFACTOR INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "RALLIANT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PTC THERAPEUTICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "JBT MAREL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ATMUS FILTRATION TECHNOL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERSIGENT LTD F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VIASAT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "DIEBOLD NIXDORF INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LIFESTANCE HEALTH GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LINCOLN NATL CORP IND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "EVERFORTH INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACKLINE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "N-ABLE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PAPA JOHNS INTL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARTIVION INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERRA MOBILITY CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GOGO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PATRICK INDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MERIT MED SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PERRIGO CO PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GIBRALTAR INDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NAVIENT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALARM COM HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LYFT INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BADGER METER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BANCFIRST CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CARGURUS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NMI HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "FOUR CORNERS PPTY TR INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 1793,
+    "estimatedCostUsd": 0.034
+  }
+}

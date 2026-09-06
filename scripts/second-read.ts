@@ -18,10 +18,9 @@ import path from "path";
 import dotenv from "dotenv";
 import { PDFDocument } from "pdf-lib";
 import { readCrosscheckLog } from "../lib/crosscheck-log";
-import { findParseRecord, promptHash, readParseCache, sha256File, writeParseCache, type ParseCacheKeyInput } from "../lib/parse-cache";
-import { validateParsedRows } from "../lib/filing-validation";
+import { findParseRecord, promptHash } from "../lib/parse-cache";
 import { recordSpend, spend, splitPdfIfNeeded, stageOptions, SpendCeilingError } from "../lib/ingest-stages";
-import { compareSecondRead, readSecondReadLog, writeSecondReadLog, SECOND_READ_MODEL, type SecondReadFiling, type SecondReadLog } from "../lib/second-read";
+import { readSecondReadLog, recordSecondRead, secondReadFiling, SECOND_READ_MODEL, type SecondReadLog } from "../lib/second-read";
 import { parsePdf, EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL, ParseTruncatedError } from "./parse-pdf.js";
 import { notify } from "../lib/notify";
 
@@ -95,65 +94,31 @@ async function main() {
   for (const p of plan) {
     const e = p.e;
     const record = findParseRecord(p.pdfPath, { pdfSha256: e.pdfSha256!, sourceUrl: e.sourceUrl!, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL })!;
-    const primary = record.transactions as Parameters<typeof compareSecondRead>[0];
     process.stdout.write(`  ${e.slug} ${e.pdfFile} (${p.pages} pp, ${p.rows} rows) `);
     const { units } = await splitPdfIfNeeded(p.pdfPath);
-    const second: Parameters<typeof compareSecondRead>[1] = [];
-    let cost = 0;
-    let failed: string | null = null;
-    for (const unit of units) {
-      const keyInput: ParseCacheKeyInput = {
-        pdfSha256: e.pdfSha256!, sourceUrl: e.sourceUrl!, chunk: unit.chunk, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: SECOND_READ_MODEL,
-      };
-      const cached = readParseCache(unit.path, keyInput);
-      if (cached) {
-        second.push(...(cached.transactions as typeof second));
+    let entry;
+    try {
+      entry = await secondReadFiling({
+        slug: e.slug, pdfPath: p.pdfPath, pdfSha256: e.pdfSha256!, sourceUrl: e.sourceUrl!, candidateSha256: e.candidateSha256!,
+        primary: record.transactions as Parameters<typeof secondReadFiling>[0]["primary"],
+        units, parserVersion: PARSER_VERSION, systemPrompt: SYSTEM_PROMPT, extractionPrompt: EXTRACTION_PROMPT,
+        read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL),
+        onSpend: recordSpend,
+        onProgress: () => process.stdout.write("."),
+      });
+    } catch (err) {
+      if (err instanceof SpendCeilingError) throw err;
+      if (err instanceof ParseTruncatedError) {
+        console.log(`could not read: ${err.message}`);
         continue;
       }
-      try {
-        const result = await parsePdf(unit.path, SECOND_READ_MODEL);
-        await recordSpend(result.tokenUsage.estimatedCostUsd);
-        cost += result.tokenUsage.estimatedCostUsd;
-        // The second read is evidence, not a publication candidate: a row
-        // that fails the shape gate is kept and compared as it is, and the
-        // failure is noted. It can only ever create a disagreement.
-        const v = validateParsedRows(result.transactions);
-        const rows = v.ok ? v.rows : (result.transactions as typeof second);
-        if (!v.ok) failed = `second read failed the shape gate on ${path.basename(unit.path)}: ${v.errors.slice(0, 3).join("; ")}`;
-        writeParseCache(unit.path, keyInput, { transactions: rows, tokenUsage: result.tokenUsage });
-        second.push(...(rows as typeof second));
-        process.stdout.write(".");
-      } catch (err) {
-        if (err instanceof SpendCeilingError) {
-          writeSecondReadLog({ ...log, generatedAt: new Date().toISOString() });
-          throw err;
-        }
-        if (err instanceof ParseTruncatedError) {
-          failed = `second read truncated on ${path.basename(unit.path)}`;
-          break;
-        }
-        throw err;
-      }
+      throw err;
     }
-    if (failed && second.length === 0) {
-      console.log(`could not read: ${failed}`);
-      continue;
-    }
-    const cmp = compareSecondRead(primary, second);
-    const entry: SecondReadFiling = {
-      slug: e.slug, pdfFile: e.pdfFile!, pdfSha256: e.pdfSha256!, candidateSha256: e.candidateSha256!, model: SECOND_READ_MODEL,
-      rowsPrimary: primary.length, rowsSecond: second.length,
-      ...cmp,
-      ...(failed ? { differences: [failed, ...cmp.differences] } : {}),
-      costUsd: Math.round(cost * 10000) / 10000,
-      checkedAt: new Date().toISOString(),
-    };
-    log.filings[e.sourceUrl!] = entry;
-    writeSecondReadLog({ ...log, generatedAt: new Date().toISOString() });
-    console.log(` agree ${cmp.agreedIndexes.length} / differ ${cmp.disputedIndexes.length} / unread ${cmp.unreadIndexes.length} / extra ${cmp.extraRows.length}  $${cost.toFixed(2)}`);
+    recordSecondRead(entry, e.sourceUrl!);
+    console.log(` agree ${entry.agreedIndexes.length} / differ ${entry.disputedIndexes.length} / unread ${entry.unreadIndexes.length} / extra ${entry.extraRows.length}  $${entry.costUsd.toFixed(2)}`);
   }
   console.log(`\nModel spend this run: $${spend.usd.toFixed(2)} over ${spend.calls} calls.`);
-  const disputed = Object.values(log.filings).filter((f) => f.disputedIndexes.length || f.extraRows.length);
+  const disputed = Object.values(readSecondReadLog()?.filings ?? {}).filter((f) => f.disputedIndexes.length || f.extraRows.length);
   if (disputed.length && plan.length) {
     await notify({
       type: "model_disagreement",

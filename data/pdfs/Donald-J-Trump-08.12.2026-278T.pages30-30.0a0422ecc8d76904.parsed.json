@@ -1,0 +1,317 @@
+{
+  "key": "0a0422ecc8d76904",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 30,
+    "last": 30
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:27:17.323Z",
+  "transactions": [
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "SALESFORCE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MASTERCARD INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "STRYKER CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "META PLATFORMS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PALANTIR TECHNOLOGIES IN CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "S&P GLOBAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "IBM CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "SHERWIN-WILLIAMS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN TOWER CORP NEW REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "LULULEMON ATHLETICA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "COINBASE GLOBAL INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ZOETIS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KROGER CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROADRIDGE FINL SOLUTION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CONAGRA BRANDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "DELL TECHNOLOGIES INC CLASS C",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ZILLOW GROUP INC CLASS CLASS C",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "HP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CONSTELLATION ENERGY COR",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FLUTTER ENTMT PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEDTRONIC PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "COUPANG INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 2746,
+    "estimatedCostUsd": 0.0483
+  }
+}

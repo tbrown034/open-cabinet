@@ -24,6 +24,8 @@ import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
 import { comparedTuple } from "./row-verification";
 import { normalizedDescription } from "./reverify-diff";
+import { validateParsedRows } from "./filing-validation";
+import { promptHash, readParseCache, writeParseCache, type ParseCacheKeyInput } from "./parse-cache";
 import type { Transaction } from "./types";
 
 export const SECOND_READ_LOG_PATH = path.resolve("data/meta/second-read-log.json");
@@ -116,4 +118,74 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
     .filter(({ j }) => !usedSecond.has(j))
     .map(({ r }) => ({ description: r.description, type: r.type, date: r.date, amount: r.amount, lateFilingFlag: !!r.lateFilingFlag }));
   return { agreedIndexes, disputedIndexes, unreadIndexes, extraRows, differences };
+}
+
+/**
+ * Read one filing with the second model and compare it to the primary
+ * rows. Shared by the batch script and the ingest's publication gate.
+ * Reads the keyed cache first; a paid call goes through `read`, which the
+ * caller supplies so this module never imports the provider client.
+ */
+export async function secondReadFiling(input: {
+  slug: string;
+  pdfPath: string;
+  pdfSha256: string;
+  sourceUrl: string;
+  candidateSha256: string;
+  primary: Row[];
+  units: Array<{ path: string; chunk: { first: number; last: number } | null }>;
+  parserVersion: string;
+  systemPrompt: string;
+  extractionPrompt: string;
+  read: (unitPath: string) => Promise<{ transactions: unknown[]; tokenUsage: { inputTokens: number; outputTokens: number; estimatedCostUsd: number } }>;
+  onSpend?: (usd: number) => Promise<void>;
+  onProgress?: () => void;
+}): Promise<SecondReadFiling & { failed: string | null }> {
+  const second: Row[] = [];
+  let cost = 0;
+  let failed: string | null = null;
+  for (const unit of input.units) {
+    const keyInput: ParseCacheKeyInput = {
+      pdfSha256: input.pdfSha256, sourceUrl: input.sourceUrl, chunk: unit.chunk,
+      parserVersion: input.parserVersion, promptSha256: promptHash(input.systemPrompt, input.extractionPrompt), model: SECOND_READ_MODEL,
+    };
+    const cached = readParseCache(unit.path, keyInput);
+    if (cached) {
+      second.push(...(cached.transactions as Row[]));
+      continue;
+    }
+    const result = await input.read(unit.path);
+    cost += result.tokenUsage.estimatedCostUsd;
+    if (input.onSpend) await input.onSpend(result.tokenUsage.estimatedCostUsd);
+    // The second read is evidence, not a publication candidate: rows that
+    // fail the shape gate are kept and compared as they are, and the
+    // failure is noted. They can only ever create a disagreement.
+    const v = validateParsedRows(result.transactions);
+    const rows = (v.ok ? v.rows : result.transactions) as Row[];
+    if (!v.ok) failed = `second read failed the shape gate on ${path.basename(unit.path)}: ${v.errors.slice(0, 3).join("; ")}`;
+    writeParseCache(unit.path, keyInput, { transactions: rows, tokenUsage: result.tokenUsage });
+    second.push(...rows);
+    input.onProgress?.();
+  }
+  const cmp = compareSecondRead(input.primary, second);
+  return {
+    slug: input.slug, pdfFile: path.basename(input.pdfPath), pdfSha256: input.pdfSha256, candidateSha256: input.candidateSha256,
+    model: SECOND_READ_MODEL, rowsPrimary: input.primary.length, rowsSecond: second.length,
+    ...cmp,
+    ...(failed ? { differences: [failed, ...cmp.differences] } : {}),
+    costUsd: Math.round(cost * 10000) / 10000,
+    checkedAt: new Date().toISOString(),
+    failed,
+  };
+}
+
+/** Insert or replace one filing's verdict and write the log atomically. */
+export function recordSecondRead(entry: SecondReadFiling, sourceUrl: string, file = SECOND_READ_LOG_PATH): SecondReadLog {
+  const log = readSecondReadLog(file) ?? { version: 1 as const, model: SECOND_READ_MODEL, generatedAt: new Date().toISOString(), filings: {} };
+  const { failed: _f, ...clean } = entry as SecondReadFiling & { failed?: string | null };
+  void _f;
+  log.filings[sourceUrl] = clean;
+  const next = { ...log, generatedAt: new Date().toISOString() };
+  writeSecondReadLog(next, file);
+  return next;
 }

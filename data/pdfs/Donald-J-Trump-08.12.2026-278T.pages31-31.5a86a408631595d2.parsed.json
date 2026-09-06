@@ -1,0 +1,317 @@
+{
+  "key": "5a86a408631595d2",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 31,
+    "last": 31
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:27:40.558Z",
+  "transactions": [
+    {
+      "description": "MCCORMICK & CO INC CLASS N",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "TRANSDIGM GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "THE TRADE DESK INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CHIPOTLE MEXICAN GRILL I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CHARTER COMMUNICATIONS I CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "KIMBERLY CLARK CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "LUCID GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "COREWEAVE INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MARVELL TECHNOLOGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CREDO TECHNOLOGY GROUP F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "FOX CORP CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "OLIN CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOOZ ALLEN HAMILTON HLDG CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MARSH & MCLENNAN COS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "PARSONS CORP DEL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "FOX CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ASTERA LABS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "LOWES COS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WESTLAKE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "PEGASYSTEMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLACKSTONE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "THE CIGNA GROUP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "EQUIFAX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "MSA SAFETY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CBRE GROUP INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "NORTHROP GRUMMAN CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "HOULIHAN LOKEY INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "EXLSERVICE HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BENTLEY SYS INC CLASS CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "KYNDRYL HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CARVANA CO CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-24",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 1819,
+    "estimatedCostUsd": 0.0344
+  }
+}

@@ -44,6 +44,7 @@ import {
   type CrosscheckState,
 } from "./crosscheck-log";
 import { crossCheckByOcr, type OcrCheck } from "./ocr-lane";
+import { recordSecondRead, secondReadFiling, SECOND_READ_MODEL } from "./second-read";
 import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
 import { notify } from "./notify";
 import type { TargetFiling } from "./oge-filings";
@@ -467,75 +468,129 @@ export async function readFiling(
  *  Stops on: any disagreement; a text layer the parser cannot read.
  *  Does not stop on: a scan (no text layer). That is recorded as
  *  no_usable_text and depends on a person's visual check. */
+export type GateVerdict =
+  /** A program that never saw the model's output agreed row for row. */
+  | { verdict: "two_lane"; lane: "text" | "ocr" }
+  /** A second company's model agreed on every row; no program could read the page. */
+  | { verdict: "two_models"; agreed: number }
+  /** Held for a person. Nothing from the filing merges. */
+  | { verdict: "held"; reason: string };
+
+/** Thrown when a filing is held for a person. The ingest stops before merge. */
+export class FilingHeldError extends Error {
+  constructor(public readonly pdfFile: string, public readonly reason: string) {
+    super(`${pdfFile} held for a person: ${reason}; nothing from it is merged`);
+    this.name = "FilingHeldError";
+  }
+}
+
+/**
+ * The publication rule, in one place: a filing merges only when two
+ * independent reads agree on every row, or a person has decided. The
+ * first read is always the primary model. The second is, in order of
+ * strength, the text layer, the OCR lane, then a second company's vision
+ * model. Any row the second read disputes, or that no second read could
+ * reach, holds the whole filing, because the comparison is positional
+ * and a missing row shifts everything after it.
+ */
 export async function checkFiling(
   slug: string,
   officialName: string,
   filing: FilingForIngest,
   pdfPath: string,
   sha256: string,
-  rows: ParsedTransaction[]
-): Promise<void> {
+  rows: ParsedTransaction[],
+  options: {
+    /** Call the second company's model when no program could confirm the
+     * read. On for the ingest. Off for a report-only re-read, which
+     * records the lanes and leaves the paid tiebreaker to pnpm second-read. */
+    secondRead?: boolean;
+  } = {}
+): Promise<GateVerdict> {
+  const secondReadAllowed = options.secondRead ?? true;
   const check = crossCheckParsedFiling(pdfPath, rows);
   recordCrosscheck(slug, filing, pdfPath, sha256, rows, check);
-  if (check.status === "scan" || (check.status === "error" && /no rows were extracted/i.test(check.message))) {
-    // The text lane could not read the filing. The OCR lane reads the page
-    // images and compares the same way. Recorded; a disagreement opens a
-    // review item like a text disagreement does, but does not halt the
-    // ingest on its own: OCR misreads more often than a text layer, and a
-    // scan today publishes with no check at all. A person still reconciles.
-    const ocr = crossCheckByOcr(pdfPath, sha256, rows, {
-      log: (line) => { if (/page (?:\d*0|1)\//.test(line)) process.stdout.write("."); },
-    });
-    if (!ocr.ran) {
-      console.warn(`           OCR lane skipped: ${ocr.reason}`);
-    } else {
-      recordOcrCheck(filing, slug, check, ocr);
-      if (ocr.result.status === "ok") {
-        console.log(`           OCR cross-check agrees on ${ocr.result.rowCount} rows (${ocr.run.pages} pages)`);
-      } else if (ocr.result.status === "mismatch") {
-        console.warn(`           OCR cross-check disagrees (${ocr.result.problems.length} problems); review item opened, ingest continues`);
-        await openReviewItem({
-          kind: "lane_disagreement",
-          slug,
-          officialName,
-          filing: { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) },
-          problems: problemsFromCrosscheck(pdfPath, ocr.result.problems, rows),
-          holding: `nothing; OCR disagreement on ${path.basename(pdfPath)} is recorded and advisory. Reconcile by eye before committing.`,
-        });
-      } else {
-        console.warn(`           OCR lane could not compare: ${ocr.result.status === "error" ? ocr.result.message : ocr.result.status}`);
-      }
-    }
-  }
-  if (check.status === "mismatch") {
-    // A person decides. Write the item, with page and printed row where
-    // the text layer shows them, and send it before halting.
+  const filingRef = { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) };
+  const hold = async (reason: string, problems: string[]): Promise<never> => {
     await openReviewItem({
       kind: "lane_disagreement",
       slug,
       officialName,
-      filing: { url: filing.pdfUrl, pdfFile: path.basename(pdfPath), date: filing.docDate.slice(0, 10) },
-      problems: problemsFromCrosscheck(pdfPath, check.problems, rows),
+      filing: filingRef,
+      problems: problemsFromCrosscheck(pdfPath, problems, rows),
       holding: `every row of ${path.basename(pdfPath)}; nothing from it is published until this is decided`,
     });
-  }
+    throw new FilingHeldError(path.basename(pdfPath), reason);
+  };
+
   if (check.status === "ok") {
     console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
-  } else if (check.status === "scan") {
-    console.warn(
-      `           SCAN — no text layer to cross-check. Recorded as no_usable_text. Do NOT commit until the parse is visually reconciled against printed row numbers.`
-    );
-  } else if (check.status === "error") {
+    return { verdict: "two_lane", lane: "text" };
+  }
+  if (check.status === "mismatch") {
+    console.error(`  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`);
+    for (const p of check.problems) console.error(`    - ${p}`);
+    return hold("text layer disagrees with the model", check.problems);
+  }
+  if (check.status === "error" && !/no rows were extracted/i.test(check.message)) {
+    // A tool failure or a form the checker does not read. Not a scan;
+    // nothing to fall back to. Stop and say so.
     throw new Error(
       `text-layer cross-check could not run on ${path.basename(pdfPath)} (${check.message}) — ingest halted before merge`
     );
-  } else {
-    console.error(`  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`);
-    for (const p of check.problems) console.error(`    - ${p}`);
-    throw new Error(
-      `text-layer cross-check failed for ${path.basename(pdfPath)} — ingest halted before merge`
-    );
   }
+
+  // The text lane could not read the filing. The OCR lane reads the page
+  // images and compares the same way.
+  let ocrProblems: string[] = [];
+  const ocr = crossCheckByOcr(pdfPath, sha256, rows, {
+    log: (line) => { if (/page (?:\d*0|1)\//.test(line)) process.stdout.write("."); },
+  });
+  if (!ocr.ran) {
+    console.warn(`           OCR lane skipped: ${ocr.reason}`);
+  } else {
+    recordOcrCheck(filing, slug, check, ocr);
+    if (ocr.result.status === "ok") {
+      console.log(`           OCR cross-check agrees on ${ocr.result.rowCount} rows (${ocr.run.pages} pages)`);
+      return { verdict: "two_lane", lane: "ocr" };
+    }
+    if (ocr.result.status === "mismatch") {
+      ocrProblems = ocr.result.problems;
+      console.warn(`           OCR cross-check disagrees (${ocr.result.problems.length} problems); asking a second model`);
+    } else {
+      console.warn(`           OCR lane could not compare: ${ocr.result.status === "error" ? ocr.result.message : ocr.result.status}`);
+    }
+  }
+
+  // No program could confirm the read. A second company's model reads the
+  // same pages; it must agree on every row, with none left over.
+  if (!secondReadAllowed) {
+    console.warn(`           no program confirmed ${path.basename(pdfPath)}; second read left to pnpm second-read`);
+    return { verdict: "held", reason: "no program could confirm the read; second read not run" };
+  }
+  const { units } = await splitPdfIfNeeded(pdfPath);
+  const second = await secondReadFiling({
+    slug, pdfPath, pdfSha256: sha256, sourceUrl: filing.pdfUrl, candidateSha256: hashRows(rows),
+    primary: rows, units, parserVersion: PARSER_VERSION, systemPrompt: SYSTEM_PROMPT, extractionPrompt: EXTRACTION_PROMPT,
+    read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL),
+    onSpend: recordSpend,
+    onProgress: () => process.stdout.write("."),
+  });
+  recordSecondRead(second, filing.pdfUrl);
+  const allAgree = second.agreedIndexes.length === rows.length && second.extraRows.length === 0 && !second.failed;
+  if (allAgree) {
+    console.log(`           second model (${SECOND_READ_MODEL}) agrees on all ${rows.length} rows ($${second.costUsd.toFixed(2)})`);
+    return { verdict: "two_models", agreed: rows.length };
+  }
+  const problems = [
+    ...(second.failed ? [second.failed] : []),
+    `second model: ${second.agreedIndexes.length} of ${rows.length} rows agree, ${second.disputedIndexes.length} differ, ${second.unreadIndexes.length} unread, ${second.extraRows.length} extra`,
+    ...second.differences,
+    ...second.extraRows.slice(0, 20).map((r) => `second model also read: ${r.type} ${r.date} ${r.amount ?? "unknown"} "${r.description}"`),
+    ...ocrProblems.slice(0, 10),
+  ];
+  console.warn(`           second model disagrees; holding ${path.basename(pdfPath)} for a person`);
+  return hold("no two independent reads agree on every row", problems);
 }
 
 /** Overlay the OCR lane's verdict on the entry the text lane just wrote. */
