@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "grok-4.6",
-  "generatedAt": "2026-09-06T03:06:40.031Z",
+  "generatedAt": "2026-09-06T03:07:24.997Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
       "slug": "kennedy-robert-f",
@@ -188,6 +188,70 @@
       "pagesAudited": 3,
       "costUsd": 0.0152,
       "checkedAt": "2026-09-06T03:06:40.031Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCD5083EB618F35085258DB200344824/$FILE/Frank-J-Bisignano-02.10.2026-278T.pdf": {
+      "slug": "bisignano-frank-j",
+      "pdfFile": "Frank-J-Bisignano-02.10.2026-278T.pdf",
+      "pdfSha256": "828efbc456097acb8f9536bc66431efb4392d177944eeeee40ccb968c1df6b77",
+      "candidateSha256": "07aaab15a8656070cfcde195868cc25a2a2b56b5c4c2e39dd55011df5b37e61e",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 14,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0169,
+      "checkedAt": "2026-09-06T03:07:01.070Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA16C26F767256C285258D5F00343F7B/$FILE/Frank-J-Bisignano-09.09.2025-278T.pdf": {
+      "slug": "bisignano-frank-j",
+      "pdfFile": "Frank-J-Bisignano-09.09.2025-278T.pdf",
+      "pdfSha256": "a6b5c154fdc16b15c5cbc8dfa419cd4ad5e9dbbaa038528c9f0179540522a574",
+      "candidateSha256": "a2ea78c2c8fbb57c5bdea4ca78d5366e154709ddf3f1c4388b571d56a0661ca6",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 14,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 4,
+      "costUsd": 0.0213,
+      "checkedAt": "2026-09-06T03:07:24.997Z"
     }
   }
 }

@@ -28,6 +28,8 @@ import {
   isTerminationForm,
   promptHash,
   readParseCache,
+  findParseRecord,
+  pdfPageCount,
   sha256File,
   writeChunkManifest,
   writeParseCache,
@@ -45,6 +47,7 @@ import {
 } from "./crosscheck-log";
 import { crossCheckByOcr, type OcrCheck } from "./ocr-lane";
 import { recordSecondRead, secondReadFiling, SECOND_READ_MODEL } from "./second-read";
+import { auditPages, foldAudit, recordGrokAudit, GROK_AUDIT_MODEL, GROK_AUDIT_PROMPT_VERSION, type Row as AuditRow } from "./grok-audit";
 import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
 import { notify } from "./notify";
 import type { TargetFiling } from "./oge-filings";
@@ -550,9 +553,55 @@ export async function checkFiling(
     appendCrosscheckProblems(filing, slug, farBefore.slice(0, 20).map((r) => `date flag: ${r.date} is more than 400 days before the posting date ${posted}: "${r.description}"`));
   }
 
+  // The third gate, after a program or a second model has agreed: a third
+  // company's model looks at the page images beside these rows. Any row it
+  // disputes or cannot find holds the filing.
+  const audited = async (verdict: GateVerdict): Promise<GateVerdict> => {
+    if (!secondReadAllowed) return verdict; // report-only runs leave the audit to pnpm grok-audit
+    const record = findParseRecord(pdfPath, {
+      pdfSha256: sha256, sourceUrl: filing.pdfUrl, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL,
+    });
+    const pages = pdfPageCount(pdfPath) ?? 1;
+    const units = record?.units
+      ? record.units.map((u) => ({ first: u.first, last: u.last, rows: u.transactions as AuditRow[] }))
+      : [{ first: 1, last: pages, rows: rows as AuditRow[] }];
+    const chunks: Array<{ offset: number; rows: number; result: Awaited<ReturnType<typeof auditPages>> }> = [];
+    let offset = 0;
+    let cost = 0;
+    for (const u of units) {
+      const result = await auditPages({ pdfPath, pdfSha256: sha256, first: u.first, last: u.last, rows: u.rows });
+      if (!result.cached) {
+        cost += result.usage.estimatedCostUsd;
+        await recordSpend(result.usage.estimatedCostUsd);
+      }
+      chunks.push({ offset, rows: u.rows.length, result });
+      offset += u.rows.length;
+    }
+    const folded = foldAudit(chunks);
+    recordGrokAudit(
+      {
+        slug, pdfFile: path.basename(pdfPath), pdfSha256: sha256, candidateSha256: hashRows(rows), model: GROK_AUDIT_MODEL,
+        promptVersion: GROK_AUDIT_PROMPT_VERSION, rows: rows.length, ...folded, pagesAudited: pages,
+        costUsd: Math.round(cost * 10000) / 10000, checkedAt: new Date().toISOString(),
+      },
+      filing.pdfUrl
+    );
+    const clean = folded.disputedIndexes.length === 0 && folded.notFoundIndexes.length === 0 && folded.missing.length === 0;
+    if (clean) {
+      console.log(`           page audit (${GROK_AUDIT_MODEL}) confirms all ${rows.length} rows ($${cost.toFixed(2)})`);
+      return verdict;
+    }
+    console.warn(`           page audit disputes ${folded.disputedIndexes.length}, cannot find ${folded.notFoundIndexes.length}, sees ${folded.missing.length} rows the read lacks; holding`);
+    return hold("the page audit disagrees", [
+      ...folded.differences,
+      ...folded.notFoundIndexes.slice(0, 20).map((i) => `row ${i + 1}: the page audit could not find this row on the pages`),
+      ...folded.missing.slice(0, 20).map((m) => `on the page but not in the read: ${m.type} ${m.date} ${m.amount} "${m.description}"`),
+    ]);
+  };
+
   if (check.status === "ok") {
     console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
-    return { verdict: "two_lane", lane: "text" };
+    return audited({ verdict: "two_lane", lane: "text" });
   }
   if (check.status === "mismatch") {
     console.error(`  [${slug}] TEXT-LAYER MISMATCH in ${path.basename(pdfPath)}:`);
@@ -579,7 +628,7 @@ export async function checkFiling(
     recordOcrCheck(filing, slug, check, ocr);
     if (ocr.result.status === "ok") {
       console.log(`           OCR cross-check agrees on ${ocr.result.rowCount} rows (${ocr.run.pages} pages)`);
-      return { verdict: "two_lane", lane: "ocr" };
+      return audited({ verdict: "two_lane", lane: "ocr" });
     }
     if (ocr.result.status === "mismatch") {
       ocrProblems = ocr.result.problems;
@@ -607,7 +656,7 @@ export async function checkFiling(
   const allAgree = second.agreedIndexes.length === rows.length && second.extraRows.length === 0 && !second.failed;
   if (allAgree) {
     console.log(`           second model (${SECOND_READ_MODEL}) agrees on all ${rows.length} rows ($${second.costUsd.toFixed(2)})`);
-    return { verdict: "two_models", agreed: rows.length };
+    return audited({ verdict: "two_models", agreed: rows.length });
   }
   const problems = [
     ...(second.failed ? [second.failed] : []),
