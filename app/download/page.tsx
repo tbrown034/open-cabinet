@@ -67,6 +67,13 @@ export default async function DownloadPage() {
           U.S. Office of Government Ethics. Free to use for journalism,
           research and analysis.
         </p>
+        <p className="text-neutral-500 max-w-xl leading-relaxed mt-3 text-sm">
+          The downloads include every official ever tracked, including
+          holdovers from the prior administration who no longer appear in the
+          current roster. That is why these counts run higher than the
+          homepage. Each row carries a verification column; see Methodology
+          for what each value means.
+        </p>
       </header>
 
       <UnderReviewNote count={fullDataset.underReviewCount} />
