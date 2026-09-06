@@ -36,7 +36,7 @@ describe("row verification display", () => {
     const summary: RowVerificationFile["summary"] = {
       rows: 20,
       byScore: { "3": 5, "2": 3, "1": 10, "0": 2 },
-      byState: { checked: 4, human_verified: 1, deterministic_agree: 2, two_models_agree: 1, audit_only: 0, single_read: 10, disputed: 2 },
+      byState: { checked: 4, human_verified: 1, deterministic_agree: 2, two_models_agree: 1, audit_only: 0, single_read: 10, implausible: 0, disputed: 2 },
     };
     const html = renderToStaticMarkup(createElement(VerificationSummary, { summary }));
     expect(html).toContain("5 of 20 rows (25 percent)");
@@ -53,7 +53,7 @@ describe("row verification display", () => {
       .toContain("Row verification counts are not yet available");
     const summary: RowVerificationFile["summary"] = {
       rows: 0, byScore: { "3": 0, "2": 0, "1": 0, "0": 0 },
-      byState: { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, disputed: 0 },
+      byState: { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, implausible: 0, disputed: 0 },
     };
     expect(renderToStaticMarkup(createElement(VerificationSummary, { summary })))
       .toContain("0 of 0 rows (0 percent)");
@@ -62,7 +62,7 @@ describe("row verification display", () => {
   it("does not crash or claim audit coverage from a pre-audit summary", () => {
     const summary = {
       rows: 20, byScore: { "3": 5, "2": 0, "1": 13, "0": 2 },
-      byState: { deterministic_agree: 5, human_verified: 0, two_models_agree: 0, single_read: 13, disputed: 2 },
+      byState: { deterministic_agree: 5, human_verified: 0, two_models_agree: 0, single_read: 13, implausible: 0, disputed: 2 },
     } as RowVerificationFile["summary"];
     const html = renderToStaticMarkup(createElement(VerificationSummary, { summary }));
     expect(html).toContain("Row verification counts need rebuilding for the current checks");

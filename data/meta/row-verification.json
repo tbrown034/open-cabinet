@@ -1,24 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T22:54:57.554Z",
+  "generatedAt": "2026-09-06T23:00:38.155Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
-      "checked": 11317,
+      "checked": 11269,
       "human_verified": 90,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 14,
+      "implausible": 48,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
       "1": 14,
-      "2": 93,
-      "3": 11407
+      "2": 141,
+      "3": 11359
     }
   },
   "rows": {
@@ -2348,10 +2349,10 @@
       "id": "4d0c7a30fb6b58521c9c6d3a",
       "slug": "blanche-todd",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-05-31); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "b0cc6baeffe1e34de47f4e8e": {
       "id": "b0cc6baeffe1e34de47f4e8e",
@@ -7856,19 +7857,19 @@
       "id": "e8995299b0d887bb057b6d30",
       "slug": "isaacman-jared",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D566015C161DDA885258DDC002DB5D1/$FILE/Jared-Isaacman-03.16.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2026-02-07); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "ab39fca42f17445a33232e01": {
       "id": "ab39fca42f17445a33232e01",
       "slug": "isaacman-jared",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D566015C161DDA885258DDC002DB5D1/$FILE/Jared-Isaacman-03.16.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2026-02-07); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "ed2ee3514b2316a49b8e36f3": {
       "id": "ed2ee3514b2316a49b8e36f3",
@@ -9035,10 +9036,10 @@
       "id": "5e53fbbe7a1859ee239abdf5",
       "slug": "kennedy-robert-f",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-01-04); markets are closed. Before this check: A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
     "fd9027437fe01732ea753175": {
       "id": "fd9027437fe01732ea753175",
@@ -9071,10 +9072,10 @@
       "id": "ce2359efc7b79ee4719ac677",
       "slug": "kennedy-robert-f",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-01-04); markets are closed. Before this check: A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
     "f8c073af47ebba41afc79227": {
       "id": "f8c073af47ebba41afc79227",
@@ -10385,82 +10386,82 @@
       "id": "a33b215898709975ab6386b2",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "da8cae35683bed28abf2b05d": {
       "id": "da8cae35683bed28abf2b05d",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "27745b9e2e36cd4b6d9e689b": {
       "id": "27745b9e2e36cd4b6d9e689b",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "48d1c7f898c3fdacf9997d7a": {
       "id": "48d1c7f898c3fdacf9997d7a",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "9c7ee4af5be79cb6051b0359": {
       "id": "9c7ee4af5be79cb6051b0359",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "2cf40cef9d6e5bd9b7542368": {
       "id": "2cf40cef9d6e5bd9b7542368",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "d2cf0cfb2ce0ce5cd3534656": {
       "id": "d2cf0cfb2ce0ce5cd3534656",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "97733f38de9c8a6fe075ca76": {
       "id": "97733f38de9c8a6fe075ca76",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "76ac6446d8bd2a46c4dd61f1": {
       "id": "76ac6446d8bd2a46c4dd61f1",
       "slug": "kupor-scott-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FEB1C36F302B4E7385258D7100345286/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-07-19); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "1f63f90fc13d45e23538e756": {
       "id": "1f63f90fc13d45e23538e756",
@@ -19268,46 +19269,46 @@
       "id": "8705c28dd237f39113a88e8e",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "2cc7ac7b8f40859c6ebd2d76": {
       "id": "2cc7ac7b8f40859c6ebd2d76",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "aa70f3280746e30205dc1a08": {
       "id": "aa70f3280746e30205dc1a08",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "1060e025567074fd3017fd61": {
       "id": "1060e025567074fd3017fd61",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-03-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "944c788ccfd44015dd585d96": {
       "id": "944c788ccfd44015dd585d96",
       "slug": "sara-bailey",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7F5276881004F82A85258E13002D93A3/$FILE/Sara-Bailey-04.01.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-02-01); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "7f0a10c469c86df234d6a130": {
       "id": "7f0a10c469c86df234d6a130",
@@ -65366,10 +65367,10 @@
       "id": "de26d16749521582bafed09f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "ocr",
-      "note": "OCR of printed row 170 agrees; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-03-15); markets are closed. Before this check: OCR of printed row 170 agrees; the page audit confirmed it"
     },
     "f9012fc4588463fa406dded1": {
       "id": "f9012fc4588463fa406dded1",
@@ -89342,10 +89343,10 @@
       "id": "89e0fab4237ad032237adf63",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "ocr",
-      "note": "OCR of printed row 68 agrees; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Saturday (2025-11-08); markets are closed. Before this check: OCR of printed row 68 agrees; the page audit confirmed it"
     },
     "3f17213946d6037c3603eb71": {
       "id": "3f17213946d6037c3603eb71",
@@ -90647,10 +90648,10 @@
       "id": "9b3e7cff978c9270bfcb48e0",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/18353894FE440B3685258D430031A337/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T%20(2).pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the bond matures in 2021, before the 2025 trade. Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "336e85e940759599ee8dc657": {
       "id": "336e85e940759599ee8dc657",
@@ -92843,46 +92844,46 @@
       "id": "ee90efd7e0157fe4ff986373",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "9de68b4a62950563d2c1fe20": {
       "id": "9de68b4a62950563d2c1fe20",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 8 differently; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR read printed row 8 differently; the page audit confirmed it"
     },
     "13422d86d7d6caa27f67b04f": {
       "id": "13422d86d7d6caa27f67b04f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "d3af944b3850d89ebc60fc92": {
       "id": "d3af944b3850d89ebc60fc92",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "450e443700e206d54bba36f9": {
       "id": "450e443700e206d54bba36f9",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "5804eebf36ef843593838285": {
       "id": "5804eebf36ef843593838285",
@@ -92897,10 +92898,10 @@
       "id": "76abeb14cc769121817cb0b2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "a20186bed656dab5f4f0bdd7": {
       "id": "a20186bed656dab5f4f0bdd7",
@@ -92915,10 +92916,10 @@
       "id": "060bf65cf872d5abda7856d0",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "28cb351d5631fd2611193a24": {
       "id": "28cb351d5631fd2611193a24",
@@ -92933,10 +92934,10 @@
       "id": "55c5d8e800ffe8fe7871f23d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "b544a2a6022db6bea6c57345": {
       "id": "b544a2a6022db6bea6c57345",
@@ -92951,19 +92952,19 @@
       "id": "efd53ca002ed4bd3158ceec0",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "7ed4ea273a9aca29b083a461": {
       "id": "7ed4ea273a9aca29b083a461",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "f96b7b7ef7214e41b31bea14": {
       "id": "f96b7b7ef7214e41b31bea14",
@@ -92978,37 +92979,37 @@
       "id": "cf78cd85197a62035738ed89",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "914b38279769b9e020f18c63": {
       "id": "914b38279769b9e020f18c63",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "ad03ee56460dfce4535fa438": {
       "id": "ad03ee56460dfce4535fa438",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "75640a19a8192599bf97fe30": {
       "id": "75640a19a8192599bf97fe30",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "a9f9b7e89deed7bb2fd3e656": {
       "id": "a9f9b7e89deed7bb2fd3e656",
@@ -93023,10 +93024,10 @@
       "id": "67e3e9b61b61a902e13dbe9e",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "8d25a6f0ec141927c8ab707e": {
       "id": "8d25a6f0ec141927c8ab707e",
@@ -93041,19 +93042,19 @@
       "id": "5e916fab7b19e8c4ce9552a5",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "45895a056e45acf131057c47": {
       "id": "45895a056e45acf131057c47",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "42135164d8498751f8a000af": {
       "id": "42135164d8498751f8a000af",
@@ -93068,10 +93069,10 @@
       "id": "12667731c80647d2826d8a17",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "2d32ea106e1a1a1c5cae9906": {
       "id": "2d32ea106e1a1a1c5cae9906",
@@ -93086,19 +93087,19 @@
       "id": "7b70d89e2521cf979002bdf6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "888834f3612f6f1290da64a0": {
       "id": "888834f3612f6f1290da64a0",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "37f4ae77a14c9a43136d9642": {
       "id": "37f4ae77a14c9a43136d9642",
@@ -93113,28 +93114,28 @@
       "id": "1be1a96584285dbc0e764a4a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "c524413047294a2176f04dee": {
       "id": "c524413047294a2176f04dee",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "7f8cfe89964f9566551366a4": {
       "id": "7f8cfe89964f9566551366a4",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "3c3a70a3d85055a3c2876ab6": {
       "id": "3c3a70a3d85055a3c2876ab6",
@@ -93338,10 +93339,10 @@
       "id": "23cd32646e6dcfae8ded8f99",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR read printed row 2 differently; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR read printed row 2 differently; the page audit confirmed it"
     },
     "e4e53ce8537f58756e2f3783": {
       "id": "e4e53ce8537f58756e2f3783",
@@ -93905,10 +93906,10 @@
       "id": "acc1db46b0aeff0bdfdcc7b6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
+      "note": "Needs a person: the name reads \"Duo\" before a month; the filing prints \"Due\". Before this check: A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "c71b0706b15b80b732ac6165": {
       "id": "c71b0706b15b80b732ac6165",
@@ -100511,10 +100512,10 @@
       "id": "55d85b55f295c77b94570538",
       "slug": "warsh-kevin",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0933B220C51FFFB485258E52002DD2D9/$FILE/Kevin-Warsh-06.25.2026-278T.pdf",
-      "score": 3,
-      "state": "checked",
+      "score": 2,
+      "state": "implausible",
       "lane": "text",
-      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
+      "note": "Needs a person: the trade is dated a Sunday (2026-05-31); markets are closed. Before this check: Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "0ba29a7455eb547cfce8e0e9": {
       "id": "0ba29a7455eb547cfce8e0e9",

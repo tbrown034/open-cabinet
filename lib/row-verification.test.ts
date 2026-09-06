@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { CrosscheckEntry } from "./crosscheck-log";
 import type { Transaction } from "./types";
-import { deriveRowVerification, locateInParseRecord, makeRecordId, printedRowForIndex, recordIdsFor } from "./row-verification";
+import { applyImplausible, deriveRowVerification, implausibleValues, locateInParseRecord, makeRecordId, printedRowForIndex, recordIdsFor } from "./row-verification";
 import { compareSecondRead, describePrimaryIndex } from "./second-read";
 
 const URL = "https://example.gov/f.pdf";
@@ -267,5 +267,38 @@ describe("describePrimaryIndex", () => {
     const out = compareSecondRead([a], [{ ...a, date: "2026-01-02" }], (i) => describePrimaryIndex(i, [{ first: 2, last: 2, transactions: [1] }]));
     expect(out.differences[0]).toMatch(/^page 2, position 1 of the parse record: /);
     expect(out.differences[0]).not.toMatch(/^row /);
+  });
+});
+
+describe("implausible values", () => {
+  it("names each value that cannot be right, and nothing else", () => {
+    expect(implausibleValues({ description: "MONROEVILLE PA FIN AUTH UPMC REV B/E 5.00 % Duo Feb 15, 2026", date: "2025-07-22", ticker: null })).toEqual(['the name reads "Duo" before a month; the filing prints "Due"']);
+    // 2026-02-28 is a Saturday.
+    expect(implausibleValues({ description: "SPS COMM INC", date: "2026-02-28", ticker: null })).toEqual(["the trade is dated a Saturday (2026-02-28); markets are closed"]);
+    expect(implausibleValues({ description: "iShares Bitcoin Trust (IBIT)", date: "2026-02-28", ticker: "IBIT" })).toEqual([]);
+    expect(implausibleValues({ description: "ALLEGHENY CNTY PA 5.00 % Due Aug 1, 2024", date: "2025-03-03", ticker: null })).toEqual(["the bond matures in 2024, before the 2025 trade"]);
+    expect(implausibleValues({ description: "ILLINOIS ST 5% DUE ON 05/01/24", date: "2025-03-03", ticker: null })).toEqual(["the bond matures in 2024, before the 2025 trade"]);
+    expect(implausibleValues({ description: "ALLEGHENY CNTY PA 5.00 % Due Aug 1, 2025", date: "2025-03-03", ticker: null })).toEqual([]);
+    expect(implausibleValues({ description: "NIKE, Inc. (NKE)", date: "2225-04-04", ticker: "NKE" }, "2025-05-09")).toEqual(["the trade is dated 2225-04-04, after the filing was posted on 2025-05-09"]);
+    expect(implausibleValues({ description: "Apple Inc. (AAPL)", date: "2026-06-12", ticker: "AAPL" }, "2026-06-20")).toEqual([]);
+    expect(implausibleValues({ description: "Apple Inc. (AAPL)", date: null as unknown as string, ticker: "AAPL" })).toEqual([]);
+  });
+
+  it("caps an agreed row at 2 with the reason, leaves a decided row and a disputed score alone", () => {
+    const rows = [tx({ description: "A", date: "2026-02-28" }), tx({ description: "B", date: "2026-02-28" }), tx({ description: "C" })];
+    const ids = recordIdsFor(rows);
+    const out = deriveRowVerification({
+      slug: "x",
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0, 1, 2]), disputed: new Set(), notFound: new Set() }]]),
+      decisionsById: new Map([[ids[1], { recordId: ids[1], slug: "x", decision: "confirmed", evidence: "page 1 row 2", decidedBy: "trevor", decidedAt: "2026-09-06T00:00:00Z" }]]),
+    });
+    expect(out.map((v) => [v.score, v.state])).toEqual([[2, "implausible"], [3, "human_verified"], [3, "checked"]]);
+    expect(out[0].note).toMatch(/^Needs a person: the trade is dated a Saturday/);
+    const disputed = applyImplausible({ id: "i", slug: "x", sourceUrl: URL, score: 0, state: "disputed", lane: "audit", note: "x" }, ["r"]);
+    expect(disputed.score).toBe(0);
+    expect(disputed.state).toBe("disputed");
   });
 });

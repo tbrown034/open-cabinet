@@ -52,6 +52,7 @@ export type VerificationState =
   | "two_models_agree"
   | "audit_only"
   | "single_read"
+  | "implausible"
   | "disputed";
 
 export type VerificationLane = "text" | "ocr" | "model2" | "audit" | "human" | null;
@@ -100,6 +101,7 @@ export const SCORE_FOR_STATE: Record<VerificationState, 0 | 1 | 2 | 3> = {
   two_models_agree: 2,
   audit_only: 2,
   single_read: 1,
+  implausible: 2,
   disputed: 0,
 };
 
@@ -111,6 +113,7 @@ export const SHORT_LABEL: Record<VerificationState, string> = {
   two_models_agree: "Two models agree, audit pending",
   audit_only: "Audit agrees, program pending",
   single_read: "Not yet checked",
+  implausible: "Needs a person: value cannot be right",
   disputed: "Under review",
 };
 
@@ -121,6 +124,7 @@ export const STATE_LABEL: Record<VerificationState, string> = {
   two_models_agree: "Two models read the same values; no program could read the page; the page audit has not run yet",
   audit_only: "The page audit confirmed this row; no independent program or second model has read it yet",
   single_read: "Not yet independently checked",
+  implausible: "The readers agree, but a value cannot be right as read (a weekend trade date, a maturity before the trade, a date after the filing, or a misread word); a person decides",
   disputed: "Under review: a check disagreed with this row",
 };
 
@@ -174,6 +178,8 @@ export interface DeriveInput {
   /** Audit lane verdicts per filing, by parsed index. Absent until it runs. */
   auditByUrl?: Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>;
   decisionsById?: Map<string, ReviewDecision>;
+  /** Posting date of each source filing, by URL, for the after-the-filing check. */
+  filingDateByUrl?: Map<string, string>;
 }
 
 /**
@@ -266,6 +272,56 @@ export function applyAudit(
   return v;
 }
 
+const MONTHS = "(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*";
+const CRYPTO = /\b(?:bitcoin|ethereum|ether|crypto|solana|polkadot|cardano|litecoin|dogecoin|xrp|ripple|btc|eth|sol|ibit|fbtc|gbtc|ethe|etha|bitb|arkb|hodl|brrr)\b/i;
+
+/**
+ * Values no reader can be right about. When every lane agrees on a value
+ * that cannot exist, agreement proves only that they all read the same
+ * ink. Deterministic, never corrects anything, only names the reason so
+ * a person looks. (Trevor, Sep 6.)
+ *
+ * - "Duo" before a month: the filing prints "Due"; the readers copied a
+ *   misprint or misread it.
+ * - A stock or bond trade dated on a Saturday or Sunday: markets are
+ *   closed. Crypto trades every day, so those rows are exempt.
+ * - A bond maturity year earlier than the trade year: nobody buys or
+ *   sells a bond after it has matured.
+ * - A trade dated after the filing was posted.
+ */
+export function implausibleValues(tx: Pick<Transaction, "description" | "date" | "ticker">, filingDate?: string | null): string[] {
+  const out: string[] = [];
+  const d = tx.description ?? "";
+  if (new RegExp(`\\bDuo\\s+${MONTHS}\\b`, "i").test(d)) out.push('the name reads "Duo" before a month; the filing prints "Due"');
+  const date = tx.date && /^\d{4}-\d{2}-\d{2}$/.test(tx.date) ? tx.date : null;
+  if (date) {
+    const year = Number(date.slice(0, 4));
+    const dow = new Date(`${date}T12:00:00Z`).getUTCDay();
+    if ((dow === 0 || dow === 6) && !CRYPTO.test(d) && !CRYPTO.test(tx.ticker ?? "")) {
+      out.push(`the trade is dated a ${dow === 0 ? "Sunday" : "Saturday"} (${date}); markets are closed`);
+    }
+    const m = d.match(new RegExp(`\\bDue\\s+${MONTHS}\\s+\\d{1,2},?\\s*(\\d{4})\\b`, "i")) ?? d.match(/\bDUE\s+(?:ON\s+)?\d{1,2}\/\d{1,2}\/(\d{2,4})\b/i);
+    if (m) {
+      const raw = m[1];
+      const maturity = raw.length === 2 ? 2000 + Number(raw) : Number(raw);
+      if (maturity < year) out.push(`the bond matures in ${maturity}, before the ${year} trade`);
+    }
+    if (filingDate && /^\d{4}-\d{2}-\d{2}$/.test(filingDate) && date > filingDate) {
+      out.push(`the trade is dated ${date}, after the filing was posted on ${filingDate}`);
+    }
+  }
+  return out;
+}
+
+/** Cap a row below the top score when a value cannot be right. A person
+ * who decided the row has already looked, so decided rows are left alone. */
+export function applyImplausible(v: RowVerification, reasons: string[]): RowVerification {
+  if (reasons.length === 0 || v.state === "human_verified") return v;
+  const why = `Needs a person: ${reasons.join("; ")}`;
+  if (v.score === 0) return { ...v, note: `${v.note}. ${why}` };
+  return { ...v, score: 2, state: "implausible", note: `${why}. Before this check: ${v.note}` };
+}
+
 export function deriveRowVerification(input: DeriveInput): RowVerification[] {
   const ids = recordIdsFor(input.transactions);
   const out: RowVerification[] = [];
@@ -281,8 +337,9 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
     const id = ids[i];
     const decision = input.decisionsById?.get(id);
     const base = { id, slug: input.slug, sourceUrl: tx.sourceUrl ?? null };
+    const reasons = implausibleValues(tx, tx.sourceUrl ? input.filingDateByUrl?.get(tx.sourceUrl) : null);
     const emit = (v: RowVerification, parsedIndex: number) => {
-      out.push(applyAudit(v, tx.sourceUrl ? input.auditByUrl?.get(tx.sourceUrl) : undefined, parsedIndex));
+      out.push(applyImplausible(applyAudit(v, tx.sourceUrl ? input.auditByUrl?.get(tx.sourceUrl) : undefined, parsedIndex), reasons));
     };
     // Every row of a filing consumes one slot of its located positions,
     // decided rows included; otherwise a human decision on one row would
@@ -295,7 +352,7 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
       return;
     }
     if (!tx.sourceUrl) {
-      out.push({ ...base, score: 1, state: "single_read", lane: null, note: "Not attributed to a specific filing; nothing has compared it" });
+      out.push(applyImplausible({ ...base, score: 1, state: "single_read", lane: null, note: "Not attributed to a specific filing; nothing has compared it" }, reasons));
       return;
     }
     const entry = input.entriesByUrl.get(tx.sourceUrl);

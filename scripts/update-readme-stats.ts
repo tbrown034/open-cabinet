@@ -32,7 +32,7 @@ const docsDir = path.join(root, "data", "source-docs");
 const docs = readdirSync(docsDir).filter((f) => f.endsWith(".json")).reduce((n, f) => n + JSON.parse(readFileSync(path.join(docsDir, f), "utf-8")).documents.length, 0);
 const verification = readRowVerification();
 if (!verification) throw new Error("run pnpm row-verification first");
-const order: VerificationState[] = ["checked", "human_verified", "deterministic_agree", "two_models_agree", "audit_only", "single_read", "disputed"];
+const order: VerificationState[] = ["checked", "human_verified", "deterministic_agree", "two_models_agree", "audit_only", "single_read", "implausible", "disputed"];
 const stateLine = `Rows by verification state: ${order.map((k) => `${fmt(verification.summary.byState[k])} ${k}`).join("; ")}.`;
 
 const rows: Record<string, string> = {

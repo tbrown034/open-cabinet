@@ -93,12 +93,13 @@ function main() {
       model2ByUrl,
       auditByUrl,
       decisionsById: decisions,
+      filingDateByUrl: new Map((official.sourceFilings ?? []).flatMap((f) => (f.url ? [[f.url, f.date] as [string, string]] : []))),
     })) {
       rows[v.id] = v;
     }
   }
 
-  const byState = { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, disputed: 0 } as Record<VerificationState, number>;
+  const byState = { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, implausible: 0, disputed: 0 } as Record<VerificationState, number>;
   const byScore = { "0": 0, "1": 0, "2": 0, "3": 0 };
   for (const v of Object.values(rows)) {
     byState[v.state] += 1;
