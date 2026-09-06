@@ -307,9 +307,9 @@ export default async function MethodologyPage() {
               sale, with a note, on a person&rsquo;s reading of the page. A
               May 2025 filing for HHS Secretary Robert F. Kennedy Jr. prints
               a trade date in the year 2225; the row shows 2025, the year
-              the filing was posted and the year on the row above it, with
-              a note saying what the page prints. Nothing is silently
-              corrected.
+              the filing was posted and the year on the row above it. That
+              correction, like every other, is recorded with the page and
+              printed row in the review log in the public source repository.
             </li>
             <li>
               <strong className="text-neutral-900">
