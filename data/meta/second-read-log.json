@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "model": "gpt-6-astra",
+  "generatedAt": "2026-09-06T02:33:20.912Z",
+  "filings": {
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
+      "slug": "kennedy-robert-f",
+      "pdfFile": "Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
+      "pdfSha256": "08033bab01420d02939eaab8644e24825b40a7dd1081fc48dc023cf6bedca486",
+      "candidateSha256": "00957c5c04624bb9f1f3ad122f5c55d8b96b196a1e74ecf70ed24cc4a0c765a8",
+      "model": "gpt-6-astra",
+      "rowsPrimary": 9,
+      "rowsSecond": 9,
+      "agreedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "disputedIndexes": [
+        8
+      ],
+      "unreadIndexes": [],
+      "extraRows": [],
+      "differences": [
+        "second read failed the shape gate on Robert-F-Kennedy-Jr-05.09.2025-278T.pdf: row 9: date in the future: \"2225-04-04\"",
+        "row 9: second model [Sale|2225-04-04|$1,001-$15,000|ontime] vs primary [Sale|2025-04-04|$1,001-$15,000|ontime] for \"NIKE, Inc. (NKE)\""
+      ],
+      "costUsd": 0.0828,
+      "checkedAt": "2026-09-06T02:33:20.912Z"
+    }
+  }
+}

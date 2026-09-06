@@ -12,6 +12,8 @@ import {
 import { getNewsForOfficial } from "@/lib/news";
 import { getFeePaymentsBySlug } from "@/lib/fee-payments";
 import type { Transaction } from "@/lib/types";
+import { verificationForOfficial } from "@/lib/row-verification";
+import VerificationMarker from "@/app/components/verification-marker";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import MonthlyBars from "@/app/components/monthly-bars";
 import RangeFilter from "@/app/components/range-filter";
@@ -203,6 +205,12 @@ export default async function OfficialPage({
     ? buildPromiseEvidence(divestiture, official.transactions)
     : null;
   const { transactions } = official;
+  // Attach in original row order before filters, sorting or pagination.
+  // Identical lots have separate occurrence IDs and may have different verdicts.
+  const verification = verificationForOfficial(slug, transactions);
+  const verificationByTransaction = new Map(
+    transactions.map((tx, i) => [tx, verification[i]])
+  );
 
   const totalTrades = transactions.length;
   const buys = transactions.filter((t) => t.type === "Purchase").length;
@@ -754,6 +762,7 @@ export default async function OfficialPage({
           </thead>
           <tbody>
             {tableSlice.map((tx, i) => {
+              const rowVerification = verificationByTransaction.get(tx) ?? null;
               const sourceFiling = getSourceFilingForTransaction(
                 tx,
                 official.sourceFilings
@@ -762,7 +771,9 @@ export default async function OfficialPage({
               <tr
                 key={`${tx.date}-${tx.description}-${i}`}
                 className={`border-b border-neutral-100 ${
-                  i % 2 === 1 ? "bg-neutral-50/60" : ""
+                  rowVerification?.score === 0
+                    ? "bg-amber-50"
+                    : i % 2 === 1 ? "bg-neutral-50/60" : ""
                 }`}
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
@@ -775,6 +786,7 @@ export default async function OfficialPage({
                       Late
                     </span>
                   )}
+                  <VerificationMarker verification={rowVerification} />
                 </td>
                 <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
                   {tx.ticker || "N/A"}

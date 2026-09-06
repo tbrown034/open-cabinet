@@ -14,6 +14,7 @@ import { sumAmountEstimates, formatCompactCurrency } from "@/lib/format";
 import { resolveTicker } from "@/lib/assets";
 import { resolveSymbol } from "@/lib/asset-registry";
 import type { AmountRange } from "@/lib/types";
+import { readRowVerification } from "@/lib/row-verification";
 
 interface DatasetTransaction {
   description: string;
@@ -62,6 +63,17 @@ describe("README current-data table matches the published dataset", () => {
     expect(readmeStat("Transactions")).toBe(
       formatCount(dataset.transactionCount)
     );
+  });
+
+  it("verification states match the recorded row summary", () => {
+    const file = readRowVerification();
+    expect(file, "The row verification file is required to check README counts").not.toBeNull();
+    if (!file) return;
+    expect(file.summary.rows).toBe(dataset.transactionCount);
+    const counts = Object.entries(file.summary.byState)
+      .map(([state, count]) => `${formatCount(count)} ${state}`)
+      .join("; ");
+    expect(readme).toContain(`Rows by verification state: ${counts}.`);
   });
 
   it("late filings", () => {

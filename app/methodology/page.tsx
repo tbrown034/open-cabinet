@@ -4,6 +4,8 @@ import AboutScrolly from "../components/about-scrolly";
 import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
 import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log";
 import { sumAmountEstimates } from "@/lib/amounts";
+import { readRowVerification } from "@/lib/row-verification";
+import VerificationSummary from "../components/verification-summary";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
 const pct = (part: number, whole: number) => (whole ? Math.round((part / whole) * 1000) / 10 : 0);
@@ -44,6 +46,7 @@ export default async function MethodologyPage() {
   ).filter((o) => o !== null);
   const allRows = everyOfficial.flatMap((o) => o.transactions);
   const log = readCrosscheckLog();
+  const rowVerification = readRowVerification();
   const coverage = log ? summarizeCrosscheckLog(log, allRows) : null;
   const agreedRows = coverage?.rows.checked_tuple_agreement ?? 0;
   const mismatchRows = coverage?.rows.checked_tuple_mismatch ?? 0;
@@ -329,7 +332,7 @@ export default async function MethodologyPage() {
                 <p className="text-neutral-500 mt-2">
                   As of the last check, that comparison agreed on{" "}
                   {fmt(agreedRows)} of {fmt(coverage.totalRows)} published
-                  rows ({pct(agreedRows, coverage.totalRows)} percent), across{" "}
+                  rows, across{" "}
                   {coverage.filings.checked_tuple_agreement} of{" "}
                   {coverage.totalFilings} filings. {fmt(mismatchRows)} rows in{" "}
                   {coverage.filings.checked_tuple_mismatch} filings are in
@@ -460,6 +463,8 @@ export default async function MethodologyPage() {
             comparable data for the executive branch is not public.
           </p>
         </section>
+
+        <VerificationSummary summary={rowVerification?.summary ?? null} />
 
         {/* Disclaimers */}
         <section className="border-t border-neutral-200 pt-8">

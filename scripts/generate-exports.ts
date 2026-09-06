@@ -10,18 +10,9 @@ import path from "path";
 import {
   transactionEstimate,
   sumAmountEstimates,
-  type AmountRange,
 } from "../lib/amounts";
-
-interface Transaction {
-  description: string;
-  ticker: string | null;
-  type: string;
-  date: string;
-  amount: AmountRange | null;
-  amountNote?: string;
-  lateFilingFlag: boolean;
-}
+import type { Transaction } from "../lib/types";
+import { readRowVerification, recordIdsFor } from "../lib/row-verification";
 
 interface OfficialData {
   name: string;
@@ -59,6 +50,23 @@ async function main() {
     allOfficials.push(JSON.parse(raw));
   }
 
+  const verification = readRowVerification();
+  const exportOfficials = allOfficials.map((official) => {
+    const ids = recordIdsFor(official.transactions);
+    return {
+      ...official,
+      transactions: official.transactions.map((tx, i) => {
+        const row = verification?.rows[ids[i]];
+        return {
+          ...tx,
+          recordId: ids[i],
+          verificationScore: row?.score ?? null,
+          verificationState: row?.state ?? null,
+        };
+      }),
+    };
+  });
+
   // 1. All Transactions CSV
   const txHeaders = [
     "official_name",
@@ -75,8 +83,11 @@ async function main() {
     "source_filing_url",
     // Trailing so existing positional parsers of this file are unaffected.
     "amount_note",
+    "recordId",
+    "verificationScore",
+    "verificationState",
   ];
-  const txRows = allOfficials.flatMap((o) =>
+  const txRows = exportOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
       [
         escapeCsv(o.name),
@@ -92,8 +103,11 @@ async function main() {
         // open-ended range). Blank, not zero, when the filing gave no value.
         tx.amount === null ? "" : String(transactionEstimate(tx)),
         tx.lateFilingFlag ? "yes" : "no",
-        (tx as { sourceUrl?: string }).sourceUrl || "",
+        tx.sourceUrl || "",
         escapeCsv(tx.amountNote ?? ""),
+        tx.recordId,
+        tx.verificationScore === null ? "" : String(tx.verificationScore),
+        tx.verificationState ?? "",
       ].join(",")
     )
   );
@@ -165,7 +179,7 @@ async function main() {
       (sum, o) => sum + o.transactions.length,
       0
     ),
-    officials: allOfficials.map((o) => ({
+    officials: exportOfficials.map((o) => ({
       name: o.name,
       slug: o.slug,
       title: o.title,
