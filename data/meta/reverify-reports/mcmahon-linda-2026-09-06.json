@@ -2,11 +2,11 @@
   "slug": "mcmahon-linda",
   "stamp": "2026-09-06",
   "laneVerdicts": [
-    "Linda-McMahon-07.02.2025-278T.pdf: lanes agree (1 rows)",
-    "Linda-E-McMahon-05.30.2025-278T.pdf: lanes agree (155 rows)"
+    "Linda-McMahon-07.02.2025-278T.pdf: text layer agrees (1 rows)",
+    "Linda-E-McMahon-05.30.2025-278T.pdf: text layer agrees (155 rows)"
   ],
   "diff": {
-    "published": 152,
+    "published": 156,
     "fresh": 156,
     "matched": 150,
     "changed": [
@@ -55,24 +55,59 @@
           "ticker"
         ],
         "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Humble Independent School District, TX, bond, (Cusip 445047MB6)",
+          "type": "Sale",
+          "date": "2025-03-17",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true
+        },
+        "after": {
+          "description": "Humble Independent School District, TX, bond, (Cusip 445047MB6)",
+          "ticker": null,
+          "type": "Sale",
+          "date": "2025-03-17",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
       }
     ],
-    "removed": [],
+    "removed": [
+      {
+        "description": "Community College District No. 525 (Counties of Will, Grundy, Livingston, Cook, Kendall, LaSalle and Kankakee), IL, bond (Cusip 969080HK9)",
+        "type": "Sale",
+        "date": "2025-03-24",
+        "amount": "$500,001-$1,000,000",
+        "lateFilingFlag": true
+      },
+      {
+        "description": "Lebanon R-III School District, MO, bond (Cusip 522714FB5)",
+        "type": "Sale",
+        "date": "2025-03-24",
+        "amount": "$500,001-$1,000,000",
+        "lateFilingFlag": true
+      },
+      {
+        "description": "Pharr-San Juan-Alamo Independent School District, TX, bond (Cusip 71746WB6)",
+        "type": "Sale",
+        "date": "2025-02-03",
+        "amount": "$500,001-$1,000,000",
+        "lateFilingFlag": true
+      }
+    ],
     "added": [
       {
         "description": "Pharr-San Jan-Alamo Independent School District, TX, bond (Cusip 71746WB6)",
         "ticker": null,
         "type": "Sale",
         "date": "2025-02-03",
-        "amount": "$500,001-$1,000,000",
-        "lateFilingFlag": true,
-        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf"
-      },
-      {
-        "description": "Humble Independent School District, TX, bond, (Cusip 445047MB6)",
-        "ticker": null,
-        "type": "Sale",
-        "date": "2025-03-17",
         "amount": "$500,001-$1,000,000",
         "lateFilingFlag": true,
         "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf"
@@ -97,6 +132,6 @@
       }
     ],
     "tradeChanged": 0,
-    "wordingChanged": 2
+    "wordingChanged": 3
   }
 }

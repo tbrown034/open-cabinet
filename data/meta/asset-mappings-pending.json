@@ -3,7 +3,7 @@
     "version": 1,
     "generatedBy": "scripts/seed-asset-registry.ts",
     "reason": "symbols filed on published rows that the SEC company list does not carry; identity awaits a person",
-    "entries": 133
+    "entries": 153
   },
   "pending": {
     "AAGIY": {
@@ -2937,6 +2937,460 @@
       "aliases": [],
       "rows": 2,
       "officials": 2,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ATNF": {
+      "symbol": "ATNF",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "180 Life Sciences Corp. Common Stock"
+      ],
+      "filedSymbols": [
+        "ATNF"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BGHAX": {
+      "symbol": "BGHAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BrandywineGLOBAL High Yield A",
+        "BrandywineGLOBAL - HIGH YIELD FUND Class A",
+        "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)"
+      ],
+      "filedSymbols": [
+        "BGHAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BND": {
+      "symbol": "BND",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Total Bond Market Index Fund ETF Shares (BND)"
+      ],
+      "filedSymbols": [
+        "BND"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FALN": {
+      "symbol": "FALN",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Fallen Angels USD Bond ETF",
+        "iShares Fallen Angels USD Bond ETF (FALN)"
+      ],
+      "filedSymbols": [
+        "FALN"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FB": {
+      "symbol": "FB",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Facebook, Inc. (FB)",
+        "Meta Platforms (FB)"
+      ],
+      "filedSymbols": [
+        "FB"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FNJQX": {
+      "symbol": "FNJQX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Franklin NJ Tax Free Income A",
+        "Franklin NJ Tax Free Income A (FNJQX)"
+      ],
+      "filedSymbols": [
+        "FNJQX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "JAAA": {
+      "symbol": "JAAA",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF",
+        "Janus Henderson AAA CLO ETF (JAAA)"
+      ],
+      "filedSymbols": [
+        "JAAA"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NNJAX": {
+      "symbol": "NNJAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Nuveen NJ Municipal Bond A",
+        "Nuveen NJ Municipal Bond A (NNJAX)"
+      ],
+      "filedSymbols": [
+        "NNJAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NVHAX": {
+      "symbol": "NVHAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Nuveen Short Duration Hi Yld Muni Bd A",
+        "Nuveen Short Duration Hi Yld Muni Bd A (NVHAX)"
+      ],
+      "filedSymbols": [
+        "NVHAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ONJAX": {
+      "symbol": "ONJAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Invesco New Jersey Municipal A",
+        "Invesco New Jersey Municipal A (ONJAX)"
+      ],
+      "filedSymbols": [
+        "ONJAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PONAX": {
+      "symbol": "PONAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PIMCO Income Fund Class A Shares",
+        "PIMCO Income Fund Class A Shares (PONAX)"
+      ],
+      "filedSymbols": [
+        "PONAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PULS": {
+      "symbol": "PULS",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PGIM Ultra Short Bond ETF",
+        "PGIM Ultra Short Bond ETF (PULS)"
+      ],
+      "filedSymbols": [
+        "PULS"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SE": {
+      "symbol": "SE",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Sea Limited (SE)"
+      ],
+      "filedSymbols": [
+        "SE"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SHY": {
+      "symbol": "SHY",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares 1-3 Year Treasury Bond ETF"
+      ],
+      "filedSymbols": [
+        "SHY"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SHYG": {
+      "symbol": "SHYG",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares 0-5 Year High Yield Corporate Bond ETF",
+        "iShares 0-5 Year High Yield Corporate Bond ETF (SHYG)"
+      ],
+      "filedSymbols": [
+        "SHYG"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SSTHX": {
+      "symbol": "SSTHX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Allspring Short-Term Hi Inc A",
+        "Allspring Short-Term Hi Inc A (SSTHX)"
+      ],
+      "filedSymbols": [
+        "SSTHX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "USIG": {
+      "symbol": "USIG",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Broad USD Investment Grade Corporate Bond ETF (USIG)"
+      ],
+      "filedSymbols": [
+        "USIG"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VBR": {
+      "symbol": "VBR",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)"
+      ],
+      "filedSymbols": [
+        "VBR"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VFH": {
+      "symbol": "VFH",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Financials Index Fund ETF Shares (VFH)"
+      ],
+      "filedSymbols": [
+        "VFH"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VYM": {
+      "symbol": "VYM",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard High Dividend Yield Index Fund ETF Shares",
+        "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)"
+      ],
+      "filedSymbols": [
+        "VYM"
+      ],
+      "aliases": [],
+      "rows": 9,
+      "officials": 1,
       "review": {
         "status": "unreviewed",
         "reviewer": null,

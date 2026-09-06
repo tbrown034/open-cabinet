@@ -2,13 +2,13 @@
   "slug": "wright-christopher",
   "stamp": "2026-09-06",
   "laneVerdicts": [
-    "Christopher-A-Wright-01.13.2026-278T.pdf: lanes agree (2 rows)",
-    "Christopher-A-Wright-07.01.2025-278T.pdf: lanes agree (2 rows)",
-    "Christopher-A-Wright-04.29.2025-278T.pdf: lanes agree (173 rows)",
-    "Christopher-A-Wright-03.19.2025-278T.pdf: lanes agree (124 rows)"
+    "Christopher-A-Wright-01.13.2026-278T.pdf: text layer agrees (2 rows)",
+    "Christopher-A-Wright-07.01.2025-278T.pdf: text layer agrees (2 rows)",
+    "Christopher-A-Wright-04.29.2025-278T.pdf: text layer agrees (173 rows)",
+    "Christopher-A-Wright-03.19.2025-278T.pdf: text layer agrees (124 rows)"
   ],
   "diff": {
-    "published": 299,
+    "published": 302,
     "fresh": 301,
     "matched": 208,
     "changed": [
@@ -2195,9 +2195,49 @@
           "ticker"
         ],
         "wordingOnly": true
+      },
+      {
+        "before": {
+          "description": "Ovintiv Inc. (DE) (OVV)",
+          "ticker": "OVV",
+          "type": "Sale",
+          "date": "2025-02-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false
+        },
+        "after": {
+          "description": "Ovintiv Inc. (DE) (OVV)",
+          "ticker": "OVV",
+          "type": "Sale",
+          "date": "2025-02-27",
+          "amount": "$500,001-$1,000,000",
+          "lateFilingFlag": false,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5057175949E7195F85258C70002C8C7C/$FILE/Christopher-A-Wright-03.19.2025-278T.pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
+        "wordingOnly": true
       }
     ],
-    "removed": [],
+    "removed": [
+      {
+        "description": "Schwab Value Advantage Money Fund",
+        "ticker": "SWVXX",
+        "type": "Purchase",
+        "date": "2025-03-05",
+        "amount": "$1,000,001-$5,000,000",
+        "lateFilingFlag": false
+      },
+      {
+        "description": "Schwab Fund International ETF",
+        "ticker": null,
+        "type": "Purchase",
+        "date": "2025-04-22",
+        "amount": "$100,001-$250,000",
+        "lateFilingFlag": false
+      }
+    ],
     "added": [
       {
         "description": "Schwab Fund International ETF",
@@ -2207,18 +2247,9 @@
         "amount": "$50,001-$100,000",
         "lateFilingFlag": false,
         "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DA3D3F7F65344C85258CC8002C8F08/$FILE/Christopher-A-Wright-04.29.2025-278T.pdf"
-      },
-      {
-        "description": "Ovintiv Inc. (DE) (OVV)",
-        "ticker": "OVV",
-        "type": "Sale",
-        "date": "2025-02-27",
-        "amount": "$500,001-$1,000,000",
-        "lateFilingFlag": false,
-        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5057175949E7195F85258C70002C8C7C/$FILE/Christopher-A-Wright-03.19.2025-278T.pdf"
       }
     ],
     "tradeChanged": 0,
-    "wordingChanged": 91
+    "wordingChanged": 92
   }
 }

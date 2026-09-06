@@ -1,13 +1,17 @@
 {
   "version": 1,
   "checkerVersion": "2026-09-06.1",
-  "generatedAt": "2026-09-06T21:28:17.406Z",
+  "generatedAt": "2026-09-06T21:41:05.745Z",
   "entries": [
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
       "slug": "bedford-bryan",
       "filingDate": "2026-04-09",
+      "pdfFile": "Bryan-Bedford-02.27.2026-278T.pdf",
+      "pdfSha256": "706794753054c5fd56401dfc4b48a59c9ccca8f5e9403956cc2ceedf478c537f",
+      "candidateSha256": "41bda5caa1bbe56b78eaaaa449425051629ab346ae603cee8d35f26fca3b6d68",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -17,20 +21,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 10,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Bryan-Bedford-02.27.2026-278T.pdf",
-      "pdfSha256": "706794753054c5fd56401dfc4b48a59c9ccca8f5e9403956cc2ceedf478c537f",
-      "candidateSha256": "41bda5caa1bbe56b78eaaaa449425051629ab346ae603cee8d35f26fca3b6d68",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 10,
-      "parseRecord": "current"
+      "publishedRows": 10,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:41:02.557Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BC33926D1346296F85258D86003449A3/$FILE/Bryan-Bedford-11.03.2025-278T.pdf",
       "slug": "bedford-bryan",
       "filingDate": "2026-01-21",
+      "pdfFile": "Bryan-Bedford-11.03.2025-278T.pdf",
+      "pdfSha256": "37813645444dc3baa3502e418cf49c8373a6b34c9c65cb5d13e673850798d9cd",
+      "candidateSha256": "f3f0eb11bbd6c7019982b56073982466dbf82fc50dfbbed688f2d7acda0a1171",
       "checkerVersion": "2026-09-06.1",
+      "state": "no_usable_text",
       "comparedFields": [
         "type",
         "date",
@@ -40,20 +44,34 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 0,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Bryan-Bedford-11.03.2025-278T.pdf",
-      "pdfSha256": "37813645444dc3baa3502e418cf49c8373a6b34c9c65cb5d13e673850798d9cd",
-      "candidateSha256": "c882bf1a90563def80f8c2a475de09b15036ede1c1cdd4ddd4b48e633e8981f4",
-      "state": "no_usable_text",
       "rowsCompared": null,
-      "parseRecord": "legacy"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:41:03.615Z",
+      "ocr": {
+        "engine": "tesseract",
+        "version": "5.5.3",
+        "dpi": 400,
+        "psm": 4,
+        "laneVersion": "2026-09-05.2",
+        "pages": 3,
+        "textFile": "data/ocr/Bryan-Bedford-11.03.2025-278T.0cc6184839b9.ocr.txt",
+        "textSha256": "78adb7a814c571b0820c56468673929154ffa0f3ccea543b3df1bac0146937a1",
+        "textLaneState": "no_usable_text",
+        "rowsRead": 0,
+        "rowNumbersRepaired": 0,
+        "problem": "ocr: no transaction rows could be parsed from the OCR text"
+      }
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1B3A289F103446F685258D6500343C16/$FILE/Bryan-Bedford-10.07.2025-278T.pdf",
       "slug": "bedford-bryan",
       "filingDate": "2025-12-19",
+      "pdfFile": "Bryan-Bedford-10.07.2025-278T.pdf",
+      "pdfSha256": "ff1bf7eddcd0f604187b6fe4dec55a0b3f7d83d85afc0d2302877d873cffd6ae",
+      "candidateSha256": "49fc0e0e3d1f07fcc2b4737a6d700bca42d62d73c0f84d99f5aa4346e3e5680c",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -63,20 +81,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 73,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Bryan-Bedford-10.07.2025-278T.pdf",
-      "pdfSha256": "ff1bf7eddcd0f604187b6fe4dec55a0b3f7d83d85afc0d2302877d873cffd6ae",
-      "candidateSha256": "49fc0e0e3d1f07fcc2b4737a6d700bca42d62d73c0f84d99f5aa4346e3e5680c",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 75,
-      "parseRecord": "current"
+      "publishedRows": 75,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:41:04.694Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf",
       "slug": "bedford-bryan",
       "filingDate": "2025-11-27",
+      "pdfFile": "Bryan-Bedford-09.02.2025-278T.pdf",
+      "pdfSha256": "86e3fd4ce3bb50cb9cb20dec76a55bb4d2a75ff3015d699ea3407599c24932da",
+      "candidateSha256": "0da26a01b8773c0b694bec7d3d191506f723abad26134fc1d86a991ab695c8a6",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -86,14 +104,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 5,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Bryan-Bedford-09.02.2025-278T.pdf",
-      "pdfSha256": "86e3fd4ce3bb50cb9cb20dec76a55bb4d2a75ff3015d699ea3407599c24932da",
-      "candidateSha256": "0da26a01b8773c0b694bec7d3d191506f723abad26134fc1d86a991ab695c8a6",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 5,
-      "parseRecord": "current"
+      "publishedRows": 5,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:41:05.745Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf",
@@ -145,7 +159,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2DC3DD386173222E85258E4D002D8CD0/$FILE/Frank-J-Bisignano-07.07.2026-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2026-08-08",
+      "pdfFile": "Frank-J-Bisignano-07.07.2026-278T.pdf",
+      "pdfSha256": "b93a6a5162780c0e0c2d1ef382d1decc1bbd38302fae5c19a022c6fb7442b8ee",
+      "candidateSha256": "040856197a05b9298108a829de19fb61dc2336a45cd662ebf9f3e43a60265aae",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -155,20 +173,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-07.07.2026-278T.pdf",
-      "pdfSha256": "b93a6a5162780c0e0c2d1ef382d1decc1bbd38302fae5c19a022c6fb7442b8ee",
-      "candidateSha256": "040856197a05b9298108a829de19fb61dc2336a45cd662ebf9f3e43a60265aae",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "current"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:41.508Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCD5083EB618F35085258DB200344824/$FILE/Frank-J-Bisignano-02.10.2026-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2026-03-06",
+      "pdfFile": "Frank-J-Bisignano-02.10.2026-278T.pdf",
+      "pdfSha256": "828efbc456097acb8f9536bc66431efb4392d177944eeeee40ccb968c1df6b77",
+      "candidateSha256": "07aaab15a8656070cfcde195868cc25a2a2b56b5c4c2e39dd55011df5b37e61e",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -178,20 +196,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 14,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-02.10.2026-278T.pdf",
-      "pdfSha256": "828efbc456097acb8f9536bc66431efb4392d177944eeeee40ccb968c1df6b77",
-      "candidateSha256": "07aaab15a8656070cfcde195868cc25a2a2b56b5c4c2e39dd55011df5b37e61e",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 14,
-      "parseRecord": "current"
+      "publishedRows": 14,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:42.561Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA16C26F767256C285258D5F00343F7B/$FILE/Frank-J-Bisignano-09.09.2025-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2025-12-13",
+      "pdfFile": "Frank-J-Bisignano-09.09.2025-278T.pdf",
+      "pdfSha256": "a6b5c154fdc16b15c5cbc8dfa419cd4ad5e9dbbaa038528c9f0179540522a574",
+      "candidateSha256": "a2ea78c2c8fbb57c5bdea4ca78d5366e154709ddf3f1c4388b571d56a0661ca6",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -201,20 +219,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 14,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-09.09.2025-278T.pdf",
-      "pdfSha256": "a6b5c154fdc16b15c5cbc8dfa419cd4ad5e9dbbaa038528c9f0179540522a574",
-      "candidateSha256": "a2ea78c2c8fbb57c5bdea4ca78d5366e154709ddf3f1c4388b571d56a0661ca6",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 14,
-      "parseRecord": "current"
+      "publishedRows": 14,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:43.614Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FCA8E4D588C234CD85258D5F00343F83/$FILE/Frank-J-Bisignano-08.08.2025-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2025-12-13",
+      "pdfFile": "Frank-J-Bisignano-08.08.2025-278T.pdf",
+      "pdfSha256": "6de6dea45f79cd8fd5e470a45f24818ecd67d407556a4ceb137bbfce1e6dbcc0",
+      "candidateSha256": "f3d9dde8d04c69ce3e6e7fc6f3c6cd3e5f06d490cf20121464c0595a514cbf2b",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -224,20 +242,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 65,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-08.08.2025-278T.pdf",
-      "pdfSha256": "6de6dea45f79cd8fd5e470a45f24818ecd67d407556a4ceb137bbfce1e6dbcc0",
-      "candidateSha256": "f3d9dde8d04c69ce3e6e7fc6f3c6cd3e5f06d490cf20121464c0595a514cbf2b",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 77,
-      "parseRecord": "current"
+      "publishedRows": 77,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:44.677Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FB264D7E3496773E85258CCC002C7F4A/$FILE/Frank-J-Bisignano-07.03.2025-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2025-07-19",
+      "pdfFile": "Frank-J-Bisignano-07.03.2025-278T.pdf",
+      "pdfSha256": "667219f435e9867f8745bec3322c6b5a2fc87b03ad4ff54a7cd33b73512536e9",
+      "candidateSha256": "e7f45a03b7131a1b3ecd5117c9292d40bdcd81e0b0685cfa93f6002e8a6db383",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -247,20 +265,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 7,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-07.03.2025-278T.pdf",
-      "pdfSha256": "667219f435e9867f8745bec3322c6b5a2fc87b03ad4ff54a7cd33b73512536e9",
-      "candidateSha256": "e7f45a03b7131a1b3ecd5117c9292d40bdcd81e0b0685cfa93f6002e8a6db383",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 7,
-      "parseRecord": "current"
+      "publishedRows": 7,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:45.708Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9A2C2ECDD1FAECA185258CC8002C7D03/$FILE/Frank-J-Bisignano-06.26.2025-278T.pdf",
       "slug": "bisignano-frank-j",
       "filingDate": "2025-07-15",
+      "pdfFile": "Frank-J-Bisignano-06.26.2025-278T.pdf",
+      "pdfSha256": "f8c11f59863a6b708840ebf2e941d1ecdbc47bf126b98c30db386976bb767569",
+      "candidateSha256": "02b6cc11b960229fc03d545100d5d9dd5521c8b7a3faf11df526f589573c4f49",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -270,14 +288,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 15,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Frank-J-Bisignano-06.26.2025-278T.pdf",
-      "pdfSha256": "f8c11f59863a6b708840ebf2e941d1ecdbc47bf126b98c30db386976bb767569",
-      "candidateSha256": "02b6cc11b960229fc03d545100d5d9dd5521c8b7a3faf11df526f589573c4f49",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 15,
-      "parseRecord": "current"
+      "publishedRows": 15,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:46.765Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9E22E6BED062C62D85258CC5002C7DEA/$FILE/Todd-Blanche-06.03.2025-278T.pdf",
@@ -329,7 +343,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B215A2D9D7B0CC0E85258E4A002D8CC2/$FILE/Douglas-J-Burgum-05.12.2026-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2026-08-05",
+      "pdfFile": "Douglas-J-Burgum-05.12.2026-278T.pdf",
+      "pdfSha256": "1a5ae8936c686cf5cddf3c7bb3c12d4107c16b613e15538358fa67536b8331ca",
+      "candidateSha256": "bea7213c6470b9bf9d30b736acf1c7b7ef4c6ef8272f779944ca38d66d0ebb34",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -339,20 +357,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 6,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Douglas-J-Burgum-05.12.2026-278T.pdf",
-      "pdfSha256": "1a5ae8936c686cf5cddf3c7bb3c12d4107c16b613e15538358fa67536b8331ca",
-      "candidateSha256": "bea7213c6470b9bf9d30b736acf1c7b7ef4c6ef8272f779944ca38d66d0ebb34",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 6,
-      "parseRecord": "current"
+      "publishedRows": 6,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:48.431Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4AFD3C0AAAA300E285258DFE002D984E/$FILE/Douglas-J-Burgum-02.27.2026-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2026-05-21",
+      "pdfFile": "Douglas-J-Burgum-02.27.2026-278T.pdf",
+      "pdfSha256": "d0cb1340b1532574f33e928509c6fcfb98e12f7986044c84065f0ef223626c9e",
+      "candidateSha256": "2a27e5d21662fd4be85bee23927780ff15f0abb2643c847d95b1cf1730debbfe",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -362,20 +380,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 19,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Douglas-J-Burgum-02.27.2026-278T.pdf",
-      "pdfSha256": "d0cb1340b1532574f33e928509c6fcfb98e12f7986044c84065f0ef223626c9e",
-      "candidateSha256": "2a27e5d21662fd4be85bee23927780ff15f0abb2643c847d95b1cf1730debbfe",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 20,
-      "parseRecord": "current"
+      "publishedRows": 20,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:49.493Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/056ABAA54A1FAC1585258D8600344DDF/$FILE/Douglas-J-Burgum-11.13.2025-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2026-01-21",
+      "pdfFile": "Douglas-J-Burgum-11.13.2025-278T.pdf",
+      "pdfSha256": "cf0c0015ea46063dc322ca5306688ddd26bff3ce8e354b42f63dc5cb8c72f7e8",
+      "candidateSha256": "437fefdf7c8199523dbec2d1812cec7bb1907d368162768c2c94d4418a5b13e6",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -385,20 +403,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Douglas-J-Burgum-11.13.2025-278T.pdf",
-      "pdfSha256": "cf0c0015ea46063dc322ca5306688ddd26bff3ce8e354b42f63dc5cb8c72f7e8",
-      "candidateSha256": "437fefdf7c8199523dbec2d1812cec7bb1907d368162768c2c94d4418a5b13e6",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:50.547Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7C0B79B66E94715885258D4F00317C5D/$FILE/Doug-Burgum-09.18.2025-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2025-11-27",
+      "pdfFile": "Doug-Burgum-09.18.2025-278T.pdf",
+      "pdfSha256": "be646d40c1c95bada0bbf40046bebee88f6d2ca65db8b832b4bfe8b68615d10a",
+      "candidateSha256": "f7fa0b5ee8ad01cebfa34242ec3c799ca57b82e9a9e1f8406b49d859d66c8579",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -408,20 +426,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 14,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Doug-Burgum-09.18.2025-278T.pdf",
-      "pdfSha256": "be646d40c1c95bada0bbf40046bebee88f6d2ca65db8b832b4bfe8b68615d10a",
-      "candidateSha256": "f7fa0b5ee8ad01cebfa34242ec3c799ca57b82e9a9e1f8406b49d859d66c8579",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 14,
-      "parseRecord": "current"
+      "publishedRows": 14,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:51.599Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4570FD57E16F594E85258CC8002C7DA3/$FILE/Douglas-J-Burgum-06.12.2025-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2025-07-15",
+      "pdfFile": "Douglas-J-Burgum-06.12.2025-278T.pdf",
+      "pdfSha256": "14bedb8d94097a8dd7c203912a2c308aa2209eff97e15932601f979d187a7df9",
+      "candidateSha256": "45243a4da729a465a82a927c1b00682bc98098f5eb871166dfea1a5a30d92633",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -431,20 +449,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 6,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Douglas-J-Burgum-06.12.2025-278T.pdf",
-      "pdfSha256": "14bedb8d94097a8dd7c203912a2c308aa2209eff97e15932601f979d187a7df9",
-      "candidateSha256": "45243a4da729a465a82a927c1b00682bc98098f5eb871166dfea1a5a30d92633",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 6,
-      "parseRecord": "current"
+      "publishedRows": 6,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:52.652Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E15FC684C226F64785258C8A002C72AC/$FILE/Douglas-J-Burgum-04.30.2025-278T.pdf",
       "slug": "burgum-douglas-j",
       "filingDate": "2025-05-14",
+      "pdfFile": "Douglas-J-Burgum-04.30.2025-278T.pdf",
+      "pdfSha256": "3f467fcff16d5540d1ea1770dba84494ae0c67bc2b5f0736b09ccfe64e827c92",
+      "candidateSha256": "ddee5d70b85db6025c23d0aa4f72ef073604c8f356f90a4b5532a924e4bcdec1",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -454,14 +472,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 103,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Douglas-J-Burgum-04.30.2025-278T.pdf",
-      "pdfSha256": "3f467fcff16d5540d1ea1770dba84494ae0c67bc2b5f0736b09ccfe64e827c92",
-      "candidateSha256": "ddee5d70b85db6025c23d0aa4f72ef073604c8f356f90a4b5532a924e4bcdec1",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 104,
-      "parseRecord": "current"
+      "publishedRows": 104,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:53.712Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
@@ -494,7 +508,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/7D4E0C157D5EAD7085258C1D00320572/$FILE/Deanne-Criswell-12.19.2024-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2025-01-25",
+      "pdfFile": "Deanne-Criswell-12.19.2024-278T.pdf",
+      "pdfSha256": "cf0ff6c3aa5d3209b0b2ffad9bfbde67369cb47eeac11f2bf83be52f6da6261d",
+      "candidateSha256": "461d65aa5e245d2e88a9a446dbfd9cb7454e613c33c1a5cd9004c17b69b3360b",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -504,20 +522,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 10,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-12.19.2024-278T.pdf",
-      "pdfSha256": "cf0ff6c3aa5d3209b0b2ffad9bfbde67369cb47eeac11f2bf83be52f6da6261d",
-      "candidateSha256": "461d65aa5e245d2e88a9a446dbfd9cb7454e613c33c1a5cd9004c17b69b3360b",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 10,
-      "parseRecord": "current"
+      "publishedRows": 10,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:55.382Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E17EF5BDAB771EB385258B86002DDD08/$FILE/Deanne-Criswell-06.24.2024-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2024-08-27",
+      "pdfFile": "Deanne-Criswell-06.24.2024-278T.pdf",
+      "pdfSha256": "225926ded7a8c82bbb9023f561bb4152827769f979d961b814e51d238ee223ac",
+      "candidateSha256": "dc41701341e0ce9edd328d37bb95603d6cd18ffd7e06ad6e968201176cadd0f3",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -527,20 +545,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-06.24.2024-278T.pdf",
-      "pdfSha256": "225926ded7a8c82bbb9023f561bb4152827769f979d961b814e51d238ee223ac",
-      "candidateSha256": "dc41701341e0ce9edd328d37bb95603d6cd18ffd7e06ad6e968201176cadd0f3",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:56.437Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/25E7F390E4D9D1F785258B10002EFB8D/$FILE/Deanne-Criswell-04.02.2024-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2024-05-01",
+      "pdfFile": "Deanne-Criswell-04.02.2024-278T.pdf",
+      "pdfSha256": "de0d4cd8df1410ce19d3d0b8b4020a87aaa4d62e6e136d1cb1a1a040f38baba0",
+      "candidateSha256": "1ad5e35772f04853423e92042a6962c124a1682f6cf25476cc71b5c38d36e6e1",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -550,20 +568,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-04.02.2024-278T.pdf",
-      "pdfSha256": "de0d4cd8df1410ce19d3d0b8b4020a87aaa4d62e6e136d1cb1a1a040f38baba0",
-      "candidateSha256": "1ad5e35772f04853423e92042a6962c124a1682f6cf25476cc71b5c38d36e6e1",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:57.475Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5050D101570BB0D085258ACA00347878/$FILE/Dianne-Criswell-12.19.2023-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2024-02-21",
+      "pdfFile": "Dianne-Criswell-12.19.2023-278T.pdf",
+      "pdfSha256": "49ce5d3a2994f3bc1886bf1fdc0e5c9c0123ae685a91e1152cee530665ab4fcc",
+      "candidateSha256": "fcbfe87cc14ebcdfee62468bc4b0d57b81d78ec6e6cee6519c05d13fde4e6e8a",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -573,20 +591,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 8,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Dianne-Criswell-12.19.2023-278T.pdf",
-      "pdfSha256": "49ce5d3a2994f3bc1886bf1fdc0e5c9c0123ae685a91e1152cee530665ab4fcc",
-      "candidateSha256": "fcbfe87cc14ebcdfee62468bc4b0d57b81d78ec6e6cee6519c05d13fde4e6e8a",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 8,
-      "parseRecord": "current"
+      "publishedRows": 8,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:58.528Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/651911337FC85C0085258A54002EEBC8/$FILE/Deanne-Criswell-09.08.2023-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2023-10-26",
+      "pdfFile": "Deanne-Criswell-09.08.2023-278T.pdf",
+      "pdfSha256": "c980d3f88312c6ddd4f38c272eb386f968317e79c32e1d4da4407f1a179db93b",
+      "candidateSha256": "39eed57785cf6ec4d5c3a143c5d7857df4449a3624558e1ce936faa36098c230",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -596,20 +614,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-09.08.2023-278T.pdf",
-      "pdfSha256": "c980d3f88312c6ddd4f38c272eb386f968317e79c32e1d4da4407f1a179db93b",
-      "candidateSha256": "39eed57785cf6ec4d5c3a143c5d7857df4449a3624558e1ce936faa36098c230",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:38:59.583Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9186734EDFB39F6085258A0C002EF245/$FILE/Deanne-Criswell-06.09.2023-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2023-08-15",
+      "pdfFile": "Deanne-Criswell-06.09.2023-278T.pdf",
+      "pdfSha256": "b27994c065f212b416b364a47b3822c40024ca13240e51a870c76f7e0086a952",
+      "candidateSha256": "d8241d1a23d6bf36c6be9992342229603922ce67d702d4fedc1ac1896a4e08e8",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -619,20 +637,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-06.09.2023-278T.pdf",
-      "pdfSha256": "b27994c065f212b416b364a47b3822c40024ca13240e51a870c76f7e0086a952",
-      "candidateSha256": "d8241d1a23d6bf36c6be9992342229603922ce67d702d4fedc1ac1896a4e08e8",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:00.614Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B064D2C895C8D7008525894F003442AC/$FILE/Deanne-Criswell-01.04.2023-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2023-02-07",
+      "pdfFile": "Deanne-Criswell-01.04.2023-278T.pdf",
+      "pdfSha256": "ac4c9bdb285c439ae40480028a3c8b0c8e1b71e492b666d46a5d2982bee39672",
+      "candidateSha256": "e1b0108d129ffb524adc1d9c9074128018c55213a5a341c00bc387eaef786568",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -642,20 +660,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 8,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-01.04.2023-278T.pdf",
-      "pdfSha256": "ac4c9bdb285c439ae40480028a3c8b0c8e1b71e492b666d46a5d2982bee39672",
-      "candidateSha256": "e1b0108d129ffb524adc1d9c9074128018c55213a5a341c00bc387eaef786568",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 8,
-      "parseRecord": "current"
+      "publishedRows": 8,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:01.665Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/251763FD50CDF140852588D1002ED451/$FILE/Deanne-Criswell-08.10.2022-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2022-10-04",
+      "pdfFile": "Deanne-Criswell-08.10.2022-278T.pdf",
+      "pdfSha256": "50c57312ba7df78de44e4b21e80e13db32251ea149d7f0108182f0e1bc4f327e",
+      "candidateSha256": "380cacf29d95a1bad0b6f5ab434c39e2697c5f547a24a8e0ef6376a250d2a5e6",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -665,20 +683,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-08.10.2022-278T.pdf",
-      "pdfSha256": "50c57312ba7df78de44e4b21e80e13db32251ea149d7f0108182f0e1bc4f327e",
-      "candidateSha256": "380cacf29d95a1bad0b6f5ab434c39e2697c5f547a24a8e0ef6376a250d2a5e6",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:02.711Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D35261AFD48DF3EE852588B1002EB958/$FILE/Deanne-Criswell-07.01.2022-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2022-09-02",
+      "pdfFile": "Deanne-Criswell-07.01.2022-278T.pdf",
+      "pdfSha256": "68a1f12c206126c8ae1eed3e1461594cb0471360f6fbfb033e6c48bcf9b2bc73",
+      "candidateSha256": "c187c23e7eab2ea5d7a33e687b770c73107e2490cd887f52a781b0750f49e791",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -688,20 +706,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-07.01.2022-278T.pdf",
-      "pdfSha256": "68a1f12c206126c8ae1eed3e1461594cb0471360f6fbfb033e6c48bcf9b2bc73",
-      "candidateSha256": "c187c23e7eab2ea5d7a33e687b770c73107e2490cd887f52a781b0750f49e791",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:03.764Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/05BBA24C3215FBC08525886F002EC55E/$FILE/Deanne-Criswell-05.18.2022-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2022-06-28",
+      "pdfFile": "Deanne-Criswell-05.18.2022-278T.pdf",
+      "pdfSha256": "78545c97b70a084339981e49054a5f8531ae35d416aef3c99e984b6dad90f0cf",
+      "candidateSha256": "7f0db1b00bbf8552b70decbd5efd58183db07e1f95d734d9aead16976653fdbf",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -711,20 +729,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 10,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-05.18.2022-278T.pdf",
-      "pdfSha256": "78545c97b70a084339981e49054a5f8531ae35d416aef3c99e984b6dad90f0cf",
-      "candidateSha256": "7f0db1b00bbf8552b70decbd5efd58183db07e1f95d734d9aead16976653fdbf",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 11,
-      "parseRecord": "current"
+      "publishedRows": 11,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:04.825Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/9B1EEC36309D0956852588030033C13A/$FILE/Deanne-Criswell-02.04.2022-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2022-03-12",
+      "pdfFile": "Deanne-Criswell-02.04.2022-278T.pdf",
+      "pdfSha256": "eb1776ae128f57d79356de810f725ab8d43a6ab8821f948c4891b7d59bdc137e",
+      "candidateSha256": "716e97034440f49b917dfb6ffd92ba348757a898c86095d9bdaea966ad88d71d",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -734,20 +752,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 8,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-02.04.2022-278T.pdf",
-      "pdfSha256": "eb1776ae128f57d79356de810f725ab8d43a6ab8821f948c4891b7d59bdc137e",
-      "candidateSha256": "716e97034440f49b917dfb6ffd92ba348757a898c86095d9bdaea966ad88d71d",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 10,
-      "parseRecord": "current"
+      "publishedRows": 10,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:05.875Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3909A58D046FDEEA852587DC0033C377/$FILE/Deanne-Criswell-01.20.2022-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2022-02-01",
+      "pdfFile": "Deanne-Criswell-01.20.2022-278T.pdf",
+      "pdfSha256": "db4897e5d59a90f5ea195a1d891dbddaee5cd7fdcfd191115778f60d779d18ac",
+      "candidateSha256": "b44832b1168b1075335d724db538ed24ea62b08c5f07c3347be8b7416832d178",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -757,20 +775,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 5,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-01.20.2022-278T.pdf",
-      "pdfSha256": "db4897e5d59a90f5ea195a1d891dbddaee5cd7fdcfd191115778f60d779d18ac",
-      "candidateSha256": "b44832b1168b1075335d724db538ed24ea62b08c5f07c3347be8b7416832d178",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 5,
-      "parseRecord": "current"
+      "publishedRows": 5,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:06.930Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E85AB5CBC0931285852587AC0033CDC5/$FILE/Deanne-Criswell-12.01.2021-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2021-12-15",
+      "pdfFile": "Deanne-Criswell-12.01.2021-278T.pdf",
+      "pdfSha256": "37db3dc0e5e8d597f5b5814816d413012725e78ba5675165c36e9e17b35c4525",
+      "candidateSha256": "be6b77fb54a21a8f511969475df0a72f7354dd7a236b11c3571e3d772c6b2bf8",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -780,20 +798,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-12.01.2021-278T.pdf",
-      "pdfSha256": "37db3dc0e5e8d597f5b5814816d413012725e78ba5675165c36e9e17b35c4525",
-      "candidateSha256": "be6b77fb54a21a8f511969475df0a72f7354dd7a236b11c3571e3d772c6b2bf8",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "current"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:07.983Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FD54C77633EEF27385258750002E5457/$FILE/Deanne-Criswell-09.06.2021-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2021-09-14",
+      "pdfFile": "Deanne-Criswell-09.06.2021-278T.pdf",
+      "pdfSha256": "9a9902e2f2da5648cc5822ea353c02fe860d79b398bf62dc282bd8cad54b394d",
+      "candidateSha256": "879e4f42d35d0e8be35e6e5974fb3a2dbd96eb11c5ce973505698f310e76afc0",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -803,20 +821,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-09.06.2021-278T.pdf",
-      "pdfSha256": "9a9902e2f2da5648cc5822ea353c02fe860d79b398bf62dc282bd8cad54b394d",
-      "candidateSha256": "879e4f42d35d0e8be35e6e5974fb3a2dbd96eb11c5ce973505698f310e76afc0",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "current"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:09.020Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B60B3A50D1966CA58525874A002E54D5/$FILE/Deanne-Criswell-08.23.2021-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2021-09-08",
+      "pdfFile": "Deanne-Criswell-08.23.2021-278T.pdf",
+      "pdfSha256": "aa7a964f08b2510ba1f63da85e19cead38ec5106d0ffbd008c778d5c1c8fd7cd",
+      "candidateSha256": "8127f9699d4b45cb4b039554285d03c85d0ff0a9c18b2ee2d69625de4fbca676",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -826,20 +844,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-08.23.2021-278T.pdf",
-      "pdfSha256": "aa7a964f08b2510ba1f63da85e19cead38ec5106d0ffbd008c778d5c1c8fd7cd",
-      "candidateSha256": "8127f9699d4b45cb4b039554285d03c85d0ff0a9c18b2ee2d69625de4fbca676",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:10.059Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/93FDEB99F2A1DF7E85258742002E548A/$FILE/Deanne-Criswell-08.10.2021-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2021-08-31",
+      "pdfFile": "Deanne-Criswell-08.10.2021-278T.pdf",
+      "pdfSha256": "7a0ffd5a8c86e77a6d62e9531ac6b8227846b4877548163b971edf5a796e4081",
+      "candidateSha256": "86df8db05d34a8149d3ac370a4272187fe0942f57569b6a9282a4b7550367070",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -849,20 +867,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 4,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Criswell-08.10.2021-278T.pdf",
-      "pdfSha256": "7a0ffd5a8c86e77a6d62e9531ac6b8227846b4877548163b971edf5a796e4081",
-      "candidateSha256": "86df8db05d34a8149d3ac370a4272187fe0942f57569b6a9282a4b7550367070",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 4,
-      "parseRecord": "current"
+      "publishedRows": 4,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:11.099Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/C9A5D86474A7CEFE85258735002E4AB2/$FILE/Deanne-Chriswell-08.05.2021-278T.pdf",
       "slug": "criswell-deanne",
       "filingDate": "2021-08-18",
+      "pdfFile": "Deanne-Chriswell-08.05.2021-278T.pdf",
+      "pdfSha256": "30e3c21f1a79019a2163f112322f25ca3bfe64d0599a6e14b2bb4ad67e80d86c",
+      "candidateSha256": "bea567677483b4bb4e32c78698c92445bd53ec176d47e4d4c188c90eca35ea85",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -872,14 +890,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 3,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Deanne-Chriswell-08.05.2021-278T.pdf",
-      "pdfSha256": "30e3c21f1a79019a2163f112322f25ca3bfe64d0599a6e14b2bb4ad67e80d86c",
-      "candidateSha256": "bea567677483b4bb4e32c78698c92445bd53ec176d47e4d4c188c90eca35ea85",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 3,
-      "parseRecord": "current"
+      "publishedRows": 3,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:12.140Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F2DB7167AE9E497285258C58002C7886/$FILE/Stacey-Dixon-02.10.2025-278T.pdf",
@@ -977,7 +991,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/890743E0467213D285258E4D002D98F0/$FILE/Sean-Duffy-06.09.2026-278T.pdf",
       "slug": "duffy-sean",
       "filingDate": "2026-08-08",
+      "pdfFile": "Sean-Duffy-06.09.2026-278T.pdf",
+      "pdfSha256": "0e06173565cffbace82d6ee75da2dad392a0722788e34235e8a86048293838ba",
+      "candidateSha256": "48e81b232d68743e1e87e74a77114f088bb75d255450ef113c628eedf83b5eac",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -987,20 +1005,23 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-Duffy-06.09.2026-278T.pdf",
-      "pdfSha256": "0e06173565cffbace82d6ee75da2dad392a0722788e34235e8a86048293838ba",
-      "candidateSha256": "48e81b232d68743e1e87e74a77114f088bb75d255450ef113c628eedf83b5eac",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:13.806Z",
+      "problems": [
+        "date flag: 2025-02-03 is more than 400 days before the posting date 2026-08-08: \"Rumble Inc\""
+      ]
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FED6F4F51D33882F85258C8A002C760E/$FILE/Sean-Duffy-04.23.2025-278T.pdf",
       "slug": "duffy-sean",
       "filingDate": "2025-05-14",
+      "pdfFile": "Sean-Duffy-04.23.2025-278T.pdf",
+      "pdfSha256": "08994ec70a46ad69214398f7940a38db8bda7f6b1b289c304cd8f13de361a786",
+      "candidateSha256": "8647798a21904bab3c93595acc81640646d44c4f8351ae23b8151b51ea48ec2d",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -1010,14 +1031,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 37,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-Duffy-04.23.2025-278T.pdf",
-      "pdfSha256": "08994ec70a46ad69214398f7940a38db8bda7f6b1b289c304cd8f13de361a786",
-      "candidateSha256": "8647798a21904bab3c93595acc81640646d44c4f8351ae23b8151b51ea48ec2d",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 38,
-      "parseRecord": "current"
+      "publishedRows": 38,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:14.873Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2F120963CF1EABAE85258C8A002C7650/$FILE/Troy-D-Edgar-05.01.2025-278T.pdf",
@@ -1975,7 +1992,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6439C8BBFB85065585258DCC002DC69B/$FILE/Linda-McMahon-07.02.2025-278T.pdf",
       "slug": "mcmahon-linda",
       "filingDate": "2026-04-01",
+      "pdfFile": "Linda-McMahon-07.02.2025-278T.pdf",
+      "pdfSha256": "60abbd4b74c17668d9d30d277020e12447ef8b3a334dc9a378ef350234239c50",
+      "candidateSha256": "8fb4ea0dae9ef5deea493b439c24a17cf1f0bf1e6c90d3ade5e72b0cf45b46c6",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -1985,20 +2006,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Linda-McMahon-07.02.2025-278T.pdf",
-      "pdfSha256": "60abbd4b74c17668d9d30d277020e12447ef8b3a334dc9a378ef350234239c50",
-      "candidateSha256": "8fb4ea0dae9ef5deea493b439c24a17cf1f0bf1e6c90d3ade5e72b0cf45b46c6",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:16.558Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F0E40BA53AD5CBA385258CC4002C8CCF/$FILE/Linda-E-McMahon-05.30.2025-278T.pdf",
       "slug": "mcmahon-linda",
       "filingDate": "2025-07-11",
+      "pdfFile": "Linda-E-McMahon-05.30.2025-278T.pdf",
+      "pdfSha256": "e8fa170270e39c45aa4a2632cb4526c295e9e4b945b8507e104ade4fa5c85cdd",
+      "candidateSha256": "13334d2bea16768a3121353f0d89c71149c50220b446f2d07263affcfa8d5884",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2008,20 +2029,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 151,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Linda-E-McMahon-05.30.2025-278T.pdf",
-      "pdfSha256": "e8fa170270e39c45aa4a2632cb4526c295e9e4b945b8507e104ade4fa5c85cdd",
-      "candidateSha256": "13334d2bea16768a3121353f0d89c71149c50220b446f2d07263affcfa8d5884",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 155,
-      "parseRecord": "current"
+      "publishedRows": 155,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:17.622Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/ADE89624CD8D7F1D85258E35002DD6B1/$FILE/Sean-McMaster-06.11.2026-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-07-15",
+      "pdfFile": "Sean-McMaster-06.11.2026-278T.pdf",
+      "pdfSha256": "5e6c887a09d313b7843c6b57739a91fb38f22c592a08522d07d099ee8fa5ed9e",
+      "candidateSha256": "ecf8c85b13f77d54501b63ebcf98a0fd3d91423f19ebb6f87e1ec7bc5d897f34",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2031,20 +2052,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 5,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-06.11.2026-278T.pdf",
-      "pdfSha256": "5e6c887a09d313b7843c6b57739a91fb38f22c592a08522d07d099ee8fa5ed9e",
-      "candidateSha256": "ecf8c85b13f77d54501b63ebcf98a0fd3d91423f19ebb6f87e1ec7bc5d897f34",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 5,
-      "parseRecord": "current"
+      "publishedRows": 5,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:19.328Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/6669428412F0329885258DCC002DC6FF/$FILE/Sean-McMaster-02.27.2026-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-04-01",
+      "pdfFile": "Sean-McMaster-02.27.2026-278T.pdf",
+      "pdfSha256": "9a7aacbca34f060129b1b998689ada521b148f6c5861563ea69f2f08194fcd79",
+      "candidateSha256": "c09648ac24a0fe3b085dcf26f64bfe3f5301a16c3553bcf5cf91f420ebc7e298",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2054,20 +2075,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-02.27.2026-278T.pdf",
-      "pdfSha256": "9a7aacbca34f060129b1b998689ada521b148f6c5861563ea69f2f08194fcd79",
-      "candidateSha256": "c09648ac24a0fe3b085dcf26f64bfe3f5301a16c3553bcf5cf91f420ebc7e298",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:20.387Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E3D897DB72CEF27F85258DB9002EEB15/$FILE/Sean-McMaster-01.20.2026-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-03-13",
+      "pdfFile": "Sean-McMaster-01.20.2026-278T.pdf",
+      "pdfSha256": "9e4d9717fc2d3f4b5ad2dbd4a295f152b9c7de9316d06f16c43aceead4084253",
+      "candidateSha256": "ab9c4aeddcaabc95bf9fe962f1586cbf0a81850c02efdb4933cf11bca22aead7",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2077,20 +2098,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 4,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-01.20.2026-278T.pdf",
-      "pdfSha256": "9e4d9717fc2d3f4b5ad2dbd4a295f152b9c7de9316d06f16c43aceead4084253",
-      "candidateSha256": "ab9c4aeddcaabc95bf9fe962f1586cbf0a81850c02efdb4933cf11bca22aead7",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 4,
-      "parseRecord": "current"
+      "publishedRows": 4,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:21.441Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/11B539874B68444985258D8C00346658/$FILE/Sean-McMaster-12.01.2025-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-01-27",
+      "pdfFile": "Sean-McMaster-12.01.2025-278T.pdf",
+      "pdfSha256": "9be70ed7cc43b2afb8fc2a5c510213d8e32c7f78645b568677074d71141c7adf",
+      "candidateSha256": "1e7c6e399e46473c6dd2077ead88ee76bf6628353672df3c781c148bf7e91575",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2100,20 +2121,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 7,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-12.01.2025-278T.pdf",
-      "pdfSha256": "9be70ed7cc43b2afb8fc2a5c510213d8e32c7f78645b568677074d71141c7adf",
-      "candidateSha256": "1e7c6e399e46473c6dd2077ead88ee76bf6628353672df3c781c148bf7e91575",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 7,
-      "parseRecord": "current"
+      "publishedRows": 7,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:22.480Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/14687F0C20F84C2385258D8C00346652/$FILE/Sean-McMaster-12.11.2025-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-01-27",
+      "pdfFile": "Sean-McMaster-12.11.2025-278T.pdf",
+      "pdfSha256": "7358213723c4daf165dfba0bf0da563b337db059f0a72388f7e233cc53722a90",
+      "candidateSha256": "57777af7f0252a20cb28b2b1d98633e60a033b623c16cf03313c515e517f96f5",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2123,20 +2144,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 1,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-12.11.2025-278T.pdf",
-      "pdfSha256": "7358213723c4daf165dfba0bf0da563b337db059f0a72388f7e233cc53722a90",
-      "candidateSha256": "57777af7f0252a20cb28b2b1d98633e60a033b623c16cf03313c515e517f96f5",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:23.534Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B716301C2D9B9D585258D7700345AA8/$FILE/Sean-McMaster-09.29.2025-278T.pdf",
       "slug": "mcmaster-sean",
       "filingDate": "2026-01-06",
+      "pdfFile": "Sean-McMaster-09.29.2025-278T.pdf",
+      "pdfSha256": "d9222c496071d4d35a82e4392cb1b38c4784c6af60dc5b49e04aa714cac0e293",
+      "candidateSha256": "d88c82ffe22c57fa9c00225a542fe8756bfd6087bdd25ff9d9bc24f53da327ef",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2146,20 +2167,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 6,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Sean-McMaster-09.29.2025-278T.pdf",
-      "pdfSha256": "d9222c496071d4d35a82e4392cb1b38c4784c6af60dc5b49e04aa714cac0e293",
-      "candidateSha256": "d88c82ffe22c57fa9c00225a542fe8756bfd6087bdd25ff9d9bc24f53da327ef",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 7,
-      "parseRecord": "current"
+      "publishedRows": 7,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:24.583Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf",
       "slug": "miran-stephen",
       "filingDate": "2026-04-25",
+      "pdfFile": "Stephen-I-Miran-04.03.2026-278T.pdf",
+      "pdfSha256": "929019c094c9b9d3a291422cfa087b06871629a6d1b9821313589723c18b98ef",
+      "candidateSha256": "be2f5430e52b75eb027f0c7cfcc96c91a3ade74c8abad53681fc1afe357ba41c",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2169,20 +2190,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 7,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Stephen-I-Miran-04.03.2026-278T.pdf",
-      "pdfSha256": "929019c094c9b9d3a291422cfa087b06871629a6d1b9821313589723c18b98ef",
-      "candidateSha256": "be2f5430e52b75eb027f0c7cfcc96c91a3ade74c8abad53681fc1afe357ba41c",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 7,
-      "parseRecord": "current"
+      "publishedRows": 7,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:26.268Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/86C03B37455893E185258D710034584A/$FILE/Stephen-I-Miran-12.03.2025-278T.pdf",
       "slug": "miran-stephen",
       "filingDate": "2025-12-31",
+      "pdfFile": "Stephen-I-Miran-12.03.2025-278T.pdf",
+      "pdfSha256": "890c8d26358200f20a6c8351694d0918030da6a7208b360f8f6bfa19afa7d3d7",
+      "candidateSha256": "7d5f884f56d267797bf0b2073042ad5eff5aeb7f92af9a64137a9972b10fb75a",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2192,20 +2213,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 0,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Stephen-I-Miran-12.03.2025-278T.pdf",
-      "pdfSha256": "890c8d26358200f20a6c8351694d0918030da6a7208b360f8f6bfa19afa7d3d7",
-      "candidateSha256": "7d5f884f56d267797bf0b2073042ad5eff5aeb7f92af9a64137a9972b10fb75a",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 1,
-      "parseRecord": "current"
+      "publishedRows": 1,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:27.323Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf",
       "slug": "miran-stephen",
       "filingDate": "2025-09-06",
+      "pdfFile": "Stephen-I-Miran-07.21.2025-278T.pdf",
+      "pdfSha256": "afeecc9c3aa44ac6feb73d2a9d81a0c1aa087fc1a7875b6435346499869b2a58",
+      "candidateSha256": "bb16911f29b0dba4215064a63ca152e5ab31401416337417769076720a93402f",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -2215,14 +2236,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 65,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Stephen-I-Miran-07.21.2025-278T.pdf",
-      "pdfSha256": "afeecc9c3aa44ac6feb73d2a9d81a0c1aa087fc1a7875b6435346499869b2a58",
-      "candidateSha256": "bb16911f29b0dba4215064a63ca152e5ab31401416337417769076720a93402f",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 69,
-      "parseRecord": "current"
+      "publishedRows": 69,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:28.379Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
@@ -23656,7 +23673,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22F95E0EAFBF6F1D85258DCC002DDF75/$FILE/Christopher-A-Wright-01.13.2026-278T.pdf",
       "slug": "wright-christopher",
       "filingDate": "2026-04-01",
+      "pdfFile": "Christopher-A-Wright-01.13.2026-278T.pdf",
+      "pdfSha256": "5ab084646441d56424f9d3730a5a9aac00f6167190010d4e7225b20218fbc40f",
+      "candidateSha256": "8567330e53b836a9dac3933ff5d4ece9824cd51a9a332d80c864eae5e7ef1f2b",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -23666,20 +23687,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Christopher-A-Wright-01.13.2026-278T.pdf",
-      "pdfSha256": "5ab084646441d56424f9d3730a5a9aac00f6167190010d4e7225b20218fbc40f",
-      "candidateSha256": "8567330e53b836a9dac3933ff5d4ece9824cd51a9a332d80c864eae5e7ef1f2b",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "current"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:30.045Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B30D247EB32A424585258D0A002C189C/$FILE/Christopher-A-Wright-07.01.2025-278T.pdf",
       "slug": "wright-christopher",
       "filingDate": "2025-09-19",
+      "pdfFile": "Christopher-A-Wright-07.01.2025-278T.pdf",
+      "pdfSha256": "2f43ebfc9eb46bdc01d1c2d183f5018f641ede9257f8881080e1d1b3e45e51d3",
+      "candidateSha256": "b9278f018c5c1c3735c76d9f15f86f84e276619d86b8823d55d99806e7ea06e9",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -23689,20 +23710,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 2,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Christopher-A-Wright-07.01.2025-278T.pdf",
-      "pdfSha256": "2f43ebfc9eb46bdc01d1c2d183f5018f641ede9257f8881080e1d1b3e45e51d3",
-      "candidateSha256": "b9278f018c5c1c3735c76d9f15f86f84e276619d86b8823d55d99806e7ea06e9",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 2,
-      "parseRecord": "current"
+      "publishedRows": 2,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:31.090Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/22DA3D3F7F65344C85258CC8002C8F08/$FILE/Christopher-A-Wright-04.29.2025-278T.pdf",
       "slug": "wright-christopher",
       "filingDate": "2025-07-15",
+      "pdfFile": "Christopher-A-Wright-04.29.2025-278T.pdf",
+      "pdfSha256": "774d769177dd44310378d2a973f376915bfbc65c040bd711eb37a2e5e09a3b82",
+      "candidateSha256": "cd76b7d9254db26b0ef7cd365fcb2f6aa28b4117a0d76c530dfa700cee2a3948",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -23712,20 +23733,20 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 172,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Christopher-A-Wright-04.29.2025-278T.pdf",
-      "pdfSha256": "774d769177dd44310378d2a973f376915bfbc65c040bd711eb37a2e5e09a3b82",
-      "candidateSha256": "cd76b7d9254db26b0ef7cd365fcb2f6aa28b4117a0d76c530dfa700cee2a3948",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 173,
-      "parseRecord": "current"
+      "publishedRows": 173,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:32.150Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5057175949E7195F85258C70002C8C7C/$FILE/Christopher-A-Wright-03.19.2025-278T.pdf",
       "slug": "wright-christopher",
       "filingDate": "2025-04-18",
+      "pdfFile": "Christopher-A-Wright-03.19.2025-278T.pdf",
+      "pdfSha256": "d6e8b20a4d37e47d7e4b2638a35591c886a0a03cf585be5532de508b1e36a6f5",
+      "candidateSha256": "3f080587de0aa1819d1d93ca61c3e0aee520acec3bcae6fe5be44d2e491fd5a2",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -23735,14 +23756,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 123,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Christopher-A-Wright-03.19.2025-278T.pdf",
-      "pdfSha256": "d6e8b20a4d37e47d7e4b2638a35591c886a0a03cf585be5532de508b1e36a6f5",
-      "candidateSha256": "3f080587de0aa1819d1d93ca61c3e0aee520acec3bcae6fe5be44d2e491fd5a2",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 124,
-      "parseRecord": "current"
+      "publishedRows": 124,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T21:39:33.220Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/1F2CA5D27DDE1D9085258D460031984D/$FILE/Lee-Zeldin-09-24-2025-278T.pdf",

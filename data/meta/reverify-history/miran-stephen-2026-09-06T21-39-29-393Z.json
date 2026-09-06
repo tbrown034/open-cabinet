@@ -1,10 +1,695 @@
 {
   "slug": "miran-stephen",
-  "stamp": "2026-09-06",
-  "laneVerdicts": [
-    "Stephen-I-Miran-04.03.2026-278T.pdf: text layer agrees (7 rows)",
-    "Stephen-I-Miran-12.03.2025-278T.pdf: text layer agrees (1 rows)",
-    "Stephen-I-Miran-07.21.2025-278T.pdf: text layer agrees (69 rows)"
+  "replacedAt": "2026-09-06T21:39:29.394Z",
+  "previousTransactions": [
+    {
+      "description": "BBH LIMITED DURATION FUND CL I",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - CLARKSTON CAPITAL PARTNERS SMALL/MID CAP SERIES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "BBH Wealth Strategies, LLC - SILVER POINT DISTRESSED OPPORTUNITY II SERIES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4B988978D7A864F785258DE4002DBF44/$FILE/Stephen-I-Miran-04.03.2026-278T.pdf"
+    },
+    {
+      "description": "ISHARES S&P 500 INDEX FUND",
+      "ticker": "IVV",
+      "type": "Purchase",
+      "date": "2025-11-14",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "VanEck Vectors Short High-Yield Municipal Index ETF",
+      "ticker": "SHYD",
+      "type": "Purchase",
+      "date": "2025-06-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Abbott Laboratories",
+      "ticker": "ABT",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Adobe Inc",
+      "ticker": "ADBE",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Advanced Drainage System Inc.",
+      "ticker": "WMS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Alcon Inc.",
+      "ticker": "ALC",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Alphabet Inc.",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Amazon.com Inc.",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Applied Materials Inc.",
+      "ticker": "AMAT",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "AptaraGroup Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Arista Networks Inc.",
+      "ticker": "ANET",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Arthur J. Gallagher & Co.",
+      "ticker": "AJG",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Automatic Data Processing Inc.",
+      "ticker": "ADP",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Berkshire Hathaway Inc.",
+      "ticker": "BRK.B",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Booking Holdings Inc.",
+      "ticker": "BKNG",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Bright Horizons Family Solutions",
+      "ticker": "BFAM",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Brown & Brown Inc.",
+      "ticker": "BRO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Bruker Corp",
+      "ticker": "BRKR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Cadence Design Systems Inc.",
+      "ticker": "CDNS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "CBRE Group",
+      "ticker": "CBRE",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Costco Wholesale Corp",
+      "ticker": "COST",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Darling Ingredients Inc.",
+      "ticker": "DAR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Eli Lilly & Co.",
+      "ticker": "LLY",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Entegris Inc",
+      "ticker": "ENTG",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "GFL Environmental",
+      "ticker": "GFL",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Globant SA",
+      "ticker": "GLOB",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Guidewire Software Inc",
+      "ticker": "GWRE",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "GXO Logistics Incorporated",
+      "ticker": "GXO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Heico Corp",
+      "ticker": "HEI",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Icon PLC",
+      "ticker": "ICLR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Keysight Technologies Inc.",
+      "ticker": "KEYS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "KLA Corporation",
+      "ticker": "KLAC",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Linde PLC",
+      "ticker": "LIN",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "LPL Financial Holdings Inc",
+      "ticker": "LPLA",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Mastercard Incorporated",
+      "ticker": "MA",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Microsoft Corp",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Nike Inc.",
+      "ticker": "NKE",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Novo Nordisk",
+      "ticker": "NVO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "NVR Inc.",
+      "ticker": "NVR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Oracle Corp.",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Otis Worldwide Corporation",
+      "ticker": "OTIS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Procter & Gamble",
+      "ticker": "PG",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Progressive Corp Ohio",
+      "ticker": "PGR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "S&P Global Inc",
+      "ticker": "SPGI",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Shift4 Payments Inc.",
+      "ticker": "FOUR",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Take-Two Interactive Software",
+      "ticker": "TTWO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Texas Instruments Inc",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Thermo Fisher Scientific Inc.",
+      "ticker": "TMO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Toro Co",
+      "ticker": "TTC",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "ULSolutions Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "United Health Group",
+      "ticker": "UNH",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Vulcan Materials Co.",
+      "ticker": "VMC",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Waste Management Inc.",
+      "ticker": "WM",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Watsco Inc",
+      "ticker": "WSO",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "West Pharmaceutical Services Inc.",
+      "ticker": "WST",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false
+    },
+    {
+      "description": "Willscot Mobile Mini Holdings Co.",
+      "ticker": "WSC",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Wyndham Hotels & Resorts Inc",
+      "ticker": "WH",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Zebra Technologies Corp.",
+      "ticker": "ZBRA",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Zoetis Inc",
+      "ticker": "ZTS",
+      "type": "Sale",
+      "date": "2025-06-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Financial Select Sector SPDR Fund",
+      "ticker": "XLF",
+      "type": "Sale",
+      "date": "2025-06-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "FNMA (Fannie Mae)",
+      "ticker": "FNMA",
+      "type": "Sale",
+      "date": "2025-06-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "iShares Transportation Average ETF",
+      "ticker": "IYT",
+      "type": "Sale",
+      "date": "2025-06-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "iShares 20+ Year Treasury Bond ETF",
+      "ticker": "TLT",
+      "type": "Purchase",
+      "date": "2025-05-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "Financial Select Sector SPDR Fund",
+      "ticker": "XLF",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "FNMA (Fannie Mae)",
+      "ticker": "FNMA",
+      "type": "Sale",
+      "date": "2025-05-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "iShares 20+ Year Treasury Bond ETF",
+      "ticker": "TLT",
+      "type": "Purchase",
+      "date": "2025-05-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "S&P 500 Future, closed",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-05-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "VanEck Vectors Short High-Yield Municipal Index ETF",
+      "ticker": "SHYD",
+      "type": "Purchase",
+      "date": "2025-04-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "S&P 500 future, opened",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    },
+    {
+      "description": "S&P 500 futures option, opened",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C347E1E940D65A885258CFD002C0504/$FILE/Stephen-I-Miran-07.21.2025-278T.pdf"
+    }
   ],
   "diff": {
     "published": 77,

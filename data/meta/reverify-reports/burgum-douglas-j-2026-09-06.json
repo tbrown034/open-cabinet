@@ -2,15 +2,15 @@
   "slug": "burgum-douglas-j",
   "stamp": "2026-09-06",
   "laneVerdicts": [
-    "Douglas-J-Burgum-05.12.2026-278T.pdf: lanes agree (6 rows)",
-    "Douglas-J-Burgum-02.27.2026-278T.pdf: lanes agree (20 rows)",
-    "Douglas-J-Burgum-11.13.2025-278T.pdf: lanes agree (3 rows)",
-    "Doug-Burgum-09.18.2025-278T.pdf: lanes agree (14 rows)",
-    "Douglas-J-Burgum-06.12.2025-278T.pdf: lanes agree (6 rows)",
-    "Douglas-J-Burgum-04.30.2025-278T.pdf: lanes agree (104 rows)"
+    "Douglas-J-Burgum-05.12.2026-278T.pdf: text layer agrees (6 rows)",
+    "Douglas-J-Burgum-02.27.2026-278T.pdf: text layer agrees (20 rows)",
+    "Douglas-J-Burgum-11.13.2025-278T.pdf: text layer agrees (3 rows)",
+    "Doug-Burgum-09.18.2025-278T.pdf: text layer agrees (14 rows)",
+    "Douglas-J-Burgum-06.12.2025-278T.pdf: text layer agrees (6 rows)",
+    "Douglas-J-Burgum-04.30.2025-278T.pdf: text layer agrees (104 rows)"
   ],
   "diff": {
-    "published": 151,
+    "published": 153,
     "fresh": 153,
     "matched": 143,
     "changed": [
@@ -60,7 +60,7 @@
         "fields": [
           "description"
         ],
-        "wordingOnly": true
+        "wordingOnly": false
       },
       {
         "before": {
@@ -84,7 +84,7 @@
         "fields": [
           "description"
         ],
-        "wordingOnly": true
+        "wordingOnly": false
       },
       {
         "before": {
@@ -204,10 +204,42 @@
         "fields": [
           "description"
         ],
+        "wordingOnly": false
+      },
+      {
+        "before": {
+          "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+          "ticker": "GSIMX",
+          "type": "Purchase",
+          "date": "2025-03-28",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true
+        },
+        "after": {
+          "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
+          "ticker": "GSIMX",
+          "type": "Purchase",
+          "date": "2025-03-28",
+          "amount": "$1,001-$15,000",
+          "lateFilingFlag": true,
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E15FC684C226F64785258C8A002C72AC/$FILE/Douglas-J-Burgum-04.30.2025-278T.pdf"
+        },
+        "fields": [
+          "sourceUrl"
+        ],
         "wordingOnly": true
       }
     ],
-    "removed": [],
+    "removed": [
+      {
+        "description": "Arthur Ventures IV, LP (Roth IRA)",
+        "ticker": null,
+        "type": "Purchase",
+        "date": "2025-12-22",
+        "amount": "$15,001-$50,000",
+        "lateFilingFlag": true
+      }
+    ],
     "added": [
       {
         "description": "Arthur Ventures IV, LP",
@@ -217,18 +249,9 @@
         "amount": "$15,001-$50,000",
         "lateFilingFlag": true,
         "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/4AFD3C0AAAA300E285258DFE002D984E/$FILE/Douglas-J-Burgum-02.27.2026-278T.pdf"
-      },
-      {
-        "description": "Goldman Sachs GQG Partners International Opportunities Fund Institutional Class Shs",
-        "ticker": "GSIMX",
-        "type": "Purchase",
-        "date": "2025-03-28",
-        "amount": "$1,001-$15,000",
-        "lateFilingFlag": true,
-        "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E15FC684C226F64785258C8A002C72AC/$FILE/Douglas-J-Burgum-04.30.2025-278T.pdf"
       }
     ],
-    "tradeChanged": 0,
-    "wordingChanged": 8
+    "tradeChanged": 3,
+    "wordingChanged": 6
   }
 }

@@ -8,6 +8,7 @@
  *                                             with the fresh set in the report
  *   pnpm reverify --all --skip-scans          leave scanned filings alone
  *   pnpm reverify --all --exclude trump-donald-j   everyone but one official
+ *   pnpm reverify <slug> --apply --accept <pdf>   count a filing a person decided row by row as confirmed
  *
  * What one run does, per official:
  *   1. read    every filing goes through the same fetch/read stages the
@@ -83,6 +84,8 @@ function independentReadsOf(sourceUrl: string, rows: unknown): string {
   return hasSecondRead ? parts.join("; ") : "";
 }
 
+const accepted = new Set<string>();
+
 async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean, dryCost: boolean) {
   const filePath = path.resolve(`data/officials/${slug}.json`);
   const official: OfficialFile = JSON.parse(await readFile(filePath, "utf-8"));
@@ -122,7 +125,7 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
       // rows a second company's model (or a person) has read, and the page
       // audit has checked, may be applied; its disputed rows publish marked
       // disputed and stay on the review list. (Trevor, Sep 6.)
-      const independent = independentReadsOf(f.url, rows);
+      const independent = independentReadsOf(f.url, rows) || (accepted.has(pdfFile) ? "accepted by a person's recorded decision (--accept)" : "");
       if (gate.verdict === "held" && !independent) notConfirmed.push(pdfFile);
       laneVerdicts.push(
         gate.verdict === "two_lane"
@@ -232,12 +235,15 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
 async function main() {
   const args = process.argv.slice(2);
   const apply = args.includes("--apply");
+  // --accept <pdf file>: a filing a person has decided row by row (decision
+  // on record in data/review/decisions.json) counts as confirmed for --apply.
+  for (let i = 0; i < args.length; i++) if (args[i] === "--accept" && args[i + 1]) accepted.add(args[++i]);
   const skipScans = args.includes("--skip-scans");
   const dryCost = args.includes("--dry-cost");
   const all = args.includes("--all");
   const excluded = new Set<string>();
   for (let i = 0; i < args.length; i++) if (args[i] === "--exclude" && args[i + 1]) excluded.add(args[++i]);
-  const valued = new Set(["--exclude", "--ceiling"]);
+  const valued = new Set(["--exclude", "--ceiling", "--accept"]);
   const slugs = args.filter((a, i) => !a.startsWith("--") && !valued.has(args[i - 1] ?? ""));
   stageOptions.forceReparse = args.includes("--force-reparse");
   // Spend ceiling for this run, dollars. Default 25; the run stops and

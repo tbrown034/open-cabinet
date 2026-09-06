@@ -10,10 +10,10 @@
       "snapshotSha256": "367fb917a218886e0070b9c349d741600b03759fb078d9f58aaca24d25b9c4ab",
       "snapshotEntries": 10415
     },
-    "symbolsInData": 426,
+    "symbolsInData": 460,
     "withheldRows": 5,
-    "entries": 293,
-    "pending": 133,
+    "entries": 307,
+    "pending": 153,
     "noSharedWord": 21
   },
   "assets": {
@@ -8950,6 +8950,429 @@
       ],
       "filedSymbols": [
         "ZTS"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ADSK": {
+      "symbol": "ADSK",
+      "secSymbol": "ADSK",
+      "secName": "Autodesk, Inc.",
+      "cik": 769397,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Autodesk, Inc. (ADSK)"
+      ],
+      "filedSymbols": [
+        "ADSK"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ARES": {
+      "symbol": "ARES",
+      "secSymbol": "ARES",
+      "secName": "Ares Management Corp",
+      "cik": 1176948,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Ares Management Corp. (ARES)"
+      ],
+      "filedSymbols": [
+        "ARES"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BABA": {
+      "symbol": "BABA",
+      "secSymbol": "BABA",
+      "secName": "Alibaba Group Holding Ltd",
+      "cik": 1577552,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Alibaba Group Holding Limited (BABA)"
+      ],
+      "filedSymbols": [
+        "BABA"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ETSY": {
+      "symbol": "ETSY",
+      "secSymbol": "ETSY",
+      "secName": "ETSY INC",
+      "cik": 1370637,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Etsy, Inc. (ETSY)"
+      ],
+      "filedSymbols": [
+        "ETSY"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "F": {
+      "symbol": "F",
+      "secSymbol": "F",
+      "secName": "FORD MOTOR CO",
+      "cik": 37996,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Ford Motor Co. (F)",
+        "Ford Motor Company (F)"
+      ],
+      "filedSymbols": [
+        "F"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "HUM": {
+      "symbol": "HUM",
+      "secSymbol": "HUM",
+      "secName": "HUMANA INC",
+      "cik": 49071,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Humana, Inc. (HUM)"
+      ],
+      "filedSymbols": [
+        "HUM"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NIO": {
+      "symbol": "NIO",
+      "secSymbol": "NIO",
+      "secName": "NIO Inc.",
+      "cik": 1736541,
+      "nameAgreement": "no_shared_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "NIO Inc. American depositary shares each representing one Class A ordinary share"
+      ],
+      "filedSymbols": [
+        "NIO"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PAYC": {
+      "symbol": "PAYC",
+      "secSymbol": "PAYC",
+      "secName": "Paycom Software, Inc.",
+      "cik": 1590955,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Paycom Software, Inc. (PAYC)"
+      ],
+      "filedSymbols": [
+        "PAYC"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PYPL": {
+      "symbol": "PYPL",
+      "secSymbol": "PYPL",
+      "secName": "PayPal Holdings, Inc.",
+      "cik": 1633917,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PayPal Holdings, Inc. (PYPL)"
+      ],
+      "filedSymbols": [
+        "PYPL"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "QQQ": {
+      "symbol": "QQQ",
+      "secSymbol": "QQQ",
+      "secName": "INVESCO QQQ TRUST, SERIES 1",
+      "cik": 1067839,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Invesco QQQ Trust, Series 1 (QQQ)"
+      ],
+      "filedSymbols": [
+        "QQQ"
+      ],
+      "aliases": [],
+      "rows": 6,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "RBLX": {
+      "symbol": "RBLX",
+      "secSymbol": "RBLX",
+      "secName": "Roblox Corp",
+      "cik": 1315098,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Roblox Corporation (RBLX)",
+        "Robolox (RBLX)",
+        "Robolox Corp. (RBLX)"
+      ],
+      "filedSymbols": [
+        "RBLX"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SBUX": {
+      "symbol": "SBUX",
+      "secSymbol": "SBUX",
+      "secName": "STARBUCKS CORP",
+      "cik": 829224,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Starbucks Corp. (SBUX)"
+      ],
+      "filedSymbols": [
+        "SBUX"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "TDOC": {
+      "symbol": "TDOC",
+      "secSymbol": "TDOC",
+      "secName": "Teladoc Health, Inc.",
+      "cik": 1477449,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Teladoc Health, Inc. (TDOC)"
+      ],
+      "filedSymbols": [
+        "TDOC"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "TRV": {
+      "symbol": "TRV",
+      "secSymbol": "TRV",
+      "secName": "TRAVELERS COMPANIES, INC.",
+      "cik": 86312,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "The Travelers Companies, Inc. (TRV)"
+      ],
+      "filedSymbols": [
+        "TRV"
       ],
       "aliases": [],
       "rows": 1,
