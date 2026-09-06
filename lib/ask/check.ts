@@ -26,14 +26,24 @@ import type { QueryPlan } from "./plan";
  * rest of the sentence is checked separately.
  */
 const DATE_TOKEN =
-  /\d{4}-\d{2}-\d{2}|(?:Jan\.|Feb\.|March|April|May|June|July|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.)\s+\d{1,2},\s+\d{4}/g;
+  /\d{4}-\d{2}-\d{2}|\d{4}-\d{2}|(?:Jan\.|Feb\.|March|April|May|June|July|Aug\.|Sept\.|Oct\.|Nov\.|Dec\.)\s+\d{1,2},\s+\d{4}/g;
+
+/**
+ * Month names carry no figure but sit next to one. Grok found the gap on
+ * Sept. 6: a by-month result put "2025-03" in the display strings, the old
+ * tokenizer split it into 2025 and 03, and "There were 2026 checked trades"
+ * passed. Months are removed alongside dates so their digits vouch for
+ * nothing.
+ */
+const MONTH_NAME =
+  /\b(?:Jan\.|January|Feb\.|February|March|April|May|June|July|Aug\.|August|Sept\.|September|Oct\.|October|Nov\.|November|Dec\.|December)\b/gi;
 
 export function extractDateTokens(text: string): string[] {
   return text.match(DATE_TOKEN) ?? [];
 }
 
 function withoutDates(text: string): string {
-  return text.replace(DATE_TOKEN, " ");
+  return text.replace(DATE_TOKEN, " ").replace(MONTH_NAME, " ");
 }
 
 /**
@@ -110,10 +120,10 @@ export interface NumberCheck {
 /* ── Language ───────────────────────────────────────────────────────────── */
 
 /**
- * Words that turn a count of verified rows into a claim about the whole
- * record. Most rows on the site are still one model's read, so "all 41 sales"
- * or "1,364 trades on file" is false by an order of magnitude. The model is
- * told not to write them; this is the part that enforces it.
+ * Words that turn a count of checked rows into a claim about the whole
+ * record. Most rows on the site have not cleared every check, so "all 41
+ * sales" or "1,364 trades on file" is false by an order of magnitude. The
+ * model is told not to write them; this is the part that enforces it.
  */
 const OVERCLAIM_PATTERNS: Array<[RegExp, string]> = [
   [/\ball\b/i, "all"],
@@ -178,10 +188,47 @@ const WORD_NUMBERS: Record<string, number | null> = {
   million: 1_000_000,
   billion: 1_000_000_000,
   dozen: 12,
+  zero: 0,
+  none: 0,
   half: null,
   twice: null,
   double: null,
 };
+
+/**
+ * A magnitude word with no numeral attached is a quantity nobody checked.
+ * "There were millions of checked trades" used to pass whenever the result
+ * happened to contain "$4.5 million", because the word sat in a display
+ * string (Grok, Sept. 6).
+ *
+ * Found by subtraction rather than by lookbehind: the numeric tokens are
+ * removed from the sentence first, since those already carry their own
+ * suffix ("$4.5 million" is one token and is checked at full scale). Whatever
+ * magnitude word survives that had no numeral in front of it.
+ */
+const MAGNITUDE_WORD =
+  /\b(?:hundreds?|thousands?|millions?|billions?|trillions?)\b/gi;
+
+/**
+ * The sentence with dates, month names and complete numeric tokens removed.
+ * What is left is the prose, where a quantity can only be spelled out. A
+ * numeric token carries its own suffix, so "$4.5 million" leaves nothing
+ * behind and is checked once, at full scale, by the numeric pass.
+ */
+export function residualText(text: string): string {
+  let rest = withoutDates(text);
+  for (const token of rest.match(NUMBER_TOKEN) ?? []) {
+    rest = rest.replace(token, " ");
+  }
+  return rest;
+}
+
+function bareMagnitudes(residual: string): string[] {
+  return residual.match(MAGNITUDE_WORD) ?? [];
+}
+
+/** A count of officials must be the number of officials the result found. */
+const OFFICIAL_COUNT = /(\d[\d,]*)\s+(?:checked\s+)?officials\b/gi;
 
 const WORD_NUMBER_TOKEN = new RegExp(
   `\\b(${Object.keys(WORD_NUMBERS).join("|")})s?\\b`,
@@ -189,7 +236,7 @@ const WORD_NUMBER_TOKEN = new RegExp(
 );
 
 export function extractWordNumbers(text: string): string[] {
-  return withoutDates(text).match(WORD_NUMBER_TOKEN) ?? [];
+  return residualText(text).match(WORD_NUMBER_TOKEN) ?? [];
 }
 
 export interface LanguageCheck {
@@ -198,7 +245,7 @@ export interface LanguageCheck {
 }
 
 /**
- * A phrased answer must qualify its counts as verified and must not claim
+ * A phrased answer must qualify its counts as checked and must not claim
  * completeness. Applied to model text only; code-built sentences are written
  * to this standard already.
  */
@@ -207,9 +254,15 @@ export function checkAnswerLanguage(answer: string): LanguageCheck {
   for (const [pattern, label] of OVERCLAIM_PATTERNS) {
     if (pattern.test(answer)) problems.push(label);
   }
-  if (!/\bverified\b/i.test(answer)) problems.push("missing the word verified");
+  if (!/\bchecked\b/i.test(answer)) problems.push("missing the word checked");
+  // "Verified" is the word this box used to use for a weaker bar than the
+  // rest of the site means by it (Grok, Sept. 6). One word, one meaning.
+  if (/\bverified\b/i.test(answer)) problems.push("verified");
   return { ok: problems.length === 0, problems };
 }
+
+/** "No trades", "no rows": a zero claim, and only true when the count is 0. */
+const NO_QUANTITY = /\bno\s+(?:checked\s+)?(?:trades|rows|transactions|sales|purchases|officials)\b/i;
 
 export function checkAnswerNumbers(answer: string, result: ExecuteResult): NumberCheck {
   const allowed = allowedValues(result);
@@ -223,15 +276,32 @@ export function checkAnswerNumbers(answer: string, result: ExecuteResult): Numbe
     const canonical = canonicalizeToken(token);
     if (canonical === null || !allowed.has(canonical)) unmatched.push(token.trim());
   }
-  // A quantity written as words passes only when the executor wrote that
-  // exact word, or when the value it names is one the result holds.
-  const spelled = result.displayStrings.join(" ").toLowerCase();
+  // A quantity written as words passes only when the value it names is one
+  // the result holds. "Zero" and "none" need the result to actually be zero.
+  const stripped = residualText(answer);
   for (const raw of extractWordNumbers(answer)) {
     const word = raw.toLowerCase().replace(/s$/, "");
-    if (new RegExp(`\\b${word}s?\\b`).test(spelled)) continue;
     const value = WORD_NUMBERS[word];
     if (value !== null && value !== undefined && allowed.has(String(value))) continue;
+    if (value === 0 && result.matchedRows === 0) continue;
     unmatched.push(raw.trim());
+  }
+
+  if (NO_QUANTITY.test(stripped) && result.matchedRows !== 0) {
+    unmatched.push("a claim that there are none");
+  }
+
+  for (const bare of bareMagnitudes(stripped)) unmatched.push(bare.trim());
+
+  // "3 officials" has to be the number of officials the ranking found, not
+  // the length of the truncated list and not some other figure in the result.
+  if (result.groupCount !== undefined) {
+    // Run on the text with its numerals intact: this rule is about the
+    // numeral sitting in front of the word "officials".
+    for (const match of withoutDates(answer).matchAll(OFFICIAL_COUNT)) {
+      const stated = Number(match[1].replace(/,/g, ""));
+      if (stated !== result.groupCount) unmatched.push(match[0].trim());
+    }
   }
 
   return { ok: unmatched.length === 0, unmatched };
@@ -247,9 +317,11 @@ export function templateAnswer(
   planText: string,
   result: ExecuteResult
 ): string {
-  const rows = `${result.matchedRows.toLocaleString("en-US")} verified ${
+  const rows = `${result.matchedRows.toLocaleString("en-US")} checked ${
     result.matchedRows === 1 ? "row" : "rows"
   }`;
+  const plural = (n: number, word: string) =>
+    `${n.toLocaleString("en-US")} checked ${word}${n === 1 ? "" : "s"}`;
 
   switch (plan.aggregate) {
     case "count":
@@ -258,9 +330,9 @@ export function templateAnswer(
       const t = result.totals;
       if (!t) return `${planText} That query matches ${rows}.`;
       return (
-        `${planText} The ${t.knownCount.toLocaleString("en-US")} verified rows with a disclosed ` +
-        `range estimate to ${t.estimateDisplay}, and ${t.unknownCount.toLocaleString("en-US")} ` +
-        `rows with no stated value are excluded.`
+        `${planText} The ${plural(t.knownCount, "row")} with a disclosed range estimate ` +
+        `to ${t.estimateDisplay}, and ${t.unknownCount.toLocaleString("en-US")} ` +
+        `${t.unknownCount === 1 ? "row" : "rows"} with no stated value are excluded.`
       );
     }
     case "list": {
@@ -272,34 +344,34 @@ export function templateAnswer(
       const missing = result.missingOfficials ?? [];
       if (!top) {
         if (missing.length > 0) {
-          return `${planText} None of them has a verified row matching that query.`;
+          return `${planText} None of them has a checked row matching that query.`;
         }
-        return `${planText} That query matches no verified rows.`;
+        return `${planText} That query matches no checked rows.`;
       }
-      const lead = `${top.name} leads with ${top.count.toLocaleString("en-US")} verified rows estimated at ${top.estimateDisplay}.`;
+      const lead = `${top.name} leads with ${plural(top.count, "row")} estimated at ${top.estimateDisplay}.`;
       // On a comparison, the official with nothing is half the answer.
       if (missing.length > 0) {
         const who = missing.length === 1 ? missing[0] : missing.join(", ");
         const verb = missing.length === 1 ? "has" : "have";
-        return `${planText} ${lead} ${who} ${verb} no verified row matching it.`;
+        return `${planText} ${lead} ${who} ${verb} no checked row matching it.`;
       }
       return `${planText} ${lead}`;
     }
     case "top_assets": {
       const top = result.topAssets?.[0];
-      if (!top) return `${planText} That query matches no verified rows.`;
-      return `${planText} ${top.label} appears in ${top.count.toLocaleString("en-US")} verified rows, more than any other asset here.`;
+      if (!top) return `${planText} That query matches no checked rows.`;
+      return `${planText} ${top.label} appears in ${plural(top.count, "row")}, more than any other asset here.`;
     }
     case "by_month": {
       const months = result.byMonth ?? [];
-      if (months.length === 0) return `${planText} That query matches no verified rows.`;
+      if (months.length === 0) return `${planText} That query matches no checked rows.`;
       const busiest = months.reduce((a, b) => (b.count > a.count ? b : a));
       return `${planText} The query matches ${rows} across ${months.length.toLocaleString("en-US")} months, with ${busiest.count.toLocaleString("en-US")} in ${busiest.month}.`;
     }
     case "late_share": {
       const share = result.lateShare;
       if (!share || share.total === 0) {
-        return `${planText} That query matches no verified rows.`;
+        return `${planText} That query matches no checked rows.`;
       }
       // The display string is the executor's own arithmetic. Nothing here
       // divides anything.
@@ -307,15 +379,15 @@ export function templateAnswer(
     }
     case "first_last_dates": {
       if (!result.firstDate || !result.lastDate) {
-        return `${planText} That query matches no verified rows.`;
+        return `${planText} That query matches no checked rows.`;
       }
-      return `${planText} The verified rows run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.`;
+      return `${planText} The checked rows run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.`;
     }
   }
 }
 
 /**
- * The sentence for a query that matched no verified row but did match rows
+ * The sentence for a query that matched no checked row but did match rows
  * the site is still checking.
  *
  * This exists because the first live run said "Trump is not among the
@@ -331,32 +403,51 @@ export function templateAnswer(
  */
 export function outOfScopeAnswer(names: string[]): string {
   const who = names.length === 1 ? names[0] : names.join(", ");
-  const verb = names.length === 1 ? "is a" : "are";
-  const noun = names.length === 1 ? "holdover" : "holdovers";
+  const verb = names.length === 1 ? "served" : "served";
   return (
-    `${who} ${verb} prior-administration ${noun}. Open Cabinet keeps their filings on ` +
-    `the site but out of current-roster totals, so this box does not query them. ` +
-    `Their pages carry the full record.`
+    `${who} ${verb} in a prior administration and is outside the current roster. ` +
+    `The download includes those rows.`
+  );
+}
+
+/**
+ * The one-line note that rides along with an answer, naming the rows this
+ * same question matched that the box could not use. Grok's point on Sept. 6:
+ * a site-wide excluded figure tells a reader nothing about their question.
+ */
+export function pendingNote(pending: {
+  underReview: number;
+  auditPending: number;
+  notYetCompared: number;
+}): string | null {
+  const total = pending.underReview + pending.auditPending + pending.notYetCompared;
+  if (total === 0) return null;
+  return (
+    `Rows matching this question but not yet checked: ` +
+    `${pending.underReview.toLocaleString("en-US")} under review, ` +
+    `${pending.auditPending.toLocaleString("en-US")} awaiting audit, ` +
+    `${pending.notYetCompared.toLocaleString("en-US")} not yet compared.`
   );
 }
 
 export function pendingAnswer(
   planText: string,
-  pending: { underReview: number; notYetChecked: number },
+  pending: { underReview: number; auditPending: number; notYetCompared: number },
   subject?: string
 ): string {
-  const total = pending.underReview + pending.notYetChecked;
-  if (total === 0) return `${planText} No verified row matches that query.`;
+  const total = pending.underReview + pending.auditPending + pending.notYetCompared;
+  if (total === 0) return `${planText} No checked row matches that question.`;
 
   const breakdown =
-    `${pending.underReview.toLocaleString("en-US")} under review and ` +
-    `${pending.notYetChecked.toLocaleString("en-US")} not yet checked`;
+    `${pending.underReview.toLocaleString("en-US")} under review, ` +
+    `${pending.auditPending.toLocaleString("en-US")} awaiting the page audit and ` +
+    `${pending.notYetCompared.toLocaleString("en-US")} not yet compared`;
   const lead = subject
     ? `${subject} is tracked here.`
-    : `${planText} Rows match that query.`;
+    : `${planText} Rows match that question.`;
 
   return (
-    `${lead} The ${total.toLocaleString("en-US")} rows matching this query are still ` +
-    `being checked, ${breakdown}. There is no verified answer yet.`
+    `${lead} The ${total.toLocaleString("en-US")} rows matching this question have not ` +
+    `cleared a check: ${breakdown}. There is no checked answer yet.`
   );
 }

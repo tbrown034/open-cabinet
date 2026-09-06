@@ -2,12 +2,16 @@
  * The rows "Ask the data" is allowed to see, and the rows it is not.
  *
  * Open Cabinet publishes every row it has parsed, each carrying its own
- * verification state (lib/row-verification.ts). The question box is held to a
- * stricter line than the site: it answers only from rows that something other
- * than the first model has confirmed. A row qualifies when its verification
- * score is 2 or better and its state is not "disputed" — a program read the
- * same values, a second company's model read the same values, or a page audit
- * or a person confirmed it.
+ * verification state (lib/row-verification.ts). The question box answers only
+ * from CHECKED rows, and "checked" here means exactly what it means in the
+ * site's tables and on the methodology page: score 3. An independent program
+ * or a second company's model agreed with the row AND a third company's model
+ * confirmed it against the page image, or a person compared it to the filing.
+ *
+ * It used to mean score 2 or better, which the box called "verified." Grok
+ * caught that on Sept. 6 and was right: the rest of the site reserves
+ * "checked" for a higher bar, so a reader who had seen a table would hear a
+ * stronger claim than the code made. One word, one meaning, site-wide.
  *
  * Everything else is kept here too, in `pendingRows`. That is what lets an
  * answer tell the difference between "we do not track this person" and "we
@@ -15,14 +19,12 @@
  * statements about the same site, and the first one was wrong about the
  * largest official on it.
  *
- * The roster is the whole officials index, not just the officials with a
- * verified row, so the planner can recognize any tracked name. Rows are
- * loaded for that whole roster, prior-administration holdovers included.
- * getAllOfficials() drops holdovers because the site keeps them out of its
- * headline totals, and using it here meant a holdover resolved by name and
- * then reported nothing at all, which reads as "this person traded nothing"
- * (Codex, Sept. 6). Their rows are counted; the plan text says they are
- * former.
+ * The roster is the whole officials index, so the planner recognizes any
+ * tracked name, holdovers included. Their ROWS are a different question. The
+ * homepage directory and every headline total exclude prior-administration
+ * holdovers, so the box excludes them too and says so when asked: one site,
+ * one universe (Grok, Sept. 6). A holdover still resolves by name, and the
+ * answer explains the scope rather than reporting a silent zero.
  */
 import { getOfficialBySlug, getOfficialsIndex } from "./data";
 import { displayName } from "./format";
@@ -51,9 +53,16 @@ export interface PublishedRow {
   verificationState: VerificationState;
 }
 
-/** A parsed row no independent check has cleared. Never answered from. */
+/**
+ * A parsed row that is not checked. Never answered from, always counted.
+ * Three states, because they mean different things to a reader: a check
+ * disagreed, a check agreed but the page audit has not run, or nothing has
+ * compared it yet.
+ */
+export type PendingState = "underReview" | "auditPending" | "notYetCompared";
+
 export interface PendingRow extends PublishedRow {
-  pending: "underReview" | "notYetChecked";
+  pending: PendingState;
 }
 
 export interface OfficialRef {
@@ -66,17 +75,21 @@ export interface OfficialRef {
   agency: string;
   /** A prior-administration holdover, kept for reference. */
   former?: boolean;
-  /** Rows of this official the question box may answer from. */
-  publishedRowCount?: number;
+  /** Checked rows of this official; what the box can answer from. */
+  checkedRowCount?: number;
 }
 
 export interface PublishedRowsSummary {
-  /** Rows the question box may answer from. */
-  published: number;
+  /** Rows the question box may answer from: score 3. */
+  checked: number;
   /** Rows a check disagreed on; a person decides. */
   underReview: number;
-  /** Rows one model read and nothing has compared. */
-  notYetChecked: number;
+  /** A program or a second model agreed; the page audit has not run. */
+  auditPending: number;
+  /** One model read it and nothing has compared it. */
+  notYetCompared: number;
+  /** Every parsed row, the denominator a reader needs. */
+  parsed: number;
 }
 
 export interface PublishedRowsData {
@@ -96,9 +109,23 @@ export interface PublishedRowsData {
   allTickers: string[];
 }
 
-/** A row is answerable only when an independent check agreed with it. */
-export function isPublishable(score: number, state: VerificationState): boolean {
-  return score >= 2 && state !== "disputed";
+/**
+ * A row is answerable only when it is checked, the site's own word for
+ * score 3: an independent program or a second company's model agreed AND the
+ * page audit confirmed it, or a person did.
+ */
+export function isChecked(score: number, state: VerificationState): boolean {
+  return score === 3 && (state === "checked" || state === "human_verified");
+}
+
+/** Which pile a row that is not checked belongs in. */
+export function pendingStateFor(
+  score: number,
+  state: VerificationState
+): PendingState {
+  if (state === "disputed") return "underReview";
+  if (score === 2) return "auditPending";
+  return "notYetCompared";
 }
 
 let cached: Promise<PublishedRowsData> | null = null;
@@ -118,7 +145,9 @@ async function build(): Promise<PublishedRowsData> {
   const officials = (
     await Promise.all(
       index.officials
-        .filter((entry) => entry.dataStatus === "parsed")
+        // Holdovers stay on the roster for recognition, but their rows are
+        // out of scope, exactly as they are in the homepage directory.
+        .filter((entry) => entry.dataStatus === "parsed" && !entry.formerOfficial)
         .map((entry) => getOfficialBySlug(entry.slug))
     )
   ).filter((o): o is NonNullable<typeof o> => o !== null);
@@ -126,9 +155,11 @@ async function build(): Promise<PublishedRowsData> {
   const rows: PublishedRow[] = [];
   const pendingRows: PendingRow[] = [];
   const summary: PublishedRowsSummary = {
-    published: 0,
+    checked: 0,
     underReview: 0,
-    notYetChecked: 0,
+    auditPending: 0,
+    notYetCompared: 0,
+    parsed: 0,
   };
   const publishedBySlug = new Map<string, number>();
   const tickers = new Set<string>();
@@ -161,15 +192,17 @@ async function build(): Promise<PublishedRowsData> {
         verificationState: record?.state ?? "single_read",
       };
 
-      if (record && record.state !== "disputed" && isPublishable(record.score, record.state)) {
-        summary.published += 1;
+      summary.parsed += 1;
+
+      if (record && isChecked(record.score, record.state)) {
+        summary.checked += 1;
         publishedBySlug.set(official.slug, (publishedBySlug.get(official.slug) ?? 0) + 1);
         if (ticker) tickers.add(ticker);
         rows.push(base);
         return;
       }
 
-      const pending = record?.state === "disputed" ? "underReview" : "notYetChecked";
+      const pending = pendingStateFor(record?.score ?? 1, record?.state ?? "single_read");
       summary[pending] += 1;
       pendingRows.push({ ...base, pending });
     });

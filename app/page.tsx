@@ -1,6 +1,7 @@
 import { datedRows } from "@/lib/types";
 import UnderReviewNote from "./components/under-review-note";
 import { getOfficialsIndex, getAllOfficials, getTradesByTicker, officialForTotals } from "@/lib/data";
+import { getPublishedRows } from "@/lib/published-rows";
 import {
   formatCompactCurrency,
   displayName,
@@ -29,11 +30,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const [index, allOfficials, news, tickerMap] = await Promise.all([
+  const [index, allOfficials, news, tickerMap, askCounts] = await Promise.all([
     getOfficialsIndex(),
     getAllOfficials(),
     getNewsCoverage(),
     getTradesByTicker(),
+    // The box states its own coverage, computed from the verification file.
+    getPublishedRows(),
   ]);
   // Real number of distinct tickers, computed the same way the Company
   // Lookup page counts them (getTradesByTicker keys). Never hardcode this,
@@ -308,7 +311,10 @@ export default async function Home() {
         {/* Plain-English questions over the verified rows. The model writes
             the query and the sentence; code computes every number. */}
         <div id="ask" className="mt-6 scroll-mt-20">
-          <AskTheData />
+          <AskTheData
+            checkedCount={askCounts.summary.checked}
+            parsedCount={askCounts.summary.parsed}
+          />
         </div>
 
       </div>

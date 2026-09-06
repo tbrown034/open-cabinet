@@ -71,10 +71,21 @@ export interface QueryPlanFilters {
   amountAtMost?: number;
 }
 
+export const SORTS = ["date", "amount"] as const;
+export type Sort = (typeof SORTS)[number];
+
 export interface QueryPlan {
   filters: QueryPlanFilters;
   aggregate: Aggregate;
   limit?: number;
+  /**
+   * How a list is ordered. "date" is newest first, the order the rows are
+   * stored in. "amount" is by the site's estimate for the disclosed range,
+   * largest first, with unknown amounts last. A question about the largest
+   * sales used to come back as a date-sorted list and read as an answer
+   * (Grok, Sept. 6), so the ordering is now something the plan states.
+   */
+  sort?: Sort;
 }
 
 export type PlanParse =
@@ -93,7 +104,7 @@ const FILTER_KEYS = new Set([
   "amountAtMost",
 ]);
 
-const PLAN_KEYS = new Set(["filters", "aggregate", "limit"]);
+const PLAN_KEYS = new Set(["filters", "aggregate", "limit", "sort"]);
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -152,6 +163,15 @@ export function parseQueryPlan(input: unknown): PlanParse {
       errors.push(`limit must be between 1 and ${MAX_LIMIT}`);
     } else {
       limit = input.limit;
+    }
+  }
+
+  let sort: Sort | undefined;
+  if (input.sort !== undefined) {
+    if (typeof input.sort !== "string" || !(SORTS as readonly string[]).includes(input.sort)) {
+      errors.push(`sort must be one of ${SORTS.join(", ")}`);
+    } else {
+      sort = input.sort as Sort;
     }
   }
 
@@ -229,7 +249,7 @@ export function parseQueryPlan(input: unknown): PlanParse {
   }
 
   if (errors.length > 0) return { ok: false, errors };
-  return { ok: true, plan: { filters, aggregate: aggregate as Aggregate, limit } };
+  return { ok: true, plan: { filters, aggregate: aggregate as Aggregate, limit, sort } };
 }
 
 /** True when a plan narrows nothing at all. */
@@ -284,6 +304,105 @@ export function normalizeName(value: string): string {
     .trim();
 }
 
+/**
+ * Short forms readers and models actually write. Grok's Sept. 6 table: "Doug
+ * Burgum", "Chris Wright" and "Robert Kennedy" all failed against filed names
+ * that carry a middle initial or a longer first name, and the reader got the
+ * absence sentence, which is the one claim this box may not make.
+ *
+ * "Sean" and "Shawn" are deliberately absent: they are different names, not
+ * two spellings of one, and guessing between them is exactly the kind of
+ * confidence this resolver refuses.
+ */
+const SHORT_FORMS: Record<string, string[]> = {
+  doug: ["douglas"],
+  chris: ["christopher"],
+  bob: ["robert"],
+  bobby: ["robert"],
+  rob: ["robert"],
+  robert: ["bob", "bobby"],
+  mike: ["michael"],
+  jim: ["james"],
+  jimmy: ["james"],
+  steve: ["stephen", "steven"],
+  tom: ["thomas"],
+  dan: ["daniel"],
+  danny: ["daniel"],
+  ed: ["edward"],
+  eddie: ["edward"],
+  ken: ["kenneth"],
+  bill: ["william"],
+  billy: ["william"],
+  will: ["william"],
+  pete: ["peter"],
+  matt: ["matthew"],
+  dave: ["david"],
+  joe: ["joseph"],
+  tony: ["anthony"],
+  rick: ["richard"],
+  dick: ["richard"],
+  nick: ["nicholas"],
+  greg: ["gregory"],
+  jeff: ["jeffrey"],
+  andy: ["andrew"],
+  chuck: ["charles"],
+  charlie: ["charles"],
+};
+
+/** Honorifics a reader puts in front of a name. Not part of the name. */
+const HONORIFIC =
+  /^(?:president|vice president|secretary|sec|senator|sen|governor|gov|administrator|director|ambassador|attorney general|justice|judge|mr|mrs|ms|dr)\s+/i;
+
+function stripHonorific(name: string): string {
+  // Normalize first so punctuation and case cannot hide the honorific:
+  // "President Trump" and "Sec. Burgum" both have to lose their title.
+  return normalizeName(name).replace(HONORIFIC, "").trim();
+}
+
+/** Every token of a filed name: "Trump, Donald J" -> [donald, j, trump]. */
+function nameTokens(filedName: string): string[] {
+  const comma = filedName.indexOf(",");
+  const normalized =
+    comma > 0
+      ? normalizeName(`${filedName.slice(comma + 1)} ${filedName.slice(0, comma)}`)
+      : normalizeName(filedName);
+  return normalized.split(" ").filter(Boolean);
+}
+
+/** Does one written token stand for one token of the filed name? */
+function tokenMatches(written: string, filed: string): boolean {
+  if (written === filed) return true;
+  if (SHORT_FORMS[written]?.includes(filed)) return true;
+  if (SHORT_FORMS[filed]?.includes(written)) return true;
+  // A hyphenated surname answers to either half: "Chavez" for
+  // "Chavez-DeRemer", when only one official has that half.
+  if (filed.includes(" ") && filed.split(" ").includes(written)) return true;
+  return false;
+}
+
+/**
+ * A written name matches a filed name when every token the reader wrote finds
+ * a distinct token of the filed name, the surname included. That accepts
+ * "Doug Burgum" for "Burgum, Douglas J" and "President Trump" for "Trump,
+ * Donald J" without accepting a first name on its own.
+ */
+function looseNameMatches(written: string, official: OfficialRef): boolean {
+  const wrote = stripHonorific(written).split(" ").filter(Boolean);
+  if (wrote.length < 2) return false;
+  const filed = nameTokens(official.filedName);
+  const surname = filed[filed.length - 1];
+  // The surname has to be one of the tokens written, or this is a guess.
+  if (!wrote.some((w) => tokenMatches(w, surname))) return false;
+
+  const remaining = [...filed];
+  for (const token of wrote) {
+    const index = remaining.findIndex((f) => tokenMatches(token, f));
+    if (index === -1) return false;
+    remaining.splice(index, 1);
+  }
+  return true;
+}
+
 function lastNameOf(filedName: string): string {
   // Stored as "Last, First Middle"; fall back to the final word.
   const comma = filedName.indexOf(",");
@@ -326,7 +445,28 @@ export function resolveOfficials(
         candidates: exact.map((o) => o.name),
       };
     }
-    const byLast = officials.filter((o) => lastNameOf(o.filedName) === input);
+    // Loose match before surname-only: "Doug Burgum" is more specific than
+    // "Burgum", and a reader who writes both names deserves the better match.
+    const loose = officials.filter((o) => looseNameMatches(raw, o));
+    if (loose.length === 1) {
+      slugs.add(loose[0].slug);
+      continue;
+    }
+    if (loose.length > 1) {
+      return {
+        ok: false,
+        reason: `"${raw}" could mean more than one official`,
+        candidates: loose.map((o) => o.name),
+      };
+    }
+
+    const surnameInput = stripHonorific(raw);
+    const byLast = officials.filter((o) => {
+      const surname = lastNameOf(o.filedName);
+      if (surname === surnameInput) return true;
+      // Either half of a hyphenated surname, when it is unambiguous.
+      return surname.includes(" ") && surname.split(" ").includes(surnameInput);
+    });
     if (byLast.length === 1) {
       slugs.add(byLast[0].slug);
       continue;
@@ -482,5 +622,11 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   else if (f.dateFrom) parts.push(`on or after ${f.dateFrom}`);
   else if (f.dateTo) parts.push(`on or before ${f.dateTo}`);
 
-  return `${parts.join(" ")}, ${AGGREGATE_PHRASE[plan.aggregate]}.`;
+  const ordering =
+    plan.sort === "amount"
+      ? ", largest disclosed range first"
+      : plan.aggregate === "list"
+        ? ", newest first"
+        : "";
+  return `${parts.join(" ")}, ${AGGREGATE_PHRASE[plan.aggregate]}${ordering}.`;
 }

@@ -26,41 +26,57 @@ it never sees a row that something other than the first model has agreed with.
    two sentences.
 5. **Check.** `lib/ask/check.ts` pulls every number out of that sentence and
    requires each one to match a figure the executor produced. It also requires
-   the sentence to call its counts verified and forbids the words that turn a
+   the sentence to call its counts checked and forbids the words that turn a
    count into a claim about the whole record. A sentence that fails either
    check is thrown away and replaced by one assembled in code.
 
-## Tracked is not the same as verified
+## Tracked is not the same as checked
 
 Most rows on the site have not cleared a check, so a question about a real
-official often has no verified answer. The first live run answered "Trump is
+official often has no checked answer. The first live run answered "Trump is
 not among the officials listed in this dataset." He is the largest official on
-it, with 8,940 rows, none of them verified at the time.
+it, with 8,940 rows, none of them checked at the time.
 
 Two things fixed that. The roster shown to the planner is the whole officials
-index, so every tracked name resolves. And when a query matches no verified
+index, so every tracked name resolves. And when a query matches no checked
 row, the same filters run again over the pending rows, and the response says
 what is waiting:
 
 > Donald J. Trump is tracked here. The 4,389 rows matching this query are still
 > being checked, 564 under review and 3,825 not yet checked. There is no
-> verified answer yet.
+> checked answer yet.
 
 Every `not_in_data` response carries `pendingMatches` with those two counts.
 The box never says a person is absent unless the name resolves to nobody in
 the index.
 
-## What the rows are
+## What "checked" means, and why the word matters
 
 `lib/published-rows.ts` is the only source the executor reads. A row qualifies
-when its verification score is 2 or better and its state is not "disputed" —
-an independent program read the same values, a second company's model read the
-same values, a page audit confirmed it, or a person did.
+when it is **checked**, which here means exactly what it means in the site's
+tables and on the methodology page: score 3. An independent program or a second
+company's model agreed with the row and a third company's model confirmed it
+against the page image, or a person compared it to the filing.
 
-Of 11,501 parsed rows as of Sept. 6, 2026, that is 1,364. Every answer carries
-the count of what it left out: 1,268 rows under review and 8,662 not yet
-independently checked. A reader sees the size of the gap in the same breath as
-the number.
+It used to mean score 2 or better, and the box called that "verified." Grok
+caught it on Sept. 6 and was right. A reporter who had read a table on this
+site would hear a stronger claim than the code was making, and the methodology
+page said 201 rows had passed every check while the box implied 1,495 had. One
+word, one meaning, or the contradiction rides on every answer.
+
+**A caveat on the coverage number.** Checked rows are a small share of the
+record and the share moves as the audit runs, so the figure is computed from
+the verification file on every request and never written into copy. At the time
+of writing it is 136 of 11,294 parsed rows for the current roster. That is not
+a comfortable number to print. It is the honest one, and it appears in the
+first line a reader sees, because a box that hid it would be worse than a box
+that has it.
+
+Every answer also carries what it left out, twice: the rows matching that
+question that have not cleared a check, broken into under review, awaiting the
+page audit and not yet compared; and the same three counts site-wide. The
+per-question line exists because a site-wide figure tells a reader nothing
+about the question they asked.
 
 ## What the AI is allowed to do
 
@@ -80,7 +96,9 @@ the number.
   site writes the sentence, because the model's own refusals used em dashes and
   read like a chatbot.
 - Say all, every, total, on file, complete, entire, "disclosure records show"
-  or "most recent", or drop the word "verified" from a count.
+  or "most recent", or drop the word "checked" from a count. The word
+  "verified" is itself refused, because it named a weaker bar than the rest of
+  the site means by it.
 - Use a dash. Em and en dashes are stripped from any model text that reaches
   the response.
 - Widen a query. On an official's page the plan is pre-filtered to that slug
@@ -107,6 +125,32 @@ passes only when the code did the rounding.
 A figure the code never produced fails. So does a share, a percentage or a
 comparison the query never asked for. On a failure the response still answers
 the question; it just answers in a sentence built by `templateAnswer`.
+
+## The refusals are code now
+
+Every rule below used to live in the planner prompt, which is a request. Grok's
+Sept. 6 review found four questions that walked straight through it and came
+back as confident answers to something else. `lib/ask/intent.ts` now classifies
+the question before a token is spent:
+
+| Question shape | What happens |
+| --- | --- |
+| average, mean, median, typical, per trade | Declines. A filing discloses a range, so there is no figure to average. |
+| a share of anything but lateness | Declines. Only late filings have a denominator this box can name. |
+| a share of late filings | Forces the `late_share` aggregate, whatever the model chose. |
+| except, excluding, but not, other than, neither | Declines. Every filter is membership; none is subtraction. |
+| both X and Y across assets | Declines. Filters are OR within a field, never AND. |
+| largest, biggest, most expensive, highest value | Forces an amount sort, so date order cannot pass for size. |
+
+The gate is deliberately over-eager. Refusing a question the box could have
+answered costs a reader one rephrase. Answering a question nobody asked costs
+them a wrong fact with a citation under it.
+
+The rescue path is gone too. A model decline used to be convertible into a
+count of a different question, which is how "Average trade size for Doug
+Burgum" shipped as a headcount. A decline is a decline. The one thing still
+re-checked is the claim the model may not make, that a person is not tracked,
+and the most a roster rescan can produce is a pending answer about that person.
 
 ## Answering a different question is the failure that matters
 
@@ -141,13 +185,13 @@ than it read. Three holes, all of the same shape: a token that looked like a
 figure was matched against something that was not one.
 
 - **Dates were being split into digits.** A result carrying Oct. 21, 2025
-  vouched for 2025, 10 and 21, so "10 verified rows shown" passed on a result
+  vouched for 2025, 10 and 21, so "10 checked rows shown" passed on a result
   that listed one. Dates are now matched whole, against the whole dates the
   result carries, and removed before anything counts numbers.
 - **Compact money lost its suffix.** "$4.5M" tokenized as "$4.5", which meant
   a sentence could say "$4.5" or "$4.5B" and pass. K, M and B are part of the
   token now.
-- **Spelled-out quantities carried no digits at all.** "One billion verified
+- **Spelled-out quantities carried no digits at all.** "One billion checked
   trades" had nothing for the tokenizer to catch. Every quantity word from one
   to ninety, plus hundred, thousand, million, billion and dozen, is now checked
   against the result. "Half", "twice" and "double" name no value, so they only
@@ -171,7 +215,7 @@ spend cannot outrun it and a restart cannot replenish it. Apply
 route falls back to a per-instance counter and says so in the logs.
 
 Two findings turned on the same mistake in the other direction. Symbol
-resolution ran against verified symbols only, so a question about a stock that
+resolution ran against checked symbols only, so a question about a stock that
 appears solely in unchecked rows died at the resolver instead of reaching the
 pending count; it now resolves against every symbol the site holds. And rows
 were loaded through the same helper the homepage uses, which drops
@@ -210,9 +254,9 @@ Because a number it makes up does not appear in the result payload, and the
 check drops the sentence. The fallback sentence is assembled from the same
 result, so the reader still gets an answer.
 
-**What stops it answering from rows you have not verified?**
+**What stops it answering from rows you have not checked?**
 The executor cannot reach them. `getPublishedRows()` filters on verification
-state before any plan runs, so an unverified row is not in the array the query
+state before any plan runs, so an unchecked row is not in the array the query
 touches.
 
 **What if the question is one your query language cannot express?**
@@ -230,10 +274,16 @@ The resolver only accepts an exact slug, an exact full name, or a last name
 held by exactly one official. Two Smiths return `not_in_data` with both names,
 and the reader picks.
 
+**Why is the number so small?**
+Because "checked" is a real bar and most rows have not cleared it. The box
+could answer from ten times as many rows by lowering the word to mean "a
+program agreed, audit pending." It used to. That is the change this feature
+most needed and the one a reader would never have caught.
+
 **What does it get wrong?**
 Coverage, mostly. Most rows are still one model's read, so a question about the
 full record gets an answer about a slice of it. Live testing caught the box
-saying "all 41 disclosed sale transactions" when it meant 41 verified ones, and
+saying "all 41 disclosed sale transactions" when it meant 41 checked ones, and
 telling a reader Trump was not in a dataset he is the largest official in. A
 code review then caught the numbers check itself passing figures it should
 have refused. All of it is now blocked in code rather than asked for in a

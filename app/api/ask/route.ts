@@ -32,6 +32,7 @@ import {
   PHRASE_TIMEOUT_MS,
 } from "@/lib/ask/limits";
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
+import { classifyIntent } from "@/lib/ask/intent";
 import {
   parseQueryPlan,
   resolvePlan,
@@ -50,6 +51,8 @@ import {
   checkAnswerLanguage,
   templateAnswer,
   pendingAnswer,
+  pendingNote,
+  outOfScopeAnswer,
 } from "@/lib/ask/check";
 import {
   DECLINE_CATEGORIES,
@@ -65,11 +68,20 @@ const MAX_QUESTION_LENGTH = 300;
 const DEFAULT_MODEL = "claude-sonnet-5";
 
 export const DISCLOSURE =
-  "Computed by code from independently verified rows only. Rows still under " +
-  "review are excluded and counted here. AI wrote the query and the sentence; " +
-  "it did not compute the numbers. Verify against the linked filings before citing.";
+  "Numbers come from code, not from the AI. The AI wrote the query and the " +
+  "sentence. This counts checked rows, the ones a program or a second model " +
+  "agreed with and a page audit confirmed, not every disclosure on the site. " +
+  "Rows under review, rows awaiting the audit and rows not yet compared are " +
+  "left out. Check the linked 278-T before you cite a figure.";
 
 export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
+
+const EMPTY_PENDING = {
+  underReview: 0,
+  auditPending: 0,
+  notYetCompared: 0,
+  total: 0,
+};
 
 
 
@@ -477,7 +489,10 @@ export async function POST(request: Request) {
     const data = await getPublishedRows();
     const excluded = {
       underReview: data.summary.underReview,
-      notYetChecked: data.summary.notYetChecked,
+      auditPending: data.summary.auditPending,
+      notYetCompared: data.summary.notYetCompared,
+      checked: data.summary.checked,
+      parsed: data.summary.parsed,
     };
 
     // On an official's page the plan is pre-filtered to that official. The
@@ -486,6 +501,23 @@ export async function POST(request: Request) {
       ? data.officials.find((o) => o.slug === scopeSlug) ?? null
       : null;
     const officialNames = scope ? [scope.name] : data.officials.map((o) => o.name);
+
+    // Before a token is spent: does the question name a shape this box
+    // cannot represent? A prompt asking the model not to approximate is a
+    // request; this is the refusal (Grok, Sept. 6).
+    const { intent, rule } = classifyIntent(question);
+    if (intent.kind === "decline") {
+      logAsk({ question, status: "declined", reason: `intent:${rule}`, ipKey });
+      return NextResponse.json({
+        status: "declined" satisfies AskStatus,
+        answer: stripDashes(declineText(intent.category)),
+        plan: null,
+        planText: null,
+        result: null,
+        excluded,
+        disclosure: DISCLOSURE,
+      });
+    }
 
     // The model has no clock. Relative periods only become dates because
     // this line hands it one.
@@ -499,47 +531,47 @@ export async function POST(request: Request) {
     );
 
     if (planCall.kind === "decline") {
-      // Before a decline about a NAME reaches a reader, check the question
-      // against the roster ourselves. A model that declines a question naming
-      // a tracked official would otherwise get the last word on whether that
-      // person exists (Codex, Sept. 6), which is the one claim it may not
-      // make. Every other category is about the computation, not the person,
-      // and stands: an average is still unsupported for someone we do track.
-      const aboutTheName = planCall.category === "unknown_person";
-      const named = aboutTheName ? officialsNamedIn(question, data.officials) : [];
-      if (named.length > 0) {
-        const fallbackPlan: QueryPlan = {
-          filters: { officials: [named[0].slug] },
-          aggregate: "count",
-        };
-        const fallbackText = describePlan(fallbackPlan, data.officials);
-        const fallbackResult = execute(fallbackPlan, data);
-        if (fallbackResult.matchedRows > 0) {
-          logAsk({ question, status: "answered", plan: fallbackPlan, rescued: true, ipKey });
+      // A decline stands. It used to be rescued into a count of a different
+      // question, which published an answer nobody asked for (Grok, Sept. 6).
+      // The one thing still checked is the claim the model may not make: that
+      // a person is not tracked. The roster is rescanned, and the most a
+      // rescan can produce is a pending answer about that person, never a
+      // count of some other question.
+      if (planCall.category === "unknown_person") {
+        const named = officialsNamedIn(question, data.officials);
+        const tracked = named[0];
+        if (tracked) {
+          if (tracked.former) {
+            logAsk({ question, status: "not_in_data", reason: "former", ipKey });
+            return NextResponse.json({
+              status: "not_in_data" satisfies AskStatus,
+              answer: stripDashes(outOfScopeAnswer([tracked.name])),
+              plan: null,
+              planText: null,
+              result: null,
+              excluded,
+              pendingMatches: EMPTY_PENDING,
+              disclosure: DISCLOSURE,
+            });
+          }
+          const rescanPlan: QueryPlan = {
+            filters: { officials: [tracked.slug] },
+            aggregate: "count",
+          };
+          const pendingMatches = countPending(rescanPlan, data.pendingRows);
+          const rescanText = describePlan(rescanPlan, data.officials);
+          logAsk({ question, status: "not_in_data", reason: "roster rescan", ipKey });
           return NextResponse.json({
-            status: "answered" satisfies AskStatus,
-            answer: stripDashes(templateAnswer(fallbackPlan, fallbackText, fallbackResult)),
-            plan: fallbackPlan,
-            planText: stripDashes(fallbackText),
-            result: fallbackResult,
+            status: "not_in_data" satisfies AskStatus,
+            answer: stripDashes(pendingAnswer(rescanText, pendingMatches, tracked.name)),
+            plan: null,
+            planText: null,
+            result: null,
             excluded,
+            pendingMatches,
             disclosure: DISCLOSURE,
           });
         }
-        const pendingMatches = countPending(fallbackPlan, data.pendingRows);
-        logAsk({ question, status: "not_in_data", plan: fallbackPlan, rescued: true, ipKey });
-        return NextResponse.json({
-          status: "not_in_data" satisfies AskStatus,
-          answer: stripDashes(
-            pendingAnswer(fallbackText, pendingMatches, named[0].name)
-          ),
-          plan: fallbackPlan,
-          planText: stripDashes(fallbackText),
-          result: fallbackResult,
-          excluded,
-          pendingMatches,
-          disclosure: DISCLOSURE,
-        });
       }
       logAsk({ question, status: "declined", ipKey });
       return NextResponse.json({
@@ -579,14 +611,42 @@ export async function POST(request: Request) {
         planText: null,
         result: null,
         excluded,
-        pendingMatches: { underReview: 0, notYetChecked: 0 },
+        pendingMatches: EMPTY_PENDING,
         disclosure: DISCLOSURE,
       });
     }
 
     let plan: QueryPlan = parsed.plan;
     if (scope) {
+      // The page box answers about the page. If the reader named someone
+      // else, say so rather than silently answering about the wrong person
+      // (Grok, Sept. 6).
+      const named = officialsNamedIn(question, data.officials);
+      const other = named.find((o) => o.slug !== scope.slug);
+      if (other) {
+        logAsk({ question, status: "declined", reason: "off-page official", ipKey });
+        return NextResponse.json({
+          status: "declined" satisfies AskStatus,
+          answer: stripDashes(
+            `On this page the box answers only about ${scope.name}. ` +
+              `Use the homepage box for others.`
+          ),
+          plan: null,
+          planText: null,
+          result: null,
+          excluded,
+          disclosure: DISCLOSURE,
+        });
+      }
       plan = { ...plan, filters: { ...plan.filters, officials: [scope.slug] } };
+    }
+
+    // The intent gate can override what the model chose. A share question
+    // gets late_share; a "largest" question gets an amount sort.
+    if (intent.kind === "require_aggregate") {
+      plan = { ...plan, aggregate: intent.aggregate };
+    } else if (intent.kind === "require_sort") {
+      plan = { ...plan, aggregate: plan.aggregate === "count" ? "list" : plan.aggregate, sort: intent.sort };
     }
 
     // Resolve against every symbol the site holds, not just the verified
@@ -606,12 +666,33 @@ export async function POST(request: Request) {
         planText: null,
         result: null,
         excluded,
-        pendingMatches: { underReview: 0, notYetChecked: 0 },
+        pendingMatches: EMPTY_PENDING,
         disclosure: DISCLOSURE,
       });
     }
 
     const finalPlan = normalizePlan(resolved.value);
+
+    // Holdovers are on the roster so their names resolve, but their rows are
+    // outside the current roster, exactly as they are in the homepage
+    // directory. One site, one universe.
+    const holdovers = (finalPlan.filters.officials ?? [])
+      .map((slug) => data.officials.find((o) => o.slug === slug))
+      .filter((o) => o?.former)
+      .map((o) => o!.name);
+    if (holdovers.length > 0) {
+      logAsk({ question, status: "not_in_data", reason: "former officials", ipKey });
+      return NextResponse.json({
+        status: "not_in_data" satisfies AskStatus,
+        answer: stripDashes(outOfScopeAnswer(holdovers)),
+        plan: finalPlan,
+        planText: stripDashes(describePlan(finalPlan, data.officials)),
+        result: null,
+        excluded,
+        pendingMatches: EMPTY_PENDING,
+        disclosure: DISCLOSURE,
+      });
+    }
 
     // A comparison across a few named people is a ranking. Past five it is a
     // table nobody asked for, and the honest move is to decline rather than
@@ -657,6 +738,7 @@ export async function POST(request: Request) {
         result,
         excluded,
         pendingMatches,
+        pendingNote: pendingNote(pendingMatches),
         disclosure: DISCLOSURE,
       });
     }
@@ -698,6 +780,10 @@ export async function POST(request: Request) {
       ipKey,
     });
 
+    // The rows this same question matched that the box could not use. A
+    // site-wide figure tells a reader nothing about their question.
+    const pendingMatches = countPending(finalPlan, data.pendingRows);
+
     return NextResponse.json({
       status: "answered" satisfies AskStatus,
       // A question can carry a dash into descriptionContains, and from there
@@ -708,6 +794,8 @@ export async function POST(request: Request) {
       planText: stripDashes(planText),
       result,
       excluded,
+      pendingMatches,
+      pendingNote: pendingNote(pendingMatches),
       disclosure: DISCLOSURE,
     });
   } catch (error) {

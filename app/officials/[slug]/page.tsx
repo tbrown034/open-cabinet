@@ -32,6 +32,7 @@ import type { ChartView } from "@/app/components/view-toggle";
 import OfficialAvatar from "@/app/components/official-avatar";
 import AlertSignupForm from "@/app/components/alert-signup-form";
 import AskTheData from "@/app/components/ask-the-data";
+import { getPublishedRows } from "@/lib/published-rows";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
 import SourceDocuments from "@/app/components/source-documents";
 import {
@@ -198,13 +199,15 @@ export default async function OfficialPage({
     notFound();
   }
 
-  const [news, divestiture, sourceDocs, index, feePayments] = await Promise.all([
-    getNewsForOfficial(slug),
-    getDivestitureData(slug),
-    getSourceDocuments(slug),
-    getOfficialsIndex(),
-    getFeePaymentsBySlug(slug),
-  ]);
+  const [news, divestiture, sourceDocs, index, feePayments, askCounts] =
+    await Promise.all([
+      getNewsForOfficial(slug),
+      getDivestitureData(slug),
+      getSourceDocuments(slug),
+      getOfficialsIndex(),
+      getFeePaymentsBySlug(slug),
+      getPublishedRows(),
+    ]);
   const currentSourceDocs = sourceDocumentsWithCurrentFilings(
     sourceDocs,
     official
@@ -699,6 +702,8 @@ export default async function OfficialPage({
         <AskTheData
           officialSlug={official.slug}
           officialName={displayName(official.name)}
+          checkedCount={askCounts.summary.checked}
+          parsedCount={askCounts.summary.parsed}
         />
       </div>
 

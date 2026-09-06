@@ -378,6 +378,20 @@ export default async function MethodologyPage() {
               </p>
             </div>
             <div>
+              <div className="font-medium text-neutral-900">
+                Ask the data
+              </div>
+              <p className="text-neutral-500 mt-0.5">
+                The question box on the homepage sends your question to a model
+                twice: once to turn it into a database query, and once to write
+                the sentence around the result. Code runs the query and
+                produces every number, and it discards the sentence if a figure
+                in it does not match what the query returned. The box answers
+                only from checked rows, the same bar this page describes above,
+                so its counts are smaller than the site totals.
+              </p>
+            </div>
+            <div>
               <div className="font-medium text-neutral-900">News coverage</div>
               <p className="text-neutral-500 mt-0.5">
                 Articles in the {"\""}In the News{"\""} sections are collected

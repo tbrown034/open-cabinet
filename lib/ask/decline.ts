@@ -21,6 +21,7 @@ export const DECLINE_CATEGORIES = [
   "injection_or_instruction",
   "unknown_person",
   "unsupported_computation",
+  "unsupported_filter",
   "needs_date_range",
   "other",
 ] as const;
@@ -39,9 +40,11 @@ const DECLINE_TEXT: Record<DeclineCategory, string> = {
   // the roster (Codex, Sept. 6). Before this sentence is ever sent, the route
   // rescans the question against the roster itself.
   unknown_person:
-    "I could not match a name in that question to a tracked official. The homepage directory lists everyone who is.",
+    "That name did not match a tracked official. The directory on the homepage is the list.",
   unsupported_computation:
-    "This box counts, totals and lists verified trades. It does not compute averages or medians because filings disclose ranges, not amounts.",
+    "This box counts, totals and lists checked trades. It does not compute averages or medians, because a filing discloses a range rather than an amount. It can give a share only for late filings.",
+  unsupported_filter:
+    "This box cannot exclude an official or an asset, and it cannot require two assets at once. Ask about one official or one asset at a time.",
   needs_date_range:
     "Name the dates you want and this box will run it. It reads explicit dates, so try a range like 2026-01-01 to 2026-03-31 instead of a relative period.",
   other:
@@ -60,13 +63,16 @@ export function declineText(category: unknown): string {
 }
 
 /**
- * Remove dashes from any model text that reaches a reader. An em or en dash
- * standing in for a full stop becomes one; anywhere else it becomes a comma.
+ * Remove dashes from anything a reader sees, model prose and filing text
+ * alike. A dash standing in for a full stop becomes one; anywhere else it
+ * becomes a comma.
  */
 export function stripDashes(text: string): string {
+  // Em, en, horizontal bar and the typed double hyphen. Grok found the last
+  // two surviving on Sept. 6: "41 rows -- more than any other" shipped intact.
   return text
-    .replace(/\s*[—–]\s*(?=[A-Z])/g, ". ")
-    .replace(/\s*[—–]\s*/g, ", ")
+    .replace(/\s*(?:[—–―]|--)\s*(?=[A-Z])/g, ". ")
+    .replace(/\s*(?:[—–―]|--)\s*/g, ", ")
     .replace(/,\s*,/g, ",")
     .replace(/\s+/g, " ")
     .trim();

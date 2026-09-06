@@ -16,11 +16,16 @@
 import {
   amountRangeToMin,
   amountRangeToMax,
+  amountRangeToMidpoint,
   sumAmountEstimates,
   amountRangeLabel,
 } from "../amounts";
 import { formatCompactCurrency, formatDate } from "../format";
-import type { PendingRow, PublishedRow, PublishedRowsData } from "../published-rows";
+import type {
+  PendingRow,
+  PublishedRow,
+  PublishedRowsData,
+} from "../published-rows";
 import type { Aggregate, QueryPlan } from "./plan";
 
 export interface ResultRow {
@@ -158,18 +163,36 @@ export function filterRows(plan: QueryPlan, rows: PublishedRow[]): PublishedRow[
   });
 }
 
+export interface PendingCounts {
+  /** A check disagreed; a person decides. */
+  underReview: number;
+  /** A program or a second model agreed; the page audit has not run. */
+  auditPending: number;
+  /** One model read it and nothing has compared it. */
+  notYetCompared: number;
+  total: number;
+}
+
 /**
- * The same filters over the rows no check has cleared. This is what separates
- * "we do not track that" from "we track it and none of it is verified yet."
+ * The same filters over the rows that are not checked.
+ *
+ * This is what separates "we do not track that" from "we track it and none of
+ * it has cleared a check." It runs on every answer now, not only on a miss
+ * (Grok, Sept. 6), because a reader owed the size of what was left out is owed
+ * it when there IS an answer too.
  */
 export function countPending(
   plan: QueryPlan,
   pendingRows: PendingRow[]
-): { underReview: number; notYetChecked: number } {
+): PendingCounts {
   const matched = filterRows(plan, pendingRows) as PendingRow[];
+  const of = (state: PendingRow["pending"]) =>
+    matched.filter((r) => r.pending === state).length;
   return {
-    underReview: matched.filter((r) => r.pending === "underReview").length,
-    notYetChecked: matched.filter((r) => r.pending === "notYetChecked").length,
+    underReview: of("underReview"),
+    auditPending: of("auditPending"),
+    notYetCompared: of("notYetCompared"),
+    total: matched.length,
   };
 }
 
@@ -269,7 +292,19 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       break;
     }
     case "list": {
-      const shown = matched.slice(0, limit);
+      // The plan states its ordering, so a question about the largest sales
+      // cannot be answered with whatever happened to be newest.
+      const ordered =
+        plan.sort === "amount"
+          ? [...matched].sort((a, b) => {
+              // Unknown amounts have no size and sort last, the same way
+              // they are excluded from every total.
+              const av = a.amount === null ? -1 : amountRangeToMidpoint(a.amount);
+              const bv = b.amount === null ? -1 : amountRangeToMidpoint(b.amount);
+              return bv - av || b.date.localeCompare(a.date);
+            })
+          : matched;
+      const shown = ordered.slice(0, limit);
       result.rows = shown.map(toResultRow);
       result.shownRows = shown.length;
       addNumber(shown.length);
@@ -374,12 +409,15 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       const late = matched.filter((r) => r.lateFilingFlag).length;
       const total = matched.length;
       const percent = total === 0 ? 0 : Math.round((late / total) * 1000) / 10;
+      // AP style: "percent" in running text. And the statistic describes the
+      // rows in this query, which are checked rows, not the whole record.
       const display =
-        `${late.toLocaleString("en-US")} of ${total.toLocaleString("en-US")} verified ` +
-        `trades (${percent}%) were flagged late`;
+        `${late.toLocaleString("en-US")} of ${total.toLocaleString("en-US")} checked ` +
+        `trades in this query (${percent} percent) were flagged late`;
       result.lateShare = { late, total, percent, display };
       addNumber(late);
       addNumber(total);
+      displayStrings.add(`${percent} percent`);
       displayStrings.add(`${percent}%`);
       displayStrings.add(display);
       break;

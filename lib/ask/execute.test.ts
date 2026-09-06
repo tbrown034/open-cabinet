@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { execute, filterRows, countPending } from "./execute";
 import { resolveTickers, type QueryPlan } from "./plan";
+import { isChecked, pendingStateFor } from "../published-rows";
 import type { PendingRow, PublishedRow, PublishedRowsData } from "../published-rows";
 
 function row(partial: Partial<PublishedRow> & { id: string }): PublishedRow {
@@ -51,19 +52,19 @@ const PENDING: PendingRow[] = [
   {
     ...row({ id: "p2", officialName: "Donald J Trump", officialSlug: "trump-donald-j", ticker: "DJT", description: "Trump Media", type: "Sale", date: "2026-03-03" }),
     verificationState: "single_read",
-    pending: "notYetChecked",
+    pending: "notYetCompared",
   },
   {
     ...row({ id: "p3", officialName: "Donald J Trump", officialSlug: "trump-donald-j", ticker: "DJT", description: "Trump Media", type: "Sale", date: "2026-04-04" }),
     verificationState: "single_read",
-    pending: "notYetChecked",
+    pending: "notYetCompared",
   },
 ];
 
 const DATA: PublishedRowsData = {
   rows: ROWS,
   pendingRows: PENDING,
-  summary: { published: 4, underReview: 7, notYetChecked: 11 },
+  summary: { checked: 4, underReview: 7, auditPending: 5, notYetCompared: 11, parsed: 27 },
   officials: [
     { slug: "bessent-scott", name: "Scott Bessent", filedName: "Bessent, Scott", title: "Secretary of the Treasury", agency: "Treasury" },
     { slug: "burgum-doug", name: "Doug Burgum", filedName: "Burgum, Doug", title: "Secretary of the Interior", agency: "Interior" },
@@ -212,7 +213,7 @@ describe("countPending", () => {
   it("counts the rows an official has waiting on a check", () => {
     expect(
       countPending(plan({ filters: { officials: ["trump-donald-j"] } }), PENDING)
-    ).toEqual({ underReview: 1, notYetChecked: 2 });
+    ).toEqual({ underReview: 1, auditPending: 0, notYetCompared: 2, total: 3 });
   });
 
   it("applies the same filters as the published query", () => {
@@ -221,13 +222,15 @@ describe("countPending", () => {
         plan({ filters: { officials: ["trump-donald-j"], types: ["Sale"] } }),
         PENDING
       )
-    ).toEqual({ underReview: 0, notYetChecked: 2 });
+    ).toEqual({ underReview: 0, auditPending: 0, notYetCompared: 2, total: 2 });
   });
 
   it("returns zeros for an official with nothing pending", () => {
     expect(countPending(plan({ filters: { officials: ["bessent-scott"] } }), PENDING)).toEqual({
       underReview: 0,
-      notYetChecked: 0,
+      auditPending: 0,
+      notYetCompared: 0,
+      total: 0,
     });
   });
 });
@@ -240,7 +243,7 @@ describe("late_share", () => {
       late: 1,
       total: 4,
       percent: 25,
-      display: "1 of 4 verified trades (25%) were flagged late",
+      display: "1 of 4 checked trades in this query (25 percent) were flagged late",
     });
   });
 
@@ -252,7 +255,7 @@ describe("late_share", () => {
 
   it("vouches for the percentage so a sentence may state it", () => {
     const result = execute(plan({ aggregate: "late_share" }), DATA);
-    expect(result.displayStrings).toContain("25%");
+    expect(result.displayStrings).toContain("25 percent");
   });
 
   it("reports zero rather than dividing by zero", () => {
@@ -264,7 +267,7 @@ describe("late_share", () => {
       late: 0,
       total: 0,
       percent: 0,
-      display: "0 of 0 verified trades (0%) were flagged late",
+      display: "0 of 0 checked trades in this query (0 percent) were flagged late",
     });
   });
 });
@@ -336,6 +339,56 @@ describe("item 7: pending-only symbols", () => {
   it("reports pending matches for a symbol with no verified row", () => {
     const p = plan({ filters: { tickers: ["DJT"] }, aggregate: "count" });
     expect(execute(p, DATA).matchedRows).toBe(0);
-    expect(countPending(p, DATA.pendingRows)).toEqual({ underReview: 1, notYetChecked: 2 });
+    expect(countPending(p, DATA.pendingRows)).toEqual({
+      underReview: 1,
+      auditPending: 0,
+      notYetCompared: 2,
+      total: 3,
+    });
+  });
+});
+
+// Item C5: "largest sales" used to come back as whatever was newest.
+describe("item C5: amount sort", () => {
+  it("orders a list by the disclosed range, largest first", () => {
+    const result = execute(plan({ aggregate: "list", sort: "amount" }), DATA);
+    expect(result.rows?.map((r) => r.officialSlug)).toEqual([
+      "burgum-doug", // $1M-$5M
+      "bessent-scott", // $50K-$100K
+      "bessent-scott", // $15K-$50K
+      "bessent-scott", // unknown, last
+    ]);
+  });
+
+  it("sorts unknown amounts last, never first", () => {
+    const result = execute(plan({ aggregate: "list", sort: "amount" }), DATA);
+    expect(result.rows?.[result.rows.length - 1].amount).toBeNull();
+  });
+
+  it("keeps the stored order when no sort is stated", () => {
+    // getPublishedRows sorts newest first, so the stored order is the date
+    // order. The executor does not re-sort unless the plan says to.
+    const result = execute(plan({ aggregate: "list" }), DATA);
+    expect(result.rows?.map((r) => r.date)).toEqual(ROWS.map((r) => r.date));
+  });
+});
+
+// Item A: "checked" is score 3, the same bar the site's tables use.
+describe("item A: checked means score 3", () => {
+  it("answers only from checked rows", () => {
+    expect(isChecked(3, "checked")).toBe(true);
+    expect(isChecked(3, "human_verified")).toBe(true);
+    expect(isChecked(2, "deterministic_agree")).toBe(false);
+    expect(isChecked(2, "two_models_agree")).toBe(false);
+    expect(isChecked(2, "audit_only")).toBe(false);
+    expect(isChecked(1, "single_read")).toBe(false);
+    expect(isChecked(0, "disputed")).toBe(false);
+  });
+
+  it("sorts everything else into the pile a reader can understand", () => {
+    expect(pendingStateFor(0, "disputed")).toBe("underReview");
+    expect(pendingStateFor(2, "deterministic_agree")).toBe("auditPending");
+    expect(pendingStateFor(2, "audit_only")).toBe("auditPending");
+    expect(pendingStateFor(1, "single_read")).toBe("notYetCompared");
   });
 });

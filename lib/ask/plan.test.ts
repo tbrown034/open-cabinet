@@ -366,3 +366,82 @@ describe("item 8: former officials", () => {
     expect(text).toBe("Trades by Doug Burgum, counted.");
   });
 });
+
+// Item D: every row of Grok's Sept. 6 resolver table. Each of these failed
+// before, and a failure here produces the one sentence this box may not say.
+describe("item D: names readers actually write", () => {
+  const ROSTER = [
+    { slug: "trump-donald-j", name: "Donald J Trump", filedName: "Trump, Donald J", title: "President", agency: "The White House" },
+    { slug: "burgum-douglas-j", name: "Douglas J Burgum", filedName: "Burgum, Douglas J", title: "Secretary", agency: "Interior" },
+    { slug: "wright-christopher", name: "Christopher Wright", filedName: "Wright, Christopher", title: "Secretary", agency: "Energy" },
+    { slug: "kennedy-robert-f", name: "Robert F Kennedy", filedName: "Kennedy, Robert F", title: "Secretary", agency: "HHS" },
+    { slug: "bisignano-frank-j", name: "Frank J Bisignano", filedName: "Bisignano, Frank J", title: "Commissioner", agency: "SSA" },
+    { slug: "chavez-deremer-lori", name: "Lori Chavez-DeRemer", filedName: "Chavez-DeRemer, Lori", title: "Secretary", agency: "Labor" },
+  ];
+
+  const expectSlug = (written: string, slug: string) => {
+    const r = resolveOfficials([written], ROSTER);
+    expect(r.ok, written).toBe(true);
+    if (r.ok) expect(r.value, written).toEqual([slug]);
+  };
+
+  it("accepts a full name with the middle initial dropped", () => {
+    expectSlug("Donald Trump", "trump-donald-j");
+    expectSlug("Frank Bisignano", "bisignano-frank-j");
+    expectSlug("Robert Kennedy", "kennedy-robert-f");
+  });
+
+  it("accepts an honorific in front of a surname", () => {
+    expectSlug("President Trump", "trump-donald-j");
+    expectSlug("Secretary Burgum", "burgum-douglas-j");
+  });
+
+  it("accepts common short forms of a first name", () => {
+    expectSlug("Doug Burgum", "burgum-douglas-j");
+    expectSlug("Chris Wright", "wright-christopher");
+    expectSlug("Bobby Kennedy", "kennedy-robert-f");
+  });
+
+  it("accepts either half of a hyphenated surname", () => {
+    expectSlug("Chavez", "chavez-deremer-lori");
+    expectSlug("DeRemer", "chavez-deremer-lori");
+    expectSlug("Lori Chavez-DeRemer", "chavez-deremer-lori");
+  });
+
+  it("still accepts the filed forms", () => {
+    expectSlug("Trump", "trump-donald-j");
+    expectSlug("Donald J. Trump", "trump-donald-j");
+    expectSlug("Trump, Donald J", "trump-donald-j");
+  });
+
+  it("still refuses a first name alone and a stranger", () => {
+    expect(resolveOfficials(["Donald"], ROSTER).ok).toBe(false);
+    expect(resolveOfficials(["Nancy Pelosi"], ROSTER).ok).toBe(false);
+  });
+
+  it("does not guess between Sean and Shawn", () => {
+    const roster = [
+      { slug: "duffy-sean-p", name: "Sean P Duffy", filedName: "Duffy, Sean P", title: "Secretary", agency: "DOT" },
+    ];
+    expect(resolveOfficials(["Shawn Duffy"], roster).ok).toBe(false);
+    expect(resolveOfficials(["Sean Duffy"], roster).ok).toBe(true);
+  });
+});
+
+// Item C5: the plan has to state its ordering.
+describe("item C5: sort", () => {
+  it("accepts date and amount, and nothing else", () => {
+    expect(parseQueryPlan({ filters: {}, aggregate: "list", sort: "amount" }).ok).toBe(true);
+    expect(parseQueryPlan({ filters: {}, aggregate: "list", sort: "date" }).ok).toBe(true);
+    expect(parseQueryPlan({ filters: {}, aggregate: "list", sort: "price" }).ok).toBe(false);
+  });
+
+  it("names the ordering in the restatement", () => {
+    expect(
+      describePlan({ filters: { lateOnly: true }, aggregate: "list", sort: "amount" }, OFFICIALS)
+    ).toContain("largest disclosed range first");
+    expect(
+      describePlan({ filters: { lateOnly: true }, aggregate: "list" }, OFFICIALS)
+    ).toContain("newest first");
+  });
+});

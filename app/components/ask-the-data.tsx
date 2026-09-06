@@ -58,44 +58,66 @@ interface AskResult {
   lastDate?: string | null;
 }
 
+interface PendingCounts {
+  underReview: number;
+  auditPending: number;
+  notYetCompared: number;
+}
+
 interface AskResponse {
   status: "answered" | "not_in_data" | "declined" | "error";
   answer: string;
   planText: string | null;
   result: AskResult | null;
-  excluded: { underReview: number; notYetChecked: number } | null;
-  /** Rows matching this query that have not cleared a check. */
-  pendingMatches?: { underReview: number; notYetChecked: number };
+  excluded:
+    | (PendingCounts & { checked: number; parsed: number })
+    | null;
+  /** Rows matching THIS question that have not cleared a check. */
+  pendingMatches?: PendingCounts;
+  /** The one-line note for those, written in code. */
+  pendingNote?: string | null;
   disclosure: string;
 }
 
 // Questions the verified rows can actually answer. Picked against the
 // published set, not invented, so the first thing a reader clicks returns
 // something rather than an empty result.
+/** Filing text carries em dashes too, and the site does not print them. */
+function cleanDashes(text: string): string {
+  return text.replace(/\s*(?:[—–―]|--)\s*/g, ", ").replace(/\s+/g, " ").trim();
+}
+
 const GENERAL_SUGGESTIONS = [
-  "How many trades did Christopher Wright report?",
+  "How many checked trades does Christopher Wright have?",
   "Which officials sold Liberty Energy?",
   "Trades flagged late in 2026",
-  "Largest sales by estimated value",
+  "What percentage of checked trades were filed late?",
 ];
 
 export default function AskTheData({
   officialSlug,
   officialName,
+  checkedCount = null,
+  parsedCount = null,
 }: {
   officialSlug?: string;
   officialName?: string;
+  /** Both computed from the verification file on the server, never hardcoded. */
+  checkedCount?: number | null;
+  parsedCount?: number | null;
 }) {
   const [question, setQuestion] = useState("");
   const [pending, setPending] = useState(false);
   const [response, setResponse] = useState<AskResponse | null>(null);
 
+  // "On file" is the completeness claim the answer checker bans, so a chip
+  // must not ask a question the box is forbidden to answer honestly.
   const suggestions = officialName
     ? [
-        `How many trades are on file for ${officialName}?`,
+        `How many checked trades does ${officialName} have?`,
         `What was sold in 2025?`,
         `Which trades were flagged late?`,
-        `What are the largest sales by estimated value?`,
+        `Largest sales by disclosed range`,
       ]
     : GENERAL_SUGGESTIONS;
 
@@ -134,10 +156,17 @@ export default function AskTheData({
           Ask the data
         </h2>
         <p className="text-xs text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-          A question in plain English{officialName ? ` about ${officialName}` : ""}. AI turns it
-          into a query and writes the sentence. Code runs the query, computes every number and
-          checks the sentence against the result before you see it. Only rows an independent
-          check has confirmed are in scope.
+          Ask in plain English{officialName ? ` about ${officialName}` : ""}. Code runs the
+          query and produces every number. AI only writes the question into a query and, if it
+          passes a check, the sentence. This box answers only from checked rows: rows that an
+          independent program or a second company{"'"}s model agreed with and a third
+          company{"'"}s model confirmed against the page image.
+          {checkedCount !== null && parsedCount !== null && (
+            <>
+              {" "}That is {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()}{" "}
+              parsed rows. It is not the full record.
+            </>
+          )}
         </p>
       </div>
 
@@ -204,18 +233,12 @@ export default function AskTheData({
 
           <p className="text-base text-neutral-900 leading-relaxed">{response.answer}</p>
 
-          {response.status === "not_in_data" &&
-            (response.pendingMatches?.underReview ?? 0) +
-              (response.pendingMatches?.notYetChecked ?? 0) >
-              0 && (
-              <p className="text-sm text-neutral-500 mt-3 border-l-2 border-amber-400 pl-3">
-                This query matches{" "}
-                {response.pendingMatches!.underReview.toLocaleString()} rows under review and{" "}
-                {response.pendingMatches!.notYetChecked.toLocaleString()} rows not yet checked.
-                They are on the site and open to read. They are not answered from here until a
-                check clears them.
-              </p>
-            )}
+          {response.status === "not_in_data" && response.pendingNote && (
+            <p className="text-sm text-neutral-500 mt-3 border-l-2 border-amber-400 pl-3">
+              Those rows are on the site and open to read. They are not answered from here
+              until a check clears them.
+            </p>
+          )}
 
           {result?.totals && (
             <div className="mt-4 border border-neutral-200">
@@ -340,7 +363,7 @@ export default function AskTheData({
                       </td>
                       <td className="px-3 py-2 text-neutral-600">
                         {row.ticker ? `${row.ticker} · ` : ""}
-                        {row.description}
+                        {cleanDashes(row.description)}
                       </td>
                       <td className="px-3 py-2 text-neutral-600 whitespace-nowrap">
                         {row.type}
@@ -377,12 +400,16 @@ export default function AskTheData({
             </div>
           )}
 
+          {response.pendingNote && (
+            <p className="text-xs text-neutral-600 mt-4">{response.pendingNote}</p>
+          )}
+
           {response.excluded && (
-            <p className="text-xs text-neutral-500 mt-4">
-              Excluded from this answer:{" "}
-              {response.excluded.underReview.toLocaleString()} rows under review and{" "}
-              {response.excluded.notYetChecked.toLocaleString()} rows not yet independently
-              checked.{" "}
+            <p className="text-xs text-neutral-500 mt-2">
+              Across the site, {response.excluded.underReview.toLocaleString()} rows are
+              under review, {response.excluded.auditPending.toLocaleString()} are awaiting
+              the page audit and {response.excluded.notYetCompared.toLocaleString()} are not
+              yet compared. They are not in this box.{" "}
               <Link href="/methodology" className="underline hover:text-neutral-900">
                 How rows get checked
               </Link>
