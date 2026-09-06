@@ -18,6 +18,9 @@
  * never sees a row that an independent check has not agreed with.
  */
 import { NextResponse } from "next/server";
+import { db } from "@/lib/db";
+import { askQuota } from "@/lib/schema";
+import { sql } from "drizzle-orm";
 import { createHash } from "crypto";
 import { appendFile } from "fs/promises";
 import path from "path";
@@ -39,9 +42,9 @@ import {
   checkAnswerLanguage,
   templateAnswer,
   pendingAnswer,
-  outOfScopeAnswer,
 } from "@/lib/ask/check";
 import { DECLINE_CATEGORIES, declineText, stripDashes } from "@/lib/ask/decline";
+import { reserveAsk } from "@/lib/ask/quota";
 
 export const runtime = "nodejs";
 
@@ -62,34 +65,42 @@ export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
  * it to the existing Neon instance if the box ever gets real traffic.
  */
 const PER_IP_PER_HOUR = 30;
-const GLOBAL_PER_DAY = 300;
 const HOUR_MS = 60 * 60 * 1000;
-const DAY_MS = 24 * HOUR_MS;
 const IP_MAP_MAX_KEYS = 2000;
+const PHRASE_TIMEOUT_MS = 10_000;
 
 const perIp = new Map<string, number[]>();
-let globalHits: number[] = [];
 
 function hashIp(ip: string): string {
   return createHash("sha256").update(ip).digest("hex").slice(0, 16);
 }
 
 /**
- * Client identity for the quota.
+ * Client identity for the per-IP quota.
  *
- * x-vercel-forwarded-for is written by the platform's ingress and cannot be
- * set by a caller; x-forwarded-for can be, and a caller who rotates it walks
- * past the per-IP limit. The platform header is preferred for that reason,
- * and the forwarded chain is only a local-development fallback.
+ * TRUST ASSUMPTION: this is only sound behind an ingress that writes these
+ * headers itself. x-vercel-forwarded-for is set by Vercel's edge and cannot
+ * be forged by a caller, so it is preferred. x-forwarded-for can be set by
+ * anyone, and a caller who rotates it walks straight past the per-IP limit
+ * (Codex, Sept. 6), so the LAST hop is taken rather than the first: the last
+ * entry is the one the nearest proxy appended, while everything to its left
+ * is whatever the client claimed. Run behind a proxy that appends, or this
+ * limit is advisory. The durable daily cap is the control that does not
+ * depend on client identity.
  */
 function clientIp(request: Request): string {
   const platform = request.headers.get("x-vercel-forwarded-for");
-  if (platform) return platform.split(",")[0].trim();
+  if (platform) return lastHop(platform);
   const real = request.headers.get("x-real-ip");
   if (real) return real.trim();
   const forwarded = request.headers.get("x-forwarded-for");
-  if (forwarded) return forwarded.split(",")[0].trim();
+  if (forwarded) return lastHop(forwarded);
   return "unknown";
+}
+
+function lastHop(header: string): string {
+  const hops = header.split(",").map((h) => h.trim()).filter(Boolean);
+  return hops[hops.length - 1] ?? "unknown";
 }
 
 const ALLOWED_ASK_HOSTS = new Set(
@@ -98,6 +109,7 @@ const ALLOWED_ASK_HOSTS = new Set(
     "www.open-cabinet.org",
     "localhost",
     "127.0.0.1",
+    process.env.VERCEL_URL,
     process.env.VERCEL_BRANCH_URL,
     process.env.VERCEL_PROJECT_PRODUCTION_URL,
     process.env.NEXT_PUBLIC_VERCEL_URL,
@@ -150,6 +162,48 @@ function overIpLimit(key: string): boolean {
  * this stage; the durable version belongs on the project's Neon instance and
  * is noted in research/ask-the-data.md as the known limit of this control.
  */
+/**
+ * Durable daily cap, shared by every serverless instance (Codex review,
+ * Sept. 6). One row per UTC day in ask_quota; the increment is the
+ * reservation, so a question is counted before either model call. Three
+ * outcomes: "ok", "over" (cap reached), "closed" (the counter itself failed).
+ * The one deliberate exception: if the table has not been created yet
+ * (Postgres 42P01), the in-memory limiter below still applies and the request
+ * proceeds, so a preview deployment works before the migration runs.
+ */
+async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
+  const day = new Date().toISOString().slice(0, 10);
+  try {
+    const rows = await db
+      .insert(askQuota)
+      .values({ day, count: 1 })
+      .onConflictDoUpdate({
+        target: askQuota.day,
+        set: { count: sql`${askQuota.count} + 1`, updatedAt: new Date() },
+      })
+      .returning({ count: askQuota.count });
+    const count = rows[0]?.count ?? Number.MAX_SAFE_INTEGER;
+    return count > GLOBAL_PER_DAY ? "over" : "ok";
+  } catch (err) {
+    // drizzle wraps the driver error; the Postgres code sits on the cause.
+    let missingTable = false;
+    let msg = "";
+    for (let e: unknown = err, depth = 0; e && depth < 5; depth++) {
+      const code = (e as { code?: string }).code;
+      const text = e instanceof Error ? e.message : String(e);
+      msg = msg || text;
+      if (code === "42P01" || /relation "ask_quota" does not exist/i.test(text)) missingTable = true;
+      e = (e as { cause?: unknown }).cause;
+    }
+    if (missingTable) {
+      console.warn("ask_quota table missing; falling back to the in-memory daily cap");
+      return "ok";
+    }
+    console.error("ask quota reservation failed:", msg);
+    return "closed";
+  }
+}
+
 function overGlobalLimit(): boolean {
   const now = Date.now();
   globalHits = globalHits.filter((ts) => now - ts < DAY_MS);
@@ -442,7 +496,19 @@ export async function POST(request: Request) {
 
   const ipKey = hashIp(clientIp(request));
 
-  if (overIpLimit(ipKey) || overGlobalLimit()) {
+  const quota = await reserveDailyQuota();
+  if (quota === "closed") {
+    return NextResponse.json(
+      {
+        status: "error",
+        answer: "The question box is paused while its usage counter is unavailable. Try again later.",
+        disclosure: DISCLOSURE,
+      },
+      { status: 503 }
+    );
+  }
+
+  if (overIpLimit(ipKey) || quota === "over" || overGlobalLimit()) {
     return NextResponse.json(
       {
         status: "error",
@@ -584,27 +650,6 @@ export async function POST(request: Request) {
 
     const finalPlan = normalizePlan(resolved.value);
 
-    // A holdover resolves by name but has no rows in the query set, because
-    // the site keeps prior-administration officials out of every aggregate.
-    // Saying "no verified rows" would read as "traded nothing."
-    const outOfScope = (finalPlan.filters.officials ?? [])
-      .map((slug) => data.officials.find((o) => o.slug === slug))
-      .filter((o) => o?.former)
-      .map((o) => o!.name);
-    if (outOfScope.length > 0) {
-      logAsk({ question, status: "not_in_data", reason: "former officials", ipKey });
-      return NextResponse.json({
-        status: "not_in_data" satisfies AskStatus,
-        answer: stripDashes(outOfScopeAnswer(outOfScope)),
-        plan: finalPlan,
-        planText: stripDashes(describePlan(finalPlan, data.officials)),
-        result: null,
-        excluded,
-        pendingMatches: { underReview: 0, notYetChecked: 0 },
-        disclosure: DISCLOSURE,
-      });
-    }
-
     // A comparison across a few named people is a ranking. Past five it is a
     // table nobody asked for, and the honest move is to decline rather than
     // return a wall the reader has to interpret.
@@ -658,10 +703,13 @@ export async function POST(request: Request) {
     let rejectedTokens: string[] = [];
     let rejectedLanguage: string[] = [];
 
-    // The answer is already computed by this point. A phrasing call that
-    // fails or hangs must not throw that away and return a 500 (Codex,
-    // Sept. 6): the reader gets the templated sentence instead.
-    const phrased = await callPhraseModel(planText, result, model).catch((error) => {
+    // The answer is already computed. A phrasing call that fails or hangs
+    // must not throw that away and return a 500 (Codex, Sept. 6): the reader
+    // gets the templated sentence instead.
+    const phrased = await Promise.race([
+      callPhraseModel(planText, result, model),
+      new Promise<null>((resolve) => setTimeout(() => resolve(null), PHRASE_TIMEOUT_MS)),
+    ]).catch((error) => {
       console.error("[ask] phrasing failed", error);
       return null;
     });
