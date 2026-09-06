@@ -295,6 +295,22 @@ export default async function MethodologyPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
+                Filings contain errors, and the site shows them as printed.
+              </strong>{" "}
+              When a filing prints something that cannot be right, the row
+              keeps the filing&rsquo;s value and carries a numbered note
+              under the table saying what the page shows and who decided how
+              to count it. Two examples from the record. A July 2025 filing
+              for Labor Secretary Lori Chavez-DeRemer prints three company
+              names across two numbered rows each, with the full trade
+              columns repeated on both halves; each pair is counted as one
+              sale, with a note, on a person&rsquo;s reading of the page. A
+              May 2025 filing for HHS Secretary Robert F. Kennedy Jr. prints
+              a trade date in the year 2225; the row shows the date the
+              filing prints, with a note. Nothing is silently corrected.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
                 Ticker symbols are not always provided.
               </strong>{" "}
               Some assets (private equity, real estate LLCs, retirement accounts)

@@ -17,10 +17,10 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 39 |
-| Transactions | 11,502 |
-| Rows under review (not counted in totals) | 12 |
+| Transactions | 11,505 |
+| Rows under review (not counted in totals) | 9 |
 | Estimated value | ~$4.5B |
-| Late filings | 7,737 |
+| Late filings | 7,740 |
 | Companies searchable | 439 |
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
@@ -29,7 +29,7 @@ Transaction counts, estimated value and late-filing totals exclude score-0 rows 
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
-Rows by verification state: 11,318 checked; 77 human_verified; 0 deterministic_agree; 0 two_models_agree; 93 audit_only; 14 single_read; 12 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
+Rows by verification state: 11,318 checked; 80 human_verified; 0 deterministic_agree; 0 two_models_agree; 93 audit_only; 14 single_read; 9 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
 
 ## Pages
 
