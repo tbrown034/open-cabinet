@@ -8,6 +8,7 @@ import {
   normalizePlan,
   hasNoFilters,
   MAX_OFFICIALS,
+  officialsNamedIn,
 } from "./plan";
 import type { OfficialRef } from "../published-rows";
 
@@ -299,5 +300,69 @@ describe("late_share normalization", () => {
     expect(normalizePlan({ filters: { lateOnly: true }, aggregate: "count" }).filters.lateOnly).toBe(
       true
     );
+  });
+});
+
+// Item 6: a decline must never be the last word on whether a person exists.
+describe("item 6: officialsNamedIn", () => {
+  it("finds a tracked official by surname in free text", () => {
+    const hits = officialsNamedIn("What did Burgum buy in 2026?", OFFICIALS);
+    expect(hits.map((o) => o.slug)).toEqual(["burgum-doug"]);
+  });
+
+  it("finds one by full name", () => {
+    expect(
+      officialsNamedIn("How many trades did Scott Bessent report?", OFFICIALS).map((o) => o.slug)
+    ).toEqual(["bessent-scott"]);
+  });
+
+  it("returns every candidate when a surname is shared", () => {
+    expect(officialsNamedIn("What did Smith sell?", OFFICIALS)).toHaveLength(2);
+  });
+
+  it("finds nobody in a question that names nobody", () => {
+    expect(officialsNamedIn("Is insider trading legal?", OFFICIALS)).toEqual([]);
+  });
+
+  it("does not match a surname inside another word", () => {
+    expect(officialsNamedIn("What about burgundy bonds?", OFFICIALS)).toEqual([]);
+  });
+});
+
+// Item 8: a holdover's rows are in scope, and the restatement says so.
+describe("item 8: former officials", () => {
+  const ROSTER = [
+    ...OFFICIALS,
+    {
+      slug: "criswell-deanne",
+      name: "Deanne Criswell",
+      filedName: "Criswell, Deanne",
+      title: "Administrator",
+      agency: "FEMA",
+      former: true,
+    },
+  ];
+
+  it("resolves a holdover like anyone else", () => {
+    expect(resolveOfficials(["Criswell"], ROSTER)).toEqual({
+      ok: true,
+      value: ["criswell-deanne"],
+    });
+  });
+
+  it("marks a holdover as former in the restatement", () => {
+    const text = describePlan(
+      { filters: { officials: ["criswell-deanne"] }, aggregate: "count" },
+      ROSTER
+    );
+    expect(text).toBe("Trades by Deanne Criswell (former), counted.");
+  });
+
+  it("leaves a current official unmarked", () => {
+    const text = describePlan(
+      { filters: { officials: ["burgum-doug"] }, aggregate: "count" },
+      ROSTER
+    );
+    expect(text).toBe("Trades by Doug Burgum, counted.");
   });
 });

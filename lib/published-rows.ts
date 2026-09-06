@@ -16,9 +16,15 @@
  * largest official on it.
  *
  * The roster is the whole officials index, not just the officials with a
- * verified row, so the planner can recognize any tracked name.
+ * verified row, so the planner can recognize any tracked name. Rows are
+ * loaded for that whole roster, prior-administration holdovers included.
+ * getAllOfficials() drops holdovers because the site keeps them out of its
+ * headline totals, and using it here meant a holdover resolved by name and
+ * then reported nothing at all, which reads as "this person traded nothing"
+ * (Codex, Sept. 6). Their rows are counted; the plan text says they are
+ * former.
  */
-import { getAllOfficials, getOfficialsIndex } from "./data";
+import { getOfficialBySlug, getOfficialsIndex } from "./data";
 import { displayName } from "./format";
 import { recordIdsFor, readRowVerification, type VerificationState } from "./row-verification";
 import { resolveTicker } from "./assets";
@@ -107,10 +113,15 @@ export function getPublishedRows(): Promise<PublishedRowsData> {
 }
 
 async function build(): Promise<PublishedRowsData> {
-  const [officials, index] = await Promise.all([
-    getAllOfficials(),
-    getOfficialsIndex(),
-  ]);
+  const index = await getOfficialsIndex();
+  // Every official the index lists as parsed, holdovers included.
+  const officials = (
+    await Promise.all(
+      index.officials
+        .filter((entry) => entry.dataStatus === "parsed")
+        .map((entry) => getOfficialBySlug(entry.slug))
+    )
+  ).filter((o): o is NonNullable<typeof o> => o !== null);
   const verification = readRowVerification();
   const rows: PublishedRow[] = [];
   const pendingRows: PendingRow[] = [];

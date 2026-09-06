@@ -50,18 +50,6 @@ export function extractNumberTokens(text: string): string[] {
   return withoutDates(text).match(NUMBER_TOKEN) ?? [];
 }
 
-/**
- * Magnitude words with no digits in front of them. "There were one billion
- * verified trades" carries no numeral, so the tokenizer above never sees it.
- * Every magnitude word in a sentence has to be accounted for by an allowed
- * numeric token, or the sentence is refused.
- */
-const MAGNITUDE_WORD = /\b(?:hundred|thousand|million|billion|trillion)s?\b/gi;
-
-function magnitudeWordCount(text: string): number {
-  return (withoutDates(text).match(MAGNITUDE_WORD) ?? []).length;
-}
-
 const SCALE: Record<string, number> = {
   thousand: 1_000,
   million: 1_000_000,
@@ -113,8 +101,6 @@ export function allowedDates(result: ExecuteResult): Set<string> {
   return allowed;
 }
 
-const MAGNITUDE_IN_TOKEN = /\b(?:thousand|million|billion|trillion)\b/i;
-
 export interface NumberCheck {
   ok: boolean;
   /** Tokens in the sentence that the result does not vouch for. */
@@ -148,12 +134,19 @@ const OVERCLAIM_PATTERNS: Array<[RegExp, string]> = [
 ];
 
 /**
- * Counts written as words. A model that says "involved three officials" is
- * stating a figure the same as one that says 3, and the number check has to
- * see it. "One" and "zero" are left out because they read as pronouns and
- * determiners far more often than as counts.
+ * Quantities written as words.
+ *
+ * "There were one billion verified trades" carries no numeral, so the
+ * tokenizer above never sees it, and the sentence used to pass both checks
+ * (Codex, Sept. 6). Every quantity word in a sentence has to be vouched for:
+ * either the executor printed that exact word in a display string, or the
+ * word has a value the result actually holds.
+ *
+ * "Half", "twice" and "double" have no value to check against, so they only
+ * pass when the executor wrote them, which it never does.
  */
-const WORD_NUMBERS: Record<string, number> = {
+const WORD_NUMBERS: Record<string, number | null> = {
+  one: 1,
   two: 2,
   three: 3,
   four: 4,
@@ -165,12 +158,38 @@ const WORD_NUMBERS: Record<string, number> = {
   ten: 10,
   eleven: 11,
   twelve: 12,
+  thirteen: 13,
+  fourteen: 14,
+  fifteen: 15,
+  sixteen: 16,
+  seventeen: 17,
+  eighteen: 18,
+  nineteen: 19,
+  twenty: 20,
+  thirty: 30,
+  forty: 40,
+  fifty: 50,
+  sixty: 60,
+  seventy: 70,
+  eighty: 80,
+  ninety: 90,
+  hundred: 100,
+  thousand: 1_000,
+  million: 1_000_000,
+  billion: 1_000_000_000,
+  dozen: 12,
+  half: null,
+  twice: null,
+  double: null,
 };
 
-const WORD_NUMBER_TOKEN = new RegExp(`\\b(${Object.keys(WORD_NUMBERS).join("|")})\\b`, "gi");
+const WORD_NUMBER_TOKEN = new RegExp(
+  `\\b(${Object.keys(WORD_NUMBERS).join("|")})s?\\b`,
+  "gi"
+);
 
 export function extractWordNumbers(text: string): string[] {
-  return text.match(WORD_NUMBER_TOKEN) ?? [];
+  return withoutDates(text).match(WORD_NUMBER_TOKEN) ?? [];
 }
 
 export interface LanguageCheck {
@@ -204,17 +223,16 @@ export function checkAnswerNumbers(answer: string, result: ExecuteResult): Numbe
     const canonical = canonicalizeToken(token);
     if (canonical === null || !allowed.has(canonical)) unmatched.push(token.trim());
   }
-  for (const word of extractWordNumbers(answer)) {
-    const value = String(WORD_NUMBERS[word.toLowerCase()]);
-    if (!allowed.has(value)) unmatched.push(word.trim());
+  // A quantity written as words passes only when the executor wrote that
+  // exact word, or when the value it names is one the result holds.
+  const spelled = result.displayStrings.join(" ").toLowerCase();
+  for (const raw of extractWordNumbers(answer)) {
+    const word = raw.toLowerCase().replace(/s$/, "");
+    if (new RegExp(`\\b${word}s?\\b`).test(spelled)) continue;
+    const value = WORD_NUMBERS[word];
+    if (value !== null && value !== undefined && allowed.has(String(value))) continue;
+    unmatched.push(raw.trim());
   }
-  // A magnitude word the numeric tokens do not account for means a figure was
-  // spelled out rather than written, and nothing has checked it.
-  const inAnswer = magnitudeWordCount(answer);
-  const accountedFor = extractNumberTokens(answer).filter((t) =>
-    MAGNITUDE_IN_TOKEN.test(t)
-  ).length;
-  if (inAnswer > accountedFor) unmatched.push("a quantity written as words");
 
   return { ok: unmatched.length === 0, unmatched };
 }

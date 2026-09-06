@@ -34,6 +34,7 @@ import {
   TRANSACTION_TYPES,
   MAX_LIMIT,
   MAX_OFFICIALS,
+  officialsNamedIn,
   type QueryPlan,
 } from "@/lib/ask/plan";
 import { execute, countPending, type ExecuteResult } from "@/lib/ask/execute";
@@ -43,8 +44,13 @@ import {
   templateAnswer,
   pendingAnswer,
 } from "@/lib/ask/check";
-import { DECLINE_CATEGORIES, declineText, stripDashes } from "@/lib/ask/decline";
-import { reserveAsk } from "@/lib/ask/quota";
+import {
+  DECLINE_CATEGORIES,
+  declineText,
+  isDeclineCategory,
+  stripDashes,
+  type DeclineCategory,
+} from "@/lib/ask/decline";
 
 export const runtime = "nodejs";
 
@@ -59,17 +65,35 @@ export const DISCLOSURE =
 export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
 
 /* ── Rate limiting ──────────────────────────────────────────────────────────
- * In-memory, so it resets on redeploy and is per serverless instance. That is
- * the right size for now: the cost ceiling this protects is cents per day, and
- * a durable limiter would mean a database round trip on every question. Move
- * it to the existing Neon instance if the box ever gets real traffic.
+ * Two limits with different jobs. The daily cap is durable, in ask_quota,
+ * because an in-memory counter cannot bound spending across instances or
+ * restarts (Codex, Sept. 6). The per-IP hourly limit stays in memory: it is a
+ * courtesy throttle, not a spending control, and a database round trip on
+ * every request is not worth it. The in-memory daily counter is only the
+ * fallback for a deployment where the ask_quota migration has not run yet, so
+ * a preview still has some ceiling.
  */
 const PER_IP_PER_HOUR = 30;
+const GLOBAL_PER_DAY = 300;
 const HOUR_MS = 60 * 60 * 1000;
+const DAY_MS = 24 * HOUR_MS;
 const IP_MAP_MAX_KEYS = 2000;
 const PHRASE_TIMEOUT_MS = 10_000;
 
 const perIp = new Map<string, number[]>();
+let globalHits: number[] = [];
+
+/** Test seam. The limiter is module state, so a test has to clear it. */
+export function resetAskLimiter(): void {
+  perIp.clear();
+  globalHits = [];
+}
+
+export function limiterSize(): number {
+  return perIp.size;
+}
+
+export const LIMITER_LIMITS = { PER_IP_PER_HOUR, IP_MAP_MAX_KEYS };
 
 function hashIp(ip: string): string {
   return createHash("sha256").update(ip).digest("hex").slice(0, 16);
@@ -88,7 +112,7 @@ function hashIp(ip: string): string {
  * limit is advisory. The durable daily cap is the control that does not
  * depend on client identity.
  */
-function clientIp(request: Request): string {
+export function clientIp(request: Request): string {
   const platform = request.headers.get("x-vercel-forwarded-for");
   if (platform) return lastHop(platform);
   const real = request.headers.get("x-real-ip");
@@ -98,29 +122,46 @@ function clientIp(request: Request): string {
   return "unknown";
 }
 
-function lastHop(header: string): string {
+export function lastHop(header: string): string {
   const hops = header.split(",").map((h) => h.trim()).filter(Boolean);
   return hops[hops.length - 1] ?? "unknown";
 }
 
-const ALLOWED_ASK_HOSTS = new Set(
-  [
-    "open-cabinet.org",
-    "www.open-cabinet.org",
-    "localhost",
-    "127.0.0.1",
-    process.env.VERCEL_URL,
-    process.env.VERCEL_BRANCH_URL,
-    process.env.VERCEL_PROJECT_PRODUCTION_URL,
-    process.env.NEXT_PUBLIC_VERCEL_URL,
-  ].filter((h): h is string => typeof h === "string" && h.length > 0)
-);
+/**
+ * Origins allowed to spend this project's model budget.
+ *
+ * The shared check in lib/origin-check.ts allows any *.vercel.app host so
+ * previews stay testable. For a paid endpoint that means any Vercel tenant
+ * can spend the budget (Codex, Sept. 6), so this route keeps its own list:
+ * the production hosts, whatever ALLOWED_ORIGINS names, and localhost only
+ * outside production. Reading the env on each call keeps it testable and
+ * costs nothing next to two model round trips.
+ */
+export function allowedAskHosts(
+  env: NodeJS.ProcessEnv = process.env
+): Set<string> {
+  const hosts = ["open-cabinet.org", "www.open-cabinet.org"];
+  for (const entry of (env.ALLOWED_ORIGINS ?? "").split(",")) {
+    const trimmed = entry.trim();
+    if (!trimmed) continue;
+    try {
+      hosts.push(new URL(trimmed).hostname);
+    } catch {
+      hosts.push(trimmed);
+    }
+  }
+  if (env.NODE_ENV !== "production") hosts.push("localhost", "127.0.0.1");
+  return new Set(hosts);
+}
 
-function isAskOrigin(request: Request): boolean {
+export function isAskOrigin(
+  request: Request,
+  env: NodeJS.ProcessEnv = process.env
+): boolean {
   const origin = request.headers.get("origin");
   if (!origin) return false;
   try {
-    return ALLOWED_ASK_HOSTS.has(new URL(origin).hostname);
+    return allowedAskHosts(env).has(new URL(origin).hostname);
   } catch {
     return false;
   }
@@ -132,7 +173,7 @@ function isAskOrigin(request: Request): boolean {
  * first; if the map is still at its cap, the oldest key is evicted, so
  * cardinality is bounded rather than merely trimmed.
  */
-function overIpLimit(key: string): boolean {
+export function overIpLimit(key: string): boolean {
   const now = Date.now();
   const recent = (perIp.get(key) ?? []).filter((ts) => now - ts < HOUR_MS);
   if (recent.length >= PER_IP_PER_HOUR) {
@@ -204,6 +245,10 @@ async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
   }
 }
 
+/**
+ * The per-instance fallback, used only when ask_quota is missing. It cannot
+ * bound spending on its own; reserveDailyQuota is the real cap.
+ */
 function overGlobalLimit(): boolean {
   const now = Date.now();
   globalHits = globalHits.filter((ts) => now - ts < DAY_MS);
@@ -331,8 +376,8 @@ function planSystemPrompt(
     "amountAtLeast 250000 with amountAtMost 500000. Never drop one side of a window.",
     "",
     "Every name below is tracked by this site. Never decline because you think a person is absent.",
-    "There is no category for an unknown person. If a name is not on this list, emit a plan for it anyway",
-    "and let the code decide; only the code may say a person is not tracked.",
+    "If a name is not on this list, emit a plan for it anyway and let the code decide.",
+    "Only the code may say a person is not tracked, and it re-checks the roster before any decline is sent.",
     "If a question names someone on this list, emit a plan for them. Code reports separately whether their rows have cleared verification.",
     "Write official names exactly as they appear here:",
     officialNames.join("; "),
@@ -368,6 +413,8 @@ interface PlanCall {
   kind: "plan" | "decline" | "unavailable";
   raw?: unknown;
   reason?: string;
+  /** The category the model chose, so the caller can tell why it declined. */
+  category?: DeclineCategory;
 }
 
 async function callPlanModel(
@@ -413,6 +460,7 @@ async function callPlanModel(
                 "unsupported_computation: averages, medians, per-trade means, growth rates, " +
                 "ratios between two figures, or a comparison naming more than five officials. " +
                 "needs_date_range: a relative period you cannot turn into explicit dates. " +
+                "unknown_person: no name in the question resembles anyone on the roster. " +
                 "other: anything else these fields cannot express.",
             },
           },
@@ -431,7 +479,11 @@ async function callPlanModel(
     if (block.name === "decline") {
       const input = block.input as { category?: unknown };
       // The model picks a category and nothing else. The sentence is ours.
-      return { kind: "decline", reason: declineText(input?.category) };
+      return {
+        kind: "decline",
+        reason: declineText(input?.category),
+        category: isDeclineCategory(input?.category) ? input.category : "other",
+      };
     }
   }
   return { kind: "unavailable", reason: "the model returned no plan" };
@@ -468,6 +520,34 @@ async function callPhraseModel(
     .join(" ")
     .trim();
   return text.length > 0 ? text : null;
+}
+
+/**
+ * Run the phrasing call, but never let it take the answer down with it.
+ *
+ * By the time this runs the answer is computed and correct. A phrasing call
+ * that throws used to surface as a 500, discarding work already done (Codex,
+ * Sept. 6), and one that hangs would hold the request open. Either way the
+ * reader gets the templated sentence instead.
+ */
+export async function withDeadline<T>(
+  work: () => Promise<T>,
+  ms: number
+): Promise<T | null> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      work(),
+      new Promise<null>((resolve) => {
+        timer = setTimeout(() => resolve(null), ms);
+      }),
+    ]);
+  } catch (error) {
+    console.error("[ask] phrasing failed", error);
+    return null;
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
 }
 
 /* ── Route ──────────────────────────────────────────────────────────────── */
@@ -578,10 +658,52 @@ export async function POST(request: Request) {
     );
 
     if (planCall.kind === "decline") {
+      // Before a decline about a NAME reaches a reader, check the question
+      // against the roster ourselves. A model that declines a question naming
+      // a tracked official would otherwise get the last word on whether that
+      // person exists (Codex, Sept. 6), which is the one claim it may not
+      // make. Every other category is about the computation, not the person,
+      // and stands: an average is still unsupported for someone we do track.
+      const aboutTheName = planCall.category === "unknown_person";
+      const named = aboutTheName ? officialsNamedIn(question, data.officials) : [];
+      if (named.length > 0) {
+        const fallbackPlan: QueryPlan = {
+          filters: { officials: [named[0].slug] },
+          aggregate: "count",
+        };
+        const fallbackText = describePlan(fallbackPlan, data.officials);
+        const fallbackResult = execute(fallbackPlan, data);
+        if (fallbackResult.matchedRows > 0) {
+          logAsk({ question, status: "answered", plan: fallbackPlan, rescued: true, ipKey });
+          return NextResponse.json({
+            status: "answered" satisfies AskStatus,
+            answer: stripDashes(templateAnswer(fallbackPlan, fallbackText, fallbackResult)),
+            plan: fallbackPlan,
+            planText: stripDashes(fallbackText),
+            result: fallbackResult,
+            excluded,
+            disclosure: DISCLOSURE,
+          });
+        }
+        const pendingMatches = countPending(fallbackPlan, data.pendingRows);
+        logAsk({ question, status: "not_in_data", plan: fallbackPlan, rescued: true, ipKey });
+        return NextResponse.json({
+          status: "not_in_data" satisfies AskStatus,
+          answer: stripDashes(
+            pendingAnswer(fallbackText, pendingMatches, named[0].name)
+          ),
+          plan: fallbackPlan,
+          planText: stripDashes(fallbackText),
+          result: fallbackResult,
+          excluded,
+          pendingMatches,
+          disclosure: DISCLOSURE,
+        });
+      }
       logAsk({ question, status: "declined", ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
-        answer: planCall.reason,
+        answer: stripDashes(planCall.reason ?? declineText("other")),
         plan: null,
         planText: null,
         result: null,
@@ -706,13 +828,10 @@ export async function POST(request: Request) {
     // The answer is already computed. A phrasing call that fails or hangs
     // must not throw that away and return a 500 (Codex, Sept. 6): the reader
     // gets the templated sentence instead.
-    const phrased = await Promise.race([
-      callPhraseModel(planText, result, model),
-      new Promise<null>((resolve) => setTimeout(() => resolve(null), PHRASE_TIMEOUT_MS)),
-    ]).catch((error) => {
-      console.error("[ask] phrasing failed", error);
-      return null;
-    });
+    const phrased = await withDeadline(
+      () => callPhraseModel(planText, result, model),
+      PHRASE_TIMEOUT_MS
+    );
     if (phrased) {
       // Strip dashes before the checks so what is checked is what ships.
       const cleaned = stripDashes(phrased);

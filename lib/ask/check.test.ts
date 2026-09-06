@@ -472,9 +472,13 @@ describe("Codex findings, Sept. 6", () => {
     expect(checkAnswerNumbers("1 verified result is shown.", R).ok).toBe(true);
   });
 
-  it("has no category for declaring a person absent", () => {
-    // Only the resolver, which holds the roster, may say a name is untracked.
-    expect(DECLINE_CATEGORIES).not.toContain("unknown_person");
+  it("never lets a decline claim a person is untracked", () => {
+    // The category exists so the model can say it failed to match a name.
+    // What it may not do is turn that into a claim about the roster, which
+    // it does not hold. The route also rescans the question before sending.
+    const text = declineText("unknown_person");
+    expect(text).toContain("could not match a name");
+    expect(text).not.toMatch(/not (a |an )?tracked|does not exist|not among/i);
   });
 });
 
@@ -498,5 +502,57 @@ describe("stripDashes on templated output", () => {
     expect(stripDashes('Trades whose description mentions "Bonds—test", counted.')).toBe(
       'Trades whose description mentions "Bonds, test", counted.'
     );
+  });
+});
+
+// Item 1 of the Codex report, at the width the follow-up brief asked for:
+// one..twenty, thirty..ninety, hundred, thousand, million, billion, dozen,
+// half, twice, double.
+describe("item 1: quantities written as words", () => {
+  const R: ExecuteResult = {
+    aggregate: "top_officials",
+    matchedRows: 11,
+    shownRows: 3,
+    groupCount: 3,
+    numbers: [11, 3, 8, 2],
+    displayStrings: ["11", "3", "8", "2"],
+  };
+
+  it("rejects every word quantity the result does not hold", () => {
+    for (const word of [
+      "one",
+      "four",
+      "nineteen",
+      "twenty",
+      "thirty",
+      "ninety",
+      "hundred",
+      "thousand",
+      "million",
+      "billion",
+      "dozen",
+      "half",
+      "twice",
+      "double",
+    ]) {
+      const check = checkAnswerNumbers(`There were ${word} verified trades.`, R);
+      expect(check.ok, word).toBe(false);
+    }
+  });
+
+  it("accepts a word quantity whose value the result does hold", () => {
+    expect(checkAnswerNumbers("Three officials had verified trades.", R).ok).toBe(true);
+    expect(checkAnswerNumbers("Two verified trades were late.", R).ok).toBe(true);
+  });
+
+  it("rejects a plural of an unvouched word", () => {
+    expect(checkAnswerNumbers("Hundreds of verified trades.", R).ok).toBe(false);
+    expect(checkAnswerNumbers("Millions of verified dollars.", R).ok).toBe(false);
+  });
+
+  it("has no value to compare for half, twice or double, so they never pass", () => {
+    const full: ExecuteResult = { ...R, numbers: [...R.numbers, 100], displayStrings: [...R.displayStrings, "100"] };
+    expect(checkAnswerNumbers("Half the verified trades were late.", full).ok).toBe(false);
+    expect(checkAnswerNumbers("Twice as many verified trades.", full).ok).toBe(false);
   });
 });

@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { execute, filterRows, countPending } from "./execute";
-import type { QueryPlan } from "./plan";
+import { resolveTickers, type QueryPlan } from "./plan";
 import type { PendingRow, PublishedRow, PublishedRowsData } from "../published-rows";
 
 function row(partial: Partial<PublishedRow> & { id: string }): PublishedRow {
@@ -321,5 +321,21 @@ describe("comparisons", () => {
     expect(result.shownRows).toBe(1);
     expect(result.groupCount).toBe(2);
     expect(result.numbers).toContain(2);
+  });
+});
+
+// Item 7: symbol resolution used to run against verified symbols only, so a
+// question about a symbol that appears only in unchecked rows died at the
+// resolver and never reached the pending count.
+describe("item 7: pending-only symbols", () => {
+  it("resolves against the full symbol set, not just the verified one", () => {
+    expect(resolveTickers(["DJT"], DATA.tickers).ok).toBe(false);
+    expect(resolveTickers(["DJT"], DATA.allTickers)).toEqual({ ok: true, value: ["DJT"] });
+  });
+
+  it("reports pending matches for a symbol with no verified row", () => {
+    const p = plan({ filters: { tickers: ["DJT"] }, aggregate: "count" });
+    expect(execute(p, DATA).matchedRows).toBe(0);
+    expect(countPending(p, DATA.pendingRows)).toEqual({ underReview: 1, notYetChecked: 2 });
   });
 });

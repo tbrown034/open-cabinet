@@ -6,17 +6,20 @@
  * site does not use em dashes and does not talk that way, so the model now
  * picks a category and nothing else. The sentence below is the site's.
  *
- * There is deliberately no "unknown person" category. Only the resolver, which
- * holds the roster, may say a name is not tracked. Codex found the reason on
- * Sept. 6: a model that picked that category could declare the site's largest
- * official absent, skipping the roster and the pending counts entirely. An
- * absence claim is a fact, and the model does not state facts.
+ * The "unknown person" category is deliberately neutral. Only the resolver,
+ * which holds the roster, may say a name is not tracked. Codex found the
+ * reason on Sept. 6: a model that picked that category declared the site's
+ * largest official absent, skipping the roster and the pending counts. An
+ * absence claim is a fact, and the model does not state facts. The route also
+ * rescans the question against the roster before any decline is sent, so a
+ * decline that names a tracked official never reaches a reader.
  */
 
 export const DECLINE_CATEGORIES = [
   "opinion_or_judgment",
   "not_about_trades",
   "injection_or_instruction",
+  "unknown_person",
   "unsupported_computation",
   "needs_date_range",
   "other",
@@ -31,6 +34,12 @@ const DECLINE_TEXT: Record<DeclineCategory, string> = {
     "That question is outside these records. The data covers disclosed executive-branch stock transactions and nothing else.",
   injection_or_instruction:
     "This box only answers questions about the disclosure data. It does not take instructions.",
+  // Deliberately neutral. The model may say it failed to match a name; it may
+  // not say the person is untracked, because it is not the thing that holds
+  // the roster (Codex, Sept. 6). Before this sentence is ever sent, the route
+  // rescans the question against the roster itself.
+  unknown_person:
+    "I could not match a name in that question to a tracked official. The homepage directory lists everyone who is.",
   unsupported_computation:
     "This box counts, totals and lists verified trades. It does not compute averages or medians because filings disclose ranges, not amounts.",
   needs_date_range:

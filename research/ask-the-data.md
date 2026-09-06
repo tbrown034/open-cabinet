@@ -89,7 +89,10 @@ the number.
   officials", "one billion" and "hundreds of" are checked the same as digits.
 - Say a date the result does not carry.
 - Say a person is not tracked. Only the resolver, which holds the roster, makes
-  an absence claim.
+  an absence claim. When the model declines because it could not place a name,
+  the route rescans the question against the roster before that reaches
+  anyone. Declines about anything else stand: an average is still unsupported
+  for someone the site does track.
 - Approximate. If any part of a question cannot be represented in the plan, the
   model declines rather than dropping the part it cannot express.
 
@@ -145,21 +148,36 @@ figure was matched against something that was not one.
   a sentence could say "$4.5" or "$4.5B" and pass. K, M and B are part of the
   token now.
 - **Spelled-out quantities carried no digits at all.** "One billion verified
-  trades" had nothing for the tokenizer to catch. Counts written as words are
-  checked, and any magnitude word a numeral does not account for fails.
+  trades" had nothing for the tokenizer to catch. Every quantity word from one
+  to ninety, plus hundred, thousand, million, billion and dozen, is now checked
+  against the result. "Half", "twice" and "double" name no value, so they only
+  pass if the executor wrote them, which it never does.
 
-Four other findings were about the endpoint rather than the check. The origin
-gate for this route no longer trusts every `*.vercel.app` host, because a paid
-endpoint that any Vercel tenant can call is a budget anyone can spend. Client
-identity for the quota comes from the platform's own forwarded header rather
-than the caller-settable one. A rejected request is no longer recorded, so
-hammering a 429 cannot grow the limiter. And a phrasing call that fails no
-longer discards an answer the code had already computed.
+The rest were about the endpoint. The origin gate for this route no longer
+trusts every `*.vercel.app` host, because a paid endpoint any Vercel tenant can
+call is a budget anyone can spend; it takes the production hosts plus whatever
+`ALLOWED_ORIGINS` names, and localhost only outside production. Client identity
+for the per-IP throttle comes from the platform's own forwarded header, and
+where it has to read `X-Forwarded-For` it takes the last hop rather than the
+first, since everything left of it is whatever the caller claimed. A rejected
+request is no longer recorded, so hammering a 429 cannot grow the limiter. A
+phrasing call that fails or hangs no longer discards an answer the code has
+already computed; it falls back to the template on a ten-second deadline.
 
-The daily spending cap is still per instance. An in-memory counter cannot
-bound spending across serverless instances or restarts, and a scaled-out
-deployment replenishes it. That is the known limit of this control; the
-durable version belongs on the project's existing database.
+The daily cap is now durable. It lives in one row per UTC day in `ask_quota`
+and is reserved by a single atomic upsert before either model call, so the
+spend cannot outrun it and a restart cannot replenish it. Apply
+`drizzle/0003_ask_quota.sql` before deploying: until that table exists the
+route falls back to a per-instance counter and says so in the logs.
+
+Two findings turned on the same mistake in the other direction. Symbol
+resolution ran against verified symbols only, so a question about a stock that
+appears solely in unchecked rows died at the resolver instead of reaching the
+pending count; it now resolves against every symbol the site holds. And rows
+were loaded through the same helper the homepage uses, which drops
+prior-administration holdovers, so a holdover resolved by name and then
+reported nothing, which reads as "this person traded nothing." Their rows are
+loaded now, and the restatement marks them former.
 
 ## Rate limits and cost
 

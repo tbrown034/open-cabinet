@@ -394,6 +394,31 @@ export function resolvePlan(
   return { ok: true, value: { ...plan, filters } };
 }
 
+/**
+ * Find any tracked official the question names, without a model.
+ *
+ * The last line of defence against a decline that hides a real person. A model
+ * that picks "unknown person" for a question naming the site's largest
+ * official would otherwise have the last word (Codex, Sept. 6). Surnames only,
+ * matched on word boundaries, longest first so "Trump" inside a longer name
+ * does not win over the longer match.
+ */
+export function officialsNamedIn(
+  question: string,
+  officials: OfficialRef[]
+): OfficialRef[] {
+  const haystack = normalizeName(question);
+  const hits: OfficialRef[] = [];
+  for (const official of officials) {
+    const surname = lastNameOf(official.filedName);
+    if (surname.length < 4) continue;
+    if (new RegExp(`\\b${surname}\\b`).test(haystack)) hits.push(official);
+  }
+  return hits.sort(
+    (a, b) => lastNameOf(b.filedName).length - lastNameOf(a.filedName).length
+  );
+}
+
 /* ── Plain English ──────────────────────────────────────────────────────── */
 
 const AGGREGATE_PHRASE: Record<Aggregate, string> = {
@@ -418,7 +443,7 @@ function joinNames(names: string[]): string {
 }
 
 export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string {
-  const nameBySlug = new Map(officials.map((o) => [o.slug, o.name]));
+  const bySlug = new Map(officials.map((o) => [o.slug, o]));
   const f = plan.filters;
   const parts: string[] = [];
 
@@ -426,7 +451,13 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   parts.push(f.lateOnly ? `${typeText} flagged late` : typeText);
 
   if (f.officials && f.officials.length > 0) {
-    const names = f.officials.map((s) => nameBySlug.get(s) ?? s);
+    // A holdover's rows are in scope, so the restatement says which people
+    // are former rather than leaving a reader to assume a current seat.
+    const names = f.officials.map((slug) => {
+      const official = bySlug.get(slug);
+      if (!official) return slug;
+      return official.former ? `${official.name} (former)` : official.name;
+    });
     parts.push(`by ${joinNames(names)}`);
   }
   if (f.tickers && f.tickers.length > 0) {
