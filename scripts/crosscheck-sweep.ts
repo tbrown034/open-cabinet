@@ -40,7 +40,7 @@ import {
   type CrosscheckState,
 } from "../lib/crosscheck-log";
 import { findParseRecord, isTerminationForm, promptHash, sha256File } from "../lib/parse-cache";
-import { crossCheckByOcr, extractOcrRows, ocrEngine, ocrPdfToText } from "../lib/ocr-lane";
+import { crossCheckByOcr, extractOcrRows, ocrEngine, ocrPdfToText, OCR_LANE_VERSION } from "../lib/ocr-lane";
 import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
 
 const PDF_DIR = path.resolve("data/pdfs");
@@ -157,7 +157,10 @@ function main() {
           const wanted = !ONLY || pdfFile.includes(ONLY) || official.slug.includes(ONLY);
           const runOcrNow = OCR && wanted && ocrCandidate(entry.state);
           const prior = previous.get(`${official.slug}|${filing.url}`);
-          if (!runOcrNow && prior?.ocr && prior.pdfSha256 === entry.pdfSha256 && prior.candidateSha256 === entry.candidateSha256) {
+          if (
+            !runOcrNow && prior?.ocr && prior.pdfSha256 === entry.pdfSha256 && prior.candidateSha256 === entry.candidateSha256 &&
+            prior.checkerVersion === CHECKER_VERSION && prior.ocr.laneVersion === OCR_LANE_VERSION
+          ) {
             entry = {
               ...entry,
               state: prior.state,

@@ -50,6 +50,18 @@ describe("deriveRowVerification", () => {
     expect(out[0]).toMatchObject({ score: 3, state: "deterministic_agree", lane: "text" });
   });
 
+  it("credits a filing-level agreement only to rows the checked candidate contains", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" })];
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
+      parseRecordByUrl: new Map([[URL, [tx({ description: "A" })]]]),
+    });
+    expect(out.map((v) => v.score)).toEqual([3, 1]);
+    expect(out[1].note).toMatch(/does not contain this row/);
+  });
+
   it("scores 0 for the whole filing when the text lane disagreed", () => {
     const out = deriveRowVerification({ ...base, transactions: [tx()], entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_mismatch" })]]) });
     expect(out[0]).toMatchObject({ score: 0, state: "disputed" });

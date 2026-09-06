@@ -68,11 +68,14 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
   const filingsRead: FilingForIngest[] = [];
   const laneVerdicts: string[] = [];
   let skipped = 0;
+  /** Filings whose gate did not pass. --apply refuses while any exist. */
+  const notConfirmed: string[] = [];
 
   for (const f of filings) {
     const pdfFile = decodeURIComponent(f.url.split("/").pop() || "");
     const prior = log?.entries.find((e) => e.sourceUrl === f.url);
-    if (skipScans && prior?.state === "no_usable_text") {
+    const priorIsScan = prior && ["no_usable_text", "unsupported_layout", "ocr_tuple_agreement", "ocr_tuple_mismatch"].includes(prior.state);
+    if (skipScans && priorIsScan) {
       skipped++;
       continue;
     }
@@ -90,15 +93,17 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
     const rows = await readFiling(pdfPath, sha256, f.url);
     try {
       const gate = await checkFiling(slug, official.name, filing, pdfPath, sha256, rows, { secondRead: false });
+      if (gate.verdict === "held") notConfirmed.push(pdfFile);
       laneVerdicts.push(
         gate.verdict === "two_lane"
           ? `${pdfFile}: ${gate.lane === "text" ? "text layer" : "OCR"} agrees (${rows.length} rows)`
           : gate.verdict === "two_models"
             ? `${pdfFile}: second model agrees (${rows.length} rows)`
-            : `${pdfFile}: ${gate.reason}`
+            : `${pdfFile}: NOT CONFIRMED, ${gate.reason}`
       );
     } catch (err) {
-      laneVerdicts.push(`${pdfFile}: ${(err as Error).message}`);
+      notConfirmed.push(pdfFile);
+      laneVerdicts.push(`${pdfFile}: NOT CONFIRMED, ${(err as Error).message.split("\n")[0]}`);
     }
     perFilingParses.push(rows);
     filingsRead.push(filing);
@@ -137,7 +142,11 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
   }
   if (wording.length) {
     lines.push("", "## Changed: same trade, ticker or wording only");
-    for (const c of wording) lines.push(`- before: ${fmtRow(c.before)}`, `  after:  ${fmtRow(c.after)}`);
+    const filingOf = (u?: string) => decodeURIComponent((u ?? "").split("/").pop() || "");
+    for (const c of wording) {
+      const attribution = c.fields.includes("sourceUrl") ? ` [${filingOf(c.before.sourceUrl)} -> ${filingOf(c.after.sourceUrl)}]` : "";
+      lines.push(`- ${c.fields.join(", ")}${attribution}`, `  before: ${fmtRow(c.before)}`, `  after:  ${fmtRow(c.after)}`);
+    }
   }
   if (diff.removed.length) {
     lines.push("", "## Would be removed (published, not in the fresh reading)");
@@ -147,15 +156,30 @@ async function reverifyOfficial(slug: string, apply: boolean, skipScans: boolean
     lines.push("", "## Would be added (in the fresh reading, not published)");
     for (const r of diff.added) lines.push(`- ${fmtRow(r)}`);
   }
-  lines.push("", diff.changed.length + diff.removed.length + diff.added.length === 0 ? "No changes. The fresh reading reproduces the published rows." : `Apply with: pnpm reverify ${slug} --apply`);
+  const noChange = diff.changed.length + diff.removed.length + diff.added.length === 0;
+  if (filingsRead.length === 0) {
+    lines.push("", `Nothing was read: every filing was skipped (${skipped}). This report verifies nothing.`);
+  } else if (notConfirmed.length) {
+    lines.push("", `Not applicable: ${notConfirmed.length} filing(s) were not confirmed by a second read (${notConfirmed.join(", ")}). A person decides before anything is applied.`);
+  } else if (noChange) {
+    lines.push("", "No changes. The fresh reading reproduces the published rows.");
+  } else {
+    lines.push("", `Apply with: pnpm reverify ${slug} --apply`);
+  }
   await writeFile(`${base}.md`, lines.join("\n") + "\n");
   await writeFile(`${base}.json`, JSON.stringify({ slug, stamp, laneVerdicts, diff }, null, 2) + "\n");
   console.log(lines.join("\n"));
   console.log(`\nReport: ${base}.md`);
 
   if (!apply) return;
-  if (skipScans && skipped) {
-    throw new Error("--apply with --skip-scans would drop rows from skipped filings; run without --skip-scans to apply");
+  // Applying replaces the official's whole row set with the fresh one, so
+  // every filing must have been read and confirmed. A skipped filing would
+  // lose its rows; an unconfirmed one would publish an unchecked read.
+  if (skipped) {
+    throw new Error(`--apply would drop rows from ${skipped} skipped filing(s); nothing applied`);
+  }
+  if (notConfirmed.length) {
+    throw new Error(`--apply refused: ${notConfirmed.length} filing(s) not confirmed by a second read (${notConfirmed.join(", ")}); a person decides first`);
   }
   await mkdir(HISTORY_DIR, { recursive: true });
   await writeFile(
@@ -181,7 +205,8 @@ async function main() {
   const all = args.includes("--all");
   const excluded = new Set<string>();
   for (let i = 0; i < args.length; i++) if (args[i] === "--exclude" && args[i + 1]) excluded.add(args[++i]);
-  const slugs = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--exclude");
+  const valued = new Set(["--exclude", "--ceiling"]);
+  const slugs = args.filter((a, i) => !a.startsWith("--") && !valued.has(args[i - 1] ?? ""));
   stageOptions.forceReparse = args.includes("--force-reparse");
   // Spend ceiling for this run, dollars. Default 25; the run stops and
   // emails the admin address when reached. Caches keep what was read.

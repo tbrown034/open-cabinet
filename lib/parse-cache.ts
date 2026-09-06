@@ -19,6 +19,7 @@
  */
 import { createHash } from "crypto";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "fs";
+import { execFileSync } from "child_process";
 import path from "path";
 
 export interface ParseCacheKeyInput {
@@ -232,6 +233,17 @@ export type ParseRecordSource = "current" | "current-chunks" | "legacy" | "legac
  * the previous one ended. Rows are concatenated in page order, which is
  * document order, as the positional comparator needs.
  */
+/** Page count via pdfinfo (poppler). Null when the tool or file is unavailable. */
+export function pdfPageCount(pdfPath: string): number | null {
+  try {
+    const out = execFileSync("pdfinfo", [pdfPath], { encoding: "utf-8", stdio: ["ignore", "pipe", "ignore"] });
+    const m = out.match(/^Pages:\s+(\d+)/m);
+    return m ? Number(m[1]) : null;
+  } catch {
+    return null;
+  }
+}
+
 export function readLegacyChunkedRecord(pdfPath: string): unknown[] | null {
   const dir = path.dirname(pdfPath);
   const base = path.basename(pdfPath, path.extname(pdfPath));
@@ -257,6 +269,10 @@ export function readLegacyChunkedRecord(pdfPath: string): unknown[] | null {
     }
     expected = c.last + 1;
   }
+  // The run must also reach the last page. A lone first-page cache is not
+  // a record of the filing (review, Sep 6).
+  const pages = pdfPageCount(pdfPath);
+  if (pages !== null && expected - 1 !== pages) return null;
   return rows;
 }
 

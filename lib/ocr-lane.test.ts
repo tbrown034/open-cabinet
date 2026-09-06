@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "fs";
 import path from "path";
-import { alignByPrintedRow, columnizeOcrRows, extractOcrRows, repairOcrText, repairRowSequence, OCR_LANE_VERSION } from "./ocr-lane";
+import { alignByPrintedRow, columnizeOcrRows, extractOcrRows, repairOcrText, repairRowSequence, withholdRepairs, OCR_LANE_VERSION } from "./ocr-lane";
 import { compareExtraction } from "../scripts/text-layer-crosscheck";
 
 const header = `
@@ -94,6 +94,22 @@ describe("OCR row handling", () => {
     const r = repairRowSequence([row(283), row(1284), row(1286)]);
     expect(r.rows.map((x) => x.rowNumber)).toEqual([283, 284, 1286]);
     expect(r.repaired).toBe(1);
+  });
+
+  it("never lets a repaired number become agreement: [1, 3, 3] cannot pass as [1, 2, 3]", () => {
+    // Review, Sep 6: the sandwich rule turned a duplicate into a filled gap
+    // and the comparator said ok. The repair still happens (it is the
+    // best guess of where the row sits) but the filing is never ok as a
+    // whole and the row is excluded from the agreed list.
+    const r = repairRowSequence([row(1), row(3), row(3)]);
+    expect(r.rows.map((x) => x.rowNumber)).toEqual([1, 2, 3]);
+    expect(r.repairedRowNumbers).toEqual([2]);
+    const held = withholdRepairs({ status: "ok", rowCount: 3 }, r.repairedRowNumbers);
+    expect(held.status).toBe("mismatch");
+    const parsed = [row(1), row(2), row(3)].map((x) => ({ type: x.type, date: x.date, amount: x.amount, lateFilingFlag: x.lateFilingFlag }));
+    const a = alignByPrintedRow({ kind: "rows", rows: r.rows, placeholderRows: [], repairedRowNumbers: r.repairedRowNumbers }, parsed)!;
+    expect(a.agreedPrintedRows).toEqual([1, 3]);
+    expect(a.repairedPrintedRows).toEqual([2]);
   });
 
   it("leaves a real gap alone", () => {

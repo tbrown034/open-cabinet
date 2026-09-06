@@ -25,11 +25,15 @@ export interface RowLike {
   amount: string | null;
   lateFilingFlag: boolean;
   sourceUrl?: string;
+  /** The filing's wording when amount is null or type is Unstated. Part
+   * of what a reader sees, so part of the full key. */
+  amountNote?: string;
+  typeNote?: string;
 }
 
 /** Full-tuple key: everything a reader can see on the row. */
 export function fullKey(t: RowLike): string {
-  return [t.sourceUrl ?? "", t.date, t.type, t.amount ?? "unknown", t.lateFilingFlag ? 1 : 0, (t.ticker ?? "").toUpperCase(), t.description.trim().toLowerCase()].join("|");
+  return [t.sourceUrl ?? "", t.date, t.type, t.amount ?? "unknown", t.lateFilingFlag ? 1 : 0, (t.ticker ?? "").toUpperCase(), t.description.trim().toLowerCase(), t.amountNote ?? "", t.typeNote ?? ""].join("|");
 }
 
 /** Loose key: the trade without description or ticker, to pair "changed" rows. */
@@ -46,7 +50,7 @@ export function normalizedDescription(d: string): string {
     .trim();
 }
 
-export type ChangedField = "type" | "date" | "amount" | "lateFilingFlag" | "ticker" | "description" | "sourceUrl";
+export type ChangedField = "type" | "date" | "amount" | "lateFilingFlag" | "ticker" | "description" | "sourceUrl" | "amountNote" | "typeNote";
 
 export interface Change {
   before: RowLike;
@@ -66,6 +70,8 @@ export function changedFields(a: RowLike, b: RowLike): ChangedField[] {
   if ((a.ticker ?? "").toUpperCase() !== (b.ticker ?? "").toUpperCase()) f.push("ticker");
   if (a.description.trim().toLowerCase() !== b.description.trim().toLowerCase()) f.push("description");
   if ((a.sourceUrl ?? "") !== (b.sourceUrl ?? "")) f.push("sourceUrl");
+  if ((a.amountNote ?? "") !== (b.amountNote ?? "")) f.push("amountNote");
+  if ((a.typeNote ?? "") !== (b.typeNote ?? "")) f.push("typeNote");
   return f;
 }
 
@@ -90,9 +96,27 @@ function assetKeys(t: RowLike): string[] {
   return keys;
 }
 
+/**
+ * Wording-only means the reader sees the same trade in the same asset:
+ * only the ticker, the attribution, or the spelling of a name moved. A
+ * description change that alters the normalized name (a different
+ * company, a different maturity on a bond) is substantive. (Review,
+ * Sep 6: "Acme 4% bond due 2030" to "due 2040" was wording-only.)
+ */
 function makeChange(before: RowLike, after: RowLike): Change {
   const fields = changedFields(before, after);
-  return { before, after, fields, wordingOnly: fields.every((f) => f === "ticker" || f === "description" || f === "sourceUrl") };
+  const sameAsset = normalizedDescription(before.description) === normalizedDescription(after.description);
+  const wordingOnly = fields.every((f) => f === "ticker" || f === "sourceUrl" || (f === "description" && sameAsset));
+  return { before, after, fields, wordingOnly };
+}
+
+/** Two descriptions name the same asset when a distinctive word is shared. */
+export function sharesAssetWord(a: string, b: string): boolean {
+  const stop = new Set(["inc", "corp", "corporation", "co", "company", "ltd", "plc", "llc", "lp", "fund", "trust", "class", "common", "stock", "shares", "the", "new", "com"]);
+  const words = (d: string) => new Set(normalizedDescription(d).split(" ").filter((w) => w.length >= 3 && !stop.has(w)));
+  const wa = words(a);
+  for (const w of words(b)) if (wa.has(w)) return true;
+  return false;
 }
 
 export function diffRows(published: RowLike[], fresh: RowLike[]): Diff {
@@ -133,7 +157,10 @@ export function diffRows(published: RowLike[], fresh: RowLike[]): Diff {
     unmatchedPub = unmatchedPub.filter((r) => !taken.has(r));
   }
 
-  // Pass 3: same trade, different words, only when unambiguous.
+  // Pass 3: same trade, different words, only when unambiguous AND the
+  // two descriptions share a distinctive word. Uniqueness alone is not
+  // identity: one leftover Apple sale and one leftover Microsoft sale are
+  // a removal and an addition, never a wording change (review, Sep 6).
   {
     const pubByTrade = new Map<string, RowLike[]>();
     for (const r of unmatchedPub) (pubByTrade.get(looseKey(r)) ?? pubByTrade.set(looseKey(r), []).get(looseKey(r))!).push(r);
@@ -144,7 +171,7 @@ export function diffRows(published: RowLike[], fresh: RowLike[]): Diff {
     for (const r of unmatchedFresh) {
       const p = pubByTrade.get(looseKey(r)) ?? [];
       const f = freshByTrade.get(looseKey(r)) ?? [];
-      if (p.length === 1 && f.length === 1) {
+      if (p.length === 1 && f.length === 1 && sharesAssetWord(p[0].description, r.description)) {
         taken.add(p[0]);
         changed.push(makeChange(p[0], r));
       } else stillFresh.push(r);

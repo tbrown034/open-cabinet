@@ -92,7 +92,7 @@ export interface CrosscheckEntry {
      * Filled only on a mismatch. Not a state; a person reads it. */
     aligned?: {
       compared: number; agree: number; differ: number; unread: number; differences: string[];
-      agreedPrintedRows?: number[]; disputedPrintedRows?: number[]; placeholderRows?: number[];
+      agreedPrintedRows?: number[]; disputedPrintedRows?: number[]; repairedPrintedRows?: number[]; placeholderRows?: number[];
     };
     /** OCR ran but its output could not be parsed or compared. */
     problem?: string;

@@ -235,9 +235,10 @@ export function columnizeOcrRows(text: string): string {
  * is sandwiched between two rows that agree on where it sits. A dropped
  * row stays a gap, and the comparator reports it. Repairs are counted.
  */
-export function repairRowSequence(rows: CrossCheckRow[]): { rows: CrossCheckRow[]; repaired: number } {
+export function repairRowSequence(rows: CrossCheckRow[]): { rows: CrossCheckRow[]; repaired: number; repairedRowNumbers: number[] } {
   const out = rows.map((r) => ({ ...r }));
   let repaired = 0;
+  const repairedRowNumbers: number[] = [];
   for (let i = 1; i < out.length; i++) {
     const prev = out[i - 1].rowNumber;
     const n = out[i].rowNumber;
@@ -246,19 +247,37 @@ export function repairRowSequence(rows: CrossCheckRow[]): { rows: CrossCheckRow[
     if (next === prev + 2) {
       out[i].rowNumber = prev + 1;
       repaired += 1;
+      repairedRowNumbers.push(prev + 1);
     } else if (n === prev + 1 + 1000 && n >= 1000) {
       // The gridline under the row number read as a leading "1": 284 came
       // through as 1284. An exact offset of 1000 from the expected number
       // is that artifact and nothing else.
       out[i].rowNumber = prev + 1;
       repaired += 1;
+      repairedRowNumbers.push(prev + 1);
     }
   }
-  return { rows: out, repaired };
+  return { rows: out, repaired, repairedRowNumbers };
+}
+
+/**
+ * A repaired row number is a guess about where a row sits, and a guess
+ * must never become evidence. (Review, Sep 6: OCR numbers [1, 3, 3] were
+ * repaired to [1, 2, 3], which then agreed with a candidate that had a
+ * different second row.) So a filing with any repaired number is never
+ * "ok" as a whole, and a repaired row is never in the agreed list; it
+ * is reported apart, and its row stays a single read.
+ */
+export function withholdRepairs(result: CrossCheckResult, repairedRowNumbers: number[]): CrossCheckResult {
+  if (repairedRowNumbers.length === 0) return result;
+  const note = `${repairedRowNumbers.length} printed row number(s) repaired by sequence (${repairedRowNumbers.slice(0, 20).join(", ")}${repairedRowNumbers.length > 20 ? " ..." : ""}); repaired rows are not counted as agreement`;
+  if (result.status === "ok") return { status: "mismatch", problems: [note] };
+  if (result.status === "mismatch") return { status: "mismatch", problems: [note, ...result.problems] };
+  return result;
 }
 
 /** Extract comparison rows from the OCR text, through the shared parser. */
-export function extractOcrRows(text: string): Extraction & { rowNumbersRepaired?: number } {
+export function extractOcrRows(text: string): Extraction & { rowNumbersRepaired?: number; repairedRowNumbers?: number[] } {
   const extraction = parseTextLayer(columnizeOcrRows(repairOcrText(text)));
   if (extraction.kind === "no-text") {
     // The image was OCRed and still no rows came out: not a scan we could
@@ -266,8 +285,8 @@ export function extractOcrRows(text: string): Extraction & { rowNumbersRepaired?
     return { kind: "tool-error", message: "ocr: no transaction rows could be parsed from the OCR text" };
   }
   if (extraction.kind === "rows") {
-    const { rows, repaired } = repairRowSequence(extraction.rows);
-    return { ...extraction, rows, rowNumbersRepaired: repaired };
+    const { rows, repaired, repairedRowNumbers } = repairRowSequence(extraction.rows);
+    return { ...extraction, rows, rowNumbersRepaired: repaired, repairedRowNumbers };
   }
   return extraction;
 }
@@ -284,6 +303,8 @@ export interface AlignedComparison {
    * a per-row verification state can be derived without re-running OCR. */
   agreedPrintedRows: number[];
   disputedPrintedRows: number[];
+  /** Rows whose printed number was repaired by sequence. Never agreement. */
+  repairedPrintedRows: number[];
   /** Placeholder rows the form numbers but the model omits; needed to map
    * a parsed index back to a printed row. */
   placeholderRows: number[];
@@ -299,10 +320,12 @@ export interface AlignedComparison {
  * differences; the state stays ocr_tuple_mismatch.
  */
 export function alignByPrintedRow(
-  extraction: Extraction,
+  extraction: Extraction & { repairedRowNumbers?: number[] },
   parsed: Array<{ type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
 ): AlignedComparison | null {
   if (extraction.kind !== "rows") return null;
+  const repairedSet = new Set(extraction.repairedRowNumbers ?? []);
+  const repairedPrintedRows: number[] = [];
   const placeholders = new Set(extraction.placeholderRows);
   // printed row number -> index into parsed, skipping placeholders
   const maxPrinted = Math.max(...extraction.rows.map((r) => r.rowNumber), ...extraction.placeholderRows, 0);
@@ -326,6 +349,10 @@ export function alignByPrintedRow(
     const i = indexOfPrinted.get(r.rowNumber);
     if (i === undefined || i >= parsed.length || seen.has(r.rowNumber)) continue;
     seen.add(r.rowNumber);
+    if (repairedSet.has(r.rowNumber)) {
+      repairedPrintedRows.push(r.rowNumber);
+      continue;
+    }
     compared += 1;
     const want = tuple(r);
     const got = tuple(parsed[i]);
@@ -341,7 +368,7 @@ export function alignByPrintedRow(
   const unread = Math.max(0, parsed.length - compared);
   return {
     compared, agree, differ, unread, differences,
-    agreedPrintedRows, disputedPrintedRows, placeholderRows: [...extraction.placeholderRows],
+    agreedPrintedRows, disputedPrintedRows, repairedPrintedRows, placeholderRows: [...extraction.placeholderRows],
   };
 }
 
@@ -371,7 +398,7 @@ export function crossCheckByOcr(
   if (!engine.available) return { ran: false, reason: engine.reason };
   const { text, run } = ocrPdfToText(pdfPath, pdfSha256, options);
   const extraction = extractOcrRows(text);
-  const result = compareExtraction(extraction, parsed, "OCR");
+  const result = withholdRepairs(compareExtraction(extraction, parsed, "OCR"), extraction.repairedRowNumbers ?? []);
   return {
     ran: true,
     run,

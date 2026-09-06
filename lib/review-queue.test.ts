@@ -83,5 +83,12 @@ describe("review queue", () => {
     const second = await openReviewItem(input, { send: false, file: f });
     expect(second.id).toBe(first.id);
     expect(listOpenReviews(f)).toHaveLength(1);
+    // New evidence opens a new item and marks the old one superseded.
+    const third = await openReviewItem(
+      { ...input, problems: [{ location: { page: 1, printedRow: 2, parsedRow: 2, description: "X" }, modelSaid: "a", textLayerSaid: "b", detail: "row 2 differs" }] },
+      { send: false, file: f }
+    );
+    expect(third.id).not.toBe(first.id);
+    expect(listOpenReviews(f).map((i) => i.id)).toEqual([third.id]);
   });
 });

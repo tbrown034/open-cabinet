@@ -51,7 +51,7 @@ function main() {
     const model2ByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>();
     for (const [url, e] of entriesByUrl) {
       const second = secondRead?.filings[url];
-      const needsRecord = e.state === "ocr_tuple_mismatch" || !!second;
+      const needsRecord = e.state === "ocr_tuple_mismatch" || e.state === "checked_tuple_agreement" || e.state === "ocr_tuple_agreement" || !!second;
       if (!needsRecord) continue;
       const pdfPath = path.join(PDF_DIR, pdfFilenameFromUrl(url));
       if (!existsSync(pdfPath) || !e.pdfSha256) continue;

@@ -62,6 +62,26 @@ describe("diffRows", () => {
     expect(d.tradeChanged).toBe(0);
   });
 
+  it("never pairs two different assets as a wording change, even as unique leftovers", () => {
+    const d = diffRows([row({ description: "Apple Inc.", ticker: "AAPL" })], [row({ description: "Microsoft Corp.", ticker: "MSFT" })]);
+    expect(d.changed).toEqual([]);
+    expect(d.removed).toHaveLength(1);
+    expect(d.added).toHaveLength(1);
+  });
+
+  it("treats a changed maturity or note as substantive, not wording", () => {
+    const d = diffRows(
+      [row({ description: "Acme 4% bond due 2030", ticker: null })],
+      [row({ description: "Acme 4% bond due 2040", ticker: null })]
+    );
+    expect(d.changed).toHaveLength(1);
+    expect(d.changed[0].wordingOnly).toBe(false);
+    expect(d.tradeChanged).toBe(1);
+    const n = diffRows([row({ amount: null, amountNote: "Value not readily ascertainable" })], [row({ amount: null, amountNote: "Illegible" })]);
+    expect(n.matched).toBe(0);
+    expect(n.changed[0]?.fields).toEqual(["amountNote"]);
+  });
+
   it("pairs a same-trade leftover only when the pairing is unambiguous", () => {
     const pub = [row({ description: "A", ticker: null }), row({ description: "B", ticker: null })];
     const fresh = [row({ description: "C", ticker: null }), row({ description: "D", ticker: null })];
@@ -69,7 +89,7 @@ describe("diffRows", () => {
     expect(d.changed).toEqual([]);
     expect(d.removed).toHaveLength(2);
     expect(d.added).toHaveLength(2);
-    const one = diffRows([row({ description: "A", ticker: null })], [row({ description: "C", ticker: null })]);
+    const one = diffRows([row({ description: "Acme Holdings", ticker: null })], [row({ description: "Acme Holdings Class B", ticker: null })]);
     expect(one.changed).toHaveLength(1);
   });
 

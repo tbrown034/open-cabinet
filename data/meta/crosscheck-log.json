@@ -1,7 +1,7 @@
 {
   "version": 1,
   "checkerVersion": "2026-09-05.2",
-  "generatedAt": "2026-09-06T01:51:03.082Z",
+  "generatedAt": "2026-09-06T02:28:28.901Z",
   "entries": [
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
@@ -2529,7 +2529,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
       "slug": "trump-donald-j",
       "filingDate": "2026-08-22",
+      "pdfFile": "Donald-J-Trump-08.12.2026-278T.pdf",
+      "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+      "candidateSha256": "6bc88b00ae39f469ca68078831392719a8b9b2ac0ac15704517ae1f8e1292165",
       "checkerVersion": "2026-09-05.2",
+      "state": "ocr_tuple_mismatch",
       "comparedFields": [
         "type",
         "date",
@@ -2538,14 +2542,10 @@
         "rowCount",
         "printedRowContinuity"
       ],
-      "publishedRows": 1051,
-      "checkedAt": "2026-09-06T00:39:51.338Z",
-      "pdfFile": "Donald-J-Trump-08.12.2026-278T.pdf",
-      "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
-      "candidateSha256": "8b31b636df6dfbe318435b5cbb2146097954ab7620e328e5fbca8e8d23ba5dce",
-      "state": "ocr_tuple_mismatch",
       "rowsCompared": 1015,
-      "parseRecord": "legacy-chunks",
+      "publishedRows": 1051,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-06T02:28:28.829Z",
       "lane": "ocr",
       "problems": [
         "printed row 12 missing from OCR extraction (rows run 1..1051)",
@@ -2600,15 +2600,14 @@
         "rowNumbersRepaired": 11,
         "aligned": {
           "compared": 1015,
-          "agree": 1010,
-          "differ": 5,
+          "agree": 1011,
+          "differ": 4,
           "unread": 36,
           "differences": [
             "row 105: OCR [Sale|2026-06-12|$1,002-$15,000|late] vs AI parse [Sale|2026-06-12|$1,001-$15,000|late]",
             "row 276: OCR [Sale|2026-06-18|$1,000,001-$5,000,000|late] vs AI parse [Sale|2026-06-18|$500,001-$1,000,000|late]",
             "row 282: OCR [Purchase|2026-06-02|$500,003-$1,000,000|late] vs AI parse [Purchase|2026-06-02|$500,001-$1,000,000|late]",
-            "row 621: OCR [Sale|2026-06-23|$1,002-$15,000|ontime] vs AI parse [Sale|2026-06-23|$1,001-$15,000|ontime]",
-            "row 781: OCR [Sale|2026-06-03|$15,001-$50,000|late] vs AI parse [Sale|2026-06-03|$1,001-$15,000|late]"
+            "row 621: OCR [Sale|2026-06-23|$1,002-$15,000|ontime] vs AI parse [Sale|2026-06-23|$1,001-$15,000|ontime]"
           ]
         }
       }
