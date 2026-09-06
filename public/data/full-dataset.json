@@ -1,8 +1,8 @@
 {
-  "exportedAt": "2026-09-06T14:52:27.303Z",
+  "exportedAt": "2026-09-06T15:11:51.024Z",
   "officialCount": 39,
-  "transactionCount": 10374,
-  "underReviewCount": 1127,
+  "transactionCount": 10375,
+  "underReviewCount": 1126,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -25498,8 +25498,8 @@
       "level": "Cabinet",
       "confirmedDate": null,
       "departedDate": null,
-      "transactionCount": 8047,
-      "underReviewCount": 893,
+      "transactionCount": 8048,
+      "underReviewCount": 892,
       "mostRecentFilingDate": "2026-08-22",
       "transactions": [
         {
@@ -30367,12 +30367,12 @@
           "ticker": null,
           "type": "Sale",
           "date": "2026-06-18",
-          "amount": "$500,001-$1,000,000",
+          "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-          "recordId": "2126fb5f7bb9e73cd4f91afe",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "b195f13b6b1aac3a8c9e6995",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "NETFLIX INC",
@@ -30383,8 +30383,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "77face1f6905402a16689351",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "O REILLY AUTOMOTIVE INC",
@@ -30419,8 +30419,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "45e428f1f773f06af6af335c",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "PAYCHEX INC",
@@ -30431,8 +30431,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "e5fc8614bd98395ed0137770",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "Paypal Hldgs Inc",
@@ -30803,8 +30803,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "03aca1513e5254acfefbbbd7",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "BENTON AR PUB UTILS REV RFDG AGM B/E PTC 5.00 % Due Sep 1, 2035",
@@ -30815,8 +30815,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "8ab642a3ae7e99a30519fc5b",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "BLACKSTONE INC",
@@ -30899,8 +30899,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "53a002edafbf519e8786f980",
-          "verificationScore": 2,
-          "verificationState": "audit_only"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "CONOCOPHILLIPS",
@@ -30911,8 +30911,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "88430f921a4f19e4349f3c8d",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 2,
+          "verificationState": "audit_only"
         },
         {
           "description": "CONSTELLATION BRANDS INC CL A",
@@ -31031,8 +31031,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "4c310a2b57896b68441337b3",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "FORT WORTH TX RFDG & IMPT GENL PURP SER A B/E PTC 5.00 % Due Mar 1, 2027",
@@ -31043,8 +31043,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "5d4cb647190ca6b243a9aee7",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "FOX CORP CL A",
@@ -31211,8 +31211,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "2445c60d2adc904c58ee8f14",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "LYONDELLBASELL INDUSTRIES N V ORD SHS CL A",
@@ -31223,8 +31223,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "6a3be8e08e18890cc0f13ed5",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "MARSHALLTOWN IA CMNTY SCH DIST 2026 AGI SER B B/E 4.00 % Due Jun 1, 2027",
@@ -31271,8 +31271,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "14075cacc79cfa7ab0ad9854",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "MICROSOFT CORP",
@@ -31283,8 +31283,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "b73d18b15ffc8553749ef867",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "MISSOURI ST BRD PUB BLDGS SPL OBLIG RFDG SER B REV B/E 5.00 % Due Oct 1, 2026",
@@ -31679,8 +31679,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "9dc26b34b33e13d77e1c133b",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "ACCENTURE PLC IRELAND CL A",
@@ -31691,8 +31691,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "40cb6119d189c7957adaa923",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "ALKERMES PLC",
@@ -31943,8 +31943,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "eedf914232a1ae16fd5acd04",
-          "verificationScore": 2,
-          "verificationState": "audit_only"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "COSTCO WHOLESALE CORP",
@@ -31955,8 +31955,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "6989f59624d0ade9935f4b53",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 2,
+          "verificationState": "audit_only"
         },
         {
           "description": "DEVON ENERGY CORP",
@@ -31967,8 +31967,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "84f58738fc49ec6f822bc06f",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "DEXCOM INC",
@@ -31979,8 +31979,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "3370dddae2a671a1e8b3574b",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "DOW INC",
@@ -32327,8 +32327,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "d292fb13b662b91708a47081",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "META PLATFORMS INC CL A",
@@ -32339,8 +32339,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "77f30e0c32a95592d8b97934",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "METLIFE INC",
@@ -32375,8 +32375,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "b8b87e983f8f9a075d797b61",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "NATERA INC",
@@ -32387,8 +32387,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0019e52cd5b7d6465cc43b27",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "NIKE INC CL B",
@@ -32807,8 +32807,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "d0c728b5c9d3d4c0d0ec729d",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "ADOBE INC",
@@ -32819,8 +32819,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "f4b4f3b186f73f1aa0b1cefd",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "AIRBNB INC",
@@ -32999,8 +32999,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "9883fd7796f6b85a360863ff",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "BAKER HUGHES COMPANY",
@@ -33011,8 +33011,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "2dd4a9f09a5ead599f13eff1",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "BANK OF AMERICA CORP",
@@ -33119,8 +33119,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "f754eab9b5c41f930c1ca340",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "CBRE GROUP INC",
@@ -33131,8 +33131,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "fd5fddfa8dfcaa2f498168c1",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "CENCORA INC",
@@ -33359,8 +33359,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "523ba4e8114dbefc79426680",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "DEVON ENERGY CORPORATION",
@@ -33371,8 +33371,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "63b4dfde75d009feefaa4831",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "DOLLAR GENERAL CORPORATION",
@@ -34499,8 +34499,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "96b2c32d9bc7c7583fc84dd0",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "VICI PROPERTIES INC",
@@ -34511,8 +34511,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0c7c9801c752088d9770ddee",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "VISA INC",
@@ -34691,8 +34691,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "fd684ebb9f536d604e2cdee4",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "ARLINGTON TX WTR & WSTEWTR SYS REV SER A B/E OID @98.996 3.101% 3.00 % Due Jun 1, 2027",
@@ -34703,8 +34703,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "eb02627813b02033de1392b0",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "BARTON CNTY MO SCH DIST R II 2026 B/E B/Q MDDP 5.00 % Due Mar 1, 2027",
@@ -35015,8 +35015,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "07df4ee17c59119c58a1c376",
-          "verificationScore": 2,
-          "verificationState": "audit_only"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "ARGAN INC",
@@ -35027,8 +35027,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "8496979b45435e739a21c2e8",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 2,
+          "verificationState": "audit_only"
         },
         {
           "description": "ARIZONA ST INDL DEV AUTH MLTIFAM HSG REV RANCHES AT GUNSMOKE APT B/E PTC 5.00 % Due Mar 1, 2058",
@@ -35507,8 +35507,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0244e3907c0d88095359e82b",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "JEFFERSON CNTY WA FIRE PROTN DIST 1 EAST RSCUE RFDG 2019 B/E B/Q 1.35 % Due Dec 1, 2026",
@@ -35519,8 +35519,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "85330d31debffa97c8305e75",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "KADANT INC",
@@ -35903,8 +35903,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "b41b6e23442387bacbcef0b0",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "SOUTH CAROLINA ST HSG FIN & DEV AUTH REV MFHR POPLAR SQUARE B/E PTC 5.00 % Due Apr 1, 2028",
@@ -35915,8 +35915,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "9fbf29b6e98513a7b2a67ab9",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "SPHERE ENTERTAINMENT A CLASS CLASS A",
@@ -35987,8 +35987,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "ca3caf740e7f33983783a530",
-          "verificationScore": 2,
-          "verificationState": "audit_only"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "TRUPANION INC",
@@ -35999,8 +35999,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "a7279d6786d866fc0fb2ba6e",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 2,
+          "verificationState": "audit_only"
         },
         {
           "description": "ULTRA CLEAN HLDGS INC",
@@ -36011,8 +36011,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "2f21d8d6c90b389bb3cca65a",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "UNDER ARMOUR INC CLASS C",
@@ -36023,8 +36023,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "6db28370b0c0fb6c1e3eb08e",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "UNIVERSAL CORP VA",
@@ -36347,8 +36347,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "fa7d1aca635fee73af9a4aa2",
-          "verificationScore": 2,
-          "verificationState": "audit_only"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "CHEWY INC CLASS CLASS A",
@@ -36359,8 +36359,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "28849cf96a17d73f88c1d602",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 2,
+          "verificationState": "audit_only"
         },
         {
           "description": "CHIPOTLE MEXICAN GRILL I",
@@ -36791,8 +36791,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "aab9c49764cc3a525a34d219",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "HENRY JACK & ASSOC INC",
@@ -36803,8 +36803,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "50790864ad90d28fb7036bd2",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "HOME DEPOT INC",
@@ -37259,8 +37259,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "1bdbfa5187103cdb88c4942a",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "PROGRESSIVE CORP OH",
@@ -37271,8 +37271,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0f03a6934e2a21e393879538",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "PUBLIC SVC ENTERPRISE GR",
@@ -37391,8 +37391,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "255b5ee6000da29dc35618ee",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "SERVICENOW INC",
@@ -37403,8 +37403,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "4c82c0771cac2522d6622cb5",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "SHERWIN-WILLIAMS CO",
@@ -37823,8 +37823,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "45b279800f7c6e5cd6ea5a80",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "MARYLAND ST DEPT TRANSN CONS TRANSN RFDG 2025 C REV B/E 5.00 % Due Nov 1, 2026",
@@ -37835,8 +37835,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "e1032ee5a60f5dab02a0bbba",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "MIAMI BEACH FL REDEV AGY TAX INCRMT REV RFDG CITY CTR HIST CONVNTN AGI B/E 5.00 % Due Feb 1, 2027",
@@ -38063,8 +38063,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0b9c1cd80403b8ec8bf03bd6",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
@@ -38075,8 +38075,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "527834b3c6ffa78120062f0f",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",

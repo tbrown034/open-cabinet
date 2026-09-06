@@ -17,19 +17,19 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 39 |
-| Transactions | 10,374 |
-| Rows under review (not counted in totals) | 1,127 |
+| Transactions | 10,375 |
+| Rows under review (not counted in totals) | 1,126 |
 | Estimated value | ~$4.3B |
-| Late filings | 6,907 |
+| Late filings | 6,908 |
 | Companies searchable | 426 |
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
 
-Transaction counts, estimated value and late-filing totals exclude score-0 rows under review. The JSON and transaction CSV retain all 11,501 rows, including the 1,127 under review. JSON `transactionCount` is the counted total; `underReviewCount` is separate at both dataset and official level. The officials summary CSV uses the same exclusion and includes `under_review_count`.
+Transaction counts, estimated value and late-filing totals exclude score-0 rows under review. The JSON and transaction CSV retain all 11,501 rows, including the 1,126 under review. JSON `transactionCount` is the counted total; `underReviewCount` is separate at both dataset and official level. The officials summary CSV uses the same exclusion and includes `under_review_count`.
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
-Rows by verification state: 4,654 checked; 0 human_verified; 1,523 deterministic_agree; 13 two_models_agree; 165 audit_only; 4,019 single_read; 1,127 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
+Rows by verification state: 4,653 checked; 1 human_verified; 1,523 deterministic_agree; 13 two_models_agree; 165 audit_only; 4,020 single_read; 1,126 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
 
 ## Pages
 
