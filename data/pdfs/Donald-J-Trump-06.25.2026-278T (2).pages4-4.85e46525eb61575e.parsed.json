@@ -1,0 +1,317 @@
+{
+  "key": "85e46525eb61575e",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:56:13.994Z",
+  "transactions": [
+    {
+      "description": "CARDINAL HEALTH INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CASEYS GENERAL STORES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CDW CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CENCORA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CENTENE CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHARLES SCHWAB CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHEVRON CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHIPOTLE MEXICAN GRILL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHUBB LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CINCINNATI FINANCIAL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CITIZENS FINANCIAL GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CME GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COINBASE GLOBAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COLGATE PALMOLIVE COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COMCAST CORP CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CONOCOPHILLIPS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CONSOLIDATED EDISON INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CORPAY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CRH PUBLIC LIMITED COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CROWN CASTLE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CVS HEALTH CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DR HORTON INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DANAHER CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOLLAR GENERAL CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DOORDASH INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ECOLAB INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "EDWARDS LIFESCIENCES CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "EQT CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "EXELON CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-11",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "EXPAND ENERGY CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "EXPEDIA GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-11",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3611,
+    "outputTokens": 2725,
+    "estimatedCostUsd": 0.0517
+  }
+}

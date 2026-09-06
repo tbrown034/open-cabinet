@@ -1,0 +1,317 @@
+{
+  "key": "73d6e1e5a897edc7",
+  "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+  "chunk": {
+    "first": 15,
+    "last": 15
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:56:13.302Z",
+  "transactions": [
+    {
+      "description": "CORECIVIC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-13",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COREWEAVE INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COSTCO WHSL CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COTERRA ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COTERRA ENERGY INC CHG",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CPTL ONE FINL CORP NTS 06.377% 060834 DTD060823 FC120823 B/E YTM = 5.467",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "CREDO TECHNOLOGY GROUP HOLDING LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CRH PUBLIC LIMITED COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CRH PUBLIC LIMITED COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CROWDSTRIKE HLDGS INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CROWDSTRIKE HOLDINGS INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CROWN CASTLE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CROWN CASTLE INC REIT REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CSG SYS INTL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CSW INDUSTRIALS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CSX CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CVS HEALTH CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CVS HEALTH CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CVS HEALTH CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "D R HORTON INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "D R Horton Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "DANAHER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DANAHER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DANAHER CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DANAHER CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DARDEN RESTAURANTS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DARDEN RESTAURANTS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DATADOG INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2882,
+    "outputTokens": 1857,
+    "estimatedCostUsd": 0.1217
+  }
+}

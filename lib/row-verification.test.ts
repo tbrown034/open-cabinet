@@ -45,9 +45,32 @@ describe("locating a published row in the parse record", () => {
 describe("deriveRowVerification", () => {
   const base = { slug: "x", parseRecordByUrl: new Map(), entriesByUrl: new Map<string, CrosscheckEntry>() };
 
-  it("scores 3 when a deterministic lane agreed on the filing", () => {
-    const out = deriveRowVerification({ ...base, transactions: [tx()], entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]) });
-    expect(out[0]).toMatchObject({ score: 3, state: "deterministic_agree", lane: "text" });
+  it("scores 2 when a deterministic lane agreed and the audit has not run; 3 once the audit confirms; 0 if it disputes", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" }), tx({ description: "C" })];
+    const entries = new Map([[URL, entry({ state: "checked_tuple_agreement" })]]);
+    const out = deriveRowVerification({ ...base, transactions: rows, entriesByUrl: entries });
+    expect(out.map((v) => [v.score, v.state])).toEqual([[2, "deterministic_agree"], [2, "deterministic_agree"], [2, "deterministic_agree"]]);
+    const audited = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: entries,
+      parseRecordByUrl: new Map([[URL, rows]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set([1]), notFound: new Set([2]) }]]),
+    });
+    expect(audited.map((v) => [v.score, v.state])).toEqual([[3, "checked"], [0, "disputed"], [0, "disputed"]]);
+    expect(audited[1].lane).toBe("audit");
+  });
+
+  it("an audit alone lifts a single read to 2, never to 3", () => {
+    const rows = [tx({ description: "A" })];
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "no_usable_text" })]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set(), notFound: new Set() }]]),
+    });
+    expect(out[0]).toMatchObject({ score: 2, state: "audit_only" });
   });
 
   it("credits a filing-level agreement only to rows the checked candidate contains", () => {
@@ -58,7 +81,7 @@ describe("deriveRowVerification", () => {
       entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
       parseRecordByUrl: new Map([[URL, [tx({ description: "A" })]]]),
     });
-    expect(out.map((v) => v.score)).toEqual([3, 1]);
+    expect(out.map((v) => v.score)).toEqual([2, 1]);
     expect(out[1].note).toMatch(/does not contain this row/);
   });
 
@@ -83,7 +106,7 @@ describe("deriveRowVerification", () => {
       },
     });
     const out = deriveRowVerification({ ...base, transactions: rows, entriesByUrl: new Map([[URL, e]]), parseRecordByUrl: new Map([[URL, rows]]) });
-    expect(out.map((v) => [v.score, v.state])).toEqual([[3, "deterministic_agree"], [0, "disputed"], [1, "single_read"]]);
+    expect(out.map((v) => [v.score, v.state])).toEqual([[2, "deterministic_agree"], [0, "disputed"], [1, "single_read"]]);
   });
 
   it("lets a second model lift an unread row to 2, and a human decision to 3", () => {

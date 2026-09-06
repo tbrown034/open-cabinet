@@ -1,0 +1,317 @@
+{
+  "key": "23a05ed6edc03a55",
+  "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+  "chunk": {
+    "first": 14,
+    "last": 14
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:55:51.723Z",
+  "transactions": [
+    {
+      "description": "COHERENT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "COINBASE GLOBAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COINBASE GLOBAL INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "COLGATE PALMOLIVE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLGATE PALMOLIVE CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLGATE PALMOLIVE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLGATE PALMOLIVE COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLLEGIUM PHARMACEUTICAL",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMCAST CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMCAST CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "COMCAST CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMMUNITY FINL SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMSTOCK RES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONAGRA BRANDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONMED CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONOCOPHILLIPS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONOCOPHILLIPS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSOLIDATED EDISON INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSOLIDATED EDISON INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSTELLATION BRANDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSTELLATION BRANDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSTELLATION BRANDS INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSTELLATION ENERGY COR",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "CONSTELLATION ENERGY CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CONSTELLATION ENERGY CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COOPER COMPANIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COOPER COS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COPART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-20",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COPART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COPART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COPART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "CORCEPT THERAPEUTICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CORE NAT RES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2906,
+    "outputTokens": 1765,
+    "estimatedCostUsd": 0.1173
+  }
+}

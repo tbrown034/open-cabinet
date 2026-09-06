@@ -1,0 +1,317 @@
+{
+  "key": "1b9166b2fdf0ebf6",
+  "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
+  "chunk": {
+    "first": 13,
+    "last": 13
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:55:31.279Z",
+  "transactions": [
+    {
+      "description": "CINEMARK HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CISCO SYSTEMS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CISCO SYSTEMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CITIGROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CITIGROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CLOROX CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CLOROX CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CLOROX CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CLOROX CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "Cloudflare Inc Cl A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CLOUDFLARE INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CME GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CME GROUP INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CME GROUP INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CMS ENERGY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CMS ENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-10",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CMS ENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COCA COLA CO COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COCA COLA COMPANY (THE)",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COCA-COLA COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COEUR MNG INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOL CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-27",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOLUTIONS CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOLUTIONS CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-07",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "Cognizant Technology Solutions Corp Cl A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-04-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COHERENT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-04-20",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2900,
+    "outputTokens": 1792,
+    "estimatedCostUsd": 0.1186
+  }
+}

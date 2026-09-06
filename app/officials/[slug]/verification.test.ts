@@ -6,7 +6,10 @@ import { verificationForOfficial, type RowVerification } from "@/lib/row-verific
 import OfficialPage from "./page";
 
 vi.mock("@/lib/data", () => ({ getOfficialBySlug: vi.fn(), getOfficialsIndex: vi.fn() }));
-vi.mock("@/lib/row-verification", () => ({ verificationForOfficial: vi.fn() }));
+vi.mock("@/lib/row-verification", async () => {
+  const actual = await vi.importActual<typeof import("@/lib/row-verification")>("@/lib/row-verification");
+  return { ...actual, verificationForOfficial: vi.fn() };
+});
 vi.mock("@/lib/news", () => ({ getNewsForOfficial: async () => [] }));
 vi.mock("@/lib/fee-payments", () => ({ getFeePaymentsBySlug: async () => [] }));
 vi.mock("@/lib/divestiture", () => ({ getDivestitureData: async () => null }));
@@ -36,7 +39,7 @@ beforeEach(() => {
   vi.mocked(getOfficialsIndex).mockResolvedValue({ lastUpdated: "2026-05-01", officials: [] });
   vi.mocked(verificationForOfficial).mockImplementation((_slug, rows) => rows.map((_tx, i) => ({
     id: `row-${i}`, slug: "example-person", score: i === 0 ? 0 : i === 1 ? 3 : 1,
-    state: i === 0 ? "disputed" : i === 1 ? "deterministic_agree" : "single_read",
+    state: i === 0 ? "disputed" : i === 1 ? "checked" : "single_read",
     lane: null, sourceUrl: null, note: `Recorded note ${i}`,
   } satisfies RowVerification)));
 });

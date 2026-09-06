@@ -1,11 +1,4 @@
-import type { RowVerification } from "@/lib/row-verification";
-
-const SCORE_LABEL = {
-  3: "Checked",
-  2: "Checked by two models",
-  1: "Not yet checked",
-  0: "Under review",
-} as const;
+import { SHORT_LABEL, type RowVerification } from "@/lib/row-verification";
 
 export default function VerificationMarker({
   verification,
@@ -18,7 +11,7 @@ export default function VerificationMarker({
         className={`cursor-pointer ${verification?.score === 0 ? "font-semibold text-amber-900" : ""}`}
         title={verification?.note ?? "No verification record is available for this row"}
       >
-        {verification ? SCORE_LABEL[verification.score] : "Not yet checked"}
+        {verification ? SHORT_LABEL[verification.state] : "Not yet checked"}
       </summary>
       <p className="mt-1 max-w-sm leading-relaxed">
         {verification?.note ?? "No verification record is available for this row"}

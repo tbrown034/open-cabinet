@@ -196,7 +196,7 @@ export function writeChunkManifest(
 export function readChunkedRecord(
   pdfPath: string,
   inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">
-): { transactions: unknown[]; pageCount: number } | null {
+): { transactions: unknown[]; pageCount: number; units: Array<{ first: number; last: number; transactions: unknown[] }> } | null {
   const wholeKey = parseCacheKey({ ...inputWithoutChunk, chunk: null });
   const file = chunkManifestPath(pdfPath, wholeKey);
   if (!existsSync(file)) return null;
@@ -208,6 +208,7 @@ export function readChunkedRecord(
   }
   if (manifest.key !== wholeKey || !Array.isArray(manifest.chunks) || manifest.chunks.length === 0) return null;
   const chunks = [...manifest.chunks].sort((a, b) => a.first - b.first);
+  const units: Array<{ first: number; last: number; transactions: unknown[] }> = [];
   let expectedFirst = 1;
   const transactions: unknown[] = [];
   for (const c of chunks) {
@@ -217,11 +218,12 @@ export function readChunkedRecord(
     const chunkPath = pdfPath.replace(/\.pdf$/i, `.pages${c.first}-${c.last}.pdf`);
     const env = readParseCache(chunkPath, { ...inputWithoutChunk, chunk: { first: c.first, last: c.last } });
     if (!env || env.pdfSha256 !== inputWithoutChunk.pdfSha256) return null;
+    units.push({ first: c.first, last: c.last, transactions: env.transactions });
     transactions.push(...env.transactions);
     expectedFirst = c.last + 1;
   }
   if (expectedFirst !== manifest.pageCount + 1) return null; // tail missing
-  return { transactions, pageCount: manifest.pageCount };
+  return { transactions, pageCount: manifest.pageCount, units };
 }
 
 export type ParseRecordSource = "current" | "current-chunks" | "legacy" | "legacy-chunks";
@@ -242,6 +244,36 @@ export function pdfPageCount(pdfPath: string): number | null {
   } catch {
     return null;
   }
+}
+
+export function readLegacyChunkedUnits(pdfPath: string): Array<{ first: number; last: number; transactions: unknown[] }> | null {
+  const dir = path.dirname(pdfPath);
+  const base = path.basename(pdfPath, path.extname(pdfPath));
+  const re = new RegExp(`^${base.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.pages(\\d+)-(\\d+)\\.parsed\\.json$`);
+  const chunks: Array<{ first: number; last: number; file: string }> = [];
+  for (const f of readdirSync(dir)) {
+    const m = f.match(re);
+    if (m) chunks.push({ first: Number(m[1]), last: Number(m[2]), file: path.join(dir, f) });
+  }
+  if (chunks.length === 0) return null;
+  chunks.sort((a, b) => a.first - b.first);
+  let expected = 1;
+  const units: Array<{ first: number; last: number; transactions: unknown[] }> = [];
+  for (const c of chunks) {
+    if (c.first !== expected || c.last < c.first) return null;
+    try {
+      const parsed = JSON.parse(readFileSync(c.file, "utf-8"));
+      const transactions = parsed.transactions ?? parsed;
+      if (!Array.isArray(transactions)) return null;
+      units.push({ first: c.first, last: c.last, transactions });
+    } catch {
+      return null;
+    }
+    expected = c.last + 1;
+  }
+  const pages = pdfPageCount(pdfPath);
+  if (pages !== null && expected - 1 !== pages) return null;
+  return units;
 }
 
 export function readLegacyChunkedRecord(pdfPath: string): unknown[] | null {
@@ -286,12 +318,12 @@ export function readLegacyChunkedRecord(pdfPath: string): unknown[] | null {
 export function findParseRecord(
   pdfPath: string,
   inputWithoutChunk: Omit<ParseCacheKeyInput, "chunk">
-): { source: ParseRecordSource; transactions: unknown[] } | null {
+): { source: ParseRecordSource; transactions: unknown[]; units?: Array<{ first: number; last: number; transactions: unknown[] }> } | null {
   const whole = readParseCache(pdfPath, { ...inputWithoutChunk, chunk: null });
   if (whole) return { source: "current", transactions: whole.transactions };
 
   const chunked = readChunkedRecord(pdfPath, inputWithoutChunk);
-  if (chunked) return { source: "current-chunks", transactions: chunked.transactions };
+  if (chunked) return { source: "current-chunks", transactions: chunked.transactions, units: chunked.units };
 
   const legacy = legacyParseCachePath(pdfPath);
   if (existsSync(legacy)) {
@@ -303,8 +335,8 @@ export function findParseRecord(
       /* unreadable */
     }
   }
-  const legacyChunks = readLegacyChunkedRecord(pdfPath);
-  if (legacyChunks) return { source: "legacy-chunks", transactions: legacyChunks };
+  const legacyUnits = readLegacyChunkedUnits(pdfPath);
+  if (legacyUnits) return { source: "legacy-chunks", transactions: legacyUnits.flatMap((u) => u.transactions), units: legacyUnits };
   return null;
 }
 

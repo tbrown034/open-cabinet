@@ -28,7 +28,8 @@
     "review": "npx tsx scripts/review.ts",
     "reverify": "npx tsx scripts/reverify.ts",
     "second-read": "npx tsx scripts/second-read.ts",
-    "row-verification": "npx tsx scripts/build-row-verification.ts"
+    "row-verification": "npx tsx scripts/build-row-verification.ts",
+    "grok-audit": "npx tsx scripts/grok-audit.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

@@ -7,9 +7,11 @@ import VerificationSummary from "./verification-summary";
 
 describe("row verification display", () => {
   it.each([
-    [3, "deterministic_agree", "Checked"],
-    [3, "human_verified", "Checked"],
-    [2, "two_models_agree", "Checked by two models"],
+    [3, "checked", "Checked"],
+    [3, "human_verified", "Checked by a person"],
+    [2, "deterministic_agree", "Program agrees, audit pending"],
+    [2, "two_models_agree", "Two models agree, audit pending"],
+    [2, "audit_only", "Audit agrees, program pending"],
     [1, "single_read", "Not yet checked"],
     [0, "disputed", "Under review"],
   ] as const)("shows score %s (%s) as visible text with an expandable note", (score, state, label) => {
@@ -34,10 +36,10 @@ describe("row verification display", () => {
     const summary: RowVerificationFile["summary"] = {
       rows: 20,
       byScore: { "3": 5, "2": 3, "1": 10, "0": 2 },
-      byState: { deterministic_agree: 4, human_verified: 1, two_models_agree: 3, single_read: 10, disputed: 2 },
+      byState: { checked: 4, human_verified: 1, deterministic_agree: 2, two_models_agree: 1, audit_only: 0, single_read: 10, disputed: 2 },
     };
     const html = renderToStaticMarkup(createElement(VerificationSummary, { summary }));
-    expect(html).toContain("8 of 20 rows (40 percent)");
+    expect(html).toContain("5 of 20 rows (25 percent)");
     expect(html.match(/percent/g)).toHaveLength(1);
     for (const [state, count] of Object.entries(summary.byState)) {
       expect(html).toContain(`${count} rows</strong> — ${STATE_LABEL[state as RowVerification["state"]]}.`);
@@ -51,7 +53,7 @@ describe("row verification display", () => {
       .toContain("Row verification counts are not yet available");
     const summary: RowVerificationFile["summary"] = {
       rows: 0, byScore: { "3": 0, "2": 0, "1": 0, "0": 0 },
-      byState: { deterministic_agree: 0, human_verified: 0, two_models_agree: 0, single_read: 0, disputed: 0 },
+      byState: { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, disputed: 0 },
     };
     expect(renderToStaticMarkup(createElement(VerificationSummary, { summary })))
       .toContain("0 of 0 rows (0 percent)");

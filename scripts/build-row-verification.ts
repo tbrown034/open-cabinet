@@ -24,6 +24,7 @@ import {
   type VerificationState,
 } from "../lib/row-verification";
 import { readSecondReadLog } from "../lib/second-read";
+import { readGrokAuditLog } from "../lib/grok-audit";
 import type { OfficialData } from "../lib/types";
 
 const OFFICIALS_DIR = path.resolve("data/officials");
@@ -39,6 +40,7 @@ function main() {
   if (!log) throw new Error("no cross-check log; run pnpm crosscheck-sweep first");
   const decisions = readReviewDecisions();
   const secondRead = readSecondReadLog();
+  const audit = readGrokAuditLog();
   const rows: Record<string, RowVerification> = {};
 
   for (const file of readdirSync(OFFICIALS_DIR).filter((f) => f.endsWith(".json")).sort()) {
@@ -49,10 +51,10 @@ function main() {
     // Parse records are needed only where a per-row lane verdict exists.
     const parseRecordByUrl = new Map<string, Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>>();
     const model2ByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>();
+    const auditByUrl = new Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>();
     for (const [url, e] of entriesByUrl) {
       const second = secondRead?.filings[url];
-      const needsRecord = e.state === "ocr_tuple_mismatch" || e.state === "checked_tuple_agreement" || e.state === "ocr_tuple_agreement" || !!second;
-      if (!needsRecord) continue;
+      const audited = audit?.filings[url];
       const pdfPath = path.join(PDF_DIR, pdfFilenameFromUrl(url));
       if (!existsSync(pdfPath) || !e.pdfSha256) continue;
       const record = findParseRecord(pdfPath, {
@@ -63,6 +65,9 @@ function main() {
       if (second && second.candidateSha256 === e.candidateSha256) {
         model2ByUrl.set(url, { agreedIndexes: new Set(second.agreedIndexes), disputedIndexes: new Set(second.disputedIndexes) });
       }
+      if (audited && audited.candidateSha256 === e.candidateSha256) {
+        auditByUrl.set(url, { confirmed: new Set(audited.confirmedIndexes), disputed: new Set(audited.disputedIndexes), notFound: new Set(audited.notFoundIndexes) });
+      }
     }
 
     for (const v of deriveRowVerification({
@@ -71,13 +76,14 @@ function main() {
       entriesByUrl,
       parseRecordByUrl,
       model2ByUrl,
+      auditByUrl,
       decisionsById: decisions,
     })) {
       rows[v.id] = v;
     }
   }
 
-  const byState = { deterministic_agree: 0, human_verified: 0, two_models_agree: 0, single_read: 0, disputed: 0 } as Record<VerificationState, number>;
+  const byState = { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, disputed: 0 } as Record<VerificationState, number>;
   const byScore = { "0": 0, "1": 0, "2": 0, "3": 0 };
   for (const v of Object.values(rows)) {
     byState[v.state] += 1;
