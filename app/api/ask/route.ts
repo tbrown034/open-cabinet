@@ -21,10 +21,17 @@ import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { askQuota } from "@/lib/schema";
 import { sql } from "drizzle-orm";
-import { createHash } from "crypto";
 import { appendFile } from "fs/promises";
 import path from "path";
 import { getPublishedRows } from "@/lib/published-rows";
+import {
+  overIpLimit,
+  overGlobalLimit,
+  withDeadline,
+  GLOBAL_PER_DAY,
+  PHRASE_TIMEOUT_MS,
+} from "@/lib/ask/limits";
+import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import {
   parseQueryPlan,
   resolvePlan,
@@ -64,137 +71,9 @@ export const DISCLOSURE =
 
 export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
 
-/* ── Rate limiting ──────────────────────────────────────────────────────────
- * Two limits with different jobs. The daily cap is durable, in ask_quota,
- * because an in-memory counter cannot bound spending across instances or
- * restarts (Codex, Sept. 6). The per-IP hourly limit stays in memory: it is a
- * courtesy throttle, not a spending control, and a database round trip on
- * every request is not worth it. The in-memory daily counter is only the
- * fallback for a deployment where the ask_quota migration has not run yet, so
- * a preview still has some ceiling.
- */
-const PER_IP_PER_HOUR = 30;
-const GLOBAL_PER_DAY = 300;
-const HOUR_MS = 60 * 60 * 1000;
-const DAY_MS = 24 * HOUR_MS;
-const IP_MAP_MAX_KEYS = 2000;
-const PHRASE_TIMEOUT_MS = 10_000;
 
-const perIp = new Map<string, number[]>();
-let globalHits: number[] = [];
 
-/** Test seam. The limiter is module state, so a test has to clear it. */
-export function resetAskLimiter(): void {
-  perIp.clear();
-  globalHits = [];
-}
 
-export function limiterSize(): number {
-  return perIp.size;
-}
-
-export const LIMITER_LIMITS = { PER_IP_PER_HOUR, IP_MAP_MAX_KEYS };
-
-function hashIp(ip: string): string {
-  return createHash("sha256").update(ip).digest("hex").slice(0, 16);
-}
-
-/**
- * Client identity for the per-IP quota.
- *
- * TRUST ASSUMPTION: this is only sound behind an ingress that writes these
- * headers itself. x-vercel-forwarded-for is set by Vercel's edge and cannot
- * be forged by a caller, so it is preferred. x-forwarded-for can be set by
- * anyone, and a caller who rotates it walks straight past the per-IP limit
- * (Codex, Sept. 6), so the LAST hop is taken rather than the first: the last
- * entry is the one the nearest proxy appended, while everything to its left
- * is whatever the client claimed. Run behind a proxy that appends, or this
- * limit is advisory. The durable daily cap is the control that does not
- * depend on client identity.
- */
-export function clientIp(request: Request): string {
-  const platform = request.headers.get("x-vercel-forwarded-for");
-  if (platform) return lastHop(platform);
-  const real = request.headers.get("x-real-ip");
-  if (real) return real.trim();
-  const forwarded = request.headers.get("x-forwarded-for");
-  if (forwarded) return lastHop(forwarded);
-  return "unknown";
-}
-
-export function lastHop(header: string): string {
-  const hops = header.split(",").map((h) => h.trim()).filter(Boolean);
-  return hops[hops.length - 1] ?? "unknown";
-}
-
-/**
- * Origins allowed to spend this project's model budget.
- *
- * The shared check in lib/origin-check.ts allows any *.vercel.app host so
- * previews stay testable. For a paid endpoint that means any Vercel tenant
- * can spend the budget (Codex, Sept. 6), so this route keeps its own list:
- * the production hosts, whatever ALLOWED_ORIGINS names, and localhost only
- * outside production. Reading the env on each call keeps it testable and
- * costs nothing next to two model round trips.
- */
-export function allowedAskHosts(
-  env: NodeJS.ProcessEnv = process.env
-): Set<string> {
-  const hosts = ["open-cabinet.org", "www.open-cabinet.org"];
-  for (const entry of (env.ALLOWED_ORIGINS ?? "").split(",")) {
-    const trimmed = entry.trim();
-    if (!trimmed) continue;
-    try {
-      hosts.push(new URL(trimmed).hostname);
-    } catch {
-      hosts.push(trimmed);
-    }
-  }
-  if (env.NODE_ENV !== "production") hosts.push("localhost", "127.0.0.1");
-  return new Set(hosts);
-}
-
-export function isAskOrigin(
-  request: Request,
-  env: NodeJS.ProcessEnv = process.env
-): boolean {
-  const origin = request.headers.get("origin");
-  if (!origin) return false;
-  try {
-    return allowedAskHosts(env).has(new URL(origin).hostname);
-  } catch {
-    return false;
-  }
-}
-
-/**
- * A rejected request is not recorded, so a caller who keeps hammering after a
- * 429 cannot keep growing the map (Codex, Sept. 6). Expired keys are swept
- * first; if the map is still at its cap, the oldest key is evicted, so
- * cardinality is bounded rather than merely trimmed.
- */
-export function overIpLimit(key: string): boolean {
-  const now = Date.now();
-  const recent = (perIp.get(key) ?? []).filter((ts) => now - ts < HOUR_MS);
-  if (recent.length >= PER_IP_PER_HOUR) {
-    perIp.set(key, recent);
-    return true;
-  }
-  recent.push(now);
-  perIp.set(key, recent);
-
-  if (perIp.size > IP_MAP_MAX_KEYS) {
-    for (const [k, times] of perIp) {
-      if (times.every((ts) => now - ts >= HOUR_MS)) perIp.delete(k);
-    }
-  }
-  while (perIp.size > IP_MAP_MAX_KEYS) {
-    const oldest = perIp.keys().next();
-    if (oldest.done || oldest.value === key) break;
-    perIp.delete(oldest.value);
-  }
-  return false;
-}
 
 /**
  * Per instance, not global. An in-memory counter cannot bound spending across
@@ -245,17 +124,6 @@ async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
   }
 }
 
-/**
- * The per-instance fallback, used only when ask_quota is missing. It cannot
- * bound spending on its own; reserveDailyQuota is the real cap.
- */
-function overGlobalLimit(): boolean {
-  const now = Date.now();
-  globalHits = globalHits.filter((ts) => now - ts < DAY_MS);
-  if (globalHits.length >= GLOBAL_PER_DAY) return true;
-  globalHits.push(now);
-  return false;
-}
 
 /* ── Logging ────────────────────────────────────────────────────────────── */
 
@@ -522,33 +390,6 @@ async function callPhraseModel(
   return text.length > 0 ? text : null;
 }
 
-/**
- * Run the phrasing call, but never let it take the answer down with it.
- *
- * By the time this runs the answer is computed and correct. A phrasing call
- * that throws used to surface as a 500, discarding work already done (Codex,
- * Sept. 6), and one that hangs would hold the request open. Either way the
- * reader gets the templated sentence instead.
- */
-export async function withDeadline<T>(
-  work: () => Promise<T>,
-  ms: number
-): Promise<T | null> {
-  let timer: ReturnType<typeof setTimeout> | undefined;
-  try {
-    return await Promise.race([
-      work(),
-      new Promise<null>((resolve) => {
-        timer = setTimeout(() => resolve(null), ms);
-      }),
-    ]);
-  } catch (error) {
-    console.error("[ask] phrasing failed", error);
-    return null;
-  } finally {
-    if (timer) clearTimeout(timer);
-  }
-}
 
 /* ── Route ──────────────────────────────────────────────────────────────── */
 
