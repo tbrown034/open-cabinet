@@ -292,7 +292,7 @@ function MonthlyBarsContent({
                     strokeDasharray="2 2"
                   />
                 )}
-                <text x={x(b.month) + 2} y={height - 8} fontSize={10} fill="#737373">
+                <text x={x(b.month) + monthWidth / 2} y={height - 8} fontSize={10} fill="#737373" textAnchor="middle">
                   {label}
                 </text>
               </g>
