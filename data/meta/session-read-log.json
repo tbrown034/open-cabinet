@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T17:16:04.980Z",
+  "generatedAt": "2026-09-06T17:19:19.784Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf": {
       "slug": "trump-donald-j",
@@ -9,7 +9,7 @@
       "candidateSha256": "32b07b803de1adf668600ad7e2671e29855dff4671ef89e1db8cbe10fb27bd1c",
       "model": "gpt-6-astra",
       "rowsPrimary": 3642,
-      "rowsSecond": 2902,
+      "rowsSecond": 3067,
       "agreedIndexes": [
         0,
         1,
@@ -2880,45 +2880,7 @@
         2898,
         2899,
         2900,
-        2901
-      ],
-      "disputedIndexes": [
-        6,
-        264,
-        332,
-        503,
-        510,
-        627,
-        841,
-        960,
-        1066,
-        1067,
-        1327,
-        1671,
-        2227,
-        2230,
-        2231,
-        2243,
-        2272,
-        2712,
-        2750,
-        2809,
-        2822,
-        2929,
-        3285
-      ],
-      "unreadIndexes": [
-        1456,
-        1504,
-        1717,
-        1838,
-        1845,
-        1918,
-        2662,
-        2754,
-        2830,
-        2856,
-        2893,
+        2901,
         2902,
         2903,
         2904,
@@ -2944,8 +2906,7 @@
         2924,
         2925,
         2926,
-        2927,
-        2928,
+        2929,
         2930,
         2931,
         2932,
@@ -3048,7 +3009,6 @@
         3029,
         3030,
         3031,
-        3032,
         3033,
         3034,
         3035,
@@ -3082,7 +3042,47 @@
         3063,
         3064,
         3065,
-        3066,
+        3066
+      ],
+      "disputedIndexes": [
+        6,
+        264,
+        332,
+        503,
+        510,
+        627,
+        841,
+        960,
+        1066,
+        1067,
+        1327,
+        1671,
+        2227,
+        2230,
+        2231,
+        2243,
+        2272,
+        2712,
+        2750,
+        2809,
+        2822,
+        3285
+      ],
+      "unreadIndexes": [
+        1456,
+        1504,
+        1717,
+        1838,
+        1845,
+        1918,
+        2662,
+        2754,
+        2830,
+        2856,
+        2893,
+        2927,
+        2928,
+        3032,
         3067,
         3068,
         3069,
@@ -3667,6 +3667,13 @@
           "lateFilingFlag": true
         },
         {
+          "description": "LEGALZOOM COM INC",
+          "type": "Purchase",
+          "date": "2026-02-02",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
           "description": "FIRST BANCORP P R F",
           "type": "Purchase",
           "date": "2026-03-04",
@@ -3721,6 +3728,27 @@
           "date": "2026-03-06",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true
+        },
+        {
+          "description": "Te Connectivity Plc Ord Shs Isin#ie000lvnqz81 Solicited Order Discretion Exercised",
+          "type": "Sale",
+          "date": "2026-03-06",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "NXP SEMICONDUCTORS N V",
+          "type": "Sale",
+          "date": "2026-03-17",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "WILLIS TOWERS WATSON P F",
+          "type": "Sale",
+          "date": "2026-02-12",
+          "amount": "$15,001-$50,000",
+          "lateFilingFlag": true
         }
       ],
       "differences": [
@@ -3745,13 +3773,12 @@
         "row 2751: second model [Sale|2026-03-18|$1,001-$15,000|late] vs primary [Sale|2026-03-16|$1,001-$15,000|late] for \"GE HEALTHCARE TECHNOLOGI\"",
         "row 2810: second model [Sale|2026-03-18|$1,001-$15,000|late] vs primary [Sale|2026-03-16|$1,001-$15,000|late] for \"AVERY DENNISON CORP\"",
         "row 2823: second model [Sale|2026-03-18|$1,001-$15,000|late] vs primary [Sale|2026-03-16|$1,001-$15,000|late] for \"ULTA BEAUTY INC\"",
-        "row 2930: second model [Purchase|2026-02-02|$15,001-$50,000|late] vs primary [Sale|2026-02-26|$15,001-$50,000|late] for \"LEGALZOOM COM INC\"",
         "row 3286: second model [Purchase|2026-03-17|$1,001-$15,000|late] vs primary [Sale|2026-02-12|$15,001-$50,000|late] for \"IQVIA HLDGS INC\""
       ],
       "costUsd": 0,
-      "checkedAt": "2026-09-06T17:16:04.979Z",
+      "checkedAt": "2026-09-06T17:19:19.783Z",
       "reader": "claude-code-session",
-      "printedRowsRead": 2902,
+      "printedRowsRead": 3067,
       "printedRowGaps": []
     }
   }
