@@ -1,8 +1,8 @@
 {
-  "exportedAt": "2026-09-06T22:29:11.525Z",
+  "exportedAt": "2026-09-06T22:48:28.519Z",
   "officialCount": 39,
-  "transactionCount": 11505,
-  "underReviewCount": 9,
+  "transactionCount": 11511,
+  "underReviewCount": 3,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -26066,8 +26066,8 @@
       "level": "Cabinet",
       "confirmedDate": null,
       "departedDate": null,
-      "transactionCount": 8935,
-      "underReviewCount": 9,
+      "transactionCount": 8941,
+      "underReviewCount": 3,
       "mostRecentFilingDate": "2026-08-22",
       "transactions": [
         {
@@ -87223,16 +87223,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "ORACLE CORP NTS B/E 04.650% 092630 DTD092625 CALL@MW+15BP YTM = 5.217 UNSOLICITED ACCRUED INT PAID",
+          "description": "ORACLE CORP NTS B/E 04.450% 092630 DTD092625 CALL@MW+15BP YTM = 5.217 UNSOLICITED ACCRUED INT PAID",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-13",
           "amount": "$100,001-$250,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-          "recordId": "3dbc6a5e8fead70f14af1547",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "9a5e9ab5ce9f1baf5a51261f",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "PACIFIC GAS & ELEC CO 04.550% 070130 DTD070120 FC010121 B/E YTM = 4.816 UNSOLICITED ACCRUED INT PAID $382",
@@ -91347,8 +91347,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
           "recordId": "a001c3319fa1b342be40b885",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "GADSDEN AL WTS SER B REV BAM B/E 5.00% Due Aug 1, 2026",
@@ -97198,37 +97198,37 @@
           "description": "INDIVIOR PHARMACEUTICALS",
           "ticker": null,
           "type": "Sale",
-          "date": "2026-02-28",
+          "date": "2026-02-26",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "eab3e3afdb97996a3245ea95",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "df23e82f65fcfc90a0e00bb2",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Q2 HLDGS INC",
           "ticker": null,
           "type": "Sale",
-          "date": "2026-02-28",
+          "date": "2026-02-26",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "ae26a4107930b7ba741f1396",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "62b6083c5bf749ebaa2e37ea",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "SPS COMM INC",
           "ticker": null,
           "type": "Sale",
-          "date": "2026-02-28",
+          "date": "2026-02-26",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "14fca0c26c427dfe17c7874c",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "40faa49ed5d00227ec86997d",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "STEPSTONE GROUP INC CLASS A",
@@ -106576,7 +106576,7 @@
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
           "recordId": "c0edcf403f3aeae0144006cc",
           "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationState": "human_verified"
         },
         {
           "description": "ZEBRA TECHNOLOGIES CORP CL A",
@@ -110271,8 +110271,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
           "recordId": "c91c2b018d76edde685edfbe",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "XCEL ENERGY INC",

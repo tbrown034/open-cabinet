@@ -651,6 +651,74 @@
       "evidence": "Trevor, Sep 6, 6:28 PM, read the page: Apr 20, 2026 filing page 3 printed row 61, CHAMBERS CNTY TX IMPT DIST 1 RD, the date is 03/02/2026 as the site has it. The second model read 3/3/2026; the page audit agreed with the site.",
       "decidedBy": "trevor",
       "decidedAt": "2026-09-06T22:28:58.739Z"
+    },
+    {
+      "recordId": "a001c3319fa1b342be40b885",
+      "slug": "trump-donald-j",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 6:37 PM, read the page: Apr 20, 2026 filing page 3 printed row 33, Westfield WA IN SCHS bond, the date is 03/06/2026 as the site has it. The second model read 3/5; the page audit agreed with the site.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:38:04.155Z"
+    },
+    {
+      "recordId": "9a5e9ab5ce9f1baf5a51261f",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "description": "ORACLE CORP NTS B/E 04.450% 092630 DTD092625 CALL@MW+15BP YTM = 5.217 UNSOLICITED ACCRUED INT PAID"
+      },
+      "evidence": "Trevor, Sep 6, 6:38 PM, read the page: Apr 20, 2026 filing page 4 printed row 88, Oracle notes. The coupon prints 04.450%, not 04.650%. Trade columns as the site has them: Purchase, 03/13/2026, $100,001 - $250,000, on time. The page audit could not find the row; the second model agreed with the first read's 04.650%. The name is cut off on the page after ACCRUED INT PAID, as the broker prints it.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:38:50.795Z"
+    },
+    {
+      "recordId": "40faa49ed5d00227ec86997d",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "date": "2026-02-26"
+      },
+      "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 103 printed row 3336, SPS COMM INC, the date is 02/26/2026. The site had 02/28/2026 (a Saturday). The session page read, the second model and the page audit all read 2/26. This row was in the item 10 table approved at 5 PM; the apply skipped it because the name was still misspelled from the first read.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:48:13.829Z"
+    },
+    {
+      "recordId": "62b6083c5bf749ebaa2e37ea",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "date": "2026-02-26"
+      },
+      "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 103 printed row 3342, Q2 HLDGS INC, the date is 02/26/2026. The site had 02/28/2026 (a Saturday). The session page read, the second model and the page audit all read 2/26. This row was in the item 10 table approved at 5 PM; the apply skipped it because the name was still misspelled from the first read.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:48:13.829Z"
+    },
+    {
+      "recordId": "df23e82f65fcfc90a0e00bb2",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "date": "2026-02-26"
+      },
+      "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 103 printed row 3348, INDIVIOR PHARMACEUTICALS, the date is 02/26/2026. The site had 02/28/2026 (a Saturday). The session page read, the second model and the page audit all read 2/26. This row was in the item 10 table approved at 5 PM; the apply skipped it because the name was still misspelled from the first read.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:48:13.829Z"
+    },
+    {
+      "recordId": "c0edcf403f3aeae0144006cc",
+      "slug": "trump-donald-j",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 2 printed row 7, WORKDAY INC CL A, Purchase, 2026-02-10, $1,000,001-$5,000,000, late Yes, as the site has it. The second model paired the filing's three Workday rows wrong; the session page read agrees with the site.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:48:13.829Z"
+    },
+    {
+      "recordId": "c91c2b018d76edde685edfbe",
+      "slug": "trump-donald-j",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 52 printed row 1672, WORKDAY INC CL A, Purchase, 2026-01-23, $1,001-$15,000, late Yes, as the site has it. The second model paired the filing's three Workday rows wrong; the session page read agrees with the site.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:48:13.829Z"
     }
   ]
 }

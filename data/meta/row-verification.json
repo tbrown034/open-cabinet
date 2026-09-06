@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T22:29:11.101Z",
+  "generatedAt": "2026-09-06T22:48:28.036Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
-      "checked": 11318,
-      "human_verified": 80,
+      "checked": 11317,
+      "human_verified": 87,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 14,
-      "disputed": 9
+      "disputed": 3
     },
     "byScore": {
-      "0": 9,
+      "0": 3,
       "1": 14,
       "2": 93,
-      "3": 11398
+      "3": 11404
     }
   },
   "rows": {
@@ -65470,14 +65470,14 @@
       "lane": "ocr",
       "note": "OCR of printed row 87 agrees; the page audit confirmed it"
     },
-    "3dbc6a5e8fead70f14af1547": {
-      "id": "3dbc6a5e8fead70f14af1547",
+    "9a5e9ab5ce9f1baf5a51261f": {
+      "id": "9a5e9ab5ce9f1baf5a51261f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "audit",
-      "note": "The page audit could not find this row on the filing's pages; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "fbbc6279cf63412637f23df9": {
       "id": "fbbc6279cf63412637f23df9",
@@ -68561,10 +68561,10 @@
       "id": "a001c3319fa1b342be40b885",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "4539e097381d55bf58ce4cd9": {
       "id": "4539e097381d55bf58ce4cd9",
@@ -72949,32 +72949,32 @@
       "lane": "human",
       "note": "Decided by trevor on 2026-09-06"
     },
-    "eab3e3afdb97996a3245ea95": {
-      "id": "eab3e3afdb97996a3245ea95",
+    "df23e82f65fcfc90a0e00bb2": {
+      "id": "df23e82f65fcfc90a0e00bb2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "ae26a4107930b7ba741f1396": {
-      "id": "ae26a4107930b7ba741f1396",
+    "62b6083c5bf749ebaa2e37ea": {
+      "id": "62b6083c5bf749ebaa2e37ea",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
-    "14fca0c26c427dfe17c7874c": {
-      "id": "14fca0c26c427dfe17c7874c",
+    "40faa49ed5d00227ec86997d": {
+      "id": "40faa49ed5d00227ec86997d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "6085f3ba3249dcc021b8a3cd": {
       "id": "6085f3ba3249dcc021b8a3cd",
@@ -79983,9 +79983,9 @@
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
-      "state": "checked",
-      "lane": "ocr",
-      "note": "OCR of printed row 7 agrees; the page audit confirmed it"
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "879f151f0029bfa00b650403": {
       "id": "879f151f0029bfa00b650403",
@@ -82754,10 +82754,10 @@
       "id": "c91c2b018d76edde685edfbe",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "5646b491a1c51f95699fa977": {
       "id": "5646b491a1c51f95699fa977",
