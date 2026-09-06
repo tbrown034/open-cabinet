@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-06T15:11:51.024Z",
+  "exportedAt": "2026-09-06T15:17:19.143Z",
   "officialCount": 39,
   "transactionCount": 10375,
   "underReviewCount": 1126,
@@ -37255,12 +37255,12 @@
           "ticker": null,
           "type": "Sale",
           "date": "2026-06-03",
-          "amount": "$1,001-$15,000",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-          "recordId": "1bdbfa5187103cdb88c4942a",
+          "recordId": "9ad0e10cabb86d6ef3358e51",
           "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationState": "human_verified"
         },
         {
           "description": "PROGRESSIVE CORP OH",
@@ -37271,8 +37271,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "0f03a6934e2a21e393879538",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "PUBLIC SVC ENTERPRISE GR",
@@ -37403,8 +37403,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "4c82c0771cac2522d6622cb5",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "SHERWIN-WILLIAMS CO",
@@ -37415,8 +37415,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "93fa00ce4fbb350d756676ef",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "SNOWFLAKE INC CLASS A",
@@ -37835,8 +37835,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "e1032ee5a60f5dab02a0bbba",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "MIAMI BEACH FL REDEV AGY TAX INCRMT REV RFDG CITY CTR HIST CONVNTN AGI B/E 5.00 % Due Feb 1, 2027",
@@ -37847,8 +37847,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "1643cfdae3ce873c6f8c43f2",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "MISSISSIPPI DEV BK SPL OBLIG MS GULF COAST CMNTY CLLG REV B/E 5.00 % Due Dec 1, 2026",
@@ -38075,8 +38075,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "527834b3c6ffa78120062f0f",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
@@ -38087,8 +38087,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
           "recordId": "1161529c5636dfc86d54f7f9",
-          "verificationScore": 3,
-          "verificationState": "checked"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "US BANCORP TIER I PERP GLBL 3.7000%",
