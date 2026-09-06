@@ -90,7 +90,35 @@ type Row = Pick<Transaction, "description" | "type" | "date" | "amount" | "lateF
  * Unpaired primary rows are unread; unpaired second rows are extras a
  * person looks at, because they may be rows the primary missed.
  */
-export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondReadFiling, "agreedIndexes" | "disputedIndexes" | "unreadIndexes" | "extraRows" | "differences"> {
+/**
+ * Name one primary row for a person. The primary rows are the parse
+ * record in document order, and a record can hold rows the filing does
+ * not number (an amendment's Exhibit A, a cover-sheet table), so a
+ * position in the record is not a printed row number. (Sep 6: "row 101"
+ * in a report was read as a printed row and sent to a person; the printed
+ * row was 97.) With the record's page units the label carries the page;
+ * the printed row is for the person to find on that page.
+ */
+export function describePrimaryIndex(i: number, units?: Array<{ first: number; last: number; transactions: unknown[] }> | null): string {
+  const position = `position ${i + 1} of the parse record`;
+  if (!units || units.length === 0) return position;
+  let start = 0;
+  for (const u of units) {
+    const n = u.transactions.length;
+    if (i < start + n) {
+      const page = u.first === u.last ? `page ${u.first}` : `pages ${u.first}-${u.last}`;
+      return `${page}, ${position}`;
+    }
+    start += n;
+  }
+  return position;
+}
+
+export function compareSecondRead(
+  primary: Row[],
+  second: Row[],
+  label: (i: number) => string = (i) => describePrimaryIndex(i)
+): Pick<SecondReadFiling, "agreedIndexes" | "disputedIndexes" | "unreadIndexes" | "extraRows" | "differences"> {
   const agreedIndexes: number[] = [];
   const disputedIndexes: number[] = [];
   const unreadIndexes: number[] = [];
@@ -120,7 +148,7 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
     if (exact !== undefined) agreedIndexes.push(i);
     else {
       disputedIndexes.push(i);
-      if (differences.length < 60) differences.push(`row ${i + 1}: second model [${comparedTuple(second[j])}] vs primary [${want}] for "${p.description}"`);
+      if (differences.length < 60) differences.push(`${label(i)}: second model [${comparedTuple(second[j])}] vs primary [${want}] for "${p.description}"`);
     }
   });
   // Second pass for rows whose names did not match exactly: pair on the
@@ -143,7 +171,7 @@ export function compareSecondRead(primary: Row[], second: Row[]): Pick<SecondRea
       if (comparedTuple(second[i]) === t) agreedIndexes.push(i);
       else {
         disputedIndexes.push(i);
-        if (differences.length < 60) differences.push(`row ${i + 1}: second model [${comparedTuple(second[i])}] vs primary [${t}] for "${primary[i].description}"`);
+        if (differences.length < 60) differences.push(`${label(i)}: second model [${comparedTuple(second[i])}] vs primary [${t}] for "${primary[i].description}"`);
       }
       continue;
     }
@@ -178,6 +206,9 @@ export async function secondReadFiling(input: {
   sourceUrl: string;
   candidateSha256: string;
   primary: Row[];
+  /** The primary record's page units, when it was read in chunks, so a
+   * difference can name the page. */
+  primaryUnits?: Array<{ first: number; last: number; transactions: unknown[] }> | null;
   units: Array<{ path: string; chunk: { first: number; last: number } | null }>;
   parserVersion: string;
   systemPrompt: string;
@@ -230,7 +261,7 @@ export async function secondReadFiling(input: {
     second.push(...rows);
     input.onProgress?.();
   }
-  const cmp = compareSecondRead(input.primary, second);
+  const cmp = compareSecondRead(input.primary, second, (i) => describePrimaryIndex(i, input.primaryUnits));
   return {
     slug: input.slug, pdfFile: path.basename(input.pdfPath), pdfSha256: input.pdfSha256, candidateSha256: input.candidateSha256,
     model: SECOND_READ_MODEL, rowsPrimary: input.primary.length, rowsSecond: second.length,

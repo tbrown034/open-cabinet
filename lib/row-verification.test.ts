@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { CrosscheckEntry } from "./crosscheck-log";
 import type { Transaction } from "./types";
 import { deriveRowVerification, locateInParseRecord, makeRecordId, printedRowForIndex, recordIdsFor } from "./row-verification";
-import { compareSecondRead } from "./second-read";
+import { compareSecondRead, describePrimaryIndex } from "./second-read";
 
 const URL = "https://example.gov/f.pdf";
 const tx = (over: Partial<Transaction> = {}): Transaction => ({
@@ -202,7 +202,7 @@ describe("compareSecondRead", () => {
     const r = compareSecondRead(p, s);
     expect(r.agreedIndexes).toEqual([0]);
     expect(r.disputedIndexes).toEqual([1]);
-    expect(r.differences[0]).toMatch(/^row 2: second model/);
+    expect(r.differences[0]).toMatch(/^position 2 of the parse record: second model/);
   });
 
   it("pairs a unique trade tuple across differently worded names, never across different assets", () => {
@@ -243,5 +243,29 @@ describe("compareSecondRead pairing", () => {
     expect(r.disputedIndexes).toEqual([1]);
     expect(r.unreadIndexes).toEqual([]);
     expect(r.extraRows).toEqual([]);
+  });
+});
+
+describe("describePrimaryIndex", () => {
+  it("names a page and a record position, never a printed row", () => {
+    // Sep 6: an amendment's Exhibit A put four rows in the record ahead
+    // of the trades; "row 101" was sent to a person as a printed row.
+    const units = [
+      { first: 3, last: 3, transactions: [1, 2, 3, 4] },
+      { first: 5, last: 5, transactions: [1, 2, 3] },
+      { first: 6, last: 8, transactions: [1, 2] },
+    ];
+    expect(describePrimaryIndex(0, units)).toBe("page 3, position 1 of the parse record");
+    expect(describePrimaryIndex(4, units)).toBe("page 5, position 5 of the parse record");
+    expect(describePrimaryIndex(8, units)).toBe("pages 6-8, position 9 of the parse record");
+    expect(describePrimaryIndex(8)).toBe("position 9 of the parse record");
+    expect(describePrimaryIndex(99, units)).toBe("position 100 of the parse record");
+  });
+
+  it("is what a difference line carries", () => {
+    const a = tx({ description: "A", type: "Sale", date: "2026-01-01", amount: "$1,001-$15,000", lateFilingFlag: false });
+    const out = compareSecondRead([a], [{ ...a, date: "2026-01-02" }], (i) => describePrimaryIndex(i, [{ first: 2, last: 2, transactions: [1] }]));
+    expect(out.differences[0]).toMatch(/^page 2, position 1 of the parse record: /);
+    expect(out.differences[0]).not.toMatch(/^row /);
   });
 });

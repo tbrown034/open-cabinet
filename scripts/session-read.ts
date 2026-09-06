@@ -17,7 +17,7 @@ import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
 import { findParseRecord, promptHash, sha256File } from "../lib/parse-cache";
 import { hashRows } from "../lib/crosscheck-log";
-import { compareSecondRead, type SecondReadFiling } from "../lib/second-read";
+import { compareSecondRead, describePrimaryIndex, type SecondReadFiling } from "../lib/second-read";
 import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
 import { AMOUNT_RANGE_KEYS } from "../lib/amounts";
 
@@ -82,7 +82,7 @@ function main() {
   const nums = rows.map((r) => r.rowNumber);
   const gaps: number[] = [];
   for (let n = 1; n <= Math.max(...nums); n++) if (!nums.includes(n)) gaps.push(n);
-  const cmp = compareSecondRead(record.transactions as Parameters<typeof compareSecondRead>[0], rows as unknown as Parameters<typeof compareSecondRead>[1]);
+  const cmp = compareSecondRead(record.transactions as Parameters<typeof compareSecondRead>[0], rows as unknown as Parameters<typeof compareSecondRead>[1], (i) => describePrimaryIndex(i, record.units ?? null));
   const entry: SecondReadFiling & { reader: string; printedRowsRead: number; printedRowGaps: number[] } = {
     slug, pdfFile, pdfSha256, candidateSha256: hashRows(record.transactions), model: "gpt-6-astra", rowsPrimary: record.transactions.length, rowsSecond: rows.length,
     ...cmp, costUsd: 0, checkedAt: new Date().toISOString(), reader, printedRowsRead: rows.length, printedRowGaps: gaps,
