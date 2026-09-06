@@ -1,8 +1,8 @@
 {
-  "exportedAt": "2026-09-06T15:22:33.063Z",
+  "exportedAt": "2026-09-06T15:32:04.629Z",
   "officialCount": 39,
-  "transactionCount": 10375,
-  "underReviewCount": 1126,
+  "transactionCount": 10373,
+  "underReviewCount": 1127,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -4849,8 +4849,8 @@
       "level": "Cabinet",
       "confirmedDate": "2025-03-10",
       "departedDate": "2026-04-20",
-      "transactionCount": 4,
-      "underReviewCount": 94,
+      "transactionCount": 2,
+      "underReviewCount": 95,
       "mostRecentFilingDate": "2025-09-09",
       "transactions": [
         {
@@ -5031,6 +5031,7 @@
         },
         {
           "description": "BRIGHT HORIZONS FAMILY SOLUTIONS INC",
+          "notes": "The filing prints this company name across two numbered rows, each carrying the same trade columns. Counted once on Trevor Brown's decision, Sep 6, 2026.",
           "type": "Sale",
           "date": "2025-04-28",
           "amount": "$1,001-$15,000",
@@ -5063,26 +5064,16 @@
           "verificationState": "disputed"
         },
         {
-          "description": "BROADRIDGE FINANCIAL",
+          "description": "BROADRIDGE FINANCIAL SOLUTIONS INC",
+          "notes": "The filing prints this company name across two numbered rows, each carrying the same trade columns. Counted once on Trevor Brown's decision, Sep 6, 2026.",
           "type": "Sale",
           "date": "2025-04-28",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-          "recordId": "0d5b0f5a3fec3a7a3987b6f7",
-          "verificationScore": 1,
-          "verificationState": "single_read"
-        },
-        {
-          "description": "SOLUTIONS INC",
-          "type": "Sale",
-          "date": "2025-04-28",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false,
-          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-          "recordId": "ab0dd30222feeeeceac184e8",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "250d188506ca548fce388dcc",
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "BRUNSWICK CORP",
@@ -5823,6 +5814,7 @@
         },
         {
           "description": "WEST PHARMACEUTICAL SERVICES INC",
+          "notes": "The filing prints this company name across two numbered rows, each carrying the same trade columns. Counted once on Trevor Brown's decision, Sep 6, 2026.",
           "type": "Sale",
           "date": "2025-04-28",
           "amount": "$1,001-$15,000",

@@ -36,7 +36,7 @@ Look at: printed row 9, NIKE, Inc. (NKE), date column. The page prints 04/04/222
 Site says: 2025-04-04 (the old model silently corrected it).
 Do: pick one. "4 keep 2025 with a note" publishes 2025-04-04 and a note that the filing prints 2225 (my recommendation: the filing was posted May 2025 and row 7 above it is 04/04/2025). "4 as printed" publishes 2225 with a note.
 
-## 5. Chavez-DeRemer, three company names printed as two rows each
+## 5. DONE. Chavez-DeRemer, three company names printed as two rows each (counted once with a note, Sep 6)
 
 Open: [local PDF, page 2](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Lori-Chavez-DeRemer-07.02.2025-278T.pdf#page=2>) and [page 6](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Lori-Chavez-DeRemer-07.02.2025-278T.pdf#page=6>) or [OGE](<https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf>)
 Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Lori-Chavez-DeRemer-07.02.2025-278T.pdf#page=2

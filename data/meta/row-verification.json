@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T15:22:32.606Z",
+  "generatedAt": "2026-09-06T15:32:04.203Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
-    "rows": 11501,
+    "rows": 11500,
     "byState": {
       "checked": 4652,
       "human_verified": 4,
       "deterministic_agree": 1523,
       "two_models_agree": 13,
       "audit_only": 165,
-      "single_read": 4018,
-      "disputed": 1126
+      "single_read": 4016,
+      "disputed": 1127
     },
     "byScore": {
-      "0": 1126,
-      "1": 4018,
+      "0": 1127,
+      "1": 4016,
       "2": 1701,
       "3": 4656
     }
@@ -3847,23 +3847,14 @@
       "lane": "text",
       "note": "Text layer disagrees with the model on this filing; a person decides"
     },
-    "0d5b0f5a3fec3a7a3987b6f7": {
-      "id": "0d5b0f5a3fec3a7a3987b6f7",
+    "250d188506ca548fce388dcc": {
+      "id": "250d188506ca548fce388dcc",
       "slug": "chavez-deremer-lori",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
-    },
-    "ab0dd30222feeeeceac184e8": {
-      "id": "ab0dd30222feeeeceac184e8",
-      "slug": "chavez-deremer-lori",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B8D0AFF6500BD71F85258D00002BFAF9/$FILE/Lori-Chavez-DeRemer-07.02.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 0,
+      "state": "disputed",
+      "lane": "text",
+      "note": "Text layer disagrees with the model on this filing; a person decides"
     },
     "c79938c527be2c0ed1abc25f": {
       "id": "c79938c527be2c0ed1abc25f",

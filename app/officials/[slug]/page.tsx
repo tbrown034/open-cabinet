@@ -806,6 +806,9 @@ export default async function OfficialPage({
                       Late
                     </span>
                   )}
+                  {tx.notes && (
+                    <p className="mt-1 text-xs text-neutral-500 max-w-md">{tx.notes}</p>
+                  )}
                   <VerificationMarker verification={rowVerification} />
                 </td>
                 <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
