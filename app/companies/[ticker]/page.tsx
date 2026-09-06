@@ -8,10 +8,13 @@ import { formatDate, rowsForTotals, amountRangeLabel, formatCompactCurrency, dis
 import CompanyBarChart from "@/app/components/company-bar-chart";
 import { INSTRUMENT_TYPE_LABEL } from "@/lib/asset-registry";
 import type { AssetLookup } from "@/lib/asset-registry";
+import { NEVER_A_SYMBOL } from "@/lib/assets";
 
 export async function generateStaticParams() {
   const tickers = await getAllTickers();
-  return tickers.map((ticker) => ({ ticker: ticker.toLowerCase() }));
+  return tickers
+    .filter((ticker) => !NEVER_A_SYMBOL.has(ticker.toUpperCase()))
+    .map((ticker) => ({ ticker: ticker.toLowerCase() }));
 }
 
 export async function generateMetadata({
@@ -23,7 +26,7 @@ export async function generateMetadata({
     params,
     getTradesByTicker(),
   ]);
-  const company = tickerMap.get(ticker.toUpperCase());
+  const company = NEVER_A_SYMBOL.has(ticker.toUpperCase()) ? undefined : tickerMap.get(ticker.toUpperCase());
   if (!company) return { title: "Not Found" };
   const trades = rowsForTotals(company.trades, company.trades.map((t) => t.verification));
   const officialCount = new Set(trades.map((t) => t.officialSlug)).size;
@@ -107,7 +110,7 @@ export default async function CompanyPage({
     params,
     getTradesByTicker(),
   ]);
-  const company = tickerMap.get(ticker.toUpperCase());
+  const company = NEVER_A_SYMBOL.has(ticker.toUpperCase()) ? undefined : tickerMap.get(ticker.toUpperCase());
 
   if (!company) {
     notFound();

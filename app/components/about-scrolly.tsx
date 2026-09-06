@@ -68,7 +68,7 @@ const BUILD_STEPS = [
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-checked sample filings and outlier detection. We maintain samples for five officials (ranging from two to 1,315 transactions) to catch errors.",
+    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; and outlier detection. A regression check for five officials (ranging from two to 1,315 transactions) compares each new parse against a saved snapshot of transaction counts and sampled row fields, and flags anything that drifts.",
   },
   {
     id: "store",

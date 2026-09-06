@@ -10,7 +10,7 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 
 - Tracks financial transactions filed by cabinet secretaries, agency heads and senior government officials
 - Parses OGE filing PDFs into searchable, sortable data with D3 visualizations
-- Flags late filings, tracks compliance and surfaces potential conflicts of interest
+- Flags self-certified late filings and links every trade to its source filing
 
 ## Current data
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/companies" },
   title: "Which Government Officials Trade This Stock",
   description:
-    "Search any ticker to see which Trump administration officials bought or sold it, when, and in what reported amount range.",
+    "Search any ticker to see which executive-branch officials bought or sold it, when, and in what reported amount range.",
 };
 
 function isSale(type: string): boolean {
@@ -51,10 +51,10 @@ export default async function CompaniesPage() {
           officials traded that asset.
         </p>
         <p className="text-sm text-neutral-500 max-w-xl leading-relaxed mt-3">
-          Not comprehensive: this lookup includes only trades whose filings
-          print a ticker symbol. Officials whose filings list securities by
-          name alone — including President Trump — do not appear here; their
-          trades are on their official pages.
+          Not comprehensive: a trade appears here only where a filing printed
+          a ticker symbol in parentheses. Officials whose filings list
+          securities by name alone — including President Trump — do not
+          appear here; their trades are on their official pages.
         </p>
       </header>
 

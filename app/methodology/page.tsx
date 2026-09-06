@@ -404,9 +404,8 @@ export default async function MethodologyPage() {
               <p className="text-neutral-500 mt-0.5">
                 AI does not generate or fabricate transaction data. It does not
                 make editorial judgments about whether trades are legal or
-                ethical. It does not determine which officials to track or how
-                to present findings. All data traces back to a government-filed
-                PDF.
+                ethical. A person chooses who gets tracked and how findings are
+                presented. All data traces back to a government-filed PDF.
               </p>
             </div>
           </div>

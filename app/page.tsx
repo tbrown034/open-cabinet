@@ -50,6 +50,10 @@ export default async function Home() {
   const totalTransactions = allTx.length;
   const estimatedTotal = sumAmountEstimates(allTx).estimate;
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
+  // Most late-filed transactions belong to one official. See it broken out
+  // at /methodology rather than duplicating the split here.
+  const trumpLateCount =
+    allOfficials.find((o) => o.slug === "trump-donald-j")?.transactions.filter((tx) => tx.lateFilingFlag).length ?? 0;
   // Headline accountability finding, surfaced on the hero: the share of all
   // disclosed trades reported after the STOCK Act deadline.
   const latePct =
@@ -282,7 +286,17 @@ export default async function Home() {
           Transactions filed January 2025 to present. Trade volume is the
           midpoint of the reporting ranges, summed across counted
           transactions &mdash; not portfolio value, net worth or exposure.
-          A single position bought and later sold counts twice.
+          A single position bought and later sold counts twice.{" "}
+          {trumpLateCount * 2 > lateCount && (
+            <>
+              Most late flags come from a single filer, President Trump; see
+              the breakdown on{" "}
+              <Link href="/methodology#what-we-add" className="underline decoration-dotted underline-offset-2 hover:text-neutral-700">
+                Methodology
+              </Link>
+              .
+            </>
+          )}
         </p>
 
         {/* id="alerts" is the anchor target for the digest email's follow-all CTA. */}
