@@ -53,8 +53,6 @@ export default async function MethodologyPage() {
   const scanRows = coverage?.rows.no_usable_text ?? 0;
   const layoutRows =
     (coverage?.rows.unsupported_layout ?? 0) + (coverage?.rows.unsupported_form ?? 0);
-  const ocrAgreedRows = coverage?.rows.ocr_tuple_agreement ?? 0;
-  const ocrMismatchRows = coverage?.rows.ocr_tuple_mismatch ?? 0;
   const ocrFilings =
     (coverage?.filings.ocr_tuple_agreement ?? 0) + (coverage?.filings.ocr_tuple_mismatch ?? 0);
   const totals = sumAmountEstimates(allRows);
@@ -351,13 +349,13 @@ export default async function MethodologyPage() {
                   For scanned filings, a second program renders each page to
                   an image, runs optical character recognition on it
                   (tesseract, locally, ignoring any text the scanner
-                  embedded) and compares the result the same way. That OCR
-                  comparison agreed on {fmt(ocrAgreedRows)} rows across{" "}
-                  {coverage.filings.ocr_tuple_agreement} scanned filings.{" "}
-                  {fmt(ocrMismatchRows)} rows in{" "}
-                  {coverage.filings.ocr_tuple_mismatch} scanned filings are in
-                  disagreement and awaiting a person, who decides whether the
-                  OCR or the model misread the page.
+                  embedded) and compares the result the same way. It has run
+                  on {ocrFilings} scanned filings. Because OCR misreads more
+                  often than a text layer, its results are counted row by row
+                  in the section below: a row counts as checked only when the
+                  OCR read that exact row the same way, a row it read
+                  differently is under review, and a row it could not read is
+                  not yet checked.
                 </p>
               ) : null}
             </div>

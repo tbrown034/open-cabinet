@@ -34,3 +34,7 @@ Checked by eye against the page image on Sep 5:
 ## MacGregor, Katharine-MacGregor-08.07.2025-278T.pdf
 
 - OGE now returns 404 for this PDF. The local copy is intact and unchanged (hash in the cross-check log). Decision: keep publishing from the local copy with a note that the source was removed, or withdraw. Recommendation: keep, note it on the source-documents line.
+
+## Follow-up, not built tonight: a fourth, low-weight lane
+
+Cross-reference Trump's rows against other trackers that parse the same OGE filings (Capitol Markets, Quiver Quantitative, Tracefour). None publishes a downloadable dataset; it would be a scrape, Trump-only, and internal confidence only, never a publication gate. ProPublica's Trump Team disclosure project publishes the documents, not parsed rows.
