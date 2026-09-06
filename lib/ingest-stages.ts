@@ -654,7 +654,7 @@ export async function checkFiling(
   const second = await secondReadFiling({
     slug, pdfPath, pdfSha256: sha256, sourceUrl: filing.pdfUrl, candidateSha256: hashRows(rows),
     primary: rows, units, parserVersion: PARSER_VERSION, systemPrompt: SYSTEM_PROMPT, extractionPrompt: EXTRACTION_PROMPT,
-    read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL),
+    read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL, { asImages: true }),
     onSpend: recordSpend,
     onProgress: () => process.stdout.write("."),
   });

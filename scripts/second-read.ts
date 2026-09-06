@@ -102,7 +102,7 @@ async function main() {
         slug: e.slug, pdfPath: p.pdfPath, pdfSha256: e.pdfSha256!, sourceUrl: e.sourceUrl!, candidateSha256: e.candidateSha256!,
         primary: record.transactions as Parameters<typeof secondReadFiling>[0]["primary"],
         units, parserVersion: PARSER_VERSION, systemPrompt: SYSTEM_PROMPT, extractionPrompt: EXTRACTION_PROMPT,
-        read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL),
+        read: (unitPath) => parsePdf(unitPath, SECOND_READ_MODEL, { asImages: true }),
         onSpend: recordSpend,
         onProgress: () => process.stdout.write("."),
       });

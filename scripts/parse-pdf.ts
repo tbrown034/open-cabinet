@@ -19,6 +19,10 @@
  *   npx tsx scripts/parse-pdf.ts /tmp/cabinet-pdfs/some-filing.pdf
  */
 import { readFile, writeFile } from "fs/promises";
+import { mkdtempSync, readdirSync, readFileSync, rmSync } from "fs";
+import { execFileSync } from "child_process";
+import { tmpdir } from "os";
+import path from "path";
 import Anthropic from "@anthropic-ai/sdk";
 import OpenAI from "openai";
 import dotenv from "dotenv";
@@ -146,11 +150,18 @@ const MODEL_COSTS: Record<ModelChoice, { input: number; output: number; provider
 
 async function parsePdf(
   pdfPath: string,
-  modelOverride?: ModelChoice
+  modelOverride?: ModelChoice,
+  options: {
+    /** Send rendered page images instead of the PDF file. For scans the
+     * page is the image; sending the file lets the provider downscale a
+     * large scan (Trump's 26 MB Aug 2026 filing came back with no
+     * amounts). OpenAI path only. */
+    asImages?: boolean;
+  } = {}
 ): Promise<ParseResult> {
   // Route to OpenAI if an OpenAI model is selected
   if (modelOverride?.startsWith("gpt-")) {
-    return parseWithOpenAI(pdfPath, modelOverride as OpenAIModel);
+    return parseWithOpenAI(pdfPath, modelOverride as OpenAIModel, options.asImages ?? false);
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -476,9 +487,24 @@ async function main() {
 
 type OpenAIModel = "gpt-5.4-mini" | "gpt-5.4-nano" | "gpt-6-astra";
 
+/** Page images for the OpenAI image path, 200 dpi PNG data URIs. */
+function renderPagesForOpenAI(pdfPath: string): string[] {
+  const work = mkdtempSync(path.join(tmpdir(), "oc-pages-"));
+  try {
+    execFileSync("pdftoppm", ["-r", "200", "-png", pdfPath, path.join(work, "p")], { stdio: ["ignore", "ignore", "pipe"], timeout: 5 * 60_000 });
+    return readdirSync(work)
+      .filter((f) => f.endsWith(".png"))
+      .sort()
+      .map((f) => `data:image/png;base64,${readFileSync(path.join(work, f)).toString("base64")}`);
+  } finally {
+    rmSync(work, { recursive: true, force: true });
+  }
+}
+
 async function parseWithOpenAI(
   pdfPath: string,
-  model: OpenAIModel = "gpt-5.4-mini"
+  model: OpenAIModel = "gpt-5.4-mini",
+  asImages = false
 ): Promise<ParseResult> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -503,16 +529,20 @@ async function parseWithOpenAI(
       {
         role: "user",
         content: [
-          {
-            type: "file",
-            file: {
-              filename: "filing.pdf",
-              file_data: `data:application/pdf;base64,${pdfBase64}`,
-            },
-          } as any, // OpenAI SDK types may not include file type yet
+          ...(asImages
+            ? renderPagesForOpenAI(pdfPath).map((url) => ({ type: "image_url" as const, image_url: { url, detail: "high" as const } }))
+            : [
+                {
+                  type: "file",
+                  file: {
+                    filename: "filing.pdf",
+                    file_data: `data:application/pdf;base64,${pdfBase64}`,
+                  },
+                } as any, // OpenAI SDK types may not include file type yet
+              ]),
           {
             type: "text",
-            text: EXTRACTION_PROMPT,
+            text: asImages ? `The pages of the filing are above, in order.\n\n${EXTRACTION_PROMPT}` : EXTRACTION_PROMPT,
           },
         ],
       },

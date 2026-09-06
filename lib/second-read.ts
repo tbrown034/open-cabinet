@@ -30,6 +30,10 @@ import type { Transaction } from "./types";
 
 export const SECOND_READ_LOG_PATH = path.resolve("data/meta/second-read-log.json");
 export const SECOND_READ_MODEL = "gpt-6-astra" as const;
+/** Appended to the parser version in the cache key: the second read sends
+ * page images, not the PDF file, since Sep 6 (a 26 MB scan sent as a file
+ * came back with no amounts). Old file-based caches are ignored. */
+export const SECOND_READ_INPUT = "images-200dpi";
 
 export interface SecondReadFiling {
   slug: string;
@@ -147,9 +151,15 @@ export async function secondReadFiling(input: {
   for (const unit of input.units) {
     const keyInput: ParseCacheKeyInput = {
       pdfSha256: input.pdfSha256, sourceUrl: input.sourceUrl, chunk: unit.chunk,
-      parserVersion: input.parserVersion, promptSha256: promptHash(input.systemPrompt, input.extractionPrompt), model: SECOND_READ_MODEL,
+      parserVersion: `${input.parserVersion}+${SECOND_READ_INPUT}`, promptSha256: promptHash(input.systemPrompt, input.extractionPrompt), model: SECOND_READ_MODEL,
     };
-    const cached = readParseCache(unit.path, keyInput);
+    // Reads made before Sep 6 sent the PDF file; they are reused only when
+    // they read amounts (a file-based read of a large scan came back with
+    // every amount null, which is a failed read, not a reading).
+    const fileBased = readParseCache(unit.path, { ...keyInput, parserVersion: input.parserVersion });
+    const usableFileBased =
+      fileBased && (fileBased.transactions.length === 0 || (fileBased.transactions as Row[]).some((r) => r.amount !== null));
+    const cached = readParseCache(unit.path, keyInput) ?? (usableFileBased ? fileBased : null);
     if (cached) {
       second.push(...(cached.transactions as Row[]));
       continue;

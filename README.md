@@ -26,7 +26,7 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
-Rows by verification state: 2,050 deterministic_agree; 0 human_verified; 0 two_models_agree; 9,038 single_read; 413 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
+Rows by verification state: 201 checked; 0 human_verified; 1,294 deterministic_agree; 0 two_models_agree; 0 audit_only; 8,738 single_read; 1,268 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
 
 ## Pages
 
