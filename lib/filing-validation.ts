@@ -43,7 +43,7 @@ export interface ParsedRow {
   description: string;
   ticker: string | null;
   type: ValidTransactionType;
-  date: string;
+  date: string | null;
   amount: AmountRange | null;
   amountNote?: string;
   typeNote?: string;
@@ -159,7 +159,14 @@ export function validateParsedRows(
       errors.push(`${at}: invalid amount range ${JSON.stringify(r.amount)}`);
     }
 
-    if (typeof r.date !== "string") {
+    if (r.date === null) {
+      // A row the filing leaves undated is allowed only with a person's
+      // dateNote; the model never writes one, so a model read with a null
+      // date is refused and held for a person.
+      if (typeof r.dateNote !== "string" || r.dateNote.trim() === "") {
+        errors.push(`${at}: date is null and no person has noted why (dateNote)`);
+      }
+    } else if (typeof r.date !== "string") {
       errors.push(`${at}: date is not a string`);
     } else {
       const problem = isRealCalendarDate(r.date, today);

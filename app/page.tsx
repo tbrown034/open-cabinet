@@ -1,3 +1,4 @@
+import { datedRows } from "@/lib/types";
 import UnderReviewNote from "./components/under-review-note";
 import { getOfficialsIndex, getAllOfficials, getTradesByTicker, officialForTotals } from "@/lib/data";
 import {
@@ -119,12 +120,12 @@ export default async function Home() {
   // read from this one rollup against one shared month axis, so the two are
   // always the same arithmetic. Roughly 630 small counts replace the ~10,000
   // full transaction objects the old swim preview sent down the wire.
-  const monthAxis = buildMonthAxis(allTx);
-  const heroBuckets = bucketByMonth(allTx, monthAxis);
+  const monthAxis = buildMonthAxis(datedRows(allTx));
+  const heroBuckets = bucketByMonth(datedRows(allTx), monthAxis);
   const activityBySlug: Record<string, MonthBucket[]> = {};
   for (const official of officials) {
     activityBySlug[official.slug] = bucketByMonth(
-      countedBySlug.get(official.slug)?.transactions ?? [],
+      datedRows(countedBySlug.get(official.slug)?.transactions ?? []),
       monthAxis
     );
   }

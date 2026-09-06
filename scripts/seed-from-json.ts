@@ -88,7 +88,7 @@ async function seedOfficials() {
         description: tx.description,
         ticker: tx.ticker || null,
         type: tx.type,
-        date: tx.date,
+        date: tx.date ?? "",
         // Unknown amounts (filing says not ascertainable) are stored as the
         // literal note so the DB mirror keeps the fact rather than a range.
         amount: tx.amount ?? "Value not readily ascertainable",

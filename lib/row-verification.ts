@@ -154,9 +154,9 @@ export function recordIdsFor(transactions: Transaction[]): string[] {
 }
 
 /** The tuple the deterministic lanes compare. */
-export function comparedTuple(tx: { type: string; date: string; amount: string | null; lateFilingFlag?: boolean }): string {
+export function comparedTuple(tx: { type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }): string {
   const t = /^sale/i.test(tx.type) ? "Sale" : /^purchase/i.test(tx.type) ? "Purchase" : /^exchange/i.test(tx.type) ? "Exchange" : tx.type;
-  return `${t}|${tx.date}|${tx.amount ?? "unknown"}|${tx.lateFilingFlag ? "late" : "ontime"}`;
+  return `${t}|${tx.date ?? "undated"}|${tx.amount ?? "unknown"}|${tx.lateFilingFlag ? "late" : "ontime"}`;
 }
 
 export interface DeriveInput {
@@ -166,7 +166,7 @@ export interface DeriveInput {
   entriesByUrl: Map<string, CrosscheckEntry>;
   /** For OCR-mismatch filings: the parse record rows in document order,
    * so a published row can be located at a printed position. */
-  parseRecordByUrl: Map<string, Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>>;
+  parseRecordByUrl: Map<string, Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>>;
   /** Second-model lane verdicts per filing: the parsed indexes it agreed
    * on and disagreed on. Absent until that lane runs. */
   model2ByUrl?: Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>;
@@ -182,10 +182,10 @@ export interface DeriveInput {
  */
 export function locateInParseRecord(
   rows: Transaction[],
-  record: Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>
+  record: Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>
 ): number[] {
   const byKey = new Map<string, number[]>();
-  const key = (r: { description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }) =>
+  const key = (r: { description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }) =>
     `${r.description.trim().toLowerCase()}|${comparedTuple(r)}`;
   record.forEach((r, i) => {
     const k = key(r);

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getAllOfficials } from "@/lib/data";
+import { datedRows } from "@/lib/types";
 import { formatCompactCurrency, sumAmountEstimates } from "@/lib/format";
 import SwimLaneChart from "../components/swim-lane-chart";
 import Link from "next/link";
@@ -34,7 +35,7 @@ export default async function AllTradesPage() {
       level: o.level,
       departedDate: o.departedDate ?? null,
       totalValue: sumAmountEstimates(o.transactions).estimate,
-      transactions: o.transactions.map((tx) => ({
+      transactions: datedRows(o.transactions).map((tx) => ({
         description: tx.description,
         ticker: tx.ticker,
         type: tx.type as string,

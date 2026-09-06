@@ -54,7 +54,7 @@ export default async function LateFilingsPage() {
         late += 1;
         if (isSale(t.type)) lateSales += 1;
         if (t.type === "Purchase") latePurchases += 1;
-        lateDates.push(t.date);
+        if (t.date) lateDates.push(t.date);
       }
       const lateRate = total > 0 ? (late / total) * 100 : 0;
       lateDates.sort();

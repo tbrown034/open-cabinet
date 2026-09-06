@@ -89,6 +89,9 @@ async function main() {
     "recordId",
     "verificationScore",
     "verificationState",
+    "type_note",
+    "date_note",
+    "row_note",
   ];
   const txRows = exportOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
@@ -100,7 +103,7 @@ async function main() {
         escapeCsv(tx.description),
         tx.ticker || "",
         tx.type,
-        tx.date,
+        tx.date ?? "",
         escapeCsv(tx.amount ?? ""),
         // The site's labeled estimate (midpoint, or 1.5x the floor for an
         // open-ended range). Blank, not zero, when the filing gave no value.
@@ -111,6 +114,9 @@ async function main() {
         tx.recordId,
         tx.verificationScore === null ? "" : String(tx.verificationScore),
         tx.verificationState ?? "",
+        escapeCsv(tx.typeNote ?? ""),
+        escapeCsv(tx.dateNote ?? ""),
+        escapeCsv(tx.notes ?? ""),
       ].join(",")
     )
   );

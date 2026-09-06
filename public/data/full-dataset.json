@@ -1,8 +1,8 @@
 {
-  "exportedAt": "2026-09-06T15:32:04.629Z",
+  "exportedAt": "2026-09-06T15:40:13.430Z",
   "officialCount": 39,
-  "transactionCount": 10373,
-  "underReviewCount": 1127,
+  "transactionCount": 10375,
+  "underReviewCount": 1125,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -19425,8 +19425,8 @@
       "level": "Sub-Cabinet",
       "confirmedDate": "2025-12-18",
       "departedDate": null,
-      "transactionCount": 167,
-      "underReviewCount": 139,
+      "transactionCount": 169,
+      "underReviewCount": 137,
       "mostRecentFilingDate": "2026-04-10",
       "transactions": [
         {
@@ -21731,13 +21731,14 @@
         {
           "description": "Cigna Corp. (CI)",
           "type": "Sale",
-          "date": "2026-01-30",
+          "date": null,
+          "dateNote": "No date printed on the filing for this row (printed row 48). The rows around it are dated 2026-01-30. Published without a date on Trevor Brown's decision, Sep 6, 2026.",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-          "recordId": "9f1b88be3e4ee2eeffcc487b",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "5d15bfbf3ad8f1e72b2d9d62",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Chevron Corp. (CVX)",
@@ -21917,14 +21918,15 @@
         },
         {
           "description": "BlackRock, Inc. (BLK)",
-          "type": "Sale",
+          "type": "Unstated",
+          "typeNote": "Type column blank on the filing (page within rows 1-8, printed row 36). Published as printed on Trevor Brown's decision, Sep 6, 2026.",
           "date": "2026-01-30",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-          "recordId": "6468559d45fc6763bcde8c7c",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "dfc09f00421e0fbdba200dbd",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Bio-Rad Laboratories Inc Class A (BIO)",
@@ -22176,8 +22178,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "774f0be39c902adf6b977da3",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "Alphabet, Inc. (GOOG)",
@@ -22198,8 +22200,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "0ca1bf3681fa175d2384c059",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "Alphabet, Inc. (GOOG)",
@@ -22341,8 +22343,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "83d8ab06d7328abf1874f571",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
@@ -22363,8 +22365,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "5b8aef445ff3fa878409dc26",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 0,
+          "verificationState": "disputed"
         },
         {
           "description": "Oracle Corp. (ORCL)",
@@ -22374,8 +22376,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "42e04d92d8b72873ee76a2e4",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "NVIDIA Corp. (NVDA)",
@@ -22385,8 +22387,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
           "recordId": "8b5835589ce0bf219b8ea628",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 1,
+          "verificationState": "single_read"
         },
         {
           "description": "Microsoft Corp. (MSFT)",

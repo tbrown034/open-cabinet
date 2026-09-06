@@ -116,7 +116,7 @@ export default async function CompanyPage({
   const trades = rowsForTotals(company.trades, company.trades.map((t) => t.verification));
   const underReviewCount = company.trades.length - trades.length;
   const sorted = company.trades.toSorted(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => (b.date ? new Date(b.date).getTime() : -Infinity) - (a.date ? new Date(a.date).getTime() : -Infinity)
   );
 
   const officialGroups = new Map<
@@ -219,7 +219,7 @@ export default async function CompanyPage({
                 }`}
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
-                  {formatDate(t.date)}
+                  {t.date ? formatDate(t.date) : "N/A"}
                 </td>
                 <td className="py-2.5 pr-4">
                   <Link

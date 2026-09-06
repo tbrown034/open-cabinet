@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T15:32:04.203Z",
+  "generatedAt": "2026-09-06T15:40:13.007Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11500,
     "byState": {
       "checked": 4652,
-      "human_verified": 4,
+      "human_verified": 6,
       "deterministic_agree": 1523,
       "two_models_agree": 13,
       "audit_only": 165,
       "single_read": 4016,
-      "disputed": 1127
+      "disputed": 1125
     },
     "byScore": {
-      "0": 1127,
+      "0": 1125,
       "1": 4016,
       "2": 1701,
-      "3": 4656
+      "3": 4658
     }
   },
   "rows": {
@@ -16672,14 +16672,14 @@
       "lane": null,
       "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
-    "9f1b88be3e4ee2eeffcc487b": {
-      "id": "9f1b88be3e4ee2eeffcc487b",
+    "5d15bfbf3ad8f1e72b2d9d62": {
+      "id": "5d15bfbf3ad8f1e72b2d9d62",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by home on 2026-09-06"
     },
     "57161e416c0701cc7158de7a": {
       "id": "57161e416c0701cc7158de7a",
@@ -16825,14 +16825,14 @@
       "lane": null,
       "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
-    "6468559d45fc6763bcde8c7c": {
-      "id": "6468559d45fc6763bcde8c7c",
+    "dfc09f00421e0fbdba200dbd": {
+      "id": "dfc09f00421e0fbdba200dbd",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by home on 2026-09-06"
     },
     "0ad24b6a264413fad6bd2a0d": {
       "id": "0ad24b6a264413fad6bd2a0d",
@@ -17036,10 +17036,10 @@
       "id": "774f0be39c902adf6b977da3",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "a4630978ae1b622c6aedddd6": {
       "id": "a4630978ae1b622c6aedddd6",
@@ -17054,10 +17054,10 @@
       "id": "0ca1bf3681fa175d2384c059",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 0,
+      "state": "disputed",
+      "lane": "text",
+      "note": "Text layer disagrees with the model on this filing; a person decides"
     },
     "b1d20cf351de0cfd51a79660": {
       "id": "b1d20cf351de0cfd51a79660",
@@ -17171,10 +17171,10 @@
       "id": "83d8ab06d7328abf1874f571",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "9279fe9727a7c12675a4e03a": {
       "id": "9279fe9727a7c12675a4e03a",
@@ -17189,28 +17189,28 @@
       "id": "5b8aef445ff3fa878409dc26",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 0,
+      "state": "disputed",
+      "lane": "text",
+      "note": "Text layer disagrees with the model on this filing; a person decides"
     },
     "42e04d92d8b72873ee76a2e4": {
       "id": "42e04d92d8b72873ee76a2e4",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "8b5835589ce0bf219b8ea628": {
       "id": "8b5835589ce0bf219b8ea628",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "text",
-      "note": "Text layer disagrees with the model on this filing; a person decides"
+      "score": 1,
+      "state": "single_read",
+      "lane": null,
+      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
     },
     "e033b3f9cc6984c2d118843f": {
       "id": "e033b3f9cc6984c2d118843f",

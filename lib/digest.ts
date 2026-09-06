@@ -104,7 +104,7 @@ function toTrade(t: Transaction): DigestTrade {
     ticker: t.ticker,
     type: t.type,
     amount: t.amount,
-    date: t.date,
+    date: t.date ?? "",
     lateFilingFlag: t.lateFilingFlag,
   };
 }
@@ -243,7 +243,7 @@ export function selectDigestItems(
     const trades = (
       o.lastIngestedTrades ??
       [...o.transactions]
-        .sort((a, b) => (a.date < b.date ? 1 : -1))
+        .sort((a, b) => ((a.date ?? "") < (b.date ?? "") ? 1 : -1))
         .slice(0, Math.min(newCount, MAX_TRADES_SHOWN))
     )
       .slice(0, MAX_TRADES_SHOWN)

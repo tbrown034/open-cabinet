@@ -61,7 +61,7 @@ export interface CompanyTrade {
   description: string;
   ticker: string;
   type: string;
-  date: string;
+  date: string | null;
   amount: AmountRange | null;
   lateFilingFlag: boolean;
 }

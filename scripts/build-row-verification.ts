@@ -49,7 +49,7 @@ function main() {
     for (const e of log.entries) if (e.slug === official.slug && e.sourceUrl) entriesByUrl.set(e.sourceUrl, e);
 
     // Parse records are needed only where a per-row lane verdict exists.
-    const parseRecordByUrl = new Map<string, Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>>();
+    const parseRecordByUrl = new Map<string, Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>>();
     const model2ByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>();
     const auditByUrl = new Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>();
     for (const [url, e] of entriesByUrl) {
@@ -61,7 +61,7 @@ function main() {
         pdfSha256: e.pdfSha256, sourceUrl: url, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL,
       });
       if (!record) continue;
-      parseRecordByUrl.set(url, record.transactions as Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>);
+      parseRecordByUrl.set(url, record.transactions as Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>);
       if (second && second.candidateSha256 === e.candidateSha256) {
         model2ByUrl.set(url, { agreedIndexes: new Set(second.agreedIndexes), disputedIndexes: new Set(second.disputedIndexes) });
       }

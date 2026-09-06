@@ -4,7 +4,7 @@ import { useState } from "react";
 import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeFormat } from "d3-time-format";
 import { extent } from "d3-array";
-import type { Transaction } from "@/lib/types";
+import type { DatedTransaction as Transaction } from "@/lib/types";
 import { amountRangeToMin, amountRangeLabel, formatDate } from "@/lib/format";
 import { useContainerWidth } from "./use-container-width";
 import TradeMark, { TradeMarkSwatch } from "./trade-mark";

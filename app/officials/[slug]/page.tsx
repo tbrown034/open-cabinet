@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { datedRows } from "@/lib/types";
+import { numberNotes, marksFor } from "@/lib/row-notes";
+import RowNotesList, { NoteMark } from "@/app/components/row-notes";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
@@ -224,18 +227,18 @@ export default async function OfficialPage({
   const sells = countedTransactions.filter((t) => isSale(t.type)).length;
   const lateFilings = countedTransactions.filter((t) => t.lateFilingFlag).length;
 
-  const dates = transactions.map((t) => new Date(t.date).getTime());
+  const dates = datedRows(transactions).map((t) => new Date(t.date).getTime());
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
 
   // Density-derived stats, surface the *rhythm* of the trading, not just
   // the cumulative count. These power the high-volume page tier.
   const countsByDay = new Map<string, number>();
-  for (const t of countedTransactions) {
+  for (const t of datedRows(countedTransactions)) {
     countsByDay.set(t.date, (countsByDay.get(t.date) ?? 0) + 1);
   }
   const countsByMonth = new Map<string, number>();
-  for (const t of countedTransactions) {
+  for (const t of datedRows(countedTransactions)) {
     const k = t.date.slice(0, 7);
     countsByMonth.set(k, (countsByMonth.get(k) ?? 0) + 1);
   }
@@ -306,7 +309,7 @@ export default async function OfficialPage({
     return true;
   };
   const passesMonth = (t: Transaction) =>
-    !monthFilter || t.date.slice(0, 7) === monthFilter;
+    !monthFilter || (t.date ?? "").slice(0, 7) === monthFilter;
 
   const rangedTransactions = transactions.filter(inRange);
   // The bar chart respects range only, clicking a bar within the
@@ -321,13 +324,15 @@ export default async function OfficialPage({
       visibleTransactions.push(transaction);
     }
   }
+  // Undated rows sort last, together, so they are visible and never
+  // mistaken for the newest trades.
   const visibleSorted = visibleTransactions.toSorted(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    (a, b) => (b.date ? new Date(b.date).getTime() : -Infinity) - (a.date ? new Date(a.date).getTime() : -Infinity)
   );
   // The client chart components never use per-row source attribution, and
   // sourceUrl is ~90 bytes per row — on an 8,900-row official that is real
   // serialized-payload weight. Strip it before the props cross to the client.
-  const stripSourceUrl = ({ sourceUrl, ...rest }: Transaction) => rest;
+  const stripSourceUrl = <T extends Transaction>({ sourceUrl, ...rest }: T) => rest;
 
   const monthLabel = monthFilter
     ? new Date(monthFilter + "-01T00:00:00").toLocaleDateString("en-US", {
@@ -370,6 +375,9 @@ export default async function OfficialPage({
   const tableSlice = tableNeedsPaging
     ? visibleSorted.slice((page - 1) * TABLE_PAGE_SIZE, page * TABLE_PAGE_SIZE)
     : visibleSorted;
+  // Numbered notes for the rows on this page: blank or impossible fields
+  // as the filing prints them, and a person's decisions.
+  const rowNotes = numberNotes(tableSlice);
 
   // "New on Open Cabinet" banner, driven by lastIngestedDate (pipeline
   // signal), not the OGE post date. Stays up for 14 days. Also pulls in the
@@ -718,13 +726,13 @@ export default async function OfficialPage({
         </div>
         {chartView === "bars" ? (
           <MonthlyBars
-            transactions={chartTransactions.map(stripSourceUrl)}
+            transactions={datedRows(chartTransactions).map(stripSourceUrl)}
             selectedMonth={monthFilter}
             clickToZoom
           />
         ) : (
           <TransactionTimeline
-            transactions={visibleTransactions.filter((tx) => verificationByTransaction.get(tx)?.score !== 0).map(stripSourceUrl)}
+            transactions={datedRows(visibleTransactions.filter((tx) => verificationByTransaction.get(tx)?.score !== 0)).map(stripSourceUrl)}
             careerEvents={getCareerEvents(official)}
           />
         )}
@@ -777,6 +785,7 @@ export default async function OfficialPage({
           <tbody>
             {tableSlice.map((tx, i) => {
               const rowVerification = verificationByTransaction.get(tx) ?? null;
+              const notes = rowNotes.byRow.get(tx);
               const sourceFiling = getSourceFilingForTransaction(
                 tx,
                 official.sourceFilings
@@ -791,13 +800,8 @@ export default async function OfficialPage({
                 }`}
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
-                  {tx.dateNote ? (
-                    <span title={tx.dateNote} className="underline decoration-dotted">
-                      {formatDate(tx.date)} (as printed)
-                    </span>
-                  ) : (
-                    formatDate(tx.date)
-                  )}
+                  {tx.date ? formatDate(tx.date) : "N/A"}
+                  <NoteMark numbers={marksFor(notes, "date")} />
                 </td>
                 <td className="py-2.5 pr-4 text-neutral-900">
                   {tx.description}
@@ -806,9 +810,7 @@ export default async function OfficialPage({
                       Late
                     </span>
                   )}
-                  {tx.notes && (
-                    <p className="mt-1 text-xs text-neutral-500 max-w-md">{tx.notes}</p>
-                  )}
+                  <NoteMark numbers={marksFor(notes, "row")} />
                   <VerificationMarker verification={rowVerification} />
                 </td>
                 <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
@@ -826,20 +828,16 @@ export default async function OfficialPage({
                   >
                     {tx.type}
                   </span>
+                  <NoteMark numbers={marksFor(notes, "type")} />
                 </td>
                 <td className="py-2.5 pr-4 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
-                  {tx.amount ? (
-                    amountRangeLabel(tx.amount)
-                  ) : (
-                    <span title={tx.amountNote ?? "The filing did not state a value"}>
-                      Not ascertainable
-                    </span>
-                  )}
+                  {tx.amount ? amountRangeLabel(tx.amount) : "Not ascertainable"}
+                  <NoteMark numbers={marksFor(notes, "amount")} />
                 </td>
                 <td className="py-2.5 pr-4 text-right tabular-nums text-neutral-500 whitespace-nowrap hidden md:table-cell">
                   {(() => {
                     if (!sourceFiling) return <span className="text-neutral-300">—</span>;
-                    const lag = disclosureLagDays(tx.date, sourceFiling.date);
+                    const lag = tx.date ? disclosureLagDays(tx.date, sourceFiling.date) : null;
                     return (
                       <span
                         title={`Posted to OGE ${formatDate(sourceFiling.date)}${
@@ -887,6 +885,7 @@ export default async function OfficialPage({
             })}
           </tbody>
         </table>
+        <RowNotesList notes={rowNotes.list} />
       </div>
       {tableNeedsPaging && (
         <Pagination

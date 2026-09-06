@@ -71,6 +71,7 @@ describe("published verification exports", () => {
       "official_name", "official_title", "agency", "departed_date", "description", "ticker", "type",
       "date", "amount_range", "amount_midpoint", "late_filing", "source_filing_url", "amount_note",
       "recordId", "verificationScore", "verificationState",
+      "type_note", "date_note", "row_note",
     ]);
     const transactions = dataset.officials.flatMap((official) => official.transactions);
     expect(rows).toHaveLength(transactions.length);
@@ -79,7 +80,8 @@ describe("published verification exports", () => {
       expect(row).toHaveLength(headers.length);
       expect(row[4]).toBe(tx.description);
       expect(row[12]).toBe(tx.amountNote ?? "");
-      expect(row.slice(-3)).toEqual([tx.recordId, String(tx.verificationScore), tx.verificationState]);
+      expect(row.slice(13, 16)).toEqual([tx.recordId, String(tx.verificationScore), tx.verificationState]);
+      expect(row[7]).toBe(tx.date ?? "");
     });
   });
 });

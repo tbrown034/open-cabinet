@@ -51,7 +51,7 @@ export interface SecondReadFiling {
   unreadIndexes: number[];
   /** Second-model rows with no counterpart in the primary: rows the
    * primary may have missed. A person reads these. */
-  extraRows: Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag: boolean }>;
+  extraRows: Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag: boolean }>;
   differences: string[];
   costUsd: number;
   checkedAt: string;

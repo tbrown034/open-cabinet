@@ -12,7 +12,8 @@
  */
 import { readFile } from "fs/promises";
 import path from "path";
-import type { Transaction } from "./types";
+import type { Transaction, DatedTransaction } from "./types";
+import { datedRows } from "./types";
 import { sumAmountEstimates } from "./format";
 
 export interface SourceDocument {
@@ -63,7 +64,7 @@ export interface DivestitureData {
 
 export interface PromiseEvidence {
   promise: DivestiturePromise;
-  matchingSales: Transaction[];
+  matchingSales: DatedTransaction[];
   earliestSaleDate: string | null;
   latestSaleDate: string | null;
   saleVolumeMidpoint: number;
@@ -92,14 +93,14 @@ export function buildPromiseEvidence(
   data: DivestitureData,
   transactions: Transaction[]
 ): PromiseEvidence[] {
-  const sales = transactions.filter(
+  const sales = datedRows(transactions).filter(
     (t) =>
       t.type.startsWith("Sale") &&
       t.date >= data.confirmedDate
   );
 
   return data.promises.map((promise) => {
-    const matchingSales: Transaction[] = [];
+    const matchingSales: DatedTransaction[] = [];
     const matchedTickers = new Set(promise.matchedSaleTickers);
     const matchedTokenPatterns = promise.matchedSaleDescriptionTokens.map(
       (token) =>

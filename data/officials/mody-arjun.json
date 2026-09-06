@@ -1682,7 +1682,8 @@
     {
       "description": "Cigna Corp. (CI)",
       "type": "Sale",
-      "date": "2026-01-30",
+      "date": null,
+      "dateNote": "No date printed on the filing for this row (printed row 48). The rows around it are dated 2026-01-30. Published without a date on Trevor Brown's decision, Sep 6, 2026.",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false,
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf"
@@ -1817,7 +1818,8 @@
     },
     {
       "description": "BlackRock, Inc. (BLK)",
-      "type": "Sale",
+      "type": "Unstated",
+      "typeNote": "Type column blank on the filing (page within rows 1-8, printed row 36). Published as printed on Trevor Brown's decision, Sep 6, 2026.",
       "date": "2026-01-30",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false,

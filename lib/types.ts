@@ -20,7 +20,11 @@ export interface Transaction {
   description: string;
   ticker: string | null;
   type: TransactionType;
-  date: string; // ISO date string YYYY-MM-DD
+  /** ISO date YYYY-MM-DD, or null when the filing prints no date for the
+   * row. A null date is allowed only with dateNote, on a person's
+   * decision; the row stays in the table with the note and is left out of
+   * date-based charts and ranges. */
+  date: string | null; // ISO date string YYYY-MM-DD
   /** The disclosed dollar range, or null when the filing states the value
    * could not be determined ("Value not readily ascertainable"). Unknown
    * rows are excluded from every dollar total and counted separately. */
@@ -114,4 +118,16 @@ export interface OfficialIndexEntry {
 export interface OfficialsIndex {
   lastUpdated: string;
   officials: OfficialIndexEntry[];
+}
+
+/** A transaction the filing dated. Charts, ranges and sorting by date use
+ * these; an undated row (date null, with dateNote) stays in tables. */
+export type DatedTransaction = Transaction & { date: string };
+
+export function isDated(tx: Transaction): tx is DatedTransaction {
+  return typeof tx.date === "string" && tx.date.length > 0;
+}
+
+export function datedRows<T extends Transaction>(rows: T[]): Array<T & { date: string }> {
+  return rows.filter((t): t is T & { date: string } => typeof t.date === "string" && t.date.length > 0);
 }

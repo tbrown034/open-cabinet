@@ -44,7 +44,7 @@ Look at: page 2 rows 17 and 18 (BRIGHT HORIZONS FAMILY / SOLUTIONSINC), rows 21 
 Site says: 98 rows; one of the three pairs is counted as two trades.
 Do: "5 one trade per pair" (my recommendation: it is a name wrap in the filer's upload) drops the double-counted half and closes the review item. "5 two trades per pair" keeps both halves for all three.
 
-## 6. Mody, two rows the model could not type or date
+## 6. DONE. Mody, two rows the model could not type or date (published as printed with notes, Sep 6)
 
 Open: [local PDF, pages 1 to 8](<file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Arjun-Mody-02.27.2026-278T.pdf#page=1>) or [OGE](<https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf>)
 Path: file:///Users/home/Desktop/dev/open-cabinet/data/pdfs/Arjun-Mody-02.27.2026-278T.pdf#page=1

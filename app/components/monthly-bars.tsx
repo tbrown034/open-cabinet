@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { scaleTime, scaleSqrt } from "d3-scale";
 import { timeMonth } from "d3-time";
 import { timeFormat } from "d3-time-format";
-import type { Transaction } from "@/lib/types";
+import type { DatedTransaction as Transaction } from "@/lib/types";
 
 /**
  * MONTHLY BARS, high-density visualization for officials with so many

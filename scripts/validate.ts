@@ -43,7 +43,7 @@ interface Transaction {
   description: string;
   ticker: string | null;
   type: string;
-  date: string;
+  date: string | null;
   amount: string | null;
   amountNote?: string;
   dateNote?: string;
@@ -97,7 +97,12 @@ function validateSchema(tx: Transaction, official: string, index: number): strin
   } else if (!isAmountRange(tx.amount)) {
     errors.push(`${prefix} Invalid amount: "${tx.amount}"`);
   }
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(tx.date)) {
+  if (tx.date === null) {
+    // Undated as the filing prints it, allowed only with a person's note.
+    if (!(typeof tx.dateNote === "string" && tx.dateNote.trim())) {
+      errors.push(`${prefix} Null date without a dateNote`);
+    }
+  } else if (!/^\d{4}-\d{2}-\d{2}$/.test(tx.date)) {
     errors.push(`${prefix} Invalid date format: "${tx.date}"`);
   } else {
     const d = new Date(tx.date + "T00:00:00");
