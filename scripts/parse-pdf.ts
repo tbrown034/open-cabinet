@@ -247,9 +247,32 @@ async function parsePdf(
   try {
     parsed = JSON.parse(rawText);
   } catch (err) {
-    console.error("Failed to parse JSON response:");
-    console.error(rawText.substring(0, 500));
-    throw new Error(`JSON parse failed: ${err}`);
+    // A cover, signature or endnote page sometimes gets a sentence before
+    // the array ("This PDF page is a cover/signature page only ... []").
+    // The same page answers the same way on retry, so retries only cost
+    // money. Take the array when the text contains exactly one; keep the
+    // prose as a warning, because an agency reviewer's note can live
+    // there ("Per agency reviewer, page 4, line 77 is Fifth Third
+    // Bancorp"). Anything else is still an error.
+    const first = rawText.indexOf("[");
+    const last = rawText.lastIndexOf("]");
+    let recovered: unknown = null;
+    if (first >= 0 && last > first) {
+      try {
+        recovered = JSON.parse(rawText.slice(first, last + 1));
+      } catch {
+        recovered = null;
+      }
+    }
+    if (Array.isArray(recovered)) {
+      const prose = (rawText.slice(0, first) + rawText.slice(last + 1)).trim();
+      console.warn(`           model added prose around its array; kept the array. Prose: "${prose.slice(0, 200)}"`);
+      parsed = recovered as ParsedTransaction[];
+    } else {
+      console.error("Failed to parse JSON response:");
+      console.error(rawText.substring(0, 500));
+      throw new Error(`JSON parse failed: ${err}`);
+    }
   }
 
   if (!Array.isArray(parsed)) {
