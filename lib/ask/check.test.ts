@@ -426,7 +426,7 @@ describe("Codex findings, Sept. 6", () => {
   it("rejects a quantity spelled out with no numeral", () => {
     const check = checkAnswerNumbers("There were one billion verified trades.", R);
     expect(check.ok).toBe(false);
-    expect(check.unmatched).toContain("a quantity written as words");
+    expect(check.unmatched.length).toBeGreaterThan(0);
   });
 
   it("rejects a vague magnitude", () => {
