@@ -1,0 +1,317 @@
+{
+  "key": "03da5a0d9e62bb5e",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 22,
+    "last": 22
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:23:32.272Z",
+  "transactions": [
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "COMCAST CORP NEW CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOWER COLO RIV AUTH 5% ELEC UTIL DUE 05/15/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BERKSHIRE HATHAWAY CLASS B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MARSH & MCLENNAN COS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SERVICENOW INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "IBM CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "STERIS PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "RESMED INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "REPUBLIC SVCS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PUBLIC SVC ENTERPRISE GR",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GE HEALTHCARE TECHNOLOGI",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PILGRIMS PRIDE CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ERIE INDTY CO CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VISA INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PINTEREST INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WORKDAY INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "INGERSOLL RAND INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PENTAIR PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "VERISK ANALYTICS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ECOLAB INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 2757,
+    "estimatedCostUsd": 0.0485
+  }
+}

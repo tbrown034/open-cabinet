@@ -1,0 +1,317 @@
+{
+  "key": "a9d259fefb42c892",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 17,
+    "last": 17
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:21:25.859Z",
+  "transactions": [
+    {
+      "description": "LOCKHEED MARTIN CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALNYLAM PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LYONDELLBASELL INDUSTRIES N V ORD SHS CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GENERAL MILLS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CONOCOPHILLIPS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "AMCOR PLC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PALANTIR TECHNOLOGIES INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ZSCALER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CATERPILLAR INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GE HEALTHCARE TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "STELLANTIS N V",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COGNIZANT TECHNOLOGY SOLUTIONS CORP CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CORNING INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "STATE STREET SPDR S&P DIVIDEND ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-22",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SALESFORCE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MARSH & MCLENNAN COS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "STRYKER CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "HENRY JACK & ASSOC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SHERWIN-WILLIAMS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PALANTIR TECHNOLOGIES IN CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "DANAHER CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UBER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 2767,
+    "estimatedCostUsd": 0.0486
+  }
+}

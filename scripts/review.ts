@@ -4,6 +4,13 @@
  *   npx tsx scripts/review.ts list
  *   npx tsx scripts/review.ts decide <id> "<what you decided>"
  *   npx tsx scripts/review.ts demo <slug> <pdf file name>
+ *   npx tsx scripts/review.ts rows <slug> [text]        list rows with their record ids and state
+ *   npx tsx scripts/review.ts row <slug> <recordId> confirmed|rejected "<evidence: page, printed row, what you saw>"
+ *
+ * "row" records a person's decision on one published row in
+ * data/review/decisions.json. A confirmed row scores 3 (human_verified) the
+ * next time pnpm row-verification runs. A rejected row stays disputed until
+ * an approved data patch changes it; the decision records the evidence.
  *
  * "demo" runs the text-layer comparison on one published filing against
  * its parse record, exactly as the ingest's check stage would, opens the
@@ -19,6 +26,8 @@ import dotenv from "dotenv";
 import { crossCheckParsedFiling } from "./text-layer-crosscheck";
 import { findParseRecord, promptHash, sha256File } from "../lib/parse-cache";
 import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
+import { REVIEW_DECISIONS_PATH, recordIdsFor, verificationForOfficial, type ReviewDecision } from "../lib/row-verification";
 import {
   decideReview,
   listOpenReviews,
@@ -79,13 +88,44 @@ async function main() {
     console.log(`decided ${id} by ${item.decidedBy}: ${decision}`);
     return;
   }
+  if (cmd === "rows") {
+    const [slug, text] = rest;
+    if (!slug) throw new Error("usage: review.ts rows <slug> [text]");
+    const official = JSON.parse(readFileSync(path.resolve(`data/officials/${slug}.json`), "utf-8"));
+    const ids = recordIdsFor(official.transactions);
+    const states = verificationForOfficial(slug, official.transactions);
+    official.transactions.forEach((t: { description: string; type: string; date: string; amount: string | null }, i: number) => {
+      if (text && !t.description.toLowerCase().includes(text.toLowerCase())) return;
+      console.log(`${ids[i]}  ${states[i]?.score ?? "-"} ${(states[i]?.state ?? "unknown").padEnd(19)} ${t.date} ${t.type.padEnd(14)} ${(t.amount ?? "unknown").padEnd(22)} ${t.description}`);
+    });
+    return;
+  }
+  if (cmd === "row") {
+    const [slug, recordId, decision, evidence] = rest;
+    if (!slug || !recordId || !["confirmed", "rejected"].includes(decision ?? "") || !evidence) {
+      throw new Error('usage: review.ts row <slug> <recordId> confirmed|rejected "<evidence>"');
+    }
+    const official = JSON.parse(readFileSync(path.resolve(`data/officials/${slug}.json`), "utf-8"));
+    if (!recordIdsFor(official.transactions).includes(recordId)) throw new Error(`no row ${recordId} for ${slug}`);
+    const file = REVIEW_DECISIONS_PATH;
+    const current: { decisions: ReviewDecision[] } = existsSync(file) ? JSON.parse(readFileSync(file, "utf-8")) : { decisions: [] };
+    const entry: ReviewDecision = {
+      recordId, slug, decision: decision as "confirmed" | "rejected", evidence,
+      decidedBy: process.env.USER || "operator", decidedAt: new Date().toISOString(),
+    };
+    current.decisions = [...current.decisions.filter((d) => d.recordId !== recordId), entry];
+    mkdirSync(path.dirname(file), { recursive: true });
+    writeFileSync(file, JSON.stringify(current, null, 2) + "\n");
+    console.log(`recorded ${decision} for ${recordId} by ${entry.decidedBy}. Run pnpm row-verification to apply.`);
+    return;
+  }
   if (cmd === "demo") {
     const [slug, pdfFile] = rest;
     if (!slug || !pdfFile) throw new Error("usage: review.ts demo <slug> <pdf file name>");
     await demo(slug, pdfFile);
     return;
   }
-  console.log("usage: review.ts list | decide <id> \"<decision>\" | demo <slug> <pdf>");
+  console.log("usage: review.ts list | decide <id> \"<decision>\" | demo <slug> <pdf> | rows <slug> [text] | row <slug> <recordId> confirmed|rejected \"<evidence>\"");
 }
 
 main().catch((e) => {

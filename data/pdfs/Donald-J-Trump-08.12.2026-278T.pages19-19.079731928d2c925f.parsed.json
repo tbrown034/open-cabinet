@@ -1,0 +1,317 @@
+{
+  "key": "079731928d2c925f",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 19,
+    "last": 19
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:22:18.508Z",
+  "transactions": [
+    {
+      "description": "MERCK & CO. INC.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ROCKET COMPANIES CLA A CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GE HEALTHCARE TECHNOLOGI",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CHARTER COMMUNICATIONS I CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "NASDAQ INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "BJS WHSL CLUB HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PHILIP MORRIS INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FLUTTER ENTMT PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ZSCALER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ATLASSIAN CORP CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMPHENOL CORP NEW CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "LOCKHEED MARTIN CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "HCA HEALTHCARE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "FAIR ISAAC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "UNIVERSAL HEALTH SVCS IN CLASS CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "TRIMBLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "EXLSERVICE HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "TELEDYNE TECHNOLOGIES IN",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "CNH INDL N V F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "AMERICAN TOWER CORP NEW REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "REPUBLIC SVCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "VEEVA SYS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GRACO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "IQVIA HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "ROBLOX CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "DIAMONDBACK ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "API GROUP CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "PENUMBRA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "TRADEWEB MKTS INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "GEN DIGITAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "KIMBERLY CLARK CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 1812,
+    "estimatedCostUsd": 0.0343
+  }
+}

@@ -323,6 +323,27 @@ export function compareExtraction(
     problems.push(
       `row count: ${lane} has ${textRows.length}, AI parse has ${parsed.length}`
     );
+    // Say where to look. Pair rows by tuple, consuming matches, and name
+    // the printed rows the model has no counterpart for, and how many
+    // model rows the lane has none for. Advisory: a person opens the PDF
+    // to these rows instead of reading all of them.
+    const pool = new Map<string, number>();
+    for (const t of parsed) {
+      const k = tupleOf({ type: baseType(t.type), date: t.date, amount: t.amount, lateFilingFlag: !!t.lateFilingFlag });
+      pool.set(k, (pool.get(k) ?? 0) + 1);
+    }
+    const unmatchedPrinted: number[] = [];
+    for (const r of textRows) {
+      const k = tupleOf(r);
+      const n = pool.get(k) ?? 0;
+      if (n > 0) pool.set(k, n - 1);
+      else unmatchedPrinted.push(r.rowNumber);
+    }
+    const modelOnly = [...pool.values()].reduce((a, b) => a + b, 0);
+    if (unmatchedPrinted.length) {
+      problems.push(`printed rows with no model row of the same type, date, amount and late flag: ${unmatchedPrinted.slice(0, 30).join(", ")}${unmatchedPrinted.length > 30 ? " ..." : ""}`);
+    }
+    if (modelOnly) problems.push(`model rows with no ${lane} row of the same tuple: ${modelOnly}`);
   } else {
     const normalizedParsed = parsed.map((t) => ({
       type: baseType(t.type),
