@@ -1,0 +1,254 @@
+{
+  "key": "5033a9fab2b3a37c",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 5,
+    "last": 5
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:00:35.411Z",
+  "transactions": [
+    {
+      "description": "ARLINGTON TX HSG FIN CORP MLTIFAM HSG REV RESV MAYFIELD APTS B/E 3.50 % Due Nov 1, 2043",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ATCHISON CNTY KS UNI SCH DIST 409 RFDG IMPT BAM B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BARTOW CNTY GA DEV AUTH POLLUTN CTL REV GA PWR CO PLT BOWEN 1ST B/E 2.875 % Due Aug 1, 2043",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BIRMINGHAM AL CONV SER A1 B/E CAB @87.829 4.04% 5.00 % Due Mar 1, 2045",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CINCO TX MUD 1 CNTRCT REV 2019 A B/E CR ENH 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CITIGROUP INC. VAR 32 DUE 05/01/32",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CLARK CNTY NV SCH DIST VARIOUS PURP MEDIUM TERM BD SER F B/E 3.00 % Due Jun 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "HUTTO TX INDPT SCH DIST BLDG PSF GTD B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "IOWA-ST UNIV SCI & TECH UNIV REV ATHLETIC FACS SER I S U B/E 3.00 % Due Jul 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KANSAS ST DEV FIN AUTH REV RFDG KS ST PJ SER F B/E 5.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "LOUISIANA LOC GOVT ENVMNTL FAC & CMNTY DEV AUTH INS ASSMT B REV B/E 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MASSACHUSETTS ST HSG FIN AGY HSG REV SER A3 GREEN BD B/E 2.95 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MEMPHIS SHELBY CNTY TN INDL DEV BRD ECON REV GRWTH RFDG B B/E 5.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MIAMI CNTY KS PUB BLDG COMMN LSE REV B/E B/Q OID @97.858 3.4% 3.25 % Due Sep 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "MINNEAPOLIS & ST PAUL MN MET ARPTS COMMN ARPT REV SUB RFDG SER C B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MORGAN STANLEY VAR 28 DUE 10/18/28",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ORANGE CNTY FL SCH BRD CTF PARTN RFDG SER C REV B/E 5.00 % Due Aug 1, 2031",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "POLK CNTY FL SCH BRD CTF PARTN RFDG SER B REV B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "QUALCOMM INC 2.15%30 DUE 05/20/30",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ST MARYS CLLG MD REV RFDG ACADEMIC FEES & B/E OID @99.780 3.02% 3.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "THE HOME DEPOT, 2.95%29 DUE 06/15/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "T-MOBILE USA, I 3.375%29 DUE 04/15/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "UNITEDHEALTH GROU 4.5%33 DUE 04/15/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "WASHINGTON ST 5%37GO UTX DUE 02/01/37",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "WELLS FARGO & CO VAR 33 DUE 07/25/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 2657,
+    "estimatedCostUsd": 0.1691
+  }
+}

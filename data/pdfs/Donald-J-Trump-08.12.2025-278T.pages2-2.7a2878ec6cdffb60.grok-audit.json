@@ -1,0 +1,136 @@
+{
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "first": 2,
+  "last": 2,
+  "rowsSha256": "da7eb9e5850041065c672085b33fddecdb622652a0e510a9aa0391168fa07ba3",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T17:51:02.678Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "not_found"
+    },
+    {
+      "i": 17,
+      "verdict": "match"
+    },
+    {
+      "i": 18,
+      "verdict": "match"
+    },
+    {
+      "i": 19,
+      "verdict": "match"
+    },
+    {
+      "i": 20,
+      "verdict": "match"
+    },
+    {
+      "i": 21,
+      "verdict": "match"
+    },
+    {
+      "i": 22,
+      "verdict": "match"
+    },
+    {
+      "i": 23,
+      "verdict": "match"
+    },
+    {
+      "i": 24,
+      "verdict": "match"
+    },
+    {
+      "i": 25,
+      "verdict": "match"
+    },
+    {
+      "i": 26,
+      "verdict": "match"
+    }
+  ],
+  "missing": [
+    {
+      "description": "MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Aug 1, 2025",
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001 - $100,000",
+      "lateFilingFlag": true,
+      "page": 2
+    }
+  ],
+  "usage": {
+    "inputTokens": 4628,
+    "outputTokens": 391,
+    "estimatedCostUsd": 0.0116
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"not_found\"},{\"i\":17,\"verdict\":\"match\"},{\"i\":18,\"verdict\":\"match\"},{\"i\":19,\"verdict\":\"match\"},{\"i\":20,\"verdict\":\"match\"},{\"i\":21,\"verdict\":\"match\"},{\"i\":22,\"verdict\":\"match\"},{\"i\":23,\"verdict\":\"match\"},{\"i\":24,\"verdict\":\"match\"},{\"i\":25,\"verdict\":\"match\"},{\"i\":26,\"verdict\":\"match\"}],\"missing\":[{\"description\":\"MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Aug 1, 2025\",\"type\":\"Purchase\",\"date\":\"2025-01-29\",\"amount\":\"$50,001 - $100,000\",\"lateFilingFlag\":true,\"page\":2}]}"
+}

@@ -1,0 +1,71 @@
+{
+  "pdfSha256": "41405584cccf872fc6aca4d2111243cef92427ea5948ae2e97459dfb3b968ebf",
+  "first": 4,
+  "last": 4,
+  "rowsSha256": "4956934c6c01faee46c7295b66119ffca6a9fb73d267b30a5b02a367135c0b81",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T17:44:47.925Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 3732,
+    "outputTokens": 151,
+    "estimatedCostUsd": 0.0084
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"}],\"missing\":[]}"
+}

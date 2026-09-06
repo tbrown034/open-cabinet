@@ -1,0 +1,87 @@
+{
+  "pdfSha256": "8a5e83d9886fd6753759ca620116880cbaf7a427bb8533be33ddf919605f5232",
+  "first": 4,
+  "last": 4,
+  "rowsSha256": "d28783165d3fb58726483f8bd3127f3345591f1b61de36cd788dec6a6232871d",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T17:21:06.363Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 3872,
+    "outputTokens": 195,
+    "estimatedCostUsd": 0.0089
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"match\"}],\"missing\":[]}"
+}

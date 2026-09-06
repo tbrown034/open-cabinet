@@ -1,0 +1,1343 @@
+{
+  "key": "847c8496fd748a4a",
+  "pdfSha256": "fa2bbdd1e7d0e183f84362bbf67fb94b27944392bec222078ac7eaea103841c7",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
+  "chunk": {
+    "first": 9,
+    "last": 16
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T18:17:49.988Z",
+  "transactions": [
+    {
+      "description": "Morgan Stanley (MS)",
+      "ticker": "MS",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MS&AD Insurance Group Holdings Inc ADR (MSADY)",
+      "ticker": "MSADY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Motorola Solutions, Inc. (MSI)",
+      "ticker": "MSI",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NextEra Energy, Inc. (NEE)",
+      "ticker": "NEE",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Newmont Corp. (NEM)",
+      "ticker": "NEM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Netflix, Inc. (NFLX)",
+      "ticker": "NFLX",
+      "type": "Sale",
+      "date": null,
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "National Oilwell Varco, Inc. (NOV)",
+      "ticker": "NOV",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ServiceNow, Inc. (NOW)",
+      "ticker": "NOW",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nestle SA ADR (NSRGY)",
+      "ticker": "NSRGY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Nutrien Ltd. Common Shares (NTR)",
+      "ticker": "NTR",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Novartis AG Common Stock (NVS)",
+      "ticker": "NVS",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ONEOK, Inc. (OKE)",
+      "ticker": "OKE",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Oracle Corp. (ORCL)",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Old Republic International Corp. (ORI)",
+      "ticker": "ORI",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "O'Reilly Automotive, Inc. (ORLY)",
+      "ticker": "ORLY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Otis Worldwide Corporation Common Stock (OTIS)",
+      "ticker": "OTIS",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Paycom Software, Inc. (PAYC)",
+      "ticker": "PAYC",
+      "type": "Sale",
+      "date": null,
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "PDF Solutions, Inc. (PDFS)",
+      "ticker": "PDFS",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Public Service Enterprise Group, Inc. (PEG)",
+      "ticker": "PEG",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PepsiCo, Inc. (PEP)",
+      "ticker": "PEP",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Progressive Corp. (PGR)",
+      "ticker": "PGR",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Philip Morris International, Inc. (PM)",
+      "ticker": "PM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PPG Industries, Inc. (PPG)",
+      "ticker": "PPG",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PPL Corp. (PPL)",
+      "ticker": "PPL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Primo Brands Corp (PRMB)",
+      "ticker": "PRMB",
+      "type": "Sale",
+      "date": null,
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "Prosus NV ADR (PROSY)",
+      "ticker": "PROSY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Privia Health Group Inc. Common Stock (PRVA)",
+      "ticker": "PRVA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Pure Storage, Inc. (PSTG)",
+      "ticker": "PSTG",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Power Corporation of Canada (PWCDF)",
+      "ticker": "PWCDF",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+      "ticker": "QQQ",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Invesco QQQ Trust, Series 1 (QQQ)",
+      "ticker": "QQQ",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "RB Global Inc (RBA)",
+      "ticker": "RBA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "RenaissanceRe Holdings Ltd. (RNR)",
+      "ticker": "RNR",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Rollins, Inc. (ROL)",
+      "ticker": "ROL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Ross Stores, Inc. (ROST)",
+      "ticker": "ROST",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Regal Rexnord Corporation Common Stock (RRX)",
+      "ticker": "RRX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Rush Street Interactive Inc. Class A Common Stock (RSI)",
+      "ticker": "RSI",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SAP SE ADS (SAP)",
+      "ticker": "SAP",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Starbucks Corp. (SBUX)",
+      "ticker": "SBUX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Starbucks Corp. (SBUX)",
+      "ticker": "SBUX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Shell PLC (SHEL)",
+      "ticker": "SHEL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The Sherwin-Williams Co. (SHW)",
+      "ticker": "SHW",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SLB Ltd (SLB)",
+      "ticker": "SLB",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SMC Corp ADR (SMCAY)",
+      "ticker": "SMCAY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Shimano Inc ADR (SMNNY)",
+      "ticker": "SMNNY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Sompo Holdings Inc ADR (SMPNY)",
+      "ticker": "SMPNY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Snowflake Inc. Class A Common Stock (SNOW)",
+      "ticker": "SNOW",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SECOM Co Ltd ADR (SOMLY)",
+      "ticker": "SOMLY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "S&P Global, Inc. (SPGI)",
+      "ticker": "SPGI",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "S&P Global, Inc. (SPGI)",
+      "ticker": "SPGI",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SPDR S&P 500 ETF Trust (SPY)",
+      "ticker": "SPY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "STERIS Plc (STE)",
+      "ticker": "STE",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "AT&T Inc (T)",
+      "ticker": "T",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TE Connectivity Ltd. (TEL)",
+      "ticker": "TEL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The TJX Cos., Inc. (TJX)",
+      "ticker": "TJX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "The TJX Cos., Inc. (TJX)",
+      "ticker": "TJX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Thermo Fisher Scientific, Inc. (TMO)",
+      "ticker": "TMO",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Trimble, Inc. (TRMB)",
+      "ticker": "TRMB",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TransUnion (TRU)",
+      "ticker": "TRU",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TransUnion (TRU)",
+      "ticker": "TRU",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Tesla, Inc. (TSLA)",
+      "ticker": "TSLA",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
+      "ticker": "TSM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
+      "ticker": "TTTXX",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
+      "ticker": "TTTXX",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Twist Bioscience Corp. (TWST)",
+      "ticker": "TWST",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Texas Instruments Incorporated (TXN)",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Texas Instruments Incorporated (TXN)",
+      "ticker": "TXN",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Tyler Technologies, Inc. (TYL)",
+      "ticker": "TYL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Universal Health Services, Inc. (UHS)",
+      "ticker": "UHS",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Unilever PLC Common Stock (UL)",
+      "ticker": "UL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UnitedHealth Group, Inc. (UNH)",
+      "ticker": "UNH",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UOL Group Ltd ADR (UOLGY)",
+      "ticker": "UOLGY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Visa, Inc. (V)",
+      "ticker": "V",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Visa, Inc. (V)",
+      "ticker": "V",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
+      "ticker": "VEA",
+      "type": "Sale",
+      "date": "2026-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Developed Markets Index Fund ETF Shares (VEA)",
+      "ticker": "VEA",
+      "type": "Sale",
+      "date": "2026-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Veeva Systems, Inc. (VEEV)",
+      "ticker": "VEEV",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
+      "ticker": "VGT",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Verisk Analytics, Inc. (VRSK)",
+      "ticker": "VRSK",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Verisk Analytics, Inc. (VRSK)",
+      "ticker": "VRSK",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vertex Pharmaceuticals, Inc. (VRTX)",
+      "ticker": "VRTX",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Value Index Fund ETF Shares (VTV)",
+      "ticker": "VTV",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-02-02",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Verizon Communications, Inc. (VZ)",
+      "ticker": "VZ",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Verizon Communications, Inc. (VZ)",
+      "ticker": "VZ",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Workday, Inc. (WDAY)",
+      "ticker": "WDAY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Wells Fargo & Co. (WFC)",
+      "ticker": "WFC",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Workiva, Inc. (WK)",
+      "ticker": "WK",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Wal - Mart de Mexico SPN ADR (WMMVY)",
+      "ticker": "WMMVY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Walmart, Inc. (WMT)",
+      "ticker": "WMT",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Walmart, Inc. (WMT)",
+      "ticker": "WMT",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Wheaton Precious Metals Corp Common Shares (Canada) (WPM)",
+      "ticker": "WPM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "West Pharmaceutical Services, Inc. (WST)",
+      "ticker": "WST",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "White Mountains Insurance Group Ltd. (WTM)",
+      "ticker": "WTM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Willis Towers Watson Public Limited Company Ordinary Shares (WTW)",
+      "ticker": "WTW",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Weyerhaeuser Co. (WY)",
+      "ticker": "WY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Xcel Energy, Inc. (XEL)",
+      "ticker": "XEL",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Exxon Mobil Corp. (XOM)",
+      "ticker": "XOM",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet, Inc. (GOOG)",
+      "ticker": "GOOG",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Alphabet Inc Class A (GOOGL)",
+      "ticker": "GOOGL",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Meta Platforms Inc. Class A Common Stock (META)",
+      "ticker": "META",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Microsoft Corp. (MSFT)",
+      "ticker": "MSFT",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA Corp. (NVDA)",
+      "ticker": "NVDA",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Oracle Corp. (ORCL)",
+      "ticker": "ORCL",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "AT&T Inc (T)",
+      "ticker": "T",
+      "type": "Sale",
+      "date": "2026-01-28",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-01-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
+      "ticker": "VGT",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
+      "ticker": "VTI",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VanguardEmerging Markets Stock Index Fund ETF Shares (VWO)",
+      "ticker": "VWO",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
+      "ticker": "VXUS",
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "Reckitt Benckiser Group (RBGLY)",
+      "ticker": "RBGLY",
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "INDIANA ST FIN AUTH REV REF LEASE SER A MAR22 05.000%FEB01 2029 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "MARYLAND ST TRANSN AUTH TRANSN FACS PRJS REV JUN20 05.000%JUL01 2035 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "DISTRICT COLUMBIA GO BDS SER A FEB19 05.000%OCT15 2034",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NEW YORK N Y GO BDS SER C OCT20 05.000%AUG01 2034",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIV CALIF REGTS MED CTR POOLED REV BDS SER P MAY22 05.000%MAY15 2037",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "BROWARD CNTY FLA TOURIST DEV TAX REV BDS DEC21 05.000%SEP01 2032",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NEW YORK ST DORM AUTH ST PERS INCOME TAX REV A MAR21 05.000%MAR15 2030 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "FLORIDA ST BRD ED PUB ED FULL FAITH CREDIT CAP C AUG18 05.000%JUN01 2029 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIVERSITY UTAH UNIV REV GEN BDS SER A DEC19 05.000%AUG01 2032",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "OHIO ST HWY CAP IMPT GO BDS W JUN20 05.000%MAY01 2031",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOUSTON TEX UTIL SYS REV COMB FIRST LIEN REF C JUL20 05.000%NOV15 2028 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PIMA CNTY ARIZ SWR REV SYS OBLIGS SER B DEC20 05.000%JUL01 2027 Bond",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS WTR DEV BRD REV ST REVOLVING FD REV BDS JUN20 05.000%AUG01 2027",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS A & M UNIV REV FING SYS BDS SER E DEC17 05.000%MAY15 2027",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 24520,
+    "outputTokens": 8515,
+    "estimatedCostUsd": 0.671
+  }
+}

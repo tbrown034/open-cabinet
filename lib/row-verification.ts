@@ -40,6 +40,7 @@ import { existsSync, readFileSync } from "fs";
 import path from "path";
 import type { Transaction } from "./types";
 import type { CrosscheckEntry } from "./crosscheck-log";
+import { normalizedDescription, sharesAssetWord } from "./reverify-diff";
 
 export const ROW_VERIFICATION_PATH = path.join(process.cwd(), "data", "meta", "row-verification.json");
 export const REVIEW_DECISIONS_PATH = path.join(process.cwd(), "data", "review", "decisions.json");
@@ -184,17 +185,45 @@ export function locateInParseRecord(
   rows: Transaction[],
   record: Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>
 ): number[] {
-  const byKey = new Map<string, number[]>();
-  const key = (r: { description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }) =>
-    `${r.description.trim().toLowerCase()}|${comparedTuple(r)}`;
+  type R = { description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean };
+  const exactKey = (r: R) => `${r.description.trim().toLowerCase()}|${comparedTuple(r)}`;
+  // Wording-only differences (a ticker appended, a trailing symbol, a
+  // spacing accident) do not make a different row. Second pass matches
+  // the normalized name; third pass matches the trade tuple where the
+  // names still share a distinctive word and the pairing is unambiguous.
+  const nameKey = (r: R) => `${normalizedDescription(r.description)}|${comparedTuple(r)}`;
+  const byExact = new Map<string, number[]>();
+  const byName = new Map<string, number[]>();
   record.forEach((r, i) => {
-    const k = key(r);
-    (byKey.get(k) ?? byKey.set(k, []).get(k)!).push(i);
+    (byExact.get(exactKey(r)) ?? byExact.set(exactKey(r), []).get(exactKey(r))!).push(i);
+    (byName.get(nameKey(r)) ?? byName.set(nameKey(r), []).get(nameKey(r))!).push(i);
   });
-  return rows.map((tx) => {
-    const bucket = byKey.get(key(tx));
-    return bucket && bucket.length ? bucket.shift()! : -1;
+  const used = new Set<number>();
+  const take = (bucket: number[] | undefined) => {
+    while (bucket && bucket.length) {
+      const i = bucket.shift()!;
+      if (!used.has(i)) {
+        used.add(i);
+        return i;
+      }
+    }
+    return -1;
+  };
+  const out = rows.map((tx) => take(byExact.get(exactKey(tx))));
+  rows.forEach((tx, k) => {
+    if (out[k] < 0) out[k] = take(byName.get(nameKey(tx)));
   });
+  const leftover = record.map((_, i) => i).filter((i) => !used.has(i));
+  rows.forEach((tx, k) => {
+    if (out[k] >= 0) return;
+    const t = comparedTuple(tx);
+    const candidates = leftover.filter((i) => !used.has(i) && comparedTuple(record[i]) === t && sharesAssetWord(tx.description, record[i].description));
+    if (candidates.length === 1) {
+      used.add(candidates[0]);
+      out[k] = candidates[0];
+    }
+  });
+  return out;
 }
 
 /**
@@ -296,7 +325,15 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
         emit({ ...base, score: 2, state: "deterministic_agree", lane: "ocr", note: "OCR of the page image agrees, row for row" }, idx);
         return;
       case "checked_tuple_mismatch":
-        emit({ ...base, score: 0, state: "disputed", lane: "text", note: "Text layer disagrees with the model on this filing; a person decides" }, idx);
+        // The text lane reports a mismatch for the filing, not the row.
+        // A row a second model read the same way has two independent
+        // reads agreeing; the page audit settles it. Otherwise the
+        // filing's mismatch stands on the row.
+        if (m2 && idx >= 0 && m2.agreedIndexes.has(idx)) {
+          emit({ ...base, score: 2, state: "two_models_agree", lane: "model2", note: "A second model read the same values; the text layer disagrees with the model somewhere on this filing" }, idx);
+        } else {
+          emit({ ...base, score: 0, state: "disputed", lane: "text", note: "Text layer disagrees with the model on this filing; a person decides" }, idx);
+        }
         return;
       case "ocr_tuple_mismatch": {
         // Per row: the OCR lane's alignment names the printed rows it
@@ -308,7 +345,16 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
         }
         const printed = printedRowForIndex(idx, aligned.placeholderRows ?? []);
         if (aligned.disputedPrintedRows?.includes(printed)) {
-          emit({ ...base, score: 0, state: "disputed", lane: "ocr", note: `OCR read printed row ${printed} differently; a person decides` }, idx);
+          // OCR is the weakest reader of a scan. When it disagrees but a
+          // second model read the same values, two independent reads
+          // agree and the page audit decides (applyAudit raises this to
+          // checked, or drops it to disputed). The OCR disagreement stays
+          // in the note. With no second read, OCR's dispute stands.
+          if (m2?.agreedIndexes.has(idx)) {
+            emit({ ...base, score: 2, state: "two_models_agree", lane: "model2", note: `A second model read the same values; OCR read printed row ${printed} differently` }, idx);
+          } else {
+            emit({ ...base, score: 0, state: "disputed", lane: "ocr", note: `OCR read printed row ${printed} differently; a person decides` }, idx);
+          }
         } else if (aligned.repairedPrintedRows?.includes(printed)) {
           emit({ ...base, score: 1, state: "single_read", lane: "ocr", note: `OCR's row number for printed row ${printed} was repaired by sequence; not counted as a check` }, idx);
         } else if (aligned.agreedPrintedRows?.includes(printed)) {

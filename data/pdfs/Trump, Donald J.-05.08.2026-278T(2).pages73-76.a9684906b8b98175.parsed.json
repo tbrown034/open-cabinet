@@ -1,0 +1,1208 @@
+{
+  "key": "a9684906b8b98175",
+  "pdfSha256": "00e56352e83731329841caedaa09328cd87ed02ec235c07058a3b351407479be",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
+  "chunk": {
+    "first": 73,
+    "last": 76
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T16:38:57.421Z",
+  "transactions": [
+    {
+      "description": "FAIR ISAAC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SCHWAB GOVERNMENT MONEY FUND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SCHWAB GOVERNMENT MONEY FUND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SCHWAB GOVERNMENT MONEY FUND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GARMIN LTD F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERSANT MEDIA GROUP INC CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EPAM SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VORNADO RLTY TR REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FISERV INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "AMERICAN TOWER CORP NEW REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DYNATRACE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "THE CIGNA GROUP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CARRIER GLOBAL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HENRY JACK & ASSOC INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOULIHAN LOKEY INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOULIHAN LOKEY INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CBRE GROUP INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GENUINE PARTS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BLOCK INC A CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ZSCALER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DUOLINGO INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BANK OF AMERICA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CROWDSTRIKE HLDGS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERSANT MEDIA GROUP INC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-06",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "AMERICAN EXPRESS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BANK OF AMERICA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VARONIS SYS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LULULEMON ATHLETICA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COINBASE GLOBAL INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ZEBRA TECHNOLOGIES CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RUBRIK INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SMUCKER J M CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUNTINGTON BANCSHARES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "NUTANIX INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MOLINA HEALTHCARE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADVANCED MICRO DEVIC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NETAPP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ESSEX PPTY TR INC REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EOG RES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUMANA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SNOWFLAKE INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TALEN ENERGY CORP NEW CLASS EQUITY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MANHATTAN ASSOCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ASTERA LABS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MANHATTAN ASSOCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROBINHOOD MKTS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BLOCK INC A CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VEEVA SYS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "XYLEM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WILLIS TOWERS WATSON P F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FNF GROUP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CHENIERE ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GODADDY INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "IQVIA HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BLOCK H & R INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CONSTELLATION ENERGY COR",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AVANOS MED INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-30",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FORD MOTOR CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SBA COMMUNICATIONS CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INVITATION HOMES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CCC INTELLIGENT SOLUTION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "WORLD ACCEP CORP S C NEW",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AUTODESK INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SNAP INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WELLS FARGO & CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MSCI INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GARTNER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PERFORMANCE FOOD GROUP C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "APPLOVIN CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUBSPOT INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DRAFTKINGS INC NEW CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BXP INC REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "METLIFE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WARNER MUSIC GROUP CORP CL A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-19",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HEWLETT PACKARD ENTERPRISE COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EVEREST REINSURANCE GR F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GUIDEWIRE SOFTWARE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PAYCOM SOFTWARE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HUMANA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MONGODB INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERISK ANALYTICS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GITLAB INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROCKET COMPANIES CL A A CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.92
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EQUIFAX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "REPUBLIC SVCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RLI CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GLOBAL PMTS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "AMERICAN WTR WKS CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INTUIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACI WORLDWIDE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ZILLOW GROUP INC CLASS C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GRAPHIC PACKAGING HLDG C",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "QUALCOMM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LAUDER ESTEE COS INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TOAST INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MCCORMICK & CO INC CLASS N",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FLUTTER ENTMT PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FLEX LTD F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LPL FINL HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SBA COMMUNICATIONS CORP REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GENERAL MILLS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RLI CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "JONES LANG LASALLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ZSCALER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SAMSARA INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GODADDY INC CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VULCAN MATLS CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACUITY INC.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GARTNER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BOOZ ALLEN HAMILTON HLDG CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "METLIFE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "GENERAL MILLS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "INVITATION HOMES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-12",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RYAN SPECIALTY HOLDINGS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SMURFIT WESTROCK PLC F",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MARKEL GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ROCKET LAB CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RYAN SPECIALTY HOLDINGS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-17",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ALLSTATE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SOLVENTUM CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-03-26",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ATLASSIAN CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-21",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ARES MGMT CORP CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-02-23",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 12292,
+    "outputTokens": 7051,
+    "estimatedCostUsd": 0.4755
+  }
+}

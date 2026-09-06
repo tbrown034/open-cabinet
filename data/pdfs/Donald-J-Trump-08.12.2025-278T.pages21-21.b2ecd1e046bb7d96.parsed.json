@@ -1,0 +1,128 @@
+{
+  "key": "b2ecd1e046bb7d96",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 21,
+    "last": 21
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:10:30.061Z",
+  "transactions": [
+    {
+      "description": "KENTUCKY ASSET LIABILITY COMMN AGY FD REV FDL HWY TR 1ST RFDG SER A B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SNOHOMISH CNTY WA SCH DIST 306 LAKEWOOD GENL RFDG OBLIG A B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "METROPOLITAN ST LOUIS MO SWR DIST WSTWTR SYS REV RFDG & IMPT C B/E PTC 5.00 % Due May 1, 2046",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "OWENSBORO KY WTR REV RFDG & IMPT BAM B/E 5.00 % Due Sep 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "METROPOLITAN UTILS DIST OMAHA NE WTR REV RFDG SYS IMPT B/E 2.85 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FLORIDA INS ASSIST INTERLOCAL AGY FL INS ASSMT REV SER A 1 B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "WELLBORN SPL UTIL DIST TX WTR SYS REV BAM B/E B/Q 3.50 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMMN REV PJ 108 SER A B/E PTC 5.00 % Due Aug 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ALLEN TX ECON DEV CORP SALES TAX REV RFDG A B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GENOA OCEOLA SWR & WTR AUTH MI SWR SYS IMPT REV 2018 B/E B/Q 3.25 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "METROPOLITAN GOVT NASHVILLE 5.0000% 07/01/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COOK CNTY ILL CM 4.25% DUE 12/01/47",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 1383,
+    "estimatedCostUsd": 0.1054
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "key": "78ae1b53e7422632",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 27,
+    "last": 27
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:57:35.308Z",
+  "transactions": [
+    {
+      "description": "ULTRA CLEAN HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NICOLET BANKSHARES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "OTTER TAIL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HAWAIIAN ELEC INDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WARBY PARKER INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "F&G ANNUITIES & LIFE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "STEWART INFORMATION SVCS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LAUREATE ED INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TRUPANION INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EASTERN BANKSHARES I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INDIVIOR PHARMACEUTICALS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CALIFORNIA WTR SVC GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PTC THERAPEUTICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SPHERE ENTERTAINMENT A CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIVERSAL TECHNICAL INST",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "RUSH STREET INTERACT A CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "WESTERN UN CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADMA BIOLOGICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ULTRA CLEAN HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ARGAN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ICHOR HLDGS LTD F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "PATHWARD FINL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "WESBANCO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ENERGIZER HLDGS INC NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNIVERSAL CORP VA",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNDER ARMOUR INC CLASS C",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MAXLINEAR INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "POWELL INDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NEOGENOMICS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "SPHERE ENTERTAINMENT A CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "QUIDELORTHO CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ALIGNMENT HEALTHCARE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BRIGHTSPRING HEALTH SVCS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 1784,
+    "estimatedCostUsd": 0.1255
+  }
+}

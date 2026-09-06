@@ -1,0 +1,547 @@
+{
+  "pdfSha256": "00e56352e83731329841caedaa09328cd87ed02ec235c07058a3b351407479be",
+  "first": 49,
+  "last": 52,
+  "rowsSha256": "34f8bbd9c8be819d41049a68701d751050048c1bb31ed079dab7da974ac3cb48",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T16:39:39.066Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "match"
+    },
+    {
+      "i": 17,
+      "verdict": "match"
+    },
+    {
+      "i": 18,
+      "verdict": "match"
+    },
+    {
+      "i": 19,
+      "verdict": "match"
+    },
+    {
+      "i": 20,
+      "verdict": "match"
+    },
+    {
+      "i": 21,
+      "verdict": "match"
+    },
+    {
+      "i": 22,
+      "verdict": "match"
+    },
+    {
+      "i": 23,
+      "verdict": "match"
+    },
+    {
+      "i": 24,
+      "verdict": "match"
+    },
+    {
+      "i": 25,
+      "verdict": "match"
+    },
+    {
+      "i": 26,
+      "verdict": "match"
+    },
+    {
+      "i": 27,
+      "verdict": "match"
+    },
+    {
+      "i": 28,
+      "verdict": "match"
+    },
+    {
+      "i": 29,
+      "verdict": "match"
+    },
+    {
+      "i": 30,
+      "verdict": "match"
+    },
+    {
+      "i": 31,
+      "verdict": "match"
+    },
+    {
+      "i": 32,
+      "verdict": "match"
+    },
+    {
+      "i": 33,
+      "verdict": "match"
+    },
+    {
+      "i": 34,
+      "verdict": "match"
+    },
+    {
+      "i": 35,
+      "verdict": "match"
+    },
+    {
+      "i": 36,
+      "verdict": "match"
+    },
+    {
+      "i": 37,
+      "verdict": "match"
+    },
+    {
+      "i": 38,
+      "verdict": "match"
+    },
+    {
+      "i": 39,
+      "verdict": "match"
+    },
+    {
+      "i": 40,
+      "verdict": "match"
+    },
+    {
+      "i": 41,
+      "verdict": "match"
+    },
+    {
+      "i": 42,
+      "verdict": "match"
+    },
+    {
+      "i": 43,
+      "verdict": "match"
+    },
+    {
+      "i": 44,
+      "verdict": "match"
+    },
+    {
+      "i": 45,
+      "verdict": "match"
+    },
+    {
+      "i": 46,
+      "verdict": "match"
+    },
+    {
+      "i": 47,
+      "verdict": "match"
+    },
+    {
+      "i": 48,
+      "verdict": "match"
+    },
+    {
+      "i": 49,
+      "verdict": "match"
+    },
+    {
+      "i": 50,
+      "verdict": "match"
+    },
+    {
+      "i": 51,
+      "verdict": "match"
+    },
+    {
+      "i": 52,
+      "verdict": "match"
+    },
+    {
+      "i": 53,
+      "verdict": "match"
+    },
+    {
+      "i": 54,
+      "verdict": "match"
+    },
+    {
+      "i": 55,
+      "verdict": "match"
+    },
+    {
+      "i": 56,
+      "verdict": "match"
+    },
+    {
+      "i": 57,
+      "verdict": "match"
+    },
+    {
+      "i": 58,
+      "verdict": "match"
+    },
+    {
+      "i": 59,
+      "verdict": "match"
+    },
+    {
+      "i": 60,
+      "verdict": "match"
+    },
+    {
+      "i": 61,
+      "verdict": "match"
+    },
+    {
+      "i": 62,
+      "verdict": "match"
+    },
+    {
+      "i": 63,
+      "verdict": "match"
+    },
+    {
+      "i": 64,
+      "verdict": "match"
+    },
+    {
+      "i": 65,
+      "verdict": "match"
+    },
+    {
+      "i": 66,
+      "verdict": "match"
+    },
+    {
+      "i": 67,
+      "verdict": "match"
+    },
+    {
+      "i": 68,
+      "verdict": "match"
+    },
+    {
+      "i": 69,
+      "verdict": "match"
+    },
+    {
+      "i": 70,
+      "verdict": "match"
+    },
+    {
+      "i": 71,
+      "verdict": "match"
+    },
+    {
+      "i": 72,
+      "verdict": "match"
+    },
+    {
+      "i": 73,
+      "verdict": "match"
+    },
+    {
+      "i": 74,
+      "verdict": "match"
+    },
+    {
+      "i": 75,
+      "verdict": "match"
+    },
+    {
+      "i": 76,
+      "verdict": "match"
+    },
+    {
+      "i": 77,
+      "verdict": "match"
+    },
+    {
+      "i": 78,
+      "verdict": "match"
+    },
+    {
+      "i": 79,
+      "verdict": "match"
+    },
+    {
+      "i": 80,
+      "verdict": "match"
+    },
+    {
+      "i": 81,
+      "verdict": "match"
+    },
+    {
+      "i": 82,
+      "verdict": "match"
+    },
+    {
+      "i": 83,
+      "verdict": "match"
+    },
+    {
+      "i": 84,
+      "verdict": "match"
+    },
+    {
+      "i": 85,
+      "verdict": "match"
+    },
+    {
+      "i": 86,
+      "verdict": "match"
+    },
+    {
+      "i": 87,
+      "verdict": "match"
+    },
+    {
+      "i": 88,
+      "verdict": "match"
+    },
+    {
+      "i": 89,
+      "verdict": "match"
+    },
+    {
+      "i": 90,
+      "verdict": "match"
+    },
+    {
+      "i": 91,
+      "verdict": "match"
+    },
+    {
+      "i": 92,
+      "verdict": "match"
+    },
+    {
+      "i": 93,
+      "verdict": "match"
+    },
+    {
+      "i": 94,
+      "verdict": "match"
+    },
+    {
+      "i": 95,
+      "verdict": "match"
+    },
+    {
+      "i": 96,
+      "verdict": "match"
+    },
+    {
+      "i": 97,
+      "verdict": "match"
+    },
+    {
+      "i": 98,
+      "verdict": "match"
+    },
+    {
+      "i": 99,
+      "verdict": "match"
+    },
+    {
+      "i": 100,
+      "verdict": "match"
+    },
+    {
+      "i": 101,
+      "verdict": "match"
+    },
+    {
+      "i": 102,
+      "verdict": "match"
+    },
+    {
+      "i": 103,
+      "verdict": "match"
+    },
+    {
+      "i": 104,
+      "verdict": "match"
+    },
+    {
+      "i": 105,
+      "verdict": "match"
+    },
+    {
+      "i": 106,
+      "verdict": "match"
+    },
+    {
+      "i": 107,
+      "verdict": "match"
+    },
+    {
+      "i": 108,
+      "verdict": "match"
+    },
+    {
+      "i": 109,
+      "verdict": "match"
+    },
+    {
+      "i": 110,
+      "verdict": "match"
+    },
+    {
+      "i": 111,
+      "verdict": "match"
+    },
+    {
+      "i": 112,
+      "verdict": "match"
+    },
+    {
+      "i": 113,
+      "verdict": "match"
+    },
+    {
+      "i": 114,
+      "verdict": "match"
+    },
+    {
+      "i": 115,
+      "verdict": "match"
+    },
+    {
+      "i": 116,
+      "verdict": "match"
+    },
+    {
+      "i": 117,
+      "verdict": "match"
+    },
+    {
+      "i": 118,
+      "verdict": "match"
+    },
+    {
+      "i": 119,
+      "verdict": "match"
+    },
+    {
+      "i": 120,
+      "verdict": "match"
+    },
+    {
+      "i": 121,
+      "verdict": "match"
+    },
+    {
+      "i": 122,
+      "verdict": "match"
+    },
+    {
+      "i": 123,
+      "verdict": "match"
+    },
+    {
+      "i": 124,
+      "verdict": "match"
+    },
+    {
+      "i": 125,
+      "verdict": "match"
+    },
+    {
+      "i": 126,
+      "verdict": "match"
+    },
+    {
+      "i": 127,
+      "verdict": "match"
+    },
+    {
+      "i": 128,
+      "verdict": "match"
+    },
+    {
+      "i": 129,
+      "verdict": "match"
+    },
+    {
+      "i": 130,
+      "verdict": "match"
+    },
+    {
+      "i": 131,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 13363,
+    "outputTokens": 1460,
+    "estimatedCostUsd": 0.0355
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"match\"},{\"i\":17,\"verdict\":\"match\"},{\"i\":18,\"verdict\":\"match\"},{\"i\":19,\"verdict\":\"match\"},{\"i\":20,\"verdict\":\"match\"},{\"i\":21,\"verdict\":\"match\"},{\"i\":22,\"verdict\":\"match\"},{\"i\":23,\"verdict\":\"match\"},{\"i\":24,\"verdict\":\"match\"},{\"i\":25,\"verdict\":\"match\"},{\"i\":26,\"verdict\":\"match\"},{\"i\":27,\"verdict\":\"match\"},{\"i\":28,\"verdict\":\"match\"},{\"i\":29,\"verdict\":\"match\"},{\"i\":30,\"verdict\":\"match\"},{\"i\":31,\"verdict\":\"match\"},{\"i\":32,\"verdict\":\"match\"},{\"i\":33,\"verdict\":\"match\"},{\"i\":34,\"verdict\":\"match\"},{\"i\":35,\"verdict\":\"match\"},{\"i\":36,\"verdict\":\"match\"},{\"i\":37,\"verdict\":\"match\"},{\"i\":38,\"verdict\":\"match\"},{\"i\":39,\"verdict\":\"match\"},{\"i\":40,\"verdict\":\"match\"},{\"i\":41,\"verdict\":\"match\"},{\"i\":42,\"verdict\":\"match\"},{\"i\":43,\"verdict\":\"match\"},{\"i\":44,\"verdict\":\"match\"},{\"i\":45,\"verdict\":\"match\"},{\"i\":46,\"verdict\":\"match\"},{\"i\":47,\"verdict\":\"match\"},{\"i\":48,\"verdict\":\"match\"},{\"i\":49,\"verdict\":\"match\"},{\"i\":50,\"verdict\":\"match\"},{\"i\":51,\"verdict\":\"match\"},{\"i\":52,\"verdict\":\"match\"},{\"i\":53,\"verdict\":\"match\"},{\"i\":54,\"verdict\":\"match\"},{\"i\":55,\"verdict\":\"match\"},{\"i\":56,\"verdict\":\"match\"},{\"i\":57,\"verdict\":\"match\"},{\"i\":58,\"verdict\":\"match\"},{\"i\":59,\"verdict\":\"match\"},{\"i\":60,\"verdict\":\"match\"},{\"i\":61,\"verdict\":\"match\"},{\"i\":62,\"verdict\":\"match\"},{\"i\":63,\"verdict\":\"match\"},{\"i\":64,\"verdict\":\"match\"},{\"i\":65,\"verdict\":\"match\"},{\"i\":66,\"verdict\":\"match\"},{\"i\":67,\"verdict\":\"match\"},{\"i\":68,\"verdict\":\"match\"},{\"i\":69,\"verdict\":\"match\"},{\"i\":70,\"verdict\":\"match\"},{\"i\":71,\"verdict\":\"match\"},{\"i\":72,\"verdict\":\"match\"},{\"i\":73,\"verdict\":\"match\"},{\"i\":74,\"verdict\":\"match\"},{\"i\":75,\"verdict\":\"match\"},{\"i\":76,\"verdict\":\"match\"},{\"i\":77,\"verdict\":\"match\"},{\"i\":78,\"verdict\":\"match\"},{\"i\":79,\"verdict\":\"match\"},{\"i\":80,\"verdict\":\"match\"},{\"i\":81,\"verdict\":\"match\"},{\"i\":82,\"verdict\":\"match\"},{\"i\":83,\"verdict\":\"match\"},{\"i\":84,\"verdict\":\"match\"},{\"i\":85,\"verdict\":\"match\"},{\"i\":86,\"verdict\":\"match\"},{\"i\":87,\"verdict\":\"match\"},{\"i\":88,\"verdict\":\"match\"},{\"i\":89,\"verdict\":\"match\"},{\"i\":90,\"verdict\":\"match\"},{\"i\":91,\"verdict\":\"match\"},{\"i\":92,\"verdict\":\"match\"},{\"i\":93,\"verdict\":\"match\"},{\"i\":94,\"verdict\":\"match\"},{\"i\":95,\"verdict\":\"match\"},{\"i\":96,\"verdict\":\"match\"},{\"i\":97,\"verdict\":\"match\"},{\"i\":98,\"verdict\":\"match\"},{\"i\":99,\"verdict\":\"match\"},{\"i\":100,\"verdict\":\"match\"},{\"i\":101,\"verdict\":\"match\"},{\"i\":102,\"verdict\":\"match\"},{\"i\":103,\"verdict\":\"match\"},{\"i\":104,\"verdict\":\"match\"},{\"i\":105,\"verdict\":\"match\"},{\"i\":106,\"verdict\":\"match\"},{\"i\":107,\"verdict\":\"match\"},{\"i\":108,\"verdict\":\"match\"},{\"i\":109,\"verdict\":\"match\"},{\"i\":110,\"verdict\":\"match\"},{\"i\":111,\"verdict\":\"match\"},{\"i\":112,\"verdict\":\"match\"},{\"i\":113,\"verdict\":\"match\"},{\"i\":114,\"verdict\":\"match\"},{\"i\":115,\"verdict\":\"match\"},{\"i\":116,\"verdict\":\"match\"},{\"i\":117,\"verdict\":\"match\"},{\"i\":118,\"verdict\":\"match\"},{\"i\":119,\"verdict\":\"match\"},{\"i\":120,\"verdict\":\"match\"},{\"i\":121,\"verdict\":\"match\"},{\"i\":122,\"verdict\":\"match\"},{\"i\":123,\"verdict\":\"match\"},{\"i\":124,\"verdict\":\"match\"},{\"i\":125,\"verdict\":\"match\"},{\"i\":126,\"verdict\":\"match\"},{\"i\":127,\"verdict\":\"match\"},{\"i\":128,\"verdict\":\"match\"},{\"i\":129,\"verdict\":\"match\"},{\"i\":130,\"verdict\":\"match\"},{\"i\":131,\"verdict\":\"match\"}],\"missing\":[]}"
+}

@@ -6,6 +6,7 @@
  *   pnpm second-read --dry-cost              list candidate filings and the estimate
  *   pnpm second-read [--only <text>] [--ceiling <usd>]
  *   pnpm second-read --slug <slug>            one official
+ *   pnpm second-read --recompare              re-pair cached reads with the current comparator, no model calls
  *
  * Candidates: every published filing whose cross-check state is not an
  * agreement (scans, unreadable layouts, disagreements, unchecked), that has
@@ -42,6 +43,9 @@ async function pageCount(pdfPath: string): Promise<number> {
 async function main() {
   const args = process.argv.slice(2);
   const dryCost = args.includes("--dry-cost");
+  // --recompare pairs the cached second reads against the primary again
+  // with the current comparator; no model call is made for a cached unit.
+  const recompare = args.includes("--recompare");
   const only = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
   const slug = args.includes("--slug") ? args[args.indexOf("--slug") + 1] : null;
   stageOptions.ceilingUsd = args.includes("--ceiling") ? Number(args[args.indexOf("--ceiling") + 1]) : 25;
@@ -77,7 +81,7 @@ async function main() {
       continue;
     }
     const prior = log.filings[e.sourceUrl!];
-    if (prior && prior.pdfSha256 === e.pdfSha256 && prior.candidateSha256 === e.candidateSha256) {
+    if (!recompare && prior && prior.pdfSha256 === e.pdfSha256 && prior.candidateSha256 === e.candidateSha256) {
       console.log(`  done ${e.slug} ${e.pdfFile}: already compared against this candidate`);
       continue;
     }

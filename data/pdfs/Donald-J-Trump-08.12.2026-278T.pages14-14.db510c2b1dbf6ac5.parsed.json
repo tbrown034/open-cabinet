@@ -1,0 +1,317 @@
+{
+  "key": "db510c2b1dbf6ac5",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 14,
+    "last": 14
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:49:47.419Z",
+  "transactions": [
+    {
+      "description": "INTUIT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "APPLE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ADOBE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BLUE OWL CAPITAL INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PFIZER INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WILLIAMS COS INC DEL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TAKE-TWO INTERACTIVE SOFTWARE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TESLA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "IDEXX LABORATORIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BROADCOM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FIDELITY NATIONAL INFORMATION SERVICES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ALPHABET INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "NXP SEMICONDUCTORS N V",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "SYNOPSYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TRACTOR SUPPLY CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WORKDAY INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BECTON DICKINSON & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "NVIDIA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "REVOLUTION MEDICINES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WALMART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PTC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "CADENCE DESIGN SYSTEMS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "DOORDASH INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FIDELITY NATIONAL INFORMATION SERVICES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "WARNER BROS DISCOVERY INC SER A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "UNITED THERAPEUTICS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "TEXAS INSTRUMENTS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "BEST BUY COMPANY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "COREWEAVE INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 1711,
+    "estimatedCostUsd": 0.1218
+  }
+}

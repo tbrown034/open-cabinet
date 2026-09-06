@@ -1,0 +1,254 @@
+{
+  "key": "69232d6d238655d2",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 13,
+    "last": 13
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:05:43.598Z",
+  "transactions": [
+    {
+      "description": "HARRIS CNTY TX IMPT DIST 18 AGM B/E OID @97.399 3.59% 3.375 % Due Sep 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 1 B/E ASRD GTY 3.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "JOHNSON CNTY KS UNI SCH DIST 512 SHAWNEE MISSION RFDG&IMPT SER A B/E PTC 4.00 % Due Oct 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMMN REV RFDG AGY FD PJ 113 B/E 4.00 % Due Apr 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "LITTLE ROCK AR SWR REV RFDG B/E OID @97.770 3.32% 3.125 % Due Oct 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MARATHON CNTY WI BLDG HLTH CARE PJ 2022B B/E 3.00 % Due Feb 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NEVADA ST RFDG SER H DB B/E PTC 3.00 % Due Aug 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NORTHWEST HARRIS CNTY TX MUD 5 SER A BAM B/E PTC 3.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "OTTUMWA IA RFDG CAP LN NT 2020 B/E CR ENH 4.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SOUTH LK MI SCHS BLDG SITE QSBLF B/E 6.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ST MARTIN PARISH LA SCH DIST PARISH WIDE SER A AGM B/E OID@98.001 3.3% 3.125 % Due Mar 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STATE UNIV IA UNIV REV UTIL SYS RFDG ST UNIV IA SER A B/E ETM 5.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SWAN CREEK INTERCNTY DRAIN DIST MI DRAIN 2018 REV B/E B/Q 3.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "TULSA OK PUB FACS AUTH CAP IMPT REV B/E PTC 3.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BUTLER CNTY KS UNI SCH DIST 385 ANDOVER RFDG & SCH BLDG B/E PTC 4.00 % Due Sep 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FLAGSTAFF AZ PLEDGED REV OBLIG RD REPAIR STR IMPT PJ B/E 4.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "GILBERT AZ SUB LIEN PLEDGED REV OBLIGS B/E OID @97.655 3.45% 3.25 % Due Jul 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GREENE CNTY MO CTF PARTN REV SER A B/E 4.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "HIDALGO CNTY TX DRAIN DIST 1 IMPT B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "HUTCHINSON KS SER A B/E 4.00 % Due Oct 1, 2032",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KING CNTY WA SCH DIST 210 FEDL WAY RFDG 2015 B/E CR ENH 4.00 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KING CNTY WA SCH DIST 411 ISSAQUAH RFDG B/E PTC BD GTY FG 3.00 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MARATHON CNTY WI BLDG HLTH CARE PJ 2022B B/E 3.00 % Due Feb 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NEW YORK N Y CITY T 5% DUE ON 11/01/50",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "NORTH ANDOVER MA MUN PURP LN B/E B/Q PTC 3.00 % Due Jun 15, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NORTHEAST WI TECH CLLG DIST WI PROM NT SER B B/E 4.00 % Due Oct 1, 2030",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-03-13",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 2678,
+    "estimatedCostUsd": 0.1702
+  }
+}

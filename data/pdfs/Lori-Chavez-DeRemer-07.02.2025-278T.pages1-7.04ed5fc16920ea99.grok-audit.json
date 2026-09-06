@@ -1,0 +1,407 @@
+{
+  "pdfSha256": "7e379cfaade9bc14ee617da4572d17cc60f8c0f49776e303c2f72f7b646ab93c",
+  "first": 1,
+  "last": 7,
+  "rowsSha256": "9ec812eab3553b32e6d8469adb73922e81523ef30a28da49fdebd39196449ff6",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T16:09:17.867Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "match"
+    },
+    {
+      "i": 17,
+      "verdict": "match"
+    },
+    {
+      "i": 18,
+      "verdict": "match"
+    },
+    {
+      "i": 19,
+      "verdict": "match"
+    },
+    {
+      "i": 20,
+      "verdict": "match"
+    },
+    {
+      "i": 21,
+      "verdict": "match"
+    },
+    {
+      "i": 22,
+      "verdict": "match"
+    },
+    {
+      "i": 23,
+      "verdict": "match"
+    },
+    {
+      "i": 24,
+      "verdict": "match"
+    },
+    {
+      "i": 25,
+      "verdict": "match"
+    },
+    {
+      "i": 26,
+      "verdict": "match"
+    },
+    {
+      "i": 27,
+      "verdict": "match"
+    },
+    {
+      "i": 28,
+      "verdict": "match"
+    },
+    {
+      "i": 29,
+      "verdict": "match"
+    },
+    {
+      "i": 30,
+      "verdict": "match"
+    },
+    {
+      "i": 31,
+      "verdict": "match"
+    },
+    {
+      "i": 32,
+      "verdict": "match"
+    },
+    {
+      "i": 33,
+      "verdict": "match"
+    },
+    {
+      "i": 34,
+      "verdict": "match"
+    },
+    {
+      "i": 35,
+      "verdict": "match"
+    },
+    {
+      "i": 36,
+      "verdict": "match"
+    },
+    {
+      "i": 37,
+      "verdict": "match"
+    },
+    {
+      "i": 38,
+      "verdict": "match"
+    },
+    {
+      "i": 39,
+      "verdict": "match"
+    },
+    {
+      "i": 40,
+      "verdict": "match"
+    },
+    {
+      "i": 41,
+      "verdict": "match"
+    },
+    {
+      "i": 42,
+      "verdict": "match"
+    },
+    {
+      "i": 43,
+      "verdict": "match"
+    },
+    {
+      "i": 44,
+      "verdict": "match"
+    },
+    {
+      "i": 45,
+      "verdict": "match"
+    },
+    {
+      "i": 46,
+      "verdict": "match"
+    },
+    {
+      "i": 47,
+      "verdict": "match"
+    },
+    {
+      "i": 48,
+      "verdict": "match"
+    },
+    {
+      "i": 49,
+      "verdict": "match"
+    },
+    {
+      "i": 50,
+      "verdict": "match"
+    },
+    {
+      "i": 51,
+      "verdict": "match"
+    },
+    {
+      "i": 52,
+      "verdict": "match"
+    },
+    {
+      "i": 53,
+      "verdict": "match"
+    },
+    {
+      "i": 54,
+      "verdict": "match"
+    },
+    {
+      "i": 55,
+      "verdict": "match"
+    },
+    {
+      "i": 56,
+      "verdict": "match"
+    },
+    {
+      "i": 57,
+      "verdict": "match"
+    },
+    {
+      "i": 58,
+      "verdict": "match"
+    },
+    {
+      "i": 59,
+      "verdict": "match"
+    },
+    {
+      "i": 60,
+      "verdict": "match"
+    },
+    {
+      "i": 61,
+      "verdict": "match"
+    },
+    {
+      "i": 62,
+      "verdict": "match"
+    },
+    {
+      "i": 63,
+      "verdict": "match"
+    },
+    {
+      "i": 64,
+      "verdict": "match"
+    },
+    {
+      "i": 65,
+      "verdict": "match"
+    },
+    {
+      "i": 66,
+      "verdict": "match"
+    },
+    {
+      "i": 67,
+      "verdict": "match"
+    },
+    {
+      "i": 68,
+      "verdict": "match"
+    },
+    {
+      "i": 69,
+      "verdict": "match"
+    },
+    {
+      "i": 70,
+      "verdict": "match"
+    },
+    {
+      "i": 71,
+      "verdict": "match"
+    },
+    {
+      "i": 72,
+      "verdict": "match"
+    },
+    {
+      "i": 73,
+      "verdict": "match"
+    },
+    {
+      "i": 74,
+      "verdict": "match"
+    },
+    {
+      "i": 75,
+      "verdict": "match"
+    },
+    {
+      "i": 76,
+      "verdict": "match"
+    },
+    {
+      "i": 77,
+      "verdict": "match"
+    },
+    {
+      "i": 78,
+      "verdict": "match"
+    },
+    {
+      "i": 79,
+      "verdict": "match"
+    },
+    {
+      "i": 80,
+      "verdict": "match"
+    },
+    {
+      "i": 81,
+      "verdict": "match"
+    },
+    {
+      "i": 82,
+      "verdict": "match"
+    },
+    {
+      "i": 83,
+      "verdict": "match"
+    },
+    {
+      "i": 84,
+      "verdict": "match"
+    },
+    {
+      "i": 85,
+      "verdict": "match"
+    },
+    {
+      "i": 86,
+      "verdict": "match"
+    },
+    {
+      "i": 87,
+      "verdict": "match"
+    },
+    {
+      "i": 88,
+      "verdict": "match"
+    },
+    {
+      "i": 89,
+      "verdict": "match"
+    },
+    {
+      "i": 90,
+      "verdict": "match"
+    },
+    {
+      "i": 91,
+      "verdict": "match"
+    },
+    {
+      "i": 92,
+      "verdict": "match"
+    },
+    {
+      "i": 93,
+      "verdict": "match"
+    },
+    {
+      "i": 94,
+      "verdict": "match"
+    },
+    {
+      "i": 95,
+      "verdict": "match"
+    },
+    {
+      "i": 96,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 18997,
+    "outputTokens": 1075,
+    "estimatedCostUsd": 0.0444
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"match\"},{\"i\":17,\"verdict\":\"match\"},{\"i\":18,\"verdict\":\"match\"},{\"i\":19,\"verdict\":\"match\"},{\"i\":20,\"verdict\":\"match\"},{\"i\":21,\"verdict\":\"match\"},{\"i\":22,\"verdict\":\"match\"},{\"i\":23,\"verdict\":\"match\"},{\"i\":24,\"verdict\":\"match\"},{\"i\":25,\"verdict\":\"match\"},{\"i\":26,\"verdict\":\"match\"},{\"i\":27,\"verdict\":\"match\"},{\"i\":28,\"verdict\":\"match\"},{\"i\":29,\"verdict\":\"match\"},{\"i\":30,\"verdict\":\"match\"},{\"i\":31,\"verdict\":\"match\"},{\"i\":32,\"verdict\":\"match\"},{\"i\":33,\"verdict\":\"match\"},{\"i\":34,\"verdict\":\"match\"},{\"i\":35,\"verdict\":\"match\"},{\"i\":36,\"verdict\":\"match\"},{\"i\":37,\"verdict\":\"match\"},{\"i\":38,\"verdict\":\"match\"},{\"i\":39,\"verdict\":\"match\"},{\"i\":40,\"verdict\":\"match\"},{\"i\":41,\"verdict\":\"match\"},{\"i\":42,\"verdict\":\"match\"},{\"i\":43,\"verdict\":\"match\"},{\"i\":44,\"verdict\":\"match\"},{\"i\":45,\"verdict\":\"match\"},{\"i\":46,\"verdict\":\"match\"},{\"i\":47,\"verdict\":\"match\"},{\"i\":48,\"verdict\":\"match\"},{\"i\":49,\"verdict\":\"match\"},{\"i\":50,\"verdict\":\"match\"},{\"i\":51,\"verdict\":\"match\"},{\"i\":52,\"verdict\":\"match\"},{\"i\":53,\"verdict\":\"match\"},{\"i\":54,\"verdict\":\"match\"},{\"i\":55,\"verdict\":\"match\"},{\"i\":56,\"verdict\":\"match\"},{\"i\":57,\"verdict\":\"match\"},{\"i\":58,\"verdict\":\"match\"},{\"i\":59,\"verdict\":\"match\"},{\"i\":60,\"verdict\":\"match\"},{\"i\":61,\"verdict\":\"match\"},{\"i\":62,\"verdict\":\"match\"},{\"i\":63,\"verdict\":\"match\"},{\"i\":64,\"verdict\":\"match\"},{\"i\":65,\"verdict\":\"match\"},{\"i\":66,\"verdict\":\"match\"},{\"i\":67,\"verdict\":\"match\"},{\"i\":68,\"verdict\":\"match\"},{\"i\":69,\"verdict\":\"match\"},{\"i\":70,\"verdict\":\"match\"},{\"i\":71,\"verdict\":\"match\"},{\"i\":72,\"verdict\":\"match\"},{\"i\":73,\"verdict\":\"match\"},{\"i\":74,\"verdict\":\"match\"},{\"i\":75,\"verdict\":\"match\"},{\"i\":76,\"verdict\":\"match\"},{\"i\":77,\"verdict\":\"match\"},{\"i\":78,\"verdict\":\"match\"},{\"i\":79,\"verdict\":\"match\"},{\"i\":80,\"verdict\":\"match\"},{\"i\":81,\"verdict\":\"match\"},{\"i\":82,\"verdict\":\"match\"},{\"i\":83,\"verdict\":\"match\"},{\"i\":84,\"verdict\":\"match\"},{\"i\":85,\"verdict\":\"match\"},{\"i\":86,\"verdict\":\"match\"},{\"i\":87,\"verdict\":\"match\"},{\"i\":88,\"verdict\":\"match\"},{\"i\":89,\"verdict\":\"match\"},{\"i\":90,\"verdict\":\"match\"},{\"i\":91,\"verdict\":\"match\"},{\"i\":92,\"verdict\":\"match\"},{\"i\":93,\"verdict\":\"match\"},{\"i\":94,\"verdict\":\"match\"},{\"i\":95,\"verdict\":\"match\"},{\"i\":96,\"verdict\":\"match\"}],\"missing\":[]}"
+}

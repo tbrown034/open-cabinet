@@ -109,6 +109,53 @@ describe("deriveRowVerification", () => {
     expect(out.map((v) => [v.score, v.state])).toEqual([[2, "deterministic_agree"], [0, "disputed"], [1, "single_read"]]);
   });
 
+  it("lets a second model outrank an OCR dispute, and the page audit settle it", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" }), tx({ description: "C" })];
+    const e = entry({
+      state: "ocr_tuple_mismatch",
+      ocr: {
+        engine: "tesseract", version: "5", dpi: 400, psm: 4, laneVersion: "v", pages: 1, textFile: "t", textSha256: "s", textLaneState: "no_usable_text",
+        aligned: { compared: 3, agree: 0, differ: 3, unread: 0, differences: [], agreedPrintedRows: [], disputedPrintedRows: [1, 2, 3], placeholderRows: [] },
+      },
+    });
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, e]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      model2ByUrl: new Map([[URL, { agreedIndexes: new Set([0, 1]), disputedIndexes: new Set([2]) }]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set([1]), notFound: new Set() }]]),
+    });
+    // Row 0: OCR disputed, second model agreed, audit confirmed -> checked, OCR noted.
+    expect(out[0]).toMatchObject({ score: 3, state: "checked" });
+    expect(out[0].note).toMatch(/OCR read printed row 1 differently/);
+    // Row 1: second model agreed but the audit disputed -> disputed.
+    expect(out[1]).toMatchObject({ score: 0, state: "disputed", lane: "audit" });
+    // Row 2: OCR and the second model both disputed -> disputed by OCR.
+    expect(out[2]).toMatchObject({ score: 0, state: "disputed", lane: "ocr" });
+  });
+
+  it("lets a second model outrank a filing-level text mismatch row by row", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" })];
+    const e = entry({ state: "checked_tuple_mismatch" });
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, e]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      model2ByUrl: new Map([[URL, { agreedIndexes: new Set([0]), disputedIndexes: new Set() }]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0, 1]), disputed: new Set(), notFound: new Set() }]]),
+    });
+    expect(out[0]).toMatchObject({ score: 3, state: "checked" });
+    expect(out[1]).toMatchObject({ score: 0, state: "disputed", lane: "text" });
+  });
+
+  it("locates a published row in the candidate through wording-only differences", () => {
+    const published = [tx({ description: "Apple Inc" }), tx({ description: "FIRST BANCORP P R F", date: "2026-03-04" })];
+    const candidate = [tx({ description: "FIRST BANCORP PR F", date: "2026-03-04" }), tx({ description: "Apple Inc (AAPL)" })];
+    expect(locateInParseRecord(published, candidate)).toEqual([1, 0]);
+  });
+
   it("lets a second model lift an unread row to 2, and a human decision to 3", () => {
     const rows = [tx({ description: "A" }), tx({ description: "B" })];
     const e = entry({ state: "no_usable_text" });
@@ -162,7 +209,7 @@ describe("compareSecondRead", () => {
 
 describe("compareSecondRead pairing", () => {
   it("pairs row for row when a repeated name appears many times", () => {
-    const w = (date: string, amount: string) => tx({ description: "WORKDAY INC CL A", date, amount, type: "Purchase" });
+    const w = (date: string, amount: Transaction["amount"]) => tx({ description: "WORKDAY INC CL A", date, amount, type: "Purchase" });
     const primary = [w("2026-02-10", "$1,000,001-$5,000,000"), tx({ description: "OTHER CO" }), w("2026-01-23", "$1,001-$15,000"), w("2026-02-19", "$1,001-$15,000")];
     // The second read has the same rows in the same order; every one agrees.
     const r = compareSecondRead(primary, primary.map((p) => ({ ...p })));

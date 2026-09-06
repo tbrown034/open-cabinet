@@ -1,0 +1,158 @@
+{
+  "pdfSha256": "8a5e83d9886fd6753759ca620116880cbaf7a427bb8533be33ddf919605f5232",
+  "first": 3,
+  "last": 3,
+  "rowsSha256": "34cc2836b8d0539d7525642597cce65b016635a21d207468429ab7d3813c33df",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T17:20:16.775Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "match"
+    },
+    {
+      "i": 1,
+      "verdict": "match"
+    },
+    {
+      "i": 2,
+      "verdict": "match"
+    },
+    {
+      "i": 3,
+      "verdict": "match"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "match"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "match"
+    },
+    {
+      "i": 8,
+      "verdict": "match"
+    },
+    {
+      "i": 9,
+      "verdict": "match"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "match"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "match"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "match"
+    },
+    {
+      "i": 17,
+      "verdict": "match"
+    },
+    {
+      "i": 18,
+      "verdict": "match"
+    },
+    {
+      "i": 19,
+      "verdict": "match"
+    },
+    {
+      "i": 20,
+      "verdict": "match"
+    },
+    {
+      "i": 21,
+      "verdict": "match"
+    },
+    {
+      "i": 22,
+      "verdict": "match"
+    },
+    {
+      "i": 23,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 24,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 25,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 26,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 27,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 28,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 29,
+      "verdict": "differs",
+      "pageShows": "date 1/8/2026"
+    },
+    {
+      "i": 30,
+      "verdict": "match"
+    },
+    {
+      "i": 31,
+      "verdict": "match"
+    },
+    {
+      "i": 32,
+      "verdict": "match"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 5084,
+    "outputTokens": 469,
+    "estimatedCostUsd": 0.013
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"match\"},{\"i\":1,\"verdict\":\"match\"},{\"i\":2,\"verdict\":\"match\"},{\"i\":3,\"verdict\":\"match\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"match\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"match\"},{\"i\":8,\"verdict\":\"match\"},{\"i\":9,\"verdict\":\"match\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"match\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"match\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"match\"},{\"i\":17,\"verdict\":\"match\"},{\"i\":18,\"verdict\":\"match\"},{\"i\":19,\"verdict\":\"match\"},{\"i\":20,\"verdict\":\"match\"},{\"i\":21,\"verdict\":\"match\"},{\"i\":22,\"verdict\":\"match\"},{\"i\":23,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":24,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":25,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":26,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":27,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":28,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":29,\"verdict\":\"differs\",\"pageShows\":\"date 1/8/2026\"},{\"i\":30,\"verdict\":\"match\"},{\"i\":31,\"verdict\":\"match\"},{\"i\":32,\"verdict\":\"match\"}],\"missing\":[]}"
+}

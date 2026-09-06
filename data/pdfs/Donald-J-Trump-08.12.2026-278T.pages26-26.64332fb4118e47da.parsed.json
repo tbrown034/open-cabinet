@@ -1,0 +1,317 @@
+{
+  "key": "64332fb4118e47da",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 26,
+    "last": 26
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T17:57:08.632Z",
+  "transactions": [
+    {
+      "description": "VANGUARD FTSE EUROPE ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "STATE STREET SPDR BLOOMBERG INTERNATIONAL TREASURY BOND ETF",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "DALLAS CNTY TEX 5% DB LTX DUE 08/15/56",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KENTUCKY ST PPTY & 5% LEAS BLDG DUE 03/01/46",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "JEFFERSON CNTY MO C 5% GO UTX DUE 03/01/46",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SHELBY CNTY TENN HE 5% SYST HLTH DUE 09/01/46",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ROSEVILLE MICH CMNT 5% DUE 05/01/56",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "UNIVERSITY SOUTH AL 5% PUB EDUC DUE 11/01/51",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "NIKE INC CLASS CLASS B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "GENUINE PARTS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "VANGUARD DIVIDEND APPRECIATION INDEX FUND ETF SHARES",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-22",
+      "amount": "$5,000,001-$25,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "ASBURY AUTOMOTIVE GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EPAM SYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "POOL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "LIQUIDIA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "FLOWERS FOODS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "THE CAMPBELL'S CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "LKQ CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PENNYMAC MTG INVT TR REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "PRIMORIS SVCS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "DAVE INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "ETHAN ALLEN INTERIORS IN",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "MARKETAXESS HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "PELOTON INTERACTIVE INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "FRESH DEL MONTE PRODUC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "REMITLY GLOBAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "LAZARD INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    },
+    {
+      "description": "CONMED CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    },
+    {
+      "description": "EXP WORLD HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3625,
+    "outputTokens": 2641,
+    "estimatedCostUsd": 0.1683
+  }
+}

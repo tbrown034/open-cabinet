@@ -1,0 +1,893 @@
+{
+  "key": "c46410bbdab965be",
+  "pdfSha256": "00e56352e83731329841caedaa09328cd87ed02ec235c07058a3b351407479be",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
+  "chunk": {
+    "first": 1,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2+images-200dpi",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T16:07:23.601Z",
+  "transactions": [
+    {
+      "description": "VANGUARD S&P 500 ETF UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Ishares Tr Russell 1000 Etf E1774634153032-00500 Average Unit Price Transaction Your Broker Acted As Agent",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-27",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "SERVICENOW INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NVIDIA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Invesco Exchange-traded Fd Tr S&p 500 Equal Weight Etf Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-20",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.91
+    },
+    {
+      "description": "ADOBE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "WORKDAY INCCL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.94
+    },
+    {
+      "description": "ORACLE CORPORATION COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MICROSOFT CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BROADCOM INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SYNOPSYS INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CDW CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CADENCE DESIGN SYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "TRANE TECHNOLOGIES PLC SHS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "TEXAS INSTRS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FIDELITY NATL INFORMATIO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.94
+    },
+    {
+      "description": "MOTOROLA SOLUTIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "EATON CORP PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STATE STRT INDSTL SLCT SCTR SPDR ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "TRANSDIGM GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AMAZON.COM INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "JABIL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AXON ENTERPRISE INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES GSCI COMMODITY DYNAMIC ROLL STRATEGY ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "Kura Sushi Usa Inc Cl A Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.93
+    },
+    {
+      "description": "DELL TECHNOLOGIES INC CL C",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BOEING COMPANY COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "UBER TECHNOLOGIES INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES CORE MSCI EMERGING ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "APPLE INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VANGUARD S&P 500 ETF UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMCAST CORP NEW CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PTC INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SCHWAB GOVERNMENT MONEY FUND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Ishares Tr Msci Eafe Value Etf E1772823070777-00497 Average Unit Price Transaction Your Broker Acted As Agent",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.77
+    },
+    {
+      "description": "Invesco Exchange-traded Fd Tr II S&p 500 Momentum Etf Solicited Order Discretion Exercised",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.92
+    },
+    {
+      "description": "ACCENTURE PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NVIDIA CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ADVANCED MICRO DEVICES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STATE STREET ENERGY SELECT SECTOR SPDR ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VANGUARD S&P 500 ETF UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-25",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "F5, Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Equinix Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AVALONBAY CMNTYS INC REIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "DATADOG INC CL A COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ALPHABET INC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AMPHENOL CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ZEBRA TECHNOLOGIES CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MICROCHIP TECHNOLOGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CHIPOTLE MEXICAN GRILL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PAYCHEX INC COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES CORE MSCI EMERGING ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "DOORDASH INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES MSCI CANADA ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MICROSOFT CORP UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "LINDE PLC SHS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CHURCH & DWIGHT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GARMIN LTD",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "AIRBNB INC COM CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES CORE MSCI EMERGING MARKETS ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VERISIGN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "DIGITAL RLTY TR INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "EDWARDS LIFESCIENCES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "APPLIED MATERIALS COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STRYKER CORP COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "LENNOX INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CME GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ILLINOIS TOOL WORKS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ROPER TECHNOLOGIES, INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "EMCOR GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "LAM RESEARCH CORPORATION COM USD0.00",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "FORTINET INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES INTERNATIONAL TRSRY BND ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "ISHARES GOLD TRUST",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "PHILIP MORRIS INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "Goldman Sachs Group Inc Com Solicited Order Discretion Exercised",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "Alphabet Inc Cl A Solicited Order Discretion Exercised",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "Amazon Com Inc Com Solicited Order Discretion Exercised",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "AMAZON.COM INC UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STATE STREET SPDR S&P 500 TRUST ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VANGUARD FTSE EUROPE ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GE Aerospace",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-02-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ZOETIS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NVR INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "VANGUARD FTSE EUROPE ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ISHARES INTERNATIONAL TREASURY BOND ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "META PLATFORMS INC CL A UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "HONEYWELL INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COSTCO WHSL CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "STE STRT COMTN SR SLCT SCTR SPDR ETF",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-04",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.94
+    },
+    {
+      "description": "EBAY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "KIMBERLY-CLARK CORP COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-03-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SHERWIN WILLIAMS CO COM",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 12292,
+    "outputTokens": 5615,
+    "estimatedCostUsd": 0.4037
+  }
+}

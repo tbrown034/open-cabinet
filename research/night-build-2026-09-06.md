@@ -33,3 +33,20 @@ One vision model (Claude Sonnet 4.6) read every filing. A text-layer lane compar
 ## What stays with a person
 
 Every held filing. Every disputed row. Every data change to the site. The adjudication list with page and row numbers is in data/meta/adjudication-notes-2026-09-06.md.
+
+## Sunday afternoon: a fourth read of the biggest scan, done by hand
+
+Trump's May 14, 2026 filing (part 2) is 113 scanned pages and 3,642 rows, a third of the site. It reads poorly: the scanner's own text layer is garbage, OCR gets 90 percent, and the first model's read carried a suspicious number of dates on the 8th, 18th and 28th.
+
+The fix was not another paid model. Trevor's Claude Code plan already covers the session, so the session read the pages itself: each page cut into three image strips, each strip read row by row and typed into a file, 3,642 rows over the afternoon while the F1 race was on. The file is data/meta/session-reads/trump-2026-05-14-part2.jsonl and the comparison is recorded by scripts/session-read.ts as an independent read, the same shape as a model's.
+
+What it found, and what the paid lanes found at the same time:
+
+- The session read and the site agree on 3,608 of 3,642 rows. The second model (gpt-6-astra, $13.25) and the audit model (grok-4.6, $1.00) agree with the session read on every disputed row but three.
+- The first model reads a printed 6 as an 8 in the day of the month, 30 times in this filing. Several of its dates fall on Saturdays. The page reading wins.
+- Two rows carry the year 2025 where the page prints 2026. One row is marked on time where the page prints Yes under late.
+- Three rows (265, 424, 3507) are 6-versus-8 calls where the readers split. Those go to Trevor with crops.
+
+Two pairing fixes came out of it. When an asset name repeats forty times in a filing, the comparison now pairs each row with the row at the same position before reaching for any other row of that name. And names that differ only in spacing (FIRST BANCORP PR F and FIRST BANCORP P R F, RLICORP and RLI CORP) count as one name. Before the fixes 32 rows showed as unread-plus-extra; after them, none. The cached second reads were paired again with the new comparator at no cost (`pnpm second-read --recompare`).
+
+Adjudication item 10 in data/meta/adjudication-notes-2026-09-06.md lists every disputed row with its page.
