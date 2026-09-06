@@ -1,0 +1,137 @@
+{
+  "key": "31941406906fa508",
+  "pdfSha256": "41405584cccf872fc6aca4d2111243cef92427ea5948ae2e97459dfb3b968ebf",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C89623DC721F62585258D430031A32A/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T.pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:42:36.728Z",
+  "transactions": [
+    {
+      "description": "CAPE CORAL FLA WTR 5% DUE 10/01/38",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "GRAND RIVER DAM AUT 5% DUE 06/01/40",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BROWNSVILLE TEX 5% DUE 02/15/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "NEW YORK N Y CITY T 5% DUE 05/01/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-08",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "DANVILLE IND MULTI- 5% DUE 07/15/41",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-08",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "WAWASEE HIGH SCH BL 5% DUE 07/15/42",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ALLEN CNTY OHIO HOS 5% DUE 11/01/41",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLORADO HSG & F 4.79% DUE 05/01/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COLORADO HSG & F 4.84% DUE 11/01/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ST LOUIS MO ARPT RE 5% DUE 07/01/38",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "FIRCREST PPTYS WASH 5% DUE 06/01/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "MISSOURI JT MUN ELE 5% DUE 01/01/38",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "SOUTH CAROLINA JOBS 5% DUE 11/01/38",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2406,
+    "outputTokens": 1228,
+    "estimatedCostUsd": 0.0855
+  }
+}

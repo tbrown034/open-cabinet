@@ -1,0 +1,140 @@
+{
+  "key": "3589e2ab43a038be",
+  "pdfSha256": "69eebaec96c824352bf5a60a7664c1941f77ce10dd12b14dec020f0c410b5ff1",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+  "chunk": {
+    "first": 9,
+    "last": 9
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:47:43.749Z",
+  "transactions": [
+    {
+      "description": "SPARTA WI AREA SCH DIST RFDG B/E PTC 4.00 % Due Mar 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "LOWER AL GAS DIST GAS GAS DIST PJ 2 REV B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ALLEN PARK MI PUB SCH DIST RFDG B/E OSBLF PTC 5.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PENNSYLVANIA ST RFDG 1ST SER B/E 5.00 % Due Sep 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "INDIANA ST FIN AUTH REV RFDG LSE APPROP STDM PJ A B/E PTC 5.25 % Due Feb 1, 2037",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV COMSPIRIT HLTH SER A2 B/E 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MILWAUKEE CNTY WI CORP PURP SER A B/E PTC 3.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "FRANKLIN IN CMNTY MULT SCH BLDG CORP REV RFDG 1ST MTG SER A NPFG B/E 5.00 % Due Jul 15, 2",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.6
+    },
+    {
+      "description": "FRANKLIN IN CMNTY MULT SCH BLDG CORP REV RFDG 1ST MTG SER A NPFG B/E 5.00 % Due Jul 15, 2",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.6
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV HOSP ADVENTIST HLTH SUNBELT SER B B/E PTC 5.00 % Due Nov 1",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.6
+    },
+    {
+      "description": "VERMONT HSG FIN AGY MULTIPLE PURP 2024 E 2 REV B/E GUAR CR ENH 3.50 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-02",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3998,
+    "outputTokens": 1620,
+    "estimatedCostUsd": 0.121
+  }
+}

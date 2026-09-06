@@ -1,0 +1,317 @@
+{
+  "key": "a6d56476aed50c3d",
+  "pdfSha256": "8e2b8ede940b8ebc9abd7590b4f6b2016dec844a7eea35c263ac494ea805ec68",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AA799A2729B4D1BE85258D430031A320/$FILE/Donald%20J.%20Trump%2010.17.2025%20278-T.pdf",
+  "chunk": {
+    "first": 1,
+    "last": 2
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:43:14.264Z",
+  "transactions": [
+    {
+      "description": "KANSAS CITY MO WTR REV SER A B/E OID @98.494 3.36% 3.25 % Due Dec 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "SOUTH SUBN PK & REC DIST CO CTF PARTN REV B/E PTC 4.00 % Due Dec 15, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "SPOKANE CNTY WA RFDG B/E OID @96.711 3.48% 3.25 % Due Dec 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "PEFA INC IA GAS PJ REV B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.94
+    },
+    {
+      "description": "JOHNSON CITY TN HLTH & EDL FACS BRD MLTIFAM REV COLLTZD HSG TAPESTRY B/E 3.60 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "OGDEN KS RFDG & IMPT 2017 B/E B/Q 2.75 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "SUMTER 2 SCH FACS INC SC INSTALL PUR RFDG SUMTER SCH DIST REV BAM B/E PTC 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "JACKSON OH LOC SCH DIST STARK & SUMMIT CNTYS RFDG B/E PTC 4.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MICHIGAN ST HSG DEV AUTH MLTIFAM REV CLARK RD SR APTS PJ B/E VAR 4.50 % Due Dec 1, 2042",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "GRAYSON CNTY TEX JR 5% GO LTX DUE 02/15/38",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "MISSOURI JT MUN ELE 5% PWR UTIL DUE 12/01/28",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "PUTNAM CNTY FLA 5.25% GO UTX DUE 07/01/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "MIAMI BEACH FLA RED 5% TAXI TAX DUE 02/01/32",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "VOLUSIA CNTY FLA ED 5% UNIV EDUC DUE 10/15/27",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "CAPE CORAL FLA WTR 5% WRSR UTIL DUE 10/01/37",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "ILLINOIS ST 5% GO UTX DUE 09/01/40",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BROWARD CNTY FL 2.384% AIR TRAN DUE 10/01/26 XTRO TAXBL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "ENERGY NORTHWES 3.503%PWR UTIL DUE 07/01/26 XTRO TAXBL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "INTEL CORP 3.75% DUE 08/05/27",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "CVS HEALTH CORP 5% DUE 02/20/26",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "FNMA PL FA2635 2.5% DUE 04/01/36",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-29",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "COMCAST CORP 3.15% DUE 03/01/26",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "THE GOLDMAN SACHS 3.5% DUE 11/16/26",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "JPMORGAN CHASE & VAR 2.963% DUE 01/25/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "QUALCOMM INC 2.15% DUE 05/20/30",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BP CAPITAL MARK 4.234% DUE 11/06/28",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "THE BOEING CO 2.196% DUE 02/04/26",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "BROADCOM INC. 4.75% DUE 04/15/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "META PLATFORMS, 4.75% DUE 08/15/34",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "THE HOME DEPOT, 2.95% DUE 06/15/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "UNITEDHEALTH GROU 4.5% DUE 04/15/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.98
+    },
+    {
+      "description": "T-MOBILE USA, I 3.375% DUE 04/15/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-28",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4606,
+    "outputTokens": 3152,
+    "estimatedCostUsd": 0.2037
+  }
+}

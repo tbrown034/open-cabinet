@@ -1,0 +1,245 @@
+{
+  "key": "efe6e3f073ed73b0",
+  "pdfSha256": "bae8f150a50b1de9e3ee19417bfc59172f1a7d0cbc3faa22e9202713112d79f0",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/322B8A28DB21CC9285258CFD002C0D0B/$FILE/Donald%20J.%20Trump%209.3.25%20278-T.pdf",
+  "chunk": {
+    "first": 2,
+    "last": 2
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:43:59.523Z",
+  "transactions": [
+    {
+      "description": "BLACK BELT ENERGY GAS DIST A 5.2500% 02/01/53",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-08-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Patriots Energy Group Fing 5.2500% 02/01/54",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.91
+    },
+    {
+      "description": "TOPEKA KS 2025 A B/E 4.00 % Due Aug 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00 % Due Mar 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFDG A1 B/E 3.30 % Due Oct 1, 2046",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "ST PAUL MN HSG & REDEV AUTH HC FAC REV RFDG A B/E OID @97.874 3.23% 3.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "INMAN KS 2025 DB BAM B/E B/Q CR ENH 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.94
+    },
+    {
+      "description": "TYLER TX JR CLLG DIST REV COMB FEE B/E OID @98.222 3.3% 3.125 % Due Aug 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "NEWTON OH LOC SCH DIST N FORK LOC SCH DIST FACS CONSTR IMPT RFDG B/E B/Q 3.00 % Due Jan 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLL HSG WILLOW PJ B/E 3.75 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "ARIZONA ST INDL DEV AUTH MLTIFAM HSG REV UNITY AT WEST GLENDALE PJ B/E 5.00 % Due Mar 1, 2045",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "WISCONSIN ST HLTH & EDL FACS REV RFDG PROHLTH CARE INC OBLIG GRP B/E 3.00 % Due Aug 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "UNIVERSITY WA REV RFDG GENL SER C B/E PTC 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PJ 7 REV SER C 1 B/E GTD 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "LONGMONT CO STORM DRAIN REV B/E PTC 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-08",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "KENTUCKY INC KY PUB ENERGY AUTH GAS SPLY REV SER A B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "PEFA INC IA GAS PJ REV B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "HOUSTON TX HSG FIN CORP MLTIFAM HSG REV ALCOTT VLG SER A B/E 3.20 % Due Apr 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "PUBLIC FIN AUTH WI POLLTN CTL DUKE ENERGY PROGRESS REV RFDG A1 B/E 3.30 % Due Oct 1, 2046",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHATTANOOGA TN HLTH EDL& HSG FAC BRD MLTIFAM HSG REV COLLTZD SHLWFRD B/E 3.80 % Due Dec 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.91
+    },
+    {
+      "description": "MENOMONIE WI AREA SCH DIST RFDG BAM B/Q B/E 3.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MIAMI DADE CNTY FL HSG MLTIFAM SANTA CLARA II APTS PJ REV B/E 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "PRINCE GEORGES CNTY MD CHRTR SCH REV CHESAPEAKE LIGHTHOUSE FNDTN 15A B/E 6.90 % Due Aug 1, 2041",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "ASHEVILLE NC HSG AUTH MLTIFAM REV VANDERBILT APTS B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3254,
+    "outputTokens": 2639,
+    "estimatedCostUsd": 0.1645
+  }
+}

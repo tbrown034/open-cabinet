@@ -1,0 +1,308 @@
+{
+  "key": "a3d70aad97115484",
+  "pdfSha256": "6b9258f6b3b1e46a5a1b73caed93e8751b1a3fed5befa59ca058bbd0bd949c36",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/903A217DC18563EC85258D4A0031B044/$FILE/Donald%20J.%20Trump%2011.14.2025%20278-T.pdf",
+  "chunk": {
+    "first": 2,
+    "last": 2
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:39:42.410Z",
+  "transactions": [
+    {
+      "description": "AMERICAN MUN PWR OH ELECT UTIL 5% DUE 02/15/34",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "COOK CNTY ILL SCH D 5% DUE 12/01/27",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "KENDALL KANE & WILL 5% DUE 02/01/35",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-09",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "NORTH TEX TWY AUTH 5% DUE 01/01/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.98
+    },
+    {
+      "description": "PAGE CNTY IA JAIL 2024 B B/E 4.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "SPRINGFIELD MO SPL OBLIG IMPT REV B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "ANDOVER KS 2025 A DB B/E 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.94
+    },
+    {
+      "description": "ALABAMA CMNTY CLLG SYS BRD TRUSTEES REV REID ST CMNTY CLLG 2025 BAM B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "WEST VIRGINIA COMMR HWY SPL OBLIG SURFACE TRANSN IMPT NT A REV B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "GMG CMNTY SCH DIST IA AGI B/E B/Q 5.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "ST CHARLES CNTY MO PUB WTR SPLY DIST 2 RFDG CTF PARTN SER C REV B/E PTC 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 5 SER A 1 B/E 4.00 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "CLAY IN MLTI SCH CMNTY BLDG CORP 1ST MTG REV B/E CR ENH 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "SCOTT CNTY IN SCH DIST 2 MIDDLE SCH BLDG RFDG & IMPT 1ST MTG REV B/E 4.00 % Due Jan 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "MICHIGAN ST HSG DEV AUTH RENT HSG REV A B/E 3.40 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "GWINNETT CNTY GA DEV AUTH REV RFDG GWINNETT CLLG STDNT CTR PJ B B/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "TUPELO MS PUB SCH DIST B/E PTC 4.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MIAMI DADE CNTY FL HSG FIN AUTH MLTIFAM REV FAIRFIELD RUNNING B/E 3.55 % Due Jan 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "KENTUCKY INC KY PUB ENERGY AUTH GAS SPLY REV SER A B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MAIN STREET NAT GAS INC GA GAS SPLY REV C B/E 4.00 % Due Mar 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 5 SER A 1 B/E 4.00 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "JENISON MI PUB SCHS RFDG B/E 5.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MISSOURI ST PUB UTILS COMMN REV INTERIM CONSTR NT B/E 4.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "MONROE CNTY GA DEV AUTH POLLTN CTL REV PWR CO PLT SCHERER 1ST ADJ B/E 3.875 % Due Dec 1, 2041",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.96
+    },
+    {
+      "description": "ALACHUA CNTY FL HLTH FACS AUTH REV RFDG SHANDS TEACHING B2 B/E 5.00 % Due Dec 1, 2037",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "IOWA FIN AUTH REV ST REVLVG FD 2022A GREEN BD B/E 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CLEVELAND OH CTF PARTN RFDG CLEVELAND STAD PJ REV B/E 5.00 % Due Nov 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "KNOXVILLE CNTY TN HLTH EDL&HSG FAC BRD MLTIFAM HSG REV COLLTZD PJ B/E 3.95 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WILLISTON BASIN SCH DIST 007 ND BLDG 2024 B/E CR ENH 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "WAUPUN WI SCH DIST RFDG B/E PTC 4.00 % Due Apr 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "WILLISTON ND PKS & REC DIST SALES TAX REV SR RFDG 2025 A B/E CR ENH 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3569,
+    "outputTokens": 3310,
+    "estimatedCostUsd": 0.2012
+  }
+}

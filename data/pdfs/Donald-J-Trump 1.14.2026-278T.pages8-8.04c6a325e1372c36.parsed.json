@@ -1,0 +1,19 @@
+{
+  "key": "04c6a325e1372c36",
+  "pdfSha256": "3d2f74d9cc5f1a2a7819e90aea17357b40ddbca9839bf89c8b3f047c6f2e33ce",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/268353939B7DACB585258D81003471B1/$FILE/Donald-J-Trump%201.14.2026-278T.pdf",
+  "chunk": {
+    "first": 8,
+    "last": 8
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:36:41.214Z",
+  "transactions": [],
+  "tokenUsage": {
+    "inputTokens": 2724,
+    "outputTokens": 4,
+    "estimatedCostUsd": 0.0274
+  }
+}

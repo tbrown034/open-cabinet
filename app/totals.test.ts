@@ -10,7 +10,8 @@ import CompaniesPage from "./companies/page";
 import CompanyPage from "./companies/[ticker]/page";
 
 vi.mock("fs/promises", () => ({ readFile: vi.fn() }));
-vi.mock("@/lib/row-verification", () => ({ verificationForOfficial: vi.fn() }));
+vi.mock("@/lib/row-verification", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/row-verification")>()), verificationForOfficial: vi.fn() }));
 vi.mock("@/lib/news", () => ({ getNewsCoverage: async () => [] }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 vi.mock("./components/hero-monthly-chart", () => ({ default: () => null }));

@@ -1,0 +1,308 @@
+{
+  "key": "a5489bc947fbdbd3",
+  "pdfSha256": "22bc47470752fc85a42804a260d53bc8fc232b5476535fac32e43134fb047d1f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
+  "chunk": {
+    "first": 3,
+    "last": 3
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:37:52.530Z",
+  "transactions": [
+    {
+      "description": "OCCIDENTAL PETE SR DEBS-REG SENIOR NOTES DUE 09/01/2030 06.625% MS 01 DISCRETIONARY ORDER YIELD 4.709 % TO PAR CALL YIELD 4.881 % TO MATURITY CALLABLE 03/01/30 AT 100.000",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "***COREWEAVE INC REG S DUE 06/01/2030 09.250% JD 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "***VICTORIAS SECRET CO REG S DUE 07/15/2029 04.625% JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "WELLS FARGO & CO NTS B/E 04.900% 012428 DTD012425",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "AIR LEASE CORP NTS B/E 05.300% 062526 DTD062524",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "FISERV INC B/E 5.600% 030233 DTD030223",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "SAN DIEGO G & E B/E 05.400% 041535 DTD032825",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "CSX CORP B/E 04.250% 031529 DTD111516",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "MORGAN STANLEY 05.173% 011630 DTD011824",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "ROYAL CARIBBEAN CRUISES 03.700% 031528 DTD112817",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "META PLATFORMS INC NTS 04.600% 111532 DTD110325",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "AMAZON.COM INC B/E 03.600% 041332 DTD041322",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "CITIGROUP INC NTS B/E 05.174% 021330 DTD021324",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "MERCK & CO INC B/E 04.950% 091535 DTD090925",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "BAKER HUGHES LLC/CO-OBL 03.337% 121527 DTD121117",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "HCA INC B/E 05.450% 091534 DTD081224",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "ROYAL BANK OF CANADA NTS 04.510% 101827 DTD101824",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "PAYPAL HOLDINGS INC NTS 02.850% 100129 DTD092619",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "PFIZER INVT ENTER NTS 04.750% 051933 DTD051923",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "AMERICAN HONDA FIN NTS 05.050% 071031 DTD071024",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "ORACLE CORP NTS B/E 05.200% 092635 DTD092625",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "GOLDMAN SACHS GROUP INC 01.431% 030927 DTD030821",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.77
+    },
+    {
+      "description": "CANADIAN IMPERIAL BANK 04.580% 090831 DTD090825",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "AMERICAN EXPRESS CO B/E 05.284% 072635 DTD072624",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "VIRGINIA ELEC & PWR CO 03.750% 051527 DTD053122",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "AIR LEASE CORP NTS B/E 05.850% 121527 DTD120522",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "VICI PROPERTIES LP NTS 05.125% 051532 DTD042922",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "BK OF AMER CORP B/E 02.972% 020433 DTD020422",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "US BANCORP B/E 3.000% 073029 DTD072919",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "NATL RURAL UTILS COOP 04.850% 020729 DTD020524",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "CITIGROUP INC NTS B/E 4.412% 033131 DTD033120",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    },
+    {
+      "description": "BROADCOM INC NTS B/E 04.750% 041529 DTD041520",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.79
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3388,
+    "outputTokens": 2960,
+    "estimatedCostUsd": 0.1819
+  }
+}

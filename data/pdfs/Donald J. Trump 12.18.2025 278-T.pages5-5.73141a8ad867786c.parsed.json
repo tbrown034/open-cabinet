@@ -1,0 +1,191 @@
+{
+  "key": "73141a8ad867786c",
+  "pdfSha256": "22bc47470752fc85a42804a260d53bc8fc232b5476535fac32e43134fb047d1f",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
+  "chunk": {
+    "first": 5,
+    "last": 5
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:38:58.652Z",
+  "transactions": [
+    {
+      "description": "UNIONVILLE CHADDS FORD PA SCH DIST RFDG B/E PTC 4.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "EAST CHINA SCH DIST MI BLDG SITE SER 1 B/E QSBLF 3.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "FORT WORTH TX INDPT SCH DIST SCH BLDG B/E 5.00 % Due Feb 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "EL PASO TX WTR & SWR REV RFDG & IMPT B/E PTC 4.00 % Due Mar 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-04",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "PEFA INC IA GAS PJ REV B/E 5.00 % Due Sep 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "LA VERNIA TX INDPT SCH DIST BLDG 2025 B/E PSF GTD 5.00 % Due Feb 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "JACKSON CNTY MO SCH DIST C 6 LNG JACK 2024 B/E MDDP 5.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "JACKSON MO RAYTOWN SCH DIST C2 B/E ST INTRCPT 5.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MACONAQUAH IN SCH CORP 2025 B/E B/Q ST INTRCPT 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "CHAPEL HILL TX INDPT SCH DIST SMITH CNTY PSF GTD BLDG B/E 5.00 % Due Feb 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "WESTFIELD IN HIGH SCH 95 BLDG AD VAL PPTY TAX B REV RFDG B/E ST INTRCPT 5.00 % Due Jan 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "MISSOURI ST HLTH & EDL FACS AUTH REV SSM HLTH SER A B/E 5.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MIDDLEBURY IN SCHS BLDG CORP AD VALOREM PPTY TAX REV B/E B/Q ST INTRCPT 5.00 % Due Jul 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "FAIRFAX CNTY VA EDA TRANSN DIST IMPT REV RFDG B/E PTC 5.00 % Due Apr 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TELL CITY TROY TWP IN SCH BLDG CORP AD VALOREM PPTY TAX 1ST REV B/E B/Q 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "NORTH TX MUN WTR DIST UPPER E FORK WSTWTR RFDG INTRCPT CNTRCT REV B/E 3.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-11-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "SAN ANTONIO TX ELEC & GAS REV B/E 3.00 % Due Feb 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "PLAZA AT NOAHS ARK CMNTY IMPT DIST MO TAX INCRMT & IMPT DIST DB B/E 3.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-31",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "TEXAS ST AFFORDABLE HSG CORP MLTIFAM HSG REV JUNIPER CREEK APTS B/E 3.75 % Due Jul 1, 2044",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-23",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2936,
+    "outputTokens": 2000,
+    "estimatedCostUsd": 0.1294
+  }
+}

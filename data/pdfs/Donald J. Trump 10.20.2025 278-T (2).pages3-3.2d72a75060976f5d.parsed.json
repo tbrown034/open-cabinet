@@ -1,0 +1,236 @@
+{
+  "key": "2d72a75060976f5d",
+  "pdfSha256": "cc66d6294e60d93f20cd834668faffb96251114316f2f9a1d182ebc32245cd24",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/18353894FE440B3685258D430031A337/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T%20(2).pdf",
+  "chunk": {
+    "first": 3,
+    "last": 3
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:40:58.422Z",
+  "transactions": [
+    {
+      "description": "MAINE ST HSG AUTH MTG PURCH SER B REV B/E 2.10 % Due Nov 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "COLUMBIA MO SCH DIST RFDG 2024 B B/E MDDP 4.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "NORTH ADAMS IN CMNTY SCHS RENOVTN BLDG CORP REV B/E B/Q ST INTRC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "FORT ZUMWALT MO SCH DIST RFDG & IMPT BAM B/E 5.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "HARRIS WALLER CNTY MUD 5 TX RD AGI B/E 6.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "UTAH WTR FIN AGY LN FING PG SER C REV B/E 5.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "BEDFORD TX RFDG IMPT B/E 5.00 % Due Feb 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "LAKE ORION MI CMNTY SCH DIST BLDG SITE B/E QSBLF 5.00 % Due May 1, 202",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "BREATHITT KY SCH DIST FIN CORP ENERGY CONSV REV B/E B/Q ST INTRCPT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "FORT BEND CNTY TX CTF OBLIG SER A DB B/E 5.00 % Due Mar 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPENCER EAST BROOKFIELD MA REGL SCH DIST BD ANTIC NT B/E 3.75 % Due",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "WASHOE CNTY NV SALES TAX REV RFDG SER A B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "MEMPHIS TN ELEC SYS REV SER A B/E 3.00 % Due Dec 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "SUGAR LAND TX WTRWKS & SWR REV RFDG SYS B/E OID @97.528 3.42% 3.25",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-01",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "METROPOLITAN TRANSN 5% DUE 11/15/35",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "DOUGLAS CNTY GA SCH 5% DUE 04/01/41",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-18",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "LEANDER TEX 5% DUE 08/15/42",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-19",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "MISSOURI ST HEALTH 5% 40 DUE 11/15/40",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-23",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "COOK CNTY ILL SCH D 5% DUE12/15/41",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-24",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "COLUMBUS IND MULTI- 5% DUE 07/15/40",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-25",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "EL PASO TEX MUN DRA 5% DUE 03/01/41",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-26",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.91
+    },
+    {
+      "description": "NEW JERSEY ECONO 5.25% DUE 06/15/37",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-09-26",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    },
+    {
+      "description": "TANGIPAHOA PARISH L 4%DUE 02/01/37",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.96
+    },
+    {
+      "description": "NORTH EAST TEX REGL 5% TOLL TRAN DUE 01/01/40",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-10-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2954,
+    "outputTokens": 2268,
+    "estimatedCostUsd": 0.1429
+  }
+}

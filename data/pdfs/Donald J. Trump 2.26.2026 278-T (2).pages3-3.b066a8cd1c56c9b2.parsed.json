@@ -1,0 +1,317 @@
+{
+  "key": "b066a8cd1c56c9b2",
+  "pdfSha256": "8a5e83d9886fd6753759ca620116880cbaf7a427bb8533be33ddf919605f5232",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BCF60D94B8F1E59285258DB000347F61/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(2).pdf",
+  "chunk": {
+    "first": 3,
+    "last": 3
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T03:31:50.189Z",
+  "transactions": [
+    {
+      "description": "***VICTORIAS SECRET CO REG S DUE 07/15/2029 04.625% JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.73
+    },
+    {
+      "description": "***COREWEAVE INC REG S DUE 02/01/2031 09.000% FA 01 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.74
+    },
+    {
+      "description": "***COTY INC SENIOR SECURED NOTES REGS DUE 01/15/2029 04.750% JJ 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.74
+    },
+    {
+      "description": "***MACYS RETAIL HOLDINGS LLC REG S DUE 03/15/2030 05.875% MS 15 DISCRETIONARY ORDER IF THIS CONFIRMATION IS IN CONNECTION WITH A SALE PURSUANT TO REG. S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.72
+    },
+    {
+      "description": "METROPOLITAN COUNCIL MIN SR A BE/R 5 DUE 030135 DTD 021226 FC 090126 2.640% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.67
+    },
+    {
+      "description": "LONE STAR CLLG SYS TX RFDG B/E 5.00 % Due Feb 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "PHILADELPHIA PA AUTH INDL DEV MLTI FAM REV HSG B/E OID @97.106 4.00 % Due Dec 1, 2047",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "FORT LUPTON CO CTF PARTN REV B/E 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "LEHIGH CNTY PA GENL PURP AUTH REV RFDG CLLG CARBON CMNTY PJ BAM B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-21",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "ARIZONA ST INDL DEV AUTH MLTI FAM HSG REV RANCHES AT GUNSMOKE APT B/E PTC 5.00 % Due Mar 1, 2056",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 4332019A BAM B/E CR ENH 4.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.68
+    },
+    {
+      "description": "MUSKOGEE CNTY OK PUB SAFETY AUTH CAP IMPT REV 2025 B/E 4.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "MADISONVILLE KY AGI B/E B/Q 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "ROMULUS MI CMNTY SCHS RFDG SER A B/E QSBLF 4.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "NEW HOPE CULTURAL ED FACS FIN CORP STDNT HSG REV CHF SER A B/E PTC 5.00 % Due Apr 1, 2036",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "CINCINNATI OH ECON DEV REV JORDAN CROSSING A B/E OID @98.507 2.91% 2.75 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.69
+    },
+    {
+      "description": "COOPER GREEN MERCY HLTH SVCS AUTH AL REV SER A B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "MAINE ST TPK AUTH REV B/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "OREGON HLTH SCI UNIV SER A REV B/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "WEST VA ST HSP FIN AUTH HOSP REV RFDG WEST VA UTD HLTH SYS SER A B/E 5.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.72
+    },
+    {
+      "description": "OMAHA NE PWR PUB DIST SEPARATE ELEC REV SYS SER A B/E PTC 5.00 % Due Feb 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "MANOR TX INDPT SCH DIST SCH BLDG B/E 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.76
+    },
+    {
+      "description": "MISSISSIPPI DEV BK SPL OBLIG NRTHEST MS CMNTY CLLG REV AGM B/E 4.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-09",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV INTERMTN HLTHCARE INC SER B B/E 5.00 % Due May 15, 2062",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.73
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV RFDG CHLDRNS HOSP CO PJ SER C B/E 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "MOORESVILLE IN CONS SCH CORP B/E B/Q ST INTRCPT 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "CHESAPEAKE VA REDEV & HSG AUTH MLTIFAM HSG REV HUNTER PT APTS B/E 5.00 % Due May 1, 2043",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "LYON CNTY KS UNI SCH DIST 253 EMPORIA B/E 4.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "KING CNTY WA SWR REV RFDG & IMPT SER B B/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMM REV PJ 117 SER D B/E 5.00 % Due May 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "MISSOURI ST HLTH & EDL FACS AUTH BJC SYS SER B REV B/E 4.00 % Due May 1, 2051",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 5 SER A 1 B/E 4.00 % Due Oct 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.74
+    },
+    {
+      "description": "CORPUS CHRISTI TX UTIL SYS REV SR LIEN IMPT RFDG 2025 B/E CR ENH 5.00 % Due Jul 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.75
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3904,
+    "outputTokens": 3943,
+    "estimatedCostUsd": 0.2362
+  }
+}
