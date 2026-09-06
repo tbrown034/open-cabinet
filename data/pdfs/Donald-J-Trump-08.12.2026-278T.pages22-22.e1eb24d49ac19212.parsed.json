@@ -1,0 +1,350 @@
+{
+  "key": "e1eb24d49ac19212",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 22,
+    "last": 22
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:45:00.466Z",
+  "transactions": [
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "COMCAST CORP NEW CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-23",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": false,
+      "confidence": 0.7
+    },
+    {
+      "description": "LOWER COLO RIV AUTH 5% ELEC UTIL DUE 05/15/33",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BERKSHIRE HATHAWAY CLASS B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MARSH & MCLENNAN COS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SERVICENOW INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "IBM CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "STERIS PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "RESMED INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "REPUBLIC SVCS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS I",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PUBLIC SVC ENTERPRISE GR",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "GE HEALTHCARE TECHNOLOGI",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PILGRIMS PRIDE CORP NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ERIE INDTY CO CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VISTRA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VISA INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PINTEREST INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "NETFLIX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "WORKDAY INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "INGERSOLL RAND INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PENTAIR PLC F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VERISK ANALYTICS INC CLASS A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ECOLAB INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 2632,
+    "estimatedCostUsd": 0.1488
+  }
+}

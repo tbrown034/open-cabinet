@@ -1,0 +1,350 @@
+{
+  "key": "d4357848a4b3536b",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 8,
+    "last": 8
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:37:08.448Z",
+  "transactions": [
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "VISA INC-CLASS A SHARES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MASTERCARD INCORPORATED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "REPUBLIC SVCS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MOODYS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "T-MOBILE US INC USD0.001",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "BOEING PANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "TYLER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "PAYCHEX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "STRYKER CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "PROCTER & GAMBLE PANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "LENNOX INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "INTUIT",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "FACTSET RESH SYS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "FORTINET INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$25",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CROWDSTRIKE HLDGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "PALO ALTO NETWORKS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "SERVICENOW INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CLOROX PANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ROYAL CARIBBEAN GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "QUALM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ECOLAB INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "AXON ENTERPRISE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "APPLOVIN CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "Salesforce Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "WALT DISNEY PANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CHIPOTLE MEXICAN GRILL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "Blackstone Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "M & T BK CORP PERP SUB GLBL 3.5000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "GENERAL MTRS FINL CO INC PER 6.5000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "BROADRIDGE FINL SOLUTIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 2876,
+    "estimatedCostUsd": 0.161
+  }
+}

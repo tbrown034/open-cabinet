@@ -1,0 +1,350 @@
+{
+  "key": "2ffdfb86e88e441b",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 12,
+    "last": 12
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:40:11.728Z",
+  "transactions": [
+    {
+      "description": "PITTSBURGH & ALLEGHENY CNTY PA SPORTS & EXHIB AUTH REV AGM B/E 5.00 % Due Feb 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "HAYS TX CONS INDPT SCH DIST RFDG B/E PSF GTD 5.00 % Due Aug 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MISSOURI ST BRD PUB BLDGS SPL OBLIG RFDG SER B REV B/E 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "GEISINGER AUTH PA HLTH SYS REV SER A2 B/E 5.00 % Due Feb 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "SOUTH CAROLINA ST HSG FIN & DEV AUTH REV MFHR POPLAR SQUARE B/E PTC 5.00 % Due Apr 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MILWAUKEE WI SWR REV SYS SER S2 GREEN BD B/E SBJ ST TAX 5.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "NORWALK IA CORP PURP SER A B/E 5.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CONNECTICUT ST SER D B/E 5.00 % Due Aug 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "KENDALL CNTY IL FST PRESV DIST RFDG BAM B/E B/Q 4.00 % Due Jan 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "FORT WORTH TX RFDG & IMPT GENL PURP SER A B/E PTC 5.00 % Due Mar 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ARIZONA ST INDL DEV AUTH MLTFAM HSG REV RANCHES AT GUNSMOKE APT B/E PTC 5.00 % Due Mar 1, 2058",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "DAHLONEGA GA WTR & SEW REV RFDG AGM B/E OID @98.849 3.71% 3.625 % Due Sep 1, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-24",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "BROOKE CNTY WV BRD ED PUB SCHS B/E ST AID PG 3.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-02",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CHEVRON CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "JOHNSON & MIAMI CNTYS KS UNI SCH DIST 230 CROSSOVER RFDG B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "NEW YORK NY CITY TRANSL FIN AUTH REV FUTURE TAX SECD SER A SUB A1 B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "WEST FARGO ND PK DIST SPL ASSMT PREPAYMENT 2020 A B/E B/Q 3.00 % Due Mar 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "CLEVELAND CNTY OK EDL FACS AUTH LSE REV MOORE PUB SCHS PJ B/E 4.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "PENN HILLS PA B/E 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MIAMI BEACH FL REDEV AGY TAX INCRMT REV RFDG CITY CTR HIST CONVNTN AGI B/E 5.00 % Due Feb 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-02",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS SPLY REV SUB SER D1 B/E GTD 4.00 % Due Jul 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "METLIFE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": false,
+      "confidence": 0.65
+    },
+    {
+      "description": "COCA-COLA COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": false,
+      "confidence": 0.65
+    },
+    {
+      "description": "OREGON ST HIGH ED SER L B/E 5.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MEDTRONIC PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": false,
+      "confidence": 0.65
+    },
+    {
+      "description": "PAYCHEX INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": false,
+      "confidence": 0.65
+    },
+    {
+      "description": "NIKE INC CL B",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ARLINGTON TX WTR & WSTEWTR SYS REV SER A B/E OID @98.996 3.101% 3.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "MERCK & COMPANY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "BLACKROCK FDG INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "DUKE ENERGY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": null,
+      "amountNote": "$50",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 3894,
+    "estimatedCostUsd": 0.2119
+  }
+}

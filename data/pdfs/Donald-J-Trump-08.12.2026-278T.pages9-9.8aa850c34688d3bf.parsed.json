@@ -1,0 +1,350 @@
+{
+  "key": "8aa850c34688d3bf",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 9,
+    "last": 9
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:37:46.332Z",
+  "transactions": [
+    {
+      "description": "US BANCORP TIER I PERP GLBL 3.7000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MORGAN STANLEY PERP JR GLBL 5.8750%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "WELLS FARGO & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "QNITY ELECTRONICS INC MON STOCK",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "VERTIV HOLDINGS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "Crh Plc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "AMCOR PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "INTERNATIONAL PAPER",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "AT & T INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "LULULEMON ATHLETICA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "FIDELITY NATL INFORMATION SVCS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "TRIMBLE NAV LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BUNGE GLOBAL SA SHS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MOLSON COORS BEVERAGE PANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "GARTNER GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "HENRY JACK & ASSOC INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "GLOBAL PMTS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "KKR & CO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CONSTELLATION ENERGY CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SBA COMMUNICATION CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VICI Properties Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "EQT CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "COSTAR GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "COINBASE GLOBAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "Paypal Hldgs Inc",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "JPMORGAN CHASE & CO ALT TIER 3.6500%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "THE HERSHEY COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "THERMO FISHER CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SCHWAB CHARLES CORP PERP SUB 4.0000%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-01",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "EQUIFAX INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-18",
+      "amount": null,
+      "amountNote": "",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 3157,
+    "estimatedCostUsd": 0.1751
+  }
+}

@@ -523,6 +523,26 @@ export async function checkFiling(
     throw new FilingHeldError(path.basename(pdfPath), reason);
   };
 
+  // Date plausibility, independent of any lane. A trade dated after the
+  // filing was posted cannot be right and holds the filing. A trade more
+  // than 400 days before the posting is unusual for a periodic
+  // transaction report and is recorded for a person (amended and late
+  // filings do reach back). (Trevor, Sep 5: a date beyond today or far
+  // outside the reporting window is a flag.)
+  const posted = filing.docDate.slice(0, 10);
+  const afterPosting = rows.map((r, i) => ({ r, i })).filter(({ r }) => r.date > posted);
+  const farBefore = rows.filter((r) => Date.parse(posted) - Date.parse(r.date) > 400 * 86_400_000);
+  if (afterPosting.length) {
+    return hold(
+      `${afterPosting.length} row(s) dated after the filing was posted (${posted})`,
+      afterPosting.slice(0, 20).map(({ r, i }) => `row ${i + 1}: dated ${r.date}, after the posting date ${posted}: "${r.description}"`)
+    );
+  }
+  if (farBefore.length) {
+    console.warn(`           ${farBefore.length} row(s) dated more than 400 days before the posting date ${posted}; recorded for a person`);
+    appendCrosscheckProblems(filing, slug, farBefore.slice(0, 20).map((r) => `date flag: ${r.date} is more than 400 days before the posting date ${posted}: "${r.description}"`));
+  }
+
   if (check.status === "ok") {
     console.log(`           text-layer cross-check OK (${check.rowCount} rows agree)`);
     return { verdict: "two_lane", lane: "text" };
@@ -591,6 +611,15 @@ export async function checkFiling(
   ];
   console.warn(`           second model disagrees; holding ${path.basename(pdfPath)} for a person`);
   return hold("no two independent reads agree on every row", problems);
+}
+
+/** Add advisory lines to the filing's log entry without changing its state. */
+export function appendCrosscheckProblems(filing: FilingForIngest, slug: string, lines: string[]): void {
+  const log = readCrosscheckLog();
+  const entry = log?.entries.find((e) => e.sourceUrl === filing.pdfUrl && e.slug === slug);
+  if (!log || !entry || lines.length === 0) return;
+  const next = { ...entry, problems: [...(entry.problems ?? []), ...lines] };
+  writeCrosscheckLog(upsertCrosscheckEntry(log, next, CHECKER_VERSION));
 }
 
 /** Overlay the OCR lane's verdict on the entry the text lane just wrote. */

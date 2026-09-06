@@ -1,0 +1,350 @@
+{
+  "key": "f2a069eb2dd4ec34",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 5,
+    "last": 5
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:35:36.546Z",
+  "transactions": [
+    {
+      "description": "AMAZON.COM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$10",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CROWN CASTLE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SLB LIMITED",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "L3HARRIS TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "S&P GLOBAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "VERTEX PHARMACEUTICALS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CHEVRON CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CHUBB LTD COM",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CONOCOPHILLIPS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "O REILLY AUTOMOTIVE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CORTEVA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "EQT CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "AMERICAN INTERNATIONAL GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "WABTEC CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "IDEXX LABORATORIES CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "EXXON MOBIL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BIOGEN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BAKER HUGHES COMPANY",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PPL CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "DEVON ENERGY CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "NISOURCE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "OMNICOM GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PFIZER INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "COSTCO WHOLESALE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "GILEAD SCIENCES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SOUTHERN CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "NEWMONT CORPORATION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "XCEL ENERGY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ZIMMER BIOMET HOLDINGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "AKAMAI TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "HASBRO INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ARCH CAPITAL GROUP LTD",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "NORTHROP GRUMMAN CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 1912,
+    "estimatedCostUsd": 0.1128
+  }
+}

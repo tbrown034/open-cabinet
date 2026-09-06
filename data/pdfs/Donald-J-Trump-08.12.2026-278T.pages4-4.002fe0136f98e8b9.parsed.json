@@ -1,0 +1,350 @@
+{
+  "key": "002fe0136f98e8b9",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:35:12.805Z",
+  "transactions": [
+    {
+      "description": "AMGEN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BANK OF AMERICA CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "GENERAL DYNAMICS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "REPUBLIC SERVICES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CHIPOTLE MEXICAN GRILL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PAYPAL HOLDINGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PG&E CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "UNITED AIRLINES HOLDINGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ROPER TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "KIMBERLY CLARK CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ZOETIS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "NRG ENERGY INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "WILLIS TOWERS WATSON PUBLIC LIMITED COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "AMERICAN WTR WKS CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "FIRSTENERGY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "SMURFIT WESTROCK PL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CMS ENERGY CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "T MOBILE US INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "DEERE & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "PACKAGING CORP AMER",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ALLIANT ENERGY CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "BRISTOL MYERS SQUIBB CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "ABBVIE INC AVG",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "LYONDELLBASELL INDUSTRIES N V",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "CARDINAL HEALTH INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$15",
+      "lateFilingFlag": true,
+      "confidence": 0.7
+    },
+    {
+      "description": "MOTOROLA SOLUTIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "ROYAL CARIBBEAN GROUP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "WILLIAMS COMPANIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "KINDER MORGAN INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "DOLLAR GENERAL CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    },
+    {
+      "description": "YUM BRANDS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": null,
+      "amountNote": "$1,0",
+      "lateFilingFlag": true,
+      "confidence": 0.65
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 1724,
+    "outputTokens": 1890,
+    "estimatedCostUsd": 0.1117
+  }
+}

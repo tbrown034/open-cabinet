@@ -1,0 +1,98 @@
+{
+  "key": "f73a7ffe031788e0",
+  "pdfSha256": "08033bab01420d02939eaab8644e24825b40a7dd1081fc48dc023cf6bedca486",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "gpt-6-astra",
+  "parsedAt": "2026-09-06T02:33:20.911Z",
+  "transactions": [
+    {
+      "description": "ASML Holding NV",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "Apple, Inc. (AAPL)",
+      "ticker": "AAPL",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "Uber Technologies, Inc. (UBER)",
+      "ticker": "UBER",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "Uber Technologies, Inc. (UBER)",
+      "ticker": "UBER",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "Zscaler, Inc. (ZS)",
+      "ticker": "ZS",
+      "type": "Sale",
+      "date": "2025-03-27",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "CRISPR Therapeutics AG Common Shares (CRSP)",
+      "ticker": "CRSP",
+      "type": "Sale",
+      "date": "2025-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 1
+    },
+    {
+      "description": "NIKE, Inc. (NKE)",
+      "ticker": "NKE",
+      "type": "Purchase",
+      "date": "2025-01-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 1
+    },
+    {
+      "description": "NIKE, Inc. (NKE)",
+      "ticker": "NKE",
+      "type": "Sale",
+      "date": "2225-04-04",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.99
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4857,
+    "outputTokens": 684,
+    "estimatedCostUsd": 0.0828
+  }
+}
