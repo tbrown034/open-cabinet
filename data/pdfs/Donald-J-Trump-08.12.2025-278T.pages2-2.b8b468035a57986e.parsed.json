@@ -1,0 +1,263 @@
+{
+  "key": "b8b468035a57986e",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 2,
+    "last": 2
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T05:13:26.695Z",
+  "transactions": [
+    {
+      "description": "TRIBOROUGH BRDG & T 5% DUE ON 12/01/50",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-21",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALACHUA CNTY FL HLTH FAC REV RFDG SHANDS TEACHING HOSP & CLINICS B1 B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LAKE CNTY OH HOSP FACS REV RFDG LK HOSP SYS INC B/E PTC 5.00 % Due Aug 15, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MASSACHUSETTS ST WTR RES AUTH REV SER C GREEN BD B/E ETM 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MATANUSKA SUSITNA BORO AK TRANSN SYS SER C B/E 4.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MICHIGAN PUB PWR AGY REV BELLE RVR PJ 2024 A B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MIDLOTHIAN TX CMNTY DEV CORP SALES TAX REV BAM B/E B/Q 4.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "RACINE WI RFDG B/E PTC 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WICKLIFFE OH CITY SCH DIST FACS IMPT 2020 A B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ATLANTA GA DEV AUTH REV GA ST UNIV RESH FNDTN SCI PK PJ B/E PTC 4.00 % Due Jul 1, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.92
+    },
+    {
+      "description": "DANVILLE VA SCH 2022 B/E GUAR CR ENH 4.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GARVIN CNTY OK EDL FACS AUTH LSE REV WYNNEWOOD PUB SCH PJ B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GRAND RAPIDS MI PUB SCHS SCH BLDG & SITE RFDG AGM B/E 5.00 % Due May 1, 2041",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "JOHNSON CNTY KS PK & REC DIST CTF PARTN REV SER A B/E B/Q 4.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOWER AL GAS DIST GAS GAS DIST PJ 2 REV B/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MEMORIAL CITY REDEV AUTH TX TAX INCRMT CNTRCT REV RFDG AGM B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Apr 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MILWAUKEE CNTY WI CORP PURP SER A B/E PTC 3.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PARIS TX WTR & SWR REV 2022 B/E CR ENH 5.00 % Due Jun 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "POLK CNTY FL SCH BRD CTF PARTN RFDG SER B REV B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WHITEHALL OH CITY SCH DIST RFDG SER A B/E B/Q CR ENH CAB @76.261 2.75% 0.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-29",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ARIZONA ST CTF PARTN RFDG REV B/E 5.00 % Due Sep 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BATAVIA OH LOC SCH DIST IMPT SER B B/E 4.00 % Due Nov 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS PREPAY REV PJ 4 SER A 1 B/E VAR 4.00 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COLORADO HLTH FACS AUTH REV COMMONSPIRIT HLTH SER A 1 B/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DUBLIN OH VARIOUS PURP B/E 3.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KENOSHA WI PROM NT B/E 4.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4362,
+    "outputTokens": 3118,
+    "estimatedCostUsd": 0.0599
+  }
+}

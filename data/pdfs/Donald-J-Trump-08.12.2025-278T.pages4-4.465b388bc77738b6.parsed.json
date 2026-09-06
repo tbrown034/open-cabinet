@@ -1,0 +1,254 @@
+{
+  "key": "465b388bc77738b6",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T05:14:53.836Z",
+  "transactions": [
+    {
+      "description": "ADAMS CNTY CO SCH DIST 001 MAPLETON PUB SCHS BIE ST INTRCPT 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOUISIANA PUB FACS AUTH REV RFDG 19TH JUDICIAL DIST COURT BLDG AGM 8/E 5.25 % Due Jun 1, 2051",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LOWER AL GAS DIST GAS GAS DIST PJ 2 REV B1E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SAN ANTONIO TX INDPT SCH DIST BLDG PSF GTD 8/E 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ST LUCIE CNTY FL SCH DIST SALES TAX REV AGM BIE 5.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "TEXAS MUN PWR AGY REV TRNSMSN SYS RFDG AGM 8/E 3.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WEST VIRGINIA ST HOSP FIN AUTH REV RFDG UTD HLTH SYS SER A B1E 5.00 % Due Jun 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ALVIN TX WTRWKS & SWR REV SYS AGM BIE 5.00 % Due Feb 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "BURKE CNTY GA DEV AUTH POLL TN CTL REV GA PWR CO PLANT VOGTLE 1ST SER B1E 2.875 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CENTRAL NE PLAINS ENERGY PJ GAS SPLY RFDG REV BIE 2.50 % Due Dec 1, 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CROWLEY TX INDPT SCH DIST RFDG PSF GTD SER A 8/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DISTRICT COLUMBIA HSG FIN AGY MLTIFAM HSG REV FAIRCLIFF PLAZA BIE PTC 5.00 % Due Dec 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GREATER CLEVELAND OH REGL TRAN AUTH SALES TAX RFDG CI REV B1E 5.00 % Due Dec 1, 2029",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "HAMILTON STHESTRN IN SCHS SER A BIE ST INTRCPT 5.00 % Due Jun 30, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "HARRIS CNTY TX MUD 459 AGM BIE 4.50 % Due Apr 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "HARRIS CNTY TX TOLL RD REV 1ST LIEN RFDG SER A BIE 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KOKOMO IN SCH CORP 2023 BIE 8/Q CR ENH 5.00 % Due Jan 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LAKEWOOD OH RFDG VARIOUS PURP IMPT SER A BIE 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "LAKEWOOD WA WTR DIST WTR REV RFDG SER A BIE 8/Q 3.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "RACINE WI PROM NT BIE 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ROUND ROCK TX INDPT SCH DIST RFDG B1E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SMITH CNTY TX B1E 4.00 % Due Feb 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WASHOE CNTY NV SCH DIST RFDG SCH IMPT SER A 8/E 5.00 % Due Jun 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WISCONSIN ST HLTH & EFA REV ADVOCATE AURORA HLTHCARE SER C 3 B1E 5.00 % Due Aug 15, 2054",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ARLINGTON CNTY VA INDL DEV AUTH MLTIFAM REV HSG SHIRLINGTON APTS A B/E 5.00 % Due Jan 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "ARLINGTON TX HIGH ED FIN CORP UPLIFT ED SER A REV 8/E PSF GTD 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-02-10",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4239,
+    "outputTokens": 2998,
+    "estimatedCostUsd": 0.0577
+  }
+}

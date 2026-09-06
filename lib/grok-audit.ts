@@ -189,13 +189,14 @@ export async function auditPages(input: {
   });
   // Transport errors are retried; a bad answer is not.
   let response: Awaited<ReturnType<typeof request>> | null = null;
-  for (let attempt = 1; attempt <= 3; attempt++) {
+  for (let attempt = 1; attempt <= 6; attempt++) {
     try {
       response = await request();
       break;
     } catch (err) {
-      if (attempt === 3 || !(err instanceof OpenAI.APIConnectionError || err instanceof OpenAI.RateLimitError || (err instanceof OpenAI.APIError && (err.status ?? 0) >= 500))) throw err;
-      await new Promise((r) => setTimeout(r, 4000 * attempt));
+      const transient = err instanceof OpenAI.APIConnectionError || err instanceof OpenAI.RateLimitError || (err instanceof OpenAI.APIError && (err.status ?? 0) >= 500);
+      if (attempt === 6 || !transient) throw err;
+      await new Promise((r) => setTimeout(r, Math.min(60_000, 5000 * 2 ** (attempt - 1))));
     }
   }
   if (!response) throw new Error("no response");

@@ -1,0 +1,56 @@
+{
+  "key": "4e7494b86d0a1eb4",
+  "pdfSha256": "ac36181ee271ff8f92aa30b06414921b92c3b69d735519b44a2511d7bac7466b",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5315A095A2EE1B9185258CEB006E7E36/$FILE/Donald-J-Trump-08.12.2025-278T(3).pdf",
+  "chunk": {
+    "first": 3,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T05:12:37.725Z",
+  "transactions": [
+    {
+      "description": "JEFFERSON CNTY CO CTF PARTN FIN CORP RFDG REV B/E 5.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.92
+    },
+    {
+      "description": "OSCEOLA CNTY FL SALES TAX RFDG SER A REV B/E 5.00 % Due Oct 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.92
+    },
+    {
+      "description": "JOHNSON CNTY KS UNI SCH DIST 233 CRSOVR RFDG SER B B/E 5.00 % Due Sep 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-08-01",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.92
+    },
+    {
+      "description": "TARRANT CNTY TEX CULTURAL ED 5.0000% Due Nov 15, 2064",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-25",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.92
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 5464,
+    "outputTokens": 459,
+    "estimatedCostUsd": 0.0233
+  }
+}

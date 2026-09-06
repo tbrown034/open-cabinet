@@ -1,0 +1,56 @@
+{
+  "key": "a1d7d0911ad14462",
+  "pdfSha256": "69eebaec96c824352bf5a60a7664c1941f77ce10dd12b14dec020f0c410b5ff1",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
+  "chunk": {
+    "first": 3,
+    "last": 3
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T05:07:28.295Z",
+  "transactions": [
+    {
+      "description": "WISCONSIN ST HLTH & EFA REV ADVOCATE HLTH HOSP CORP SER 82 B/E 5.00 % Duo Aue 15, 2054",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-17",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Duo Oct 1 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-11",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.82
+    },
+    {
+      "description": "KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLLIZD HSG DGA GROSVENSOR BIE 4.00 % Duo D",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-10",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.75
+    },
+    {
+      "description": "BASTROP TX INOPT SCH DIST BLOG PSF GTD B/E 4.00 % Duo Feb 15, 2034",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-07-07",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2831,
+    "outputTokens": 479,
+    "estimatedCostUsd": 0.0157
+  }
+}

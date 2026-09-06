@@ -59,7 +59,8 @@ async function main() {
     }
     const candidateSha256 = hashRows(record.transactions);
     const prior = previous?.filings[e.sourceUrl];
-    if (prior && prior.pdfSha256 === e.pdfSha256 && prior.candidateSha256 === candidateSha256 && prior.promptVersion === GROK_AUDIT_PROMPT_VERSION) continue;
+    const priorComplete = prior && !prior.differences.some((d) => d.startsWith("audit incomplete"));
+    if (priorComplete && prior.pdfSha256 === e.pdfSha256 && prior.candidateSha256 === candidateSha256 && prior.promptVersion === GROK_AUDIT_PROMPT_VERSION) continue;
     const pages = pageCount(pdfPath);
     const units = record.units
       ? record.units.map((u) => ({ first: u.first, last: u.last, rows: u.transactions as Row[] }))

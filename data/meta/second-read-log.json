@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "gpt-6-astra",
-  "generatedAt": "2026-09-06T03:48:33.948Z",
+  "generatedAt": "2026-09-06T05:27:41.912Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
       "slug": "kennedy-robert-f",
@@ -1274,7 +1274,7 @@
       "slug": "trump-donald-j",
       "pdfFile": "Donald-J-Trump-06.25.2026-278T.pdf",
       "pdfSha256": "b928fded2e3583e2cc5305bd230d944a198e226a3e04aee486883db03b40eca2",
-      "candidateSha256": "7623a5e87b3b7a4a8e99dba7a393a2ceac26e44b8756c900efd9dd3021ed2dd9",
+      "candidateSha256": "4a61e4463054cdb7e8c638a407f668f154edbbd1c1344307da78e68110b15b38",
       "model": "gpt-6-astra",
       "rowsPrimary": 1375,
       "rowsSecond": 1375,
@@ -1526,6 +1526,7 @@
         246,
         247,
         248,
+        249,
         250,
         251,
         252,
@@ -2018,6 +2019,7 @@
         739,
         740,
         741,
+        742,
         743,
         744,
         745,
@@ -2182,6 +2184,7 @@
         906,
         907,
         908,
+        909,
         910,
         911,
         912,
@@ -2194,6 +2197,7 @@
         920,
         921,
         922,
+        923,
         924,
         925,
         926,
@@ -2202,6 +2206,7 @@
         930,
         931,
         932,
+        933,
         934,
         935,
         936,
@@ -2214,6 +2219,9 @@
         943,
         944,
         945,
+        946,
+        947,
+        948,
         949,
         950,
         951,
@@ -2646,17 +2654,9 @@
       "unreadIndexes": [
         121,
         218,
-        249,
-        742,
         815,
         836,
-        909,
-        923,
         929,
-        933,
-        946,
-        947,
-        948,
         1331
       ],
       "extraRows": [
@@ -2675,20 +2675,6 @@
           "lateFilingFlag": true
         },
         {
-          "description": "BERKLEY W R CORP",
-          "type": "Purchase",
-          "date": "2026-04-17",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "KENTUCKY ST PPTY & BLDGS SR A RV BE/R/ 5 DUE 100127 DTD 102424 2.667%",
-          "type": "Sale",
-          "date": "2026-04-07",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
           "description": "LYONDELLBASELL INDUSTRIES N V ORD SHS CL A",
           "type": "Purchase",
           "date": "2026-04-15",
@@ -2703,52 +2689,10 @@
           "lateFilingFlag": true
         },
         {
-          "description": "NEBIUS GROUP N V CL A",
-          "type": "Purchase",
-          "date": "2026-04-07",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "Nike Inc Cl B Average Unit Price Transaction Your Broker Acted As Agent",
-          "type": "Purchase",
-          "date": "2026-04-27",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
           "description": "NORTH CAROLINA ST SR C BE/R/ 5 DUE 060128 DTD 111925 FC 060126 2.416%",
           "type": "Sale",
           "date": "2026-04-07",
           "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NORTHSIDE TX INDPT SCH DIST RFDG 2018 B/E PSF GTD 3.35 % Due Aug 15, 2036",
-          "type": "Purchase",
-          "date": "2026-04-16",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NXP SEMICONDUCTORS N V",
-          "type": "Sale",
-          "date": "2026-04-07",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NXP SEMICONDUCTORS N V",
-          "type": "Purchase",
-          "date": "2026-04-27",
-          "amount": "$50,001-$100,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "NXP SEMICONDUCTORS N V COM EUR",
-          "type": "Sale",
-          "date": "2026-04-09",
-          "amount": "$100,001-$250,000",
           "lateFilingFlag": true
         },
         {
@@ -2762,14 +2706,14 @@
       "differences": [
         "row 916: second model [Sale|2026-04-07|$1,001-$15,000|late] vs primary [Purchase|2026-04-07|$1,001-$15,000|late] for \"NETFLIX INC\""
       ],
-      "costUsd": 5.7907,
-      "checkedAt": "2026-09-06T03:07:41.043Z"
+      "costUsd": 0,
+      "checkedAt": "2026-09-06T05:27:41.851Z"
     },
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf": {
       "slug": "trump-donald-j",
       "pdfFile": "Donald-J-Trump-06.25.2026-278T (2).pdf",
       "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
-      "candidateSha256": "024648e0da619813b3e6706cebf707b8a14d255f08e51c2c507dd6d29d9ad8b9",
+      "candidateSha256": "e766649e9ea2efa68941e8305b7f17ce5be92758e04ac7e25a2c87e656d75f6f",
       "model": "gpt-6-astra",
       "rowsPrimary": 1150,
       "rowsSecond": 1150,
@@ -2839,6 +2783,7 @@
         62,
         63,
         64,
+        65,
         66,
         67,
         68,
@@ -3141,7 +3086,6 @@
         365,
         366,
         367,
-        368,
         369,
         370,
         371,
@@ -3349,6 +3293,7 @@
         573,
         574,
         575,
+        576,
         577,
         578,
         579,
@@ -3647,6 +3592,7 @@
         872,
         873,
         874,
+        875,
         876,
         877,
         878,
@@ -3851,6 +3797,7 @@
         1077,
         1078,
         1079,
+        1080,
         1081,
         1082,
         1083,
@@ -3917,76 +3864,39 @@
         1144,
         1145,
         1146,
-        1147
-      ],
-      "disputedIndexes": [],
-      "unreadIndexes": [
-        65,
-        576,
-        875,
-        1080,
+        1147,
         1148,
         1149
       ],
+      "disputedIndexes": [],
+      "unreadIndexes": [
+        368
+      ],
       "extraRows": [
         {
-          "description": "C H ROBINSON WORLDWIDE INC",
-          "type": "Sale",
-          "date": "2026-05-11",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "U S PHYSICAL THERAPY",
+          "description": "ENVIRI CORP",
           "type": "Sale",
           "date": "2026-05-15",
-          "amount": "$1,001-$15,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NXP SEMICONDUCTORS N V",
-          "type": "Purchase",
-          "date": "2026-05-18",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "HARDIN CNTY KY SCH DIST FIN CORP SCH BLDG REV BAM TCRS B/E OID @99.472 3.00 % Due May 1, 2036",
-          "type": "Purchase",
-          "date": "2026-05-22",
-          "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NEW YORK N Y CITY 5.5% DUE 11/01/54",
-          "type": "Purchase",
-          "date": "2026-05-29",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "NEW YORK N Y CITY 5.5% DUE 11/01/54",
-          "type": "Purchase",
-          "date": "2026-05-29",
-          "amount": "$500,001-$1,000,000",
+          "amount": "$15,001-$50,000",
           "lateFilingFlag": false
         }
       ],
       "differences": [],
-      "costUsd": 4.6534,
-      "checkedAt": "2026-09-06T03:21:34.596Z"
+      "costUsd": 0,
+      "checkedAt": "2026-09-06T05:27:41.896Z"
     },
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf": {
       "slug": "trump-donald-j",
       "pdfFile": "Trump, Donald J.-05.08.2026-278T.pdf",
       "pdfSha256": "c4f1ceaca8d703769828cf69000425aca5dbebc30e2d82880f603984ef7aa51a",
-      "candidateSha256": "ddab953b2190315384401fac09908117f2af2013d148adb5e075ca7e60c10310",
+      "candidateSha256": "c363daee53662ab00fcafdc7b5360e101890a37ad6b1b5c0ad81a722132d0e5e",
       "model": "gpt-6-astra",
       "rowsPrimary": 69,
       "rowsSecond": 69,
       "agreedIndexes": [
         1,
         2,
+        3,
         4,
         5,
         6,
@@ -3994,10 +3904,12 @@
         10,
         12,
         13,
+        14,
         15,
         18,
         19,
         20,
+        21,
         22,
         23,
         24,
@@ -4011,8 +3923,10 @@
         35,
         37,
         39,
+        43,
         44,
         45,
+        46,
         48,
         49,
         50,
@@ -4033,14 +3947,11 @@
       "disputedIndexes": [],
       "unreadIndexes": [
         0,
-        3,
         7,
         9,
         11,
-        14,
         16,
         17,
-        21,
         29,
         30,
         32,
@@ -4049,8 +3960,6 @@
         40,
         41,
         42,
-        43,
-        46,
         47,
         51,
         52,
@@ -4064,13 +3973,6 @@
           "type": "Purchase",
           "date": "2026-02-23",
           "amount": "$100,001-$250,000",
-          "lateFilingFlag": false
-        },
-        {
-          "description": "MONTANA ST SER G B/E 5.00% Due Aug 1, 2026",
-          "type": "Purchase",
-          "date": "2026-02-23",
-          "amount": "$50,001-$100,000",
           "lateFilingFlag": false
         },
         {
@@ -4095,13 +3997,6 @@
           "lateFilingFlag": false
         },
         {
-          "description": "WISCONSIN CTR DIST WI APPROP REV MILW ARENA B/E OID .99503 3.034% 3.00% Due Dec 15, 2035",
-          "type": "Purchase",
-          "date": "2026-02-20",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": false
-        },
-        {
           "description": "EL PASO TX COMB TAX REV CTF OBLIG BLD B/E 4.00% Due Aug 15, 2037",
           "type": "Purchase",
           "date": "2026-02-10",
@@ -4114,13 +4009,6 @@
           "date": "2026-02-10",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": false
-        },
-        {
-          "description": "PMA LEVY & AID ANTIC NT PG WI MLTYRS SER A B/E 5.00% Due Aug 27, 2026",
-          "type": "Purchase",
-          "date": "2026-02-03",
-          "amount": "$1,000,001-$5,000,000",
-          "lateFilingFlag": true
         },
         {
           "description": "TRI CREEK 2002 HIGH SCH BLDG CORP IN 1ST MTG REV RFDG B/E B/Q ST INTERCEPT 5.00% Due Jul 15, 2026",
@@ -4179,20 +4067,6 @@
           "lateFilingFlag": true
         },
         {
-          "description": "ROUND ROCK TEX MUN 4% Due 09/01/42",
-          "type": "Purchase",
-          "date": "2026-02-03",
-          "amount": "$250,001-$500,000",
-          "lateFilingFlag": true
-        },
-        {
-          "description": "SPDR SERIES TRUST STATE STREET SPDR PORTFOLIO HIGH YIELD BOND ETF DISCRETIONARY ORDER J.P. MORGAN SECURITIES LLC MAKES A MARKET IN THIS SECURITY ROME: WHPANHYMq202602042245",
-          "type": "Purchase",
-          "date": "2026-02-04",
-          "amount": "$500,001-$1,000,000",
-          "lateFilingFlag": true
-        },
-        {
           "description": "GENERAL MTRS FINL CO INC DUE 03/01/2026 05.250%MS 01 DISCRETIONARY ORDER YIELD 2.828% TO MATURITY TIME OF EXECUTION 15:29:00 FINRA LINK FOLLOWS>>> HTTP://BONDFACTS.FINRA.ORG/37045XBG0",
           "type": "Purchase",
           "date": "2026-02-04",
@@ -4236,8 +4110,8 @@
         }
       ],
       "differences": [],
-      "costUsd": 0.5297,
-      "checkedAt": "2026-09-06T03:23:13.042Z"
+      "costUsd": 0,
+      "checkedAt": "2026-09-06T05:27:41.911Z"
     },
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf": {
       "slug": "trump-donald-j",

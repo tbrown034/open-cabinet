@@ -1,0 +1,254 @@
+{
+  "key": "6f4fa58e32bf514b",
+  "pdfSha256": "4ff1b0a3c85c346123aba556077327cf6df2d2fb3514a7f0dd591ab06c2d2043",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
+  "chunk": {
+    "first": 19,
+    "last": 19
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T05:25:12.716Z",
+  "transactions": [
+    {
+      "description": "TEXAS CITY TX INDPT SCH DIST 8/E PSF GTD 5.00 % Due Aug 15, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "TEXAS WOMANS UNIV REV FING SYS SER A 8/E 5.00 % Due Jul 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "UNIVERSITY CO ENTRPRS SYS REV SER A 8/E 5.00 % Due Jun 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "UNIVERSITY MN SPL PURP REV RFDG SER A 8/E 5.00 % Due Aug 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-06",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "WATERTOWN S D SALES TAX REV RFDG 2020 SD 8/E 4.00 % Due Dec 1, 2025",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-06",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PALM BEACH CNTY FLA SCH BRD 5.0000% 08/01/30",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "DUVAL CNTY FLA SCH BRD CTFS 5.0000% 07/01/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-08",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CONNECTICUT ST HEALTH & EDL 5.0000% 07/01/64",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-09",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KANSAS ST DEPT TRANSN HWY RE 5.0000%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-22",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MIAMI-DADE CNTY 5.25% DUE ON 04/01/37",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NEW HAMPSHIRE HEALT 5% DUE ON 08/01/55",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-27",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "CHICAGO ILL O HA 5.25% DUE ON 01/01/53",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-28",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMMN REV PJ 108 SER A 8/E PTC 5.00 % Due Aug 1, 2032",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-29",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KENTUCKY ST PPTY & BLDGS COMMN REV RFDG PJ 110 8/E PTC 5.00 % Due Aug 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-29",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "SAN ANTONIO TEX WTR REV SYS 5.0000% 05/15/27",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-29",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "GREATER CLARK BLDG 5% DUE ON 07/15/39",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-05-30",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NEW YORK NY GO BDS FISCAL 5.0000% 08/01/29",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "HOUSTON TX ARPT SYS REV RFDG SUB LIEN SER B 8/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MICHIGAN ST HOSP FIN AUTH REV ASCENSION HLTH SR CR GRP 2010F 6 8/E 4.00 % Due Nov 15, 2047",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "TEMPLE TX NT 8/E 4.00 % Due Aug 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NORTH SUMTER CNTY UTIL DEPENDENT DIST FL UTIL REV RFDG 2020 8/E 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-02",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "KENTUCKY INC KY PUB ENERGY AUTH GAS SPLY REV SER A 8/E 4.00 % Due Dec 1, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "MILL CREEK IN CMNTY SCH BLDG AD VALOREM PPTY TAX 1ST MTG REV 8/E 8/Q 5.00 % Due Jan 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-04",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "NEW YORK NY CITY HSG DEV CO 3.7500% 05/01/65",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "COLORADO HEALTH FACS AUTH RE 5.0000% 11/15/60",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    },
+    {
+      "description": "PEFA INC IOWA GAS PROJ REV B 5.0000% 09/01/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-06-05",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 4075,
+    "outputTokens": 2829,
+    "estimatedCostUsd": 0.0547
+  }
+}

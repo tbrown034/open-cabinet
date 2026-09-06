@@ -187,7 +187,19 @@ export async function secondReadFiling(input: {
       second.push(...(cached.transactions as Row[]));
       continue;
     }
-    const result = await input.read(unit.path);
+    let result: Awaited<ReturnType<typeof input.read>> | null = null;
+    for (let attempt = 1; attempt <= 6; attempt++) {
+      try {
+        result = await input.read(unit.path);
+        break;
+      } catch (err) {
+        const msg = String((err as Error)?.message ?? err);
+        const transient = /connection|socket|ECONNRESET|ETIMEDOUT|fetch failed|other side closed|rate limit|429|5\d\d/i.test(msg);
+        if (attempt === 6 || !transient) throw err;
+        await new Promise((r) => setTimeout(r, Math.min(60_000, 5000 * 2 ** (attempt - 1))));
+      }
+    }
+    if (!result) throw new Error("no result");
     cost += result.tokenUsage.estimatedCostUsd;
     if (input.onSpend) await input.onSpend(result.tokenUsage.estimatedCostUsd);
     // The second read is evidence, not a publication candidate: rows that

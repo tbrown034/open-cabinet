@@ -1,0 +1,173 @@
+{
+  "key": "39babbd3925c61d8",
+  "pdfSha256": "8a5e83d9886fd6753759ca620116880cbaf7a427bb8533be33ddf919605f5232",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BCF60D94B8F1E59285258DB000347F61/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(2).pdf",
+  "chunk": {
+    "first": 4,
+    "last": 4
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T04:51:13.521Z",
+  "transactions": [
+    {
+      "description": "CONNECTICUT ST HLTH & EDL FACS AUTH REV FAIRFIELD UNIV S B/E 5.00 % Due Jul 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.82
+    },
+    {
+      "description": "CAPE ANN MA TRAN AUTH REV ANTIC NT B/E B/O 4.25 % Due Jul 15, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.82
+    },
+    {
+      "description": "LAKE CNTY OH VARIOUS PURP IMPT NT B/E 3.75 % Due Sep 16, 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.82
+    },
+    {
+      "description": "PROSPER TX INDPT SCH DIST BLDG SER B B/E PSF GTD 4.00 % Due Feb 15, 2050",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-07",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.82
+    },
+    {
+      "description": "CONNECTICUT ST HEAL 5%42 SYST HLTH DUE 07/01/42 XTRO ASSURED GUARANTY IN",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.8
+    },
+    {
+      "description": "SCHERTZ-CIBOLO-UNVL 5%34 GO UTX DUE 02/01/34",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-22",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.8
+    },
+    {
+      "description": "DU PAGE CNTY ILL CM 4%42 GO UTX DUE 01/15/42 OID",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-13",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.8
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION CONV PFD SER L 7.250%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP PERP S 3.9500%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CITIZENS FINL GROUP INC PERP 4.0000%",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "Fifth 6.9802% 12/31/49",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-01-30",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.78
+    },
+    {
+      "description": "KEYCORP OP SH PFD H DTD 08/24/22 RT 6.200%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.83
+    },
+    {
+      "description": "WELLS FARGO & CO NEW PERP PFD CNV A 7.50%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-30",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WELLS FARGO & CO NEW - STOCK",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-13",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.83
+    },
+    {
+      "description": "BANK OF AMERICA CORPORATION CONV PFD SER L 7.250%",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.83
+    },
+    {
+      "description": "COREBRIDGE FINL INC PERP -A 6.8750% 12/31/49",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.83
+    },
+    {
+      "description": "WELLS FARGO & CO NEW - STOCK",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-01-06",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.83
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3605,
+    "outputTokens": 1739,
+    "estimatedCostUsd": 0.0369
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "key": "7c4bd774192c0cfa",
+  "pdfSha256": "3d2f74d9cc5f1a2a7819e90aea17357b40ddbca9839bf89c8b3f047c6f2e33ce",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/268353939B7DACB585258D81003471B1/$FILE/Donald-J-Trump%201.14.2026-278T.pdf",
+  "chunk": {
+    "first": 5,
+    "last": 5
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T04:54:59.017Z",
+  "transactions": [
+    {
+      "description": "TEXAS HM COLLABORATIVE MLTIFAM HSG REV 1518 APTS LTD B/E 5.00% Due Oct 1, 2041",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "WEST LAFAYETTE IN SCH BLDG CORP AD VALOREM PPTY TAX 1ST MTG REV B/E 5.00% Due Jul 15 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "SWEETWATER CNTY WY SPECIFIC PURP TAX JT PWR BRD SALES & USE REV B/E 6.00% Due Jun 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-12",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ESCAMBIA CNTY FL HSG FIN AUTH MLTIFAM HSG REV HOLLOWBROOK APTS B/E 3.80% Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WISCONSIN HSG & ECON DEV AUTH MLTIFAM HSG REV VIEW HUXLEY YARDS A B/E 5.00% Due Feb 1 2058",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-12",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HARRIS CNTY TX CULTURAL ED FAC FIN CORP REV HOSP MEMORIAL HERMANN B3 B/E 5.00% Due Jul 1 2049",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WEST CHESTER PA AREA SCH DIST SER A B/E 2.50% Due Feb 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-11",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MINNEAPOLIS MN SPL SCH DIST 001 LONG TERM FACS MAINT SER B B/E 5.00% Due Feb 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-11",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "LEBANON IN MIDDLE SCH BLDG CORP 1ST MTG REV B B/E ST INTRCPT 5.00% Due Jan 15 2028",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-11",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HUMBLE TX INDPT SCH T SRA BE/R/ 5 DUE 021529 DTD 011426 FC 021526 2.590% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "PROSPER TX ISD BK PERMA BE/R/ 5 DUE 021531 DTD 121525 INSRD FC 021526 2.670% YIELD TO MATURITY UNSOLICITED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-17",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "Oklahoma St Wtr Res Brd St Ln Program Rev Bds 2025 C 5.000% 10/01/48 B/e Dtd 12/17/25 Clb Solicited Order Yid 4.219 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-10",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Bryan Tex Elec Sys Rev Bds 2025 5.000% 07/01/50 B/e Dtd 11/15/25 Clb Solicited Order Yid 4.547 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-08",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Intermountain Pwr Agy Utah Pwr Supply Rev Bds 2022a 5.000% 07/01/44 B/e Dtd 05/12/22 Clb Solicited Order Yid 4.238 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-04",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Arkansas St Dev Fin Auth Rev Revolving Ln Fd Bds 2026 5.000% 06/01/51 B/e Dtd 01/06/26 Clb Syndicate Yid 4.350 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-04",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Arkansas St Dev Fin Auth Rev Revolving Ln Fd Bds 2026 5.000% 06/01/46 B/e Dtd 01/06/26 Clb Syndicate Yid 4.130 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-04",
+      "amount": "$500,001-$1,000,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Lee Cnty Fla Sch Brd Ctfs Partn Cops 2025 A 5.250% 08/01/47 B/e Dtd 11/14/25 Clb Solicited Order Yid 4.267 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Hilliard Ohio Sch Dist Go Unltd Tax Facs Bds 2025b 5.000% 12/01/47 B/e Dtd 09/24/25 Clb Solicited Order Yid 4.094 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Clifton Tex Higher Ed Fin Corp Ed Rev Ref Bds International 5.250% 02/15/45 B/e Dtd 05/01/25 Clb Solicited Order Yid 4.206 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-02",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.85
+    },
+    {
+      "description": "University Louisville Ky Revs Gen Rcpts Bds 2025 A 5.000% 09/01/45 B/e Dtd 05/07/25 Clb Solicited Order Yid 3.883 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Travis Cnty Tex Healthcare Dist Ltd Tax Ctfs Of Oblig Central Health 2025 5.250% 03/01/48 B/e Dtd 12/01/25 Clb Solicited Order Yid 4.292 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Timpanogos Spl Svc Dist Utah Swr Rev Ref Bds 2024 5.000% 06/01/48 B/e Dtd 10/15/24 Clb Solicited Order Yid 4.225 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Tarrant Cnty Tex Cultural Ed Facs Fin Corp Hosp Rev Bds Baylor Scott White 5.500% 11/15/47 B/e Dtd 11/30/22 Clb Solicited Order Yid 4.130 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "South Dakota Conservancy Dist Rev St Revolving Fd Program Bds 2024 A 5.000% 08/01/50 B/e Dtd 09/05/24 Clb Solicited Order Yid 4.181 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "South Carolina St Pub Svcs Auth Rev Impt Oblgts 2021 B 5.000% 12/01/43 B/e Dtd 09/02/21 Clb Solicited Order Yid 4.328 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "South Carolina Jobs-economic Dev Auth Health Care Facs Rev Bds Novant 5.500% 11/01/50 B/e Dtd 05/14/24 Clb Solicited Order Yid 4.247 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Pennsylvania St Higher Ed Facs Auth Rev Fixed Rate Bds Thomas Jefferson 5.250% 11/01/41 B/e Dtd 11/13/24 Clb Solicited Order Yid 3.962 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Palm Beach Cnty Fla Health Facs Auth Hosp Rev Bds Jupiter Med Ctr Inc 2025 5.000% 11/01/45 B/e Dtd 07/23/25 Clb Solicited Order Yid 4.083 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Omaha Pub Pwr Dist Neb Elec Rev Sys Bds 2025b 5.000% 02/01/46 B/e Dtd 12/10/25 Clb Solicited Order Yid 4.072 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Mobile Cnty Ala Gen Oblig Impt Wts 2025 5.000% 02/01/46 B/e Dtd 12/11/25 Clb Solicited Order Yid 4.080 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Missouri Jt Mun Elec Util Commn Pwr Proj Rev Bds Marshall Energy Ctr Proj 2025 5.000% 01/01/44 B/e Dtd 11/04/25 Clb Solicited Order Yid 4.172 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Miami-dade Cnty Fla Wtr & Swr Rev Sys Bds 2024a 5.000% 10/01/49 B/e Dtd 05/29/24 Clb Solicited Order Yid 4.267 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Metrocare Svcs Tex Rev Bds 2025 5.000% 11/01/42 B/e Dtd 11/19/25 Clb Solicited Order Yid 4.013 To Par",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2025-12-01",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 5687,
+    "outputTokens": 4430,
+    "estimatedCostUsd": 0.0835
+  }
+}

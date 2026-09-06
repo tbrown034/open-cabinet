@@ -1,0 +1,174 @@
+{
+  "pdfSha256": "460e19fa82ef26ce297f52868a688d321a372b2117df260d990d3764c3778091",
+  "first": 2,
+  "last": 2,
+  "rowsSha256": "2b91e4721f3e9a77118347f8b3f6025bf213ff9357b578cdef5d0eb28cdf09fc",
+  "model": "grok-4.6",
+  "promptVersion": "2026-09-06.1",
+  "auditedAt": "2026-09-06T07:16:34.699Z",
+  "verdicts": [
+    {
+      "i": 0,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 1,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 2,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 3,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 4,
+      "verdict": "match"
+    },
+    {
+      "i": 5,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 6,
+      "verdict": "match"
+    },
+    {
+      "i": 7,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 8,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 9,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 10,
+      "verdict": "match"
+    },
+    {
+      "i": 11,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 12,
+      "verdict": "match"
+    },
+    {
+      "i": 13,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 14,
+      "verdict": "match"
+    },
+    {
+      "i": 15,
+      "verdict": "match"
+    },
+    {
+      "i": 16,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 17,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 18,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 19,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 20,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 21,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 22,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 23,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 24,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 25,
+      "verdict": "match"
+    },
+    {
+      "i": 26,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 27,
+      "verdict": "match"
+    },
+    {
+      "i": 28,
+      "verdict": "match"
+    },
+    {
+      "i": 29,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 30,
+      "verdict": "match"
+    },
+    {
+      "i": 31,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    },
+    {
+      "i": 32,
+      "verdict": "differs",
+      "pageShows": "notification Yes"
+    }
+  ],
+  "missing": [],
+  "usage": {
+    "inputTokens": 4473,
+    "outputTokens": 555,
+    "estimatedCostUsd": 0.0123
+  },
+  "cached": false,
+  "raw": "{\"verdicts\":[{\"i\":0,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":1,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":2,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":3,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":4,\"verdict\":\"match\"},{\"i\":5,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":6,\"verdict\":\"match\"},{\"i\":7,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":8,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":9,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":10,\"verdict\":\"match\"},{\"i\":11,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":12,\"verdict\":\"match\"},{\"i\":13,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":14,\"verdict\":\"match\"},{\"i\":15,\"verdict\":\"match\"},{\"i\":16,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":17,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":18,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":19,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":20,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":21,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":22,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":23,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":24,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":25,\"verdict\":\"match\"},{\"i\":26,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":27,\"verdict\":\"match\"},{\"i\":28,\"verdict\":\"match\"},{\"i\":29,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":30,\"verdict\":\"match\"},{\"i\":31,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"},{\"i\":32,\"verdict\":\"differs\",\"pageShows\":\"notification Yes\"}],\"missing\":[]}"
+}
