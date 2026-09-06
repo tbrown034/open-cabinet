@@ -12,7 +12,7 @@ import {
   sumAmountEstimates,
 } from "../lib/amounts";
 import type { Transaction } from "../lib/types";
-import { readRowVerification, recordIdsFor } from "../lib/row-verification";
+import { verificationForOfficial, recordIdsFor } from "../lib/row-verification";
 
 interface OfficialData {
   name: string;
@@ -50,13 +50,16 @@ async function main() {
     allOfficials.push(JSON.parse(raw));
   }
 
-  const verification = readRowVerification();
   const exportOfficials = allOfficials.map((official) => {
     const ids = recordIdsFor(official.transactions);
+    const verification = verificationForOfficial(official.slug, official.transactions);
+    const underReviewCount = verification.filter((row) => row?.score === 0).length;
     return {
       ...official,
+      transactionCount: official.transactions.length - underReviewCount,
+      underReviewCount,
       transactions: official.transactions.map((tx, i) => {
-        const row = verification?.rows[ids[i]];
+        const row = verification[i];
         return {
           ...tx,
           recordId: ids[i],
@@ -130,16 +133,18 @@ async function main() {
     "late_filing_count",
     "estimated_total_value",
     "most_recent_oge_filing_date",
+    "under_review_count",
   ];
-  const sumRows = allOfficials.map((o) => {
-    const sales = o.transactions.filter((t) =>
+  const sumRows = exportOfficials.map((o) => {
+    const counted = o.transactions.filter((tx) => tx.verificationScore !== 0);
+    const sales = counted.filter((t) =>
       ["Sale", "Sale (Partial)", "Sale (Full)"].includes(t.type)
     ).length;
-    const purchases = o.transactions.filter(
+    const purchases = counted.filter(
       (t) => t.type === "Purchase"
     ).length;
-    const late = o.transactions.filter((t) => t.lateFilingFlag).length;
-    const totalValue = sumAmountEstimates(o.transactions).estimate;
+    const late = counted.filter((t) => t.lateFilingFlag).length;
+    const totalValue = sumAmountEstimates(counted).estimate;
     return [
       escapeCsv(o.name),
       o.slug,
@@ -148,12 +153,13 @@ async function main() {
         o.level,
         o.confirmedDate || "",
         o.departedDate || "",
-      String(o.transactions.length),
+      String(o.transactionCount),
       String(sales),
       String(purchases),
       String(late),
       String(totalValue),
       o.mostRecentFilingDate,
+      String(o.underReviewCount),
     ].join(",");
   });
   const sumCsv = [sumHeaders.join(","), ...sumRows].join("\n") + "\n";
@@ -175,10 +181,11 @@ async function main() {
   const fullJson = {
     exportedAt,
     officialCount: allOfficials.length,
-    transactionCount: allOfficials.reduce(
-      (sum, o) => sum + o.transactions.length,
+    transactionCount: exportOfficials.reduce(
+      (sum, o) => sum + o.transactionCount,
       0
     ),
+    underReviewCount: exportOfficials.reduce((sum, o) => sum + o.underReviewCount, 0),
     officials: exportOfficials.map((o) => ({
       name: o.name,
       slug: o.slug,
@@ -187,7 +194,8 @@ async function main() {
       level: o.level,
       confirmedDate: o.confirmedDate ?? null,
       departedDate: o.departedDate ?? null,
-      transactionCount: o.transactions.length,
+      transactionCount: o.transactionCount,
+      underReviewCount: o.underReviewCount,
       mostRecentFilingDate: o.mostRecentFilingDate,
       transactions: o.transactions,
     })),

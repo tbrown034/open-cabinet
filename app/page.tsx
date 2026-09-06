@@ -1,4 +1,5 @@
-import { getOfficialsIndex, getAllOfficials, getTradesByTicker } from "@/lib/data";
+import UnderReviewNote from "./components/under-review-note";
+import { getOfficialsIndex, getAllOfficials, getTradesByTicker, officialForTotals } from "@/lib/data";
 import {
   formatCompactCurrency,
   displayName,
@@ -38,15 +39,14 @@ export default async function Home() {
   const companyCount = tickerMap.size;
   // Drop prior-administration holdovers from the directory, counts and banner.
   const officials = index.officials.filter((o) => !o.formerOfficial);
+  const countedOfficials = allOfficials.map(officialForTotals);
+  const countedBySlug = new Map(countedOfficials.map((o) => [o.slug, o]));
+  const underReviewCount = countedOfficials.reduce((sum, o) => sum + o.underReviewCount, 0);
   const officialsBySlug = new Map(allOfficials.map((o) => [o.slug, o]));
 
   const totalOfficials = officials.length;
-  const totalTransactions = officials.reduce(
-    (sum, o) => sum + o.transactionCount,
-    0
-  );
-
-  const allTx = allOfficials.flatMap((o) => o.transactions);
+  const allTx = countedOfficials.flatMap((o) => o.transactions);
+  const totalTransactions = allTx.length;
   const estimatedTotal = sumAmountEstimates(allTx).estimate;
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
   // Headline accountability finding, surfaced on the hero: the share of all
@@ -123,9 +123,8 @@ export default async function Home() {
   const heroBuckets = bucketByMonth(allTx, monthAxis);
   const activityBySlug: Record<string, MonthBucket[]> = {};
   for (const official of officials) {
-    const full = officialsBySlug.get(official.slug);
     activityBySlug[official.slug] = bucketByMonth(
-      full?.transactions ?? [],
+      countedBySlug.get(official.slug)?.transactions ?? [],
       monthAxis
     );
   }
@@ -277,9 +276,10 @@ export default async function Home() {
             <Link href="/late-filings" className="underline decoration-dotted underline-offset-2 hover:text-neutral-700">late-filed transactions</Link>
           </div>
         </div>
+        <UnderReviewNote count={underReviewCount} />
         <p className="text-xs text-neutral-400 mt-2 pb-4 border-b border-neutral-200">
           Transactions filed January 2025 to present. Trade volume is the
-          midpoint of the reporting ranges, summed across all disclosed
+          midpoint of the reporting ranges, summed across counted
           transactions &mdash; not portfolio value, net worth or exposure.
           A single position bought and later sold counts twice.
         </p>
@@ -306,7 +306,7 @@ export default async function Home() {
         </div>
 
         <OfficialsTable
-          officials={officials}
+          officials={officials.map((o) => ({ ...o, transactionCount: countedBySlug.get(o.slug)?.transactions.length ?? 0 }))}
           initialLimit={15}
           newIngestedCutoff={newCutoffStr}
           activityBySlug={activityBySlug}

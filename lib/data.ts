@@ -3,6 +3,19 @@ import path from "path";
 import type { AmountRange, OfficialData, OfficialsIndex } from "./types";
 import { companyGroupName, resolveTicker } from "./assets";
 import { lookupAsset, registryDisplayName, resolveSymbol, type AssetLookup } from "./asset-registry";
+import { verificationForOfficial, type RowVerification } from "./row-verification";
+import { rowsForTotals } from "./format";
+
+/** A separate aggregate view; never remove rows from the source official. */
+export function officialForTotals(official: OfficialData) {
+  const verification = verificationForOfficial(official.slug, official.transactions);
+  const transactions = rowsForTotals(official.transactions, verification);
+  return {
+    ...official,
+    transactions,
+    underReviewCount: official.transactions.length - transactions.length,
+  };
+}
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -40,6 +53,7 @@ export async function getAllOfficials(): Promise<OfficialData[]> {
 }
 
 export interface CompanyTrade {
+  verification: RowVerification | null;
   officialName: string;
   officialSlug: string;
   officialTitle: string;
@@ -92,7 +106,8 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
 
   const descriptionsByTicker = new Map<string, string[]>();
   for (const official of officials) {
-    for (const tx of official.transactions) {
+    const verification = verificationForOfficial(official.slug, official.transactions);
+    for (const [i, tx] of official.transactions.entries()) {
       // Resolve at read time. A filed symbol that is a name suffix ("THE")
       // or an unreviewed ambiguous short symbol is withheld here, so it can
       // never become a company page. The stored row is untouched.
@@ -107,6 +122,7 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
       }
       descriptionsByTicker.get(ticker)!.push(tx.description);
       tickerMap.get(ticker)!.trades.push({
+        verification: verification[i],
         officialName: official.name,
         officialSlug: official.slug,
         officialTitle: official.title,

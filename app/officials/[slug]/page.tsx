@@ -4,6 +4,9 @@ import Link from "next/link";
 import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib/data";
 import {
   formatDate,
+  rowsForTotals,
+  sumAmountEstimates,
+  formatCompactCurrency,
   amountRangeLabel,
   displayName,
   getSourceFilingForTransaction,
@@ -13,6 +16,7 @@ import { getNewsForOfficial } from "@/lib/news";
 import { getFeePaymentsBySlug } from "@/lib/fee-payments";
 import type { Transaction } from "@/lib/types";
 import { verificationForOfficial } from "@/lib/row-verification";
+import UnderReviewNote from "@/app/components/under-review-note";
 import VerificationMarker from "@/app/components/verification-marker";
 import TransactionTimeline from "@/app/components/transaction-timeline";
 import MonthlyBars from "@/app/components/monthly-bars";
@@ -201,9 +205,6 @@ export default async function OfficialPage({
     sourceDocs,
     official
   );
-  const promiseEvidence = divestiture
-    ? buildPromiseEvidence(divestiture, official.transactions)
-    : null;
   const { transactions } = official;
   // Attach in original row order before filters, sorting or pagination.
   // Identical lots have separate occurrence IDs and may have different verdicts.
@@ -212,10 +213,16 @@ export default async function OfficialPage({
     transactions.map((tx, i) => [tx, verification[i]])
   );
 
-  const totalTrades = transactions.length;
-  const buys = transactions.filter((t) => t.type === "Purchase").length;
-  const sells = transactions.filter((t) => isSale(t.type)).length;
-  const lateFilings = transactions.filter((t) => t.lateFilingFlag).length;
+  const countedTransactions = rowsForTotals(transactions, verification);
+  const underReviewCount = transactions.length - countedTransactions.length;
+  const promiseEvidence = divestiture
+    ? buildPromiseEvidence(divestiture, countedTransactions)
+    : null;
+  const totalValue = sumAmountEstimates(countedTransactions).estimate;
+  const totalTrades = countedTransactions.length;
+  const buys = countedTransactions.filter((t) => t.type === "Purchase").length;
+  const sells = countedTransactions.filter((t) => isSale(t.type)).length;
+  const lateFilings = countedTransactions.filter((t) => t.lateFilingFlag).length;
 
   const dates = transactions.map((t) => new Date(t.date).getTime());
   const earliest = new Date(Math.min(...dates));
@@ -224,11 +231,11 @@ export default async function OfficialPage({
   // Density-derived stats, surface the *rhythm* of the trading, not just
   // the cumulative count. These power the high-volume page tier.
   const countsByDay = new Map<string, number>();
-  for (const t of transactions) {
+  for (const t of countedTransactions) {
     countsByDay.set(t.date, (countsByDay.get(t.date) ?? 0) + 1);
   }
   const countsByMonth = new Map<string, number>();
-  for (const t of transactions) {
+  for (const t of countedTransactions) {
     const k = t.date.slice(0, 7);
     countsByMonth.set(k, (countsByMonth.get(k) ?? 0) + 1);
   }
@@ -305,7 +312,7 @@ export default async function OfficialPage({
   // The bar chart respects range only, clicking a bar within the
   // chart is itself the month filter, so we don't want the chart to
   // collapse to a single bar when a month is selected.
-  const chartTransactions = rangedTransactions;
+  const chartTransactions = countedTransactions.filter(inRange);
   // The table and dot-timeline respect every filter, so they narrow to
   // the user's selection.
   const visibleTransactions = [];
@@ -385,7 +392,7 @@ export default async function OfficialPage({
   // meaning we just published this official for the first time. That's a
   // bigger story than an additive filing on an existing page.
   const isFirstAppearance =
-    isRecentlyIngested && newCount > 0 && newCount === totalTrades;
+    isRecentlyIngested && newCount > 0 && newCount === transactions.length;
 
   /**
    * Person + Dataset markup for the page.
@@ -550,6 +557,12 @@ export default async function OfficialPage({
           </span>
           {buys === 1 ? "purchase" : "purchases"}
         </div>
+        <div>
+          <span className="text-lg font-semibold text-neutral-900 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
+            ~{formatCompactCurrency(totalValue)}
+          </span>
+          trade volume (est.)
+        </div>
         {lateFilings > 0 && (
           <div>
             <span className="text-lg font-semibold text-amber-700 font-[family-name:var(--font-dm-mono)] tabular-nums mr-1">
@@ -594,6 +607,7 @@ export default async function OfficialPage({
           {formatDate(latest.toISOString().split("T")[0])}
         </div>
       </div>
+      <UnderReviewNote count={underReviewCount} />
       <p className="text-xs text-neutral-400 mb-2">
         Last filing: {formatDate(ogeFilingDate)}
         <span className="text-neutral-300 mx-1.5">|</span>
@@ -657,7 +671,7 @@ export default async function OfficialPage({
 
       {buys === 0 && sells > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
-          Every transaction on file is a sale. This is the pattern you would
+          The counted trades include sales and no purchases. This is the pattern you would
           expect from an official liquidating positions to comply with an
           ethics agreement, but Open Cabinet does not yet ingest the
           entry-disclosure baseline (Nominee 278) needed to confirm which
@@ -666,7 +680,7 @@ export default async function OfficialPage({
       )}
       {sells === 0 && buys > 0 && (
         <p className="text-xs text-neutral-400 mb-6">
-          All transactions were purchases made while in office.
+          The counted trades include purchases and no sales.
         </p>
       )}
 
@@ -710,7 +724,7 @@ export default async function OfficialPage({
           />
         ) : (
           <TransactionTimeline
-            transactions={visibleTransactions.map(stripSourceUrl)}
+            transactions={visibleTransactions.filter((tx) => verificationByTransaction.get(tx)?.score !== 0).map(stripSourceUrl)}
             careerEvents={getCareerEvents(official)}
           />
         )}

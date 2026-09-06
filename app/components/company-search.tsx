@@ -1,11 +1,13 @@
 "use client";
 
+import UnderReviewNote from "./under-review-note";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import { formatCompactCurrency } from "@/lib/format";
 
 interface CompanyEntry {
+  underReviewCount: number;
   ticker: string;
   companyName: string;
   tradeCount: number;
@@ -80,7 +82,10 @@ export default function CompanySearch({
                     {c.ticker}
                   </Link>
                 </td>
-                <td className="py-2.5 pr-3 text-neutral-600 max-w-[160px] truncate sm:max-w-none sm:whitespace-normal" title={c.companyName}>{c.companyName}</td>
+                <td className="py-2.5 pr-3 text-neutral-600 max-w-[160px] truncate sm:max-w-none sm:whitespace-normal" title={c.companyName}>
+                  {c.companyName}
+                  <UnderReviewNote count={c.underReviewCount} />
+                </td>
                 <td className="py-2.5 pr-3 text-right tabular-nums text-neutral-900 hidden sm:table-cell">
                   {c.officialCount}
                 </td>

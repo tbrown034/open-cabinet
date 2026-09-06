@@ -21,14 +21,18 @@ interface DatasetTransaction {
   ticker: string | null;
   amount: AmountRange | null;
   lateFilingFlag: boolean;
+  verificationScore: number | null;
 }
 
 interface DatasetOfficial {
+  transactionCount: number;
+  underReviewCount: number;
   transactions: DatasetTransaction[];
 }
 
 interface Dataset {
   officialCount: number;
+  underReviewCount: number;
   transactionCount: number;
   officials: DatasetOfficial[];
 }
@@ -52,6 +56,7 @@ const formatCount = (n: number) => n.toLocaleString("en-US");
 
 describe("README current-data table matches the published dataset", () => {
   const allTx = dataset.officials.flatMap((o) => o.transactions);
+  const countedTx = allTx.filter((tx) => tx.verificationScore !== 0);
 
   it("officials tracked", () => {
     expect(readmeStat("Officials tracked")).toBe(
@@ -69,15 +74,27 @@ describe("README current-data table matches the published dataset", () => {
     const file = readRowVerification();
     expect(file, "The row verification file is required to check README counts").not.toBeNull();
     if (!file) return;
-    expect(file.summary.rows).toBe(dataset.transactionCount);
+    expect(file.summary.rows).toBe(allTx.length);
     const counts = Object.entries(file.summary.byState)
       .map(([state, count]) => `${formatCount(count)} ${state}`)
       .join("; ");
     expect(readme).toContain(`Rows by verification state: ${counts}.`);
   });
 
+  it("excludes under-review rows from transaction totals and reports them separately", () => {
+    const underReview = allTx.length - countedTx.length;
+    expect(dataset.transactionCount).toBe(countedTx.length);
+    expect(dataset.underReviewCount).toBe(underReview);
+    expect(readmeStat("Rows under review \\(not counted in totals\\)")).toBe(formatCount(underReview));
+    for (const official of dataset.officials) {
+      const counted = official.transactions.filter((tx) => tx.verificationScore !== 0).length;
+      expect(official.transactionCount).toBe(counted);
+      expect(official.underReviewCount).toBe(official.transactions.length - counted);
+    }
+  });
+
   it("late filings", () => {
-    const late = allTx.filter((t) => t.lateFilingFlag).length;
+    const late = countedTx.filter((t) => t.lateFilingFlag).length;
     expect(readmeStat("Late filings")).toBe(formatCount(late));
   });
 
@@ -94,7 +111,7 @@ describe("README current-data table matches the published dataset", () => {
   });
 
   it("estimated value", () => {
-    const total = sumAmountEstimates(allTx).estimate;
+    const total = sumAmountEstimates(countedTx).estimate;
     expect(readmeStat("Estimated value")).toBe(
       `~${formatCompactCurrency(total)}`
     );
