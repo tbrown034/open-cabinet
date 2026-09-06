@@ -1,8 +1,10 @@
+import UnderReviewNote from "@/app/components/under-review-note";
+import VerificationMarker from "@/app/components/verification-marker";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getTradesByTicker, getAllTickers, COMPANY_CONTEXT } from "@/lib/data";
-import { formatDate, amountRangeLabel, formatCompactCurrency, displayName, sumAmountEstimates, transactionEstimate } from "@/lib/format";
+import { formatDate, rowsForTotals, amountRangeLabel, formatCompactCurrency, displayName, sumAmountEstimates, transactionEstimate } from "@/lib/format";
 import CompanyBarChart from "@/app/components/company-bar-chart";
 import { INSTRUMENT_TYPE_LABEL } from "@/lib/asset-registry";
 import type { AssetLookup } from "@/lib/asset-registry";
@@ -23,7 +25,8 @@ export async function generateMetadata({
   ]);
   const company = tickerMap.get(ticker.toUpperCase());
   if (!company) return { title: "Not Found" };
-  const officialCount = new Set(company.trades.map((t) => t.officialSlug)).size;
+  const trades = rowsForTotals(company.trades, company.trades.map((t) => t.verification));
+  const officialCount = new Set(trades.map((t) => t.officialSlug)).size;
   return {
     // Lowercase self-canonical also collapses /companies/AAPL and
     // /companies/aapl (both serve identical content) into one indexed URL.
@@ -32,10 +35,10 @@ export async function generateMetadata({
     // Many company names already end in a period ("NVIDIA Corp.", "Apple,
     // Inc."), so appending one produced "NVIDIA Corp.." in every search
     // result for those tickers.
-    description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName.replace(/\.$/, "")}.`,
+    description: `${officialCount} executive branch official${officialCount !== 1 ? "s" : ""} reported ${trades.length} trade${trades.length !== 1 ? "s" : ""} in ${company.companyName.replace(/\.$/, "")}.`,
     openGraph: {
       title: `${company.ticker}: Who in Government Trades This Stock — Open Cabinet`,
-      description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${company.trades.length} trade${company.trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
+      description: `${officialCount} official${officialCount !== 1 ? "s" : ""}, ${trades.length} trade${trades.length !== 1 ? "s" : ""} in ${company.companyName}.`,
       type: "website",
     },
   };
@@ -110,8 +113,9 @@ export default async function CompanyPage({
     notFound();
   }
 
-  const { trades } = company;
-  const sorted = trades.toSorted(
+  const trades = rowsForTotals(company.trades, company.trades.map((t) => t.verification));
+  const underReviewCount = company.trades.length - trades.length;
+  const sorted = company.trades.toSorted(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
@@ -186,6 +190,8 @@ export default async function CompanyPage({
         </div>
       </div>
 
+      <UnderReviewNote count={underReviewCount} />
+
       {officials.length > 1 && (
         <CompanyBarChart officials={officials} ticker={company.ticker} />
       )}
@@ -201,6 +207,7 @@ export default async function CompanyPage({
               <th className="pb-2 pr-4 font-medium">Official</th>
               <th className="pb-2 pr-4 font-medium">Type</th>
               <th className="pb-2 font-medium text-right">Amount</th>
+              <th className="pb-2 pl-4 font-medium">Verification</th>
             </tr>
           </thead>
           <tbody>
@@ -235,6 +242,7 @@ export default async function CompanyPage({
                 <td className="py-2.5 text-right tabular-nums font-[family-name:var(--font-dm-mono)] text-neutral-600 whitespace-nowrap">
                   {t.amount ? amountRangeLabel(t.amount) : "Not ascertainable"}
                 </td>
+                <td className="py-2.5 pl-4"><VerificationMarker verification={t.verification} /></td>
               </tr>
             ))}
           </tbody>

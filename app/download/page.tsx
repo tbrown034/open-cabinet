@@ -1,3 +1,4 @@
+import UnderReviewNote from "../components/under-review-note";
 import type { Metadata } from "next";
 import { readFile } from "fs/promises";
 import path from "path";
@@ -23,8 +24,9 @@ export default async function DownloadPage() {
     exportedAt: string;
     officialCount: number;
     transactionCount: number;
+    underReviewCount: number;
   };
-  const txCount = fullDataset.transactionCount;
+  const txCount = fullDataset.transactionCount + fullDataset.underReviewCount;
   const officialCount = fullDataset.officialCount;
 
   const exports = [
@@ -33,7 +35,7 @@ export default async function DownloadPage() {
       file: "/data/all-transactions.csv",
       format: "CSV",
       description:
-        "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate and late filing flag.",
+        "One row per transaction. Includes official name, title, agency, asset description, ticker, type, date, amount range, midpoint estimate, late filing flag and verificationState. Keeps every row, including rows under review.",
       rows: `${fmt(txCount)} rows`,
     },
     {
@@ -41,7 +43,7 @@ export default async function DownloadPage() {
       file: "/data/officials-summary.csv",
       format: "CSV",
       description:
-        "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count and estimated total value.",
+        "One row per official. Includes name, title, agency, trade count, sales/purchases breakdown, late filing count, estimated total value and under-review count. Totals exclude rows under review.",
       rows: `${officialCount} rows`,
     },
     {
@@ -49,7 +51,7 @@ export default async function DownloadPage() {
       file: "/data/full-dataset.json",
       format: "JSON",
       description:
-        "Complete structured dataset with all officials and their transactions. Suitable for programmatic analysis.",
+        "Complete structured dataset with every transaction. transactionCount excludes score-0 rows; underReviewCount reports them separately, per official and for the dataset.",
       rows: `${officialCount} officials, ${fmt(txCount)} transactions`,
     },
   ];
@@ -67,6 +69,7 @@ export default async function DownloadPage() {
         </p>
       </header>
 
+      <UnderReviewNote count={fullDataset.underReviewCount} />
       <div className="space-y-6">
         {exports.map((item) => (
           <div

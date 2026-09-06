@@ -1,5 +1,14 @@
 import type { SourceFiling, Transaction } from "./types";
 
+/** Pass verdicts in the original row order, before sorting or filtering.
+ * Missing verification remains a single read; only score zero is excluded. */
+export function rowsForTotals<T>(
+  rows: T[],
+  verification: ({ score: number } | null)[]
+): T[] {
+  return rows.filter((_, i) => verification[i]?.score !== 0);
+}
+
 export {
   amountRangeToMin,
   amountRangeToMax,

@@ -72,3 +72,37 @@ it("still marks every displayed row when verification data is missing", async ()
   expect(body).toContain(">Not yet checked</summary>");
   expect(body).toContain("No verification record is available for this row");
 });
+
+
+it.each(["Purchase", "Sale"] as const)("excludes a disputed %s from totals while keeping its marked table row", async (type) => {
+  transactions = [
+    { description: "Disputed large trade", ticker: null, type, date: "2026-01-01", amount: "$1,000,001-$5,000,000", lateFilingFlag: true },
+    { description: "Counted purchase", ticker: null, type: "Purchase", date: "2026-01-02", amount: "$1,001-$15,000", lateFilingFlag: false },
+    { description: "Counted sale", ticker: null, type: "Sale (Partial)", date: "2026-01-03", amount: "$1,001-$15,000", lateFilingFlag: true },
+  ];
+  vi.mocked(getOfficialBySlug).mockResolvedValue({
+    name: "Example, Person", slug: "example-person", title: "Secretary", agency: "Example",
+    level: "Cabinet", filingType: "278-T", mostRecentFilingDate: "2026-05-01", transactions,
+  });
+  const html = renderToStaticMarkup(await OfficialPage({ params: Promise.resolve({ slug: "example-person" }) }));
+  expect(html).toMatch(/>2<\/span>trades/);
+  expect(html).toMatch(/>1<\/span>sale/);
+  expect(html).toMatch(/>1<\/span>purchase/);
+  expect(html).toMatch(/>1<\/span>late filing/);
+  expect(html).toContain("~$16K");
+  expect(html).toContain("1 row under review is not counted");
+  expect(html).toContain("Disputed large trade");
+  expect(html).toContain(">Under review</summary>");
+});
+
+it("shows zero totals when every row is under review", async () => {
+  vi.mocked(verificationForOfficial).mockReturnValue(transactions.map((_tx, i) => ({
+    id: `row-${i}`, slug: "example-person", score: 0, state: "disputed",
+    lane: null, sourceUrl: null, note: "Disputed",
+  })));
+  const html = renderToStaticMarkup(await OfficialPage({ params: Promise.resolve({ slug: "example-person" }) }));
+  expect(html).toMatch(/>0<\/span>trades/);
+  expect(html).toContain("~$0");
+  expect(html).toContain("104 rows under review are not counted");
+  expect(html).toContain(">Under review</summary>");
+});

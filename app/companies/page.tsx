@@ -1,6 +1,7 @@
+import UnderReviewNote from "../components/under-review-note";
 import type { Metadata } from "next";
 import { getTradesByTicker } from "@/lib/data";
-import { sumAmountEstimates } from "@/lib/format";
+import { rowsForTotals, sumAmountEstimates } from "@/lib/format";
 import CompanySearch from "../components/company-search";
 import Link from "next/link";
 
@@ -19,15 +20,19 @@ export default async function CompaniesPage() {
   const tickerMap = await getTradesByTicker();
 
   const companies = Array.from(tickerMap.values())
-    .map((c) => ({
-      ticker: c.ticker,
-      companyName: c.companyName,
-      tradeCount: c.trades.length,
-      buyCount: c.trades.filter((t) => t.type === "Purchase").length,
-      sellCount: c.trades.filter((t) => isSale(t.type)).length,
-      officialCount: new Set(c.trades.map((t) => t.officialSlug)).size,
-      estimatedValue: sumAmountEstimates(c.trades).estimate,
-    }))
+    .map((c) => {
+      const trades = rowsForTotals(c.trades, c.trades.map((t) => t.verification));
+      return {
+        underReviewCount: c.trades.length - trades.length,
+        ticker: c.ticker,
+        companyName: c.companyName,
+        tradeCount: trades.length,
+        buyCount: trades.filter((t) => t.type === "Purchase").length,
+        sellCount: trades.filter((t) => isSale(t.type)).length,
+        officialCount: new Set(trades.map((t) => t.officialSlug)).size,
+        estimatedValue: sumAmountEstimates(trades).estimate,
+      };
+    })
     .toSorted((a, b) => b.tradeCount - a.tradeCount);
 
   // Top 5 most-traded by number of officials
@@ -75,6 +80,7 @@ export default async function CompaniesPage() {
         </div>
       </div>
 
+      <UnderReviewNote count={companies.reduce((sum, c) => sum + c.underReviewCount, 0)} />
       <CompanySearch companies={companies} />
 
       <p className="text-xs text-neutral-400 mt-8">
