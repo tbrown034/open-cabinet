@@ -31,6 +31,7 @@ import ViewToggle from "@/app/components/view-toggle";
 import type { ChartView } from "@/app/components/view-toggle";
 import OfficialAvatar from "@/app/components/official-avatar";
 import AlertSignupForm from "@/app/components/alert-signup-form";
+import AskTheData from "@/app/components/ask-the-data";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
 import SourceDocuments from "@/app/components/source-documents";
 import {
@@ -691,6 +692,15 @@ export default async function OfficialPage({
           The counted trades include purchases and no sales.
         </p>
       )}
+
+      {/* Scoped to this official: the plan arrives pre-filtered to this slug
+          and the model cannot widen it. */}
+      <div className="mb-8">
+        <AskTheData
+          officialSlug={official.slug}
+          officialName={displayName(official.name)}
+        />
+      </div>
 
       <div className="mb-8">
         <AlertSignupForm

@@ -15,6 +15,7 @@ import {
   type MonthBucket,
 } from "@/lib/monthly-activity";
 import AlertSignupForm from "./components/alert-signup-form";
+import AskTheData from "./components/ask-the-data";
 import OfficialAvatar from "./components/official-avatar";
 import ProjectCrossPromo from "./components/project-cross-promo";
 import Link from "next/link";
@@ -302,6 +303,12 @@ export default async function Home() {
         {/* id="alerts" is the anchor target for the digest email's follow-all CTA. */}
         <div id="alerts" className="mt-6 scroll-mt-20">
           <AlertSignupForm sourcePage="home-stats" />
+        </div>
+
+        {/* Plain-English questions over the verified rows. The model writes
+            the query and the sentence; code computes every number. */}
+        <div id="ask" className="mt-6 scroll-mt-20">
+          <AskTheData />
         </div>
 
       </div>
