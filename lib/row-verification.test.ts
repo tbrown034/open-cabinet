@@ -176,6 +176,23 @@ describe("deriveRowVerification", () => {
     });
     expect(decided[1]).toMatchObject({ score: 3, state: "human_verified" });
   });
+
+  it("a human decision on one row never shifts the parse index of the rows after it", () => {
+    // Sep 6: after Trevor decided printed rows 39 and 58 of one filing,
+    // the rows below them read the audit verdicts one row up, and a row
+    // every reader agreed on showed as disputed.
+    const rows = [tx({ description: "A" }), tx({ description: "B" }), tx({ description: "C" })];
+    const ids = recordIdsFor(rows);
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0, 2]), disputed: new Set([1]), notFound: new Set() }]]),
+      decisionsById: new Map([[ids[1], { recordId: ids[1], slug: "x", decision: "corrected", evidence: "page 1 row 2", decidedBy: "trevor", decidedAt: "2026-09-06T00:00:00Z" }]]),
+    });
+    expect(out.map((v) => [v.score, v.state])).toEqual([[3, "checked"], [3, "human_verified"], [3, "checked"]]);
+  });
 });
 
 describe("compareSecondRead", () => {

@@ -284,6 +284,12 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
     const emit = (v: RowVerification, parsedIndex: number) => {
       out.push(applyAudit(v, tx.sourceUrl ? input.auditByUrl?.get(tx.sourceUrl) : undefined, parsedIndex));
     };
+    // Every row of a filing consumes one slot of its located positions,
+    // decided rows included; otherwise a human decision on one row would
+    // shift every row after it onto its neighbour's parse index. (Sep 6:
+    // two decided rows made an agreed row below them read as disputed.)
+    const cursor = tx.sourceUrl ? (perFilingCursor.get(tx.sourceUrl) ?? 0) : 0;
+    if (tx.sourceUrl) perFilingCursor.set(tx.sourceUrl, cursor + 1);
     if (decision && decision.decision !== "rejected") {
       out.push({ ...base, score: 3, state: "human_verified", lane: "human", note: `Decided by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}` });
       return;
@@ -297,8 +303,6 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
     // candidate is on disk: -1 when not found, null when no candidate.
     const record = input.parseRecordByUrl.get(tx.sourceUrl);
     const positions = located.get(tx.sourceUrl);
-    const cursor = perFilingCursor.get(tx.sourceUrl) ?? 0;
-    perFilingCursor.set(tx.sourceUrl, cursor + 1);
     const parsedIndex: number | null = record && positions ? positions[cursor] : null;
     const m2 = input.model2ByUrl?.get(tx.sourceUrl);
 
