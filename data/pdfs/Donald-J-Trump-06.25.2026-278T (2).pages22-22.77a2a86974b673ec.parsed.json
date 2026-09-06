@@ -1,0 +1,317 @@
+{
+  "key": "77a2a86974b673ec",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 22,
+    "last": 22
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T03:04:43.783Z",
+  "transactions": [
+    {
+      "description": "BERKSHIRE HATHAWAY CLASS B",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BEST BUY INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLACKROCK INC NEW",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "Blackstone Inc.",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BLOOM ENERGY CORP CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOEING CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOEING COMPANY",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOOKING HLDGS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRIDGEBIO PHARMA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRIGHT HORIZONS FAMILY S",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRIGHT HORIZONS FAMILY S",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRISTOL MYERS SQUIBB CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BRISTOL MYERS SQUIBB CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BROADCOM INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BROADRIDGE FINL SOLUTION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BROADRIDGE FINL SOLUTION",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "BROWN & BROWN INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CAPITAL ONE FINL CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CARLISLE COS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CARNIVAL CORP LTD F",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CARVANA CO CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CATERPILLAR INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CBRE GROUP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CBRE GROUP INC CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CDW CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CENCORA INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CENCORA INC CLASS SERIES A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "CENCORA INC CLASS SERIES A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3660,
+    "outputTokens": 1798,
+    "estimatedCostUsd": 0.038
+  }
+}

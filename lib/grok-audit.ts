@@ -173,7 +173,7 @@ export async function auditPages(input: {
   const list = input.rows
     .map((r, i) => `${i}. ${r.description} | ${r.type} | ${r.date} | ${r.amount ?? "value not readily ascertainable"} | notification ${r.lateFilingFlag ? "Yes" : "No"}`)
     .join("\n");
-  const response = await client.chat.completions.create({
+  const request = () => client.chat.completions.create({
     model: GROK_AUDIT_MODEL,
     max_completion_tokens: 16000,
     messages: [
@@ -187,6 +187,18 @@ export async function auditPages(input: {
       },
     ],
   });
+  // Transport errors are retried; a bad answer is not.
+  let response: Awaited<ReturnType<typeof request>> | null = null;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      response = await request();
+      break;
+    } catch (err) {
+      if (attempt === 3 || !(err instanceof OpenAI.APIConnectionError || err instanceof OpenAI.RateLimitError || (err instanceof OpenAI.APIError && (err.status ?? 0) >= 500))) throw err;
+      await new Promise((r) => setTimeout(r, 4000 * attempt));
+    }
+  }
+  if (!response) throw new Error("no response");
   if (response.choices[0]?.finish_reason === "length") throw new Error(`audit response hit the token cap on pages ${input.first}-${input.last}`);
   const raw = (response.choices[0]?.message?.content ?? "").trim().replace(/^```(?:json)?\n?/, "").replace(/\n?```$/, "");
   let parsed: { verdicts?: AuditVerdict[]; missing?: AuditChunkResult["missing"] };

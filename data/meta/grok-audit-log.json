@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "grok-4.6",
-  "generatedAt": "2026-09-06T02:57:48.771Z",
+  "generatedAt": "2026-09-06T03:06:03.010Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
       "slug": "kennedy-robert-f",
@@ -32,6 +32,100 @@
       "pagesAudited": 3,
       "costUsd": 0.0162,
       "checkedAt": "2026-09-06T02:57:48.771Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf": {
+      "slug": "bedford-bryan",
+      "pdfFile": "Bryan-Bedford-02.27.2026-278T.pdf",
+      "pdfSha256": "706794753054c5fd56401dfc4b48a59c9ccca8f5e9403956cc2ceedf478c537f",
+      "candidateSha256": "41bda5caa1bbe56b78eaaaa449425051629ab346ae603cee8d35f26fca3b6d68",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 10,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0163,
+      "checkedAt": "2026-09-06T03:02:08.545Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BC33926D1346296F85258D86003449A3/$FILE/Bryan-Bedford-11.03.2025-278T.pdf": {
+      "slug": "bedford-bryan",
+      "pdfFile": "Bryan-Bedford-11.03.2025-278T.pdf",
+      "pdfSha256": "37813645444dc3baa3502e418cf49c8373a6b34c9c65cb5d13e673850798d9cd",
+      "candidateSha256": "c882bf1a90563def80f8c2a475de09b15036ede1c1cdd4ddd4b48e633e8981f4",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 2,
+      "confirmedIndexes": [],
+      "disputedIndexes": [
+        0,
+        1
+      ],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [
+        "row 1: page shows type See Endnote, amount blank",
+        "row 2: page shows type See Endnote, amount blank"
+      ],
+      "pagesAudited": 3,
+      "costUsd": 0.0156,
+      "checkedAt": "2026-09-06T03:02:36.682Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf": {
+      "slug": "bedford-bryan",
+      "pdfFile": "Bryan-Bedford-09.02.2025-278T.pdf",
+      "pdfSha256": "86e3fd4ce3bb50cb9cb20dec76a55bb4d2a75ff3015d699ea3407599c24932da",
+      "candidateSha256": "0da26a01b8773c0b694bec7d3d191506f723abad26134fc1d86a991ab695c8a6",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 5,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0156,
+      "checkedAt": "2026-09-06T03:05:51.539Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE9B4FD2E26CCFAC85258D7100343B09/$FILE/Scott-Bessent-12.05.2025-278T.pdf": {
+      "slug": "bessent-scott",
+      "pdfFile": "Scott-Bessent-12.05.2025-278T.pdf",
+      "pdfSha256": "90c274f9606865f41a1766a802798af12d32da268f8b0954123217d615c7e2aa",
+      "candidateSha256": "b73faac14c355ead4443cd5dd060691aa4b805cc00863e28402c9a350b9cab7c",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 2,
+      "confirmedIndexes": [
+        0,
+        1
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0152,
+      "checkedAt": "2026-09-06T03:06:03.010Z"
     }
   }
 }

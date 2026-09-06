@@ -1,0 +1,317 @@
+{
+  "key": "0baef971634dfb31",
+  "pdfSha256": "89d331853a821b576dc63284228f277637a8325bf8eb2e094f2807589c778f46",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
+  "chunk": {
+    "first": 20,
+    "last": 20
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T03:03:51.199Z",
+  "transactions": [
+    {
+      "description": "VIRTUS INVT PARTNERS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "VITAL FARMS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "VSE CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WALMART INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WARRIOR MET COAL INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WAYSTAR HLDG CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WEC ENERGY GROUP INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WERNER ENTERPRISES INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WESTAMERICA BANCORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WESTERN UN CO",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WILLIAMS COS INC DEL",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WILLIAMSON CNTY TX RD B/E 3.00 % Due Feb 15 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WILLSCOT HOLDINGS CO CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WINMARK CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WINNEBAGO INDS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WOLVERINE WORLD WIDE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WORTHINGTON ENTERPRI",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "WSFS FINL CORP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "YELP INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ZIFF DAVIS INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ZOOMINFO TECHNOLOGIES IN",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ZURN ELKAY WTR SOLUTIONS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ABBOTT LABS",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ACCENTURE PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND F CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ADVANCED MICRO DEVIC",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "AGILENT TECHNOLOGIES INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ALBERTSONS CO SHS CL A CLASS CLASS A",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ALEXANDRIA REAL ESTATE E REIT",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    },
+    {
+      "description": "ALNYLAM PHARMACEUTICALS",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-05-18",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.85
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 3664,
+    "outputTokens": 1823,
+    "estimatedCostUsd": 0.0383
+  }
+}

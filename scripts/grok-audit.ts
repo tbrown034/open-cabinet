@@ -34,6 +34,8 @@ async function main() {
   const dryCost = args.includes("--dry-cost");
   const only = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
   const slug = args.includes("--slug") ? args[args.indexOf("--slug") + 1] : null;
+  const excluded = new Set<string>();
+  for (let i = 0; i < args.length; i++) if (args[i] === "--exclude" && args[i + 1]) excluded.add(args[++i]);
   stageOptions.ceilingUsd = args.includes("--ceiling") ? Number(args[args.indexOf("--ceiling") + 1]) : 25;
 
   const crosscheck = readCrosscheckLog();
@@ -46,6 +48,7 @@ async function main() {
   for (const e of crosscheck.entries) {
     if (!e.sourceUrl || !e.pdfFile || !e.pdfSha256) continue;
     if (slug && e.slug !== slug) continue;
+    if (excluded.has(e.slug)) continue;
     if (only && !e.pdfFile.includes(only) && !e.slug.includes(only)) continue;
     const pdfPath = path.join(PDF_DIR, e.pdfFile);
     if (!existsSync(pdfPath)) continue;
