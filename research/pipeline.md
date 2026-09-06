@@ -22,11 +22,11 @@ All seven stages are functions with these exact names: fetch, read, check and me
 
 ## 3. Read (`readFiling`)
 
-**What happens.** The whole PDF, or each page range for a large filing, goes to a vision model as a document with a prompt that fixes the output contract: five transaction types, eleven dollar ranges or an explicit unknown, dates as YYYY-MM-DD, a late flag, a self-reported confidence. The PDF is declared third-party data in the system prompt; text inside it is never an instruction. A ticker is taken from a parenthetical only when it is symbol-shaped and not a name suffix. Every row, from the model or from a cache, passes `lib/filing-validation.ts`. Caches are keyed on the PDF bytes, the source URL, the page range, the prompt, the parser version and the model (`lib/parse-cache.ts`); a prompt change never reuses an old parse.
+**What happens.** The whole PDF, or each page range for a large filing (more than 500 KB, or more than eight pages, since a dense text filing overran the output cap whole), goes to a vision model as a document with a prompt that fixes the output contract: six transaction types (the five trade types and "Unstated", allowed only with the filing's own wording), eleven dollar ranges or an explicit unknown, dates as YYYY-MM-DD, a late flag, a self-reported confidence. The PDF is declared third-party data in the system prompt; text inside it is never an instruction. A ticker is taken from a parenthetical only when it is symbol-shaped and not a name suffix. Every row, from the model or from a cache, passes `lib/filing-validation.ts`. Caches are keyed on the PDF bytes, the source URL, the page range, the prompt, the parser version and the model (`lib/parse-cache.ts`); a prompt change never reuses an old parse.
 
-**What stops it.** A row that fails validation. A response cut off at the token limit. Three failed attempts. Enforced.
+**What stops it.** A row that fails validation (not retried: the same page reads the same way, so the rejected read is kept beside the PDF as `.parsed.rejected.json` evidence and the filing is held for a person). A response cut off at the token limit. Three failed attempts on a transport error. The spend ceiling: every paid call counts toward a per-run dollar ceiling, and the next call past it stops the run and emails a person; what was already read stays cached. Enforced.
 
-**What a person does.** Nothing at this stage. The confidence the model reports is a review signal, not a measurement; carrying it into a review file is Gate 2 work.
+**What a person does.** Reads a rejected read against the PDF and decides. Otherwise nothing at this stage. The confidence the model reports is a review signal, not a measurement; carrying it into a review file is Gate 2 work.
 
 ## 4. Check (`checkFiling`)
 
