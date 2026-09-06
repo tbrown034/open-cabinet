@@ -1,0 +1,317 @@
+{
+  "key": "7caa9d5c76caae43",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 13,
+    "last": 13
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:19:29.352Z",
+  "transactions": [
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INTL BUSINESS MACHINES CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBVIE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "STATE PUB SCH BLDG AUTH PA CLLG REV NORTHHAMPTON CNTY AREA CMNTY BAM B/E 5.00 % Due Mar 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "KANSAS ST DEV FIN AUTH REV RFDG ST KS PJ R B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PROLOGIS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "DOUGLAS CNTY NE SCH DIST 1 OMAHA PUB B/E 5.00 % Due Dec 15, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WILLIAMSON CNTY TX RD B/E 5.00 % Due Feb 15, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-04",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WOODLANDS TWP TX SALES & HOTEL OCCUP TAX RFDG REV B/E 5.00 % Due Mar 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MARYLAND ST DEPT TRANSN CONS TRANSN RFDG 2025 C REV B/E 5.00 % Due Nov 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-02",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOHNSON CITY TN HLTH & EDL FACS BRD MLTIFAM REV COLLTD HSG TAPESTRY B/E 3.60 % Due Dec 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SOUTHFIELD MI LIBR BLDG AUTH REV RFDG B/E OID @97.400 3.26% 3.00 % Due May 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "QUALCOMM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BROADCOM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "OLDHAM CNTY KY SCH DIST FIN CORP SCH BLDG REV RFDG B/E ST INTRCPT 5.00 % Due Jun 1, 2027",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-05",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "NEW HOPE CULTURAL ED FACS FIN CORP STDNT HSG REV TX A&M UNIV B/E 5.00 % Due Apr 1, 2031",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GAINESVILLE FL UTIL SYS REV SER A B/E ETM 5.00 % Due Oct 1, 2026",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ALPHABET INC CL C",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEDTRONIC PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JPMORGAN CHASE & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "QUALCOMM INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "APPLE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEMPHIS TN GENL IMPT B/E 3.45 % Due Jun 1, 2035",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "META PLATFORMS INC CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VERIZON COMMUNICATIONS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACKSTONE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "DOW INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "FORD MOTOR CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ARES MANAGEMENT CORP CL A",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOOKING HOLDINGS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MICROSOFT CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BLACKSTONE INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-16",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 2204,
+    "estimatedCostUsd": 0.0402
+  }
+}

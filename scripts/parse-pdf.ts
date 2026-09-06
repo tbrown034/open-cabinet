@@ -125,7 +125,8 @@ type ModelChoice =
   | "claude-haiku-4-5"
   | "claude-opus-4-6"
   | "gpt-5.4-mini"
-  | "gpt-5.4-nano";
+  | "gpt-5.4-nano"
+  | "gpt-6-astra";
 
 /** The model the ingest uses unless told otherwise. */
 const DEFAULT_MODEL: ModelChoice = "claude-sonnet-4-6";
@@ -138,6 +139,9 @@ const MODEL_COSTS: Record<ModelChoice, { input: number; output: number; provider
   "claude-opus-4-6": { input: 5.0, output: 25.0, provider: "anthropic" },
   "gpt-5.4-mini": { input: 0.75, output: 4.5, provider: "openai" },
   "gpt-5.4-nano": { input: 0.20, output: 1.25, provider: "openai" },
+  // OpenAI's flagship, Sep 2026. The second-read lane's model: a different
+  // company's reader for rows no deterministic lane could check.
+  "gpt-6-astra": { input: 10.0, output: 50.0, provider: "openai" },
 };
 
 async function parsePdf(
@@ -146,7 +150,7 @@ async function parsePdf(
 ): Promise<ParseResult> {
   // Route to OpenAI if an OpenAI model is selected
   if (modelOverride?.startsWith("gpt-")) {
-    return parseWithOpenAI(pdfPath, modelOverride as "gpt-5.4-mini" | "gpt-5.4-nano");
+    return parseWithOpenAI(pdfPath, modelOverride as OpenAIModel);
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
@@ -470,9 +474,11 @@ async function main() {
 // ── OPENAI PARSING ──
 // Cross-provider verification: parse with GPT as a second opinion
 
+type OpenAIModel = "gpt-5.4-mini" | "gpt-5.4-nano" | "gpt-6-astra";
+
 async function parseWithOpenAI(
   pdfPath: string,
-  model: "gpt-5.4-mini" | "gpt-5.4-nano" = "gpt-5.4-mini"
+  model: OpenAIModel = "gpt-5.4-mini"
 ): Promise<ParseResult> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -491,6 +497,9 @@ async function parseWithOpenAI(
     model,
     max_completion_tokens: 16000,
     messages: [
+      // Same data boundary as the Anthropic path: the PDF is third-party
+      // data, never an instruction.
+      { role: "system", content: SYSTEM_PROMPT },
       {
         role: "user",
         content: [
@@ -510,6 +519,11 @@ async function parseWithOpenAI(
     ],
   });
 
+  if (response.choices[0]?.finish_reason === "length") {
+    throw new ParseTruncatedError(
+      `Model output hit the token cap on ${pdfPath}; split the PDF into smaller chunks`
+    );
+  }
   const rawText = response.choices[0]?.message?.content?.trim() || "";
   let cleaned = rawText;
   if (cleaned.startsWith("```")) {

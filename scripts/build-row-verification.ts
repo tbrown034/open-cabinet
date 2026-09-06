@@ -1,0 +1,108 @@
+/**
+ * Write data/meta/row-verification.json: one verification state per
+ * published row, derived from the cross-check log, the OCR lane's row
+ * alignment, the second-model lane and human decisions.
+ *
+ *   pnpm row-verification            rebuild the file
+ *   pnpm row-verification --check    exit 1 if a rebuild would change it
+ *
+ * Reads only. Never calls a model, never edits an official file.
+ */
+import { readdirSync, readFileSync, writeFileSync, existsSync } from "fs";
+import path from "path";
+import { readCrosscheckLog, type CrosscheckEntry } from "../lib/crosscheck-log";
+import { findParseRecord } from "../lib/parse-cache";
+import { CHECKER_VERSION } from "./text-layer-crosscheck";
+import { EXTRACTION_PROMPT, SYSTEM_PROMPT, PARSER_VERSION, DEFAULT_MODEL } from "./parse-pdf.js";
+import { promptHash } from "../lib/parse-cache";
+import {
+  ROW_VERIFICATION_PATH,
+  deriveRowVerification,
+  readReviewDecisions,
+  type RowVerification,
+  type RowVerificationFile,
+  type VerificationState,
+} from "../lib/row-verification";
+import { readSecondReadLog } from "../lib/second-read";
+import type { OfficialData } from "../lib/types";
+
+const OFFICIALS_DIR = path.resolve("data/officials");
+const PDF_DIR = path.resolve("data/pdfs");
+const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
+
+function pdfFilenameFromUrl(url: string): string {
+  return decodeURIComponent(url.split("/").pop() || "filing.pdf");
+}
+
+function main() {
+  const log = readCrosscheckLog();
+  if (!log) throw new Error("no cross-check log; run pnpm crosscheck-sweep first");
+  const decisions = readReviewDecisions();
+  const secondRead = readSecondReadLog();
+  const rows: Record<string, RowVerification> = {};
+
+  for (const file of readdirSync(OFFICIALS_DIR).filter((f) => f.endsWith(".json")).sort()) {
+    const official = JSON.parse(readFileSync(path.join(OFFICIALS_DIR, file), "utf-8")) as OfficialData;
+    const entriesByUrl = new Map<string, CrosscheckEntry>();
+    for (const e of log.entries) if (e.slug === official.slug && e.sourceUrl) entriesByUrl.set(e.sourceUrl, e);
+
+    // Parse records are needed only where a per-row lane verdict exists.
+    const parseRecordByUrl = new Map<string, Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>>();
+    const model2ByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>();
+    for (const [url, e] of entriesByUrl) {
+      const second = secondRead?.filings[url];
+      const needsRecord = e.state === "ocr_tuple_mismatch" || !!second;
+      if (!needsRecord) continue;
+      const pdfPath = path.join(PDF_DIR, pdfFilenameFromUrl(url));
+      if (!existsSync(pdfPath) || !e.pdfSha256) continue;
+      const record = findParseRecord(pdfPath, {
+        pdfSha256: e.pdfSha256, sourceUrl: url, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL,
+      });
+      if (!record) continue;
+      parseRecordByUrl.set(url, record.transactions as Array<{ description: string; type: string; date: string; amount: string | null; lateFilingFlag?: boolean }>);
+      if (second && second.candidateSha256 === e.candidateSha256) {
+        model2ByUrl.set(url, { agreedIndexes: new Set(second.agreedIndexes), disputedIndexes: new Set(second.disputedIndexes) });
+      }
+    }
+
+    for (const v of deriveRowVerification({
+      slug: official.slug,
+      transactions: official.transactions,
+      entriesByUrl,
+      parseRecordByUrl,
+      model2ByUrl,
+      decisionsById: decisions,
+    })) {
+      rows[v.id] = v;
+    }
+  }
+
+  const byState = { deterministic_agree: 0, human_verified: 0, two_models_agree: 0, single_read: 0, disputed: 0 } as Record<VerificationState, number>;
+  const byScore = { "0": 0, "1": 0, "2": 0, "3": 0 };
+  for (const v of Object.values(rows)) {
+    byState[v.state] += 1;
+    byScore[String(v.score) as "0" | "1" | "2" | "3"] += 1;
+  }
+  const out: RowVerificationFile = {
+    version: 1,
+    generatedAt: new Date().toISOString(),
+    generatedBy: "scripts/build-row-verification.ts",
+    checkerVersion: CHECKER_VERSION,
+    summary: { rows: Object.keys(rows).length, byState, byScore },
+    rows,
+  };
+  const text = JSON.stringify(out, null, 2) + "\n";
+  if (process.argv.includes("--check")) {
+    const current = existsSync(ROW_VERIFICATION_PATH) ? readFileSync(ROW_VERIFICATION_PATH, "utf-8") : "";
+    const strip = (t: string) => t.replace(/"generatedAt": "[^"]*"/, "");
+    const same = strip(current) === strip(text);
+    console.log(same ? "row verification is current" : "row verification is stale: run pnpm row-verification");
+    process.exit(same ? 0 : 1);
+  }
+  writeFileSync(ROW_VERIFICATION_PATH, text);
+  console.log(`rows ${out.summary.rows}`);
+  for (const [k, n] of Object.entries(byState)) console.log(`  ${k.padEnd(20)} ${String(n).padStart(6)}`);
+  console.log(`  by score: ${JSON.stringify(byScore)}`);
+}
+
+main();

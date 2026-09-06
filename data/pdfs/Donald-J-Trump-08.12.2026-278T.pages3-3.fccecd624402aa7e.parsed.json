@@ -1,0 +1,317 @@
+{
+  "key": "fccecd624402aa7e",
+  "pdfSha256": "dfa4d453c1008370a001043bad41f1149fbe18b0800588157c10c4631e5476c6",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
+  "chunk": {
+    "first": 3,
+    "last": 3
+  },
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T02:13:41.588Z",
+  "transactions": [
+    {
+      "description": "Goldman Sachs Group Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Broadcom Inc",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-15",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Federated Hermes Government Obligations Fund",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "Broadcom Inc Com",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-06-02",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "GE AEROSPACE",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HOME DEPOT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WELLS FARGO & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MCDONALDS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ELI LILLY & CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "META PLATFORMS INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "AT&T INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "VISA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MASTERCARD INCORPORATED",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ABBOTT LABORATORIES",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "INTUITIVE SURGICAL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "RTX CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOHNSON & JOHNSON",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "STRYKER CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "ACCENTURE PLC IRELAND",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MEDTRONIC PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "HONEYWELL INTL INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MCKESSON CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PROCTER & GAMBLE CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "WASTE MANAGEMENT INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "MERCK & CO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "JOHNSON CONTROLS INTERNATIONAL PLC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "SHERWIN WILLIAMS CO",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "BOSTON SCIENTIFIC CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CINTAS CORP",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "DOORDASH INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "CENCORA INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "EXELON CORPORATION",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    },
+    {
+      "description": "PEPSICO INC",
+      "ticker": null,
+      "type": "Purchase",
+      "date": "2026-06-12",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": true,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 2380,
+    "outputTokens": 2714,
+    "estimatedCostUsd": 0.0478
+  }
+}

@@ -280,6 +280,13 @@ export interface AlignedComparison {
   /** Printed rows the OCR lane did not read at all. */
   unread: number;
   differences: string[];
+  /** Printed row numbers whose tuple agreed, and whose tuple differed, so
+   * a per-row verification state can be derived without re-running OCR. */
+  agreedPrintedRows: number[];
+  disputedPrintedRows: number[];
+  /** Placeholder rows the form numbers but the model omits; needed to map
+   * a parsed index back to a printed row. */
+  placeholderRows: number[];
 }
 
 /**
@@ -312,6 +319,8 @@ export function alignByPrintedRow(
   };
   let compared = 0, agree = 0;
   const differences: string[] = [];
+  const agreedPrintedRows: number[] = [];
+  const disputedPrintedRows: number[] = [];
   const seen = new Set<number>();
   for (const r of extraction.rows) {
     const i = indexOfPrinted.get(r.rowNumber);
@@ -320,12 +329,20 @@ export function alignByPrintedRow(
     compared += 1;
     const want = tuple(r);
     const got = tuple(parsed[i]);
-    if (want === got) agree += 1;
-    else if (differences.length < 40) differences.push(`row ${r.rowNumber}: OCR [${want}] vs AI parse [${got}]`);
+    if (want === got) {
+      agree += 1;
+      agreedPrintedRows.push(r.rowNumber);
+    } else {
+      disputedPrintedRows.push(r.rowNumber);
+      if (differences.length < 40) differences.push(`row ${r.rowNumber}: OCR [${want}] vs AI parse [${got}]`);
+    }
   }
   const differ = compared - agree;
   const unread = Math.max(0, parsed.length - compared);
-  return { compared, agree, differ, unread, differences };
+  return {
+    compared, agree, differ, unread, differences,
+    agreedPrintedRows, disputedPrintedRows, placeholderRows: [...extraction.placeholderRows],
+  };
 }
 
 export type OcrCheck =
