@@ -31,6 +31,7 @@ import {
   sha256File,
   writeChunkManifest,
   writeParseCache,
+  writeRejectedParse,
   type ParseCacheKeyInput,
 } from "./parse-cache";
 import {
@@ -44,13 +45,46 @@ import {
 } from "./crosscheck-log";
 import { crossCheckByOcr, type OcrCheck } from "./ocr-lane";
 import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
+import { notify } from "./notify";
 import type { TargetFiling } from "./oge-filings";
 
 export type { ParsedTransaction };
 
 export const PDF_DIR = path.resolve("data/pdfs");
 /** Runtime switches the CLI sets; libraries never read process.argv. */
-export const stageOptions = { forceReparse: false };
+export const stageOptions = {
+  forceReparse: false,
+  /** Dollars this process may spend on model calls before it stops.
+   * Every script that reads filings sets this from --ceiling or a
+   * default; null means no ceiling, which only tests use. */
+  ceilingUsd: 25 as number | null,
+};
+
+/** Running total of model spend in this process, in dollars. */
+export const spend = { usd: 0, calls: 0 };
+
+export class SpendCeilingError extends Error {
+  constructor(public readonly spentUsd: number, public readonly ceilingUsd: number) {
+    super(`spend ceiling reached: $${spentUsd.toFixed(2)} of $${ceilingUsd.toFixed(2)}; stopping before the next paid call`);
+    this.name = "SpendCeilingError";
+  }
+}
+
+/** Record a paid call. Throws when the next call would pass the ceiling,
+ * after notifying the admin address once. */
+export async function recordSpend(usd: number): Promise<void> {
+  spend.usd += usd;
+  spend.calls += 1;
+  if (stageOptions.ceilingUsd !== null && spend.usd >= stageOptions.ceilingUsd) {
+    const err = new SpendCeilingError(spend.usd, stageOptions.ceilingUsd);
+    await notify({
+      type: "credits_exhausted",
+      headline: `Open Cabinet stopped at its spend ceiling ($${stageOptions.ceilingUsd})`,
+      summary: `${err.message}\n\nCalls this run: ${spend.calls}. Nothing was applied. Rerun with a higher --ceiling to continue; caches keep what was already read.`,
+    });
+    throw err;
+  }
+}
 
 export interface SourceFiling {
   date: string;
@@ -185,6 +219,9 @@ export async function scanPdfForFeeAnnotation(
   }
 }
 
+/** A vision read of more than this many pages risks the output cap. */
+export const MAX_PAGES_PER_UNIT = 8;
+
 /** One piece of a filing to parse: the whole PDF, or a page-range chunk. */
 export interface ParseUnit {
   path: string;
@@ -195,12 +232,15 @@ export async function splitPdfIfNeeded(
   pdfPath: string
 ): Promise<{ units: ParseUnit[]; pageCount: number | null }> {
   const buf = await readFile(pdfPath);
-  if (buf.length <= 500_000) return { units: [{ path: pdfPath, chunk: null }], pageCount: null };
-
   const doc = await PDFDocument.load(buf);
   const pageCount = doc.getPageCount();
+  // Two reasons to split: the bytes (a scan) or the pages (a dense text
+  // filing; Mody's 19-page, 41 KB filing overran the output cap whole).
+  if (buf.length <= 500_000 && pageCount <= MAX_PAGES_PER_UNIT) {
+    return { units: [{ path: pdfPath, chunk: null }], pageCount: null };
+  }
   const bytesPerPage = buf.length / pageCount;
-  const pagesPerChunk = Math.max(1, Math.floor(500_000 / bytesPerPage));
+  const pagesPerChunk = Math.max(1, Math.min(MAX_PAGES_PER_UNIT, Math.floor(500_000 / bytesPerPage)));
   const chunks: ParseUnit[] = [];
 
   for (let i = 0; i < pageCount; i += pagesPerChunk) {
@@ -262,9 +302,24 @@ export async function parseUnitWithRetry(
 
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
+      if (stageOptions.ceilingUsd !== null && spend.usd >= stageOptions.ceilingUsd) {
+        throw new SpendCeilingError(spend.usd, stageOptions.ceilingUsd);
+      }
       const result = await parsePdf(unit.path);
+      await recordSpend(result.tokenUsage.estimatedCostUsd);
       // Enum and shape gate before anything is cached or merged.
-      const rows = assertParsedRows(result.transactions, path.basename(unit.path));
+      let rows: ReturnType<typeof assertParsedRows>;
+      try {
+        rows = assertParsedRows(result.transactions, path.basename(unit.path));
+      } catch (err) {
+        if (err instanceof ParsedRowsInvalidError) {
+          const file = writeRejectedParse(unit.path, keyInput, {
+            transactions: result.transactions, problems: err.problems, tokenUsage: result.tokenUsage,
+          });
+          console.warn(`           rejected read kept for a person: ${path.basename(file)}`);
+        }
+        throw err;
+      }
       console.log(
         `           ${rows.length} txns, $${result.tokenUsage.estimatedCostUsd}`
       );
@@ -282,6 +337,7 @@ export async function parseUnitWithRetry(
       // 04/04/2225 and a faithful read fails the future-date check three
       // times at three times the cost). It goes to a person, not a retry.
       if (err instanceof ParsedRowsInvalidError) throw err;
+      if (err instanceof SpendCeilingError) throw err;
       console.warn(`           attempt ${attempt}/3 failed: ${(err as Error).message}`);
       if (attempt === 3) throw err;
       await sleep(5000 * attempt);
@@ -377,6 +433,15 @@ export async function readFiling(
   sourceUrl: string
 ): Promise<ParsedTransaction[]> {
   const rows: ParsedTransaction[] = [];
+  // A current whole-file cache is used before any split, so a filing read
+  // whole under this key is never paid for again because the split rule
+  // changed.
+  const wholeKey: ParseCacheKeyInput = {
+    pdfSha256: sha256, sourceUrl, chunk: null, parserVersion: PARSER_VERSION, promptSha256: PROMPT_SHA256, model: DEFAULT_MODEL,
+  };
+  if (!stageOptions.forceReparse && readParseCache(pdfPath, wholeKey)) {
+    return parseUnitWithRetry({ path: pdfPath, chunk: null }, sha256, sourceUrl);
+  }
   const { units, pageCount } = await splitPdfIfNeeded(pdfPath);
   for (const unit of units) {
     if (unit.chunk) console.log(`           parsing chunk ${path.basename(unit.path)}`);

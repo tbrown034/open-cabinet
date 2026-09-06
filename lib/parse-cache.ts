@@ -97,6 +97,25 @@ export function readParseCache(
   }
 }
 
+/**
+ * A read the shape gate refused is kept beside the PDF as evidence, under
+ * the same key with a .rejected.json suffix, so a person can see what the
+ * model said without paying for the call again. Never read as a cache.
+ */
+export function writeRejectedParse(
+  pdfPath: string,
+  input: ParseCacheKeyInput,
+  body: { transactions: unknown; problems: string[]; tokenUsage?: ParseCacheEnvelope["tokenUsage"] }
+): string {
+  const key = parseCacheKey(input);
+  const file = parseCachePath(pdfPath, key).replace(/\.json$/, ".rejected.json");
+  writeFileSync(
+    file,
+    JSON.stringify({ key, ...input, rejectedAt: new Date().toISOString(), ...body }, null, 2) + "\n"
+  );
+  return file;
+}
+
 export function writeParseCache(
   pdfPath: string,
   input: ParseCacheKeyInput,

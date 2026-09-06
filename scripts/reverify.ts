@@ -29,6 +29,7 @@
  * This is also the evaluation harness: change the prompt or the model,
  * reverify a fixed set, and the report is the score.
  */
+import { SpendCeilingError, spend } from "../lib/ingest-stages";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import path from "path";
@@ -176,8 +177,13 @@ async function main() {
   for (let i = 0; i < args.length; i++) if (args[i] === "--exclude" && args[i + 1]) excluded.add(args[++i]);
   const slugs = args.filter((a, i) => !a.startsWith("--") && args[i - 1] !== "--exclude");
   stageOptions.forceReparse = args.includes("--force-reparse");
+  // Spend ceiling for this run, dollars. Default 25; the run stops and
+  // emails the admin address when reached. Caches keep what was read.
+  const ceilingArg = args.indexOf("--ceiling");
+  stageOptions.ceilingUsd = ceilingArg >= 0 ? Number(args[ceilingArg + 1]) : 25;
+  if (!Number.isFinite(stageOptions.ceilingUsd)) throw new Error("--ceiling needs a dollar amount");
   if (!all && slugs.length === 0) {
-    console.log("usage: reverify.ts <slug> [--apply] [--skip-scans] [--dry-cost] | --all [--skip-scans] [--exclude <slug>]...");
+    console.log("usage: reverify.ts <slug> [--apply] [--skip-scans] [--dry-cost] [--ceiling <usd>] | --all [--skip-scans] [--exclude <slug>]...");
     process.exit(1);
   }
   if (all && apply) throw new Error("--apply is per official; read each report first");
@@ -193,6 +199,7 @@ async function main() {
     try {
       await reverifyOfficial(slug, apply, skipScans, dryCost);
     } catch (err) {
+      if (err instanceof SpendCeilingError) throw err;
       if (all && !apply) {
         // One official's failure is a finding for a person, not a reason
         // to leave the rest of the batch unread. Record it and go on.
@@ -207,6 +214,7 @@ async function main() {
     console.log(`\nHeld for a person (${held.length}):`);
     for (const h of held) console.log(`  ${h}`);
   }
+  console.log(`\nModel spend this run: $${spend.usd.toFixed(2)} over ${spend.calls} calls (ceiling $${stageOptions.ceilingUsd}).`);
 }
 const held: string[] = [];
 
