@@ -599,6 +599,18 @@
       "evidence": "Trevor, Sep 6, read the page: Jan 14, 2026 filing page 3 printed row 58, the bond is Due Apr 1, 2028. The first model and the browser text read 2026; the page audit read 2028.",
       "decidedBy": "trevor",
       "decidedAt": "2026-09-06T22:07:37.827Z"
+    },
+    {
+      "recordId": "f98983dedc210754ec16dcd1",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "description": "PENNSYLVANIA ECON DEV FING AUTH UPMC REV UNIV PITTSBURGH MED CTR A B/E 4.00 % Due Oct 15, 2026",
+        "lateFilingFlag": true
+      },
+      "evidence": "Trevor, Sep 6, read the page: Jan 14, 2026 filing page 3 printed row 39, the UPMC bond. The late column prints Yes and the bond is Due Oct 15, 2026. The site had on time and 2028. The second model and the page audit both read Yes and 2026; the browser text could not read the cell.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:21:47.843Z"
     }
   ]
 }
