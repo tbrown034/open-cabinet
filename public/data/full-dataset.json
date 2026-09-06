@@ -1,8 +1,8 @@
 {
-  "exportedAt": "2026-09-06T22:48:28.519Z",
+  "exportedAt": "2026-09-06T22:54:57.974Z",
   "officialCount": 39,
-  "transactionCount": 11511,
-  "underReviewCount": 3,
+  "transactionCount": 11514,
+  "underReviewCount": 0,
   "officials": [
     {
       "name": "Bedford, Bryan",
@@ -26066,8 +26066,8 @@
       "level": "Cabinet",
       "confirmedDate": null,
       "departedDate": null,
-      "transactionCount": 8941,
-      "underReviewCount": 3,
+      "transactionCount": 8944,
+      "underReviewCount": 0,
       "mostRecentFilingDate": "2026-08-22",
       "transactions": [
         {
@@ -124779,8 +124779,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
           "recordId": "4a00cb87a8a243c2b543a3ed",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "COLONY TX RFDG B/E PTC 3.00 % Due Aug 15, 2026",
@@ -130539,8 +130539,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
           "recordId": "b3cc748c2ec64f63724fb577",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "RACINE WIS UNI SCH 5% DUE ON 04/01/30",
@@ -133219,16 +133219,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Apr 1, 2025",
+          "description": "MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Aug 1, 2025",
           "ticker": null,
           "type": "Purchase",
           "date": "2025-01-29",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
-          "recordId": "f2a95a4bb0f80bc286c63d92",
-          "verificationScore": 0,
-          "verificationState": "disputed"
+          "recordId": "35e81a46c16ce31b48b07992",
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "MILWAUKEE CNTY WI CORP PURP SER A B/E PTC 3.00 % Due Oct 1, 2025",

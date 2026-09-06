@@ -1,24 +1,24 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T22:48:28.036Z",
+  "generatedAt": "2026-09-06T22:54:57.554Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11514,
     "byState": {
       "checked": 11317,
-      "human_verified": 87,
+      "human_verified": 90,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
       "single_read": 14,
-      "disputed": 3
+      "disputed": 0
     },
     "byScore": {
-      "0": 3,
+      "0": 0,
       "1": 14,
       "2": 93,
-      "3": 11404
+      "3": 11407
     }
   },
   "rows": {
@@ -93635,10 +93635,10 @@
       "id": "4a00cb87a8a243c2b543a3ed",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "model2",
-      "note": "A second model read this row differently; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "6bb27a3bd838754d3f02f724": {
       "id": "6bb27a3bd838754d3f02f724",
@@ -97955,10 +97955,10 @@
       "id": "b3cc748c2ec64f63724fb577",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "audit",
-      "note": "The page audit could not find this row on the filing's pages; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "4495536a5e01457f75151d10": {
       "id": "4495536a5e01457f75151d10",
@@ -99967,14 +99967,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "f2a95a4bb0f80bc286c63d92": {
-      "id": "f2a95a4bb0f80bc286c63d92",
+    "35e81a46c16ce31b48b07992": {
+      "id": "35e81a46c16ce31b48b07992",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
-      "score": 0,
-      "state": "disputed",
-      "lane": "audit",
-      "note": "The page audit could not find this row on the filing's pages; a person decides"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-06"
     },
     "130c2ff60348bbbe165918ca": {
       "id": "130c2ff60348bbbe165918ca",

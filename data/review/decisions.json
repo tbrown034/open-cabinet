@@ -719,6 +719,33 @@
       "evidence": "Trevor, Sep 6, 6:47 PM, read the page: May 14, 2026 filing (part 2) page 52 printed row 1672, WORKDAY INC CL A, Purchase, 2026-01-23, $1,001-$15,000, late Yes, as the site has it. The second model paired the filing's three Workday rows wrong; the session page read agrees with the site.",
       "decidedBy": "trevor",
       "decidedAt": "2026-09-06T22:48:13.829Z"
+    },
+    {
+      "recordId": "4a00cb87a8a243c2b543a3ed",
+      "slug": "trump-donald-j",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 6:49 PM, read the page: Aug 12, 2025 AMENDED filing page 7 printed row 97 (not 101; the second model's row label is its parse index, which runs four ahead here because the amendment's Exhibit A rows precede the trades in the parse record). Clark Pleasant IN Middle School bond: Purchase, 07/08/2025, $50,001 - $100,000, late Yes, as the site has it. The name is cut off on the page after Jan 15, 202. The second model read no amount.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:50:12.373Z"
+    },
+    {
+      "recordId": "35e81a46c16ce31b48b07992",
+      "slug": "trump-donald-j",
+      "decision": "corrected",
+      "correction": {
+        "description": "MIAMI DADE CNTY FL HLTH FACS HOSP RFDG NICKLAUS CHLDRNS HOSP A REV B/E 5.00 % Due Aug 1, 2025"
+      },
+      "evidence": "Trevor, Sep 6, 6:54 PM, read the page: Aug 12, 2025 filing page 2 printed row 17, Miami-Dade Nicklaus Children's Hospital bond, the maturity prints Due Aug 1, 2025; the site had Apr 1, 2025. Trade columns as the site has them: Purchase, 01/29/2025, $50,001 - $100,000, late Yes. The page audit could not find the row under the old name; no second model read exists for this filing.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:54:56.638Z"
+    },
+    {
+      "recordId": "b3cc748c2ec64f63724fb577",
+      "slug": "trump-donald-j",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 6:54 PM, read the page: Aug 12, 2025 filing page 11 printed row 246, Philadelphia Rebuild bond, Purchase, 03/05/2025, $100,001 - $250,000, late Yes, Due May 1, 2025, as the site has it. The page audit had said it could not find the row; no second model read exists for this filing.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-06T22:54:56.638Z"
     }
   ]
 }
