@@ -18,7 +18,9 @@ import {
 import { getNewsForOfficial } from "@/lib/news";
 import { getFeePaymentsBySlug } from "@/lib/fee-payments";
 import type { Transaction } from "@/lib/types";
-import { verificationForOfficial } from "@/lib/row-verification";
+import { verificationForOfficial, recordIdsFor } from "@/lib/row-verification";
+import { readAssetResolution } from "@/lib/asset-resolution";
+import { INSTRUMENT_LABEL } from "@/lib/instrument-type";
 import UnderReviewNote from "@/app/components/under-review-note";
 import VerificationMarker from "@/app/components/verification-marker";
 import TransactionTimeline from "@/app/components/transaction-timeline";
@@ -214,6 +216,15 @@ export default async function OfficialPage({
   const verification = verificationForOfficial(slug, transactions);
   const verificationByTransaction = new Map(
     transactions.map((tx, i) => [tx, verification[i]])
+  );
+  // Instrument type per row from the asset resolution sidecar (Sep 2026):
+  // a small label on anything that is not a plain stock, so a reader can
+  // tell a municipal bond from a company at a glance. Tickers from the
+  // lane are not shown here yet (step 2 of the rollout).
+  const assetFile = readAssetResolution();
+  const recordIds = recordIdsFor(transactions);
+  const assetByTransaction = new Map(
+    transactions.map((tx, i) => [tx, assetFile?.rows[recordIds[i]] ?? null])
   );
 
   const countedTransactions = rowsForTotals(transactions, verification);
@@ -805,6 +816,14 @@ export default async function OfficialPage({
                 </td>
                 <td className="py-2.5 pr-4 text-neutral-900">
                   {tx.description}
+                  {(() => {
+                    const a = assetByTransaction.get(tx);
+                    return a && a.instrumentType !== "common_stock" && a.instrumentType !== "unknown" ? (
+                      <span className="ml-2 text-[11px] text-neutral-500 whitespace-nowrap" title={a.issuerLabel ?? INSTRUMENT_LABEL[a.instrumentType]}>
+                        {INSTRUMENT_LABEL[a.instrumentType]}
+                      </span>
+                    ) : null;
+                  })()}
                   {tx.lateFilingFlag && (
                     <span className="ml-2 text-xs text-amber-700 font-medium uppercase">
                       Late

@@ -30,7 +30,9 @@
     "second-read": "npx tsx scripts/second-read.ts",
     "row-verification": "npx tsx scripts/build-row-verification.ts",
     "grok-audit": "npx tsx scripts/grok-audit.ts",
-    "readme-stats": "npx tsx scripts/update-readme-stats.ts"
+    "readme-stats": "npx tsx scripts/update-readme-stats.ts",
+    "asset-resolution": "npx tsx scripts/build-asset-resolution.ts",
+    "fetch-asset-sources": "npx tsx scripts/fetch-asset-sources.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

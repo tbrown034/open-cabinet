@@ -13,6 +13,7 @@ import {
 } from "../lib/amounts";
 import type { Transaction } from "../lib/types";
 import { verificationForOfficial, recordIdsFor } from "../lib/row-verification";
+import { readAssetResolution } from "../lib/asset-resolution";
 
 interface OfficialData {
   name: string;
@@ -50,6 +51,10 @@ async function main() {
     allOfficials.push(JSON.parse(raw));
   }
 
+  // The asset resolution sidecar (data/meta/asset-resolution.json): the
+  // instrument type on every row, and a resolved ticker only at the top
+  // tier. Absent rows export blank, never a guess.
+  const assets = readAssetResolution();
   const exportOfficials = allOfficials.map((official) => {
     const ids = recordIdsFor(official.transactions);
     const verification = verificationForOfficial(official.slug, official.transactions);
@@ -60,11 +65,16 @@ async function main() {
       underReviewCount,
       transactions: official.transactions.map((tx, i) => {
         const row = verification[i];
+        const asset = assets?.rows[ids[i]];
         return {
           ...tx,
           recordId: ids[i],
           verificationScore: row?.score ?? null,
           verificationState: row?.state ?? null,
+          instrumentType: asset?.instrumentType ?? null,
+          issuerLabel: asset?.issuerLabel ?? null,
+          resolvedTicker: asset?.tier === "T1" ? asset.resolvedTicker : null,
+          resolutionTier: asset?.tier ?? null,
         };
       }),
     };
@@ -92,6 +102,13 @@ async function main() {
     "type_note",
     "date_note",
     "row_note",
+    // Asset resolution lane (Sep 2026): the instrument type from the
+    // printed text; a resolved ticker only at the top tier (T1), where two
+    // reference lists or a person agreed; the tier itself.
+    "instrument_type",
+    "issuer_label",
+    "resolved_ticker",
+    "resolution_tier",
   ];
   const txRows = exportOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
@@ -117,6 +134,10 @@ async function main() {
         escapeCsv(tx.typeNote ?? ""),
         escapeCsv(tx.dateNote ?? ""),
         escapeCsv(tx.notes ?? ""),
+        tx.instrumentType ?? "",
+        escapeCsv(tx.issuerLabel ?? ""),
+        tx.resolvedTicker ?? "",
+        tx.resolutionTier ?? "",
       ].join(",")
     )
   );

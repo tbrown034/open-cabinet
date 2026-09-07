@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "fetchedAt": "2026-09-07T01:14:48.445Z",
+  "files": {
+    "nasdaqlisted.txt": {
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+      "kind": "nasdaq-listed",
+      "sha256": "491337a821469a830093aca740849358982960c46f0192537f5de898f59e9200",
+      "bytes": 347010,
+      "fetchedAt": "2026-09-07T01:14:48.445Z"
+    },
+    "otherlisted.txt": {
+      "url": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
+      "kind": "other-listed",
+      "sha256": "0e7be707f683443160a78e85139d8af18f786270c9ed82de8402d1d72538a319",
+      "bytes": 538961,
+      "fetchedAt": "2026-09-07T01:14:48.445Z"
+    },
+    "sec-company-tickers-exchange.json": {
+      "url": "https://www.sec.gov/files/company_tickers_exchange.json",
+      "kind": "sec-company-tickers-exchange",
+      "sha256": "ec43db74f82d1739cce6340f36b9695dcb51231fc38edd493215677627bb01cd",
+      "bytes": 522577,
+      "fetchedAt": "2026-09-07T01:14:48.445Z"
+    }
+  }
+}

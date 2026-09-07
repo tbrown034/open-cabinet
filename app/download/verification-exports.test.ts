@@ -13,6 +13,10 @@ type ExportTransaction = Transaction & {
   recordId: string;
   verificationScore: number | null;
   verificationState: string | null;
+  instrumentType: string | null;
+  issuerLabel: string | null;
+  resolvedTicker: string | null;
+  resolutionTier: string | null;
 };
 const dataset: { transactionCount: number; underReviewCount: number; officials: (Omit<OfficialData, "transactions"> & { transactionCount: number; underReviewCount: number; transactions: ExportTransaction[] })[] } =
   JSON.parse(read("public/data/full-dataset.json"));
@@ -51,9 +55,13 @@ describe("published verification exports", () => {
       expect(official.transactionCount).toBe(counted.length);
       expect(official.underReviewCount).toBe(source.transactions.length - counted.length);
       official.transactions.forEach((tx, i) => {
-        const { recordId, verificationScore, verificationState, ...raw } = tx;
+        const { recordId, verificationScore, verificationState, instrumentType, issuerLabel, resolvedTicker, resolutionTier, ...raw } = tx;
         expect(raw).toEqual(source.transactions[i]);
-        expect(Object.keys(tx).slice(-3)).toEqual(["recordId", "verificationScore", "verificationState"]);
+        expect(Object.keys(tx).slice(-7)).toEqual(["recordId", "verificationScore", "verificationState", "instrumentType", "issuerLabel", "resolvedTicker", "resolutionTier"]);
+        // A ticker from the resolution lane is exported only at the top tier.
+        if (resolvedTicker) expect(resolutionTier).toBe("T1");
+        expect(typeof instrumentType === "string" || instrumentType === null).toBe(true);
+        void issuerLabel;
         expect(recordId).toBe(ids[i]);
         expect(file.rows[recordId], `${official.slug}: ${recordId}`).toBeDefined();
         expect(verificationScore).toBe(file.rows[recordId].score);
@@ -72,6 +80,7 @@ describe("published verification exports", () => {
       "date", "amount_range", "amount_midpoint", "late_filing", "source_filing_url", "amount_note",
       "recordId", "verificationScore", "verificationState",
       "type_note", "date_note", "row_note",
+      "instrument_type", "issuer_label", "resolved_ticker", "resolution_tier",
     ]);
     const transactions = dataset.officials.flatMap((official) => official.transactions);
     expect(rows).toHaveLength(transactions.length);
