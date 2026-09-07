@@ -444,7 +444,17 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
             emit({ ...base, score: 0, state: "disputed", lane: "ocr", note: `OCR read printed row ${printed} differently; a person decides` }, idx);
           }
         } else if (aligned.repairedPrintedRows?.includes(printed)) {
-          emit({ ...base, score: 1, state: "single_read", lane: "ocr", note: `OCR's row number for printed row ${printed} was repaired by sequence; not counted as a check` }, idx);
+          // OCR cannot vouch for a row whose number it misread, but a
+          // second model that read the same values still can. (Sep 6: 93
+          // Trump rows sat at audit-only although the second model agreed
+          // on every one, because this branch never asked it.)
+          if (m2?.agreedIndexes.has(idx)) {
+            emit({ ...base, score: 2, state: "two_models_agree", lane: "model2", note: `A second model read the same values; OCR's row number for printed row ${printed} was repaired by sequence` }, idx);
+          } else if (m2?.disputedIndexes.has(idx)) {
+            emit({ ...base, score: 0, state: "disputed", lane: "model2", note: `A second model read this row differently; OCR's row number for printed row ${printed} was repaired by sequence; a person decides` }, idx);
+          } else {
+            emit({ ...base, score: 1, state: "single_read", lane: "ocr", note: `OCR's row number for printed row ${printed} was repaired by sequence; not counted as a check` }, idx);
+          }
         } else if (aligned.agreedPrintedRows?.includes(printed)) {
           emit({ ...base, score: 2, state: "deterministic_agree", lane: "ocr", note: `OCR of printed row ${printed} agrees` }, idx);
         } else if (m2?.agreedIndexes.has(idx)) {

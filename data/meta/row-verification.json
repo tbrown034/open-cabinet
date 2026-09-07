@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:01:02.513Z",
+  "generatedAt": "2026-09-07T00:02:24.428Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11513,
     "byState": {
-      "checked": 11263,
+      "checked": 11356,
       "human_verified": 142,
       "deterministic_agree": 0,
       "two_models_agree": 0,
-      "audit_only": 93,
+      "audit_only": 0,
       "single_read": 15,
       "implausible": 0,
       "disputed": 0
@@ -18,8 +18,8 @@
     "byScore": {
       "0": 0,
       "1": 15,
-      "2": 93,
-      "3": 11405
+      "2": 0,
+      "3": 11498
     }
   },
   "rows": {
@@ -19746,10 +19746,10 @@
       "id": "435ae91f124e51f6e9b50885",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 935 was repaired by sequence; the page audit confirmed it"
     },
     "bc451dff4f8ba7859ece31fc": {
       "id": "bc451dff4f8ba7859ece31fc",
@@ -20457,10 +20457,10 @@
       "id": "e74d1e8c0b857885be65bf06",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 938 was repaired by sequence; the page audit confirmed it"
     },
     "e6b587fdefc7cb4772a1dac7": {
       "id": "e6b587fdefc7cb4772a1dac7",
@@ -20502,10 +20502,10 @@
       "id": "35506a0a0c23613220511b7d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1009 was repaired by sequence; the page audit confirmed it"
     },
     "604b9a0039ec99df695fd1fd": {
       "id": "604b9a0039ec99df695fd1fd",
@@ -20970,10 +20970,10 @@
       "id": "d99d9a369a43e498f41a4c02",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 539 was repaired by sequence; the page audit confirmed it"
     },
     "2e678f1c1486df04c38537e7": {
       "id": "2e678f1c1486df04c38537e7",
@@ -21195,10 +21195,10 @@
       "id": "35b2978779db0b2189b98197",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 635 was repaired by sequence; the page audit confirmed it"
     },
     "f48f86109386c757a7bd8ad6": {
       "id": "f48f86109386c757a7bd8ad6",
@@ -22833,10 +22833,10 @@
       "id": "d16ebd4d76553dbe6c48d4d7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 849 was repaired by sequence; the page audit confirmed it"
     },
     "3ea3bf93e6b1d30b3331cb3f": {
       "id": "3ea3bf93e6b1d30b3331cb3f",
@@ -23643,10 +23643,10 @@
       "id": "53a002edafbf519e8786f980",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 338 was repaired by sequence; the page audit confirmed it"
     },
     "88430f921a4f19e4349f3c8d": {
       "id": "88430f921a4f19e4349f3c8d",
@@ -24426,10 +24426,10 @@
       "id": "eedf914232a1ae16fd5acd04",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 429 was repaired by sequence; the page audit confirmed it"
     },
     "6989f59624d0ade9935f4b53": {
       "id": "6989f59624d0ade9935f4b53",
@@ -26730,10 +26730,10 @@
       "id": "07df4ee17c59119c58a1c376",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 894 was repaired by sequence; the page audit confirmed it"
     },
     "8496979b45435e739a21c2e8": {
       "id": "8496979b45435e739a21c2e8",
@@ -27459,10 +27459,10 @@
       "id": "ca3caf740e7f33983783a530",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 298 was repaired by sequence; the page audit confirmed it"
     },
     "a7279d6786d866fc0fb2ba6e": {
       "id": "a7279d6786d866fc0fb2ba6e",
@@ -27729,10 +27729,10 @@
       "id": "fa7d1aca635fee73af9a4aa2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2BF91F890F718ACB85258E5B002DE16B/$FILE/Donald-J-Trump-08.12.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 694 was repaired by sequence; the page audit confirmed it"
     },
     "28849cf96a17d73f88c1d602": {
       "id": "28849cf96a17d73f88c1d602",
@@ -32049,10 +32049,10 @@
       "id": "2bb34907e68748805e9809f8",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 777 was repaired by sequence; the page audit confirmed it"
     },
     "98d1054598d73c7edc2b18a6": {
       "id": "98d1054598d73c7edc2b18a6",
@@ -33561,10 +33561,10 @@
       "id": "566606a9ff1f890ad7934e40",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 945 was repaired by sequence; the page audit confirmed it"
     },
     "fad816f0c98b8fde2d77f596": {
       "id": "fad816f0c98b8fde2d77f596",
@@ -34605,10 +34605,10 @@
       "id": "b7ff4f3c6b593aed1d565b64",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 325 was repaired by sequence; the page audit confirmed it"
     },
     "e8685c066403974fc08adc5f": {
       "id": "e8685c066403974fc08adc5f",
@@ -34803,10 +34803,10 @@
       "id": "59e77d4bd399a6a64f0c5524",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 347 was repaired by sequence; the page audit confirmed it"
     },
     "c9fe0a90f0ee93132f04b7c9": {
       "id": "c9fe0a90f0ee93132f04b7c9",
@@ -35532,10 +35532,10 @@
       "id": "c56bbc88e51e1ca2596e6b74",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 428 was repaired by sequence; the page audit confirmed it"
     },
     "d1738bb0f7cae2a8e03fd7ee": {
       "id": "d1738bb0f7cae2a8e03fd7ee",
@@ -37377,10 +37377,10 @@
       "id": "1cbf4796234a41b1b1076428",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/F9CA13B970439E8F85258E27002DDF15/$FILE/Donald-J-Trump-06.25.2026-278T (2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 229 was repaired by sequence; the page audit confirmed it"
     },
     "948942de940a936025304f90": {
       "id": "948942de940a936025304f90",
@@ -39654,10 +39654,10 @@
       "id": "5e65564e9265f78d6c08f8a2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 293 was repaired by sequence; the page audit confirmed it"
     },
     "a02982f0bf5103899d0f127c": {
       "id": "a02982f0bf5103899d0f127c",
@@ -40023,10 +40023,10 @@
       "id": "052ba8a1af10c3f454038ed1",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 639 was repaired by sequence; the page audit confirmed it"
     },
     "7cae45227eb2c0ee0e0adfee": {
       "id": "7cae45227eb2c0ee0e0adfee",
@@ -40113,10 +40113,10 @@
       "id": "5d4874137890ae80bc2ad797",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 729 was repaired by sequence; the page audit confirmed it"
     },
     "d8b84b3d07e94ab8e18f278f": {
       "id": "d8b84b3d07e94ab8e18f278f",
@@ -40158,10 +40158,10 @@
       "id": "52564544963907542d8af3b4",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 777 was repaired by sequence; the page audit confirmed it"
     },
     "b2d9f52cc400b7dd939b8f49": {
       "id": "b2d9f52cc400b7dd939b8f49",
@@ -40968,10 +40968,10 @@
       "id": "e7f0b47ce784f03b36e702d5",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 252 was repaired by sequence; the page audit confirmed it"
     },
     "ec36fbcc8b4a393c89a23297": {
       "id": "ec36fbcc8b4a393c89a23297",
@@ -42426,19 +42426,19 @@
       "id": "11523430f72eccb9eb1dc456",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 280 was repaired by sequence; the page audit confirmed it"
     },
     "d50f180845a1029277981436": {
       "id": "d50f180845a1029277981436",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 284 was repaired by sequence; the page audit confirmed it"
     },
     "a53c20e5d0569ed6cc1f90e3": {
       "id": "a53c20e5d0569ed6cc1f90e3",
@@ -42471,10 +42471,10 @@
       "id": "991ee8ae99b6919c447d0c06",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 298 was repaired by sequence; the page audit confirmed it"
     },
     "f91bc51348b51b66c40b009f": {
       "id": "f91bc51348b51b66c40b009f",
@@ -43020,10 +43020,10 @@
       "id": "a37053ab95af4129f6e933a3",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 522 was repaired by sequence; the page audit confirmed it"
     },
     "ab7364feaa69796bd109f2c2": {
       "id": "ab7364feaa69796bd109f2c2",
@@ -43461,10 +43461,10 @@
       "id": "b4f9263c0d65468518055de6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 728 was repaired by sequence; the page audit confirmed it"
     },
     "22b72a0bb1278ba775ca387e": {
       "id": "22b72a0bb1278ba775ca387e",
@@ -45432,10 +45432,10 @@
       "id": "0b5413de55aa0a58391ac87b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 652 was repaired by sequence; the page audit confirmed it"
     },
     "89299416e2b5057913c532cc": {
       "id": "89299416e2b5057913c532cc",
@@ -46098,10 +46098,10 @@
       "id": "953712add06c9ee32f759f68",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 262 was repaired by sequence; the page audit confirmed it"
     },
     "b60debf9a7600fba2b5054d3": {
       "id": "b60debf9a7600fba2b5054d3",
@@ -47979,10 +47979,10 @@
       "id": "aa2f51e9f7e48560435ae907",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AC43530823BD60D485258E27002DDEF7/$FILE/Donald-J-Trump-06.25.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 383 was repaired by sequence; the page audit confirmed it"
     },
     "4b2c67ca14587b16b13ae877": {
       "id": "4b2c67ca14587b16b13ae877",
@@ -52803,10 +52803,10 @@
       "id": "0adeeaafa2e992c3432c23e5",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 648 was repaired by sequence; the page audit confirmed it"
     },
     "b6f9ebd3339bd857bb49bf16": {
       "id": "b6f9ebd3339bd857bb49bf16",
@@ -53118,10 +53118,10 @@
       "id": "fba2b8d18fbaa3d65022c095",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1580 was repaired by sequence; the page audit confirmed it"
     },
     "e8a80b8e46fe5d81bb975ec2": {
       "id": "e8a80b8e46fe5d81bb975ec2",
@@ -54333,10 +54333,10 @@
       "id": "1c13a60aa6fd091783ead137",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 3079 was repaired by sequence; the page audit confirmed it"
     },
     "c507419503ade2defd834fe0": {
       "id": "c507419503ade2defd834fe0",
@@ -54378,10 +54378,10 @@
       "id": "58c5e56771f8399d029ddea5",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 3038 was repaired by sequence; the page audit confirmed it"
     },
     "6a2ba8b198ae1ba92c6800ba": {
       "id": "6a2ba8b198ae1ba92c6800ba",
@@ -54864,10 +54864,10 @@
       "id": "041763b1fb5eddcaeda3b62f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 141 was repaired by sequence; the page audit confirmed it"
     },
     "08983036eb36a93707cc1e8d": {
       "id": "08983036eb36a93707cc1e8d",
@@ -55926,10 +55926,10 @@
       "id": "224d771b4e85d9087272566b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2864 was repaired by sequence; the page audit confirmed it"
     },
     "ddd1f02c5ec83927a412809b": {
       "id": "ddd1f02c5ec83927a412809b",
@@ -56340,10 +56340,10 @@
       "id": "7e67b81f1af66b6aa06c90f7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2471 was repaired by sequence; the page audit confirmed it"
     },
     "7b348ad67e9f1d99f4bc5dd3": {
       "id": "7b348ad67e9f1d99f4bc5dd3",
@@ -56430,10 +56430,10 @@
       "id": "ca88f6d7521afc9fdec97518",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 105 was repaired by sequence; the page audit confirmed it"
     },
     "28e1978d255bc0bf49ef7047": {
       "id": "28e1978d255bc0bf49ef7047",
@@ -56646,10 +56646,10 @@
       "id": "7ba6f31578f3cb9f956cd31a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 223 was repaired by sequence; the page audit confirmed it"
     },
     "a9131d8a60e889f02083b36b": {
       "id": "a9131d8a60e889f02083b36b",
@@ -56961,10 +56961,10 @@
       "id": "7a711eb7b531dbc8dbcea90f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 734 was repaired by sequence; the page audit confirmed it"
     },
     "f3e12f0cb196e9f558e8f4e4": {
       "id": "f3e12f0cb196e9f558e8f4e4",
@@ -57267,10 +57267,10 @@
       "id": "0f8f4d60b22586a3d3e79893",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 715 was repaired by sequence; the page audit confirmed it"
     },
     "0c373d63e88ae8e0d827dcd2": {
       "id": "0c373d63e88ae8e0d827dcd2",
@@ -57411,10 +57411,10 @@
       "id": "8745b95f3332ab2c27085d3f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 763 was repaired by sequence; the page audit confirmed it"
     },
     "2f55de7cb1e4a8fbb365fef4": {
       "id": "2f55de7cb1e4a8fbb365fef4",
@@ -57645,10 +57645,10 @@
       "id": "7a4ca81b138087a76aa4ff7f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1095 was repaired by sequence; the page audit confirmed it"
     },
     "4864f5ce7ffbc3c9c535f036": {
       "id": "4864f5ce7ffbc3c9c535f036",
@@ -57690,10 +57690,10 @@
       "id": "4f11f4f4f8f4ed7b6984d25a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 924 was repaired by sequence; the page audit confirmed it"
     },
     "8dbd97dd699511e3310a5c4e": {
       "id": "8dbd97dd699511e3310a5c4e",
@@ -58014,10 +58014,10 @@
       "id": "78a2ce4cf944fe6ec868ca82",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1792 was repaired by sequence; the page audit confirmed it"
     },
     "a9cb4577ab3d7474cb5f7ff0": {
       "id": "a9cb4577ab3d7474cb5f7ff0",
@@ -59823,10 +59823,10 @@
       "id": "a9587152474f76d7e6cf775b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2031 was repaired by sequence; the page audit confirmed it"
     },
     "4748866886b6e326fb17e6ee": {
       "id": "4748866886b6e326fb17e6ee",
@@ -62415,10 +62415,10 @@
       "id": "4267069df787e4378a1f72f9",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2033 was repaired by sequence; the page audit confirmed it"
     },
     "4606a95d0497fa54628edfbb": {
       "id": "4606a95d0497fa54628edfbb",
@@ -62667,10 +62667,10 @@
       "id": "ce02c8335e641464c87a50e3",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 636 was repaired by sequence; the page audit confirmed it"
     },
     "5d457dfbe0494ec1ab5e2fce": {
       "id": "5d457dfbe0494ec1ab5e2fce",
@@ -64458,10 +64458,10 @@
       "id": "0cc272ba5efa8c7afd5c7948",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 153 was repaired by sequence; the page audit confirmed it"
     },
     "a8949976291df17a3e0a620b": {
       "id": "a8949976291df17a3e0a620b",
@@ -64476,10 +64476,10 @@
       "id": "cebfb38000f7680115350d07",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 303 was repaired by sequence; the page audit confirmed it"
     },
     "0df0a6d04c8639d17f4cb02d": {
       "id": "0df0a6d04c8639d17f4cb02d",
@@ -64620,10 +64620,10 @@
       "id": "978f51bc83bd06ca1a716c31",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1749 was repaired by sequence; the page audit confirmed it"
     },
     "91fb994c66c4b4c2d270e884": {
       "id": "91fb994c66c4b4c2d270e884",
@@ -67131,10 +67131,10 @@
       "id": "0228e52ab6f0de87801fd7cb",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 527 was repaired by sequence; the page audit confirmed it"
     },
     "3fb5bebfced122c2f0ac3bb8": {
       "id": "3fb5bebfced122c2f0ac3bb8",
@@ -67509,10 +67509,10 @@
       "id": "4d89f164c86140827b1d4494",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2343 was repaired by sequence; the page audit confirmed it"
     },
     "14f07a283c449078cd0b64f5": {
       "id": "14f07a283c449078cd0b64f5",
@@ -68580,10 +68580,10 @@
       "id": "0c5ad76aae939cce46485cf8",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 77 was repaired by sequence; the page audit confirmed it"
     },
     "dd60d10377bd68e89e393aca": {
       "id": "dd60d10377bd68e89e393aca",
@@ -68796,10 +68796,10 @@
       "id": "997c4f55d5875fec7c70ebc8",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CD75555856A7D2E485258DE4002DD4A0/$FILE/Donald-J-Trump-4.20.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 109 was repaired by sequence; the page audit confirmed it"
     },
     "ac7336a66457d76d93acdf13": {
       "id": "ac7336a66457d76d93acdf13",
@@ -69561,10 +69561,10 @@
       "id": "27bbedf487cb8ee1be9d4794",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 987 was repaired by sequence; the page audit confirmed it"
     },
     "455061d3e01929318034f437": {
       "id": "455061d3e01929318034f437",
@@ -70425,10 +70425,10 @@
       "id": "1768b837af51944b67db2981",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 177 was repaired by sequence; the page audit confirmed it"
     },
     "fcac04638e4316546f8a4e0e": {
       "id": "fcac04638e4316546f8a4e0e",
@@ -70614,10 +70614,10 @@
       "id": "ae15a3290bfa28c5585a2598",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1527 was repaired by sequence; the page audit confirmed it"
     },
     "3d8fe4f6dc703a59a91708c6": {
       "id": "3d8fe4f6dc703a59a91708c6",
@@ -71487,10 +71487,10 @@
       "id": "8e8a13c955577b5f1257e86c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1253 was repaired by sequence; the page audit confirmed it"
     },
     "4f1db8203e41587fe3402861": {
       "id": "4f1db8203e41587fe3402861",
@@ -71658,10 +71658,10 @@
       "id": "83dc4f9ce52e2969f2f14545",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1039 was repaired by sequence; the page audit confirmed it"
     },
     "c275941f576fee859acc3336": {
       "id": "c275941f576fee859acc3336",
@@ -71712,10 +71712,10 @@
       "id": "f85da73d20db4418941dc1c9",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1339 was repaired by sequence; the page audit confirmed it"
     },
     "0d0eb57a37d604b3293baab1": {
       "id": "0d0eb57a37d604b3293baab1",
@@ -72909,10 +72909,10 @@
       "id": "4f91aba5d6390cba8a3efe3e",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1337 was repaired by sequence; the page audit confirmed it"
     },
     "72cf3a403d00c8d762ecde8f": {
       "id": "72cf3a403d00c8d762ecde8f",
@@ -73062,10 +73062,10 @@
       "id": "8c463d6ab0083941f64bb8a6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 3115 was repaired by sequence; the page audit confirmed it"
     },
     "bb0892b81f83659b149ada84": {
       "id": "bb0892b81f83659b149ada84",
@@ -73809,10 +73809,10 @@
       "id": "37699987cc4d2aa0a4588d4c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2806 was repaired by sequence; the page audit confirmed it"
     },
     "cdbe6d5ccf45e30adc69c8e7": {
       "id": "cdbe6d5ccf45e30adc69c8e7",
@@ -73935,10 +73935,10 @@
       "id": "dea59cb179a6534187df089c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2594 was repaired by sequence; the page audit confirmed it"
     },
     "5b623c108f4b9113d49ed47a": {
       "id": "5b623c108f4b9113d49ed47a",
@@ -74385,10 +74385,10 @@
       "id": "373b25c2c4003485b08360a3",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2647 was repaired by sequence; the page audit confirmed it"
     },
     "e912ff9a50607a2c331b13ca": {
       "id": "e912ff9a50607a2c331b13ca",
@@ -74862,10 +74862,10 @@
       "id": "2f4d1107bf9e8403523297cc",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2032 was repaired by sequence; the page audit confirmed it"
     },
     "4408b34cc386b8d6b9d7ac0e": {
       "id": "4408b34cc386b8d6b9d7ac0e",
@@ -74934,10 +74934,10 @@
       "id": "be8e5d4cc342ca7033692fce",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 12 was repaired by sequence; the page audit confirmed it"
     },
     "4a950c512a6e9cba823d07d2": {
       "id": "4a950c512a6e9cba823d07d2",
@@ -75528,10 +75528,10 @@
       "id": "11c10765e452abe59f3569fb",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2637 was repaired by sequence; the page audit confirmed it"
     },
     "a5226fe3bce01bf95f1ff2ab": {
       "id": "a5226fe3bce01bf95f1ff2ab",
@@ -75807,10 +75807,10 @@
       "id": "ea51f6e4a3468d43eb224054",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1961 was repaired by sequence; the page audit confirmed it"
     },
     "9ca5bb1944386f247f04718d": {
       "id": "9ca5bb1944386f247f04718d",
@@ -77346,10 +77346,10 @@
       "id": "a4b69ba628cccd993686e4c8",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2415 was repaired by sequence; the page audit confirmed it"
     },
     "8159591753d87c8da71d25b7": {
       "id": "8159591753d87c8da71d25b7",
@@ -80235,10 +80235,10 @@
       "id": "9202693a2f68a2f41075e361",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5326D3AF5BE7C25385258DF7002DD1B7/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 22 was repaired by sequence; the page audit confirmed it"
     },
     "06fa3e87be62969c358ba2e6": {
       "id": "06fa3e87be62969c358ba2e6",
@@ -81657,10 +81657,10 @@
       "id": "53e73e1f5f7a8b1e2369547d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2741 was repaired by sequence; the page audit confirmed it"
     },
     "fb99aed4d24a111c93f1d009": {
       "id": "fb99aed4d24a111c93f1d009",
@@ -81720,10 +81720,10 @@
       "id": "10d68ba1091e57434b82de68",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2841 was repaired by sequence; the page audit confirmed it"
     },
     "faa40c25b89727a175a6af10": {
       "id": "faa40c25b89727a175a6af10",
@@ -82287,10 +82287,10 @@
       "id": "512c9cfd0507b2d6105f7d87",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 1365 was repaired by sequence; the page audit confirmed it"
     },
     "53428bd9840df48cb80605f2": {
       "id": "53428bd9840df48cb80605f2",
@@ -82989,10 +82989,10 @@
       "id": "a6a3cc3fe3a44a19314ad98b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 2352 was repaired by sequence; the page audit confirmed it"
     },
     "f2b91188a349ec56e0a341bc": {
       "id": "f2b91188a349ec56e0a341bc",
@@ -86229,10 +86229,10 @@
       "id": "fa54747a14d54e477b386a15",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 299 was repaired by sequence; the page audit confirmed it"
     },
     "225bb5ede442645a3988321c": {
       "id": "225bb5ede442645a3988321c",
@@ -87174,10 +87174,10 @@
       "id": "afa5a6f0c4ebe05dae9c4d03",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 225 was repaired by sequence; the page audit confirmed it"
     },
     "19524ead5badbc9d83bdcb8c": {
       "id": "19524ead5badbc9d83bdcb8c",
@@ -87633,10 +87633,10 @@
       "id": "780e04098cc7cbd9d4236e5c",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/268353939B7DACB585258D81003471B1/$FILE/Donald-J-Trump%201.14.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 149 was repaired by sequence; the page audit confirmed it"
     },
     "5428c93056169a26c294cdb7": {
       "id": "5428c93056169a26c294cdb7",
@@ -89136,10 +89136,10 @@
       "id": "766e702b758cf19df3a46ca6",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/268353939B7DACB585258D81003471B1/$FILE/Donald-J-Trump%201.14.2026-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 69 was repaired by sequence; the page audit confirmed it"
     },
     "5e11e6057d16cef9961fe8c4": {
       "id": "5e11e6057d16cef9961fe8c4",
@@ -89739,10 +89739,10 @@
       "id": "2a16e0ee5006ce53b45326b2",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87BFE542A2751E0285258D6600346FCD/$FILE/Donald%20J.%20Trump%2012.18.2025%20278-T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 77 was repaired by sequence; the page audit confirmed it"
     },
     "396f6759bb2f0f11f228e9af": {
       "id": "396f6759bb2f0f11f228e9af",
@@ -90315,10 +90315,10 @@
       "id": "715129844caeb9a20e67f238",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 11 was repaired by sequence; the page audit confirmed it"
     },
     "76b7c5d7a777a8e3008b5b65": {
       "id": "76b7c5d7a777a8e3008b5b65",
@@ -91476,10 +91476,10 @@
       "id": "52f08525ea5d7d82fb1d27c7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C89623DC721F62585258D430031A32A/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 25 was repaired by sequence; the page audit confirmed it"
     },
     "abdc791a778aad0c36adcd9a": {
       "id": "abdc791a778aad0c36adcd9a",
@@ -91593,10 +91593,10 @@
       "id": "bf3be1e961e7927564fed2f1",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2C89623DC721F62585258D430031A32A/$FILE/Donald%20J.%20Trump%2010.20.2025%20278-T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 35 was repaired by sequence; the page audit confirmed it"
     },
     "32ca27670819a4070f7db1ed": {
       "id": "32ca27670819a4070f7db1ed",
@@ -95139,10 +95139,10 @@
       "id": "f64af88277f484eba0a41442",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 77 was repaired by sequence; the page audit confirmed it"
     },
     "a88d1d3aec9bae22451be8ad": {
       "id": "a88d1d3aec9bae22451be8ad",
@@ -95238,10 +95238,10 @@
       "id": "f815eb84f34016de1cb362bb",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 92 was repaired by sequence; the page audit confirmed it"
     },
     "37b4ac24553828029344d185": {
       "id": "37b4ac24553828029344d185",
@@ -95544,10 +95544,10 @@
       "id": "1836a049751b8bec90455df3",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 125 was repaired by sequence; the page audit confirmed it"
     },
     "c9569605329fa629ef4f5db5": {
       "id": "c9569605329fa629ef4f5db5",
@@ -95634,10 +95634,10 @@
       "id": "56efe529398c70deffa04acd",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 131 was repaired by sequence; the page audit confirmed it"
     },
     "7398c2dcf993a235002f03a4": {
       "id": "7398c2dcf993a235002f03a4",
@@ -95715,10 +95715,10 @@
       "id": "57b9e34ec80c3e41d7aee97d",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 139 was repaired by sequence; the page audit confirmed it"
     },
     "86d4e0fb44d6cc08035545c2": {
       "id": "86d4e0fb44d6cc08035545c2",
@@ -95760,10 +95760,10 @@
       "id": "5de8053c999e8a67fb8d303f",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 145 was repaired by sequence; the page audit confirmed it"
     },
     "a69b80f5fcec2ab7c387d628": {
       "id": "a69b80f5fcec2ab7c387d628",
@@ -95895,10 +95895,10 @@
       "id": "1cb75f797690381de198a12b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/174165F6E1E120B185258DB000347F54/$FILE/Donald%20J.%20Trump%202.26.2026%20278-T%20(1).pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 159 was repaired by sequence; the page audit confirmed it"
     },
     "caf82aa1e857d962f22901af": {
       "id": "caf82aa1e857d962f22901af",
@@ -98550,10 +98550,10 @@
       "id": "5d1b0bea349b72ec679475cd",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 177 was repaired by sequence; the page audit confirmed it"
     },
     "75c6bbd14722c46fe3f503cc": {
       "id": "75c6bbd14722c46fe3f503cc",
@@ -98982,10 +98982,10 @@
       "id": "6178ddfeba99104c4c33e40a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/E9C024E25C9E4B2085258CEB006E7E23/$FILE/Donald-J-Trump-08.12.2025-278T.pdf",
-      "score": 2,
-      "state": "audit_only",
-      "lane": "audit",
-      "note": "The page audit confirmed this row against the page image; no program or second model has read it"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR's row number for printed row 109 was repaired by sequence; the page audit confirmed it"
     },
     "a22ba79acd5395e6150a33c9": {
       "id": "a22ba79acd5395e6150a33c9",

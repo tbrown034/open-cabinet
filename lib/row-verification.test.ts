@@ -150,6 +150,23 @@ describe("deriveRowVerification", () => {
     expect(out[2]).toMatchObject({ score: 0, state: "disputed", lane: "ocr" });
   });
 
+  it("lets a second model vouch for a row whose OCR row number was repaired", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" }), tx({ description: "C" })];
+    const e = entry({
+      state: "ocr_tuple_mismatch",
+      ocr: { aligned: { agreedPrintedRows: [1], disputedPrintedRows: [], repairedPrintedRows: [2, 3], placeholderRows: [] } } as unknown as CrosscheckEntry["ocr"],
+    });
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, e]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      model2ByUrl: new Map([[URL, { agreedIndexes: new Set([1]), disputedIndexes: new Set([2]) }]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0, 1, 2]), disputed: new Set(), notFound: new Set() }]]),
+    });
+    expect(out.map((v) => [v.score, v.state])).toEqual([[3, "checked"], [3, "checked"], [0, "disputed"]]);
+  });
+
   it("lets a second model outrank a filing-level text mismatch row by row", () => {
     const rows = [tx({ description: "A" }), tx({ description: "B" })];
     const e = entry({ state: "checked_tuple_mismatch" });
