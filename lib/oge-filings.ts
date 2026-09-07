@@ -163,6 +163,22 @@ export async function fetchOgeRecords({
   return { records: allRecords, totalRecords: totalRecords ?? allRecords.length };
 }
 
+/**
+ * Every filing in the index with a PDF, no level, date or form filter:
+ * the set to reconcile our published filings against. A former
+ * official's 2023 report is out of scope for ingest but still published,
+ * and "gone from OGE" must mean gone, not filtered.
+ */
+export function getAllIndexedFilings(records: OGERecord[]): TargetFiling[] {
+  const byUrl = new Map<string, TargetFiling>();
+  for (const record of records) {
+    const pdfUrl = extractPdfUrl(record.type);
+    if (!pdfUrl) continue;
+    byUrl.set(pdfUrl, { name: canonicalName(record.name), pdfUrl, docDate: record.docDate, agency: record.agency, title: record.title, level: record.level });
+  }
+  return Array.from(byUrl.values());
+}
+
 export function getTargetFilings(records: OGERecord[]): TargetFiling[] {
   const byUrl = new Map<string, TargetFiling>();
 
@@ -270,4 +286,41 @@ export async function writeLastCheckState({
   };
 
   await writeFile(lastCheckPath, JSON.stringify(state, null, 2) + "\n");
+}
+
+/**
+ * Filings we publish that OGE's index no longer lists, or lists under a
+ * different posting date. diffNewFilings only ever sees additions; a
+ * filing OGE deletes (MacGregor's 2020 reports, found by hand Sep 6, 2026)
+ * or re-posts simply stops matching and nobody hears. Compare by decoded
+ * URL, the same way the addition check does. Read-only: the caller decides
+ * what to do; this never removes a row.
+ */
+export function reconcileKnownFilings(
+  index: TargetFiling[],
+  known: Array<{ url: string; date: string }>
+): { missing: Array<{ url: string; date: string }>; redated: Array<{ url: string; date: string; indexDate: string }> } {
+  const decode = (u: string) => { try { return decodeURIComponent(u); } catch { return u; } };
+  const byUrl = new Map(index.map((f) => [decode(f.pdfUrl), f] as const));
+  const missing: Array<{ url: string; date: string }> = [];
+  const redated: Array<{ url: string; date: string; indexDate: string }> = [];
+  for (const k of known) {
+    const f = byUrl.get(decode(k.url));
+    if (!f) { missing.push(k); continue; }
+    const indexDate = f.docDate.slice(0, 10);
+    if (k.date && k.date.slice(0, 10) !== indexDate) redated.push({ ...k, indexDate });
+  }
+  return { missing, redated };
+}
+
+/** Every published filing with its stored posting date, for reconciliation. */
+export async function loadKnownFilingsFromData(root = process.cwd()): Promise<Array<{ url: string; date: string; slug: string }>> {
+  const out: Array<{ url: string; date: string; slug: string }> = [];
+  const officialsDir = path.join(root, "data", "officials");
+  const files = await readdir(officialsDir);
+  for (const file of files.filter((name) => name.endsWith(".json"))) {
+    const official = JSON.parse(await readFile(path.join(officialsDir, file), "utf-8")) as { slug: string; sourceFilings?: Array<{ url?: string; date?: string }> };
+    for (const f of official.sourceFilings || []) if (f.url) out.push({ url: f.url, date: f.date ?? "", slug: official.slug });
+  }
+  return out;
 }

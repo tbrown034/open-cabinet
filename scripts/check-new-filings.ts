@@ -13,6 +13,9 @@ import path from "path";
 import https from "https";
 import {
   diffNewFilings,
+  getAllIndexedFilings,
+  loadKnownFilingsFromData,
+  reconcileKnownFilings,
   fetchOgeRecords,
   getTargetFilings,
   loadKnownFilingUrlsFromData,
@@ -173,6 +176,19 @@ async function main() {
       `OGE response had ${records.length} records but zero target 278-T filings — response likely malformed. First record: ${JSON.stringify(records[0] ?? null).slice(0, 400)}`
     );
     process.exit(1);
+  }
+  // Reconciliation: anything we publish that OGE no longer lists, or
+  // lists under a different posting date. Behind the same zero-target
+  // guard, so a malformed response cannot mass-flag deletions. Report
+  // only; a person decides what a deletion means.
+  const reconciled = reconcileKnownFilings(getAllIndexedFilings(records), await loadKnownFilingsFromData());
+  if (reconciled.missing.length) {
+    console.warn(`${reconciled.missing.length} published filing(s) are no longer in OGE's index:`);
+    for (const m of reconciled.missing) console.warn(`  ${m.url}`);
+  }
+  if (reconciled.redated.length) {
+    console.warn(`${reconciled.redated.length} published filing(s) carry a different posting date in OGE's index (ours -> index):`);
+    for (const r of reconciled.redated) console.warn(`  ${r.date} -> ${r.indexDate}  ${r.url.split("/").pop()}`);
   }
   const knownUrls = await loadKnownFilingUrlsFromData();
   const newFilings = diffNewFilings(targetFilings, knownUrls).map(
