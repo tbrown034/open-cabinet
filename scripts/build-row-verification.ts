@@ -25,6 +25,7 @@ import {
 } from "../lib/row-verification";
 import { readSecondReadLog } from "../lib/second-read";
 import { readGrokAuditLog } from "../lib/grok-audit";
+import { extractTextLayerRows } from "./text-layer-crosscheck";
 import type { OfficialData } from "../lib/types";
 
 const OFFICIALS_DIR = path.resolve("data/officials");
@@ -61,6 +62,7 @@ function main() {
     const model2OnlyByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes: Set<number> }>();
     const sessionByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes: Set<number> }>();
     const auditByUrl = new Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>();
+    const nameReadsByUrl = new Map<string, Array<Map<number, string>>>();
     for (const [url, e] of entriesByUrl) {
       const second = secondRead?.filings[url];
       const audited = audit?.filings[url];
@@ -74,9 +76,28 @@ function main() {
       const agreed = new Set<number>();
       const disputed = new Set<number>();
       let anySecond = false;
+      const nameReads: Array<Map<number, string>> = [];
+      // The text lane's own reading of each name, positionally, when the
+      // text layer agreed with the read row for row.
+      if (e.state === "checked_tuple_agreement") {
+        const ext = extractTextLayerRows(pdfPath);
+        if (ext.kind === "rows") {
+          const m = new Map<number, string>();
+          const placeholders = new Set(ext.placeholderRows);
+          let k = 0;
+          for (const r of ext.rows) {
+            if (placeholders.has(r.rowNumber)) continue;
+            if (r.description) m.set(k, r.description);
+            k += 1;
+          }
+          nameReads.push(m);
+        }
+      }
       for (const src of [second, sessionRead?.filings[url]]) {
         if (!src || src.candidateSha256 !== e.candidateSha256) continue;
         anySecond = true;
+        const paired = (src as { pairedDescriptions?: Record<string, string> }).pairedDescriptions;
+        if (paired) nameReads.push(new Map(Object.entries(paired).map(([i, d]) => [Number(i), d])));
         for (const i of src.agreedIndexes) agreed.add(i);
         for (const i of src.disputedIndexes) disputed.add(i);
         const own = { agreedIndexes: new Set(src.agreedIndexes), disputedIndexes: new Set(src.disputedIndexes), unreadIndexes: new Set((src as { unreadIndexes?: number[] }).unreadIndexes ?? []) };
@@ -87,6 +108,7 @@ function main() {
       if (audited && audited.candidateSha256 === e.candidateSha256) {
         auditByUrl.set(url, { confirmed: new Set(audited.confirmedIndexes), disputed: new Set(audited.disputedIndexes), notFound: new Set(audited.notFoundIndexes) });
       }
+      if (nameReads.length) nameReadsByUrl.set(url, nameReads);
     }
 
     for (const v of deriveRowVerification({
@@ -98,6 +120,7 @@ function main() {
       model2OnlyByUrl,
       sessionByUrl,
       auditByUrl,
+      nameReadsByUrl,
       decisionsById: decisions,
       filingDateByUrl: new Map((official.sourceFilings ?? []).flatMap((f) => (f.url ? [[f.url, f.date] as [string, string]] : []))),
     })) {

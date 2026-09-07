@@ -59,6 +59,7 @@ function verdict(score: RowVerification["score"], i: number): RowVerification {
     id: `row-${i}`, slug: official.slug, score,
     state: score === 0 ? "disputed" : score === 2 ? "two_models_agree" : "single_read",
     lane: null, sourceUrl: null, note: `Verdict ${i}`,
+    gates: { read1Confidence: null, text: "agree", ocr: "none", model2: "none", session: "none", audit: "none", human: null, implausible: [], name: "agree" },
   };
 }
 beforeEach(() => {

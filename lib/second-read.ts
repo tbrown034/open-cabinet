@@ -53,6 +53,10 @@ export interface SecondReadFiling {
    * primary may have missed. A person reads these. */
   extraRows: Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag: boolean }>;
   differences: string[];
+  /** The second reader's own description for each primary index it was
+   * paired with, so the name gate can compare names strictly instead of
+   * inferring agreement from the pairing (Codex, Sep 7). */
+  pairedDescriptions?: Record<string, string>;
   costUsd: number;
   checkedAt: string;
 }
@@ -118,11 +122,12 @@ export function compareSecondRead(
   primary: Row[],
   second: Row[],
   label: (i: number) => string = (i) => describePrimaryIndex(i)
-): Pick<SecondReadFiling, "agreedIndexes" | "disputedIndexes" | "unreadIndexes" | "extraRows" | "differences"> {
+): Pick<SecondReadFiling, "agreedIndexes" | "disputedIndexes" | "unreadIndexes" | "extraRows" | "differences" | "pairedDescriptions"> {
   const agreedIndexes: number[] = [];
   const disputedIndexes: number[] = [];
   const unreadIndexes: number[] = [];
   const differences: string[] = [];
+  const pairedDescriptions: Record<string, string> = {};
   const usedSecond = new Set<number>();
   const byDesc = new Map<string, number[]>();
   second.forEach((r, i) => {
@@ -145,6 +150,7 @@ export function compareSecondRead(
     const exact = exactAll.includes(i) ? i : exactAll[0];
     const j = exact ?? (bucket.includes(i) ? i : bucket[0]);
     usedSecond.add(j);
+    pairedDescriptions[String(i)] = second[j].description;
     if (exact !== undefined) agreedIndexes.push(i);
     else {
       disputedIndexes.push(i);
@@ -168,6 +174,7 @@ export function compareSecondRead(
     // count it as unread plus extra.
     if (i < second.length && !usedSecond.has(i) && sharesAssetWord(primary[i].description, second[i].description)) {
       usedSecond.add(i);
+      pairedDescriptions[String(i)] = second[i].description;
       if (comparedTuple(second[i]) === t) agreedIndexes.push(i);
       else {
         disputedIndexes.push(i);
@@ -178,6 +185,7 @@ export function compareSecondRead(
     const j = countP.get(t) === 1 && countS.get(t) === 1 ? leftoverSecond.find((x) => !usedSecond.has(x) && comparedTuple(second[x]) === t) : undefined;
     if (j !== undefined && sharesAssetWord(primary[i].description, second[j].description)) {
       usedSecond.add(j);
+      pairedDescriptions[String(i)] = second[j].description;
       agreedIndexes.push(i);
     } else {
       unreadIndexes.push(i);
@@ -190,7 +198,7 @@ export function compareSecondRead(
     .map((r, j) => ({ r, j }))
     .filter(({ j }) => !usedSecond.has(j))
     .map(({ r }) => ({ description: r.description, type: r.type, date: r.date, amount: r.amount, lateFilingFlag: !!r.lateFilingFlag }));
-  return { agreedIndexes, disputedIndexes, unreadIndexes, extraRows, differences };
+  return { agreedIndexes, disputedIndexes, unreadIndexes, extraRows, pairedDescriptions, differences };
 }
 
 /**

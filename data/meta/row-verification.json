@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T01:28:17.282Z",
+  "generatedAt": "2026-09-07T01:44:37.736Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
@@ -215,7 +215,7 @@
         "read1Confidence": 0.9,
         "text": "none",
         "ocr": "none",
-        "model2": "none",
+        "model2": "agree",
         "session": "none",
         "audit": "none",
         "human": "confirmed",
@@ -235,7 +235,7 @@
         "read1Confidence": 0.9,
         "text": "none",
         "ocr": "none",
-        "model2": "none",
+        "model2": "agree",
         "session": "none",
         "audit": "none",
         "human": "confirmed",
@@ -113358,7 +113358,7 @@
         "audit": "confirm",
         "human": null,
         "implausible": [],
-        "name": "agree"
+        "name": "none"
       }
     },
     "a47e919a49350de93ef11198": {
@@ -222980,7 +222980,7 @@
         "audit": "confirm",
         "human": null,
         "implausible": [],
-        "name": "agree"
+        "name": "none"
       }
     },
     "681372826878c3ffd8debcf7": {
@@ -223000,7 +223000,7 @@
         "audit": "confirm",
         "human": null,
         "implausible": [],
-        "name": "agree"
+        "name": "none"
       }
     },
     "3c66c179c070e7624a8d9b59": {

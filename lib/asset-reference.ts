@@ -159,6 +159,12 @@ const STOP = new Set(["INC", "CORP", "CO", "COMPANY", "LTD", "PLC", "LLC", "GROU
  * "AMERICAN" do not. Used only to corroborate a printed ticker (rule R1),
  * never to pick one.
  */
+export function sharedDistinctiveWords(a: string, b: string): string[] {
+  const words = (s: string) => new Set(assetNameKey(s).split(" ").filter((w) => w.length >= 4 && !STOP.has(w) && !/^\d+$/.test(w)));
+  const wb = words(b);
+  return [...words(a)].filter((w) => wb.has(w));
+}
+
 export function sharesDistinctiveWord(a: string, b: string): string | null {
   const words = (s: string) => new Set(assetNameKey(s).split(" ").filter((w) => w.length >= 4 && !STOP.has(w) && !/^\d+$/.test(w)));
   const wb = words(b);

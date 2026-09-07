@@ -64,7 +64,9 @@ const MUNI_WORDS = new RegExp(`\\b(?:CNTY|COUNTY|CITY|TOWN|TWP|TOWNSHIP|VLG|VILL
 const STATE_IN_LINE = new RegExp(`\\b(?:${STATE_ABBR}|${STATE_NAMES})\\b`);
 
 export function classifyInstrument(description: string, filedTicker: string | null | undefined): InstrumentCall {
-  const u = foldAssetText(description);
+  // A parenthetical symbol is not a word: "Eaton Corp. Plc (ETN)" is a
+  // stock, not an exchange-traded note (Codex, Sep 7).
+  const u = foldAssetText(description.replace(/\(\s*[A-Z][A-Z.]{0,6}\s*\)/g, " "));
   const t = (filedTicker ?? "").toUpperCase();
 
   if (/\b(?:CALL|PUT)\s+OPTIONS?\b|\bOPTION EXERCISE\b|\bOPTIONS? EXERCISE|\bVESTED (?:STOCK )?OPTIONS?\b|\bEXERCISE\b.*\bOPTION|\bOPTION\b.*\bEXERCISE|\bWARRANTS?\b|\bSTRIKE\b/.test(u)) {
@@ -104,7 +106,7 @@ export function classifyInstrument(description: string, filedTicker: string | nu
   if (/\bETF\b|\bETN\b|\bISHARES\b|\bSPDR\b|\bSELECT SECTOR\b|\bINDEX FD\b|\bINDEX FUND\b|\bVANGUARD\b.*\b(?:ETF|INDEX|FD|FUND)\b|\bINVESCO QQQ\b|\bARK\b.*\bETF\b/.test(u)) {
     return { type: "etf", issuerLabel: null, rule: "etf words" };
   }
-  if (/\bFUND\b|\bFD\b|\bPORTFOLIO\b.*\b(?:CL|CLASS)\b|\bCLASS [A-Z]\b.*\bFUND\b|\bMUTUAL\b|\bTAX FREE\b|\bMONEY MARKET\b/.test(u) || /^[A-Z]{4}X$/.test(t)) {
+  if (/\bFUND\b|\bFD\b|\bPORTFOLIO\b.*\b(?:CL|CLASS)\b|\bCLASS [A-Z]\b.*\bFUND\b|\bMUTUAL\b|\bTAX FREE\b|\bMONEY MARKET\b|\bF[12]\b|\bADMIRAL\b|\bINVESTOR (?:CL|CLASS|SHARES)\b/.test(u) || /^[A-Z]{4}X$/.test(t)) {
     return { type: "mutual_fund", issuerLabel: null, rule: "fund words or five-letter X symbol" };
   }
   if (/\bLLC\b|\bL L C\b|\bLP\b|\bL P\b|\bLIMITED PARTNERSHIP\b|\bPARTNERS\b|\bSERIES \d+\b|\bVENTURES?\b|\bCAPITAL PARTNERS\b|\bPRIVATE\b|\bSHARES IN RETIREMENT\b|\bRETIREMENT ACCOUNT\b|\b401K\b|\bIRA\b/.test(u)) {

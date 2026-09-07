@@ -210,6 +210,11 @@ export interface DeriveInput {
   decisionsById?: Map<string, ReviewDecision>;
   /** Posting date of each source filing, by URL, for the after-the-filing check. */
   filingDateByUrl?: Map<string, string>;
+  /** Independent readings of each row's asset name, by filing URL and
+   * parsed index: the text lane's description column, the second model's
+   * paired description, the session read's. The name gate compares these
+   * strictly (sameAssetWording) against the published name. */
+  nameReadsByUrl?: Map<string, Array<Map<number, string>>>;
 }
 
 /**
@@ -416,10 +421,17 @@ export function gatesForRow(
   const a = url ? input.auditByUrl?.get(url) : undefined;
   const audit: RowGates["audit"] = !a || idx < 0 ? "none" : a.confirmed.has(idx) ? "confirm" : a.disputed.has(idx) ? "dispute" : a.notFound.has(idx) ? "notfound" : "none";
   const human: RowGates["human"] = decision ? decision.decision : null;
-  const name: RowGates["name"] =
-    text === "agree" || model2 === "agree" || model2 === "disagree" || session === "agree" || session === "disagree" || human === "confirmed" || human === "corrected"
-      ? "agree"
-      : "none";
+  // The name gate is its own check: at least one independent reading of
+  // this row's name, compared strictly (one asset, different wording), or
+  // a person's decision on the row. Pairing or trade-column agreement is
+  // not evidence about the name (Codex, Sep 7: "Apple Inc" paired with
+  // "Apple Hospitality REIT" on identical trade values).
+  const reads = url && idx >= 0 ? input.nameReadsByUrl?.get(url) ?? [] : [];
+  const independentName = reads.some((m) => {
+    const other = m.get(idx);
+    return !!other && sameAssetWording(tx.description, other);
+  });
+  const name: RowGates["name"] = independentName || human === "confirmed" || human === "corrected" ? "agree" : "none";
   return { read1Confidence: conf, text, ocr, model2, session, audit, human, implausible, name };
 }
 

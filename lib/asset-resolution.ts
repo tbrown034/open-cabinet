@@ -33,7 +33,7 @@ import { existsSync, readFileSync } from "fs";
 import path from "path";
 import { resolveTicker } from "./assets";
 import { assetNameKey, normalizeAssetName, printedShareClass } from "./asset-normalize";
-import { canonicalListedSymbol, flatKey, loadAssetReference, sharesDistinctiveWord, type AssetReference } from "./asset-reference";
+import { canonicalListedSymbol, flatKey, loadAssetReference, sharedDistinctiveWords, sharesDistinctiveWord, type AssetReference } from "./asset-reference";
 import { classifyInstrument, type InstrumentType } from "./instrument-type";
 
 export type ResolutionTier = "T1" | "T2" | null;
@@ -99,8 +99,16 @@ export function resolveAsset(
   row: { description: string; ticker: string | null | undefined },
   ctx: ResolutionContext
 ): AssetResolution {
-  const call = classifyInstrument(row.description, row.ticker);
+  // The printed symbol first: a five-letter X symbol in parentheses marks a
+  // mutual fund even when the name says nothing, so typing needs it.
+  const filed = resolveTicker(row.description, row.ticker ?? null, { fillFromParenthetical: true });
+  const call = classifyInstrument(row.description, filed.ticker ?? row.ticker);
   const nameKey = assetNameKey(row.description);
+  // A broker sometimes prints the symbol inside the name ("BANK OF AMERICA
+  // BAC"); that trailing symbol is not part of the name. Only a symbol of
+  // three or more letters is stripped: "AT T" ends in T, the company's
+  // symbol, and is the whole name.
+  const strippedKey = filed.ticker && filed.ticker.length >= 3 && nameKey.endsWith(" " + filed.ticker) ? nameKey.slice(0, -filed.ticker.length - 1) : nameKey;
   const base = { instrumentType: call.type, issuerLabel: call.issuerLabel, nameKey };
   if (!TICKER_TYPES.has(call.type)) {
     return { ...base, resolvedTicker: null, tier: null, rule: `typed ${call.type}: no stock ticker`, evidence: [call.rule], candidates: [] };
@@ -111,28 +119,53 @@ export function resolveAsset(
   if (ex) return { ...base, resolvedTicker: null, tier: null, rule: "R0 exception", evidence: [`never resolve: ${ex.reason} (${ex.decidedBy}, ${ex.decidedAt.slice(0, 10)})`], candidates: [] };
 
   // R1 / R6: a printed symbol
-  const filed = resolveTicker(row.description, row.ticker ?? null, { fillFromParenthetical: true });
   if (filed.ticker) {
     const sym = canonicalListedSymbol(filed.ticker);
     const listed = ctx.ref.listedBySymbol.get(sym);
     const sec = ctx.ref.secBySymbol.get(sym);
     const listedOk = listed && (listed.kind === "common" || listed.kind === "etf");
-    let word = listedOk ? sharesDistinctiveWord(row.description, listed!.name) ?? (sec ? sharesDistinctiveWord(row.description, sec.name) : null) : null;
-    // Short names ("AT&T", "3M", "IBM") have no four-letter word to share;
-    // an exact key match with the listing is the same evidence.
-    if (listedOk && !word && nameKey && (listed!.key === nameKey || (sec && sec.key === nameKey))) word = nameKey;
-    if (listedOk && word) {
-      return { ...base, resolvedTicker: sym, tier: "T1", rule: "R1 filed ticker, corroborated", evidence: [`printed symbol ${sym} (${filed.source})`, `listed as "${listed!.name}" on ${listed!.exchange}`, `shares the word "${word}"`], candidates: [sym] };
+    // Corroboration is an exact name: the printed name's key equals the
+    // listing's key or the SEC issuer's key (spaces ignored). A shared
+    // word is not enough: "META FINL (META)" shares "META" with Meta
+    // Platforms and is a different company (Codex, Sep 7).
+    const sameName = (k: string | undefined) => !!k && !!nameKey && (k === nameKey || flatKey(k) === flatKey(nameKey) || k === strippedKey || flatKey(k) === flatKey(strippedKey));
+    const exact = listedOk && (sameName(listed!.key) || sameName(sec?.key));
+    if (listedOk && exact) {
+      return { ...base, resolvedTicker: sym, tier: "T1", rule: "R1 filed ticker, corroborated", evidence: [`printed symbol ${sym} (${filed.source})`, `listed as "${listed!.name}" on ${listed!.exchange}`, `printed name matches the listing exactly`], candidates: [sym] };
     }
+    // An ETF's printed name is its legal name ("Vanguard Tax-Exempt Bond
+    // Index Fund ETF"), the directory's is its marketing name ("Vanguard
+    // Tax-Exempt Bond ETF"). For a row typed ETF whose printed symbol is
+    // an ETF listing, two shared distinctive words (the family plus one
+    // more: "VANGUARD" and "EXEMPT") are the corroboration. Stocks get no
+    // such allowance.
+    if (listedOk && listed!.kind === "etf" && call.type === "etf") {
+      const shared = sharedDistinctiveWords(row.description, listed!.name);
+      if (shared.length >= 2) {
+        return { ...base, resolvedTicker: sym, tier: "T1", rule: "R1 filed ETF symbol, corroborated by two words", evidence: [`printed symbol ${sym} (${filed.source})`, `listed as "${listed!.name}" on ${listed!.exchange}`, `shares the words ${shared.map((w) => `"${w}"`).join(", ")}`], candidates: [sym] };
+      }
+    }
+    const word = listedOk ? sharesDistinctiveWord(row.description, listed!.name) : null;
     if (listed && !listedOk) {
       return { ...base, resolvedTicker: null, tier: null, rule: "R1 refused: symbol names a non-stock listing", evidence: [`printed symbol ${sym} is listed as "${listed.name}" (${listed.kind})`], candidates: [sym] };
     }
-    return { ...base, resolvedTicker: null, tier: "T2", rule: "R6 filed ticker, uncorroborated", evidence: [`printed symbol ${sym} (${filed.source})`, listed ? `listed as "${listed.name}" but no distinctive word shared` : "not in the Nasdaq directory", sec ? `SEC: "${sec.name}"` : "not in the SEC issuer list"], candidates: [sym] };
+    return { ...base, resolvedTicker: null, tier: "T2", rule: "R6 filed ticker, uncorroborated", evidence: [`printed symbol ${sym} (${filed.source})`, listed ? `listed as "${listed.name}"${word ? ` (shares "${word}" but the names are not the same)` : " (no name match)"}` : "not in the Nasdaq directory", sec ? `SEC: "${sec.name}"` : "not in the SEC issuer list"], candidates: [sym] };
   }
 
   // R2
   const dict = ctx.dictionary.get(nameKey);
-  if (dict) return { ...base, resolvedTicker: canonicalListedSymbol(dict.ticker), tier: "T1", rule: "R2 dictionary", evidence: [`${dict.decidedBy} on ${dict.decidedAt.slice(0, 10)}: ${dict.evidence}`], candidates: [canonicalListedSymbol(dict.ticker)] };
+  if (dict) {
+    const sym = canonicalListedSymbol(dict.ticker);
+    // A dictionary entry names one listing. If the row prints a share
+    // class the listing does not carry, the entry does not cover it.
+    const cls = printedShareClass(row.description);
+    const listing = ctx.ref.listedBySymbol.get(sym);
+    const listingClass = listing ? (listing.name.match(/\bClass ([A-C])\b/i)?.[1] ?? (listing.symbol.match(/\.([A-C])$/)?.[1] ?? null)) : null;
+    if (cls && listingClass && cls.toUpperCase() !== listingClass.toUpperCase()) {
+      return { ...base, resolvedTicker: null, tier: "T2", rule: "R2 dictionary, class differs", evidence: [`dictionary maps this name to ${sym} (class ${listingClass}); the row prints class ${cls}`], candidates: [sym] };
+    }
+    return { ...base, resolvedTicker: sym, tier: "T1", rule: "R2 dictionary", evidence: [`${dict.decidedBy} on ${dict.decidedAt.slice(0, 10)}: ${dict.evidence}`], candidates: [sym] };
+  }
 
   // R3 / R4: exact key
   if (!nameKey) return { ...base, resolvedTicker: null, tier: null, rule: "empty name", evidence: [], candidates: [] };
@@ -157,6 +190,12 @@ export function resolveAsset(
   // two lists agree on that symbol; the extras are the same issuer.
   if (listedSyms.length === 1 && secSyms.length > 1 && secSyms.includes(listedSyms[0])) secSyms = [listedSyms[0]];
   if (listedSyms.length === 1 && secSyms.length === 1) {
+    const cls = printedShareClass(row.description);
+    const only = listedHits[0];
+    const onlyClass = only.name.match(/\bClass ([A-C])\b/i)?.[1] ?? only.symbol.match(/\.([A-C])$/)?.[1] ?? null;
+    if (cls && onlyClass && cls.toUpperCase() !== onlyClass.toUpperCase()) {
+      return { ...base, resolvedTicker: null, tier: null, rule: "class printed is not the listed class", evidence: [`the row prints class ${cls}; the only listing of this name is "${only.name}" (${only.symbol})`], candidates: [only.symbol] };
+    }
     if (listedSyms[0] === secSyms[0]) {
       return { ...base, resolvedTicker: listedSyms[0], tier: "T1", rule: "R3 exact name, both lists agree", evidence: [`"${normalizeAssetName(row.description)}" = "${listedHits[0].name}" (${listedHits[0].exchange})`, `SEC: "${secHits[0].name}" CIK ${secHits[0].cik}`], candidates: [listedSyms[0]] };
     }

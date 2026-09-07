@@ -73,7 +73,7 @@ async function main() {
           verificationState: row?.state ?? null,
           instrumentType: asset?.instrumentType ?? null,
           issuerLabel: asset?.issuerLabel ?? null,
-          resolvedTicker: asset?.tier === "T1" ? asset.resolvedTicker : null,
+          resolvedTicker: asset?.tier === "T1" && row?.gates?.name === "agree" ? asset.resolvedTicker : null,
           resolutionTier: asset?.tier ?? null,
         };
       }),

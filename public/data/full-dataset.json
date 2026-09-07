@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-07T01:26:30.866Z",
+  "exportedAt": "2026-09-07T01:46:20.478Z",
   "officialCount": 39,
   "transactionCount": 11509,
   "underReviewCount": 0,
@@ -383,7 +383,7 @@
           "recordId": "c4b8df119557c252b28c820e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": "ETN",
           "resolutionTier": "T1"
@@ -881,8 +881,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "ASML",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Chevron Corp. (CVX)",
@@ -1441,8 +1441,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMZN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "e.l.f. Beauty, Inc. (ELF)",
@@ -8437,8 +8437,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "META",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "NVIDIA Corp. (NVDA)",
@@ -8645,8 +8645,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "NIO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Palantir Technologies Inc. Class A Common Stock",
@@ -8805,8 +8805,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VOO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Walmart, Inc. (WMT)",
@@ -8869,8 +8869,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VOO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Invesco QQQ Trust, Series 1 (QQQ)",
@@ -9657,10 +9657,10 @@
           "recordId": "5d93fce32bc63cedb426ddeb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
@@ -9672,10 +9672,10 @@
           "recordId": "63d452ba3e98f26f5518c934",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
@@ -9687,10 +9687,10 @@
           "recordId": "5114d998b2b874da6779dae3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
@@ -9717,10 +9717,10 @@
           "recordId": "6e95436a19797a9388546acb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
@@ -9732,10 +9732,10 @@
           "recordId": "42d890148bb0eb521d60cffb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
@@ -9747,10 +9747,10 @@
           "recordId": "a470996b4a902dd3db592642",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN WA MUTUAL F2 (WMFFX)",
@@ -9777,10 +9777,10 @@
           "recordId": "daa361839c0824a3130d8d5a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN BALANCED F2 (AMBFX)",
@@ -9792,10 +9792,10 @@
           "recordId": "a2636cc939fae26a6a213ad5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN SMALL CAP WORLD F2 (SMCFX)",
@@ -9807,10 +9807,10 @@
           "recordId": "6058741c58fcbe33bce54a56",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
@@ -9837,10 +9837,10 @@
           "recordId": "761a93443258b581ff70587f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN STRATEGIC BOND F2 (ANBFX)",
@@ -9882,10 +9882,10 @@
           "recordId": "d35e6f5ccb925cd52bf7f072",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN GLOBAL INSIGHT F2 (AGVGX)",
@@ -9897,10 +9897,10 @@
           "recordId": "afe45fc102c8f7eb01b99a53",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
@@ -9912,10 +9912,10 @@
           "recordId": "eeeb0dee7f7cb934a7849b23",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
@@ -9927,10 +9927,10 @@
           "recordId": "6ffb0030854cf42a2fa92520",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
@@ -9942,10 +9942,10 @@
           "recordId": "d9789bf7c87f51c34a10859d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
@@ -9957,10 +9957,10 @@
           "recordId": "3caa24f85d7f3fb780e895f8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN BALANCED F2 (AMBFX)",
@@ -9972,10 +9972,10 @@
           "recordId": "f0828e06b995a220b7dbff05",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN WA MUTUAL F2 (WMFFX)",
@@ -10002,10 +10002,10 @@
           "recordId": "bc51717d71bd435f12207096",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
@@ -10062,10 +10062,10 @@
           "recordId": "3fda62ccea5af52417124b2b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN INV CO OF AMER F2 (ICAFX)",
@@ -10077,10 +10077,10 @@
           "recordId": "710c46ef6c00eeb2b3c59f62",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN BALANCED F2 (AMBFX)",
@@ -10092,10 +10092,10 @@
           "recordId": "aded4ba91703464cd6d54ed7",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP INC BUILDER F2 (CAIFX)",
@@ -10107,10 +10107,10 @@
           "recordId": "c0eb68bc8e2a4741054163ad",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 (WGIFX)",
@@ -10122,10 +10122,10 @@
           "recordId": "174d3d76b45329f158768451",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN SMALL CAP WORLD F2 (SMCFX)",
@@ -10137,10 +10137,10 @@
           "recordId": "f920118a01e9ae3499a4e8d4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN GW FD OF AMERICA F2 (GFFFX)",
@@ -10197,10 +10197,10 @@
           "recordId": "bc55183cd48a07041ca0ed6e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
@@ -10257,10 +10257,10 @@
           "recordId": "b775a6f493a19c4bc4de7704",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN CAP WRLD GR & INC F2 CONFIRM NBR (WGIFX)",
@@ -10272,10 +10272,10 @@
           "recordId": "531e00ec8d32a4b52d5f8fc8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN GW FD OF AMERICA F2 CONFIRM NBR (GFFFX)",
@@ -10302,10 +10302,10 @@
           "recordId": "b7812c129ce0f7762259b312",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN SMALL CAP WORLD F2 CONFIRM NBR (SMCFX)",
@@ -10317,10 +10317,10 @@
           "recordId": "74b5d3991eb57a2378f24cb0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN INV CO OF AMER F2 CONFIRM NBR (ICAFX)",
@@ -10332,10 +10332,10 @@
           "recordId": "025919d75bc168e65771c7b6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "AMERICAN WA MUTUAL F2 CONFIRM NBR (WMFFX)",
@@ -10829,8 +10829,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "WAYFAIR INC (W)",
@@ -10859,8 +10859,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "Z",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ZOOM VIDEO COMMUNICATIONS-A (ZM)",
@@ -10874,8 +10874,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "ZM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Amazon.com, Inc. (AMZN)",
@@ -11378,8 +11378,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "ARGX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ASML Holding N.V. New York Registry Shares (ASML)",
@@ -11394,8 +11394,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "ASML",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Blackstone Inc. Common Stock (BX)",
@@ -11520,7 +11520,7 @@
           "recordId": "c4481daad65531bb828ae11e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": "ETN",
           "resolutionTier": "T1"
@@ -11746,8 +11746,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "SHOP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Taiwan Semiconductor Manufacturing Company Ltd. (TSM)",
@@ -12240,8 +12240,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolvedTicker": "XOM",
+          "resolutionTier": "T1"
         },
         {
           "description": "Meta Platforms Inc. Class A Common Stock",
@@ -13068,8 +13068,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VOO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Extended Market Index Fund ETF Shares",
@@ -16086,8 +16086,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "NIKE, Inc.",
@@ -17266,8 +17266,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "OMDA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Samsara Inc. Class A Common Stock (IOT)",
@@ -17538,8 +17538,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "GOOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Southern Company (SO) (required sale pursuant to CD)",
@@ -18832,8 +18832,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "GOLD",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Becton, Dickinson and Company (BDX)",
@@ -18944,8 +18944,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CCU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Danone S.A. (DANOY)",
@@ -19040,8 +19040,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "FMX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Fuchs SE (FUPBY)",
@@ -19072,8 +19072,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "HLN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Heineken N.V. (HEINY)",
@@ -20618,8 +20618,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "NEE",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Target Retirement 2045 Fund Investor Class Shares (VTIVX)",
@@ -20826,8 +20826,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMZN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         }
       ]
     },
@@ -21016,8 +21016,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "COST",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Deere and Co.",
@@ -21048,8 +21048,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EMR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Goldman Sachs Group Inc Com",
@@ -21272,8 +21272,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "PM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "RTX Corp Com",
@@ -21400,8 +21400,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VPU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Visa Inc Com CL A",
@@ -21880,8 +21880,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "PG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Salesforce Inc",
@@ -21912,8 +21912,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolvedTicker": "NOW",
+          "resolutionTier": "T1"
         },
         {
           "description": "United Health Group Inc",
@@ -22168,8 +22168,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MPWR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Monolithic Power System (MPWR)",
@@ -22184,8 +22184,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MPWR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Stride Inc (LRN)",
@@ -22376,8 +22376,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MPWR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Stride Inc (LRN)",
@@ -22438,8 +22438,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DJT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Ares Management Corp. (ARES)",
@@ -24948,8 +24948,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "FPS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Akamai Technologies, Inc. (AKAM)",
@@ -25268,8 +25268,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BMNR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "bitmine immersion technology",
@@ -25284,8 +25284,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BMNR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Global X MSCI Argentina ETF",
@@ -25538,8 +25538,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "WMS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Alcon Inc.",
@@ -26066,8 +26066,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "NVO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "NVR Inc.",
@@ -26258,8 +26258,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ULS",
+          "resolutionTier": "T1"
         },
         {
           "description": "Unlted Health Group",
@@ -26354,8 +26354,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "WSC",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Wyndham Hotels & Resorts Inc",
@@ -28860,8 +28860,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "LYG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Lincoln Electric Holdings, Inc. (LECO)",
@@ -29115,8 +29115,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "HLN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "HEICO Corp. (HEI)",
@@ -29355,8 +29355,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolvedTicker": "XOM",
+          "resolutionTier": "T1"
         },
         {
           "description": "Expeditors International of Washington, Inc. (EXPD)",
@@ -29956,8 +29956,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Booz Allen Hamilton Holding Corp. (BAH)",
@@ -35096,7 +35096,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -35256,7 +35256,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -35511,8 +35511,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EPAM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQT CORP",
@@ -35704,7 +35704,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GLOBAL PMTS INC",
@@ -35848,7 +35848,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTUIT",
@@ -36055,7 +36055,7 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MA",
+          "resolvedTicker": null,
           "resolutionTier": "T1"
         },
         {
@@ -36215,7 +36215,7 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "NKE",
+          "resolvedTicker": null,
           "resolutionTier": "T1"
         },
         {
@@ -37512,7 +37512,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "Cognizant Technology Solutions Corp",
@@ -37527,8 +37527,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -37735,8 +37735,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQT CORP",
@@ -37928,7 +37928,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GEN DIGITAL INC",
@@ -38232,7 +38232,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "International Flavors & Fragrances Inc",
@@ -39159,8 +39159,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "SPG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "SLB LIMITED F",
@@ -39527,8 +39527,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERALTO CORP",
@@ -39800,7 +39800,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BEACON FINL CORP",
@@ -41495,8 +41495,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "SBAC",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "SERVICENOW INC",
@@ -41927,8 +41927,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COMCAST CORP CL A",
@@ -47783,8 +47783,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EPAM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "ETHAN ALLEN INTERIORS IN",
@@ -47912,7 +47912,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "FRANKLIN BSP REALTY",
@@ -48071,8 +48071,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "INSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ITRON INC EQUITY CLASS EQUITY",
@@ -48263,8 +48263,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MMSI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "MGE ENERGY INC",
@@ -49704,7 +49704,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GEISINGER AUTH PA HLTH SYS REV SER A2 B/E 5.00 % Due Feb 15, 2027",
@@ -49944,7 +49944,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTUIT",
@@ -51943,8 +51943,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BSY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "BERKSHIRE HATHAWAY CLASS B",
@@ -52152,7 +52152,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -52391,8 +52391,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EPAM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQUIFAX INC",
@@ -52520,7 +52520,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GENERAL MILLS INC",
@@ -52680,7 +52680,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTUIT",
@@ -53367,8 +53367,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERISK ANALYTICS INC CLASS A",
@@ -55304,7 +55304,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROADRIDGE FINL SOLUTION",
@@ -55320,7 +55320,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -56776,7 +56776,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GEN DIGITAL INC",
@@ -57303,8 +57303,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ICE",
+          "resolutionTier": "T1"
         },
         {
           "description": "INTERNATIONAL BUSINESS MACHS",
@@ -58903,8 +58903,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "REGN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "RESMED INC",
@@ -59399,8 +59399,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "TRGP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "TERADYNE INC",
@@ -60327,8 +60327,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ALPHABET INC CL C",
@@ -60455,8 +60455,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMPH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "APPLE HOSPITALITY REIT I REIT",
@@ -60728,7 +60728,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "AVISTA CORP",
@@ -61143,8 +61143,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRC",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CALIFORNIA WTR SVC GROUP",
@@ -61479,8 +61479,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CBU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "COMSTOCK RES INC",
@@ -61495,8 +61495,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRK",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONOCOPHILLIPS",
@@ -61847,8 +61847,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DORM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "DOUBLEVERIFY HLDGS INC",
@@ -62328,7 +62328,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "FRANKLIN ELEC INC",
@@ -62887,8 +62887,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "INSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "INTERNTNL SEAWAYS IN F",
@@ -63687,8 +63687,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MMSI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "MERITAGE HOMES CORP",
@@ -64151,8 +64151,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "OSIS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "OTTER TAIL CORP",
@@ -64807,8 +64807,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "REX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "RINGCENTRAL INC CLASS CLASS A",
@@ -66183,8 +66183,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CSCO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "INVESCO QQQ TR",
@@ -66488,7 +66488,7 @@
           "instrumentType": "etf",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "STATE STREET TECHNOLOGY SPDR EFT",
@@ -70280,7 +70280,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BADGER METER INC",
@@ -70615,8 +70615,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CBU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "COMSTOCK RES INC",
@@ -70631,8 +70631,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRK",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONMED CORP",
@@ -70743,8 +70743,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DORM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "DOUBLEVERIFY HLDGS INC",
@@ -73304,7 +73304,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GENERAL MILLS INC",
@@ -73559,8 +73559,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "KNSL",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "LAM RESH CORP",
@@ -75511,8 +75511,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CAMDEN PROPERTY TRUST",
@@ -75959,8 +75959,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "Cognizant Technology Solutions Corp Cl A",
@@ -75975,8 +75975,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COLGATE PALMOLIVE CO",
@@ -80344,7 +80344,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "CAPITAL ONE FINL CORP",
@@ -80648,7 +80648,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GENERAL MILLS INC",
@@ -80744,7 +80744,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTERNTNL PAPER CO",
@@ -82471,8 +82471,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQT CORP",
@@ -82935,8 +82935,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ICE",
+          "resolutionTier": "T1"
         },
         {
           "description": "INTERNTNL PAPER CO",
@@ -84231,8 +84231,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "TRGP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "TEXAS PACIFIC LAND CORPORATION COM",
@@ -85255,8 +85255,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COMCAST CORP CL A",
@@ -86135,8 +86135,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MPWR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "MONSTER BEVERAGE CORP",
@@ -86936,7 +86936,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROADSTONE NET LEASE INC REIT",
@@ -87751,8 +87751,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COLGATE PALMOLIVE COMPANY",
@@ -88119,8 +88119,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQT CORPORATION",
@@ -90119,8 +90119,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "COHERENT CORP",
@@ -90727,8 +90727,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COREWEAVE INC CL A",
@@ -92871,8 +92871,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CWST",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CAVCO INDS INC DEL",
@@ -93015,8 +93015,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CBU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "COMSTOCK RES INC",
@@ -93031,8 +93031,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRK",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CORCEPT THERAPEUTICS INC",
@@ -93191,8 +93191,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DORM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "DOUBLEVERIFY HLDGS INC",
@@ -93895,8 +93895,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "INSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "INTEGRA LIFESCIENCES HLD",
@@ -94471,8 +94471,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MMSI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "MGE ENERGY INC",
@@ -95159,8 +95159,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "REYN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "RINGCENTRAL INC CLASS A",
@@ -95463,8 +95463,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "SLG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "SOUTHSIDE BANCSHARES INC",
@@ -95959,8 +95959,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VCTR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VIRTUS INVT PARTNERS INC",
@@ -96311,8 +96311,8 @@
           "verificationState": "human_verified",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "KNSL",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "MID-AMER APT CMNTYS INC REIT",
@@ -96647,8 +96647,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Capital One Finl Corp Com Solicited Order Discretion Exercised",
@@ -96711,8 +96711,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "CONROE TX INDEPT SCH ULT BE/R/5 DUE 021535 DTD 112025 FC 021526 3.328% YIELD TO MATURITY UNSOLICITED",
@@ -98088,7 +98088,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -98119,8 +98119,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CANADIAN IMPERIAL BANK 04.862% 011328 DTD011325 FC071325 FIX-TO-FLOAT YTM = 4.698 UNSOLICITED ACCRUED",
@@ -98311,8 +98311,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONAGRA BRANDS INC",
@@ -99016,7 +99016,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTERNTNL PAPER CO",
@@ -100359,8 +100359,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERALTO CORP",
@@ -102935,8 +102935,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CAPITAL ONE FINL CORP",
@@ -103159,8 +103159,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CSCO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CISCO SYSTEMS INC UNSOLICITED",
@@ -103208,7 +103208,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COLGATE PALMOLIVE CO",
@@ -103239,8 +103239,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "FIX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CONOCOPHILLIPS",
@@ -103864,7 +103864,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "FREEPORT-MCMORAN INC UNSOLICITED",
@@ -103944,7 +103944,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "GE VERNOVA INC",
@@ -104312,7 +104312,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTERDIGITAL INC",
@@ -105783,8 +105783,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "REGN",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "REGIONS FINL CORP NEW",
@@ -106295,8 +106295,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "TRGP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "TARGA RESOURCES CORP UNSOLICITED",
@@ -106647,8 +106647,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VENTAS INC REIT",
@@ -107672,7 +107672,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -107816,7 +107816,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -107863,8 +107863,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONAGRA BRANDS INC",
@@ -108183,8 +108183,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EPAM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQUITABLE HLDGS INC",
@@ -108727,8 +108727,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "KNSL",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "KKR & CO INC",
@@ -109831,8 +109831,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "TTEK",
+          "resolutionTier": "T1"
         },
         {
           "description": "TEXAS INSTRS INC",
@@ -110135,8 +110135,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERISK ANALYTICS INC CLASS A",
@@ -111559,8 +111559,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CAPITAL ONE FINL CORP",
@@ -111815,8 +111815,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CSCO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CITIGROUP INC",
@@ -111895,8 +111895,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COINBASE GLOBAL INC",
@@ -112232,7 +112232,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "DISNEY WALT CO",
@@ -112503,8 +112503,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQT CORP",
@@ -113127,8 +113127,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ICE",
+          "resolutionTier": "T1"
         },
         {
           "description": "INTERNATIONAL FLAVORS & FRAGRANCES INC",
@@ -116024,7 +116024,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "METROPOLITAN UTILS DIST RV BE/R/5 DUE 120128 DTD 032526 FC 060126 2.250% YIELD TO MATURITY UNSOLICITED",
@@ -116823,8 +116823,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CHIPOTLE MEXICAN GRILL INC CL A UNSOLICITED",
@@ -118167,8 +118167,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VRTX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "VISA INC CL A UNSOLICITED",
@@ -118631,8 +118631,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CATERPILLAR INC UNSOLICITED",
@@ -119143,8 +119143,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ICE",
+          "resolutionTier": "T1"
         },
         {
           "description": "INTL BUSINESS MACH UNSOLICITED",
@@ -122167,8 +122167,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMPH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ARCHROCK INC",
@@ -122967,8 +122967,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CBU",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CORCEPT THERAPEUTICS INC",
@@ -124375,8 +124375,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "OSIS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "OTTER TAIL CORP",
@@ -125687,8 +125687,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VCTR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VIRTU FINL INC CLASS A",
@@ -126791,8 +126791,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CARVANA CO CL A UNSOLICITED",
@@ -129335,8 +129335,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VRTX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "VISA INC CL A UNSOLICITED",
@@ -130071,8 +130071,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CWST",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CATALYST PHARMACEUTICALS",
@@ -130151,8 +130151,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CRK",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CORCEPT THERAPEUTICS INC",
@@ -130295,8 +130295,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DORM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "DOUGLAS EMMETT INC REIT",
@@ -130599,8 +130599,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "INSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "INTEGRA LIFESCIENCES HLD",
@@ -130887,8 +130887,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "MMSI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "MGE ENERGY INC",
@@ -131303,8 +131303,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "SLG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "SOLSTICE ADVANCED MATLS",
@@ -132119,8 +132119,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BSY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "BERKSHIRE HATHAWAY CLASS B",
@@ -132296,7 +132296,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -132343,8 +132343,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CAPITAL ONE FINL CORP",
@@ -132392,7 +132392,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "CHARTER COMMUNICATIONS I CLASS A",
@@ -132455,8 +132455,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CSCO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CLEVELAND CNTY OK EDL FACS AUTH LSE REV NORMAN PUB SCH SER C B/E 5.00% Due Jun 1, 2026",
@@ -132488,7 +132488,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -132551,8 +132551,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONSTELLATION ENERGY COR",
@@ -132791,8 +132791,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EPAM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQUIFAX INC",
@@ -133240,7 +133240,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTUIT",
@@ -133319,8 +133319,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "KNSL",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "KKR & CO INC",
@@ -134343,8 +134343,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERISK ANALYTICS INC CLASS A",
@@ -134727,8 +134727,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COPART INC",
@@ -136135,8 +136135,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "BSY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "BERKSHIRE HATHAWAY CLASS B",
@@ -136408,7 +136408,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROADRIDGE FINL SOLUTION",
@@ -136424,7 +136424,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "BROWN & BROWN INC",
@@ -136520,7 +136520,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "CCC INTELLIGENT SOLUTION",
@@ -136536,7 +136536,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "CENTENE CORP DEL",
@@ -136600,7 +136600,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COGNIZANT TECHNOLOGY SOL CLASS A",
@@ -136616,7 +136616,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "COINBASE GLOBAL INC CLASS A",
@@ -136663,8 +136663,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CONSTELLATION ENERGY COR",
@@ -137752,7 +137752,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTERCONTINENTAL EXCHANG",
@@ -137768,7 +137768,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "INTUIT",
@@ -139799,8 +139799,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VRNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VARONIS SYS INC",
@@ -139815,8 +139815,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VRNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VEEVA SYS INC CLASS A",
@@ -139831,8 +139831,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERISK ANALYTICS INC CLASS A",
@@ -142087,8 +142087,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "WST",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "WORKDAY INC CL A",
@@ -142151,8 +142151,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "ARWR",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "KEYCORP DP SH PFD H",
@@ -143799,8 +143799,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "AMPH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ARBOR RLTY TR INC REIT",
@@ -144103,8 +144103,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DORM",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "DOUGLAS EMMETT INC REIT",
@@ -144391,8 +144391,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "INSP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "IRVING TX SCH DIST RFDG B/E PSF GTD PTC 4.00% Due Feb 15, 2030",
@@ -147687,8 +147687,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CSCO",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CMS ENERGY CORP",
@@ -147911,8 +147911,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EXELON CORP",
@@ -148151,8 +148151,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "KNSL",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "KKR & CO INC",
@@ -150024,7 +150024,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": null
+          "resolutionTier": "T2"
         },
         {
           "description": "CARRIER GLOBAL CORP",
@@ -150599,8 +150599,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "EOG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "EQUINIX INC REIT",
@@ -151799,8 +151799,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "RRC",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "RLICORP",
@@ -152119,8 +152119,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "TRGP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "TEXAS INSTRS INC",
@@ -152391,8 +152391,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "VEEV",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "VERIZON COMMUNICATIONS I",
@@ -153399,8 +153399,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "CDNS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "CARVANA CO CL A",
@@ -153479,8 +153479,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "CTSH",
+          "resolutionTier": "T1"
         },
         {
           "description": "COLORADO HLTH FACS AUTH REV INTERMTN HLTHCARE INC SER B B/E 5.00 % Due May 15, 2062",
@@ -153527,8 +153527,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "FIX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "COMFORT SYSTEMS USA INC UNSOLICITED",
@@ -153736,7 +153736,7 @@
           "instrumentType": "common_stock",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "DOLLAR TREE INC",
@@ -154135,8 +154135,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": null
+          "resolvedTicker": "ICE",
+          "resolutionTier": "T1"
         },
         {
           "description": "INTUITIVE SURGICAL INC NEW",
@@ -154567,8 +154567,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "PNW",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "PUBLIC STORAGE",
@@ -154807,8 +154807,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "TRGP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "TELEDYNE TECHNOLOGIES INC",
@@ -179374,8 +179374,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -179518,8 +179518,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "GAJPX (Goldman Sachs Dynamic Municipal Income Fund)",
@@ -179694,8 +179694,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -179902,8 +179902,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -179918,8 +179918,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -180062,8 +180062,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -180206,8 +180206,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -180350,8 +180350,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -180542,8 +180542,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Muni Bond ETF",
@@ -180574,8 +180574,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -180766,8 +180766,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Muni Bond ETF",
@@ -180798,8 +180798,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -180942,8 +180942,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -181086,8 +181086,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SCHH",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Fund International ETF",
@@ -181294,8 +181294,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Westside LC LLC",
@@ -181390,8 +181390,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
@@ -181534,8 +181534,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -181662,8 +181662,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -181790,8 +181790,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -181918,8 +181918,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",
@@ -182030,8 +182030,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SPY",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Dodge & Cox International Stock Fund (DODFX)",
@@ -184172,8 +184172,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Datavault",
@@ -184188,8 +184188,8 @@
           "verificationState": "checked",
           "instrumentType": "common_stock",
           "issuerLabel": null,
-          "resolvedTicker": "DVLT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         }
       ]
     }

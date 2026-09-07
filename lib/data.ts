@@ -123,7 +123,7 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
     for (const [i, tx] of official.transactions.entries()) {
       const asset = assets?.rows[ids[i]];
       if (!asset || asset.tier !== "T1" || !asset.resolvedTicker) continue;
-      if (verification[i]?.gates && verification[i]!.gates!.name !== "agree") continue;
+      if (verification[i]?.gates?.name !== "agree") continue;
       const ticker = asset.resolvedTicker;
       if (!tickerMap.has(ticker)) {
         tickerMap.set(ticker, { ticker, companyName: ticker, trades: [], registry: lookupAsset(ticker) });
