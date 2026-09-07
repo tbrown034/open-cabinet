@@ -1266,6 +1266,14 @@
       "evidence": "Trevor, Sep 6, 7:34 PM: May 9, 2025 filing page 2 printed row 9, NIKE sale, the page prints 04/04/2225; \"this is obviously 2025\". Published as 2025-04-04 with a row note saying what the filing prints. Reverses the morning call to publish 2225 as printed, after the 2225 date stretched every time axis on the site to the year 2225.",
       "decidedBy": "trevor",
       "decidedAt": "2026-09-06T23:35:49.009Z"
+    },
+    {
+      "recordId": "d09cd676992dae38bb06c20d",
+      "slug": "dixon-stacey",
+      "decision": "rejected",
+      "evidence": "Sep 6, 8:05 PM, Claude Code on Trevor's standing instruction (act, ask only as a last resort): this row was attributed to no filing. It is the same trade as the Amazon.com (AMZN) sale of 08/23/2021, $1,001 - $15,000, printed row 1 of Stacey-Dixon-08.24.2021-278T(1).pdf, which the site already holds. The other Aug 24, 2021 filing's endnote says 'in a separate OGE278T report I documented the sale of between $1000-$15,000 in Amazon (AMZN) stock on 8-23'; the old read turned that endnote into a second row. Removed as a double count. Row removed: {\"description\":\"AMAZON (AMZN) - referenced as documented in separate OGE278T report\",\"type\":\"Sale\",\"date\":\"2021-08-23\",\"amount\":\"$1,001-$15,000\",\"lateFilingFlag\":false}",
+      "decidedBy": "claude-code",
+      "decidedAt": "2026-09-07T00:01:01.591Z"
     }
   ]
 }

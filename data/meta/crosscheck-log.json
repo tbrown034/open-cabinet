@@ -1,7 +1,7 @@
 {
   "version": 1,
   "checkerVersion": "2026-09-06.1",
-  "generatedAt": "2026-09-06T21:41:05.745Z",
+  "generatedAt": "2026-09-07T00:00:29.693Z",
   "entries": [
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
@@ -1761,7 +1761,11 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "slug": "landau-christopher",
       "filingDate": "2025-07-16",
+      "pdfFile": "Christopher-Lundau-05.22.2025-278T.pdf",
+      "pdfSha256": "c45f4166dd0f8d40b626119f69941e08bbd28c20f6963b3da77f846f32fee5a1",
+      "candidateSha256": "e6e6fd8222b42c388710366a656c6225bd17d59466720b8bcb87ba12057c1916",
       "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
       "comparedFields": [
         "type",
         "date",
@@ -1771,14 +1775,10 @@
         "printedRowContinuity",
         "assetNameSharedWord"
       ],
-      "publishedRows": 89,
-      "checkedAt": "2026-09-06T16:02:43.365Z",
-      "pdfFile": "Christopher-Lundau-05.22.2025-278T.pdf",
-      "pdfSha256": "c45f4166dd0f8d40b626119f69941e08bbd28c20f6963b3da77f846f32fee5a1",
-      "candidateSha256": "e6e6fd8222b42c388710366a656c6225bd17d59466720b8bcb87ba12057c1916",
-      "state": "checked_tuple_agreement",
       "rowsCompared": 89,
-      "parseRecord": "current"
+      "publishedRows": 89,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-07T00:00:29.688Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/5B8B5CEB2359CA1D85258CC4002C8A8E/$FILE/Paul-R-Lawrence-06.11.2025-278T.pdf",

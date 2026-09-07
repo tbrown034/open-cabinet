@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-06T23:37:57.268Z",
+  "generatedAt": "2026-09-07T00:01:02.513Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
-    "rows": 11514,
+    "rows": 11513,
     "byState": {
-      "checked": 11250,
+      "checked": 11263,
       "human_verified": 142,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 93,
-      "single_read": 29,
+      "single_read": 15,
       "implausible": 0,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
-      "1": 29,
+      "1": 15,
       "2": 93,
-      "3": 11392
+      "3": 11405
     }
   },
   "rows": {
@@ -6170,15 +6170,6 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d09cd676992dae38bb06c20d": {
-      "id": "d09cd676992dae38bb06c20d",
-      "slug": "dixon-stacey",
-      "sourceUrl": null,
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Not attributed to a specific filing; nothing has compared it"
-    },
     "6597582f24f039e39aaa83ce": {
       "id": "6597582f24f039e39aaa83ce",
       "slug": "dixon-stacey",
@@ -10472,8 +10463,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ea75c846b47b4d2b52680ec6": {
-      "id": "ea75c846b47b4d2b52680ec6",
+    "04ffffe532842cca27c50590": {
+      "id": "04ffffe532842cca27c50590",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10481,8 +10472,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d16b410be07d433fcb05c97d": {
-      "id": "d16b410be07d433fcb05c97d",
+    "dd5363332f660417baafe275": {
+      "id": "dd5363332f660417baafe275",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10490,8 +10481,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6e40504d811af0bce7f4e6d6": {
-      "id": "6e40504d811af0bce7f4e6d6",
+    "8d7d66d7ba5aa80723c644a9": {
+      "id": "8d7d66d7ba5aa80723c644a9",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10499,8 +10490,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6af1617bcd4d0607e378d99a": {
-      "id": "6af1617bcd4d0607e378d99a",
+    "9bec5ae1ff8afd4276060de3": {
+      "id": "9bec5ae1ff8afd4276060de3",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10508,8 +10499,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7bb04abd399d3dadbe2af79b": {
-      "id": "7bb04abd399d3dadbe2af79b",
+    "e55fc1fae7b5ae841abe11e7": {
+      "id": "e55fc1fae7b5ae841abe11e7",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10517,17 +10508,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8f76c67efe34311b31b78308": {
-      "id": "8f76c67efe34311b31b78308",
+    "435fce897225203b10201bc4": {
+      "id": "435fce897225203b10201bc4",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "a2d0893dc0af5b36f24ac7c3": {
-      "id": "a2d0893dc0af5b36f24ac7c3",
+    "d40cd8b62d984b926a1c5d90": {
+      "id": "d40cd8b62d984b926a1c5d90",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10535,8 +10526,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "27a7a2667281ec2b8b38b438": {
-      "id": "27a7a2667281ec2b8b38b438",
+    "7e9ad1e7e9d3bc78adabcc5a": {
+      "id": "7e9ad1e7e9d3bc78adabcc5a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10544,8 +10535,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "5a49d5bb6c2f4f2619aaa056": {
-      "id": "5a49d5bb6c2f4f2619aaa056",
+    "8f1497e06eb5afb06493663d": {
+      "id": "8f1497e06eb5afb06493663d",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10553,8 +10544,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "42cd1a3bcb3722ec976a37a5": {
-      "id": "42cd1a3bcb3722ec976a37a5",
+    "1889b6fa1f142092fa4ab1e0": {
+      "id": "1889b6fa1f142092fa4ab1e0",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10562,26 +10553,26 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c8413decce541d9b0abf217e": {
-      "id": "c8413decce541d9b0abf217e",
+    "6a61d0ad93287fb3774ab859": {
+      "id": "6a61d0ad93287fb3774ab859",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "b30b37a98c364766bd2a9d98": {
-      "id": "b30b37a98c364766bd2a9d98",
+    "03cd126512f50f8161208b31": {
+      "id": "03cd126512f50f8161208b31",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "714baca26ea3bd81e3498df9": {
-      "id": "714baca26ea3bd81e3498df9",
+    "42a5f15351b158b0f00b9491": {
+      "id": "42a5f15351b158b0f00b9491",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10589,8 +10580,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7e365c37a2868766dac9dd90": {
-      "id": "7e365c37a2868766dac9dd90",
+    "c96180e75f9ed329e51beb8a": {
+      "id": "c96180e75f9ed329e51beb8a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10598,8 +10589,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "626f9c96d183881842e8f8d3": {
-      "id": "626f9c96d183881842e8f8d3",
+    "22ae85672dae6aaeeeecd7f9": {
+      "id": "22ae85672dae6aaeeeecd7f9",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10607,8 +10598,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6888a4a68c87d78967f9027d": {
-      "id": "6888a4a68c87d78967f9027d",
+    "50d9eaec49e2ac88b3f49d3d": {
+      "id": "50d9eaec49e2ac88b3f49d3d",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10616,17 +10607,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6d8260cf5b1730aa964a7a31": {
-      "id": "6d8260cf5b1730aa964a7a31",
+    "2b222f3e8a20fa2c990dae57": {
+      "id": "2b222f3e8a20fa2c990dae57",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "27ac1775870e6698558e5edb": {
-      "id": "27ac1775870e6698558e5edb",
+    "17a2ac731b2e59aa118af0ee": {
+      "id": "17a2ac731b2e59aa118af0ee",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10634,8 +10625,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8640acf0bc9035ed1a77db14": {
-      "id": "8640acf0bc9035ed1a77db14",
+    "ed817f6b72ff992b31bb9231": {
+      "id": "ed817f6b72ff992b31bb9231",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10643,17 +10634,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "b22c790ae136120f2e239dfa": {
-      "id": "b22c790ae136120f2e239dfa",
+    "0d2513b94f74b8e858ab9e4c": {
+      "id": "0d2513b94f74b8e858ab9e4c",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2b70a0d4aaf4e708dd7a804b": {
-      "id": "2b70a0d4aaf4e708dd7a804b",
+    "29e4407cd13b4831497d77ed": {
+      "id": "29e4407cd13b4831497d77ed",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10661,8 +10652,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "63484d59a8bc2aa431e0e230": {
-      "id": "63484d59a8bc2aa431e0e230",
+    "b9765dcaa7624199debfa728": {
+      "id": "b9765dcaa7624199debfa728",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10670,8 +10661,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "5544558c6ea456ffc21e5f61": {
-      "id": "5544558c6ea456ffc21e5f61",
+    "560e7081962de25e1feb8f7a": {
+      "id": "560e7081962de25e1feb8f7a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10679,8 +10670,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "f48c7c9f774dba42ba85a693": {
-      "id": "f48c7c9f774dba42ba85a693",
+    "fc56e8a8d9cad78fe064f653": {
+      "id": "fc56e8a8d9cad78fe064f653",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10688,8 +10679,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d98412b84575fa7c34b1da22": {
-      "id": "d98412b84575fa7c34b1da22",
+    "e746718a11ffa8940a8e49fc": {
+      "id": "e746718a11ffa8940a8e49fc",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10697,8 +10688,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "be9228847181b3910b38d77e": {
-      "id": "be9228847181b3910b38d77e",
+    "9fcfb535673a402697524059": {
+      "id": "9fcfb535673a402697524059",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10706,8 +10697,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "abd99616b49436b75678aedf": {
-      "id": "abd99616b49436b75678aedf",
+    "71fb5bdfc1a652bf2ce7d684": {
+      "id": "71fb5bdfc1a652bf2ce7d684",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10715,8 +10706,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4a72d15a4dc705e594be5381": {
-      "id": "4a72d15a4dc705e594be5381",
+    "4ba1c97188ff2412fadd98d1": {
+      "id": "4ba1c97188ff2412fadd98d1",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10724,8 +10715,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2b46627609d48d80f708319c": {
-      "id": "2b46627609d48d80f708319c",
+    "68373c3eb1c4fbd3e45c9f94": {
+      "id": "68373c3eb1c4fbd3e45c9f94",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10733,8 +10724,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3a3de7568079bee96fae9cb4": {
-      "id": "3a3de7568079bee96fae9cb4",
+    "207ead55280e7a6e648c91a2": {
+      "id": "207ead55280e7a6e648c91a2",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10742,8 +10733,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "9cbb8787dcbd73b212c653c7": {
-      "id": "9cbb8787dcbd73b212c653c7",
+    "fa6132bbdfb353d3e1e21bdf": {
+      "id": "fa6132bbdfb353d3e1e21bdf",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10751,8 +10742,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3a003e964861d55767de8ad9": {
-      "id": "3a003e964861d55767de8ad9",
+    "ff161e26bb8a919361a6d22c": {
+      "id": "ff161e26bb8a919361a6d22c",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10760,8 +10751,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "65a86d4a0ddaf97cd666fffc": {
-      "id": "65a86d4a0ddaf97cd666fffc",
+    "2925aec4963f1a54e1c9f01b": {
+      "id": "2925aec4963f1a54e1c9f01b",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10769,8 +10760,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "811374cf1325e6cfc11097b3": {
-      "id": "811374cf1325e6cfc11097b3",
+    "c6df8f9c3f3ac3b38d745b2e": {
+      "id": "c6df8f9c3f3ac3b38d745b2e",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10778,8 +10769,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "799875d50d11c467368f8967": {
-      "id": "799875d50d11c467368f8967",
+    "3e3471da66e9d3dd6c432b44": {
+      "id": "3e3471da66e9d3dd6c432b44",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10787,8 +10778,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "1f61e37913cd09c368057aca": {
-      "id": "1f61e37913cd09c368057aca",
+    "d3e499e82f65394a634be234": {
+      "id": "d3e499e82f65394a634be234",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10796,8 +10787,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "28ab42e4251fab059198e5f8": {
-      "id": "28ab42e4251fab059198e5f8",
+    "26bae6ca09d53f63eb23a544": {
+      "id": "26bae6ca09d53f63eb23a544",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10805,17 +10796,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c21614457831d64a0d42b09a": {
-      "id": "c21614457831d64a0d42b09a",
+    "9c34c3d8b1c83fc18d8c6e87": {
+      "id": "9c34c3d8b1c83fc18d8c6e87",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4cb2ab45a73b40c462ed1104": {
-      "id": "4cb2ab45a73b40c462ed1104",
+    "99c0672b96963a6f6966c277": {
+      "id": "99c0672b96963a6f6966c277",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10823,8 +10814,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3ca0b01784c34edfaf756487": {
-      "id": "3ca0b01784c34edfaf756487",
+    "d3a67ac02f991e05b24655a3": {
+      "id": "d3a67ac02f991e05b24655a3",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10832,8 +10823,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "96cc5f69a53cf7ed89f1900f": {
-      "id": "96cc5f69a53cf7ed89f1900f",
+    "1735684ed03a5c9d9dbe28ec": {
+      "id": "1735684ed03a5c9d9dbe28ec",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10841,8 +10832,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "299d834e0ca609443907a691": {
-      "id": "299d834e0ca609443907a691",
+    "8f3ba896006a01950696e197": {
+      "id": "8f3ba896006a01950696e197",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10850,8 +10841,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "c13d505093d17f9183e7c414": {
-      "id": "c13d505093d17f9183e7c414",
+    "27c480488a4b6215181734c2": {
+      "id": "27c480488a4b6215181734c2",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10859,8 +10850,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "29f75fa4c664c419d3a6fb41": {
-      "id": "29f75fa4c664c419d3a6fb41",
+    "4b2f2beaf89dd568c5f37e70": {
+      "id": "4b2f2beaf89dd568c5f37e70",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10868,8 +10859,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6b7c690aa9eb98e644be377b": {
-      "id": "6b7c690aa9eb98e644be377b",
+    "979ebcf659558f7cc57a8cb3": {
+      "id": "979ebcf659558f7cc57a8cb3",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10877,8 +10868,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4b72f51bf953e1fb77d05ceb": {
-      "id": "4b72f51bf953e1fb77d05ceb",
+    "49062c9294f7835afe548c89": {
+      "id": "49062c9294f7835afe548c89",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10886,8 +10877,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3ba5654b8fa4e893f3dfb171": {
-      "id": "3ba5654b8fa4e893f3dfb171",
+    "d11de533a99ad6b80b48d4ae": {
+      "id": "d11de533a99ad6b80b48d4ae",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10895,8 +10886,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ad2286dbeaf8b8114355140f": {
-      "id": "ad2286dbeaf8b8114355140f",
+    "0190f75cb63cb8a13a584b02": {
+      "id": "0190f75cb63cb8a13a584b02",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10904,8 +10895,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "829451ab0022cea1f9503b91": {
-      "id": "829451ab0022cea1f9503b91",
+    "10897585c012c371c5d810c6": {
+      "id": "10897585c012c371c5d810c6",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10913,8 +10904,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2fe304e2cc32afdd4176c555": {
-      "id": "2fe304e2cc32afdd4176c555",
+    "5c3684f6997a84c19f0365cc": {
+      "id": "5c3684f6997a84c19f0365cc",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10922,8 +10913,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "3a086ca2c9687e73e5903a3f": {
-      "id": "3a086ca2c9687e73e5903a3f",
+    "d88de52ced7ed38337f28dba": {
+      "id": "d88de52ced7ed38337f28dba",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10931,8 +10922,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0fcb39998dbe560b3b7d39f3": {
-      "id": "0fcb39998dbe560b3b7d39f3",
+    "27209f584528f986cfc83f10": {
+      "id": "27209f584528f986cfc83f10",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10940,8 +10931,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7fae8c83285822270d481f57": {
-      "id": "7fae8c83285822270d481f57",
+    "75b4200f6322abde8dfb3a72": {
+      "id": "75b4200f6322abde8dfb3a72",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10949,8 +10940,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "e2a9be9ffc9c3d75dd1e2afa": {
-      "id": "e2a9be9ffc9c3d75dd1e2afa",
+    "c0e69fe826ed0e42baaeb976": {
+      "id": "c0e69fe826ed0e42baaeb976",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10958,8 +10949,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "44c658fe388650af90db30a0": {
-      "id": "44c658fe388650af90db30a0",
+    "9a5ec155562a7c6f3442851f": {
+      "id": "9a5ec155562a7c6f3442851f",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10967,8 +10958,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ad8f099ffe467cbf0b6243c3": {
-      "id": "ad8f099ffe467cbf0b6243c3",
+    "ad3e36648a14a5739eb491a6": {
+      "id": "ad3e36648a14a5739eb491a6",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10976,8 +10967,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "718a5431cb3afff30dc27976": {
-      "id": "718a5431cb3afff30dc27976",
+    "cf1d373052f47fcefe5f1f3e": {
+      "id": "cf1d373052f47fcefe5f1f3e",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10985,8 +10976,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d9ebd9eaae68d36f068b9bc2": {
-      "id": "d9ebd9eaae68d36f068b9bc2",
+    "8854fd6ff37fcf9a7c6393d8": {
+      "id": "8854fd6ff37fcf9a7c6393d8",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -10994,8 +10985,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d2dfa3cbbfccbdf08665706c": {
-      "id": "d2dfa3cbbfccbdf08665706c",
+    "fce851535d808b450e9f9cf5": {
+      "id": "fce851535d808b450e9f9cf5",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11003,8 +10994,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "a901994922a4c26b6be95d4f": {
-      "id": "a901994922a4c26b6be95d4f",
+    "83902b4f244ff116888b6a75": {
+      "id": "83902b4f244ff116888b6a75",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11012,8 +11003,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "4d3537713590f1b68015f219": {
-      "id": "4d3537713590f1b68015f219",
+    "34b2fa5ef3439cb7decebc89": {
+      "id": "34b2fa5ef3439cb7decebc89",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11021,8 +11012,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "dc38ef72deb62feffdc21a06": {
-      "id": "dc38ef72deb62feffdc21a06",
+    "250eca74342f19bcda49ad8b": {
+      "id": "250eca74342f19bcda49ad8b",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11030,8 +11021,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "47ba95e57e395b81920be941": {
-      "id": "47ba95e57e395b81920be941",
+    "04fb564f75216375abf2a9ed": {
+      "id": "04fb564f75216375abf2a9ed",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11039,8 +11030,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2969f8a0bb6abaed190e3d28": {
-      "id": "2969f8a0bb6abaed190e3d28",
+    "4bd6c6e116621c0290daecc2": {
+      "id": "4bd6c6e116621c0290daecc2",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11048,17 +11039,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2e78ad50a6de101d6a2b5256": {
-      "id": "2e78ad50a6de101d6a2b5256",
+    "c20e479dae6b808f3070622c": {
+      "id": "c20e479dae6b808f3070622c",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "02802bf12ad78255a569cc6b": {
-      "id": "02802bf12ad78255a569cc6b",
+    "2da5da2f8236e82495b1b258": {
+      "id": "2da5da2f8236e82495b1b258",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11066,8 +11057,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "02149bddac0f4034fa8253dc": {
-      "id": "02149bddac0f4034fa8253dc",
+    "a3450e9890c6b914845bb390": {
+      "id": "a3450e9890c6b914845bb390",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11075,8 +11066,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "ee419c81a85b63f61e4b8160": {
-      "id": "ee419c81a85b63f61e4b8160",
+    "646f4b4dda13a7b67a18abb3": {
+      "id": "646f4b4dda13a7b67a18abb3",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11084,8 +11075,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "7554a889e9d01b2a4af5524d": {
-      "id": "7554a889e9d01b2a4af5524d",
+    "af689bc26636085f3677f368": {
+      "id": "af689bc26636085f3677f368",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11093,8 +11084,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "092f36a4ba31f3ae8c3b40ca": {
-      "id": "092f36a4ba31f3ae8c3b40ca",
+    "f5507d6369b7fed05925252c": {
+      "id": "f5507d6369b7fed05925252c",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11102,8 +11093,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "6bb36dae059ac5c0c20aedd0": {
-      "id": "6bb36dae059ac5c0c20aedd0",
+    "85da07969ac7d368623c5a98": {
+      "id": "85da07969ac7d368623c5a98",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11111,8 +11102,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "e85169deac2fc357d2a8ab55": {
-      "id": "e85169deac2fc357d2a8ab55",
+    "8a3470d0e81ac57dc0fb1e80": {
+      "id": "8a3470d0e81ac57dc0fb1e80",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11120,17 +11111,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "1101ac7cdab16cc1f9507b7c": {
-      "id": "1101ac7cdab16cc1f9507b7c",
+    "e3e8481da5744a5557041777": {
+      "id": "e3e8481da5744a5557041777",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0ae5ce23f261870fdccbaab0": {
-      "id": "0ae5ce23f261870fdccbaab0",
+    "435b6fca12a6390b5e8ecb9a": {
+      "id": "435b6fca12a6390b5e8ecb9a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11138,8 +11129,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "713bdfa9092c9411c7a2242a": {
-      "id": "713bdfa9092c9411c7a2242a",
+    "51e30c9358f862f109015761": {
+      "id": "51e30c9358f862f109015761",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11147,8 +11138,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "af0d0b0184b4c2fe257aead0": {
-      "id": "af0d0b0184b4c2fe257aead0",
+    "a00e3c15b7f16f56b8f03c9d": {
+      "id": "a00e3c15b7f16f56b8f03c9d",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11156,8 +11147,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "426edc9c9b5d13e123bc0d1c": {
-      "id": "426edc9c9b5d13e123bc0d1c",
+    "20749facad648cd9c9a3dc98": {
+      "id": "20749facad648cd9c9a3dc98",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11165,8 +11156,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "cc95a2a2ef31b4728d542a11": {
-      "id": "cc95a2a2ef31b4728d542a11",
+    "6c757f7813fd257ab9df3d9b": {
+      "id": "6c757f7813fd257ab9df3d9b",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11174,8 +11165,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "434777380ea38cdfbd3204d9": {
-      "id": "434777380ea38cdfbd3204d9",
+    "3ec11dd81f484f4ed0ae4970": {
+      "id": "3ec11dd81f484f4ed0ae4970",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11183,8 +11174,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "d88d90962da09b4c40da3735": {
-      "id": "d88d90962da09b4c40da3735",
+    "46260c999575d51741ffdcef": {
+      "id": "46260c999575d51741ffdcef",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11192,8 +11183,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "2f4b899eba4f432ddc2595ff": {
-      "id": "2f4b899eba4f432ddc2595ff",
+    "76b34f357d81406568cf8785": {
+      "id": "76b34f357d81406568cf8785",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11201,8 +11192,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "8fed06f6aefc714414d2c26b": {
-      "id": "8fed06f6aefc714414d2c26b",
+    "abae5bd2fe29275c59ab9f66": {
+      "id": "abae5bd2fe29275c59ab9f66",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11210,8 +11201,8 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "f01ca7a3256b35a069c43722": {
-      "id": "f01ca7a3256b35a069c43722",
+    "a71da93dfefdd6ed2959151e": {
+      "id": "a71da93dfefdd6ed2959151e",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11219,17 +11210,17 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "0e85ef5c8330436c613153f6": {
-      "id": "0e85ef5c8330436c613153f6",
+    "7bc859ac9ad1a38ddc9e0cbc": {
+      "id": "7bc859ac9ad1a38ddc9e0cbc",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "68393034ad5859f16eaf6b16": {
-      "id": "68393034ad5859f16eaf6b16",
+    "ba2ed252e1f9208877185f0b": {
+      "id": "ba2ed252e1f9208877185f0b",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
       "score": 3,
@@ -11237,41 +11228,41 @@
       "lane": "text",
       "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "e41d6a682166be906ad2ac65": {
-      "id": "e41d6a682166be906ad2ac65",
+    "5094e5e0e2725f9bcd20b453": {
+      "id": "5094e5e0e2725f9bcd20b453",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "60d24942985bd6ff8ea86228": {
-      "id": "60d24942985bd6ff8ea86228",
+    "ca0facec477fb6eaa32919ac": {
+      "id": "ca0facec477fb6eaa32919ac",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "30fb6f0233756a36cc8a6e2b": {
-      "id": "30fb6f0233756a36cc8a6e2b",
+    "5ccd338bf36cb4b97ad6090a": {
+      "id": "5ccd338bf36cb4b97ad6090a",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "f458ef68d867451d4a5325c0": {
-      "id": "f458ef68d867451d4a5325c0",
+    "21f5d0dfb58f6a60cf031a20": {
+      "id": "21f5d0dfb58f6a60cf031a20",
       "slug": "landau-christopher",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/8047AB6EB94C751185258CC9002C850B/$FILE/Christopher-Lundau-05.22.2025-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "dcba28d66b2e2fd5941bd377": {
       "id": "dcba28d66b2e2fd5941bd377",
