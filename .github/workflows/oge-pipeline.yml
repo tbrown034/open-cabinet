@@ -74,6 +74,10 @@ jobs:
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: pnpm run validate
 
+      - name: Rebuild per-row verification states
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run row-verification
+
       - name: Regenerate exports
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: pnpm run generate-exports

@@ -118,7 +118,7 @@ export const SHORT_LABEL: Record<VerificationState, string> = {
 };
 
 export const STATE_LABEL: Record<VerificationState, string> = {
-  checked: "Checked: an independent program or a second model from another company read the same values, and a third model from a third company confirmed the row against the page image",
+  checked: "Checked on type, date, amount and late flag: an independent program or a second model from another company read the same four values, and a third model from a third company, shown the row, confirmed it against the page image",
   human_verified: "Checked by a person against the filing",
   deterministic_agree: "An independent program read the same values from the filing; the page audit has not run yet",
   two_models_agree: "Two models read the same values; no program could read the page; the page audit has not run yet",
@@ -376,6 +376,13 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
     if (tx.sourceUrl) perFilingCursor.set(tx.sourceUrl, cursor + 1);
     if (decision && decision.decision !== "rejected") {
       out.push({ ...base, score: 3, state: "human_verified", lane: "human", note: `Decided by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}` });
+      return;
+    }
+    if (decision) {
+      // A person rejected this row as published. Until an approved patch
+      // changes it, no automatic agreement may lift it. (Codex, Sep 6: a
+      // rejected row fell through and came back as "checked".)
+      out.push({ ...base, score: 0, state: "disputed", lane: "human", note: `Rejected by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}; the row is wrong as published and waits for an approved patch` });
       return;
     }
     if (!tx.sourceUrl) {

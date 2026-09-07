@@ -209,6 +209,20 @@ describe("deriveRowVerification", () => {
     expect(decided[1]).toMatchObject({ score: 3, state: "human_verified" });
   });
 
+  it("a rejected row stays disputed no matter what the lanes say (Codex, Sep 6)", () => {
+    const rows = [tx({ description: "A" })];
+    const ids = recordIdsFor(rows);
+    const out = deriveRowVerification({
+      ...base,
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
+      parseRecordByUrl: new Map([[URL, rows]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set(), notFound: new Set() }]]),
+      decisionsById: new Map([[ids[0], { recordId: ids[0], slug: "x", decision: "rejected", evidence: "page 1 row 1 differs", decidedBy: "trevor", decidedAt: "2026-09-06T00:00:00Z" }]]),
+    });
+    expect(out[0]).toMatchObject({ score: 0, state: "disputed", lane: "human" });
+  });
+
   it("a human decision on one row never shifts the parse index of the rows after it", () => {
     // Sep 6: after Trevor decided printed rows 39 and 58 of one filing,
     // the rows below them read the audit verdicts one row up, and a row

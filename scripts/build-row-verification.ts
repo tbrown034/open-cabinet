@@ -99,6 +99,17 @@ function main() {
     }
   }
 
+  // A decision whose row no longer exists as published is either
+  // superseded (the row was patched again, or removed) or a sign that a
+  // patch changed a row without a new decision. List them so a person
+  // sees them; never silently drop them. (Codex, Sep 6.)
+  const orphans = [...decisions.values()].filter((d) => !rows[d.recordId]);
+  if (orphans.length) {
+    console.log(`
+${orphans.length} decision(s) match no published row (superseded or removed):`);
+    for (const d of orphans) console.log(`  ${d.slug} ${d.decision} ${d.recordId}: ${d.evidence.slice(0, 90)}`);
+  }
+
   const byState = { checked: 0, human_verified: 0, deterministic_agree: 0, two_models_agree: 0, audit_only: 0, single_read: 0, implausible: 0, disputed: 0 } as Record<VerificationState, number>;
   const byScore = { "0": 0, "1": 0, "2": 0, "3": 0 };
   for (const v of Object.values(rows)) {

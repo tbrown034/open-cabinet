@@ -286,7 +286,10 @@ export default async function MethodologyPage() {
               program that never sees the model&rsquo;s output reads the same
               PDF&rsquo;s text layer and compares type, date, amount, late
               flag and printed row numbers, row for row. Where the two
-              disagree, nothing is published until a person decides. Scanned
+              disagree on a new filing, nothing from it is published until a
+              person decides; where they disagree on a row already on the
+              site, the row stays up marked under review until a person
+              decides. Scanned
               filings have no text layer, so that comparison cannot run; those
               rows depend on a visual check against the printed row numbers
               and are the largest share of the dataset. The current state of

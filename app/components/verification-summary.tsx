@@ -26,7 +26,7 @@ export default function VerificationSummary({
         <>
           <p className="text-neutral-600 leading-relaxed mb-4">
             {checked.toLocaleString("en-US")} of {summary.rows.toLocaleString("en-US")} rows
-            {" "}({share} percent) have passed every check: an independent program or a second company&rsquo;s model agreed, and a third company&rsquo;s model confirmed the row against the page image, or a person decided.
+            {" "}({share} percent) are checked on their trade columns: type, date, amount and late flag. Checked means an independent program or a second company&rsquo;s model read the same four values, and a third company&rsquo;s model, shown the row, confirmed it against the page image; or a person compared the row to the page. Company names and ticker symbols are not part of that comparison; where a reader saw a different name, a person looked.
           </p>
           <ul className="space-y-2 text-sm text-neutral-600 mb-4">
             {(Object.keys(STATE_LABEL) as VerificationState[]).map((state) => (
