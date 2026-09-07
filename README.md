@@ -76,10 +76,14 @@ The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages, described s
 1. **Find** — the OGE API is diffed against the filings already tracked.
 2. **Fetch** — the PDF is downloaded and hashed.
 3. **Read** — the whole PDF goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/filing-validation.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
-4. **Check** — where the PDF has a text layer, `pdftotext` plus a column parser reads the same table and the two lanes are compared row for row on type, date, amount, late flag and printed row numbers (`scripts/text-layer-crosscheck.ts`). A mismatch stops the filing. A scan cannot be compared and is recorded as such. Every verdict is written to `data/meta/crosscheck-log.json`, which the methodology page renders.
-5. **Merge** — rows are added to the official's JSON; identical rows an amendment repeats are not double-counted.
+4. **Check** — where the PDF has a text layer, `pdftotext` plus a column parser reads the same table and the two lanes are compared row for row on type, date, amount, late flag and printed row numbers (`scripts/text-layer-crosscheck.ts`). A mismatch stops the filing. A scan is OCR-compared instead, and where no program can read the page a second company's model reads it; a third company's model then audits each row against the page image. Every verdict is written per row to `data/meta/row-verification.json` (`lib/row-verification.ts`), which the site, the exports and the methodology page render. An amended filing is always held for a person: OGE amendments substitute line items of an earlier report, and a machine that merged them would double-count.
+5. **Merge** — rows are added to the official's JSON; identical rows a filing repeats are real trades and are kept.
 6. **Validate** — `scripts/validate.ts` checks schema and golden files and reports anomalies.
 7. **Publish** — a pull request is opened for a person to merge; the site and exports rebuild from the JSON.
+
+### Company identity
+
+Filings print names, not tickers. `lib/instrument-type.ts` types every row from the printed text (stock, ETF, mutual fund, preferred, corporate note, municipal bond, Treasury, crypto, private holding, option). `lib/asset-resolution.ts` then ties a stock or ETF row to a symbol only on exact evidence: a printed symbol whose listing carries the printed name, an exact name match on both the Nasdaq directory and the SEC issuer list, or a person's dictionary entry (`data/meta/asset-dictionary.json`, every entry with who decided and why). No similarity matching, no model guessing. A ticker is shown only when the row's printed name was also read the same way by an independent reader. Unresolved names publish under the printed name and wait in a queue (`scripts/asset-decide.ts`, `/admin/assets`). The result is `data/meta/asset-resolution.json`; the company pages, the official trade tables and the exports all read it through one rule (`publicTicker`).
 
 The Neon database is a mirror of the JSON used by the admin panel and alerts, not the source of what readers see. `scripts/pipeline.ts` writes to it and is not part of the scheduled ingest.
 
@@ -89,6 +93,8 @@ The Neon database is a mirror of the JSON used by the admin panel and alerts, no
 pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs (the scheduled path)
 pnpm run plan-reparse          # List published filings a prompt change would re-read, with cost; never parses
 pnpm run crosscheck-sweep      # Re-run the text-layer comparison over every filing; writes the log
+pnpm run row-verification      # Rebuild the per-row verification record from every lane
+pnpm run asset-resolution      # Type every row and tie stocks/ETFs to tickers on exact evidence
 pnpm run pipeline              # DB mirror path (not scheduled): check, download, parse, insert
 pnpm run pipeline -- --dry-run # Check only; still records a run row
 pnpm run check-filings -- --dry-run # URL-diff OGE without writing state
