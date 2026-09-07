@@ -217,7 +217,9 @@ const PLAN_TOOL_SCHEMA = {
       additionalProperties: false,
     },
     aggregate: { type: "string", enum: AGGREGATES as unknown as string[] },
-    limit: { type: "integer", minimum: 1, maximum: MAX_LIMIT },
+    // No minimum/maximum: the strict grammar does not support them; the
+    // validator caps limit at MAX_LIMIT after the call.
+    limit: { type: "integer", description: `1 to ${MAX_LIMIT}.` },
   },
   required: ["filters", "aggregate"],
   additionalProperties: false,
@@ -319,7 +321,8 @@ async function callPlanModel(
   officialNames: string[],
   tickerCount: number,
   model: string,
-  today: string
+  today: string,
+  userKey: string
 ): Promise<PlanCall> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return { kind: "unavailable", reason: "no API key configured" };
@@ -333,6 +336,9 @@ async function callPlanModel(
     tools: [
       {
         name: "emit_plan",
+        // Grammar-constrained: the input always matches the schema and the
+        // tool name is always one of ours (platform docs, strict tool use).
+        strict: true,
         description:
           "Emit the query plan that answers the question. If any part of the question cannot " +
           "be represented in this plan, do not approximate. Decline with the closest category " +
@@ -342,6 +348,7 @@ async function callPlanModel(
       },
       {
         name: "decline",
+        strict: true,
         description:
           "Decline a question these fields cannot express. Choose the category only; the site writes the sentence.",
         input_schema: {
@@ -367,8 +374,20 @@ async function callPlanModel(
       },
     ],
     tool_choice: { type: "any" },
+    // An opaque key for abuse tracking on the provider side: a truncated
+    // hash of the address, never the address (platform docs, metadata.user_id).
+    metadata: { user_id: `ask:${userKey}` },
     messages: [{ role: "user", content: question }],
   });
+
+  // Read stop_reason before content (platform docs): a refusal carries no
+  // usable block, and a truncated response must not be parsed as a plan.
+  if (response.stop_reason === "refusal") {
+    return { kind: "decline", reason: declineText("other"), category: "other" };
+  }
+  if (response.stop_reason === "max_tokens") {
+    return { kind: "unavailable", reason: "the model's plan was cut off" };
+  }
 
   for (const block of response.content) {
     if (block.type !== "tool_use") continue;
@@ -389,7 +408,8 @@ async function callPlanModel(
 async function callPhraseModel(
   planText: string,
   result: ExecuteResult,
-  model: string
+  model: string,
+  userKey: string
 ): Promise<string | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null;
@@ -400,6 +420,7 @@ async function callPhraseModel(
     model,
     max_tokens: 300,
     system: PHRASE_SYSTEM_PROMPT,
+    metadata: { user_id: `ask:${userKey}` },
     messages: [
       {
         role: "user",
@@ -412,6 +433,8 @@ async function callPhraseModel(
       },
     ],
   });
+  // A refusal or a cut-off sentence is not a sentence; the template stands.
+  if (response.stop_reason !== "end_turn" && response.stop_reason !== "stop_sequence") return null;
   const text = response.content
     .map((block) => (block.type === "text" ? block.text : ""))
     .join(" ")
@@ -552,7 +575,8 @@ export async function POST(request: Request) {
       officialNames,
       data.tickers.length,
       model,
-      today
+      today,
+      ipKey
     );
 
     if (planCall.kind === "decline") {
@@ -782,7 +806,7 @@ export async function POST(request: Request) {
     // the check binds each figure to its role, the template is the answer.
     // ASKAI_PHRASER=model turns the second call back on.
     const phrased = process.env.ASKAI_PHRASER === "model"
-      ? await withDeadline(() => callPhraseModel(planText, result, model), PHRASE_TIMEOUT_MS)
+      ? await withDeadline(() => callPhraseModel(planText, result, model, ipKey), PHRASE_TIMEOUT_MS)
       : null;
     if (phrased) {
       // Strip dashes before the checks so what is checked is what ships.
