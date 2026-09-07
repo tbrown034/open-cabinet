@@ -80,8 +80,9 @@ describe("item C4: two assets at once", () => {
     );
   });
 
-  it("leaves a single asset alone", () => {
-    expect(kindOf("Which officials sold Liberty Energy?")).toBe("ok");
+  it("leaves a single asset alone (a who-question ranks by official, which is not a decline)", () => {
+    expect(kindOf("Which officials sold Liberty Energy?")).toBe("require_aggregate");
+    expect(kindOf("Trades in Liberty Energy")).toBe("ok");
   });
 });
 

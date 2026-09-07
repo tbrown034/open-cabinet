@@ -20,7 +20,7 @@ import type { DeclineCategory } from "./decline";
 export type Intent =
   | { kind: "ok" }
   /** Force an aggregate the phrasing demands, whatever the model chose. */
-  | { kind: "require_aggregate"; aggregate: Aggregate }
+  | { kind: "require_aggregate"; aggregate: Aggregate; sort?: "amount" | "amount_asc" }
   /** Force a sort the phrasing demands. */
   | { kind: "require_sort"; sort: "amount" | "amount_asc" }
   | { kind: "decline"; category: DeclineCategory };
@@ -37,6 +37,9 @@ const EXCLUSION = /\b(except|excepting|excluding|exclude|but not|other than|apar
 
 /** Intersection across assets. Filters are OR within a field, never AND. */
 const BOTH_ASSETS = /\bboth\b[^.?!]*\b(and|&)\b/i;
+
+/** "Who" or "which officials" asks for a ranking by official, whatever the model picked. */
+const WHO = /^\s*(who|whom|which (officials?|cabinet (members?|secretaries)|secretaries|agency heads?|people|person))\b/i;
 
 /** Ranking by size, which needs a sort the plan has to carry explicitly. */
 const BY_SIZE = /\b(largest|biggest|largest-value|most expensive|highest value|highest-value|priciest|top by value|biggest by value|by size|by value)\b/i;
@@ -146,6 +149,10 @@ export function classifyIntent(question: string): IntentCheck {
     return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "share_not_late" };
   }
 
+  if (WHO.test(q) && !/\bhow many\b/i.test(q)) {
+    const sort = BY_SIZE.test(q) ? "amount" : BY_SIZE_ASC.test(q) ? "amount_asc" : undefined;
+    return { intent: { kind: "require_aggregate", aggregate: "top_officials", ...(sort ? { sort } : {}) }, rule: "who" };
+  }
   if (BY_SIZE_ASC.test(q)) {
     return { intent: { kind: "require_sort", sort: "amount_asc" }, rule: "by_size_asc" };
   }

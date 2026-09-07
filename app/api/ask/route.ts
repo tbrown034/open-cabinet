@@ -114,7 +114,7 @@ const EMPTY_PENDING = {
  * (Postgres 42P01), the in-memory limiter below still applies and the request
  * proceeds, so a preview deployment works before the migration runs.
  */
-async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
+async function reserveDailyQuota(attempt = 0): Promise<"ok" | "over" | "closed"> {
   const day = new Date().toISOString().slice(0, 10);
   try {
     const rows = await db
@@ -144,6 +144,9 @@ async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
       console.error("ask_quota table missing; the question box is closed until the migration runs");
       return "closed";
     }
+    // A transient driver error closed the box on about 4 percent of calls
+    // in the Sept. 7 batch tests. One retry, then closed.
+    if (attempt === 0) return reserveDailyQuota(1);
     console.error("ask quota reservation failed:", msg);
     return "closed";
   }
@@ -728,7 +731,7 @@ export async function POST(request: Request) {
     // The intent gate can override what the model chose. A share question
     // gets late_share; a "largest" question gets an amount sort.
     if (intent.kind === "require_aggregate") {
-      plan = { ...plan, aggregate: intent.aggregate };
+      plan = { ...plan, aggregate: intent.aggregate, ...(intent.sort ? { sort: intent.sort } : {}) };
     } else if (intent.kind === "require_sort") {
       // "Largest" or "smallest" asks for rows in size order. A count or a
       // total is not that; only a ranking keeps its own shape (Grok P2-4).
