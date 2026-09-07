@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-07T01:46:20.478Z",
+  "exportedAt": "2026-09-07T02:25:53.549Z",
   "officialCount": 39,
   "transactionCount": 11509,
   "underReviewCount": 0,
@@ -1121,8 +1121,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "EPP",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Jazz Pharmaceuticals Plc (JAZZ)",
@@ -1997,8 +1997,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
@@ -2013,8 +2013,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
@@ -2029,8 +2029,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
@@ -2045,8 +2045,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)",
@@ -2253,8 +2253,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "BrandywineGLOBAL - HIGH YIELD FUND Class A",
@@ -2459,8 +2459,8 @@
           "recordId": "f9453bf80c95f691520e4fed",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nuveen NJ Municipal",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -2475,8 +2475,8 @@
           "recordId": "bade214a5c173db6fc7d4e77",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nuveen NJ Municipal",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -2731,8 +2731,8 @@
           "recordId": "695d67599e23a1ca171c964d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nuveen NJ Municipal",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -2923,8 +2923,8 @@
           "recordId": "bf13a93533b7d68626a9959b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nuveen NJ Municipal",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -3211,8 +3211,8 @@
           "recordId": "04ef82c328afc5c5f9c09f99",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nuveen NJ Municipal",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -3501,8 +3501,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
@@ -3517,8 +3517,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
@@ -3533,8 +3533,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
@@ -3549,8 +3549,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard High Dividend Yield Index Fund ETF Shares",
@@ -5189,10 +5189,10 @@
           "recordId": "f76a5be08fa80f4405e87ee3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Vanguard Intermediate-Term Bond Index Fund Admiral Shares",
@@ -5205,10 +5205,10 @@
           "recordId": "3ccdbaca08f0b0b23b1fd0e4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Arthur Ventures Growth III, LP - Threatlocker",
@@ -5413,10 +5413,10 @@
           "recordId": "1691c532d46dc7968f3466ef",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Vanguard High-Yield Tax-Exempt Fund Admiral Shares",
@@ -5429,10 +5429,10 @@
           "recordId": "af143a627e7cb207ed60368e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Lamb Weston Holdings, Inc.",
@@ -5669,10 +5669,10 @@
           "recordId": "01a55a4744f51ef1790f619f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
@@ -5765,10 +5765,10 @@
           "recordId": "b1a2f3e8a1652dc92c957c33",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares",
@@ -6117,8 +6117,8 @@
           "recordId": "6411594add7da1c458dcb09e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Napa CA Water",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -6229,8 +6229,8 @@
           "recordId": "ae2f2dc3dd6b93b81564330c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Calhoun County AL Brd Ed",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -6277,8 +6277,8 @@
           "recordId": "c903509f932d2f02bb7b290d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Floresville TX Independent Sch",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -6551,8 +6551,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "GDX",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Verizon Communications, Inc.",
@@ -9584,8 +9584,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "AOA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
@@ -9599,8 +9599,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "AOA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "AMERICAN BD FD OF AMERICA F2 (ABNFX)",
@@ -10214,8 +10214,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "AOA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
@@ -10229,8 +10229,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "AOA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "ISHARES CORE AGGRESSIVE ALLO (AOA)",
@@ -10244,8 +10244,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "AOA",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "AMERICAN CAP INC BUILDER F2 CONFIRM NBR (CAIFX)",
@@ -13068,8 +13068,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolvedTicker": "VOO",
+          "resolutionTier": "T1"
         },
         {
           "description": "Vanguard Extended Market Index Fund ETF Shares",
@@ -13100,8 +13100,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares",
@@ -13116,8 +13116,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         }
       ]
     },
@@ -15830,10 +15830,10 @@
           "recordId": "78ae90e56bd6bb273cfcfce1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "IShares TR Core MSCI EAF",
@@ -15862,7 +15862,7 @@
           "recordId": "58fd73eaab0daeffd4da48f0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
@@ -16276,8 +16276,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
@@ -16292,8 +16292,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
@@ -16356,8 +16356,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Scale AI vested stock options",
@@ -16468,8 +16468,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares National Muni Bond ETF",
@@ -16596,8 +16596,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core Dividend Growth ETF",
@@ -16628,8 +16628,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
@@ -16708,8 +16708,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Emerging Markets Stock Index Fund ETF Shares",
@@ -16740,8 +16740,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core Dividend Growth ETF",
@@ -16772,8 +16772,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
@@ -16788,8 +16788,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core S&P Total US Stock Market ETF",
@@ -16836,8 +16836,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares",
@@ -16852,8 +16852,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares National Muni Bond ETF",
@@ -16932,8 +16932,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
@@ -17012,8 +17012,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core S&P Total US Stock Market ETF",
@@ -17124,8 +17124,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core Dividend Growth ETF",
@@ -17172,8 +17172,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VIG",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares Core S&P Total US Stock Market ETF",
@@ -20632,10 +20632,10 @@
           "recordId": "7cdba880070e03e4ded0ee31",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "XPLR Infrastructure LP (XIFR - Formerly NextEra Energy Partners - NEP)",
@@ -20680,10 +20680,10 @@
           "recordId": "2e5da59004c6756a62499f9e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Vanguard 500 Index Fund Admiral Shares (VFIAX)",
@@ -20696,10 +20696,10 @@
           "recordId": "16e319625833f2873fe45577",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
-          "resolutionTier": "T2"
+          "resolutionTier": null
         },
         {
           "description": "Amazon.com, Inc. (AMZN)",
@@ -21462,8 +21462,8 @@
           "recordId": "5997beb6192ad74503dc0489",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Austin TX Ctfs Oblig",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21494,8 +21494,8 @@
           "recordId": "650ea45b12daf8a740992898",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Cook County IL Cmnty Cons Sch",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21510,8 +21510,8 @@
           "recordId": "476e4f8a302cbf5be4a471be",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Corsicana TX Combination Tax And",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21543,7 +21543,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Fort Lauderdale Fla Water And Swr",
+          "issuerLabel": "Municipal bond, Fort Lauderdale FL Water And Swr",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21559,7 +21559,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Fort Smith Ark Water And Swr",
+          "issuerLabel": "Municipal bond, Fort Smith AR Water And Swr",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21607,7 +21607,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Macomb Inter School District Mich Unltd",
+          "issuerLabel": "Municipal bond, Macomb Inter School District MI Unltd",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21687,7 +21687,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Seattle Wash Drain And Wastewater",
+          "issuerLabel": "Municipal bond, Seattle WA Drain And Wastewater",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -21703,7 +21703,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, West Palm Beach Fla Cmnty Redev",
+          "issuerLabel": "Municipal bond, West Palm Beach FL Cmnty Redev",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -22516,8 +22516,8 @@
           "recordId": "e8d0516e173c356db60d84e8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Tolles Career And Technical Center Madison",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -22948,8 +22948,8 @@
           "recordId": "4cc03e04af28be11a2a19829",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Franklin Park School District Number 84",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -23108,8 +23108,8 @@
           "recordId": "c19b82705bb8e1a41c5b7be9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, District Of Columbia WA D C.",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -23412,8 +23412,8 @@
           "recordId": "934bed64b233cc70770da731",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Pasco School District No. 1 Franklin",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -24884,8 +24884,8 @@
           "recordId": "38fc6800de5b85756c302dce",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, District Columbia Income Tax",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -25490,8 +25490,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SHYD",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Abbott Laboratories",
@@ -26450,8 +26450,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "IYT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "iShares 20+ Year Treasury Bond ETF (TLT)",
@@ -26546,8 +26546,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "SHYD",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "S&P 500 future, opened",
@@ -26607,8 +26607,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -26622,8 +26622,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -26637,8 +26637,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
@@ -26652,8 +26652,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
@@ -26667,8 +26667,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VGT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
@@ -26772,8 +26772,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -26787,8 +26787,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
@@ -27222,8 +27222,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -27237,8 +27237,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -27252,8 +27252,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)",
@@ -27267,8 +27267,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
@@ -27282,8 +27282,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
@@ -27297,8 +27297,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
@@ -27312,8 +27312,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
@@ -27327,8 +27327,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VXUS",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Information Technology Index Fund ETF Class Shares (VGT)",
@@ -27342,8 +27342,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VGT",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Vanguard Growth Index Fund ETF Class Shares (VUG)",
@@ -29263,10 +29263,10 @@
           "recordId": "f473b32c6c625669af12ec86",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
-          "resolvedTicker": "FMX",
-          "resolutionTier": "T1"
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Fomento Economico Mexicano S A B.",
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "Floor & Decor Holdings, Inc. (FND)",
@@ -30210,10 +30210,10 @@
           "recordId": "26a79205eb77e6fa78810dbf",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
-          "resolvedTicker": "AWK",
-          "resolutionTier": "T1"
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Water Works Co. Inc.",
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "American International Group, Inc. (AIG)",
@@ -30572,8 +30572,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTI",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Treasury Trust Fund Institutional Shares (TTTXX)",
@@ -30766,7 +30766,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, University Calif Regts Med Ctr Pooled",
+          "issuerLabel": "Municipal bond, University CA Regts Med Ctr Pooled",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -30856,7 +30856,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Pima County Ariz Swr",
+          "issuerLabel": "Municipal bond, Pima County AZ Swr",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -30961,7 +30961,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y Go",
+          "issuerLabel": "Municipal bond, NY NY Go",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -30976,7 +30976,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y Go",
+          "issuerLabel": "Municipal bond, NY NY Go",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -31036,7 +31036,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lower Colo Riv At TX Trans",
+          "issuerLabel": "Municipal bond, Lower CO Riv At TX Trans",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -31140,8 +31140,8 @@
           "recordId": "d0e4efc477149b3a1fa2d859",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, District Columbia Go",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -31171,7 +31171,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Broward County Fla Tourist Dev Tax",
+          "issuerLabel": "Municipal bond, Broward County FL Tourist Dev Tax",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -31186,7 +31186,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Broward County Fla Tourist Dev Tax",
+          "issuerLabel": "Municipal bond, Broward County FL Tourist Dev Tax",
           "resolvedTicker": null,
           "resolutionTier": null
         }
@@ -36341,8 +36341,8 @@
           "recordId": "40c58ee899c3e600ca5ed71f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, PA St Higher E",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, PA St Higher E",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -39509,8 +39509,8 @@
           "recordId": "50c80676824f677690a59081",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Universal Health Svcs IN Class Class",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -39845,8 +39845,8 @@
           "recordId": "935443ab5fba3640ea188dcd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, CA Water Svc Group",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -44629,8 +44629,8 @@
           "recordId": "cb84ba5b602b4de1a4819be3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Water Wks CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -47205,8 +47205,8 @@
           "recordId": "36d6c87578e76e094945eaa6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Lower Colo Riv Authority",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Lower CO Riv Authority",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -48565,8 +48565,8 @@
           "recordId": "5c65cc0b7b38f999cc63bc45",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Roseville Mich Cmnt",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Roseville MI Cmnt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -50293,8 +50293,8 @@
           "recordId": "dbbe717271db48a77899ead1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Norwalk IA Corp Purp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Norwalk IA Corp Purp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -51253,8 +51253,8 @@
           "recordId": "866be94d1410b214c4662937",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Spirit Lake IA Cap Ln",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Spirit Lake IA Cap Ln",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -51477,8 +51477,8 @@
           "recordId": "86cf35e3a53112c7cdf6eefe",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Jpmorgan Chase And CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -51621,8 +51621,8 @@
           "recordId": "5a5a53d960c31e1c84b2636f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, NY N Y",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, NY NY",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -51685,8 +51685,8 @@
           "recordId": "495f776080548fd588311121",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, AZ Brd Regents",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, AZ Brd Regents",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -53717,7 +53717,7 @@
           "recordId": "26486db6a551b4cdf262aa85",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
@@ -53797,8 +53797,8 @@
           "recordId": "b4d62ea247f179383e26fac3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Philadelphia PA S",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Philadelphia PA S",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -53877,8 +53877,8 @@
           "recordId": "85e19eb435c84185b6c19979",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Vanguard Intermediate Term Corporate",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -53893,8 +53893,8 @@
           "recordId": "47e93ffc570658a6ac9c8c0b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Vanguard Short Term",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -53941,8 +53941,8 @@
           "recordId": "a82acd517fa044d1a6c853fd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Great Lakes Water Aut",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Great Lakes Water Aut",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -54037,8 +54037,8 @@
           "recordId": "8d318f1204dcde762409a7fc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, PA Econom",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, PA Econom",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -54069,8 +54069,8 @@
           "recordId": "cfea57702925dc568055cc1d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Trinity River Authority",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Trinity River Authority",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -54213,8 +54213,8 @@
           "recordId": "b9db1a5bc855480898d3df3c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Lower Colo Riv Authority",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Lower CO Riv Authority",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -54661,8 +54661,8 @@
           "recordId": "18d77192f9a4cba3fb249fb9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Water Wks CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -60405,8 +60405,8 @@
           "recordId": "c3056108955af97d660a1d19",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Sts Water CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -61157,8 +61157,8 @@
           "recordId": "129c02b2d468f77b1970537c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, CA Water Svc Group",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -61333,10 +61333,10 @@
           "recordId": "f329b95815252e8be36253bc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
-          "resolvedTicker": "CHCO",
-          "resolutionTier": "T1"
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, City Hldg CO",
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CLEAR SECURE INC CLASS A",
@@ -63765,8 +63765,8 @@
           "recordId": "cd193b0f5fc03a43ad556e2b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Middlesex Water CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -64869,8 +64869,8 @@
           "recordId": "a3720169ef29715a4e0f8c7f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Romeo Mich Cmnty SC",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Romeo MI Cmnty SC",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -66565,7 +66565,7 @@
           "recordId": "a41a5c6255ce8f7a6f35148a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
@@ -66581,7 +66581,7 @@
           "recordId": "c0c9fdd7710819cf3b9879a6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "etf",
+          "instrumentType": "mutual_fund",
           "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
@@ -70485,8 +70485,8 @@
           "recordId": "0a5a41223793efdfbb468fd1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, CA Water Svc Group",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -73077,8 +73077,8 @@
           "recordId": "e7cb1075eda43e5d107d685e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Cptl One Financial Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Cptl One Financial Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -74869,8 +74869,8 @@
           "recordId": "375ab6c3f5bba48cc1d43a7a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Water Wks CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -85973,8 +85973,8 @@
           "recordId": "eafcae06877f8cd32ffe5d73",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Maricopa County AZ Indl Dev",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -90965,8 +90965,8 @@
           "recordId": "ab7c81b50ae3bf5e37a81b33",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Honolulu HI Cit",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Honolulu HI Cit",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91109,8 +91109,8 @@
           "recordId": "bafe17f43013d733c95ccd0a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, KY St Ppty And Bldgs",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, KY St Ppty And Bldgs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91237,8 +91237,8 @@
           "recordId": "475cf14339408f2ad09f77e5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, MN St For Previou",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, MN St For Previou",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91333,8 +91333,8 @@
           "recordId": "35d7de270423d5ad3b1ef351",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NC St",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, NC St",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91557,8 +91557,8 @@
           "recordId": "c972348d24328ad432eed70c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Raleigh NC Be/r/ 5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Raleigh NC Be/r/ 5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91797,8 +91797,8 @@
           "recordId": "4ca858a58f0ea3c70ef35220",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, University Pittsburgh Be/r/ 5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91877,8 +91877,8 @@
           "recordId": "b2ab743acb352bec5bcb6e14",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Volusia County Fla Ed",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Volusia County FL Ed",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -91989,8 +91989,8 @@
           "recordId": "fa0a311ce8223b2b491a448d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Tarrant Regl Water Dist Te Rv",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Tarrant Regl Water Dist Te Rv",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -92965,10 +92965,10 @@
           "recordId": "023d9bc3944534c2b95e515d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
-          "resolvedTicker": "CHCO",
-          "resolutionTier": "T1"
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, City Hldg CO",
+          "resolvedTicker": null,
+          "resolutionTier": null
         },
         {
           "description": "CLEANSPARK INC",
@@ -96725,8 +96725,8 @@
           "recordId": "f2b2ca8abfe5c58db1dca07e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Conroe TX Indept Sch Ult Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Conroe TX Indept Sch Ult Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -97253,8 +97253,8 @@
           "recordId": "83dbbabaefd56bd48c2b401d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, San Jacinto TX Cmnty Clg Be/r/",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, San Jacinto TX Cmnty Clg Be/r/",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -97269,8 +97269,8 @@
           "recordId": "9e02d119ae88ecb7ff8141e9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, San Jacinto TX Cmnty Clg Be/r/",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, San Jacinto TX Cmnty Clg Be/r/",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -97285,8 +97285,8 @@
           "recordId": "3d2c6fe3dd6133df567759d2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, San Jacinto TX Cmnty Clg Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, San Jacinto TX Cmnty Clg Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -97301,8 +97301,8 @@
           "recordId": "e7928d3ef5df5d7eed6ca75b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, San Jacinto TX Cmnty Clg Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, San Jacinto TX Cmnty Clg Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -97573,8 +97573,8 @@
           "recordId": "363410519ca237b06f880868",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Abbvie Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Abbvie Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -98133,8 +98133,8 @@
           "recordId": "baad8cfafd0f2d8cc6464ee7",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Canadian Imperial Bank",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -98869,8 +98869,8 @@
           "recordId": "50107322c1f09f0cbbd928c0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Hca Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Hca Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -99333,8 +99333,8 @@
           "recordId": "99b771f27cac5b5139445b78",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Meta Platforms Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Meta Platforms Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -99381,8 +99381,8 @@
           "recordId": "fec8ecf6e88ef4dd15ab1229",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Microsoft Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Microsoft Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -99541,8 +99541,8 @@
           "recordId": "67f30375220a7acd95c2115e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Oracle Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Oracle Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -100245,8 +100245,8 @@
           "recordId": "ca88f6d7521afc9fdec97518",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Toyota Motor Credit Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -100469,8 +100469,8 @@
           "recordId": "5e6d3830e99d4c9ffc7420bb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Western Midstream",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Western Midstream",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -101221,8 +101221,8 @@
           "recordId": "74e19d0b4b61b986e3791f34",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, IL St",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, IL St",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -102069,8 +102069,8 @@
           "recordId": "048c994a2933140e573eb59f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Abbvie Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Abbvie Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -102117,8 +102117,8 @@
           "recordId": "21b8bf9defa8fde59f2c43bd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, GA Power CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, GA Power CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -102149,8 +102149,8 @@
           "recordId": "b61b13fbdfdd811ad04a227e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Microsoft Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Microsoft Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116037,8 +116037,8 @@
           "recordId": "f2fa554689edfd0699557436",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Metropolitan Utils Dist Rv Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Metropolitan Utils Dist Rv Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116181,8 +116181,8 @@
           "recordId": "27fbc1176154a3b0ae7ee709",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Broadcom Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Broadcom Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116213,8 +116213,8 @@
           "recordId": "0c1d2f5001907f27df4fe737",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Citigroup Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Citigroup Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116229,8 +116229,8 @@
           "recordId": "15ec45a694a0277a4817e9a9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Constellation Energy",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116245,8 +116245,8 @@
           "recordId": "cc9ea7f762906f9745239db9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Huntsville AL Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Huntsville AL Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116293,8 +116293,8 @@
           "recordId": "c4a6e58fbb908d479ae77f64",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Jpmorgan Chase And CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Jpmorgan Chase And CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116309,8 +116309,8 @@
           "recordId": "9a5e9ab5ce9f1baf5a51261f",
           "verificationScore": 3,
           "verificationState": "human_verified",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Oracle Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Oracle Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116325,8 +116325,8 @@
           "recordId": "fbbc6279cf63412637f23df9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Pacific Gas And Elec CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Pacific Gas And Elec CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116342,7 +116342,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Public Service Colo",
+          "issuerLabel": "Corporate note, Public Service CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116357,8 +116357,8 @@
           "recordId": "3bc6c5545768f989b3b0cfa1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, T Mobile Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, T Mobile Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116389,8 +116389,8 @@
           "recordId": "755d77a7aa87f8661a3d10d9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, University Pittsburgh Be/r/ 5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116405,8 +116405,8 @@
           "recordId": "b0900baab3c35976dda19695",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Wells Fargo And CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Wells Fargo And CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -116453,8 +116453,8 @@
           "recordId": "87e163a887fff6d0923c9bc1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Xcel Energy Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Xcel Energy Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -117525,8 +117525,8 @@
           "recordId": "6710f12ad65e5434ebc80ad4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Metropolitan Utls Dist Rv Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Metropolitan Utls Dist Rv Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -120821,8 +120821,8 @@
           "recordId": "b455a2e72bc43d7521c3dacf",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Vanguard Intermediate Term Corporate",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -121173,8 +121173,8 @@
           "recordId": "ede9fc07024025000388767a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Arlington TX Independent",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Arlington TX Independent",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -122757,8 +122757,8 @@
           "recordId": "9d2d4734700ca499c2595e58",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, CA Water Svc Group",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -123957,8 +123957,8 @@
           "recordId": "299d7acb1d142f02dd41e1dd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Lower Colo Riv Authority",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Lower CO Riv Authority",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125605,8 +125605,8 @@
           "recordId": "855e8f05cf01594198448342",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Vanguard Intermediate Term Corporate",
+          "instrumentType": "mutual_fund",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125909,8 +125909,8 @@
           "recordId": "9e2751c5e2517317e10cff2e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "private",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Baker Hughes A Ge CO Llc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125925,8 +125925,8 @@
           "recordId": "45bb24905fc73fd682a839e8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Cadence Design Sys Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125941,8 +125941,8 @@
           "recordId": "cceffad89320326167637685",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Cadence Design Systems",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125957,8 +125957,8 @@
           "recordId": "129ee2b557cae96846087a6e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Cheniere Energy Partners",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Cheniere Energy Partners",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125973,8 +125973,8 @@
           "recordId": "be61a10f9376ed17cd8ee7ca",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Cptl One Financial Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Cptl One Financial Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -125989,8 +125989,8 @@
           "recordId": "2d4897107eab595f55c09e00",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Eli Lilly And CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Eli Lilly And CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126021,8 +126021,8 @@
           "recordId": "f7f293200c7600fa16a6ab78",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Genl Motors Fin CO Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Genl Motors Fin CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126037,8 +126037,8 @@
           "recordId": "865d5d51bfbaea1742b50a4a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Goldman Sachs Group Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126069,8 +126069,8 @@
           "recordId": "e32f5b6a1ec5f7d3634984d9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Morgan Stanley",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126085,8 +126085,8 @@
           "recordId": "70bd015dfbe92534b1de9861",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, National Rural Util Coop",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126101,8 +126101,8 @@
           "recordId": "490340f7ce5510ef3895b699",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Nvidia Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Nvidia Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126117,8 +126117,8 @@
           "recordId": "c850f201bd665a88718d5277",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Oracle Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Oracle Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126133,8 +126133,8 @@
           "recordId": "d8ab57ba88d987471fe67c82",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Royal Caribbean Cruises",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126149,8 +126149,8 @@
           "recordId": "ef60ea7229b59466f327edf5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Unitedhealth Group Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126165,8 +126165,8 @@
           "recordId": "b6a5d9db4759c671514dc6b1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, VA Elec And Power CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -126181,8 +126181,8 @@
           "recordId": "6723f536001137e464cc23cf",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Wells Fargo And CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Wells Fargo And CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -127429,8 +127429,8 @@
           "recordId": "0d0eb57a37d604b3293baab1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -128725,8 +128725,8 @@
           "recordId": "b70633218a40884913cd06c1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Raleigh NC Be/r/5",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Raleigh NC Be/r/5",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -129829,8 +129829,8 @@
           "recordId": "bb0892b81f83659b149ada84",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Sts Water CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -131925,8 +131925,8 @@
           "recordId": "ef33d3f3b92f81c07e0f9975",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Water Wks CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -133381,8 +133381,8 @@
           "recordId": "e042fb2c2ed0bf5dbb9ad547",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lawrence KS Temp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Lawrence KS Temp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -133573,8 +133573,8 @@
           "recordId": "532a5c4d362e141311d2a145",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Milwaukee WI Corp Purp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Milwaukee WI Corp Purp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -142357,8 +142357,8 @@
           "recordId": "c12038295795b9fd7d5a0b6c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -142565,8 +142565,8 @@
           "recordId": "9202693a2f68a2f41075e361",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Pma Levy And Aid Antic",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Pma Levy And Aid Antic",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -143253,8 +143253,8 @@
           "recordId": "586d79951f6a9312bb9f7f57",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -143749,8 +143749,8 @@
           "recordId": "222a7c735a2c5cefdd701945",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, American Sts Water CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -143973,8 +143973,8 @@
           "recordId": "196deddc15f64146f3eea745",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, CA Water Svc Group",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -144533,8 +144533,8 @@
           "recordId": "cd2bca3c7359a57cd2a77788",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Madison WI Prom",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Madison WI Prom",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -149109,8 +149109,8 @@
           "recordId": "5b88462829af857b77ba9ce8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -149429,8 +149429,8 @@
           "recordId": "fc7fe22e5302df2d1434293c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, New Hope Cultural Ed Facilities Fin",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, New Hope Cultural Ed Facilities Fin",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155237,8 +155237,8 @@
           "recordId": "d8987e65e35542c58f235aa8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155461,8 +155461,8 @@
           "recordId": "38f2bc5646d10cf0215a7656",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Metropolitan Transn",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Metropolitan Transn",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155493,8 +155493,8 @@
           "recordId": "fa746fad02032080564c7b55",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Judson TX Independent SC",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Judson TX Independent SC",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155669,8 +155669,8 @@
           "recordId": "3b4036f7029dcaa96b088022",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Prosper TX Independent S",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Prosper TX Independent S",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155733,8 +155733,8 @@
           "recordId": "5428c93056169a26c294cdb7",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Carnivalcorp Regs",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Carnivalcorp Regs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -155909,8 +155909,8 @@
           "recordId": "294767ddc70750b0e8179185",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -156357,8 +156357,8 @@
           "recordId": "3347a58da47358328b76473c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -156581,8 +156581,8 @@
           "recordId": "4eca79424c301ae0d83eb000",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Chicago IL O Hare",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Chicago IL O Hare",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -156662,7 +156662,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y City T",
+          "issuerLabel": "Municipal bond, NY NY City T",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -156694,7 +156694,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Usf Fing Corp Fla C",
+          "issuerLabel": "Corporate note, Usf Fing Corp FL C",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -156997,8 +156997,8 @@
           "recordId": "88586aae9ebd46a7d4cffde2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, DE Valley PA",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, DE Valley PA",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -157173,8 +157173,8 @@
           "recordId": "bac961619ca122761c5e9576",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Danbury CT",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Danbury CT",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -157365,8 +157365,8 @@
           "recordId": "3c3b8ec4fabe2e62145e5787",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, AZ Ida Natl Chtr Sch Revlvg",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, AZ Ida Natl Chtr Sch Revlvg",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -157622,7 +157622,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lee County Fla Sch Brd Ctfs",
+          "issuerLabel": "Municipal bond, Lee County FL Sch Brd Ctfs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -157782,7 +157782,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Central Fla Tourism Oversight Dist Utils",
+          "issuerLabel": "Municipal bond, Central FL Tourism Oversight Dist Utils",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -157894,7 +157894,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Fort Lauderdale Fla Spl Oblgt",
+          "issuerLabel": "Municipal bond, Fort Lauderdale FL Spl Oblgt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158006,7 +158006,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lee County Fla Sch Brd Ctfs",
+          "issuerLabel": "Municipal bond, Lee County FL Sch Brd Ctfs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158022,7 +158022,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lewis And Clark County Mont High",
+          "issuerLabel": "Municipal bond, Lewis And Clark County MT High",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158086,7 +158086,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Miami Dade County Fla Water And",
+          "issuerLabel": "Municipal bond, Miami Dade County FL Water And",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158134,7 +158134,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Mobile County Ala Gen Oblig Impt",
+          "issuerLabel": "Municipal bond, Mobile County AL Gen Oblig Impt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158182,7 +158182,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Omaha Pub Power Dist Neb Elec",
+          "issuerLabel": "Municipal bond, Omaha Pub Power Dist NE Elec",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158198,7 +158198,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Palm Beach County Fla Health Facilities",
+          "issuerLabel": "Municipal bond, Palm Beach County FL Health Facilities",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158469,8 +158469,8 @@
           "recordId": "a17a6ad6cd782419883d84df",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, University Okla",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, University OK",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158501,8 +158501,8 @@
           "recordId": "bafe5d19060a9a2f3fe96275",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, NY NY City Municipal Wt Rv",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158646,7 +158646,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Omaha Pub Power Dist Neb Elec",
+          "issuerLabel": "Municipal bond, Omaha Pub Power Dist NE Elec",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158805,8 +158805,8 @@
           "recordId": "3ec1584cae8aa4af9bd740b2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Central Fla Tourism",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Central FL Tourism",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158822,7 +158822,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Huntsville Ala Heath Care Authority",
+          "issuerLabel": "Municipal bond, Huntsville AL Heath Care Authority",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158853,8 +158853,8 @@
           "recordId": "be707b12ad00724e93563cac",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Lee County Fla Sch Br",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Lee County FL Sch Br",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158869,8 +158869,8 @@
           "recordId": "de7f00dd4a0eee4f4b220de3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Lee County Fla Sch Brd Ctfs",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Lee County FL Sch Brd Ctfs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -158949,8 +158949,8 @@
           "recordId": "6e10a707fcd8dfc9e5092d51",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, South Putnam IN High Sch Bldg",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159173,8 +159173,8 @@
           "recordId": "236358a1cc878d670898002d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159429,8 +159429,8 @@
           "recordId": "e2d03368749d96aaaf89f820",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Air Lease Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Air Lease Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159477,8 +159477,8 @@
           "recordId": "396f6759bb2f0f11f228e9af",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Csx Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Csx Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159509,8 +159509,8 @@
           "recordId": "203af3dcfa2b0ab16ad37fde",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Fiserv Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Fiserv Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159621,8 +159621,8 @@
           "recordId": "8189c1e0c1d99b95cf5667c5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Morgan Stanley",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159669,8 +159669,8 @@
           "recordId": "f411a1f079b9c6735dda28c1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, San Diego G And E",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, San Diego G And E",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159701,8 +159701,8 @@
           "recordId": "ccb0c3d36c94b141f7d2e27f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Wells Fargo And CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Wells Fargo And CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159733,8 +159733,8 @@
           "recordId": "9772ce36d887b16fe9e861b2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Air Lease Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Air Lease Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159765,8 +159765,8 @@
           "recordId": "b177b31e32fb3f56caf1fe63",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Amazon Com Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Amazon Com Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159781,8 +159781,8 @@
           "recordId": "3d3da87bf96671069d87c1f4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, American Express CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, American Express CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159813,8 +159813,8 @@
           "recordId": "d433b83a93f48e3988016084",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "private",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Baker Hughes Llc/co Obl",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159829,8 +159829,8 @@
           "recordId": "d1fd7a64e27e4949b6373db0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Bk Of Amer Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Bk Of Amer Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159845,8 +159845,8 @@
           "recordId": "b8de346876692ba5b52a7771",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Broadcom Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Broadcom Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159861,8 +159861,8 @@
           "recordId": "bed99aeeb9cc88cbeb609356",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Canadian Imperial Bank",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159877,8 +159877,8 @@
           "recordId": "26a7e0789c89b6e90611476c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Capital One Financial CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159893,8 +159893,8 @@
           "recordId": "eb8d94d41f65a7c93a5ef237",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Citigroup Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Citigroup Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159909,8 +159909,8 @@
           "recordId": "56c2f2642fe36dfb96da57fb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Citigroup Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Citigroup Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159925,8 +159925,8 @@
           "recordId": "f4b1082c30cc138f2238a1ca",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Dte Energy CO",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Dte Energy CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159941,8 +159941,8 @@
           "recordId": "54974d3423beb34040b17e00",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Genl Motors Financial CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159957,8 +159957,8 @@
           "recordId": "d11fd411e8579ce80e7f18eb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Goldman Sachs Group Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159973,8 +159973,8 @@
           "recordId": "42bceff6aef197515ebd9413",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Hca Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Hca Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -159989,8 +159989,8 @@
           "recordId": "9a2cb1d328123f0d5e14a4f9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Merck And CO Inc",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Merck And CO Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160021,8 +160021,8 @@
           "recordId": "4f718b2903a133621d1b408a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Miami Dade County Fla School District",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Miami Dade County FL School District",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160037,8 +160037,8 @@
           "recordId": "177c8f958584c5ce90700efc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Natl Rural Utils Coop",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160053,8 +160053,8 @@
           "recordId": "0bef5b1a918bb80a3eb9bdf9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Oracle Corp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Oracle Corp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160118,7 +160118,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Plaza At Noahs Ark Cmnty Impt",
+          "issuerLabel": "Municipal bond, Plaza At Noahs AR Cmnty Impt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160149,8 +160149,8 @@
           "recordId": "acfb36a6c6c800973fb12076",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Royal Caribbean Cruises",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160181,8 +160181,8 @@
           "recordId": "b9c93ef84f7aed6c89266a83",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Us Bancorp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Us Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160213,8 +160213,8 @@
           "recordId": "5cd25e825c65007f15b4804e",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, VA Elec And Power CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160229,8 +160229,8 @@
           "recordId": "d1e5cada8bb6d340ac360b83",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Racine Wis Wuni Sch",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Racine WI Wuni Sch",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160293,8 +160293,8 @@
           "recordId": "47e32fc67e0387b5e9d6a4ed",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Miami Dade County",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Miami Dade County",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160325,8 +160325,8 @@
           "recordId": "8e7216e1067fc3cf22a32e7b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, North East TX Regl",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, North East TX Regl",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -160357,8 +160357,8 @@
           "recordId": "0480c2422a19962e179e187c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Wayne County Mich Arp",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Wayne County MI Arp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161045,8 +161045,8 @@
           "recordId": "1a2acc5f0d61e01f50a7a747",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Columbia MO School District",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161478,8 +161478,8 @@
           "recordId": "e6a6ede09ff445bf5a03db57",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, NJ Econo",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, NJ Econo",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161718,8 +161718,8 @@
           "recordId": "0c4a29c519efbcd86711dc75",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, First Horizon Bk Memphis TN",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, First Horizon Bk Memphis TN",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161750,8 +161750,8 @@
           "recordId": "b0c8697aa05aec9a7649a398",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Leander TX",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Leander TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161894,8 +161894,8 @@
           "recordId": "f0a699799365bc56ebd246d5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Metropolitan Transn",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Metropolitan Transn",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161910,8 +161910,8 @@
           "recordId": "5807d23ae643d4e89e86e1b7",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Philadelphia PA Aut",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Philadelphia PA Aut",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -161926,8 +161926,8 @@
           "recordId": "c836ecc305d8b48bf16c413c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162054,8 +162054,8 @@
           "recordId": "d8d54dba801bbfdd2b713fb8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Waller TX Independent SC",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Waller TX Independent SC",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162102,8 +162102,8 @@
           "recordId": "f51e598d1c3321a6a567c0b6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Pearland TX",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Pearland TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162214,8 +162214,8 @@
           "recordId": "dda84a849769e2504d97ac9b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Manhattan KS Temp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Manhattan KS Temp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162310,8 +162310,8 @@
           "recordId": "312ebac73ad47357d21c99c1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Clifton TX Higher",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Clifton TX Higher",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162422,8 +162422,8 @@
           "recordId": "e0800bb074f9d2ceac6a47bc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Brownsville TX",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Brownsville TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162438,8 +162438,8 @@
           "recordId": "9deee38777d78d1fe162e4de",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Cape Coral Fla Water",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Cape Coral FL Water",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162454,8 +162454,8 @@
           "recordId": "ca00247bcd0a2d05c5a0e90f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Clark County Nev Sch",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Clark County NV Sch",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162486,8 +162486,8 @@
           "recordId": "eda0f12264e0645467946edc",
           "verificationScore": 3,
           "verificationState": "human_verified",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162502,8 +162502,8 @@
           "recordId": "436c759812c2f39568a108cf",
           "verificationScore": 3,
           "verificationState": "human_verified",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162518,8 +162518,8 @@
           "recordId": "1e3a7030ec729a2e6bc8ad67",
           "verificationScore": 3,
           "verificationState": "human_verified",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162534,8 +162534,8 @@
           "recordId": "317097778408cf1cf9873afb",
           "verificationScore": 3,
           "verificationState": "human_verified",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162727,7 +162727,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y City T",
+          "issuerLabel": "Municipal bond, NY NY City T",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -162838,8 +162838,8 @@
           "recordId": "bed6378a85d483399b9694cc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Fircrest Pptys Wash",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Fircrest Pptys WA",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163078,8 +163078,8 @@
           "recordId": "2bdbdcff909949d0104410f2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, SC Jobs",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, SC Jobs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163350,8 +163350,8 @@
           "recordId": "89ffeca4b66da514e385517b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Putnam County Fla",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163398,8 +163398,8 @@
           "recordId": "0e8cc2e70531e5e0477378e0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Miami Beach Fla Red",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Miami Beach FL Red",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163430,8 +163430,8 @@
           "recordId": "ae5c2131bf8e490874ddbdb6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Volusia County Fla Ed",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Volusia County FL Ed",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163462,8 +163462,8 @@
           "recordId": "ce1270e21dda9c14ba2aeb18",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Cape Coral Fla Water",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Cape Coral FL Water",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -163494,8 +163494,8 @@
           "recordId": "b1c87825a4a2ddc5e7637f0c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Energy Northwes",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Energy Northwes",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -164150,8 +164150,8 @@
           "recordId": "fd74d69bed862e03c7387845",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Black Belt Energy Gas Dist A",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -164470,8 +164470,8 @@
           "recordId": "c820ec7c658adb790a921a4c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Burlington IA Corp Purp A",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Burlington IA Corp Purp A",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -164598,8 +164598,8 @@
           "recordId": "f0a73c1a7b84f232da47c4ae",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Hutchinson KS Temp",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Hutchinson KS Temp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -166918,8 +166918,8 @@
           "recordId": "b24edbadf537fc3a32d72676",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Madison WI Prom",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Madison WI Prom",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -167174,8 +167174,8 @@
           "recordId": "270864c896c672ec1d2605a1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Franklin IN Cmnty Mult Sch Bldg",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -167190,8 +167190,8 @@
           "recordId": "e6eae5b76d7c4de50098504c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Franklin IN Cmnty Mult Sch Bldg",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -167478,8 +167478,8 @@
           "recordId": "c7f69ff30b5d062a192677ea",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -167510,8 +167510,8 @@
           "recordId": "d05de6d1a7389d3dd9211f16",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, American Express CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -167558,8 +167558,8 @@
           "recordId": "4d3bf081dc0e10479ed1016c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168263,7 +168263,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Lower Colo Riv Authority TX",
+          "issuerLabel": "Municipal bond, Lower CO Riv Authority TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168471,7 +168471,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y City Housing Dev",
+          "issuerLabel": "Municipal bond, NY NY City Housing Dev CO",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168662,8 +168662,8 @@
           "recordId": "64e113811abf88a8bd18ced9",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Temple TX",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Temple TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168742,8 +168742,8 @@
           "recordId": "07d23aaa73c8e88338af35a4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Chicago IL O Ha",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Chicago IL O Ha",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168758,8 +168758,8 @@
           "recordId": "a8c7840b6107d5c858f900c6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Miami Dade County",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Miami Dade County",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168774,8 +168774,8 @@
           "recordId": "d9641726391f453c068a72c6",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, NH Healt",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, NH Healt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168806,8 +168806,8 @@
           "recordId": "c8f0f49ea1d453bfffdcb2a0",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth Third Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168822,8 +168822,8 @@
           "recordId": "f56b61c764f24718c39bbb59",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth Third Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168838,8 +168838,8 @@
           "recordId": "d6e7ae8487e97381b6191482",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168870,8 +168870,8 @@
           "recordId": "73f7db64097d99e36e5f07b8",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168886,8 +168886,8 @@
           "recordId": "cfa9796c8d8c3170055ce2bd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -168950,8 +168950,8 @@
           "recordId": "b859ef5bfdfd7e9c2d8a9773",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Purchased 65000.00 Par Value Of American",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169014,8 +169014,8 @@
           "recordId": "a88d1d3aec9bae22451be8ad",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth Third Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169046,8 +169046,8 @@
           "recordId": "eb05786cbcce4b7074e92908",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Jpmorgan Chase And CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169142,8 +169142,8 @@
           "recordId": "e645420af5e4b9285915b41f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, American Express CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169158,8 +169158,8 @@
           "recordId": "04c95e85502dd243defedcfd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, American Express CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169174,8 +169174,8 @@
           "recordId": "f815eb84f34016de1cb362bb",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169190,8 +169190,8 @@
           "recordId": "37b4ac24553828029344d185",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169318,8 +169318,8 @@
           "recordId": "b8f0ceddc845c62e87ffe148",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth Third Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169398,8 +169398,8 @@
           "recordId": "7deabc44699bd8a84546baab",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169414,8 +169414,8 @@
           "recordId": "85553bc49b531f84ac7cd33a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169430,8 +169430,8 @@
           "recordId": "dfe5fd34a026b6faaece2b50",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Jpmorgan Chase And CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169686,8 +169686,8 @@
           "recordId": "faa51848cde32dfa21dd8457",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, American Express CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169702,8 +169702,8 @@
           "recordId": "5e9e0f2e30e37577c306e9be",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, American Express CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169718,8 +169718,8 @@
           "recordId": "1836a049751b8bec90455df3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169734,8 +169734,8 @@
           "recordId": "c9569605329fa629ef4f5db5",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Bank NY Mellon Corp Pe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169862,8 +169862,8 @@
           "recordId": "3eeb4abf9680bd681ed6b961",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Duval County FL Sch Brd Ctfs",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -169878,8 +169878,8 @@
           "recordId": "56efe529398c70deffa04acd",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Fifth Third Bancorp",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170006,8 +170006,8 @@
           "recordId": "ce3c3288b6229bfed8e63ca1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170022,8 +170022,8 @@
           "recordId": "57b9e34ec80c3e41d7aee97d",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170038,8 +170038,8 @@
           "recordId": "86d4e0fb44d6cc08035545c2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Jpmorgan Chase And CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170054,8 +170054,8 @@
           "recordId": "6e418dc65e2babde34820533",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Jpmorgan Chase And CO Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170294,8 +170294,8 @@
           "recordId": "d5c92ba6431b163d8e5047c4",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Societe Generale Alt",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170566,8 +170566,8 @@
           "recordId": "5494a4f332f39d28a6e236c1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Palm Beach County FL Sch Brd",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170582,8 +170582,8 @@
           "recordId": "095736bbe7c92f1025d7694f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "preferred",
+          "issuerLabel": "Preferred stock, Pnc Financial Svcs Group Inc",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -170742,8 +170742,8 @@
           "recordId": "438dd3b5553fdf243e926783",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Jea FL Elec Sys",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -171414,8 +171414,8 @@
           "recordId": "b696d879eda4e8b8c6490965",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Commonwealth Fing A",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Commonwealth Fing A",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -172342,8 +172342,8 @@
           "recordId": "8fae564f32c29e2652fa2ea1",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Houston TX Independent S",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Houston TX Independent S",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -172438,8 +172438,8 @@
           "recordId": "f47cc912e51b48ae18c5808c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, District Columbia",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -172534,8 +172534,8 @@
           "recordId": "3b4834a1a473387d79c41bfe",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, North Putnam IN Mid Sch Bldg",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -172839,7 +172839,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, NY N Y City T",
+          "issuerLabel": "Municipal bond, NY NY City T",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -173766,8 +173766,8 @@
           "recordId": "fbe9e7c59719f71ae19acf0a",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Monroeville PA Fin",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Monroeville PA Fin",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -173782,8 +173782,8 @@
           "recordId": "60719520ab2246d8169745de",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Oak Creek Franklin",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -173911,7 +173911,7 @@
           "verificationScore": 3,
           "verificationState": "checked",
           "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Manatee County Fla SC",
+          "issuerLabel": "Municipal bond, Manatee County FL SC",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -174006,8 +174006,8 @@
           "recordId": "4495536a5e01457f75151d10",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Racine Wis Uni Sch",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Racine WI Uni Sch",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -174086,8 +174086,8 @@
           "recordId": "f39b5859b4219748bb5e60e2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, District Columbia Housing Fin Agy Mltifam",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -174214,8 +174214,8 @@
           "recordId": "1201a57d22e833f047c05cc3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Rhode Is St Health",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Rhode Is St Health",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175126,8 +175126,8 @@
           "recordId": "7d1422fe481b1cb8213f5392",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, WI Dells WI Prom",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, WI Dells WI Prom",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175142,8 +175142,8 @@
           "recordId": "6458110949934b60afeaf863",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Chattanooga TN He",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Chattanooga TN He",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175174,8 +175174,8 @@
           "recordId": "c98737af42d2e7a3038e01bc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Franklin County MO Pub Water Sply",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175254,8 +175254,8 @@
           "recordId": "ed3e77215dcc0367045a194b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Miami Dade County",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Miami Dade County",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175302,8 +175302,8 @@
           "recordId": "8f7a8f410933c5a002a297ab",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Weld County Colo S",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Weld County CO S",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175670,8 +175670,8 @@
           "recordId": "0253b6b8af1f61a908de78b2",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Arlington TX Highe",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175686,8 +175686,8 @@
           "recordId": "e7e274fcbae3c54e41e2d022",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Liberty NY Dev",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175702,8 +175702,8 @@
           "recordId": "b717e983cfba04ce3555e37c",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, North Spencer County",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, North Spencer County",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175718,8 +175718,8 @@
           "recordId": "6b16da96823c694683f9857b",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, AZ Indl Dev Au",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, AZ Indl Dev Au",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175734,8 +175734,8 @@
           "recordId": "fb5c5c11019f9195577cebf3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Hutto TX",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Hutto TX",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175750,8 +175750,8 @@
           "recordId": "e31b652dfd27220282ea068f",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, TX Private Activ",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, TX Private Activ",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175766,8 +175766,8 @@
           "recordId": "9975d188cd37a22ec5cd89e7",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "common_stock",
-          "issuerLabel": null,
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, West VA Commr Of Hw",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -175782,8 +175782,8 @@
           "recordId": "bce559f001b83c7c34e6a8a3",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, Arlington TX Independent",
+          "instrumentType": "municipal_bond",
+          "issuerLabel": "Municipal bond, Arlington TX Independent",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -176022,8 +176022,8 @@
           "recordId": "53371b5297ed5cdb5d437101",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Rhode Is Health And Edl Bldg",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Rhode Is Health And Edl Bldg",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -176630,8 +176630,8 @@
           "recordId": "74cd12d8dcdff454e5276b76",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "corporate_note",
-          "issuerLabel": "Corporate note, District Columbia Housing Fin Agy Mltifam",
+          "instrumentType": "common_stock",
+          "issuerLabel": null,
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -177334,8 +177334,8 @@
           "recordId": "063c1a63ada97a8168565ccc",
           "verificationScore": 3,
           "verificationState": "checked",
-          "instrumentType": "municipal_bond",
-          "issuerLabel": "Municipal bond, Kenosha WI Prom",
+          "instrumentType": "corporate_note",
+          "issuerLabel": "Corporate note, Kenosha WI Prom",
           "resolvedTicker": null,
           "resolutionTier": null
         },
@@ -180046,8 +180046,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -180190,8 +180190,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -180334,8 +180334,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -180558,8 +180558,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -180782,8 +180782,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -180926,8 +180926,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -181070,8 +181070,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "Charles Schwab US Reit ETF",
@@ -181214,8 +181214,8 @@
           "verificationState": "checked",
           "instrumentType": "etf",
           "issuerLabel": null,
-          "resolvedTicker": "VTEB",
-          "resolutionTier": "T1"
+          "resolvedTicker": null,
+          "resolutionTier": "T2"
         },
         {
           "description": "DODFX (Dodge & Cox International Stock Fund)",

@@ -10,10 +10,10 @@
       "snapshotSha256": "367fb917a218886e0070b9c349d741600b03759fb078d9f58aaca24d25b9c4ab",
       "snapshotEntries": 10415
     },
-    "symbolsInData": 1232,
+    "symbolsInData": 1228,
     "withheldRows": 5,
-    "entries": 1073,
-    "pending": 159,
+    "entries": 1071,
+    "pending": 157,
     "noSharedWord": 59
   },
   "assets": {
@@ -3234,37 +3234,6 @@
         "evidence": null
       }
     },
-    "AWK": {
-      "symbol": "AWK",
-      "secSymbol": "AWK",
-      "secName": "American Water Works Company, Inc.",
-      "cik": 1410636,
-      "nameAgreement": "shares_a_word",
-      "instrumentType": "common",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "American Water Works Co., Inc. (AWK)"
-      ],
-      "filedSymbols": [
-        "AWK",
-        "resolved:R1"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "source": {
-        "kind": "sec-company-tickers",
-        "url": "https://www.sec.gov/files/company_tickers.json",
-        "fetchedAt": "2026-09-05T23:27:18Z"
-      },
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
     "AXON": {
       "symbol": "AXON",
       "secSymbol": "AXON",
@@ -6176,37 +6145,6 @@
       "aliases": [],
       "rows": 4,
       "officials": 2,
-      "source": {
-        "kind": "sec-company-tickers",
-        "url": "https://www.sec.gov/files/company_tickers.json",
-        "fetchedAt": "2026-09-05T23:27:18Z"
-      },
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "CHCO": {
-      "symbol": "CHCO",
-      "secSymbol": "CHCO",
-      "secName": "CITY HOLDING CO",
-      "cik": 726854,
-      "nameAgreement": "shares_a_word",
-      "instrumentType": "common",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "CITY HLDG CO"
-      ],
-      "filedSymbols": [
-        "CHCO",
-        "resolved:R3"
-      ],
-      "aliases": [],
-      "rows": 2,
-      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -12398,16 +12336,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Fomento Economico Mexicano S.A.B. de C.V. Common Stock (FMX)",
         "Fomento Económico Mexicano, S.A.B. de C.V. (FMX)"
       ],
       "filedSymbols": [
-        "FMX",
-        "resolved:R1"
+        "FMX"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 2,
+      "rows": 1,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",

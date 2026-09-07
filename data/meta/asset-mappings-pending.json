@@ -3,7 +3,7 @@
     "version": 1,
     "generatedBy": "scripts/seed-asset-registry.ts",
     "reason": "symbols filed on published rows that the SEC company list does not carry; identity awaits a person",
-    "entries": 159
+    "entries": 157
   },
   "pending": {
     "AAGIY": {
@@ -42,29 +42,6 @@
       ],
       "aliases": [],
       "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "AOA": {
-      "symbol": "AOA",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "ISHARES CORE AGGRESSIVE ALLO (AOA)"
-      ],
-      "filedSymbols": [
-        "AOA",
-        "resolved:R1"
-      ],
-      "aliases": [],
-      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -625,11 +602,10 @@
         "iShares MSCIPacific ex Japan ETF (EPP)"
       ],
       "filedSymbols": [
-        "EPP",
-        "resolved:R1"
+        "EPP"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -987,11 +963,10 @@
         "VanEck Vectors Gold Miners ETF"
       ],
       "filedSymbols": [
-        "GDX",
-        "resolved:R1"
+        "GDX"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1420,11 +1395,10 @@
         "iShares Transportation Average ETF (IYT)"
       ],
       "filedSymbols": [
-        "IYT",
-        "resolved:R1"
+        "IYT"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2386,11 +2360,10 @@
         "VanEck Vectors Short High-Yield Municipal Index ETF (SHYD)"
       ],
       "filedSymbols": [
-        "SHYD",
-        "resolved:R1"
+        "SHYD"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -3052,29 +3025,6 @@
         "evidence": null
       }
     },
-    "VGT": {
-      "symbol": "VGT",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Vanguard Information Technology Index Fund ETF Class Shares (VGT)"
-      ],
-      "filedSymbols": [
-        "VGT",
-        "resolved:R1"
-      ],
-      "aliases": [],
-      "rows": 2,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
     "VIG": {
       "symbol": "VIG",
       "reason": "not in SEC company_tickers.json",
@@ -3086,11 +3036,10 @@
         "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)"
       ],
       "filedSymbols": [
-        "VIG",
-        "resolved:R1"
+        "VIG"
       ],
       "aliases": [],
-      "rows": 38,
+      "rows": 19,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -3181,10 +3130,11 @@
         "Vanguard S&P 500 (VOO)"
       ],
       "filedSymbols": [
-        "VOO"
+        "VOO",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 4,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -3232,7 +3182,7 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 58,
+      "rows": 49,
       "officials": 3,
       "review": {
         "status": "unreviewed",
@@ -3248,16 +3198,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Total Stock Market Index Fund ETF Class Shares",
-        "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)"
+        "Vanguard Total Stock Market Index Fund ETF Class Shares"
       ],
       "filedSymbols": [
-        "VTI",
-        "resolved:R1"
+        "VTI"
       ],
       "aliases": [],
-      "rows": 22,
-      "officials": 3,
+      "rows": 6,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3409,16 +3357,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
         "Vanguard Total International Stock Index Fund ETF Shares"
       ],
       "filedSymbols": [
-        "VXUS",
-        "resolved:R1"
+        "VXUS"
       ],
       "aliases": [],
-      "rows": 7,
-      "officials": 2,
+      "rows": 1,
+      "officials": 1,
       "review": {
         "status": "unreviewed",
         "reviewer": null,

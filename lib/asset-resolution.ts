@@ -33,7 +33,7 @@ import { existsSync, readFileSync } from "fs";
 import path from "path";
 import { resolveTicker } from "./assets";
 import { assetNameKey, normalizeAssetName, printedShareClass } from "./asset-normalize";
-import { canonicalListedSymbol, flatKey, loadAssetReference, sharedDistinctiveWords, sharesDistinctiveWord, type AssetReference } from "./asset-reference";
+import { canonicalListedSymbol, flatKey, loadAssetReference, sharesDistinctiveWord, type AssetReference } from "./asset-reference";
 import { classifyInstrument, type InstrumentType } from "./instrument-type";
 
 export type ResolutionTier = "T1" | "T2" | null;
@@ -95,6 +95,13 @@ export function defaultContext(): ResolutionContext {
 
 const TICKER_TYPES = new Set<InstrumentType>(["common_stock", "etf"]);
 
+/** Words that name a fund family or a fund's structure, not which fund. */
+const ETF_GENERIC = new Set(["VANGUARD", "ISHARES", "SPDR", "SCHWAB", "INVESCO", "FIDELITY", "STATE", "STREET", "STRT", "SELECT", "SECTOR", "INDEX", "FUND", "FD", "ETF", "TRUST", "TR", "SERIES", "PORTFOLIO", "SHARES", "CLASS", "CORE", "TOTAL", "MARKET", "US", "USA", "MORNINGSTAR", "FTSE", "MSCI", "CRSP", "BLOOMBERG", "INTL", "THE", "AND", "OF", "STOCK", "EQUITY"]);
+/** The words of an ETF name that say which fund it is, digits included ("1000" in Russell 1000). */
+export function etfDistinctiveWords(key: string): string[] {
+  return key.split(" ").filter((w) => w.length >= 2 && !ETF_GENERIC.has(w));
+}
+
 export function resolveAsset(
   row: { description: string; ticker: string | null | undefined },
   ctx: ResolutionContext
@@ -139,10 +146,16 @@ export function resolveAsset(
     // an ETF listing, two shared distinctive words (the family plus one
     // more: "VANGUARD" and "EXEMPT") are the corroboration. Stocks get no
     // such allowance.
+    // Family and structural words (VANGUARD, SELECT SECTOR, INDEX, FUND)
+    // do not distinguish one fund from another; the words that do ("TAX
+    // EXEMPT", "RUSSELL 1000", "ENERGY", "BOND") must every one appear in
+    // the listing. "Energy Select Sector SPDR" printed with XLF fails on
+    // "ENERGY" (Grok, Sep 7).
     if (listedOk && listed!.kind === "etf" && call.type === "etf") {
-      const shared = sharedDistinctiveWords(row.description, listed!.name);
-      if (shared.length >= 2) {
-        return { ...base, resolvedTicker: sym, tier: "T1", rule: "R1 filed ETF symbol, corroborated by two words", evidence: [`printed symbol ${sym} (${filed.source})`, `listed as "${listed!.name}" on ${listed!.exchange}`, `shares the words ${shared.map((w) => `"${w}"`).join(", ")}`], candidates: [sym] };
+      const printedWords = etfDistinctiveWords(nameKey);
+      const listedWords = new Set(etfDistinctiveWords(listed!.key));
+      if (printedWords.length >= 1 && printedWords.every((w) => listedWords.has(w))) {
+        return { ...base, resolvedTicker: sym, tier: "T1", rule: "R1 filed ETF symbol, every distinctive word in the listing", evidence: [`printed symbol ${sym} (${filed.source})`, `listed as "${listed!.name}" on ${listed!.exchange}`, `distinctive words ${printedWords.map((w) => `"${w}"`).join(", ")} all in the listing`], candidates: [sym] };
       }
     }
     const word = listedOk ? sharesDistinctiveWord(row.description, listed!.name) : null;

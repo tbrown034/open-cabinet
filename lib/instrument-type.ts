@@ -53,14 +53,18 @@ export interface InstrumentCall {
 }
 
 const STATE_ABBR = "AL|AK|AZ|AR|CA|CO|CT|DE|FL|GA|HI|ID|IL|IN|IA|KS|KY|LA|ME|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|OH|OK|OR|PA|RI|SC|SD|TN|TX|UT|VT|VA|WA|WV|WI|WY|DC|PR";
-const STATE_NAMES = "ALABAMA|ALASKA|ARIZONA|ARKANSAS|CALIFORNIA|COLORADO|CONNECTICUT|DELAWARE|FLORIDA|GEORGIA|HAWAII|IDAHO|ILLINOIS|ILL|INDIANA|IOWA|KANSAS|KENTUCKY|LOUISIANA|MAINE|MARYLAND|MASSACHUSETTS|MICHIGAN|MINNESOTA|MISSISSIPPI|MISSOURI|MONTANA|NEBRASKA|NEVADA|NEW HAMPSHIRE|NEW JERSEY|NEW MEXICO|NEW YORK|NORTH CAROLINA|NORTH DAKOTA|OHIO|OKLAHOMA|OREGON|PENNSYLVANIA|PENN|RHODE ISLAND|SOUTH CAROLINA|SOUTH DAKOTA|TENNESSEE|TENN|TEXAS|TEX|UTAH|VERMONT|VIRGINIA|WASHINGTON|WEST VIRGINIA|WISCONSIN|WYOMING|PUERTO RICO";
+const STATE_NAMES = "ALABAMA|ALA|ALASKA|ARIZONA|ARIZ|ARKANSAS|ARK|CALIFORNIA|CALIF|COLORADO|COLO|CONNECTICUT|CONN|DELAWARE|FLORIDA|FLA|GEORGIA|HAWAII|IDAHO|ILLINOIS|ILL|INDIANA|IOWA|KANSAS|KANS|KENTUCKY|LOUISIANA|MAINE|MARYLAND|MASSACHUSETTS|MASS|MICHIGAN|MICH|MINNESOTA|MINN|MISSISSIPPI|MISS|MISSOURI|MONTANA|MONT|NEBRASKA|NEB|NEVADA|NEV|NEW HAMPSHIRE|NEW JERSEY|NEW MEXICO|NEW YORK|N Y|NORTH CAROLINA|NORTH DAKOTA|OHIO|OKLAHOMA|OKLA|OREGON|ORE|PENNSYLVANIA|PENN|RHODE ISLAND|SOUTH CAROLINA|SOUTH DAKOTA|TENNESSEE|TENN|TEXAS|TEX|UTAH|VERMONT|VIRGINIA|WASHINGTON|WASH|WEST VIRGINIA|WISCONSIN|WIS|WYOMING|WYO|PUERTO RICO";
 const STATE_TO_ABBR: Record<string, string> = {
-  ALABAMA: "AL", ALASKA: "AK", ARIZONA: "AZ", ARKANSAS: "AR", CALIFORNIA: "CA", COLORADO: "CO", CONNECTICUT: "CT", DELAWARE: "DE", FLORIDA: "FL", GEORGIA: "GA", HAWAII: "HI", IDAHO: "ID", ILLINOIS: "IL", ILL: "IL", INDIANA: "IN", IOWA: "IA", KANSAS: "KS", KENTUCKY: "KY", LOUISIANA: "LA", MAINE: "ME", MARYLAND: "MD", MASSACHUSETTS: "MA", MICHIGAN: "MI", MINNESOTA: "MN", MISSISSIPPI: "MS", MISSOURI: "MO", MONTANA: "MT", NEBRASKA: "NE", NEVADA: "NV", "NEW HAMPSHIRE": "NH", "NEW JERSEY": "NJ", "NEW MEXICO": "NM", "NEW YORK": "NY", "NORTH CAROLINA": "NC", "NORTH DAKOTA": "ND", OHIO: "OH", OKLAHOMA: "OK", OREGON: "OR", PENNSYLVANIA: "PA", PENN: "PA", "RHODE ISLAND": "RI", "SOUTH CAROLINA": "SC", "SOUTH DAKOTA": "SD", TENNESSEE: "TN", TENN: "TN", TEXAS: "TX", TEX: "TX", UTAH: "UT", VERMONT: "VT", VIRGINIA: "VA", WASHINGTON: "WA", "WEST VIRGINIA": "WV", WISCONSIN: "WI", WYOMING: "WY", "PUERTO RICO": "PR",
+  ALABAMA: "AL", ALA: "AL", ALASKA: "AK", ARIZONA: "AZ", ARIZ: "AZ", ARKANSAS: "AR", ARK: "AR", CALIFORNIA: "CA", CALIF: "CA", COLORADO: "CO", COLO: "CO", CONNECTICUT: "CT", CONN: "CT", FLA: "FL", KANS: "KS", MASS: "MA", MICH: "MI", MINN: "MN", MISS: "MS", MONT: "MT", NEB: "NE", NEV: "NV", "N Y": "NY", OKLA: "OK", ORE: "OR", WASH: "WA", WIS: "WI", WYO: "WY", DELAWARE: "DE", FLORIDA: "FL", GEORGIA: "GA", HAWAII: "HI", IDAHO: "ID", ILLINOIS: "IL", ILL: "IL", INDIANA: "IN", IOWA: "IA", KANSAS: "KS", KENTUCKY: "KY", LOUISIANA: "LA", MAINE: "ME", MARYLAND: "MD", MASSACHUSETTS: "MA", MICHIGAN: "MI", MINNESOTA: "MN", MISSISSIPPI: "MS", MISSOURI: "MO", MONTANA: "MT", NEBRASKA: "NE", NEVADA: "NV", "NEW HAMPSHIRE": "NH", "NEW JERSEY": "NJ", "NEW MEXICO": "NM", "NEW YORK": "NY", "NORTH CAROLINA": "NC", "NORTH DAKOTA": "ND", OHIO: "OH", OKLAHOMA: "OK", OREGON: "OR", PENNSYLVANIA: "PA", PENN: "PA", "RHODE ISLAND": "RI", "SOUTH CAROLINA": "SC", "SOUTH DAKOTA": "SD", TENNESSEE: "TN", TENN: "TN", TEXAS: "TX", TEX: "TX", UTAH: "UT", VERMONT: "VT", VIRGINIA: "VA", WASHINGTON: "WA", "WEST VIRGINIA": "WV", WISCONSIN: "WI", WYOMING: "WY", "PUERTO RICO": "PR",
 };
 
-const COUPON = /\b\d{1,2}(?:\.\d{1,4})?\s*%/;
+const COUPON = /\b\d{1,2}(?:\.\d{1,4})?\s*%|\b\d\.\d{3,4}\s+(?:\d{2}\s\d{2}\s\d{2,4}|\d{6})\b/;
+const FUND_FAMILY = /\b(?:NUVEEN|FRANKLIN|PIMCO|VANGUARD|FIDELITY|BLACKROCK|INVESCO|AMERICAN FUNDS|AMER FUNDS|T ROWE|DODGE AND COX|DODGE COX|SCHWAB|JANUS|LORD ABBETT|MFS|PUTNAM|OPPENHEIMER|EATON VANCE|COLUMBIA|DIMENSIONAL|DFA|THORNBURG|WESTWOOD|ALLSPRING|BRANDYWINE|NEUBERGER|BARON|MAINSTAY|GOLDMAN SACHS FUNDS|JPMORGAN FUNDS|ISHARES|SPDR)\b/;
 const MATURITY = /\bDUE\b|\bMATUR/;
-const MUNI_WORDS = new RegExp(`\\b(?:CNTY|COUNTY|CITY|TOWN|TWP|TOWNSHIP|VLG|VILLAGE|SCH DIST|SCHOOL DIST|ISD|INDPT SCH|IND SCH|UNI SCH|MUN\\b|MUNI\\b|MUNICIPAL|PUB PWR|PWR DIST|WTR|WATER|SWR|SEWER|UTIL|UTILS|HSG|HOUSING|HLTH|HEALTH|HOSP|FACS|AUTH|AUTHORITY|MUD\\b|DIST\\b|DISTRICT|RFDG|REFUNDING|REV\\b|REVENUE|GO BDS|G O BDS|GEN OBLIG|BDS\\b|BONDS|B/E|PSF GTD|ST INTRCPT|CR ENH|TRANSN|TRANSIT|AIRPORT|TPK|TURNPIKE|TOLL|PORT AUTH|UNIV\\b|UNIVERSITY|COLLEGE|COMMWLTH|COMMONWEALTH|STATE OF|ST\\b)`);
+// Public-issuer words. "B/E" (book entry) is deliberately absent: corporate
+// notes print it too ("MICROSOFT B/E 03.300% 020627", Grok, Sep 7).
+const MUNI_WORDS = new RegExp(`\\b(?:CNTY|COUNTY|CITY|TOWN|TWP|TOWNSHIP|VLG|VILLAGE|SCH DIST|SCHOOL DIST|SCH BRD|SCHS|ISD|INDPT SCH|IND SCH|UNI SCH|MUN\\b|MUNI\\b|MUNICIPAL|PUB PWR|PWR DIST|WTR|WATER|SWR|SEWER|UTIL|UTILS|HSG|HOUSING|HLTH|HEALTH|HOSP|FACS|AUTH|AUTHORITY|MUD\\b|DIST\\b|DISTRICT|RFDG|REFUNDING|REV\\b|REVENUE|GO BDS|G O BDS|GEN OBLIG|BDS\\b|BONDS|PSF GTD|ST INTRCPT|CR ENH|TRANSN|TRANSIT|AIRPORT|TPK|TURNPIKE|TOLL|PORT AUTH|UNIV\\b|UNIVERSITY|COLLEGE|CLLGS|COMMWLTH|COMMONWEALTH|STATE OF|BRD ED|CTFS|ELEC SYS|IMPT|INDL DEV|ECON DEV|ECONOM)`);
+const CORP_WORDS = /\b(?:INC|CORP|CORPORATION|CO\b|COMPANY|LLC|PLC|LTD|HLDGS|HOLDINGS|GROUP|BANCORP|BANK|FINL|FINANCIAL|TRUST|NTS?|NOTES?|SR|SENIOR)\b/;
 const STATE_IN_LINE = new RegExp(`\\b(?:${STATE_ABBR}|${STATE_NAMES})\\b`);
 
 export function classifyInstrument(description: string, filedTicker: string | null | undefined): InstrumentCall {
@@ -78,14 +82,32 @@ export function classifyInstrument(description: string, filedTicker: string | nu
   if (/\b(?:US|U S|UNITED STATES) TREAS(?:URY)?\b|\bTREASURY (?:BILL|NOTE|BOND|BILLS|NOTES|BONDS)\b|\bT-?BILL\b|\bUS GOVT\b/.test(u) && !/\bETF\b|\bFUND\b|\bFD\b/.test(u)) {
     return { type: "treasury", issuerLabel: "U.S. Treasury", rule: "treasury words" };
   }
-  // A municipal bond: a public issuer word plus a state, or the book-entry
-  // and coupon signature every muni line carries.
+  // A fund family's product is a fund even when the line says "municipal
+  // bond" ("NUVEEN NJ MUNICIPAL BOND A" is a Nuveen fund share class).
+  if (FUND_FAMILY.test(u) && !/\bETF\b/.test(u) && (/\b(?:BOND|BD|MUNI|MUNICIPAL|INCOME|GROWTH|VALUE|EQUITY|BALANCED|ALLOCATION|TAX)\b/.test(u) || /\b[A-C]$/.test(u) || /\bF[12]\b|\bADMIRAL\b|\bINSTL\b|\bINVESTOR\b/.test(u))) {
+    return { type: "mutual_fund", issuerLabel: null, rule: "fund family product" };
+  }
   const hasCoupon = COUPON.test(u);
   const hasMaturity = MATURITY.test(u);
   const muniWord = MUNI_WORDS.test(u);
   const stateWord = STATE_IN_LINE.test(u);
-  if (!/\bETF\b|\bFUND\b|\bFD\b|\bTR\b|\bTRUST\b/.test(u) && muniWord && (stateWord || /\bB\/E\b|\bBDS\b|\bRFDG\b|\bPSF GTD\b|\bCR ENH\b/.test(u)) && (hasCoupon || hasMaturity || /\bB\/E\b|\bBDS\b/.test(u))) {
-    return { type: "municipal_bond", issuerLabel: issuerLabelFor("Municipal bond", u), rule: "muni issuer + coupon/maturity" };
+  const fundLike = /\bETF\b|\bFUND\b|\bFD\b|\bTR\b|\bTRUST\b/.test(u) || FUND_FAMILY.test(u);
+  const corpWord = CORP_WORDS.test(u);
+  // A municipal bond: a public-issuer word with a state (a school district,
+  // county, authority), with or without a coupon; or a city and state with a
+  // coupon or maturity and no corporate word ("BROWNSVILLE TEX 5% DUE
+  // 02/15/39"); or a public-issuer word with the muni markers.
+  if (!fundLike && muniWord && stateWord) {
+    return { type: "municipal_bond", issuerLabel: issuerLabelFor("Municipal bond", u), rule: "public issuer + state" };
+  }
+  if (!fundLike && !corpWord && stateWord && (hasCoupon || hasMaturity)) {
+    return { type: "municipal_bond", issuerLabel: issuerLabelFor("Municipal bond", u), rule: "place + state + coupon/maturity" };
+  }
+  if (!fundLike && muniWord && /\bBDS\b|\bRFDG\b|\bPSF GTD\b|\bCR ENH\b|\bGO BDS\b/.test(u) && (hasCoupon || hasMaturity || /\bB\/E\b|\bBDS\b/.test(u))) {
+    return { type: "municipal_bond", issuerLabel: issuerLabelFor("Municipal bond", u), rule: "muni markers + coupon/maturity" };
+  }
+  if (!fundLike && !corpWord && muniWord && (hasCoupon || hasMaturity)) {
+    return { type: "municipal_bond", issuerLabel: issuerLabelFor("Municipal bond", u), rule: "public issuer + coupon/maturity" };
   }
   // A line that simply says "bond" with a state or public issuer is a
   // municipal bond ("State of Connecticut, bond (Cusip 207758U84)").
@@ -97,10 +119,14 @@ export function classifyInstrument(description: string, filedTicker: string | nu
   // "American Depositary Shares" is an ADR of common stock, not a
   // preferred; only depositary shares of a preferred series count here.
   const adr = /\bAMERICAN DEP(?:OSITARY|OSITORY)? (?:SH|SHS|SHARES|RECEIPTS?)\b|\bADR\b|\bADS\b/.test(u);
-  if (/\bPFD\b|\bPREFERRED\b|\bPERP\b|\bPERPETUAL\b|\bTIER I\b|\bTIER 1\b|\.PR\.|\bSER(?:IES)? [A-Z]{1,2}\b.*\bPFD\b/.test(u) || (!adr && /\bDEP(?:OSITARY)? (?:RP|SH|SHS|SHARES|PFD)\b/.test(u))) {
+  if (/\bPFD\b|\bPREFERRED\b|\bPERP\b|\bPERPETUAL\b|\bTIER I\b|\bTIER 1\b|\bALT TIER\b|\bTIER \d\b|\.PR\.|\bSER(?:IES)? [A-Z]{1,2}\b.*\bPFD\b|\b12\/31\/49\b|\b12\/31\/2049\b|\bPE \d\.\d{2,4}\b/.test(u) || (!adr && /\bDEP(?:OSITARY)? (?:RP|SH|SHS|SHARES|PFD)\b/.test(u))) {
     return { type: "preferred", issuerLabel: issuerLabelFor("Preferred stock", u), rule: "preferred words" };
   }
-  if (/\bNTS?\b|\bNOTES?\b|\bSR (?:NT|NOTE|UNSECURED|SECURED)\b|\bSENIOR (?:NOTE|UNSECURED|SECURED)\b|\bDEBENTURE|\bFXD TO\b|\bTHRAFTR\b|\bSUBORDINATED\b|\bCONV\b.*\bDUE\b/.test(u) || (hasCoupon && hasMaturity && !/\bETF\b|\bFUND\b|\bFD\b/.test(u))) {
+  // A coupon with a maturity, a dated ("DTD") issue, or a six-digit
+  // maturity code is a note even without the word ("MICROSOFT B/E 03.300%
+  // 020627 DTD020617", Grok, Sep 7).
+  const datedNote = hasCoupon && (hasMaturity || /\bDTD\s*\d{6}\b|\b\d{6}\b/.test(u));
+  if (/\bNTS?\b|\bNOTES?\b|\bSR (?:NT|NOTE|UNSECURED|SECURED)\b|\bSENIOR (?:NOTE|UNSECURED|SECURED)\b|\bDEBENTURE|\bFXD TO\b|\bTHRAFTR\b|\bSUBORDINATED\b|\bCONV\b.*\bDUE\b/.test(u) || (datedNote && !fundLike)) {
     return { type: "corporate_note", issuerLabel: issuerLabelFor("Corporate note", u), rule: "note words or coupon + maturity" };
   }
   if (/\bETF\b|\bETN\b|\bISHARES\b|\bSPDR\b|\bSELECT SECTOR\b|\bINDEX FD\b|\bINDEX FUND\b|\bVANGUARD\b.*\b(?:ETF|INDEX|FD|FUND)\b|\bINVESCO QQQ\b|\bARK\b.*\bETF\b/.test(u)) {

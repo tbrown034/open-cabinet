@@ -67,6 +67,13 @@ describe("instrument typing", () => {
     expect(t("SPDR SERIES TRUST STATE STREET SPDR PORTFOLIO HIGH YIELD BOND ETF DISCRETIONARY ORDER J.P. MORGAN SECURITIES LLC")).toBe("etf");
     expect(t("Dodge & Cox International Stock Fund (DODFX)")).toBe("mutual_fund");
     expect(t("AMERICAN GW FD OF AMERICA F2 CONFIRM NBR (GFFFX)")).toBe("mutual_fund");
+    expect(t("MICROSOFT B/E 03.300% 020627 DTD020617")).toBe("corporate_note");
+    expect(t("BROWNSVILLE TEX 5% DUE 02/15/39")).toBe("municipal_bond");
+    expect(t("COOK CNTY ILL CMNTY CONS SCH DIST NO 015")).toBe("municipal_bond");
+    expect(t("NUVEEN NJ MUNICIPAL BOND A")).toBe("mutual_fund");
+    expect(t("JPMORGAN CHASE ALT TIER 3.6500 12/31/49")).toBe("preferred");
+    expect(t("Texas Roadhouse Inc")).toBe("common_stock");
+    expect(t("Washington Federal Inc")).toBe("common_stock");
     expect(t("TEXAS INSTRS INC")).toBe("common_stock");
     expect(t("Haleon plc American Depositary Shares (Each representing two Ordinary Shares) (HLN)")).toBe("common_stock");
     expect(t("AGNC Investment Corp. Depositary Shares Each Representing a 1/1000th Interest in a Share of 7.00% Series C Preferred Stock (AGNCN)")).toBe("preferred");
@@ -146,6 +153,15 @@ describe("resolution rules", () => {
     expect(jpm.resolvedTicker === null || jpm.resolvedTicker === "JPM").toBe(true);
     expect(jpm.candidates).not.toContain("AMJB");
   });
+  it("an ETF's printed symbol resolves only when every distinctive printed word is in the listing", () => {
+    const ok = r("Vanguard Tax-Exempt Bond Index Fund ETF (VTEB)", "VTEB");
+    expect([ok.tier, ok.resolvedTicker]).toEqual(["T1", "VTEB"]);
+    const wrongSector = r("Energy Select Sector SPDR Fund (XLF)", "XLF");
+    expect(wrongSector.resolvedTicker).toBeNull();
+    const wrongAsset = r("Vanguard Total Bond Market Index Fund ETF (VTI)", "VTI");
+    expect(wrongAsset.resolvedTicker).toBeNull();
+  });
+
   it("a truncated broker name is a T2 candidate, never T1", () => {
     const x = r("FIDELITY NATL INFORMATIO");
     expect(x.tier).not.toBe("T1");
