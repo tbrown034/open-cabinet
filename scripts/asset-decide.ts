@@ -6,7 +6,7 @@
  *   npx tsx scripts/asset-decide.ts queue [--min 3] [--limit 60]
  *   npx tsx scripts/asset-decide.ts accept "<name key>" <SYMBOL> "<evidence: what you checked>"
  *   npx tsx scripts/asset-decide.ts reject "<name key>" "<reason>"
- *   npx tsx scripts/asset-decide.ts accept-batch <recommendations.csv> [--confidence High] [--by trevor]
+ *   npx tsx scripts/asset-decide.ts accept-batch <recommendations.csv> [--confidence High] [--by trevor] [--note "..."]
  *       every row of the CSV (nameKey,symbol,confidence,reason) at the given
  *       confidence or better is accepted through the same checks as
  *       "accept"; rows that fail a check are listed and skipped. Meant for
@@ -112,11 +112,12 @@ function main() {
     const file = rest[0];
     const minConf = rest[rest.indexOf("--confidence") + 1] || "High";
     const by = rest.indexOf("--by") > 0 ? rest[rest.indexOf("--by") + 1] : who;
+    const note = rest.indexOf("--note") > 0 ? rest[rest.indexOf("--note") + 1] + " " : "";
     const rank: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
     let ok = 0, skipped = 0;
     for (const { nameKey: key, symbol: sym, confidence: conf, reason } of parseRecommendationsCsv(readFileSync(file, "utf-8"))) {
       if (!sym || (rank[conf] ?? 0) < (rank[minConf] ?? 3)) { skipped++; continue; }
-      const r = acceptName(key, sym, `${conf}: ${reason}`, by);
+      const r = acceptName(key, sym, `${note}${conf}: ${reason}`, by);
       if (r.ok) ok++; else { skipped++; console.log(`  skip ${key}: ${r.why}`); }
     }
     console.log(`accepted ${ok}, skipped ${skipped}. Run pnpm asset-resolution to apply.`);

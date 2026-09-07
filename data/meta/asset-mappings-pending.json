@@ -3,7 +3,7 @@
     "version": 1,
     "generatedBy": "scripts/seed-asset-registry.ts",
     "reason": "symbols filed on published rows that the SEC company list does not carry; identity awaits a person",
-    "entries": 157
+    "entries": 162
   },
   "pending": {
     "AAGIY": {
@@ -367,6 +367,30 @@
         "evidence": null
       }
     },
+    "BWX": {
+      "symbol": "BWX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "STATE STREET SPDR BLOOMBERG INTERNATIONAL TREASURY BOND ETF",
+        "State Street SPDR Bloomberg International Treasury Bond ETF"
+      ],
+      "filedSymbols": [
+        "BWX",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "CDDRX": {
       "symbol": "CDDRX",
       "reason": "not in SEC company_tickers.json",
@@ -425,6 +449,29 @@
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "COMT": {
+      "symbol": "COMT",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ISHARES GSCI COMMODITY DYNAMIC ROLL STRATEGY ETF"
+      ],
+      "filedSymbols": [
+        "COMT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -643,15 +690,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ISHARES MSCI CANADA ETF",
         "iShares MSCI Canada ETF (EWC)"
       ],
       "filedSymbols": [
         "EWC",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 5,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -689,15 +738,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCI Japan ETF (EWJ)"
+        "ISHARES MSCI JAPAN ETF",
+        "iShares MSCI Japan ETF (EWJ)",
+        "iShares MSCI Japan ETF"
       ],
       "filedSymbols": [
         "EWJ",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 7,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1005,15 +1057,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares US Treasury Bond ETF"
+        "iShares US Treasury Bond ETF",
+        "ISHARES U.S. TREASURY BOND ETF"
       ],
       "filedSymbols": [
         "GOVT",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 1,
+      "rows": 7,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1163,14 +1217,39 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ISHARES CORE MSCI EMERGING MARKETS ETF",
         "iShares Core MSCI Emerging Markets ETF"
       ],
       "filedSymbols": [
         "IEMG",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 9,
+      "officials": 2,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "IGOV": {
+      "symbol": "IGOV",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ISHARES INTERNATIONAL TREASURY BOND ETF"
+      ],
+      "filedSymbols": [
+        "IGOV",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1300,15 +1379,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares Russell 1000 Growth ETF"
+        "iShares Russell 1000 Growth ETF",
+        "IWF - ISHARES RUSSELL 1000 GRW ETF"
       ],
       "filedSymbols": [
         "IWF",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 8,
-      "officials": 1,
+      "rows": 11,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2176,14 +2257,16 @@
       "displayName": null,
       "filedAs": [
         "Schwab US Small Cap ETF",
+        "Schwab Fund US Small Cap ETF",
         "Schwab US Small-Cap ETF"
       ],
       "filedSymbols": [
         "SCHA",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 24,
+      "rows": 35,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -2267,14 +2350,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Schwab US Large Cap ETF"
+        "Schwab US Large Cap ETF",
+        "Schwab Fund US Large Cap ETF"
       ],
       "filedSymbols": [
         "SCHX",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 22,
+      "rows": 33,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -3025,6 +3110,29 @@
         "evidence": null
       }
     },
+    "VGK": {
+      "symbol": "VGK",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "VANGUARD FTSE EUROPE ETF"
+      ],
+      "filedSymbols": [
+        "VGK",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "VIG": {
       "symbol": "VIG",
       "reason": "not in SEC company_tickers.json",
@@ -3033,14 +3141,16 @@
       "displayName": null,
       "filedAs": [
         "Vanguard Dividend Appreciation Index Fund ETF Class Shares",
-        "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)"
+        "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)",
+        "VANGUARD DIVIDEND APPRECIATION INDEX FUND ETF SHARES"
       ],
       "filedSymbols": [
-        "VIG"
+        "VIG",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 19,
-      "officials": 2,
+      "rows": 23,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3125,17 +3235,20 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VANGUARD S&P 500 ETF UNSOLICITED",
         "Vanguard 500 Index Fund ETF Shares",
+        "VANGUARD S&P 500 ETF",
         "vanguard S&P 500 (VOO)",
         "Vanguard S&P 500 (VOO)"
       ],
       "filedSymbols": [
         "VOO",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 2,
+      "rows": 11,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3198,14 +3311,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Total Stock Market Index Fund ETF Class Shares"
+        "Vanguard Total Stock Market Index Fund ETF Class Shares",
+        "VANGUARD TOTAL STOCK MARKET INDEX FUND ETF SHARES"
       ],
       "filedSymbols": [
-        "VTI"
+        "VTI",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 6,
-      "officials": 2,
+      "rows": 9,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3444,20 +3559,22 @@
     "XLE": {
       "symbol": "XLE",
       "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
+      "instrumentType": "etf",
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "STATE STREET ENERGY SELECT SECTOR SPDR ETF",
         "Energy Select Sector SPDR Fund",
         "Energy Select Sector SPDR Fund (XLE)"
       ],
       "filedSymbols": [
         "XLE",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 2,
+      "rows": 7,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3492,19 +3609,21 @@
     "XLP": {
       "symbol": "XLP",
       "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
+      "instrumentType": "etf",
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "STATE STREET CONSUMER STAPLES SELECT SECTOR SPDR ETF",
         "Consumer Staples Select Sector SPDR Fund (XLP)"
       ],
       "filedSymbols": [
         "XLP",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 5,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3552,6 +3671,29 @@
       "aliases": [],
       "rows": 4,
       "officials": 2,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "XLY": {
+      "symbol": "XLY",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "STATE STREET CONSUMER DISCRETIONARY SELECT SECTOR SPDR ETF"
+      ],
+      "filedSymbols": [
+        "XLY",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
       "review": {
         "status": "unreviewed",
         "reviewer": null,

@@ -1,4 +1,1589 @@
 {
   "version": 1,
-  "entries": []
+  "entries": [
+    {
+      "nameKey": "FIDELITY NATL INFORMATIO",
+      "ticker": "FIS",
+      "displayName": "Fidelity National Information Services, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:52:33.856Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes to only one listing, Fidelity National Information Services; FNF is the separate Fidelity National Financial."
+    },
+    {
+      "nameKey": "GALLAGHER ARTHUR J",
+      "ticker": "AJG",
+      "displayName": "Arthur J. Gallagher & Co. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:53:25.318Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Inverted broker style for Arthur J. Gallagher & Co."
+    },
+    {
+      "nameKey": "IBM",
+      "ticker": "IBM",
+      "displayName": "International Business Machines Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:53:29.992Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Ticker and issuer match International Business Machines exactly."
+    },
+    {
+      "nameKey": "MARSH MCLENNAN",
+      "ticker": "MRSH",
+      "displayName": "Marsh Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:53:36.286Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Marsh & McLennan now lists as Marsh; MMC is absent from the directory and MRSH is the only Marsh common line."
+    },
+    {
+      "nameKey": "VERIZON COMM I",
+      "ticker": "VZ",
+      "displayName": "Verizon Communications Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:53:38.139Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncated Verizon Communications Inc.; only one Verizon common line."
+    },
+    {
+      "nameKey": "AMER TOWER REIT",
+      "ticker": "AMT",
+      "displayName": "American Tower Corporation (REIT) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:53:43.486Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Listing name is American Tower Corporation (REIT)."
+    },
+    {
+      "nameKey": "GE AEROSPACE",
+      "ticker": "GE",
+      "displayName": "GE Aerospace Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:16.577Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Listing name is literally GE Aerospace."
+    },
+    {
+      "nameKey": "DISNEY WALT",
+      "ticker": "DIS",
+      "displayName": "Walt Disney Company (The) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:19.369Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Inverted broker style for Walt Disney Company."
+    },
+    {
+      "nameKey": "HENRY JACK ASSOC",
+      "ticker": "JKHY",
+      "displayName": "Jack Henry & Associates, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:24.286Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Inverted broker style for Jack Henry & Associates."
+    },
+    {
+      "nameKey": "SPMD S P 400 MID CAP ETF",
+      "ticker": "SPMD",
+      "displayName": "State Street SPDR Portfolio S&P 400 Mid Cap ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:30.973Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Filed ticker matches the SPDR Portfolio S&P 400 Mid Cap ETF listing."
+    },
+    {
+      "nameKey": "CHARLES SCHWAB US REIT ETF",
+      "ticker": "SCHH",
+      "displayName": "Schwab U.S. REIT ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:35.242Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: ETF gets its own symbol; Schwab U.S. REIT ETF is SCHH, not the sponsor SCHW."
+    },
+    {
+      "nameKey": "CROWN CASTLE REIT REIT",
+      "ticker": "CCI",
+      "displayName": "Crown Castle Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:58:58.790Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Doubled REIT token is a parser artifact; Crown Castle Inc. is the only match."
+    },
+    {
+      "nameKey": "SCHWAB FUND US LARGE CAP ETF",
+      "ticker": "SCHX",
+      "displayName": "Schwab U.S. Large-Cap ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:00.929Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Schwab U.S. Large-Cap ETF; the ETF's own symbol, not SCHW."
+    },
+    {
+      "nameKey": "SCHWAB FUND US SMALL CAP ETF",
+      "ticker": "SCHA",
+      "displayName": "Schwab U.S. Small-Cap ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:02.386Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Schwab U.S. Small-Cap ETF; the ETF's own symbol, not SCHW."
+    },
+    {
+      "nameKey": "BROADRIDGE FINL SOLUTION",
+      "ticker": "BR",
+      "displayName": "Broadridge Financial Solutions, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:05.039Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Broadridge Financial Solutions."
+    },
+    {
+      "nameKey": "CONSTELLATION ENERGY COR",
+      "ticker": "CEG",
+      "displayName": "Constellation Energy Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:07.273Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Only Constellation Energy Corporation line in the directory."
+    },
+    {
+      "nameKey": "INTERCONTINENTAL EXCHANG",
+      "ticker": "ICE",
+      "displayName": "Intercontinental Exchange Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:13.520Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Intercontinental Exchange Inc."
+    },
+    {
+      "nameKey": "SPY S P 500 SPDR ETF",
+      "ticker": "SPY",
+      "displayName": "State Street SPDR S&P 500 ETF Trust",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:20.378Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Filed ticker matches the SPDR S&P 500 ETF Trust listing."
+    },
+    {
+      "nameKey": "AUTOMATIC DATA PROCESSIN",
+      "ticker": "ADP",
+      "displayName": "Automatic Data Processing, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:27.277Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Automatic Data Processing, Inc."
+    },
+    {
+      "nameKey": "COSTCO WHSL",
+      "ticker": "COST",
+      "displayName": "Costco Wholesale Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:33.297Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Abbreviated Costco Wholesale Corporation."
+    },
+    {
+      "nameKey": "GE HLTHCARE TECHNOLOGI",
+      "ticker": "GEHC",
+      "displayName": "GE HealthCare Technologies Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:34.442Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to GE HealthCare Technologies Inc."
+    },
+    {
+      "nameKey": "LILLY ELI",
+      "ticker": "LLY",
+      "displayName": "Eli Lilly and Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:35.901Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Inverted broker style for Eli Lilly and Company."
+    },
+    {
+      "nameKey": "ROBINHOOD MKTS",
+      "ticker": "HOOD",
+      "displayName": "Robinhood Markets, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T17:59:50.602Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Robinhood Markets, Inc. Class A common; only one listing."
+    },
+    {
+      "nameKey": "VEEVA SYS",
+      "ticker": "VEEV",
+      "displayName": "Veeva Systems Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:36.452Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Veeva Systems Inc. Class A common; only one listing."
+    },
+    {
+      "nameKey": "VERTEX PHARMACEUTICALS I",
+      "ticker": "VRTX",
+      "displayName": "Vertex Pharmaceuticals Incorporated",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:38.153Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncated Vertex Pharmaceuticals Incorporated; Vertex Energy is a different, non-matching name."
+    },
+    {
+      "nameKey": "ADVANCED MICRO DEVIC",
+      "ticker": "AMD",
+      "displayName": "Advanced Micro Devices, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:39.835Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Advanced Micro Devices, Inc."
+    },
+    {
+      "nameKey": "BRIGHT HORIZONS FAMILY S",
+      "ticker": "BFAM",
+      "displayName": "Bright Horizons Family Solutions Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:40.963Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Bright Horizons Family Solutions Inc."
+    },
+    {
+      "nameKey": "COGNIZANT TECHNOLOGY SOL",
+      "ticker": "CTSH",
+      "displayName": "Cognizant Technology Solutions Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:42.095Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncation completes only to Cognizant Technology Solutions Corporation."
+    },
+    {
+      "nameKey": "FACTSET RESH SYS",
+      "ticker": "FDS",
+      "displayName": "FactSet Research Systems Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:43.227Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Abbreviated FactSet Research Systems Inc."
+    },
+    {
+      "nameKey": "INTERNTNL PAPER",
+      "ticker": "IP",
+      "displayName": "International Paper Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:44.631Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Abbreviated International Paper Company."
+    },
+    {
+      "nameKey": "CADENCE DESIGN SYS",
+      "ticker": "CDNS",
+      "displayName": "Cadence Design Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:45.547Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Abbreviated Cadence Design Systems, Inc."
+    },
+    {
+      "nameKey": "CHIPOTLE MEXICAN GRILL I",
+      "ticker": "CMG",
+      "displayName": "Chipotle Mexican Grill, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:46.479Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncated Chipotle Mexican Grill, Inc."
+    },
+    {
+      "nameKey": "CRH PUBLIC",
+      "ticker": "CRH",
+      "displayName": "CRH PLC Ordinary Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:48.085Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: CRH PLC ordinary shares; PUBLIC is the stripped public limited company suffix."
+    },
+    {
+      "nameKey": "D R HORTON",
+      "ticker": "DHI",
+      "displayName": "D.R. Horton, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:48.904Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: D.R. Horton, Inc. with punctuation removed."
+    },
+    {
+      "nameKey": "EQUINIX REIT",
+      "ticker": "EQIX",
+      "displayName": "Equinix, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:49.755Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Equinix, Inc. is the only match; REIT is a descriptor."
+    },
+    {
+      "nameKey": "ERIE INDTY",
+      "ticker": "ERIE",
+      "displayName": "Erie Indemnity Company",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:50.632Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Abbreviated Erie Indemnity Company Class A common."
+    },
+    {
+      "nameKey": "GRAPHIC PACKAGING C",
+      "ticker": "GPK",
+      "displayName": "Graphic Packaging Holding Company",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:01:54.252Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. High: Truncated Graphic Packaging Holding Company."
+    },
+    {
+      "nameKey": "ILLINOIS TOOL WKS",
+      "ticker": "ITW",
+      "displayName": "Illinois Tool Works Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.021Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Illinois Tool Works Inc."
+    },
+    {
+      "nameKey": "PG E",
+      "ticker": "PCG",
+      "displayName": "Pacific Gas & Electric Co. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: PG&E with the ampersand stripped; Pacific Gas & Electric Co. common."
+    },
+    {
+      "nameKey": "ROYAL CARIBBEAN",
+      "ticker": "RCL",
+      "displayName": "Royal Caribbean Cruises Ltd. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Royal Caribbean Cruises Ltd. is the only match."
+    },
+    {
+      "nameKey": "UNION PAC",
+      "ticker": "UNP",
+      "displayName": "Union Pacific Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Union Pacific Corporation."
+    },
+    {
+      "nameKey": "VANGUARD S P 500 ETF",
+      "ticker": "VOO",
+      "displayName": "Vanguard S&P 500 ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Vanguard S&P 500 ETF listing matches exactly."
+    },
+    {
+      "nameKey": "ALEXANDRIA REAL ESTATE E REIT",
+      "ticker": "ARE",
+      "displayName": "Alexandria Real Estate Equities, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Alexandria Real Estate Equities, Inc."
+    },
+    {
+      "nameKey": "BLOCK A",
+      "ticker": "XYZ",
+      "displayName": "Block, Inc. Class A Common Stock,",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Block, Inc. Class A common now trades as XYZ; the old SQ symbol is not in the directory."
+    },
+    {
+      "nameKey": "CARNIVAL",
+      "ticker": "CCL",
+      "displayName": "Carnival Corporation Ltd. Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Carnival Corporation Ltd. common shares; the paired CUK is the UK plc line, not this name."
+    },
+    {
+      "nameKey": "CHARTER COMM I",
+      "ticker": "CHTR",
+      "displayName": "Charter Communications, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.022Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Charter Communications, Inc. Class A common."
+    },
+    {
+      "nameKey": "EOG RES",
+      "ticker": "EOG",
+      "displayName": "EOG Resources, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated EOG Resources, Inc."
+    },
+    {
+      "nameKey": "ITRON EQUITY CLASS EQUITY",
+      "ticker": "ITRI",
+      "displayName": "Itron, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Doubled EQUITY tokens are parser noise; Itron, Inc. is the only match."
+    },
+    {
+      "nameKey": "WABTEC",
+      "ticker": "WAB",
+      "displayName": "Westinghouse Air Brake Technologies Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Wabtec is the trade name of Westinghouse Air Brake Technologies Corporation."
+    },
+    {
+      "nameKey": "ADVANCE AUTO PTS",
+      "ticker": "AAP",
+      "displayName": "Advance Auto Parts Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Advance Auto Parts Inc."
+    },
+    {
+      "nameKey": "AMAZON COM",
+      "ticker": "AMZN",
+      "displayName": "Amazon.com, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Amazon.com, Inc. common stock."
+    },
+    {
+      "nameKey": "BLACKSTONE MTG TR REIT",
+      "ticker": "BXMT",
+      "displayName": "Blackstone Mortgage Trust, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Blackstone Mortgage Trust, Inc."
+    },
+    {
+      "nameKey": "BLOCK H R",
+      "ticker": "HRB",
+      "displayName": "H&R Block, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for H&R Block, Inc.; unrelated to Block, Inc."
+    },
+    {
+      "nameKey": "CALIFORNIA WTR SVC",
+      "ticker": "CWT",
+      "displayName": "California Water Service Group Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated California Water Service Group."
+    },
+    {
+      "nameKey": "CINEMARK",
+      "ticker": "CNK",
+      "displayName": "Cinemark Holdings Inc Cinemark Holdings, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Cinemark Holdings, Inc. common stock."
+    },
+    {
+      "nameKey": "CISCO SYS",
+      "ticker": "CSCO",
+      "displayName": "Cisco Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.023Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Cisco Systems, Inc."
+    },
+    {
+      "nameKey": "DIGITAL REALTY TRUST REIT",
+      "ticker": "DLR",
+      "displayName": "Digital Realty Trust, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Digital Realty Trust, Inc. common stock."
+    },
+    {
+      "nameKey": "DORMAN PRODS",
+      "ticker": "DORM",
+      "displayName": "Dorman Products, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Dorman Products, Inc."
+    },
+    {
+      "nameKey": "EPAM SYS",
+      "ticker": "EPAM",
+      "displayName": "EPAM Systems, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated EPAM Systems, Inc."
+    },
+    {
+      "nameKey": "ESSENTIAL PPTYS RLTY TR REIT",
+      "ticker": "EPRT",
+      "displayName": "Essential Properties Realty Trust, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Essential Properties Realty Trust, Inc."
+    },
+    {
+      "nameKey": "GENERAC",
+      "ticker": "GNRC",
+      "displayName": "Generac Holdlings Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Generac Holdings Inc. common stock."
+    },
+    {
+      "nameKey": "INSPIRE MED SYS",
+      "ticker": "INSP",
+      "displayName": "Inspire Medical Systems, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Inspire Medical Systems, Inc."
+    },
+    {
+      "nameKey": "ISHARES CORE MSCI EMERGING MARKETS ETF",
+      "ticker": "IEMG",
+      "displayName": "iShares Core MSCI Emerging Markets ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the iShares Core MSCI Emerging Markets ETF listing."
+    },
+    {
+      "nameKey": "ISHARES GSCI COMMODITY DYNAMIC ROLL STRATEGY ETF",
+      "ticker": "COMT",
+      "displayName": "iShares GSCI Commodity Dynamic Roll Strategy ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the iShares GSCI Commodity Dynamic Roll Strategy ETF listing."
+    },
+    {
+      "nameKey": "ISHARES MSCI JAPAN ETF",
+      "ticker": "EWJ",
+      "displayName": "iShares MSCI Japan Index Fund",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: iShares MSCI Japan Index Fund is the same fund under its directory name."
+    },
+    {
+      "nameKey": "KINSALE CAP",
+      "ticker": "KNSL",
+      "displayName": "Kinsale Capital Group, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.024Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Kinsale Capital Group, Inc."
+    },
+    {
+      "nameKey": "MASTERCARD CLASS",
+      "ticker": "MA",
+      "displayName": "Mastercard Incorporated Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Only one Mastercard Incorporated common line; CLASS is a stripped share-class token."
+    },
+    {
+      "nameKey": "META PLATFORMS CLASS",
+      "ticker": "META",
+      "displayName": "Meta Platforms, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Meta Platforms, Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "RITHM CAPITAL REIT",
+      "ticker": "RITM",
+      "displayName": "Rithm Capital Corp. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Rithm Capital Corp. common stock."
+    },
+    {
+      "nameKey": "RYMAN HOSPITALITY PPTYS REIT",
+      "ticker": "RHP",
+      "displayName": "Ryman Hospitality Properties, Inc. (REIT)",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Ryman Hospitality Properties, Inc. (REIT)."
+    },
+    {
+      "nameKey": "SEMPRA",
+      "ticker": "SRE",
+      "displayName": "DBA Sempra Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Sempra common stock."
+    },
+    {
+      "nameKey": "SMUCKER J M",
+      "ticker": "SJM",
+      "displayName": "The J.M. Smucker Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for The J.M. Smucker Company."
+    },
+    {
+      "nameKey": "STELLANTIS",
+      "ticker": "STLA",
+      "displayName": "Stellantis N.V. Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Stellantis N.V. common shares."
+    },
+    {
+      "nameKey": "TARGA RES",
+      "ticker": "TRGP",
+      "displayName": "Targa Resources, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Targa Resources, Inc."
+    },
+    {
+      "nameKey": "TRADE DESK CLASS",
+      "ticker": "TTD",
+      "displayName": "The Trade Desk, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.025Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: The Trade Desk, Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "UNIFIRST MASS",
+      "ticker": "UNF",
+      "displayName": "Unifirst Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Unifirst Corporation; MASS is the stripped Massachusetts state-of-incorporation token."
+    },
+    {
+      "nameKey": "VICI PPTYS REIT",
+      "ticker": "VICI",
+      "displayName": "VICI Properties Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated VICI Properties Inc."
+    },
+    {
+      "nameKey": "VISA CLASS",
+      "ticker": "V",
+      "displayName": "Visa Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Only one Visa Inc. line in the directory; the Class B and C shares are unlisted."
+    },
+    {
+      "nameKey": "ADOBE DELAWARE",
+      "ticker": "ADBE",
+      "displayName": "Adobe Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Adobe Inc.; DELAWARE is the stripped state-of-incorporation token."
+    },
+    {
+      "nameKey": "AMER WTR WKS",
+      "ticker": "AWK",
+      "displayName": "American Water Works Company, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated American Water Works Company, Inc."
+    },
+    {
+      "nameKey": "ARBOR RLTY TR REIT",
+      "ticker": "ABR",
+      "displayName": "Arbor Realty Trust Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Arbor Realty Trust."
+    },
+    {
+      "nameKey": "ATMUS FILTRATION TECHNOL",
+      "ticker": "ATMU",
+      "displayName": "Atmus Filtration Technologies Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncation completes only to Atmus Filtration Technologies Inc."
+    },
+    {
+      "nameKey": "BANK HAWAII",
+      "ticker": "BOH",
+      "displayName": "Bank of Hawaii Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.026Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Bank of Hawaii Corporation with the of dropped."
+    },
+    {
+      "nameKey": "BANK OF AMER",
+      "ticker": "BAC",
+      "displayName": "Bank of America Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Bank of America Corporation common stock."
+    },
+    {
+      "nameKey": "CADENCE DESIGN SYSTEM",
+      "ticker": "CDNS",
+      "displayName": "Cadence Design Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Same issuer as CADENCE DESIGN SYS; Cadence Design Systems, Inc."
+    },
+    {
+      "nameKey": "CBRE CLASS",
+      "ticker": "CBRE",
+      "displayName": "CBRE Group Inc Common Stock Class A",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: CBRE Group Inc Common Stock Class A is the only listed class."
+    },
+    {
+      "nameKey": "CHESAPEAKE UTILS",
+      "ticker": "CPK",
+      "displayName": "Chesapeake Utilities Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Chesapeake Utilities Corporation."
+    },
+    {
+      "nameKey": "CME CLASS",
+      "ticker": "CME",
+      "displayName": "CME Group Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: CME Group Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "COGENT COMM HL",
+      "ticker": "CCOI",
+      "displayName": "Cogent Communications Holdings, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Cogent Communications Holdings, Inc."
+    },
+    {
+      "nameKey": "COMMUNITY FINL SYS",
+      "ticker": "CBU",
+      "displayName": "Community Financial System, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.027Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Community Financial System, Inc."
+    },
+    {
+      "nameKey": "COMMVAULT SYS",
+      "ticker": "CVLT",
+      "displayName": "Commvault Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Commvault Systems, Inc."
+    },
+    {
+      "nameKey": "COMSTOCK RES",
+      "ticker": "CRK",
+      "displayName": "Comstock Resources, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Comstock Resources, Inc.; distinct from Comstock Inc."
+    },
+    {
+      "nameKey": "DOUGLAS EMMETT REIT",
+      "ticker": "DEI",
+      "displayName": "Douglas Emmett, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Douglas Emmett, Inc. common stock."
+    },
+    {
+      "nameKey": "EMERSON ELEC",
+      "ticker": "EMR",
+      "displayName": "Emerson Electric Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Emerson Electric Company."
+    },
+    {
+      "nameKey": "EVERSOURCE ENERGY",
+      "ticker": "ES",
+      "displayName": "Eversource Energy (D/B/A) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Eversource Energy common stock."
+    },
+    {
+      "nameKey": "FRANKLIN ELEC",
+      "ticker": "FELE",
+      "displayName": "Franklin Electric Co., Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Franklin Electric Co., Inc.; distinct from Franklin Resources."
+    },
+    {
+      "nameKey": "GATES INDL",
+      "ticker": "GTES",
+      "displayName": "Gates Industrial Corporation Ltd. Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.028Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Gates Industrial Corporation Ltd."
+    },
+    {
+      "nameKey": "GENL ELEC",
+      "ticker": "GE",
+      "displayName": "GE Aerospace Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: General Electric renamed to GE Aerospace, which holds the GE symbol."
+    },
+    {
+      "nameKey": "INSMED PAR 01",
+      "ticker": "INSM",
+      "displayName": "Insmed Incorporated",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Insmed Incorporated; PAR 01 is the stripped par-value note."
+    },
+    {
+      "nameKey": "JOHNSON CONTROLS INTL",
+      "ticker": "JCI",
+      "displayName": "Johnson Controls International plc Ordinary Share",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Johnson Controls International plc ordinary shares."
+    },
+    {
+      "nameKey": "LAUREATE ED",
+      "ticker": "LAUR",
+      "displayName": "Laureate Education, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Laureate Education, Inc."
+    },
+    {
+      "nameKey": "LYONDELLBASELL INDUSTR",
+      "ticker": "LYB",
+      "displayName": "LyondellBasell Industries NV Ordinary Shares Class A (Netherlands)",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated LyondellBasell Industries NV Class A ordinary shares."
+    },
+    {
+      "nameKey": "MANHATTAN ASSOCS",
+      "ticker": "MANH",
+      "displayName": "Manhattan Associates, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Manhattan Associates, Inc."
+    },
+    {
+      "nameKey": "MARSH",
+      "ticker": "MRSH",
+      "displayName": "Marsh Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.029Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Marsh is the current listed name of the former Marsh & McLennan."
+    },
+    {
+      "nameKey": "MARTIN MARIETTA MATLS",
+      "ticker": "MLM",
+      "displayName": "Martin Marietta Materials, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Martin Marietta Materials, Inc."
+    },
+    {
+      "nameKey": "MERCHANTS BANCORP IND",
+      "ticker": "MBIN",
+      "displayName": "Merchants Bancorp",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Merchants Bancorp; IND is the stripped Indiana state token."
+    },
+    {
+      "nameKey": "MERIT MED SYS",
+      "ticker": "MMSI",
+      "displayName": "Merit Medical Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Merit Medical Systems, Inc."
+    },
+    {
+      "nameKey": "MONOLITHIC POWER SYSTEM",
+      "ticker": "MPWR",
+      "displayName": "Monolithic Power Systems, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Monolithic Power Systems, Inc."
+    },
+    {
+      "nameKey": "MUELLER WATER PRODUC CLASS SERIES A",
+      "ticker": "MWA",
+      "displayName": "MUELLER WATER PRODUCTS Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Mueller Water Products; the Series A common is the only listed line."
+    },
+    {
+      "nameKey": "NIKE CLASS",
+      "ticker": "NKE",
+      "displayName": "Nike, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Nike, Inc. Class B is the only listed class."
+    },
+    {
+      "nameKey": "PRESTIGE CONSUMER HLTH",
+      "ticker": "PBH",
+      "displayName": "Prestige Consumer Healthcare Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Prestige Consumer Healthcare Inc."
+    },
+    {
+      "nameKey": "PRICE T ROWE",
+      "ticker": "TROW",
+      "displayName": "T. Rowe Price Group, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.030Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for T. Rowe Price Group, Inc."
+    },
+    {
+      "nameKey": "PUBLIC SVC ENTERPRISE GR",
+      "ticker": "PEG",
+      "displayName": "Public Service Enterprise Group Incorporated Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.031Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Public Service Enterprise Group Incorporated."
+    },
+    {
+      "nameKey": "ROCKET CLA A",
+      "ticker": "RKT",
+      "displayName": "Rocket Companies, Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.031Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Rocket Companies, Inc. Class A common; CLA A is a truncated class token."
+    },
+    {
+      "nameKey": "ROYAL CARIBBEAN GROU",
+      "ticker": "RCL",
+      "displayName": "Royal Caribbean Cruises Ltd. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.031Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Royal Caribbean Group, listed as Royal Caribbean Cruises Ltd."
+    },
+    {
+      "nameKey": "SCHWAB CHARLES",
+      "ticker": "SCHW",
+      "displayName": "Charles Schwab Corporation (The) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.031Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for The Charles Schwab Corporation, the operating company rather than a Schwab fund."
+    },
+    {
+      "nameKey": "SERVISFIRST BANCSHARES I",
+      "ticker": "SFBS",
+      "displayName": "ServisFirst Bancshares, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.031Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated ServisFirst Bancshares, Inc."
+    },
+    {
+      "nameKey": "SLB",
+      "ticker": "SLB",
+      "displayName": "SLB Limited Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.032Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: SLB Limited common shares, the former Schlumberger."
+    },
+    {
+      "nameKey": "SPROUTS FMRS MKT",
+      "ticker": "SFM",
+      "displayName": "Sprouts Farmers Market, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.032Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Sprouts Farmers Market, Inc."
+    },
+    {
+      "nameKey": "STATE STREET CONSUMER DISCRETIONARY SELECT SECTOR SPDR ETF",
+      "ticker": "XLY",
+      "displayName": "State Street Consumer Discretionary Select Sector SPDR ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.032Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the Consumer Discretionary Select Sector SPDR ETF listing."
+    },
+    {
+      "nameKey": "TAKE TWO INTERACTV SOF",
+      "ticker": "TTWO",
+      "displayName": "Take-Two Interactive Software, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.032Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Take-Two Interactive Software, Inc."
+    },
+    {
+      "nameKey": "TERRENO RLTY REIT",
+      "ticker": "TRNO",
+      "displayName": "Terreno Realty Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Terreno Realty Corporation."
+    },
+    {
+      "nameKey": "TRIMBLE NAV",
+      "ticker": "TRMB",
+      "displayName": "Trimble Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Trimble Inc., formerly Trimble Navigation."
+    },
+    {
+      "nameKey": "VANGUARD DIVIDEND APPRECIATION INDEX FUND ETF",
+      "ticker": "VIG",
+      "displayName": "Vanguard Div Appreciation ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: The ETF share class of Vanguard Dividend Appreciation is VIG."
+    },
+    {
+      "nameKey": "VEEVA SYS CLASS",
+      "ticker": "VEEV",
+      "displayName": "Veeva Systems Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Veeva Systems Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "VULCAN MATLS",
+      "ticker": "VMC",
+      "displayName": "Vulcan Materials Company (Holding Company) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Vulcan Materials Company."
+    },
+    {
+      "nameKey": "WALT DISNEY DISNEY",
+      "ticker": "DIS",
+      "displayName": "Walt Disney Company (The) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Doubled token is parser noise; Walt Disney Company."
+    },
+    {
+      "nameKey": "WSTN DIGITAL",
+      "ticker": "WDC",
+      "displayName": "Western Digital Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.033Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Western Digital Corporation."
+    },
+    {
+      "nameKey": "ZOETIS CLASS",
+      "ticker": "ZTS",
+      "displayName": "Zoetis Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Zoetis Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "AMER STS WTR",
+      "ticker": "AWR",
+      "displayName": "American States Water Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated American States Water Company."
+    },
+    {
+      "nameKey": "AMPHASTAR PHARMACEUTICAL",
+      "ticker": "AMPH",
+      "displayName": "Amphastar Pharmaceuticals, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Amphastar Pharmaceuticals, Inc."
+    },
+    {
+      "nameKey": "APOLLO GLOBAL MGMT N",
+      "ticker": "APO",
+      "displayName": "Apollo Global Management, Inc. (New) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Apollo Global Management, Inc. (New); the trailing N is the New token."
+    },
+    {
+      "nameKey": "ATLASSIAN CLASS",
+      "ticker": "TEAM",
+      "displayName": "Atlassian Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Atlassian Corporation Class A common is the only listed class."
+    },
+    {
+      "nameKey": "BERKLEY W R",
+      "ticker": "WRB",
+      "displayName": "W.R. Berkley Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.034Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for W.R. Berkley Corporation."
+    },
+    {
+      "nameKey": "BERKLEY WR",
+      "ticker": "WRB",
+      "displayName": "W.R. Berkley Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.035Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Same issuer as BERKLEY W R, W.R. Berkley Corporation."
+    },
+    {
+      "nameKey": "BOISE CASCADE",
+      "ticker": "BCC",
+      "displayName": "Boise Cascade, L.L.C. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.035Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Boise Cascade common stock."
+    },
+    {
+      "nameKey": "BOOKING FORWARD SPLIT WITH STOCK SPLIT",
+      "ticker": "BKNG",
+      "displayName": "Booking Holdings Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.035Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Corporate-action wording appended to Booking Holdings Inc."
+    },
+    {
+      "nameKey": "BUNGE GLOBAL",
+      "ticker": "BG",
+      "displayName": "Bunge Limited Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.035Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Bunge Global SA, carried in the directory under the predecessor name Bunge Limited."
+    },
+    {
+      "nameKey": "CCC INTELLIGENT SOLUTION",
+      "ticker": "CCC",
+      "displayName": "CCC Intelligent Solutions Holdings Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: CCC Intelligent Solutions Holdings Inc. holds the CCC symbol in this directory; CCCS is not listed."
+    },
+    {
+      "nameKey": "CENCORA CLASS SERIES A",
+      "ticker": "COR",
+      "displayName": "Cencora, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Cencora, Inc. common stock; only one listed line."
+    },
+    {
+      "nameKey": "CHARLES RIVER LABS",
+      "ticker": "CRL",
+      "displayName": "Charles River Laboratories International, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Charles River Laboratories International, Inc."
+    },
+    {
+      "nameKey": "CHARTER COMM I CLASS",
+      "ticker": "CHTR",
+      "displayName": "Charter Communications, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Charter Communications, Inc. Class A common."
+    },
+    {
+      "nameKey": "CORE NAT RES",
+      "ticker": "CNR",
+      "displayName": "Core Natural Resources, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Core Natural Resources, Inc."
+    },
+    {
+      "nameKey": "COUPANG CLASS",
+      "ticker": "CPNG",
+      "displayName": "Coupang, Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.036Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Coupang, Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "EASTMAN CHEM",
+      "ticker": "EMN",
+      "displayName": "Eastman Chemical Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.037Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Eastman Chemical Company."
+    },
+    {
+      "nameKey": "ELLINGTON FINL REIT",
+      "ticker": "EFC",
+      "displayName": "Ellington Financial Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.037Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Ellington Financial Inc."
+    },
+    {
+      "nameKey": "EVEREST REINSURANCE GR",
+      "ticker": "EG",
+      "displayName": "Everest Group, Ltd. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.038Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Everest Group, Ltd., the former Everest Re Group."
+    },
+    {
+      "nameKey": "FNF",
+      "ticker": "FNF",
+      "displayName": "Fidelity National Financial, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.038Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Fidelity National Financial, Inc.; distinct from Fidelity National Information Services."
+    },
+    {
+      "nameKey": "FRANKLIN BSP REALTY",
+      "ticker": "FBRT",
+      "displayName": "Franklin BSP Realty Trust, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.038Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Franklin BSP Realty Trust, Inc."
+    },
+    {
+      "nameKey": "GODADDY CLASS",
+      "ticker": "GDDY",
+      "displayName": "GoDaddy Inc. Class A Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.038Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: GoDaddy Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "GRAINGER W W",
+      "ticker": "GWW",
+      "displayName": "W.W. Grainger, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.039Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for W.W. Grainger, Inc."
+    },
+    {
+      "nameKey": "HAWAIIAN ELEC INDS",
+      "ticker": "HE",
+      "displayName": "Hawaiian Electric Industries, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.039Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Hawaiian Electric Industries, Inc."
+    },
+    {
+      "nameKey": "HIGHWOODS PPTYS REIT",
+      "ticker": "HIW",
+      "displayName": "Highwoods Properties, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.039Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Highwoods Properties, Inc."
+    },
+    {
+      "nameKey": "INNOVATIVE INDL PPTYS IN REIT",
+      "ticker": "IIPR",
+      "displayName": "Innovative Industrial Properties, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.039Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Innovative Industrial Properties, Inc."
+    },
+    {
+      "nameKey": "INTL BUSINESS MACH",
+      "ticker": "IBM",
+      "displayName": "International Business Machines Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.040Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated International Business Machines Corporation."
+    },
+    {
+      "nameKey": "INTL BUSINESS MACHS",
+      "ticker": "IBM",
+      "displayName": "International Business Machines Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.040Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated International Business Machines Corporation."
+    },
+    {
+      "nameKey": "INVESCO QQQ TR",
+      "ticker": "QQQ",
+      "displayName": "Invesco QQQ Trust, Series 1",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.040Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Invesco QQQ Trust, Series 1."
+    },
+    {
+      "nameKey": "ISHARES INTL TREASURY BOND ETF",
+      "ticker": "IGOV",
+      "displayName": "iShares International Treasury Bond ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.040Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the iShares International Treasury Bond ETF listing."
+    },
+    {
+      "nameKey": "ISHARES MSCI CANADA ETF",
+      "ticker": "EWC",
+      "displayName": "iShares MSCI Canada Index Fund",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.040Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: iShares MSCI Canada Index Fund is the same fund under its directory name."
+    },
+    {
+      "nameKey": "ISHARES U S TREASURY BOND ETF",
+      "ticker": "GOVT",
+      "displayName": "iShares U.S. Treasury Bond ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.041Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the iShares U.S. Treasury Bond ETF listing."
+    },
+    {
+      "nameKey": "IWF ISHARES RUSSELL 1000 GRW ETF",
+      "ticker": "IWF",
+      "displayName": "iShares Russell 1000 Growth Fund",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.041Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Filed ticker matches the iShares Russell 1000 Growth Fund listing."
+    },
+    {
+      "nameKey": "JOHNSON CTLS INTL",
+      "ticker": "JCI",
+      "displayName": "Johnson Controls International plc Ordinary Share",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.041Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Johnson Controls International plc."
+    },
+    {
+      "nameKey": "LAM RESH",
+      "ticker": "LRCX",
+      "displayName": "Lam Research Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.041Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Lam Research Corporation."
+    },
+    {
+      "nameKey": "LAUDER ESTEE",
+      "ticker": "EL",
+      "displayName": "Estee Lauder Companies, Inc. (The) Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.042Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Inverted broker style for The Estee Lauder Companies, Inc."
+    },
+    {
+      "nameKey": "LIBERTY MEDIA LIBERTY FORMULA ONE SER C",
+      "ticker": "FWONK",
+      "displayName": "Liberty Media Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.042Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Liberty Media Corporation Series C Liberty Formula One Common Stock."
+    },
+    {
+      "nameKey": "LIFE360 EQUITY",
+      "ticker": "LIF",
+      "displayName": "Life360, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.042Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Life360, Inc. common stock; EQUITY is parser noise."
+    },
+    {
+      "nameKey": "LINCOLN NATL IND",
+      "ticker": "LNC",
+      "displayName": "Lincoln National Corporation Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.042Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Lincoln National Corporation; IND is the stripped Indiana state token."
+    },
+    {
+      "nameKey": "LINDE EUR",
+      "ticker": "LIN",
+      "displayName": "Linde plc",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.042Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Linde plc ordinary shares on Nasdaq; EUR is a broker currency token."
+    },
+    {
+      "nameKey": "LOAR EQUITY CLASS EQUITY",
+      "ticker": "LOAR",
+      "displayName": "Loar Holdings Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.043Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Loar Holdings Inc.; the doubled EQUITY tokens are parser noise."
+    },
+    {
+      "nameKey": "NAPCO SEC TECHNOLOGIES I",
+      "ticker": "NSSC",
+      "displayName": "NAPCO Security Technologies, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.043Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated NAPCO Security Technologies, Inc."
+    },
+    {
+      "nameKey": "OLD DOMINION FREIGHT LINES",
+      "ticker": "ODFL",
+      "displayName": "Old Dominion Freight Line, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.043Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Old Dominion Freight Line, Inc."
+    },
+    {
+      "nameKey": "OLLIES BARGAIN OUTLET HL",
+      "ticker": "OLLI",
+      "displayName": "Ollie's Bargain Outlet Holdings, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.043Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Ollie's Bargain Outlet Holdings, Inc."
+    },
+    {
+      "nameKey": "PALANTIR TECHNOLOGIES IN CLASS",
+      "ticker": "PLTR",
+      "displayName": "Palantir Technologies Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.044Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Palantir Technologies Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "PENNYMAC MTG INVT TR REIT",
+      "ticker": "PMT",
+      "displayName": "PennyMac Mortgage Investment Trust Common Shares of Beneficial Interest",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.044Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated PennyMac Mortgage Investment Trust; distinct from PennyMac Financial Services."
+    },
+    {
+      "nameKey": "PERDOCEO ED",
+      "ticker": "PRDO",
+      "displayName": "Perdoceo Education Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.044Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Perdoceo Education Corporation."
+    },
+    {
+      "nameKey": "PUBLIC SVC ENTERPRISE",
+      "ticker": "PEG",
+      "displayName": "Public Service Enterprise Group Incorporated Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.044Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Public Service Enterprise Group Incorporated."
+    },
+    {
+      "nameKey": "SBA COMM REIT",
+      "ticker": "SBAC",
+      "displayName": "SBA Communications Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.045Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated SBA Communications Corporation Class A common."
+    },
+    {
+      "nameKey": "SNOWFLAKE CLASS",
+      "ticker": "SNOW",
+      "displayName": "Snowflake Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.045Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Snowflake Inc. common stock; only one listed line."
+    },
+    {
+      "nameKey": "SOLSTICE ADVANCED MATLS",
+      "ticker": "SOLS",
+      "displayName": "Solstice Advanced Materials Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.045Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Solstice Advanced Materials Inc."
+    },
+    {
+      "nameKey": "SPS COMM",
+      "ticker": "SPSC",
+      "displayName": "SPS Commerce, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.045Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated SPS Commerce, Inc."
+    },
+    {
+      "nameKey": "STATE STREET CONSUMER STAPLES SELECT SECTOR SPDR ETF",
+      "ticker": "XLP",
+      "displayName": "State Street Consumer Staples Select Sector SPDR ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.046Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the Consumer Staples Select Sector SPDR ETF listing."
+    },
+    {
+      "nameKey": "STATE STREET ENERGY SELECT SECTOR SPDR ETF",
+      "ticker": "XLE",
+      "displayName": "State Street Energy Select Sector SPDR ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.046Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the Energy Select Sector SPDR ETF listing."
+    },
+    {
+      "nameKey": "STATE STREET SPDR BLOOMBERG INTL TREASURY BOND ETF",
+      "ticker": "BWX",
+      "displayName": "State Street SPDR Bloomberg International Treasury Bond ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.046Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the SPDR Bloomberg International Treasury Bond ETF listing."
+    },
+    {
+      "nameKey": "STATE STREET SPDR S P 500 ETF TRUST",
+      "ticker": "SPY",
+      "displayName": "State Street SPDR S&P 500 ETF Trust",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.046Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Exact match to the SPDR S&P 500 ETF Trust listing."
+    },
+    {
+      "nameKey": "T ROWE PRICE",
+      "ticker": "TROW",
+      "displayName": "T. Rowe Price Group, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.046Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: T. Rowe Price Group, Inc."
+    },
+    {
+      "nameKey": "TALEN ENERGY CLASS EQUITY",
+      "ticker": "TLN",
+      "displayName": "Talen Energy Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.047Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Talen Energy Corporation; the trailing tokens are parser noise."
+    },
+    {
+      "nameKey": "U HAUL NON VOTIN CLASS SERIES N",
+      "ticker": "UHAL.B",
+      "displayName": "U-Haul Holding Company Series N Non-Voting Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.047Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: U-Haul Holding Company Series N Non-Voting Common Stock matches the printed name exactly; the voting line is UHAL."
+    },
+    {
+      "nameKey": "UNITED PARCEL SVC",
+      "ticker": "UPS",
+      "displayName": "United Parcel Service, Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.047Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated United Parcel Service, Inc."
+    },
+    {
+      "nameKey": "VANGUARD FTSE EUROPE ETF",
+      "ticker": "VGK",
+      "displayName": "Vanguard FTSEEuropean ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.047Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Vanguard FTSE Europe ETF."
+    },
+    {
+      "nameKey": "VANGUARD TOTAL STOCK MARKET INDEX FUND ETF",
+      "ticker": "VTI",
+      "displayName": "Vanguard Morningstar Total Stock Market ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.048Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: The ETF share class of Vanguard Total Stock Market Index Fund is VTI."
+    },
+    {
+      "nameKey": "VORNADO RLTY TR REIT",
+      "ticker": "VNO",
+      "displayName": "Vornado Realty Trust Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.048Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Abbreviated Vornado Realty Trust."
+    },
+    {
+      "nameKey": "WELLTOWER REIT",
+      "ticker": "WELL",
+      "displayName": "Welltower Inc. Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.048Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Welltower Inc. common stock."
+    },
+    {
+      "nameKey": "WEYERHAEUSER REIT",
+      "ticker": "WY",
+      "displayName": "Weyerhaeuser Company Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.048Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Weyerhaeuser Company common stock."
+    },
+    {
+      "nameKey": "WILLIS TOWERS WATSON P",
+      "ticker": "WTW",
+      "displayName": "Willis Towers Watson Public Limited Company",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.048Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Willis Towers Watson Public Limited Company."
+    },
+    {
+      "nameKey": "WILLIS TOWERS WATSON PUBLIC",
+      "ticker": "WTW",
+      "displayName": "Willis Towers Watson Public Limited Company",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.049Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Willis Towers Watson Public Limited Company ordinary shares."
+    },
+    {
+      "nameKey": "WILLSCOT A",
+      "ticker": "WSC",
+      "displayName": "WillScot Holdings Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.049Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: WillScot Holdings Corporation Class A common."
+    },
+    {
+      "nameKey": "WORKDAY CLASS",
+      "ticker": "WDAY",
+      "displayName": "Workday, Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.049Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Workday, Inc. Class A common is the only listed class."
+    },
+    {
+      "nameKey": "WORTHINGTON ENTERPRI",
+      "ticker": "WOR",
+      "displayName": "Worthington Enterprises, Inc. Common Shares",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:13:53.049Z",
+      "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Worthington Enterprises, Inc."
+    }
+  ]
 }

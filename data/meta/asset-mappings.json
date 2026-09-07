@@ -10,11 +10,11 @@
       "snapshotSha256": "367fb917a218886e0070b9c349d741600b03759fb078d9f58aaca24d25b9c4ab",
       "snapshotEntries": 10415
     },
-    "symbolsInData": 1228,
+    "symbolsInData": 1307,
     "withheldRows": 5,
-    "entries": 1071,
-    "pending": 157,
-    "noSharedWord": 59
+    "entries": 1145,
+    "pending": 162,
+    "noSharedWord": 61
   },
   "assets": {
     "A": {
@@ -40,6 +40,37 @@
       "aliases": [],
       "rows": 9,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "AAP": {
+      "symbol": "AAP",
+      "secSymbol": "AAP",
+      "secName": "ADVANCE AUTO PARTS INC",
+      "cik": 1158449,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ADVANCE AUTO PTS INC"
+      ],
+      "filedSymbols": [
+        "AAP",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -261,6 +292,37 @@
       "aliases": [],
       "rows": 17,
       "officials": 3,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ABR": {
+      "symbol": "ABR",
+      "secSymbol": "ABR",
+      "secName": "ARBOR REALTY TRUST INC",
+      "cik": 1253986,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ARBOR RLTY TR INC REIT"
+      ],
+      "filedSymbols": [
+        "ABR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -578,17 +640,20 @@
         "ADOBE INC",
         "Adobe Inc (ADBE)",
         "Adobe, Inc.",
+        "ADOBE INC (DELAWARE) UNSOLICITED",
         "Adobe Inc",
         "Adobe, Inc. (ADBE)",
-        "ADOBE INC COM"
+        "ADOBE INC COM",
+        "ADOBE INC. (DELAWARE)"
       ],
       "filedSymbols": [
         "ADBE",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 35,
+      "rows": 39,
       "officials": 7,
       "source": {
         "kind": "sec-company-tickers",
@@ -740,6 +805,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "AUTOMATIC DATA PROCESSIN",
         "AUTOMATIC DATA PROCESSING INC",
         "Automatic Data Processing Inc.",
         "Automatic Data Processing, Inc."
@@ -747,10 +813,11 @@
       "filedSymbols": [
         "ADP",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 16,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -1280,15 +1347,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Arthur J. Gallagher & Co."
+        "GALLAGHER ARTHUR J & CO",
+        "Arthur J. Gallagher & Co.",
+        "GALLAGHER ARTHUR J & CO UNSOLICITED"
       ],
       "filedSymbols": [
         "AJG",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 18,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -1831,6 +1901,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ADVANCED MICRO DEVIC",
         "ADVANCED MICRO DEVICES INC",
         "Advanced Micro Devices, Inc. (AMD)",
         "ADVANCED MICRO DEVICES INC UNSOLICITED",
@@ -1840,10 +1911,11 @@
       "filedSymbols": [
         "AMD",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 23,
+      "rows": 31,
       "officials": 5,
       "source": {
         "kind": "sec-company-tickers",
@@ -2023,6 +2095,37 @@
         "evidence": null
       }
     },
+    "AMPH": {
+      "symbol": "AMPH",
+      "secSymbol": "AMPH",
+      "secName": "Amphastar Pharmaceuticals, Inc.",
+      "cik": 1297184,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "AMPHASTAR PHARMACEUTICAL"
+      ],
+      "filedSymbols": [
+        "AMPH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "AMSF": {
       "symbol": "AMSF",
       "secSymbol": "AMSF",
@@ -2064,16 +2167,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "AMERICAN TOWER CORP NEW REIT",
         "American Tower Corporation (REIT) (AMT)",
         "AMERICAN TOWER CORP"
       ],
       "filedSymbols": [
         "AMT",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 16,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -2103,18 +2208,21 @@
         "AMAZON.COM INC UNSOLICITED",
         "Amazon Com Inc",
         "AMAZON COM INC",
+        "Amazon Com Inc Com Solicited Order Discretion Exercised",
         "Amazon.com",
         "Amazon.com Inc.",
         "Amazon Com Inc Com",
+        "Amazon Com Inc Com Average Unit Price Transaction Your Broker Acted As Agent",
         "Amazon Stock"
       ],
       "filedSymbols": [
         "AMZN",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 82,
+      "rows": 86,
       "officials": 18,
       "source": {
         "kind": "sec-company-tickers",
@@ -2468,6 +2576,7 @@
       "displayName": null,
       "filedAs": [
         "APOLLO GLOBAL MGMT INC COM",
+        "APOLLO GLOBAL MGMT INC N CLASS A",
         "APOLLO GLOBAL MANAGEMENT INC",
         "Apollo Global Mgmt Inc",
         "APOLLO GLOBAL MGMT INC",
@@ -2475,10 +2584,11 @@
       ],
       "filedSymbols": [
         "APO",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 10,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -2636,14 +2746,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ALEXANDRIA REAL ESTATE E REIT",
         "ALEXANDRIA REAL ESTATE EQUITIES INC"
       ],
       "filedSymbols": [
         "ARE",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 8,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -2930,6 +3042,37 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ATMU": {
+      "symbol": "ATMU",
+      "secSymbol": "ATMU",
+      "secName": "Atmus Filtration Technologies Inc.",
+      "cik": 1921963,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ATMUS FILTRATION TECHNOL"
+      ],
+      "filedSymbols": [
+        "ATMU",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -3509,6 +3652,7 @@
       "filedAs": [
         "BANK OF AMERICA CORP",
         "BANK OF AMERICA CORPORATION - BAC",
+        "BANK OF AMER CORP UNSOLICITED",
         "Bank of America Corp.",
         "Bank of America Corp. (BAC)",
         "BANK OF AMERICA CORPORATION"
@@ -3516,10 +3660,11 @@
       "filedSymbols": [
         "BAC",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 24,
+      "rows": 28,
       "officials": 4,
       "source": {
         "kind": "sec-company-tickers",
@@ -3847,6 +3992,37 @@
         "evidence": null
       }
     },
+    "BCC": {
+      "symbol": "BCC",
+      "secSymbol": "BCC",
+      "secName": "BOISE CASCADE Co",
+      "cik": 1328581,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BOISE CASCADE CO"
+      ],
+      "filedSymbols": [
+        "BCC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "BCPC": {
       "symbol": "BCPC",
       "secSymbol": "BCPC",
@@ -4016,17 +4192,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "BRIGHT HORIZONS FAMILY S",
         "Bright Horizons Family Solutions",
         "BRIGHT HORIZONS FAMILY SOLUTIONS INC"
       ],
       "filedSymbols": [
         "BFAM",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
-      "officials": 2,
+      "rows": 11,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -4080,15 +4258,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Bunge Global SA (BG)"
+        "Bunge Global SA (BG)",
+        "BUNGE GLOBAL SA COM SHS",
+        "BUNGE GLOBAL SA SHS"
       ],
       "filedSymbols": [
         "BG",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 5,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -4242,16 +4423,18 @@
         "BOOKING HLDGS INC",
         "BOOKING HOLDINGS INC",
         "Booking Holdings Inc.",
+        "BOOKING HLDGS INC FORWARD SPLIT WITH STOCK SPLIT SHARES",
         "BOOKING HLDGS INC COM",
         "BOOKING HLDGS INC UNSOLICITED"
       ],
       "filedSymbols": [
         "BKNG",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 27,
+      "rows": 30,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -4620,6 +4803,37 @@
         "evidence": null
       }
     },
+    "BOH": {
+      "symbol": "BOH",
+      "secSymbol": "BOH",
+      "secName": "BANK OF HAWAII CORP",
+      "cik": 46195,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BANK HAWAII CORP"
+      ],
+      "filedSymbols": [
+        "BOH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "BOOT": {
       "symbol": "BOOT",
       "secSymbol": "BOOT",
@@ -4692,6 +4906,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "BROADRIDGE FINL SOLUTION",
         "BROADRIDGE FINANCIAL SOLUTIONS INC",
         "BROADRIDGE FINL SOLUTIONS INC",
         "BROADRIDGE FINANCIAL SOLUTIONS INC UNSOLICITED",
@@ -4700,10 +4915,11 @@
       "filedSymbols": [
         "BR",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 9,
+      "rows": 19,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -5083,6 +5299,37 @@
       "aliases": [],
       "rows": 29,
       "officials": 4,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BXMT": {
+      "symbol": "BXMT",
+      "secSymbol": "BXMT",
+      "secName": "BLACKSTONE MORTGAGE TRUST, INC.",
+      "cik": 1061630,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BLACKSTONE MTG TR INC REIT"
+      ],
+      "filedSymbols": [
+        "BXMT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -5718,6 +5965,7 @@
       "displayName": null,
       "filedAs": [
         "CBRE GROUP INC CLASS A",
+        "CBRE GROUP INC CLASS CLASS A",
         "CBRE GROUP INC",
         "CBRE Group",
         "Cbre Group Inc Cl A",
@@ -5727,10 +5975,11 @@
       "filedSymbols": [
         "CBRE",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 15,
+      "rows": 19,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -5806,6 +6055,69 @@
         "evidence": null
       }
     },
+    "CBU": {
+      "symbol": "CBU",
+      "secSymbol": "CBU",
+      "secName": "COMMUNITY FINANCIAL SYSTEM, INC.",
+      "cik": 723188,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "COMMUNITY FINL SYS INC",
+        "COMMUNITY FINL SYS INC IN"
+      ],
+      "filedSymbols": [
+        "CBU",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CCC": {
+      "symbol": "CCC",
+      "secSymbol": "CCC",
+      "secName": "CCC Intelligent Solutions Holdings Inc.",
+      "cik": 1818201,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CCC INTELLIGENT SOLUTION"
+      ],
+      "filedSymbols": [
+        "CCC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "CCI": {
       "symbol": "CCI",
       "secSymbol": "CCI",
@@ -5816,14 +6128,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "CROWN CASTLE INC REIT REIT",
         "CROWN CASTLE INC"
       ],
       "filedSymbols": [
         "CCI",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 15,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -5855,6 +6169,71 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CCL": {
+      "symbol": "CCL",
+      "secSymbol": "CCL",
+      "secName": "Carnival Corp Ltd.",
+      "cik": 815097,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CARNIVAL CORP",
+        "CARNIVAL CORP F",
+        "CARNIVAL CORP LTD",
+        "CARNIVAL CORP LTD F"
+      ],
+      "filedSymbols": [
+        "CCL",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 6,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CCOI": {
+      "symbol": "CCOI",
+      "secSymbol": "CCOI",
+      "secName": "COGENT COMMUNICATIONS HOLDINGS, INC.",
+      "cik": 1158324,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "COGENT COMMUNICATIONS HL"
+      ],
+      "filedSymbols": [
+        "CCOI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -5909,15 +6288,21 @@
       "displayName": null,
       "filedAs": [
         "CADENCE DESIGN SYSTEMS INC",
-        "Cadence Design Systems Inc."
+        "CADENCE DESIGN SYS INC",
+        "CADENCE DESIGN SYSTEM UNSOLICITED",
+        "Cadence Design Systems Inc.",
+        "Cadence Design Sys Inc",
+        "Cadence Design Sys Inc Com Solicited Order Discretion Exercised",
+        "CADENCE DESIGN SYSTEM"
       ],
       "filedSymbols": [
         "CDNS",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 19,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -6007,6 +6392,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "CONSTELLATION ENERGY COR",
         "CONSTELLATION ENERGY CORPORATION",
         "CONSTELLATION ENERGY CORP COM",
         "CONSTELLATION ENERGY UNSOLICITED",
@@ -6014,10 +6400,11 @@
       ],
       "filedSymbols": [
         "CEG",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 18,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -6359,7 +6746,9 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "CHARTER COMMUNICATIONS I CLASS A",
         "CHARTER COMMUNICATIONS INC NEW CL A",
+        "CHARTER COMMUNICATIONS I CLASS CLASS A",
         "Charter Communications Inc",
         "CHARTER COMMUNICATIONS INC",
         "Charter Communications Inc New",
@@ -6368,10 +6757,11 @@
       "filedSymbols": [
         "CHTR",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 17,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -6696,16 +7086,18 @@
       "filedAs": [
         "CME GROUP INC",
         "CME GROUP INC CLASS A",
+        "CME GROUP INC CLASS CLASS A",
         "CME GROUP INC UNSOLICITED",
         "CME Group, Inc. (CME)"
       ],
       "filedSymbols": [
         "CME",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 16,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -6729,16 +7121,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "CHIPOTLE MEXICAN GRILL I",
         "CHIPOTLE MEXICAN GRILL INC",
         "CHIPOTLE MEXICAN GRILL INC CL A UNSOLICITED",
         "CHIPOTLE MEXICAN GRILL"
       ],
       "filedSymbols": [
         "CMG",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 10,
+      "rows": 17,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -6850,6 +7244,37 @@
         "evidence": null
       }
     },
+    "CNK": {
+      "symbol": "CNK",
+      "secSymbol": "CNK",
+      "secName": "Cinemark Holdings, Inc.",
+      "cik": 1385280,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CINEMARK HLDGS INC"
+      ],
+      "filedSymbols": [
+        "CNK",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "CNMD": {
       "symbol": "CNMD",
       "secSymbol": "CNMD",
@@ -6902,6 +7327,37 @@
       "aliases": [],
       "rows": 2,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CNR": {
+      "symbol": "CNR",
+      "secSymbol": "CNR",
+      "secName": "Core Natural Resources, Inc.",
+      "cik": 1710366,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CORE NAT RES INC"
+      ],
+      "filedSymbols": [
+        "CNR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -7226,14 +7682,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "CENCORA INC"
+        "CENCORA INC",
+        "CENCORA INC CLASS SERIES A"
       ],
       "filedSymbols": [
         "COR",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 5,
+      "rows": 8,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -7288,20 +7746,24 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "COSTCO WHSL CORP NEW",
         "COSTCO WHOLESALE CORP",
         "Costco Wholesale Corp.",
         "COSTCO WHOLESALE CORP UNSOLICITED",
         "Costco Wholesale Corp. (COST)",
         "COSTCO WHOLESALE CORP NEW",
-        "Costco"
+        "Costco",
+        "Costco Whsl Corp New",
+        "Costco Whsl Corp New Com Solicited Order Discretion Exercised"
       ],
       "filedSymbols": [
         "COST",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 24,
+      "rows": 33,
       "officials": 6,
       "source": {
         "kind": "sec-company-tickers",
@@ -7380,6 +7842,37 @@
         "evidence": null
       }
     },
+    "CPK": {
+      "symbol": "CPK",
+      "secSymbol": "CPK",
+      "secName": "CHESAPEAKE UTILITIES CORP",
+      "cik": 19745,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CHESAPEAKE UTILS CORP"
+      ],
+      "filedSymbols": [
+        "CPK",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "CPNG": {
       "symbol": "CPNG",
       "secSymbol": "CPNG",
@@ -7390,14 +7883,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "COUPANG INC CLASS A"
+        "COUPANG INC CLASS A",
+        "COUPANG INC CLASS CLASS A"
       ],
       "filedSymbols": [
         "CPNG",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 10,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -7573,6 +8068,38 @@
         "evidence": null
       }
     },
+    "CRH": {
+      "symbol": "CRH",
+      "secSymbol": "CRH",
+      "secName": "CRH PUBLIC LTD CO",
+      "cik": 849395,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CRH PUBLIC LIMITED COMPANY",
+        "CRH PUBLIC LIMITED CO F"
+      ],
+      "filedSymbols": [
+        "CRH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "CRK": {
       "symbol": "CRK",
       "secSymbol": "CRK",
@@ -7583,15 +8110,49 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "COMSTOCK RES INC",
         "Comstock Resources, Inc. (CRK)"
       ],
       "filedSymbols": [
         "CRK",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 6,
+      "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CRL": {
+      "symbol": "CRL",
+      "secSymbol": "CRL",
+      "secName": "CHARLES RIVER LABORATORIES INTERNATIONAL, INC.",
+      "cik": 1100682,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "CHARLES RIVER LABORATORIES",
+        "CHARLES RIVER LABORATORIES UNSOLICITED"
+      ],
+      "filedSymbols": [
+        "CRL",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -7818,6 +8379,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "CISCO SYS INC",
         "CISCO SYSTEMS INC",
         "CISCO SYSTEMS INC UNSOLICITED",
         "Cisco Systems, Inc."
@@ -7825,10 +8387,11 @@
       "filedSymbols": [
         "CSCO",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 10,
+      "rows": 15,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -8047,6 +8610,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "COGNIZANT TECHNOLOGY SOL CLASS A",
         "COGNIZANT TECHNOLOGY SOLUTIONS CORP CL A",
         "COGNIZANT TECHNOLOGY SOLUTIONS CL A",
         "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
@@ -8056,10 +8620,11 @@
       ],
       "filedSymbols": [
         "CTSH",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 19,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -8184,6 +8749,37 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "CVLT": {
+      "symbol": "CVLT",
+      "secSymbol": "CVLT",
+      "secName": "COMMVAULT SYSTEMS INC",
+      "cik": 1169561,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "COMMVAULT SYS INC"
+      ],
+      "filedSymbols": [
+        "CVLT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -8765,6 +9361,37 @@
         "evidence": null
       }
     },
+    "DEI": {
+      "symbol": "DEI",
+      "secSymbol": "DEI",
+      "secName": "Douglas Emmett Inc",
+      "cik": 1364250,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "DOUGLAS EMMETT INC REIT"
+      ],
+      "filedSymbols": [
+        "DEI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "DELL": {
       "symbol": "DELL",
       "secSymbol": "DELL",
@@ -8925,6 +9552,39 @@
         "evidence": null
       }
     },
+    "DHI": {
+      "symbol": "DHI",
+      "secSymbol": "DHI",
+      "secName": "HORTON D R INC /DE/",
+      "cik": 882184,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "D R HORTON INC",
+        "D R Horton Inc",
+        "D R Horton Inc Com Solicited Order Discretion Exercised"
+      ],
+      "filedSymbols": [
+        "DHI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "DHR": {
       "symbol": "DHR",
       "secSymbol": "DHR",
@@ -9034,19 +9694,24 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "DISNEY WALT CO",
         "The Walt Disney Co. (DIS)",
+        "WALT DISNEY CO (HOLDING CO) DISNEY COM UNSOLICITED",
+        "DISNEY WALT CO COM",
         "The Walt Disney Co.",
         "WALT DISNEY COMPANY COM",
-        "WALT DISNEY CO"
+        "WALT DISNEY CO",
+        "WALT DISNEY CO /HOLDING CO/ DISNEY COM UNSOLICITED"
       ],
       "filedSymbols": [
         "DIS",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 10,
-      "officials": 6,
+      "rows": 26,
+      "officials": 7,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -9143,6 +9808,38 @@
       ],
       "aliases": [],
       "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "DLR": {
+      "symbol": "DLR",
+      "secSymbol": "DLR",
+      "secName": "DIGITAL REALTY TRUST, INC.",
+      "cik": 1297996,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "DIGITAL REALTY TRUST INC REIT UNSOLICITED",
+        "DIGITAL REALTY TRUST INC REIT"
+      ],
+      "filedSymbols": [
+        "DLR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -9366,6 +10063,37 @@
       "aliases": [],
       "rows": 11,
       "officials": 3,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "DORM": {
+      "symbol": "DORM",
+      "secSymbol": "DORM",
+      "secName": "Dorman Products, Inc.",
+      "cik": 868780,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "DORMAN PRODS INC"
+      ],
+      "filedSymbols": [
+        "DORM",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -10079,6 +10807,37 @@
         "evidence": null
       }
     },
+    "EFC": {
+      "symbol": "EFC",
+      "secSymbol": "EFC",
+      "secName": "Ellington Financial Inc.",
+      "cik": 1411342,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ELLINGTON FINL INC REIT"
+      ],
+      "filedSymbols": [
+        "EFC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "EFOR": {
       "symbol": "EFOR",
       "secSymbol": "EFOR",
@@ -10155,14 +10914,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EVEREST REINSURANCE GR F",
         "EVEREST GROUP LTD"
       ],
       "filedSymbols": [
         "EG",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -10224,6 +10985,39 @@
       "filedSymbols": [
         "EIX",
         "resolved:R3"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "EL": {
+      "symbol": "EL",
+      "secSymbol": "EL",
+      "secName": "ESTEE LAUDER COMPANIES INC",
+      "cik": 1001250,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LAUDER ESTEE COS CL A UNSOLICITED",
+        "LAUDER ESTEE COS INC CL A",
+        "LAUDER ESTEE COS INC CLASS A"
+      ],
+      "filedSymbols": [
+        "EL",
+        "resolved:R2"
       ],
       "aliases": [],
       "rows": 3,
@@ -10381,14 +11175,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EASTMAN CHEM CO",
         "EASTMAN CHEMICAL CO"
       ],
       "filedSymbols": [
         "EMN",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -10412,16 +11208,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EMERSON ELEC CO",
+        "Emerson Elec Co",
         "Emerson Elec Co Com",
         "EMERSON ELECTRIC CO",
         "EMERSON ELECTRIC COM"
       ],
       "filedSymbols": [
         "EMR",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -10664,15 +11463,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EOG RES INC",
         "EOG RESOURCES INC",
         "EOG RESOURCES INC UNSOLICITED"
       ],
       "filedSymbols": [
         "EOG",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 5,
+      "rows": 11,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -10727,14 +11528,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EPAM SYS INC",
         "EPAM SYSTEMS INC UNSOLICITED"
       ],
       "filedSymbols": [
         "EPAM",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 6,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -10767,6 +11570,37 @@
       "aliases": [],
       "rows": 2,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "EPRT": {
+      "symbol": "EPRT",
+      "secSymbol": "EPRT",
+      "secName": "ESSENTIAL PROPERTIES REALTY TRUST, INC.",
+      "cik": 1728951,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ESSENTIAL PPTYS RLTY TR REIT"
+      ],
+      "filedSymbols": [
+        "EPRT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -10822,14 +11656,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "EQUINIX INC REIT UNSOLICITED",
+        "EQUINIX INC REIT",
         "Equinix Inc"
       ],
       "filedSymbols": [
         "EQIX",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 8,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -10866,6 +11703,69 @@
       "aliases": [],
       "rows": 12,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ERIE": {
+      "symbol": "ERIE",
+      "secSymbol": "ERIE",
+      "secName": "ERIE INDEMNITY CO",
+      "cik": 922621,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ERIE INDTY CO CLASS A"
+      ],
+      "filedSymbols": [
+        "ERIE",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ES": {
+      "symbol": "ES",
+      "secSymbol": "ES",
+      "secName": "EVERSOURCE ENERGY",
+      "cik": 72741,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "EVERSOURCE ENERGY",
+        "EVERSOURCE ENERGY COM UNSOLICITED"
+      ],
+      "filedSymbols": [
+        "ES",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -11686,6 +12586,37 @@
         "evidence": null
       }
     },
+    "FBRT": {
+      "symbol": "FBRT",
+      "secSymbol": "FBRT",
+      "secName": "Franklin BSP Realty Trust, Inc.",
+      "cik": 1562528,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "FRANKLIN BSP REALTY"
+      ],
+      "filedSymbols": [
+        "FBRT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "FCFS": {
       "symbol": "FCFS",
       "secSymbol": "FCFS",
@@ -11752,6 +12683,37 @@
         "evidence": null
       }
     },
+    "FDS": {
+      "symbol": "FDS",
+      "secSymbol": "FDS",
+      "secName": "FACTSET RESEARCH SYSTEMS INC",
+      "cik": 1013237,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "FACTSET RESH SYS INC"
+      ],
+      "filedSymbols": [
+        "FDS",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 8,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "FDX": {
       "symbol": "FDX",
       "secSymbol": "FDX",
@@ -11803,6 +12765,37 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FELE": {
+      "symbol": "FELE",
+      "secSymbol": "FELE",
+      "secName": "FRANKLIN ELECTRIC CO INC",
+      "cik": 38725,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "FRANKLIN ELEC INC"
+      ],
+      "filedSymbols": [
+        "FELE",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -12048,16 +13041,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "FIDELITY NATL INFORMATIO",
         "FIDELITY NATIONAL INFORMATION SERVICES INC",
         "FIDELITY NATL INFORMATION SVCS INC",
         "FIDELITY NATL INFORMATION SVCS UNSOLICITED"
       ],
       "filedSymbols": [
         "FIS",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 9,
+      "rows": 25,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -12408,6 +13403,37 @@
       "aliases": [],
       "rows": 3,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FNF": {
+      "symbol": "FNF",
+      "secSymbol": "FNF",
+      "secName": "Fidelity National Financial, Inc.",
+      "cik": 1331875,
+      "nameAgreement": "no_shared_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "FNF GROUP CLASS A"
+      ],
+      "filedSymbols": [
+        "FNF",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -12839,6 +13865,37 @@
         "evidence": null
       }
     },
+    "FWONK": {
+      "symbol": "FWONK",
+      "secSymbol": "FWONK",
+      "secName": "Liberty Media Corp",
+      "cik": 1560385,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LIBERTY MEDIA CORP LIBERTY FORMULA ONE SER C"
+      ],
+      "filedSymbols": [
+        "FWONK",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "FWRD": {
       "symbol": "FWRD",
       "secSymbol": "FWRD",
@@ -13009,6 +14066,7 @@
       "filedAs": [
         "GODADDY INC CLASS A",
         "Godaddy Inc",
+        "GODADDY INC CLASS CLASS A",
         "GODADDY INC CL A UNSOLICITED",
         "Godaddy Inc Cl A",
         "Godaddy Inc Cl A Solicited Order Discretion Exercised",
@@ -13017,10 +14075,11 @@
       "filedSymbols": [
         "GDDY",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 19,
+      "rows": 22,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -13070,21 +14129,29 @@
       "secSymbol": "GE",
       "secName": "GENERAL ELECTRIC CO",
       "cik": 40545,
-      "nameAgreement": "no_shared_word",
+      "nameAgreement": "shares_a_word",
       "instrumentType": "common",
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "GE AEROSPACE",
+        "GE AEROSPACE UNSOLICITED",
+        "GE Aerospace",
         "GE Aerospace (GE)",
-        "GE Aerospace Com New"
+        "GE Aerospace Com New",
+        "General Elec Co",
+        "General Elec Co Com New",
+        "General Elec Co Com New Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent",
+        "General Elec Co Com New Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent"
       ],
       "filedSymbols": [
         "GE",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 2,
+      "rows": 21,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -13107,6 +14174,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "GE HEALTHCARE TECHNOLOGI",
         "GE HEALTHCARE TECHNOLOGIES INC",
         "GE HEALTHCARE TECHNOLOGIES INC UNSOLICITED",
         "GE Healthcare Technologies Inc. (GEHC)"
@@ -13114,10 +14182,11 @@
       "filedSymbols": [
         "GEHC",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 20,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -13579,6 +14648,39 @@
         "evidence": null
       }
     },
+    "GNRC": {
+      "symbol": "GNRC",
+      "secSymbol": "GNRC",
+      "secName": "GENERAC HOLDINGS INC.",
+      "cik": 1474735,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "GENERAC HLDGS INC",
+        "GENERAC HLDGS INC UNSOLICITED",
+        "GENERAC HOLDINGS INC"
+      ],
+      "filedSymbols": [
+        "GNRC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "GO": {
       "symbol": "GO",
       "secSymbol": "GO",
@@ -13842,6 +14944,37 @@
         "evidence": null
       }
     },
+    "GPK": {
+      "symbol": "GPK",
+      "secSymbol": "GPK",
+      "secName": "GRAPHIC PACKAGING HOLDING CO",
+      "cik": 1408075,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "GRAPHIC PACKAGING HLDG C"
+      ],
+      "filedSymbols": [
+        "GPK",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "GPN": {
       "symbol": "GPN",
       "secSymbol": "GPN",
@@ -14006,6 +15139,37 @@
         "evidence": null
       }
     },
+    "GTES": {
+      "symbol": "GTES",
+      "secSymbol": "GTES",
+      "secName": "Gates Industrial Corp Ltd.",
+      "cik": 1718512,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "GATES INDL CORP PLC F"
+      ],
+      "filedSymbols": [
+        "GTES",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "GTLB": {
       "symbol": "GTLB",
       "secSymbol": "GTLB",
@@ -14112,14 +15276,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "GRAINGER W W INC",
+        "GRAINGER W W INC COM",
         "W W GRAINGER INC"
       ],
       "filedSymbols": [
         "GWW",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -14425,6 +15592,37 @@
         "evidence": null
       }
     },
+    "HE": {
+      "symbol": "HE",
+      "secSymbol": "HE",
+      "secName": "HAWAIIAN ELECTRIC INDUSTRIES INC",
+      "cik": 354707,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "HAWAIIAN ELEC INDS INC"
+      ],
+      "filedSymbols": [
+        "HE",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "HEI": {
       "symbol": "HEI",
       "secSymbol": "HEI",
@@ -14508,6 +15706,37 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "HIW": {
+      "symbol": "HIW",
+      "secSymbol": "HIW",
+      "secName": "HIGHWOODS PROPERTIES, INC.",
+      "cik": 921082,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "HIGHWOODS PPTYS INC REIT"
+      ],
+      "filedSymbols": [
+        "HIW",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -14757,16 +15986,22 @@
       "displayName": null,
       "filedAs": [
         "Robinhood Markets Inc. Class A Common Stock (HOOD)",
+        "ROBINHOOD MKTS INC CLASS A",
         "Robinhood Markets Inc. Class A Common Stock",
-        "ROBINHOOD MARKETS INC"
+        "ROBINHOOD MKTS INC COM CL A",
+        "ROBINHOOD MARKETS INC",
+        "ROBINHOOD MKTS INC CL A UNSOLICITED",
+        "Robinhood Mkts Inc Com Cl A",
+        "Robinhood Mkts Inc Com Cl A Solicited Order Discretion Exercised"
       ],
       "filedSymbols": [
         "HOOD",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 17,
+      "rows": 26,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -14836,6 +16071,37 @@
       "aliases": [],
       "rows": 9,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "HRB": {
+      "symbol": "HRB",
+      "secSymbol": "HRB",
+      "secName": "H&R BLOCK INC",
+      "cik": 12659,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BLOCK H & R INC"
+      ],
+      "filedSymbols": [
+        "HRB",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -15271,17 +16537,24 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "IBM CORP",
         "International Business Machines Corp.",
+        "INTL BUSINESS MACH UNSOLICITED",
         "INTL BUSINESS MACHINES CORP",
-        "INTERNATIONAL BUSINESS MACHINES CORP"
+        "INTERNATIONAL BUSINESS MACHINES CORP",
+        "INTERNATIONAL BUSINESS MACHS",
+        "International Business Machs Corp Com",
+        "International Business Machs Corp Com Solicited Order Discretion Exercised",
+        "INTL BUSINESS MACH"
       ],
       "filedSymbols": [
         "IBM",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 9,
+      "rows": 31,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -15305,6 +16578,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "INTERCONTINENTAL EXCHANG",
         "INTERCONTINENTALEXCHANGE INC",
         "Intercontinental Exchange, Inc. (ICE)",
         "Intercontinental Exchange Group",
@@ -15314,10 +16588,11 @@
       "filedSymbols": [
         "ICE",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 22,
       "officials": 4,
       "source": {
         "kind": "sec-company-tickers",
@@ -15620,6 +16895,37 @@
         "evidence": null
       }
     },
+    "IIPR": {
+      "symbol": "IIPR",
+      "secSymbol": "IIPR",
+      "secName": "INNOVATIVE INDUSTRIAL PROPERTIES INC",
+      "cik": 1677576,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "INNOVATIVE INDL PPTYS IN REIT"
+      ],
+      "filedSymbols": [
+        "IIPR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "ILMN": {
       "symbol": "ILMN",
       "secSymbol": "ILMN",
@@ -15757,14 +17063,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "INSMED INC PAR $.01",
         "INSMED INC"
       ],
       "filedSymbols": [
         "INSM",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 5,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -15788,15 +17096,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "INSPIRE MED SYS INC",
         "Inspire Medical Systems, Inc. (INSP)"
       ],
       "filedSymbols": [
         "INSP",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 7,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -16047,6 +17357,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "INTERNTNL PAPER CO",
         "INTL PAPER COMPANY",
         "INTERNATIONAL PAPER CO",
         "INTERNATIONAL PAPER COM",
@@ -16054,10 +17365,11 @@
       ],
       "filedSymbols": [
         "IP",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 16,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -16244,6 +17556,37 @@
         "evidence": null
       }
     },
+    "ITRI": {
+      "symbol": "ITRI",
+      "secSymbol": "ITRI",
+      "secName": "ITRON, INC.",
+      "cik": 780571,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ITRON INC EQUITY CLASS EQUITY"
+      ],
+      "filedSymbols": [
+        "ITRI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 6,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "ITT": {
       "symbol": "ITT",
       "secSymbol": "ITT",
@@ -16315,16 +17658,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ILLINOIS TOOL WKS INC",
         "ILLINOIS TOOL WORKS INC",
         "ILLINOIS TOOL WORKS",
         "ILLINOIS TOOL WORKS INC UNSOLICITED"
       ],
       "filedSymbols": [
         "ITW",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 5,
+      "rows": 12,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -16538,15 +17883,20 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Johnson Controls International Plc"
+        "JOHNSON CONTROLS INTERNATIONAL PLC",
+        "Johnson Controls International Plc",
+        "JOHNSON CTLS INTL PLC UNSOLICITED",
+        "JOHNSON CONTROLS INTL PLC",
+        "JOHNSON CTLS INTL PLC"
       ],
       "filedSymbols": [
         "JCI",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 9,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -16579,6 +17929,39 @@
       "aliases": [],
       "rows": 4,
       "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "JKHY": {
+      "symbol": "JKHY",
+      "secSymbol": "JKHY",
+      "secName": "JACK HENRY & ASSOCIATES INC",
+      "cik": 779152,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "HENRY JACK & ASSOC INC",
+        "HENRY JACK & ASSOC INC COM",
+        "HENRY JACK & ASSOCIATES INC"
+      ],
+      "filedSymbols": [
+        "JKHY",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 12,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -17296,15 +18679,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "KINSALE CAP GROUP INC",
         "Kinsale Capital Group, Inc. (KNSL)"
       ],
       "filedSymbols": [
         "KNSL",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 6,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -17630,6 +19015,37 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "LAUR": {
+      "symbol": "LAUR",
+      "secSymbol": "LAUR",
+      "secName": "LAUREATE EDUCATION, INC.",
+      "cik": 912766,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LAUREATE ED INC"
+      ],
+      "filedSymbols": [
+        "LAUR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -18027,6 +19443,37 @@
         "evidence": null
       }
     },
+    "LIF": {
+      "symbol": "LIF",
+      "secSymbol": "LIF",
+      "secName": "Life360, Inc.",
+      "cik": 1581760,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LIFE360 INC EQUITY"
+      ],
+      "filedSymbols": [
+        "LIF",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "LII": {
       "symbol": "LII",
       "secSymbol": "LII",
@@ -18070,6 +19517,7 @@
       "filedAs": [
         "Linde Plc",
         "LINDE PLC F",
+        "LINDE PLC NEW EUR UNSOLICITED",
         "LINDE PLC SHS",
         "Linde PLC",
         "LINDE PLC"
@@ -18077,10 +19525,11 @@
       "filedSymbols": [
         "LIN",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 17,
+      "rows": 20,
       "officials": 4,
       "source": {
         "kind": "sec-company-tickers",
@@ -18199,21 +19648,27 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "LILLY ELI & CO UNSOLICITED",
         "Eli Lilly & Co.",
         "ELI LILLY AND CO",
         "ELI LILLY & CO",
         "Eli Lilly & Co. (LLY)",
         "ELI LILLY & CO.",
+        "Lilly Eli & Co",
+        "LILLY ELI & CO",
+        "Lilly Eli & Co Com Average Unit Price Transaction Your Broker Acted As Agent",
+        "Lilly Eli & Co Com Solicited Order Discretion Exercised",
         "Lily Eli & Co Com"
       ],
       "filedSymbols": [
         "LLY",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 16,
-      "officials": 6,
+      "rows": 25,
+      "officials": 7,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -18248,6 +19703,37 @@
       "aliases": [],
       "rows": 15,
       "officials": 3,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "LNC": {
+      "symbol": "LNC",
+      "secSymbol": "LNC",
+      "secName": "LINCOLN NATIONAL CORP",
+      "cik": 59558,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LINCOLN NATL CORP IND"
+      ],
+      "filedSymbols": [
+        "LNC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -18342,6 +19828,37 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "LOAR": {
+      "symbol": "LOAR",
+      "secSymbol": "LOAR",
+      "secName": "Loar Holdings Inc.",
+      "cik": 2000178,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "LOAR HOLDINGS INC EQUITY CLASS EQUITY"
+      ],
+      "filedSymbols": [
+        "LOAR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -18532,6 +20049,7 @@
         "LAM RESEARCH CORP UNSOLICITED",
         "LAM RESEARCH CORP",
         "Lam Research Corp.",
+        "LAM RESH CORP",
         "Lam Research Corp Com New Solicited Order Discretion Exercised",
         "Lam Research Corp. (LRCX)",
         "LAM Resh Corp Com New"
@@ -18539,10 +20057,11 @@
       "filedSymbols": [
         "LRCX",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 14,
       "officials": 4,
       "source": {
         "kind": "sec-company-tickers",
@@ -18796,16 +20315,18 @@
       "displayName": null,
       "filedAs": [
         "LyondellBasell Industries NV",
+        "LYONDELLBASELL INDUSTR F CLASS A",
         "LYONDELLBASELL INDUSTRIES N V ORD SHS CL A",
         "LYONDELLBASELL INDUSTRIES N V",
         "LYONDELLBASELL INDUSTRIES N V CL A"
       ],
       "filedSymbols": [
         "LYB",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 37,
+      "rows": 41,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -18989,6 +20510,7 @@
       "filedAs": [
         "MASTERCARD INC CLASS A",
         "MASTERCARD INCORPORATED",
+        "MASTERCARD INC CLASS CLASS A",
         "MASTERCARD INC CL A UNSOLICITED",
         "Mastercard, Inc.",
         "Mastercard, Inc. (MA)",
@@ -19002,10 +20524,11 @@
       "filedSymbols": [
         "MA",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 39,
+      "rows": 44,
       "officials": 9,
       "source": {
         "kind": "sec-company-tickers",
@@ -19037,6 +20560,37 @@
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MANH": {
+      "symbol": "MANH",
+      "secSymbol": "MANH",
+      "secName": "MANHATTAN ASSOCIATES INC",
+      "cik": 1056696,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MANHATTAN ASSOCS INC"
+      ],
+      "filedSymbols": [
+        "MANH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -19221,6 +20775,37 @@
       "filedSymbols": [
         "MBC",
         "resolved:R3"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MBIN": {
+      "symbol": "MBIN",
+      "secSymbol": "MBIN",
+      "secName": "Merchants Bancorp",
+      "cik": 1629019,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MERCHANTS BANCORP IND"
+      ],
+      "filedSymbols": [
+        "MBIN",
+        "resolved:R2"
       ],
       "aliases": [],
       "rows": 4,
@@ -19585,6 +21170,7 @@
         "META PLATFORMS INC CL A",
         "Meta Platforms Inc. Class A Common Stock",
         "META PLATFORMS INC CL A UNSOLICITED",
+        "META PLATFORMS INC CLASS CLASS A",
         "META PLATFORMS INC",
         "Meta Platforms Inc",
         "Meta Platforms Inc CL A",
@@ -19597,10 +21183,11 @@
       "filedSymbols": [
         "META",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 53,
+      "rows": 58,
       "officials": 10,
       "source": {
         "kind": "sec-company-tickers",
@@ -19937,16 +21524,20 @@
       "displayName": null,
       "filedAs": [
         "MARTIN MARIETTA MATERIALS INC",
+        "MARTIN MARIETTA MATLS INC",
         "MARTIN MARIETTA MATERIALS INC UNSOLICITED",
-        "Martin Marietta Materials, Inc. (MLM)"
+        "Martin Marietta Materials, Inc. (MLM)",
+        "Martin Marietta Matls Inc",
+        "Martin Marietta Matls Inc Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent"
       ],
       "filedSymbols": [
         "MLM",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 8,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -20010,6 +21601,37 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MMSI": {
+      "symbol": "MMSI",
+      "secSymbol": "MMSI",
+      "secName": "MERIT MEDICAL SYSTEMS INC",
+      "cik": 856982,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MERIT MED SYS INC"
+      ],
+      "filedSymbols": [
+        "MMSI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -20324,14 +21946,16 @@
       "filedAs": [
         "MONOLITHIC POWER SYSTEMS INC UNSOLICITED",
         "Monolithic Power System (MPWR)",
+        "MONOLITHIC POWER SYSTEM INC",
         "MONOLITHIC POWER SYSTEMS INC"
       ],
       "filedSymbols": [
         "MPWR",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 9,
+      "rows": 10,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -20437,6 +22061,39 @@
       "aliases": [],
       "rows": 3,
       "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MRSH": {
+      "symbol": "MRSH",
+      "secSymbol": "MRSH",
+      "secName": "MARSH & MCLENNAN COMPANIES, INC.",
+      "cik": 62709,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MARSH & MCLENNAN COS INC",
+        "MARSH",
+        "MARSH COMMON STOCK"
+      ],
+      "filedSymbols": [
+        "MRSH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 18,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -20928,6 +22585,37 @@
       "aliases": [],
       "rows": 14,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MWA": {
+      "symbol": "MWA",
+      "secSymbol": "MWA",
+      "secName": "Mueller Water Products, Inc.",
+      "cik": 1350593,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MUELLER WATER PRODUC CLASS SERIES A"
+      ],
+      "filedSymbols": [
+        "MWA",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -21543,6 +23231,7 @@
       "displayName": null,
       "filedAs": [
         "NIKE INC CLASS B",
+        "NIKE INC CLASS CLASS B",
         "NIKE, Inc.",
         "NIKE INC CL B",
         "Nike Inc.",
@@ -21554,10 +23243,11 @@
       "filedSymbols": [
         "NKE",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 19,
+      "rows": 23,
       "officials": 4,
       "source": {
         "kind": "sec-company-tickers",
@@ -21906,6 +23596,37 @@
       "filedSymbols": [
         "NSP",
         "resolved:R3"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NSSC": {
+      "symbol": "NSSC",
+      "secSymbol": "NSSC",
+      "secName": "NAPCO SECURITY TECHNOLOGIES, INC",
+      "cik": 69633,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "NAPCO SEC TECHNOLOGIES I"
+      ],
+      "filedSymbols": [
+        "NSSC",
+        "resolved:R2"
       ],
       "aliases": [],
       "rows": 3,
@@ -22401,6 +24122,38 @@
         "evidence": null
       }
     },
+    "ODFL": {
+      "symbol": "ODFL",
+      "secSymbol": "ODFL",
+      "secName": "OLD DOMINION FREIGHT LINE, INC.",
+      "cik": 878927,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "OLD DOMINION FREIGHT LINES INC",
+        "OLD DOMINION FREIGHT LINES INC UNSOLICITED"
+      ],
+      "filedSymbols": [
+        "ODFL",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "OGE": {
       "symbol": "OGE",
       "secSymbol": "OGE",
@@ -22583,6 +24336,37 @@
       "aliases": [],
       "rows": 2,
       "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "OLLI": {
+      "symbol": "OLLI",
+      "secSymbol": "OLLI",
+      "secName": "Ollie's Bargain Outlet Holdings, Inc.",
+      "cik": 1639300,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "OLLIES BARGAIN OUTLET HL"
+      ],
+      "filedSymbols": [
+        "OLLI",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -23400,6 +25184,37 @@
         "evidence": null
       }
     },
+    "PBH": {
+      "symbol": "PBH",
+      "secSymbol": "PBH",
+      "secName": "Prestige Consumer Healthcare Inc.",
+      "cik": 1295947,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PRESTIGE CONSUMER HEALTH"
+      ],
+      "filedSymbols": [
+        "PBH",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "PBI": {
       "symbol": "PBI",
       "secSymbol": "PBI",
@@ -23449,6 +25264,38 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PCG": {
+      "symbol": "PCG",
+      "secSymbol": "PCG",
+      "secName": "PG&E Corp",
+      "cik": 1004980,
+      "nameAgreement": "no_shared_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PG&E CORP",
+        "PG & E CORP (HOLDING COMPANY) UNSOLICITED"
+      ],
+      "filedSymbols": [
+        "PCG",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -23658,16 +25505,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "PUBLIC SVC ENTERPRISE GR",
         "PUBLIC SERVICE ENTERPRISE GROUP INC",
+        "PUBLIC SVC ENTERPRISE GROUP INC",
         "Public Service Enterprise Group, Inc. (PEG)"
       ],
       "filedSymbols": [
         "PEG",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 11,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -24350,6 +26200,7 @@
         "PALANTIR TECHNOLOGIES INC CL A",
         "PALANTIR TECHNOLOGIES INC CL A UNSOLICITED",
         "Palantir Technologies Inc. Class A Common Stock",
+        "PALANTIR TECHNOLOGIES IN CLASS CLASS A",
         "PALANTIR TECHNOLOGIES INC",
         "PALANTIR TECHNOLOGIES INC CLASS A",
         "Palantir Technologies Inc. Class A Common Stock (PLTR)",
@@ -24359,10 +26210,11 @@
       "filedSymbols": [
         "PLTR",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 32,
+      "rows": 35,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -24433,6 +26285,37 @@
       "aliases": [],
       "rows": 28,
       "officials": 6,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PMT": {
+      "symbol": "PMT",
+      "secSymbol": "PMT",
+      "secName": "PennyMac Mortgage Investment Trust",
+      "cik": 1464423,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PENNYMAC MTG INVT TR REIT"
+      ],
+      "filedSymbols": [
+        "PMT",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -24790,6 +26673,37 @@
       ],
       "aliases": [],
       "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PRDO": {
+      "symbol": "PRDO",
+      "secSymbol": "PRDO",
+      "secName": "PERDOCEO EDUCATION Corp",
+      "cik": 1046568,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PERDOCEO ED CORP"
+      ],
+      "filedSymbols": [
+        "PRDO",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -25583,15 +27497,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Invesco QQQ Trust, Series 1 (QQQ)"
+        "Invesco QQQ Trust, Series 1 (QQQ)",
+        "INVESCO QQQ TR"
       ],
       "filedSymbols": [
         "QQQ",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 14,
-      "officials": 2,
+      "rows": 17,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -25909,6 +27825,38 @@
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "RCL": {
+      "symbol": "RCL",
+      "secSymbol": "RCL",
+      "secName": "ROYAL CARIBBEAN CRUISES LTD",
+      "cik": 884887,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ROYAL CARIBBEAN GROUP",
+        "ROYAL CARIBBEAN GROU F"
+      ],
+      "filedSymbols": [
+        "RCL",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 11,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -26277,14 +28225,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "RYMAN HOSPITALITY PPTYS REIT",
         "RYMAN HOSPITALITY PPTYS INC"
       ],
       "filedSymbols": [
         "RHP",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 6,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -26316,6 +28266,37 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "RITM": {
+      "symbol": "RITM",
+      "secSymbol": "RITM",
+      "secName": "Rithm Capital Corp.",
+      "cik": 1556593,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "RITHM CAPITAL CORP REIT"
+      ],
+      "filedSymbols": [
+        "RITM",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -26408,6 +28389,37 @@
       "filedSymbols": [
         "RKLB",
         "resolved:R3"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "RKT": {
+      "symbol": "RKT",
+      "secSymbol": "RKT",
+      "secName": "Rocket Companies, Inc.",
+      "cik": 1805284,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ROCKET COMPANIES CLA A CLASS A"
+      ],
+      "filedSymbols": [
+        "RKT",
+        "resolved:R2"
       ],
       "aliases": [],
       "rows": 4,
@@ -27478,14 +29490,17 @@
       "displayName": null,
       "filedAs": [
         "SBA COMMUNICATIONS CORP CLASS A",
-        "SBA COMMUNICATIONS CORP NEW CL A"
+        "SBA COMMUNICATIONS CORP REIT",
+        "SBA COMMUNICATIONS CORP NEW CL A",
+        "SBA COMMUNICATIONS CORP NEW REIT UNSOLICITED"
       ],
       "filedSymbols": [
         "SBAC",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -27553,6 +29568,38 @@
       "aliases": [],
       "rows": 17,
       "officials": 3,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SCHW": {
+      "symbol": "SCHW",
+      "secSymbol": "SCHW",
+      "secName": "SCHWAB CHARLES CORP",
+      "cik": 316709,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SCHWAB CHARLES CORP NEW UNSOLICITED",
+        "SCHWAB CHARLES CORP NEW"
+      ],
+      "filedSymbols": [
+        "SCHW",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -27751,6 +29798,68 @@
         "evidence": null
       }
     },
+    "SFBS": {
+      "symbol": "SFBS",
+      "secSymbol": "SFBS",
+      "secName": "ServisFirst Bancshares, Inc.",
+      "cik": 1430723,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SERVISFIRST BANCSHARES I"
+      ],
+      "filedSymbols": [
+        "SFBS",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SFM": {
+      "symbol": "SFM",
+      "secSymbol": "SFM",
+      "secName": "Sprouts Farmers Market, Inc.",
+      "cik": 1575515,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SPROUTS FMRS MKT INC"
+      ],
+      "filedSymbols": [
+        "SFM",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "SHAK": {
       "symbol": "SHAK",
       "secSymbol": "SHAK",
@@ -27916,6 +30025,38 @@
         "evidence": null
       }
     },
+    "SJM": {
+      "symbol": "SJM",
+      "secSymbol": "SJM",
+      "secName": "J M SMUCKER Co",
+      "cik": 91419,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SMUCKER J M CO NEW",
+        "SMUCKER J M CO"
+      ],
+      "filedSymbols": [
+        "SJM",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "SKY": {
       "symbol": "SKY",
       "secSymbol": "SKY",
@@ -27988,16 +30129,20 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "SLB LIMITED",
         "Schlumberger NV (SLB)",
+        "SLB LIMITED F",
+        "SLB LTD",
         "SLB Ltd (SLB)"
       ],
       "filedSymbols": [
         "SLB",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 2,
+      "rows": 6,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -28342,6 +30487,7 @@
       "displayName": null,
       "filedAs": [
         "SNOWFLAKE INC CLASS A",
+        "SNOWFLAKE INC CLASS CLASS A",
         "Snowflake Inc",
         "SNOWFLAKE INC CL A (SNOW)",
         "Snowflake Inc Com Solicited Order Discretion Exercised",
@@ -28350,10 +30496,11 @@
       "filedSymbols": [
         "SNOW",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 13,
+      "rows": 16,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -28485,6 +30632,37 @@
       ],
       "aliases": [],
       "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SOLS": {
+      "symbol": "SOLS",
+      "secSymbol": "SOLS",
+      "secName": "Solstice Advanced Materials Inc.",
+      "cik": 2064953,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SOLSTICE ADVANCED MATLS"
+      ],
+      "filedSymbols": [
+        "SOLS",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -28662,6 +30840,37 @@
         "evidence": null
       }
     },
+    "SPSC": {
+      "symbol": "SPSC",
+      "secSymbol": "SPSC",
+      "secName": "SPS COMMERCE INC",
+      "cik": 1092699,
+      "nameAgreement": "no_shared_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SPS COMM INC"
+      ],
+      "filedSymbols": [
+        "SPSC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "SPY": {
       "symbol": "SPY",
       "secSymbol": "SPY",
@@ -28675,15 +30884,48 @@
         "SPDR S&P 500 ETF Trust (SPY)",
         "SPY (S&P 500 SPDR ETF)",
         "SPDR S&P 500 ETF Trust",
+        "STATE STREET SPDR S&P 500 ETF TRUST",
         "State Street SPDR S&P 500 ETF Trust"
       ],
       "filedSymbols": [
         "SPY",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 58,
-      "officials": 7,
+      "rows": 61,
+      "officials": 8,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SRE": {
+      "symbol": "SRE",
+      "secSymbol": "SRE",
+      "secName": "SEMPRA",
+      "cik": 1032208,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SEMPRA"
+      ],
+      "filedSymbols": [
+        "SRE",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -28842,6 +31084,37 @@
       ],
       "aliases": [],
       "rows": 4,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "STLA": {
+      "symbol": "STLA",
+      "secSymbol": "STLA",
+      "secName": "Stellantis N.V.",
+      "cik": 1605484,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "STELLANTIS N V"
+      ],
+      "filedSymbols": [
+        "STLA",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -29386,15 +31659,17 @@
       "filedAs": [
         "ATLASSIAN CORP CLASS A",
         "ATLASSIAN CORP CL A",
-        "Atlassian Corporation Plc Class A Ordinary Shares"
+        "Atlassian Corporation Plc Class A Ordinary Shares",
+        "ATLASSIAN CORP CLASS CLASS A"
       ],
       "filedSymbols": [
         "TEAM",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 18,
+      "rows": 21,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -29805,6 +32080,37 @@
         "evidence": null
       }
     },
+    "TLN": {
+      "symbol": "TLN",
+      "secSymbol": "TLN",
+      "secName": "Talen Energy Corp",
+      "cik": 1622536,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "TALEN ENERGY CORP NEW CLASS EQUITY"
+      ],
+      "filedSymbols": [
+        "TLN",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "TMC": {
       "symbol": "TMC",
       "secSymbol": "TMC",
@@ -30171,16 +32477,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "TARGA RES CORP",
         "Targa Resources Corp.",
         "TARGA RESOURCES CORP UNSOLICITED"
       ],
       "filedSymbols": [
         "TRGP",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 8,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -30236,16 +32544,18 @@
       "displayName": null,
       "filedAs": [
         "TRIMBLE INC",
+        "TRIMBLE NAV LTD",
         "Trimble, Inc. (TRMB)",
         "TRIMBLE INC COM UNSOLICITED"
       ],
       "filedSymbols": [
         "TRMB",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 10,
+      "rows": 14,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -30300,14 +32610,49 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "TERRENO RLTY CORP REIT",
         "TERRENO REALTY CORP"
       ],
       "filedSymbols": [
         "TRNO",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "TROW": {
+      "symbol": "TROW",
+      "secSymbol": "TROW",
+      "secName": "PRICE T ROWE GROUP INC",
+      "cik": 1113169,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PRICE T ROWE GROUP INC UNSOLICITED",
+        "T ROWE PRICE GROUP INC",
+        "PRICE T ROWE GROUP INC"
+      ],
+      "filedSymbols": [
+        "TROW",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 7,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -30701,6 +33046,7 @@
       "displayName": null,
       "filedAs": [
         "THE TRADE DESK INC CLASS A",
+        "THE TRADE DESK INC CLASS CLASS A",
         "TRADE DESK INC",
         "THE TRADE DESK INC CL A UNSOLICITED",
         "The Trade Desk Inc",
@@ -30714,10 +33060,11 @@
       "filedSymbols": [
         "TTD",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 21,
+      "rows": 26,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -30804,6 +33151,7 @@
       "displayName": null,
       "filedAs": [
         "TAKE-TWO INTERACTIVE SOFTWARE INC",
+        "TAKE-TWO INTERACTIVE SOF",
         "Take-Two Interactive Software",
         "TAKE TWO INTERACTIVE SOFTWARE INC",
         "TAKE-TWO INTERACTIVE SOFTWARE"
@@ -30811,10 +33159,11 @@
       "filedSymbols": [
         "TTWO",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 9,
+      "rows": 13,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -31313,6 +33662,37 @@
         "evidence": null
       }
     },
+    "UHAL.B": {
+      "symbol": "UHAL.B",
+      "secSymbol": "UHAL-B",
+      "secName": "U-Haul Holding Co /NV/",
+      "cik": 4457,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "U HAUL HOLDING NON VOTIN CLASS SERIES N"
+      ],
+      "filedSymbols": [
+        "UHAL.B",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "UHS": {
       "symbol": "UHS",
       "secSymbol": "UHS",
@@ -31442,6 +33822,37 @@
         "evidence": null
       }
     },
+    "UNF": {
+      "symbol": "UNF",
+      "secSymbol": "UNF",
+      "secName": "UNIFIRST CORP",
+      "cik": 717954,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "UNIFIRST CORP MASS"
+      ],
+      "filedSymbols": [
+        "UNF",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "UNH": {
       "symbol": "UNH",
       "secSymbol": "UNH",
@@ -31521,6 +33932,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "UNION PAC CORP",
         "Union Pacific Corp",
         "UNION PACIFIC CORP",
         "Union Pacific Corp.",
@@ -31531,10 +33943,11 @@
       "filedSymbols": [
         "UNP",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 18,
       "officials": 5,
       "source": {
         "kind": "sec-company-tickers",
@@ -31592,14 +34005,18 @@
         "UNITED PARCEL SERVICE INC CL B",
         "UNITED PARCEL SERVICE INC",
         "UNITED PARCEL SERVICE INC CL B UNSOLICITED",
-        "United Parcel Service"
+        "United Parcel Service",
+        "UNITED PARCEL SVC INC",
+        "UNITED PARCEL SVC INC CL B",
+        "UNITED PARCEL SVC INC CLASS B"
       ],
       "filedSymbols": [
         "UPS",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 14,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -31875,6 +34292,7 @@
       "filedAs": [
         "VISA INC CLASS A",
         "Visa, Inc.",
+        "VISA INC CLASS CLASS A",
         "VISA INC CL A UNSOLICITED",
         "VISA INC",
         "VISA INC CL A",
@@ -31889,10 +34307,11 @@
       "filedSymbols": [
         "V",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 39,
+      "rows": 44,
       "officials": 7,
       "source": {
         "kind": "sec-company-tickers",
@@ -31978,16 +34397,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VEEVA SYS INC CLASS A",
+        "VEEVA SYS INC CLASS CLASS A",
         "VEEVA SYSTEMS INC",
         "Veeva Systems, Inc. (VEEV)"
       ],
       "filedSymbols": [
         "VEEV",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 15,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -32074,15 +34496,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VICI PPTYS INC REIT",
         "VICI PROPERTIES INC",
         "VICI Properties Inc."
       ],
       "filedSymbols": [
         "VICI",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 9,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -32268,6 +34692,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VULCAN MATLS CO",
         "VULCAN MATERIALS CO (HOLDING CO)",
         "Vulcan Materials Co.",
         "VULCAN MATERIALS CO",
@@ -32277,11 +34702,43 @@
       "filedSymbols": [
         "VMC",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 11,
       "officials": 3,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VNO": {
+      "symbol": "VNO",
+      "secSymbol": "VNO",
+      "secName": "VORNADO REALTY TRUST",
+      "cik": 899689,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "VORNADO RLTY TR REIT"
+      ],
+      "filedSymbols": [
+        "VNO",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -32439,16 +34896,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VERTEX PHARMACEUTICALS I",
         "VERTEX PHARMACEUTICALS INC",
         "Vertex Pharmaceuticals, Inc. (VRTX)"
       ],
       "filedSymbols": [
         "VRTX",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 21,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -32726,6 +35185,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "VERIZON COMMUNICATIONS I",
         "VERIZON COMMUNICATIONS INC",
         "VERIZON COMMUNICATIONS",
         "Verizon Communications, Inc.",
@@ -32735,10 +35195,11 @@
       "filedSymbols": [
         "VZ",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 26,
+      "rows": 40,
       "officials": 6,
       "source": {
         "kind": "sec-company-tickers",
@@ -32793,15 +35254,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Westinghouse Air Brake Technologies Corporation (WAB)"
+        "WABTEC CORP",
+        "Westinghouse Air Brake Technologies Corporation (WAB)",
+        "WABTEC",
+        "WABTEC INC"
       ],
       "filedSymbols": [
         "WAB",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 1,
+      "rows": 10,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -33014,6 +35479,7 @@
       "filedAs": [
         "WORKDAY INC CLASS A",
         "WORKDAY INC CL A",
+        "WORKDAY INC CLASS CLASS A",
         "Workday, Inc. (WDAY)",
         "WORKDAY INC CL A UNSOLICITED",
         "WORKDAY INC"
@@ -33021,10 +35487,11 @@
       "filedSymbols": [
         "WDAY",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 27,
+      "rows": 30,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -33048,14 +35515,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "WESTERN DIGITAL CORP"
+        "WSTN DIGITAL CORP UNSOLICITED",
+        "WESTERN DIGITAL CORP",
+        "WSTN DIGITAL CORP"
       ],
       "filedSymbols": [
         "WDC",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 5,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -33144,14 +35614,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "WELLTOWER INC"
+        "WELLTOWER INC REIT",
+        "WELLTOWER INC",
+        "WELLTOWER INC REIT UNSOLICITED"
       ],
       "filedSymbols": [
         "WELL",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 4,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -33745,6 +36218,37 @@
         "evidence": null
       }
     },
+    "WOR": {
+      "symbol": "WOR",
+      "secSymbol": "WOR",
+      "secName": "WORTHINGTON ENTERPRISES, INC.",
+      "cik": 108516,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "WORTHINGTON ENTERPRI"
+      ],
+      "filedSymbols": [
+        "WOR",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 3,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "WPM": {
       "symbol": "WPM",
       "secSymbol": "WPM",
@@ -33764,6 +36268,38 @@
       ],
       "aliases": [],
       "rows": 3,
+      "officials": 2,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "WRB": {
+      "symbol": "WRB",
+      "secSymbol": "WRB",
+      "secName": "BERKLEY W R CORP",
+      "cik": 11544,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BERKLEY W R CORP",
+        "BERKLEY WR CORP"
+      ],
+      "filedSymbols": [
+        "WRB",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 6,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -33849,15 +36385,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "WILLSCOT HOLDINGS CO A CLASS A",
         "WILLSCOT HOLDINGS CO CLASS A",
         "Willscot Mobile Mini Holdings Co."
       ],
       "filedSymbols": [
         "WSC",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 5,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -34073,16 +36611,19 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "WILLIS TOWERS WATSON P F",
+        "WILLIS TOWERS WATSON PUBLIC LIMITED COMPANY",
         "Willis Towers Watson Public Limited Company (WTW)",
         "Willis Towers Watson Public Limited Company Ordinary Shares (WTW)"
       ],
       "filedSymbols": [
         "WTW",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 3,
-      "officials": 2,
+      "rows": 9,
+      "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -34167,16 +36708,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "WEYERHAEUSER CO REIT",
         "WEYERHAEUSER CO",
         "Weyerhaeuser Co. (WY)"
       ],
       "filedSymbols": [
         "WY",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 5,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
@@ -34396,6 +36939,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "BLOCK INC A CLASS A",
         "BLOCK INC CL A UNSOLICITED",
         "Block, Inc.",
         "Block Inc Cl A",
@@ -34404,10 +36948,11 @@
       ],
       "filedSymbols": [
         "XYZ",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 13,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -34726,16 +37271,18 @@
       "filedAs": [
         "ZOETIS INC",
         "ZOETIS INC CLASS A",
+        "ZOETIS INC CLASS CLASS A",
         "Zoetis Inc",
         "ZOETIS INC CL A"
       ],
       "filedSymbols": [
         "ZTS",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 15,
       "officials": 2,
       "source": {
         "kind": "sec-company-tickers",

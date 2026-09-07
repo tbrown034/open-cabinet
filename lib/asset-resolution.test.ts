@@ -11,7 +11,8 @@ import { defaultContext, resolveAsset, type ResolutionContext } from "./asset-re
  * case below that expects no ticker is a case where a looser matcher
  * would have printed the wrong company.
  */
-const ctx: ResolutionContext = defaultContext();
+// Rules are tested against empty curated files so a real dictionary entry cannot change a rule test; R2 and R0 get their own maps below.
+const ctx: ResolutionContext = { ...defaultContext(), dictionary: new Map(), exceptions: new Map() };
 const r = (description: string, ticker: string | null = null) => resolveAsset({ description, ticker }, ctx);
 
 describe("normalizing printed names", () => {
