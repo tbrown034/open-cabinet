@@ -56,8 +56,30 @@ export default async function DownloadPage() {
     },
   ];
 
+  // Schema.org Dataset, so Google Dataset Search and AI crawlers describe
+  // the download correctly: what it is, where it came from, the license,
+  // the two file formats. Counts come from the export, never typed in.
+  const datasetJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    name: "Open Cabinet: executive branch stock transactions",
+    description: `${txCount.toLocaleString("en-US")} securities transactions disclosed by ${officialCount} U.S. executive branch officials on OGE Form 278-T periodic transaction reports, with each row's source filing, verification state, instrument type and, where confirmed, ticker symbol.`,
+    url: "https://open-cabinet.org/download",
+    license: "https://github.com/tbrown034/open-cabinet/blob/main/LICENSE",
+    isAccessibleForFree: true,
+    creator: { "@type": "Person", name: "Trevor Brown", url: "https://trevorthewebdeveloper.com" },
+    sourceOrganization: { "@type": "GovernmentOrganization", name: "U.S. Office of Government Ethics", url: "https://www.oge.gov" },
+    temporalCoverage: "2020/..",
+    keywords: ["STOCK Act", "financial disclosure", "executive branch", "OGE Form 278-T", "stock trades"],
+    distribution: [
+      { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: "https://open-cabinet.org/data/all-transactions.csv" },
+      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: "https://open-cabinet.org/data/full-dataset.json" },
+      { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: "https://open-cabinet.org/data/officials-summary.csv" },
+    ],
+  };
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd) }} />
       <header className="mb-12">
         <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">
           Download Data
