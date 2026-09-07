@@ -3,7 +3,7 @@
     "version": 1,
     "generatedBy": "scripts/seed-asset-registry.ts",
     "reason": "symbols filed on published rows that the SEC company list does not carry; identity awaits a person",
-    "entries": 153
+    "entries": 159
   },
   "pending": {
     "AAGIY": {
@@ -13,7 +13,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "AIA Group Limited"
+        "AIA Group Limited (AAGIY)"
       ],
       "filedSymbols": [
         "AAGIY"
@@ -35,13 +35,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "adidas AG"
+        "adidas AG (ADDYY)"
       ],
       "filedSymbols": [
         "ADDYY"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "AOA": {
+      "symbol": "AOA",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ISHARES CORE AGGRESSIVE ALLO (AOA)"
+      ],
+      "filedSymbols": [
+        "AOA",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -60,10 +83,11 @@
         "Global X MSCI Argentina ETF"
       ],
       "filedSymbols": [
-        "ARGT"
+        "ARGT",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -79,10 +103,32 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Athene Holding Ltd."
+        "Athene Holding Ltd. (ATH)"
       ],
       "filedSymbols": [
         "ATH"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ATNF": {
+      "symbol": "ATNF",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "180 Life Sciences Corp. Common Stock"
+      ],
+      "filedSymbols": [
+        "ATNF"
       ],
       "aliases": [],
       "rows": 1,
@@ -101,13 +147,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan BetaBuilders Developed Asia ex-Japan ETF"
+        "JPMorgan BetaBuilders Developed Asia ex-Japan ETF (BBAX)"
       ],
       "filedSymbols": [
-        "BBAX"
+        "BBAX",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 6,
+      "rows": 12,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -123,13 +170,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan BetaBuilders Canada ETF"
+        "JPMorgan BetaBuilders Canada ETF (BBCA)"
       ],
       "filedSymbols": [
-        "BBCA"
+        "BBCA",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -145,13 +193,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan BetaBuilders Japan ETF"
+        "JPMorgan BetaBuilders Japan ETF (BBJP)"
       ],
       "filedSymbols": [
-        "BBJP"
+        "BBJP",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 6,
+      "rows": 12,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -182,6 +231,53 @@
         "evidence": null
       }
     },
+    "BGHAX": {
+      "symbol": "BGHAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "BrandywineGLOBAL High Yield A",
+        "BrandywineGLOBAL - HIGH YIELD FUND Class A",
+        "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)"
+      ],
+      "filedSymbols": [
+        "BGHAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BIL": {
+      "symbol": "BIL",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "State Street SPDR Bloomberg 1-3 Month T-Bill ETF (BIL)"
+      ],
+      "filedSymbols": [
+        "BIL",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "BKGFY": {
       "symbol": "BKGFY",
       "reason": "not in SEC company_tickers.json",
@@ -189,7 +285,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "The Berkeley Group Holdings plc"
+        "The Berkeley Group Holdings plc (BKGFY)"
       ],
       "filedSymbols": [
         "BKGFY"
@@ -211,13 +307,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Bangkok Bank Public Company Limited"
+        "Bangkok Bank Public Company Limited (BKKLY)"
       ],
       "filedSymbols": [
         "BKKLY"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "BND": {
+      "symbol": "BND",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Total Bond Market Index Fund ETF Shares (BND)"
+      ],
+      "filedSymbols": [
+        "BND",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -236,10 +355,11 @@
         "Vanguard Total International Bond Index Fund ETF Shares"
       ],
       "filedSymbols": [
-        "BNDX"
+        "BNDX",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -255,7 +375,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Brenntag SE"
+        "Brenntag SE (BNTGY)"
       ],
       "filedSymbols": [
         "BNTGY"
@@ -299,7 +419,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Compagnie Financiere Richemont SA"
+        "Compagnie Financière Richemont SA (CFRUY)"
       ],
       "filedSymbols": [
         "CFRUY"
@@ -343,7 +463,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Danone S.A."
+        "Danone S.A. (DANOY)"
       ],
       "filedSymbols": [
         "DANOY"
@@ -369,10 +489,11 @@
         "iShares Core Dividend Growth ETF (DGRO)"
       ],
       "filedSymbols": [
-        "DGRO"
+        "DGRO",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 16,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -411,13 +532,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCI EAFE ETF"
+        "iShares MSCI EAFE ETF (EFA)"
       ],
       "filedSymbols": [
-        "EFA"
+        "EFA",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 14,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -433,13 +555,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCI EAFE Growth ETF"
+        "iShares MSCI EAFE Growth ETF (EFG)"
       ],
       "filedSymbols": [
-        "EFG"
+        "EFG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -499,13 +622,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCIPacific ex Japan ETF"
+        "iShares MSCIPacific ex Japan ETF (EPP)"
       ],
       "filedSymbols": [
-        "EPP"
+        "EPP",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -521,14 +645,13 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "180 Life Sciences Corp. Common Stock (now ETHZilla)",
-        "ETHZilla Corp"
+        "ETHZilla Corp (ETHZ)"
       ],
       "filedSymbols": [
         "ETHZ"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -544,13 +667,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCI Canada ETF"
+        "iShares MSCI Canada ETF (EWC)"
       ],
       "filedSymbols": [
-        "EWC"
+        "EWC",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -569,10 +693,11 @@
         "iShares MSCI Germany ETF (EWG)"
       ],
       "filedSymbols": [
-        "EWG"
+        "EWG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -588,13 +713,38 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares MSCI Japan ETF"
+        "iShares MSCI Japan ETF (EWJ)"
       ],
       "filedSymbols": [
-        "EWJ"
+        "EWJ",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FALN": {
+      "symbol": "FALN",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Fallen Angels USD Bond ETF",
+        "iShares Fallen Angels USD Bond ETF (FALN)"
+      ],
+      "filedSymbols": [
+        "FALN",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 10,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -610,13 +760,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Fanuc Corporation"
+        "Fanuc Corporation (FANUY)"
       ],
       "filedSymbols": [
         "FANUY"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FB": {
+      "symbol": "FB",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Facebook, Inc. (FB)",
+        "Meta Platforms (FB)"
+      ],
+      "filedSymbols": [
+        "FB"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -654,13 +827,37 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Franklin FTSE Canada ETF"
+        "Franklin FTSE Canada ETF (FLCA)"
       ],
       "filedSymbols": [
-        "FLCA"
+        "FLCA",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FNJQX": {
+      "symbol": "FNJQX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Franklin NJ Tax Free Income A",
+        "Franklin NJ Tax Free Income A (FNJQX)"
+      ],
+      "filedSymbols": [
+        "FNJQX"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -720,7 +917,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Fuchs SE"
+        "Fuchs SE (FUPBY)"
       ],
       "filedSymbols": [
         "FUPBY"
@@ -790,10 +987,11 @@
         "VanEck Vectors Gold Miners ETF"
       ],
       "filedSymbols": [
-        "GDX"
+        "GDX",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -835,10 +1033,11 @@
         "iShares US Treasury Bond ETF"
       ],
       "filedSymbols": [
-        "GOVT"
+        "GOVT",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -854,6 +1053,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "GQG PartnersEmerging Markets Equity Fund Institutional Class Shares",
         "GQG Partners Emerging Markets Equity Fund Institutional Class Shares"
       ],
       "filedSymbols": [
@@ -898,7 +1098,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Heineken N.V."
+        "Heineken N.V. (HEINY)"
       ],
       "filedSymbols": [
         "HEINY"
@@ -920,7 +1120,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Henkel AG & Co. KGaA"
+        "Henkel AG & Co. KGaA (HENKY)"
       ],
       "filedSymbols": [
         "HENKY"
@@ -942,7 +1142,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Hongkong Land Holdings Limited"
+        "Hongkong Land Holdings Limited (HNGKY)"
       ],
       "filedSymbols": [
         "HNGKY"
@@ -964,13 +1164,15 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares Core MSCI International Developed Markets ETF"
+        "iShares Core MSCI International Developed Markets ETF",
+        "iShares Core MSCI International Developed Markets ETF (IDEV)"
       ],
       "filedSymbols": [
-        "IDEV"
+        "IDEV",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -989,10 +1191,11 @@
         "iShares Core MSCI Emerging Markets ETF"
       ],
       "filedSymbols": [
-        "IEMG"
+        "IEMG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1008,32 +1211,10 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan Liquid Assets Money Market Fund Institutional Shares"
+        "JPMorgan Liquid Assets Money Market Fund Institutional Shares (IJLXX)"
       ],
       "filedSymbols": [
         "IJLXX"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "INFA": {
-      "symbol": "INFA",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Informatica Inc. Class A"
-      ],
-      "filedSymbols": [
-        "INFA"
       ],
       "aliases": [],
       "rows": 1,
@@ -1052,13 +1233,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares Core MSCIPacific ETF"
+        "iShares Core MSCIPacific ETF (IPAC)"
       ],
       "filedSymbols": [
-        "IPAC"
+        "IPAC",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1077,10 +1259,11 @@
         "iShares Core S&P Total US Stock Market ETF"
       ],
       "filedSymbols": [
-        "ITOT"
+        "ITOT",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 8,
+      "rows": 16,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1089,20 +1272,44 @@
         "evidence": null
       }
     },
-    "IVV": {
-      "symbol": "IVV",
+    "IUSG": {
+      "symbol": "IUSG",
       "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
+      "instrumentType": "etf",
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "ISHARES S&P 500 INDEX FUND"
+        "iShares Core S&P US Growth ETF (IUSG)"
       ],
       "filedSymbols": [
-        "IVV"
+        "IUSG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "IUSV": {
+      "symbol": "IUSV",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Core S&P US Value ETF (IUSV)"
+      ],
+      "filedSymbols": [
+        "IUSV",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1121,10 +1328,34 @@
         "iShares Russell 1000 Growth ETF"
       ],
       "filedSymbols": [
-        "IWF"
+        "IWF",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 8,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "IWM": {
+      "symbol": "IWM",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Russell 2000 ETF (IWM)"
+      ],
+      "filedSymbols": [
+        "IWM",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1143,10 +1374,11 @@
         "iShares Russell Mid-Cap Growth ETF"
       ],
       "filedSymbols": [
-        "IWP"
+        "IWP",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1162,13 +1394,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares Global Healthcare ETF"
+        "iShares Global Healthcare ETF (IXJ)"
       ],
       "filedSymbols": [
-        "IXJ"
+        "IXJ",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1184,13 +1417,38 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares Transportation Average ETF"
+        "iShares Transportation Average ETF (IYT)"
       ],
       "filedSymbols": [
-        "IYT"
+        "IYT",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "JAAA": {
+      "symbol": "JAAA",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF",
+        "Janus Henderson AAA CLO ETF (JAAA)"
+      ],
+      "filedSymbols": [
+        "JAAA",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 10,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1206,13 +1464,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan Equity Premium Income ETF"
+        "JPMorgan Equity Premium Income ETF (JEPI)"
       ],
       "filedSymbols": [
-        "JEPI"
+        "JEPI",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1228,13 +1487,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "JPMorgan Nasdaq Equity Premium Income ETF"
+        "JPMorgan Nasdaq Equity Premium Income ETF (JEPQ)"
       ],
       "filedSymbols": [
-        "JEPQ"
+        "JEPQ",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1294,7 +1554,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Jardine Matheson Holdings Limited"
+        "Jardine Matheson Holdings Limited (JMHLY)"
       ],
       "filedSymbols": [
         "JMHLY"
@@ -1316,7 +1576,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Komatsu Ltd."
+        "Komatsu Ltd. (KMTUY)"
       ],
       "filedSymbols": [
         "KMTUY"
@@ -1338,7 +1598,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Legrand SA"
+        "Legrand SA (LGRDY)"
       ],
       "filedSymbols": [
         "LGRDY"
@@ -1363,10 +1623,11 @@
         "iShares iBoxx $ Investment Grade Corporate Bond ETF (LQD)"
       ],
       "filedSymbols": [
-        "LQD"
+        "LQD",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1382,7 +1643,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "LVMH Moet Hennessy - Louis Vuitton, Societe Europeenne"
+        "LVMH Moët Hennessy - Louis Vuitton, Société Européenne (LVMUY)"
       ],
       "filedSymbols": [
         "LVMUY"
@@ -1404,7 +1665,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "BlackRock Emerging Markets Fund, Inc Institutional Shares"
+        "BlackRockEmerging Markets Fund, Inc Institutional Shares"
       ],
       "filedSymbols": [
         "MADCX"
@@ -1492,7 +1753,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Mitsubishi Electric Corporation"
+        "Mitsubishi Electric Corporation (MIELY)"
       ],
       "filedSymbols": [
         "MIELY"
@@ -1514,7 +1775,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Merck KGaA"
+        "Merck KGaA (MKKGY)"
       ],
       "filedSymbols": [
         "MKKGY"
@@ -1536,7 +1797,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "MS&AD Insurance Group Holdings, Inc."
+        "MS&AD Insurance Group Holdings, Inc. (MSADY)"
       ],
       "filedSymbols": [
         "MSADY"
@@ -1562,11 +1823,12 @@
         "iShares National Muni Bond ETF (MUB)"
       ],
       "filedSymbols": [
-        "MUB"
+        "MUB",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 11,
-      "officials": 1,
+      "rows": 30,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1581,7 +1843,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Nihon Kohden Corporation"
+        "Nihon Kohden Corporation (NHNKY)"
       ],
       "filedSymbols": [
         "NHNKY"
@@ -1603,13 +1865,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Municipal Total Return Managed Accounts Portfolio Common Shares"
+        "Municipal Total Return Managed Accounts Portfolio Common Shares (NMTRX)"
       ],
       "filedSymbols": [
         "NMTRX"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NNJAX": {
+      "symbol": "NNJAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Nuveen NJ Municipal Bond A",
+        "Nuveen NJ Municipal Bond A (NNJAX)"
+      ],
+      "filedSymbols": [
+        "NNJAX"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1625,13 +1910,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Nestle S.A."
+        "Nestlé S.A. (NSRGY)"
       ],
       "filedSymbols": [
         "NSRGY"
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "NVHAX": {
+      "symbol": "NVHAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Nuveen Short Duration Hi Yld Muni Bd A",
+        "Nuveen Short Duration Hi Yld Muni Bd A (NVHAX)"
+      ],
+      "filedSymbols": [
+        "NVHAX"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1662,6 +1970,29 @@
         "evidence": null
       }
     },
+    "ONJAX": {
+      "symbol": "ONJAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Invesco New Jersey Municipal A",
+        "Invesco New Jersey Municipal A (ONJAX)"
+      ],
+      "filedSymbols": [
+        "ONJAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "ORKLY": {
       "symbol": "ORKLY",
       "reason": "not in SEC company_tickers.json",
@@ -1669,7 +2000,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Orkla ASA"
+        "Orkla ASA (ORKLY)"
       ],
       "filedSymbols": [
         "ORKLY"
@@ -1728,6 +2059,29 @@
         "evidence": null
       }
     },
+    "PONAX": {
+      "symbol": "PONAX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PIMCO Income Fund Class A Shares",
+        "PIMCO Income Fund Class A Shares (PONAX)"
+      ],
+      "filedSymbols": [
+        "PONAX"
+      ],
+      "aliases": [],
+      "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "PROSY": {
       "symbol": "PROSY",
       "reason": "not in SEC company_tickers.json",
@@ -1735,13 +2089,37 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Prosus N.V."
+        "Prosus N.V. (PROSY)"
       ],
       "filedSymbols": [
         "PROSY"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PULS": {
+      "symbol": "PULS",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PGIM Ultra Short Bond ETF",
+        "PGIM Ultra Short Bond ETF (PULS)"
+      ],
+      "filedSymbols": [
+        "PULS",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 10,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1757,7 +2135,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Power Corporation of Canada"
+        "Power Corporation of Canada (PWCDF)"
       ],
       "filedSymbols": [
         "PWCDF"
@@ -1779,7 +2157,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Roche Holdings AG Basel ADR Common Stock"
+        "Roche Holdings AG Basel ADR Common Stock (RHHBY)"
       ],
       "filedSymbols": [
         "RHHBY"
@@ -1827,10 +2205,11 @@
         "Schwab US Small-Cap ETF"
       ],
       "filedSymbols": [
-        "SCHA"
+        "SCHA",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 24,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -1849,10 +2228,11 @@
         "Schwab International Equity ETF"
       ],
       "filedSymbols": [
-        "SCHF"
+        "SCHF",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 22,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1871,10 +2251,11 @@
         "Charles Schwab US Reit ETF"
       ],
       "filedSymbols": [
-        "SCHH"
+        "SCHH",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 22,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1893,10 +2274,11 @@
         "Schwab US TIPS ETF"
       ],
       "filedSymbols": [
-        "SCHP"
+        "SCHP",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 12,
+      "rows": 24,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -1915,10 +2297,33 @@
         "Schwab US Large Cap ETF"
       ],
       "filedSymbols": [
-        "SCHX"
+        "SCHX",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 11,
+      "rows": 22,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SE": {
+      "symbol": "SE",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Sea Limited (SE)"
+      ],
+      "filedSymbols": [
+        "SE"
+      ],
+      "aliases": [],
+      "rows": 3,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1934,13 +2339,36 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "SGS SA"
+        "SGS SA (SGSOY)"
       ],
       "filedSymbols": [
         "SGSOY"
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SHY": {
+      "symbol": "SHY",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares 1-3 Year Treasury Bond ETF"
+      ],
+      "filedSymbols": [
+        "SHY",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 8,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1956,13 +2384,38 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "VanEck Vectors Short High-Yield Municipal Index ETF"
+        "VanEck Vectors Short High-Yield Municipal Index ETF (SHYD)"
       ],
       "filedSymbols": [
-        "SHYD"
+        "SHYD",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SHYG": {
+      "symbol": "SHYG",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares 0-5 Year High Yield Corporate Bond ETF",
+        "iShares 0-5 Year High Yield Corporate Bond ETF (SHYG)"
+      ],
+      "filedSymbols": [
+        "SHYG",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 10,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1978,7 +2431,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "SMC Corporation"
+        "SMC Corporation (SMCAY)"
       ],
       "filedSymbols": [
         "SMCAY"
@@ -2000,7 +2453,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Westwood Salient MLP & Energy Infrastructure Inst"
+        "Westwood Salient MLP & Engy Infras Inst (SMLPX)"
       ],
       "filedSymbols": [
         "SMLPX"
@@ -2044,7 +2497,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Shimano Inc."
+        "Shimano Inc. (SMNNY)"
       ],
       "filedSymbols": [
         "SMNNY"
@@ -2066,7 +2519,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Sompo Holdings, Inc."
+        "Sompo Holdings, Inc. (SMPNY)"
       ],
       "filedSymbols": [
         "SMPNY"
@@ -2110,7 +2563,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "SECOM CO., LTD."
+        "SECOM CO., LTD. (SOMLY)"
       ],
       "filedSymbols": [
         "SOMLY"
@@ -2132,14 +2585,15 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": "SPDR Portfolio S&P 400 Mid Cap ETF",
       "filedAs": [
-        "SPMD (S&P 400 Mid-Cap ETF)",
-        "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)"
+        "SPDR Portfolio S&P 400 Mid Cap ETF (SPMD)",
+        "SPMD (S&P 400 Mid-Cap ETF)"
       ],
       "filedSymbols": [
-        "SPMD"
+        "SPMD",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 23,
+      "rows": 34,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2158,10 +2612,34 @@
         "SPDR Portfolio S&P 500 Growth ETF"
       ],
       "filedSymbols": [
-        "SPYG"
+        "SPYG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SSTHX": {
+      "symbol": "SSTHX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Allspring Short-Term Hi Inc A",
+        "Allspring Short-Term Hi Inc A (SSTHX)"
+      ],
+      "filedSymbols": [
+        "SSTHX"
+      ],
+      "aliases": [],
+      "rows": 5,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2177,7 +2655,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Svenska Handelsbanken AB (publ)"
+        "Svenska Handelsbanken AB (publ) (SVNLY)"
       ],
       "filedSymbols": [
         "SVNLY"
@@ -2222,14 +2700,15 @@
       "displayName": null,
       "filedAs": [
         "Schwab Value Advantage Money Fund",
-        "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)"
+        "Schwab Value Advantage Money Fund Investor Class Shares (SWVXX)",
+        "Schwab Value Advantage Money Fund Investor Class Shares"
       ],
       "filedSymbols": [
         "SWVXX"
       ],
       "aliases": [],
-      "rows": 14,
-      "officials": 1,
+      "rows": 16,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2244,7 +2723,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Suzuki Motor Corporation"
+        "Suzuki Motor Corporation (SZKMY)"
       ],
       "filedSymbols": [
         "SZKMY"
@@ -2291,10 +2770,11 @@
         "iShares MSCI Thailand ETF (THD)"
       ],
       "filedSymbols": [
-        "THD"
+        "THD",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2332,13 +2812,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "iShares 20+ Year Treasury Bond ETF"
+        "iShares 20+ Year Treasury Bond ETF (TLT)"
       ],
       "filedSymbols": [
-        "TLT"
+        "TLT",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2376,7 +2857,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "UOL Group Limited"
+        "UOL Group Limited (UOLGY)"
       ],
       "filedSymbols": [
         "UOLGY"
@@ -2401,7 +2882,31 @@
         "iShares Broad USD High Yield Corporate Bond ETF"
       ],
       "filedSymbols": [
-        "USHY"
+        "USHY",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 12,
+      "officials": 2,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "USIG": {
+      "symbol": "USIG",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Broad USD Investment Grade Corporate Bond ETF (USIG)"
+      ],
+      "filedSymbols": [
+        "USIG",
+        "resolved:R1"
       ],
       "aliases": [],
       "rows": 2,
@@ -2435,6 +2940,29 @@
         "evidence": null
       }
     },
+    "VBR": {
+      "symbol": "VBR",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)"
+      ],
+      "filedSymbols": [
+        "VBR",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "VEA": {
       "symbol": "VEA",
       "reason": "not in SEC company_tickers.json",
@@ -2442,14 +2970,15 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Developed Markets Index Fund ETF Shares"
+        "Vanguard Developed Markets Index Fund ETF Shares (VEA)"
       ],
       "filedSymbols": [
-        "VEA"
+        "VEA",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 4,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2471,6 +3000,29 @@
       ],
       "aliases": [],
       "rows": 3,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VFH": {
+      "symbol": "VFH",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Financials Index Fund ETF Shares (VFH)"
+      ],
+      "filedSymbols": [
+        "VFH",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2501,6 +3053,29 @@
         "evidence": null
       }
     },
+    "VGT": {
+      "symbol": "VGT",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Information Technology Index Fund ETF Class Shares (VGT)"
+      ],
+      "filedSymbols": [
+        "VGT",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "VIG": {
       "symbol": "VIG",
       "reason": "not in SEC company_tickers.json",
@@ -2512,11 +3087,12 @@
         "Vanguard Dividend Appreciation Index Fund ETF Class Shares (VIG)"
       ],
       "filedSymbols": [
-        "VIG"
+        "VIG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 11,
-      "officials": 1,
+      "rows": 38,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2534,10 +3110,11 @@
         "Vanguard Mortgage-Backed Securities Index Fund ETF Class Shares"
       ],
       "filedSymbols": [
-        "VMBS"
+        "VMBS",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2556,10 +3133,11 @@
         "Vanguard Real Estate Index Fund ETF Shares"
       ],
       "filedSymbols": [
-        "VNQ"
+        "VNQ",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2575,14 +3153,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Russell 1000 Growth Index Fund ETF Shares"
+        "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+        "Vanguard Russell 1000 Growth Index Fund ETF Shares (VONG)"
       ],
       "filedSymbols": [
-        "VONG"
+        "VONG",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 20,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2597,14 +3177,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard 500 Index Fund ETF Shares"
+        "Vanguard 500 Index Fund ETF Shares",
+        "vanguard S&P 500 (VOO)",
+        "Vanguard S&P 500 (VOO)"
       ],
       "filedSymbols": [
-        "VOO"
+        "VOO",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 6,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2622,10 +3205,11 @@
         "Vanguard World FDS Vanguard Utils ETF"
       ],
       "filedSymbols": [
-        "VPU"
+        "VPU",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2643,14 +3227,16 @@
       "filedAs": [
         "Vanguard Tax-Exempt Bond Index Fund ETF Shares",
         "Vanguard Muni Bond ETF",
-        "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)"
+        "Vanguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)",
+        "anguard Tax-Exempt Bond Index Fund ETF Shares (VTEB)"
       ],
       "filedSymbols": [
-        "VTEB"
+        "VTEB",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 20,
-      "officials": 2,
+      "rows": 58,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2665,14 +3251,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Total Stock Market Index Fund ETF Class Shares"
+        "Vanguard Total Stock Market Index Fund ETF Class Shares",
+        "Vanguard Total Stock Market Index Fund ETF Class Shares (VTI)"
       ],
       "filedSymbols": [
-        "VTI"
+        "VTI",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 6,
-      "officials": 2,
+      "rows": 22,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2694,6 +3282,52 @@
       ],
       "aliases": [],
       "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VTV": {
+      "symbol": "VTV",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Value Index Fund ETF Shares (VTV)"
+      ],
+      "filedSymbols": [
+        "VTV",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VUG": {
+      "symbol": "VUG",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Growth Index Fund ETF Class Shares (VUG)"
+      ],
+      "filedSymbols": [
+        "VUG",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2731,14 +3365,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Vanguard Emerging Markets Stock Index Fund ETF Shares"
+        "Vanguard Emerging Markets Stock Index Fund ETF Shares",
+        "Vanguard Emerging Markets Stock Index Fund ETF Shares (VWO)"
       ],
       "filedSymbols": [
-        "VWO"
+        "VWO",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 3,
-      "officials": 1,
+      "rows": 7,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -2756,10 +3392,11 @@
         "Vanguard Extended Market Index Fund ETF Shares"
       ],
       "filedSymbols": [
-        "VXF"
+        "VXF",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2775,13 +3412,39 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "Vanguard Total International Stock Index Fund ETF Shares (VXUS)",
         "Vanguard Total International Stock Index Fund ETF Shares"
       ],
       "filedSymbols": [
-        "VXUS"
+        "VXUS",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 7,
+      "officials": 2,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "VYM": {
+      "symbol": "VYM",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard High Dividend Yield Index Fund ETF Shares",
+        "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)"
+      ],
+      "filedSymbols": [
+        "VYM",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 18,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2797,7 +3460,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Wise plc distribution"
+        "Wise plc (WISE) distribution"
       ],
       "filedSymbols": [
         "WISE"
@@ -2819,13 +3482,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Communication Services Select Sector SPDR Fund"
+        "Communication Services Select Sector SPDR Fund (XLC)"
       ],
       "filedSymbols": [
-        "XLC"
+        "XLC",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2841,13 +3505,15 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Energy Select Sector SPDR Fund"
+        "Energy Select Sector SPDR Fund",
+        "Energy Select Sector SPDR Fund (XLE)"
       ],
       "filedSymbols": [
-        "XLE"
+        "XLE",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
+      "rows": 4,
       "officials": 2,
       "review": {
         "status": "unreviewed",
@@ -2863,13 +3529,15 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "Financial Select Sector SPDR Fund (XLF)",
         "Financial Select Sector SPDR Fund"
       ],
       "filedSymbols": [
-        "XLF"
+        "XLF",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 4,
+      "rows": 8,
       "officials": 3,
       "review": {
         "status": "unreviewed",
@@ -2885,13 +3553,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Consumer Staples Select Sector SPDR Fund"
+        "Consumer Staples Select Sector SPDR Fund (XLP)"
       ],
       "filedSymbols": [
-        "XLP"
+        "XLP",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2907,13 +3576,14 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Utilities Select Sector SPDR Fund"
+        "Utilities Select Sector SPDR Fund (XLU)"
       ],
       "filedSymbols": [
-        "XLU"
+        "XLU",
+        "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2929,468 +3599,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Health Care Select Sector SPDR Fund"
+        "Health Care Select Sector SPDR Fund",
+        "Health Care Select Sector SPDR Fund (XLV)"
       ],
       "filedSymbols": [
-        "XLV"
-      ],
-      "aliases": [],
-      "rows": 2,
-      "officials": 2,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "ATNF": {
-      "symbol": "ATNF",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "180 Life Sciences Corp. Common Stock"
-      ],
-      "filedSymbols": [
-        "ATNF"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "BGHAX": {
-      "symbol": "BGHAX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "mutual_fund",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "BrandywineGLOBAL High Yield A",
-        "BrandywineGLOBAL - HIGH YIELD FUND Class A",
-        "BrandywineGLOBAL - HIGH YIELD FUND Class A (BGHAX)"
-      ],
-      "filedSymbols": [
-        "BGHAX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "BND": {
-      "symbol": "BND",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Vanguard Total Bond Market Index Fund ETF Shares (BND)"
-      ],
-      "filedSymbols": [
-        "BND"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "FALN": {
-      "symbol": "FALN",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "iShares Fallen Angels USD Bond ETF",
-        "iShares Fallen Angels USD Bond ETF (FALN)"
-      ],
-      "filedSymbols": [
-        "FALN"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "FB": {
-      "symbol": "FB",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Facebook, Inc. (FB)",
-        "Meta Platforms (FB)"
-      ],
-      "filedSymbols": [
-        "FB"
-      ],
-      "aliases": [],
-      "rows": 2,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "FNJQX": {
-      "symbol": "FNJQX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Franklin NJ Tax Free Income A",
-        "Franklin NJ Tax Free Income A (FNJQX)"
-      ],
-      "filedSymbols": [
-        "FNJQX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "JAAA": {
-      "symbol": "JAAA",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Janus Henderson AAA CLO ETF Janus Henderson AAA CLO ETF",
-        "Janus Henderson AAA CLO ETF (JAAA)"
-      ],
-      "filedSymbols": [
-        "JAAA"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "NNJAX": {
-      "symbol": "NNJAX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Nuveen NJ Municipal Bond A",
-        "Nuveen NJ Municipal Bond A (NNJAX)"
-      ],
-      "filedSymbols": [
-        "NNJAX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "NVHAX": {
-      "symbol": "NVHAX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Nuveen Short Duration Hi Yld Muni Bd A",
-        "Nuveen Short Duration Hi Yld Muni Bd A (NVHAX)"
-      ],
-      "filedSymbols": [
-        "NVHAX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "ONJAX": {
-      "symbol": "ONJAX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Invesco New Jersey Municipal A",
-        "Invesco New Jersey Municipal A (ONJAX)"
-      ],
-      "filedSymbols": [
-        "ONJAX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "PONAX": {
-      "symbol": "PONAX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "mutual_fund",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "PIMCO Income Fund Class A Shares",
-        "PIMCO Income Fund Class A Shares (PONAX)"
-      ],
-      "filedSymbols": [
-        "PONAX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "PULS": {
-      "symbol": "PULS",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "PGIM Ultra Short Bond ETF",
-        "PGIM Ultra Short Bond ETF (PULS)"
-      ],
-      "filedSymbols": [
-        "PULS"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "SE": {
-      "symbol": "SE",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Sea Limited (SE)"
-      ],
-      "filedSymbols": [
-        "SE"
-      ],
-      "aliases": [],
-      "rows": 3,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "SHY": {
-      "symbol": "SHY",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "iShares 1-3 Year Treasury Bond ETF"
-      ],
-      "filedSymbols": [
-        "SHY"
+        "XLV",
+        "resolved:R1"
       ],
       "aliases": [],
       "rows": 4,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "SHYG": {
-      "symbol": "SHYG",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "iShares 0-5 Year High Yield Corporate Bond ETF",
-        "iShares 0-5 Year High Yield Corporate Bond ETF (SHYG)"
-      ],
-      "filedSymbols": [
-        "SHYG"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "SSTHX": {
-      "symbol": "SSTHX",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "unknown",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Allspring Short-Term Hi Inc A",
-        "Allspring Short-Term Hi Inc A (SSTHX)"
-      ],
-      "filedSymbols": [
-        "SSTHX"
-      ],
-      "aliases": [],
-      "rows": 5,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "USIG": {
-      "symbol": "USIG",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "iShares Broad USD Investment Grade Corporate Bond ETF (USIG)"
-      ],
-      "filedSymbols": [
-        "USIG"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "VBR": {
-      "symbol": "VBR",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)"
-      ],
-      "filedSymbols": [
-        "VBR"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "VFH": {
-      "symbol": "VFH",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Vanguard Financials Index Fund ETF Shares (VFH)"
-      ],
-      "filedSymbols": [
-        "VFH"
-      ],
-      "aliases": [],
-      "rows": 1,
-      "officials": 1,
-      "review": {
-        "status": "unreviewed",
-        "reviewer": null,
-        "reviewedAt": null,
-        "evidence": null
-      }
-    },
-    "VYM": {
-      "symbol": "VYM",
-      "reason": "not in SEC company_tickers.json",
-      "instrumentType": "etf",
-      "instrumentTypeSource": "inferred_from_name",
-      "displayName": null,
-      "filedAs": [
-        "Vanguard High Dividend Yield Index Fund ETF Shares",
-        "Vanguard High Dividend Yield Index Fund ETF Shares (VYM)"
-      ],
-      "filedSymbols": [
-        "VYM"
-      ],
-      "aliases": [],
-      "rows": 9,
-      "officials": 1,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,

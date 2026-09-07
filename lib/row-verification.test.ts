@@ -363,8 +363,8 @@ describe("gates per row", () => {
       auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set([1]), notFound: new Set() }]]),
       decisionsById: new Map([[ids[1], { recordId: ids[1], slug: "x", decision: "confirmed", evidence: "page 1 row 2", decidedBy: "trevor", decidedAt: "2026-09-06T00:00:00Z" }]]),
     });
-    expect(out[0].gates).toEqual({ read1Confidence: 0.91, text: "agree", ocr: "none", model2: "agree", session: "none", audit: "confirm", human: null, implausible: [] });
-    expect(out[1].gates).toEqual({ read1Confidence: 0.55, text: "agree", ocr: "none", model2: "disagree", session: "none", audit: "dispute", human: "confirmed", implausible: [] });
+    expect(out[0].gates).toEqual({ read1Confidence: 0.91, text: "agree", ocr: "none", model2: "agree", session: "none", audit: "confirm", human: null, implausible: [], name: "agree" });
+    expect(out[1].gates).toEqual({ read1Confidence: 0.55, text: "agree", ocr: "none", model2: "disagree", session: "none", audit: "dispute", human: "confirmed", implausible: [], name: "agree" });
     expect(out[1].state).toBe("human_verified");
   });
 });

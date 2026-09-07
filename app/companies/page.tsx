@@ -51,10 +51,13 @@ export default async function CompaniesPage() {
           officials traded that asset.
         </p>
         <p className="text-sm text-neutral-500 max-w-xl leading-relaxed mt-3">
-          Not comprehensive: this lookup includes only trades whose filings
-          print a ticker symbol. Officials whose filings list securities by
-          name alone — including President Trump — do not appear here; their
-          trades are on their official pages.
+          A trade appears under a company only when its printed name was
+          read the same way by two independent readers and matched a listed
+          security exactly, by symbol or by name on two reference lists, or
+          a person confirmed it. Broker abbreviations still under review,
+          bonds, notes, preferreds, funds and private holdings are not
+          listed here; every trade stays on its official&rsquo;s page under
+          the name the filing prints. Method: <Link href="/methodology#assets" className="underline hover:text-neutral-900">how names become tickers</Link>.
         </p>
       </header>
 

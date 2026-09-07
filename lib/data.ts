@@ -1,10 +1,11 @@
 import { readFile } from "fs/promises";
 import path from "path";
 import type { AmountRange, OfficialData, OfficialsIndex } from "./types";
-import { companyGroupName, resolveTicker } from "./assets";
-import { lookupAsset, registryDisplayName, resolveSymbol, type AssetLookup } from "./asset-registry";
-import { verificationForOfficial, type RowVerification } from "./row-verification";
+import { companyGroupName } from "./assets";
+import { lookupAsset, registryDisplayName, type AssetLookup } from "./asset-registry";
+import { recordIdsFor, verificationForOfficial, type RowVerification } from "./row-verification";
 import { rowsForTotals } from "./format";
+import { readAssetResolution } from "./asset-resolution";
 
 /** A separate aggregate view; never remove rows from the source official. */
 export function officialForTotals(official: OfficialData) {
@@ -105,17 +106,25 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
   const tickerMap = new Map<string, CompanyData>();
 
   const descriptionsByTicker = new Map<string, string[]>();
+  // The asset resolution lane (lib/asset-resolution, built into
+  // data/meta/asset-resolution.json) decides which rows belong on a
+  // company page: only a row resolved at the top tier (T1: a printed
+  // symbol corroborated by a listing, an exact name on both reference
+  // lists, or a person's dictionary entry) AND whose printed name an
+  // independent reader read the same way (gates.name). A printed symbol
+  // no list confirms stays off, as does every bond, note, preferred,
+  // fund and private holding. The stored rows are untouched. (Sep 2026:
+  // before this, only rows whose filing printed a symbol appeared, and
+  // President Trump's 8,940 rows print none.)
+  const assets = readAssetResolution();
   for (const official of officials) {
     const verification = verificationForOfficial(official.slug, official.transactions);
+    const ids = recordIdsFor(official.transactions);
     for (const [i, tx] of official.transactions.entries()) {
-      // Resolve at read time. A filed symbol that is a name suffix ("THE")
-      // or an unreviewed ambiguous short symbol is withheld here, so it can
-      // never become a company page. The stored row is untouched.
-      const resolved = resolveTicker(tx.description, tx.ticker);
-      if (!resolved.ticker) continue;
-      // The registry folds filed variants (APPL, BRKB, BRK-B) into one
-      // symbol, each with recorded evidence.
-      const ticker = resolveSymbol(resolved.ticker);
+      const asset = assets?.rows[ids[i]];
+      if (!asset || asset.tier !== "T1" || !asset.resolvedTicker) continue;
+      if (verification[i]?.gates && verification[i]!.gates!.name !== "agree") continue;
+      const ticker = asset.resolvedTicker;
       if (!tickerMap.has(ticker)) {
         tickerMap.set(ticker, { ticker, companyName: ticker, trades: [], registry: lookupAsset(ticker) });
         descriptionsByTicker.set(ticker, []);

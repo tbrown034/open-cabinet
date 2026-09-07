@@ -85,6 +85,13 @@ export interface RowGates {
   human: "confirmed" | "corrected" | "rejected" | null;
   /** Reasons from the impossible-value check, empty when clean. */
   implausible: string[];
+  /** Whether an independent reader read the same asset name. The text
+   * lane compares names (a shared asset word); the second model and the
+   * session read pair rows by name before comparing values, so either
+   * verdict on the row means the name matched. OCR compares values only.
+   * "none" means nobody independent has read this row's name; a ticker
+   * is never attached to such a row (the Adobe-for-Apple case). */
+  name: "agree" | "none";
 }
 
 export interface RowVerificationFile {
@@ -409,7 +416,11 @@ export function gatesForRow(
   const a = url ? input.auditByUrl?.get(url) : undefined;
   const audit: RowGates["audit"] = !a || idx < 0 ? "none" : a.confirmed.has(idx) ? "confirm" : a.disputed.has(idx) ? "dispute" : a.notFound.has(idx) ? "notfound" : "none";
   const human: RowGates["human"] = decision ? decision.decision : null;
-  return { read1Confidence: conf, text, ocr, model2, session, audit, human, implausible };
+  const name: RowGates["name"] =
+    text === "agree" || model2 === "agree" || model2 === "disagree" || session === "agree" || session === "disagree" || human === "confirmed" || human === "corrected"
+      ? "agree"
+      : "none";
+  return { read1Confidence: conf, text, ocr, model2, session, audit, human, implausible, name };
 }
 
 export function deriveRowVerification(input: DeriveInput): RowVerification[] {

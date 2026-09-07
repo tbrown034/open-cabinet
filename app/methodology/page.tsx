@@ -5,6 +5,7 @@ import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/dat
 import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log";
 import { sumAmountEstimates } from "@/lib/amounts";
 import { readRowVerification } from "@/lib/row-verification";
+import { readAssetResolution } from "@/lib/asset-resolution";
 import VerificationSummary from "../components/verification-summary";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -47,6 +48,9 @@ export default async function MethodologyPage() {
   const allRows = everyOfficial.flatMap((o) => o.transactions);
   const log = readCrosscheckLog();
   const rowVerification = readRowVerification();
+  const assets = readAssetResolution();
+  const assetTiers = assets?.summary.byTier ?? {};
+  const stockRows = (assetTiers.T1 ?? 0) + (assetTiers.T2 ?? 0) + (assetTiers.none ?? 0);
   const coverage = log ? summarizeCrosscheckLog(log, allRows) : null;
   const agreedRows = coverage?.rows.checked_tuple_agreement ?? 0;
   const mismatchRows = coverage?.rows.checked_tuple_mismatch ?? 0;
@@ -416,6 +420,43 @@ export default async function MethodologyPage() {
         </section>
 
         <VerificationSummary summary={rowVerification?.summary ?? null} />
+
+        {/* How names become tickers */}
+        <section id="assets" className="border-t border-neutral-200 pt-8 scroll-mt-24">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">
+            How names become tickers
+          </h2>
+          <p className="text-neutral-600 leading-relaxed mb-4">
+            Filings print asset names the way a broker statement does:
+            &ldquo;TEXAS INSTRS INC,&rdquo; &ldquo;Apple Inc Com Solicited Order
+            Discretion Exercised,&rdquo; a municipal bond with its coupon and
+            maturity. Most print no ticker symbol. To put a trade on a company
+            page, the site first decides what kind of thing the row is from the
+            printed text (stock, ETF, mutual fund, preferred, corporate note,
+            municipal bond, Treasury, crypto, private holding, option). Bonds,
+            notes, preferreds, funds and private holdings never get a stock
+            ticker.
+          </p>
+          <p className="text-neutral-600 leading-relaxed mb-4">
+            A stock or ETF row is tied to a company only on exact evidence: a
+            symbol the filing itself prints, confirmed by the exchange listing
+            of the same name; or the printed name, after broker boilerplate is
+            removed, matching one security by exact name on two public reference
+            lists (the Nasdaq symbol directory and the SEC&rsquo;s issuer list)
+            that agree on the symbol; or a person&rsquo;s recorded decision.
+            Nothing is matched by similarity, and no model is asked to guess.
+            A name that matches on only one list, or is cut short by the broker,
+            waits for a person.
+          </p>
+          {assets ? (
+            <p className="text-neutral-600 leading-relaxed">
+              Today: {stockRows.toLocaleString("en-US")} rows are stocks or ETFs.
+              {" "}{(assetTiers.T1 ?? 0).toLocaleString("en-US")} are tied to a company on that evidence and appear on company pages;
+              {" "}{((assetTiers.T2 ?? 0) + (assetTiers.none ?? 0)).toLocaleString("en-US")} show the printed name only until a person looks.
+              Reference lists fetched {assets.sources["nasdaqlisted.txt"]?.fetchedAt.slice(0, 10) ?? "n/a"}.
+            </p>
+          ) : null}
+        </section>
 
         {/* Disclaimers */}
         <section className="border-t border-neutral-200 pt-8">

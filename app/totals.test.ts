@@ -13,6 +13,24 @@ vi.mock("fs/promises", () => ({ readFile: vi.fn() }));
 vi.mock("@/lib/row-verification", async (importOriginal) => ({
   ...(await importOriginal<typeof import("@/lib/row-verification")>()), verificationForOfficial: vi.fn() }));
 vi.mock("@/lib/news", () => ({ getNewsCoverage: async () => [] }));
+// Company pages take rows only from the asset resolution sidecar at the
+// top tier. The fixture's three Apple rows resolve by rule R1 (printed
+// symbol corroborated by the Nasdaq listing); build that sidecar from the
+// real resolver so the test follows the same rules as production.
+vi.mock("@/lib/asset-resolution", async (importOriginal) => {
+  const mod = await importOriginal<typeof import("@/lib/asset-resolution")>();
+  const { recordIdsFor } = await vi.importActual<typeof import("@/lib/row-verification")>("@/lib/row-verification");
+  return {
+    ...mod,
+    readAssetResolution: () => {
+      const ctx = mod.defaultContext();
+      const ids = recordIdsFor(transactions);
+      const rows: Record<string, ReturnType<typeof mod.resolveAsset> & { slug: string }> = {};
+      transactions.forEach((tx, i) => { rows[ids[i]] = { ...mod.resolveAsset(tx, ctx), slug: "example-person" }; });
+      return { version: 1, generatedAt: "", generatedBy: "test", sources: {}, summary: { rows: 3, byType: {}, byTier: {}, byRule: {} }, rows };
+    },
+  };
+});
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn() }) }));
 vi.mock("./components/hero-monthly-chart", () => ({ default: () => null }));
 vi.mock("./components/official-avatar", () => ({ default: () => null }));

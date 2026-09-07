@@ -38,6 +38,8 @@ import {
   type PendingRegistry,
 } from "../lib/asset-registry";
 import { resolveTicker } from "../lib/assets";
+import { readAssetResolution } from "../lib/asset-resolution";
+import { recordIdsFor } from "../lib/row-verification";
 
 const SEC_SOURCE_URL = "https://www.sec.gov/files/company_tickers.json";
 // Recorded by hand when the snapshot was fetched (curl, Sep 5, 2026). If the
@@ -181,6 +183,37 @@ function collectFiledUses(sec: Map<string, SecRow>): {
       u.filedSymbols.add(filed);
       u.rows += 1;
       u.officials.add(o.slug);
+    }
+  }
+  // Symbols the asset resolution lane resolved at the top tier from a
+  // printed name alone (data/meta/asset-resolution.json, Sep 2026). They
+  // reach company pages exactly like a printed symbol, so the registry
+  // must carry them too; the filed variant recorded is the printed name.
+  const resolution = readAssetResolution();
+  if (resolution) {
+    const bySlug = new Map<string, Map<string, string>>();
+    for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+      const o = JSON.parse(readFileSync(path.join(dir, file), "utf-8"));
+      const ids = recordIdsFor(o.transactions ?? []);
+      bySlug.set(o.slug, new Map(ids.map((id: string, i: number) => [id, o.transactions[i].description])));
+    }
+    for (const [id, r] of Object.entries(resolution.rows)) {
+      if (r.tier !== "T1" || !r.resolvedTicker) continue;
+      const description = bySlug.get(r.slug)?.get(id);
+      if (!description) continue;
+      const symbol = canonicalizeSymbol(r.resolvedTicker);
+      let u = uses.get(symbol);
+      if (!u) {
+        u = { descriptions: new Map(), filedSymbols: new Set(), rows: 0, officials: new Set() };
+        uses.set(symbol, u);
+      }
+      u.descriptions.set(description, (u.descriptions.get(description) ?? 0) + 1);
+      // The symbol itself is what the lane resolved; the rule that did it
+      // is recorded as an alias-style marker so a reviewer can see why.
+      u.filedSymbols.add(symbol);
+      u.filedSymbols.add(`resolved:${r.rule.split(" ")[0]}`);
+      u.rows += 1;
+      u.officials.add(r.slug);
     }
   }
   return { uses, folded, withheld };
