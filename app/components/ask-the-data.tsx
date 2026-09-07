@@ -8,8 +8,59 @@
  * numbers, the rows with links to the filings, and the count of rows the
  * answer left out because a check has not agreed with them yet.
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+
+/**
+ * Honest wait status. There is no streaming from the route, so the stages
+ * are time-based and worded as what the route does in order: the code
+ * gate, the one model call, the count. Never a stage the route is not in.
+ */
+function PendingStatus() {
+  const [seconds, setSeconds] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setSeconds((s) => s + 1), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const stages: Array<[string, boolean]> = [
+    ["Reading the question", true],
+    ["Turning it into a query", seconds >= 1],
+    ["Counting checked rows", seconds >= 6],
+  ];
+  return (
+    <div className="px-5 py-4 border-t border-neutral-200" role="status" aria-live="polite">
+      {stages.map(([label, reached], i) => {
+        const current = reached && (i === stages.length - 1 || !stages[i + 1][1]);
+        return (
+          <p key={label} className={`flex items-center gap-2 text-sm ${reached ? "text-neutral-700" : "text-neutral-300"} mt-0.5 first:mt-0`}>
+            {current ? (
+              <span className="size-2 animate-pulse rounded-full bg-neutral-500" aria-hidden />
+            ) : reached ? (
+              <span className="size-2 rounded-full bg-neutral-300" aria-hidden />
+            ) : (
+              <span className="size-2 rounded-full border border-neutral-200" aria-hidden />
+            )}
+            <span>{label}{current ? "..." : ""}</span>
+          </p>
+        );
+      })}
+      {seconds >= 12 && <p className="text-xs text-neutral-400 mt-2">Still working ({seconds}s). The model call stops at 10 seconds; the count is quick.</p>}
+    </div>
+  );
+}
+
+const STATUS_LABEL: Record<AskResponse["status"], { text: string; className: string }> = {
+  answered: { text: "Answered from checked rows", className: "border-emerald-700 text-emerald-800" },
+  not_in_data: { text: "Not in this data", className: "border-neutral-400 text-neutral-600" },
+  declined: { text: "Declined", className: "border-amber-700 text-amber-800" },
+  error: { text: "Error", className: "border-red-700 text-red-800" },
+};
+
+/** The template repeats the query restatement first; the card shows the query once, on its own line. */
+function sentenceWithoutQuery(answer: string, planText: string | null): string {
+  if (planText && answer.startsWith(planText)) return answer.slice(planText.length).trim();
+  return answer;
+}
 
 interface ResultRow {
   officialName: string;
@@ -77,6 +128,8 @@ interface AskResponse {
   /** The one-line note for those, written in code. */
   pendingNote?: string | null;
   disclosure: string;
+  /** The validated plan the executor ran (builder view). */
+  plan?: unknown;
 }
 
 // Questions the verified rows can actually answer. Picked against the
@@ -109,6 +162,16 @@ export default function AskTheData({
   const [question, setQuestion] = useState("");
   const [pending, setPending] = useState(false);
   const [response, setResponse] = useState<AskResponse | null>(null);
+  const [elapsedMs, setElapsedMs] = useState<number | null>(null);
+  // Builder view: the machinery under the answer. Off for readers; a person
+  // building or explaining the box turns it on, and the choice sticks.
+  const [builder, setBuilder] = useState(false);
+  useEffect(() => {
+    try { setBuilder(localStorage.getItem("askai-builder") === "1"); } catch {}
+  }, []);
+  function toggleBuilder() {
+    setBuilder((b) => { try { localStorage.setItem("askai-builder", b ? "0" : "1"); } catch {} return !b; });
+  }
 
   // "On file" is the completeness claim the answer checker bans, so a chip
   // must not ask a question the box is forbidden to answer honestly.
@@ -126,6 +189,8 @@ export default function AskTheData({
     if (trimmed.length < 3 || pending) return;
     setPending(true);
     setResponse(null);
+    setElapsedMs(null);
+    const t0 = Date.now();
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
@@ -133,6 +198,7 @@ export default function AskTheData({
         body: JSON.stringify({ question: trimmed, officialSlug }),
       });
       setResponse((await res.json()) as AskResponse);
+      setElapsedMs(Date.now() - t0);
     } catch {
       setResponse({
         status: "error",
@@ -155,17 +221,11 @@ export default function AskTheData({
         <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900">
           Ask the data
         </h2>
-        <p className="text-xs text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-          Ask in plain English{officialName ? ` about ${officialName}` : ""}. Code runs the
-          query and produces every number. AI only writes the question into a query and, if it
-          passes a check, the sentence. This box answers only from checked rows: rows that an
-          independent program or a second company{"'"}s model agreed with and a third
-          company{"'"}s model confirmed against the page image.
+        <p className="text-sm text-neutral-500 mt-1 max-w-2xl leading-relaxed">
+          Ask in plain English{officialName ? ` about ${officialName}` : ""}. The AI only turns your question into a
+          query; code runs it over checked rows and writes the answer.
           {checkedCount !== null && parsedCount !== null && (
-            <>
-              {" "}That is {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()}{" "}
-              parsed rows. It is not the full record.
-            </>
+            <> {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()} parsed rows qualify today.</>
           )}
         </p>
       </div>
@@ -218,20 +278,28 @@ export default function AskTheData({
         </div>
       </div>
 
-      {response && (
-        <div className="border-t border-neutral-200 px-5 py-4">
-          {response.planText && (
-            <p className="text-xs uppercase tracking-wider text-neutral-400 mb-1">
-              Query that ran
-            </p>
-          )}
-          {response.planText && (
-            <p className="text-sm text-neutral-600 font-[family-name:var(--font-dm-mono)] mb-4">
-              {response.planText}
-            </p>
-          )}
+      {pending && <PendingStatus />}
 
-          <p className="text-base text-neutral-900 leading-relaxed">{response.answer}</p>
+      {response && !pending && (
+        <div className="border-t border-neutral-200 px-5 py-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <span className={`inline-block border text-[11px] uppercase tracking-wider px-2 py-0.5 ${STATUS_LABEL[response.status].className}`}>
+              {STATUS_LABEL[response.status].text}
+            </span>
+            <button type="button" onClick={toggleBuilder} className="text-xs text-neutral-400 underline hover:text-neutral-900">
+              {builder ? "Hide the machinery" : "Show the machinery"}
+            </button>
+          </div>
+
+          <p className="font-[family-name:var(--font-source-serif)] text-xl text-neutral-900 leading-snug">
+            {sentenceWithoutQuery(response.answer, response.planText)}
+          </p>
+          {response.planText && (
+            <p className="text-xs text-neutral-500 mt-2">
+              <span className="uppercase tracking-wider text-neutral-400 mr-2">Query</span>
+              <span className="font-[family-name:var(--font-dm-mono)]">{response.planText}</span>
+            </p>
+          )}
 
           {response.status === "not_in_data" && response.pendingNote && (
             <p className="text-sm text-neutral-500 mt-3 border-l-2 border-amber-400 pl-3">
@@ -417,9 +485,28 @@ export default function AskTheData({
           )}
 
           {response.disclosure && (
-            <p className="text-xs text-neutral-400 mt-2 leading-relaxed">
-              {response.disclosure}
-            </p>
+            <details className="mt-4 text-xs text-neutral-500">
+              <summary className="cursor-pointer text-neutral-500 hover:text-neutral-900">How this answer was made</summary>
+              <p className="mt-2 leading-relaxed">{response.disclosure}</p>
+            </details>
+          )}
+
+          {builder && (
+            <div className="mt-4 border border-dashed border-neutral-300 bg-stone-50 p-3 text-xs text-neutral-700">
+              <p className="uppercase tracking-wider text-neutral-400 mb-2">Builder view: what the code did</p>
+              <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
+                <dt className="text-neutral-400">Outcome</dt><dd>{response.status}</dd>
+                <dt className="text-neutral-400">Round trip</dt><dd>{elapsedMs !== null ? `${(elapsedMs / 1000).toFixed(1)}s` : "n/a"}</dd>
+                <dt className="text-neutral-400">Rows matched</dt><dd>{result ? result.matchedRows.toLocaleString() : "n/a"}</dd>
+                <dt className="text-neutral-400">Aggregate</dt><dd>{result?.aggregate ?? "n/a"}</dd>
+                <dt className="text-neutral-400">Sentence by</dt><dd>code template (model prose is off in this alpha)</dd>
+              </dl>
+              <p className="uppercase tracking-wider text-neutral-400 mt-3 mb-1">Validated plan the executor ran</p>
+              <pre className="overflow-x-auto font-[family-name:var(--font-dm-mono)] text-[11px] leading-relaxed whitespace-pre-wrap">{response.plan ? JSON.stringify(response.plan, null, 2) : "(no plan: the question was declined or not translated before execution)"}</pre>
+              {response.excluded && (
+                <p className="mt-2 text-neutral-500">Site-wide rows outside the box: {response.excluded.underReview} under review, {response.excluded.auditPending} awaiting audit, {response.excluded.notYetCompared} not compared, of {response.excluded.parsed.toLocaleString()} parsed.</p>
+              )}
+            </div>
           )}
         </div>
       )}
