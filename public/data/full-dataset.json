@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-07T00:04:48.719Z",
+  "exportedAt": "2026-09-07T00:09:09.183Z",
   "officialCount": 39,
   "transactionCount": 11513,
   "underReviewCount": 0,
@@ -15633,6 +15633,7 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
+          "notes": "OGE no longer serves the filing this row came from (its URL returned \"Document has been deleted\" on Sep 6, 2026), so no second reader can check it against the page. The row stands on the original read.",
           "recordId": "344793be92c8db46645c8d2d",
           "verificationScore": 1,
           "verificationState": "single_read"
@@ -15645,6 +15646,7 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
+          "notes": "OGE no longer serves the filing this row came from (its URL returned \"Document has been deleted\" on Sep 6, 2026), so no second reader can check it against the page. The row stands on the original read.",
           "recordId": "51a093c6dd7b6d599c1cfd93",
           "verificationScore": 1,
           "verificationState": "single_read"
@@ -72367,8 +72369,8 @@
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
           "recordId": "13a3f7e1383385cf4e025f13",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Arista Networks Inc Com New Solicited Order Discretion Exercised",
@@ -72683,14 +72685,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "Kier & Co Inc Com Solicited Order Discretion Exercised",
+          "description": "Kkr & Co Inc Com Solicited Order Discretion Exercised",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-27",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "1cc0413d27cd1e5e8b4991cc",
+          "recordId": "b1e4bafc97b21245b8f290f5",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -76715,14 +76717,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "AIR REALTY REIT",
+          "description": "AH REALTY REIT",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-23",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "7ccc531879dac31b82b579e0",
+          "recordId": "36f601dc9855f7bfc049db82",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -84923,14 +84925,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "IOVIA HLDGS INC",
+          "description": "IQVIA HLDGS INC",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-17",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "5bca7c4e7399e54f38060f31",
+          "recordId": "30dd2ac2ee875d5be19b92ec",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -89819,14 +89821,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "UNITY ELECTRONICS INC UNSOLICITED",
+          "description": "QNITY ELECTRONICS INC UNSOLICITED",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-11",
           "amount": "$15,001-$50,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "a31051c48a23e589ea862239",
+          "recordId": "abb7ff349a1a165e99b367a7",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -90851,14 +90853,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "Adobe Inc Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent",
+          "description": "Apple Inc Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-06",
           "amount": "$100,001-$250,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "70fb332270ed4cc070993e30",
+          "recordId": "d2707a52bdfeb5e3dd0f8005",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -91055,16 +91057,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "iShares Tr Mad Ealo Value ETF",
+          "description": "Ishares Tr Msci Eafe Value Etf E17772823070777-00497 Average Unit Price Transaction Your Broker Acted As Agent",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-06",
           "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "c47e5ec29407c1378a5bf0c0",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "b1413c0ca545f2bc564e33a7",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "Johnson & Johnson Com Solicited Order Discretion Exercised Allocated Order Your Broker Acted As Agent",
@@ -91175,14 +91177,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "Nvidia Corp Com Solicited Order Discretion Based",
+          "description": "Nvidia Corp Com Solicited Order Discretion Exercised",
           "ticker": null,
           "type": "Sale",
           "date": "2026-03-06",
           "amount": "$250,001-$500,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "138d24487a109a2348ca9792",
+          "recordId": "772ec121dc99a56cd7ff2065",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -92807,16 +92809,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "ISHARES INTERNATIONAL TREASURY BOND ETF",
+          "description": "ISHARES INTERNATIONAL TRSRY BND ETF",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$500,001-$1,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "f17b2d2be0c645119cc935a7",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "db98e80a6faa2e52cf977465",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "ISHARES MSCI JAPAN ETF",
@@ -93815,16 +93817,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "STATE STREET TECHNOLOGY SELECT SECTOR SPDR ETF",
+          "description": "STATE STRET TEC SELECT SEC SPDR ETF",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-03-04",
           "amount": "$250,001-$500,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "4786501e8a85a807877e4c8f",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "dfc3af03c7cbffa9cfc21cdd",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "STATE STRT CONS DSRY SLT SE SP ETF JV",
@@ -105731,16 +105733,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "Gen Dental Inc",
+          "description": "Gen Digital Inc.",
           "ticker": null,
           "type": "Sale",
           "date": "2026-02-10",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "e8b5e34870e97f53a31cee2a",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "d682607dd9f5a633ee9a2692",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "Godaddy Inc",
@@ -107147,14 +107149,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "Kum Sushi Uu Inc Cl A Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent",
+          "description": "Kura Sushi Usa Inc Cl A Com Solicited Order Discretion Exercised Average Unit Price Transaction Your Broker Acted As Agent",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-02-02",
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "0a183c86cf8132628e5d8741",
+          "recordId": "4a5ae92a7a806cd46a4f166a",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -107639,16 +107641,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "STATE STREET INDUSTRIAL SELECT SECTOR SPDR ETF",
+          "description": "STATE STRT INDSTL SLCT SCTR SPDR ETF",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-01-29",
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "9a8c0ae373a9bab15a75bd1b",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "86b75da6030ee4c744e39e36",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "STE SRT CNSR STPLS SLCT SEC SPDR ETF",
@@ -113375,14 +113377,14 @@
           "verificationState": "checked"
         },
         {
-          "description": "LINDE PLC",
+          "description": "LINDE PLC F",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-01-12",
           "amount": "$50,001-$100,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "334f3a9834ad9e64924089d6",
+          "recordId": "010d0b52f7ff6bcac908aa0b",
           "verificationScore": 3,
           "verificationState": "checked"
         },
@@ -114083,16 +114085,16 @@
           "verificationState": "checked"
         },
         {
-          "description": "TEXAS INSTRUMENTS INC",
+          "description": "TEXAS INSTRS INC",
           "ticker": null,
           "type": "Purchase",
           "date": "2026-01-12",
           "amount": "$1,000,001-$5,000,000",
           "lateFilingFlag": true,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-          "recordId": "c1abd61f822650adf7c8d8a8",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "recordId": "c11eda22bd418916c1808d0b",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "THE CAMPBELL'S CO",

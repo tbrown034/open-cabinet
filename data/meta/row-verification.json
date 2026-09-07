@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:04:21.270Z",
+  "generatedAt": "2026-09-07T00:09:08.758Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11513,
     "byState": {
-      "checked": 11359,
-      "human_verified": 145,
+      "checked": 11365,
+      "human_verified": 146,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 0,
-      "single_read": 9,
+      "single_read": 2,
       "implausible": 0,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
-      "1": 9,
+      "1": 2,
       "2": 0,
-      "3": 11504
+      "3": 11511
     }
   },
   "rows": {
@@ -54324,10 +54324,10 @@
       "id": "13a3f7e1383385cf4e025f13",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-07"
     },
     "1c13a60aa6fd091783ead137": {
       "id": "1c13a60aa6fd091783ead137",
@@ -54563,8 +54563,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "1cc0413d27cd1e5e8b4991cc": {
-      "id": "1cc0413d27cd1e5e8b4991cc",
+    "b1e4bafc97b21245b8f290f5": {
+      "id": "b1e4bafc97b21245b8f290f5",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -57587,8 +57587,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "7ccc531879dac31b82b579e0": {
-      "id": "7ccc531879dac31b82b579e0",
+    "36f601dc9855f7bfc049db82": {
+      "id": "36f601dc9855f7bfc049db82",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -63743,8 +63743,8 @@
       "lane": "ocr",
       "note": "OCR of printed row 3578 agrees; the page audit confirmed it"
     },
-    "5bca7c4e7399e54f38060f31": {
-      "id": "5bca7c4e7399e54f38060f31",
+    "30dd2ac2ee875d5be19b92ec": {
+      "id": "30dd2ac2ee875d5be19b92ec",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -67415,8 +67415,8 @@
       "lane": "ocr",
       "note": "OCR of printed row 1214 agrees; the page audit confirmed it"
     },
-    "a31051c48a23e589ea862239": {
-      "id": "a31051c48a23e589ea862239",
+    "abb7ff349a1a165e99b367a7": {
+      "id": "abb7ff349a1a165e99b367a7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -68189,8 +68189,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "70fb332270ed4cc070993e30": {
-      "id": "70fb332270ed4cc070993e30",
+    "d2707a52bdfeb5e3dd0f8005": {
+      "id": "d2707a52bdfeb5e3dd0f8005",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -68342,14 +68342,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "c47e5ec29407c1378a5bf0c0": {
-      "id": "c47e5ec29407c1378a5bf0c0",
+    "b1413c0ca545f2bc564e33a7": {
+      "id": "b1413c0ca545f2bc564e33a7",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "c63b1134d45aaaa37ee9085f": {
       "id": "c63b1134d45aaaa37ee9085f",
@@ -68432,8 +68432,8 @@
       "lane": "ocr",
       "note": "OCR of printed row 2863 agrees; the page audit confirmed it"
     },
-    "138d24487a109a2348ca9792": {
-      "id": "138d24487a109a2348ca9792",
+    "772ec121dc99a56cd7ff2065": {
+      "id": "772ec121dc99a56cd7ff2065",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -69656,14 +69656,14 @@
       "lane": "ocr",
       "note": "OCR of printed row 286 agrees; the page audit confirmed it"
     },
-    "f17b2d2be0c645119cc935a7": {
-      "id": "f17b2d2be0c645119cc935a7",
+    "db98e80a6faa2e52cf977465": {
+      "id": "db98e80a6faa2e52cf977465",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR read printed row 76 differently; the page audit confirmed it"
     },
     "73306b316d6344df2d876dc0": {
       "id": "73306b316d6344df2d876dc0",
@@ -70412,14 +70412,14 @@
       "lane": "ocr",
       "note": "OCR of printed row 2742 agrees; the page audit confirmed it"
     },
-    "4786501e8a85a807877e4c8f": {
-      "id": "4786501e8a85a807877e4c8f",
+    "dfc3af03c7cbffa9cfc21cdd": {
+      "id": "dfc3af03c7cbffa9cfc21cdd",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR read printed row 98 differently; the page audit confirmed it"
     },
     "1768b837af51944b67db2981": {
       "id": "1768b837af51944b67db2981",
@@ -79349,14 +79349,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR read printed row 503 differently; the page audit confirmed it"
     },
-    "e8b5e34870e97f53a31cee2a": {
-      "id": "e8b5e34870e97f53a31cee2a",
+    "d682607dd9f5a633ee9a2692": {
+      "id": "d682607dd9f5a633ee9a2692",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
     "71be84ccb2339ec2757f3f95": {
       "id": "71be84ccb2339ec2757f3f95",
@@ -80411,8 +80411,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "0a183c86cf8132628e5d8741": {
-      "id": "0a183c86cf8132628e5d8741",
+    "4a5ae92a7a806cd46a4f166a": {
+      "id": "4a5ae92a7a806cd46a4f166a",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -80780,14 +80780,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "9a8c0ae373a9bab15a75bd1b": {
-      "id": "9a8c0ae373a9bab15a75bd1b",
+    "86b75da6030ee4c744e39e36": {
+      "id": "86b75da6030ee4c744e39e36",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR read printed row 20 differently; the page audit confirmed it"
     },
     "5bc842ab59f33caa330e6893": {
       "id": "5bc842ab59f33caa330e6893",
@@ -85082,8 +85082,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "334f3a9834ad9e64924089d6": {
-      "id": "334f3a9834ad9e64924089d6",
+    "010d0b52f7ff6bcac908aa0b": {
+      "id": "010d0b52f7ff6bcac908aa0b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
@@ -85613,14 +85613,14 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it"
     },
-    "c1abd61f822650adf7c8d8a8": {
-      "id": "c1abd61f822650adf7c8d8a8",
+    "c11eda22bd418916c1808d0b": {
+      "id": "c11eda22bd418916c1808d0b",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; OCR read printed row 16 differently; the page audit confirmed it"
     },
     "65007fcc57d638af66643c98": {
       "id": "65007fcc57d638af66643c98",
