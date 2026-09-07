@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
+import PipelineFlow from "../components/pipeline-flow";
 import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
 import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log";
 import { sumAmountEstimates } from "@/lib/amounts";
@@ -121,6 +122,17 @@ export default async function MethodologyPage() {
           support from data alone &mdash; only from a side-by-side reading of
           the ethics agreement and the trades on file.
         </p>
+      </div>
+
+      {/* The pipeline on one page */}
+      <div id="pipeline" className="mx-auto max-w-3xl px-4 pb-8 scroll-mt-24">
+        <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-2">
+          How a filing becomes published rows
+        </h2>
+        <p className="text-neutral-600 leading-relaxed">
+          One diagram: what a program does, what a model does, and where a person is required.
+        </p>
+        <PipelineFlow />
       </div>
 
       {/* How this was built (the law and its deadlines live on About) */}
