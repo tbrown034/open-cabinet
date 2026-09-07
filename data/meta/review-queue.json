@@ -63,7 +63,7 @@
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-003",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T02:28:30.523Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -483,11 +483,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Donald-J-Trump-08.12.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T02:28:30.682Z"
+    "emailSentAt": "2026-09-06T02:28:30.682Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:18.825Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-004",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T02:54:42.185Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -35876,11 +35879,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Donald-J-Trump-06.25.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T02:54:42.457Z"
+    "emailSentAt": "2026-09-06T02:54:42.457Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:19.251Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-005",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T03:11:20.436Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -36619,11 +36625,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Donald-J-Trump-06.25.2026-278T (2).pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T03:11:20.585Z"
+    "emailSentAt": "2026-09-06T03:11:20.585Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:19.687Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-006",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T03:13:29.285Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -36955,11 +36964,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Trump, Donald J.-05.08.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T03:13:29.434Z"
+    "emailSentAt": "2026-09-06T03:13:29.434Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:20.113Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-007",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T04:32:59.586Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -125973,11 +125985,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Trump, Donald J.-05.08.2026-278T(2).pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T04:32:59.892Z"
+    "emailSentAt": "2026-09-06T04:32:59.892Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:20.549Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-008",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T04:38:41.450Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -140829,11 +140844,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Donald-J-Trump-4.20.2026-278T.pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T04:38:41.689Z"
+    "emailSentAt": "2026-09-06T04:38:41.689Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:20.976Z"
   },
   {
     "id": "trump-donald-j-lane_disagreement-2026-09-06-009",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T04:42:26.671Z",
     "kind": "lane_disagreement",
     "slug": "trump-donald-j",
@@ -147600,11 +147618,14 @@
       }
     ],
     "holding": "nothing; OCR disagreement on Donald J. Trump 2.26.2026 278-T (1).pdf is recorded and advisory. Reconcile by eye before committing.",
-    "emailSentAt": "2026-09-06T04:42:26.847Z"
+    "emailSentAt": "2026-09-06T04:42:26.847Z",
+    "decision": "Closed Sep 6, 8:40 PM: this was the OCR lane's filing-level disagreement from the Saturday night sweep. Every row of this filing has since been read by a second model or the session page read, audited against the page, or decided by Trevor row by row (data/review/decisions.json); the per-row states show 0 disputed. The filing-level item is superseded by the per-row record.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:21.400Z"
   },
   {
     "id": "kupor-scott-a-lane_disagreement-2026-09-06-010",
-    "status": "open",
+    "status": "decided",
     "createdAt": "2026-09-06T16:01:49.623Z",
     "kind": "lane_disagreement",
     "slug": "kupor-scott-a",
@@ -147628,6 +147649,9 @@
       }
     ],
     "holding": "every row of Scott-A-Kupor-09.12.2025-278T.pdf; nothing from it is published until this is decided",
-    "emailSentAt": "2026-09-06T16:01:49.807Z"
+    "emailSentAt": "2026-09-06T16:01:49.807Z",
+    "decision": "Closed Sep 6, 8:40 PM: the only difference is the text layer's 'See Endnote' cross-reference appended to the HP INC COM name; the form's endnote marker is not part of the asset name. Trade columns agree. Rows are published and checked.",
+    "decidedBy": "home",
+    "decidedAt": "2026-09-07T00:17:21.846Z"
   }
 ]
