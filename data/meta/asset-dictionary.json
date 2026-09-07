@@ -1584,6 +1584,102 @@
       "decidedBy": "trevor",
       "decidedAt": "2026-09-07T18:13:53.049Z",
       "evidence": "Trevor read and approved the High list as a whole on 2026-09-07 (docs/high-list-for-trevor-2026-09-07.md); Codex and Grok cold-checked it, their doubts cleared against the printed rows. High: Truncated Worthington Enterprises, Inc."
+    },
+    {
+      "nameKey": "ACCENTURE IRELAND",
+      "ticker": "ACN",
+      "displayName": "Accenture plc Class A Ordinary Shares (Ireland)",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:17:53.480Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+    },
+    {
+      "nameKey": "SCHWAB FUND INTL ETF",
+      "ticker": "SCHF",
+      "displayName": "Schwab International Equity ETF",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:18:13.336Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+    },
+    {
+      "nameKey": "ALPHABET CAP STK",
+      "ticker": "GOOG",
+      "displayName": "Alphabet Inc.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:18:21.807Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Capital Stock is the Class C nomenclature, which is GOOG; GOOGL Class A common is the alternative if the broker used the term loosely."
+    },
+    {
+      "nameKey": "ACCENTURE IRELAND F CLASS",
+      "ticker": "ACN",
+      "displayName": "Accenture plc Class A Ordinary Shares (Ireland)",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:18:30.178Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+    },
+    {
+      "nameKey": "NXP SEMICONDUCTORS EUR",
+      "ticker": "NXPI",
+      "displayName": "NXP Semiconductors N.V.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:18:34.419Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary marked EUR; resolves to the US Nasdaq listing of NXP Semiconductors N.V."
+    },
+    {
+      "nameKey": "BENTLEY SYS",
+      "ticker": "BSY",
+      "displayName": "Bentley Systems, Incorporated",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:20:24.530Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Bentley Systems, Incorporated; only the Class B common is listed, so the class the filing means is not certain."
+    },
+    {
+      "nameKey": "BENTLEY SYS CLASS",
+      "ticker": "BSY",
+      "displayName": "Bentley Systems, Incorporated",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:20:25.957Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Same as BENTLEY SYS; only the Class B common line exists in the directory."
+    },
+    {
+      "nameKey": "LIBERTY MEDIA CLASS SERIES C",
+      "ticker": "FWONK",
+      "displayName": "Liberty Media Corporation",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:21:02.327Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: The only Liberty Media lines in the directory are the Formula One trackers, so Series C reads as FWONK; a different tracker would change this."
+    },
+    {
+      "nameKey": "MCCORMICK CLASS CLASS N",
+      "ticker": "MKC",
+      "displayName": "McCormick & Company, Incorporated Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:21:22.542Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+    },
+    {
+      "nameKey": "MCCORMICK CLASS N",
+      "ticker": "MKC",
+      "displayName": "McCormick & Company, Incorporated Common Stock",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:21:23.597Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+    },
+    {
+      "nameKey": "SEA",
+      "ticker": "SE",
+      "displayName": "Sea Limited American Depositary Shares, each representing one Class A Ordinary Share",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:21:27.479Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Sea Limited American depositary shares; the bare three-letter name is thin evidence but SE is the only Sea listing."
+    },
+    {
+      "nameKey": "SEAGATE TECHNOLOGY H",
+      "ticker": "STX",
+      "displayName": "Seagate Technology Holdings PLC",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T18:21:30.218Z",
+      "evidence": "Trevor approved 2026-09-07 from the review screen. Medium: Truncated Seagate Technology Holdings PLC, an Ireland ordinary trading on Nasdaq."
     }
   ]
 }

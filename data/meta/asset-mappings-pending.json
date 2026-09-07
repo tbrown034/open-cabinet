@@ -2282,14 +2282,16 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "Schwab International Equity ETF"
+        "Schwab International Equity ETF",
+        "Schwab Fund International ETF"
       ],
       "filedSymbols": [
         "SCHF",
-        "resolved:R1"
+        "resolved:R1",
+        "resolved:R2"
       ],
       "aliases": [],
-      "rows": 22,
+      "rows": 33,
       "officials": 1,
       "review": {
         "status": "unreviewed",

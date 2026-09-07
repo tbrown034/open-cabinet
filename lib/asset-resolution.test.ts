@@ -73,6 +73,13 @@ describe("instrument typing", () => {
     expect(t("COOK CNTY ILL CMNTY CONS SCH DIST NO 015")).toBe("municipal_bond");
     expect(t("NUVEEN NJ MUNICIPAL BOND A")).toBe("mutual_fund");
     expect(t("JPMORGAN CHASE ALT TIER 3.6500 12/31/49")).toBe("preferred");
+    // Broker shorthand with no maturity printed (Trevor's Low list, Sep 7).
+    expect(t("GENERAL MTRS FINL CO INC PER 6.5000%")).toBe("preferred");
+    expect(t("HUNTINGTON BANCSHARES INC TI 4.4500%")).toBe("preferred");
+    expect(t("BANK OF AMERICA CORPORATION - BACpl")).toBe("preferred");
+    // The same words as ordinary text stay stock: a company named Tier, a per-share note.
+    expect(t("BANK OF AMERICA CORP")).toBe("common_stock");
+    expect(t("PERION NETWORK LTD")).toBe("common_stock");
     expect(t("Texas Roadhouse Inc")).toBe("common_stock");
     expect(t("Washington Federal Inc")).toBe("common_stock");
     expect(t("TEXAS INSTRS INC")).toBe("common_stock");

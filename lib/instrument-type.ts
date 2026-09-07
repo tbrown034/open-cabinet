@@ -119,7 +119,11 @@ export function classifyInstrument(description: string, filedTicker: string | nu
   // "American Depositary Shares" is an ADR of common stock, not a
   // preferred; only depositary shares of a preferred series count here.
   const adr = /\bAMERICAN DEP(?:OSITARY|OSITORY)? (?:SH|SHS|SHARES|RECEIPTS?)\b|\bADR\b|\bADS\b/.test(u);
-  if (/\bPFD\b|\bPREFERRED\b|\bPERP\b|\bPERPETUAL\b|\bTIER I\b|\bTIER 1\b|\bALT TIER\b|\bTIER \d\b|\.PR\.|\bSER(?:IES)? [A-Z]{1,2}\b.*\bPFD\b|\b12\/31\/49\b|\b12\/31\/2049\b|\bPE \d\.\d{2,4}\b/.test(u) || (!adr && /\bDEP(?:OSITARY)? (?:RP|SH|SHS|SHARES|PFD)\b/.test(u))) {
+  // Broker shorthand for a preferred series: a two-letter code (PE, PER
+  // perpetual, TI tier) right before the coupon, or a lowercase "p" plus
+  // series letter glued to the symbol ("BACpl" is BAC preferred L).
+  const preferredShorthand = /\b(?:PE|PER|TI) \d{1,2}\.\d{2,4}\s?%?/.test(u) || /\b[A-Z]{2,5}p[A-Za-z]\b/.test(description);
+  if (preferredShorthand || /\bPFD\b|\bPREFERRED\b|\bPERP\b|\bPERPETUAL\b|\bTIER I\b|\bTIER 1\b|\bALT TIER\b|\bTIER \d\b|\.PR\.|\bSER(?:IES)? [A-Z]{1,2}\b.*\bPFD\b|\b12\/31\/49\b|\b12\/31\/2049\b/.test(u) || (!adr && /\bDEP(?:OSITARY)? (?:RP|SH|SHS|SHARES|PFD)\b/.test(u))) {
     return { type: "preferred", issuerLabel: issuerLabelFor("Preferred stock", u), rule: "preferred words" };
   }
   // A coupon with a maturity, a dated ("DTD") issue, or a six-digit

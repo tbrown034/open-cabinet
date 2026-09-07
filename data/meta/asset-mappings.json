@@ -10,9 +10,9 @@
       "snapshotSha256": "367fb917a218886e0070b9c349d741600b03759fb078d9f58aaca24d25b9c4ab",
       "snapshotEntries": 10415
     },
-    "symbolsInData": 1307,
+    "symbolsInData": 1308,
     "withheldRows": 5,
-    "entries": 1145,
+    "entries": 1146,
     "pending": 162,
     "noSharedWord": 61
   },
@@ -603,17 +603,25 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "ACCENTURE PLC IRELAND F CLASS A",
+        "ACCENTURE PLC IRELAND F CLASS CLASS A",
         "ACCENTURE PLC",
         "Accenture Plc",
-        "Accenture Plc (ACN)"
+        "ACCENTURE PLC IRELAND",
+        "ACCENTURE PLC IRELAND CL A UNSOLICITED",
+        "Accenture Plc (ACN)",
+        "ACCENTURE PLC IRELAND CL A",
+        "Accenture Plc Ireland Shs Cl A",
+        "ACCENTURE PLC IRELAND SHS CL A"
       ],
       "filedSymbols": [
         "ACN",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 31,
       "officials": 3,
       "source": {
         "kind": "sec-company-tickers",
@@ -5124,15 +5132,18 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "BENTLEY SYS INC CLASS B",
+        "BENTLEY SYS INC CLASS CLASS B",
         "BENTLEY SYSTEMS INC CL B"
       ],
       "filedSymbols": [
         "BSY",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 7,
+      "officials": 2,
       "source": {
         "kind": "sec-company-tickers",
         "url": "https://www.sec.gov/files/company_tickers.json",
@@ -13875,6 +13886,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "LIBERTY MEDIA CORP DEL CLASS SERIES C",
         "LIBERTY MEDIA CORP LIBERTY FORMULA ONE SER C"
       ],
       "filedSymbols": [
@@ -13882,7 +13894,7 @@
         "resolved:R2"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -14817,16 +14829,20 @@
         "Alphabet, Inc. (GOOG)",
         "Alphabet, Inc.",
         "ALPHABET INC CL C",
+        "ALPHABET INC CAP STK CL C",
         "Alphabet, Inc. Class C (GOOG)",
+        "Alphabet Inc Cap Stk Cl C",
+        "Alphabet Inc Cap Stk Cl C Average Unit Price Transaction Your Broker Acted As Agent",
         "Alphabet, Inc. (GOOG) (sale of stock per required CD)"
       ],
       "filedSymbols": [
         "GOOG",
         "resolved:R1",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 26,
+      "rows": 30,
       "officials": 10,
       "source": {
         "kind": "sec-company-tickers",
@@ -21387,6 +21403,38 @@
         "evidence": null
       }
     },
+    "MKC": {
+      "symbol": "MKC",
+      "secSymbol": "MKC",
+      "secName": "MCCORMICK & CO INC",
+      "cik": 63754,
+      "nameAgreement": "shares_a_word",
+      "instrumentType": "common",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MCCORMICK & CO INC CLASS CLASS N",
+        "MCCORMICK & CO INC CLASS N"
+      ],
+      "filedSymbols": [
+        "MKC",
+        "resolved:R2"
+      ],
+      "aliases": [],
+      "rows": 6,
+      "officials": 1,
+      "source": {
+        "kind": "sec-company-tickers",
+        "url": "https://www.sec.gov/files/company_tickers.json",
+        "fetchedAt": "2026-09-05T23:27:18Z"
+      },
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "MKL": {
       "symbol": "MKL",
       "secSymbol": "MKL",
@@ -24039,14 +24087,17 @@
       "displayName": null,
       "filedAs": [
         "NXP SEMICONDUCTORS NV",
-        "NXP SEMICONDUCTORS N V"
+        "NXP SEMICONDUCTORS NV COM EUR UNSOLICITED",
+        "NXP SEMICONDUCTORS N V",
+        "NXP SEMICONDUCTORS NV COM EUR"
       ],
       "filedSymbols": [
         "NXPI",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 7,
+      "rows": 11,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",
@@ -31202,15 +31253,17 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "SEAGATE TECHNOLOGY H F",
         "SEAGATE TECHNOLOGY HLDGS UNSOLICITED",
         "SEAGATE TECHNOLOGY HLDGS"
       ],
       "filedSymbols": [
         "STX",
+        "resolved:R2",
         "resolved:R3"
       ],
       "aliases": [],
-      "rows": 3,
+      "rows": 6,
       "officials": 1,
       "source": {
         "kind": "sec-company-tickers",

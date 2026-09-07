@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T18:14:12.234Z",
+  "generatedAt": "2026-09-07T18:23:46.785Z",
   "generatedBy": "scripts/build-asset-resolution.ts",
   "sources": {
     "nasdaqlisted.txt": {
@@ -19,7 +19,7 @@
   "summary": {
     "rows": 11509,
     "byType": {
-      "common_stock": 8201,
+      "common_stock": 8180,
       "etf": 562,
       "mutual_fund": 346,
       "private": 320,
@@ -27,24 +27,24 @@
       "option": 15,
       "municipal_bond": 1558,
       "corporate_note": 298,
-      "preferred": 186,
+      "preferred": 207,
       "treasury": 13
     },
     "byTier": {
-      "T1": 7787,
-      "none": 679,
-      "T2": 297,
-      "n/a": 2746
+      "T1": 7848,
+      "none": 593,
+      "T2": 301,
+      "n/a": 2767
     },
     "byRule": {
       "R1 filed ticker, corroborated": 1031,
-      "no exact match": 643,
+      "no exact match": 557,
       "R1 filed ETF symbol, every distinctive word in the listing": 94,
       "R6 filed ticker, uncorroborated": 238,
       "typed mutual_fund: no stock ticker": 346,
       "typed private: no stock ticker": 320,
       "R3 exact name, both lists agree": 5615,
-      "R2 dictionary": 955,
+      "R2 dictionary": 1016,
       "typed crypto: no stock ticker": 10,
       "typed option: no stock ticker": 15,
       "typed municipal_bond: no stock ticker": 1558,
@@ -52,7 +52,8 @@
       "ambiguous: name maps to several symbols": 31,
       "R4 exact name, one list only": 32,
       "typed corporate_note: no stock ticker": 298,
-      "typed preferred: no stock ticker": 186,
+      "R2 dictionary, class differs": 4,
+      "typed preferred: no stock ticker": 207,
       "R1 refused: symbol names a non-stock listing": 1,
       "typed treasury: no stock ticker": 13,
       "R5 truncated name is a unique prefix": 27,
@@ -17188,21 +17189,29 @@
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
       "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "tier": "T2",
+      "rule": "R2 dictionary, class differs",
+      "evidence": [
+        "dictionary maps this name to GOOG (class C); the row prints class A"
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "kupor-scott-a"
     },
     "9a84f456b7802daafec6feb8": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "GOOG",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Capital Stock is the Class C nomenclature, which is GOOG; GOOGL Class A common is the alternative if the broker used the term loosely."
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "kupor-scott-a"
     },
     "2628e602837c8a45b632b816": {
@@ -17694,21 +17703,29 @@
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
       "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "tier": "T2",
+      "rule": "R2 dictionary, class differs",
+      "evidence": [
+        "dictionary maps this name to GOOG (class C); the row prints class A"
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "kupor-scott-a"
     },
     "0b0fb9cd98edd121f78201aa": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "GOOG",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Capital Stock is the Class C nomenclature, which is GOOG; GOOGL Class A common is the alternative if the broker used the term loosely."
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "kupor-scott-a"
     },
     "a8e5008f8522230b08e5440c": {
@@ -33552,11 +33569,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "0519774264a64474a97cf836": {
@@ -33690,11 +33711,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same as BENTLEY SYS; only the Class B common line exists in the directory."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "831c486beed8572ba08eb2f3": {
@@ -34748,11 +34773,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "162e24bf7f8a4cfa16081bc4": {
@@ -35547,11 +35576,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "6deba0dd50e64dec34ec7390": {
@@ -35856,11 +35889,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same as BENTLEY SYS; only the Class B common line exists in the directory."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "2e678f1c1486df04c38537e7": {
@@ -37031,11 +37068,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "LIBERTY MEDIA CLASS SERIES C",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "FWONK",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: The only Liberty Media lines in the directory are the Formula One trackers, so Series C reads as FWONK; a different tracker would change this."
+      ],
+      "candidates": [
+        "FWONK"
+      ],
       "slug": "trump-donald-j"
     },
     "e1cc50e8461652408d37e6d7": {
@@ -38296,11 +38337,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND F CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "e575ba0bd8a6bd070303f300": {
@@ -41409,11 +41454,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "676c0a13df0dcbbf278405b4": {
@@ -42874,11 +42923,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "f4b4f3b186f73f1aa0b1cefd": {
@@ -47166,11 +47219,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND F CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "f8bc00adc3647e38d2674971": {
@@ -48270,11 +48327,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "f8be53af55342463b39ebf7c": {
@@ -49458,13 +49519,15 @@
       "slug": "trump-donald-j"
     },
     "e9c1c970db14e14eb390c897": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 6 5000",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -49700,11 +49763,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "41f271ed20f549b16ca8a283": {
@@ -49881,11 +49948,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Bentley Systems, Incorporated; only the Class B common is listed, so the class the filing means is not certain."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "21faa572eb89e0c2aad9c885": {
@@ -51477,11 +51548,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "8c7e872207acdf2e43722ad7": {
@@ -52212,22 +52287,30 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND F CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "5c057f495561f318d74978c8": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND F CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "445aaa40e950916baf80039e": {
@@ -55641,22 +55724,30 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "019fa3970b58112c2e62f635": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "9d08c70996a5256fd8a78e38": {
@@ -56759,11 +56850,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "SEAGATE TECHNOLOGY H",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "STX",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Truncated Seagate Technology Holdings PLC, an Ireland ordinary trading on Nasdaq."
+      ],
+      "candidates": [
+        "STX"
+      ],
       "slug": "trump-donald-j"
     },
     "6686152f3fb43972df8d5989": {
@@ -69656,11 +69751,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND F CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same foreign-ordinary case as ACCENTURE IRELAND; the F suffix is broker notation, and the US listing is ACN."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "5c61641f81afaa6e74d7327b": {
@@ -69869,11 +69968,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS CLASS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Same as BENTLEY SYS; only the Class B common line exists in the directory."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "e7f0b47ce784f03b36e702d5": {
@@ -70805,11 +70908,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "54567c0b0a6836625b7fd9c1": {
@@ -71582,22 +71689,30 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "4b25c6923e6bfd15e0eeec35": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "70d0088c3be75e0a876cdc24": {
@@ -71720,11 +71835,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "GOOG",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Capital Stock is the Class C nomenclature, which is GOOG; GOOGL Class A common is the alternative if the broker used the term loosely."
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "trump-donald-j"
     },
     "77765a8d715fae30496c2c14": {
@@ -77921,11 +78040,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "SEAGATE TECHNOLOGY H",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "STX",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Truncated Seagate Technology Holdings PLC, an Ireland ordinary trading on Nasdaq."
+      ],
+      "candidates": [
+        "STX"
+      ],
       "slug": "trump-donald-j"
     },
     "965349cb6b972606255563c0": {
@@ -78391,10 +78514,14 @@
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
       "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "tier": "T2",
+      "rule": "R2 dictionary, class differs",
+      "evidence": [
+        "dictionary maps this name to GOOG (class C); the row prints class A"
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "trump-donald-j"
     },
     "bb647abdf3c5479a8a2e8841": {
@@ -83877,11 +84004,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "7d53c8187eea515f987e4283": {
@@ -86932,11 +87063,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "NXP SEMICONDUCTORS EUR",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "NXPI",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary marked EUR; resolves to the US Nasdaq listing of NXP Semiconductors N.V."
+      ],
+      "candidates": [
+        "NXPI"
+      ],
       "slug": "trump-donald-j"
     },
     "77e9e30dd70ae276f275108a": {
@@ -92715,11 +92850,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "GOOG",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Capital Stock is the Class C nomenclature, which is GOOG; GOOGL Class A common is the alternative if the broker used the term loosely."
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "trump-donald-j"
     },
     "6a6f64c89542df5a462314b2": {
@@ -93822,11 +93961,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "50fbabef826a9d357934493b": {
@@ -95479,11 +95622,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "MCCORMICK CLASS N",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "MKC",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: CLASS N reads as the non-voting common, which is MKC; the voting line MKC.V is the alternative."
+      ],
+      "candidates": [
+        "MKC"
+      ],
       "slug": "trump-donald-j"
     },
     "dea5838ffb43af879845dea2": {
@@ -102960,11 +103107,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "b327600069cabefe55d1eee9": {
@@ -106329,11 +106480,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "2f39907840580c1347e52854": {
@@ -111746,11 +111901,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "SEAGATE TECHNOLOGY H",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "STX",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Truncated Seagate Technology Holdings PLC, an Ireland ordinary trading on Nasdaq."
+      ],
+      "candidates": [
+        "STX"
+      ],
       "slug": "trump-donald-j"
     },
     "5e2353175d41470b69f98e43": {
@@ -112110,11 +112269,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "fb5784a903640a05ad9a8d8e": {
@@ -113240,11 +113403,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "NXP SEMICONDUCTORS EUR",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "NXPI",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary marked EUR; resolves to the US Nasdaq listing of NXP Semiconductors N.V."
+      ],
+      "candidates": [
+        "NXPI"
+      ],
       "slug": "trump-donald-j"
     },
     "21263ae41380f9e1b9b8672e": {
@@ -115127,11 +115294,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "NXP SEMICONDUCTORS EUR",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "NXPI",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary marked EUR; resolves to the US Nasdaq listing of NXP Semiconductors N.V."
+      ],
+      "candidates": [
+        "NXPI"
+      ],
       "slug": "trump-donald-j"
     },
     "8d2cf046e38663e3ce7344ac": {
@@ -121318,11 +121489,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "874173d4903422fc00a74d21": {
@@ -123276,11 +123451,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "NXP SEMICONDUCTORS EUR",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "NXPI",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary marked EUR; resolves to the US Nasdaq listing of NXP Semiconductors N.V."
+      ],
+      "candidates": [
+        "NXPI"
+      ],
       "slug": "trump-donald-j"
     },
     "59814e48b0387b78a4af0f8e": {
@@ -126603,11 +126782,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "93287b7eb1eeb89f74fe97d5": {
@@ -126860,11 +127043,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Bentley Systems, Incorporated; only the Class B common is listed, so the class the filing means is not certain."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "abb3eb654cce0630d06dab7b": {
@@ -130216,22 +130403,30 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "aee3711d5b344d33553f0c40": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "95eb91af763c6fd2b6918f71": {
@@ -130736,11 +130931,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "BENTLEY SYS",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "BSY",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Bentley Systems, Incorporated; only the Class B common is listed, so the class the filing means is not certain."
+      ],
+      "candidates": [
+        "BSY"
+      ],
       "slug": "trump-donald-j"
     },
     "9e6784389f8d76b2de917179": {
@@ -132494,11 +132693,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "LIBERTY MEDIA CLASS SERIES C",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "FWONK",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: The only Liberty Media lines in the directory are the Formula One trackers, so Series C reads as FWONK; a different tracker would change this."
+      ],
+      "candidates": [
+        "FWONK"
+      ],
       "slug": "trump-donald-j"
     },
     "f8ccae5dd52c72535e6a23e3": {
@@ -134691,10 +134894,14 @@
       "issuerLabel": null,
       "nameKey": "ALPHABET CAP STK",
       "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "tier": "T2",
+      "rule": "R2 dictionary, class differs",
+      "evidence": [
+        "dictionary maps this name to GOOG (class C); the row prints class A"
+      ],
+      "candidates": [
+        "GOOG"
+      ],
       "slug": "trump-donald-j"
     },
     "cc38a073475f45b870adfd8a": {
@@ -141523,11 +141730,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "af8aa3d790fd33eaf1e68dbb": {
@@ -143663,11 +143874,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "ACCENTURE IRELAND",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "ACN",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Foreign ordinary; broker suffix names Ireland. Resolves to the US-listed Accenture plc Class A ordinary shares."
+      ],
+      "candidates": [
+        "ACN"
+      ],
       "slug": "trump-donald-j"
     },
     "065e9d210a87ae04e9cc1e35": {
@@ -145133,11 +145348,15 @@
       "instrumentType": "common_stock",
       "issuerLabel": null,
       "nameKey": "LIBERTY MEDIA CLASS SERIES C",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "FWONK",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: The only Liberty Media lines in the directory are the Formula One trackers, so Series C reads as FWONK; a different tracker would change this."
+      ],
+      "candidates": [
+        "FWONK"
+      ],
       "slug": "trump-donald-j"
     },
     "010d0b52f7ff6bcac908aa0b": {
@@ -151717,13 +151936,15 @@
       "slug": "trump-donald-j"
     },
     "32d27abd46ac9e70e83dbd00": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpl",
       "nameKey": "BANK OF AMERICA BACPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -151793,13 +152014,15 @@
       "slug": "trump-donald-j"
     },
     "881fb49b5a22ee0768bef48a": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Wells Fargo And CO New Wfcpl",
       "nameKey": "WELLS FARGO WFCPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -153347,13 +153570,15 @@
       "slug": "trump-donald-j"
     },
     "a6d195b96ce9e2b1c7bb2341": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpl",
       "nameKey": "BANK OF AMERICA BACPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -153371,13 +153596,15 @@
       "slug": "trump-donald-j"
     },
     "5765592fbfa7cfe673962281": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Wells Fargo And CO New Wfcpl",
       "nameKey": "WELLS FARGO WFCPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -154431,13 +154658,15 @@
       "slug": "trump-donald-j"
     },
     "776113031d7a764ce94799ab": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 6 5000",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -154741,13 +154970,15 @@
       "slug": "trump-donald-j"
     },
     "e1aede353d4b811eef57ce09": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
       "nameKey": "HUNTINGTON BANCSHARES TI 4 4500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -158761,24 +158992,28 @@
       "slug": "trump-donald-j"
     },
     "8e675f4c9fdfd417fd0da0a1": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpl",
       "nameKey": "BANK OF AMERICA BACPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
     "e542f68bdb8bb90a90ada84a": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpl",
       "nameKey": "BANK OF AMERICA BACPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -158796,13 +159031,15 @@
       "slug": "trump-donald-j"
     },
     "a3b32192ce8f21d12568be20": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 5 7500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -159028,13 +159265,15 @@
       "slug": "trump-donald-j"
     },
     "953f03a8df28b7fdf610b171": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 6 5000",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -159221,13 +159460,15 @@
       "slug": "trump-donald-j"
     },
     "a8603e65588a4bbc87234e52": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Wells Fargo And CO New Wfcpi",
       "nameKey": "WELLS FARGO WFCPI",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -160021,13 +160262,15 @@
       "slug": "trump-donald-j"
     },
     "4bd47479e051bffb9392c4fb": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
       "nameKey": "HUNTINGTON BANCSHARES TI 4 4500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -160308,13 +160551,15 @@
       "slug": "trump-donald-j"
     },
     "a2c61dde2dca1d00aa7ed714": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpl",
       "nameKey": "BANK OF AMERICA BACPL",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -160410,24 +160655,28 @@
       "slug": "trump-donald-j"
     },
     "52bf3bfa4bf9252b829feac3": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 5 7500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
     "dcd31e1d76100101464edc84": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 6 5000",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -160861,24 +161110,28 @@
       "slug": "trump-donald-j"
     },
     "7398c2dcf993a235002f03a4": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 5 7500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
     "d7a6254f1a8d8374bfcfc8cf": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, General Mtrs Financial CO Inc Per",
       "nameKey": "GENL MTRS FINL PER 6 5000",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -160935,13 +161188,15 @@
       "slug": "trump-donald-j"
     },
     "22a8dd3b6ba54ae741c528b5": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Huntington Bancshares Inc Ti",
       "nameKey": "HUNTINGTON BANCSHARES TI 4 4500",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -161258,13 +161513,15 @@
       "slug": "trump-donald-j"
     },
     "3840bf568ecec7c6a5281488": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Wells Fargo And CO New Wfcpi",
       "nameKey": "WELLS FARGO WFCPI",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -161347,13 +161604,15 @@
       "slug": "trump-donald-j"
     },
     "58bd474d40ba381aec13edfe": {
-      "instrumentType": "common_stock",
-      "issuerLabel": null,
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Bank Of America Corporation Bacpi",
       "nameKey": "BANK OF AMERICA BACPI",
       "resolvedTicker": null,
       "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
       "candidates": [],
       "slug": "trump-donald-j"
     },
@@ -168599,11 +168858,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "143e910adba3b9d5065dcaa2": {
@@ -168764,11 +169027,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "800fc4fa20eb665041a4b448": {
@@ -168942,11 +169209,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "a918effd7208c25dfdc243c0": {
@@ -169115,11 +169386,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "dc55c0f93966021a323eaa7d": {
@@ -169258,11 +169533,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "2edd5f660aa860ba7eafa862": {
@@ -169401,11 +169680,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "fa08ff9a75d625a29a11f80a": {
@@ -169583,11 +169866,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "2b4d58b365cf27cb82c0d23d": {
@@ -169799,11 +170086,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "8ccd958c48bc2787fb193f36": {
@@ -169976,11 +170267,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "bfe7999f48e21eb772acc059": {
@@ -170119,11 +170414,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "5293e71dd3675da9be05e234": {
@@ -170262,11 +170561,15 @@
       "instrumentType": "etf",
       "issuerLabel": null,
       "nameKey": "SCHWAB FUND INTL ETF",
-      "resolvedTicker": null,
-      "tier": null,
-      "rule": "no exact match",
-      "evidence": [],
-      "candidates": [],
+      "resolvedTicker": "SCHF",
+      "tier": "T1",
+      "rule": "R2 dictionary",
+      "evidence": [
+        "trevor on 2026-09-07: Trevor approved 2026-09-07 from the review screen. Medium: Schwab International Equity ETF is the plain-vanilla read, but SCHC small-cap and SCHY dividend also fit the truncated name."
+      ],
+      "candidates": [
+        "SCHF"
+      ],
       "slug": "wright-christopher"
     },
     "04fd032f145840d5d38c58d4": {
