@@ -33,10 +33,10 @@ const boxes: Box[] = [
   { id: "read1", x: 40, y: 96, w: 236, h: 44, kind: "model", lines: ["Read 1: vision model", "reads every page into rows"] },
   { id: "shape", x: 40, y: 172, w: 236, h: 44, kind: "program", lines: ["Shape gate", "dates, ranges, types valid?"] },
   { id: "text", x: 40, y: 248, w: 236, h: 44, kind: "program", lines: ["Text layer or OCR", "compares type, date, amount, late flag"] },
-  { id: "read2", x: 40, y: 324, w: 236, h: 44, kind: "model", lines: ["Read 2: second company's model", "page images; must agree on every row"] },
+  { id: "read2", x: 40, y: 324, w: 236, h: 44, kind: "model", lines: ["Read 2: second company's model", "only when no program could read the page"] },
   { id: "audit", x: 40, y: 400, w: 236, h: 44, kind: "model", lines: ["Page audit: third company's model", "shown each row beside the page"] },
-  { id: "flag", x: 40, y: 476, w: 236, h: 44, kind: "program", lines: ["Impossible-value check", "weekend date, maturity before trade"] },
-  { id: "asset", x: 40, y: 552, w: 236, h: 44, kind: "program", lines: ["Asset lane", "exact name on two lists, or a person"] },
+  { id: "flag", x: 40, y: 476, w: 236, h: 44, kind: "program", lines: ["Impossible-value check", "flags a row for a person; it stays published"] },
+  { id: "asset", x: 40, y: 552, w: 236, h: 44, kind: "program", lines: ["Asset lane", "ticker only on exact evidence, else name only"] },
   { id: "publish", x: 40, y: 628, w: 236, h: 44, kind: "publish", lines: ["Publish", "site, CSV, JSON, filing alert"] },
   { id: "human", x: 480, y: 248, w: 240, h: 120, kind: "human", lines: ["A person", "reads the page, rules row by row;", "every ruling recorded with the", "page and printed row"] },
   { id: "amend", x: 480, y: 96, w: 240, h: 44, kind: "human", lines: ["Amended filing", "always held for a person"] },
@@ -76,14 +76,14 @@ export default function PipelineFlow() {
             </marker>
           </defs>
           {chain.slice(0, -1).map((id, i) => (
-            <Arrow key={id} from={bottom(id)} to={top(chain[i + 1])} label={id === "text" ? "agree" : id === "read2" ? "every row agrees" : id === "audit" ? "confirms" : id === "shape" ? "valid" : undefined} />
+            <Arrow key={id} from={bottom(id)} to={top(chain[i + 1])} label={id === "text" ? "agree (skips read 2)" : id === "read2" ? "every row agrees" : id === "audit" ? "confirms" : id === "shape" ? "valid" : undefined} />
           ))}
           <Arrow from={right("shape")} to={left("human", -40)} label="invalid" dashed />
           <Arrow from={right("text")} to={left("human", -20)} label="disagree, or scan unreadable" dashed />
           <Arrow from={right("read2")} to={left("human", 0)} label="any row differs" dashed />
           <Arrow from={right("audit")} to={left("human", 20)} label="disputes a row" dashed />
-          <Arrow from={right("flag")} to={left("human", 40)} label="flag" dashed />
-          <Arrow from={right("asset", 8)} to={left("human", 56)} label="no exact match" dashed />
+          <Arrow from={right("flag")} to={left("human", 40)} label="flag (row stays up, marked)" dashed />
+          <Arrow from={right("asset", 8)} to={left("human", 56)} label="no exact match: name only, queue" dashed />
           <Arrow from={right("oge", -8)} to={left("amend")} label="OGE marks it amended" dashed />
           <Arrow from={[by.human.x + 120, by.human.y + by.human.h]} to={[by.publish.x + by.publish.w + 6, by.publish.y + 6]} label="ruling recorded, rows continue" dashed />
           {boxes.map((b) => {
@@ -112,7 +112,7 @@ export default function PipelineFlow() {
         </svg>
       </div>
       <figcaption className="text-xs text-neutral-500 mt-2 max-w-3xl mx-auto">
-        Every filing takes the left path. Any dashed exit sends the page and printed rows to a person; nothing from a new filing publishes until the reads agree on every row or a person rules. Rows already published that a later check disputes stay up marked under review.
+        Every filing takes the left path; a program that confirms the read skips the second model. A dashed exit from the shape gate, the lanes or the audit holds a new filing until a person rules. The two lower exits do not hold: an impossible value marks the row for review while it stays published, and an unresolved asset name publishes under the printed name with no ticker. Rows already published that a later check disputes stay up marked under review.
       </figcaption>
     </figure>
   );

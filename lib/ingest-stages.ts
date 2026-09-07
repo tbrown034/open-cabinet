@@ -544,7 +544,7 @@ export async function checkFiling(
       `amended filing (${filing.amended === "filename" ? "AMENDED in the file name" : `OGE amended ${filing.amended.slice(0, 10)}`}); a person applies the substitutions`,
       [
         "Read the cover letter and Exhibit A on the first pages: each item says which line of the earlier report it replaces, or adds, or withdraws.",
-        "Apply each item to the earlier filing's rows by printed line number (scripts/review.ts row, decision 'corrected' or 'rejected'); do not merge the attached copy of the original table.",
+        "Apply each item to the earlier filing's rows by printed line number: a replaced row is patched in data/officials/<slug>.json by an approved script and the ruling recorded in data/review/decisions.json as 'corrected' (the Sep 6, 2026 Trump amendment is the worked example: docs/report-2026-09-06-night.md); a withdrawn row is removed and recorded as 'rejected'. Do not merge the attached copy of the original table.",
         `Rows the model read from this PDF: ${rows.length}.`,
       ]
     );

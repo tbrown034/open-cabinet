@@ -78,6 +78,10 @@ jobs:
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: pnpm run row-verification
 
+      - name: Rebuild asset resolution and the registry
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run asset-resolution && pnpm run seed-assets
+
       - name: Regenerate exports
         if: ${{ github.event.inputs.dry_run != 'true' }}
         run: pnpm run generate-exports

@@ -7,6 +7,7 @@ import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log"
 import { sumAmountEstimates } from "@/lib/amounts";
 import { readRowVerification } from "@/lib/row-verification";
 import { readAssetResolution } from "@/lib/asset-resolution";
+import { getTradesByTicker } from "@/lib/data";
 import VerificationSummary from "../components/verification-summary";
 
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -52,6 +53,9 @@ export default async function MethodologyPage() {
   const assets = readAssetResolution();
   const assetTiers = assets?.summary.byTier ?? {};
   const stockRows = (assetTiers.T1 ?? 0) + (assetTiers.T2 ?? 0) + (assetTiers.none ?? 0);
+  // What actually reaches company pages: T1 plus the name gate plus the
+  // current roster, counted by the same loader the pages use.
+  const onCompanyPages = [...(await getTradesByTicker()).values()].reduce((n, c) => n + c.trades.length, 0);
   const coverage = log ? summarizeCrosscheckLog(log, allRows) : null;
   const agreedRows = coverage?.rows.checked_tuple_agreement ?? 0;
   const mismatchRows = coverage?.rows.checked_tuple_mismatch ?? 0;
@@ -456,14 +460,19 @@ export default async function MethodologyPage() {
             removed, matching one security by exact name on two public reference
             lists (the Nasdaq symbol directory and the SEC&rsquo;s issuer list)
             that agree on the symbol; or a person&rsquo;s recorded decision.
-            Nothing is matched by similarity, and no model is asked to guess.
-            A name that matches on only one list, or is cut short by the broker,
-            waits for a person.
+            One allowance for ETFs, whose legal and marketing names differ: a
+            printed ETF symbol is accepted when every distinguishing word of
+            the printed name appears in the listing (&ldquo;Vanguard Tax-Exempt
+            Bond Index Fund ETF&rdquo; and &ldquo;Vanguard Tax-Exempt Bond
+            ETF&rdquo;). Nothing is matched by similarity, and no model is asked
+            to guess. A name that matches on only one list, or is cut short by
+            the broker, waits for a person. A ticker is attached only where an
+            independent reader also read the same name.
           </p>
           {assets ? (
             <p className="text-neutral-600 leading-relaxed">
               Today: {stockRows.toLocaleString("en-US")} rows are stocks or ETFs.
-              {" "}{(assetTiers.T1 ?? 0).toLocaleString("en-US")} are tied to a company on that evidence and appear on company pages;
+              {" "}{(assetTiers.T1 ?? 0).toLocaleString("en-US")} are tied to a company on that evidence, and {onCompanyPages.toLocaleString("en-US")} of those appear on company pages (the rest belong to former officials outside the main directory or lack an independent reading of the name);
               {" "}{((assetTiers.T2 ?? 0) + (assetTiers.none ?? 0)).toLocaleString("en-US")} show the printed name only until a person looks.
               Reference lists fetched {assets.sources["nasdaqlisted.txt"]?.fetchedAt.slice(0, 10) ?? "n/a"}.
             </p>
