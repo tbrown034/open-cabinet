@@ -32,6 +32,10 @@ export interface TargetFiling {
   agency?: string;
   title?: string;
   level?: string;
+  /** OGE's "amended" field when set, or "filename" when the PDF name says
+   * AMENDED. An amendment replaces line items of an earlier report; the
+   * ingest holds it for a person (Trevor, Sep 6). */
+  amended?: string;
 }
 
 export interface LastCheckFile {
@@ -174,9 +178,17 @@ export function getAllIndexedFilings(records: OGERecord[]): TargetFiling[] {
   for (const record of records) {
     const pdfUrl = extractPdfUrl(record.type);
     if (!pdfUrl) continue;
-    byUrl.set(pdfUrl, { name: canonicalName(record.name), pdfUrl, docDate: record.docDate, agency: record.agency, title: record.title, level: record.level });
+    byUrl.set(pdfUrl, { name: canonicalName(record.name), pdfUrl, docDate: record.docDate, agency: record.agency, title: record.title, level: record.level, amended: amendedFlag(record, pdfUrl) });
   }
   return Array.from(byUrl.values());
+}
+
+/** The amendment signal for a record: OGE's field, or the file name. */
+export function amendedFlag(record: Pick<OGERecord, "amended">, pdfUrl: string): string | undefined {
+  const flag = (record.amended ?? "").trim();
+  if (flag) return flag;
+  if (/amend/i.test(decodeURIComponent(pdfUrl.split("/").pop() ?? ""))) return "filename";
+  return undefined;
 }
 
 export function getTargetFilings(records: OGERecord[]): TargetFiling[] {
@@ -197,6 +209,7 @@ export function getTargetFilings(records: OGERecord[]): TargetFiling[] {
       agency: record.agency,
       title: record.title,
       level: record.level,
+      amended: amendedFlag(record, pdfUrl),
     });
   }
 

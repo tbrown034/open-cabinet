@@ -533,6 +533,23 @@ export async function checkFiling(
     throw new FilingHeldError(path.basename(pdfPath), reason);
   };
 
+  // An amendment replaces line items of an earlier report ("in place of
+  // line item #27, substitute the following") and ships the full original
+  // table beside them. Merging it like a new filing double-counts every
+  // replaced row (Trump, Aug 12, 2025: four rows, found and removed by
+  // hand Sep 6). Amendments are rare (two of 5,122 reports on OGE), so a
+  // person reads the cover letter and Exhibit A and applies it row by row.
+  if (filing.amended) {
+    return hold(
+      `amended filing (${filing.amended === "filename" ? "AMENDED in the file name" : `OGE amended ${filing.amended.slice(0, 10)}`}); a person applies the substitutions`,
+      [
+        "Read the cover letter and Exhibit A on the first pages: each item says which line of the earlier report it replaces, or adds, or withdraws.",
+        "Apply each item to the earlier filing's rows by printed line number (scripts/review.ts row, decision 'corrected' or 'rejected'); do not merge the attached copy of the original table.",
+        `Rows the model read from this PDF: ${rows.length}.`,
+      ]
+    );
+  }
+
   // Date plausibility, independent of any lane. A trade dated after the
   // filing was posted cannot be right and holds the filing. A trade more
   // than 400 days before the posting is unusual for a periodic

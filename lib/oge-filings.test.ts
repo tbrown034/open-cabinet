@@ -17,3 +17,12 @@ describe("reconcileKnownFilings", () => {
     expect(r.redated).toEqual([{ url: "https://x/$FILE/B-2026-278T.pdf", date: "2026-08-30", indexDate: "2026-09-01" }]);
   });
 });
+
+describe("amendedFlag", () => {
+  it("reads OGE's amended field, or AMENDED in the file name, and nothing else", async () => {
+    const { amendedFlag } = await import("./oge-filings");
+    expect(amendedFlag({ amended: "2025-08-12T00:00:00" }, "https://x/$FILE/a.pdf")).toBe("2025-08-12T00:00:00");
+    expect(amendedFlag({ amended: "" }, "https://x/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf")).toBe("filename");
+    expect(amendedFlag({}, "https://x/$FILE/Scott-A-Kupor-07.28.2025-278T.pdf")).toBeUndefined();
+  });
+});
