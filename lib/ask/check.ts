@@ -364,9 +364,13 @@ export function templateAnswer(
     }
     case "by_month": {
       const months = result.byMonth ?? [];
-      if (months.length === 0) return `${planText} That query matches no checked rows.`;
+      const undated = result.undatedRows ?? 0;
+      if (result.matchedRows === 0) return `${planText} That query matches no checked rows.`;
+      const undatedNote = undated > 0 ? ` ${undated.toLocaleString("en-US")} matching row${undated === 1 ? "" : "s"} print${undated === 1 ? "s" : ""} no transaction date and ${undated === 1 ? "is" : "are"} not placed in a month.` : "";
+      if (months.length === 0) return `${planText} The query matches ${rows}, none with a printed transaction date.`;
+      const dated = result.matchedRows - undated;
       const busiest = months.reduce((a, b) => (b.count > a.count ? b : a));
-      return `${planText} The query matches ${rows} across ${months.length.toLocaleString("en-US")} months, with ${busiest.count.toLocaleString("en-US")} in ${busiest.month}.`;
+      return `${planText} The query matches ${rows}; the ${dated.toLocaleString("en-US")} dated ones span ${months.length.toLocaleString("en-US")} months, with ${busiest.count.toLocaleString("en-US")} in ${busiest.month}.${undatedNote}`;
     }
     case "late_share": {
       const share = result.lateShare;
@@ -378,10 +382,13 @@ export function templateAnswer(
       return `${planText} ${share.display}.`;
     }
     case "first_last_dates": {
+      const undated = result.undatedRows ?? 0;
+      if (result.matchedRows === 0) return `${planText} That query matches no checked rows.`;
       if (!result.firstDate || !result.lastDate) {
-        return `${planText} That query matches no checked rows.`;
+        return `${planText} The query matches ${rows}, but none prints a transaction date.`;
       }
-      return `${planText} The checked rows run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.`;
+      const undatedNote = undated > 0 ? ` ${undated.toLocaleString("en-US")} matching row${undated === 1 ? "" : "s"} print${undated === 1 ? "s" : ""} no transaction date and ${undated === 1 ? "is" : "are"} left out of that span.` : "";
+      return `${planText} The dated checked rows run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.${undatedNote}`;
     }
   }
 }

@@ -129,8 +129,10 @@ async function reserveDailyQuota(): Promise<"ok" | "over" | "closed"> {
       e = (e as { cause?: unknown }).cause;
     }
     if (missingTable) {
-      console.warn("ask_quota table missing; falling back to the in-memory daily cap");
-      return "ok";
+      // Fail closed (Codex, Sept. 7): no shared counter means no paid path.
+      // Run the drizzle migrations (0003_ask_quota) before enabling the alpha.
+      console.error("ask_quota table missing; the question box is closed until the migration runs");
+      return "closed";
     }
     console.error("ask quota reservation failed:", msg);
     return "closed";
@@ -477,19 +479,17 @@ export async function POST(request: Request) {
 
   const ipKey = hashIp(clientIp(request));
 
-  const quota = await reserveDailyQuota();
-  if (quota === "closed") {
+  // Request size before anything else (Codex, Sept. 7): the question limit
+  // is not a body limit.
+  const declaredLength = Number(request.headers.get("content-length") ?? "0");
+  if (declaredLength > 4096) {
     return NextResponse.json(
-      {
-        status: "error",
-        answer: "The question box is paused while its usage counter is unavailable. Try again later.",
-        disclosure: DISCLOSURE,
-      },
-      { status: 503 }
+      { status: "error", answer: "Request too large.", disclosure: DISCLOSURE },
+      { status: 413 }
     );
   }
 
-  if (overIpLimit(ipKey) || quota === "over" || overGlobalLimit()) {
+  if (overIpLimit(ipKey) || overGlobalLimit()) {
     return NextResponse.json(
       {
         status: "error",
@@ -502,7 +502,14 @@ export async function POST(request: Request) {
 
   let body: unknown;
   try {
-    body = await request.json();
+    const text = await request.text();
+    if (text.length > 4096) {
+      return NextResponse.json(
+        { status: "error", answer: "Request too large.", disclosure: DISCLOSURE },
+        { status: 413 }
+      );
+    }
+    body = JSON.parse(text);
   } catch {
     return NextResponse.json(
       { status: "error", answer: "Invalid request body.", disclosure: DISCLOSURE },
@@ -570,6 +577,27 @@ export async function POST(request: Request) {
     // The model has no clock. Relative periods only become dates because
     // this line hands it one.
     const today = new Date().toISOString().slice(0, 10);
+
+    // Reserve durable capacity only now, after every free rejection
+    // (throttle, body, intent) has had its chance (Codex, Sept. 7: 301
+    // empty requests used to exhaust the day's quota with zero model calls).
+    const quota = await reserveDailyQuota();
+    if (quota === "closed") {
+      return NextResponse.json(
+        {
+          status: "error",
+          answer: "The question box is paused while its usage counter is unavailable. Try again later.",
+          disclosure: DISCLOSURE,
+        },
+        { status: 503 }
+      );
+    }
+    if (quota === "over") {
+      return NextResponse.json(
+        { status: "error", answer: "The question box has hit its limit for today. Try again tomorrow.", disclosure: DISCLOSURE },
+        { status: 429 }
+      );
+    }
     const planCall = await callPlanModel(
       question,
       officialNames,
@@ -603,21 +631,25 @@ export async function POST(request: Request) {
               disclosure: DISCLOSURE,
             });
           }
-          const rescanPlan: QueryPlan = {
-            filters: { officials: [tracked.slug] },
-            aggregate: "count",
-          };
-          const pendingMatches = countPending(rescanPlan, data.pendingRows);
-          const rescanText = describePlan(rescanPlan, data.officials);
-          logAsk({ question, status: "not_in_data", reason: "roster rescan", ipKey });
+          // The person is tracked, so the model's "unknown person" is wrong,
+          // but the question itself was not translated. Say exactly that.
+          // The old rescan counted only pending rows and could report "no
+          // checked row matches" for a person with checked rows, and it
+          // dropped the question's other filters (Codex, Sept. 7).
+          const others = named.slice(1).map((n) => n.name);
+          logAsk({ question, status: "not_in_data", reason: "untranslated, person tracked", ipKey });
           return NextResponse.json({
             status: "not_in_data" satisfies AskStatus,
-            answer: stripDashes(pendingAnswer(rescanText, pendingMatches, tracked.name)),
+            answer: stripDashes(
+              `${tracked.name} is tracked here${others.length ? ` (so ${others.length === 1 ? "is" : "are"} ${others.join(", ")})` : ""}, ` +
+              "but this question could not be turned into a query. Try naming the official and one thing to count: " +
+              `for example, "How many checked trades does ${tracked.name} have?"`
+            ),
             plan: null,
             planText: null,
             result: null,
             excluded,
-            pendingMatches,
+            pendingMatches: EMPTY_PENDING,
             disclosure: DISCLOSURE,
           });
         }

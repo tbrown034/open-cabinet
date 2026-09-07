@@ -194,8 +194,17 @@ export function parseQueryPlan(input: unknown): PlanParse {
       const value = rawFilters.descriptionContains;
       if (typeof value !== "string" || value.trim().length === 0) {
         errors.push("descriptionContains must be a non-empty string");
-      } else if (value.length > 120) {
-        errors.push("descriptionContains must be 120 characters or fewer");
+      } else if (value.length > 40) {
+        errors.push("descriptionContains must be 40 characters or fewer");
+      } else if (/\d{3,}/.test(value)) {
+        // A search string is a name fragment; three digits in a row is a
+        // figure, and a figure inside the restatement reads as a fact.
+        errors.push("descriptionContains may not contain a number of three or more digits");
+      } else if (!/^[\p{L}\p{N} .,&'()/-]+$/u.test(value.trim())) {
+        // Letters, digits and the punctuation asset names use. Quotation
+        // marks and sentence punctuation are refused so the value can never
+        // read as prose inside a template (Codex, Sept. 7).
+        errors.push("descriptionContains may contain only letters, digits, spaces and . , & ' ( ) / -");
       } else {
         filters.descriptionContains = value.trim();
       }
@@ -604,7 +613,7 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
     parts.push(`in ${f.tickers.join(", ")}`);
   }
   if (f.descriptionContains) {
-    parts.push(`whose description mentions "${f.descriptionContains}"`);
+    parts.push(`whose description mentions the text ${f.descriptionContains.toUpperCase()}`);
   }
   // Both bounds are named, and the wording says what a bound means against a
   // range: the disclosed range has to sit inside the window, not overlap it.

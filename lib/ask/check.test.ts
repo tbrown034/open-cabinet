@@ -594,3 +594,18 @@ describe("plurals", () => {
     expect(answer).not.toContain("1 checked rows");
   });
 });
+
+describe("undated rows in time answers (Codex, Sept. 7)", () => {
+  it("first_last_dates never calls a matched-but-undated row absent", () => {
+    const one: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 1, undatedRows: 1, firstDate: null, lastDate: null, numbers: [1], displayStrings: [] };
+    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", one)).toBe("Trades. The query matches 1 checked row, but none prints a transaction date.");
+    const mixed: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 3, undatedRows: 1, firstDate: "2026-01-05", lastDate: "2026-02-10", numbers: [3, 1], displayStrings: [] };
+    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", mixed)).toMatch(/1 matching row prints no transaction date/);
+  });
+  it("by_month reconciles dated rows to the month buckets and names the undated remainder", () => {
+    const r: ExecuteResult = { aggregate: "by_month", matchedRows: 4, undatedRows: 1, byMonth: [{ month: "2026-01", count: 2 }, { month: "2026-02", count: 1 }], numbers: [4, 1, 2, 1], displayStrings: [] };
+    const a = templateAnswer({ filters: {}, aggregate: "by_month" }, "Trades.", r);
+    expect(a).toContain("the 3 dated ones span 2 months");
+    expect(a).toContain("1 matching row prints no transaction date");
+  });
+});

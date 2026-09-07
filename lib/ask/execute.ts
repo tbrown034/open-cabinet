@@ -80,6 +80,8 @@ export interface ExecuteResult {
   aggregate: Aggregate;
   /** Rows the filters matched, before any display cap. */
   matchedRows: number;
+  /** Matched rows with no printed transaction date; time answers cannot place them. */
+  undatedRows?: number;
   /** Rows shown, when the aggregate lists or ranks. */
   shownRows?: number;
   /**
@@ -403,6 +405,8 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
     }
     case "by_month": {
       const counts = new Map<string, number>();
+      result.undatedRows = matched.filter((r) => r.date === null).length;
+      addNumber(result.undatedRows);
       for (const row of matched) {
         if (row.date === null) continue;
         const month = row.date.slice(0, 7);
@@ -439,6 +443,8 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
     }
     case "first_last_dates": {
       const dates = matched.map((r) => r.date).filter((d): d is string => d !== null).sort();
+      result.undatedRows = matched.length - dates.length;
+      addNumber(result.undatedRows);
       result.firstDate = dates[0] ?? null;
       result.lastDate = dates[dates.length - 1] ?? null;
       if (result.firstDate) addDate(result.firstDate);
