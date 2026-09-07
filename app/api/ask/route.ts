@@ -448,6 +448,7 @@ async function callPhraseModel(
 /* ── Route ──────────────────────────────────────────────────────────────── */
 
 export async function POST(request: Request) {
+  const startedAt = Date.now();
   // Stricter than the shared origin check the other public routes use. That
   // one allows any *.vercel.app host so previews stay testable, which for a
   // paid endpoint means any Vercel tenant can spend this project's budget
@@ -562,7 +563,7 @@ export async function POST(request: Request) {
     // request; this is the refusal (Grok, Sept. 6).
     const { intent, rule } = classifyIntent(question);
     if (intent.kind === "decline") {
-      logAsk({ question, status: "declined", reason: `intent:${rule}`, ipKey });
+      logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
         answer: stripDashes(declineText(intent.category)),
@@ -619,7 +620,7 @@ export async function POST(request: Request) {
         const tracked = named[0];
         if (tracked) {
           if (tracked.former) {
-            logAsk({ question, status: "not_in_data", reason: "former", ipKey });
+            logAsk({ startedAt, question, status: "not_in_data", reason: "former", ipKey });
             return NextResponse.json({
               status: "not_in_data" satisfies AskStatus,
               answer: stripDashes(outOfScopeAnswer([tracked.name])),
@@ -637,7 +638,7 @@ export async function POST(request: Request) {
           // checked row matches" for a person with checked rows, and it
           // dropped the question's other filters (Codex, Sept. 7).
           const others = named.slice(1).map((n) => n.name);
-          logAsk({ question, status: "not_in_data", reason: "untranslated, person tracked", ipKey });
+          logAsk({ startedAt, question, status: "not_in_data", reason: "untranslated, person tracked", ipKey });
           return NextResponse.json({
             status: "not_in_data" satisfies AskStatus,
             answer: stripDashes(
@@ -654,7 +655,7 @@ export async function POST(request: Request) {
           });
         }
       }
-      logAsk({ question, status: "declined", ipKey });
+      logAsk({ startedAt, question, status: "declined", ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
         answer: stripDashes(planCall.reason ?? declineText("other")),
@@ -666,7 +667,7 @@ export async function POST(request: Request) {
       });
     }
     if (planCall.kind === "unavailable") {
-      logAsk({ question, status: "error", reason: planCall.reason, ipKey });
+      logAsk({ startedAt, question, status: "error", reason: planCall.reason, ipKey });
       return NextResponse.json(
         {
           status: "error" satisfies AskStatus,
@@ -683,7 +684,7 @@ export async function POST(request: Request) {
 
     const parsed = parseQueryPlan(planCall.raw);
     if (!parsed.ok) {
-      logAsk({ question, status: "not_in_data", errors: parsed.errors, ipKey });
+      logAsk({ startedAt, question, status: "not_in_data", errors: parsed.errors, ipKey });
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
         answer:
@@ -705,7 +706,7 @@ export async function POST(request: Request) {
       const named = officialsNamedIn(question, data.officials);
       const other = named.find((o) => o.slug !== scope.slug);
       if (other) {
-        logAsk({ question, status: "declined", reason: "off-page official", ipKey });
+        logAsk({ startedAt, question, status: "declined", reason: "off-page official", ipKey });
         return NextResponse.json({
           status: "declined" satisfies AskStatus,
           answer: stripDashes(
@@ -735,7 +736,7 @@ export async function POST(request: Request) {
     // pending count instead of being called absent.
     const resolved = resolvePlan(plan, data.officials, data.allTickers);
     if (!resolved.ok) {
-      logAsk({ question, status: "not_in_data", reason: resolved.reason, ipKey });
+      logAsk({ startedAt, question, status: "not_in_data", reason: resolved.reason, ipKey });
       const candidates =
         resolved.candidates.length > 0
           ? ` It could mean: ${resolved.candidates.join(", ")}.`
@@ -762,7 +763,7 @@ export async function POST(request: Request) {
       .filter((o) => o?.former)
       .map((o) => o!.name);
     if (holdovers.length > 0) {
-      logAsk({ question, status: "not_in_data", reason: "former officials", ipKey });
+      logAsk({ startedAt, question, status: "not_in_data", reason: "former officials", ipKey });
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
         answer: stripDashes(outOfScopeAnswer(holdovers)),
@@ -779,7 +780,7 @@ export async function POST(request: Request) {
     // table nobody asked for, and the honest move is to decline rather than
     // return a wall the reader has to interpret.
     if ((finalPlan.filters.officials?.length ?? 0) > MAX_OFFICIALS) {
-      logAsk({ question, status: "declined", reason: "too many officials", ipKey });
+      logAsk({ startedAt, question, status: "declined", reason: "too many officials", ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
         answer: declineText("unsupported_computation"),
@@ -805,6 +806,7 @@ export async function POST(request: Request) {
           ? data.officials.find((o) => o.slug === scopedSlugs[0])?.name
           : undefined;
       logAsk({
+      startedAt,
         question,
         status: "not_in_data",
         plan: finalPlan,
@@ -855,6 +857,7 @@ export async function POST(request: Request) {
     }
 
     logAsk({
+      startedAt,
       question,
       status: "answered",
       plan: finalPlan,
@@ -885,7 +888,7 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("[ask] failed", error);
-    logAsk({ question, status: "error", ipKey });
+    logAsk({ startedAt, question, status: "error", ipKey });
     return NextResponse.json(
       {
         status: "error" satisfies AskStatus,
