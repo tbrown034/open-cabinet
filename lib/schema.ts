@@ -296,3 +296,45 @@ export const emailSends = pgTable(
     index("email_sends_kind_idx").on(table.kind),
   ]
 );
+
+// ── ASK QUOTA ──
+// One row per UTC day, counting questions the "Ask the data" box has sent to
+// a model. The counter lives here rather than in memory because an in-memory
+// cap cannot bound spending: every serverless instance gets its own copy, and
+// a restart resets it, so a scaled-out deployment keeps replenishing the
+// budget (Codex review, Sept. 6, 2026).
+//
+// The route increments this row before either model call and refuses when the
+// new count would pass the cap, so the reservation happens ahead of the spend
+// rather than after it.
+export const askQuota = pgTable("ask_quota", {
+  // The UTC date being counted, "YYYY-MM-DD". One row per day.
+  day: date("day").primaryKey(),
+  count: integer("count").default(0).notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+});
+
+// ── ASK LOG ──
+// One row per question the alpha box received, whatever happened to it.
+// The file log the route first used is lost on Vercel (read-only, per
+// instance). This is the record a person reads to see what was asked, what
+// was declined and why, and what each answer was built from (Sept. 7, 2026).
+export const askLog = pgTable(
+  "ask_log",
+  {
+    id: serial("id").primaryKey(),
+    at: timestamp("at").defaultNow().notNull(),
+    question: text("question").notNull(),
+    // answered | not_in_data | declined | error
+    status: text("status").notNull(),
+    reason: text("reason"),
+    // The validated query plan the executor ran, as JSON; null unless answered.
+    plan: text("plan"),
+    matchedRows: integer("matched_rows"),
+    // model | template: whether the model's sentence passed the number check.
+    phrasedBy: text("phrased_by"),
+    ipHash: text("ip_hash"),
+    durationMs: integer("duration_ms"),
+  },
+  (table) => [index("ask_log_at_idx").on(table.at)]
+);

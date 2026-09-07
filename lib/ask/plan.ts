@@ -1,0 +1,632 @@
+/**
+ * The query plan: the only thing the model is allowed to produce.
+ *
+ * A question goes to a model once, and what comes back is not an answer. It is
+ * a plan — a set of filters and one aggregate, in a fixed shape this file
+ * validates field by field. Anything the validator does not recognize is
+ * rejected outright rather than coerced, and a rejected plan never reaches the
+ * data.
+ *
+ * The model may write official names and asset names the way a person would.
+ * It may not write slugs, because it does not know them. The resolver here
+ * turns names into slugs conservatively: an exact slug, an exact full name, or
+ * a last name that belongs to exactly one official. A name that matches two
+ * people, or none, is not guessed at — the question comes back as not_in_data
+ * with the names it could have meant.
+ *
+ * Written by hand rather than with zod, which is not a dependency of this
+ * repo. The checks below are exhaustive on purpose: every known key is typed,
+ * and every unknown key is an error.
+ */
+import type { TransactionType } from "../types";
+import type { OfficialRef } from "../published-rows";
+
+export const AGGREGATES = [
+  "count",
+  "sum_estimate",
+  "list",
+  "top_officials",
+  "top_assets",
+  "by_month",
+  "first_last_dates",
+  "late_share",
+] as const;
+
+export type Aggregate = (typeof AGGREGATES)[number];
+
+export const TRANSACTION_TYPES: readonly TransactionType[] = [
+  "Sale",
+  "Sale (Partial)",
+  "Sale (Full)",
+  "Purchase",
+  "Exchange",
+  "Unstated",
+];
+
+export const MAX_LIMIT = 25;
+
+/**
+ * A comparison across a handful of named officials is a ranking. Past five
+ * it is a table nobody asked for, and the box declines instead of guessing.
+ */
+export const MAX_OFFICIALS = 5;
+
+export interface QueryPlanFilters {
+  /** Official slugs, after resolution. The model emits names; code resolves. */
+  officials?: string[];
+  tickers?: string[];
+  descriptionContains?: string;
+  types?: TransactionType[];
+  dateFrom?: string;
+  dateTo?: string;
+  lateOnly?: boolean;
+  /** Keep rows whose disclosed range floor is at least this many dollars. */
+  amountAtLeast?: number;
+  /**
+   * Keep rows whose disclosed range ceiling is at most this many dollars.
+   * With amountAtLeast this reads as "the whole disclosed range sits inside
+   * the window," which is the only reading a range can support. An
+   * open-ended range has no ceiling and is excluded whenever this is set.
+   */
+  amountAtMost?: number;
+}
+
+export const SORTS = ["date", "amount"] as const;
+export type Sort = (typeof SORTS)[number];
+
+export interface QueryPlan {
+  filters: QueryPlanFilters;
+  aggregate: Aggregate;
+  limit?: number;
+  /**
+   * How a list is ordered. "date" is newest first, the order the rows are
+   * stored in. "amount" is by the site's estimate for the disclosed range,
+   * largest first, with unknown amounts last. A question about the largest
+   * sales used to come back as a date-sorted list and read as an answer
+   * (Grok, Sept. 6), so the ordering is now something the plan states.
+   */
+  sort?: Sort;
+}
+
+export type PlanParse =
+  | { ok: true; plan: QueryPlan }
+  | { ok: false; errors: string[] };
+
+const FILTER_KEYS = new Set([
+  "officials",
+  "tickers",
+  "descriptionContains",
+  "types",
+  "dateFrom",
+  "dateTo",
+  "lateOnly",
+  "amountAtLeast",
+  "amountAtMost",
+]);
+
+const PLAN_KEYS = new Set(["filters", "aggregate", "limit", "sort"]);
+
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function isValidIsoDate(value: string): boolean {
+  if (!ISO_DATE.test(value)) return false;
+  const date = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+}
+
+function stringArray(
+  value: unknown,
+  field: string,
+  errors: string[]
+): string[] | undefined {
+  if (!Array.isArray(value)) {
+    errors.push(`${field} must be an array of strings`);
+    return undefined;
+  }
+  const out: string[] = [];
+  for (const item of value) {
+    if (typeof item !== "string" || item.trim().length === 0) {
+      errors.push(`${field} must contain only non-empty strings`);
+      return undefined;
+    }
+    out.push(item.trim());
+  }
+  return out.length > 0 ? out : undefined;
+}
+
+/**
+ * Validate a raw plan from the model. Never throws, never coerces: an
+ * unrecognized key or a wrong type is an error, and the caller declines.
+ */
+export function parseQueryPlan(input: unknown): PlanParse {
+  const errors: string[] = [];
+  if (!isRecord(input)) return { ok: false, errors: ["plan must be an object"] };
+
+  for (const key of Object.keys(input)) {
+    if (!PLAN_KEYS.has(key)) errors.push(`unknown key "${key}" on plan`);
+  }
+
+  const aggregate = input.aggregate;
+  if (typeof aggregate !== "string" || !(AGGREGATES as readonly string[]).includes(aggregate)) {
+    errors.push(`aggregate must be one of ${AGGREGATES.join(", ")}`);
+  }
+
+  let limit: number | undefined;
+  if (input.limit !== undefined) {
+    if (typeof input.limit !== "number" || !Number.isInteger(input.limit)) {
+      errors.push("limit must be a whole number");
+    } else if (input.limit < 1 || input.limit > MAX_LIMIT) {
+      errors.push(`limit must be between 1 and ${MAX_LIMIT}`);
+    } else {
+      limit = input.limit;
+    }
+  }
+
+  let sort: Sort | undefined;
+  if (input.sort !== undefined) {
+    if (typeof input.sort !== "string" || !(SORTS as readonly string[]).includes(input.sort)) {
+      errors.push(`sort must be one of ${SORTS.join(", ")}`);
+    } else {
+      sort = input.sort as Sort;
+    }
+  }
+
+  const filters: QueryPlanFilters = {};
+  const rawFilters = input.filters === undefined ? {} : input.filters;
+  if (!isRecord(rawFilters)) {
+    errors.push("filters must be an object");
+  } else {
+    for (const key of Object.keys(rawFilters)) {
+      if (!FILTER_KEYS.has(key)) errors.push(`unknown filter "${key}"`);
+    }
+
+    if (rawFilters.officials !== undefined) {
+      filters.officials = stringArray(rawFilters.officials, "officials", errors);
+    }
+    if (rawFilters.tickers !== undefined) {
+      filters.tickers = stringArray(rawFilters.tickers, "tickers", errors);
+    }
+    if (rawFilters.descriptionContains !== undefined) {
+      const value = rawFilters.descriptionContains;
+      if (typeof value !== "string" || value.trim().length === 0) {
+        errors.push("descriptionContains must be a non-empty string");
+      } else if (value.length > 120) {
+        errors.push("descriptionContains must be 120 characters or fewer");
+      } else {
+        filters.descriptionContains = value.trim();
+      }
+    }
+    if (rawFilters.types !== undefined) {
+      const list = stringArray(rawFilters.types, "types", errors);
+      if (list) {
+        const bad = list.filter((t) => !(TRANSACTION_TYPES as readonly string[]).includes(t));
+        if (bad.length > 0) {
+          errors.push(`unknown transaction type: ${bad.join(", ")}`);
+        } else {
+          filters.types = list as TransactionType[];
+        }
+      }
+    }
+    for (const field of ["dateFrom", "dateTo"] as const) {
+      const value = rawFilters[field];
+      if (value === undefined) continue;
+      if (typeof value !== "string" || !isValidIsoDate(value)) {
+        errors.push(`${field} must be an ISO date, YYYY-MM-DD`);
+      } else {
+        filters[field] = value;
+      }
+    }
+    if (filters.dateFrom && filters.dateTo && filters.dateFrom > filters.dateTo) {
+      errors.push("dateFrom must not be after dateTo");
+    }
+    if (rawFilters.lateOnly !== undefined) {
+      if (typeof rawFilters.lateOnly !== "boolean") {
+        errors.push("lateOnly must be true or false");
+      } else if (rawFilters.lateOnly) {
+        filters.lateOnly = true;
+      }
+    }
+    for (const field of ["amountAtLeast", "amountAtMost"] as const) {
+      const value = rawFilters[field];
+      if (value === undefined) continue;
+      if (typeof value !== "number" || !Number.isFinite(value) || value < 0) {
+        errors.push(`${field} must be a number of dollars, zero or more`);
+      } else {
+        filters[field] = value;
+      }
+    }
+    if (
+      filters.amountAtLeast !== undefined &&
+      filters.amountAtMost !== undefined &&
+      filters.amountAtLeast > filters.amountAtMost
+    ) {
+      errors.push("amountAtLeast must not be above amountAtMost");
+    }
+  }
+
+  if (errors.length > 0) return { ok: false, errors };
+  return { ok: true, plan: { filters, aggregate: aggregate as Aggregate, limit, sort } };
+}
+
+/** True when a plan narrows nothing at all. */
+export function hasNoFilters(plan: QueryPlan): boolean {
+  const f = plan.filters;
+  return (
+    !f.officials?.length &&
+    !f.tickers?.length &&
+    !f.descriptionContains &&
+    !f.types?.length &&
+    !f.dateFrom &&
+    !f.dateTo &&
+    !f.lateOnly &&
+    f.amountAtLeast === undefined &&
+    f.amountAtMost === undefined
+  );
+}
+
+/**
+ * A bare "trades" used to come back as a list of whatever sat at the top of
+ * the array, which the phraser then narrated as though the rows were a
+ * finding. An unfiltered question gets a count instead; the reader can filter
+ * from there.
+ */
+export function normalizePlan(plan: QueryPlan): QueryPlan {
+  if (plan.aggregate === "list" && hasNoFilters(plan)) {
+    return { ...plan, aggregate: "count", limit: undefined };
+  }
+  // A share of late filings needs the whole set as its denominator. A
+  // lateOnly filter would make the answer 100% by construction, so it goes.
+  if (plan.aggregate === "late_share" && plan.filters.lateOnly) {
+    const { lateOnly, ...rest } = plan.filters;
+    void lateOnly;
+    return { ...plan, filters: rest };
+  }
+  return plan;
+}
+
+/* ── Resolution ─────────────────────────────────────────────────────────── */
+
+export type Resolution<T> =
+  | { ok: true; value: T }
+  | { ok: false; reason: string; candidates: string[] };
+
+export function normalizeName(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Short forms readers and models actually write. Grok's Sept. 6 table: "Doug
+ * Burgum", "Chris Wright" and "Robert Kennedy" all failed against filed names
+ * that carry a middle initial or a longer first name, and the reader got the
+ * absence sentence, which is the one claim this box may not make.
+ *
+ * "Sean" and "Shawn" are deliberately absent: they are different names, not
+ * two spellings of one, and guessing between them is exactly the kind of
+ * confidence this resolver refuses.
+ */
+const SHORT_FORMS: Record<string, string[]> = {
+  doug: ["douglas"],
+  chris: ["christopher"],
+  bob: ["robert"],
+  bobby: ["robert"],
+  rob: ["robert"],
+  robert: ["bob", "bobby"],
+  mike: ["michael"],
+  jim: ["james"],
+  jimmy: ["james"],
+  steve: ["stephen", "steven"],
+  tom: ["thomas"],
+  dan: ["daniel"],
+  danny: ["daniel"],
+  ed: ["edward"],
+  eddie: ["edward"],
+  ken: ["kenneth"],
+  bill: ["william"],
+  billy: ["william"],
+  will: ["william"],
+  pete: ["peter"],
+  matt: ["matthew"],
+  dave: ["david"],
+  joe: ["joseph"],
+  tony: ["anthony"],
+  rick: ["richard"],
+  dick: ["richard"],
+  nick: ["nicholas"],
+  greg: ["gregory"],
+  jeff: ["jeffrey"],
+  andy: ["andrew"],
+  chuck: ["charles"],
+  charlie: ["charles"],
+};
+
+/** Honorifics a reader puts in front of a name. Not part of the name. */
+const HONORIFIC =
+  /^(?:president|vice president|secretary|sec|senator|sen|governor|gov|administrator|director|ambassador|attorney general|justice|judge|mr|mrs|ms|dr)\s+/i;
+
+function stripHonorific(name: string): string {
+  // Normalize first so punctuation and case cannot hide the honorific:
+  // "President Trump" and "Sec. Burgum" both have to lose their title.
+  return normalizeName(name).replace(HONORIFIC, "").trim();
+}
+
+/** Every token of a filed name: "Trump, Donald J" -> [donald, j, trump]. */
+function nameTokens(filedName: string): string[] {
+  const comma = filedName.indexOf(",");
+  const normalized =
+    comma > 0
+      ? normalizeName(`${filedName.slice(comma + 1)} ${filedName.slice(0, comma)}`)
+      : normalizeName(filedName);
+  return normalized.split(" ").filter(Boolean);
+}
+
+/** Does one written token stand for one token of the filed name? */
+function tokenMatches(written: string, filed: string): boolean {
+  if (written === filed) return true;
+  if (SHORT_FORMS[written]?.includes(filed)) return true;
+  if (SHORT_FORMS[filed]?.includes(written)) return true;
+  // A hyphenated surname answers to either half: "Chavez" for
+  // "Chavez-DeRemer", when only one official has that half.
+  if (filed.includes(" ") && filed.split(" ").includes(written)) return true;
+  return false;
+}
+
+/**
+ * A written name matches a filed name when every token the reader wrote finds
+ * a distinct token of the filed name, the surname included. That accepts
+ * "Doug Burgum" for "Burgum, Douglas J" and "President Trump" for "Trump,
+ * Donald J" without accepting a first name on its own.
+ */
+function looseNameMatches(written: string, official: OfficialRef): boolean {
+  const wrote = stripHonorific(written).split(" ").filter(Boolean);
+  if (wrote.length < 2) return false;
+  const filed = nameTokens(official.filedName);
+  const surname = filed[filed.length - 1];
+  // The surname has to be one of the tokens written, or this is a guess.
+  if (!wrote.some((w) => tokenMatches(w, surname))) return false;
+
+  const remaining = [...filed];
+  for (const token of wrote) {
+    const index = remaining.findIndex((f) => tokenMatches(token, f));
+    if (index === -1) return false;
+    remaining.splice(index, 1);
+  }
+  return true;
+}
+
+function lastNameOf(filedName: string): string {
+  // Stored as "Last, First Middle"; fall back to the final word.
+  const comma = filedName.indexOf(",");
+  if (comma > 0) return normalizeName(filedName.slice(0, comma));
+  const parts = normalizeName(filedName).split(" ");
+  return parts[parts.length - 1] ?? "";
+}
+
+/**
+ * Turn the names a model wrote into slugs. Exact slug, exact full name in
+ * either order, or a last name held by exactly one official. Anything else
+ * is refused with the names it might have meant.
+ */
+export function resolveOfficials(
+  inputs: string[],
+  officials: OfficialRef[]
+): Resolution<string[]> {
+  const slugs = new Set<string>();
+  for (const raw of inputs) {
+    const input = normalizeName(raw);
+    const bySlug = officials.find((o) => o.slug === raw.trim().toLowerCase());
+    if (bySlug) {
+      slugs.add(bySlug.slug);
+      continue;
+    }
+    const exact = officials.filter((o) => {
+      const display = normalizeName(o.name);
+      const filed = normalizeName(o.filedName);
+      const reversed = filed.split(" ").reverse().join(" ");
+      return display === input || filed === input || reversed === input;
+    });
+    if (exact.length === 1) {
+      slugs.add(exact[0].slug);
+      continue;
+    }
+    if (exact.length > 1) {
+      return {
+        ok: false,
+        reason: `"${raw}" matches more than one official`,
+        candidates: exact.map((o) => o.name),
+      };
+    }
+    // Loose match before surname-only: "Doug Burgum" is more specific than
+    // "Burgum", and a reader who writes both names deserves the better match.
+    const loose = officials.filter((o) => looseNameMatches(raw, o));
+    if (loose.length === 1) {
+      slugs.add(loose[0].slug);
+      continue;
+    }
+    if (loose.length > 1) {
+      return {
+        ok: false,
+        reason: `"${raw}" could mean more than one official`,
+        candidates: loose.map((o) => o.name),
+      };
+    }
+
+    const surnameInput = stripHonorific(raw);
+    const byLast = officials.filter((o) => {
+      const surname = lastNameOf(o.filedName);
+      if (surname === surnameInput) return true;
+      // Either half of a hyphenated surname, when it is unambiguous.
+      return surname.includes(" ") && surname.split(" ").includes(surnameInput);
+    });
+    if (byLast.length === 1) {
+      slugs.add(byLast[0].slug);
+      continue;
+    }
+    if (byLast.length > 1) {
+      return {
+        ok: false,
+        reason: `"${raw}" could mean more than one official`,
+        candidates: byLast.map((o) => o.name),
+      };
+    }
+    // The roster is the whole officials index, so an unmatched name really
+    // is not tracked. Listing a dozen arbitrary officials would not help, so
+    // the caller points at the directory instead.
+    return {
+      ok: false,
+      reason: `"${raw}" is not among the officials Open Cabinet tracks`,
+      candidates: [],
+    };
+  }
+  return { ok: true, value: Array.from(slugs) };
+}
+
+/** Uppercase and confirm each symbol actually appears in the published rows. */
+export function resolveTickers(
+  inputs: string[],
+  available: Iterable<string>
+): Resolution<string[]> {
+  const set = new Set(Array.from(available, (t) => t.toUpperCase()));
+  const out = new Set<string>();
+  for (const raw of inputs) {
+    const symbol = raw.trim().toUpperCase();
+    if (!set.has(symbol)) {
+      return {
+        ok: false,
+        reason: `no verified trade in this data names the symbol ${symbol}`,
+        candidates: [],
+      };
+    }
+    out.add(symbol);
+  }
+  return { ok: true, value: Array.from(out) };
+}
+
+/**
+ * Resolve a whole plan. Returns a plan whose officials and tickers are known
+ * to exist, or the reason it could not.
+ */
+export function resolvePlan(
+  plan: QueryPlan,
+  officials: OfficialRef[],
+  tickers: Iterable<string>
+): Resolution<QueryPlan> {
+  const filters: QueryPlanFilters = { ...plan.filters };
+  if (filters.officials) {
+    const resolved = resolveOfficials(filters.officials, officials);
+    if (!resolved.ok) return resolved;
+    filters.officials = resolved.value;
+  }
+  if (filters.tickers) {
+    const resolved = resolveTickers(filters.tickers, tickers);
+    if (!resolved.ok) return resolved;
+    filters.tickers = resolved.value;
+  }
+  return { ok: true, value: { ...plan, filters } };
+}
+
+/**
+ * Find any tracked official the question names, without a model.
+ *
+ * The last line of defence against a decline that hides a real person. A model
+ * that picks "unknown person" for a question naming the site's largest
+ * official would otherwise have the last word (Codex, Sept. 6). Surnames only,
+ * matched on word boundaries, longest first so "Trump" inside a longer name
+ * does not win over the longer match.
+ */
+export function officialsNamedIn(
+  question: string,
+  officials: OfficialRef[]
+): OfficialRef[] {
+  const haystack = normalizeName(question);
+  const hits: OfficialRef[] = [];
+  for (const official of officials) {
+    const surname = lastNameOf(official.filedName);
+    if (surname.length < 4) continue;
+    if (new RegExp(`\\b${surname}\\b`).test(haystack)) hits.push(official);
+  }
+  return hits.sort(
+    (a, b) => lastNameOf(b.filedName).length - lastNameOf(a.filedName).length
+  );
+}
+
+/* ── Plain English ──────────────────────────────────────────────────────── */
+
+const AGGREGATE_PHRASE: Record<Aggregate, string> = {
+  count: "counted",
+  sum_estimate: "totaled by estimated value",
+  list: "listed",
+  top_officials: "ranked by official",
+  top_assets: "ranked by asset",
+  by_month: "counted by month",
+  first_last_dates: "reduced to the first and last dates",
+  late_share: "measured for the share flagged late",
+};
+
+/**
+ * Restate the plan in a sentence, built in code from the validated fields.
+ * The model never writes this line, so a reader can always see what was run.
+ */
+function joinNames(names: string[]): string {
+  if (names.length <= 1) return names[0] ?? "";
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+}
+
+export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string {
+  const bySlug = new Map(officials.map((o) => [o.slug, o]));
+  const f = plan.filters;
+  const parts: string[] = [];
+
+  const typeText = f.types && f.types.length > 0 ? f.types.join(" or ") + " rows" : "Trades";
+  parts.push(f.lateOnly ? `${typeText} flagged late` : typeText);
+
+  if (f.officials && f.officials.length > 0) {
+    // A holdover's rows are in scope, so the restatement says which people
+    // are former rather than leaving a reader to assume a current seat.
+    const names = f.officials.map((slug) => {
+      const official = bySlug.get(slug);
+      if (!official) return slug;
+      return official.former ? `${official.name} (former)` : official.name;
+    });
+    parts.push(`by ${joinNames(names)}`);
+  }
+  if (f.tickers && f.tickers.length > 0) {
+    parts.push(`in ${f.tickers.join(", ")}`);
+  }
+  if (f.descriptionContains) {
+    parts.push(`whose description mentions "${f.descriptionContains}"`);
+  }
+  // Both bounds are named, and the wording says what a bound means against a
+  // range: the disclosed range has to sit inside the window, not overlap it.
+  const dollars = (n: number) => `$${n.toLocaleString("en-US")}`;
+  if (f.amountAtLeast !== undefined && f.amountAtMost !== undefined) {
+    parts.push(
+      `whose disclosed range falls entirely between ${dollars(f.amountAtLeast)} and ${dollars(f.amountAtMost)}`
+    );
+  } else if (f.amountAtLeast !== undefined) {
+    parts.push(`whose disclosed range starts at ${dollars(f.amountAtLeast)} or more`);
+  } else if (f.amountAtMost !== undefined) {
+    parts.push(`whose disclosed range tops out at ${dollars(f.amountAtMost)} or less`);
+  }
+  if (f.dateFrom && f.dateTo) parts.push(`between ${f.dateFrom} and ${f.dateTo}`);
+  else if (f.dateFrom) parts.push(`on or after ${f.dateFrom}`);
+  else if (f.dateTo) parts.push(`on or before ${f.dateTo}`);
+
+  const ordering =
+    plan.sort === "amount"
+      ? ", largest disclosed range first"
+      : plan.aggregate === "list"
+        ? ", newest first"
+        : "";
+  return `${parts.join(" ")}, ${AGGREGATE_PHRASE[plan.aggregate]}${ordering}.`;
+}

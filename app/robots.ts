@@ -26,12 +26,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin", "/api/"],
+        disallow: ["/admin", "/api/", "/askai"],
       },
       {
         userAgent: AI_CRAWLERS,
         allow: "/",
-        disallow: ["/admin", "/api/"],
+        disallow: ["/admin", "/api/", "/askai"],
       },
     ],
     sitemap: "https://open-cabinet.org/sitemap.xml",
