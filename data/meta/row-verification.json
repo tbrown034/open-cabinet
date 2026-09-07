@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:32:07.631Z",
+  "generatedAt": "2026-09-07T14:02:47.419Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
@@ -203,7 +203,7 @@
       "lane": "human",
       "note": "Decided by trevor on 2026-09-06",
       "gates": {
-        "read1Confidence": 0.9,
+        "read1Confidence": null,
         "text": "none",
         "ocr": "none",
         "model2": "none",
@@ -222,7 +222,7 @@
       "lane": "human",
       "note": "Decided by trevor on 2026-09-06",
       "gates": {
-        "read1Confidence": 0.9,
+        "read1Confidence": null,
         "text": "none",
         "ocr": "none",
         "model2": "none",
