@@ -83,12 +83,17 @@ async function seedOfficials() {
 
     for (let i = 0; i < data.transactions.length; i += txBatchSize) {
       const batch = data.transactions.slice(i, i + txBatchSize);
-      const values = batch.map((tx, j) => ({
+      // The date column is NOT NULL. A row the filing prints with no date
+      // (published as printed, with a note) cannot go into the mirror;
+      // it stays in the JSON, which is the render source. Say so.
+      const undated = batch.filter((tx) => !tx.date);
+      if (undated.length) console.warn(`  ${data.slug}: ${undated.length} undated row(s) skipped by the mirror (date column is NOT NULL): ${undated.map((t) => t.description).join("; ")}`);
+      const values = batch.filter((tx) => !!tx.date).map((tx, j) => ({
         officialId: inserted.id,
         description: tx.description,
         ticker: tx.ticker || null,
         type: tx.type,
-        date: tx.date ?? "",
+        date: tx.date as string,
         // Unknown amounts (filing says not ascertainable) are stored as the
         // literal note so the DB mirror keeps the fact rather than a range.
         amount: tx.amount ?? "Value not readily ascertainable",
@@ -100,12 +105,14 @@ async function seedOfficials() {
         pdfSource: (tx as { sourceUrl?: string }).sourceUrl || null,
       }));
 
-      await db
-        .insert(transactions)
-        .values(values)
-        .onConflictDoNothing(); // Skip only true duplicates (same key + rowIndex)
+      if (values.length) {
+        await db
+          .insert(transactions)
+          .values(values)
+          .onConflictDoNothing(); // Skip only true duplicates (same key + rowIndex)
+      }
 
-      txInserted += batch.length;
+      txInserted += values.length;
     }
 
     totalTransactions += txInserted;
