@@ -10,4 +10,5 @@ CREATE TABLE IF NOT EXISTS "ask_log" (
 	"ip_hash" text,
 	"duration_ms" integer
 );
+--> statement-breakpoint
 CREATE INDEX IF NOT EXISTS "ask_log_at_idx" ON "ask_log" ("at");
