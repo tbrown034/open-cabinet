@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:29:01.562Z",
+  "generatedAt": "2026-09-07T00:32:07.631Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
-    "rows": 11513,
+    "rows": 11509,
     "byState": {
-      "checked": 11367,
-      "human_verified": 146,
+      "checked": 11364,
+      "human_verified": 145,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 0,
@@ -19,7 +19,7 @@
       "0": 0,
       "1": 0,
       "2": 0,
-      "3": 11513
+      "3": 11509
     }
   },
   "rows": {
@@ -196466,25 +196466,6 @@
         "implausible": []
       }
     },
-    "ba5060165bbec41534fd8677": {
-      "id": "ba5060165bbec41534fd8677",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "human_verified",
-      "lane": "human",
-      "note": "Decided by trevor on 2026-09-06",
-      "gates": {
-        "read1Confidence": 0.9,
-        "text": "none",
-        "ocr": "unread",
-        "model2": "agree",
-        "session": "none",
-        "audit": "confirm",
-        "human": "corrected",
-        "implausible": []
-      }
-    },
     "2d32ea106e1a1a1c5cae9906": {
       "id": "2d32ea106e1a1a1c5cae9906",
       "slug": "trump-donald-j",
@@ -197017,25 +196998,6 @@
         "implausible": []
       }
     },
-    "487a953a9b7a9da021194d2f": {
-      "id": "487a953a9b7a9da021194d2f",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it",
-      "gates": {
-        "read1Confidence": 0.9,
-        "text": "none",
-        "ocr": "unread",
-        "model2": "agree",
-        "session": "none",
-        "audit": "confirm",
-        "human": null,
-        "implausible": []
-      }
-    },
     "c6e6b7e7e2c2604cd504a710": {
       "id": "c6e6b7e7e2c2604cd504a710",
       "slug": "trump-donald-j",
@@ -197337,25 +197299,6 @@
         "session": "none",
         "audit": "confirm",
         "human": "corrected",
-        "implausible": []
-      }
-    },
-    "fc1aa98a514deb6f0086ff59": {
-      "id": "fc1aa98a514deb6f0086ff59",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it",
-      "gates": {
-        "read1Confidence": 0.8,
-        "text": "none",
-        "ocr": "unread",
-        "model2": "agree",
-        "session": "none",
-        "audit": "confirm",
-        "human": null,
         "implausible": []
       }
     },
@@ -198197,25 +198140,6 @@
     },
     "1c46b6c9a90460a5f314a36c": {
       "id": "1c46b6c9a90460a5f314a36c",
-      "slug": "trump-donald-j",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
-      "score": 3,
-      "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; OCR could not read this row; the page audit confirmed it",
-      "gates": {
-        "read1Confidence": 0.9,
-        "text": "none",
-        "ocr": "unread",
-        "model2": "agree",
-        "session": "none",
-        "audit": "confirm",
-        "human": null,
-        "implausible": []
-      }
-    },
-    "fe2230142eaf7d110b7043b3": {
-      "id": "fe2230142eaf7d110b7043b3",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf",
       "score": 3,

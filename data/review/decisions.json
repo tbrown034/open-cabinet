@@ -1306,6 +1306,38 @@
       "evidence": "Trevor, Sep 6, 5 PM (\"10 apply as printed\", adjudication item 10): May 14, 2026 filing (part 2) page 110 printed row 3594, Apple Inc sale 3/27/2026 $500,001 - $1,000,000, the page prints Yes under late; the site's old read had on time. The session page read and the second model read Yes; the fresh first read has No. Re-recorded Sep 6, 8:12 PM because the row's record id changed when the re-read was applied (item 9).",
       "decidedBy": "trevor",
       "decidedAt": "2026-09-07T00:08:20.379Z"
+    },
+    {
+      "recordId": "ba5060165bbec41534fd8677",
+      "slug": "trump-donald-j",
+      "decision": "rejected",
+      "evidence": "Sep 6, 8:32 PM, Claude Code on Trevor's standing instruction: Aug 12, 2025 AMENDED filing, Exhibit A: \"In place of line item #27, substitute the following\" with $100,001 - $250,000, late Yes. This row is the superseded original ($250,001-$500,000, late No) that the ingest kept beside the substitute because the merge keys on amount. Removed as superseded; the substitute row stays. Removed row: {\"description\":\"WISCONSIN ST HLTH & EFA REV ADVOCATE HLTH HOSP CORP SER B2 B/E 5.00 % Due Aug 15, 2054\",\"ticker\":null,\"type\":\"Purchase\",\"date\":\"2025-07-17\",\"amount\":\"$250,001-$500,000\",\"lateFilingFlag\":false,\"sourceUrl\":\"https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf\"}",
+      "decidedBy": "claude-code",
+      "decidedAt": "2026-09-07T00:31:56.742Z"
+    },
+    {
+      "recordId": "487a953a9b7a9da021194d2f",
+      "slug": "trump-donald-j",
+      "decision": "rejected",
+      "evidence": "Sep 6, 8:32 PM, Claude Code on Trevor's standing instruction: Aug 12, 2025 AMENDED filing, Exhibit A: \"In place of line item #52, substitute the following\" with $1,000,001 - $5,000,000, late Yes. This row is the superseded original ($500,001-$1,000,000, late Yes) that the ingest kept beside the substitute because the merge keys on amount. Removed as superseded; the substitute row stays. Removed row: {\"description\":\"BLACK BELT ENERGY GAS DIST AL GAS REV PJ 6 SER B B/E 4.00 % Due Oct 1, 2052\",\"ticker\":null,\"type\":\"Purchase\",\"date\":\"2025-07-11\",\"amount\":\"$500,001-$1,000,000\",\"lateFilingFlag\":true,\"sourceUrl\":\"https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf\"}",
+      "decidedBy": "claude-code",
+      "decidedAt": "2026-09-07T00:31:56.742Z"
+    },
+    {
+      "recordId": "fc1aa98a514deb6f0086ff59",
+      "slug": "trump-donald-j",
+      "decision": "rejected",
+      "evidence": "Sep 6, 8:32 PM, Claude Code on Trevor's standing instruction: Aug 12, 2025 AMENDED filing, Exhibit A: \"In place of line item #71, substitute the following\" with $50,001 - $100,000, late Yes. This row is the superseded original ($100,001-$250,000, late Yes) that the ingest kept beside the substitute because the merge keys on amount. Removed as superseded; the substitute row stays. Removed row: {\"description\":\"KNOXVILLE TN CMNTY DEV CORP MLTIFAM REV COLLTZD HSG DGA GROSVENSOR B/E 4.00 % Due D\",\"ticker\":null,\"type\":\"Purchase\",\"date\":\"2025-07-10\",\"amount\":\"$100,001-$250,000\",\"lateFilingFlag\":true,\"sourceUrl\":\"https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf\"}",
+      "decidedBy": "claude-code",
+      "decidedAt": "2026-09-07T00:31:56.742Z"
+    },
+    {
+      "recordId": "fe2230142eaf7d110b7043b3",
+      "slug": "trump-donald-j",
+      "decision": "rejected",
+      "evidence": "Sep 6, 8:32 PM, Claude Code on Trevor's standing instruction: Aug 12, 2025 AMENDED filing, Exhibit A: \"In place of line item #123, substitute the following\" with $15,001 - $50,000, late Yes. This row is the superseded original ($1,001-$15,000, late Yes) that the ingest kept beside the substitute because the merge keys on amount. Removed as superseded; the substitute row stays. Removed row: {\"description\":\"BASTROP TX INDPT SCH DIST BLDG PSF GTD B/E 4.00 % Due Feb 15, 2034\",\"ticker\":null,\"type\":\"Purchase\",\"date\":\"2025-07-07\",\"amount\":\"$1,001-$15,000\",\"lateFilingFlag\":true,\"sourceUrl\":\"https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/024D876AAE518C5085258CEB006E7E2E/$FILE/Donald-J-Trump-08.12.2025-278T(2)%20AMENDED.pdf\"}",
+      "decidedBy": "claude-code",
+      "decidedAt": "2026-09-07T00:31:56.742Z"
     }
   ]
 }
