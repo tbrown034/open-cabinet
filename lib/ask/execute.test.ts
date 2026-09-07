@@ -12,6 +12,7 @@ function row(partial: Partial<PublishedRow> & { id: string }): PublishedRow {
     title: "Secretary of the Treasury",
     description: "NVIDIA Corporation",
     ticker: "NVDA",
+    instrumentType: "common_stock",
     type: "Purchase",
     date: "2025-03-04",
     amount: "$15,001-$50,000",
@@ -157,11 +158,13 @@ describe("execute", () => {
     expect(result.matchedRows).toBe(4);
   });
 
-  it("ranks officials by estimated value", () => {
-    const result = execute(plan({ aggregate: "top_officials" }), DATA);
-    expect(result.topOfficials?.[0].slug).toBe("burgum-doug");
-    expect(result.topOfficials?.[0].estimateDisplay).toBe("$3,000,000");
-    expect(result.topOfficials?.[1].count).toBe(3);
+  it("ranks officials by rows, and by estimated value only when the plan sorts by amount", () => {
+    const byRows = execute(plan({ aggregate: "top_officials" }), DATA);
+    expect(byRows.topOfficials?.[0].slug).toBe("bessent-scott");
+    expect(byRows.topOfficials?.[0].count).toBe(3);
+    const byValue = execute(plan({ aggregate: "top_officials", sort: "amount" }), DATA);
+    expect(byValue.topOfficials?.[0].slug).toBe("burgum-doug");
+    expect(byValue.topOfficials?.[0].estimateDisplay).toBe("$3,000,000");
   });
 
   it("ranks assets by how often they appear", () => {
@@ -397,5 +400,20 @@ describe("item A: checked means score 3", () => {
     expect(pendingStateFor(2, "deterministic_agree")).toBe("auditPending");
     expect(pendingStateFor(2, "audit_only")).toBe("auditPending");
     expect(pendingStateFor(1, "single_read")).toBe("notYetCompared");
+  });
+});
+
+describe("instrument type filter (Sept. 7)", () => {
+  it("keeps only rows the asset lane typed as asked", () => {
+    const data: PublishedRowsData = {
+      rows: [
+        row({ id: "b1", description: "HARRIS CNTY TX 4% Due 2035", ticker: null, instrumentType: "municipal_bond", type: "Purchase", date: "2026-06-03" }),
+        row({ id: "s1", description: "APPLE INC", ticker: "AAPL", instrumentType: "common_stock", type: "Purchase", date: "2026-06-04" }),
+      ],
+      pendingRows: [], officials: [], tickers: ["AAPL"], allTickers: ["AAPL"],
+      summary: { checked: 2, underReview: 0, auditPending: 0, notYetCompared: 0, parsed: 2 },
+    } as unknown as PublishedRowsData;
+    const r = execute({ filters: { instrumentTypes: ["municipal_bond", "corporate_note", "treasury"] }, aggregate: "count" }, data);
+    expect(r.matchedRows).toBe(1);
   });
 });

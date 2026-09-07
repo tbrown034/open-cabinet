@@ -41,9 +41,11 @@ import {
   normalizePlan,
   AGGREGATES,
   TRANSACTION_TYPES,
+  INSTRUMENT_TYPES,
   MAX_LIMIT,
   MAX_OFFICIALS,
   officialsNamedIn,
+  planCorrespondence,
   type QueryPlan,
 } from "@/lib/ask/plan";
 import { execute, countPending, type ExecuteResult } from "@/lib/ask/execute";
@@ -69,11 +71,18 @@ const MAX_QUESTION_LENGTH = 300;
 const DEFAULT_MODEL = "claude-sonnet-5";
 
 export const DISCLOSURE =
-  "Numbers come from code, not from the AI. The AI wrote the query and the " +
-  "sentence. This counts checked rows, the ones a program or a second model " +
-  "agreed with and a page audit confirmed, not every disclosure on the site. " +
-  "Rows under review, rows awaiting the audit and rows not yet compared are " +
-  "left out. Check the linked 278-T before you cite a figure.";
+  process.env.ASKAI_PHRASER === "model"
+    ? "Numbers come from code, not from the AI. The AI wrote the query and the " +
+      "sentence; every number in the sentence was checked against the code's figures. " +
+      "This counts checked rows only, the ones an independent program or a second model " +
+      "agreed with and a page audit confirmed. Dollar figures are sums of disclosed range " +
+      "midpoints, not reported prices. Open the linked 278-T before you cite a figure."
+    : "Numbers and the sentence come from code, not from the AI. The AI only turned " +
+      "your question into the query shown above. This counts checked rows only, the ones " +
+      "an independent program or a second model agreed with and a page audit confirmed. " +
+      "Dollar figures are sums of disclosed range midpoints, not reported prices. " +
+      "\"Late\" means the filer checked the box saying the trade was reported more than " +
+      "30 days after notice. Open the linked 278-T before you cite a figure.";
 
 export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
 
@@ -174,56 +183,48 @@ function logAsk(entry: Record<string, unknown>): void {
 /* ── The two model calls ────────────────────────────────────────────────── */
 
 const PLAN_TOOL_SCHEMA = {
+  // Strict grammar: every field is required and "not asked" is null. An
+  // optional field under strict sampling invited placeholders (a $0 to
+  // $999,999,999,999 window on "trades flagged late in 2026", Sept. 7).
   type: "object" as const,
   properties: {
     filters: {
       type: "object",
       properties: {
         officials: {
-          type: "array",
-          items: { type: "string" },
-          description: "Official names exactly as listed in the system prompt.",
+          anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }],
+          description: "Official names exactly as listed in the system prompt, or null if the question names nobody.",
         },
         tickers: {
-          type: "array",
-          items: { type: "string" },
-          description: "Stock symbols, uppercase, e.g. NVDA.",
+          anyOf: [{ type: "array", items: { type: "string" } }, { type: "null" }],
+          description: "Stock symbols, uppercase, e.g. NVDA, or null.",
         },
         descriptionContains: {
-          type: "string",
-          description:
-            "Case-insensitive substring of the asset description, for assets with no symbol.",
+          anyOf: [{ type: "string" }, { type: "null" }],
+          description: "A short company-name fragment to match in the asset description, only when no symbol is known; letters, digits and spaces; or null.",
         },
         types: {
-          type: "array",
-          items: { type: "string", enum: TRANSACTION_TYPES as unknown as string[] },
+          anyOf: [{ type: "array", items: { type: "string", enum: TRANSACTION_TYPES as unknown as string[] } }, { type: "null" }],
+          description: "Transaction types to keep, or null for all.",
         },
-        dateFrom: { type: "string", description: "ISO date, YYYY-MM-DD, inclusive." },
-        dateTo: { type: "string", description: "ISO date, YYYY-MM-DD, inclusive." },
-        lateOnly: {
-          type: "boolean",
-          description: "Keep only rows the filer certified as reported late.",
+        instrumentTypes: {
+          anyOf: [{ type: "array", items: { type: "string", enum: INSTRUMENT_TYPES as unknown as string[] } }, { type: "null" }],
+          description: "Kinds of asset to keep when the question asks for bonds, notes, ETFs, funds, stocks, preferreds, options, crypto or private holdings: " +
+            "municipal_bond, corporate_note, treasury, etf, mutual_fund, common_stock, preferred, option, crypto, private. 'Bonds' means municipal_bond, corporate_note and treasury. Otherwise null.",
         },
-        amountAtLeast: {
-          type: "number",
-          description:
-            "Dollars. Keeps rows whose disclosed range starts at or above this figure.",
-        },
-        amountAtMost: {
-          type: "number",
-          description:
-            "Dollars. Keeps rows whose disclosed range ends at or below this figure. " +
-            "Use both bounds for a question like 'between $250,000 and $500,000'.",
-        },
+        dateFrom: { anyOf: [{ type: "string" }, { type: "null" }], description: "ISO date, YYYY-MM-DD, inclusive; null if the question gives no start." },
+        dateTo: { anyOf: [{ type: "string" }, { type: "null" }], description: "ISO date, YYYY-MM-DD, inclusive; null if the question gives no end." },
+        lateOnly: { anyOf: [{ type: "boolean" }, { type: "null" }], description: "true only when the question asks about late-reported trades; otherwise null." },
+        amountAtLeast: { anyOf: [{ type: "number" }, { type: "null" }], description: "Dollars, only when the question states a lower bound; otherwise null." },
+        amountAtMost: { anyOf: [{ type: "number" }, { type: "null" }], description: "Dollars, only when the question states an upper bound; otherwise null. Never invent a ceiling." },
       },
+      required: ["officials", "tickers", "descriptionContains", "types", "instrumentTypes", "dateFrom", "dateTo", "lateOnly", "amountAtLeast", "amountAtMost"],
       additionalProperties: false,
     },
     aggregate: { type: "string", enum: AGGREGATES as unknown as string[] },
-    // No minimum/maximum: the strict grammar does not support them; the
-    // validator caps limit at MAX_LIMIT after the call.
-    limit: { type: "integer", description: `1 to ${MAX_LIMIT}.` },
+    limit: { anyOf: [{ type: "integer" }, { type: "null" }], description: `Rows to list, 1 to ${MAX_LIMIT}, or null.` },
   },
-  required: ["filters", "aggregate"],
+  required: ["filters", "aggregate", "limit"],
   additionalProperties: false,
 };
 
@@ -728,7 +729,10 @@ export async function POST(request: Request) {
     if (intent.kind === "require_aggregate") {
       plan = { ...plan, aggregate: intent.aggregate };
     } else if (intent.kind === "require_sort") {
-      plan = { ...plan, aggregate: plan.aggregate === "count" ? "list" : plan.aggregate, sort: intent.sort };
+      // "Largest" or "smallest" asks for rows in size order. A count or a
+      // total is not that; only a ranking keeps its own shape (Grok P2-4).
+      const keep = plan.aggregate === "top_officials" || plan.aggregate === "top_assets" || plan.aggregate === "list";
+      plan = { ...plan, aggregate: keep ? plan.aggregate : "list", sort: intent.sort };
     }
 
     // Resolve against every symbol the site holds, not just the verified
@@ -754,6 +758,22 @@ export async function POST(request: Request) {
     }
 
     const finalPlan = normalizePlan(resolved.value);
+
+    // The plan must answer the question that was asked (Codex, Sept. 7).
+    const fit = planCorrespondence(question, finalPlan, data.officials);
+    if (!fit.ok) {
+      logAsk({ startedAt, question, status: "not_in_data", reason: `correspondence: ${fit.reason}`, plan: finalPlan, ipKey });
+      return NextResponse.json({
+        status: "not_in_data" satisfies AskStatus,
+        answer: stripDashes(`That question did not translate cleanly: ${fit.reason}. Try restating it with the official, the symbol and the dates spelled out.`),
+        plan: null,
+        planText: null,
+        result: null,
+        excluded,
+        pendingMatches: EMPTY_PENDING,
+        disclosure: DISCLOSURE,
+      });
+    }
 
     // Holdovers are on the roster so their names resolve, but their rows are
     // outside the current roster, exactly as they are in the homepage

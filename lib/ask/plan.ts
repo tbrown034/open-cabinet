@@ -20,6 +20,10 @@
  */
 import type { TransactionType } from "../types";
 import type { OfficialRef } from "../published-rows";
+import { INSTRUMENT_LABEL, type InstrumentType } from "../instrument-type";
+
+/** The instrument types the plan may filter on, as the asset lane names them. */
+export const INSTRUMENT_TYPES = Object.keys(INSTRUMENT_LABEL) as InstrumentType[];
 
 export const AGGREGATES = [
   "count",
@@ -57,6 +61,8 @@ export interface QueryPlanFilters {
   tickers?: string[];
   descriptionContains?: string;
   types?: TransactionType[];
+  /** Instrument types from the asset lane: municipal_bond, corporate_note, etf, and so on. */
+  instrumentTypes?: InstrumentType[];
   dateFrom?: string;
   dateTo?: string;
   lateOnly?: boolean;
@@ -71,7 +77,7 @@ export interface QueryPlanFilters {
   amountAtMost?: number;
 }
 
-export const SORTS = ["date", "amount"] as const;
+export const SORTS = ["date", "amount", "amount_asc"] as const;
 export type Sort = (typeof SORTS)[number];
 
 export interface QueryPlan {
@@ -96,6 +102,7 @@ const FILTER_KEYS = new Set([
   "officials",
   "tickers",
   "descriptionContains",
+  "instrumentTypes",
   "types",
   "dateFrom",
   "dateTo",
@@ -142,8 +149,20 @@ function stringArray(
  * Validate a raw plan from the model. Never throws, never coerces: an
  * unrecognized key or a wrong type is an error, and the caller declines.
  */
-export function parseQueryPlan(input: unknown): PlanParse {
+/** A strict-schema model fills unused fields with null; null means "not set". */
+function withoutNulls(value: unknown): unknown {
+  if (!isRecord(value)) return value;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(value)) {
+    if (v === null) continue;
+    out[k] = isRecord(v) ? withoutNulls(v) : v;
+  }
+  return out;
+}
+
+export function parseQueryPlan(rawInput: unknown): PlanParse {
   const errors: string[] = [];
+  const input = withoutNulls(rawInput);
   if (!isRecord(input)) return { ok: false, errors: ["plan must be an object"] };
 
   for (const key of Object.keys(input)) {
@@ -189,6 +208,12 @@ export function parseQueryPlan(input: unknown): PlanParse {
     }
     if (rawFilters.tickers !== undefined) {
       filters.tickers = stringArray(rawFilters.tickers, "tickers", errors);
+    }
+    if (rawFilters.instrumentTypes !== undefined) {
+      const list = stringArray(rawFilters.instrumentTypes, "instrumentTypes", errors) ?? [];
+      const bad = list.filter((t) => !(INSTRUMENT_TYPES as string[]).includes(t));
+      if (bad.length > 0) errors.push(`instrumentTypes must be among ${INSTRUMENT_TYPES.join(", ")}`);
+      else if (list.length > 0) filters.instrumentTypes = list as InstrumentType[];
     }
     if (rawFilters.descriptionContains !== undefined) {
       const value = rawFilters.descriptionContains;
@@ -268,6 +293,7 @@ export function hasNoFilters(plan: QueryPlan): boolean {
     !f.officials?.length &&
     !f.tickers?.length &&
     !f.descriptionContains &&
+    !(f.instrumentTypes && f.instrumentTypes.length > 0) &&
     !f.types?.length &&
     !f.dateFrom &&
     !f.dateTo &&
@@ -509,10 +535,14 @@ export function resolveTickers(
   for (const raw of inputs) {
     const symbol = raw.trim().toUpperCase();
     if (!set.has(symbol)) {
+      // Another class of the same issuer (BRK.A asked, BRK.B in the data)
+      // is offered, never substituted (Codex, Sept. 7: contradictory classes).
+      const root = symbol.replace(/[.-][A-Z]$/, "");
+      const siblings = Array.from(set).filter((t) => t !== symbol && t.replace(/[.-][A-Z]$/, "") === root && root.length >= 2);
       return {
         ok: false,
-        reason: `no verified trade in this data names the symbol ${symbol}`,
-        candidates: [],
+        reason: `No checked trade in this data names the symbol ${symbol}`,
+        candidates: siblings.sort(),
       };
     }
     out.add(symbol);
@@ -612,6 +642,9 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   if (f.tickers && f.tickers.length > 0) {
     parts.push(`in ${f.tickers.join(", ")}`);
   }
+  if (f.instrumentTypes && f.instrumentTypes.length > 0) {
+    parts.push(`typed as ${f.instrumentTypes.map((t) => INSTRUMENT_LABEL[t].toLowerCase()).join(" or ")}`);
+  }
   if (f.descriptionContains) {
     parts.push(`whose description mentions the text ${f.descriptionContains.toUpperCase()}`);
   }
@@ -634,8 +667,73 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
   const ordering =
     plan.sort === "amount"
       ? ", largest disclosed range first"
+      : plan.sort === "amount_asc"
+      ? ", smallest disclosed range first"
       : plan.aggregate === "list"
         ? ", newest first"
         : "";
   return `${parts.join(" ")}, ${AGGREGATE_PHRASE[plan.aggregate]}${ordering}.`;
+}
+
+/* ── Does the plan answer the question that was asked? ─────────────────── */
+
+/**
+ * Cheap correspondence checks between the question's own words and the
+ * resolved plan (Codex, Sept. 7: "validation checks whether a plan is
+ * executable, not whether it preserves the question"). Each rule names one
+ * thing the question plainly asked for that the plan dropped or invented.
+ * A mismatch means "not translated", never a substitute answer.
+ */
+export function planCorrespondence(
+  question: string,
+  plan: QueryPlan,
+  officials: OfficialRef[]
+): { ok: true } | { ok: false; reason: string } {
+  const q = question;
+  const f = plan.filters;
+
+  // A four-digit year in the question must survive as a date bound in that year.
+  const years = [...q.matchAll(/\b(20[0-3]\d)\b/g)].map((m) => m[1]);
+  if (years.length > 0) {
+    const bounds = [f.dateFrom, f.dateTo].filter((d): d is string => !!d);
+    const covered = years.every((y) => bounds.some((d) => d.startsWith(y)));
+    if (!covered) return { ok: false, reason: `the question names ${years.join(" and ")} but the query carries no date bound in that year` };
+  }
+
+  // Dollar bounds only when the question talks money.
+  const money = /\$|\bdollars?\b|\b\d+\s?(k|m|million|thousand|billion)\b|\b(over|under|above|below|at least|at most|more than|less than|between|worth|value|valued)\b/i.test(q);
+  if ((f.amountAtLeast !== undefined || f.amountAtMost !== undefined) && !money) {
+    return { ok: false, reason: "the query carries a dollar bound the question did not ask for" };
+  }
+  // A dollar ceiling nobody would type is a filled-in placeholder, not a filter.
+  if (f.amountAtMost !== undefined && f.amountAtMost >= 1e9) {
+    return { ok: false, reason: "the query carries a dollar ceiling the question did not ask for" };
+  }
+
+  // "Late" in the question must reach the plan.
+  if (/\blate\b|\boverdue\b|\bpast the deadline\b/i.test(q) && !f.lateOnly && plan.aggregate !== "late_share") {
+    return { ok: false, reason: "the question asks about late trades but the query does not filter on the late flag" };
+  }
+
+  // Every tracked person the question names must be in the plan, and the
+  // plan must not name a person the question did not.
+  const named = officialsNamedIn(q, officials).map((o) => o.slug);
+  const planned = f.officials ?? [];
+  for (const slug of named) {
+    if (!planned.includes(slug)) return { ok: false, reason: "the query dropped an official the question named" };
+  }
+  for (const slug of planned) {
+    if (!named.includes(slug)) {
+      const o = officials.find((x) => x.slug === slug);
+      // Allow a first-name-only or nickname match the surname scan missed;
+      // reject only when nothing in the question resembles the person.
+      const hay = normalizeName(q);
+      const first = (o?.name ?? "").split(" ")[0].toLowerCase();
+      const surname = o ? lastNameOf(o.filedName) : "";
+      const mentioned = (first.length >= 3 && hay.includes(first)) || (surname.length >= 4 && hay.includes(surname));
+      if (!mentioned) return { ok: false, reason: "the query names an official the question did not" };
+    }
+  }
+
+  return { ok: true };
 }

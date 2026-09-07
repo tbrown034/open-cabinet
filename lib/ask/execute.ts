@@ -144,6 +144,7 @@ export function filterRows(plan: QueryPlan, rows: PublishedRow[]): PublishedRow[
     if (officials && !officials.has(row.officialSlug)) return false;
     if (tickers && (!row.ticker || !tickers.has(row.ticker))) return false;
     if (needle && !row.description.toLowerCase().includes(needle)) return false;
+    if (f.instrumentTypes && f.instrumentTypes.length > 0 && !(f.instrumentTypes as string[]).includes(row.instrumentType)) return false;
     if (f.types && f.types.length > 0 && !typeMatches(row.type, f.types)) return false;
     // A row with no printed date never satisfies a date filter.
     if ((f.dateFrom || f.dateTo) && row.date === null) return false;
@@ -299,13 +300,18 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       // The plan states its ordering, so a question about the largest sales
       // cannot be answered with whatever happened to be newest.
       const ordered =
-        plan.sort === "amount"
+        plan.sort === "amount" || plan.sort === "amount_asc"
           ? [...matched].sort((a, b) => {
-              // Unknown amounts have no size and sort last, the same way
-              // they are excluded from every total.
-              const av = a.amount === null ? -1 : amountRangeToMidpoint(a.amount);
-              const bv = b.amount === null ? -1 : amountRangeToMidpoint(b.amount);
-              return bv - av || (b.date ?? "").localeCompare(a.date ?? "");
+              // Unknown amounts have no size and sort last either way, the
+              // same way they are excluded from every total. Ties break by
+              // date, newest first, so the order is stable and stated.
+              const av = a.amount === null ? null : amountRangeToMidpoint(a.amount);
+              const bv = b.amount === null ? null : amountRangeToMidpoint(b.amount);
+              if (av === null && bv === null) return (b.date ?? "").localeCompare(a.date ?? "");
+              if (av === null) return 1;
+              if (bv === null) return -1;
+              const diff = plan.sort === "amount" ? bv - av : av - bv;
+              return diff || (b.date ?? "").localeCompare(a.date ?? "");
             })
           : matched;
       const shown = ordered.slice(0, limit);
@@ -349,7 +355,14 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
             estimateDisplay: `$${estimate.toLocaleString("en-US")}`,
           };
         })
-        .sort((a, b) => b.estimate - a.estimate || b.count - a.count)
+        // Rows first, dollars only when the question asked by value. "Who
+        // sold X" is a headcount question; ranking it by midpoint dollars
+        // put an official with 2 rows above one with 6 (Sept. 7 batch test).
+        .sort((a, b) =>
+          plan.sort === "amount"
+            ? b.estimate - a.estimate || b.count - a.count
+            : b.count - a.count || b.estimate - a.estimate
+        )
         .slice(0, limit);
       result.topOfficials = ranked;
       result.shownRows = ranked.length;

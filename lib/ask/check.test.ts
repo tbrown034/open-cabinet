@@ -401,7 +401,7 @@ describe("templateAnswer for a comparison", () => {
     );
     expect(answer).toBe(
       "Purchase rows by Scott Bessent and Christopher Wright, ranked by official. " +
-        "Christopher Wright leads with 234 checked rows estimated at $91,183,500. " +
+        "Christopher Wright leads with 234 checked rows, estimated at $91,183,500. " +
         "Scott Bessent has no checked row matching it."
     );
     expect(checkAnswerNumbers(answer, COMPARISON).ok).toBe(true);
@@ -590,7 +590,7 @@ describe("plurals", () => {
       "Trades on 2025-03-05, ranked by official.",
       ONE
     );
-    expect(answer).toContain("1 checked row estimated at $8,000");
+    expect(answer).toContain("1 checked row, estimated at $8,000");
     expect(answer).not.toContain("1 checked rows");
   });
 });

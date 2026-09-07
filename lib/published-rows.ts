@@ -43,6 +43,8 @@ export interface PublishedRow {
   description: string;
   /** Resolved symbol, or null when the filing named no usable symbol. */
   ticker: string | null;
+  /** From the asset lane: common_stock, etf, municipal_bond, corporate_note, ... */
+  instrumentType: string;
   type: TransactionType;
   /** ISO date, YYYY-MM-DD. */
   /** ISO date, or null when the filing prints no date for the row. */
@@ -176,6 +178,7 @@ async function build(): Promise<PublishedRowsData> {
       const id = ids[i];
       const record = verification?.rows[id] ?? null;
       const ticker = publicTicker(assets?.rows[id], record?.gates?.name);
+      const instrumentType = assets?.rows[id]?.instrumentType ?? "unknown";
       if (ticker) allTickers.add(ticker);
 
       const base: PublishedRow = {
@@ -186,6 +189,7 @@ async function build(): Promise<PublishedRowsData> {
         title: official.title,
         description: tx.description,
         ticker,
+        instrumentType,
         type: tx.type,
         date: tx.date,
         amount: tx.amount,

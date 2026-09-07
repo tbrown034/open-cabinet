@@ -10,7 +10,9 @@
  * only acts as a fallback where the ask_quota migration has not run yet.
  */
 
-export const PER_IP_PER_HOUR = 30;
+// ASK_PER_IP_PER_HOUR overrides for local batch testing only; production
+// never sets it.
+export const PER_IP_PER_HOUR = Number(process.env.ASK_PER_IP_PER_HOUR) > 0 ? Number(process.env.ASK_PER_IP_PER_HOUR) : 30;
 export const GLOBAL_PER_DAY = 300;
 export const HOUR_MS = 60 * 60 * 1000;
 export const DAY_MS = 24 * HOUR_MS;

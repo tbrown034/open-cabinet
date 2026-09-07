@@ -404,7 +404,7 @@ export default function AskTheData({
             <p className="text-xs text-neutral-600 mt-4">{response.pendingNote}</p>
           )}
 
-          {response.excluded && (
+          {response.excluded && (response.excluded.underReview + response.excluded.auditPending + response.excluded.notYetCompared > 0) && (
             <p className="text-xs text-neutral-500 mt-2">
               Across the site, {response.excluded.underReview.toLocaleString()} rows are
               under review, {response.excluded.auditPending.toLocaleString()} are awaiting

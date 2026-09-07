@@ -22,7 +22,7 @@ export type Intent =
   /** Force an aggregate the phrasing demands, whatever the model chose. */
   | { kind: "require_aggregate"; aggregate: Aggregate }
   /** Force a sort the phrasing demands. */
-  | { kind: "require_sort"; sort: "amount" }
+  | { kind: "require_sort"; sort: "amount" | "amount_asc" }
   | { kind: "decline"; category: DeclineCategory };
 
 /** An average or a median over disclosed ranges is not a figure that exists. */
@@ -39,7 +39,8 @@ const EXCLUSION = /\b(except|excepting|excluding|exclude|but not|other than|apar
 const BOTH_ASSETS = /\bboth\b[^.?!]*\b(and|&)\b/i;
 
 /** Ranking by size, which needs a sort the plan has to carry explicitly. */
-const BY_SIZE = /\b(largest|biggest|largest-value|most expensive|highest value|highest-value|priciest|top by value|biggest by value|by size|by value|smallest)\b/i;
+const BY_SIZE = /\b(largest|biggest|largest-value|most expensive|highest value|highest-value|priciest|top by value|biggest by value|by size|by value)\b/i;
+const BY_SIZE_ASC = /\b(smallest|cheapest|lowest value|lowest-value|least expensive|tiniest)\b/i;
 
 /**
  * Rules added after the Sept. 7 red team (docs/grok-askai-redteam-2026-09-07.md),
@@ -59,7 +60,7 @@ const HOLDINGS = /\b(own|owns|owned|ownership|holding|holdings|hold|holds|held|p
 const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|month|quarter|year|days|weeks|months|quarters|years)\b|\b(\d+\s+(days|weeks|months|years)\s+ago)\b|\b(year to date|ytd|so far this year|recently|lately)\b/i;
 
 /** Comparison between named people, or an AND across two assets. */
-const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|more than|less than|fewer than|who traded more|who sold more|who bought more|outsold|outbought)\b/i;
+const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|who traded more|who sold more|who bought more|outsold|outbought)\b|\b(more|less|fewer) than\b(?!\s*\$?\s*\d)/i;
 
 /** Attributes the plan cannot filter on. */
 const UNSUPPORTED_ATTRIBUTE = /\b(republican|republicans|democrat|democrats|gop|party|agency|agencies|department of|cabinet-level|women|men|youngest|oldest)\b/i;
@@ -127,6 +128,9 @@ export function classifyIntent(question: string): IntentCheck {
     return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "share_not_late" };
   }
 
+  if (BY_SIZE_ASC.test(q)) {
+    return { intent: { kind: "require_sort", sort: "amount_asc" }, rule: "by_size_asc" };
+  }
   if (BY_SIZE.test(q)) {
     return { intent: { kind: "require_sort", sort: "amount" }, rule: "by_size" };
   }

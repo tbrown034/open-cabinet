@@ -348,7 +348,9 @@ export function templateAnswer(
         }
         return `${planText} That query matches no checked rows.`;
       }
-      const lead = `${top.name} leads with ${plural(top.count, "row")} estimated at ${top.estimateDisplay}.`;
+      const lead = plan.sort === "amount"
+        ? `${top.name} leads by estimated value, ${top.estimateDisplay} across ${plural(top.count, "row")}.`
+        : `${top.name} leads with ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`;
       // On a comparison, the official with nothing is half the answer.
       if (missing.length > 0) {
         const who = missing.length === 1 ? missing[0] : missing.join(", ");

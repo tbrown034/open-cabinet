@@ -445,3 +445,11 @@ describe("item C5: sort", () => {
     ).toContain("newest first");
   });
 });
+
+describe("strict-schema nulls (Sept. 7)", () => {
+  it("treats a null filter or limit as not set", () => {
+    const parsed = parseQueryPlan({ filters: { lateOnly: true, dateFrom: "2026-01-01", dateTo: "2026-12-31", amountAtLeast: null, tickers: null, officials: null }, aggregate: "count", limit: null });
+    expect(parsed.ok).toBe(true);
+    if (parsed.ok) expect(parsed.plan.filters).toEqual({ lateOnly: true, dateFrom: "2026-01-01", dateTo: "2026-12-31" });
+  });
+});
