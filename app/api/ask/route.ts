@@ -82,7 +82,8 @@ export const DISCLOSURE =
       "an independent program or a second model agreed with and a page audit confirmed. " +
       "Dollar figures are sums of disclosed range midpoints, not reported prices. " +
       "\"Late\" means the filer checked the box saying the trade was reported more than " +
-      "30 days after notice. Open the linked 278-T before you cite a figure.";
+      "30 days after notice. A row can be a trade reported for a spouse or dependent child; " +
+      "the filing does not always say which. Open the linked 278-T before you cite a figure.";
 
 export type AskStatus = "answered" | "not_in_data" | "declined" | "error";
 

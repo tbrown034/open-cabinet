@@ -684,6 +684,8 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
  * thing the question plainly asked for that the plan dropped or invented.
  * A mismatch means "not translated", never a substitute answer.
  */
+const GENERIC_TITLE_WORDS = new Set(["secretary", "deputy", "director", "administrator", "assistant", "office", "department", "united", "states", "president", "chairman", "commissioner", "executive", "general", "counsel", "under", "former", "acting", "board", "federal", "national"]);
+
 export function planCorrespondence(
   question: string,
   plan: QueryPlan,
@@ -730,7 +732,13 @@ export function planCorrespondence(
       const hay = normalizeName(q);
       const first = (o?.name ?? "").split(" ")[0].toLowerCase();
       const surname = o ? lastNameOf(o.filedName) : "";
-      const mentioned = (first.length >= 3 && hay.includes(first)) || (surname.length >= 4 && hay.includes(surname));
+      // A title or agency word also counts: "the energy secretary" is
+      // Christopher Wright, and the model was right to say so.
+      const titleWords = `${o?.title ?? ""} ${o?.agency ?? ""}`.toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 5 && !GENERIC_TITLE_WORDS.has(w));
+      const mentioned =
+        (first.length >= 3 && hay.includes(first)) ||
+        (surname.length >= 4 && hay.includes(surname)) ||
+        titleWords.some((w) => new RegExp(`\\b${w}\\b`).test(hay));
       if (!mentioned) return { ok: false, reason: "the query names an official the question did not" };
     }
   }

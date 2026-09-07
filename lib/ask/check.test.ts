@@ -263,11 +263,8 @@ describe("decline text", () => {
   });
 
   it("explains why an average is unsupported", () => {
-    expect(declineText("unsupported_computation")).toBe(
-      "This box counts, totals and lists checked trades. It does not compute averages " +
-        "or medians, because a filing discloses a range rather than an amount. It can " +
-        "give a share only for late filings."
-    );
+    expect(declineText("unsupported_computation")).toMatch(/does not compute averages, medians, ratios or growth/);
+    expect(declineText("unsupported_computation")).toMatch(/at most five officials/);
   });
 
   it("asks for explicit dates rather than guessing a period", () => {

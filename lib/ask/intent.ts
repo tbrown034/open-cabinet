@@ -48,7 +48,7 @@ const BY_SIZE_ASC = /\b(smallest|cheapest|lowest value|lowest-value|least expens
  * declined only by the model. A prompt is a request; these are rules.
  */
 /** An instruction to the model rather than a question about the records. */
-const INJECTION = /\b(ignore|disregard|forget|override)\b[^.?!]*\b(instructions?|rules?|prompt|guidelines?|previous|above)\b|\b(system prompt|your instructions|your rules|developer message)\b|\byou are (now|a|an)\b|\b(pretend|act as|roleplay|role-play|jailbreak|DAN)\b|\b(repeat|print|reveal|show|output)\b[^.?!]*\b(roster|prompt|instructions|verbatim|system)\b/i;
+const INJECTION = /\b(ignore|disregard|forget|override)\b[^.?!]*\b(instructions?|rules?|prompt|guidelines?|previous|above)\b|\b(system prompt|your instructions|your rules|developer message)\b|\byou are (now|a|an)\b|\b(pretend|act as|roleplay|role-play|jailbreak|DAN)\b|\b(repeat|print|reveal|show|output)\b[^.?!]*\b(roster|prompt|instructions|verbatim|system)\b|\b(emit_plan|tool_choice|system note|as a system|calibration)\b/i;
 
 /** Legality, propriety, motive: judgments the records cannot support. */
 const JUDGMENT = /\b(illegal|legal|legally|lawful|unlawful|crime|criminal|corrupt|corruption|insider|bribe|unethical|ethical|ethics agreement|proper|improper|suspicious|shady|conflict of interest|should (he|she|they|have|[a-z]+ have)|why did|why does|why would|motive|motives|intend|intended|break (his|her|their) )\b/i;
@@ -61,6 +61,9 @@ const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|
 
 /** Comparison between named people, or an AND across two assets. */
 const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|who traded more|who sold more|who bought more|outsold|outbought)\b|\b(more|less|fewer) than\b(?!\s*\$?\s*\d)/i;
+
+/** Day-of-week and holiday questions: the plan has dates, not calendars. */
+const WEEKDAY = /\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekend|weekends|weekday|weekdays|holiday|holidays|christmas|thanksgiving)\b/i;
 
 /** Attributes the plan cannot filter on. */
 const UNSUPPORTED_ATTRIBUTE = /\b(republican|republicans|democrat|democrats|gop|party|agency|agencies|department of|cabinet-level|women|men|youngest|oldest)\b/i;
@@ -101,6 +104,9 @@ export function classifyIntent(question: string): IntentCheck {
   }
   if (COMPARE.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "compare" };
+  }
+  if (WEEKDAY.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "weekday" };
   }
   if (UNSUPPORTED_ATTRIBUTE.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "attribute" };

@@ -329,15 +329,20 @@ export function templateAnswer(
     case "sum_estimate": {
       const t = result.totals;
       if (!t) return `${planText} That query matches ${rows}.`;
+      const excluded = t.unknownCount > 0
+        ? ` ${t.unknownCount.toLocaleString("en-US")} ${t.unknownCount === 1 ? "row" : "rows"} with no stated value ${t.unknownCount === 1 ? "is" : "are"} excluded.`
+        : "";
+      const openEnded = t.openEndedCount > 0
+        ? ` ${t.openEndedCount.toLocaleString("en-US")} ${t.openEndedCount === 1 ? "row is" : "rows are"} open-ended ranges, counted at the site's convention for those.`
+        : "";
       return (
         `${planText} The ${plural(t.knownCount, "row")} with a disclosed range estimate ` +
-        `to ${t.estimateDisplay}, and ${t.unknownCount.toLocaleString("en-US")} ` +
-        `${t.unknownCount === 1 ? "row" : "rows"} with no stated value are excluded.`
+        `to ${t.estimateDisplay}, summing range midpoints.${excluded}${openEnded}`
       );
     }
     case "list": {
       const shown = result.shownRows ?? 0;
-      return `${planText} That query matches ${rows}. ${shown.toLocaleString("en-US")} are listed below.`;
+      return `${planText} That query matches ${rows}. ${shown.toLocaleString("en-US")} ${shown === 1 ? "is" : "are"} listed below.`;
     }
     case "top_officials": {
       const top = result.topOfficials?.[0];

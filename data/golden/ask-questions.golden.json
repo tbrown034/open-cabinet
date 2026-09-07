@@ -233,6 +233,19 @@
       "expect": {
         "kind": "ok"
       }
+    },
+    {
+      "question": "Trump trades on a Sunday",
+      "expect": {
+        "kind": "decline",
+        "category": "unsupported_filter"
+      }
+    },
+    {
+      "question": "what did the energy secretary sell",
+      "expect": {
+        "kind": "ok"
+      }
     }
   ]
 }
