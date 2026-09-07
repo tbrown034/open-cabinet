@@ -19,7 +19,7 @@ import { getNewsForOfficial } from "@/lib/news";
 import { getFeePaymentsBySlug } from "@/lib/fee-payments";
 import type { Transaction } from "@/lib/types";
 import { verificationForOfficial, recordIdsFor } from "@/lib/row-verification";
-import { readAssetResolution } from "@/lib/asset-resolution";
+import { readAssetResolution, publicTicker } from "@/lib/asset-resolution";
 import { INSTRUMENT_LABEL } from "@/lib/instrument-type";
 import UnderReviewNote from "@/app/components/under-review-note";
 import VerificationMarker from "@/app/components/verification-marker";
@@ -219,8 +219,8 @@ export default async function OfficialPage({
   );
   // Instrument type per row from the asset resolution sidecar (Sep 2026):
   // a small label on anything that is not a plain stock, so a reader can
-  // tell a municipal bond from a company at a glance. Tickers from the
-  // lane are not shown here yet (step 2 of the rollout).
+  // tell a municipal bond from a company at a glance, and the ticker
+  // column, which follows the same rule as the company pages.
   const assetFile = readAssetResolution();
   const recordIds = recordIdsFor(transactions);
   const assetByTransaction = new Map(
@@ -833,7 +833,16 @@ export default async function OfficialPage({
                   <VerificationMarker verification={rowVerification} />
                 </td>
                 <td className="py-2.5 pr-4 font-[family-name:var(--font-dm-mono)] text-neutral-500 hidden sm:table-cell">
-                  {tx.ticker || "N/A"}
+                  {(() => {
+                    // Same rule as the company pages: the lane's top-tier
+                    // ticker with the name gate agreed, linked. A symbol the
+                    // filing printed that no list corroborates is shown as
+                    // printed, unlinked, so the page never contradicts /companies.
+                    const shown = publicTicker(assetByTransaction.get(tx), rowVerification?.gates?.name);
+                    if (shown) return <Link href={`/companies/${shown.toLowerCase()}`} className="hover:underline text-neutral-700">{shown}</Link>;
+                    if (tx.ticker) return <span title="Printed in the filing; no reference list corroborates it, so it has no company page">{tx.ticker}</span>;
+                    return <span className="text-neutral-300">—</span>;
+                  })()}
                 </td>
                 <td className="py-2.5 pr-4 whitespace-nowrap">
                   <span

@@ -15,6 +15,16 @@ interface CompanyEntry {
   sellCount: number;
   officialCount: number;
   estimatedValue: number;
+  /** Distinct names the filings printed for this symbol, so "General Electric" finds GE. */
+  filedAs?: string[];
+}
+
+function rank(c: CompanyEntry, q: string): number {
+  const t = c.ticker.toLowerCase();
+  if (t === q) return 0;
+  if (t.startsWith(q)) return 1;
+  if (c.companyName.toLowerCase().startsWith(q)) return 2;
+  return 3;
 }
 
 export default function CompanySearch({
@@ -25,12 +35,18 @@ export default function CompanySearch({
   const router = useRouter();
   const [query, setQuery] = useState("");
 
-  const filtered = query
-    ? companies.filter(
-        (c) =>
-          c.ticker.toLowerCase().includes(query.toLowerCase()) ||
-          c.companyName.toLowerCase().includes(query.toLowerCase())
-      )
+  // Exact symbol first, then symbol prefix, then name or any filed spelling.
+  // A query of "GE" must put GE Aerospace above General Mills (Sep 7 user test).
+  const q = query.trim().toLowerCase();
+  const filtered = q
+    ? companies
+        .filter(
+          (c) =>
+            c.ticker.toLowerCase().includes(q) ||
+            c.companyName.toLowerCase().includes(q) ||
+            (c.filedAs ?? []).some((d) => d.toLowerCase().includes(q))
+        )
+        .toSorted((a, b) => rank(a, q) - rank(b, q))
     : companies;
 
   return (

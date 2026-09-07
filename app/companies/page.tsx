@@ -26,6 +26,9 @@ export default async function CompaniesPage() {
         underReviewCount: c.trades.length - trades.length,
         ticker: c.ticker,
         companyName: c.companyName,
+        // Searchable spellings: what the filings printed plus the SEC
+        // registrant name, so "General Electric" finds GE Aerospace.
+        filedAs: [...(c.filedAs ?? []), ...(c.registry.kind === "sec" ? [c.registry.entry.secName] : [])],
         tradeCount: trades.length,
         buyCount: trades.filter((t) => t.type === "Purchase").length,
         sellCount: trades.filter((t) => isSale(t.type)).length,

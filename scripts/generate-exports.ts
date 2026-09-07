@@ -13,7 +13,7 @@ import {
 } from "../lib/amounts";
 import type { Transaction } from "../lib/types";
 import { verificationForOfficial, recordIdsFor } from "../lib/row-verification";
-import { readAssetResolution } from "../lib/asset-resolution";
+import { readAssetResolution, publicTicker } from "../lib/asset-resolution";
 
 interface OfficialData {
   name: string;
@@ -73,8 +73,10 @@ async function main() {
           verificationState: row?.state ?? null,
           instrumentType: asset?.instrumentType ?? null,
           issuerLabel: asset?.issuerLabel ?? null,
-          resolvedTicker: asset?.tier === "T1" && row?.gates?.name === "agree" ? asset.resolvedTicker : null,
-          resolutionTier: asset?.tier ?? null,
+          resolvedTicker: publicTicker(asset, row?.gates?.name),
+          // The tier says what the lane found; when the name gate withholds
+          // the ticker the tier says so, so a T1 row never has an empty symbol.
+          resolutionTier: asset ? (asset.tier === "T1" && !publicTicker(asset, row?.gates?.name) ? "T1 name unconfirmed" : asset.tier) : null,
         };
       }),
     };

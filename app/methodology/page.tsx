@@ -449,9 +449,9 @@ export default async function MethodologyPage() {
             maturity. Most print no ticker symbol. To put a trade on a company
             page, the site first decides what kind of thing the row is from the
             printed text (stock, ETF, mutual fund, preferred, corporate note,
-            municipal bond, Treasury, crypto, private holding, option). Bonds,
-            notes, preferreds, funds and private holdings never get a stock
-            ticker.
+            municipal bond, Treasury, crypto, private holding, option). Only a
+            stock or an exchange-traded fund can get a ticker; bonds, notes,
+            preferreds, mutual funds and private holdings never do.
           </p>
           <p className="text-neutral-600 leading-relaxed mb-4">
             A stock or ETF row is tied to a company only on exact evidence: a

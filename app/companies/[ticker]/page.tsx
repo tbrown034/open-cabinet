@@ -70,7 +70,7 @@ function RegistryLine({ registry }: { registry: AssetLookup }) {
           SEC registrant: {registry.entry.secName}, CIK {registry.entry.cik}
           {registry.entry.secSymbol !== registry.entry.symbol ? `, listed as ${registry.entry.secSymbol}` : ""}.{" "}
           {typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1)}
-          {typeNote}. From the SEC company list fetched {registry.entry.source.fetchedAt.slice(0, 10)}.
+          {typeNote}. Issuer name and CIK from the SEC company list fetched {registry.entry.source.fetchedAt.slice(0, 10)}; the ticker match itself uses the exchange lists described on the methodology page.
         </p>
       ) : (
         <p>
@@ -205,6 +205,7 @@ export default async function CompanyPage({
             <tr className="border-b border-neutral-900 text-xs uppercase tracking-wider text-neutral-500">
               <th className="pb-2 pr-4 font-medium">Date</th>
               <th className="pb-2 pr-4 font-medium">Official</th>
+              <th className="pb-2 pr-4 font-medium">As filed</th>
               <th className="pb-2 pr-4 font-medium">Type</th>
               <th className="pb-2 font-medium text-right">Amount</th>
               <th className="pb-2 pl-4 font-medium">Verification</th>
@@ -229,6 +230,17 @@ export default async function CompanyPage({
                     {displayName(t.officialName)}
                   </Link>
                   <div className="text-xs text-neutral-400">{t.officialTitle}</div>
+                </td>
+                <td className="py-2.5 pr-4 text-xs text-neutral-600 max-w-xs">
+                  <span className="font-[family-name:var(--font-dm-mono)]">{t.description}</span>
+                  {t.sourceUrl ? (
+                    <>
+                      {" "}
+                      <a href={t.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-neutral-900 hover:underline whitespace-nowrap">
+                        filing
+                      </a>
+                    </>
+                  ) : null}
                 </td>
                 <td className="py-2.5 pr-4 whitespace-nowrap">
                   <span

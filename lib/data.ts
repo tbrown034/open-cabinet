@@ -5,7 +5,8 @@ import { companyGroupName } from "./assets";
 import { lookupAsset, registryDisplayName, type AssetLookup } from "./asset-registry";
 import { recordIdsFor, verificationForOfficial, type RowVerification } from "./row-verification";
 import { rowsForTotals } from "./format";
-import { readAssetResolution } from "./asset-resolution";
+import { readAssetResolution, publicTicker, listingDisplayName } from "./asset-resolution";
+import { loadAssetReference } from "./asset-reference";
 
 /** A separate aggregate view; never remove rows from the source official. */
 export function officialForTotals(official: OfficialData) {
@@ -54,6 +55,8 @@ export async function getAllOfficials(): Promise<OfficialData[]> {
 }
 
 export interface CompanyTrade {
+  /** OGE URL of the filing this row came from, when known. */
+  sourceUrl?: string | null;
   verification: RowVerification | null;
   officialName: string;
   officialSlug: string;
@@ -70,6 +73,8 @@ export interface CompanyTrade {
 export interface CompanyData {
   ticker: string;
   companyName: string;
+  /** Every distinct description filed under this symbol; the search index reads it. */
+  filedAs?: string[];
   trades: CompanyTrade[];
   /** What the asset registry knows about this symbol: the SEC entry, a
    * pending record, or nothing. Never "unknown" for a symbol on a company
@@ -121,10 +126,8 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
     const verification = verificationForOfficial(official.slug, official.transactions);
     const ids = recordIdsFor(official.transactions);
     for (const [i, tx] of official.transactions.entries()) {
-      const asset = assets?.rows[ids[i]];
-      if (!asset || asset.tier !== "T1" || !asset.resolvedTicker) continue;
-      if (verification[i]?.gates?.name !== "agree") continue;
-      const ticker = asset.resolvedTicker;
+      const ticker = publicTicker(assets?.rows[ids[i]], verification[i]?.gates?.name);
+      if (!ticker) continue;
       if (!tickerMap.has(ticker)) {
         tickerMap.set(ticker, { ticker, companyName: ticker, trades: [], registry: lookupAsset(ticker) });
         descriptionsByTicker.set(ticker, []);
@@ -137,6 +140,7 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
         officialTitle: official.title,
         agency: official.agency,
         description: tx.description,
+        sourceUrl: tx.sourceUrl ?? null,
         ticker,
         type: tx.type,
         date: tx.date,
@@ -146,13 +150,20 @@ export async function getTradesByTicker(): Promise<Map<string, CompanyData>> {
     }
   }
 
-  // Name each group from what was filed, never from a swap, bond or
-  // preferred line; the registry's display name, then its SEC name, is the
-  // fallback for a symbol whose filings print only the symbol.
+  // Name each group from the exchange listing (the name the symbol's own
+  // directory carries, with the class kept), then the registry's SEC name,
+  // then what was filed. Broker text is never a title: a Sep 7 user test
+  // found "ALPHABET INC CL A UNSOLICITED" and "VERIZON COMMUNICATIONS I"
+  // as page headlines. The filed spellings stay listed on the page.
+  const listed = loadAssetReference().listedBySymbol;
   for (const [ticker, group] of tickerMap) {
     const filed = companyGroupName(descriptionsByTicker.get(ticker) ?? [], ticker);
+    const listing = listed.get(ticker);
     group.companyName =
-      filed.toUpperCase() === ticker ? (registryDisplayName(ticker) ?? filed) : filed;
+      (listing ? listingDisplayName(listing.name) : null) ??
+      registryDisplayName(ticker) ??
+      filed;
+    group.filedAs = [...new Set(descriptionsByTicker.get(ticker) ?? [])];
   }
 
   return tickerMap;

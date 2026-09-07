@@ -271,3 +271,20 @@ export function readAssetResolution(file = ASSET_RESOLUTION_PATH): AssetResoluti
   fileCache = existsSync(file) ? (JSON.parse(readFileSync(file, "utf-8")) as AssetResolutionFile) : null;
   return fileCache;
 }
+
+/**
+ * The one rule for showing a ticker in public: the lane resolved the row
+ * at the top tier AND an independent reader read the same asset name.
+ * Company pages, the official's trade table and the exports all call this,
+ * so they cannot disagree about a row (a Sep 7 user test found the
+ * official page saying "N/A" for rows a company page listed).
+ */
+export function publicTicker(asset: AssetResolution | null | undefined, nameGate: string | undefined): string | null {
+  if (!asset || asset.tier !== "T1" || !asset.resolvedTicker) return null;
+  return nameGate === "agree" ? asset.resolvedTicker : null;
+}
+
+/** A listing name fit for a page title: "Alphabet Inc. - Class A Common Stock" -> "Alphabet Inc. Class A". */
+export function listingDisplayName(name: string): string {
+  return name.replace(/\s+-\s+/g, " ").replace(/\s*\b(?:common|capital|ordinary) (?:stock|shares?)\s*$/i, "").replace(/\s+/g, " ").trim();
+}
