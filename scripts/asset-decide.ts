@@ -50,6 +50,20 @@ export function assetQueue(min = 1): QueueLine[] {
   return [...byKey.values()].filter((q) => q.rows >= min).sort((a, b) => b.rows - a.rows || a.nameKey.localeCompare(b.nameKey));
 }
 
+export interface Recommendation { nameKey: string; symbol: string; confidence: string; reason: string }
+
+/** Rows of a recommendations CSV (nameKey,symbol,confidence,reason); reasons may be quoted and contain commas. */
+export function parseRecommendationsCsv(text: string): Recommendation[] {
+  const lines = text.split(/\r?\n/).filter(Boolean);
+  if (lines.length === 0) return [];
+  const header = lines[0].split(",");
+  const col = (name: string) => header.indexOf(name);
+  return lines.slice(1).map((line) => {
+    const cells = (line.match(/("([^"]|"")*"|[^,]*)(,|$)/g) ?? []).map((c) => c.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"'));
+    return { nameKey: cells[col("nameKey")] ?? "", symbol: cells[col("symbol")] ?? "", confidence: cells[col("confidence")] ?? "", reason: cells[col("reason")] ?? "" };
+  });
+}
+
 export function acceptName(nameKey: string, symbol: string, evidence: string, decidedBy: string): { ok: true; note: string } | { ok: false; why: string } {
   const key = nameKey.trim().toUpperCase();
   const sym = canonicalListedSymbol(symbol);
@@ -99,14 +113,8 @@ function main() {
     const minConf = rest[rest.indexOf("--confidence") + 1] || "High";
     const by = rest.indexOf("--by") > 0 ? rest[rest.indexOf("--by") + 1] : who;
     const rank: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
-    const lines = readFileSync(file, "utf-8").split(/\r?\n/).filter(Boolean);
-    const header = lines[0].split(",");
-    const col = (name: string) => header.indexOf(name);
     let ok = 0, skipped = 0;
-    for (const line of lines.slice(1)) {
-      // CSV with quoted reasons: split on commas outside quotes.
-      const cells = line.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((c) => c.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"'));
-      const key = cells[col("nameKey")], sym = cells[col("symbol")], conf = cells[col("confidence")], reason = cells[col("reason")];
+    for (const { nameKey: key, symbol: sym, confidence: conf, reason } of parseRecommendationsCsv(readFileSync(file, "utf-8"))) {
       if (!sym || (rank[conf] ?? 0) < (rank[minConf] ?? 3)) { skipped++; continue; }
       const r = acceptName(key, sym, `${conf}: ${reason}`, by);
       if (r.ok) ok++; else { skipped++; console.log(`  skip ${key}: ${r.why}`); }

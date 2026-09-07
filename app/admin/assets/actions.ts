@@ -11,7 +11,10 @@ export async function acceptAsset(formData: FormData): Promise<void> {
   const symbol = String(formData.get("symbol") ?? "");
   const evidence = String(formData.get("evidence") ?? "");
   const r = acceptName(key, symbol, evidence, "trevor");
-  redirect(`/admin/assets?${r.ok ? `message=${encodeURIComponent(`Accepted ${r.note}. Rebuild with pnpm asset-resolution.`)}` : `error=${encodeURIComponent(r.why)}`}`);
+  const next = String(formData.get("next") ?? "");
+  const base = next.startsWith("/admin/assets") ? next : "/admin/assets";
+  const sep = base.includes("?") ? "&" : "?";
+  redirect(`${base}${sep}${r.ok ? `message=${encodeURIComponent(`Accepted ${r.note}.`)}` : `error=${encodeURIComponent(r.why)}`}`);
 }
 
 /** Record a never-resolve exception from the local admin queue. */
@@ -20,5 +23,8 @@ export async function rejectAsset(formData: FormData): Promise<void> {
   const key = String(formData.get("nameKey") ?? "");
   const reason = String(formData.get("reason") ?? "");
   const r = rejectName(key, reason, "trevor");
-  redirect(`/admin/assets?${r.ok ? `message=${encodeURIComponent(`Rejected ${key.toUpperCase()}. Rebuild with pnpm asset-resolution.`)}` : `error=${encodeURIComponent(r.why)}`}`);
+  const next = String(formData.get("next") ?? "");
+  const base = next.startsWith("/admin/assets") ? next : "/admin/assets";
+  const sep = base.includes("?") ? "&" : "?";
+  redirect(`${base}${sep}${r.ok ? `message=${encodeURIComponent(`Rejected ${key.toUpperCase()}.`)}` : `error=${encodeURIComponent(r.why)}`}`);
 }
