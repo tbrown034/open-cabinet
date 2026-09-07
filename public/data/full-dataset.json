@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-07T00:10:05.017Z",
+  "exportedAt": "2026-09-07T00:27:08.418Z",
   "officialCount": 39,
   "transactionCount": 11513,
   "underReviewCount": 0,
@@ -15633,23 +15633,21 @@
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
-          "notes": "OGE no longer serves the filing this row came from (its URL returned \"Document has been deleted\" on Sep 6, 2026), so no second reader can check it against the page. The row stands on the original read.",
           "recordId": "344793be92c8db46645c8d2d",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
-          "description": "Amazon Stock (AMZN)",
+          "description": "Amazon Stock",
           "ticker": "AMZN",
           "type": "Sale",
           "date": "2020-04-14",
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
-          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
-          "notes": "OGE no longer serves the filing this row came from (its URL returned \"Document has been deleted\" on Sep 6, 2026), so no second reader can check it against the page. The row stands on the original read.",
-          "recordId": "51a093c6dd7b6d599c1cfd93",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
+          "recordId": "74bef26f7ee2726f6f3ff315",
+          "verificationScore": 3,
+          "verificationState": "checked"
         }
       ]
     },

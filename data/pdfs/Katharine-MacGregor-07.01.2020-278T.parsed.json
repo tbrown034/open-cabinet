@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "description": "Amazon.com, Inc. (AMZN)",
+      "ticker": "AMZN",
+      "type": "Sale",
+      "date": "2020-06-29",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6776,
+    "outputTokens": 67,
+    "estimatedCostUsd": 0.0213
+  },
+  "model": "claude-sonnet-4-6",
+  "pdfPath": "data/pdfs/Katharine-MacGregor-07.01.2020-278T.pdf"
+}

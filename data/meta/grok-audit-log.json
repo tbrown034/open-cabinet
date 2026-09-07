@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "grok-4.6",
-  "generatedAt": "2026-09-06T18:10:28.306Z",
+  "generatedAt": "2026-09-07T00:26:45.758Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
       "slug": "kennedy-robert-f",
@@ -14277,6 +14277,44 @@
       "pagesAudited": 11,
       "costUsd": 0.0666,
       "checkedAt": "2026-09-06T18:10:28.305Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf": {
+      "slug": "macgregor-katharine",
+      "pdfFile": "Katharine-MacGregor-07.01.2020-278T.pdf",
+      "pdfSha256": "7cf850053b4e7f0782855d89fbe3d2b4cf2a02a8d84342f2b13ea023965a3042",
+      "candidateSha256": "897ab85e24702f2f6edd3c4c6216b9b07ec0deace74b1c29f307e7d58021b274",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 1,
+      "confirmedIndexes": [
+        0
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0151,
+      "checkedAt": "2026-09-07T00:26:38.089Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf": {
+      "slug": "macgregor-katharine",
+      "pdfFile": "Katharine-MacGregor-04.21.2020-278T.pdf",
+      "pdfSha256": "35516f62f84f665619f88ba9c79060233a80d492848476cddd2fc0b02b21a064",
+      "candidateSha256": "28b9d31352ee6b6226f15eaaf6a1ffde2b93da4ff36226ffde54c98780f3592a",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 1,
+      "confirmedIndexes": [
+        0
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0151,
+      "checkedAt": "2026-09-07T00:26:45.757Z"
     }
   }
 }

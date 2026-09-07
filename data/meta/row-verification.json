@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:11:27.864Z",
+  "generatedAt": "2026-09-07T00:26:53.347Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11513,
     "byState": {
-      "checked": 11365,
+      "checked": 11367,
       "human_verified": 146,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 0,
-      "single_read": 2,
+      "single_read": 0,
       "implausible": 0,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
-      "1": 2,
+      "1": 0,
       "2": 0,
-      "3": 11511
+      "3": 11513
     }
   },
   "rows": {
@@ -9344,8 +9344,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "bf3aefe684e80cd540fc62e3": {
       "id": "bf3aefe684e80cd540fc62e3",
@@ -9353,8 +9353,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "0ce9d51ca82673b33595a929": {
       "id": "0ce9d51ca82673b33595a929",
@@ -9362,8 +9362,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "39c1331d894c793cf8fbee05": {
       "id": "39c1331d894c793cf8fbee05",
@@ -9371,8 +9371,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "31640ef5955b3ca0d81da34f": {
       "id": "31640ef5955b3ca0d81da34f",
@@ -9380,8 +9380,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "dc7ea37542753aca4ce5884d": {
       "id": "dc7ea37542753aca4ce5884d",
@@ -9389,8 +9389,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "d72833633328afb7f753d441": {
       "id": "d72833633328afb7f753d441",
@@ -9398,8 +9398,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "d8fb67dc2f138cc4a8b56de3": {
       "id": "d8fb67dc2f138cc4a8b56de3",
@@ -9407,8 +9407,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "30529665e6a53e4f350b1b8f": {
       "id": "30529665e6a53e4f350b1b8f",
@@ -9416,8 +9416,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "18239468267b1d21a5634f7f": {
       "id": "18239468267b1d21a5634f7f",
@@ -9425,8 +9425,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "7cf594df46215f614850ebb8": {
       "id": "7cf594df46215f614850ebb8",
@@ -9434,8 +9434,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "4d92e62d78febcadaeadb6af": {
       "id": "4d92e62d78febcadaeadb6af",
@@ -9443,8 +9443,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "4db89dfdb550e3aa33903604": {
       "id": "4db89dfdb550e3aa33903604",
@@ -9452,8 +9452,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "7932c6e9ae47c8cd54dae6ec": {
       "id": "7932c6e9ae47c8cd54dae6ec",
@@ -9461,8 +9461,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "1c1f270b4d2923fc05458058": {
       "id": "1c1f270b4d2923fc05458058",
@@ -9470,8 +9470,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "9693c403a950b207e912e4df": {
       "id": "9693c403a950b207e912e4df",
@@ -9479,8 +9479,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "bf357edbd1a3e4a6a40acc63": {
       "id": "bf357edbd1a3e4a6a40acc63",
@@ -9488,8 +9488,8 @@
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/42F9603BA8CD51AE85258C86002C7C13/$FILE/Michael-J-Kratsios-04.18.2025-278T.pdf",
       "score": 3,
       "state": "checked",
-      "lane": "model2",
-      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "7d6c1f468b87f171be7fc0ad": {
       "id": "7d6c1f468b87f171be7fc0ad",
@@ -11664,19 +11664,19 @@
       "id": "344793be92c8db46645c8d2d",
       "slug": "macgregor-katharine",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Nothing has compared this row"
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
-    "51a093c6dd7b6d599c1cfd93": {
-      "id": "51a093c6dd7b6d599c1cfd93",
+    "74bef26f7ee2726f6f3ff315": {
+      "id": "74bef26f7ee2726f6f3ff315",
       "slug": "macgregor-katharine",
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "Nothing has compared this row"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it"
     },
     "b1373a93bf85efda3225db68": {
       "id": "b1373a93bf85efda3225db68",
