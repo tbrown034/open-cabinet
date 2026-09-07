@@ -373,6 +373,7 @@ async function callPlanModel(
                 "unsupported_computation: averages, medians, per-trade means, growth rates, " +
                 "ratios between two figures, or a comparison naming more than five officials. " +
                 "needs_date_range: a relative period you cannot turn into explicit dates. " +
+                "no_prices_or_profit: profit, loss, performance, best or worst trade, beating the market; filings carry ranges, never prices. " +
                 "unknown_person: no name in the question resembles anyone on the roster. " +
                 "other: anything else these fields cannot express.",
             },

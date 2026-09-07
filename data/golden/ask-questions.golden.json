@@ -291,6 +291,55 @@
       "expect": {
         "kind": "ok"
       }
+    },
+    {
+      "question": "Which trades made the most money?",
+      "expect": {
+        "kind": "decline",
+        "category": "no_prices_or_profit"
+      }
+    },
+    {
+      "question": "What were the worst trades?",
+      "expect": {
+        "kind": "decline",
+        "category": "no_prices_or_profit"
+      }
+    },
+    {
+      "question": "Did Lutnick make a profit on Microsoft?",
+      "expect": {
+        "kind": "decline",
+        "category": "no_prices_or_profit"
+      }
+    },
+    {
+      "question": "Which officials beat the market?",
+      "expect": {
+        "kind": "decline",
+        "category": "no_prices_or_profit"
+      }
+    },
+    {
+      "question": "What stocks are hot right now among officials?",
+      "expect": {
+        "kind": "decline",
+        "category": "needs_date_range"
+      }
+    },
+    {
+      "question": "Show me suspicious trades",
+      "expect": {
+        "kind": "decline",
+        "category": "opinion_or_judgment"
+      }
+    },
+    {
+      "question": "What is Nvidia's stock price?",
+      "expect": {
+        "kind": "decline",
+        "category": "not_about_trades"
+      }
     }
   ]
 }

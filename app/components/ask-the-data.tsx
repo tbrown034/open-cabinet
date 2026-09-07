@@ -228,6 +228,16 @@ export default function AskTheData({
             <> {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()} parsed rows qualify today.</>
           )}
         </p>
+        <div className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2 text-xs text-neutral-500 max-w-2xl">
+          <p>
+            <span className="text-neutral-700 font-medium">It can answer:</span> who traded a company, an official&apos;s
+            sales or purchases, a date range, trades flagged late, totals by disclosed range, bonds or ETFs as a kind of asset.
+          </p>
+          <p>
+            <span className="text-neutral-700 font-medium">It cannot answer:</span> what a trade earned or lost, best or worst
+            trades, current holdings or net worth, prices, motives or legality. Filings give dollar ranges, not prices.
+          </p>
+        </div>
       </div>
 
       <div className="px-5 py-4">

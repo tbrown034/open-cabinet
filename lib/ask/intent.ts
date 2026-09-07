@@ -53,6 +53,9 @@ const BY_SIZE_ASC = /\b(smallest|cheapest|lowest value|lowest-value|least expens
 /** An instruction to the model rather than a question about the records. */
 const INJECTION = /\b(ignore|disregard|forget|override)\b[^.?!]*\b(instructions?|rules?|prompt|guidelines?|previous|above)\b|\b(system prompt|your instructions|your rules|developer message)\b|\byou are (now|a|an)\b|\b(pretend|act as|roleplay|role-play|jailbreak|DAN)\b|\b(repeat|print|reveal|show|output)\b[^.?!]*\b(roster|prompt|instructions|verbatim|system)\b|\b(emit_plan|tool_choice|system note|as a system|calibration)\b/i;
 
+/** Profit, loss, performance, best and worst: the filings carry ranges, never prices. */
+const PROFIT = /\b(profit|profits|profitable|gain|gains|gained|loss|losses|lost money|made money|make money|making money|most money|return|returns|performance|performed|beat the market|outperform|underperform|best|worst|smartest|winning|losing|winners|losers|paid off|earned|earn)\b/i;
+
 /** Legality, propriety, motive: judgments the records cannot support. */
 const JUDGMENT = /\b(illegal|legal|legally|lawful|unlawful|crime|criminal|corrupt|corruption|insider|bribe|unethical|ethical|ethics agreement|proper|improper|suspicious|shady|conflict of interest|should (he|she|they|have|[a-z]+ have)|why did|why does|why would|motive|motives|intend|intended|break (his|her|their) )\b/i;
 
@@ -60,7 +63,7 @@ const JUDGMENT = /\b(illegal|legal|legally|lawful|unlawful|crime|criminal|corrup
 const HOLDINGS = /\b(own|owns|owned|ownership|holding|holdings|hold|holds|held|portfolio|net worth|networth|worth today|still (own|hold)|position in|stake in|divested everything|assets? (does|did) .* (have|own))\b/i;
 
 /** A period relative to now. The plan carries explicit dates or none. */
-const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|month|quarter|year|days|weeks|months|quarters|years)\b|\b(\d+\s+(days|weeks|months|years)\s+ago)\b|\b(year to date|ytd|so far this year|recently|lately)\b/i;
+const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|month|quarter|year|days|weeks|months|quarters|years)\b|\b(\d+\s+(days|weeks|months|years)\s+ago)\b|\b(year to date|ytd|so far this year|recently|lately|right now|currently|these days|at the moment|nowadays|hot|trending)\b/i;
 
 /** Comparison between named people, or an AND across two assets. */
 const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|who traded more|who sold more|who bought more|outsold|outbought)\b|\b(more|less|fewer) than\b(?!\s*\$?\s*\d)/i;
@@ -98,6 +101,9 @@ export function classifyIntent(question: string): IntentCheck {
 
   if (INJECTION.test(q)) {
     return { intent: { kind: "decline", category: "injection_or_instruction" }, rule: "injection" };
+  }
+  if (PROFIT.test(q)) {
+    return { intent: { kind: "decline", category: "no_prices_or_profit" }, rule: "profit" };
   }
   if (JUDGMENT.test(q)) {
     return { intent: { kind: "decline", category: "opinion_or_judgment" }, rule: "judgment" };

@@ -268,7 +268,7 @@ describe("decline text", () => {
   });
 
   it("asks for explicit dates rather than guessing a period", () => {
-    expect(declineText("needs_date_range")).toContain("2026-01-01 to 2026-03-31");
+    expect(declineText("needs_date_range")).toContain("Jan. 1, 2026 to March 31, 2026");
   });
 
   it("falls back to the general sentence for an unknown category", () => {
