@@ -7,8 +7,7 @@ import Link from "next/link";
 /**
  * Title carries the search terms, not just the section name.
  *
- * This is the page nothing else on the internet has — no other tracker
- * computes late-filing rates for the executive branch — and "Late Filings"
+ * This page computes late-filing rates for the executive branch, and "Late Filings"
  * matched none of the language a reader would actually type. The ticker
  * pages already do this well ("NVDA: Who in Government Trades This Stock").
  */

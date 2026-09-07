@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   title: "Open Cabinet — Executive Branch Stock Tracker",
   description:
-    "An interactive stock tracker for the executive branch. Search 10,000+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
+    "An interactive stock tracker for the executive branch. Search 11,500+ transactions by cabinet secretaries and senior officials, sourced from U.S. Office of Government Ethics filings.",
 };
 
 export default async function Home() {

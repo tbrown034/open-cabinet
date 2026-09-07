@@ -25,7 +25,7 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
 
-Transaction counts, estimated value and late-filing totals exclude score-0 rows under review. The JSON and transaction CSV retain all 11,500 rows, including the 1,127 under review. JSON `transactionCount` is the counted total; `underReviewCount` is separate at both dataset and official level. The officials summary CSV uses the same exclusion and includes `under_review_count`.
+Transaction counts, estimated value and late-filing totals exclude score-0 rows under review. The JSON and transaction CSV retain all 11,513 rows, including the 0 under review. JSON `transactionCount` is the counted total; `underReviewCount` is separate at both dataset and official level. The officials summary CSV uses the same exclusion and includes `under_review_count`.
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
@@ -58,7 +58,7 @@ OGE API ──▶ scripts/ingest-new-filings.ts ──▶ data/officials/*.json 
                      ├─▶ scripts/rebuild-index.ts    ──▶ data/meta/officials-index.json
                      └─▶ scripts/generate-exports.ts ──▶ public/data/*.json, *.csv
 
-Next.js App Router reads data/ at build time ──▶ static pages (650+ prerendered)
+Next.js App Router reads data/ at build time ──▶ static pages (470+ prerendered)
 Neon PostgreSQL + Better Auth ──▶ /admin panel, email alerts (Resend)
 ```
 
@@ -98,19 +98,20 @@ pnpm run check-news            # News coverage search guidance
 pnpm run seed                  # Seed database from JSON files
 ```
 
-### Parser models
+### Models and lanes
 
-| Model | Provider | Cost/PDF | Role |
-|-------|----------|----------|------|
-| Claude Sonnet 4.6 | Anthropic | ~$0.02 | Default parser |
-| Claude Haiku 4.5 | Anthropic | ~$0.01 | Budget option |
-| Claude Opus 4.6 | Anthropic | ~$0.06 | Verification |
-| GPT-5.4-mini | OpenAI | ~$0.01 | Cross-provider check |
-| GPT-5.4-nano | OpenAI | ~$0.003 | Cheapest fallback |
+| Model | Provider | Role |
+|-------|----------|------|
+| Claude Sonnet 4.6 | Anthropic | First read of every filing page (vision) |
+| GPT-6 Astra | OpenAI | Second read of scans no program could confirm, page images, paired by asset |
+| Grok 4.6 | xAI | Page audit: shown each row and the page image, confirms or disputes |
+| Claude Sonnet 5 | Anthropic | Summaries and digest ledes (never transaction data) |
+
+Programs that never see a model's output: the text-layer comparison (pdftotext) and the OCR lane (tesseract) compare type, date, amount, late flag and printed row numbers row for row. Every paid call counts against a spend ceiling; crossing it stops the run and emails Trevor.
 
 ## Tech stack
 
-- **Next.js 16** (App Router, static generation, 650+ pages prerendered)
+- **Next.js 16** (App Router, static generation, 470+ pages prerendered)
 - **React 19** + **TypeScript**
 - **D3.js** v7 sub-modules for all visualizations
 - **Tailwind CSS 4**

@@ -53,7 +53,7 @@ for (const [label, value] of Object.entries(rows)) {
   readme = readme.replace(re, `| ${label} | ${value} |`);
 }
 readme = readme.replace(/Rows by verification state: [^\n]*?\. Counts are checked/, `${stateLine} Counts are checked`);
-readme = readme.replace(/retain all 11,501 rows, including the [\d,]+ under review/, `retain all ${fmt(allTx.length)} rows, including the ${fmt(allTx.length - countedTx.length)} under review`);
+readme = readme.replace(/retain all [\d,]+ rows, including the [\d,]+ under review/, `retain all ${fmt(allTx.length)} rows, including the ${fmt(allTx.length - countedTx.length)} under review`);
 writeFileSync(path.join(root, "README.md"), readme);
 console.log(Object.entries(rows).map(([k, v]) => `${k}: ${v}`).join("\n"));
 console.log(stateLine);

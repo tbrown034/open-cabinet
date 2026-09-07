@@ -8,12 +8,12 @@ Built and maintained by Trevor Brown, a journalist and developer (https://trevor
 
 - Transactions from OGE Form 278-T periodic transaction reports only. Not the annual 278e, not asset holdings, not income.
 - Per transaction: the description as filed, a ticker where the filing prints one, transaction type (purchase, sale, exchange, or unstated when the filing states none), transaction date, the dollar range the filing reports (or "not readily ascertainable" when the filing says so), and the filing's own notification flag (whether the filer told the agency more than 30 days after the trade).
-- A verification state per row: checked by an independent program and a page audit, checked by two models, not yet independently checked, or under review. The methodology page explains each.
+- A verification state per row: checked (an independent program or a second company's model agreed on type, date, amount and late flag, and a page audit confirmed the row), checked by a person, not yet independently checked, or under review. Company names and tickers are not part of the automated comparison. The methodology page explains each.
 - Which filing disclosed each row, with a link to the PDF.
 
 ## How rows are checked
 
-Each filing is read by a vision model. Where the PDF has a text layer, a program that never saw the model's output reads the same table and the two are compared row for row. Scans are read again by OCR and compared the same way. Where no program can read the page, a second company's model reads it. A third company's model then audits the rows against the page images. A new filing is published only when the reads agree on every row; anything else is held for a person. Details: /methodology.
+Each filing is read by a vision model. Where the PDF has a text layer, a program that never saw the model's output reads the same table and the two are compared row for row. Scans are read again by OCR and compared the same way. Where no program can read the page, a second company's model reads it. A third company's model then audits the rows against the page images. A new filing is published only when the reads agree on every row; anything else is held for a person. Rows already on the site that a check later disputes stay up marked under review until a person decides. Details: /methodology.
 
 ## Primary pages
 

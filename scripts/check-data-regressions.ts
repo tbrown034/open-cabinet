@@ -40,11 +40,13 @@ async function main() {
     3642,
     "Trump May 8, 2026 part-two transaction rows"
   );
-  assertEqual(trump.transactions.length, 8940, "Trump aggregate profile transaction count");
+  assertEqual(trump.transactions.length, 8944, "Trump aggregate profile transaction count");
   // Aug 22, 2026 ingest: Trump 08.12.2026 filing (+1,051, rows 1-1051 visually
   // reconciled against printed row numbers), Kupor 07.15 + 07.20 (+5)
   assertEqual(fullDataset.officialCount, 39, "Full dataset official count");
-  assertEqual(fullDataset.transactionCount, 11501, "Full dataset transaction count");
+  // Sep 6, 2026: re-read applied (Trump 8,940 -> 8,944), Landau/Bisignano and others +10,
+  // Chavez-DeRemer name-wrap -1, Dixon duplicate -1: 11,513.
+  assertEqual(fullDataset.transactionCount, 11513, "Full dataset transaction count");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {
@@ -52,7 +54,7 @@ async function main() {
   }
   assertEqual(
     exportedTrump.transactions.length,
-    8940,
+    8944,
     "Full dataset Trump aggregate transaction count"
   );
 }
