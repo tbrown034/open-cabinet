@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:09:08.758Z",
+  "generatedAt": "2026-09-07T00:10:04.575Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
@@ -80375,8 +80375,8 @@
       "lane": "model2",
       "note": "A second model read the same values; OCR read printed row 219 differently; the page audit confirmed it"
     },
-    "84541f2dd93d2232f539f3af": {
-      "id": "84541f2dd93d2232f539f3af",
+    "f419fd68a15ca94d26ec67fe": {
+      "id": "f419fd68a15ca94d26ec67fe",
       "slug": "trump-donald-j",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/405E4EC4E27BE8D185258DF7002DD1C0/$FILE/Trump%2C%20Donald%20J.-05.08.2026-278T(2).pdf",
       "score": 3,
