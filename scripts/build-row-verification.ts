@@ -58,6 +58,8 @@ function main() {
     // Parse records are needed only where a per-row lane verdict exists.
     const parseRecordByUrl = new Map<string, Array<{ description: string; type: string; date: string | null; amount: string | null; lateFilingFlag?: boolean }>>();
     const model2ByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>();
+    const model2OnlyByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes: Set<number> }>();
+    const sessionByUrl = new Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes: Set<number> }>();
     const auditByUrl = new Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>();
     for (const [url, e] of entriesByUrl) {
       const second = secondRead?.filings[url];
@@ -77,6 +79,8 @@ function main() {
         anySecond = true;
         for (const i of src.agreedIndexes) agreed.add(i);
         for (const i of src.disputedIndexes) disputed.add(i);
+        const own = { agreedIndexes: new Set(src.agreedIndexes), disputedIndexes: new Set(src.disputedIndexes), unreadIndexes: new Set((src as { unreadIndexes?: number[] }).unreadIndexes ?? []) };
+        if (src === second) model2OnlyByUrl.set(url, own); else sessionByUrl.set(url, own);
       }
       for (const i of disputed) agreed.delete(i);
       if (anySecond) model2ByUrl.set(url, { agreedIndexes: agreed, disputedIndexes: disputed });
@@ -91,6 +95,8 @@ function main() {
       entriesByUrl,
       parseRecordByUrl,
       model2ByUrl,
+      model2OnlyByUrl,
+      sessionByUrl,
       auditByUrl,
       decisionsById: decisions,
       filingDateByUrl: new Map((official.sourceFilings ?? []).flatMap((f) => (f.url ? [[f.url, f.date] as [string, string]] : []))),

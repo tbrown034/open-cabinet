@@ -67,6 +67,24 @@ export interface RowVerification {
   sourceUrl: string | null;
   /** One short reason, for the page and the export. */
   note: string;
+  /** What each gate said about this row, for the admin view. Absent on
+   * rows built before Sep 6, 2026. */
+  gates?: RowGates;
+}
+
+/** Per-gate verdicts for one row. "none" means the gate did not run or
+ * could not see the row. */
+export interface RowGates {
+  /** The first read's own confidence for this row, 0 to 1, when recorded. */
+  read1Confidence: number | null;
+  text: "agree" | "disagree" | "none";
+  ocr: "agree" | "disagree" | "repaired" | "unread" | "none";
+  model2: "agree" | "disagree" | "unread" | "none";
+  session: "agree" | "disagree" | "unread" | "none";
+  audit: "confirm" | "dispute" | "notfound" | "none";
+  human: "confirmed" | "corrected" | "rejected" | null;
+  /** Reasons from the impossible-value check, empty when clean. */
+  implausible: string[];
 }
 
 export interface RowVerificationFile {
@@ -175,6 +193,11 @@ export interface DeriveInput {
   /** Second-model lane verdicts per filing: the parsed indexes it agreed
    * on and disagreed on. Absent until that lane runs. */
   model2ByUrl?: Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number> }>;
+  /** The session page read alone (also merged into model2ByUrl by the
+   * builder), so the admin view can show it as its own gate. */
+  sessionByUrl?: Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes?: Set<number> }>;
+  /** The second model alone, for the same reason. */
+  model2OnlyByUrl?: Map<string, { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes?: Set<number> }>;
   /** Audit lane verdicts per filing, by parsed index. Absent until it runs. */
   auditByUrl?: Map<string, { confirmed: Set<number>; disputed: Set<number>; notFound: Set<number> }>;
   decisionsById?: Map<string, ReviewDecision>;
@@ -349,6 +372,46 @@ export function applyImplausible(v: RowVerification, reasons: string[]): RowVeri
   return { ...v, score: 2, state: "implausible", note: `${why}. Before this check: ${v.note}` };
 }
 
+/** What each gate said about one row. Pure; used by the derivation. */
+export function gatesForRow(
+  input: DeriveInput,
+  tx: Transaction,
+  decision: ReviewDecision | undefined,
+  parsedIndex: number,
+  implausible: string[]
+): RowGates {
+  const url = tx.sourceUrl ?? "";
+  const entry = url ? input.entriesByUrl.get(url) : undefined;
+  const record = url ? input.parseRecordByUrl.get(url) : undefined;
+  const conf = parsedIndex >= 0 && record ? (record[parsedIndex] as { confidence?: number } | undefined)?.confidence ?? null : null;
+  const idx = parsedIndex;
+  let text: RowGates["text"] = "none";
+  let ocr: RowGates["ocr"] = "none";
+  if (entry && idx >= 0) {
+    if (entry.state === "checked_tuple_agreement") text = "agree";
+    else if (entry.state === "checked_tuple_mismatch") text = "disagree";
+    else if (entry.state === "ocr_tuple_agreement") ocr = "agree";
+    else if (entry.state === "ocr_tuple_mismatch") {
+      const aligned = entry.ocr?.aligned;
+      if (aligned) {
+        const printed = printedRowForIndex(idx, aligned.placeholderRows ?? []);
+        if (aligned.disputedPrintedRows?.includes(printed)) ocr = "disagree";
+        else if (aligned.repairedPrintedRows?.includes(printed)) ocr = "repaired";
+        else if (aligned.agreedPrintedRows?.includes(printed)) ocr = "agree";
+        else ocr = "unread";
+      }
+    }
+  }
+  const lane = (m?: { agreedIndexes: Set<number>; disputedIndexes: Set<number>; unreadIndexes?: Set<number> }): RowGates["model2"] =>
+    !m || idx < 0 ? "none" : m.agreedIndexes.has(idx) ? "agree" : m.disputedIndexes.has(idx) ? "disagree" : m.unreadIndexes?.has(idx) ? "unread" : "none";
+  const model2 = lane(url ? (input.model2OnlyByUrl ?? input.model2ByUrl)?.get(url) : undefined);
+  const session = lane(url ? input.sessionByUrl?.get(url) : undefined);
+  const a = url ? input.auditByUrl?.get(url) : undefined;
+  const audit: RowGates["audit"] = !a || idx < 0 ? "none" : a.confirmed.has(idx) ? "confirm" : a.disputed.has(idx) ? "dispute" : a.notFound.has(idx) ? "notfound" : "none";
+  const human: RowGates["human"] = decision ? decision.decision : null;
+  return { read1Confidence: conf, text, ocr, model2, session, audit, human, implausible };
+}
+
 export function deriveRowVerification(input: DeriveInput): RowVerification[] {
   const ids = recordIdsFor(input.transactions);
   const out: RowVerification[] = [];
@@ -364,29 +427,34 @@ export function deriveRowVerification(input: DeriveInput): RowVerification[] {
     const id = ids[i];
     const decision = input.decisionsById?.get(id);
     const base = { id, slug: input.slug, sourceUrl: tx.sourceUrl ?? null };
-    const reasons = implausibleValues(tx, tx.sourceUrl ? input.filingDateByUrl?.get(tx.sourceUrl) : null);
-    const emit = (v: RowVerification, parsedIndex: number) => {
-      out.push(applyImplausible(applyAudit(v, tx.sourceUrl ? input.auditByUrl?.get(tx.sourceUrl) : undefined, parsedIndex), reasons));
-    };
     // Every row of a filing consumes one slot of its located positions,
     // decided rows included; otherwise a human decision on one row would
     // shift every row after it onto its neighbour's parse index. (Sep 6:
     // two decided rows made an agreed row below them read as disputed.)
     const cursor = tx.sourceUrl ? (perFilingCursor.get(tx.sourceUrl) ?? 0) : 0;
     if (tx.sourceUrl) perFilingCursor.set(tx.sourceUrl, cursor + 1);
+    const earlyIndex = (): number => {
+      const positions = tx.sourceUrl ? located.get(tx.sourceUrl) : undefined;
+      return positions ? positions[cursor] : -1;
+    };
+    const reasons = implausibleValues(tx, tx.sourceUrl ? input.filingDateByUrl?.get(tx.sourceUrl) : null);
+    const gatesAt = (parsedIndex: number): RowGates => gatesForRow(input, tx, decision, parsedIndex, reasons);
+    const emit = (v: RowVerification, parsedIndex: number) => {
+      out.push({ ...applyImplausible(applyAudit(v, tx.sourceUrl ? input.auditByUrl?.get(tx.sourceUrl) : undefined, parsedIndex), reasons), gates: gatesAt(parsedIndex) });
+    };
     if (decision && decision.decision !== "rejected") {
-      out.push({ ...base, score: 3, state: "human_verified", lane: "human", note: `Decided by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}` });
+      out.push({ ...base, score: 3, state: "human_verified", lane: "human", note: `Decided by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}`, gates: gatesAt(earlyIndex()) });
       return;
     }
     if (decision) {
       // A person rejected this row as published. Until an approved patch
       // changes it, no automatic agreement may lift it. (Codex, Sep 6: a
       // rejected row fell through and came back as "checked".)
-      out.push({ ...base, score: 0, state: "disputed", lane: "human", note: `Rejected by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}; the row is wrong as published and waits for an approved patch` });
+      out.push({ ...base, score: 0, state: "disputed", lane: "human", note: `Rejected by ${decision.decidedBy} on ${decision.decidedAt.slice(0, 10)}; the row is wrong as published and waits for an approved patch`, gates: gatesAt(earlyIndex()) });
       return;
     }
     if (!tx.sourceUrl) {
-      out.push(applyImplausible({ ...base, score: 1, state: "single_read", lane: null, note: "Not attributed to a specific filing; nothing has compared it" }, reasons));
+      out.push({ ...applyImplausible({ ...base, score: 1, state: "single_read", lane: null, note: "Not attributed to a specific filing; nothing has compared it" }, reasons), gates: gatesAt(-1) });
       return;
     }
     const entry = input.entriesByUrl.get(tx.sourceUrl);

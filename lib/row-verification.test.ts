@@ -348,3 +348,23 @@ describe("implausible values", () => {
     expect(disputed.state).toBe("disputed");
   });
 });
+
+describe("gates per row", () => {
+  it("records what each gate said, a person's decision, and the first read's confidence", () => {
+    const rows = [tx({ description: "A" }), tx({ description: "B" })];
+    const record = rows.map((r, i) => ({ ...r, confidence: i === 0 ? 0.91 : 0.55 }));
+    const ids = recordIdsFor(rows);
+    const out = deriveRowVerification({
+      slug: "x",
+      transactions: rows,
+      entriesByUrl: new Map([[URL, entry({ state: "checked_tuple_agreement" })]]),
+      parseRecordByUrl: new Map([[URL, record]]),
+      model2OnlyByUrl: new Map([[URL, { agreedIndexes: new Set([0]), disputedIndexes: new Set([1]), unreadIndexes: new Set() }]]),
+      auditByUrl: new Map([[URL, { confirmed: new Set([0]), disputed: new Set([1]), notFound: new Set() }]]),
+      decisionsById: new Map([[ids[1], { recordId: ids[1], slug: "x", decision: "confirmed", evidence: "page 1 row 2", decidedBy: "trevor", decidedAt: "2026-09-06T00:00:00Z" }]]),
+    });
+    expect(out[0].gates).toEqual({ read1Confidence: 0.91, text: "agree", ocr: "none", model2: "agree", session: "none", audit: "confirm", human: null, implausible: [] });
+    expect(out[1].gates).toEqual({ read1Confidence: 0.55, text: "agree", ocr: "none", model2: "disagree", session: "none", audit: "dispute", human: "confirmed", implausible: [] });
+    expect(out[1].state).toBe("human_verified");
+  });
+});
