@@ -13,7 +13,7 @@
  * not compute.
  */
 import { formatDate } from "../format";
-import type { ExecuteResult } from "./execute";
+import { readerMoney, type ExecuteResult } from "./execute";
 import type { QueryPlan } from "./plan";
 
 /**
@@ -287,7 +287,10 @@ export function checkAnswerNumbers(answer: string, result: ExecuteResult): Numbe
     unmatched.push(raw.trim());
   }
 
-  if (NO_QUANTITY.test(stripped) && result.matchedRows !== 0) {
+  // "No trades" is a true claim about an official the comparison named who
+  // has nothing; the executor vouches for that list in missingOfficials.
+  const zeroVouched = (result.missingOfficials?.length ?? 0) > 0;
+  if (NO_QUANTITY.test(stripped) && result.matchedRows !== 0 && !zeroVouched) {
     unmatched.push("a claim that there are none");
   }
 
@@ -307,108 +310,174 @@ export function checkAnswerNumbers(answer: string, result: ExecuteResult): Numbe
   return { ok: unmatched.length === 0, unmatched };
 }
 
+/* ── Reader wording ─────────────────────────────────────────────────────── */
+
+/** "sales", "purchases", "exchanges" or "trades", from the plan's type filter. */
+export function tradeNoun(plan: QueryPlan, n: number): string {
+  const types = plan.filters.types ?? [];
+  const one = n === 1;
+  if (types.length > 0 && types.every((t) => t.startsWith("Sale"))) return one ? "sale" : "sales";
+  if (types.length > 0 && types.every((t) => t === "Purchase")) return one ? "purchase" : "purchases";
+  if (types.length > 0 && types.every((t) => t === "Exchange")) return one ? "exchange" : "exchanges";
+  return one ? "trade" : "trades";
+}
+
+/** "March 2026" from "2026-03". */
+function monthName(ym: string): string {
+  const [y, m] = ym.split("-").map(Number);
+  return new Date(Date.UTC(y, (m || 1) - 1, 1)).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+}
+
+function n(v: number): string {
+  return v.toLocaleString("en-US");
+}
+
+/** "Christopher Wright, Secretary of Energy," or "Officials in this data". */
+function whoPhrase(result: ExecuteResult): { subject: string; possessive: string; named: boolean } {
+  const who = result.subjectOfficials ?? [];
+  if (who.length === 0) return { subject: "Officials in this data", possessive: "Officials'", named: false };
+  const one = (o: { name: string; title: string; agency?: string }) => (o.title ? `${o.name}, ${fullTitle(o)},` : o.name);
+  if (who.length === 1) return { subject: one(who[0]), possessive: `${who[0].name}'s`, named: true };
+  const names = who.map((o) => o.name);
+  const list = `${names.slice(0, -1).join(", ")} and ${names[names.length - 1]}`;
+  return { subject: list, possessive: `${list}'s`, named: true };
+}
+
+/** "Chairman" alone says nothing; "Chairman, Federal Reserve" does. Skipped when the title already names the agency. */
+function fullTitle(o: { name: string; title: string; agency?: string }): string {
+  if (!o.agency) return o.title;
+  const words = o.agency.toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 5 && !["department", "office", "united", "states", "federal", "national", "administration", "agency", "commission"].includes(w));
+  const shared = words.some((w) => o.title.toLowerCase().includes(w));
+  return shared ? o.title : `${o.title}, ${o.agency}`;
+}
+
+function ofAsset(result: ExecuteResult): string {
+  return result.assetLabel ? ` of ${result.assetLabel}` : "";
+}
+
+function whenPhrase(plan: QueryPlan): string {
+  const f = plan.filters;
+  if (f.dateFrom && f.dateTo) return ` between ${formatDate(f.dateFrom)} and ${formatDate(f.dateTo)}`;
+  if (f.dateFrom) return ` since ${formatDate(f.dateFrom)}`;
+  if (f.dateTo) return ` through ${formatDate(f.dateTo)}`;
+  return "";
+}
+
+function qualifiers(plan: QueryPlan): string {
+  const f = plan.filters;
+  const parts: string[] = [];
+  if (f.lateOnly) parts.push("flagged as reported late");
+  const dollars = (v: number) => `$${v.toLocaleString("en-US")}`;
+  if (f.amountAtLeast !== undefined && f.amountAtMost !== undefined) parts.push(`with a disclosed range inside ${dollars(f.amountAtLeast)} to ${dollars(f.amountAtMost)}`);
+  else if (f.amountAtLeast !== undefined) parts.push(`with a disclosed range starting at ${dollars(f.amountAtLeast)} or more`);
+  else if (f.amountAtMost !== undefined) parts.push(`with a disclosed range ending at ${dollars(f.amountAtMost)} or less`);
+  return parts.length ? ` ${parts.join(", ")}` : "";
+}
+
 /**
- * The sentence used when the model's phrasing fails the check, or when no
- * model is available. Assembled from the result, so it can only be wrong if
- * the arithmetic is wrong.
+ * The sentence a reader sees. Assembled from the result, so it can only be
+ * wrong if the arithmetic is wrong. Written for a reader, not a database:
+ * "sales" not "rows", the official's title, the company's name, dollars
+ * rounded the way a story would print them (Trevor, Sept. 7). The scope
+ * ("checked rows only") lives in the status label and the disclosure.
  */
 export function templateAnswer(
   plan: QueryPlan,
   planText: string,
   result: ExecuteResult
 ): string {
-  const rows = `${result.matchedRows.toLocaleString("en-US")} checked ${
-    result.matchedRows === 1 ? "row" : "rows"
-  }`;
-  const plural = (n: number, word: string) =>
-    `${n.toLocaleString("en-US")} checked ${word}${n === 1 ? "" : "s"}`;
+  // One closing sentence carries the scope every answer must state.
+  const body = readerSentence(plan, result);
+  return `${body} Checked trades only.`;
+}
+
+function readerSentence(plan: QueryPlan, result: ExecuteResult): string {
+  const total = result.matchedRows;
+  const noun = tradeNoun(plan, total);
+  const { subject, possessive, named } = whoPhrase(result);
+  const asset = ofAsset(result);
+  const when = whenPhrase(plan);
+  const qual = qualifiers(plan);
+  const reported = named ? "reported" : "reported";
+  const none = `${subject} ${reported} no ${tradeNoun(plan, 2)}${asset}${qual}${when}.`;
 
   switch (plan.aggregate) {
     case "count":
-      return `${planText} That query matches ${rows}.`;
+      if (total === 0) return none;
+      return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}.`;
     case "sum_estimate": {
       const t = result.totals;
-      if (!t) return `${planText} That query matches ${rows}.`;
-      const excluded = t.unknownCount > 0
-        ? ` ${t.unknownCount.toLocaleString("en-US")} ${t.unknownCount === 1 ? "row" : "rows"} with no stated value ${t.unknownCount === 1 ? "is" : "are"} excluded.`
-        : "";
-      const openEnded = t.openEndedCount > 0
-        ? ` ${t.openEndedCount.toLocaleString("en-US")} ${t.openEndedCount === 1 ? "row is" : "rows are"} open-ended ranges, counted at the site's convention for those.`
-        : "";
-      return (
-        `${planText} The ${plural(t.knownCount, "row")} with a disclosed range estimate ` +
-        `to ${t.estimateDisplay}, summing range midpoints.${excluded}${openEnded}`
-      );
+      if (!t || total === 0) return none;
+      const excluded = t.unknownCount > 0 ? ` ${n(t.unknownCount)} with no stated value ${t.unknownCount === 1 ? "is" : "are"} left out of the total.` : "";
+      const open = t.openEndedCount > 0 ? ` ${n(t.openEndedCount)} ${t.openEndedCount === 1 ? "is an open-ended range" : "are open-ended ranges"}, counted at the site's convention.` : "";
+      return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}, an estimated ${readerMoney(t.estimate)} in total, adding the midpoint of each disclosed range.${excluded}${open}`;
     }
     case "list": {
+      if (total === 0) return none;
       const shown = result.shownRows ?? 0;
-      return `${planText} That query matches ${rows}. ${shown.toLocaleString("en-US")} ${shown === 1 ? "is" : "are"} listed below.`;
+      const order = plan.sort === "amount" ? "largest" : plan.sort === "amount_asc" ? "smallest" : "most recent";
+      const listed = shown >= total ? (total === 1 ? " It is listed below." : " All are listed below.") : ` The ${n(shown)} ${order} are listed below.`;
+      return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}.${listed}`;
     }
     case "top_officials": {
       const top = result.topOfficials?.[0];
       const missing = result.missingOfficials ?? [];
+      const pluralNoun = tradeNoun(plan, 2);
       if (!top) {
-        if (missing.length > 0) {
-          return `${planText} None of them has a checked row matching that query.`;
-        }
-        return `${planText} That query matches no checked rows.`;
+        if (missing.length > 0) return `None of them reported ${pluralNoun}${asset}${qual}${when}.`;
+        return `No official in this data reported ${pluralNoun}${asset}${qual}${when}.`;
       }
-      // The headcount first: "how many officials traded X" is answered by
-      // the number of groups, and the leader is the detail.
       const groups = result.groupCount ?? 0;
-      const head = groups > 1 ? `${groups.toLocaleString("en-US")} officials have a matching checked row. ` : "";
-      // A tie is a tie (Grok P0-7): name everyone at the top, never one leader.
       const ranked = result.topOfficials ?? [];
-      const tiedByRows = ranked.filter((o) => o.count === top.count);
-      const tiedByValue = ranked.filter((o) => o.estimate === top.estimate);
-      const tied = plan.sort === "amount" ? tiedByValue : tiedByRows;
-      const lead = groups === 1
-        ? `${top.name} is the only official with a matching checked row: ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`
-        : tied.length > 1
-        ? `${head}${tied.length === ranked.length && groups > tied.length ? `The ${tied.length} listed` : tied.map((o) => o.name).join(", ")} tie at ${plural(top.count, "row")} each${plan.sort === "amount" ? ` (${top.estimateDisplay} estimated)` : ""}.`
-        : plan.sort === "amount"
-        ? `${head}${top.name} leads by estimated value, ${top.estimateDisplay} across ${plural(top.count, "row")}.`
-        : `${head}${top.name} leads with ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`;
-      // On a comparison, the official with nothing is half the answer.
+      const byValue = plan.sort === "amount";
+      const tied = ranked.filter((o) => (byValue ? o.estimate === top.estimate : o.count === top.count));
+      const person = (o: { name: string; title?: string; agency?: string }) => (o.title ? `${o.name}, ${fullTitle({ name: o.name, title: o.title, agency: o.agency })},` : o.name);
+      const detail = (o: { count: number; estimate: number }) => `${n(o.count)} ${tradeNoun(plan, o.count)}, an estimated ${readerMoney(o.estimate)}`;
+      let lead: string;
+      if (groups === 1) {
+        lead = `${person(top)} is the only official who reported ${pluralNoun}${asset}${qual}${when}: ${detail(top)}.`;
+      } else {
+        const head = `${n(groups)} officials reported ${pluralNoun}${asset}${qual}${when}.`;
+        if (tied.length > 1) {
+          const names = tied.length === ranked.length && groups > tied.length ? `The ${n(tied.length)} listed` : tied.map((o) => o.name).join(", ");
+          lead = `${head} ${names} tie at ${n(top.count)} ${tradeNoun(plan, top.count)} each${byValue ? ` (about ${readerMoney(top.estimate)})` : ""}.`;
+        } else if (byValue) {
+          lead = `${head} ${person(top)} leads by estimated value with ${readerMoney(top.estimate)} across ${n(top.count)} ${tradeNoun(plan, top.count)}.`;
+        } else {
+          lead = `${head} ${person(top)} leads with ${detail(top)}.`;
+        }
+      }
       if (missing.length > 0) {
         const who = missing.length === 1 ? missing[0] : missing.join(", ");
-        const verb = missing.length === 1 ? "has" : "have";
-        return `${planText} ${lead} ${who} ${verb} no checked row matching it.`;
+        return `${lead} ${who} reported no ${pluralNoun}${asset}${when}.`;
       }
-      return `${planText} ${lead}`;
+      return lead;
     }
     case "top_assets": {
       const top = result.topAssets?.[0];
-      if (!top) return `${planText} That query matches no checked rows.`;
-      return `${planText} ${top.label} appears in ${plural(top.count, "row")}, more than any other asset here.`;
+      if (!top) return none;
+      return `${possessive} most-traded asset${qual}${when} was ${top.label}, with ${n(top.count)} ${tradeNoun(plan, top.count)}.`;
     }
     case "by_month": {
       const months = result.byMonth ?? [];
       const undated = result.undatedRows ?? 0;
-      if (result.matchedRows === 0) return `${planText} That query matches no checked rows.`;
-      const undatedNote = undated > 0 ? ` ${undated.toLocaleString("en-US")} matching row${undated === 1 ? "" : "s"} print${undated === 1 ? "s" : ""} no transaction date and ${undated === 1 ? "is" : "are"} not placed in a month.` : "";
-      if (months.length === 0) return `${planText} The query matches ${rows}, none with a printed transaction date.`;
-      const dated = result.matchedRows - undated;
+      if (total === 0) return none;
+      const undatedNote = undated > 0 ? ` ${n(undated)} ${undated === 1 ? "has" : "have"} no transaction date printed and ${undated === 1 ? "is" : "are"} not placed in a month.` : "";
+      if (months.length === 0) return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}, none with a transaction date printed.`;
       const busiest = months.reduce((a, b) => (b.count > a.count ? b : a));
-      return `${planText} The query matches ${rows}; the ${dated.toLocaleString("en-US")} dated ones span ${months.length.toLocaleString("en-US")} months, with ${busiest.count.toLocaleString("en-US")} in ${busiest.month}.${undatedNote}`;
+      return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}, across ${n(months.length)} month${months.length === 1 ? "" : "s"}. The busiest was ${monthName(busiest.month)}, with ${n(busiest.count)}.${undatedNote}`;
     }
     case "late_share": {
       const share = result.lateShare;
-      if (!share || share.total === 0) {
-        return `${planText} That query matches no checked rows.`;
-      }
-      // The display string is the executor's own arithmetic. Nothing here
-      // divides anything.
-      return `${planText} ${share.display}.`;
+      if (!share || share.total === 0) return none;
+      return `${n(share.late)} of ${possessive === "Officials'" ? "the" : possessive} ${n(share.total)} ${tradeNoun(plan, share.total)}${asset}${when} (${share.percent} percent) were flagged as reported late.`;
     }
     case "first_last_dates": {
       const undated = result.undatedRows ?? 0;
-      if (result.matchedRows === 0) return `${planText} That query matches no checked rows.`;
-      if (!result.firstDate || !result.lastDate) {
-        return `${planText} The query matches ${rows}, but none prints a transaction date.`;
-      }
-      const undatedNote = undated > 0 ? ` ${undated.toLocaleString("en-US")} matching row${undated === 1 ? "" : "s"} print${undated === 1 ? "s" : ""} no transaction date and ${undated === 1 ? "is" : "are"} left out of that span.` : "";
-      return `${planText} The dated checked rows run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.${undatedNote}`;
+      if (total === 0) return none;
+      if (!result.firstDate || !result.lastDate) return `${subject} ${reported} ${n(total)} ${noun}${asset}${qual}${when}, none with a transaction date printed.`;
+      const undatedNote = undated > 0 ? ` ${n(undated)} ${undated === 1 ? "has" : "have"} no transaction date printed and ${undated === 1 ? "is" : "are"} left out of that span.` : "";
+      return `${possessive} ${tradeNoun(plan, 2)}${asset}${qual} run from ${formatDate(result.firstDate)} to ${formatDate(result.lastDate)}.${undatedNote}`;
     }
   }
 }

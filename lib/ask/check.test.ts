@@ -128,7 +128,7 @@ describe("templateAnswer", () => {
       "Trades, counted.",
       COUNT_RESULT
     );
-    expect(answer).toBe("Trades, counted. That query matches 142 checked rows.");
+    expect(answer).toBe("Officials in this data reported 142 trades. Checked trades only.");
   });
 
   it("names the excluded unknown-amount rows in a sum sentence", () => {
@@ -137,8 +137,8 @@ describe("templateAnswer", () => {
       "Trades, totaled by estimated value.",
       SUM_RESULT
     );
-    expect(answer).toContain("$4,500,000");
-    expect(answer).toContain("3 rows with no stated value are excluded");
+    expect(answer).toContain("an estimated $4.5 million in total");
+    expect(answer).toContain("3 with no stated value are left out of the total");
   });
 
   it("passes its own number check", () => {
@@ -303,7 +303,7 @@ describe("templateAnswer for late_share", () => {
         LATE_RESULT
       )
     ).toBe(
-      "Trades, measured for the share flagged late. 41 of 299 checked trades in this query (13.7 percent) were flagged late."
+      "41 of the 299 trades (13.7 percent) were flagged as reported late. Checked trades only."
     );
   });
 
@@ -387,7 +387,7 @@ describe("templateAnswer for a comparison", () => {
     ],
     missingOfficials: ["Scott Bessent"],
     numbers: [234, 91_183_500, 1],
-    displayStrings: ["234", "$91,183,500", "1"],
+    displayStrings: ["234", "$91,183,500", "$91.2 million", "1"],
   };
 
   it("states the zero side, which is half of what was asked", () => {
@@ -397,9 +397,8 @@ describe("templateAnswer for a comparison", () => {
       COMPARISON
     );
     expect(answer).toBe(
-      "Purchase rows by Scott Bessent and Christopher Wright, ranked by official. " +
-        "Christopher Wright is the only official with a matching checked row: 234 checked rows, estimated at $91,183,500. " +
-        "Scott Bessent has no checked row matching it."
+      "Christopher Wright is the only official who reported trades: 234 trades, an estimated $91.2 million. " +
+        "Scott Bessent reported no trades. Checked trades only."
     );
     expect(checkAnswerNumbers(answer, COMPARISON).ok).toBe(true);
     expect(checkAnswerLanguage(answer).ok).toBe(true);
@@ -411,7 +410,7 @@ describe("templateAnswer for a comparison", () => {
       "Purchase rows by A and B, ranked by official.",
       { ...COMPARISON, topOfficials: [], missingOfficials: ["A", "B"] }
     );
-    expect(answer).toContain("None of them has a checked row");
+    expect(answer).toContain("None of them reported trades.");
   });
 });
 
@@ -587,7 +586,7 @@ describe("plurals", () => {
       "Trades on 2025-03-05, ranked by official.",
       ONE
     );
-    expect(answer).toContain("1 checked row, estimated at $8,000");
+    expect(answer).toContain("1 trade, an estimated $8,000");
     expect(answer).not.toContain("1 checked rows");
   });
 });
@@ -595,15 +594,15 @@ describe("plurals", () => {
 describe("undated rows in time answers (Codex, Sept. 7)", () => {
   it("first_last_dates never calls a matched-but-undated row absent", () => {
     const one: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 1, undatedRows: 1, firstDate: null, lastDate: null, numbers: [1], displayStrings: [] };
-    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", one)).toBe("Trades. The query matches 1 checked row, but none prints a transaction date.");
+    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", one)).toBe("Officials in this data reported 1 trade, none with a transaction date printed. Checked trades only.");
     const mixed: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 3, undatedRows: 1, firstDate: "2026-01-05", lastDate: "2026-02-10", numbers: [3, 1], displayStrings: [] };
-    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", mixed)).toMatch(/1 matching row prints no transaction date/);
+    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", mixed)).toMatch(/1 has no transaction date printed/);
   });
   it("by_month reconciles dated rows to the month buckets and names the undated remainder", () => {
     const r: ExecuteResult = { aggregate: "by_month", matchedRows: 4, undatedRows: 1, byMonth: [{ month: "2026-01", count: 2 }, { month: "2026-02", count: 1 }], numbers: [4, 1, 2, 1], displayStrings: [] };
     const a = templateAnswer({ filters: {}, aggregate: "by_month" }, "Trades.", r);
-    expect(a).toContain("the 3 dated ones span 2 months");
-    expect(a).toContain("1 matching row prints no transaction date");
+    expect(a).toContain("across 2 months. The busiest was January 2026, with 2.");
+    expect(a).toContain("1 has no transaction date printed");
   });
 });
 
@@ -618,8 +617,8 @@ describe("ties in a ranking (Grok P0-7)", () => {
       numbers: [4, 1, 32500, 8000, 2], displayStrings: [],
     };
     const a = templateAnswer({ filters: {}, aggregate: "top_officials" }, "Sales in NVDA, ranked by official.", r);
-    expect(a).toContain("4 officials have a matching checked row.");
-    expect(a).toContain("The 2 listed tie at 1 checked row each.");
+    expect(a).toContain("4 officials reported trades.");
+    expect(a).toContain("The 2 listed tie at 1 trade each.");
     expect(a).not.toContain("leads");
   });
 });

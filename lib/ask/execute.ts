@@ -21,6 +21,8 @@ import {
   amountRangeLabel,
 } from "../amounts";
 import { formatCompactCurrency, formatDate } from "../format";
+import { companyGroupName } from "../assets";
+import { INSTRUMENT_LABEL } from "../instrument-type";
 import type {
   PendingRow,
   PublishedRow,
@@ -47,6 +49,9 @@ export interface ResultRow {
 export interface RankedOfficial {
   name: string;
   slug: string;
+  /** The official's title and agency, for the sentence ("Christopher Wright, Secretary of Energy"). */
+  title?: string;
+  agency?: string;
   count: number;
   estimate: number;
   estimateDisplay: string;
@@ -82,6 +87,10 @@ export interface ExecuteResult {
   matchedRows: number;
   /** Matched rows with no printed transaction date; time answers cannot place them. */
   undatedRows?: number;
+  /** Who the plan is about, from the roster, whether or not anything matched. */
+  subjectOfficials?: Array<{ name: string; title: string; agency?: string }>;
+  /** What the plan is about: a company name with its symbol, a search text, or an asset kind. */
+  assetLabel?: string | null;
   /** Rows shown, when the aggregate lists or ranks. */
   shownRows?: number;
   /**
@@ -214,7 +223,15 @@ function moneyStrings(value: number): string[] {
     `$${value.toLocaleString("en-US")}`,
     formatCompactCurrency(value),
     spellDollars(value),
+    readerMoney(value),
   ];
+}
+
+/** "$65.9 million", "$1.86 billion", "$401,500": the form a story prints. */
+export function readerMoney(value: number): string {
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2).replace(/\.?0+$/, "")} billion`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1).replace(/\.0$/, "")} million`;
+  return `$${value.toLocaleString("en-US")}`;
 }
 
 function toResultRow(row: PublishedRow): ResultRow {
@@ -238,6 +255,11 @@ function toResultRow(row: PublishedRow): ResultRow {
 export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult {
   const matched = filterRows(plan, data.rows);
   const numbers = new Set<number>();
+  const subjectOfficials = (plan.filters.officials ?? [])
+    .map((slug) => data.officials.find((o) => o.slug === slug))
+    .filter((o): o is NonNullable<typeof o> => !!o)
+    .map((o) => ({ name: o.name, title: o.title, agency: o.agency }));
+  const assetLabel = assetLabelFor(plan, matched);
   const displayStrings = new Set<string>();
 
   const addNumber = (n: number) => {
@@ -256,6 +278,8 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
   const result: ExecuteResult = {
     aggregate: plan.aggregate,
     matchedRows: matched.length,
+    subjectOfficials,
+    assetLabel,
     numbers: [],
     displayStrings: [],
   };
@@ -334,11 +358,13 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       break;
     }
     case "top_officials": {
-      const groups = new Map<string, { name: string; slug: string; rows: PublishedRow[] }>();
+      const groups = new Map<string, { name: string; slug: string; title: string; agency: string; rows: PublishedRow[] }>();
       for (const row of matched) {
         const g = groups.get(row.officialSlug) ?? {
           name: row.officialName,
           slug: row.officialSlug,
+          title: row.title,
+          agency: row.agency,
           rows: [],
         };
         g.rows.push(row);
@@ -350,6 +376,8 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
           return {
             name: g.name,
             slug: g.slug,
+            title: g.title,
+            agency: g.agency,
             count: g.rows.length,
             estimate,
             estimateDisplay: `$${estimate.toLocaleString("en-US")}`,
@@ -396,9 +424,12 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
       const ranked = Array.from(groups.values())
         .map((g) => {
           const estimate = sumAmountEstimates(g.rows).estimate;
+          // A symbol reads as the company name the filings print for it,
+          // with the symbol: "Microsoft Corp (MSFT)", never bare "MSFT".
+          const label = g.ticker ? companyLabel(g.ticker, g.rows.map((r) => r.description)) : g.label;
           return {
             ticker: g.ticker,
-            label: g.label,
+            label,
             count: g.rows.length,
             estimate,
             estimateDisplay: `$${estimate.toLocaleString("en-US")}`,
@@ -475,4 +506,51 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
   result.numbers = Array.from(numbers);
   result.displayStrings = Array.from(displayStrings);
   return result;
+}
+
+/**
+ * A reader's name for what the plan is about. A symbol becomes the company
+ * name the filings print for it plus the symbol; a text search is quoted;
+ * an asset kind uses the lane's label. Null when the plan names no asset.
+ */
+export function assetLabelFor(plan: QueryPlan, matched: PublishedRow[]): string | null {
+  const f = plan.filters;
+  if (f.tickers && f.tickers.length > 0) {
+    return f.tickers
+      .map((t) => {
+        return companyLabel(t, matched.filter((r) => r.ticker === t).map((r) => r.description));
+      })
+      .join(" or ");
+  }
+  if (f.descriptionContains) return `"${f.descriptionContains}"`;
+  if (f.instrumentTypes && f.instrumentTypes.length > 0) {
+    const kinds = f.instrumentTypes.map(instrumentPlural);
+    return kinds.length > 1 ? `${kinds.slice(0, -1).join(", ")} or ${kinds[kinds.length - 1]}` : kinds[0];
+  }
+  return null;
+}
+
+/** "Microsoft Corp (MSFT)" from the filed descriptions, or the bare symbol when the filings print only that. */
+export function companyLabel(ticker: string, descriptions: string[]): string {
+  const name = descriptions.length > 0 ? companyGroupName(descriptions, ticker) : ticker;
+  return name.toUpperCase() === ticker ? ticker : `${titleCase(name)} (${ticker})`;
+}
+
+/** Plural, reader-facing kind of asset: "municipal bonds", "Treasuries", "ETFs". */
+export function instrumentPlural(t: keyof typeof INSTRUMENT_LABEL): string {
+  const special: Partial<Record<keyof typeof INSTRUMENT_LABEL, string>> = {
+    treasury: "Treasuries",
+    etf: "ETFs",
+    common_stock: "stocks",
+    preferred: "preferred shares",
+    crypto: "crypto holdings",
+    unknown: "unclassified assets",
+  };
+  return special[t] ?? `${INSTRUMENT_LABEL[t].toLowerCase()}s`;
+}
+
+/** "LIBERTY ENERGY INC" -> "Liberty Energy Inc"; a name already in mixed case is kept. */
+function titleCase(name: string): string {
+  if (name !== name.toUpperCase()) return name;
+  return name.toLowerCase().replace(/\b([a-z])/g, (c) => c.toUpperCase()).replace(/\b(Inc|Corp|Co|Ltd|Plc|Llc)\b/g, (w) => w);
 }
