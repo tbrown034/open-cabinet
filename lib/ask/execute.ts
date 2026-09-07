@@ -259,7 +259,9 @@ export function execute(plan: QueryPlan, data: PublishedRowsData): ExecuteResult
     .map((slug) => data.officials.find((o) => o.slug === slug))
     .filter((o): o is NonNullable<typeof o> => !!o)
     .map((o) => ({ name: o.name, title: o.title, agency: o.agency }));
-  const assetLabel = assetLabelFor(plan, matched);
+  // Named from every row that carries the symbol, not only the matched
+  // ones, so a zero result still says "Liberty Energy Inc (LBRT)".
+  const assetLabel = assetLabelFor(plan, data.rows);
   const displayStrings = new Set<string>();
 
   const addNumber = (n: number) => {

@@ -335,6 +335,9 @@ export const askLog = pgTable(
     phrasedBy: text("phrased_by"),
     ipHash: text("ip_hash"),
     durationMs: integer("duration_ms"),
+    // Reader feedback on the answer: right | wrong, with an optional reason.
+    feedback: text("feedback"),
+    feedbackReason: text("feedback_reason"),
   },
   (table) => [index("ask_log_at_idx").on(table.at)]
 );

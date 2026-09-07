@@ -8,7 +8,7 @@
  * numbers, the rows with links to the filings, and the count of rows the
  * answer left out because a check has not agreed with them yet.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 /**
@@ -130,6 +130,12 @@ interface AskResponse {
   disclosure: string;
   /** The validated plan the executor ran (builder view). */
   plan?: unknown;
+  /** Where the plan came from: the model, a stored plan for the same question, or a follow-up chip. */
+  planSource?: "model" | "cache" | "follow-up";
+  /** The log row for this answer, so feedback can attach to it. */
+  logId?: number | null;
+  /** Code-built variations of the plan that ran; each needs no model call. */
+  followUps?: Array<{ label: string; plan: unknown }>;
 }
 
 // Questions the verified rows can actually answer. Picked against the
@@ -184,33 +190,70 @@ export default function AskTheData({
       ]
     : GENERAL_SUGGESTIONS;
 
-  async function ask(text: string) {
+  const abortRef = useRef<AbortController | null>(null);
+  const answerRef = useRef<HTMLDivElement | null>(null);
+  const [feedback, setFeedback] = useState<"right" | "wrong" | "sent" | null>(null);
+  const [feedbackReason, setFeedbackReason] = useState("");
+
+  /** Ask a question, or run a code-built follow-up plan (no model call). */
+  async function ask(text: string, plan?: unknown) {
     const trimmed = text.trim();
     if (trimmed.length < 3 || pending) return;
     setPending(true);
     setResponse(null);
     setElapsedMs(null);
+    setFeedback(null);
+    setFeedbackReason("");
+    const controller = new AbortController();
+    abortRef.current = controller;
     const t0 = Date.now();
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed, officialSlug }),
+        body: JSON.stringify(plan ? { question: trimmed, officialSlug, plan } : { question: trimmed, officialSlug }),
+        signal: controller.signal,
       });
       setResponse((await res.json()) as AskResponse);
       setElapsedMs(Date.now() - t0);
-    } catch {
-      setResponse({
-        status: "error",
-        answer: "The question could not be sent. Check your connection and try again.",
-        planText: null,
-        result: null,
-        excluded: null,
-        disclosure: "",
-      });
+    } catch (err) {
+      if ((err as Error)?.name === "AbortError") {
+        setResponse(null);
+      } else {
+        setResponse({
+          status: "error",
+          answer: "The question could not be sent. Check your connection and try again.",
+          planText: null,
+          result: null,
+          excluded: null,
+          disclosure: "",
+        });
+      }
     } finally {
+      abortRef.current = null;
       setPending(false);
     }
+  }
+
+  // Move focus to the answer when it lands, so a keyboard or screen-reader
+  // user is taken to it instead of left at the input.
+  useEffect(() => {
+    if (response && answerRef.current) answerRef.current.focus();
+  }, [response]);
+
+  async function sendFeedback(verdict: "right" | "wrong") {
+    if (!response?.logId) return;
+    setFeedback(verdict);
+    if (verdict === "right") {
+      await fetch("/api/ask/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ logId: response.logId, verdict }) }).catch(() => undefined);
+      setFeedback("sent");
+    }
+  }
+
+  async function sendWrongReason() {
+    if (!response?.logId) return;
+    await fetch("/api/ask/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ logId: response.logId, verdict: "wrong", reason: feedbackReason }) }).catch(() => undefined);
+    setFeedback("sent");
   }
 
   const result = response?.result ?? null;
@@ -230,7 +273,7 @@ export default function AskTheData({
         </p>
         <div className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2 text-xs text-neutral-500 max-w-2xl">
           <p>
-            <span className="text-neutral-700 font-medium">It can answer:</span> who traded a company, an official&apos;s
+            <span className="text-neutral-700 font-medium">It can answer:</span>{" "}who traded a company, an official&apos;s
             sales or purchases, a date range, trades flagged late, totals by disclosed range, bonds or ETFs as a kind of asset.
           </p>
           <p>
@@ -288,10 +331,17 @@ export default function AskTheData({
         </div>
       </div>
 
-      {pending && <PendingStatus />}
+      {pending && (
+        <div className="relative">
+          <PendingStatus />
+          <button type="button" onClick={() => abortRef.current?.abort()} className="absolute right-5 top-4 text-xs text-neutral-400 underline hover:text-neutral-900">
+            Cancel
+          </button>
+        </div>
+      )}
 
       {response && !pending && (
-        <div className="border-t border-neutral-200 px-5 py-4">
+        <div ref={answerRef} tabIndex={-1} className="border-t border-neutral-200 px-5 py-4 outline-none">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
             <span className={`inline-block border text-[11px] uppercase tracking-wider px-2 py-0.5 ${STATUS_LABEL[response.status].className}`}>
               {STATUS_LABEL[response.status].text}
@@ -307,8 +357,25 @@ export default function AskTheData({
           {response.planText && (
             <p className="text-xs text-neutral-500 mt-2">
               <span className="uppercase tracking-wider text-neutral-400 mr-2">Query</span>
-              <span className="font-[family-name:var(--font-dm-mono)]">{response.planText}</span>
+              <span>{response.planText}</span>
+              {response.planSource === "cache" && <span className="ml-2 text-neutral-400">(stored translation, re-run on today&apos;s rows)</span>}
+              {response.planSource === "follow-up" && <span className="ml-2 text-neutral-400">(follow-up, no model call)</span>}
             </p>
+          )}
+
+          {response.followUps && response.followUps.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {response.followUps.map((f) => (
+                <button
+                  key={f.label}
+                  type="button"
+                  onClick={() => ask(`${question || "Follow-up"}: ${f.label}`, f.plan)}
+                  className="border border-neutral-200 text-xs text-neutral-600 px-2.5 py-1 hover:border-neutral-900 hover:text-neutral-900 transition-colors"
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           )}
 
           {response.status === "not_in_data" && response.pendingNote && (
@@ -440,7 +507,12 @@ export default function AskTheData({
                         </Link>
                       </td>
                       <td className="px-3 py-2 text-neutral-600">
-                        {row.ticker ? `${row.ticker} · ` : ""}
+                        {row.ticker ? (
+                          <>
+                            <Link href={`/companies/${row.ticker.toLowerCase()}`} className="font-[family-name:var(--font-dm-mono)] text-neutral-900 underline hover:text-neutral-600">{row.ticker}</Link>
+                            {" · "}
+                          </>
+                        ) : null}
                         {cleanDashes(row.description)}
                       </td>
                       <td className="px-3 py-2 text-neutral-600 whitespace-nowrap">
@@ -494,6 +566,25 @@ export default function AskTheData({
             </p>
           )}
 
+          {response.logId && response.status === "answered" && (
+            <div className="mt-4 text-xs text-neutral-500 flex flex-wrap items-center gap-2">
+              {feedback === "sent" ? (
+                <span>Thanks. Your note is attached to this answer in the log.</span>
+              ) : feedback === "wrong" ? (
+                <>
+                  <input value={feedbackReason} onChange={(e) => setFeedbackReason(e.target.value)} maxLength={500} placeholder="What was wrong? (optional)" className="border border-neutral-300 px-2 py-1 text-xs w-64" aria-label="What was wrong" />
+                  <button type="button" onClick={sendWrongReason} className="border border-neutral-900 px-2 py-1 hover:bg-neutral-900 hover:text-white">Send</button>
+                </>
+              ) : (
+                <>
+                  <span>Was this answer right?</span>
+                  <button type="button" onClick={() => sendFeedback("right")} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">Yes</button>
+                  <button type="button" onClick={() => sendFeedback("wrong")} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">No</button>
+                </>
+              )}
+            </div>
+          )}
+
           {response.disclosure && (
             <details className="mt-4 text-xs text-neutral-500">
               <summary className="cursor-pointer text-neutral-500 hover:text-neutral-900">How this answer was made</summary>
@@ -509,6 +600,7 @@ export default function AskTheData({
                 <dt className="text-neutral-400">Round trip</dt><dd>{elapsedMs !== null ? `${(elapsedMs / 1000).toFixed(1)}s` : "n/a"}</dd>
                 <dt className="text-neutral-400">Rows matched</dt><dd>{result ? result.matchedRows.toLocaleString() : "n/a"}</dd>
                 <dt className="text-neutral-400">Aggregate</dt><dd>{result?.aggregate ?? "n/a"}</dd>
+                <dt className="text-neutral-400">Plan from</dt><dd>{response.planSource ?? "n/a"}</dd>
                 <dt className="text-neutral-400">Sentence by</dt><dd>code template (model prose is off in this alpha)</dd>
               </dl>
               <p className="uppercase tracking-wider text-neutral-400 mt-3 mb-1">Validated plan the executor ran</p>

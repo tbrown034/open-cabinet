@@ -391,7 +391,7 @@ export function templateAnswer(
   return `${body} Checked trades only.`;
 }
 
-function readerSentence(plan: QueryPlan, result: ExecuteResult): string {
+export function readerSentence(plan: QueryPlan, result: ExecuteResult): string {
   const total = result.matchedRows;
   const noun = tradeNoun(plan, total);
   const { subject, possessive, named } = whoPhrase(result);
@@ -546,4 +546,19 @@ export function pendingAnswer(
     `${lead} The ${total.toLocaleString("en-US")} rows matching this question have not ` +
     `cleared a check: ${breakdown}. There is no checked answer yet.`
   );
+}
+
+/**
+ * A useful zero. "Bessent reported no purchases" is a dead end; the same
+ * rows without the type filter say "he reported 26 sales." Code-only, one
+ * extra count, labeled as what it is.
+ */
+export function zeroHint(plan: QueryPlan, nearby: ExecuteResult | null): string {
+  if (!nearby || nearby.matchedRows === 0) return "";
+  const who = nearby.subjectOfficials ?? [];
+  const subject = who.length === 1 ? who[0].name.split(" ").slice(-1)[0] : who.length > 1 ? "They" : "They";
+  const n = nearby.matchedRows.toLocaleString("en-US");
+  const noun = nearby.matchedRows === 1 ? "trade" : "trades";
+  const asset = nearby.assetLabel ? ` in ${nearby.assetLabel}` : "";
+  return ` ${subject} did report ${n} other ${noun}${asset} in that scope.`;
 }

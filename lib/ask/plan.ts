@@ -768,3 +768,81 @@ export function planCorrespondence(
 
   return { ok: true };
 }
+
+/* ── The query line a reader sees ───────────────────────────────────────── */
+
+/**
+ * The same plan, in the words the answer sentence uses: "Sales of Liberty
+ * Energy Inc. (LBRT) by Christopher Wright, flagged late, between Jan. 1 and
+ * March 31, 2026, ranked by official." describePlan stays as the precise
+ * form for the log and the phraser.
+ */
+export function describePlanForReader(plan: QueryPlan, officials: OfficialRef[], assetLabel: string | null): string {
+  const bySlug = new Map(officials.map((o) => [o.slug, o]));
+  const f = plan.filters;
+  const types = f.types ?? [];
+  const noun =
+    types.length > 0 && types.every((t) => t.startsWith("Sale")) ? "Sales"
+    : types.length > 0 && types.every((t) => t === "Purchase") ? "Purchases"
+    : types.length > 0 && types.every((t) => t === "Exchange") ? "Exchanges"
+    : "Trades";
+  const parts: string[] = [noun];
+  if (assetLabel) parts.push(`of ${assetLabel}`);
+  if (f.officials && f.officials.length > 0) {
+    const names = f.officials.map((slug) => { const o = bySlug.get(slug); return o ? (o.former ? `${o.name} (former)` : o.name) : slug; });
+    parts.push(`by ${joinNames(names)}`);
+  }
+  if (f.lateOnly) parts.push("flagged as reported late");
+  const dollars = (v: number) => `$${v.toLocaleString("en-US")}`;
+  if (f.amountAtLeast !== undefined && f.amountAtMost !== undefined) parts.push(`with a disclosed range inside ${dollars(f.amountAtLeast)} to ${dollars(f.amountAtMost)}`);
+  else if (f.amountAtLeast !== undefined) parts.push(`with a disclosed range starting at ${dollars(f.amountAtLeast)} or more`);
+  else if (f.amountAtMost !== undefined) parts.push(`with a disclosed range ending at ${dollars(f.amountAtMost)} or less`);
+  const fd = (d: string) => new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  if (f.dateFrom && f.dateTo) parts.push(`between ${fd(f.dateFrom)} and ${fd(f.dateTo)}`);
+  else if (f.dateFrom) parts.push(`since ${fd(f.dateFrom)}`);
+  else if (f.dateTo) parts.push(`through ${fd(f.dateTo)}`);
+  const how: Record<Aggregate, string> = {
+    count: "counted",
+    sum_estimate: "totaled by estimated value",
+    list: plan.sort === "amount" ? "listed largest first" : plan.sort === "amount_asc" ? "listed smallest first" : "listed newest first",
+    top_officials: plan.sort === "amount" ? "ranked by official by estimated value" : "ranked by official",
+    top_assets: "ranked by asset",
+    by_month: "counted by month",
+    late_share: "measured for the share flagged late",
+    first_last_dates: "first and last dates",
+  };
+  return `${parts.join(" ")}, ${how[plan.aggregate]}.`;
+}
+
+/* ── Follow-ups a reader can click ──────────────────────────────────────── */
+
+export interface FollowUp {
+  label: string;
+  plan: QueryPlan;
+}
+
+/**
+ * One-click variations of the plan that just ran, each a plan the code
+ * built, so none of them needs the model. Only variations that change
+ * something are offered.
+ */
+export function followUpsFor(plan: QueryPlan, today: string): FollowUp[] {
+  const f = plan.filters;
+  const out: FollowUp[] = [];
+  const types = f.types ?? [];
+  const isSales = types.length > 0 && types.every((t) => t.startsWith("Sale"));
+  const isBuys = types.length > 0 && types.every((t) => t === "Purchase");
+  if (!isBuys) out.push({ label: "Only purchases", plan: { ...plan, filters: { ...f, types: ["Purchase"] } } });
+  if (!isSales) out.push({ label: "Only sales", plan: { ...plan, filters: { ...f, types: ["Sale", "Sale (Partial)", "Sale (Full)"] } } });
+  if (!f.lateOnly) out.push({ label: "Only those flagged late", plan: { ...plan, filters: { ...f, lateOnly: true } } });
+  else out.push({ label: "Late or not", plan: { ...plan, filters: { ...f, lateOnly: undefined } } });
+  const year = today.slice(0, 4);
+  if (!f.dateFrom && !f.dateTo) out.push({ label: `Just ${year}`, plan: { ...plan, filters: { ...f, dateFrom: `${year}-01-01`, dateTo: today } } });
+  else out.push({ label: "Any date", plan: { ...plan, filters: { ...f, dateFrom: undefined, dateTo: undefined } } });
+  if (plan.aggregate !== "top_officials") out.push({ label: "Rank by official", plan: { ...plan, aggregate: "top_officials", sort: undefined } });
+  if (plan.aggregate !== "top_assets" && (f.officials?.length ?? 0) > 0) out.push({ label: "Rank by asset", plan: { ...plan, aggregate: "top_assets", sort: undefined } });
+  if (plan.aggregate !== "sum_estimate") out.push({ label: "Total by estimated value", plan: { ...plan, aggregate: "sum_estimate", sort: undefined } });
+  if (plan.aggregate !== "list") out.push({ label: "List the trades", plan: { ...plan, aggregate: "list", limit: 25 } });
+  if (plan.aggregate !== "by_month") out.push({ label: "By month", plan: { ...plan, aggregate: "by_month", sort: undefined } });
+  return out.slice(0, 6);
+}

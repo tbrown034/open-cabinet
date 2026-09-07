@@ -20,7 +20,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { askQuota, askLog } from "@/lib/schema";
-import { sql } from "drizzle-orm";
+import { and, desc, eq, gt, sql } from "drizzle-orm";
 import { appendFile } from "fs/promises";
 import path from "path";
 import { getPublishedRows } from "@/lib/published-rows";
@@ -34,7 +34,7 @@ import {
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
 import { lookupAsset } from "@/lib/asset-registry";
-import { classifyIntent } from "@/lib/ask/intent";
+import { classifyIntent, type Intent } from "@/lib/ask/intent";
 import {
   parseQueryPlan,
   resolvePlan,
@@ -47,6 +47,8 @@ import {
   MAX_OFFICIALS,
   officialsNamedIn,
   planCorrespondence,
+  describePlanForReader,
+  followUpsFor,
   type QueryPlan,
 } from "@/lib/ask/plan";
 import { execute, countPending, type ExecuteResult } from "@/lib/ask/execute";
@@ -57,6 +59,8 @@ import {
   pendingAnswer,
   pendingNote,
   outOfScopeAnswer,
+  zeroHint,
+  readerSentence,
 } from "@/lib/ask/check";
 import {
   DECLINE_CATEGORIES,
@@ -163,15 +167,37 @@ const LOG_PATH = path.join(process.cwd(), "data", "meta", "ask-log.jsonl");
  * is best effort and never blocks a response; locally it builds the record of
  * what people actually ask.
  */
-function logAsk(entry: Record<string, unknown>): void {
+/**
+ * A validated plan stored for the same question in the last day, so a
+ * repeat runs with no model call. The plan is re-executed over today's
+ * rows, so the answer is never stale; only the translation is reused.
+ */
+async function findRecentPlan(question: string): Promise<unknown | null> {
+  try {
+    const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    const rows = await db
+      .select({ plan: askLog.plan })
+      .from(askLog)
+      .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), gt(askLog.at, since)))
+      .orderBy(desc(askLog.id))
+      .limit(1);
+    const text = rows[0]?.plan;
+    return text ? JSON.parse(text) : null;
+  } catch {
+    return null;
+  }
+}
+
+function logAsk(entry: Record<string, unknown>): Promise<number | null> {
   const line = JSON.stringify({ at: new Date().toISOString(), ...entry }) + "\n";
   appendFile(LOG_PATH, line, "utf-8").catch(() => {
     console.log("[ask]", line.trim());
   });
   // Durable copy in the database, read by /admin/askai. Best effort: a log
-  // failure never changes the answer.
+  // failure never changes the answer. Returns the row id so feedback can
+  // attach to it.
   const startedAt = typeof entry.startedAt === "number" ? entry.startedAt : null;
-  db.insert(askLog)
+  return db.insert(askLog)
     .values({
       question: String(entry.question ?? "").slice(0, 300),
       status: String(entry.status ?? "error"),
@@ -182,7 +208,9 @@ function logAsk(entry: Record<string, unknown>): void {
       ipHash: entry.ipKey != null ? String(entry.ipKey) : null,
       durationMs: startedAt ? Date.now() - startedAt : null,
     })
-    .catch((err: unknown) => console.warn("ask log insert failed:", err instanceof Error ? err.message : String(err)));
+    .returning({ id: askLog.id })
+    .then((rows) => rows[0]?.id ?? null)
+    .catch((err: unknown) => { console.warn("ask log insert failed:", err instanceof Error ? err.message : String(err)); return null; });
 }
 
 /* ── The two model calls ────────────────────────────────────────────────── */
@@ -529,6 +557,10 @@ export async function POST(request: Request) {
   const raw = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
   const question = typeof raw.question === "string" ? raw.question.trim() : "";
   const scopeSlug = typeof raw.officialSlug === "string" ? raw.officialSlug.trim() : "";
+  // A follow-up chip sends the plan the code built for it. It is parsed and
+  // resolved like any other plan but needs no model, no quota and no
+  // correspondence check, since no free text produced it.
+  const followUpPlan = raw.plan && typeof raw.plan === "object" ? raw.plan : null;
 
   if (question.length < 3) {
     return NextResponse.json(
@@ -573,7 +605,7 @@ export async function POST(request: Request) {
     // Before a token is spent: does the question name a shape this box
     // cannot represent? A prompt asking the model not to approximate is a
     // request; this is the refusal (Grok, Sept. 6).
-    const { intent, rule } = classifyIntent(question);
+    const { intent, rule } = followUpPlan ? { intent: { kind: "ok" } as Intent, rule: "follow-up" } : classifyIntent(question);
     if (intent.kind === "decline") {
       logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
       return NextResponse.json({
@@ -591,6 +623,19 @@ export async function POST(request: Request) {
     // this line hands it one.
     const today = new Date().toISOString().slice(0, 10);
 
+    // Where the plan comes from: a follow-up chip (code-built), a stored
+    // plan for the same question within a day (no model, no spend, and the
+    // answer is re-executed over today's rows), or the model.
+    let planSource: "follow-up" | "cache" | "model" = "model";
+    let planCall: PlanCall;
+    const cached = followUpPlan ? null : await findRecentPlan(question);
+    if (followUpPlan) {
+      planSource = "follow-up";
+      planCall = { kind: "plan", raw: followUpPlan };
+    } else if (cached) {
+      planSource = "cache";
+      planCall = { kind: "plan", raw: cached };
+    } else {
     // Reserve durable capacity only now, after every free rejection
     // (throttle, body, intent) has had its chance (Codex, Sept. 7: 301
     // empty requests used to exhaust the day's quota with zero model calls).
@@ -611,7 +656,7 @@ export async function POST(request: Request) {
         { status: 429 }
       );
     }
-    const planCall = await callPlanModel(
+    planCall = await callPlanModel(
       question,
       officialNames,
       data.tickers.length,
@@ -619,6 +664,7 @@ export async function POST(request: Request) {
       today,
       ipKey
     );
+    }
 
     if (planCall.kind === "decline") {
       // A decline stands. It used to be rescued into a count of a different
@@ -791,7 +837,7 @@ export async function POST(request: Request) {
     }
 
     // The plan must answer the question that was asked (Codex, Sept. 7).
-    const fit = planCorrespondence(question, finalPlan, data.officials);
+    const fit = planSource === "follow-up" ? { ok: true as const } : planCorrespondence(question, finalPlan, data.officials);
     if (!fit.ok) {
       logAsk({ startedAt, question, status: "not_in_data", reason: `correspondence: ${fit.reason}`, plan: finalPlan, ipKey });
       return NextResponse.json({
@@ -845,6 +891,8 @@ export async function POST(request: Request) {
 
     const planText = describePlan(finalPlan, data.officials);
     const result = execute(finalPlan, data);
+    const readerPlanText = describePlanForReader(finalPlan, data.officials, result.assetLabel ?? null);
+    const followUps = followUpsFor(finalPlan, today);
 
     // Nothing verified matched. Before saying so, ask whether the site holds
     // rows for this query that simply have not cleared a check. Those are
@@ -864,12 +912,19 @@ export async function POST(request: Request) {
         pendingMatches,
         ipKey,
       });
+      // A useful zero: the same rows without the type filter, so "no
+      // purchases" can add "he did report 26 sales."
+      const nearby = finalPlan.filters.types && finalPlan.filters.types.length > 0
+        ? execute({ ...finalPlan, filters: { ...finalPlan.filters, types: undefined }, aggregate: "count" }, data)
+        : null;
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
-        answer: stripDashes(pendingAnswer(planText, pendingMatches, subject)),
+        answer: stripDashes(`${readerSentence(finalPlan, result)}${zeroHint(finalPlan, nearby)} Checked trades only.${pendingMatches.underReview + pendingMatches.auditPending + pendingMatches.notYetCompared > 0 ? ` ${pendingAnswer(planText, pendingMatches, subject)}` : ""}`),
         plan: finalPlan,
-        planText: stripDashes(planText),
+        planText: stripDashes(readerPlanText),
+        planSource,
         result,
+        followUps,
         excluded,
         pendingMatches,
         pendingNote: pendingNote(pendingMatches),
@@ -907,10 +962,11 @@ export async function POST(request: Request) {
       }
     }
 
-    logAsk({
+    const logId = await logAsk({
       startedAt,
       question,
       status: "answered",
+      reason: planSource === "model" ? null : planSource,
       plan: finalPlan,
       matchedRows: result.matchedRows,
       phrasedBy,
@@ -930,8 +986,11 @@ export async function POST(request: Request) {
       // templates included, not only on model prose.
       answer: stripDashes(answer),
       plan: finalPlan,
-      planText: stripDashes(planText),
+      planText: stripDashes(readerPlanText),
+      planSource,
+      logId,
       result,
+      followUps,
       excluded,
       pendingMatches,
       pendingNote: pendingNote(pendingMatches),

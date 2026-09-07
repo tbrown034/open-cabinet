@@ -14,9 +14,12 @@ vi.mock("@/lib/db", () => ({
     insert: () => ({
       values: () => ({
         onConflictDoUpdate: () => ({ returning: async () => { quotaCalls.push(1); return [{ count: quotaCalls.length }]; } }),
+        returning: () => Promise.resolve([{ id: 7 }]),
         catch: () => undefined,
       }),
     }),
+    // No stored plans in these tests: every question goes to the (mocked) model.
+    select: () => ({ from: () => ({ where: () => ({ orderBy: () => ({ limit: async () => [] }) }) }) }),
   },
 }));
 vi.mock("@anthropic-ai/sdk", () => ({
@@ -88,7 +91,20 @@ describe("POST /api/ask gates", () => {
     expect(j.status).toBe("answered");
     expect(j.answer).toContain("Christopher Wright, Secretary of Energy");
     expect(j.answer).toContain("1 sale");
+    expect(j.planText).toBe("Sales of Liberty Energy Inc (LBRT), ranked by official.");
+    expect(j.logId).toBe(7);
+    expect(j.followUps.map((f: { label: string }) => f.label)).toContain("Only purchases");
     expect(quotaCalls.length).toBe(1);
+  });
+
+  it("runs a follow-up plan with no model call and no quota", async () => {
+    const res = await post({ question: "Follow-up: Only purchases", plan: { filters: { tickers: ["LBRT"], types: ["Purchase"] }, aggregate: "count" } });
+    const j = await res.json();
+    expect(j.status).toBe("not_in_data");
+    expect(j.answer).toContain("reported no purchases of Liberty Energy Inc (LBRT)");
+    expect(j.answer).toContain("did report 1 other trade in Liberty Energy Inc (LBRT)");
+    expect(j.planSource).toBe("follow-up");
+    expect(quotaCalls.length).toBe(0);
   });
 
   it("refuses a plan that answers a different question than the one asked", async () => {
