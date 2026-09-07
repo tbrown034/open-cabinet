@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/methodology" },
   title: "Methodology",
   description:
-    "How Open Cabinet tracks executive branch financial disclosures. The STOCK Act, divestiture deadlines, late filings and how this tool was built.",
+    "How Open Cabinet collects, parses and verifies executive branch financial disclosures: the pipeline, the checks, and the known limitations.",
 };
 
 export default async function MethodologyPage() {
@@ -73,7 +73,7 @@ export default async function MethodologyPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           How we collect, parse and verify executive branch financial
-          disclosures &mdash; and the federal laws that require them.
+          disclosures. The law behind them is on the <Link href="/about#the-law" className="underline hover:text-neutral-900">About page</Link>.
         </p>
       </div>
 
@@ -119,76 +119,8 @@ export default async function MethodologyPage() {
         </p>
       </div>
 
-      {/* Scrollytelling sections */}
-      <AboutScrolly />
-
-      {/* Quick facts, infographic style */}
-      <div className="bg-neutral-900 text-white py-16 px-4">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl mb-2">
-            By the numbers
-          </h2>
-          <p className="text-neutral-400 text-sm mb-10">
-            Key facts about executive branch financial disclosure, sourced from
-            federal law, OGE data and published investigations.
-          </p>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                $200
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                The fee for a disclosure more than 30 days overdue. Flat, once
-                per report, waivable by the filer{"'"}s agency. Aggregate data
-                on how often it is assessed is not published.
-              </div>
-              <a href="https://www.law.cornell.edu/uscode/text/5/13106" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                5 U.S.C. Section 13106(d)
-              </a>
-            </div>
-
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                0
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                Criminal prosecutions ever brought for STOCK Act disclosure
-                violations.
-              </div>
-              <a href="https://www.law.georgetown.edu/american-criminal-law-review/wp-content/uploads/sites/15/2021/05/58-0-Mesiya-Failures-of-the-Stock-Act-UPDATED.pdf" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                Campaign Legal Center; Georgetown Law (2021)
-              </a>
-            </div>
-
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                14 sec
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                Floor debate before Congress gutted the STOCK Act{"'"}s online
-                disclosure database in 2013.
-              </div>
-              <a href="https://www.congress.gov/bill/113th-congress/senate-bill/716" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                S.716, 113th Congress
-              </a>
-            </div>
-
-            <div className="border border-neutral-700 p-5">
-              <div className="font-[family-name:var(--font-dm-mono)] text-3xl font-semibold text-white mb-2">
-                4
-              </div>
-              <div className="text-sm text-neutral-300 mb-2">
-                OGE directors in a single year (2025). The Senate-confirmed
-                director was removed by email on a Friday night.
-              </div>
-              <a href="https://www.citizensforethics.org/reports-investigations/crew-investigations/trumps-unprecedented-meddling-has-turned-oge-into-a-revolving-door/" className="text-[10px] text-neutral-500 hover:text-neutral-300 underline" target="_blank" rel="noopener noreferrer">
-                CREW (February 2025)
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* How this was built (the law and its deadlines live on About) */}
+      <AboutScrolly part="build" />
 
       {/* Static sections */}
       <div className="mx-auto max-w-3xl px-4 py-16 space-y-12">

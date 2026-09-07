@@ -243,24 +243,34 @@ function ScrollySection({
   );
 }
 
-export default function AboutScrolly() {
+/**
+ * Two scrolly sections. "law" (the STOCK Act and its deadlines) lives on
+ * the About page; "build" (the pipeline) lives on Methodology. Trevor,
+ * Sep 6, 2026: the law is context about the world, the pipeline is about
+ * our process, and they belong on different pages.
+ */
+export default function AboutScrolly({ part = "both" }: { part?: "law" | "build" | "both" }) {
   return (
     <div className="space-y-24">
-      <section className="bg-stone-50 -mx-0 py-16">
-        <ScrollySection
-          title="The law and the deadlines"
-          subtitle="What the STOCK Act requires, how divestiture works and what happens when officials miss their deadlines."
-          steps={LAW_STEPS}
-        />
-      </section>
+      {part !== "build" && (
+        <section className="bg-stone-50 -mx-0 py-16">
+          <ScrollySection
+            title="The law and the deadlines"
+            subtitle="What the STOCK Act requires, how divestiture works and what happens when officials miss their deadlines."
+            steps={LAW_STEPS}
+          />
+        </section>
+      )}
 
-      <section className="bg-stone-50 -mx-0 py-16">
-        <ScrollySection
-          title="How this was built"
-          subtitle="From government PDFs to searchable data, the pipeline behind Open Cabinet."
-          steps={BUILD_STEPS}
-        />
-      </section>
+      {part !== "law" && (
+        <section className="bg-stone-50 -mx-0 py-16">
+          <ScrollySection
+            title="How this was built"
+            subtitle="From government PDFs to searchable data, the pipeline behind Open Cabinet."
+            steps={BUILD_STEPS}
+          />
+        </section>
+      )}
     </div>
   );
 }

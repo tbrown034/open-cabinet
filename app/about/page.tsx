@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import FeedbackForm from "../components/feedback-form";
 import ResearchContactCta from "../components/research-contact-cta";
+import AboutScrolly from "../components/about-scrolly";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/about" },
@@ -97,6 +98,17 @@ export default function AboutPage() {
             for details.
           </p>
         </section>
+
+        {/* The law and the deadlines (moved from Methodology, Sep 6, 2026) */}
+        <section id="the-law" className="border-t border-neutral-200 pt-8 scroll-mt-24">
+          <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-2">
+            The law
+          </h2>
+          <p className="text-sm text-neutral-500 mb-2">
+            The rules these filings answer to, and what happens when a deadline is missed.
+          </p>
+        </section>
+        <AboutScrolly part="law" />
 
         {/* Other projects */}
         <section className="border-t border-neutral-200 pt-8">
