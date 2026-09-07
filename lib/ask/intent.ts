@@ -62,8 +62,14 @@ const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|
 /** Comparison between named people, or an AND across two assets. */
 const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|who traded more|who sold more|who bought more|outsold|outbought)\b|\b(more|less|fewer) than\b(?!\s*\$?\s*\d)/i;
 
+/** The date a filing was posted is not a field; the plan dates trades. */
+const FILING_DATE = /\b(disclosed|filed|reported|posted|published|submitted)\s+(in|on|during|between|after|before|since)\b|\bin the\b[^.?!]*\bfiling\b|\bfiling (of|from|dated)\b/i;
+
 /** Day-of-week and holiday questions: the plan has dates, not calendars. */
 const WEEKDAY = /\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday|weekend|weekends|weekday|weekdays|holiday|holidays|christmas|thanksgiving)\b/i;
+
+/** A sector or industry: the plan filters by symbol or asset kind, never by what a company does. */
+const SECTOR = /\b(defen[cs]e|tech|technology|pharma|pharmaceutical|biotech|health\s?care|energy|oil|gas|bank|banking|financial|semiconductor|chip|retail|media|telecom|utility|utilities|real estate|airline|auto|automotive|mining|weapons|arms|tobacco|cannabis|gambling|fossil fuel)\s+(stocks?|companies|company|shares|firms|sector|industry|names|holdings|contractors?)\b|\b(sector|industry)\b/i;
 
 /** Attributes the plan cannot filter on. */
 const UNSUPPORTED_ATTRIBUTE = /\b(republican|republicans|democrat|democrats|gop|party|agency|agencies|department of|cabinet-level|women|men|youngest|oldest)\b/i;
@@ -104,6 +110,12 @@ export function classifyIntent(question: string): IntentCheck {
   }
   if (COMPARE.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "compare" };
+  }
+  if (FILING_DATE.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "filing_date" };
+  }
+  if (SECTOR.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "sector" };
   }
   if (WEEKDAY.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "weekday" };

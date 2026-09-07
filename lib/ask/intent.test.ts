@@ -48,7 +48,7 @@ describe("item C2: shares", () => {
 
   it("declines a share of anything else, which has no denominator here", () => {
     for (const q of [
-      "What percentage of Wright's purchases were energy stocks?",
+      "What percentage of Wright's purchases were in Liberty Energy?",
       "What share of trades were sales?",
       "What proportion of Burgum's trades were over $1 million?",
     ]) {

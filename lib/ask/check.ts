@@ -353,9 +353,22 @@ export function templateAnswer(
         }
         return `${planText} That query matches no checked rows.`;
       }
-      const lead = plan.sort === "amount"
-        ? `${top.name} leads by estimated value, ${top.estimateDisplay} across ${plural(top.count, "row")}.`
-        : `${top.name} leads with ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`;
+      // The headcount first: "how many officials traded X" is answered by
+      // the number of groups, and the leader is the detail.
+      const groups = result.groupCount ?? 0;
+      const head = groups > 1 ? `${groups.toLocaleString("en-US")} officials have a matching checked row. ` : "";
+      // A tie is a tie (Grok P0-7): name everyone at the top, never one leader.
+      const ranked = result.topOfficials ?? [];
+      const tiedByRows = ranked.filter((o) => o.count === top.count);
+      const tiedByValue = ranked.filter((o) => o.estimate === top.estimate);
+      const tied = plan.sort === "amount" ? tiedByValue : tiedByRows;
+      const lead = groups === 1
+        ? `${top.name} is the only official with a matching checked row: ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`
+        : tied.length > 1
+        ? `${head}${tied.length === ranked.length && groups > tied.length ? `The ${tied.length} listed` : tied.map((o) => o.name).join(", ")} tie at ${plural(top.count, "row")} each${plan.sort === "amount" ? ` (${top.estimateDisplay} estimated)` : ""}.`
+        : plan.sort === "amount"
+        ? `${head}${top.name} leads by estimated value, ${top.estimateDisplay} across ${plural(top.count, "row")}.`
+        : `${head}${top.name} leads with ${plural(top.count, "row")}, estimated at ${top.estimateDisplay}.`;
       // On a comparison, the official with nothing is half the answer.
       if (missing.length > 0) {
         const who = missing.length === 1 ? missing[0] : missing.join(", ");

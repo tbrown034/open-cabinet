@@ -398,7 +398,7 @@ describe("templateAnswer for a comparison", () => {
     );
     expect(answer).toBe(
       "Purchase rows by Scott Bessent and Christopher Wright, ranked by official. " +
-        "Christopher Wright leads with 234 checked rows, estimated at $91,183,500. " +
+        "Christopher Wright is the only official with a matching checked row: 234 checked rows, estimated at $91,183,500. " +
         "Scott Bessent has no checked row matching it."
     );
     expect(checkAnswerNumbers(answer, COMPARISON).ok).toBe(true);
@@ -604,5 +604,22 @@ describe("undated rows in time answers (Codex, Sept. 7)", () => {
     const a = templateAnswer({ filters: {}, aggregate: "by_month" }, "Trades.", r);
     expect(a).toContain("the 3 dated ones span 2 months");
     expect(a).toContain("1 matching row prints no transaction date");
+  });
+});
+
+describe("ties in a ranking (Grok P0-7)", () => {
+  it("names everyone tied at the top instead of one leader", () => {
+    const r: ExecuteResult = {
+      aggregate: "top_officials", matchedRows: 4, groupCount: 4,
+      topOfficials: [
+        { name: "Tulsi Gabbard", slug: "gabbard-tulsi", count: 1, estimate: 32500, estimateDisplay: "$32,500" },
+        { name: "Sean Duffy", slug: "duffy-sean", count: 1, estimate: 8000, estimateDisplay: "$8,000" },
+      ],
+      numbers: [4, 1, 32500, 8000, 2], displayStrings: [],
+    };
+    const a = templateAnswer({ filters: {}, aggregate: "top_officials" }, "Sales in NVDA, ranked by official.", r);
+    expect(a).toContain("4 officials have a matching checked row.");
+    expect(a).toContain("The 2 listed tie at 1 checked row each.");
+    expect(a).not.toContain("leads");
   });
 });

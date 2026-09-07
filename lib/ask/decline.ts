@@ -44,7 +44,7 @@ const DECLINE_TEXT: Record<DeclineCategory, string> = {
   unsupported_computation:
     "This box counts, totals and lists checked trades. It does not compute averages, medians, ratios or growth, because a filing discloses a range rather than an amount; it can give a share only for late filings; and it compares at most five officials at a time.",
   unsupported_filter:
-    "This box filters by official, symbol, trade type, date range, late flag, dollar bounds and kind of asset. It cannot exclude, require two assets at once, or pick by weekday, party or agency. Ask about one official or one asset at a time.",
+    "This box filters by official, symbol, trade type, date range, late flag, dollar bounds and kind of asset. It dates trades by the transaction date, not by when a filing was posted. It cannot exclude, require two assets at once, or pick by sector, weekday, party or agency. Ask about one official or one asset at a time.",
   needs_date_range:
     "Name the dates you want and this box will run it. It reads explicit dates, so try a range like 2026-01-01 to 2026-03-31 instead of a relative period.",
   other:

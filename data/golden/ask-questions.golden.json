@@ -246,6 +246,45 @@
       "expect": {
         "kind": "ok"
       }
+    },
+    {
+      "question": "Which cabinet members traded defense stocks?",
+      "expect": {
+        "kind": "decline",
+        "category": "unsupported_filter"
+      }
+    },
+    {
+      "question": "Who traded Lockheed Martin?",
+      "expect": {
+        "kind": "ok"
+      }
+    },
+    {
+      "question": "What did RFK Jr sell?",
+      "expect": {
+        "kind": "ok"
+      }
+    },
+    {
+      "question": "Trump trades disclosed in August 2026",
+      "expect": {
+        "kind": "decline",
+        "category": "unsupported_filter"
+      }
+    },
+    {
+      "question": "How many trades did Trump report late in the June 2026 filing?",
+      "expect": {
+        "kind": "decline",
+        "category": "unsupported_filter"
+      }
+    },
+    {
+      "question": "lutnik sales",
+      "expect": {
+        "kind": "ok"
+      }
     }
   ]
 }

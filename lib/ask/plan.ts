@@ -684,6 +684,21 @@ export function describePlan(plan: QueryPlan, officials: OfficialRef[]): string 
  * thing the question plainly asked for that the plan dropped or invented.
  * A mismatch means "not translated", never a substitute answer.
  */
+/** Levenshtein distance, small strings only. */
+function editDistance(a: string, b: string): number {
+  const dp: number[] = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = dp[0];
+    dp[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = dp[j];
+      dp[j] = Math.min(dp[j] + 1, dp[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = tmp;
+    }
+  }
+  return dp[b.length];
+}
+
 const GENERIC_TITLE_WORDS = new Set(["secretary", "deputy", "director", "administrator", "assistant", "office", "department", "united", "states", "president", "chairman", "commissioner", "executive", "general", "counsel", "under", "former", "acting", "board", "federal", "national"]);
 
 export function planCorrespondence(
@@ -735,7 +750,15 @@ export function planCorrespondence(
       // A title or agency word also counts: "the energy secretary" is
       // Christopher Wright, and the model was right to say so.
       const titleWords = `${o?.title ?? ""} ${o?.agency ?? ""}`.toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 5 && !GENERIC_TITLE_WORDS.has(w));
+      // Initials too: "RFK" is Robert F Kennedy.
+      const initials = (o?.name ?? "").split(/\s+/).map((w) => w[0]?.toLowerCase() ?? "").join("");
+      // A misspelling within two edits of the surname ("lutnik", "bessant")
+      // still names the person; the model resolved it and the check agrees.
+      const tokens = hay.split(/[^a-z]+/).filter((t) => t.length >= 4);
+      const nearSurname = surname.length >= 5 && tokens.some((t) => editDistance(t, surname) <= 2);
       const mentioned =
+        nearSurname ||
+        (initials.length >= 3 && new RegExp(`\\b${initials}\\b`).test(hay)) ||
         (first.length >= 3 && hay.includes(first)) ||
         (surname.length >= 4 && hay.includes(surname)) ||
         titleWords.some((w) => new RegExp(`\\b${w}\\b`).test(hay));
