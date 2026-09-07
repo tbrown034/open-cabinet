@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T00:02:24.428Z",
+  "generatedAt": "2026-09-07T00:04:21.270Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
     "rows": 11513,
     "byState": {
-      "checked": 11356,
-      "human_verified": 142,
+      "checked": 11359,
+      "human_verified": 145,
       "deterministic_agree": 0,
       "two_models_agree": 0,
       "audit_only": 0,
-      "single_read": 15,
+      "single_read": 9,
       "implausible": 0,
       "disputed": 0
     },
     "byScore": {
       "0": 0,
-      "1": 15,
+      "1": 9,
       "2": 0,
-      "3": 11498
+      "3": 11504
     }
   },
   "rows": {
@@ -15872,14 +15872,14 @@
       "lane": "model2",
       "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
-    "6bfe7e0da1429131d558db09": {
-      "id": "6bfe7e0da1429131d558db09",
+    "d915a59247ad2f43bb68d509": {
+      "id": "d915a59247ad2f43bb68d509",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
     "fe636d2ccc920f8f3a6124c6": {
       "id": "fe636d2ccc920f8f3a6124c6",
@@ -15908,14 +15908,14 @@
       "lane": "model2",
       "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
-    "dd8060cf5f30cad6d826eba1": {
-      "id": "dd8060cf5f30cad6d826eba1",
+    "541ef966e54296990baed15e": {
+      "id": "541ef966e54296990baed15e",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
     "67e23d37ae61cdff5b917d78": {
       "id": "67e23d37ae61cdff5b917d78",
@@ -16025,14 +16025,14 @@
       "lane": "model2",
       "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
-    "5a04f5e63e01e3c39a5839d8": {
-      "id": "5a04f5e63e01e3c39a5839d8",
+    "c9dad695ca9ac0a61ea7a3dd": {
+      "id": "c9dad695ca9ac0a61ea7a3dd",
       "slug": "mody-arjun",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The checked read of this filing does not contain this row as published; a person reconciles"
+      "score": 3,
+      "state": "checked",
+      "lane": "model2",
+      "note": "A second model read the same values; the text layer disagrees with the model somewhere on this filing; the page audit confirmed it"
     },
     "74954fadc1fe0241cef8eff5": {
       "id": "74954fadc1fe0241cef8eff5",
@@ -17640,28 +17640,28 @@
       "id": "cf7143e82e0c949a948b04fa",
       "slug": "molinaro-marcus",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The form type is not checked"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-07"
     },
     "8ea0a0f30a964aefd5e54986": {
       "id": "8ea0a0f30a964aefd5e54986",
       "slug": "molinaro-marcus",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The form type is not checked"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-07"
     },
     "a629c3996a2a6e1f2a9b12f5": {
       "id": "a629c3996a2a6e1f2a9b12f5",
       "slug": "molinaro-marcus",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
-      "score": 1,
-      "state": "single_read",
-      "lane": null,
-      "note": "The form type is not checked"
+      "score": 3,
+      "state": "human_verified",
+      "lane": "human",
+      "note": "Decided by trevor on 2026-09-07"
     },
     "902e1cdcc83e676e763603ed": {
       "id": "902e1cdcc83e676e763603ed",

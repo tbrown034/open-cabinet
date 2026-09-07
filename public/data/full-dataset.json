@@ -1,5 +1,5 @@
 {
-  "exportedAt": "2026-09-07T00:02:39.130Z",
+  "exportedAt": "2026-09-07T00:04:48.719Z",
   "officialCount": 39,
   "transactionCount": 11513,
   "underReviewCount": 0,
@@ -21204,13 +21204,14 @@
         {
           "description": "Primo Brands Corp (PRMB)",
           "type": "Sale",
-          "date": "2026-01-30",
+          "date": null,
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-          "recordId": "6bfe7e0da1429131d558db09",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "dateNote": "No date printed on the filing for this row. The rows around it are dated 2026-01-30. Published without a date, matching the treatment of printed row 48 on Trevor Brown's decision, Sep 6, 2026.",
+          "recordId": "d915a59247ad2f43bb68d509",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "Power Corporation of Canada (PWCDF)",
@@ -21248,13 +21249,14 @@
         {
           "description": "Paycom Software, Inc. (PAYC)",
           "type": "Sale",
-          "date": "2026-01-30",
+          "date": null,
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-          "recordId": "dd8060cf5f30cad6d826eba1",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "dateNote": "No date printed on the filing for this row. The rows around it are dated 2026-01-30. Published without a date, matching the treatment of printed row 48 on Trevor Brown's decision, Sep 6, 2026.",
+          "recordId": "541ef966e54296990baed15e",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "PPL Corp. (PPL)",
@@ -21391,13 +21393,14 @@
         {
           "description": "Netflix, Inc. (NFLX)",
           "type": "Sale",
-          "date": "2026-01-30",
+          "date": null,
           "amount": "$1,001-$15,000",
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/3F589CB2A272619D85258DD5002DC58C/$FILE/Arjun-Mody-02.27.2026-278T.pdf",
-          "recordId": "5a04f5e63e01e3c39a5839d8",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "dateNote": "No date printed on the filing for this row. The rows around it are dated 2026-01-30. Published without a date, matching the treatment of printed row 48 on Trevor Brown's decision, Sep 6, 2026.",
+          "recordId": "c9dad695ca9ac0a61ea7a3dd",
+          "verificationScore": 3,
+          "verificationState": "checked"
         },
         {
           "description": "Nestle SA ADR (NSRGY)",
@@ -23382,8 +23385,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
           "recordId": "cf7143e82e0c949a948b04fa",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
@@ -23394,8 +23397,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
           "recordId": "8ea0a0f30a964aefd5e54986",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         },
         {
           "description": "Genoa Benchmark US Treasury 20 Year Bond ETF",
@@ -23406,8 +23409,8 @@
           "lateFilingFlag": false,
           "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/FE0053885B75FD0E85258DD5002DC5B4/$FILE/Marcus-Molinaro-2026-278TERM.pdf",
           "recordId": "a629c3996a2a6e1f2a9b12f5",
-          "verificationScore": 1,
-          "verificationState": "single_read"
+          "verificationScore": 3,
+          "verificationState": "human_verified"
         }
       ]
     },

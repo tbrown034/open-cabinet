@@ -1274,6 +1274,30 @@
       "evidence": "Sep 6, 8:05 PM, Claude Code on Trevor's standing instruction (act, ask only as a last resort): this row was attributed to no filing. It is the same trade as the Amazon.com (AMZN) sale of 08/23/2021, $1,001 - $15,000, printed row 1 of Stacey-Dixon-08.24.2021-278T(1).pdf, which the site already holds. The other Aug 24, 2021 filing's endnote says 'in a separate OGE278T report I documented the sale of between $1000-$15,000 in Amazon (AMZN) stock on 8-23'; the old read turned that endnote into a second row. Removed as a double count. Row removed: {\"description\":\"AMAZON (AMZN) - referenced as documented in separate OGE278T report\",\"type\":\"Sale\",\"date\":\"2021-08-23\",\"amount\":\"$1,001-$15,000\",\"lateFilingFlag\":false}",
       "decidedBy": "claude-code",
       "decidedAt": "2026-09-07T00:01:01.591Z"
+    },
+    {
+      "recordId": "cf7143e82e0c949a948b04fa",
+      "slug": "molinaro-marcus",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 8:03 PM, read the page: 2026 termination form (278TERM) page 5 printed row 1, State Street SPDR S&P 500 ETF Trust, Purchase, 2025-06-20, $15,001-$50,000, as the site has it (row 1 also prints the symbol FBVVNX). This form has no \"over 30 days\" column, so no late flag can be read from it.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T00:04:04.087Z"
+    },
+    {
+      "recordId": "8ea0a0f30a964aefd5e54986",
+      "slug": "molinaro-marcus",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 8:03 PM, read the page: 2026 termination form (278TERM) page 5 printed row 2, Genoa Benchmark US Treasury 20 Year Bond ETF, Purchase, 2025-06-02, $50,001-$100,000, as the site has it (row 1 also prints the symbol FBVVNX). This form has no \"over 30 days\" column, so no late flag can be read from it.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T00:04:04.087Z"
+    },
+    {
+      "recordId": "a629c3996a2a6e1f2a9b12f5",
+      "slug": "molinaro-marcus",
+      "decision": "confirmed",
+      "evidence": "Trevor, Sep 6, 8:03 PM, read the page: 2026 termination form (278TERM) page 5 printed row 3, Genoa Benchmark US Treasury 20 Year Bond ETF, Sale, 2025-11-25, $15,001-$50,000, as the site has it (row 1 also prints the symbol FBVVNX). This form has no \"over 30 days\" column, so no late flag can be read from it.",
+      "decidedBy": "trevor",
+      "decidedAt": "2026-09-07T00:04:04.087Z"
     }
   ]
 }
