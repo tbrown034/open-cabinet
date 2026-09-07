@@ -6,6 +6,11 @@
  *   npx tsx scripts/asset-decide.ts queue [--min 3] [--limit 60]
  *   npx tsx scripts/asset-decide.ts accept "<name key>" <SYMBOL> "<evidence: what you checked>"
  *   npx tsx scripts/asset-decide.ts reject "<name key>" "<reason>"
+ *   npx tsx scripts/asset-decide.ts accept-batch <recommendations.csv> [--confidence High] [--by trevor]
+ *       every row of the CSV (nameKey,symbol,confidence,reason) at the given
+ *       confidence or better is accepted through the same checks as
+ *       "accept"; rows that fail a check are listed and skipped. Meant for
+ *       a list a person has read and approved as a whole.
  *
  * accept writes data/meta/asset-dictionary.json (rule R2, top tier); the
  * symbol must be a common-stock or ETF listing in the Nasdaq directory,
@@ -87,6 +92,26 @@ function main() {
     const r = acceptName(key, sym, ev.join(" "), who);
     if (!r.ok) { console.error(r.why); process.exit(1); }
     console.log(`accepted ${r.note}. Run pnpm asset-resolution to apply.`);
+    return;
+  }
+  if (cmd === "accept-batch") {
+    const file = rest[0];
+    const minConf = rest[rest.indexOf("--confidence") + 1] || "High";
+    const by = rest.indexOf("--by") > 0 ? rest[rest.indexOf("--by") + 1] : who;
+    const rank: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
+    const lines = readFileSync(file, "utf-8").split(/\r?\n/).filter(Boolean);
+    const header = lines[0].split(",");
+    const col = (name: string) => header.indexOf(name);
+    let ok = 0, skipped = 0;
+    for (const line of lines.slice(1)) {
+      // CSV with quoted reasons: split on commas outside quotes.
+      const cells = line.match(/("([^"]|"")*"|[^,]*)(,|$)/g)!.map((c) => c.replace(/,$/, "").replace(/^"|"$/g, "").replace(/""/g, '"'));
+      const key = cells[col("nameKey")], sym = cells[col("symbol")], conf = cells[col("confidence")], reason = cells[col("reason")];
+      if (!sym || (rank[conf] ?? 0) < (rank[minConf] ?? 3)) { skipped++; continue; }
+      const r = acceptName(key, sym, `${conf}: ${reason}`, by);
+      if (r.ok) ok++; else { skipped++; console.log(`  skip ${key}: ${r.why}`); }
+    }
+    console.log(`accepted ${ok}, skipped ${skipped}. Run pnpm asset-resolution to apply.`);
     return;
   }
   if (cmd === "reject") {
