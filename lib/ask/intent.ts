@@ -41,6 +41,35 @@ const BOTH_ASSETS = /\bboth\b[^.?!]*\b(and|&)\b/i;
 /** Ranking by size, which needs a sort the plan has to carry explicitly. */
 const BY_SIZE = /\b(largest|biggest|largest-value|most expensive|highest value|highest-value|priciest|top by value|biggest by value|by size|by value|smallest)\b/i;
 
+/**
+ * Rules added after the Sept. 7 red team (docs/grok-askai-redteam-2026-09-07.md),
+ * which found that opinions, instructions, holdings and relative dates were
+ * declined only by the model. A prompt is a request; these are rules.
+ */
+/** An instruction to the model rather than a question about the records. */
+const INJECTION = /\b(ignore|disregard|forget|override)\b[^.?!]*\b(instructions?|rules?|prompt|guidelines?|previous|above)\b|\b(system prompt|your instructions|your rules|developer message)\b|\byou are (now|a|an)\b|\b(pretend|act as|roleplay|role-play|jailbreak|DAN)\b|\b(repeat|print|reveal|show|output)\b[^.?!]*\b(roster|prompt|instructions|verbatim|system)\b/i;
+
+/** Legality, propriety, motive: judgments the records cannot support. */
+const JUDGMENT = /\b(illegal|legal|legally|lawful|unlawful|crime|criminal|corrupt|corruption|insider|bribe|unethical|ethical|ethics agreement|proper|improper|suspicious|shady|conflict of interest|should (he|she|they|have|[a-z]+ have)|why did|why does|why would|motive|motives|intend|intended|break (his|her|their) )\b/i;
+
+/** Holdings, ownership and net worth: the 278-T is a transaction record. */
+const HOLDINGS = /\b(own|owns|owned|ownership|holding|holdings|hold|holds|held|portfolio|net worth|networth|worth today|still (own|hold)|position in|stake in|divested everything|assets? (does|did) .* (have|own))\b/i;
+
+/** A period relative to now. The plan carries explicit dates or none. */
+const RELATIVE_DATE_STRICT = /\b(last|past|previous|this|next)\s+(\d+\s+)?(week|month|quarter|year|days|weeks|months|quarters|years)\b|\b(\d+\s+(days|weeks|months|years)\s+ago)\b|\b(year to date|ytd|so far this year|recently|lately)\b/i;
+
+/** Comparison between named people, or an AND across two assets. */
+const COMPARE = /\b(compare|comparison|versus|vs\.?|compared (to|with)|more than|less than|fewer than|who traded more|who sold more|who bought more|outsold|outbought)\b/i;
+
+/** Attributes the plan cannot filter on. */
+const UNSUPPORTED_ATTRIBUTE = /\b(republican|republicans|democrat|democrats|gop|party|agency|agencies|department of|cabinet-level|women|men|youngest|oldest)\b/i;
+
+/** Ratios and growth, beyond the eight aggregates. */
+const RATIO_GROWTH = /\b(ratio|ratios|growth|grew|grow|year over year|year-over-year|yoy|trend|trending|rate of|per (month|year|week|official))\b/i;
+
+/** Plainly not about these records. */
+const OFF_TOPIC = /\b(weather|recipe|joke|poem|song|stock price|share price|price of|forecast|should i (buy|sell)|invest in|who is the (secretary|president|director|administrator|chairman)|what is (a|an|the) (stock act|278|oge)\b)/i;
+
 export interface IntentCheck {
   intent: Intent;
   /** Which rule fired, for the log and for tests. */
@@ -53,6 +82,31 @@ export interface IntentCheck {
  */
 export function classifyIntent(question: string): IntentCheck {
   const q = question.trim();
+
+  if (INJECTION.test(q)) {
+    return { intent: { kind: "decline", category: "injection_or_instruction" }, rule: "injection" };
+  }
+  if (JUDGMENT.test(q)) {
+    return { intent: { kind: "decline", category: "opinion_or_judgment" }, rule: "judgment" };
+  }
+  if (OFF_TOPIC.test(q)) {
+    return { intent: { kind: "decline", category: "not_about_trades" }, rule: "off_topic" };
+  }
+  if (HOLDINGS.test(q)) {
+    return { intent: { kind: "decline", category: "not_about_trades" }, rule: "holdings" };
+  }
+  if (RATIO_GROWTH.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "ratio_growth" };
+  }
+  if (COMPARE.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "compare" };
+  }
+  if (UNSUPPORTED_ATTRIBUTE.test(q)) {
+    return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "attribute" };
+  }
+  if (RELATIVE_DATE_STRICT.test(q)) {
+    return { intent: { kind: "decline", category: "needs_date_range" }, rule: "relative_date" };
+  }
 
   if (AVERAGE.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_computation" }, rule: "average" };

@@ -1,12 +1,19 @@
 "use server";
 
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { ASKAI_COOKIE, askaiToken, passwordMatches } from "@/lib/askai-access";
+import { ASKAI_COOKIE, askaiToken, passwordMatches, passwordAttemptAllowed } from "@/lib/askai-access";
+import { createHash } from "crypto";
 
 /** Set the alpha cookie when the shared password matches. No accounts, nothing stored. */
 export async function enterAskai(formData: FormData): Promise<void> {
-  const candidate = String(formData.get("password") ?? "");
+  const candidate = String(formData.get("password") ?? "").slice(0, 200);
+  const h = await headers();
+  const ip = (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || h.get("x-real-ip") || "unknown";
+  const key = createHash("sha256").update(`askai-pw:${ip}`).digest("hex").slice(0, 16);
+  if (!passwordAttemptAllowed(key)) {
+    redirect("/askai?error=2");
+  }
   const token = askaiToken();
   if (!token || !passwordMatches(candidate)) {
     redirect("/askai?error=1");

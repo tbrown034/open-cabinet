@@ -25,3 +25,18 @@ describe("askai alpha gate", () => {
     expect(requestHasAskaiAccess(new Request("http://localhost/api/ask"), env)).toBe(false);
   });
 });
+
+import { passwordAttemptAllowed, PASSWORD_ATTEMPTS_PER_HOUR } from "./askai-access";
+
+describe("password attempt limiter", () => {
+  it("allows the cap, then refuses until the hour resets", () => {
+    const t0 = 1_000_000;
+    for (let i = 0; i < PASSWORD_ATTEMPTS_PER_HOUR; i++) expect(passwordAttemptAllowed("k1", t0)).toBe(true);
+    expect(passwordAttemptAllowed("k1", t0)).toBe(false);
+    expect(passwordAttemptAllowed("k1", t0 + 60 * 60 * 1000 + 1)).toBe(true);
+  });
+  it("treats a malformed cookie as no access", () => {
+    const req = new Request("http://localhost/api/ask", { headers: { cookie: `${ASKAI_COOKIE}=%E0%A4%A` } });
+    expect(requestHasAskaiAccess(req, env)).toBe(false);
+  });
+});

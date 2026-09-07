@@ -53,5 +53,34 @@ export function hasAskaiAccess(cookieValue: string | undefined, env: NodeJS.Proc
 export function requestHasAskaiAccess(request: Request, env: NodeJS.ProcessEnv = process.env): boolean {
   const header = request.headers.get("cookie") ?? "";
   const match = header.split(/;\s*/).find((c) => c.startsWith(`${ASKAI_COOKIE}=`));
-  return hasAskaiAccess(match ? decodeURIComponent(match.slice(ASKAI_COOKIE.length + 1)) : undefined, env);
+  if (!match) return false;
+  let value: string;
+  try {
+    value = decodeURIComponent(match.slice(ASKAI_COOKIE.length + 1));
+  } catch {
+    return false; // a malformed cookie is not access, and not a 500 (Grok, Sept. 7)
+  }
+  return hasAskaiAccess(value, env);
+}
+
+/**
+ * Password attempts per address, per instance. In-memory is enough for an
+ * alpha behind one shared password: it turns an online guess into a slow
+ * one, and the cookie secret can be rotated in seconds. Not a substitute
+ * for a durable limiter if the gate ever protects anything more.
+ */
+const attempts = new Map<string, { count: number; resetAt: number }>();
+export const PASSWORD_ATTEMPTS_PER_HOUR = 10;
+
+export function passwordAttemptAllowed(key: string, now = Date.now()): boolean {
+  const entry = attempts.get(key);
+  if (!entry || entry.resetAt <= now) {
+    attempts.set(key, { count: 1, resetAt: now + 60 * 60 * 1000 });
+    if (attempts.size > 2000) {
+      for (const [k, v] of attempts) if (v.resetAt <= now) attempts.delete(k);
+    }
+    return true;
+  }
+  entry.count += 1;
+  return entry.count <= PASSWORD_ATTEMPTS_PER_HOUR;
 }

@@ -24,6 +24,7 @@ export const metadata: Metadata = {
 export default async function AskaiPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
   const wrong = sp.error === "1";
+  const throttled = sp.error === "2";
   const jar = await cookies();
   const open = hasAskaiAccess(jar.get(ASKAI_COOKIE)?.value);
 
@@ -61,8 +62,10 @@ export default async function AskaiPage({ searchParams }: { searchParams: Promis
           </button>
         </form>
         {wrong && <p role="alert" className="text-sm text-red-700 mt-3">That password did not match.</p>}
+        {throttled && <p role="alert" className="text-sm text-red-700 mt-3">Too many attempts from this address. Try again in an hour.</p>}
         <p className="text-xs text-neutral-400 mt-8">
-          No account is created and nothing about you is stored beyond a hashed address used for rate limiting.
+          No account is created. Every question you ask is stored with its outcome, the query the code ran, and a
+          truncated hash of your address used for rate limiting. Do not put personal information in a question.
         </p>
       </div>
     );
@@ -107,10 +110,9 @@ export default async function AskaiPage({ searchParams }: { searchParams: Promis
             Today that is {published.summary.checked.toLocaleString()} of {published.summary.parsed.toLocaleString()} rows.
           </li>
           <li>
-            <strong>The model writes two sentences from the result, and code checks them.</strong> Every number in the
-            sentence must match a figure the code produced. If one does not, the sentence is thrown away and a plain
-            template is shown instead. Words that overclaim (&quot;all,&quot; &quot;on file,&quot; &quot;total holdings&quot;)
-            are banned.
+            <strong>Code writes the sentence.</strong> In this alpha the answer sentence is a fixed template filled from
+            the computed result. The model writes nothing you read. (A model-written sentence exists behind a switch and is
+            off: the check that every number in it matched a computed figure was shown on Sept. 7 to be too loose.)
           </li>
           <li>
             <strong>You see the query, the rows and the source filings.</strong> The restated query sits above the answer so

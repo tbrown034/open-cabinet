@@ -776,10 +776,14 @@ export async function POST(request: Request) {
     // The answer is already computed. A phrasing call that fails or hangs
     // must not throw that away and return a 500 (Codex, Sept. 6): the reader
     // gets the templated sentence instead.
-    const phrased = await withDeadline(
-      () => callPhraseModel(planText, result, model),
-      PHRASE_TIMEOUT_MS
-    );
+    // Alpha default: the model writes no sentence a reader sees. The Sept. 7
+    // red team showed the number check is membership, not meaning (a
+    // truncated ranking of 4 rows could ship as "1 checked row"), so until
+    // the check binds each figure to its role, the template is the answer.
+    // ASKAI_PHRASER=model turns the second call back on.
+    const phrased = process.env.ASKAI_PHRASER === "model"
+      ? await withDeadline(() => callPhraseModel(planText, result, model), PHRASE_TIMEOUT_MS)
+      : null;
     if (phrased) {
       // Strip dashes before the checks so what is checked is what ships.
       const cleaned = stripDashes(phrased);
