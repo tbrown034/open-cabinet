@@ -33,6 +33,7 @@ import {
 } from "@/lib/ask/limits";
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
+import { lookupAsset } from "@/lib/asset-registry";
 import { classifyIntent } from "@/lib/ask/intent";
 import {
   parseQueryPlan,
@@ -284,11 +285,12 @@ function planSystemPrompt(
     "If a name is not on this list, emit a plan for it anyway and let the code decide.",
     "Only the code may say a person is not tracked, and it re-checks the roster before any decline is sent.",
     "If a question names someone on this list, emit a plan for them. Code reports separately whether their rows have cleared verification.",
-    "Write official names exactly as they appear here:",
+    "Write official names exactly as they appear here, without the parenthetical, which is the title and agency:",
     officialNames.join("; "),
     "",
     `The data covers ${tickerCount} distinct stock symbols. Write a symbol in uppercase.`,
     "For an asset with no symbol, use descriptionContains instead.",
+    "For a kind of asset (bonds, notes, Treasuries, ETFs, mutual funds, stocks, preferreds, options, crypto, private holdings) use instrumentTypes; 'bonds' means municipal_bond, corporate_note and treasury.",
   ].join("\n");
 }
 
@@ -561,7 +563,11 @@ export async function POST(request: Request) {
     const scope = scopeSlug
       ? data.officials.find((o) => o.slug === scopeSlug) ?? null
       : null;
-    const officialNames = scope ? [scope.name] : data.officials.map((o) => o.name);
+    // The roster carries each title and agency so "the energy secretary"
+    // resolves from the list, not from the model's outside knowledge
+    // (Haiku 4.5 could not do it without this; Sonnet 5 did it from memory,
+    // which a closed-book planner must not need).
+    const officialNames = (scope ? [scope] : data.officials).map((o) => `${o.name} (${o.title}${o.agency && !o.title.includes(o.agency) ? `, ${o.agency}` : ""})`);
 
     // Before a token is spent: does the question name a shape this box
     // cannot represent? A prompt asking the model not to approximate is a
@@ -761,7 +767,27 @@ export async function POST(request: Request) {
       });
     }
 
-    const finalPlan = normalizePlan(resolved.value);
+    let finalPlan = normalizePlan(resolved.value);
+
+    // A company with two listed classes (GOOG and GOOGL) is one company to
+    // a reader. Unless the question names a class, every listed class of a
+    // symbol the plan carries is included, and the restatement shows both.
+    if (finalPlan.filters.tickers && !/\bclass\b|\bcl\s?[abc]\b|\bseries\b/i.test(question)) {
+      const have = new Set(finalPlan.filters.tickers);
+      // Same issuer = same SEC CIK in the registry (GOOG and GOOGL share
+      // one); a suffix pattern alone would miss that pair.
+      const cikOf = (t: string) => { const r = lookupAsset(t); return r.kind === "sec" ? r.entry.cik : null; };
+      for (const t of finalPlan.filters.tickers) {
+        const cik = cikOf(t);
+        if (cik === null) continue;
+        for (const other of data.allTickers) {
+          if (other !== t && cikOf(other) === cik) have.add(other);
+        }
+      }
+      if (have.size !== finalPlan.filters.tickers.length) {
+        finalPlan = { ...finalPlan, filters: { ...finalPlan.filters, tickers: Array.from(have).sort() } };
+      }
+    }
 
     // The plan must answer the question that was asked (Codex, Sept. 7).
     const fit = planCorrespondence(question, finalPlan, data.officials);
