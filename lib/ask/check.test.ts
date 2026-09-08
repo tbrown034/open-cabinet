@@ -240,7 +240,7 @@ describe("pendingAnswer", () => {
       auditPending: 0,
       notYetCompared: 0,
     });
-    expect(answer).toBe("Trades in ZZZZ, counted. No checked row matches that question.");
+    expect(answer).toBe("Trades in ZZZZ, counted. No trade matches that question.");
   });
 
   it("works without a named subject", () => {

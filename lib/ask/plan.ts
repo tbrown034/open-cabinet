@@ -541,7 +541,7 @@ export function resolveTickers(
       const siblings = Array.from(set).filter((t) => t !== symbol && t.replace(/[.-][A-Z]$/, "") === root && root.length >= 2);
       return {
         ok: false,
-        reason: `No checked trade in this data names the symbol ${symbol}`,
+        reason: `No trade in this dataset names the symbol ${symbol}`,
         candidates: siblings.sort(),
       };
     }

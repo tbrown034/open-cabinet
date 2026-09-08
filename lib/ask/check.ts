@@ -530,7 +530,7 @@ export function pendingAnswer(
   subject?: string
 ): string {
   const total = pending.underReview + pending.auditPending + pending.notYetCompared;
-  if (total === 0) return `${planText} No checked row matches that question.`;
+  if (total === 0) return `${planText} No trade matches that question.`;
 
   const breakdown =
     `${pending.underReview.toLocaleString("en-US")} under review, ` +
