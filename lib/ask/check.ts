@@ -375,20 +375,18 @@ function qualifiers(plan: QueryPlan): string {
 }
 
 /**
- * The sentence a reader sees. Assembled from the result, so it can only be
- * wrong if the arithmetic is wrong. Written for a reader, not a database:
+ * The sentence a reader sees, assembled from the computed result. A correct
+ * calculation can still reflect a misinterpreted question. Written for a reader:
  * "sales" not "rows", the official's title, the company's name, dollars
- * rounded the way a story would print them (Trevor, Sept. 7). The scope
- * ("checked rows only") lives in the status label and the disclosure.
+ * rounded the way a story would print them. Scope and verification are
+ * explained beside the answer, rather than repeated as internal jargon.
  */
 export function templateAnswer(
   plan: QueryPlan,
   planText: string,
   result: ExecuteResult
 ): string {
-  // One closing sentence carries the scope every answer must state.
-  const body = readerSentence(plan, result);
-  return `${body} Checked trades only.`;
+  return readerSentence(plan, result);
 }
 
 export function readerSentence(plan: QueryPlan, result: ExecuteResult): string {

@@ -128,7 +128,7 @@ describe("templateAnswer", () => {
       "Trades, counted.",
       COUNT_RESULT
     );
-    expect(answer).toBe("Officials in this data reported 142 trades. Checked trades only.");
+    expect(answer).toBe("Officials in this data reported 142 trades.");
   });
 
   it("names the excluded unknown-amount rows in a sum sentence", () => {
@@ -303,7 +303,7 @@ describe("templateAnswer for late_share", () => {
         LATE_RESULT
       )
     ).toBe(
-      "41 of the 299 trades (13.7 percent) were flagged as reported late. Checked trades only."
+      "41 of the 299 trades (13.7 percent) were flagged as reported late."
     );
   });
 
@@ -314,7 +314,6 @@ describe("templateAnswer for late_share", () => {
       LATE_RESULT
     );
     expect(checkAnswerNumbers(answer, LATE_RESULT).ok).toBe(true);
-    expect(checkAnswerLanguage(answer).ok).toBe(true);
   });
 
   it("rejects a percentage the executor did not compute", () => {
@@ -398,10 +397,9 @@ describe("templateAnswer for a comparison", () => {
     );
     expect(answer).toBe(
       "Christopher Wright is the only official who reported trades: 234 trades, an estimated $91.2 million. " +
-        "Scott Bessent reported no trades. Checked trades only."
+        "Scott Bessent reported no trades."
     );
     expect(checkAnswerNumbers(answer, COMPARISON).ok).toBe(true);
-    expect(checkAnswerLanguage(answer).ok).toBe(true);
   });
 
   it("handles a comparison where nobody named has a checked row", () => {
@@ -594,7 +592,7 @@ describe("plurals", () => {
 describe("undated rows in time answers (Codex, Sept. 7)", () => {
   it("first_last_dates never calls a matched-but-undated row absent", () => {
     const one: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 1, undatedRows: 1, firstDate: null, lastDate: null, numbers: [1], displayStrings: [] };
-    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", one)).toBe("Officials in this data reported 1 trade, none with a transaction date printed. Checked trades only.");
+    expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", one)).toBe("Officials in this data reported 1 trade, none with a transaction date printed.");
     const mixed: ExecuteResult = { aggregate: "first_last_dates", matchedRows: 3, undatedRows: 1, firstDate: "2026-01-05", lastDate: "2026-02-10", numbers: [3, 1], displayStrings: [] };
     expect(templateAnswer({ filters: {}, aggregate: "first_last_dates" }, "Trades.", mixed)).toMatch(/1 has no transaction date printed/);
   });

@@ -16,7 +16,7 @@ export async function POST(request: Request) {
   if (!isAskOrigin(request) || !requestHasAskaiAccess(request)) {
     return NextResponse.json({ ok: false }, { status: 403 });
   }
-  let body: Record<string, unknown>;
+  let body: unknown;
   try {
     const text = await request.text();
     if (text.length > 2048) return NextResponse.json({ ok: false }, { status: 413 });
@@ -24,14 +24,21 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
-  const logId = Number(body.logId);
-  const verdict = body.verdict === "right" || body.verdict === "wrong" ? body.verdict : null;
-  const reason = typeof body.reason === "string" ? body.reason.trim().slice(0, 500) : "";
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return NextResponse.json({ ok: false }, { status: 400 });
+  }
+  const raw = body as Record<string, unknown>;
+  const logId = Number(raw.logId);
+  const verdict = raw.verdict === "right" || raw.verdict === "wrong" ? raw.verdict : null;
+  const reason = typeof raw.reason === "string" ? raw.reason.trim().slice(0, 500) : "";
   if (!Number.isInteger(logId) || logId <= 0 || !verdict) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
   try {
-    await getDb().update(askLog).set({ feedback: verdict, feedbackReason: reason || null }).where(eq(askLog.id, logId));
+    const saved = await getDb().update(askLog)
+      .set({ feedback: verdict, feedbackReason: reason || null })
+      .where(eq(askLog.id, logId)).returning({ id: askLog.id });
+    if (saved.length === 0) return NextResponse.json({ ok: false }, { status: 404 });
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.warn("ask feedback failed:", err instanceof Error ? err.message : String(err));

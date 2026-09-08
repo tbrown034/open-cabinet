@@ -87,60 +87,16 @@ export default async function AskaiPage({ searchParams }: { searchParams: Promis
 
       <AskTheData checkedCount={published.summary.checked} parsedCount={published.summary.parsed} />
 
-      <section className="mt-12 border-t border-neutral-200 pt-8 text-sm text-neutral-700 leading-relaxed">
-        <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-4">What happens to your question</h2>
-        <ol className="list-decimal pl-5 space-y-3">
-          <li>
-            <strong>A filter reads it first.</strong> Instructions, requests for opinions, and questions that are not about
-            these records are declined before anything is spent.
-          </li>
-          <li>
-            <strong>An AI model turns the question into a query.</strong> It fills in a fixed form: which officials, which
-            symbol or words, which trade types, which dates, late or not, and one of a short list of counts. It never sees a
-            trade row and it is never asked for a fact. If the question does not fit the form, it must decline rather than
-            approximate.
-          </li>
-          <li>
-            <strong>Code checks the form.</strong> Every name must be someone the site tracks. Every field must be on the
-            allowed list. Anything else ends the request with an honest &quot;not in this data.&quot;
-          </li>
-          <li>
-            <strong>Code runs the query and produces every number.</strong> Only checked rows count: rows an independent
-            program or a second company&apos;s model agreed with and a third company&apos;s model confirmed against the page.
-            Today that is {published.summary.checked.toLocaleString()} of {published.summary.parsed.toLocaleString()} rows.
-          </li>
-          <li>
-            <strong>Code writes the sentence.</strong> In this alpha the answer sentence is a fixed template filled from
-            the computed result. The model writes nothing you read. (A model-written sentence exists behind a switch and is
-            off: the check that every number in it matched a computed figure was shown on Sept. 7 to be too loose.)
-          </li>
-          <li>
-            <strong>You see the query, the rows and the source filings.</strong> The restated query sits above the answer so
-            you can tell whether it asked what you meant. Rows link to the official&apos;s page and the 278-T.
-          </li>
-        </ol>
-
-        <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mt-10 mb-4">What it will not do</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>Say whether a trade was legal, proper or suspicious.</li>
-          <li>Compute averages, ratios or growth. Only the counts and sums the code supports.</li>
-          <li>Answer about anyone the site does not track, or from rows that have not been checked.</li>
-          <li>Give exact dollar amounts. Filings report ranges, and the box repeats the range.</li>
-          <li>Remember you. Each question stands alone.</li>
-        </ul>
-
-        <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mt-10 mb-4">Limits and logging</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>{PER_IP_PER_HOUR} questions an hour per address, {GLOBAL_PER_DAY} a day for the whole site, counted in the database before any model call.</li>
-          <li>Each question, its outcome, the query the code ran and how long it took are logged so a person can review what was asked and what was declined.</li>
-          <li>Questions only reach the model from this site&apos;s own pages.</li>
-        </ul>
-
-        <p className="text-xs text-neutral-400 mt-10">
-          Alpha build. Wording and limits will change. Method for the underlying rows:{" "}
-          <Link href="/methodology" className="underline hover:text-neutral-600">methodology</Link>.
-        </p>
-      </section>
+      <details className="mt-6 border-t border-neutral-200 pt-4 text-sm text-neutral-600 leading-relaxed">
+        <summary className="cursor-pointer font-medium text-neutral-800">How Ask works and what gets logged</summary>
+        <div className="mt-4 space-y-3">
+          <p>An AI model interprets your question. Code checks that interpretation and calculates the answer from disclosure records that have completed the site’s verification process. Check the “Interpreted as” line to make sure it matches what you meant.</p>
+          <p>These records report transactions and dollar ranges. They do not establish current holdings, profit, motive or legality. Each question stands alone; Ask does not remember earlier questions.</p>
+          <p>Questions, their interpretations and outcomes are logged for review, along with a hashed address used for rate limiting. Do not enter personal information.</p>
+          <p>Limits: {PER_IP_PER_HOUR} requests per hour per address and {GLOBAL_PER_DAY} new question translations per day across the site.</p>
+          <p>Read the <Link href="/methodology" className="underline hover:text-neutral-900">data methodology</Link> for how records are checked.</p>
+        </div>
+      </details>
     </div>
   );
 }

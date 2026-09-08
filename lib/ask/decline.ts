@@ -53,7 +53,7 @@ const DECLINE_TEXT: Record<DeclineCategory, string> = {
   unknown_person:
     "That name did not match a tracked official. The directory on the homepage is the list.",
   unsupported_computation:
-    "This box counts, totals and lists checked trades. It does not compute averages, medians, ratios or growth, because a filing discloses a dollar range, not an amount; it can give a share only for late filings; and it compares at most five officials at a time.",
+    "This box counts, totals and lists disclosed trades. It does not compute averages, medians, ratios or growth, because a filing discloses a dollar range, not an amount; it can give a share only for late filings; and it compares at most five officials at a time.",
   unsupported_filter:
     "This box filters by official, symbol, trade type, date range, late flag, dollar bounds and kind of asset. It dates trades by the transaction date, not by when a filing was posted. It cannot exclude, require two assets at once, or pick by sector, weekday, party or agency.",
   needs_date_range:

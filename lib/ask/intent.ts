@@ -33,13 +33,19 @@ const SHARE = /\b(percent|percentage|percentages|share|shares of|proportion|frac
 const LATE = /\b(late|lateness|overdue|past the deadline|after the deadline|stock act deadline)\b/i;
 
 /** Set subtraction. Every filter here is membership, never exclusion. */
-const EXCLUSION = /\b(except|excepting|excluding|exclude|but not|other than|apart from|aside from|without|neither|nor|rather than)\b/i;
+const EXCLUSION = /\b(except|excepting|excluding|exclude|not|never|didn['’]t|doesn['’]t|don['’]t|hasn['’]t|haven['’]t|no(?: [a-z0-9.]+){0,4} (purchases|sales|trades)|other than|apart from|aside from|without|neither|nor|rather than)\b/i;
 
 /** Intersection across assets. Filters are OR within a field, never AND. */
 const BOTH_ASSETS = /\bboth\b[^.?!]*\b(and|&)\b/i;
 
 /** "Who" or "which officials" asks for a ranking by official, whatever the model picked. */
 const WHO = /^\s*(who|whom|which (officials?|cabinet (members?|secretaries)|secretaries|agency heads?|people|person))\b/i;
+
+/** A person matching multiple trade histories needs joins the query cannot express. */
+const PERSON_QUESTION = /\b(who|whom|which officials?|which people|which person)\b/i;
+const PURCHASE_WORD = /\b(buy|buys|buying|bought|purchase|purchases|purchased|purchasing)\b/i;
+const SALE_WORD = /\b(sell|sells|selling|sold|sale|sales)\b/i;
+const ONLY_HISTORY = /\b(only|exclusively)\s+(bought|buy|buys|purchased|purchases|sold|sell|sells|traded|trades)\b/i;
 
 /** Ranking by size, which needs a sort the plan has to carry explicitly. */
 const BY_SIZE = /\b(largest|biggest|largest-value|most expensive|highest value|highest-value|priciest|top by value|biggest by value|by size|by value)\b/i;
@@ -142,6 +148,10 @@ export function classifyIntent(question: string): IntentCheck {
 
   if (EXCLUSION.test(q)) {
     return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "exclusion" };
+  }
+
+  if (PERSON_QUESTION.test(q) && ((PURCHASE_WORD.test(q) && SALE_WORD.test(q)) || ONLY_HISTORY.test(q))) {
+    return { intent: { kind: "decline", category: "unsupported_filter" }, rule: "compound_history" };
   }
 
   if (BOTH_ASSETS.test(q)) {

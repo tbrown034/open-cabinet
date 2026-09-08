@@ -73,6 +73,12 @@ Many pages are generated during the build. Official pages use URL filters and re
 
 Ask translates a question into a constrained plan, checks it and calculates results from eligible published rows. It does not execute arbitrary model-written SQL against the mirror. Models also help read PDFs and draft optional narrative text. Keep three ideas distinct: the filed values, the saved evidence about those values, and the narrative describing them.
 
+Ask caches only validated question translations tagged for the same official-page scope, model, UTC date and cache-contract version. Old untagged logs and follow-up logs are not reused as translations. Every cached plan is validated and executed again against current rows; this cannot prove that a model interpreted a question correctly.
+
+Ask accepts question text and optional official-page scope only. Example buttons fill the input; submitting the form runs the question. Answers preserve the submitted wording and show the interpreted query. Browser-supplied plans and retired follow-up tokens are rejected. There is no separate follow-up execution path. The intent gate refuses histories that require joining separate purchases and sales, including “never sold” and “only bought.” The planner prompt explains this boundary too. A changed prompt contract increments the cache version so old translations are not reused.
+
+Reader-facing answers use ordinary transaction language; verification policy remains in Methodology and answer details. Pending records, if any appear, are still excluded from Ask and explained. Model planning has a 20-second SDK timeout with retries disabled; an unavailable service offers retry or direct browsing. Feedback only acknowledges a successful database update.
+
 ## Limits worth explaining honestly
 
 Verification labels describe evidence, not guaranteed accuracy. Amounts are disclosure ranges; dollar totals generally use estimates. Report scope differs from transaction date. Company matching can be uncertain, especially for share classes. Validation and tests catch specified errors; they do not independently recheck every PDF.

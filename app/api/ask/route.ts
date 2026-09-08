@@ -1,21 +1,7 @@
 /**
- * Ask the data.
- *
- * POST /api/ask with { question }. Five steps, in order:
- *
- *   1. Plan.     One model call. The model may return a query plan or decline.
- *                It never sees a trade row and it is never asked for a fact.
- *   2. Validate. The plan is checked field by field and its names resolved to
- *                slugs that exist. An unresolvable name ends the request.
- *   3. Execute.  Ordinary code filters and counts the checked rows.
- *   4. Phrase.   A second model call sees the result JSON and nothing else,
- *                and writes at most two sentences.
- *   5. Check.    Every number in that sentence must match a figure the
- *                executor produced. If one does not, the sentence is
- *                discarded and a templated one is used instead.
- *
- * The model is a translator on both ends. It never computes a number, and it
- * never sees a row that an independent check has not agreed with.
+ * Ask accepts a question, translates it into a restricted query, validates
+ * the query and computes the answer from checked rows. The default answer
+ * is a code template. Optional model phrasing must pass the answer checks.
  */
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
@@ -34,7 +20,7 @@ import {
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
 import { lookupAsset } from "@/lib/asset-registry";
-import { classifyIntent, type Intent } from "@/lib/ask/intent";
+import { classifyIntent } from "@/lib/ask/intent";
 import {
   parseQueryPlan,
   resolvePlan,
@@ -48,7 +34,6 @@ import {
   officialsNamedIn,
   planCorrespondence,
   describePlanForReader,
-  followUpsFor,
   type QueryPlan,
 } from "@/lib/ask/plan";
 import { execute, countPending, type ExecuteResult } from "@/lib/ask/execute";
@@ -114,9 +99,7 @@ const EMPTY_PENDING = {
  * Sept. 6). One row per UTC day in ask_quota; the increment is the
  * reservation, so a question is counted before either model call. Three
  * outcomes: "ok", "over" (cap reached), "closed" (the counter itself failed).
- * The one deliberate exception: if the table has not been created yet
- * (Postgres 42P01), the in-memory limiter below still applies and the request
- * proceeds, so a preview deployment works before the migration runs.
+ * If the counter is missing or unavailable, paid planning fails closed.
  */
 async function reserveDailyQuota(attempt = 0): Promise<"ok" | "over" | "closed"> {
   const day = new Date().toISOString().slice(0, 10);
@@ -167,17 +150,17 @@ const LOG_PATH = path.join(process.cwd(), "data", "meta", "ask-log.jsonl");
  * what people actually ask.
  */
 /**
- * A validated plan stored for the same question in the last day, so a
- * repeat runs with no model call. The plan is re-executed over today's
- * rows, so the answer is never stale; only the translation is reused.
+ * Reuse a validated translation only for the same question and context.
+ * Execution reads current rows; model translation mistakes can still recur.
+ * The versioned context excludes legacy and browser-supplied plans.
  */
-async function findRecentPlan(question: string): Promise<unknown | null> {
+async function findRecentPlan(question: string, context: string): Promise<unknown | null> {
   try {
     const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
     const rows = await getDb()
       .select({ plan: askLog.plan })
       .from(askLog)
-      .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), gt(askLog.at, since)))
+      .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), eq(askLog.reason, context), gt(askLog.at, since)))
       .orderBy(desc(askLog.id))
       .limit(1);
     const text = rows[0]?.plan;
@@ -273,6 +256,8 @@ function planSystemPrompt(
     "THE RULE THAT OUTRANKS THE REST: if any part of the question cannot be represented in the plan,",
     "do not approximate and do not drop it. Decline with the closest category.",
     "Silently answering a narrower question than the one asked is worse than declining.",
+    "Filters select individual transactions, not a person’s trading history. Decline questions about who never sold,",
+    "who only bought, or who bought one asset and sold another. These need separate sets of transactions and cannot be represented.",
     "",
     "The dataset is executive-branch stock transactions disclosed on OGE Form 278-T.",
     "Each row has: official (name, slug, agency, title), description (the asset as the filing wrote it), ticker (may be absent),",
@@ -364,7 +349,7 @@ async function callPlanModel(
   if (!apiKey) return { kind: "unavailable", reason: "no API key configured" };
 
   const { default: Anthropic } = await import("@anthropic-ai/sdk");
-  const client = new Anthropic({ apiKey });
+  const client = new Anthropic({ apiKey, timeout: 20_000, maxRetries: 0 });
   const response = await client.messages.create({
     model,
     max_tokens: 1024,
@@ -556,10 +541,13 @@ export async function POST(request: Request) {
   const raw = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
   const question = typeof raw.question === "string" ? raw.question.trim() : "";
   const scopeSlug = typeof raw.officialSlug === "string" ? raw.officialSlug.trim() : "";
-  // A follow-up chip sends the plan the code built for it. It is parsed and
-  // resolved like any other plan but needs no model, no quota and no
-  // correspondence check, since no free text produced it.
-  const followUpPlan = raw.plan && typeof raw.plan === "object" ? raw.plan : null;
+  // Requests contain questions, never executable plans (including old clients).
+  if ("plan" in raw || "followUpToken" in raw) {
+    return NextResponse.json(
+      { status: "error", answer: "Refresh this page and type your question in the question box.", disclosure: DISCLOSURE },
+      { status: 400 }
+    );
+  }
 
   if (question.length < 3) {
     return NextResponse.json(
@@ -595,6 +583,34 @@ export async function POST(request: Request) {
     const scope = scopeSlug
       ? data.officials.find((o) => o.slug === scopeSlug) ?? null
       : null;
+    if (scopeSlug && !scope) {
+      return NextResponse.json(
+        { status: "error", answer: "That official is not in this dataset. Return to Ask and try a name from the directory.", disclosure: DISCLOSURE },
+        { status: 400 }
+      );
+    }
+    if (scope) {
+      // The page box answers about the page. If the reader named someone
+      // else, say so rather than silently answering about the wrong person
+      // (Grok, Sept. 6).
+      const named = officialsNamedIn(question, data.officials);
+      const other = named.find((o) => o.slug !== scope.slug);
+      if (other) {
+        logAsk({ startedAt, question, status: "declined", reason: "off-page official", ipKey });
+        return NextResponse.json({
+          status: "declined" satisfies AskStatus,
+          answer: stripDashes(
+            `On this page the box answers only about ${scope.name}. ` +
+              `Use Ask without an official filter for other people.`
+          ),
+          plan: null,
+          planText: null,
+          result: null,
+          excluded,
+          disclosure: DISCLOSURE,
+        });
+      }
+    }
     // The roster carries each title and agency so "the energy secretary"
     // resolves from the list, not from the model's outside knowledge
     // (Haiku 4.5 could not do it without this; Sonnet 5 did it from memory,
@@ -604,12 +620,12 @@ export async function POST(request: Request) {
     // Before a token is spent: does the question name a shape this box
     // cannot represent? A prompt asking the model not to approximate is a
     // request; this is the refusal (Grok, Sept. 6).
-    const { intent, rule } = followUpPlan ? { intent: { kind: "ok" } as Intent, rule: "follow-up" } : classifyIntent(question);
+    const { intent, rule } = classifyIntent(question);
     if (intent.kind === "decline") {
       logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
-        answer: stripDashes(declineText(intent.category)),
+        answer: stripDashes((rule === "exclusion" || rule === "compound_history") ? "This question combines separate trading histories or excludes trades. Ask cannot answer that comparison reliably. Try asking about purchases and sales separately." : declineText(intent.category)),
         plan: null,
         planText: null,
         result: null,
@@ -621,17 +637,16 @@ export async function POST(request: Request) {
     // The model has no clock. Relative periods only become dates because
     // this line hands it one.
     const today = new Date().toISOString().slice(0, 10);
+    // Only translations produced under this contract can be reused. Old
+    // untagged logs and follow-ups are never cache candidates. Include UTC
+    // date for relative questions, model, and the page's official scope.
+    const cacheContext = `plan-cache-v2:${model}:${today}:${scopeSlug || "all"}`;
 
-    // Where the plan comes from: a follow-up chip (code-built), a stored
-    // plan for the same question within a day (no model, no spend, and the
-    // answer is re-executed over today's rows), or the model.
-    let planSource: "follow-up" | "cache" | "model" = "model";
+    // Reuse a validated translation or ask the model to translate the question.
+    let planSource: "cache" | "model" = "model";
     let planCall: PlanCall;
-    const cached = followUpPlan ? null : await findRecentPlan(question);
-    if (followUpPlan) {
-      planSource = "follow-up";
-      planCall = { kind: "plan", raw: followUpPlan };
-    } else if (cached) {
+    const cached = await findRecentPlan(question, cacheContext);
+    if (cached) {
       planSource = "cache";
       planCall = { kind: "plan", raw: cached };
     } else {
@@ -701,7 +716,7 @@ export async function POST(request: Request) {
             answer: stripDashes(
               `${tracked.name} is tracked here${others.length ? ` (so ${others.length === 1 ? "is" : "are"} ${others.join(", ")})` : ""}, ` +
               "but this question could not be turned into a query. Try naming the official and one thing to count: " +
-              `for example, "How many checked trades does ${tracked.name} have?"`
+              `for example, "How many trades does ${tracked.name} have?"`
             ),
             plan: null,
             planText: null,
@@ -728,7 +743,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           status: "error" satisfies AskStatus,
-          answer: "The question box is not available right now.",
+          answer: "Ask could not reach its question interpreter. Please try again in a moment, or browse the trades directly.",
           plan: null,
           planText: null,
           result: null,
@@ -757,26 +772,6 @@ export async function POST(request: Request) {
 
     let plan: QueryPlan = parsed.plan;
     if (scope) {
-      // The page box answers about the page. If the reader named someone
-      // else, say so rather than silently answering about the wrong person
-      // (Grok, Sept. 6).
-      const named = officialsNamedIn(question, data.officials);
-      const other = named.find((o) => o.slug !== scope.slug);
-      if (other) {
-        logAsk({ startedAt, question, status: "declined", reason: "off-page official", ipKey });
-        return NextResponse.json({
-          status: "declined" satisfies AskStatus,
-          answer: stripDashes(
-            `On this page the box answers only about ${scope.name}. ` +
-              `Use the homepage box for others.`
-          ),
-          plan: null,
-          planText: null,
-          result: null,
-          excluded,
-          disclosure: DISCLOSURE,
-        });
-      }
       plan = { ...plan, filters: { ...plan.filters, officials: [scope.slug] } };
     }
 
@@ -803,7 +798,7 @@ export async function POST(request: Request) {
           : "";
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
-        answer: stripDashes(`${resolved.reason}.${candidates}`),
+        answer: stripDashes(`${resolved.reason}.${candidates} Try the official’s full name or the company’s ticker symbol.`),
         plan: null,
         planText: null,
         result: null,
@@ -836,7 +831,8 @@ export async function POST(request: Request) {
     }
 
     // The plan must answer the question that was asked (Codex, Sept. 7).
-    const fit = planSource === "follow-up" ? { ok: true as const } : planCorrespondence(question, finalPlan, data.officials);
+    const scopedQuestion = scope ? `${scope.name}: ${question}` : question;
+    const fit = planCorrespondence(scopedQuestion, finalPlan, data.officials);
     if (!fit.ok) {
       logAsk({ startedAt, question, status: "not_in_data", reason: `correspondence: ${fit.reason}`, plan: finalPlan, ipKey });
       return NextResponse.json({
@@ -891,7 +887,6 @@ export async function POST(request: Request) {
     const planText = describePlan(finalPlan, data.officials);
     const result = execute(finalPlan, data);
     const readerPlanText = describePlanForReader(finalPlan, data.officials, result.assetLabel ?? null);
-    const followUps = followUpsFor(finalPlan, today);
 
     // Nothing verified matched. Before saying so, ask whether the site holds
     // rows for this query that simply have not cleared a check. Those are
@@ -923,7 +918,6 @@ export async function POST(request: Request) {
         planText: stripDashes(readerPlanText),
         planSource,
         result,
-        followUps,
         excluded,
         pendingMatches,
         pendingNote: pendingNote(pendingMatches),
@@ -965,7 +959,7 @@ export async function POST(request: Request) {
       startedAt,
       question,
       status: "answered",
-      reason: planSource === "model" ? null : planSource,
+      reason: cacheContext,
       plan: finalPlan,
       matchedRows: result.matchedRows,
       phrasedBy,
@@ -989,7 +983,6 @@ export async function POST(request: Request) {
       planSource,
       logId,
       result,
-      followUps,
       excluded,
       pendingMatches,
       pendingNote: pendingNote(pendingMatches),
@@ -997,11 +990,12 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("[ask] failed", error);
-    logAsk({ startedAt, question, status: "error", ipKey });
+    const timedOut = error instanceof Error && error.name === "APIConnectionTimeoutError";
+    logAsk({ startedAt, question, status: "error", reason: timedOut ? "planning timeout" : "request failed", ipKey });
     return NextResponse.json(
       {
         status: "error" satisfies AskStatus,
-        answer: "Something went wrong running that question.",
+        answer: timedOut ? "Ask took too long to interpret your question. Try again, or browse the trades directly." : "Ask could not finish this request. Please try again in a moment, or browse the trades directly.",
         plan: null,
         planText: null,
         result: null,
