@@ -82,6 +82,16 @@ beforeEach(() => { quotaCalls.length = 0; planToReturn = null; modelFailure = nu
 afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 
 describe("POST /api/ask gates", () => {
+  it("explains no matching purchases without internal verification jargon", async () => {
+    planToReturn = { filters: { officials: ["wright-christopher"], tickers: null, descriptionContains: null, types: ["Purchase"], instrumentTypes: null, dateFrom: null, dateTo: null, lateOnly: null, amountAtLeast: null, amountAtMost: null }, aggregate: "count", limit: null };
+    const j = await (await post({ question: "How many purchases did Christopher Wright make?" })).json();
+    expect(j.status).toBe("not_in_data");
+    expect(j.result.matchedRows).toBe(0);
+    expect(j.answer).toContain("reported no purchases");
+    expect(j.answer).toContain("1 other trade");
+    expect(j.answer).not.toMatch(/checked|rows/i);
+  });
+
   it("explains a provider timeout without inventing an answer", async () => {
     modelFailure = new Error("private provider diagnostic");
     modelFailure.name = "APIConnectionTimeoutError";

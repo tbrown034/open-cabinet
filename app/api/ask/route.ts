@@ -913,7 +913,7 @@ export async function POST(request: Request) {
         : null;
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
-        answer: stripDashes(`${readerSentence(finalPlan, result)}${zeroHint(finalPlan, nearby)} Checked trades only.${pendingMatches.underReview + pendingMatches.auditPending + pendingMatches.notYetCompared > 0 ? ` ${pendingAnswer(planText, pendingMatches, subject)}` : ""}`),
+        answer: stripDashes(`${readerSentence(finalPlan, result)}${zeroHint(finalPlan, nearby)}${pendingMatches.underReview + pendingMatches.auditPending + pendingMatches.notYetCompared > 0 ? ` ${pendingAnswer(planText, pendingMatches, subject)}` : ""}`),
         plan: finalPlan,
         planText: stripDashes(readerPlanText),
         planSource,
