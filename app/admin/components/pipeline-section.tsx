@@ -5,60 +5,47 @@ export function PipelineSection({ runs }: { runs: PipelineRun[] }) {
   return (
     <section className="mb-12">
       <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
-        Pipeline Status
+        Filing monitor and ingestion
       </h2>
       <div className="bg-stone-50 border border-neutral-200 p-4 mb-4 text-sm space-y-3">
         <div>
-          <div className="text-neutral-900 font-medium text-xs mb-1">
-            Automated
-          </div>
+          <h3 className="text-neutral-900 font-medium text-xs mb-1">Daily monitor</h3>
           <p className="text-neutral-500 text-xs">
-            Runs daily (10 AM UTC) via Vercel Cron. Can also be triggered from
-            the{" "}
-            <a
-              href="https://vercel.com/tbrown034s-projects/open-cabinet/settings/cron-jobs"
-              className="underline hover:text-neutral-900"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vercel dashboard
-            </a>{" "}
-            or locally with the commands below.
+            Vercel Cron checks OGE at 10 AM UTC, records the result and sends admin
+            notifications when needed. It discovers filings; it does not parse
+            PDFs or update published transactions.
           </p>
         </div>
         <div>
-          <div className="text-neutral-900 font-medium text-xs mb-1">
-            Manual (local)
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run pipeline
-            </code>
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run pipeline -- --dry-run
-            </code>
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run pipeline -- --verify
-            </code>
-          </div>
+          <h3 className="text-neutral-900 font-medium text-xs mb-1">Weekly ingestion</h3>
+          <p className="text-neutral-500 text-xs">
+            <a className="underline" href="https://github.com/tbrown034/open-cabinet/actions/workflows/oge-pipeline.yml">
+              GitHub Actions
+            </a>{" "}
+            runs the JSON ingestion workflow on Mondays or on demand. It reads
+            and checks PDFs, rebuilds supporting files and opens a pull request.
+            Published data changes after review, merge and deployment.
+          </p>
         </div>
         <div>
-          <div className="text-neutral-900 font-medium text-xs mb-1">
-            Other commands
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run validate
-            </code>
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run check-news
-            </code>
-            <code className="text-[11px] font-[family-name:var(--font-dm-mono)] bg-neutral-200 px-2 py-1">
-              pnpm run parse-pdf &lt;file&gt;
-            </code>
-          </div>
+          <h3 className="text-neutral-900 font-medium text-xs mb-1">Manual work</h3>
+          <p className="text-neutral-500 text-xs">
+            <code>pnpm ingest-filings</code> is the current JSON ingestion command;
+            it can make paid calls and write data. Read the{" "}
+            <a className="underline" href="https://github.com/tbrown034/open-cabinet/blob/main/docs/maintenance.md">
+              maintenance guide
+            </a>{" "}
+            before adding a filing or correcting an existing one. The older
+            database pipeline is a separate workflow.
+          </p>
         </div>
       </div>
+      <p className="text-xs text-neutral-500 mb-4">
+        History below contains runs recorded in PostgreSQL, including daily
+        monitor checks and older database jobs. It is not the weekly ingestion
+        history or a complete model-cost ledger. A monitor can complete with
+        zero transactions because it only checks for filings.
+      </p>
 
       {runs.length > 0 ? (
         <div className="overflow-x-auto">
@@ -126,11 +113,7 @@ export function PipelineSection({ runs }: { runs: PipelineRun[] }) {
         </div>
       ) : (
         <p className="text-sm text-neutral-400">
-          No pipeline runs yet. Run{" "}
-          <code className="font-[family-name:var(--font-dm-mono)] bg-neutral-100 px-1">
-            pnpm run pipeline
-          </code>{" "}
-          to start.
+          No monitor or database-job runs have been recorded yet.
         </p>
       )}
     </section>

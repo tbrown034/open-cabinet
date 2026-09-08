@@ -20,7 +20,7 @@ export function ValidationSection({
     <section className="mb-12">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium">
-          Data Validation
+          Mirror validation and source check
         </h2>
         <div className="flex gap-2">
           <button
@@ -29,7 +29,7 @@ export function ValidationSection({
             disabled={validating}
             className="text-xs bg-neutral-900 text-white px-3 py-1.5 hover:bg-neutral-800 transition-colors cursor-pointer disabled:opacity-50"
           >
-            {validating ? "Running…" : "Validate DB"}
+            {validating ? "Running…" : "Validate mirror"}
           </button>
           <button
             type="button"
@@ -41,6 +41,10 @@ export function ValidationSection({
           </button>
         </div>
       </div>
+      <p className="text-sm text-neutral-500 mb-4">
+        Published JSON is checked separately with <code>pnpm validate</code>.
+        A passing mirror check does not validate the public dataset.
+      </p>
       {validationReport ? (
         <div
           className={`border px-4 py-3 text-sm ${validationReport.result === "PASS" ? "border-emerald-200 bg-emerald-50" : "border-red-200 bg-red-50"}`}
@@ -74,8 +78,9 @@ export function ValidationSection({
         </div>
       ) : (
         <p className="text-sm text-neutral-400">
-          Click {"\""}Validate DB{"\""} to check data integrity or {"\""}Check
-          OGE{"\""} to poll for new filings.
+          Validate mirror checks the database copy. Check OGE polls for new
+          filings, records a monitor run and may send an admin notification;
+          it does not ingest transactions.
         </p>
       )}
 

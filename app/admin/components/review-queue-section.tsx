@@ -1,6 +1,6 @@
 import type { ReviewItem } from "../types";
 
-/** Low-confidence transactions awaiting an approve/delete decision. */
+/** Review decisions for the older database mirror. */
 export function ReviewQueueSection({
   items,
   count,
@@ -13,7 +13,7 @@ export function ReviewQueueSection({
   return (
     <section className="mb-12">
       <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">
-        Review Queue
+        Database mirror review
         {count > 0 && (
           <span className="ml-2 bg-amber-100 text-amber-800 px-2 py-0.5 rounded-sm text-[10px]">
             {count}
@@ -21,6 +21,10 @@ export function ReviewQueueSection({
         )}
       </h2>
 
+      <p className="text-sm text-neutral-500 mb-4">
+        These actions change only the database copy. They do not correct published
+        JSON or its verification labels. Reseeding the mirror replaces these edits.
+      </p>
       {items.length > 0 ? (
         <div className="space-y-3">
           {items.map((item) => (
@@ -80,7 +84,7 @@ export function ReviewQueueSection({
           ))}
         </div>
       ) : (
-        <p className="text-sm text-neutral-400">No transactions need review.</p>
+        <p className="text-sm text-neutral-400">No database mirror rows are marked for review.</p>
       )}
     </section>
   );
