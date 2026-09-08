@@ -44,7 +44,7 @@ export default async function AskaiPage({ searchParams }: { searchParams: Promis
         <Badge />
         <h1 className="font-[family-name:var(--font-source-serif)] text-4xl text-neutral-900 mb-4">Ask the data</h1>
         <p className="text-neutral-600 mb-6 leading-relaxed">
-          A question box over the site&apos;s verified trade rows. It is in a closed alpha: a few people are trying it
+          A question box over the site&apos;s checked trade rows. It is in a closed alpha: a few people are trying it
           and every question is logged for review. Enter the access password to continue.
         </p>
         <form action={enterAskai} className="flex flex-col sm:flex-row gap-2 max-w-md">
