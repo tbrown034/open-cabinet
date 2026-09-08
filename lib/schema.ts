@@ -1,20 +1,11 @@
 /**
- * Data schema for Open Cabinet.
+ * PostgreSQL schema: operational records plus retained historical mirror tables.
+ * Auth tables live in auth-schema.ts. Public transactions are read from JSON.
  *
- * Separate from auth-schema.ts (Better Auth tables). Both live in the
- * same Neon PostgreSQL database but are defined in separate files so
- * Drizzle can manage them independently.
- *
- * Key design decisions:
- * - officials.slug is the unique identifier (matches JSON filenames)
- * - transactions use a UNIQUE constraint on (officialId, description,
- *   date, amount, type, pdfSource) — this allows legitimate duplicate
- *   lot sales within a single filing while still catching cross-filing
- *   duplicates from amended filings. When an amended filing replaces
- *   an original, the pipeline deletes the original's transactions first.
- * - batchId links transactions to the pipeline run that created them,
- *   enabling "revert this run" rollback
- * - confidence + needsReview support the human-in-the-loop review queue
+ * officials, transactions, newsCoverage and validationResults are retired
+ * mirrors. Their import/edit tools are gone, but declarations remain so a
+ * future Drizzle operation cannot silently propose dropping historical data.
+ * Remove tables only through a separately reviewed migration.
  */
 import {
   pgTable,
@@ -53,14 +44,8 @@ export const officials = pgTable("officials", {
 });
 
 // ── TRANSACTIONS ──
-// One row per financial transaction extracted from OGE 278-T PDFs.
-// The UNIQUE constraint prevents cross-filing duplicates (amended
-// filings restating the same trades) while allowing legitimate
-// duplicate lot sales within a single filing. Including pdfSource
-// means two rows with identical (desc, date, type, amount) from the
-// SAME PDF are allowed — they represent different lots. When an
-// amended filing arrives, the pipeline deletes all transactions from
-// the original filing first, then inserts the amendment's rows.
+// Historical parsed transaction mirror. The dedup constraint includes rowIndex
+// and excludes pdfSource; it is not the public JSON ingestion dedup policy.
 export const transactions = pgTable(
   "transactions",
   {

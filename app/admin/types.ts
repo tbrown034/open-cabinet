@@ -20,19 +20,6 @@ export interface PipelineRun {
   completedAt: string | null;
 }
 
-export interface ReviewItem {
-  id: number;
-  description: string;
-  ticker: string | null;
-  type: string;
-  date: string;
-  amount: string;
-  confidence: number | null;
-  pdfSource: string | null;
-  officialName: string;
-  officialSlug: string;
-}
-
 export interface AlertSignup {
   id: number;
   email: string;
@@ -97,29 +84,10 @@ export interface DigestSendResult {
   message?: string;
 }
 
-export interface DbValidationReport {
-  result: "PASS" | "FAIL";
-  duration: string;
-  officials: number;
-  transactions: number;
-  needsReview: number;
-  totalIssues: number;
-  checks: Record<string, number>;
-}
-
 export interface OgeCheckReport {
   ok: boolean;
   duration?: string;
   totalOgeRecords?: number;
   runId?: number;
   error?: string;
-}
-
-export interface AdminStats {
-  officials: number;
-  transactions: number;
-  newsArticles: number;
-  needsReview: number;
-  totalPipelineCost: number;
-  lastPipelineRun: PipelineRun | null;
 }

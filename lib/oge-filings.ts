@@ -232,10 +232,23 @@ export function diffNewFilings(
   filings: TargetFiling[],
   knownUrls: Set<string>
 ): TargetFiling[] {
-  return filings.filter((filing) => !knownUrls.has(filing.pdfUrl));
+  // URL serialization encodes literal spaces. OGE and saved source entries
+  // sometimes spell the same PDF URL differently (" " versus "%20").
+  const known = new Set(Array.from(knownUrls, (url) => new URL(url).href));
+  return filings.filter((filing) => !known.has(new URL(filing.pdfUrl).href));
 }
 
-export async function loadKnownFilingUrlsFromData(
+/** Successfully saved filings, including accepted filings with zero new rows.
+ * Discovery/download state is deliberately excluded. Missing or malformed
+ * official data must stop ingestion rather than make every URL look new. */
+export async function loadImportedFilingUrls(root = process.cwd()): Promise<Set<string>> {
+  const filings = await loadKnownFilingsFromData(root);
+  return new Set(filings.map((filing) => filing.url));
+}
+
+/** Monitor baseline: URLs previously discovered or already in official data.
+ * This suppresses repeated discovery notices, not ingestion attempts. */
+export async function loadDiscoveredFilingUrls(
   root = process.cwd()
 ): Promise<Set<string>> {
   const urls = new Set<string>();

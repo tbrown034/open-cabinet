@@ -34,7 +34,7 @@ import {
   type TargetFiling,
   writeLastCheckState,
 } from "../lib/oge-filings";
-import { loadKnownFilingUrlsFromData } from "../lib/oge-filings";
+import { loadImportedFilingUrls } from "../lib/oge-filings";
 import { reconcileSummaryAfterIngest } from "../lib/summary-review";
 import {
   checkFiling,
@@ -118,7 +118,7 @@ async function findNewFilings(): Promise<NewFilingsLoadResult> {
     log: (message) => console.log(`  ${message}`),
   });
   const targetFilings = getTargetFilings(records);
-  const knownUrls = await loadKnownFilingUrlsFromData();
+  const knownUrls = await loadImportedFilingUrls();
   const newFilings = diffNewFilings(targetFilings, knownUrls);
   const slugMap = await loadOfficialSlugMap();
 
@@ -325,7 +325,7 @@ function validateDataset(): void {
 }
 
 /** PUBLISH, handed off. This script cannot publish: it records which
- *  filings were processed in data/meta/last-check.json and stops. The
+ *  filings were imported or held in data/meta/last-check.json and stops. The
  *  workflow rebuilds the index and exports and opens a pull request; a
  *  person merges it. The merge is the publication decision. */
 async function handOffForPublish(
@@ -333,6 +333,8 @@ async function handOffForPublish(
   newFilings: Record<string, FilingForIngest[]>
 ): Promise<void> {
   if (!targetFilings) return;
+  const importedUrls = await loadImportedFilingUrls();
+  const pendingUrls = new Set(diffNewFilings(targetFilings, importedUrls).map((filing) => filing.pdfUrl));
   await writeLastCheckState({
     filings: targetFilings,
     newFilings: targetFilings
@@ -341,7 +343,10 @@ async function handOffForPublish(
           group.some((newFiling) => newFiling.pdfUrl === filing.pdfUrl)
         )
       )
-      .map((filing) => ({ ...filing, status: "processed" })),
+      .map((filing) => ({
+        ...filing,
+        status: pendingUrls.has(filing.pdfUrl) ? "held" : "imported",
+      })),
   });
   console.log("\nUpdated data/meta/last-check.json. Publication is the pull request a person merges.");
 }

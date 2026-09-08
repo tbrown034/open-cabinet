@@ -17,7 +17,7 @@ import {
   diffNewFilings,
   fetchOgeRecords,
   getTargetFilings,
-  loadKnownFilingUrlsFromData,
+  loadDiscoveredFilingUrls,
   loadKnownFilingsFromData,
   getAllIndexedFilings,
   reconcileKnownFilings,
@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
         `OGE response had ${records.length} records but zero target 278-T filings — response likely malformed. First record: ${sample}`
       );
     }
-    const knownUrls = await loadKnownFilingUrlsFromData();
+    const knownUrls = await loadDiscoveredFilingUrls();
     const newFilings = diffNewFilings(targetFilings, knownUrls);
     if (records.length !== totalRecords) throw new Error("Incomplete OGE index; source comparison skipped");
     const sourceChanges = reconcileKnownFilings(getAllIndexedFilings(records), await loadKnownFilingsFromData());
@@ -178,7 +178,7 @@ export async function GET(request: NextRequest) {
       message:
         newFilings.length === 0
           ? "OGE URL-diff check complete."
-          : "New OGE filings found. Run the GitHub Actions pipeline or pnpm run pipeline for parse/ingest.",
+          : "New OGE filings found. Run the GitHub Actions pipeline or pnpm ingest-filings for JSON ingestion.",
     });
   } catch (err) {
     if (runId && db) {

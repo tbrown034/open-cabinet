@@ -50,7 +50,7 @@ Rows by verification state: 11,364 checked; 145 human_verified; 0 deterministic_
 | Company Detail | `/companies/[ticker]` | Who in government trades this stock |
 | About | `/about` | Methodology, legal basis, AI transparency, feedback form |
 | Download | `/download` | CSV and JSON exports of the full dataset |
-| Admin | `/admin` | Email management and operational history, plus older database-mirror stats and review panels (auth-gated) |
+| Admin | `/admin` | Email management, filing monitor history, source checks and Ask activity (auth-gated) |
 
 ## Data source
 
@@ -58,7 +58,7 @@ All data comes from the U.S. Office of Government Ethics. Transaction reports (2
 
 ## Architecture
 
-**Published transactions live in JSON files. PostgreSQL holds operational records and a separate transaction mirror.** Editing that database copy does not correct a transaction on the public website.
+**Published transactions live in JSON files. PostgreSQL powers login, emails and operational records.** Corrections to public transactions are reviewed changes to the JSON.
 
 ### Where information lives
 
@@ -69,11 +69,11 @@ All data comes from the U.S. Office of Government Ethics. Transaction reports (2
 | `data/meta/asset-resolution.json` | Saved asset classifications and ticker decisions | Company grouping and ticker display, together with the name-verification rule |
 | `public/data/` | Generated JSON and CSV downloads | Download page and bulk-data readers |
 | PostgreSQL operational tables | Login sessions, subscriptions/follows, email delivery, pipeline history, Ask quotas and question logs | Interactive services and admin |
-| PostgreSQL mirror tables | A separate copy of officials, transactions and news | Older admin stats, validation and DB review panels |
+| Retired PostgreSQL mirror tables | Historical copies of officials, transactions and news | No current application workflow; retained pending separate database cleanup |
 
 The official JSON files are the **source of truth**: the saved transaction records that publication and corrections are based on. The verification and asset files add checking and interpretation information alongside those records. They are joined by transaction IDs currently computed from the records.
 
-The database mirror has a different schema and does not include all of that supporting information. `scripts/seed-from-json.ts` replaces its contents from JSON; this overwrites edits made through the DB review panel. The mirror's current freshness must be checked rather than assumed.
+The older database-mirror import, reseed and admin-edit tools have been removed. Existing mirror tables and their schema declarations remain to preserve historical data and avoid an implicit table drop; database removal requires a separate migration review.
 
 ### How a transaction reaches a page
 
@@ -97,7 +97,7 @@ Ask also calculates answers from eligible JSON transaction records, through [lib
 
 ### Adding filings and making corrections
 
-The current scheduled ingestion entrypoint is [scripts/ingest-new-filings.ts](scripts/ingest-new-filings.ts). It updates the JSON publication path. The older [scripts/pipeline.ts](scripts/pipeline.ts) writes the database mirror and is not the scheduled path. These commands are not interchangeable.
+The scheduled and manual JSON ingestion entrypoint is [scripts/ingest-new-filings.ts](scripts/ingest-new-filings.ts), run with `pnpm ingest-filings`. The retired `pipeline` and `seed` commands are no longer available.
 
 Adding a new filing and correcting an existing filing are different operations. [scripts/reverify.ts](scripts/reverify.ts) provides the candidate comparison/application workflow for existing filings. Ingestion, re-verification and review commands can write files or make paid calls depending on their options; invoking them through a coding assistant does not change those effects. The current tools remain available while their manual usage and recovery rules are reviewed.
 
@@ -105,20 +105,20 @@ Adding a new filing and correcting an existing filing are different operations. 
 
 Open Cabinet uses two scheduled paths:
 
-1. **Monitor** — Vercel Cron polls the OGE API daily, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
+1. **Monitor** — Vercel Cron polls the OGE API daily, compares 278-T PDF URLs with previously discovered/imported URLs, records the run and sends notifications when needed. Discovery is not proof of import.
 2. **Ingest** — GitHub Actions runs the static JSON ingest weekly (Mondays) or on demand, downloads new PDFs, parses them with Claude, checks them, regenerates exports and opens a PR for review.
 
 The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages. The entrypoint coordinates the work, with acquisition, reading and checking implemented in [lib/ingest-stages.ts](lib/ingest-stages.ts):
 
-1. **Find** — the OGE API is diffed against the filings already tracked.
+1. **Find** — compare the OGE API with `sourceFilings` in official JSON. A discovered, failed or held filing stays eligible until its source entry is saved with the accepted import.
 2. **Fetch** — the PDF is downloaded and hashed.
-3. **Read** — the whole PDF goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/validation/parsed-rows.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
+3. **Read** — the PDF, split into page ranges when needed, goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/validation/parsed-rows.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
 4. **Check** — text extraction, OCR, a second model and a page audit provide separate evidence about the proposed rows. `lib/ingest-stages.ts` decides whether to hold or merge a filing; `lib/row-verification.ts` later builds the public row labels. These are separate decisions, and agreement is evidence, not a guarantee of accuracy.
 5. **Merge** — accepted rows are added to the official JSON. This path handles new filings; it is not a replacement workflow for correcting existing records.
 6. **Validate** — `pnpm validate` runs the checks in [lib/validation/published-data.ts](lib/validation/published-data.ts). A failure or review-required result stops the workflow.
 7. **Publish** — the workflow rebuilds supporting files and downloads, then opens a pull request for review. Merging triggers the Vercel deployment.
 
-Amendments, retries and cross-filing duplicate handling still need hardening. In particular, a hand-written `--from-file` plan does not retain all the OGE metadata used by the normal discovery path. Review the [maintenance guide](docs/maintenance.md) before adding or correcting data.
+Amendments, partial-run recovery and cross-filing duplicate handling still need hardening. In particular, a hand-written `--from-file` plan does not retain all the OGE metadata used by the normal discovery path. Review the [maintenance guide](docs/maintenance.md) before adding or correcting data.
 
 ### Company identity
 
@@ -126,7 +126,7 @@ The filed description and the company interpretation are separate. [lib/instrume
 
 `publicTicker` combines that decision with evidence about the printed name. [getTradesByTicker](lib/data.ts) groups accepted symbols into company views. Unresolved rows keep their filed descriptions. Share classes, ambiguous names and evidence precedence remain areas for careful review; an inferred ticker is not a value copied directly from the filing.
 
-The database mirror supports older admin panels. Email subscriptions and delivery records are separate operational tables; they are not copies of the published transaction files.
+Email subscriptions and delivery records remain in PostgreSQL. Removing mirror tools does not change those services or the JSON-backed review workflow.
 
 ### Pipeline commands
 
@@ -136,13 +136,10 @@ pnpm run plan-reparse          # List published filings a prompt change would re
 pnpm run crosscheck-sweep      # Re-run the text-layer comparison over every filing; writes the log
 pnpm run row-verification      # Rebuild the per-row verification record from every lane
 pnpm run asset-resolution      # Type every row and tie stocks/ETFs to tickers on exact evidence
-pnpm run pipeline              # DB mirror path (not scheduled): check, download, parse, insert
-pnpm run pipeline -- --dry-run # Legacy path; still has DB, download, parsing and notification side effects
 pnpm run check-filings -- --dry-run # URL-diff OGE without writing state
 pnpm run validate              # Run validation suite against data
 pnpm run parse-pdf <file>      # Parse a single PDF
 pnpm run check-news            # News coverage search guidance
-pnpm run seed                  # Replace the DB mirror from JSON; overwrites mirror edits
 ```
 
 ### Models and evidence

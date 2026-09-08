@@ -43,11 +43,10 @@ Tests use fixtures and mocks. The Ask route tests can write a local diagnostic l
 | `pnpm reverify <slug> --apply` | Apply a reviewed correction | Replaces official rows and writes history; requires deliberate review of the proposed changes |
 | `pnpm row-verification` | Derive public row labels | Writes verification artifact from saved evidence; does not itself call a model |
 | `pnpm asset-resolution` | Derive classifications and ticker matches | Writes asset-resolution artifact |
-| `pnpm seed-assets` | Rebuild the file-based asset registry | Writes the registry; this is different from `pnpm seed` |
+| `pnpm seed-assets` | Rebuild the file-based asset registry | Writes the file-based registry; does not seed PostgreSQL |
 | `pnpm rebuild-index` | Recalculate official index | Writes index JSON |
 | `pnpm generate-exports` | Rebuild downloads | Writes public CSV/JSON files |
 | `pnpm readme-stats` | Update README numbers | Writes README using current exports and public company lookup |
-| `pnpm pipeline` / `pnpm seed` | Older database mirror workflows | Database writes; seed replaces mirror contents. Not the public JSON ingestion path |
 | `pnpm check-news` | Print news-search guidance | Placeholder; news links are manually curated |
 
 ## Add a new filing
@@ -56,7 +55,9 @@ The scheduled path is `.github/workflows/oge-pipeline.yml`: check sources → in
 
 For a manual run, begin with discovery and inspect which URLs and officials are in scope. Approve the cost before ingestion, then inspect the changed official rows and their source evidence. Regenerate the supporting artifacts and README statistics, run checks, and review the entire diff before merging.
 
-Do not treat `check-filings` without `--dry-run` as harmless preparation: it writes discovery state used by ingestion. Discovery/retry state still needs separation. A hand-written `--from-file` plan omits amendment metadata; it is not a safe general workaround for an amended report. Stop for review when a filing replaces or corrects existing records.
+`check-filings` without `--dry-run` can download PDFs and writes discovery state. That state is only a monitor baseline: normal ingestion skips URLs saved in official `sourceFilings`, so checking first cannot hide an unimported filing. Failed and held filings remain candidates; caches and existing publication gates still apply. Before retrying, inspect the prior failure/hold and expected cost.
+
+A hand-written `--from-file` plan omits amendment metadata and bypasses normal discovery selection; it is not a safe general retry workaround. Use the normal ingest path for new filings and the correction workflow for existing records. Stop for review when a filing replaces or corrects earlier rows.
 
 ## PDF size and incomplete answers
 
@@ -81,9 +82,15 @@ A correction may change computed row IDs. Inspect attached human decisions and r
 | A company match looks wrong | Asset-resolution entry, reference snapshot/dictionary, printed description and name evidence |
 | New filing is missing | OGE URL, `data/meta/last-check.json`, official source URLs, pipeline logs; discovery is not proof of publication |
 | Counts differ | Historical/former scope, score-zero exclusion, unknown dates, estimated amount ranges |
-| Admin edit has no public effect | Determine whether the panel edits the DB mirror or the canonical JSON |
+| Need to correct a public transaction | Use the JSON correction/review workflow; the retired DB mirror controls no longer exist |
 | Email failed or may have partially sent | `/admin`, digest run and delivery records; inspect before rerunning a real send |
 | CI fails only on GitHub | Tracked files, Node/pnpm versions, environment requirements; private notes are absent from fresh clones |
+
+## Retired database tools
+
+`pnpm pipeline`, `pnpm seed`, the mirror stats/review/validation endpoints, and their admin panels have been removed. Use `pnpm ingest-filings` for new JSON filings and `pnpm validate` for published-data checks. `pnpm seed-assets` still builds the file-based asset registry.
+
+Existing mirror rows, table declarations and migrations are preserved. Do not drop them or rewrite migration history as part of application cleanup. Login, subscriptions, email delivery, monitor history and Ask records still use the operational database.
 
 ## Publish a code change
 
