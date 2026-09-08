@@ -23,6 +23,7 @@ Open Cabinet turns executive-branch financial disclosure PDFs into searchable tr
 | Running validation | `scripts/validate.ts`, a short CLI calling the validation module |
 | Ingesting a new filing | `scripts/ingest-new-filings.ts` → `lib/ingest-stages.ts` |
 | PDF model requests and prompts | `scripts/parse-pdf.ts` |
+| PDF page splitting and Claude request-size checks | `lib/pdf/` |
 | Cached extraction responses | `lib/parse-cache.ts` |
 | Independent evidence | `lib/text-layer-parser.ts`, `lib/ocr-lane.ts`, `lib/second-read.ts`, `lib/grok-audit.ts` |
 | Public verification labels | `lib/row-verification.ts`; builder: `scripts/build-row-verification.ts` |
