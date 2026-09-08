@@ -25,8 +25,9 @@ export default async function DownloadPage() {
     officialCount: number;
     transactionCount: number;
     underReviewCount: number;
+    historicalCount?: number;
   };
-  const txCount = fullDataset.transactionCount + fullDataset.underReviewCount;
+  const txCount = fullDataset.transactionCount + fullDataset.underReviewCount + (fullDataset.historicalCount ?? 0);
   const officialCount = fullDataset.officialCount;
 
   const exports = [
@@ -92,6 +93,12 @@ export default async function DownloadPage() {
       </header>
 
       <UnderReviewNote count={fullDataset.underReviewCount} />
+      <p className="mb-6 text-sm text-neutral-600">
+        Downloads preserve historical records. The historical_report and
+        former_official CSV columns (historical and formerOfficial in JSON)
+        identify records excluded from current-roster totals. Date scope labels
+        distinguish older trades disclosed in second-term reports; those remain included.
+      </p>
       <div className="space-y-6">
         {exports.map((item) => (
           <div

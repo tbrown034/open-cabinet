@@ -15,7 +15,8 @@ export function officialForTotals(official: OfficialData) {
   return {
     ...official,
     transactions,
-    underReviewCount: official.transactions.length - transactions.length,
+    underReviewCount: verification.filter((v, i) => v?.score === 0 && !official.transactions[i].historical).length,
+    historicalCount: official.transactions.filter((tx) => tx.historical).length,
   };
 }
 
@@ -51,7 +52,9 @@ export async function getAllOfficials(): Promise<OfficialData[]> {
     }
   }
   const officials = await Promise.all(officialPromises);
-  return officials.filter((o): o is OfficialData => o !== null);
+  return officials.filter((o): o is OfficialData => o !== null).map((o) => ({
+    ...o, transactions: o.transactions.filter((tx) => !tx.historical),
+  }));
 }
 
 export interface CompanyTrade {

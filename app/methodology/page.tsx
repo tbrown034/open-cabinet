@@ -224,6 +224,20 @@ export default async function MethodologyPage() {
             </li>
             <li>
               <strong className="text-neutral-900">
+                Reports and trade dates have different scopes.
+              </strong>{" "}
+              Current-roster totals cover second-term reports. A trade before
+              January 20, 2025 remains included when disclosed in a second-term
+              report and is labeled on the official page. Prior-administration
+              reports retained as history are excluded from current totals and
+              charts; the original rows and source links are preserved.
+              Daily checks flag newly missing OGE index listings. Weekly checks
+              test the saved transaction-report URLs and prepare availability
+              updates for review. An unavailable link does not establish why OGE
+              removed or moved a record; timeouts remain unconfirmed.
+            </li>
+            <li>
+              <strong className="text-neutral-900">
                 Former officials remain in the dataset.
               </strong>{" "}
               If OGE filings are relevant to the executive-branch record, Open

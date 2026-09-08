@@ -17,6 +17,7 @@ import type { AmountRange } from "@/lib/types";
 import { readRowVerification } from "@/lib/row-verification";
 
 interface DatasetTransaction {
+  historical?: boolean;
   description: string;
   ticker: string | null;
   amount: AmountRange | null;
@@ -56,7 +57,7 @@ const formatCount = (n: number) => n.toLocaleString("en-US");
 
 describe("README current-data table matches the published dataset", () => {
   const allTx = dataset.officials.flatMap((o) => o.transactions);
-  const countedTx = allTx.filter((tx) => tx.verificationScore !== 0);
+  const countedTx = allTx.filter((tx) => !tx.historical && tx.verificationScore !== 0);
 
   it("officials tracked", () => {
     expect(readmeStat("Officials tracked")).toBe(
@@ -82,14 +83,14 @@ describe("README current-data table matches the published dataset", () => {
   });
 
   it("excludes under-review rows from transaction totals and reports them separately", () => {
-    const underReview = allTx.length - countedTx.length;
+    const underReview = allTx.filter((tx) => !tx.historical && tx.verificationScore === 0).length;
     expect(dataset.transactionCount).toBe(countedTx.length);
     expect(dataset.underReviewCount).toBe(underReview);
     expect(readmeStat("Rows under review \\(not counted in totals\\)")).toBe(formatCount(underReview));
     for (const official of dataset.officials) {
-      const counted = official.transactions.filter((tx) => tx.verificationScore !== 0).length;
+      const counted = official.transactions.filter((tx) => !tx.historical && tx.verificationScore !== 0).length;
       expect(official.transactionCount).toBe(counted);
-      expect(official.underReviewCount).toBe(official.transactions.length - counted);
+      expect(official.underReviewCount).toBe(official.transactions.filter((tx) => !tx.historical && tx.verificationScore === 0).length);
     }
   });
 

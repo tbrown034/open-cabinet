@@ -18,7 +18,7 @@ type ExportTransaction = Transaction & {
   resolvedTicker: string | null;
   resolutionTier: string | null;
 };
-const dataset: { transactionCount: number; underReviewCount: number; officials: (Omit<OfficialData, "transactions"> & { transactionCount: number; underReviewCount: number; transactions: ExportTransaction[] })[] } =
+const dataset: { transactionCount: number; underReviewCount: number; historicalCount: number; officials: (Omit<OfficialData, "transactions"> & { transactionCount: number; underReviewCount: number; historicalCount: number; transactions: ExportTransaction[] })[] } =
   JSON.parse(read("public/data/full-dataset.json"));
 
 // CSV fields may contain escaped quotes, commas and newlines.
@@ -51,9 +51,10 @@ describe("published verification exports", () => {
       const source: OfficialData = JSON.parse(read(`data/officials/${official.slug}.json`));
       const ids = recordIdsFor(source.transactions);
       expect(official.transactions).toHaveLength(source.transactions.length);
-      const counted = official.transactions.filter((tx) => tx.verificationScore !== 0);
+      const counted = official.transactions.filter((tx) => !tx.historical && tx.verificationScore !== 0);
       expect(official.transactionCount).toBe(counted.length);
-      expect(official.underReviewCount).toBe(source.transactions.length - counted.length);
+      expect(official.historicalCount).toBe(source.transactions.filter((tx) => tx.historical).length);
+      expect(official.underReviewCount).toBe(source.transactions.length - counted.length - official.historicalCount);
       official.transactions.forEach((tx, i) => {
         const { recordId, verificationScore, verificationState, instrumentType, issuerLabel, resolvedTicker, resolutionTier, ...raw } = tx;
         expect(raw).toEqual(source.transactions[i]);
@@ -69,7 +70,7 @@ describe("published verification exports", () => {
         count++;
       });
     }
-    expect(count).toBe(dataset.transactionCount + dataset.underReviewCount);
+    expect(count).toBe(dataset.transactionCount + dataset.underReviewCount + dataset.historicalCount);
     expect(count).toBe(file.summary.rows);
   });
 
@@ -81,6 +82,7 @@ describe("published verification exports", () => {
       "recordId", "verificationScore", "verificationState",
       "type_note", "date_note", "row_note",
       "instrument_type", "issuer_label", "resolved_ticker", "resolution_tier",
+      "historical_report", "date_scope", "former_official",
     ]);
     const transactions = dataset.officials.flatMap((official) => official.transactions);
     expect(rows).toHaveLength(transactions.length);
@@ -91,6 +93,7 @@ describe("published verification exports", () => {
       expect(row[12]).toBe(tx.amountNote ?? "");
       expect(row.slice(13, 16)).toEqual([tx.recordId, String(tx.verificationScore), tx.verificationState]);
       expect(row[7]).toBe(tx.date ?? "");
+      expect(row[23]).toBe(tx.historical ? "yes" : "no");
     });
   });
 });

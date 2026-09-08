@@ -194,7 +194,8 @@
       "date": "2020-08-13",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false,
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/294765D0509B1112852585E10027E9D3/$FILE/Katharine-MacGregor-08.13.2020-278T.pdf"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/294765D0509B1112852585E10027E9D3/$FILE/Katharine-MacGregor-08.13.2020-278T.pdf",
+      "historical": true
     },
     {
       "description": "Amazon.com, Inc. (AMZN)",
@@ -203,7 +204,8 @@
       "date": "2020-06-29",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false,
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D3AD148822D68054852585B30027DBDA/$FILE/Katharine-MacGregor-07.01.2020-278T.pdf",
+      "historical": true
     },
     {
       "description": "Amazon Stock",
@@ -212,10 +214,11 @@
       "date": "2020-04-14",
       "amount": "$1,001-$15,000",
       "lateFilingFlag": false,
-      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf"
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
+      "historical": true
     }
   ],
-  "summary": "MacGregor reported 13 sales (estimated at $1.3M) and 10 purchases (estimated at $1.3M) across 23 transactions between April 14, 2020 and August 6, 2025, an estimated $2.5M in total volume. NextEra Energy (NEE) was the most-traded asset, followed by Amazon (AMZN) and several index funds. None of the transactions were flagged as filed late.",
+  "summary": "MacGregor reported 10 sales (est. $1.2M) and 10 purchases (est. $1.3M). These totals cover second-term reports. Three transactions from 2020 reports remain available as history and are excluded.",
   "confirmedDate": "2025-05-14",
   "party": "R",
   "sourceFilings": [
@@ -239,5 +242,8 @@
       "url": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B1B753542BDDB222852585840027DBCE/$FILE/Katharine-MacGregor-04.21.2020-278T.pdf",
       "label": "278-T (OGE PDF unavailable)"
     }
-  ]
+  ],
+  "summarySource": "template",
+  "summaryFactSha256": "abb8135be8db5107f3ce139b656a0c858e10cfecc61f619200f627f1e9068431",
+  "summaryPublishedAt": "2026-09-08T14:53:30.555Z"
 }

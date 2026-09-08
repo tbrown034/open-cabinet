@@ -150,7 +150,8 @@ async function validateGoldenFiles(dataDir: string): Promise<{
 
   try {
     const files = await readdir(goldenDir);
-    goldenFiles = files.filter((f) => f.endsWith(".golden.json"));
+    // The question-box evaluation is not an official's financial-data fixture.
+    goldenFiles = files.filter((f) => f.endsWith(".golden.json") && f !== "ask-questions.golden.json");
   } catch {
     return { passed: 0, total: 0, errors: ["Golden directory not found"] };
   }

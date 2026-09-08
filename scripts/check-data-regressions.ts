@@ -31,6 +31,7 @@ async function main() {
   const fullDataset = await readJson<{
     officialCount: number;
     transactionCount: number;
+    historicalCount: number;
     officials: OfficialData[];
   }>("public/data/full-dataset.json");
 
@@ -47,7 +48,10 @@ async function main() {
   // Sep 6, 2026: re-read applied (Trump 8,940 -> 8,944), Landau/Bisignano and others +10,
   // Chavez-DeRemer name-wrap -1, Dixon duplicate -1, four superseded rows of the
   // Aug 12, 2025 amendment removed (Trump 8,944 -> 8,940): 11,509.
-  assertEqual(fullDataset.transactionCount, 11509, "Full dataset transaction count");
+  // Sep 8: three MacGregor rows remain in the export as history; no rows removed.
+  assertEqual(fullDataset.transactionCount, 11506, "Full dataset counted transaction count");
+  assertEqual(fullDataset.historicalCount, 3, "Full dataset historical transaction count");
+  assertEqual(fullDataset.officials.reduce((n, o) => n + o.transactions.length, 0), 11509, "Full dataset preserved rows");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {

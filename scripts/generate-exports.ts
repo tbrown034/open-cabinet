@@ -12,6 +12,7 @@ import {
   sumAmountEstimates,
 } from "../lib/amounts";
 import type { Transaction } from "../lib/types";
+import { rowsForTotals, transactionScopeLabel } from "../lib/format";
 import { verificationForOfficial, recordIdsFor } from "../lib/row-verification";
 import { readAssetResolution, publicTicker } from "../lib/asset-resolution";
 
@@ -24,6 +25,7 @@ interface OfficialData {
   confirmedDate?: string | null;
   mostRecentFilingDate: string;
   departedDate?: string | null;
+  formerOfficial?: boolean;
   transactions: Transaction[];
 }
 
@@ -58,10 +60,11 @@ async function main() {
   const exportOfficials = allOfficials.map((official) => {
     const ids = recordIdsFor(official.transactions);
     const verification = verificationForOfficial(official.slug, official.transactions);
-    const underReviewCount = verification.filter((row) => row?.score === 0).length;
+    const underReviewCount = verification.filter((row, i) => row?.score === 0 && !official.transactions[i].historical).length;
     return {
       ...official,
-      transactionCount: official.transactions.length - underReviewCount,
+      transactionCount: rowsForTotals(official.transactions, verification).length,
+      historicalCount: official.transactions.filter((tx) => tx.historical).length,
       underReviewCount,
       transactions: official.transactions.map((tx, i) => {
         const row = verification[i];
@@ -111,6 +114,9 @@ async function main() {
     "issuer_label",
     "resolved_ticker",
     "resolution_tier",
+    "historical_report",
+    "date_scope",
+    "former_official",
   ];
   const txRows = exportOfficials.flatMap((o) =>
     o.transactions.map((tx) =>
@@ -140,6 +146,9 @@ async function main() {
         escapeCsv(tx.issuerLabel ?? ""),
         tx.resolvedTicker ?? "",
         tx.resolutionTier ?? "",
+        tx.historical ? "yes" : "no",
+        escapeCsv(transactionScopeLabel(tx) ?? ""),
+        o.formerOfficial ? "yes" : "no",
       ].join(",")
     )
   );
@@ -163,9 +172,10 @@ async function main() {
     "estimated_total_value",
     "most_recent_oge_filing_date",
     "under_review_count",
+    "historical_count",
   ];
   const sumRows = exportOfficials.map((o) => {
-    const counted = o.transactions.filter((tx) => tx.verificationScore !== 0);
+    const counted = o.transactions.filter((tx) => !tx.historical && tx.verificationScore !== 0);
     const sales = counted.filter((t) =>
       ["Sale", "Sale (Partial)", "Sale (Full)"].includes(t.type)
     ).length;
@@ -189,6 +199,7 @@ async function main() {
       String(totalValue),
       o.mostRecentFilingDate,
       String(o.underReviewCount),
+      String(o.historicalCount),
     ].join(",");
   });
   const sumCsv = [sumHeaders.join(","), ...sumRows].join("\n") + "\n";
@@ -215,6 +226,7 @@ async function main() {
       0
     ),
     underReviewCount: exportOfficials.reduce((sum, o) => sum + o.underReviewCount, 0),
+    historicalCount: exportOfficials.reduce((sum, o) => sum + o.historicalCount, 0),
     officials: exportOfficials.map((o) => ({
       name: o.name,
       slug: o.slug,
@@ -223,8 +235,10 @@ async function main() {
       level: o.level,
       confirmedDate: o.confirmedDate ?? null,
       departedDate: o.departedDate ?? null,
+      formerOfficial: o.formerOfficial ?? false,
       transactionCount: o.transactionCount,
       underReviewCount: o.underReviewCount,
+      historicalCount: o.historicalCount,
       mostRecentFilingDate: o.mostRecentFilingDate,
       transactions: o.transactions,
     })),

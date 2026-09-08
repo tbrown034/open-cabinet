@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getOfficialBySlug } from "@/lib/data";
+import { getOfficialBySlug, officialForTotals } from "@/lib/data";
 import { displayName } from "@/lib/format";
 import type { Transaction } from "@/lib/types";
 
@@ -46,10 +46,11 @@ export default async function OfficialOGImage({
     );
   }
 
-  const buys = official.transactions.filter((t) => t.type === "Purchase").length;
-  const sells = official.transactions.filter((t) => isSale(t.type)).length;
-  const lateFilings = official.transactions.filter((t) => t.lateFilingFlag).length;
-  const total = official.transactions.length;
+  const counted = officialForTotals(official).transactions;
+  const buys = counted.filter((t) => t.type === "Purchase").length;
+  const sells = counted.filter((t) => isSale(t.type)).length;
+  const lateFilings = counted.filter((t) => t.lateFilingFlag).length;
+  const total = counted.length;
   const fullName = displayName(official.name);
 
   return new ImageResponse(

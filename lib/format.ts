@@ -1,12 +1,19 @@
 import type { SourceFiling, Transaction } from "./types";
 
 /** Pass verdicts in the original row order, before sorting or filtering.
- * Missing verification remains a single read; only score zero is excluded. */
+ * Historical rows are preserved for reference but excluded from current totals. */
 export function rowsForTotals<T>(
   rows: T[],
   verification: ({ score: number } | null)[]
 ): T[] {
-  return rows.filter((_, i) => verification[i]?.score !== 0);
+  return rows.filter((row, i) => verification[i]?.score !== 0 &&
+    !(row !== null && typeof row === "object" && "historical" in row && row.historical === true));
+}
+
+export function transactionScopeLabel(tx: Pick<Transaction, "date" | "historical">): string | null {
+  if (tx.historical) return "Historical report · excluded from current totals";
+  if (tx.date && tx.date < "2025-01-20") return "Trade before second term";
+  return null;
 }
 
 export {

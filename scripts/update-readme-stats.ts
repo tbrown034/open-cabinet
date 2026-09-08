@@ -13,13 +13,14 @@ import { resolveSymbol } from "../lib/asset-registry";
 import { readRowVerification, type VerificationState } from "../lib/row-verification";
 import type { AmountRange } from "../lib/types";
 
-interface Tx { description: string; ticker: string | null; type: string; date: string; amount: AmountRange | null; lateFilingFlag: boolean; verificationScore?: number }
+interface Tx { description: string; ticker: string | null; type: string; date: string; amount: AmountRange | null; lateFilingFlag: boolean; verificationScore?: number; historical?: boolean }
 interface Dataset { officials: Array<{ transactions: Tx[] }> }
 
 const root = process.cwd();
 const dataset: Dataset = JSON.parse(readFileSync(path.join(root, "public", "data", "full-dataset.json"), "utf-8"));
 const allTx = dataset.officials.flatMap((o) => o.transactions);
-const countedTx = allTx.filter((tx) => tx.verificationScore !== 0);
+const countedTx = allTx.filter((tx) => !tx.historical && tx.verificationScore !== 0);
+const underReview = allTx.filter((tx) => !tx.historical && tx.verificationScore === 0).length;
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 const tickers = new Set<string>();
@@ -38,7 +39,7 @@ const stateLine = `Rows by verification state: ${order.map((k) => `${fmt(verific
 const rows: Record<string, string> = {
   "Officials tracked": fmt(dataset.officials.length),
   "Transactions": fmt(countedTx.length),
-  "Rows under review (not counted in totals)": fmt(allTx.length - countedTx.length),
+  "Rows under review (not counted in totals)": fmt(underReview),
   "Estimated value": `~${formatCompactCurrency(sumAmountEstimates(countedTx).estimate)}`,
   "Late filings": fmt(countedTx.filter((t) => t.lateFilingFlag).length),
   "Companies searchable": fmt(tickers.size),
@@ -53,7 +54,7 @@ for (const [label, value] of Object.entries(rows)) {
   readme = readme.replace(re, `| ${label} | ${value} |`);
 }
 readme = readme.replace(/Rows by verification state: [^\n]*?\. Counts are checked/, `${stateLine} Counts are checked`);
-readme = readme.replace(/retain all [\d,]+ rows, including the [\d,]+ under review/, `retain all ${fmt(allTx.length)} rows, including the ${fmt(allTx.length - countedTx.length)} under review`);
+readme = readme.replace(/retain all [\d,]+ rows, including the [\d,]+ under review/, `retain all ${fmt(allTx.length)} rows, including the ${fmt(underReview)} under review`);
 writeFileSync(path.join(root, "README.md"), readme);
 console.log(Object.entries(rows).map(([k, v]) => `${k}: ${v}`).join("\n"));
 console.log(stateLine);

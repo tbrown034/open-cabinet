@@ -8,6 +8,7 @@ import { getOfficialBySlug, getAllOfficialSlugs, getOfficialsIndex } from "@/lib
 import {
   formatDate,
   rowsForTotals,
+  transactionScopeLabel,
   sumAmountEstimates,
   formatCompactCurrency,
   amountRangeLabel,
@@ -35,6 +36,7 @@ import OfficialAvatar from "@/app/components/official-avatar";
 import AlertSignupForm from "@/app/components/alert-signup-form";
 import DivestitureLedger from "@/app/components/divestiture-ledger";
 import SourceDocuments from "@/app/components/source-documents";
+import SourceAvailabilityNote from "@/app/components/source-availability-note";
 import {
   getDivestitureData,
   buildPromiseEvidence,
@@ -105,7 +107,7 @@ export async function generateMetadata({
     description: official.summary || `Financial transaction data for ${displayName}, ${official.title}.`,
     openGraph: {
       title: `${displayName} Financial Trades — Open Cabinet`,
-      description: `${official.transactions.length} transactions reported by ${displayName}, ${official.title}.`,
+      description: `${official.transactions.filter((tx) => !tx.historical).length} current-scope transactions reported by ${displayName}, ${official.title}.`,
       type: "website",
     },
   };
@@ -228,7 +230,9 @@ export default async function OfficialPage({
   );
 
   const countedTransactions = rowsForTotals(transactions, verification);
-  const underReviewCount = transactions.length - countedTransactions.length;
+  const underReviewCount = verification.filter((v, i) => v?.score === 0 && !transactions[i].historical).length;
+  const historicalCount = transactions.filter((tx) => tx.historical).length;
+  const preTermCount = transactions.filter((tx) => !tx.historical && tx.date && tx.date < "2025-01-20").length;
   const promiseEvidence = divestiture
     ? buildPromiseEvidence(divestiture, countedTransactions)
     : null;
@@ -238,7 +242,7 @@ export default async function OfficialPage({
   const sells = countedTransactions.filter((t) => isSale(t.type)).length;
   const lateFilings = countedTransactions.filter((t) => t.lateFilingFlag).length;
 
-  const dates = datedRows(transactions).map((t) => new Date(t.date).getTime());
+  const dates = datedRows(transactions.filter((tx) => !tx.historical)).map((t) => new Date(t.date).getTime());
   const earliest = new Date(Math.min(...dates));
   const latest = new Date(Math.max(...dates));
 
@@ -343,7 +347,7 @@ export default async function OfficialPage({
   // The client chart components never use per-row source attribution, and
   // sourceUrl is ~90 bytes per row — on an 8,900-row official that is real
   // serialized-payload weight. Strip it before the props cross to the client.
-  const stripSourceUrl = <T extends Transaction>({ sourceUrl, ...rest }: T) => rest;
+  const stripSourceUrl = <T extends Transaction>(tx: T) => { const copy = { ...tx }; delete copy.sourceUrl; return copy; };
 
   const monthLabel = monthFilter
     ? new Date(monthFilter + "-01T00:00:00").toLocaleDateString("en-US", {
@@ -627,6 +631,18 @@ export default async function OfficialPage({
         </div>
       </div>
       <UnderReviewNote count={underReviewCount} />
+      {historicalCount > 0 && (
+        <p className="mb-3 text-sm text-neutral-600">
+          {historicalCount} transactions from prior-administration reports are retained
+          as history in the table. They are excluded from current totals and charts.
+        </p>
+      )}
+      {!official.formerOfficial && preTermCount > 0 && (
+        <p className="mb-3 text-sm text-neutral-600">
+          {preTermCount} trades occurred before January 20, 2025 and were disclosed
+          in second-term reports. They remain included and are labeled in the table.
+        </p>
+      )}
       <p className="text-xs text-neutral-400 mb-2">
         Last filing: {formatDate(ogeFilingDate)}
         <span className="text-neutral-300 mx-1.5">|</span>
@@ -743,7 +759,7 @@ export default async function OfficialPage({
           />
         ) : (
           <TransactionTimeline
-            transactions={datedRows(visibleTransactions.filter((tx) => verificationByTransaction.get(tx)?.score !== 0)).map(stripSourceUrl)}
+            transactions={datedRows(visibleTransactions.filter((tx) => !tx.historical && verificationByTransaction.get(tx)?.score !== 0)).map(stripSourceUrl)}
             careerEvents={getCareerEvents(official)}
           />
         )}
@@ -812,6 +828,11 @@ export default async function OfficialPage({
               >
                 <td className="py-2.5 pr-4 tabular-nums text-neutral-500 whitespace-nowrap">
                   {tx.date ? formatDate(tx.date) : "N/A"}
+                  {!official.formerOfficial && transactionScopeLabel(tx) && (
+                    <span className="block text-xs text-neutral-500 whitespace-normal">
+                      {transactionScopeLabel(tx)}
+                    </span>
+                  )}
                   <NoteMark numbers={marksFor(notes, "date")} />
                 </td>
                 <td className="py-2.5 pr-4 text-neutral-900">
@@ -887,6 +908,7 @@ export default async function OfficialPage({
                   })()}
                 </td>
                 <td className="py-2.5 text-right whitespace-nowrap">
+                  <SourceAvailabilityNote url={sourceFiling?.url} />
                   {sourceFiling?.url ? (
                     <a
                       href={sourceFiling.url}
