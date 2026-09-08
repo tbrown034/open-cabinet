@@ -8,6 +8,25 @@ import { rowsForTotals } from "@/lib/format";
 import Home from "./page";
 import CompaniesPage from "./companies/page";
 import CompanyPage from "./companies/[ticker]/page";
+import DashboardPage from "./dashboard/page";
+import AllTradesPage from "./all/page";
+import LateFilingsPage from "./late-filings/page";
+import OGImage from "./opengraph-image";
+import MethodologyPage from "./methodology/page";
+import SwimLaneChart from "./components/swim-lane-chart";
+import SectorTreemap from "./components/sector-treemap";
+import OfficialRankings from "./components/official-rankings";
+const assetFixture = vi.hoisted(() => ({ distinguishOccurrences: false }));
+
+vi.mock("next/og", () => ({ ImageResponse: class {
+  html: string;
+  constructor(element: Parameters<typeof renderToStaticMarkup>[0]) { this.html = renderToStaticMarkup(element); }
+} }));
+vi.mock("./components/swim-lane-chart", () => ({ default: vi.fn(() => null) }));
+vi.mock("./components/sector-treemap", () => ({ default: vi.fn(() => null) }));
+vi.mock("./components/official-rankings", () => ({ default: vi.fn(() => null) }));
+vi.mock("./components/about-scrolly", () => ({ default: () => null }));
+vi.mock("./components/pipeline-flow", () => ({ default: () => null }));
 
 vi.mock("fs/promises", () => ({ readFile: vi.fn() }));
 vi.mock("@/lib/row-verification", async (importOriginal) => ({
@@ -27,6 +46,9 @@ vi.mock("@/lib/asset-resolution", async (importOriginal) => {
       const ids = recordIdsFor(transactions);
       const rows: Record<string, ReturnType<typeof mod.resolveAsset> & { slug: string }> = {};
       transactions.forEach((tx, i) => { rows[ids[i]] = { ...mod.resolveAsset(tx, ctx), slug: "example-person" }; });
+      // Different types on identical occurrences expose accidental re-hashing
+      // after filtering: the retained second row must keep its own asset ID.
+      if (assetFixture.distinguishOccurrences) rows[ids[0]].instrumentType = "preferred";
       return { version: 1, generatedAt: "", generatedBy: "test", sources: {}, summary: { rows: 3, byType: {}, byTier: {}, byRule: {} }, rows };
     },
   };
@@ -63,6 +85,8 @@ function verdict(score: RowVerification["score"], i: number): RowVerification {
   };
 }
 beforeEach(() => {
+  vi.clearAllMocks();
+  assetFixture.distinguishOccurrences = false;
   vi.mocked(readFile).mockImplementation(async (file) => {
     if (String(file).endsWith("officials-index.json")) return JSON.stringify(index);
     if (String(file).endsWith("example-person.json")) return JSON.stringify(official);
@@ -71,6 +95,61 @@ beforeEach(() => {
   vi.mocked(verificationForOfficial).mockImplementation((_slug, rows) =>
     rows.map((_tx, i) => verdict(i === 0 ? 0 : i === 1 ? 2 : 1, i))
   );
+});
+
+it("excludes disputes from overview totals, rankings and asset categories", async () => {
+  assetFixture.distinguishOccurrences = true;
+  const html = renderToStaticMarkup(await DashboardPage());
+  expect(html).toMatch(/>2<\/span>transactions/);
+  expect(html).toContain("~$16K");
+  expect(html).toContain("1 row under review is not counted");
+  expect(vi.mocked(OfficialRankings).mock.calls[0][0].rankings[0].tradeCount).toBe(2);
+  expect(vi.mocked(SectorTreemap).mock.calls[0][0].data).toEqual([{ name: "Stock", value: 16000 }]);
+});
+
+it("excludes disputes from all-trades headlines and plotted rows", async () => {
+  const html = renderToStaticMarkup(await AllTradesPage());
+  expect(html).toContain("2 trades disclosed");
+  expect(html).toContain("1 row under review is not counted");
+  expect(html).toContain("officials&#x27; trade tables");
+  expect(vi.mocked(SwimLaneChart).mock.calls[0][0].officials[0].transactions).toHaveLength(2);
+});
+
+it("counts undated eligible trades in headlines without plotting them", async () => {
+  const date = transactions[2].date;
+  transactions[2].date = null;
+  try {
+    const html = renderToStaticMarkup(await AllTradesPage());
+    expect(html).toContain("2 trades disclosed");
+    expect(html).toContain("1 counted trade has no reported date");
+    expect(vi.mocked(SwimLaneChart).mock.calls[0][0].officials[0].transactions).toHaveLength(1);
+  } finally { transactions[2].date = date; }
+});
+
+it("uses counted late rows and a counted denominator for late-filing rates", async () => {
+  const html = renderToStaticMarkup(await LateFilingsPage());
+  expect(html).toContain("50.0%");
+  expect(html).toMatch(/>1<\/span>late-filed transactions/);
+  expect(html).toContain("1 row under review is not counted");
+});
+
+it("shows zero, not NaN, when every row is under review", async () => {
+  vi.mocked(verificationForOfficial).mockReturnValue(transactions.map((_tx, i) => verdict(0, i)));
+  const html = renderToStaticMarkup(await LateFilingsPage());
+  expect(html).toContain("0.0%");
+  expect(html).not.toContain("NaN");
+});
+
+it("builds the share-card total from eligible rows instead of stale index counts", async () => {
+  const response = await OGImage() as unknown as { html: string };
+  expect(response.html).toMatch(/>2<\/span>/);
+  expect(response.html).not.toContain(">999</span>");
+});
+
+it("uses the same counted population in methodology's aggregate comparison", async () => {
+  const html = renderToStaticMarkup(await MethodologyPage());
+  expect(html).toContain("2 tracked transactions");
+  expect(html).toContain("1 row under review is not counted");
 });
 
 it("filters by occurrence before company grouping and preserves all original rows", async () => {

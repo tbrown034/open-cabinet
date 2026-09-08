@@ -81,7 +81,7 @@ A correction may change computed row IDs. Inspect attached human decisions and r
 | A verification label looks wrong | `data/meta/row-verification.json`, `lib/row-verification.ts`, original lane logs |
 | A company match looks wrong | Asset-resolution entry, reference snapshot/dictionary, printed description and name evidence |
 | New filing is missing | OGE URL, `data/meta/last-check.json`, official source URLs, pipeline logs; discovery is not proof of publication |
-| Counts differ | Historical/former scope, score-zero exclusion, unknown dates, estimated amount ranges |
+| Counts differ | Start at `officialForTotals` / `rowsForTotals`. Check official/company/date scope; under-review and historical rows do not count. Undated counted rows appear in headlines but cannot appear on a timeline |
 | Need to correct a public transaction | Use the JSON correction/review workflow; the retired DB mirror controls no longer exist |
 | Email failed or may have partially sent | `/admin`, digest run and delivery records; inspect before rerunning a real send |
 | CI fails only on GitHub | Tracked files, Node/pnpm versions, environment requirements; private notes are absent from fresh clones |

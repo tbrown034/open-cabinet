@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getAllOfficials, getTradesByTicker } from "@/lib/data";
+import { getAllOfficials, getTradesByTicker, officialForTotals } from "@/lib/data";
+import UnderReviewNote from "../components/under-review-note";
 import { readAssetResolution } from "@/lib/asset-resolution";
 import { recordIdsFor } from "@/lib/row-verification";
 import { INSTRUMENT_LABEL, type InstrumentType } from "@/lib/instrument-type";
@@ -22,7 +23,9 @@ function isSale(type: string): boolean {
 }
 
 export default async function DashboardPage() {
-  const officials = await getAllOfficials();
+  const sourceOfficials = await getAllOfficials();
+  const officials = sourceOfficials.map(officialForTotals);
+  const underReviewCount = officials.reduce((sum, o) => sum + o.underReviewCount, 0);
 
   const allTx = officials.flatMap((o) =>
     o.transactions.map((tx) => ({ ...tx, officialName: o.name, officialSlug: o.slug }))
@@ -57,9 +60,13 @@ export default async function DashboardPage() {
   // that disagreed with the lane (it called resolved Fiserv rows "Other").
   const assetFile = readAssetResolution();
   const byType = new Map<InstrumentType, number>();
-  for (const o of officials) {
+  // Compute occurrence-based IDs before removing disputed rows, otherwise
+  // a repeated row can pick up a different row's asset classification.
+  const countedRows = new Set(officials.flatMap((o) => o.transactions));
+  for (const o of sourceOfficials) {
     const ids = recordIdsFor(o.transactions);
     o.transactions.forEach((tx, i) => {
+      if (!countedRows.has(tx)) return;
       const type = assetFile?.rows[ids[i]]?.instrumentType ?? "unknown";
       byType.set(type, (byType.get(type) ?? 0) + (transactionEstimate(tx) ?? 0));
     });
@@ -128,6 +135,7 @@ export default async function DashboardPage() {
         </div>
       </div>
 
+      <UnderReviewNote count={underReviewCount} />
       <div className="space-y-16">
         <BuySellRatio
           salesCount={salesCount}

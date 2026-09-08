@@ -1,16 +1,16 @@
 import { ImageResponse } from "next/og";
-import { getOfficialsIndex } from "@/lib/data";
+import { getAllOfficials, getOfficialsIndex, officialForTotals } from "@/lib/data";
 
 const IMAGE_SIZE = { width: 1200, height: 630 };
 
 export default async function OGImage() {
-  const index = await getOfficialsIndex();
+  const [index, officials] = await Promise.all([getOfficialsIndex(), getAllOfficials()]);
   // Exclude prior-administration holdovers so the share card matches the site's
   // current-roster headline totals.
   const current = index.officials.filter((o) => !o.formerOfficial);
   const officialsCount = current.length;
-  const txCount = current.reduce(
-    (sum, o) => sum + (o.transactionCount || 0),
+  const txCount = officials.map(officialForTotals).reduce(
+    (sum, o) => sum + o.transactions.length,
     0
   );
 
