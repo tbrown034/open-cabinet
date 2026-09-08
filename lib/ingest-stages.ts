@@ -10,7 +10,7 @@ import { createWriteStream, existsSync, statSync } from "fs";
 import { execFileSync } from "node:child_process";
 import path from "path";
 import https from "https";
-import { PDFDocument } from "pdf-lib";
+import { splitPdfIfNeeded, type ParseUnit } from "./pdf/chunks";
 import {
   parsePdf,
   ParseTruncatedError,
@@ -50,6 +50,7 @@ import { recordSecondRead, secondReadFiling, SECOND_READ_MODEL } from "./second-
 import { auditPages, foldAudit, recordGrokAudit, GROK_AUDIT_MODEL, GROK_AUDIT_PROMPT_VERSION, type Row as AuditRow } from "./grok-audit";
 import { openReviewItem, problemsFromCrosscheck } from "./review-queue";
 import { notify } from "./notify";
+import { PdfRequestTooLargeError } from "./pdf/request-size";
 import type { TargetFiling } from "./oge-filings";
 
 export type { ParsedTransaction };
@@ -223,50 +224,6 @@ export async function scanPdfForFeeAnnotation(
   }
 }
 
-/** A vision read of more than this many pages risks the output cap. */
-export const MAX_PAGES_PER_UNIT = 8;
-
-/** One piece of a filing to parse: the whole PDF, or a page-range chunk. */
-export interface ParseUnit {
-  path: string;
-  chunk: { first: number; last: number } | null;
-}
-
-export async function splitPdfIfNeeded(
-  pdfPath: string
-): Promise<{ units: ParseUnit[]; pageCount: number | null }> {
-  const buf = await readFile(pdfPath);
-  const doc = await PDFDocument.load(buf);
-  const pageCount = doc.getPageCount();
-  // Two reasons to split: the bytes (a scan) or the pages (a dense text
-  // filing; Mody's 19-page, 41 KB filing overran the output cap whole).
-  if (buf.length <= 500_000 && pageCount <= MAX_PAGES_PER_UNIT) {
-    return { units: [{ path: pdfPath, chunk: null }], pageCount: null };
-  }
-  const bytesPerPage = buf.length / pageCount;
-  const pagesPerChunk = Math.max(1, Math.min(MAX_PAGES_PER_UNIT, Math.floor(500_000 / bytesPerPage)));
-  const chunks: ParseUnit[] = [];
-
-  for (let i = 0; i < pageCount; i += pagesPerChunk) {
-    const end = Math.min(i + pagesPerChunk, pageCount);
-    const newDoc = await PDFDocument.create();
-    const pages = await newDoc.copyPages(
-      doc,
-      Array.from({ length: end - i }, (_, k) => i + k)
-    );
-    pages.forEach((p) => newDoc.addPage(p));
-    const bytes = await newDoc.save();
-    const chunkPath = pdfPath.replace(/\.pdf$/i, `.pages${i + 1}-${end}.pdf`);
-    await writeFile(chunkPath, bytes);
-    chunks.push({ path: chunkPath, chunk: { first: i + 1, last: end } });
-  }
-
-  console.log(
-    `           split ${path.basename(pdfPath)} into ${chunks.length} chunks`
-  );
-  return { units: chunks, pageCount };
-}
-
 export const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
 
 /**
@@ -340,9 +297,9 @@ export async function parseUnitWithRetry(
         await recordSpend(result.tokenUsage.estimatedCostUsd);
       }
     } catch (err: unknown) {
-      // A response cut off at the token cap will be cut off again on a
-      // retry. Surface it so the operator splits the PDF instead.
-      if (err instanceof ParseTruncatedError) throw err;
+      // Repeating an oversized request or an output cutoff does not make
+      // the input smaller. Surface it for page-range review instead.
+      if (err instanceof ParseTruncatedError || err instanceof PdfRequestTooLargeError) throw err;
       // A validation failure is deterministic: the model read the page
       // the same way it will read it again (Kennedy's filing prints
       // 04/04/2225 and a faithful read fails the future-date check three

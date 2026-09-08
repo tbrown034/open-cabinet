@@ -58,6 +58,14 @@ For a manual run, begin with discovery and inspect which URLs and officials are 
 
 Do not treat `check-filings` without `--dry-run` as harmless preparation: it writes discovery state used by ingestion. Discovery/retry state still needs separation. A hand-written `--from-file` plan omits amendment metadata; it is not a safe general workaround for an amended report. Stop for review when a filing replaces or corrects existing records.
 
+## PDF size and incomplete answers
+
+`lib/pdf/chunks.ts` splits filings into at most eight pages per unit and checks the actual saved chunk size against a 500 KB target. It divides oversized multi-page chunks again. A single oversized page stays intact with a warning; the target is not a provider rejection limit. Original PDFs and page rotation are preserved.
+
+The normal Claude parser checks the whole encoded request against the documented 32 MB limit before sending it. Base64 encoding makes the request larger than the PDF on disk. This guard does not cover the separate OpenAI or legacy batch paths.
+
+Input size and answer length are different limits. If Claude's answer reaches the output limit, ingestion still stops for smaller-page review; it does not automatically retry with more paid requests. A large scanned filing may already have one page per unit. Do not assume smaller file sizes alone solve that failure. Changed chunk boundaries can also require new reads when existing cache entries no longer match.
+
 ## Correct an existing filing
 
 Use the candidate comparison in `scripts/reverify.ts`. Read the report against the original PDF before applying. `--force-reparse` pays for fresh reads; using the ingestion merge path on existing data can append rows rather than replace them. If testing a fresh parse through ingest, use `--parse-only` and review the effects listed above.

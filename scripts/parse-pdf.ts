@@ -28,6 +28,7 @@ import OpenAI from "openai";
 import dotenv from "dotenv";
 import { AMOUNT_RANGE_KEYS, type AmountRange } from "../lib/amounts";
 import { resolveTicker } from "../lib/assets";
+import { assertClaudeRequestSize } from "../lib/pdf/request-size";
 
 dotenv.config({ path: ".env.local" });
 
@@ -176,7 +177,7 @@ async function parsePdf(
   const pdfBase64 = pdfBuffer.toString("base64");
 
   console.log(
-    `  Sending PDF to Claude API (${(pdfBuffer.length / 1024).toFixed(0)} KB)...`
+    `  Preparing PDF for Claude API (${(pdfBuffer.length / 1024).toFixed(0)} KB)...`
   );
 
   // Model selection:
@@ -190,32 +191,32 @@ async function parsePdf(
   // the network mid-response ("Connection error" after ~2 min, reproducible
   // on Mullin's 68-row filing). Streaming keeps bytes flowing; finalMessage()
   // returns the same shape create() would.
-  const response = await client.messages
-    .stream({
-      model,
-      max_tokens: 16000, // Trump has 389 transactions — needs room
-      system: SYSTEM_PROMPT,
-      messages: [
-        {
-          role: "user",
-          content: [
-            {
-              type: "document",
-              source: {
-                type: "base64",
-                media_type: "application/pdf",
-                data: pdfBase64,
-              },
+  const request = {
+    model,
+    max_tokens: 16000, // Output budget; a cutoff is held for smaller-page review.
+    system: SYSTEM_PROMPT,
+    messages: [
+      {
+        role: "user",
+        content: [
+          {
+            type: "document",
+            source: {
+              type: "base64",
+              media_type: "application/pdf",
+              data: pdfBase64,
             },
-            {
-              type: "text",
-              text: EXTRACTION_PROMPT,
-            },
-          ],
-        },
-      ],
-    })
-    .finalMessage();
+          },
+          {
+            type: "text",
+            text: EXTRACTION_PROMPT,
+          },
+        ],
+      },
+    ],
+  } satisfies Anthropic.MessageCreateParams;
+  assertClaudeRequestSize({ ...request, stream: true }, pdfPath);
+  const response = await client.messages.stream(request).finalMessage();
 
   // Extract the text response
   // Note: if credits run out, the SDK throws an Anthropic.BadRequestError
