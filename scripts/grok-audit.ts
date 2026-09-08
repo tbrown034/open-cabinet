@@ -13,7 +13,7 @@
  * are cached beside the PDF; reruns are free until the rows or the pages
  * change. Nothing here edits an official file.
  */
-import { readdirSync, readFileSync, existsSync } from "fs";
+import { readdirSync, existsSync } from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { readCrosscheckLog, hashRows } from "../lib/crosscheck-log";

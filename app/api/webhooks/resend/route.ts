@@ -18,7 +18,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Webhook } from "svix";
 import { and, eq, ne } from "drizzle-orm";
 import { sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups, emailSends } from "@/lib/schema";
 
 interface ResendEvent {
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
         // Suppress the subscriber so they're never mailed again. Don't override
         // an explicit unsubscribe (also a do-not-send state).
         for (const email of emails) {
-          const updated = await db
+          const updated = await getDb()
             .update(alertSignups)
             .set({ status: "suppressed", suppressedReason: reason, updatedAt: sql`now()` })
             .where(and(eq(alertSignups.email, email), ne(alertSignups.status, "unsubscribed")))
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
           }
         }
         if (messageId) {
-          await db
+          await getDb()
             .update(emailSends)
             .set({ status: event.type === "email.bounced" ? "bounced" : "complained" })
             .where(eq(emailSends.resendMessageId, messageId));
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
       }
       case "email.delivered": {
         if (messageId) {
-          await db
+          await getDb()
             .update(emailSends)
             .set({ status: "delivered" })
             .where(eq(emailSends.resendMessageId, messageId));

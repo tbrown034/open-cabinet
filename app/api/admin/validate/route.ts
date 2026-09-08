@@ -4,7 +4,7 @@
  * POST /api/admin/validate — Runs validation checks and returns report
  */
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { officials, transactions } from "@/lib/schema";
 import { count, eq, sql } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
@@ -26,29 +26,29 @@ export async function POST() {
     [orphaned],
     [emptyOfficials],
   ] = await Promise.all([
-    db.select({ count: count() }).from(officials),
-    db.select({ count: count() }).from(transactions),
-    db
+    getDb().select({ count: count() }).from(officials),
+    getDb().select({ count: count() }).from(transactions),
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(eq(transactions.needsReview, true)),
-    db
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(sql`${transactions.description} IS NULL OR ${transactions.description} = ''`),
-    db
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(sql`${transactions.type} IS NULL OR ${transactions.type} = ''`),
-    db
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(sql`${transactions.date} IS NULL`),
-    db
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(sql`${transactions.officialId} NOT IN (SELECT id FROM officials)`),
-    db
+    getDb()
       .select({ count: count() })
       .from(officials)
       .where(

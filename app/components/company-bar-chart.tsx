@@ -29,7 +29,6 @@ export default function CompanyBarChart({
   officials,
 }: {
   officials: OfficialBar[];
-  ticker: string;
 }) {
   const [containerRef, width] = useContainerWidth<HTMLDivElement>(800);
 

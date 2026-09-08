@@ -31,7 +31,7 @@
  *      - none                           -> freeze payload (recipients + slugs),
  *                                          "sending"
  *   5. send chunks (skipping any already confirmed), persist chunk state
- *   6. all chunks ok -> ONE atomic db.batch: write notified_filings ledger +
+ *   6. all chunks ok -> ONE atomic getDb().batch: write notified_filings ledger +
  *      per-recipient email_sends rows + bump recipients' lastNotifiedAt + flip
  *      run to "sent". Then email the admin a receipt.
  *   7. any chunk failed -> persist "failed"; the admin retries (retry = resume).
@@ -40,13 +40,13 @@
  * follows, never by content-filtering the digest. (The test action can content-
  * filter to preview a single-official digest; real sends never do.)
  *
- * neon-http has no interactive transactions, so the finalize uses db.batch,
+ * neon-http has no interactive transactions, so the finalize uses getDb().batch,
  * which runs its statements as a single atomic request.
  */
 import { NextResponse } from "next/server";
 import { and, desc, eq, inArray, isNotNull } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups, digestRuns, emailSends, notifiedFilings } from "@/lib/schema";
 import {
   buildDigest,
@@ -136,7 +136,7 @@ function mergeChunks(
  * 'active' with a null confirmedAt — they must be excluded until re-permission
  * stamps confirmedAt via the confirm flow. */
 async function loadConfirmedRecipients(): Promise<FollowsRecipient[]> {
-  return db
+  return getDb()
     .select({
       id: alertSignups.id,
       email: alertSignups.email,
@@ -171,14 +171,14 @@ export async function GET() {
 
     // Surface any unfinished run (so the admin sees a resume is pending) and the
     // most recent successful send timestamp.
-    const [inFlight] = await db
+    const [inFlight] = await getDb()
       .select({ id: digestRuns.id, status: digestRuns.status, chunks: digestRuns.chunks })
       .from(digestRuns)
       .where(inArray(digestRuns.status, ["sending", "failed"]))
       .orderBy(desc(digestRuns.createdAt))
       .limit(1);
 
-    const [lastSent] = await db
+    const [lastSent] = await getDb()
       .select({ sentAt: digestRuns.sentAt })
       .from(digestRuns)
       .where(eq(digestRuns.status, "sent"))
@@ -269,7 +269,7 @@ async function handleTestSend(
 
   // Use the admin's own real unsubscribe link if they're a signup; otherwise
   // fall back to the site URL rather than minting a token for a nonexistent row.
-  const [ownRow] = await db
+  const [ownRow] = await getDb()
     .select({ id: alertSignups.id })
     .from(alertSignups)
     .where(eq(alertSignups.email, adminEmail))
@@ -396,7 +396,7 @@ export async function POST(req: Request) {
     // list, so the freshly recomputed filter must not be allowed to strand a
     // partial send (which would leave the ledger unwritten and re-trigger these
     // filings in the next digest — a double send for everyone already mailed).
-    const [existing] = await db
+    const [existing] = await getDb()
       .select()
       .from(digestRuns)
       .where(eq(digestRuns.idempotencyKey, key))
@@ -442,7 +442,7 @@ export async function POST(req: Request) {
         trackedOfficialCount: digest.trackedOfficialCount,
         lede: (await getDigestLede(key)) ?? undefined,
       };
-      const [row] = await db
+      const [row] = await getDb()
         .insert(digestRuns)
         .values({
           status: "sending",
@@ -474,7 +474,7 @@ export async function POST(req: Request) {
       mergedChunks.length === totalChunks && mergedChunks.every((c) => c.ok);
 
     if (!batch.ok || !allOk) {
-      await db
+      await getDb()
         .update(digestRuns)
         .set({
           status: "failed",
@@ -499,8 +499,8 @@ export async function POST(req: Request) {
     const sentEmails = sentRows.map((r) => r.email);
     const now = new Date();
 
-    await db.batch([
-      db
+    await getDb().batch([
+      getDb()
         .insert(notifiedFilings)
         .values(
           payload.filings.map((f) => ({
@@ -510,7 +510,7 @@ export async function POST(req: Request) {
           }))
         )
         .onConflictDoNothing(),
-      db.insert(emailSends).values(
+      getDb().insert(emailSends).values(
         sentRows.map((r) => ({
           email: r.email,
           kind: "digest",
@@ -519,11 +519,11 @@ export async function POST(req: Request) {
           status: "sent",
         }))
       ),
-      db
+      getDb()
         .update(alertSignups)
         .set({ lastNotifiedAt: now })
         .where(inArray(alertSignups.email, sentEmails)),
-      db
+      getDb()
         .update(digestRuns)
         .set({ status: "sent", sentAt: now, chunks: mergedChunks, recipientCount: sentRows.length })
         .where(eq(digestRuns.id, runId)),

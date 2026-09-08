@@ -1,31 +1,12 @@
 /**
- * Validation of parsed 278-T rows, run on every parse whether it came from
- * the model just now or from a cache file on disk.
+ * Validate parser output before ingest, including rows loaded from cache.
+ * Checks allowed fields, transaction types, amounts, calendar dates and
+ * model confidence. Implausible tickers are withheld with a warning.
  *
- * This is the enum-and-shape gate for the production ingest. Before it
- * existed, `quickValidate` in scripts/parse-pdf.ts was called by the CLI and
- * by the dormant DB pipeline, never by scripts/ingest-new-filings.ts, so a
- * model response with one novel amount string could reach the published
- * JSON unchecked. Pure: no I/O, no model, no filesystem.
- *
- * What it checks, per row:
- *   - exactly the known keys, nothing extra (an injected or renamed field
- *     fails here rather than being carried into the dataset)
- *   - description: non-empty string, bounded length
- *   - ticker: null or a plausible symbol (dotted share classes allowed)
- *   - type: one of the five legal transaction types
- *   - amount: one of the eleven legal ranges, or null with a non-empty
- *     amountNote carrying the filing's own wording
- *   - date: a real calendar date, YYYY-MM-DD, not in the future, not before
- *     the 2019 floor the dataset uses
- *   - lateFilingFlag: a real boolean, not a string
- *   - confidence: a finite number between 0 and 1 (self-reported by the
- *     model; kept as a review signal, never treated as calibrated accuracy)
- *
- * What it does not check: whether the values are true. That is the job of
- * the text-layer cross-check and of a person.
+ * This checks structure, not whether a row matches the PDF. Source checks
+ * and human review provide that evidence. No I/O or model calls happen here.
  */
-import { isAmountRange, type AmountRange } from "./amounts";
+import { isAmountRange, type AmountRange } from "../amounts";
 
 export const VALID_TRANSACTION_TYPES = [
   "Sale",
@@ -204,7 +185,6 @@ export function validateParsedRows(
   return { ok: errors.length === 0, rows, errors, warnings };
 }
 
-/** Throws with every problem listed, for callers that must halt. */
 /** Thrown when the model's rows fail the shape gate. Deterministic: the
  * same document read the same way fails the same way, so callers must not
  * retry it, and a batch should record it and move on. */

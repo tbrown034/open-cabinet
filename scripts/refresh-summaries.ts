@@ -35,7 +35,6 @@ import {
   buildFactBlock,
   computeStats,
   factHash,
-  unwitnessedNumbers,
   type Stats,
 } from "../lib/summary-facts";
 import {

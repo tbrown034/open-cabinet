@@ -1,0 +1,67 @@
+# How Open Cabinet works
+
+Open Cabinet turns executive-branch financial disclosure PDFs into searchable transaction records. The website reads published JSON. PostgreSQL supports accounts, subscriptions, email delivery and other changing operational state.
+
+## Follow one transaction
+
+1. **Find the filing.** `lib/oge-filings.ts` reads OGE's index and identifies filing URLs. `scripts/ingest-new-filings.ts` coordinates ingestion.
+2. **Read the PDF.** `lib/ingest-stages.ts` fetches and prepares it; `scripts/parse-pdf.ts` contains the model request and extraction contract. The proposed rows are ordinary JavaScript objects.
+3. **Check the proposed rows.** `lib/validation/parsed-rows.ts` checks their shape and allowed values. Other readers compare the values with the document: text extraction, OCR, a second model and a page audit. Shape validation alone cannot establish that a value is true.
+4. **Save accepted records.** The ingest command writes `data/officials/<slug>.json`. Corrections to existing filings use a separate review workflow; they should not be appended as new filings.
+5. **Build supporting information.** Verification and asset builders write files under `data/meta/`; the export builder writes `public/data/`.
+6. **Review and publish.** GitHub Actions prepares a pull request. Merging it starts Vercel's build and deployment.
+7. **Render a page.** `lib/data.ts` reads the JSON and selects or groups rows. Next.js builds the page; React renders the interface and D3 calculates chart positions and scales.
+
+## Where to look
+
+| If you want to understand… | Start here |
+|---|---|
+| A page or URL | `app/`: `page.tsx` is a page; `route.ts` is an API endpoint |
+| Charts and shared interface pieces | `app/components/` |
+| Reading public transactions and grouping by ticker | `lib/data.ts` |
+| **Validation rules** | **`lib/validation/`**: `parsed-rows.ts` for proposed rows; `published-data.ts` for the saved dataset |
+| Running validation | `scripts/validate.ts`, a short CLI calling the validation module |
+| Ingesting a new filing | `scripts/ingest-new-filings.ts` → `lib/ingest-stages.ts` |
+| PDF model requests and prompts | `scripts/parse-pdf.ts` |
+| Cached extraction responses | `lib/parse-cache.ts` |
+| Independent evidence | `lib/text-layer-parser.ts`, `lib/ocr-lane.ts`, `lib/second-read.ts`, `lib/grok-audit.ts` |
+| Public verification labels | `lib/row-verification.ts`; builder: `scripts/build-row-verification.ts` |
+| Asset classification and ticker decisions | `lib/instrument-type.ts`, `lib/asset-resolution.ts`, `lib/asset-reference.ts` |
+| Corrections to existing filings | `scripts/reverify.ts`, `lib/reverify-diff.ts`, `app/admin/review/` |
+| Asking questions about the data | `app/api/ask/route.ts`, `lib/ask/`, `lib/published-rows.ts` |
+| Database access and table definitions | `lib/db.ts` (`getDb`), `lib/schema.ts`, `lib/auth-schema.ts` |
+| Login and admin checks | `lib/auth.ts` (`getAuth`, `requireAdmin`); some local review surfaces have separate gates |
+| Email subscriptions and digests | `app/api/alerts/`, `app/api/admin/digest/`, `lib/digest.ts` |
+| Scheduled work | `.github/workflows/oge-pipeline.yml`, `app/api/cron/route.ts`, `vercel.json` |
+| Tests | Next to the code as `*.test.ts`; CI is `.github/workflows/ci.yml` |
+
+`lib/` means reusable application code; it is not a single subsystem. Validation and Ask have named subfolders. Other domains still have explicit filenames directly under `lib/`; reorganize them in tested batches rather than moving everything at once. `scripts/` contains runnable commands, including older maintenance tools. Read the command's effects before executing it.
+
+## How the files connect without SQL
+
+An official file contains the transaction's description, date, type, amount range and source URL. Two supporting files add information:
+
+- `data/meta/asset-resolution.json`: what instrument/ticker a row has been matched to.
+- `data/meta/row-verification.json`: what evidence supports a row and its public label.
+
+The code computes a transaction ID from its contents and occurrence. That ID looks up entries in both supporting files. Company pages group transactions by their resolved ticker; there is no public company database table driving these pages.
+
+This keeps published data reviewable in Git. The tradeoff is that changing a transaction's contents can change its ID and detach old decisions. A future stored ID must preserve identity while a separate content version invalidates outdated checks. That migration has not happened.
+
+## What PostgreSQL does
+
+PostgreSQL stores state that changes through requests: sessions, subscriptions, email sends, pipeline runs and Ask quotas/logs/plans. `getDb()` creates and reuses the Drizzle client on first use. `getAuth()` also initializes on demand, so importing the application does not immediately require a live database configuration.
+
+Older tables contain a separate mirror of officials, transactions and news. Some admin panels read or edit that mirror. They do not change the public JSON, and reseeding replaces mirror contents. Those tools remain until their use is confirmed; no public-data migration to SQL is planned for this cleanup.
+
+## Rendering and the AI boundary
+
+Many pages are generated during the build. Official pages use URL filters and render on request. Both paths read the same published files. Interactive charts run browser JavaScript; D3 calculates geometry while React renders the elements.
+
+Ask translates a question into a constrained plan, checks it and calculates results from eligible published rows. It does not execute arbitrary model-written SQL against the mirror. Models also help read PDFs and draft optional narrative text. Keep three ideas distinct: the filed values, the saved evidence about those values, and the narrative describing them.
+
+## Limits worth explaining honestly
+
+Verification labels describe evidence, not guaranteed accuracy. Amounts are disclosure ranges; dollar totals generally use estimates. Report scope differs from transaction date. Company matching can be uncertain, especially for share classes. Validation and tests catch specified errors; they do not independently recheck every PDF.
+
+The highest remaining maintenance work is ingestion recovery/amendments, verification precedence, stable row identity, database migration reproducibility, and Ask/email failure handling. The working architecture does not require a rewrite to address those issues.

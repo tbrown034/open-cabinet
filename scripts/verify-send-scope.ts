@@ -3,12 +3,12 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
 async function main() {
-  const { db } = await import("@/lib/db");
+  const { getDb } = await import("@/lib/db");
   const { digestRuns, notifiedFilings, emailSends } = await import("@/lib/schema");
   const { buildDigest } = await import("@/lib/digest");
   const { getSendScope } = await import("@/lib/updates");
 
-  const runs = await db.select().from(digestRuns);
+  const runs = await getDb().select().from(digestRuns);
   console.log("=== digest_runs ===");
   for (const r of runs) {
     console.log(
@@ -20,7 +20,7 @@ async function main() {
     if (chunks) console.log("  chunks:", JSON.stringify(chunks));
   }
 
-  const ledger = await db.select().from(notifiedFilings);
+  const ledger = await getDb().select().from(notifiedFilings);
   console.log("");
   console.log("=== notified_filings ledger ===");
   console.log("  total rows:", ledger.length);
@@ -32,7 +32,7 @@ async function main() {
   for (const row of recent) recentBySlug[row.officialSlug] = (recentBySlug[row.officialSlug] ?? 0) + 1;
   console.log("  by official (this send):", JSON.stringify(recentBySlug));
 
-  const sends = await db.select().from(emailSends);
+  const sends = await getDb().select().from(emailSends);
   const digestSends = sends.filter((s) => s.kind === "digest");
   console.log("");
   console.log("=== email_sends (kind=digest) ===");

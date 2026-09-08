@@ -6,7 +6,7 @@
  *   as a Vercel function — too long-running. Returns instructions.)
  */
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { pipelineRuns } from "@/lib/schema";
 import { desc } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
@@ -16,7 +16,7 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const runs = await db
+  const runs = await getDb()
     .select()
     .from(pipelineRuns)
     .orderBy(desc(pipelineRuns.ranAt))

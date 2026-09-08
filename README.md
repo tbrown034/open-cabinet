@@ -6,6 +6,8 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 
 **Live:** [open-cabinet.org](https://open-cabinet.org)
 
+**Start here:** [Architecture and file map](docs/architecture.md) · [Maintenance commands and debugging](docs/maintenance.md)
+
 ## What it does
 
 - Tracks financial transactions filed by cabinet secretaries, agency heads and senior government officials
@@ -21,7 +23,7 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | Rows under review (not counted in totals) | 0 |
 | Estimated value | ~$4.5B |
 | Late filings | 7,745 |
-| Companies searchable | 439 |
+| Companies searchable | 1,182 |
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
 
@@ -110,15 +112,19 @@ The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages. The entrypo
 
 1. **Find** — the OGE API is diffed against the filings already tracked.
 2. **Fetch** — the PDF is downloaded and hashed.
-3. **Read** — the whole PDF goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/filing-validation.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
-4. **Check** — where the PDF has a text layer, `pdftotext` plus a column parser reads the same table and the two lanes are compared row for row on type, date, amount, late flag and printed row numbers (`scripts/text-layer-crosscheck.ts`). A mismatch stops the filing. A scan is OCR-compared instead, and where no program can read the page a second company's model reads it; a third company's model then audits each row against the page image. Every verdict is written per row to `data/meta/row-verification.json` (`lib/row-verification.ts`), which the site, the exports and the methodology page render. An amended filing is always held for a person: OGE amendments substitute line items of an earlier report, and a machine that merged them would double-count.
-5. **Merge** — rows are added to the official's JSON; identical rows a filing repeats are real trades and are kept.
-6. **Validate** — `scripts/validate.ts` checks schema and golden files and reports anomalies.
-7. **Publish** — a pull request is opened for a person to merge; the site and exports rebuild from the JSON.
+3. **Read** — the whole PDF goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/validation/parsed-rows.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
+4. **Check** — text extraction, OCR, a second model and a page audit provide separate evidence about the proposed rows. `lib/ingest-stages.ts` decides whether to hold or merge a filing; `lib/row-verification.ts` later builds the public row labels. These are separate decisions, and agreement is evidence, not a guarantee of accuracy.
+5. **Merge** — accepted rows are added to the official JSON. This path handles new filings; it is not a replacement workflow for correcting existing records.
+6. **Validate** — `pnpm validate` runs the checks in [lib/validation/published-data.ts](lib/validation/published-data.ts). A failure or review-required result stops the workflow.
+7. **Publish** — the workflow rebuilds supporting files and downloads, then opens a pull request for review. Merging triggers the Vercel deployment.
+
+Amendments, retries and cross-filing duplicate handling still need hardening. In particular, a hand-written `--from-file` plan does not retain all the OGE metadata used by the normal discovery path. Review the [maintenance guide](docs/maintenance.md) before adding or correcting data.
 
 ### Company identity
 
-Filings print names, not tickers. `lib/instrument-type.ts` types every row from the printed text (stock, ETF, mutual fund, preferred, corporate note, municipal bond, Treasury, crypto, private holding, option). `lib/asset-resolution.ts` then ties a stock or ETF row to a symbol only on exact evidence: a printed symbol whose listing carries the printed name, an exact name match on both the Nasdaq directory and the SEC issuer list, or a person's dictionary entry (`data/meta/asset-dictionary.json`, every entry with who decided and why). No similarity matching, no model guessing. A ticker is shown only when the row's printed name was also read the same way by an independent reader. Unresolved names publish under the printed name and wait in a queue (`scripts/asset-decide.ts`, `/admin/assets`). The result is `data/meta/asset-resolution.json`; the company pages, the official trade tables and the exports all read it through one rule (`publicTicker`).
+The filed description and the company interpretation are separate. [lib/instrument-type.ts](lib/instrument-type.ts) classifies the instrument; [lib/asset-resolution.ts](lib/asset-resolution.ts) matches it against saved exchange/SEC reference lists and human dictionary decisions. The result is saved in `data/meta/asset-resolution.json`.
+
+`publicTicker` combines that decision with evidence about the printed name. [getTradesByTicker](lib/data.ts) groups accepted symbols into company views. Unresolved rows keep their filed descriptions. Share classes, ambiguous names and evidence precedence remain areas for careful review; an inferred ticker is not a value copied directly from the filing.
 
 The database mirror supports older admin panels. Email subscriptions and delivery records are separate operational tables; they are not copies of the published transaction files.
 
@@ -139,16 +145,17 @@ pnpm run check-news            # News coverage search guidance
 pnpm run seed                  # Replace the DB mirror from JSON; overwrites mirror edits
 ```
 
-### Models and lanes
+### Models and evidence
 
-| Model | Provider | Role |
-|-------|----------|------|
-| Claude Sonnet 4.6 | Anthropic | First read of every filing page (vision) |
-| GPT-6 Astra | OpenAI | Second read of scans no program could confirm, page images, paired by asset |
-| Grok 4.6 | xAI | Page audit: shown each row and the page image, confirms or disputes |
-| Claude Sonnet 5 | Anthropic | Summaries and digest ledes (never transaction data) |
+| Task | Configuration and implementation |
+|------|----------------------------------|
+| Primary PDF extraction | `scripts/parse-pdf.ts` (`DEFAULT_MODEL`, prompt and pricing configuration) |
+| Independent second read | `lib/second-read.ts` (`SECOND_READ_MODEL`) |
+| Page-image audit | `lib/grok-audit.ts` (`GROK_AUDIT_MODEL`) |
+| Official summaries | `scripts/refresh-summaries.ts` (deterministic and model-drafted modes) |
+| Optional digest introduction | `scripts/generate-digest-lede.ts` |
 
-Programs that never see a model's output: the text-layer comparison (pdftotext) and the OCR lane (tesseract) compare type, date, amount, late flag and printed row numbers row for row. Every paid call counts against a spend ceiling; crossing it stops the run and emails Trevor.
+Text-layer parsing and OCR provide additional comparisons. The code records model usage and has spending controls, but those controls still need stronger retry accounting; estimate and approve paid runs before executing them. Cached responses avoid another call only when the cache matches the requested inputs.
 
 ## Tech stack
 
@@ -176,28 +183,16 @@ pnpm dev                    # http://localhost:3003
 
 ### Environment variables
 
-See `.env.example` for the full list. Required:
+See `.env.example` for the main settings. Public JSON pages and ordinary tests do not need live service credentials. Enable credentials only for the features you intend to run:
 
 - `ANTHROPIC_API_KEY` — Claude API for PDF parsing
-- `OPENAI_API_KEY` — Cross-provider verification (optional)
+- `OPENAI_API_KEY` — Independent second-model verification
+- `GROK_API_KEY` — Page-image auditing in the ingestion gate
 - `DATABASE_URL` / `DATABASE_URL_UNPOOLED` — Neon PostgreSQL
 - `BETTER_AUTH_SECRET` — Session signing
 - `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` — Admin OAuth
 - `RESEND_API_KEY` — Email notifications
 - `CRON_SECRET` — Vercel Cron authentication
-
-## Research
-
-The local `research/` directory contains historical working briefs covering:
-
-1. STOCK Act and federal ethics law
-2. Case law and legal precedent
-3. News coverage of executive branch financial conflicts
-4. OGE structure and data landscape
-5. Late filing patterns and enforcement
-6. The divestiture process
-
-These private working documents are ignored by Git and are not included in a fresh clone. They are not required to run tests. Use the architecture and pipeline sections above to understand the current implementation; historical research should not be treated as a current operating guide.
 
 ## Tests and CI
 
@@ -208,15 +203,16 @@ pnpm lint             # ESLint (app and lib; scripts/ excluded by design)
 pnpm typecheck        # tsc --noEmit across app, lib and scripts
 ```
 
-GitHub Actions runs all three on every push and pull request (`.github/workflows/ci.yml`). A second workflow (`oge-pipeline.yml`) runs the weekly OGE ingest and opens a data PR when new filings appear.
+GitHub Actions runs all three for pull requests and pushes to `main` (`.github/workflows/ci.yml`). The separate weekly workflow (`oge-pipeline.yml`) opens or updates a data PR when generated files change. Timestamp-only changes can still produce unnecessary PR updates.
 
-## Quality assurance
+## Data checks
 
 ```bash
-pnpm run validate     # Schema + golden file regression tests
-/copy-review          # AP style + journalism ethics audit (Claude Code command)
-/anomaly-check        # Data quality + contextual anomaly detection
+pnpm validate         # Published-data rules and reference fixtures; no model or DB calls
+pnpm test:data        # Current export/data regression checks
 ```
+
+Validation checks consistency and known examples. It does not prove every value matches its PDF. The [maintenance guide](docs/maintenance.md) explains the checks and their limits.
 
 ## Legal
 
@@ -224,15 +220,11 @@ This tool aggregates public records. The Ethics in Government Act's [news media 
 
 For informational and journalism purposes only. Not investment advice.
 
-## AI transparency
+## Extraction transparency
 
-- **PDF parsing**: Claude Sonnet (default) with OpenAI cross-verification
-- **Official summaries**: AI-generated from transaction data, reviewed for accuracy
-- **News coverage**: AI-assisted search, all linked articles are real published pieces
-- **Codebase**: Built by Trevor Brown with the assistance of Claude Code
-- **What AI does NOT do**: No fabricated data, no editorial judgments, no decisions about who to track
+Models propose transaction records and can draft narrative text. Separate checks, source links and human review support those outputs; a model's confidence number is not an accuracy percentage. News links are curated manually; `check-news` prints search guidance rather than running an automated news search.
 
-See the [About page](https://open-cabinet.org/about) for full AI transparency disclosure.
+See the [About page](https://open-cabinet.org/about) for the public disclosure of these methods.
 
 ## Contributing
 

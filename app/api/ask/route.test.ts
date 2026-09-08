@@ -10,7 +10,7 @@ const quotaCalls: number[] = [];
 let planToReturn: unknown = null;
 
 vi.mock("@/lib/db", () => ({
-  db: {
+  getDb: () => ({
     insert: () => ({
       values: () => ({
         onConflictDoUpdate: () => ({ returning: async () => { quotaCalls.push(1); return [{ count: quotaCalls.length }]; } }),
@@ -20,7 +20,7 @@ vi.mock("@/lib/db", () => ({
     }),
     // No stored plans in these tests: every question goes to the (mocked) model.
     select: () => ({ from: () => ({ where: () => ({ orderBy: () => ({ limit: async () => [] }) }) }) }),
-  },
+  }),
 }));
 vi.mock("@anthropic-ai/sdk", () => ({
   default: class {

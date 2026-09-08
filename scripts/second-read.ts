@@ -14,7 +14,7 @@
  * the keyed parse cache with the second model's name; reruns are free.
  * Nothing here edits an official file.
  */
-import { readdirSync, readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import path from "path";
 import dotenv from "dotenv";
 import { PDFDocument } from "pdf-lib";
@@ -28,7 +28,6 @@ import { notify } from "../lib/notify";
 dotenv.config({ path: ".env.local" });
 
 const PDF_DIR = path.resolve("data/pdfs");
-const OFFICIALS_DIR = path.resolve("data/officials");
 const PROMPT_SHA256 = promptHash(SYSTEM_PROMPT, EXTRACTION_PROMPT);
 const AGREEMENT = new Set(["checked_tuple_agreement", "ocr_tuple_agreement"]);
 
@@ -54,12 +53,6 @@ async function main() {
   if (!crosscheck) throw new Error("no cross-check log; run pnpm crosscheck-sweep first");
   const previous = readSecondReadLog();
   const log: SecondReadLog = previous ?? { version: 1, model: SECOND_READ_MODEL, generatedAt: new Date().toISOString(), filings: {} };
-
-  const officialsBySlug = new Map<string, { name: string }>();
-  for (const f of readdirSync(OFFICIALS_DIR).filter((f) => f.endsWith(".json"))) {
-    const o = JSON.parse(readFileSync(path.join(OFFICIALS_DIR, f), "utf-8"));
-    officialsBySlug.set(o.slug, { name: o.name });
-  }
 
   const candidates = crosscheck.entries.filter((e) => {
     if (!e.sourceUrl || !e.pdfFile || !e.pdfSha256) return false;
@@ -120,15 +113,16 @@ async function main() {
       throw err;
     }
     recordSecondRead(entry, e.sourceUrl!);
+    if (entry.failed) console.warn(`held for review: ${entry.failed}`);
     console.log(` agree ${entry.agreedIndexes.length} / differ ${entry.disputedIndexes.length} / unread ${entry.unreadIndexes.length} / extra ${entry.extraRows.length}  $${entry.costUsd.toFixed(2)}`);
   }
   console.log(`\nModel spend this run: $${spend.usd.toFixed(2)} over ${spend.calls} calls.`);
-  const disputed = Object.values(readSecondReadLog()?.filings ?? {}).filter((f) => f.disputedIndexes.length || f.extraRows.length);
+  const disputed = Object.values(readSecondReadLog()?.filings ?? {}).filter((f) => f.failed || f.disputedIndexes.length || f.extraRows.length);
   if (disputed.length && plan.length) {
     await notify({
       type: "model_disagreement",
       headline: `Second-read lane: ${disputed.length} filings with rows for a person`,
-      summary: disputed.map((f) => `${f.slug} ${f.pdfFile}: ${f.disputedIndexes.length} disputed, ${f.extraRows.length} extra, ${f.unreadIndexes.length} unread`).join("\n"),
+      summary: disputed.map((f) => `${f.slug} ${f.pdfFile}: ${f.disputedIndexes.length} disputed, ${f.extraRows.length} extra, ${f.unreadIndexes.length} unread${f.failed ? `; ${f.failed}` : ""}`).join("\n"),
     });
   }
 }

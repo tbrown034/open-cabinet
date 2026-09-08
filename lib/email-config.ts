@@ -2,8 +2,7 @@
  * Central email sender/recipient constants.
  *
  * All Open Cabinet mail sends from the project's own verified Resend domain,
- * open-cabinet.org (swapped from trevorthewebdeveloper.com — see
- * docs/email-alerts-YOUR-SETUP.md and memory reference_resend_email_setup).
+ * open-cabinet.org.
  *
  *  - alerts@   : admin notifications (lib/notify.ts) — pipeline/signup/feedback
  *  - digest@   : subscriber-facing filing-alert digests + confirm/welcome mail
@@ -52,10 +51,6 @@ export function siteUrl(): string {
  * used as human-clickable links in email bodies: mail scanners prefetch GETs,
  * so the clickable links use the interstitial *page* URLs below instead.
  */
-export function confirmUrl(token: string): string {
-  return `${siteUrl()}/api/alerts/confirm?token=${encodeURIComponent(token)}`;
-}
-
 export function unsubscribeUrl(token: string): string {
   return `${siteUrl()}/api/alerts/unsubscribe?token=${encodeURIComponent(token)}`;
 }

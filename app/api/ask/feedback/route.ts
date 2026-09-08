@@ -5,7 +5,7 @@
  */
 import { NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { askLog } from "@/lib/schema";
 import { isAskOrigin } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
   try {
-    await db.update(askLog).set({ feedback: verdict, feedbackReason: reason || null }).where(eq(askLog.id, logId));
+    await getDb().update(askLog).set({ feedback: verdict, feedbackReason: reason || null }).where(eq(askLog.id, logId));
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.warn("ask feedback failed:", err instanceof Error ? err.message : String(err));

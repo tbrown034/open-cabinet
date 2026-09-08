@@ -388,7 +388,7 @@ export async function buildDigest(
   opts: { ingestedOnOrAfter?: string } = {}
 ): Promise<DigestResult> {
   const { getAllOfficials, getOfficialsIndex } = await import("@/lib/data");
-  const { db } = await import("@/lib/db");
+  const { getDb } = await import("@/lib/db");
   const { notifiedFilings } = await import("@/lib/schema");
   const { inArray } = await import("drizzle-orm");
 
@@ -411,7 +411,7 @@ export async function buildDigest(
   ];
 
   const notifiedRows = candidateUrls.length
-    ? await db
+    ? await getDb()
         .select({ url: notifiedFilings.filingUrl })
         .from(notifiedFilings)
         .where(inArray(notifiedFilings.filingUrl, candidateUrls))

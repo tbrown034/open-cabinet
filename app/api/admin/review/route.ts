@@ -5,7 +5,7 @@
  * PATCH  /api/admin/review — Approve or edit a transaction
  */
 import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { transactions, officials } from "@/lib/schema";
 import { eq } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
@@ -16,7 +16,7 @@ export async function GET() {
   }
 
   // Get transactions flagged for review (low confidence or explicit flag)
-  const reviewItems = await db
+  const reviewItems = await getDb()
     .select({
       id: transactions.id,
       description: transactions.description,
@@ -67,7 +67,7 @@ export async function PATCH(request: NextRequest) {
   }
 
   if (action === "approve") {
-    await db
+    await getDb()
       .update(transactions)
       .set({ needsReview: false })
       .where(eq(transactions.id, id as number));
@@ -92,7 +92,7 @@ export async function PATCH(request: NextRequest) {
     for (const key of EDITABLE) {
       if (key in raw) safe[key] = raw[key];
     }
-    await db
+    await getDb()
       .update(transactions)
       .set({
         ...safe,
@@ -103,7 +103,7 @@ export async function PATCH(request: NextRequest) {
   }
 
   if (action === "delete") {
-    await db.delete(transactions).where(eq(transactions.id, id as number));
+    await getDb().delete(transactions).where(eq(transactions.id, id as number));
     return NextResponse.json({ success: true, action: "deleted" });
   }
 
