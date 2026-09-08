@@ -4,7 +4,7 @@
  * GET /api/admin/stats — Returns counts and health metrics
  */
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { officials, transactions, newsCoverage, pipelineRuns } from "@/lib/schema";
 import { count, eq, desc } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
@@ -26,19 +26,19 @@ export async function GET() {
     lastRun,
     allRuns,
   ] = await Promise.all([
-    db.select({ count: count() }).from(officials),
-    db.select({ count: count() }).from(transactions),
-    db.select({ count: count() }).from(newsCoverage),
-    db
+    getDb().select({ count: count() }).from(officials),
+    getDb().select({ count: count() }).from(transactions),
+    getDb().select({ count: count() }).from(newsCoverage),
+    getDb()
       .select({ count: count() })
       .from(transactions)
       .where(eq(transactions.needsReview, true)),
-    db
+    getDb()
       .select()
       .from(pipelineRuns)
       .orderBy(desc(pipelineRuns.ranAt))
       .limit(1),
-    db.select({ tokenUsage: pipelineRuns.tokenUsage }).from(pipelineRuns),
+    getDb().select({ tokenUsage: pipelineRuns.tokenUsage }).from(pipelineRuns),
   ]);
 
   // Total cost from all pipeline runs

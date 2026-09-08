@@ -24,7 +24,7 @@ import { existsSync, readFileSync, renameSync, writeFileSync } from "fs";
 import path from "path";
 import { comparedTuple } from "./row-verification";
 import { normalizedDescription, sharesAssetWord } from "./reverify-diff";
-import { validateParsedRows } from "./filing-validation";
+import { validateParsedRows } from "./validation/parsed-rows";
 import { promptHash, readParseCache, writeParseCache, type ParseCacheKeyInput } from "./parse-cache";
 import type { Transaction } from "./types";
 
@@ -59,6 +59,8 @@ export interface SecondReadFiling {
   pairedDescriptions?: Record<string, string>;
   costUsd: number;
   checkedAt: string;
+  /** A failed shape check cannot supply agreement or asset-name evidence. */
+  failed?: string | null;
 }
 
 export interface SecondReadLog {
@@ -71,10 +73,30 @@ export interface SecondReadLog {
 export function readSecondReadLog(file = SECOND_READ_LOG_PATH): SecondReadLog | null {
   if (!existsSync(file)) return null;
   try {
-    return JSON.parse(readFileSync(file, "utf-8")) as SecondReadLog;
+    const log = JSON.parse(readFileSync(file, "utf-8")) as SecondReadLog;
+    for (const [url, filing] of Object.entries(log.filings)) {
+      log.filings[url] = withholdFailedEvidence(filing);
+    }
+    return log;
   } catch {
     return null;
   }
+}
+
+/** Old logs omitted `failed` but kept its diagnostic. Apply the same rule
+ * when reading those logs, so rebuilding verification cannot revive an
+ * agreement from a rejected read. The raw cache remains the diagnostic. */
+function withholdFailedEvidence(entry: SecondReadFiling): SecondReadFiling {
+  const failed = entry.failed || entry.differences.find((d) => d.startsWith("second read failed the shape gate"));
+  if (!failed) return entry;
+  return {
+    ...entry,
+    failed,
+    agreedIndexes: [],
+    disputedIndexes: [],
+    unreadIndexes: Array.from({ length: entry.rowsPrimary }, (_, i) => i),
+    pairedDescriptions: {},
+  };
 }
 
 export function writeSecondReadLog(log: SecondReadLog, file = SECOND_READ_LOG_PATH): void {
@@ -227,66 +249,74 @@ export async function secondReadFiling(input: {
 }): Promise<SecondReadFiling & { failed: string | null }> {
   const second: Row[] = [];
   let cost = 0;
-  let failed: string | null = null;
+  let rowsSecond = 0;
+  const failures: string[] = [];
   for (const unit of input.units) {
     const keyInput: ParseCacheKeyInput = {
       pdfSha256: input.pdfSha256, sourceUrl: input.sourceUrl, chunk: unit.chunk,
       parserVersion: `${input.parserVersion}+${SECOND_READ_INPUT}`, promptSha256: promptHash(input.systemPrompt, input.extractionPrompt), model: SECOND_READ_MODEL,
     };
-    // Reads made before Sep 6 sent the PDF file; they are reused only when
-    // they read amounts (a file-based read of a large scan came back with
-    // every amount null, which is a failed read, not a reading).
+    // Older reads sent PDF files. Valid legacy reads without any amounts
+    // fall back to images. Invalid legacy reads stay held for review;
+    // finding a bad cache must not silently trigger another paid call.
     const fileBased = readParseCache(unit.path, { ...keyInput, parserVersion: input.parserVersion });
-    const usableFileBased =
-      fileBased && (fileBased.transactions.length === 0 || (fileBased.transactions as Row[]).some((r) => r.amount !== null));
+    const usableFileBased = fileBased && (
+      !validateParsedRows(fileBased.transactions).ok ||
+      fileBased.transactions.length === 0 ||
+      (fileBased.transactions as Row[]).some((r) => r.amount !== null)
+    );
     const cached = readParseCache(unit.path, keyInput) ?? (usableFileBased ? fileBased : null);
+    let transactions: unknown[];
     if (cached) {
-      second.push(...(cached.transactions as Row[]));
-      continue;
-    }
-    let result: Awaited<ReturnType<typeof input.read>> | null = null;
-    for (let attempt = 1; attempt <= 6; attempt++) {
-      try {
-        result = await input.read(unit.path);
-        break;
-      } catch (err) {
-        const msg = String((err as Error)?.message ?? err);
-        const transient = /connection|socket|ECONNRESET|ETIMEDOUT|fetch failed|other side closed|rate limit|429|5\d\d/i.test(msg);
-        if (attempt === 6 || !transient) throw err;
-        await new Promise((r) => setTimeout(r, Math.min(60_000, 5000 * 2 ** (attempt - 1))));
+      transactions = cached.transactions;
+    } else {
+      let result: Awaited<ReturnType<typeof input.read>> | null = null;
+      for (let attempt = 1; attempt <= 6; attempt++) {
+        try {
+          result = await input.read(unit.path);
+          break;
+        } catch (err) {
+          const msg = String((err as Error)?.message ?? err);
+          const transient = /connection|socket|ECONNRESET|ETIMEDOUT|fetch failed|other side closed|rate limit|429|5\d\d/i.test(msg);
+          if (attempt === 6 || !transient) throw err;
+          await new Promise((r) => setTimeout(r, Math.min(60_000, 5000 * 2 ** (attempt - 1))));
+        }
       }
+      if (!result) throw new Error("no result");
+      cost += result.tokenUsage.estimatedCostUsd;
+      if (input.onSpend) await input.onSpend(result.tokenUsage.estimatedCostUsd);
+      transactions = result.transactions;
+      // Preserve the response, including invalid rows, for diagnosis and
+      // free replay. Validation below runs on both fresh and cached reads.
+      writeParseCache(unit.path, keyInput, result);
+      input.onProgress?.();
     }
-    if (!result) throw new Error("no result");
-    cost += result.tokenUsage.estimatedCostUsd;
-    if (input.onSpend) await input.onSpend(result.tokenUsage.estimatedCostUsd);
-    // The second read is evidence, not a publication candidate: rows that
-    // fail the shape gate are kept and compared as they are, and the
-    // failure is noted. They can only ever create a disagreement.
-    const v = validateParsedRows(result.transactions);
-    const rows = (v.ok ? v.rows : result.transactions) as Row[];
-    if (!v.ok) failed = `second read failed the shape gate on ${path.basename(unit.path)}: ${v.errors.slice(0, 3).join("; ")}`;
-    writeParseCache(unit.path, keyInput, { transactions: rows, tokenUsage: result.tokenUsage });
-    second.push(...rows);
-    input.onProgress?.();
+    rowsSecond += transactions.length;
+    const v = validateParsedRows(transactions);
+    if (!v.ok) {
+      failures.push(`second read failed the shape gate on ${path.basename(unit.path)}: ${v.errors.slice(0, 3).join("; ")}`);
+    } else {
+      second.push(...v.rows);
+    }
   }
   const cmp = compareSecondRead(input.primary, second, (i) => describePrimaryIndex(i, input.primaryUnits));
-  return {
+  const failed = failures.length ? failures.join("\n") : null;
+  const entry: SecondReadFiling = {
     slug: input.slug, pdfFile: path.basename(input.pdfPath), pdfSha256: input.pdfSha256, candidateSha256: input.candidateSha256,
-    model: SECOND_READ_MODEL, rowsPrimary: input.primary.length, rowsSecond: second.length,
+    model: SECOND_READ_MODEL, rowsPrimary: input.primary.length, rowsSecond,
     ...cmp,
     ...(failed ? { differences: [failed, ...cmp.differences] } : {}),
     costUsd: Math.round(cost * 10000) / 10000,
     checkedAt: new Date().toISOString(),
     failed,
   };
+  return { ...withholdFailedEvidence(entry), failed };
 }
 
 /** Insert or replace one filing's verdict and write the log atomically. */
 export function recordSecondRead(entry: SecondReadFiling, sourceUrl: string, file = SECOND_READ_LOG_PATH): SecondReadLog {
   const log = readSecondReadLog(file) ?? { version: 1 as const, model: SECOND_READ_MODEL, generatedAt: new Date().toISOString(), filings: {} };
-  const { failed: _f, ...clean } = entry as SecondReadFiling & { failed?: string | null };
-  void _f;
-  log.filings[sourceUrl] = clean;
+  log.filings[sourceUrl] = withholdFailedEvidence(entry);
   const next = { ...log, generatedAt: new Date().toISOString() };
   writeSecondReadLog(next, file);
   return next;

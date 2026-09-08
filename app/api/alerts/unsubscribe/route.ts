@@ -17,13 +17,13 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { eq, sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
 import { verifyToken } from "@/lib/tokens";
 import { siteUrl } from "@/lib/email-config";
 
 async function unsubscribe(id: number): Promise<void> {
-  await db
+  await getDb()
     .update(alertSignups)
     .set({
       status: "unsubscribed",

@@ -19,7 +19,7 @@
 import { NextResponse, after } from "next/server";
 import type { NextRequest } from "next/server";
 import { and, eq, sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
 import { verifyToken, mintToken } from "@/lib/tokens";
 import { unsubscribeUrl, unsubscribePageUrl, siteUrl } from "@/lib/email-config";
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
     // active. This structurally preserves the lifecycle edge cases — a dead
     // bounce, a complaint-suppressed row, or an unsubscribed row is not
     // "pending", so a stale confirm link can never resurrect it.
-    const [confirmed] = await db
+    const [confirmed] = await getDb()
       .update(alertSignups)
       .set({ status: "active", confirmedAt: new Date(), updatedAt: sql`now()` })
       .where(and(eq(alertSignups.id, id), eq(alertSignups.status, "pending")))
@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
 
     // Zero rows updated: distinguish an already-active row (idempotent success)
     // from a non-resurrectable one (unsubscribed / suppressed / not found).
-    const [row] = await db
+    const [row] = await getDb()
       .select({ status: alertSignups.status })
       .from(alertSignups)
       .where(eq(alertSignups.id, id))

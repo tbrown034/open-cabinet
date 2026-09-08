@@ -193,7 +193,7 @@ export default async function CompanyPage({
       <UnderReviewNote count={underReviewCount} />
 
       {officials.length > 1 && (
-        <CompanyBarChart officials={officials} ticker={company.ticker} />
+        <CompanyBarChart officials={officials} />
       )}
 
       <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-4">

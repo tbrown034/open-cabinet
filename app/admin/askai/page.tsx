@@ -3,7 +3,7 @@ import Link from "next/link";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { desc, sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { askLog } from "@/lib/schema";
 import { requireAdmin } from "@/lib/auth";
 
@@ -27,13 +27,13 @@ export default async function AskLogPage({ searchParams }: { searchParams: Promi
   const status = one("status");
   const limit = Math.min(500, Math.max(20, Number(one("limit")) || 200));
 
-  const rows = await db
+  const rows = await getDb()
     .select()
     .from(askLog)
     .where(status ? sql`${askLog.status} = ${status}` : sql`true`)
     .orderBy(desc(askLog.id))
     .limit(limit);
-  const totals = await db
+  const totals = await getDb()
     .select({ status: askLog.status, n: sql<number>`count(*)::int`, wrong: sql<number>`count(*) filter (where ${askLog.feedback} = 'wrong')::int`, right: sql<number>`count(*) filter (where ${askLog.feedback} = 'right')::int`, ms: sql<number>`coalesce(percentile_cont(0.5) within group (order by ${askLog.durationMs}), 0)::int` })
     .from(askLog)
     .groupBy(askLog.status);

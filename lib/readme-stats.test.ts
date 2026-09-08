@@ -11,8 +11,7 @@ import { readdirSync } from "fs";
 import path from "path";
 import { describe, expect, it } from "vitest";
 import { sumAmountEstimates, formatCompactCurrency } from "@/lib/format";
-import { resolveTicker } from "@/lib/assets";
-import { resolveSymbol } from "@/lib/asset-registry";
+import { getAllTickers } from "@/lib/data";
 import type { AmountRange } from "@/lib/types";
 import { readRowVerification } from "@/lib/row-verification";
 
@@ -99,16 +98,8 @@ describe("README current-data table matches the published dataset", () => {
     expect(readmeStat("Late filings")).toBe(formatCount(late));
   });
 
-  it("companies searchable", () => {
-    // Same definition the site uses: a stored symbol counts only if the
-    // resolver accepts it (lib/assets.ts), after the registry folds filed
-    // variants (APPL, BRKB). A withheld suffix like "THE" is not a company.
-    const tickers = new Set<string>();
-    for (const t of allTx) {
-      const r = resolveTicker(t.description, t.ticker);
-      if (r.ticker) tickers.add(resolveSymbol(r.ticker));
-    }
-    expect(readmeStat("Companies searchable")).toBe(formatCount(tickers.size));
+  it("companies searchable matches the public company routes", async () => {
+    expect(readmeStat("Companies searchable")).toBe(formatCount((await getAllTickers()).length));
   });
 
   it("estimated value", () => {

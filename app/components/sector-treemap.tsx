@@ -125,7 +125,6 @@ export default function SectorTreemap({
             const isSmall = w < 80 || h < 40;
             const isHovered = hovered === d.name;
             const color = colorScale(d.name);
-            const isLight = false; // all colors are dark now, always use white text
 
             // Truncate the name to whatever fits inside the tile minus padding.
             // 11px medium text is ~6.5px per character; this prevents labels
@@ -163,14 +162,14 @@ export default function SectorTreemap({
                     <text
                       x={x0 + 6}
                       y={y0 + 16}
-                      className={`text-[11px] font-medium ${isLight ? "fill-neutral-700" : "fill-white"}`}
+                      className="text-[11px] font-medium fill-white"
                     >
                       {displayName}
                     </text>
                     <text
                       x={x0 + 6}
                       y={y0 + 30}
-                      className={`text-[10px] ${isLight ? "fill-neutral-500" : "fill-white/70"}`}
+                      className="text-[10px] fill-white/70"
                     >
                       {formatCompactCurrency(d.value)} ({pct}%)
                     </text>

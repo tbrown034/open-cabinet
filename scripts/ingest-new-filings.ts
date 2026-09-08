@@ -1,22 +1,21 @@
 /**
  * Ingest new downloadable OGE 278-T filings into the static JSON dataset.
  *
- * Seven stages: find, fetch, read, check, merge, validate, publish. The
- * first five are functions in this file, named as such. Validate is
- * scripts/validate.ts and publish is the pull request the workflow opens.
- * research/pipeline.md describes each stage in three lines: what happens,
- * what stops it, what a person does. A test asserts the names match.
+ * This command discovers filings and coordinates the work in
+ * lib/ingest-stages.ts. Published-data checks run through scripts/validate.ts;
+ * .github/workflows/oge-pipeline.yml derives artifacts and opens a review PR.
+ * See docs/maintenance.md before running a paid or data-writing command.
  *
  * A new official is bootstrapped from OGE metadata only when OGE supplies a
  * title and an agency; otherwise the official is held for a person.
  *
  * Usage: npx tsx scripts/ingest-new-filings.ts
  *        npx tsx scripts/ingest-new-filings.ts --from-file /tmp/new-filings.json
- *        npx tsx scripts/ingest-new-filings.ts --from-file plan.json --force-reparse
+ *        pnpm ingest-filings --from-file plan.json --force-reparse --parse-only
  *
  * --force-reparse ignores every cache for the listed filings and pays for a
- * fresh parse. Use it only with a plan from scripts/plan-reparse.ts and an
- * approved cost; the weekly job never passes it.
+ * fresh parse. For an existing filing, pair it with --parse-only and an
+ * approved cost; review corrections through scripts/reverify.ts.
  *
  * --parse-only runs find, fetch, read and check, records the cross-check
  * verdict and the cache, and stops before merge. Nothing in data/officials

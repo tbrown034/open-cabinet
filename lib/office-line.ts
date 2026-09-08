@@ -123,10 +123,6 @@ export const AGENCY_SHORT_NAMES: Record<string, string> = {
   "Federal Transit Administration": "FTA",
 };
 
-export function shortAgency(agency: string): string {
-  return AGENCY_SHORT_NAMES[agency] ?? agency;
-}
-
 // Longest key first, so a shorter entry can never consume part of a longer
 // one before it has had its turn.
 const ABBREVIATION_ENTRIES = Object.entries(AGENCY_SHORT_NAMES).toSorted(

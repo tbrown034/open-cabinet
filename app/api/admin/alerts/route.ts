@@ -7,7 +7,7 @@
 import { NextResponse } from "next/server";
 import { count, desc } from "drizzle-orm";
 import { requireAdmin } from "@/lib/auth";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
 
 function csvCell(value: unknown): string {
@@ -30,8 +30,8 @@ export async function GET(req: Request) {
   const limit = format === "csv" ? 5000 : 50;
 
   const [[total], signups] = await Promise.all([
-    db.select({ count: count() }).from(alertSignups),
-    db
+    getDb().select({ count: count() }).from(alertSignups),
+    getDb()
       .select()
       .from(alertSignups)
       .orderBy(desc(alertSignups.updatedAt))

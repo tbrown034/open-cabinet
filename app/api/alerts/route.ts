@@ -1,6 +1,6 @@
 import { NextResponse, after } from "next/server";
 import { eq, sql } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { alertSignups } from "@/lib/schema";
 import { notify } from "@/lib/notify";
 import { mintToken, type TokenPurpose } from "@/lib/tokens";
@@ -121,7 +121,7 @@ export async function POST(req: Request) {
     // Upsert: new rows start "pending" (must double-opt-in). On conflict we
     // refresh preferences but DO NOT touch status here — that's decided below
     // based on the existing state.
-    const [row] = await db
+    const [row] = await getDb()
       .insert(alertSignups)
       .values({
         email,
@@ -188,7 +188,7 @@ export async function POST(req: Request) {
       // Re-opt-in: an unsubscribed / complaint-suppressed address that signs up
       // again goes back to pending, clears the suppression flag, and re-confirms.
       if (priorStatus !== "pending") {
-        await db
+        await getDb()
           .update(alertSignups)
           .set({
             status: "pending",
@@ -217,7 +217,7 @@ export async function POST(req: Request) {
           });
           if (result.ok) {
             // Stamp the send so the throttle above can gate the next attempt.
-            await db
+            await getDb()
               .update(alertSignups)
               .set({ confirmationSentAt: new Date(), updatedAt: sql`now()` })
               .where(eq(alertSignups.id, row.id));

@@ -18,7 +18,7 @@
  * never sees a row that an independent check has not agreed with.
  */
 import { NextResponse } from "next/server";
-import { db } from "@/lib/db";
+import { getDb } from "@/lib/db";
 import { askQuota, askLog } from "@/lib/schema";
 import { and, desc, eq, gt, sql } from "drizzle-orm";
 import { appendFile } from "fs/promises";
@@ -121,7 +121,7 @@ const EMPTY_PENDING = {
 async function reserveDailyQuota(attempt = 0): Promise<"ok" | "over" | "closed"> {
   const day = new Date().toISOString().slice(0, 10);
   try {
-    const rows = await db
+    const rows = await getDb()
       .insert(askQuota)
       .values({ day, count: 1 })
       .onConflictDoUpdate({
@@ -174,7 +174,7 @@ const LOG_PATH = path.join(process.cwd(), "data", "meta", "ask-log.jsonl");
 async function findRecentPlan(question: string): Promise<unknown | null> {
   try {
     const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
-    const rows = await db
+    const rows = await getDb()
       .select({ plan: askLog.plan })
       .from(askLog)
       .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), gt(askLog.at, since)))
@@ -196,7 +196,7 @@ function logAsk(entry: Record<string, unknown>): Promise<number | null> {
   // failure never changes the answer. Returns the row id so feedback can
   // attach to it.
   const startedAt = typeof entry.startedAt === "number" ? entry.startedAt : null;
-  return db.insert(askLog)
+  return getDb().insert(askLog)
     .values({
       question: String(entry.question ?? "").slice(0, 300),
       status: String(entry.status ?? "error"),

@@ -55,7 +55,9 @@ next-env.d.ts
 
 # Working notes, plans and drafts — never public (Aug 3, 2026).
 # Planning, job-search and launch material stays out of git; files live on disk only.
-/docs/
+/docs/*
+!/docs/architecture.md
+!/docs/maintenance.md
 
 # Holdings pipeline intermediate artifacts — per holdings-plan guardrail.
 /data/holdings-staging/

@@ -21,7 +21,7 @@ import {
   type ParsedTransaction,
 } from "../scripts/parse-pdf.js";
 import { CHECKER_VERSION, crossCheckParsedFiling } from "../scripts/text-layer-crosscheck.js";
-import { assertParsedRows, ParsedRowsInvalidError } from "./filing-validation";
+import { assertParsedRows, ParsedRowsInvalidError } from "./validation/parsed-rows";
 import {
   describeCacheKey,
   hasLegacyCacheOnly,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assertParsedRows, validateParsedRows } from "./filing-validation";
+import { assertParsedRows, validateParsedRows } from "./parsed-rows";
 
 const today = new Date("2026-09-05T12:00:00Z");
 

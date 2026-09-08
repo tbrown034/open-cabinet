@@ -11,6 +11,7 @@
  */
 import { NextRequest, NextResponse } from "next/server";
 import { timingSafeEqual } from "node:crypto";
+import { getDb } from "@/lib/db";
 import { notify } from "@/lib/notify";
 import {
   diffNewFilings,
@@ -49,15 +50,9 @@ export async function GET(request: NextRequest) {
 
   const startTime = Date.now();
   let runId: number | null = null;
-  let db:
-    | Awaited<ReturnType<typeof import("drizzle-orm/neon-http").drizzle>>
-    | null = null;
+  let db: ReturnType<typeof getDb> | null = null;
 
   try {
-    // Dynamic import to avoid loading database code on every request.
-    const { neon } = await import("@neondatabase/serverless");
-    const { drizzle } = await import("drizzle-orm/neon-http");
-
     const connectionString =
       process.env.DATABASE_URL || process.env.DATABASE_URL_UNPOOLED;
     if (!connectionString) {
@@ -67,8 +62,7 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const sql = neon(connectionString);
-    db = drizzle(sql);
+    db = getDb();
 
     // Import schema
     const { pipelineRuns } = await import("@/lib/schema");

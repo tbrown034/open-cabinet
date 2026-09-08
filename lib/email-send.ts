@@ -57,9 +57,8 @@ export function getResend(): Resend | null {
 
 /**
  * Best-effort audit row for a single send. A failed insert must NEVER fail the
- * send itself (the email already went out), so we log and swallow. db + schema
- * are imported dynamically so importing this module in a script doesn't force
- * lib/db to evaluate before the script's dotenv.config() has run.
+ * send itself (the email already went out), so we log and swallow. The database
+ * client is requested only when recording a send.
  */
 async function logEmailSend(
   email: string,
@@ -67,9 +66,9 @@ async function logEmailSend(
   resendMessageId?: string
 ): Promise<void> {
   try {
-    const { db } = await import("@/lib/db");
+    const { getDb } = await import("@/lib/db");
     const { emailSends } = await import("@/lib/schema");
-    await db.insert(emailSends).values({
+    await getDb().insert(emailSends).values({
       email,
       kind,
       resendMessageId: resendMessageId ?? null,

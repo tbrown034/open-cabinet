@@ -1,17 +1,6 @@
-/**
- * News Coverage Search — finds published reporting on tracked officials.
- *
- * Uses AI-assisted web search to find articles about executive branch
- * financial conflicts from major outlets. Runs independently of the
- * main pipeline.
- *
- * Run: pnpm run check-news
- *
- * This is a placeholder that documents the intended workflow.
- * The actual search requires Claude Code or a web search API.
- * For now, news is manually curated in data/news-coverage.json.
- */
-import { readFile, writeFile } from "fs/promises";
+/** Print guidance for manually curating data/news-coverage.json.
+ * This command does not call a search API or add articles. */
+import { readFile } from "fs/promises";
 import { join } from "path";
 
 const NEWS_PATH = join(process.cwd(), "data", "news-coverage.json");
