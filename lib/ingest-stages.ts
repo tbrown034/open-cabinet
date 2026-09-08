@@ -416,8 +416,8 @@ export function recordCrosscheck(
 //
 // The first five run here, per official, per filing. Validate is
 // scripts/validate.ts and publish is the pull request the workflow opens;
-// both are named below so the file reads the same way research/pipeline.md
-// describes it. Each stage says what stops it.
+// both are named below so the whole sequence reads in one place. Each stage
+// says what stops it.
 
 /** FETCH. Download the filing PDF (or reuse the local copy) and hash it.
  *  Stops on: HTTP error. Also scans the certification page for a

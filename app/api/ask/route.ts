@@ -105,10 +105,9 @@ const EMPTY_PENDING = {
 
 /**
  * Per instance, not global. An in-memory counter cannot bound spending across
- * serverless instances or restarts, and Codex is right that a scaled-out
- * deployment replenishes this budget. It is what the design called for at
- * this stage; the durable version belongs on the project's Neon instance and
- * is noted in research/ask-the-data.md as the known limit of this control.
+ * serverless instances or restarts, so a scaled-out deployment replenishes
+ * this budget. The durable cap below is the real limit; this one only slows
+ * a burst within a single instance.
  */
 /**
  * Durable daily cap, shared by every serverless instance (Codex review,

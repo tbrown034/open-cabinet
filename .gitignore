@@ -60,3 +60,12 @@ next-env.d.ts
 # Holdings pipeline intermediate artifacts — per holdings-plan guardrail.
 /data/holdings-staging/
 data/meta/ask-log.jsonl
+
+# Internal working documents: research briefs, plans, verification session
+# output and peer-review notes. Public-facing documentation lives in README.md
+# and on the site itself.
+/research/
+/.claude/
+/data/meta/adjudication-notes-*.md
+/data/meta/reverify-reports/
+/data/meta/reverify-history/

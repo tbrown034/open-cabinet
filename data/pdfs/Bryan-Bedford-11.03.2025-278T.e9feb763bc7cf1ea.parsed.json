@@ -1,0 +1,39 @@
+{
+  "key": "e9feb763bc7cf1ea",
+  "pdfSha256": "37813645444dc3baa3502e418cf49c8373a6b34c9c65cb5d13e673850798d9cd",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/BC33926D1346296F85258D86003449A3/$FILE/Bryan-Bedford-11.03.2025-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-06T21:38:31.067Z",
+  "transactions": [
+    {
+      "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
+      "ticker": null,
+      "type": "Unstated",
+      "date": "2025-10-22",
+      "amount": null,
+      "amountNote": "Value not readily ascertainable",
+      "typeNote": "See Endnote",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    },
+    {
+      "description": "Total return swap contract with JPMorgan (value not readily ascertainable)",
+      "ticker": null,
+      "type": "Unstated",
+      "date": "2025-10-22",
+      "amount": null,
+      "amountNote": "Value not readily ascertainable",
+      "typeNote": "See Endnote",
+      "lateFilingFlag": false,
+      "confidence": 0.9
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6878,
+    "outputTokens": 234,
+    "estimatedCostUsd": 0.0241
+  }
+}
