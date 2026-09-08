@@ -10,6 +10,7 @@ import type { SQL } from "drizzle-orm";
 
 const quotaCalls: number[] = [];
 let planToReturn: unknown = null;
+let modelFailure: Error | null = null;
 const savedLogs: Array<{ question: string; plan?: string; reason?: string | null; status: string }> = [];
 const cacheConditions: unknown[][] = [];
 
@@ -37,10 +38,12 @@ vi.mock("fs/promises", () => ({ appendFile: vi.fn(async () => undefined) }));
 vi.mock("@anthropic-ai/sdk", () => ({
   default: class {
     messages = {
-      create: async () => ({
+      create: async () => {
+        if (modelFailure) throw modelFailure;
+        return {
         stop_reason: "tool_use",
         content: [{ type: "tool_use", name: "emit_plan", input: planToReturn }],
-      }),
+      }; },
     };
   },
 }));
@@ -75,10 +78,34 @@ function post(body: unknown, opts: { cookie?: boolean; origin?: string } = {}) {
   return POST(new Request("http://localhost:3000/api/ask", { method: "POST", headers, body: typeof body === "string" ? body : JSON.stringify(body) }));
 }
 
-beforeEach(() => { quotaCalls.length = 0; planToReturn = null; savedLogs.length = 0; cacheConditions.length = 0; resetAskLimiter(); });
+beforeEach(() => { quotaCalls.length = 0; planToReturn = null; modelFailure = null; savedLogs.length = 0; cacheConditions.length = 0; resetAskLimiter(); });
 afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 
 describe("POST /api/ask gates", () => {
+  it("explains a provider timeout without inventing an answer", async () => {
+    modelFailure = new Error("private provider diagnostic");
+    modelFailure.name = "APIConnectionTimeoutError";
+    const errorLog = vi.spyOn(console, "error").mockImplementation(() => undefined);
+    const res = await post({ question: "How many Apple purchases?" });
+    const j = await res.json();
+    expect(j.status).toBe("error");
+    expect(j.answer).toContain("took too long");
+    expect(j.answer).toContain("browse the trades");
+    expect(j.answer).not.toContain("private provider diagnostic");
+    expect(j.result).toBeNull();
+    expect(savedLogs.at(-1)?.reason).toBe("planning timeout");
+    errorLog.mockRestore();
+  });
+
+  it.each(["Which officials bought Apple but never sold it?", "Which officials have only bought Apple?", "Which officials bought Apple and sold Microsoft?"])("rejects unsupported history even when cached: %s", async (question) => {
+    savedLogs.push({ question, status: "answered", reason: `plan-cache-v2:claude-sonnet-5:${new Date().toISOString().slice(0, 10)}:all`, plan: JSON.stringify({ filters: { tickers: ["AAPL"] }, aggregate: "top_officials" }) });
+    const j = await (await post({ question })).json();
+    expect(j.status).toBe("declined");
+    expect(j.answer).toContain("purchases and sales separately");
+    expect(quotaCalls).toHaveLength(0);
+    expect(cacheConditions).toHaveLength(0);
+  });
+
   it("rejects a browser-supplied plan paired with an unrelated question", async () => {
     const res = await post({ question: "How many AAPL purchases?", plan: { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" } });
     expect(res.status).toBe(400);
@@ -127,6 +154,7 @@ describe("POST /api/ask gates", () => {
     const wrong = { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" };
     savedLogs.push({ question, status: "answered", reason: null, plan: JSON.stringify(wrong) });
     savedLogs.push({ question, status: "answered", reason: "follow-up", plan: JSON.stringify(wrong) });
+    savedLogs.push({ question, status: "answered", reason: `plan-cache-v1:claude-sonnet-5:${new Date().toISOString().slice(0, 10)}:all`, plan: JSON.stringify(wrong) });
     planToReturn = { filters: { tickers: ["AAPL"], types: ["Purchase"] }, aggregate: "count" };
     const answer = await (await post({ question })).json();
     expect(answer.planSource).toBe("model");
@@ -135,6 +163,20 @@ describe("POST /api/ask gates", () => {
     const repeat = await (await post({ question })).json();
     expect(repeat.planSource).toBe("cache");
     expect(quotaCalls).toHaveLength(1);
+  });
+
+  it("does not widen an unknown official scope to everyone", async () => {
+    const res = await post({ question: "How many purchases?", officialSlug: "not-a-tracked-official" });
+    expect(res.status).toBe(400);
+    expect(quotaCalls).toHaveLength(0);
+  });
+
+  it("does not answer about a different named official within a page scope", async () => {
+    planToReturn = { filters: { officials: ["bessent-scott"] }, aggregate: "count" };
+    const j = await (await post({ question: "How many trades did Scott Bessent make?", officialSlug: "wright-christopher" })).json();
+    expect(j.status).toBe("declined");
+    expect(j.answer).toContain("only about Christopher Wright");
+    expect(quotaCalls).toHaveLength(0);
   });
 
   it("separates question translations by official scope", async () => {

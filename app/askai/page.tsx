@@ -90,7 +90,7 @@ export default async function AskaiPage({ searchParams }: { searchParams: Promis
       <details className="mt-6 border-t border-neutral-200 pt-4 text-sm text-neutral-600 leading-relaxed">
         <summary className="cursor-pointer font-medium text-neutral-800">How Ask works and what gets logged</summary>
         <div className="mt-4 space-y-3">
-          <p>An AI model interprets your question. Code checks that interpretation and calculates the answer from checked disclosure records. Check the “Interpreted as” line to make sure it matches what you meant.</p>
+          <p>An AI model interprets your question. Code checks that interpretation and calculates the answer from disclosure records that have completed the site’s verification process. Check the “Interpreted as” line to make sure it matches what you meant.</p>
           <p>These records report transactions and dollar ranges. They do not establish current holdings, profit, motive or legality. Each question stands alone; Ask does not remember earlier questions.</p>
           <p>Questions, their interpretations and outcomes are logged for review, along with a hashed address used for rate limiting. Do not enter personal information.</p>
           <p>Limits: {PER_IP_PER_HOUR} requests per hour per address and {GLOBAL_PER_DAY} new question translations per day across the site.</p>

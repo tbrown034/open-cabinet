@@ -1,21 +1,7 @@
 /**
- * Ask the data.
- *
- * POST /api/ask with { question }. Five steps, in order:
- *
- *   1. Plan.     One model call. The model may return a query plan or decline.
- *                It never sees a trade row and it is never asked for a fact.
- *   2. Validate. The plan is checked field by field and its names resolved to
- *                slugs that exist. An unresolvable name ends the request.
- *   3. Execute.  Ordinary code filters and counts the checked rows.
- *   4. Phrase.   A second model call sees the result JSON and nothing else,
- *                and writes at most two sentences.
- *   5. Check.    Every number in that sentence must match a figure the
- *                executor produced. If one does not, the sentence is
- *                discarded and a templated one is used instead.
- *
- * The model is a translator on both ends. It never computes a number, and it
- * never sees a row that an independent check has not agreed with.
+ * Ask accepts a question, translates it into a restricted query, validates
+ * the query and computes the answer from checked rows. The default answer
+ * is a code template. Optional model phrasing must pass the answer checks.
  */
 import { NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
@@ -270,6 +256,8 @@ function planSystemPrompt(
     "THE RULE THAT OUTRANKS THE REST: if any part of the question cannot be represented in the plan,",
     "do not approximate and do not drop it. Decline with the closest category.",
     "Silently answering a narrower question than the one asked is worse than declining.",
+    "Filters select individual transactions, not a person’s trading history. Decline questions about who never sold,",
+    "who only bought, or who bought one asset and sold another. These need separate sets of transactions and cannot be represented.",
     "",
     "The dataset is executive-branch stock transactions disclosed on OGE Form 278-T.",
     "Each row has: official (name, slug, agency, title), description (the asset as the filing wrote it), ticker (may be absent),",
@@ -361,7 +349,7 @@ async function callPlanModel(
   if (!apiKey) return { kind: "unavailable", reason: "no API key configured" };
 
   const { default: Anthropic } = await import("@anthropic-ai/sdk");
-  const client = new Anthropic({ apiKey });
+  const client = new Anthropic({ apiKey, timeout: 20_000, maxRetries: 0 });
   const response = await client.messages.create({
     model,
     max_tokens: 1024,
@@ -595,6 +583,34 @@ export async function POST(request: Request) {
     const scope = scopeSlug
       ? data.officials.find((o) => o.slug === scopeSlug) ?? null
       : null;
+    if (scopeSlug && !scope) {
+      return NextResponse.json(
+        { status: "error", answer: "That official is not in this dataset. Return to Ask and try a name from the directory.", disclosure: DISCLOSURE },
+        { status: 400 }
+      );
+    }
+    if (scope) {
+      // The page box answers about the page. If the reader named someone
+      // else, say so rather than silently answering about the wrong person
+      // (Grok, Sept. 6).
+      const named = officialsNamedIn(question, data.officials);
+      const other = named.find((o) => o.slug !== scope.slug);
+      if (other) {
+        logAsk({ startedAt, question, status: "declined", reason: "off-page official", ipKey });
+        return NextResponse.json({
+          status: "declined" satisfies AskStatus,
+          answer: stripDashes(
+            `On this page the box answers only about ${scope.name}. ` +
+              `Use Ask without an official filter for other people.`
+          ),
+          plan: null,
+          planText: null,
+          result: null,
+          excluded,
+          disclosure: DISCLOSURE,
+        });
+      }
+    }
     // The roster carries each title and agency so "the energy secretary"
     // resolves from the list, not from the model's outside knowledge
     // (Haiku 4.5 could not do it without this; Sonnet 5 did it from memory,
@@ -609,7 +625,7 @@ export async function POST(request: Request) {
       logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
-        answer: stripDashes(declineText(intent.category)),
+        answer: stripDashes((rule === "exclusion" || rule === "compound_history") ? "This question combines separate trading histories or excludes trades. Ask cannot answer that comparison reliably. Try asking about purchases and sales separately." : declineText(intent.category)),
         plan: null,
         planText: null,
         result: null,
@@ -624,7 +640,7 @@ export async function POST(request: Request) {
     // Only translations produced under this contract can be reused. Old
     // untagged logs and follow-ups are never cache candidates. Include UTC
     // date for relative questions, model, and the page's official scope.
-    const cacheContext = `plan-cache-v1:${model}:${today}:${scopeSlug || "all"}`;
+    const cacheContext = `plan-cache-v2:${model}:${today}:${scopeSlug || "all"}`;
 
     // Reuse a validated translation or ask the model to translate the question.
     let planSource: "cache" | "model" = "model";
@@ -700,7 +716,7 @@ export async function POST(request: Request) {
             answer: stripDashes(
               `${tracked.name} is tracked here${others.length ? ` (so ${others.length === 1 ? "is" : "are"} ${others.join(", ")})` : ""}, ` +
               "but this question could not be turned into a query. Try naming the official and one thing to count: " +
-              `for example, "How many checked trades does ${tracked.name} have?"`
+              `for example, "How many trades does ${tracked.name} have?"`
             ),
             plan: null,
             planText: null,
@@ -727,7 +743,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           status: "error" satisfies AskStatus,
-          answer: "The question box is not available right now.",
+          answer: "Ask could not reach its question interpreter. Please try again in a moment, or browse the trades directly.",
           plan: null,
           planText: null,
           result: null,
@@ -756,26 +772,6 @@ export async function POST(request: Request) {
 
     let plan: QueryPlan = parsed.plan;
     if (scope) {
-      // The page box answers about the page. If the reader named someone
-      // else, say so rather than silently answering about the wrong person
-      // (Grok, Sept. 6).
-      const named = officialsNamedIn(question, data.officials);
-      const other = named.find((o) => o.slug !== scope.slug);
-      if (other) {
-        logAsk({ startedAt, question, status: "declined", reason: "off-page official", ipKey });
-        return NextResponse.json({
-          status: "declined" satisfies AskStatus,
-          answer: stripDashes(
-            `On this page the box answers only about ${scope.name}. ` +
-              `Use the homepage box for others.`
-          ),
-          plan: null,
-          planText: null,
-          result: null,
-          excluded,
-          disclosure: DISCLOSURE,
-        });
-      }
       plan = { ...plan, filters: { ...plan.filters, officials: [scope.slug] } };
     }
 
@@ -802,7 +798,7 @@ export async function POST(request: Request) {
           : "";
       return NextResponse.json({
         status: "not_in_data" satisfies AskStatus,
-        answer: stripDashes(`${resolved.reason}.${candidates}`),
+        answer: stripDashes(`${resolved.reason}.${candidates} Try the official’s full name or the company’s ticker symbol.`),
         plan: null,
         planText: null,
         result: null,
@@ -994,11 +990,12 @@ export async function POST(request: Request) {
     });
   } catch (error) {
     console.error("[ask] failed", error);
-    logAsk({ startedAt, question, status: "error", ipKey });
+    const timedOut = error instanceof Error && error.name === "APIConnectionTimeoutError";
+    logAsk({ startedAt, question, status: "error", reason: timedOut ? "planning timeout" : "request failed", ipKey });
     return NextResponse.json(
       {
         status: "error" satisfies AskStatus,
-        answer: "Something went wrong running that question.",
+        answer: timedOut ? "Ask took too long to interpret your question. Try again, or browse the trades directly." : "Ask could not finish this request. Please try again in a moment, or browse the trades directly.",
         plan: null,
         planText: null,
         result: null,

@@ -122,3 +122,34 @@ describe("precedence", () => {
     expect(classifyIntent("How many trades?").rule).toBe("none");
   });
 });
+
+
+describe("negative trade-history questions", () => {
+  it.each([
+    "Which officials bought Apple but never sold it?",
+    "Who bought Apple and did not sell it?",
+    "Who hasn't sold Apple?",
+    "Which officials have no Apple sales?",
+    "Show trades that were not late",
+  ])("does not discard negation in %s", (question) => {
+    expect(classifyIntent(question).intent.kind).toBe("decline");
+  });
+});
+
+
+describe("compound trade histories", () => {
+  it.each([
+    "Which officials have only bought Apple?",
+    "Which officials bought Apple and sold Microsoft?",
+    "Who sold Microsoft and purchased Apple?",
+    "Who bought and sold Apple?",
+    "Who exclusively traded Apple?",
+    "Tell me who bought Apple and sold Microsoft",
+    "Show me which officials only bought Apple",
+  ])("does not answer only one part of %s", (question) => {
+    expect(classifyIntent(question).rule).toBe("compound_history");
+  });
+  it.each(["Who bought Apple?", "How many Apple and Microsoft purchases?", "Did Trump buy Verizon or sell it?"])("preserves the supported query %s", (question) => {
+    expect(classifyIntent(question).intent.kind).not.toBe("decline");
+  });
+});

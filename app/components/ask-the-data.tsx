@@ -22,7 +22,7 @@ function PendingStatus() {
 }
 
 const STATUS_LABEL: Record<AskResponse["status"], { text: string; className: string }> = {
-  answered: { text: "Answered from checked rows", className: "border-emerald-700 text-emerald-800" },
+  answered: { text: "Answer", className: "border-emerald-700 text-emerald-800" },
   not_in_data: { text: "Not in this data", className: "border-neutral-400 text-neutral-600" },
   declined: { text: "Declined", className: "border-amber-700 text-amber-800" },
   error: { text: "Error", className: "border-red-700 text-red-800" },
@@ -117,10 +117,10 @@ function cleanDashes(text: string): string {
 }
 
 const GENERAL_SUGGESTIONS = [
-  "How many checked trades does Christopher Wright have?",
+  "How many trades does Christopher Wright have?",
   "Which officials sold Liberty Energy?",
   "Trades flagged late in 2026",
-  "What percentage of checked trades were filed late?",
+  "What percentage of trades were filed late?",
 ];
 
 export default function AskTheData({
@@ -146,7 +146,7 @@ export default function AskTheData({
   // must not ask a question the box is forbidden to answer honestly.
   const suggestions = officialName
     ? [
-        `How many checked trades does ${officialName} have?`,
+        `How many trades does ${officialName} have?`,
         `What was sold in 2025?`,
         `Which trades were flagged late?`,
         `Largest sales by disclosed range`,
@@ -157,17 +157,20 @@ export default function AskTheData({
   const answerRef = useRef<HTMLDivElement | null>(null);
   const [feedback, setFeedback] = useState<"right" | "wrong" | "sent" | null>(null);
   const [feedbackReason, setFeedbackReason] = useState("");
+  const [feedbackSaving, setFeedbackSaving] = useState(false);
+  const [feedbackError, setFeedbackError] = useState("");
 
   /** Only an explicit form submission runs a question. */
   async function ask(text: string) {
     const trimmed = text.trim();
-    if (trimmed.length < 3 || pending) return;
+    if (trimmed.length < 3 || pending || feedbackSaving || abortRef.current) return;
     setSubmittedQuestion(trimmed);
     setPending(true);
     setResponse(null);
     setElapsedMs(null);
     setFeedback(null);
     setFeedbackReason("");
+    setFeedbackError("");
     const controller = new AbortController();
     abortRef.current = controller;
     const t0 = Date.now();
@@ -205,19 +208,23 @@ export default function AskTheData({
     if (response && answerRef.current) answerRef.current.focus();
   }, [response]);
 
-  async function sendFeedback(verdict: "right" | "wrong") {
-    if (!response?.logId) return;
-    setFeedback(verdict);
-    if (verdict === "right") {
-      await fetch("/api/ask/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ logId: response.logId, verdict }) }).catch(() => undefined);
+  async function submitFeedback(verdict: "right" | "wrong") {
+    if (!response?.logId || feedbackSaving) return;
+    setFeedbackSaving(true);
+    setFeedbackError("");
+    try {
+      const res = await fetch("/api/ask/feedback", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ logId: response.logId, verdict, reason: verdict === "wrong" ? feedbackReason : undefined }),
+      });
+      if (!res.ok || !(await res.json()).ok) throw new Error("Feedback was not saved");
       setFeedback("sent");
+    } catch {
+      setFeedbackError("Your feedback was not saved. Please try again.");
+    } finally {
+      setFeedbackSaving(false);
     }
-  }
-
-  async function sendWrongReason() {
-    if (!response?.logId) return;
-    await fetch("/api/ask/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ logId: response.logId, verdict: "wrong", reason: feedbackReason }) }).catch(() => undefined);
-    setFeedback("sent");
   }
 
   const result = response?.result ?? null;
@@ -229,12 +236,14 @@ export default function AskTheData({
           Ask the data
         </h2>
         <p className="text-sm text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-          Explore purchases, sales and late filings{officialName ? ` by ${officialName}` : ""}. Answers use checked disclosure records.
+          Explore purchases, sales and late filings{officialName ? ` by ${officialName}` : ""}. Answers come from financial disclosure records.
           {checkedCount !== null && parsedCount !== null && (
-            <> {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()} parsed rows qualify today.</>
+            <> {checkedCount.toLocaleString()} trades available.{parsedCount > checkedCount ? ` ${(parsedCount - checkedCount).toLocaleString()} more are awaiting verification.` : ""}</>
           )}
         </p>
-        <div className="mt-3 grid gap-x-8 gap-y-1 sm:grid-cols-2 text-xs text-neutral-500 max-w-2xl">
+        <details className="mt-3 text-xs text-neutral-600">
+          <summary className="cursor-pointer hover:text-neutral-900">What questions can I ask?</summary>
+          <div className="mt-2 grid gap-x-8 gap-y-2 sm:grid-cols-2 max-w-2xl">
           <p>
             <span className="text-neutral-700 font-medium">It can answer:</span>{" "}who traded a company, an official&apos;s
             sales or purchases, a date range, trades flagged late, totals by disclosed range, bonds or ETFs as a kind of asset.
@@ -243,7 +252,8 @@ export default function AskTheData({
             <span className="text-neutral-700 font-medium">It cannot answer:</span> what a trade earned or lost, best or worst
             trades, current holdings or net worth, prices, motives or legality. Filings give dollar ranges, not prices.
           </p>
-        </div>
+          </div>
+        </details>
       </div>
 
       <div className="px-5 py-4">
@@ -271,7 +281,7 @@ export default function AskTheData({
           />
           <button
             type="submit"
-            disabled={pending || question.trim().length < 3}
+            disabled={pending || feedbackSaving || question.trim().length < 3}
             className="bg-neutral-900 text-white text-sm font-medium px-5 py-2 hover:bg-neutral-700 disabled:bg-neutral-300 disabled:cursor-not-allowed transition-colors"
           >
             {pending ? "Running" : "Ask"}
@@ -314,7 +324,7 @@ export default function AskTheData({
           <p className="text-sm text-neutral-600 mb-3"><span className="font-medium">You asked:</span> {submittedQuestion}</p>
           <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
             <span className={`inline-block border text-[11px] uppercase tracking-wider px-2 py-0.5 ${STATUS_LABEL[response.status].className}`}>
-              {STATUS_LABEL[response.status].text}
+              {response.status === "not_in_data" && result?.matchedRows === 0 ? "No matching records" : response.status === "not_in_data" ? "Could not answer this question" : STATUS_LABEL[response.status].text}
             </span>
           </div>
 
@@ -331,7 +341,7 @@ export default function AskTheData({
           {response.plan && (!response.plan.filters.officials?.length || (!response.plan.filters.dateFrom && !response.plan.filters.dateTo)) && (
             <p className="text-xs text-neutral-500 mt-1">
               {!response.plan.filters.officials?.length && "All officials in this dataset. "}
-              {!response.plan.filters.dateFrom && !response.plan.filters.dateTo && "All dates in the checked records."}
+              {!response.plan.filters.dateFrom && !response.plan.filters.dateTo && "All dates in this dataset."}
             </p>
           )}
 
@@ -382,7 +392,7 @@ export default function AskTheData({
                     </td>
                   </tr>
                   <tr className="border-b border-neutral-100">
-                    <td className="px-3 py-2 text-neutral-500">Verified rows in the query</td>
+                    <td className="px-3 py-2 text-neutral-500">Matching trades</td>
                     <td className="px-3 py-2 text-right font-[family-name:var(--font-dm-mono)] tabular-nums text-neutral-900">
                       {result.lateShare.total.toLocaleString()}
                     </td>
@@ -440,7 +450,7 @@ export default function AskTheData({
           )}
 
           {result?.rows && result.rows.length > 0 && (
-            <div className="mt-4 overflow-x-auto border border-neutral-200">
+            <div className="mt-4 overflow-x-auto border border-neutral-200" role="region" aria-label="Matching trades" tabIndex={0}>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-xs uppercase tracking-wider text-neutral-400 border-b border-neutral-200">
@@ -529,18 +539,27 @@ export default function AskTheData({
                 <span>Thanks. Your note is attached to this answer in the log.</span>
               ) : feedback === "wrong" ? (
                 <>
-                  <input value={feedbackReason} onChange={(e) => setFeedbackReason(e.target.value)} maxLength={500} placeholder="What was wrong? (optional)" className="border border-neutral-300 px-2 py-1 text-xs w-64" aria-label="What was wrong" />
-                  <button type="button" onClick={sendWrongReason} className="border border-neutral-900 px-2 py-1 hover:bg-neutral-900 hover:text-white">Send</button>
+                  <input disabled={feedbackSaving} value={feedbackReason} onChange={(e) => setFeedbackReason(e.target.value)} maxLength={500} placeholder="What was wrong? (optional)" className="border border-neutral-300 px-2 py-1 text-xs w-64 max-w-full" aria-label="What was wrong" />
+                  <button type="button" disabled={feedbackSaving} onClick={() => submitFeedback("wrong")} className="border border-neutral-900 px-2 py-1 hover:bg-neutral-900 hover:text-white">Send</button>
                 </>
               ) : (
                 <>
                   <span>Was this answer right?</span>
-                  <button type="button" onClick={() => sendFeedback("right")} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">Yes</button>
-                  <button type="button" onClick={() => sendFeedback("wrong")} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">No</button>
+                  <button type="button" disabled={feedbackSaving} onClick={() => submitFeedback("right")} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">Yes</button>
+                  <button type="button" disabled={feedbackSaving} onClick={() => { setFeedback("wrong"); setFeedbackError(""); }} className="border border-neutral-300 px-2 py-0.5 hover:border-neutral-900">No</button>
                 </>
               )}
             </div>
           )}
+
+          {response.status !== "answered" && (
+            <p className="mt-3 text-sm text-neutral-600">
+              You can also <Link href="/all" className="underline hover:text-neutral-900">browse trades</Link> or find a name in the <Link href="/#directory" className="underline hover:text-neutral-900">officials directory</Link>.
+            </p>
+          )}
+
+          {feedbackSaving && <p role="status" className="mt-2 text-xs text-neutral-500">Saving feedback...</p>}
+          {feedbackError && <p role="alert" className="mt-2 text-xs text-red-700">{feedbackError}</p>}
 
           <details className="mt-4 text-xs text-neutral-600">
             <summary className="cursor-pointer hover:text-neutral-900">How this answer was calculated</summary>
