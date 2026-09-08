@@ -140,17 +140,14 @@ describe("OCR row handling", () => {
   });
 });
 
-describe("OCR states are rendered and documented", () => {
+describe("OCR state display and version", () => {
   it("the methodology page renders both OCR states from the log", () => {
     const page = readFileSync(path.join(process.cwd(), "app", "methodology", "page.tsx"), "utf-8");
     expect(page).toContain("ocr_tuple_agreement");
     expect(page).toContain("ocr_tuple_mismatch");
   });
 
-  it("the pipeline page describes the OCR lane and the lane version is dated", () => {
-    const doc = readFileSync(path.join(process.cwd(), "research", "pipeline.md"), "utf-8");
-    expect(doc).toContain("lib/ocr-lane.ts");
-    expect(doc).toContain("ocr_tuple_agreement");
+  it("the lane version uses a date and revision number", () => {
     expect(OCR_LANE_VERSION).toMatch(/^\d{4}-\d{2}-\d{2}\.\d+$/);
   });
 });

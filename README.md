@@ -48,7 +48,7 @@ Rows by verification state: 11,364 checked; 145 human_verified; 0 deterministic_
 | Company Detail | `/companies/[ticker]` | Who in government trades this stock |
 | About | `/about` | Methodology, legal basis, AI transparency, feedback form |
 | Download | `/download` | CSV and JSON exports of the full dataset |
-| Admin | `/admin` | Pipeline status, review queue, data validation (auth-gated) |
+| Admin | `/admin` | Email management and operational history, plus older database-mirror stats and review panels (auth-gated) |
 
 ## Data source
 
@@ -56,17 +56,48 @@ All data comes from the U.S. Office of Government Ethics. Transaction reports (2
 
 ## Architecture
 
-```
-OGE API ──▶ scripts/ingest-new-filings.ts ──▶ data/officials/*.json   (source of truth)
-                     │
-                     ├─▶ scripts/rebuild-index.ts    ──▶ data/meta/officials-index.json
-                     └─▶ scripts/generate-exports.ts ──▶ public/data/*.json, *.csv
+**Published transactions live in JSON files. PostgreSQL holds operational records and a separate transaction mirror.** Editing that database copy does not correct a transaction on the public website.
 
-Next.js App Router reads data/ at build time ──▶ static pages (470+ prerendered)
-Neon PostgreSQL + Better Auth ──▶ /admin panel, email alerts (Resend)
+### Where information lives
+
+| Location | What it contains | What uses it |
+|----------|------------------|--------------|
+| `data/officials/*.json` | One file per official, containing their information and transaction records | Public official pages and aggregate views |
+| `data/meta/row-verification.json` | Saved check results for individual transactions | Verification labels, counting rules and Ask eligibility |
+| `data/meta/asset-resolution.json` | Saved asset classifications and ticker decisions | Company grouping and ticker display, together with the name-verification rule |
+| `public/data/` | Generated JSON and CSV downloads | Download page and bulk-data readers |
+| PostgreSQL operational tables | Login sessions, subscriptions/follows, email delivery, pipeline history, Ask quotas and question logs | Interactive services and admin |
+| PostgreSQL mirror tables | A separate copy of officials, transactions and news | Older admin stats, validation and DB review panels |
+
+The official JSON files are the **source of truth**: the saved transaction records that publication and corrections are based on. The verification and asset files add checking and interpretation information alongside those records. They are joined by transaction IDs currently computed from the records.
+
+The database mirror has a different schema and does not include all of that supporting information. `scripts/seed-from-json.ts` replaces its contents from JSON; this overwrites edits made through the DB review panel. The mirror's current freshness must be checked rather than assumed.
+
+### How a transaction reaches a page
+
+```
+OGE filing PDF
+    → extraction and checks
+    → accepted transactions in data/officials/*.json
+    → rebuild verification, asset information, index and downloads
+    → review and publish the changes
+
+Published JSON + saved verification/asset information
+    → JavaScript selects, groups and counts records
+    → Next.js pages and React/D3 charts
 ```
 
-The public site is served entirely from static JSON committed to this repo — no live database reads on public pages. The database backs the admin panel, pipeline run history and the email alert system.
+For example, [getOfficialBySlug in lib/data.ts](lib/data.ts) opens an official's JSON file. The [official detail page](app/officials/[slug]/page.tsx) selects transactions for the requested filters and displays them as table rows. Company pages use `getTradesByTicker` to group transactions from multiple officials using the saved asset decisions and name checks. These selections use JavaScript, not SQL queries against the mirror.
+
+**JSON storage does not mean every page is built ahead of time.** Next.js can prepare static pages during a build, while the official detail page reads URL filters and renders on the server when requested. Both use the JSON records. React handles the interface; D3 supplies chart calculations.
+
+Ask also calculates answers from eligible JSON transaction records, through [lib/published-rows.ts](lib/published-rows.ts). Its database use is for quotas, question logs and saved plans. Email alerts use the published filing data together with subscriptions and delivery history in PostgreSQL.
+
+### Adding filings and making corrections
+
+The current scheduled ingestion entrypoint is [scripts/ingest-new-filings.ts](scripts/ingest-new-filings.ts). It updates the JSON publication path. The older [scripts/pipeline.ts](scripts/pipeline.ts) writes the database mirror and is not the scheduled path. These commands are not interchangeable.
+
+Adding a new filing and correcting an existing filing are different operations. [scripts/reverify.ts](scripts/reverify.ts) provides the candidate comparison/application workflow for existing filings. Ingestion, re-verification and review commands can write files or make paid calls depending on their options; invoking them through a coding assistant does not change those effects. The current tools remain available while their manual usage and recovery rules are reviewed.
 
 ## Data pipeline
 
@@ -75,7 +106,7 @@ Open Cabinet uses two scheduled paths:
 1. **Monitor** — Vercel Cron polls the OGE API daily, diffs exact 278-T PDF URLs against tracked source filings, records the run and emails the result.
 2. **Ingest** — GitHub Actions runs the static JSON ingest weekly (Mondays) or on demand, downloads new PDFs, parses them with Claude, checks them, regenerates exports and opens a PR for review.
 
-The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages, described stage by stage with what stops each one in [`research/pipeline.md`](research/pipeline.md):
+The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages. The entrypoint coordinates the work, with acquisition, reading and checking implemented in [lib/ingest-stages.ts](lib/ingest-stages.ts):
 
 1. **Find** — the OGE API is diffed against the filings already tracked.
 2. **Fetch** — the PDF is downloaded and hashed.
@@ -89,7 +120,7 @@ The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages, described s
 
 Filings print names, not tickers. `lib/instrument-type.ts` types every row from the printed text (stock, ETF, mutual fund, preferred, corporate note, municipal bond, Treasury, crypto, private holding, option). `lib/asset-resolution.ts` then ties a stock or ETF row to a symbol only on exact evidence: a printed symbol whose listing carries the printed name, an exact name match on both the Nasdaq directory and the SEC issuer list, or a person's dictionary entry (`data/meta/asset-dictionary.json`, every entry with who decided and why). No similarity matching, no model guessing. A ticker is shown only when the row's printed name was also read the same way by an independent reader. Unresolved names publish under the printed name and wait in a queue (`scripts/asset-decide.ts`, `/admin/assets`). The result is `data/meta/asset-resolution.json`; the company pages, the official trade tables and the exports all read it through one rule (`publicTicker`).
 
-The Neon database is a mirror of the JSON used by the admin panel and alerts, not the source of what readers see. `scripts/pipeline.ts` writes to it and is not part of the scheduled ingest.
+The database mirror supports older admin panels. Email subscriptions and delivery records are separate operational tables; they are not copies of the published transaction files.
 
 ### Pipeline commands
 
@@ -100,12 +131,12 @@ pnpm run crosscheck-sweep      # Re-run the text-layer comparison over every fil
 pnpm run row-verification      # Rebuild the per-row verification record from every lane
 pnpm run asset-resolution      # Type every row and tie stocks/ETFs to tickers on exact evidence
 pnpm run pipeline              # DB mirror path (not scheduled): check, download, parse, insert
-pnpm run pipeline -- --dry-run # Check only; still records a run row
+pnpm run pipeline -- --dry-run # Legacy path; still has DB, download, parsing and notification side effects
 pnpm run check-filings -- --dry-run # URL-diff OGE without writing state
 pnpm run validate              # Run validation suite against data
 pnpm run parse-pdf <file>      # Parse a single PDF
 pnpm run check-news            # News coverage search guidance
-pnpm run seed                  # Seed database from JSON files
+pnpm run seed                  # Replace the DB mirror from JSON; overwrites mirror edits
 ```
 
 ### Models and lanes
@@ -121,7 +152,7 @@ Programs that never see a model's output: the text-layer comparison (pdftotext) 
 
 ## Tech stack
 
-- **Next.js 16** (App Router, static generation, 470+ pages prerendered)
+- **Next.js 16** (App Router, static pages and request-time server rendering)
 - **React 19** + **TypeScript**
 - **D3.js** v7 sub-modules for all visualizations
 - **Tailwind CSS 4**
@@ -157,7 +188,7 @@ See `.env.example` for the full list. Required:
 
 ## Research
 
-The `research/` directory contains six internally sourced research briefs (180+ pages) covering:
+The local `research/` directory contains historical working briefs covering:
 
 1. STOCK Act and federal ethics law
 2. Case law and legal precedent
@@ -166,7 +197,7 @@ The `research/` directory contains six internally sourced research briefs (180+ 
 5. Late filing patterns and enforcement
 6. The divestiture process
 
-All briefs follow SPJ Code of Ethics standards with inline citations. See `research/README.md` for the index.
+These private working documents are ignored by Git and are not included in a fresh clone. They are not required to run tests. Use the architecture and pipeline sections above to understand the current implementation; historical research should not be treated as a current operating guide.
 
 ## Tests and CI
 
