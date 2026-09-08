@@ -9,6 +9,12 @@ export function QuickLinksSection() {
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <Link
+          href="/admin/askai"
+          className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
+        >
+          Ask activity
+        </Link>
+        <Link
           href="/"
           className="border border-neutral-200 px-4 py-3 text-sm hover:bg-neutral-50 transition-colors"
         >
