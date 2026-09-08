@@ -36,7 +36,7 @@ Open Cabinet turns executive-branch financial disclosure PDFs into searchable tr
 | Scheduled work | `.github/workflows/oge-pipeline.yml`, `app/api/cron/route.ts`, `vercel.json` |
 | Tests | Next to the code as `*.test.ts`; CI is `.github/workflows/ci.yml` |
 
-`lib/` means reusable application code; it is not a single subsystem. Validation and Ask have named subfolders. Other domains still have explicit filenames directly under `lib/`; reorganize them in tested batches rather than moving everything at once. `scripts/` contains runnable commands, including older maintenance tools. Read the command's effects before executing it.
+`lib/` means reusable application code; it is not a single subsystem. Validation, PDF preparation and Ask have named subfolders. Other domains still have explicit filenames directly under `lib/`; reorganize them in tested batches rather than moving everything at once. `scripts/` contains runnable commands, including older maintenance tools. Read the command's effects before executing it.
 
 ## How the files connect without SQL
 
@@ -53,7 +53,13 @@ This keeps published data reviewable in Git. The tradeoff is that changing a tra
 
 PostgreSQL stores state that changes through requests: sessions, subscriptions, email sends, pipeline runs and Ask quotas/logs/plans. `getDb()` creates and reuses the Drizzle client on first use. `getAuth()` also initializes on demand, so importing the application does not immediately require a live database configuration.
 
-Older tables contain a separate mirror of officials, transactions and news. Some admin panels read or edit that mirror. They do not change the public JSON, and reseeding replaces mirror contents. Those tools remain until their use is confirmed; no public-data migration to SQL is planned for this cleanup.
+The old mirror import, reseed, stats, validation and database review tools have been retired. Historical mirror tables and schema declarations remain pending an explicit database migration. Admin still manages email, monitor history, source checks and Ask activity. The file-based correction/review workflow remains available.
+
+## How a failed filing gets another attempt
+
+The monitor remembers URLs it has seen in `data/meta/last-check.json`. Ingestion instead reads `sourceFilings` in `data/officials/*.json`: those entries are saved alongside accepted rows, even when deduplication adds no new transactions. Seeing or downloading a PDF never marks it imported. Failed and held filings remain candidates on a later normal ingest run; saved filings are skipped.
+
+This uses existing source provenance rather than adding another database or job ledger. It does not automatically repair damaged files, bypass human holds, or publish partial results. Explicit `--from-file` plans still need careful review.
 
 ## Rendering and the AI boundary
 

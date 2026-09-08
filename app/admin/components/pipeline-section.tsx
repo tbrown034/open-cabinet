@@ -35,8 +35,7 @@ export function PipelineSection({ runs }: { runs: PipelineRun[] }) {
             <a className="underline" href="https://github.com/tbrown034/open-cabinet/blob/main/docs/maintenance.md">
               maintenance guide
             </a>{" "}
-            before adding a filing or correcting an existing one. The older
-            database pipeline is a separate workflow.
+            before adding a filing or correcting an existing one.
           </p>
         </div>
       </div>

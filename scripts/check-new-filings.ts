@@ -18,7 +18,7 @@ import {
   reconcileKnownFilings,
   fetchOgeRecords,
   getTargetFilings,
-  loadKnownFilingUrlsFromData,
+  loadDiscoveredFilingUrls,
   writeLastCheckState,
   MIN_DOC_DATE,
   type TargetFiling,
@@ -190,7 +190,7 @@ async function main() {
     console.warn(`${reconciled.redated.length} published filing(s) carry a different posting date in OGE's index (ours -> index):`);
     for (const r of reconciled.redated) console.warn(`  ${r.date} -> ${r.indexDate}  ${r.url.split("/").pop()}`);
   }
-  const knownUrls = await loadKnownFilingUrlsFromData();
+  const knownUrls = await loadDiscoveredFilingUrls();
   const newFilings = diffNewFilings(targetFilings, knownUrls).map(
     (filing): TargetFiling & { status: string } => ({
       ...filing,

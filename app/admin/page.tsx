@@ -2,29 +2,22 @@
 
 import { useReducer, useEffect, useCallback } from "react";
 import { useSession, signIn, signOut } from "@/lib/auth-client";
-import { StatsSection } from "./components/stats-section";
 import { DigestSection } from "./components/digest-section";
 import { AlertSignupsSection } from "./components/alert-signups-section";
 import { PipelineSection } from "./components/pipeline-section";
-import { ReviewQueueSection } from "./components/review-queue-section";
-import { ValidationSection } from "./components/validation-section";
+import { SourceCheckSection } from "./components/source-check-section";
 import { QuickLinksSection } from "./components/quick-links-section";
 import { ModelsSection } from "./components/models-section";
 import type {
-  AdminStats,
   AlertSignup,
-  DbValidationReport,
   DigestPreview,
   DigestSendResult,
   OgeCheckReport,
   PipelineRun,
-  ReviewItem,
 } from "./types";
 
 interface AdminState {
   runs: PipelineRun[];
-  reviewItems: ReviewItem[];
-  reviewCount: number;
   alertSignups: AlertSignup[];
   alertSignupCount: number;
   digest: DigestPreview | null;
@@ -38,17 +31,12 @@ interface AdminState {
   // a slug = preview the single-official digest for that official.
   digestTestOfficial: string;
   loading: boolean;
-  validationReport: DbValidationReport | null;
   ogeReport: OgeCheckReport | null;
-  validating: boolean;
   checkingOge: boolean;
-  stats: AdminStats | null;
 }
 
 const INITIAL_ADMIN_STATE: AdminState = {
   runs: [],
-  reviewItems: [],
-  reviewCount: 0,
   alertSignups: [],
   alertSignupCount: 0,
   digest: null,
@@ -60,11 +48,8 @@ const INITIAL_ADMIN_STATE: AdminState = {
   digestTestResult: null,
   digestTestOfficial: "",
   loading: false,
-  validationReport: null,
   ogeReport: null,
-  validating: false,
   checkingOge: false,
-  stats: null,
 };
 
 function adminReducer(
@@ -85,27 +70,15 @@ export default function AdminPage() {
     if (!isAdmin) return;
     setAdminState({ loading: true });
     try {
-      const [pipelineRes, reviewRes, statsRes, alertsRes, digestRes] =
+      const [pipelineRes, alertsRes, digestRes] =
         await Promise.all([
           fetch("/api/admin/pipeline"),
-          fetch("/api/admin/review"),
-          fetch("/api/admin/stats"),
           fetch("/api/admin/alerts"),
           fetch("/api/admin/digest"),
         ]);
       if (pipelineRes.ok) {
         const data = await pipelineRes.json();
         setAdminState({ runs: data.runs || [] });
-      }
-      if (reviewRes.ok) {
-        const data = await reviewRes.json();
-        setAdminState({
-          reviewItems: data.items || [],
-          reviewCount: data.count || 0,
-        });
-      }
-      if (statsRes.ok) {
-        setAdminState({ stats: await statsRes.json() });
       }
       if (alertsRes.ok) {
         const data = await alertsRes.json();
@@ -205,33 +178,6 @@ export default function AdminPage() {
     setAdminState({ checkingOge: false });
   }
 
-  async function runValidation() {
-    setAdminState({ validating: true });
-    try {
-      const res = await fetch("/api/admin/validate", { method: "POST" });
-      if (res.ok) {
-        setAdminState({ validationReport: await res.json() });
-      }
-    } catch (err) {
-      console.error("Validation failed:", err);
-    }
-    setAdminState({ validating: false });
-  }
-
-  async function handleReview(id: number, action: "approve" | "delete") {
-    const res = await fetch("/api/admin/review", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, action }),
-    });
-    if (res.ok) {
-      setAdminState({
-        reviewItems: state.reviewItems.filter((item) => item.id !== id),
-        reviewCount: state.reviewCount - 1,
-      });
-    }
-  }
-
   if (isPending) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-16 text-center text-neutral-500 text-sm">
@@ -317,8 +263,6 @@ export default function AdminPage() {
         </div>
       </div>
 
-      <StatsSection stats={state.stats} />
-
       <DigestSection
         digest={state.digest}
         digestError={state.digestError}
@@ -344,18 +288,9 @@ export default function AdminPage() {
 
       <PipelineSection runs={state.runs} />
 
-      <ReviewQueueSection
-        items={state.reviewItems}
-        count={state.reviewCount}
-        onReview={handleReview}
-      />
-
-      <ValidationSection
-        validationReport={state.validationReport}
+      <SourceCheckSection
         ogeReport={state.ogeReport}
-        validating={state.validating}
         checkingOge={state.checkingOge}
-        onValidate={runValidation}
         onCheckOge={runCronCheck}
       />
 

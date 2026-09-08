@@ -35,8 +35,7 @@ async function main() {
   console.log(`2. Key sources: ProPublica, NOTUS, CNBC, Bloomberg, KFF Health News`);
   console.log(`3. Add entries to data/news-coverage.json`);
   console.log(`4. Each entry needs: official (slug), headline, source, date, url, relevance`);
-  console.log(`5. Run 'pnpm run seed' to update the database`);
-  console.log(`\nTo automate: integrate Anthropic web_search tool or a news API.`);
+  console.log(`5. Review the JSON change in a pull request; the site reads it directly`);
 }
 
 main().catch(console.error);
