@@ -58,6 +58,10 @@ jobs:
       - name: Install poppler and tesseract
         run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr
 
+      - name: Check published source availability
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        run: pnpm run check-sources
+
       - name: Ingest OGE filings into static data
         run: |
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
@@ -98,6 +102,7 @@ jobs:
             Automated OGE filing pipeline run.
 
             Validation included:
+            - `pnpm run check-sources` (review source availability flags in data/meta/source-availability.json)
             - `pnpm run ingest-filings`
             - `pnpm run rebuild-index`
             - `pnpm run validate`

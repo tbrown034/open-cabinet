@@ -175,6 +175,7 @@ async function build(): Promise<PublishedRowsData> {
   for (const official of officials) {
     const ids = recordIdsFor(official.transactions);
     official.transactions.forEach((tx, i) => {
+      if (tx.historical) return;
       const id = ids[i];
       const record = verification?.rows[id] ?? null;
       const ticker = publicTicker(assets?.rows[id], record?.gates?.name);

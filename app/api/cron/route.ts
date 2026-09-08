@@ -17,7 +17,11 @@ import {
   fetchOgeRecords,
   getTargetFilings,
   loadKnownFilingUrlsFromData,
+  loadKnownFilingsFromData,
+  getAllIndexedFilings,
+  reconcileKnownFilings,
 } from "@/lib/oge-filings";
+import { readSourceAvailability, sourceKey } from "@/lib/source-availability";
 
 export const maxDuration = 300; // 5 minutes (Vercel Pro)
 
@@ -92,6 +96,14 @@ export async function GET(request: NextRequest) {
     }
     const knownUrls = await loadKnownFilingUrlsFromData();
     const newFilings = diffNewFilings(targetFilings, knownUrls);
+    if (records.length !== totalRecords) throw new Error("Incomplete OGE index; source comparison skipped");
+    const sourceChanges = reconcileKnownFilings(getAllIndexedFilings(records), await loadKnownFilingsFromData());
+    const previousSources = readSourceAvailability();
+    const newlyMissing = sourceChanges.missing.filter((f) =>
+      previousSources?.filings[sourceKey(f.url)]?.indexListed !== false);
+    const sourceNote = newlyMissing.length
+      ? `\n\n${newlyMissing.length} tracked report(s) are no longer listed in OGE's index. This does not establish that the PDFs were deleted. Review their original links:\n${newlyMissing.map((f) => f.url).join("\n")}`
+      : "";
 
     const { eq } = await import("drizzle-orm");
 
@@ -104,9 +116,10 @@ export async function GET(request: NextRequest) {
         completedAt: new Date(),
         errors: null,
         tokenUsage: {
-          note: "OGE URL-diff monitor only",
+          note: "OGE new-filing and source-listing monitor",
           totalOgeRecords: totalRecords,
           target278TFilings: targetFilings.length,
+          missingSourceListings: sourceChanges.missing.length,
         },
       })
       .where(eq(pipelineRuns.id, run.id));
@@ -135,19 +148,21 @@ export async function GET(request: NextRequest) {
       console.warn("[cron] digest draft check failed:", (e as Error).message);
     }
     // Quiet on all-clear runs: the pipelineRuns row is the record. Email only
-    // when there are new filings or a subscriber digest is waiting on /admin.
-    if (newFilings.length > 0 || digestNote) {
+    // for new filings, newly missing source listings, or a waiting digest.
+    if (newFilings.length > 0 || digestNote || sourceNote) {
       await notify({
         type: "new_filings",
         headline:
-          newFilings.length === 0
+          newlyMissing.length > 0
+            ? `OGE check: ${newFilings.length} new filings, ${newlyMissing.length} missing source listings`
+            : newFilings.length === 0
             ? "OGE check OK · subscriber digest ready"
             : `OGE check found ${newFilings.length} new filing${newFilings.length === 1 ? "" : "s"}`,
         summary:
           (newFilings.length === 0
             ? `Polled the OGE public portal and found no new downloadable 278-T PDFs beyond the URLs already tracked by Open Cabinet.`
             : `Polled the OGE public portal and found ${newFilings.length} downloadable 278-T PDF${newFilings.length === 1 ? "" : "s"} not yet tracked by Open Cabinet.\n\n${filingList}`) +
-          digestNote,
+          digestNote + sourceNote,
         metadata: {
           "Total OGE records": totalRecords.toLocaleString(),
           "Tracked 278-T PDFs": targetFilings.length,
@@ -164,6 +179,7 @@ export async function GET(request: NextRequest) {
       totalOgeRecords: totalRecords,
       target278TFilings: targetFilings.length,
       newFilingsFound: newFilings.length,
+      missingSourceListings: sourceChanges.missing.length,
       duration: `${((Date.now() - startTime) / 1000).toFixed(1)}s`,
       message:
         newFilings.length === 0

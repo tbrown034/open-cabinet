@@ -86,7 +86,7 @@ export default async function RowsPage({ searchParams }: { searchParams: Promise
     <main className="max-w-[1400px] mx-auto px-4 py-8 text-sm">
       <h1 className="font-[family-name:var(--font-source-serif)] text-2xl mb-1">Rows by gate</h1>
       <p className="text-neutral-600 mb-4">
-        {tally.rows.toLocaleString("en-US")} rows in scope. {tally.disagree.toLocaleString("en-US")} where at least one gate disagreed with the row; {tally.human.toLocaleString("en-US")} decided by a person; {tally.lowconf.toLocaleString("en-US")} where the first read's own confidence was under 0.7. Built {file.generatedAt.slice(0, 16).replace("T", " ")}. <Link className="underline" href="/admin/review">Review queue</Link>
+        {tally.rows.toLocaleString("en-US")} rows in scope. {tally.disagree.toLocaleString("en-US")} where at least one gate disagreed with the row; {tally.human.toLocaleString("en-US")} decided by a person; {tally.lowconf.toLocaleString("en-US")} where the first read&rsquo;s own confidence was under 0.7. Built {file.generatedAt.slice(0, 16).replace("T", " ")}. <Link className="underline" href="/admin/review">Review queue</Link>
       </p>
       <div className="flex flex-wrap gap-2 mb-4">
         <Link className={`px-2 py-1 border ${!only ? "bg-neutral-900 text-white" : ""}`} href={link({ only: "" })}>All</Link>

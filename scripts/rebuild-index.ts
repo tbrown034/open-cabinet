@@ -23,7 +23,7 @@ interface OfficialData {
   lastIngestedNewCount?: number;
   departedDate?: string | null;
   formerOfficial?: boolean;
-  transactions: Array<{ amount: string }>;
+  transactions: Array<{ amount: string; historical?: boolean }>;
 }
 
 async function main() {
@@ -39,7 +39,7 @@ async function main() {
   for (const file of jsonFiles) {
     const raw = await readFile(path.join(officialsDir, file), "utf-8");
     const data: OfficialData = JSON.parse(raw);
-    const txCount = data.transactions.length;
+    const txCount = data.transactions.filter((tx) => !tx.historical).length;
     totalTx += txCount;
 
     officials.push({

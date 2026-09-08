@@ -330,7 +330,9 @@ export default async function Home() {
             whose 278-T transaction reports are directly downloadable from
             OGE{"'"}s public portal. The directory excludes prior-administration
             holdovers but keeps recent former officials when their filings are
-            part of the current executive-branch record. Hundreds more have
+            part of the current executive-branch record. Totals exclude historical
+            reports but include older trades disclosed in second-term reports.
+            Hundreds more have
             filed reports that require individual{" "}
             <a href="https://extapps2.oge.gov/201/Presiden.nsf" className="underline hover:text-neutral-600" target="_blank" rel="noopener noreferrer">
               Form 201 requests

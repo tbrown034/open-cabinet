@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "check-sources": "tsx scripts/check-source-availability.ts",
     "dev": "next dev --port 3003",
     "build": "next build",
     "start": "next start",

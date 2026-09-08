@@ -65,8 +65,9 @@ export default async function AllTradesPage() {
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
           Every reported transaction across {ranked.length} executive branch
-          officials. {totalTx.toLocaleString()} trades from January 2025 to the
-          present. The density is the story.
+          officials. {totalTx.toLocaleString()} trades disclosed in second-term
+          reports, including earlier trades reported later. Historical reports
+          are excluded.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-500 mt-4">
           <span>

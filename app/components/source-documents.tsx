@@ -4,6 +4,8 @@ import type {
 } from "@/lib/source-docs";
 import { formatDate } from "@/lib/format";
 import DocumentTimeline from "./document-timeline";
+import SourceAvailabilityNote from "./source-availability-note";
+import { readSourceAvailability, sourceKey } from "@/lib/source-availability";
 
 interface Props {
   data: SourceDocumentsData;
@@ -24,8 +26,10 @@ const FORM_201_REQUEST_URL = "https://extapps2.oge.gov/201/Presiden.nsf/201%20Re
 const AGENCY_CONTACT_URL = "https://www.oge.gov/web/oge.nsf/about_ethics-contact-list";
 
 export default function SourceDocuments({ data }: Props) {
-  const publicCount = data.documents.filter((d) => d.publiclyDownloadable).length;
-  const form201Count = data.documents.length - publicCount;
+  const availability = readSourceAvailability();
+  const publicCount = data.documents.filter((d) => d.publiclyDownloadable &&
+    (!d.ogeUrl || availability?.filings[sourceKey(d.ogeUrl)]?.pdfStatus !== "unavailable")).length;
+  const form201Count = data.documents.filter((d) => !d.publiclyDownloadable).length;
   const propublicaFilings = data.propublicaCheck.filingsListedThere;
   const requestOnlyLabel = (kind: DocumentKind) =>
     kind === "conflict_waiver" ? "Contact agency" : "Form 201 only";
@@ -35,7 +39,7 @@ export default function SourceDocuments({ data }: Props) {
   return (
     <section className="mt-12 mb-12 border-t border-neutral-200 pt-10">
       <h2 className="text-xs uppercase tracking-wider text-neutral-500 font-medium mb-1">
-        Source documents on file with OGE
+        Source documents
       </h2>
       <p className="text-sm text-neutral-600 leading-relaxed mb-6 max-w-2xl">
         Reviewed financial disclosure documents the Office of Government Ethics
@@ -114,6 +118,7 @@ export default function SourceDocuments({ data }: Props) {
             <p className="text-sm text-neutral-700 leading-relaxed">
               {doc.summary}
             </p>
+            <SourceAvailabilityNote url={doc.ogeUrl} />
             <div className="text-xs text-neutral-400 mt-2 flex flex-wrap gap-x-4">
               {doc.ogeUrl ? (
                 <a

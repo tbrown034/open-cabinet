@@ -17,6 +17,9 @@ export type GovernmentLevel = "Cabinet" | "Sub-Cabinet" | "Senior Staff";
 export type DataStatus = "parsed" | "metadata-only";
 
 export interface Transaction {
+  /** Prior-administration report retained as history, excluded from current totals.
+   * Do not set merely because a new report discloses an older trade. */
+  historical?: boolean;
   description: string;
   ticker: string | null;
   type: TransactionType;

@@ -41,7 +41,7 @@ export default async function AskLogPage({ searchParams }: { searchParams: Promi
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 text-sm">
       <h1 className="font-[family-name:var(--font-source-serif)] text-2xl mb-1">Ask log</h1>
-      <p className="text-neutral-500 mb-4">Every question the box received, newest first. Reasons are the code's own: which rule declined, why a plan did not translate, or where the plan came from.</p>
+      <p className="text-neutral-500 mb-4">Every question the box received, newest first. Reasons are the code&rsquo;s own: which rule declined, why a plan did not translate, or where the plan came from.</p>
 
       <table className="text-xs mb-6">
         <thead><tr className="text-left text-neutral-500"><th className="pr-4 pb-1">Outcome</th><th className="pr-4 pb-1 text-right">Questions</th><th className="pr-4 pb-1 text-right">Said right</th><th className="pr-4 pb-1 text-right">Said wrong</th><th className="pb-1 text-right">Median ms</th></tr></thead>

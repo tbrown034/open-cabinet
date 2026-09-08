@@ -17,7 +17,7 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | Metric | Value |
 |--------|-------|
 | Officials tracked | 39 |
-| Transactions | 11,509 |
+| Transactions | 11,506 |
 | Rows under review (not counted in totals) | 0 |
 | Estimated value | ~$4.5B |
 | Late filings | 7,745 |
@@ -25,7 +25,11 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
 
-Transaction counts, estimated value and late-filing totals exclude score-0 rows under review. The JSON and transaction CSV retain all 11,509 rows, including the 0 under review. JSON `transactionCount` is the counted total; `underReviewCount` is separate at both dataset and official level. The officials summary CSV uses the same exclusion and includes `under_review_count`.
+Transaction counts, estimated value and late-filing totals exclude score-0 rows under review and three historical-report rows. The JSON and transaction CSV retain all 11,509 rows, including the 0 under review. JSON `transactionCount` is the counted total; `underReviewCount` and `historicalCount` are separate at both dataset and official level. The officials summary CSV uses the same exclusions and includes `under_review_count` and `historical_count`.
+
+Current-roster views exclude former-administration profiles and rows explicitly marked `historical`. MacGregor's three 2020 transactions remain on her profile as history. Older trade dates in second-term reports remain included and labeled. Full downloads retain historical profiles, identified by `formerOfficial` in JSON and `former_official` in CSV.
+
+The daily OGE monitor compares published URLs with the full index and flags newly missing listings. The weekly workflow also runs `pnpm check-sources`: it tests each saved transaction-report URL and prepares `data/meta/source-availability.json` for review. HTTP 404/410 means the original link is unavailable; timeouts and other failures remain unconfirmed. Neither check deletes saved rows or PDFs.
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 

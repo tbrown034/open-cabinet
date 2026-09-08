@@ -15,6 +15,7 @@ export interface SummaryInput {
   title?: string;
   agency?: string;
   transactions?: Array<{
+    historical?: boolean;
     description: string;
     ticker?: string | null;
     type: string;
@@ -68,7 +69,7 @@ export interface Stats {
 }
 
 export function computeStats(d: SummaryInput): Stats {
-  const txs = d.transactions || [];
+  const txs = (d.transactions || []).filter((tx) => !tx.historical);
   const sales = txs.filter((t) => t.type?.startsWith("Sale"));
   const purchases = txs.filter((t) => t.type === "Purchase");
   const exchanges = txs.filter((t) => t.type === "Exchange");

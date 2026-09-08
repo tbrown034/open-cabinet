@@ -188,7 +188,7 @@ export default async function DashboardPage() {
       <p className="text-xs text-neutral-400 mt-12">
         Source: U.S. Office of Government Ethics. Estimated values use range
         midpoints. Instrument types come from the printed description; company
-        ties from exact matches against exchange and SEC lists or a person's
+        ties from exact matches against exchange and SEC lists or a person&rsquo;s
         decision.
       </p>
     </div>

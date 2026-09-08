@@ -89,7 +89,7 @@ export function normalizeAssetName(description: string): string {
   // parenthetical symbols "(AAPL)" (the symbol is resolveTicker's job, not
   // part of the name), confirmation codes with hyphens, ISIN/SEDOL/CUSIP
   // fragments, and share-class parentheticals like "(DE)".
-  let raw = description
+  const raw = description
     .toUpperCase()
     .replace(/\(\s*[A-Z][A-Z.]{0,6}\s*\)/g, " ")
     .replace(/\(\s*(?:REIT|ADR|ADS|DE|NEW|OPTION[^)]*|CUSIP[^)]*)\s*\)/g, " ")
