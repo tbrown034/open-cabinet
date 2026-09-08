@@ -84,6 +84,11 @@ describe("POST /api/ask gates", () => {
     expect(res.status).toBe(400);
     expect(quotaCalls).toHaveLength(0);
   });
+  it("rejects retired follow-up tokens without reserving quota", async () => {
+    const res = await post({ question: "How many AAPL purchases?", followUpToken: "old-token" });
+    expect(res.status).toBe(400);
+    expect(quotaCalls).toHaveLength(0);
+  });
   it("refuses without the alpha cookie and spends nothing", async () => {
     const res = await post({ question: "Who sold Liberty Energy?" }, { cookie: false });
     expect(res.status).toBe(403);
@@ -112,22 +117,10 @@ describe("POST /api/ask gates", () => {
     expect(j.answer).toContain("1 sale");
     expect(j.planText).toBe("Sales of Liberty Energy Inc (LBRT), ranked by official.");
     expect(j.logId).toBe(7);
-    expect(j.followUps.map((f: { label: string }) => f.label)).toContain("Only purchases");
+    expect(j).not.toHaveProperty("followUps");
     expect(quotaCalls.length).toBe(1);
   });
 
-  it("runs a server-issued follow-up with no additional model quota", async () => {
-    planToReturn = { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" };
-    const first = await (await post({ question: "How many LBRT sales?" })).json();
-    const chip = first.followUps.find((f: { label: string }) => f.label === "Only purchases");
-    const res = await post({ question: chip.question, followUpToken: chip.token });
-    const j = await res.json();
-    expect(j.status).toBe("not_in_data");
-    expect(j.answer).toContain("reported no purchases of Liberty Energy Inc (LBRT)");
-    expect(j.answer).toContain("did report 1 other trade in Liberty Energy Inc (LBRT)");
-    expect(j.planSource).toBe("follow-up");
-    expect(quotaCalls.length).toBe(1);
-  });
 
   it("does not reuse legacy or follow-up log plans as question translations", async () => {
     const question = "How many AAPL purchases?";
@@ -170,24 +163,7 @@ describe("POST /api/ask gates", () => {
     expect(quotaCalls).toHaveLength(3);
   });
 
-  it("logs answered signed follow-ups without making them cache candidates", async () => {
-    planToReturn = { filters: { tickers: ["AAPL"] }, aggregate: "count" };
-    const first = await (await post({ question: "How many AAPL trades?" })).json();
-    const chip = first.followUps.find((f: { label: string }) => f.label === "Only purchases");
-    const follow = await (await post({ question: chip.question, followUpToken: chip.token })).json();
-    expect(follow.status).toBe("answered");
-    expect(savedLogs.at(-1)?.reason).toBe("follow-up");
-    await post({ question: chip.question });
-    expect(quotaCalls).toHaveLength(2);
-  });
 
-  it("rejects a valid chip reused under another question before any paid call", async () => {
-    planToReturn = { filters: { tickers: ["LBRT"] }, aggregate: "count" };
-    const first = await (await post({ question: "How many LBRT trades?" })).json();
-    const res = await post({ question: "How many AAPL purchases?", followUpToken: first.followUps[0].token });
-    expect(res.status).toBe(400);
-    expect(quotaCalls).toHaveLength(1);
-  });
 
   it("refuses a plan that answers a different question than the one asked", async () => {
     planToReturn = { filters: { officials: ["Scott Bessent"], tickers: null, descriptionContains: null, types: null, instrumentTypes: null, dateFrom: null, dateTo: null, lateOnly: null, amountAtLeast: null, amountAtMost: null }, aggregate: "count", limit: null };

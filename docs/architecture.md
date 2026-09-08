@@ -75,7 +75,7 @@ Ask translates a question into a constrained plan, checks it and calculates resu
 
 Ask caches only validated question translations tagged for the same official-page scope, model, UTC date and cache-contract version. Old untagged logs and follow-up logs are not reused as translations. Every cached plan is validated and executed again against current rows; this cannot prove that a model interpreted a question correctly.
 
-Follow-up buttons use `lib/ask/follow-up.ts`. The server signs the exact plan, button question and page scope with the existing alpha secret. It verifies that signature before accepting the plan, then runs the normal shape/resolution/execution checks. Buttons expire after 30 minutes or at UTC midnight; they require no new planning call. Altered/expired buttons ask the reader to rerun the question. No database migration or new secret is required.
+Ask accepts question text and optional official-page scope only. Example buttons fill the input; submitting the form runs the question. Answers preserve the submitted wording and show the interpreted query. Browser-supplied plans and retired follow-up tokens are rejected. There is no separate follow-up execution path.
 
 ## Limits worth explaining honestly
 

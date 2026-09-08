@@ -10,41 +10,13 @@
  */
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import type { QueryPlan } from "@/lib/ask/plan";
 
-/**
- * Honest wait status. There is no streaming from the route, so the stages
- * are time-based and worded as what the route does in order: the code
- * gate, the one model call, the count. Never a stage the route is not in.
- */
+/** The server does not stream progress, so do not invent processing stages. */
 function PendingStatus() {
-  const [seconds, setSeconds] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setSeconds((s) => s + 1), 1000);
-    return () => clearInterval(t);
-  }, []);
-  const stages: Array<[string, boolean]> = [
-    ["Reading the question", true],
-    ["Turning it into a query", seconds >= 1],
-    ["Counting checked rows", seconds >= 6],
-  ];
   return (
     <div className="px-5 py-4 border-t border-neutral-200" role="status" aria-live="polite">
-      {stages.map(([label, reached], i) => {
-        const current = reached && (i === stages.length - 1 || !stages[i + 1][1]);
-        return (
-          <p key={label} className={`flex items-center gap-2 text-sm ${reached ? "text-neutral-700" : "text-neutral-300"} mt-0.5 first:mt-0`}>
-            {current ? (
-              <span className="size-2 animate-pulse rounded-full bg-neutral-500" aria-hidden />
-            ) : reached ? (
-              <span className="size-2 rounded-full bg-neutral-300" aria-hidden />
-            ) : (
-              <span className="size-2 rounded-full border border-neutral-200" aria-hidden />
-            )}
-            <span>{label}{current ? "..." : ""}</span>
-          </p>
-        );
-      })}
-      {seconds >= 12 && <p className="text-xs text-neutral-400 mt-2">Still working ({seconds}s). The model call stops at 10 seconds; the count is quick.</p>}
+      <p className="text-sm text-neutral-600">Finding your answer. This may take a few seconds.</p>
     </div>
   );
 }
@@ -128,14 +100,12 @@ interface AskResponse {
   /** The one-line note for those, written in code. */
   pendingNote?: string | null;
   disclosure: string;
-  /** The validated plan the executor ran (builder view). */
-  plan?: unknown;
-  /** Where the plan came from: the model, a stored plan for the same question, or a follow-up chip. */
-  planSource?: "model" | "cache" | "follow-up";
+  /** The validated plan shown in answer details. */
+  plan?: QueryPlan;
+  /** Where the plan came from: the model, a stored plan for the same question. */
+  planSource?: "model" | "cache";
   /** The log row for this answer, so feedback can attach to it. */
   logId?: number | null;
-  /** Code-built variations of the plan that ran; each needs no model call. */
-  followUps?: Array<{ label: string; question: string; token: string }>;
 }
 
 // Questions the verified rows can actually answer. Picked against the
@@ -166,20 +136,13 @@ export default function AskTheData({
   parsedCount?: number | null;
 }) {
   const [question, setQuestion] = useState("");
+  const [submittedQuestion, setSubmittedQuestion] = useState("");
+  const inputRef = useRef<HTMLInputElement | null>(null);
   const [pending, setPending] = useState(false);
   const [response, setResponse] = useState<AskResponse | null>(null);
   const [elapsedMs, setElapsedMs] = useState<number | null>(null);
-  // Builder view: the machinery under the answer. Off for readers; a person
-  // building or explaining the box turns it on, and the choice sticks.
-  const [builder, setBuilder] = useState(false);
-  useEffect(() => {
-    try { setBuilder(localStorage.getItem("askai-builder") === "1"); } catch {}
-  }, []);
-  function toggleBuilder() {
-    setBuilder((b) => { try { localStorage.setItem("askai-builder", b ? "0" : "1"); } catch {} return !b; });
-  }
 
-  // "On file" is the completeness claim the answer checker bans, so a chip
+  // "On file" is the completeness claim the answer checker bans, so an example
   // must not ask a question the box is forbidden to answer honestly.
   const suggestions = officialName
     ? [
@@ -195,10 +158,11 @@ export default function AskTheData({
   const [feedback, setFeedback] = useState<"right" | "wrong" | "sent" | null>(null);
   const [feedbackReason, setFeedbackReason] = useState("");
 
-  /** Ask a question, or run a code-built follow-up plan (no model call). */
-  async function ask(text: string, followUpToken?: string) {
+  /** Only an explicit form submission runs a question. */
+  async function ask(text: string) {
     const trimmed = text.trim();
     if (trimmed.length < 3 || pending) return;
+    setSubmittedQuestion(trimmed);
     setPending(true);
     setResponse(null);
     setElapsedMs(null);
@@ -211,7 +175,7 @@ export default function AskTheData({
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question: trimmed, officialSlug, ...(followUpToken ? { followUpToken } : {}) }),
+        body: JSON.stringify({ question: trimmed, officialSlug }),
         signal: controller.signal,
       });
       setResponse((await res.json()) as AskResponse);
@@ -265,8 +229,7 @@ export default function AskTheData({
           Ask the data
         </h2>
         <p className="text-sm text-neutral-500 mt-1 max-w-2xl leading-relaxed">
-          Ask in plain English{officialName ? ` about ${officialName}` : ""}. The AI only turns your question into a
-          query; code runs it over checked rows and writes the answer.
+          Explore purchases, sales and late filings{officialName ? ` by ${officialName}` : ""}. Answers use checked disclosure records.
           {checkedCount !== null && parsedCount !== null && (
             <> {checkedCount.toLocaleString()} of {parsedCount.toLocaleString()} parsed rows qualify today.</>
           )}
@@ -292,7 +255,9 @@ export default function AskTheData({
           className="flex flex-col sm:flex-row gap-2"
         >
           <input
+            ref={inputRef}
             type="text"
+            disabled={pending}
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
             maxLength={300}
@@ -301,7 +266,7 @@ export default function AskTheData({
                 ? `Ask about ${officialName}'s disclosures`
                 : "Ask about officials, symbols, dates or late filings"
             }
-            className="flex-1 border border-neutral-300 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900"
+            className="min-w-0 flex-1 border border-neutral-300 px-3 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-neutral-900"
             aria-label="Your question about the disclosure data"
           />
           <button
@@ -313,14 +278,18 @@ export default function AskTheData({
           </button>
         </form>
 
-        <div className="flex flex-wrap gap-2 mt-3">
+        <p className="text-xs text-neutral-500 mt-2">
+          Each question stands alone. Include an official, company or year to narrow your answer.
+        </p>
+        <p className="text-xs font-medium text-neutral-600 mt-4">Try an example, then click Ask:</p>
+        <div className="flex flex-wrap gap-2 mt-2">
           {suggestions.map((s) => (
             <button
               key={s}
               type="button"
               onClick={() => {
                 setQuestion(s);
-                ask(s);
+                inputRef.current?.focus();
               }}
               disabled={pending}
               className="border border-neutral-200 bg-stone-50 text-xs text-neutral-600 px-2.5 py-1 hover:border-neutral-900 hover:text-neutral-900 disabled:opacity-50 transition-colors"
@@ -342,13 +311,11 @@ export default function AskTheData({
 
       {response && !pending && (
         <div ref={answerRef} tabIndex={-1} className="border-t border-neutral-200 px-5 py-4 outline-none">
+          <p className="text-sm text-neutral-600 mb-3"><span className="font-medium">You asked:</span> {submittedQuestion}</p>
           <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
             <span className={`inline-block border text-[11px] uppercase tracking-wider px-2 py-0.5 ${STATUS_LABEL[response.status].className}`}>
               {STATUS_LABEL[response.status].text}
             </span>
-            <button type="button" onClick={toggleBuilder} className="text-xs text-neutral-400 underline hover:text-neutral-900">
-              {builder ? "Hide the machinery" : "Show the machinery"}
-            </button>
           </div>
 
           <p className="font-[family-name:var(--font-source-serif)] text-xl text-neutral-900 leading-snug">
@@ -356,26 +323,16 @@ export default function AskTheData({
           </p>
           {response.planText && (
             <p className="text-xs text-neutral-500 mt-2">
-              <span className="uppercase tracking-wider text-neutral-400 mr-2">Query</span>
+              <span className="font-medium text-neutral-600 mr-2">Interpreted as:</span>
               <span>{response.planText}</span>
-              {response.planSource === "cache" && <span className="ml-2 text-neutral-400">(stored translation, re-run on today&apos;s rows)</span>}
-              {response.planSource === "follow-up" && <span className="ml-2 text-neutral-400">(follow-up, no model call)</span>}
             </p>
           )}
 
-          {response.followUps && response.followUps.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {response.followUps.map((f) => (
-                <button
-                  key={f.label}
-                  type="button"
-                  onClick={() => ask(f.question, f.token)}
-                  className="border border-neutral-200 text-xs text-neutral-600 px-2.5 py-1 hover:border-neutral-900 hover:text-neutral-900 transition-colors"
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
+          {response.plan && (!response.plan.filters.officials?.length || (!response.plan.filters.dateFrom && !response.plan.filters.dateTo)) && (
+            <p className="text-xs text-neutral-500 mt-1">
+              {!response.plan.filters.officials?.length && "All officials in this dataset. "}
+              {!response.plan.filters.dateFrom && !response.plan.filters.dateTo && "All dates in the checked records."}
+            </p>
           )}
 
           {response.status === "not_in_data" && response.pendingNote && (
@@ -585,16 +542,10 @@ export default function AskTheData({
             </div>
           )}
 
-          {response.disclosure && (
-            <details className="mt-4 text-xs text-neutral-500">
-              <summary className="cursor-pointer text-neutral-500 hover:text-neutral-900">How this answer was made</summary>
-              <p className="mt-2 leading-relaxed">{response.disclosure}</p>
-            </details>
-          )}
-
-          {builder && (
-            <div className="mt-4 border border-dashed border-neutral-300 bg-stone-50 p-3 text-xs text-neutral-700">
-              <p className="uppercase tracking-wider text-neutral-400 mb-2">Builder view: what the code did</p>
+          <details className="mt-4 text-xs text-neutral-600">
+            <summary className="cursor-pointer hover:text-neutral-900">How this answer was calculated</summary>
+            <p className="mt-2 leading-relaxed">{response.disclosure}</p>
+            <div className="mt-3 border border-neutral-200 bg-stone-50 p-3">
               <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1">
                 <dt className="text-neutral-400">Outcome</dt><dd>{response.status}</dd>
                 <dt className="text-neutral-400">Round trip</dt><dd>{elapsedMs !== null ? `${(elapsedMs / 1000).toFixed(1)}s` : "n/a"}</dd>
@@ -609,7 +560,7 @@ export default function AskTheData({
                 <p className="mt-2 text-neutral-500">Site-wide rows outside the box: {response.excluded.underReview} under review, {response.excluded.auditPending} awaiting audit, {response.excluded.notYetCompared} not compared, of {response.excluded.parsed.toLocaleString()} parsed.</p>
               )}
             </div>
-          )}
+          </details>
         </div>
       )}
     </section>

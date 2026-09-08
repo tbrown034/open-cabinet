@@ -84,7 +84,7 @@ A correction may change computed row IDs. Inspect attached human decisions and r
 | Counts differ | Start at `officialForTotals` / `rowsForTotals`. Check official/company/date scope; under-review and historical rows do not count. Undated counted rows appear in headlines but cannot appear on a timeline |
 | Need to correct a public transaction | Use the JSON correction/review workflow; the retired DB mirror controls no longer exist |
 | Email failed or may have partially sent | `/admin`, digest run and delivery records; inspect before rerunning a real send |
-| Ask follow-up says invalid or expired | Rerun the original question for fresh buttons. Old browser tabs sending raw plans must refresh; signed buttons expire within 30 minutes |
+| Old Ask tab asks you to refresh | Refresh and submit a written question. Raw plans and retired follow-up tokens are rejected before model spending |
 | Ask reused an unexpected translation | Inspect `/admin/askai` and the displayed query. Cache candidates carry a `plan-cache-v1` reason with model/date/page scope; follow-ups and legacy untagged rows are excluded |
 | CI fails only on GitHub | Tracked files, Node/pnpm versions, environment requirements; private notes are absent from fresh clones |
 
@@ -99,3 +99,9 @@ Existing mirror rows, table declarations and migrations are preserved. Do not dr
 Work on a branch. Run focused checks and the full test/lint/typecheck suite, then open a PR. Inspect GitHub CI and Vercel's preview build before merging. After merging, confirm the production deployment corresponds to the merge commit. A successful build and a browser smoke test are different checks; record which you performed.
 
 Private working notes remain ignored. Only this guide and `architecture.md` are public under `docs/`. No secrets, audit working papers or interview notes belong in a release.
+
+### Ask interaction smoke check
+
+On `/askai`, click an example: it should fill and focus the input without submitting. Click Ask or press Enter to run it. Edit the draft after an answer: the answer must retain its original “You asked” text. Check “Interpreted as” and the official/date scope against your intent.
+
+Try a company count, an official-specific question, a year, a list with filing links, a question with no matches, and an unsupported profit question. Compare numeric results against `getPublishedRows()` using explicit filters. Test cancellation and a failed connection. Examples are independent questions; Ask does not remember prior answers. Cached translations must still run over current records.

@@ -33,9 +33,8 @@ import {
 } from "@/lib/ask/limits";
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
-import { readFollowUp, signFollowUp } from "@/lib/ask/follow-up";
 import { lookupAsset } from "@/lib/asset-registry";
-import { classifyIntent, type Intent } from "@/lib/ask/intent";
+import { classifyIntent } from "@/lib/ask/intent";
 import {
   parseQueryPlan,
   resolvePlan,
@@ -49,7 +48,6 @@ import {
   officialsNamedIn,
   planCorrespondence,
   describePlanForReader,
-  followUpsFor,
   type QueryPlan,
 } from "@/lib/ask/plan";
 import { execute, countPending, type ExecuteResult } from "@/lib/ask/execute";
@@ -555,12 +553,10 @@ export async function POST(request: Request) {
   const raw = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
   const question = typeof raw.question === "string" ? raw.question.trim() : "";
   const scopeSlug = typeof raw.officialSlug === "string" ? raw.officialSlug.trim() : "";
-  // A browser cannot assert that a plan came from our follow-up builder.
-  // Old clients must rerun their question to receive signed chips.
-  const followUpPlan = readFollowUp(raw.followUpToken, question, scopeSlug);
-  if ("plan" in raw || ("followUpToken" in raw && !followUpPlan)) {
+  // Requests contain questions, never executable plans (including old clients).
+  if ("plan" in raw || "followUpToken" in raw) {
     return NextResponse.json(
-      { status: "error", answer: "That follow-up is invalid or expired. Ask your question again to get fresh options.", disclosure: DISCLOSURE },
+      { status: "error", answer: "Refresh this page and type your question in the question box.", disclosure: DISCLOSURE },
       { status: 400 }
     );
   }
@@ -608,7 +604,7 @@ export async function POST(request: Request) {
     // Before a token is spent: does the question name a shape this box
     // cannot represent? A prompt asking the model not to approximate is a
     // request; this is the refusal (Grok, Sept. 6).
-    const { intent, rule } = followUpPlan ? { intent: { kind: "ok" } as Intent, rule: "follow-up" } : classifyIntent(question);
+    const { intent, rule } = classifyIntent(question);
     if (intent.kind === "decline") {
       logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
       return NextResponse.json({
@@ -630,16 +626,11 @@ export async function POST(request: Request) {
     // date for relative questions, model, and the page's official scope.
     const cacheContext = `plan-cache-v1:${model}:${today}:${scopeSlug || "all"}`;
 
-    // Where the plan comes from: a follow-up chip (code-built), a stored
-    // plan for the same question within a day (no model, no spend, and the
-    // answer is re-executed over today's rows), or the model.
-    let planSource: "follow-up" | "cache" | "model" = "model";
+    // Reuse a validated translation or ask the model to translate the question.
+    let planSource: "cache" | "model" = "model";
     let planCall: PlanCall;
-    const cached = followUpPlan ? null : await findRecentPlan(question, cacheContext);
-    if (followUpPlan) {
-      planSource = "follow-up";
-      planCall = { kind: "plan", raw: followUpPlan };
-    } else if (cached) {
+    const cached = await findRecentPlan(question, cacheContext);
+    if (cached) {
       planSource = "cache";
       planCall = { kind: "plan", raw: cached };
     } else {
@@ -845,7 +836,7 @@ export async function POST(request: Request) {
 
     // The plan must answer the question that was asked (Codex, Sept. 7).
     const scopedQuestion = scope ? `${scope.name}: ${question}` : question;
-    const fit = planSource === "follow-up" ? { ok: true as const } : planCorrespondence(scopedQuestion, finalPlan, data.officials);
+    const fit = planCorrespondence(scopedQuestion, finalPlan, data.officials);
     if (!fit.ok) {
       logAsk({ startedAt, question, status: "not_in_data", reason: `correspondence: ${fit.reason}`, plan: finalPlan, ipKey });
       return NextResponse.json({
@@ -900,7 +891,6 @@ export async function POST(request: Request) {
     const planText = describePlan(finalPlan, data.officials);
     const result = execute(finalPlan, data);
     const readerPlanText = describePlanForReader(finalPlan, data.officials, result.assetLabel ?? null);
-    const followUps = followUpsFor(finalPlan, today).map((followUp) => signFollowUp(followUp, scopeSlug));
 
     // Nothing verified matched. Before saying so, ask whether the site holds
     // rows for this query that simply have not cleared a check. Those are
@@ -932,7 +922,6 @@ export async function POST(request: Request) {
         planText: stripDashes(readerPlanText),
         planSource,
         result,
-        followUps,
         excluded,
         pendingMatches,
         pendingNote: pendingNote(pendingMatches),
@@ -974,7 +963,7 @@ export async function POST(request: Request) {
       startedAt,
       question,
       status: "answered",
-      reason: planSource === "follow-up" ? "follow-up" : cacheContext,
+      reason: cacheContext,
       plan: finalPlan,
       matchedRows: result.matchedRows,
       phrasedBy,
@@ -998,7 +987,6 @@ export async function POST(request: Request) {
       planSource,
       logId,
       result,
-      followUps,
       excluded,
       pendingMatches,
       pendingNote: pendingNote(pendingMatches),
