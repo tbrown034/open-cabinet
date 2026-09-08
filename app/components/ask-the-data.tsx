@@ -135,7 +135,7 @@ interface AskResponse {
   /** The log row for this answer, so feedback can attach to it. */
   logId?: number | null;
   /** Code-built variations of the plan that ran; each needs no model call. */
-  followUps?: Array<{ label: string; plan: unknown }>;
+  followUps?: Array<{ label: string; question: string; token: string }>;
 }
 
 // Questions the verified rows can actually answer. Picked against the
@@ -196,7 +196,7 @@ export default function AskTheData({
   const [feedbackReason, setFeedbackReason] = useState("");
 
   /** Ask a question, or run a code-built follow-up plan (no model call). */
-  async function ask(text: string, plan?: unknown) {
+  async function ask(text: string, followUpToken?: string) {
     const trimmed = text.trim();
     if (trimmed.length < 3 || pending) return;
     setPending(true);
@@ -211,7 +211,7 @@ export default function AskTheData({
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(plan ? { question: trimmed, officialSlug, plan } : { question: trimmed, officialSlug }),
+        body: JSON.stringify({ question: trimmed, officialSlug, ...(followUpToken ? { followUpToken } : {}) }),
         signal: controller.signal,
       });
       setResponse((await res.json()) as AskResponse);
@@ -369,7 +369,7 @@ export default function AskTheData({
                 <button
                   key={f.label}
                   type="button"
-                  onClick={() => ask(`${question || "Follow-up"}: ${f.label}`, f.plan)}
+                  onClick={() => ask(f.question, f.token)}
                   className="border border-neutral-200 text-xs text-neutral-600 px-2.5 py-1 hover:border-neutral-900 hover:text-neutral-900 transition-colors"
                 >
                   {f.label}

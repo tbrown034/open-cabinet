@@ -4,24 +4,36 @@
  * after every free rejection) and the correspondence check, without a
  * network call.
  */
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { PgDialect } from "drizzle-orm/pg-core";
+import type { SQL } from "drizzle-orm";
 
 const quotaCalls: number[] = [];
 let planToReturn: unknown = null;
+const savedLogs: Array<{ question: string; plan?: string; reason?: string | null; status: string }> = [];
+const cacheConditions: unknown[][] = [];
 
 vi.mock("@/lib/db", () => ({
   getDb: () => ({
     insert: () => ({
-      values: () => ({
+      values: (values: typeof savedLogs[number]) => {
+        if (values.question) savedLogs.push(values);
+        return ({
         onConflictDoUpdate: () => ({ returning: async () => { quotaCalls.push(1); return [{ count: quotaCalls.length }]; } }),
         returning: () => Promise.resolve([{ id: 7 }]),
         catch: () => undefined,
-      }),
+      }); },
     }),
-    // No stored plans in these tests: every question goes to the (mocked) model.
-    select: () => ({ from: () => ({ where: () => ({ orderBy: () => ({ limit: async () => [] }) }) }) }),
+    select: () => ({ from: () => ({ where: (condition: SQL) => {
+      const params = new PgDialect().sqlToQuery(condition).params;
+      cacheConditions.push(params);
+      return { orderBy: () => ({ limit: async () => savedLogs.filter((row) =>
+        params.includes(row.question.toLowerCase()) && row.status === "answered" && params.includes(row.reason)
+      ).slice(-1) }) };
+    } }) }),
   }),
 }));
+vi.mock("fs/promises", () => ({ appendFile: vi.fn(async () => undefined) }));
 vi.mock("@anthropic-ai/sdk", () => ({
   default: class {
     messages = {
@@ -55,6 +67,7 @@ process.env.ANTHROPIC_API_KEY = "test";
 
 import { POST } from "./route";
 import { ASKAI_COOKIE, askaiToken } from "@/lib/askai-access";
+import { resetAskLimiter } from "@/lib/ask/limits";
 
 function post(body: unknown, opts: { cookie?: boolean; origin?: string } = {}) {
   const headers: Record<string, string> = { "content-type": "application/json", origin: opts.origin ?? "http://localhost:3000" };
@@ -62,9 +75,15 @@ function post(body: unknown, opts: { cookie?: boolean; origin?: string } = {}) {
   return POST(new Request("http://localhost:3000/api/ask", { method: "POST", headers, body: typeof body === "string" ? body : JSON.stringify(body) }));
 }
 
-beforeEach(() => { quotaCalls.length = 0; planToReturn = null; });
+beforeEach(() => { quotaCalls.length = 0; planToReturn = null; savedLogs.length = 0; cacheConditions.length = 0; resetAskLimiter(); });
+afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 
 describe("POST /api/ask gates", () => {
+  it("rejects a browser-supplied plan paired with an unrelated question", async () => {
+    const res = await post({ question: "How many AAPL purchases?", plan: { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" } });
+    expect(res.status).toBe(400);
+    expect(quotaCalls).toHaveLength(0);
+  });
   it("refuses without the alpha cookie and spends nothing", async () => {
     const res = await post({ question: "Who sold Liberty Energy?" }, { cookie: false });
     expect(res.status).toBe(403);
@@ -97,14 +116,77 @@ describe("POST /api/ask gates", () => {
     expect(quotaCalls.length).toBe(1);
   });
 
-  it("runs a follow-up plan with no model call and no quota", async () => {
-    const res = await post({ question: "Follow-up: Only purchases", plan: { filters: { tickers: ["LBRT"], types: ["Purchase"] }, aggregate: "count" } });
+  it("runs a server-issued follow-up with no additional model quota", async () => {
+    planToReturn = { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" };
+    const first = await (await post({ question: "How many LBRT sales?" })).json();
+    const chip = first.followUps.find((f: { label: string }) => f.label === "Only purchases");
+    const res = await post({ question: chip.question, followUpToken: chip.token });
     const j = await res.json();
     expect(j.status).toBe("not_in_data");
     expect(j.answer).toContain("reported no purchases of Liberty Energy Inc (LBRT)");
     expect(j.answer).toContain("did report 1 other trade in Liberty Energy Inc (LBRT)");
     expect(j.planSource).toBe("follow-up");
-    expect(quotaCalls.length).toBe(0);
+    expect(quotaCalls.length).toBe(1);
+  });
+
+  it("does not reuse legacy or follow-up log plans as question translations", async () => {
+    const question = "How many AAPL purchases?";
+    const wrong = { filters: { tickers: ["LBRT"], types: ["Sale"] }, aggregate: "count" };
+    savedLogs.push({ question, status: "answered", reason: null, plan: JSON.stringify(wrong) });
+    savedLogs.push({ question, status: "answered", reason: "follow-up", plan: JSON.stringify(wrong) });
+    planToReturn = { filters: { tickers: ["AAPL"], types: ["Purchase"] }, aggregate: "count" };
+    const answer = await (await post({ question })).json();
+    expect(answer.planSource).toBe("model");
+    expect(answer.plan.filters.tickers).toEqual(["AAPL"]);
+    expect(quotaCalls).toHaveLength(1);
+    const repeat = await (await post({ question })).json();
+    expect(repeat.planSource).toBe("cache");
+    expect(quotaCalls).toHaveLength(1);
+  });
+
+  it("separates question translations by official scope", async () => {
+    planToReturn = { filters: {}, aggregate: "count" };
+    const question = "How many checked trades?";
+    const first = await (await post({ question, officialSlug: "wright-christopher" })).json();
+    const second = await (await post({ question, officialSlug: "bessent-scott" })).json();
+    expect(first.plan.filters.officials).toEqual(["wright-christopher"]);
+    expect(second.plan.filters.officials).toEqual(["bessent-scott"]);
+    expect(second.planSource).toBe("model");
+    expect(quotaCalls).toHaveLength(2);
+    expect(cacheConditions[0]).not.toEqual(cacheConditions[1]);
+  });
+
+  it("does not reuse translations across a model or UTC-date change", async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2026-09-08T12:00:00Z"));
+    vi.stubEnv("ASK_MODEL", "test-model-a");
+    planToReturn = { filters: { tickers: ["AAPL"] }, aggregate: "count" };
+    const question = "How many AAPL trades?";
+    await post({ question });
+    vi.stubEnv("ASK_MODEL", "test-model-b");
+    expect((await (await post({ question })).json()).planSource).toBe("model");
+    vi.setSystemTime(new Date("2026-09-09T12:00:00Z"));
+    expect((await (await post({ question })).json()).planSource).toBe("model");
+    expect(quotaCalls).toHaveLength(3);
+  });
+
+  it("logs answered signed follow-ups without making them cache candidates", async () => {
+    planToReturn = { filters: { tickers: ["AAPL"] }, aggregate: "count" };
+    const first = await (await post({ question: "How many AAPL trades?" })).json();
+    const chip = first.followUps.find((f: { label: string }) => f.label === "Only purchases");
+    const follow = await (await post({ question: chip.question, followUpToken: chip.token })).json();
+    expect(follow.status).toBe("answered");
+    expect(savedLogs.at(-1)?.reason).toBe("follow-up");
+    await post({ question: chip.question });
+    expect(quotaCalls).toHaveLength(2);
+  });
+
+  it("rejects a valid chip reused under another question before any paid call", async () => {
+    planToReturn = { filters: { tickers: ["LBRT"] }, aggregate: "count" };
+    const first = await (await post({ question: "How many LBRT trades?" })).json();
+    const res = await post({ question: "How many AAPL purchases?", followUpToken: first.followUps[0].token });
+    expect(res.status).toBe(400);
+    expect(quotaCalls).toHaveLength(1);
   });
 
   it("refuses a plan that answers a different question than the one asked", async () => {

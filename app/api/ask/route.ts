@@ -33,6 +33,7 @@ import {
 } from "@/lib/ask/limits";
 import { isAskOrigin, clientIp, hashIp } from "@/lib/ask/origin";
 import { requestHasAskaiAccess } from "@/lib/askai-access";
+import { readFollowUp, signFollowUp } from "@/lib/ask/follow-up";
 import { lookupAsset } from "@/lib/asset-registry";
 import { classifyIntent, type Intent } from "@/lib/ask/intent";
 import {
@@ -114,9 +115,7 @@ const EMPTY_PENDING = {
  * Sept. 6). One row per UTC day in ask_quota; the increment is the
  * reservation, so a question is counted before either model call. Three
  * outcomes: "ok", "over" (cap reached), "closed" (the counter itself failed).
- * The one deliberate exception: if the table has not been created yet
- * (Postgres 42P01), the in-memory limiter below still applies and the request
- * proceeds, so a preview deployment works before the migration runs.
+ * If the counter is missing or unavailable, paid planning fails closed.
  */
 async function reserveDailyQuota(attempt = 0): Promise<"ok" | "over" | "closed"> {
   const day = new Date().toISOString().slice(0, 10);
@@ -167,17 +166,17 @@ const LOG_PATH = path.join(process.cwd(), "data", "meta", "ask-log.jsonl");
  * what people actually ask.
  */
 /**
- * A validated plan stored for the same question in the last day, so a
- * repeat runs with no model call. The plan is re-executed over today's
- * rows, so the answer is never stale; only the translation is reused.
+ * Reuse a validated translation only for the same question and context.
+ * Execution reads current rows; model translation mistakes can still recur.
+ * The versioned context excludes legacy and browser-supplied plans.
  */
-async function findRecentPlan(question: string): Promise<unknown | null> {
+async function findRecentPlan(question: string, context: string): Promise<unknown | null> {
   try {
     const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
     const rows = await getDb()
       .select({ plan: askLog.plan })
       .from(askLog)
-      .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), gt(askLog.at, since)))
+      .where(and(eq(sql`lower(${askLog.question})`, question.toLowerCase()), eq(askLog.status, "answered"), eq(askLog.reason, context), gt(askLog.at, since)))
       .orderBy(desc(askLog.id))
       .limit(1);
     const text = rows[0]?.plan;
@@ -556,10 +555,15 @@ export async function POST(request: Request) {
   const raw = body && typeof body === "object" ? (body as Record<string, unknown>) : {};
   const question = typeof raw.question === "string" ? raw.question.trim() : "";
   const scopeSlug = typeof raw.officialSlug === "string" ? raw.officialSlug.trim() : "";
-  // A follow-up chip sends the plan the code built for it. It is parsed and
-  // resolved like any other plan but needs no model, no quota and no
-  // correspondence check, since no free text produced it.
-  const followUpPlan = raw.plan && typeof raw.plan === "object" ? raw.plan : null;
+  // A browser cannot assert that a plan came from our follow-up builder.
+  // Old clients must rerun their question to receive signed chips.
+  const followUpPlan = readFollowUp(raw.followUpToken, question, scopeSlug);
+  if ("plan" in raw || ("followUpToken" in raw && !followUpPlan)) {
+    return NextResponse.json(
+      { status: "error", answer: "That follow-up is invalid or expired. Ask your question again to get fresh options.", disclosure: DISCLOSURE },
+      { status: 400 }
+    );
+  }
 
   if (question.length < 3) {
     return NextResponse.json(
@@ -621,13 +625,17 @@ export async function POST(request: Request) {
     // The model has no clock. Relative periods only become dates because
     // this line hands it one.
     const today = new Date().toISOString().slice(0, 10);
+    // Only translations produced under this contract can be reused. Old
+    // untagged logs and follow-ups are never cache candidates. Include UTC
+    // date for relative questions, model, and the page's official scope.
+    const cacheContext = `plan-cache-v1:${model}:${today}:${scopeSlug || "all"}`;
 
     // Where the plan comes from: a follow-up chip (code-built), a stored
     // plan for the same question within a day (no model, no spend, and the
     // answer is re-executed over today's rows), or the model.
     let planSource: "follow-up" | "cache" | "model" = "model";
     let planCall: PlanCall;
-    const cached = followUpPlan ? null : await findRecentPlan(question);
+    const cached = followUpPlan ? null : await findRecentPlan(question, cacheContext);
     if (followUpPlan) {
       planSource = "follow-up";
       planCall = { kind: "plan", raw: followUpPlan };
@@ -836,7 +844,8 @@ export async function POST(request: Request) {
     }
 
     // The plan must answer the question that was asked (Codex, Sept. 7).
-    const fit = planSource === "follow-up" ? { ok: true as const } : planCorrespondence(question, finalPlan, data.officials);
+    const scopedQuestion = scope ? `${scope.name}: ${question}` : question;
+    const fit = planSource === "follow-up" ? { ok: true as const } : planCorrespondence(scopedQuestion, finalPlan, data.officials);
     if (!fit.ok) {
       logAsk({ startedAt, question, status: "not_in_data", reason: `correspondence: ${fit.reason}`, plan: finalPlan, ipKey });
       return NextResponse.json({
@@ -891,7 +900,7 @@ export async function POST(request: Request) {
     const planText = describePlan(finalPlan, data.officials);
     const result = execute(finalPlan, data);
     const readerPlanText = describePlanForReader(finalPlan, data.officials, result.assetLabel ?? null);
-    const followUps = followUpsFor(finalPlan, today);
+    const followUps = followUpsFor(finalPlan, today).map((followUp) => signFollowUp(followUp, scopeSlug));
 
     // Nothing verified matched. Before saying so, ask whether the site holds
     // rows for this query that simply have not cleared a check. Those are
@@ -965,7 +974,7 @@ export async function POST(request: Request) {
       startedAt,
       question,
       status: "answered",
-      reason: planSource === "model" ? null : planSource,
+      reason: planSource === "follow-up" ? "follow-up" : cacheContext,
       plan: finalPlan,
       matchedRows: result.matchedRows,
       phrasedBy,

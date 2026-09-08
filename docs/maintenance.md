@@ -84,6 +84,8 @@ A correction may change computed row IDs. Inspect attached human decisions and r
 | Counts differ | Start at `officialForTotals` / `rowsForTotals`. Check official/company/date scope; under-review and historical rows do not count. Undated counted rows appear in headlines but cannot appear on a timeline |
 | Need to correct a public transaction | Use the JSON correction/review workflow; the retired DB mirror controls no longer exist |
 | Email failed or may have partially sent | `/admin`, digest run and delivery records; inspect before rerunning a real send |
+| Ask follow-up says invalid or expired | Rerun the original question for fresh buttons. Old browser tabs sending raw plans must refresh; signed buttons expire within 30 minutes |
+| Ask reused an unexpected translation | Inspect `/admin/askai` and the displayed query. Cache candidates carry a `plan-cache-v1` reason with model/date/page scope; follow-ups and legacy untagged rows are excluded |
 | CI fails only on GitHub | Tracked files, Node/pnpm versions, environment requirements; private notes are absent from fresh clones |
 
 ## Retired database tools

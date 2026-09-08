@@ -73,6 +73,10 @@ Many pages are generated during the build. Official pages use URL filters and re
 
 Ask translates a question into a constrained plan, checks it and calculates results from eligible published rows. It does not execute arbitrary model-written SQL against the mirror. Models also help read PDFs and draft optional narrative text. Keep three ideas distinct: the filed values, the saved evidence about those values, and the narrative describing them.
 
+Ask caches only validated question translations tagged for the same official-page scope, model, UTC date and cache-contract version. Old untagged logs and follow-up logs are not reused as translations. Every cached plan is validated and executed again against current rows; this cannot prove that a model interpreted a question correctly.
+
+Follow-up buttons use `lib/ask/follow-up.ts`. The server signs the exact plan, button question and page scope with the existing alpha secret. It verifies that signature before accepting the plan, then runs the normal shape/resolution/execution checks. Buttons expire after 30 minutes or at UTC midnight; they require no new planning call. Altered/expired buttons ask the reader to rerun the question. No database migration or new secret is required.
+
 ## Limits worth explaining honestly
 
 Verification labels describe evidence, not guaranteed accuracy. Amounts are disclosure ranges; dollar totals generally use estimates. Report scope differs from transaction date. Company matching can be uncertain, especially for share classes. Validation and tests catch specified errors; they do not independently recheck every PDF.
