@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { getAllOfficials } from "@/lib/data";
+import { getAllOfficials, officialForTotals } from "@/lib/data";
+import UnderReviewNote from "../components/under-review-note";
 import { getFeePayments } from "@/lib/fee-payments";
 import { displayName, formatDate } from "@/lib/format";
 import Link from "next/link";
@@ -23,7 +24,8 @@ function isSale(type: string): boolean {
 }
 
 export default async function LateFilingsPage() {
-  const officials = await getAllOfficials();
+  const officials = (await getAllOfficials()).map(officialForTotals);
+  const underReviewCount = officials.reduce((sum, o) => sum + o.underReviewCount, 0);
   const feePayments = await getFeePayments();
 
   // Calculate late filing stats per official
@@ -81,7 +83,7 @@ export default async function LateFilingsPage() {
     (sum, o) => sum + o.transactions.length,
     0
   );
-  const overallRate = ((totalLate / totalTransactions) * 100).toFixed(1);
+  const overallRate = totalTransactions > 0 ? ((totalLate / totalTransactions) * 100).toFixed(1) : "0.0";
   const officialsWithLate = officialStats.length;
 
   // Find officials with 100% late rate
@@ -223,6 +225,7 @@ export default async function LateFilingsPage() {
         </p>
       </div>
 
+      <UnderReviewNote count={underReviewCount} />
       {/* Key findings */}
       <section className="mb-12 space-y-6">
         <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900">

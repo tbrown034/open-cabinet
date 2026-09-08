@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AboutScrolly from "../components/about-scrolly";
 import PipelineFlow from "../components/pipeline-flow";
-import { getAllOfficials, getOfficialBySlug, getOfficialsIndex } from "@/lib/data";
+import { getAllOfficials, getOfficialBySlug, getOfficialsIndex, officialForTotals } from "@/lib/data";
+import UnderReviewNote from "../components/under-review-note";
 import { readCrosscheckLog, summarizeCrosscheckLog } from "@/lib/crosscheck-log";
 import { sumAmountEstimates } from "@/lib/amounts";
 import { readRowVerification } from "@/lib/row-verification";
@@ -28,16 +29,19 @@ export default async function MethodologyPage() {
   ]);
   const totalOfficials = index.officials.length;
   const currentOfficialCount = currentOfficials.length;
-  const currentTransactions = currentOfficials.reduce(
+  const countedOfficials = currentOfficials.map(officialForTotals);
+  const underReviewCount = countedOfficials.reduce((sum, o) => sum + o.underReviewCount, 0);
+  const currentTransactions = countedOfficials.reduce(
     (sum, official) => sum + official.transactions.length,
     0
   );
-  const currentLateTransactions = currentOfficials.reduce(
+  const currentLateTransactions = countedOfficials.reduce(
     (sum, official) =>
       sum + official.transactions.filter((tx) => tx.lateFilingFlag).length,
     0
   );
-  const trumpTransactions = trump?.transactions.length ?? 0;
+  const countedTrumpRows = trump ? officialForTotals(trump).transactions : [];
+  const trumpTransactions = countedTrumpRows.length;
 
   // What the deterministic lane has actually compared, from the log the
   // ingest and the sweep write. Rendered as numbers so this page cannot
@@ -69,7 +73,7 @@ export default async function MethodologyPage() {
     allRows.filter((t) => t.amount === "Over $50,000,000" || t.amount === "Over $1,000,000")
   );
   const trumpLateTransactions =
-    trump?.transactions.filter((tx) => tx.lateFilingFlag).length ?? 0;
+    countedTrumpRows.filter((tx) => tx.lateFilingFlag).length;
   const nonTrumpLateTransactions =
     currentLateTransactions - trumpLateTransactions;
 
@@ -209,6 +213,7 @@ export default async function MethodologyPage() {
               transactions. Across all other main-directory officials, Open
               Cabinet counts {nonTrumpLateTransactions.toLocaleString()}{" "}
               late-filed transactions.
+              <UnderReviewNote count={underReviewCount} />
             </li>
             <li>
               <strong className="text-neutral-900">

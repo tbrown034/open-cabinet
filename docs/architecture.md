@@ -63,6 +63,12 @@ This uses existing source provenance rather than adding another database or job 
 
 ## Rendering and the AI boundary
 
+### Which rows count
+
+Public transaction totals use `officialForTotals` in `lib/data.ts`, which applies `rowsForTotals` from `lib/format.ts`. It excludes historical-report rows and score-0 rows marked Under review. Scores 1–3 and rows without a saved verdict still count under the existing policy; counted does not mean fully verified. Ask has a stricter evidence policy of its own.
+
+The homepage, Overview, All Trades, Late Filings, aggregate methodology comparison and share card use that same counted view. Company and official totals use the same row rule within their own scope. Under-review rows stay in official/company tables and downloads. The All Trades chart plots only dated, counted rows; its headline also includes counted rows whose dates are unknown. Methodology's evidence-coverage statistics deliberately inspect the full dataset, including disputed rows.
+
 Many pages are generated during the build. Official pages use URL filters and render on request. Both paths read the same published files. Interactive charts run browser JavaScript; D3 calculates geometry while React renders the elements.
 
 Ask translates a question into a constrained plan, checks it and calculates results from eligible published rows. It does not execute arbitrary model-written SQL against the mirror. Models also help read PDFs and draft optional narrative text. Keep three ideas distinct: the filed values, the saved evidence about those values, and the narrative describing them.

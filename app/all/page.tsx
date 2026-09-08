@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { getAllOfficials } from "@/lib/data";
+import { getAllOfficials, officialForTotals } from "@/lib/data";
+import UnderReviewNote from "../components/under-review-note";
 import { datedRows } from "@/lib/types";
 import { formatCompactCurrency, sumAmountEstimates } from "@/lib/format";
 import SwimLaneChart from "../components/swim-lane-chart";
@@ -23,7 +24,8 @@ function isSale(type: string): boolean {
 }
 
 export default async function AllTradesPage() {
-  const officials = await getAllOfficials();
+  const officials = (await getAllOfficials()).map(officialForTotals);
+  const underReviewCount = officials.reduce((sum, o) => sum + o.underReviewCount, 0);
 
   // Sort officials by total transaction volume (most active at top)
   const ranked = officials
@@ -47,12 +49,14 @@ export default async function AllTradesPage() {
     }))
     .toSorted((a, b) => b.totalValue - a.totalValue);
 
-  const allTx = ranked.flatMap((o) => o.transactions);
+  // Undated rows count in headlines even though a timeline cannot plot them.
+  const allTx = officials.flatMap((o) => o.transactions);
+  const undatedCount = allTx.length - ranked.reduce((sum, o) => sum + o.transactions.length, 0);
   const totalTx = allTx.length;
-  const salesCount = allTx.filter((tx) => tx.isSale).length;
+  const salesCount = allTx.filter((tx) => isSale(tx.type)).length;
   const purchasesCount = allTx.filter((tx) => tx.type === "Purchase").length;
   const lateCount = allTx.filter((tx) => tx.lateFilingFlag).length;
-  const salesValue = sumAmountEstimates(allTx.filter((tx) => tx.isSale)).estimate;
+  const salesValue = sumAmountEstimates(allTx.filter((tx) => isSale(tx.type))).estimate;
   const purchasesValue = sumAmountEstimates(
     allTx.filter((tx) => tx.type === "Purchase")
   ).estimate;
@@ -64,10 +68,10 @@ export default async function AllTradesPage() {
           All Trades
         </h1>
         <p className="text-neutral-500 max-w-xl leading-relaxed">
-          Every reported transaction across {ranked.length} executive branch
+          Counted transactions across {ranked.length} executive branch
           officials. {totalTx.toLocaleString()} trades disclosed in second-term
           reports, including earlier trades reported later. Historical reports
-          are excluded.
+          and rows under review are excluded from these totals and the chart.
         </p>
         <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-neutral-500 mt-4">
           <span>
@@ -85,6 +89,17 @@ export default async function AllTradesPage() {
         </div>
       </header>
 
+      <UnderReviewNote count={underReviewCount} />
+      {underReviewCount > 0 && (
+        <p className="text-xs text-neutral-500 mb-4">
+          Rows under review remain available in <Link href="/" className="underline">officials&apos; trade tables</Link> and <Link href="/download" className="underline">downloads</Link>.
+        </p>
+      )}
+      {undatedCount > 0 && (
+        <p className="text-xs text-neutral-500 mb-4">
+          {undatedCount.toLocaleString()} counted {undatedCount === 1 ? "trade has" : "trades have"} no reported date and cannot be plotted.
+        </p>
+      )}
       {/* Suspense: the chart reads its group/sort/period from the URL via
           useSearchParams, which requires a boundary on a static route. */}
       <Suspense fallback={<div className="min-h-96" />}>
