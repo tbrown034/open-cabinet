@@ -10,6 +10,25 @@ function categoryOf(question: string) {
   return intent.kind === "decline" ? intent.category : null;
 }
 
+describe("filing date versus trade date", () => {
+  it.each([
+    "How many transactions did Howard Lutnick disclose in 2025?",
+    "How many transactions did the Commerce secretary report in 2025?",
+    "Which sales were disclosed in 2025?",
+    "What did Bessent file during March 2025?",
+  ])("declines unsupported filing-date wording: %s", (question) => {
+    expect(classifyIntent(question).rule).toBe("filing_date");
+  });
+
+  it.each([
+    "How many sales occurred in March 2025?",
+    "How many sales did Bessent disclose?",
+    "Count purchases dated June 24, 2026.",
+  ])("preserves supported wording: %s", (question) => {
+    expect(kindOf(question)).toBe("ok");
+  });
+});
+
 // Every input below shipped as a confident answer to a different question in
 // Grok's Sept. 6 review, or is the same shape one step over.
 describe("item C1: averages and medians", () => {
