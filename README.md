@@ -31,7 +31,7 @@ Transaction counts, estimated value and late-filing totals exclude score-0 rows 
 
 Current-roster views exclude former-administration profiles and rows explicitly marked `historical`. MacGregor's three 2020 transactions remain on her profile as history. Older trade dates in second-term reports remain included and labeled. Full downloads retain historical profiles, identified by `formerOfficial` in JSON and `former_official` in CSV.
 
-The daily OGE monitor compares published URLs with the full index and flags newly missing listings. The weekly workflow also runs `pnpm check-sources`: it tests each saved transaction-report URL and prepares `data/meta/source-availability.json` for review. HTTP 404/410 means the original link is unavailable; timeouts and other failures remain unconfirmed. Neither check deletes saved rows or PDFs.
+The daily OGE monitor compares published URLs with the full index and emails the owner when it finds a new filing or newly missing listing. It does not ingest filings. The manually started workflow runs `pnpm check-sources`, tests saved transaction-report URLs and prepares `data/meta/source-availability.json` for review.
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
@@ -106,14 +106,14 @@ Adding a new filing and correcting an existing filing are different operations. 
 Open Cabinet uses two scheduled paths:
 
 1. **Monitor** — Vercel Cron polls the OGE API daily, compares 278-T PDF URLs with previously discovered/imported URLs, records the run and sends notifications when needed. Discovery is not proof of import.
-2. **Ingest** — GitHub Actions runs the static JSON ingest weekly (Mondays) or on demand, downloads new PDFs, parses them with Claude, checks them, regenerates exports and opens a PR for review.
+2. **Ingest** — The owner starts the GitHub Actions workflow after reviewing an alert. It downloads new PDFs, parses them with Claude PDF support, checks them, regenerates exports and opens a PR for review.
 
 The ingest path (`scripts/ingest-new-filings.ts`) runs seven stages. The entrypoint coordinates the work, with acquisition, reading and checking implemented in [lib/ingest-stages.ts](lib/ingest-stages.ts):
 
 1. **Find** — compare the OGE API with `sourceFilings` in official JSON. A discovered, failed or held filing stays eligible until its source entry is saved with the accepted import.
 2. **Fetch** — the PDF is downloaded and hashed.
-3. **Read** — the PDF, split into page ranges when needed, goes to a vision model (Claude Sonnet) as a document; there is no text-extraction step in front of it. Every returned row passes a shape and enum check (`lib/validation/parsed-rows.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
-4. **Check** — text extraction, OCR, a second model and a page audit provide separate evidence about the proposed rows. `lib/ingest-stages.ts` decides whether to hold or merge a filing; `lib/row-verification.ts` later builds the public row labels. These are separate decisions, and agreement is evidence, not a guarantee of accuracy.
+3. **Read** — the PDF, split into page ranges when needed, goes through [Claude PDF support](https://platform.claude.com/docs/en/build-with-claude/pdf-support), which reads its text and page images. Every returned row passes a field check (`lib/validation/parsed-rows.ts`) whether it came from the model or from a cache. Caches are keyed on the PDF bytes, source URL, page range, prompt, parser version and model (`lib/parse-cache.ts`).
+4. **Check** — readable PDF text or Tesseract OCR provides an independent comparison. A second provider's model is used only when OCR cannot confirm the rows. `lib/ingest-stages.ts` decides whether to hold or merge a filing; `lib/row-verification.ts` later builds the public row labels. Agreement is evidence, not a guarantee of accuracy.
 5. **Merge** — accepted rows are added to the official JSON. This path handles new filings; it is not a replacement workflow for correcting existing records.
 6. **Validate** — `pnpm validate` runs the checks in [lib/validation/published-data.ts](lib/validation/published-data.ts). A failure or review-required result stops the workflow.
 7. **Publish** — the workflow rebuilds supporting files and downloads, then opens a pull request for review. Merging triggers the Vercel deployment.
@@ -165,7 +165,7 @@ Text-layer parsing and OCR provide additional comparisons. The code records mode
 - **Anthropic SDK** + **OpenAI SDK** for PDF parsing
 - **Resend** for email notifications
 - **Vercel** (Pro) for hosting and lightweight cron monitoring
-- **GitHub Actions** for weekly pipeline ingest and PR creation
+- **GitHub Actions** for manually started pipeline ingest and PR creation
 - **pnpm** for package management
 
 ## Setup
@@ -184,7 +184,6 @@ See `.env.example` for the main settings. Public JSON pages and ordinary tests d
 
 - `ANTHROPIC_API_KEY` — Claude API for PDF parsing
 - `OPENAI_API_KEY` — Independent second-model verification
-- `GROK_API_KEY` — Page-image auditing in the ingestion gate
 - `DATABASE_URL` / `DATABASE_URL_UNPOOLED` — Neon PostgreSQL
 - `BETTER_AUTH_SECRET` — Session signing
 - `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` — Admin OAuth
@@ -200,7 +199,7 @@ pnpm lint             # ESLint (app and lib; scripts/ excluded by design)
 pnpm typecheck        # tsc --noEmit across app, lib and scripts
 ```
 
-GitHub Actions runs all three for pull requests and pushes to `main` (`.github/workflows/ci.yml`). The separate weekly workflow (`oge-pipeline.yml`) opens or updates a data PR when generated files change. Timestamp-only changes can still produce unnecessary PR updates.
+GitHub Actions runs all three for pull requests and pushes to `main` (`.github/workflows/ci.yml`). The separate manually started workflow (`oge-pipeline.yml`) opens or updates a data PR when generated files change.
 
 ## Data checks
 

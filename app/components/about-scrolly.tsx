@@ -50,7 +50,7 @@ const BUILD_STEPS = [
     id: "oge-api",
     label: "OGE API",
     title: "Start with the public records",
-    body: "The Office of Government Ethics maintains a public API listing financial disclosure filers (5 U.S.C. \u00A713107). It returns more than 16,000 records, including names, titles, agencies, filing types and links to PDF documents. No authentication required. This is the entry point.",
+    body: "The Office of Government Ethics maintains a public index of financial disclosures. Open Cabinet reads that index through its public API, which includes names, titles, agencies, filing types and available PDF links. This is the entry point for finding source documents.",
   },
   {
     id: "filter",
@@ -68,13 +68,13 @@ const BUILD_STEPS = [
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-checked sample filings and outlier detection. We maintain regression samples for five officials to catch errors; sample comparisons allow a 95 percent field-match threshold, while volume outliers are review notes.",
+    body: "Code checks transaction types, amount ranges, dates and ticker format, and compares the data with saved samples for five officials. Those sample comparisons use a 95 percent field-match threshold; volume outliers are review notes. These checks catch regressions, but they do not establish that every row matches its PDF. Independent text or OCR comparisons, the conditional fallback model and recorded human decisions provide separate evidence.",
   },
   {
     id: "store",
     label: "Store",
     title: "Static dataset with source trails",
-    body: "The public site is built from reviewed static JSON files and generated exports. Each official record keeps the OGE source filing URLs that produced the transaction rows, so bad data can be traced back to a specific PDF and corrected.",
+    body: "The public site reads static JSON files and generated exports. The owner manually starts the workflow, which prepares a data update for a person to review and merge before publication. Each official record keeps its OGE source filing URLs so a row can be traced back to the PDF and corrected.",
   },
   {
     id: "build-viz",
@@ -85,8 +85,8 @@ const BUILD_STEPS = [
   {
     id: "monitor",
     label: "Monitor",
-    title: "Daily monitoring, weekly ingest",
-    body: "A Vercel Cron job checks the OGE API daily and diffs exact PDF URLs against tracked source filings. GitHub Actions handles full ingest: download new PDFs, parse them, validate the static dataset, regenerate exports and prepare the update for review. A public feedback form lets anyone report data errors.",
+    title: "Daily monitoring, manual ingest",
+    body: "Every morning, a Vercel Cron job checks OGE and emails the owner when it finds a new filing. It does not import anything. The owner reviews the filing and starts the GitHub Actions import only if it belongs on the site.",
   },
   {
     id: "ai-role",

@@ -2,16 +2,13 @@ import { STATE_LABEL, type RowVerificationFile, type VerificationState } from "@
 
 export default function VerificationSummary({
   summary: storedSummary,
+  generatedAt,
 }: {
   summary: RowVerificationFile["summary"] | null;
+  generatedAt?: string;
 }) {
-  // Older files predate the audit gate and give score 3 to program-only
-  // agreements. They cannot support the current coverage claim.
   const summary = storedSummary && (Object.keys(STATE_LABEL) as VerificationState[])
     .every((state) => typeof storedSummary.byState[state] === "number") ? storedSummary : null;
-  // "Checked" here means all three gates: an independent program (or a
-  // second company's model), the model read, and the page audit; or a
-  // person's decision.
   const checked = summary ? summary.byScore["3"] : 0;
   const share = summary?.rows
     ? ((checked / summary.rows) * 100).toLocaleString("en-US", { maximumFractionDigits: 1 })
@@ -26,10 +23,23 @@ export default function VerificationSummary({
         <>
           <p className="text-neutral-600 leading-relaxed mb-4">
             {checked.toLocaleString("en-US")} of {summary.rows.toLocaleString("en-US")} rows
-            {" "}({share} percent) are checked on their trade columns: type, date, amount and late flag. Checked means an independent program or a second company&rsquo;s model read the same four values, and a third company&rsquo;s model, shown the row, confirmed it against the page image; or a person compared the row to the page. This status describes the trade columns. Company names and ticker symbols have separate checks; a public ticker also requires a matching independent name read or a recorded human decision.
+            {" "}({share} percent) have a recorded checked status for their trade columns: type, date, amount and late flag.
+          </p>
+          {generatedAt ? (
+            <p className="text-sm text-neutral-500 mb-4">
+              Verification records last rebuilt <time dateTime={generatedAt}>{generatedAt.slice(0, 10)}</time> (UTC).
+              These are saved results; this page does not rerun the checks.
+            </p>
+          ) : null}
+          <p className="text-neutral-600 leading-relaxed mb-4">
+            &ldquo;Checked&rdquo; means an independent program or a second
+            provider&rsquo;s model agreed with the first read, or a person compared
+            the row to the PDF.
+            Company names and ticker symbols have separate checks. A public
+            ticker also requires a matching independent name read or a recorded human decision.
           </p>
           <ul className="space-y-2 text-sm text-neutral-600 mb-4">
-            {(Object.keys(STATE_LABEL) as VerificationState[]).map((state) => (
+            {(Object.keys(STATE_LABEL) as VerificationState[]).filter((state) => summary.byState[state] > 0).map((state) => (
               <li key={state}>
                 <strong className="text-neutral-900">{summary.byState[state].toLocaleString("en-US")} rows</strong>
                 {" "}— {STATE_LABEL[state]}.

@@ -99,7 +99,7 @@ export default async function MethodologyPage() {
           Executive branch public financial disclosures include periodic
           transaction reports and reports of holdings, income and other
           financial interests. Open Cabinet&rsquo;s trade dataset comes from
-          278-T reports; work to add entry holdings is at the pilot stage.
+          278-T reports.
         </p>
         <ul className="space-y-3 text-neutral-600 leading-relaxed mb-4">
           <li>
@@ -113,11 +113,8 @@ export default async function MethodologyPage() {
             <strong className="text-neutral-900">OGE Form 278e (Nominee/New Entrant Report).</strong>{" "}
             Nominee reports accompany Senate-confirmed nominations; new entrant
             reports are generally due within 30 days of taking office. They
-            disclose reportable holdings and other financial interests. This is the baseline against which
-            divestitures should be measured. Adding nominee holdings data is in
-            progress; until it is complete, this site cannot tell you whether
-            an official has fully divested a holding &mdash; only what they
-            have traded.
+            disclose reportable holdings and other financial interests.
+            These reports are outside this site&rsquo;s trade dataset.
           </li>
           <li>
             <strong className="text-neutral-900">OGE Form 278e (Annual Report).</strong>{" "}
@@ -126,21 +123,26 @@ export default async function MethodologyPage() {
             Annual-report ingestion is not part of the current trade pipeline.
           </li>
         </ul>
+        <p className="text-sm text-neutral-500 mb-4">
+          Source: OGE&rsquo;s{" "}
+          <a href="https://www.oge.gov/web/278eGuide.nsf/Form_278-T" className="underline hover:text-neutral-900">transaction-report guide</a>
+          {" "}and{" "}
+          <a href="https://www.oge.gov/web/278eGuide.nsf/Overview" className="underline hover:text-neutral-900">report-type overview</a>.
+        </p>
         <p className="text-neutral-600 leading-relaxed">
-          Until the entry-holdings dataset is complete, statements like &ldquo;consistent with
-          ethics agreement divestitures&rdquo; are not something this site can
-          support from data alone &mdash; only from a side-by-side reading of
-          the ethics agreement and the trades on file.
+          Reported trades alone do not show all of an official&rsquo;s holdings
+          or establish whether an official has fulfilled an ethics agreement.
         </p>
       </div>
 
       {/* The pipeline on one page */}
       <div id="pipeline" className="mx-auto max-w-3xl px-4 pb-8 scroll-mt-24">
         <h2 className="font-[family-name:var(--font-source-serif)] text-2xl text-neutral-900 mb-2">
-          How a filing becomes published rows
+          How a filing gets added to the site
         </h2>
         <p className="text-neutral-600 leading-relaxed">
-          One diagram: what a program does, what a model does, and where a person is required.
+          Follow the filing from source PDF to publication: who does each
+          step, when processing stops, and which evaluation is still being integrated.
         </p>
         <PipelineFlow />
       </div>
@@ -224,10 +226,9 @@ export default async function MethodologyPage() {
               A transaction counts as late only when the filer marked the
               278-T column indicating notification was received more than 30
               days before filing &mdash; the official{"'"}s own certification,
-              not our computation. Agencies can grant filing extensions of up
-              to 90 days that are not visible in public filings, and $200
-              late-fee assessments surface publicly only when OGE reviewers
-              note them on an individual filing.
+              not our computation. Agencies can grant filing extensions;
+              some filings carry extension or fee annotations. The late flag
+              alone does not establish whether a fee was assessed or paid.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -238,9 +239,9 @@ export default async function MethodologyPage() {
               report and is labeled on the official page. Prior-administration
               reports retained as history are excluded from current totals and
               charts; the original rows and source links are preserved.
-              Daily checks flag newly missing OGE index listings. Weekly checks
-              test the saved transaction-report URLs and prepare availability
-              updates for review. An unavailable link does not establish why OGE
+              Daily checks flag newly missing OGE index listings. The manually
+              started ingest also tests saved transaction-report URLs and prepares
+              availability updates for review. An unavailable link does not establish why OGE
               removed or moved a record; timeouts remain unconfirmed.
             </li>
             <li>
@@ -255,20 +256,13 @@ export default async function MethodologyPage() {
               <strong className="text-neutral-900">
                 Parsing is automated; checking is partly automated and partly by hand.
               </strong>{" "}
-              A vision model reads each filing PDF and proposes rows. A second
-              program that never sees the model&rsquo;s output reads the same
-              PDF&rsquo;s text layer and compares type, date, amount, late
-              flag and printed row numbers, row for row. Where the two
-              disagree on a new filing, nothing from it is published until a
-              person decides. For rows already published, agreement from a
-              second model plus a confirming page audit can resolve a text or
-              OCR disagreement; otherwise a disputed row remains under review.
-              When a filing has no usable text layer, a local OCR read is tried.
-              If OCR cannot confirm it, a second company&rsquo;s model reads
-              the page images and a third company&rsquo;s model audits the
-              proposed rows. The current state of those checks is below under
-              AI transparency. Source PDFs are
-              linked from each official{"'"}s page.
+              Claude PDF support proposes rows from the PDF. Code compares them
+              with an independent text or OCR reading; a second model is used
+              when those programs cannot confirm the rows. There is no routine
+              third-model step. A person reviews the prepared data
+              update before publication. Older rows have been checked through
+              separate review runs; the recorded row statuses below describe
+              their evidence. Source PDFs are linked from each official&rsquo;s page.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -310,11 +304,13 @@ export default async function MethodologyPage() {
             <div>
               <div className="font-medium text-neutral-900">PDF parsing</div>
               <p className="text-neutral-500 mt-0.5">
-                Each filing PDF is sent whole to a vision model (Claude), which
+                Each filing PDF is sent whole through{" "}
+                <a href="https://platform.claude.com/docs/en/build-with-claude/pdf-support" className="underline hover:text-neutral-700">Claude PDF support</a>,
+                {" "}which reads the document&rsquo;s text and page images and
                 returns the transaction table as structured rows. There is no
                 separate text-extraction step in front of the model. Large
                 filings are split into page ranges first. Every returned row
-                passes a shape check: five transaction types plus an explicit
+                is checked for valid fields: five transaction types plus an explicit
                 &ldquo;Unstated&rdquo; type with a note, eleven dollar ranges or
                 an explicit unknown, calendar dates, and no unexpected fields.
                 Reviewed source exceptions can retain an undated row or an
@@ -335,7 +331,7 @@ export default async function MethodologyPage() {
                   the row-level totals below show their current status. {fmt(scanRows)}{" "}
                   rows are in scanned filings with no text layer, where the
                   text comparison cannot run. {fmt(layoutRows)} rows are in layouts
-                  the comparison program cannot yet read.{" "}
+                  or form types the text comparison program cannot read.{" "}
                   {fmt(coverage.unstampedRows)} rows are not yet attributed to
                   a specific filing. The comparison covers type, date, amount,
                   late flag and row count, with a limited name-word check.
@@ -349,14 +345,24 @@ export default async function MethodologyPage() {
                   an image, runs optical character recognition on it
                   (tesseract, locally, ignoring any text the scanner
                   embedded) and compares the result the same way. It has run
-                  on {ocrFilings} scanned filings. OCR agreement alone is not
-                  enough for a row to count as checked: the page audit must
-                  also confirm it. If OCR disagrees or cannot read a row, a
-                  matching independent model read and confirming page audit can
-                  establish its checked status. Unresolved disagreements stay
-                  under review; a person can also record a decision.
+                  on {ocrFilings} filings. A confirming OCR comparison skips
+                  the second model. If OCR disagrees or cannot read the rows,
+                  the ingest tries an independent model read.
                 </p>
               ) : null}
+            </div>
+            <div id="fallback-read" className="scroll-mt-24">
+              <div className="font-medium text-neutral-900">
+                Conditional fallback model
+              </div>
+              <p className="text-neutral-500 mt-0.5">
+                A second provider&rsquo;s model independently extracts rows only
+                when readable PDF text or OCR cannot confirm Claude&rsquo;s first
+                read. It is a fallback second read, not a routine third-model
+                audit. Every proposed row must agree or the filing stops for
+                human review. Model agreement reduces transcription risk but
+                does not guarantee that a filing itself is accurate.
+              </p>
             </div>
             <div>
               <div className="font-medium text-neutral-900">
@@ -403,10 +409,11 @@ export default async function MethodologyPage() {
             <div>
               <div className="font-medium text-neutral-900">News coverage</div>
               <p className="text-neutral-500 mt-0.5">
-                Articles in the {"\""}In the News{"\""} sections are collected
-                via AI-assisted web search across major outlets (ProPublica,
-                CNBC, NOTUS, Bloomberg, etc.). Every linked article is a real,
-                published piece, no AI-generated news content.
+                The {"\""}In the News{"\""} sections link to outside reporting.
+                The article list is curated separately from filing ingestion;
+                search tools can help find coverage. Changes to the saved list
+                are reviewed before publication. The site does not generate
+                the linked articles.
               </p>
             </div>
             <div>
@@ -486,7 +493,10 @@ export default async function MethodologyPage() {
           </p>
         </section>
 
-        <VerificationSummary summary={rowVerification?.summary ?? null} />
+        <VerificationSummary
+          summary={rowVerification?.summary ?? null}
+          generatedAt={rowVerification?.generatedAt}
+        />
 
         {/* How names become tickers */}
         <section id="assets" className="border-t border-neutral-200 pt-8 scroll-mt-24">

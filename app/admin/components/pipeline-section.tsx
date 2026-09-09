@@ -17,12 +17,12 @@ export function PipelineSection({ runs }: { runs: PipelineRun[] }) {
           </p>
         </div>
         <div>
-          <h3 className="text-neutral-900 font-medium text-xs mb-1">Weekly ingestion</h3>
+          <h3 className="text-neutral-900 font-medium text-xs mb-1">Manual ingestion</h3>
           <p className="text-neutral-500 text-xs">
             <a className="underline" href="https://github.com/tbrown034/open-cabinet/actions/workflows/oge-pipeline.yml">
               GitHub Actions
             </a>{" "}
-            runs the JSON ingestion workflow on Mondays or on demand. It reads
+            runs the JSON ingestion workflow only when the owner starts it. It reads
             and checks PDFs, rebuilds supporting files and opens a pull request.
             Published data changes after review, merge and deployment.
           </p>
@@ -41,7 +41,7 @@ export function PipelineSection({ runs }: { runs: PipelineRun[] }) {
       </div>
       <p className="text-xs text-neutral-500 mb-4">
         History below contains runs recorded in PostgreSQL, including daily
-        monitor checks and older database jobs. It is not the weekly ingestion
+        monitor checks and older database jobs. It is not the manual ingestion
         history or a complete model-cost ledger. A monitor can complete with
         zero transactions because it only checks for filings.
       </p>

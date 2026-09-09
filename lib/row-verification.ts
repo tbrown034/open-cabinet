@@ -143,7 +143,7 @@ export const SHORT_LABEL: Record<VerificationState, string> = {
 };
 
 export const STATE_LABEL: Record<VerificationState, string> = {
-  checked: "Checked on type, date, amount and late flag: an independent program or a second model from another company read the same four values, and a third model from a third company, shown the row, confirmed it against the page image",
+  checked: "Checked on type, date, amount and late flag: an independent program or a second provider's model agreed with the first read",
   human_verified: "Checked by a person against the filing",
   deterministic_agree: "An independent program read the same values from the filing; the page audit has not run yet",
   two_models_agree: "Two models read the same values; no program could read the page; the page audit has not run yet",

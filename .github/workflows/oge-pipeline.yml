@@ -1,8 +1,6 @@
 name: OGE filing pipeline
 
 on:
-  schedule:
-    - cron: "0 14 * * 1"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -31,9 +29,6 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-      # The audit lane (third gate). Without it checkFiling holds every
-      # filing for a person rather than publishing unaudited.
-      GROK_API_KEY: ${{ secrets.GROK_API_KEY }}
 
     steps:
       - name: Check out repository
