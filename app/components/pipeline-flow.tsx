@@ -89,6 +89,7 @@ export default function PipelineFlow() {
       </div>
 
       <figcaption className="mx-auto mt-5 max-w-xl space-y-2 text-sm leading-relaxed text-neutral-500">
+        <p><strong>Planned confidence safeguard:</strong> when a fallback model is used, both extraction models must report at least 0.8 confidence for each row; lower or missing scores require human review. This threshold is not yet enforced. Confidence does not replace the comparison or page-image audit.</p>
         <p>OCR does not have to agree when a fallback model provides corroboration. Unresolved differences and audit problems require human review.</p>
         <p>Publication always requires owner approval.</p>
       </figcaption>
