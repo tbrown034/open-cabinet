@@ -68,7 +68,7 @@ const BUILD_STEPS = [
     id: "validate",
     label: "Validate",
     title: "Automated checks before data goes live",
-    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-checked sample filings and outlier detection. We maintain samples for five officials (ranging from two to 1,315 transactions) to catch errors.",
+    body: "Before any parsed data goes live, it runs through automated checks: valid transaction types, amount ranges and dates; ticker symbol verification; comparison against hand-checked sample filings and outlier detection. We maintain regression samples for five officials to catch errors; sample comparisons allow a 95 percent field-match threshold, while volume outliers are review notes.",
   },
   {
     id: "store",
@@ -85,14 +85,14 @@ const BUILD_STEPS = [
   {
     id: "monitor",
     label: "Monitor",
-    title: "Weekly checks with email alerts",
-    body: "A Vercel Cron job checks the OGE API weekly and diffs exact PDF URLs against tracked source filings. GitHub Actions handles full ingest: download new PDFs, parse them, validate the static dataset, regenerate exports and prepare the update for review. A public feedback form lets anyone report data errors.",
+    title: "Daily monitoring, weekly ingest",
+    body: "A Vercel Cron job checks the OGE API daily and diffs exact PDF URLs against tracked source filings. GitHub Actions handles full ingest: download new PDFs, parse them, validate the static dataset, regenerate exports and prepare the update for review. A public feedback form lets anyone report data errors.",
   },
   {
     id: "ai-role",
     label: "AI usage",
     title: "Where AI is and isn't involved",
-    body: "PDF parsing uses AI to convert OGE tables into structured transaction rows, followed by schema checks, regression samples and source-PDF review. Official summaries are generated from parsed data and reviewed for accuracy. The application was built by Trevor Brown with coding assistance. All data traces back to government-filed source documents.",
+    body: "PDF parsing uses AI to convert OGE tables into structured transaction rows, followed by schema checks, regression samples and source-PDF review. Official summaries use computed facts; current model-written candidates require a separate review-and-publish step. Older summaries predate that gate. The application was built by Trevor Brown. All data traces back to government-filed source documents.",
   },
 ];
 

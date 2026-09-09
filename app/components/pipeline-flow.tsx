@@ -33,7 +33,7 @@ const boxes: Box[] = [
   { id: "read1", x: 40, y: 96, w: 236, h: 44, kind: "model", lines: ["Read 1: vision model", "reads every page into rows"] },
   { id: "shape", x: 40, y: 172, w: 236, h: 44, kind: "program", lines: ["Shape gate", "dates, ranges, types valid?"] },
   { id: "text", x: 40, y: 248, w: 236, h: 44, kind: "program", lines: ["Text layer or OCR", "compares type, date, amount, late flag"] },
-  { id: "read2", x: 40, y: 324, w: 236, h: 44, kind: "model", lines: ["Read 2: second company's model", "only when no program could read the page"] },
+  { id: "read2", x: 40, y: 324, w: 236, h: 44, kind: "model", lines: ["Read 2: second company's model", "when no program confirms the read"] },
   { id: "audit", x: 40, y: 400, w: 236, h: 44, kind: "model", lines: ["Page audit: third company's model", "shown each row beside the page"] },
   { id: "flag", x: 40, y: 476, w: 236, h: 44, kind: "program", lines: ["Impossible-value check", "flags a row for a person; it stays published"] },
   { id: "asset", x: 40, y: 552, w: 236, h: 44, kind: "program", lines: ["Asset lane", "ticker only on exact evidence, else name only"] },
@@ -69,7 +69,7 @@ export default function PipelineFlow() {
   return (
     <figure className="my-6">
       <div className="overflow-x-auto">
-        <svg viewBox={`0 0 ${W} 700`} width="100%" role="img" aria-label="How a filing becomes published rows: a program fetches and checks, two models read, a third audits, a person rules on every disagreement, then the rows publish." className="max-w-[760px] block mx-auto" style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>
+        <svg viewBox={`0 0 ${W} 700`} width="100%" role="img" aria-label="How a filing becomes published rows: a program fetches and checks, two models read, a third audits, unresolved disagreements go to review, then the rows publish." className="max-w-[760px] block mx-auto" style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>
           <defs>
             <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#78716c" />
@@ -79,7 +79,7 @@ export default function PipelineFlow() {
             <Arrow key={id} from={bottom(id)} to={top(chain[i + 1])} label={id === "text" ? "agree (skips read 2)" : id === "read2" ? "every row agrees" : id === "audit" ? "confirms" : id === "shape" ? "valid" : undefined} />
           ))}
           <Arrow from={right("shape")} to={left("human", -40)} label="invalid" dashed />
-          <Arrow from={right("text")} to={left("human", -20)} label="disagree, or scan unreadable" dashed />
+          <Arrow from={right("text")} to={left("human", -20)} label="text disagrees" dashed />
           <Arrow from={right("read2")} to={left("human", 0)} label="any row differs" dashed />
           <Arrow from={right("audit")} to={left("human", 20)} label="disputes a row" dashed />
           <Arrow from={right("flag")} to={left("human", 40)} label="flag (row stays up, marked)" dashed />
@@ -112,7 +112,7 @@ export default function PipelineFlow() {
         </svg>
       </div>
       <figcaption className="text-xs text-neutral-500 mt-2 max-w-3xl mx-auto">
-        Every filing takes the left path; a program that confirms the read skips the second model. A dashed exit from the shape gate, the lanes or the audit holds a new filing until a person rules. The two lower exits do not hold: an impossible value marks the row for review while it stays published, and an unresolved asset name publishes under the printed name with no ticker. Rows already published that a later check disputes stay up marked under review.
+        Every new filing follows these checks. A confirming text or OCR read skips the second model; an OCR disagreement can proceed to that second read. A text-layer mismatch, invalid shape, second-model disagreement or disputed page audit holds the filing for review. A trade dated after the filing was posted also holds it. Other plausibility flags can remain published with a note, and an unresolved asset publishes as a name without a ticker. For existing rows, agreement from a second model plus a confirming audit can resolve a text or OCR disagreement; unresolved disputes stay marked under review. Recorded human decisions can resolve rows too.
       </figcaption>
     </figure>
   );

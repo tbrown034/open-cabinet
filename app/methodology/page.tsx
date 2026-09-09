@@ -96,36 +96,38 @@ export default async function MethodologyPage() {
           What we add, and what we don{"'"}t
         </h2>
         <p className="text-neutral-600 leading-relaxed mb-4">
-          Senior executive branch officials file three different financial
-          disclosure documents with the Office of Government Ethics. Open
-          Cabinet imports one of them today, and is in the process of adding a
-          second.
+          Executive branch public financial disclosures include periodic
+          transaction reports and reports of holdings, income and other
+          financial interests. Open Cabinet&rsquo;s trade dataset comes from
+          278-T reports; work to add entry holdings is at the pilot stage.
         </p>
         <ul className="space-y-3 text-neutral-600 leading-relaxed mb-4">
           <li>
             <strong className="text-neutral-900">OGE Form 278-T (Periodic Transaction Report).</strong>{" "}
-            Filed within 30 to 45 days of any individual-security transaction
-            over $1,000. This is what powers the trades, dollar volume and
+            Covered securities transactions over $1,000 must be reported within
+            30 days of notification, and no later than 45 days after the trade,
+            subject to applicable extensions and reporting exemptions. This is what powers the trades, dollar volume and
             late-filing counts on this site.
           </li>
           <li>
-            <strong className="text-neutral-900">OGE Form 278 (Nominee/Entry Report).</strong>{" "}
-            Filed once, before Senate confirmation, listing every asset the
-            official held going in. This is the baseline against which
-            divestitures should be measured. Adding Nominee 278 data is in
+            <strong className="text-neutral-900">OGE Form 278e (Nominee/New Entrant Report).</strong>{" "}
+            Nominee reports accompany Senate-confirmed nominations; new entrant
+            reports are generally due within 30 days of taking office. They
+            disclose reportable holdings and other financial interests. This is the baseline against which
+            divestitures should be measured. Adding nominee holdings data is in
             progress; until it is complete, this site cannot tell you whether
             an official has fully divested a holding &mdash; only what they
             have traded.
           </li>
           <li>
             <strong className="text-neutral-900">OGE Form 278e (Annual Report).</strong>{" "}
-            Filed every May 15 by every covered official, restating holdings
-            and transactions for the prior year. Open Cabinet will add annual
-            reports as they become available in public, downloadable form.
+            Generally due May 15, subject to eligibility rules and extensions,
+            reporting holdings and other financial activity for the prior year.
+            Annual-report ingestion is not part of the current trade pipeline.
           </li>
         </ul>
         <p className="text-neutral-600 leading-relaxed">
-          Until Nominee 278 data is in, statements like &ldquo;consistent with
+          Until the entry-holdings dataset is complete, statements like &ldquo;consistent with
           ethics agreement divestitures&rdquo; are not something this site can
           support from data alone &mdash; only from a side-by-side reading of
           the ethics agreement and the trades on file.
@@ -258,23 +260,23 @@ export default async function MethodologyPage() {
               PDF&rsquo;s text layer and compares type, date, amount, late
               flag and printed row numbers, row for row. Where the two
               disagree on a new filing, nothing from it is published until a
-              person decides; where they disagree on a row already on the
-              site, the row stays up marked under review until a person
-              decides. Scanned
-              filings have no text layer, so that comparison cannot run; those
-              rows depend on a visual check against the printed row numbers
-              and are the largest share of the dataset. The current state of
-              that comparison is below under AI transparency. Source PDFs are
+              person decides. For rows already published, agreement from a
+              second model plus a confirming page audit can resolve a text or
+              OCR disagreement; otherwise a disputed row remains under review.
+              When a filing has no usable text layer, a local OCR read is tried.
+              If OCR cannot confirm it, a second company&rsquo;s model reads
+              the page images and a third company&rsquo;s model audits the
+              proposed rows. The current state of those checks is below under
+              AI transparency. Source PDFs are
               linked from each official{"'"}s page.
             </li>
             <li>
               <strong className="text-neutral-900">
-                Filings contain errors, and the site shows them as printed.
+                Filings contain errors; departures from the printed values are documented.
               </strong>{" "}
-              When a filing prints something that cannot be right, the row
-              keeps the filing&rsquo;s value and carries a numbered note
-              under the table saying what the page shows and who decided how
-              to count it. Two examples from the record. A July 2025 filing
+              When a filing prints something that appears wrong, a reviewer
+              may retain the printed value or record a correction. A numbered
+              note under the table explains the source wording and the decision. Two examples from the record. A July 2025 filing
               for Labor Secretary Lori Chavez-DeRemer prints three company
               names across two numbered rows each, with the full trade
               columns repeated on both halves; each pair is counted as one
@@ -282,8 +284,8 @@ export default async function MethodologyPage() {
               May 2025 filing for HHS Secretary Robert F. Kennedy Jr. prints
               a trade date in the year 2225; the row shows 2025, the year
               the filing was posted and the year on the row above it. That
-              correction, like every other, is recorded with the page and
-              printed row in the review log in the public source repository.
+              correction is recorded with the page and printed row in the
+              review log in the public source repository.
             </li>
             <li>
               <strong className="text-neutral-900">
@@ -312,9 +314,11 @@ export default async function MethodologyPage() {
                 returns the transaction table as structured rows. There is no
                 separate text-extraction step in front of the model. Large
                 filings are split into page ranges first. Every returned row
-                passes a shape check: only the five legal transaction types,
-                the eleven legal dollar ranges or an explicit unknown, real
-                calendar dates, and no extra fields. Where the PDF has a text
+                passes a shape check: five transaction types plus an explicit
+                &ldquo;Unstated&rdquo; type with a note, eleven dollar ranges or
+                an explicit unknown, calendar dates, and no unexpected fields.
+                Reviewed source exceptions can retain an undated row or an
+                impossible printed date with an explanatory note. Where the PDF has a text
                 layer, an independent program (pdftotext plus a column parser)
                 reads the same table and the two are compared row for row.
               </p>
@@ -326,14 +330,17 @@ export default async function MethodologyPage() {
                   {coverage.filings.checked_tuple_agreement} of{" "}
                   {coverage.totalFilings} filings. {fmt(mismatchRows)} rows in{" "}
                   {coverage.filings.checked_tuple_mismatch} filings are in
-                  disagreement and awaiting a person&rsquo;s review. {fmt(scanRows)}{" "}
+                  disagreement in that filing-level comparison. Later model
+                  checks or recorded decisions may resolve individual rows;
+                  the row-level totals below show their current status. {fmt(scanRows)}{" "}
                   rows are in scanned filings with no text layer, where the
                   text comparison cannot run. {fmt(layoutRows)} rows are in layouts
                   the comparison program cannot yet read.{" "}
                   {fmt(coverage.unstampedRows)} rows are not yet attributed to
                   a specific filing. The comparison covers type, date, amount,
-                  late flag and row count; it does not compare asset names or
-                  ticker symbols.
+                  late flag and row count, with a limited name-word check.
+                  It does not verify ticker symbols; asset resolution and
+                  the independent name check are separate.
                 </p>
               ) : null}
               {coverage && ocrFilings > 0 ? (
@@ -342,12 +349,12 @@ export default async function MethodologyPage() {
                   an image, runs optical character recognition on it
                   (tesseract, locally, ignoring any text the scanner
                   embedded) and compares the result the same way. It has run
-                  on {ocrFilings} scanned filings. Because OCR misreads more
-                  often than a text layer, its results are counted row by row
-                  in the section below: a row counts as checked only when the
-                  OCR read that exact row the same way, a row it read
-                  differently is under review, and a row it could not read is
-                  not yet checked.
+                  on {ocrFilings} scanned filings. OCR agreement alone is not
+                  enough for a row to count as checked: the page audit must
+                  also confirm it. If OCR disagrees or cannot read a row, a
+                  matching independent model read and confirming page audit can
+                  establish its checked status. Unresolved disagreements stay
+                  under review; a person can also record a decision.
                 </p>
               ) : null}
             </div>
@@ -366,7 +373,31 @@ export default async function MethodologyPage() {
                 that gate existed were not individually approved. When new
                 filings change an official&rsquo;s facts, the existing summary
                 is kept and marked as behind the data until a new one is
-                approved. Summaries do not make editorial judgments.
+                approved. The prompt prohibits editorial judgments and
+                compliance conclusions; review remains necessary because a
+                number appearing in the facts does not establish that a
+                sentence uses it correctly.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Ask the Data</div>
+              <p className="text-neutral-500 mt-0.5">
+                Claude turns a reader&rsquo;s question into a constrained query
+                plan. Code validates that plan, queries the published checked
+                rows and calculates the answer. The default answer sentence is
+                a fixed template. An optional configuration lets a model phrase
+                the result; number and language checks must pass or the template
+                remains. The answer identifies which process was used.
+              </p>
+            </div>
+            <div>
+              <div className="font-medium text-neutral-900">Subscriber digests</div>
+              <p className="text-neutral-500 mt-0.5">
+                An operator can ask Claude to draft a digest introduction from
+                filing facts, sample transactions and existing official
+                summaries. It is shown in the admin draft for review before
+                sending. The saved introduction is included only when its
+                filing set still matches the digest; generating it sends no email.
               </p>
             </div>
             <div>
@@ -394,11 +425,12 @@ export default async function MethodologyPage() {
                 What AI does not do
               </div>
               <p className="text-neutral-500 mt-0.5">
-                AI does not generate or fabricate transaction data. It does not
-                make editorial judgments about whether trades are legal or
-                ethical. It does not determine which officials to track or how
-                to present findings. All data traces back to a government-filed
-                PDF.
+                Models are instructed to extract the filing&rsquo;s values,
+                not invent transactions or judge whether trades are legal or
+                ethical. They can misread a page; the checks and review process
+                above address that risk. Coverage is set by the project&rsquo;s
+                source rules. Published transaction rows retain their government
+                filing links.
               </p>
             </div>
           </div>
@@ -479,14 +511,20 @@ export default async function MethodologyPage() {
             removed, matching one security by exact name on two public reference
             lists (the Nasdaq symbol directory and the SEC&rsquo;s issuer list)
             that agree on the symbol; or a person&rsquo;s recorded decision.
+            An exact listed name with a printed share class can also resolve
+            when only one listed class matches and the SEC reference has no
+            symbol for that name or corroborates the issuer.
             One allowance for ETFs, whose legal and marketing names differ: a
             printed ETF symbol is accepted when every distinguishing word of
             the printed name appears in the listing (&ldquo;Vanguard Tax-Exempt
             Bond Index Fund ETF&rdquo; and &ldquo;Vanguard Tax-Exempt Bond
-            ETF&rdquo;). Nothing is matched by similarity, and no model is asked
-            to guess. A name that matches on only one list, or is cut short by
-            the broker, waits for a person. A ticker is attached only where an
-            independent reader also read the same name.
+            ETF&rdquo;). Selecting a ticker from the reference lists does not
+            use fuzzy matching or a model guess. Apart from the share-class
+            exception above, a name found on only one list, or cut short by the
+            broker, waits for a person. A public ticker also needs a matching
+            independent name read or a recorded human decision. That name check
+            tolerates spelling and wording differences, so it is not a guarantee
+            of exact transcription.
           </p>
           {assets ? (
             <p className="text-neutral-600 leading-relaxed">
