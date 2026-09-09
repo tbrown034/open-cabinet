@@ -142,7 +142,7 @@ export default async function MethodologyPage() {
         </h2>
         <p className="text-neutral-600 leading-relaxed">
           Follow the filing from source PDF to publication: who does each
-          step, when processing stops, and which evaluation is still being integrated.
+          step, when processing stops, and where a person is required.
         </p>
         <PipelineFlow />
       </div>
@@ -256,10 +256,10 @@ export default async function MethodologyPage() {
               <strong className="text-neutral-900">
                 Parsing is automated; checking is partly automated and partly by hand.
               </strong>{" "}
-              Claude PDF support proposes rows from the PDF. Code compares them
-              with an independent text or OCR reading; a second model is used
-              when those programs cannot confirm the rows. There is no routine
-              third-model step. A person reviews the prepared data
+              Claude PDF support proposes rows from the PDF. A second reader
+              checks them using PDF text, OCR or a fallback model. A page-image
+              audit then checks the completed rows against the source pages.
+              Any disagreement is held for a person. A person reviews the prepared data
               update before publication. Older rows have been checked through
               separate review runs; the recorded row statuses below describe
               their evidence. Source PDFs are linked from each official&rsquo;s page.
@@ -345,23 +345,24 @@ export default async function MethodologyPage() {
                   an image, runs optical character recognition on it
                   (tesseract, locally, ignoring any text the scanner
                   embedded) and compares the result the same way. It has run
-                  on {ocrFilings} filings. A confirming OCR comparison skips
-                  the second model. If OCR disagrees or cannot read the rows,
-                  the ingest tries an independent model read.
+                  on {ocrFilings} filings. When OCR cannot confirm Claude&rsquo;s
+                  rows, an independent model reads the page. Any remaining
+                  disagreement holds the filing for a person.
                 </p>
               ) : null}
             </div>
-            <div id="fallback-read" className="scroll-mt-24">
+            <div id="additional-verification" className="scroll-mt-24">
               <div className="font-medium text-neutral-900">
-                Conditional fallback model
+                Page-image audit
               </div>
               <p className="text-neutral-500 mt-0.5">
-                A second provider&rsquo;s model independently extracts rows only
-                when readable PDF text or OCR cannot confirm Claude&rsquo;s first
-                read. It is a fallback second read, not a routine third-model
-                audit. Every proposed row must agree or the filing stops for
-                human review. Model agreement reduces transcription risk but
-                does not guarantee that a filing itself is accurate.
+                A separate model sees the proposed rows beside the source-page
+                images. It checks whether each row matches and whether anything
+                is missing or extra. Any difference goes to a person. This
+                visual audit was also applied during the dataset-wide
+                reverification of existing records. These checks reduce
+                transcription risk but do not guarantee that a government
+                filing itself is accurate.
               </p>
             </div>
             <div>
