@@ -117,10 +117,12 @@ function cleanDashes(text: string): string {
 }
 
 const GENERAL_SUGGESTIONS = [
+  "How many Apple purchases?",
   "How many trades does Christopher Wright have?",
   "Which officials sold Liberty Energy?",
   "Trades flagged late in 2026",
   "What percentage of trades were filed late?",
+  "How many purchases did Scott Bessent make?",
 ];
 
 export default function AskTheData({
@@ -308,6 +310,9 @@ export default function AskTheData({
             </button>
           ))}
         </div>
+        <p className="text-xs text-neutral-500 mt-3">
+          You can count disclosed sales, but these records cannot tell you what someone earned or which stock to buy.
+        </p>
       </div>
 
       {pending && (

@@ -85,7 +85,7 @@ A correction may change computed row IDs. Inspect attached human decisions and r
 | Need to correct a public transaction | Use the JSON correction/review workflow; the retired DB mirror controls no longer exist |
 | Email failed or may have partially sent | `/admin`, digest run and delivery records; inspect before rerunning a real send |
 | Old Ask tab asks you to refresh | Refresh and submit a written question. Raw plans and retired follow-up tokens are rejected before model spending |
-| Ask reused an unexpected translation | Inspect `/admin/askai` and the displayed query. Cache candidates carry a `plan-cache-v2` reason with model/date/page scope; follow-ups and legacy untagged rows are excluded |
+| Ask reused an unexpected translation | Inspect `/admin/askai` and the displayed query. Cache candidates carry a `plan-cache-v3` reason with model/date/page scope; follow-ups and legacy untagged rows are excluded |
 | CI fails only on GitHub | Tracked files, Node/pnpm versions, environment requirements; private notes are absent from fresh clones |
 
 ## Retired database tools
@@ -106,6 +106,6 @@ On `/askai`, click an example: it should fill and focus the input without submit
 
 Try a company count, an official-specific question, a year, a list with filing links, a question with no matches, and an unsupported profit question. Compare numeric results against `getPublishedRows()` using explicit filters. Test cancellation and a failed connection. Examples are independent questions; Ask does not remember prior answers. Cached translations must still run over current records.
 
-The planning request uses a 20-second timeout and `maxRetries: 0`, following the [Anthropic SDK configuration](https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript#timeouts). This bounds the model request, not the full database/request lifecycle. A timeout or provider failure produces a recovery message; the optional model phraser remains off by default. If planning instructions change, increment the `plan-cache-v2` contract tag so earlier translations are not silently reused.
+The planning request uses a 20-second timeout and `maxRetries: 0`, following the [Anthropic SDK configuration](https://platform.claude.com/docs/en/cli-sdks-libraries/sdks/typescript#timeouts). This bounds the model request, not the full database/request lifecycle. A timeout or provider failure produces a recovery message; the optional model phraser remains off by default. If planning instructions change, increment the `plan-cache-v3` contract tag so earlier translations are not silently reused.
 
 Compound history questions (for example, “who bought Apple but never sold it?”) are unsupported. Test their refusal and a nearby supported question such as “who bought Apple?” together. The free intent gate must run before the cache lookup. Feedback failure must retain the form and show “not saved”; a success message requires an actual updated log record.

@@ -195,8 +195,10 @@
     {
       "question": "How many sales did Bessent report in 2025?",
       "expect": {
-        "kind": "ok"
-      }
+        "kind": "decline",
+        "category": "unsupported_filter"
+      },
+      "note": "Filing-date wording cannot safely stand in for transaction dates. Updated after September 8 evaluation."
     },
     {
       "question": "Which officials bought NVIDIA?",
@@ -339,6 +341,12 @@
       "expect": {
         "kind": "decline",
         "category": "not_about_trades"
+      }
+    },
+    {
+      "question": "How many sales did Bessent make in 2025?",
+      "expect": {
+        "kind": "ok"
       }
     }
   ]

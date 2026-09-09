@@ -623,9 +623,15 @@ export async function POST(request: Request) {
     const { intent, rule } = classifyIntent(question);
     if (intent.kind === "decline") {
       logAsk({ startedAt, question, status: "declined", reason: `intent:${rule}`, ipKey });
+      let answer = declineText(intent.category);
+      if (rule === "filing_date") {
+        answer = "Ask can filter by when a trade happened, but not when a filing was submitted or posted. Try asking: How many trades occurred in 2025?";
+      } else if (rule === "exclusion" || rule === "compound_history") {
+        answer = "This question combines separate trading histories or excludes trades. Ask cannot answer that comparison reliably. Try asking about purchases and sales separately.";
+      }
       return NextResponse.json({
         status: "declined" satisfies AskStatus,
-        answer: stripDashes((rule === "exclusion" || rule === "compound_history") ? "This question combines separate trading histories or excludes trades. Ask cannot answer that comparison reliably. Try asking about purchases and sales separately." : declineText(intent.category)),
+        answer: stripDashes(answer),
         plan: null,
         planText: null,
         result: null,
@@ -640,7 +646,7 @@ export async function POST(request: Request) {
     // Only translations produced under this contract can be reused. Old
     // untagged logs and follow-ups are never cache candidates. Include UTC
     // date for relative questions, model, and the page's official scope.
-    const cacheContext = `plan-cache-v2:${model}:${today}:${scopeSlug || "all"}`;
+    const cacheContext = `plan-cache-v3:${model}:${today}:${scopeSlug || "all"}`;
 
     // Reuse a validated translation or ask the model to translate the question.
     let planSource: "cache" | "model" = "model";
@@ -811,14 +817,16 @@ export async function POST(request: Request) {
     let finalPlan = normalizePlan(resolved.value);
 
     // A company with two listed classes (GOOG and GOOGL) is one company to
-    // a reader. Unless the question names a class, every listed class of a
-    // symbol the plan carries is included, and the restatement shows both.
+    // a reader. Company-wide questions include its listed classes. An
+    // explicit ticker names one class and must not be broadened.
     if (finalPlan.filters.tickers && !/\bclass\b|\bcl\s?[abc]\b|\bseries\b/i.test(question)) {
+      const namedSymbols = new Set(question.toUpperCase().match(/[A-Z][A-Z0-9]*(?:[.-][A-Z])?/g) ?? []);
       const have = new Set(finalPlan.filters.tickers);
       // Same issuer = same SEC CIK in the registry (GOOG and GOOGL share
       // one); a suffix pattern alone would miss that pair.
       const cikOf = (t: string) => { const r = lookupAsset(t); return r.kind === "sec" ? r.entry.cik : null; };
       for (const t of finalPlan.filters.tickers) {
+        if (namedSymbols.has(t)) continue;
         const cik = cikOf(t);
         if (cik === null) continue;
         for (const other of data.allTickers) {

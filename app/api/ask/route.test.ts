@@ -52,15 +52,16 @@ vi.mock("@/lib/published-rows", () => ({
     rows: [
       { id: "r1", officialName: "Christopher Wright", officialSlug: "wright-christopher", agency: "Department of Energy", title: "Secretary of Energy", description: "LIBERTY ENERGY INC", ticker: "LBRT", instrumentType: "common_stock", type: "Sale", date: "2025-03-05", amount: "$1,000,001-$5,000,000", lateFilingFlag: false, sourceUrl: null, verificationState: "checked" },
       { id: "r2", officialName: "Scott Bessent", officialSlug: "bessent-scott", agency: "Department of the Treasury", title: "Secretary of the Treasury", description: "APPLE INC", ticker: "AAPL", instrumentType: "common_stock", type: "Purchase", date: "2026-02-01", amount: "$15,001-$50,000", lateFilingFlag: true, sourceUrl: null, verificationState: "checked" },
+      ...["GOOG", "GOOGL"].map((ticker) => ({ id: ticker, officialName: "Scott Bessent", officialSlug: "bessent-scott", agency: "Department of the Treasury", title: "Secretary of the Treasury", description: "Alphabet Inc", ticker, instrumentType: "common_stock", type: "Purchase", date: "2026-02-01", amount: "$15,001-$50,000", lateFilingFlag: false, sourceUrl: null, verificationState: "checked" })),
     ],
     pendingRows: [],
     officials: [
       { slug: "wright-christopher", name: "Christopher Wright", filedName: "Wright, Christopher", title: "Secretary of Energy", agency: "Department of Energy", former: false },
       { slug: "bessent-scott", name: "Scott Bessent", filedName: "Bessent, Scott", title: "Secretary of the Treasury", agency: "Department of the Treasury", former: false },
     ],
-    tickers: ["LBRT", "AAPL"],
-    allTickers: ["LBRT", "AAPL"],
-    summary: { checked: 2, underReview: 0, auditPending: 0, notYetCompared: 0, parsed: 2 },
+    tickers: ["LBRT", "AAPL", "GOOG", "GOOGL"],
+    allTickers: ["LBRT", "AAPL", "GOOG", "GOOGL"],
+    summary: { checked: 4, underReview: 0, auditPending: 0, notYetCompared: 0, parsed: 4 },
   }),
 }));
 
@@ -82,6 +83,36 @@ beforeEach(() => { quotaCalls.length = 0; planToReturn = null; modelFailure = nu
 afterEach(() => { vi.unstubAllEnvs(); vi.useRealTimers(); });
 
 describe("POST /api/ask gates", () => {
+  it("keeps an explicit GOOG symbol separate from GOOGL, including cached repeats", async () => {
+    const question = "Tell me how many trades involve GOOG.";
+    savedLogs.push({ question, status: "answered", reason: `plan-cache-v2:claude-sonnet-5:${new Date().toISOString().slice(0, 10)}:all`, plan: JSON.stringify({ filters: { tickers: ["GOOG", "GOOGL"] }, aggregate: "count" }) });
+    planToReturn = { filters: { tickers: ["GOOG"] }, aggregate: "count" };
+    const first = await (await post({ question })).json();
+    expect(first.planSource).toBe("model");
+    expect(first.plan.filters.tickers).toEqual(["GOOG"]);
+    expect(first.result.matchedRows).toBe(1);
+    const repeat = await (await post({ question })).json();
+    expect(repeat.planSource).toBe("cache");
+    expect(repeat.result.matchedRows).toBe(1);
+  });
+
+  it("still includes both listed classes for an Alphabet company question", async () => {
+    planToReturn = { filters: { tickers: ["GOOG"] }, aggregate: "count" };
+    const j = await (await post({ question: "Count Alphabet trades." })).json();
+    expect(j.plan.filters.tickers).toEqual(["GOOG", "GOOGL"]);
+    expect(j.result.matchedRows).toBe(2);
+  });
+
+  it("explains filing-date limits before using a cached translation", async () => {
+    const question = "How many transactions did Howard Lutnick disclose in 2025?";
+    const j = await (await post({ question })).json();
+    expect(j.status).toBe("declined");
+    expect(j.answer).toContain("when a trade happened");
+    expect(j.answer).toContain("How many trades occurred in 2025?");
+    expect(quotaCalls).toHaveLength(0);
+    expect(cacheConditions).toHaveLength(0);
+  });
+
   it("explains no matching purchases without internal verification jargon", async () => {
     planToReturn = { filters: { officials: ["wright-christopher"], tickers: null, descriptionContains: null, types: ["Purchase"], instrumentTypes: null, dateFrom: null, dateTo: null, lateOnly: null, amountAtLeast: null, amountAtMost: null }, aggregate: "count", limit: null };
     const j = await (await post({ question: "How many purchases did Christopher Wright make?" })).json();
@@ -108,7 +139,7 @@ describe("POST /api/ask gates", () => {
   });
 
   it.each(["Which officials bought Apple but never sold it?", "Which officials have only bought Apple?", "Which officials bought Apple and sold Microsoft?"])("rejects unsupported history even when cached: %s", async (question) => {
-    savedLogs.push({ question, status: "answered", reason: `plan-cache-v2:claude-sonnet-5:${new Date().toISOString().slice(0, 10)}:all`, plan: JSON.stringify({ filters: { tickers: ["AAPL"] }, aggregate: "top_officials" }) });
+    savedLogs.push({ question, status: "answered", reason: `plan-cache-v3:claude-sonnet-5:${new Date().toISOString().slice(0, 10)}:all`, plan: JSON.stringify({ filters: { tickers: ["AAPL"] }, aggregate: "top_officials" }) });
     const j = await (await post({ question })).json();
     expect(j.status).toBe("declined");
     expect(j.answer).toContain("purchases and sales separately");
@@ -219,7 +250,7 @@ describe("POST /api/ask gates", () => {
 
   it("refuses a plan that answers a different question than the one asked", async () => {
     planToReturn = { filters: { officials: ["Scott Bessent"], tickers: null, descriptionContains: null, types: null, instrumentTypes: null, dateFrom: null, dateTo: null, lateOnly: null, amountAtLeast: null, amountAtMost: null }, aggregate: "count", limit: null };
-    const res = await post({ question: "How many sales did Christopher Wright report in 2025?" });
+    const res = await post({ question: "How many sales did Christopher Wright make in 2025?" });
     const j = await res.json();
     expect(j.status).toBe("not_in_data");
     expect(j.answer).toMatch(/did not translate cleanly/);
