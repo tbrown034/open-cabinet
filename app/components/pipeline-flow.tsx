@@ -46,18 +46,31 @@ export default function PipelineFlow() {
         <Arrow />
 
         <Step kind="program" title="4. A second reader checks the rows">
-          <p><strong>Readable PDF:</strong> <code>pdftotext</code> + column parser. <strong>Scanned PDF:</strong> Tesseract OCR. If neither can confirm the page, a second provider&rsquo;s model reads it independently.</p>
+          <p><strong>Readable PDF:</strong> <code>pdftotext</code> + column parser. <strong>Scanned PDF:</strong> Tesseract OCR. Code compares the result with Claude&rsquo;s rows.</p>
         </Step>
-        <Arrow />
+        <Arrow label="Does the comparison confirm the rows?" />
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Step kind="program" title="Yes: continue to the audit">
+            <p>The program confirms the rows. Skip the fallback model.</p>
+          </Step>
+          <Step kind="model" title="OCR disagrees or cannot compare: fallback">
+            <p>Another provider&rsquo;s model independently reads the PDF.</p>
+            <p className="mt-2"><strong>Agrees with Claude:</strong> continue to the audit.</p>
+            <p className="mt-2"><strong>Disagrees or fails:</strong> hold for a person.</p>
+          </Step>
+        </div>
+        <p className="mt-3 text-sm text-amber-900">A readable-PDF text mismatch goes directly to human review.</p>
+        <Arrow label="Corroborated rows, or a recorded human resolution" />
 
         <Step kind="model" title="5. Check the completed rows against the page">
           <p>A separate model checks each proposed row beside the source page and looks for missing or extra rows.</p>
         </Step>
-        <Arrow label="Do the checks agree?" />
+        <Arrow label="Is the verification complete?" />
 
         <div className="grid gap-3 sm:grid-cols-2">
           <Step kind="program" title="Yes: prepare the update">
-            <p>Continue only when every checked field and row count agree.</p>
+            <p>The rows have corroborating evidence and a confirming page audit, or recorded human decisions resolving the exceptions.</p>
           </Step>
           <Step kind="human" title="No: hold for a person">
             <p>Read the source PDF, check the disagreement, record a visual decision and rerun the checks.</p>
@@ -76,8 +89,8 @@ export default function PipelineFlow() {
       </div>
 
       <figcaption className="mx-auto mt-5 max-w-xl space-y-2 text-sm leading-relaxed text-neutral-500">
-        <p>Any disagreement, missing row, extra row or failed check holds the filing for a person.</p>
-        <p>Three independent checks support each row. Any disagreement goes to human review, and publication always requires owner approval.</p>
+        <p>OCR does not have to agree when a fallback model provides corroboration. Unresolved differences and audit problems require human review.</p>
+        <p>Publication always requires owner approval.</p>
       </figcaption>
     </figure>
   );
