@@ -7,13 +7,13 @@ const projects = [
     name: "Capitol Releases",
     href: "https://capitolreleases.com/?utm_source=open-cabinet&utm_medium=referral&utm_campaign=accountability-tools",
     description:
-      "Senate press releases from all 100 senators, searchable and updated throughout the day.",
+      "Press releases from all 535 members of Congress, searchable and updated four times a day.",
   },
   {
     name: "Delegation Decoded",
-    href: "https://delegation-decoded.vercel.app/?utm_source=open-cabinet&utm_medium=referral&utm_campaign=accountability-tools",
+    href: "https://delegationdecoded.org/?utm_source=open-cabinet&utm_medium=referral&utm_campaign=accountability-tools",
     description:
-      "State-by-state congressional delegation tracking for trades, bills, committees and campaign money.",
+      "State-by-state congressional delegation tracking for votes, bills, committees and campaign money.",
   },
 ];
 

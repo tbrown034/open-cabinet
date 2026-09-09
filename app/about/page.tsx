@@ -131,13 +131,13 @@ export default function AboutPage() {
               </a>
               <span className="text-neutral-500">
                 {" "}&mdash; a searchable archive of every press release
-                published by all 100 U.S. senators&rsquo; offices, normalized
+                published by all 535 members of Congress, normalized
                 and updated four times a day.
               </span>
             </li>
             <li>
               <a
-                href="https://delegation-decoded.vercel.app"
+                href="https://delegationdecoded.org"
                 className="underline hover:text-neutral-900 font-medium"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -146,7 +146,7 @@ export default function AboutPage() {
               </a>
               <span className="text-neutral-500">
                 {" "}&mdash; congressional accountability tracking organized by
-                state delegation: stock trades, legislation, committee
+                state delegation: votes, legislation, committee
                 assignments and campaign finance for all 535 members of
                 Congress.
               </span>
