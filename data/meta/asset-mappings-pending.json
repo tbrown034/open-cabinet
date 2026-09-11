@@ -3,7 +3,7 @@
     "version": 1,
     "generatedBy": "scripts/seed-asset-registry.ts",
     "reason": "symbols filed on published rows that the SEC company list does not carry; identity awaits a person",
-    "entries": 162
+    "entries": 178
   },
   "pending": {
     "AAGIY": {
@@ -65,6 +65,28 @@
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "ASGN": {
+      "symbol": "ASGN",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "unknown",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "ASGN, Inc. (ASGN)"
+      ],
+      "filedSymbols": [
+        "ASGN"
+      ],
+      "aliases": [],
+      "rows": 4,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -336,8 +358,8 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 4,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -480,6 +502,28 @@
         "evidence": null
       }
     },
+    "CPXIX": {
+      "symbol": "CPXIX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Cohen & Steers Preferred Securities and Income Fund, Inc Class I Shares"
+      ],
+      "filedSymbols": [
+        "CPXIX"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "DANOY": {
       "symbol": "DANOY",
       "reason": "not in SEC company_tickers.json",
@@ -494,6 +538,28 @@
       ],
       "aliases": [],
       "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "DCCIX": {
+      "symbol": "DCCIX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Delaware Small Cap Core Fund Institutional Class Shares"
+      ],
+      "filedSymbols": [
+        "DCCIX"
+      ],
+      "aliases": [],
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -608,8 +674,8 @@
         "EGFIX"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 3,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -848,6 +914,28 @@
         "evidence": null
       }
     },
+    "FCBYX": {
+      "symbol": "FCBYX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Nuveen Strategic Income Fund Class I Shares"
+      ],
+      "filedSymbols": [
+        "FCBYX"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "FLCA": {
       "symbol": "FLCA",
       "reason": "not in SEC company_tickers.json",
@@ -886,6 +974,28 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "FROGX": {
+      "symbol": "FROGX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Fidelity Advisor Municipal Income Fund Class I Shares"
+      ],
+      "filedSymbols": [
+        "FROGX"
+      ],
+      "aliases": [],
+      "rows": 1,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -1186,6 +1296,28 @@
         "evidence": null
       }
     },
+    "HYD": {
+      "symbol": "HYD",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "VanEck Vectors High-Yield Municipal Index ETF"
+      ],
+      "filedSymbols": [
+        "HYD"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "IDEV": {
       "symbol": "IDEV",
       "reason": "not in SEC company_tickers.json",
@@ -1201,8 +1333,31 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 6,
-      "officials": 2,
+      "rows": 8,
+      "officials": 3,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "IEFA": {
+      "symbol": "IEFA",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Core MSCI EAFE ETF"
+      ],
+      "filedSymbols": [
+        "IEFA",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1217,8 +1372,8 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
-        "ISHARES CORE MSCI EMERGING MARKETS ETF",
-        "iShares Core MSCI Emerging Markets ETF"
+        "iShares Core MSCI Emerging Markets ETF",
+        "ISHARES CORE MSCI EMERGING MARKETS ETF"
       ],
       "filedSymbols": [
         "IEMG",
@@ -1226,8 +1381,8 @@
         "resolved:R2"
       ],
       "aliases": [],
-      "rows": 9,
-      "officials": 2,
+      "rows": 11,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1372,6 +1527,29 @@
         "evidence": null
       }
     },
+    "IWD": {
+      "symbol": "IWD",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "iShares Russell 1000 Value ETF"
+      ],
+      "filedSymbols": [
+        "IWD",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "IWF": {
       "symbol": "IWF",
       "reason": "not in SEC company_tickers.json",
@@ -1388,8 +1566,8 @@
         "resolved:R2"
       ],
       "aliases": [],
-      "rows": 11,
-      "officials": 2,
+      "rows": 13,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1646,6 +1824,28 @@
         "evidence": null
       }
     },
+    "LFRIX": {
+      "symbol": "LFRIX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Lord Abbett Floating Rate Fund Class I Shares"
+      ],
+      "filedSymbols": [
+        "LFRIX"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "LGRDY": {
       "symbol": "LGRDY",
       "reason": "not in SEC company_tickers.json",
@@ -1770,8 +1970,8 @@
         "MEIIX"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 2,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -1812,6 +2012,28 @@
       ],
       "filedSymbols": [
         "MIELY"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "MIMIX": {
+      "symbol": "MIMIX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "MFS Municipal Income Fund Class I Shares"
+      ],
+      "filedSymbols": [
+        "MIMIX"
       ],
       "aliases": [],
       "rows": 1,
@@ -1980,6 +2202,28 @@
         "evidence": null
       }
     },
+    "NSTLX": {
+      "symbol": "NSTLX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Neuberger Berman Strategic Income Fund Institutional Class Shares"
+      ],
+      "filedSymbols": [
+        "NSTLX"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "NVHAX": {
       "symbol": "NVHAX",
       "reason": "not in SEC company_tickers.json",
@@ -2092,6 +2336,29 @@
         "evidence": null
       }
     },
+    "PCY": {
+      "symbol": "PCY",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Invesco Emerging Markets Sovereign Debt ETF"
+      ],
+      "filedSymbols": [
+        "PCY",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 2,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "PIMIX": {
       "symbol": "PIMIX",
       "reason": "not in SEC company_tickers.json",
@@ -2129,6 +2396,28 @@
       ],
       "aliases": [],
       "rows": 5,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "PONPX": {
+      "symbol": "PONPX",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "mutual_fund",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "PIMCO Income Fund Class I-2 Shares"
+      ],
+      "filedSymbols": [
+        "PONPX"
+      ],
+      "aliases": [],
+      "rows": 2,
       "officials": 1,
       "review": {
         "status": "unreviewed",
@@ -2322,6 +2611,29 @@
         "evidence": null
       }
     },
+    "SCHO": {
+      "symbol": "SCHO",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Schwab Short-Term US Treasury ETF"
+      ],
+      "filedSymbols": [
+        "SCHO",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 6,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "SCHP": {
       "symbol": "SCHP",
       "reason": "not in SEC company_tickers.json",
@@ -2403,6 +2715,28 @@
       ],
       "filedSymbols": [
         "SGSOY"
+      ],
+      "aliases": [],
+      "rows": 1,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
+    "SHM": {
+      "symbol": "SHM",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "SPDRNuveen Bloomberg Barclays Short Term Municipal Bond ETF"
+      ],
+      "filedSymbols": [
+        "SHM"
       ],
       "aliases": [],
       "rows": 1,
@@ -2999,6 +3333,29 @@
         "evidence": null
       }
     },
+    "VBK": {
+      "symbol": "VBK",
+      "reason": "not in SEC company_tickers.json",
+      "instrumentType": "etf",
+      "instrumentTypeSource": "inferred_from_name",
+      "displayName": null,
+      "filedAs": [
+        "Vanguard Small-Cap Growth Index Fund ETF Class Shares"
+      ],
+      "filedSymbols": [
+        "VBK",
+        "resolved:R1"
+      ],
+      "aliases": [],
+      "rows": 4,
+      "officials": 1,
+      "review": {
+        "status": "unreviewed",
+        "reviewer": null,
+        "reviewedAt": null,
+        "evidence": null
+      }
+    },
     "VBR": {
       "symbol": "VBR",
       "reason": "not in SEC company_tickers.json",
@@ -3006,6 +3363,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "Vanguard Small-Cap Value Index Fund ETF Class Shares",
         "Vanguard Small-Cap Value Index Fund ETF Class Shares (VBR)"
       ],
       "filedSymbols": [
@@ -3013,8 +3371,8 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 2,
-      "officials": 1,
+      "rows": 8,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3221,8 +3579,8 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 20,
-      "officials": 2,
+      "rows": 22,
+      "officials": 3,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3359,6 +3717,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "Vanguard Value Index Fund ETF Shares",
         "Vanguard Value Index Fund ETF Shares (VTV)"
       ],
       "filedSymbols": [
@@ -3366,8 +3725,8 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 1,
-      "officials": 1,
+      "rows": 7,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,
@@ -3382,6 +3741,7 @@
       "instrumentTypeSource": "inferred_from_name",
       "displayName": null,
       "filedAs": [
+        "Vanguard Growth Index Fund ETF Class Shares",
         "Vanguard Growth Index Fund ETF Class Shares (VUG)"
       ],
       "filedSymbols": [
@@ -3389,8 +3749,8 @@
         "resolved:R1"
       ],
       "aliases": [],
-      "rows": 4,
-      "officials": 1,
+      "rows": 10,
+      "officials": 2,
       "review": {
         "status": "unreviewed",
         "reviewer": null,

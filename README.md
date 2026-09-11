@@ -18,16 +18,16 @@ Congress has well-known stock trackers like Capitol Trades and Quiver Quantitati
 
 | Metric | Value |
 |--------|-------|
-| Officials tracked | 39 |
-| Transactions | 11,506 |
+| Officials tracked | 40 |
+| Transactions | 11,552 |
 | Rows under review (not counted in totals) | 0 |
 | Estimated value | ~$4.5B |
-| Late filings | 7,745 |
-| Companies searchable | 1,182 |
+| Late filings | 7,749 |
+| Companies searchable | 1,188 |
 | News articles linked | 35 |
 | Source filing PDFs linked | 189 |
 
-Transaction counts, estimated value and late-filing totals exclude score-0 rows under review and three historical-report rows. The JSON and transaction CSV retain all 11,509 rows, including the 0 under review. JSON `transactionCount` is the counted total; `underReviewCount` and `historicalCount` are separate at both dataset and official level. The officials summary CSV uses the same exclusions and includes `under_review_count` and `historical_count`.
+Transaction counts, estimated value and late-filing totals exclude score-0 rows under review and three historical-report rows. The JSON and transaction CSV retain all 11,555 rows, including the 0 under review. JSON `transactionCount` is the counted total; `underReviewCount` and `historicalCount` are separate at both dataset and official level. The officials summary CSV uses the same exclusions and includes `under_review_count` and `historical_count`.
 
 Current-roster views exclude former-administration profiles and rows explicitly marked `historical`. MacGregor's three 2020 transactions remain on her profile as history. Older trade dates in second-term reports remain included and labeled. Full downloads retain historical profiles, identified by `formerOfficial` in JSON and `former_official` in CSV.
 
@@ -35,7 +35,7 @@ The daily OGE monitor compares published URLs with the full index and emails the
 
 Every number in this table is checked against `public/data/full-dataset.json` by an automated test (`lib/readme-stats.test.ts`). CI fails if the table drifts from the published dataset.
 
-Rows by verification state: 11,364 checked; 145 human_verified; 0 deterministic_agree; 0 two_models_agree; 0 audit_only; 0 single_read; 0 implausible; 0 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
+Rows by verification state: 11,410 checked; 145 human_verified; 0 deterministic_agree; 0 two_models_agree; 0 audit_only; 0 single_read; 0 implausible; 0 disputed. Counts are checked against `data/meta/row-verification.json` at test time.
 
 ## Pages
 

@@ -18,5 +18,43 @@
     "text": "Burgum disclosed 153 transactions between Jan. 15, 2025, and April 8, 2026, comprising 71 sales (estimated $13.4 million), 77 purchases (estimated $2.7 million), and five exchanges, for an estimated cumulative total of $16.7 million. Of those transactions, 106, or 69 percent, were filed late. The largest single transaction was a holding in Arthur Ventures III, LP - PureSpectrum, a market research platform, valued at an estimated $1,000,001 to $5,000,000. The most-traded asset was TFDXX, which appeared in seven transactions, followed by Arthur Ventures V, LP in six.",
     "unwitnessed": [],
     "status": "pending"
+  },
+  {
+    "id": "warsh-kevin-364ccd45-003",
+    "slug": "warsh-kevin",
+    "factSha256": "364ccd454af6486aee01072b2ff853f29667f9c0c22a0676c724610a2ef99e87",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-09-11T15:03:36.768Z",
+    "text": "Warsh disclosed 65 transactions between May 27, 2026, and Aug. 3, 2026, consisting of 64 sales (estimated $47.3 million) and one purchase (estimated $175,000). Fifty-five of the 65 rows were sales of numbered series of THSDFS LLC; the rest were sales of Bessemer Venture Associates funds, Lansing Management Onshore LP, DCM Investments, Goat Growth Fund II LP and stakes in the startups Aven, Hebbia and Arcana Analytics. The single purchase was an exercise of vested Aven stock options, paired with a same-day sale of the resulting stock. Eleven sales, including the Aug. 3, 2026, sale of Arcana Analytics, fell in the filings’ largest reported range, $1,000,001 to $5,000,000. None of the 65 transactions were late-filed.",
+    "unwitnessed": [],
+    "status": "published",
+    "editedBy": "claude-code, hand-corrected from the Opus draft, Sep 11, 2026; numbers checked against the data file",
+    "decidedAt": "2026-09-11T15:05:17.948Z",
+    "decidedBy": "home"
+  },
+  {
+    "id": "mcmaster-sean-609193e7-004",
+    "slug": "mcmaster-sean",
+    "factSha256": "609193e74920ef6980639e06e03809b6de213c22ddee2056a2a3c335a6f6c0b8",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-09-11T15:03:39.928Z",
+    "text": "McMaster disclosed 29 transactions dated Aug. 7, 2025, to May 14, 2026, consisting of 18 purchases (estimated $548K) and 11 sales (estimated $638K). Four sales of ASGN, Inc. (ASGN) dated August 2025 appeared in a report OGE posted Sept. 9, 2026, more than a year after the trades; the filing itself marks them as received more than 30 days late. His five most recent purchases, dated May 13 and May 14, 2026, were Akamai (AKAM), Corning (GLW), Fluence Energy (FLNC), Qualcomm (QCOM) and Forgent Power (FPS). 19 of the 29 transactions, or 66 percent, were flagged as filed late.",
+    "unwitnessed": [],
+    "status": "published",
+    "editedBy": "claude-code, hand-corrected from the Opus draft, Sep 11, 2026; numbers checked against the data file",
+    "decidedAt": "2026-09-11T15:05:18.245Z",
+    "decidedBy": "home"
+  },
+  {
+    "id": "ueland-eric-m-9cef58f2-005",
+    "slug": "ueland-eric-m",
+    "factSha256": "9cef58f24e6baa750f4eb94415fc4e7df2b004e30afe0e43e10eaeb8994ef62f",
+    "model": "claude-opus-4-8",
+    "generatedAt": "2026-09-11T15:03:43.268Z",
+    "text": "Ueland disclosed 37 transactions, all dated July 15, 2026, split between 19 purchases (estimated $275K) and 18 sales (estimated $242K), for an estimated cumulative total of $517K. None of the 37 transactions were filed late. The largest single transaction was a trade in Neuberger Berman Strategic Income Fund Institutional Class Shares, valued at an estimated $15,001 to $50,000. The most-traded assets were SCHO, VUG, VBR and VTV, each appearing three times.",
+    "unwitnessed": [],
+    "status": "published",
+    "decidedAt": "2026-09-11T15:05:18.535Z",
+    "decidedBy": "home"
   }
 ]

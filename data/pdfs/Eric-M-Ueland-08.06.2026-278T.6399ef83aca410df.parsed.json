@@ -1,0 +1,350 @@
+{
+  "key": "6399ef83aca410df",
+  "pdfSha256": "39706d0bc76702e5f6e011d879715e021e8f04d5e91271172c2bd5b2c9315244",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-11T14:58:25.327Z",
+  "transactions": [
+    {
+      "description": "iShares Russell 1000 Value ETF",
+      "ticker": "IWD",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Russell 1000 Growth ETF",
+      "ticker": "IWF",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Total International Bond Index Fund ETF Shares",
+      "ticker": "BNDX",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI International Developed Markets ETF",
+      "ticker": "IDEV",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Edgewood Growth Fund Institutional Class Shares",
+      "ticker": "EGFIX",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Delaware Small Cap Core Fund Institutional Class Shares",
+      "ticker": "DCCIX",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "VanEck Vectors High-Yield Municipal Index ETF",
+      "ticker": "HYD",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "SPDRNuveen Bloomberg Barclays Short Term Municipal Bond ETF",
+      "ticker": "SHM",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Russell 1000 Growth Index Fund ETF Shares",
+      "ticker": "VONG",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Fidelity Advisor Municipal Income Fund Class I Shares",
+      "ticker": "FROGX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MFS Municipal Income Fund Class I Shares",
+      "ticker": "MIMIX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "MFS Value Fund Class I Shares",
+      "ticker": "MEIIX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Value Index Fund ETF Shares",
+      "ticker": "VTV",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schwab Short-Term US Treasury ETF",
+      "ticker": "SCHO",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Small-Cap Value Index Fund ETF Class Shares",
+      "ticker": "VBR",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI EAFE ETF",
+      "ticker": "IEFA",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Value Index Fund ETF Shares",
+      "ticker": "VTV",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Small-Cap Value Index Fund ETF Class Shares",
+      "ticker": "VBR",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Small-Cap Growth Index Fund ETF Class Shares",
+      "ticker": "VBK",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schwab Short-Term US Treasury ETF",
+      "ticker": "SCHO",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "iShares Core MSCI Emerging Markets ETF",
+      "ticker": "IEMG",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Invesco Emerging Markets Sovereign Debt ETF",
+      "ticker": "PCY",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Nuveen Strategic Income Fund Class I Shares",
+      "ticker": "FCBYX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Lord Abbett Floating Rate Fund Class I Shares",
+      "ticker": "LFRIX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Neuberger Berman Strategic Income Fund Institutional Class Shares",
+      "ticker": "NSTLX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Cohen & Steers Preferred Securities and Income Fund, Inc Class I Shares",
+      "ticker": "CPXIX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PIMCO Income Fund Class I-2 Shares",
+      "ticker": "PONPX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Value Index Fund ETF Shares",
+      "ticker": "VTV",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Small-Cap Value Index Fund ETF Class Shares",
+      "ticker": "VBR",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Small-Cap Growth Index Fund ETF Class Shares",
+      "ticker": "VBK",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Schwab Short-Term US Treasury ETF",
+      "ticker": "SCHO",
+      "type": "Sale",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Vanguard Growth Index Fund ETF Class Shares",
+      "ticker": "VUG",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Nuveen Strategic Income Fund Class I Shares",
+      "ticker": "FCBYX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Neuberger Berman Strategic Income Fund Institutional Class Shares",
+      "ticker": "NSTLX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "PIMCO Income Fund Class I-2 Shares",
+      "ticker": "PONPX",
+      "type": "Purchase",
+      "date": "2026-07-15",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 10925,
+    "outputTokens": 2292,
+    "estimatedCostUsd": 0.0672
+  }
+}

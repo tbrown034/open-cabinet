@@ -62,10 +62,12 @@ interface NewFilingsLoadResult {
   targetFilings?: TargetFiling[];
 }
 
+/** OGE names are "Last, First M". The site's slugs are last-first
+ *  ("warsh-kevin", "kratsios-michael-j"); 36 of 39 officials follow that
+ *  order, so a bootstrapped official does too (Sep 11: "ueland-eric-m"). */
 function slugFromOgeName(name: string): string {
   const parts = name.split(",").map((part) => part.trim()).filter(Boolean);
-  const ordered = parts.length > 1 ? [parts[1], parts[0]] : parts;
-  return ordered
+  return parts
     .join(" ")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")

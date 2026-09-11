@@ -1,7 +1,7 @@
 {
   "version": 1,
   "model": "grok-4.6",
-  "generatedAt": "2026-09-07T00:26:45.758Z",
+  "generatedAt": "2026-09-11T15:02:32.890Z",
   "filings": {
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/B410FFBD2E16727285258C8D002C7DC5/$FILE/Robert-F-Kennedy-Jr-05.09.2025-278T.pdf": {
       "slug": "kennedy-robert-f",
@@ -65,7 +65,7 @@
       "slug": "bedford-bryan",
       "pdfFile": "Bryan-Bedford-11.03.2025-278T.pdf",
       "pdfSha256": "37813645444dc3baa3502e418cf49c8373a6b34c9c65cb5d13e673850798d9cd",
-      "candidateSha256": "c882bf1a90563def80f8c2a475de09b15036ede1c1cdd4ddd4b48e633e8981f4",
+      "candidateSha256": "f3f0eb11bbd6c7019982b56073982466dbf82fc50dfbbed688f2d7acda0a1171",
       "model": "grok-4.6",
       "promptVersion": "2026-09-06.1",
       "rows": 2,
@@ -77,12 +77,12 @@
       "notFoundIndexes": [],
       "missing": [],
       "differences": [
-        "row 1: page shows type See Endnote, amount blank",
-        "row 2: page shows type See Endnote, amount blank"
+        "row 1: page shows type See Endnote; amount blank",
+        "row 2: page shows type See Endnote; amount blank"
       ],
       "pagesAudited": 3,
-      "costUsd": 0.0156,
-      "checkedAt": "2026-09-06T03:02:36.682Z"
+      "costUsd": 0.0154,
+      "checkedAt": "2026-09-11T15:01:18.203Z"
     },
     "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2D38D470438A3C4A85258D4F00317899/$FILE/Bryan-Bedford-09.02.2025-278T.pdf": {
       "slug": "bedford-bryan",
@@ -14315,6 +14315,106 @@
       "pagesAudited": 3,
       "costUsd": 0.0151,
       "checkedAt": "2026-09-07T00:26:45.757Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf": {
+      "slug": "ueland-eric-m",
+      "pdfFile": "Eric-M-Ueland-08.06.2026-278T.pdf",
+      "pdfSha256": "39706d0bc76702e5f6e011d879715e021e8f04d5e91271172c2bd5b2c9315244",
+      "candidateSha256": "6d1b2c7d77e9127e43cc8b138c648755b47761c34c8a76c028dc5d3b3a4fd04e",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 37,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 5,
+      "costUsd": 0.0285,
+      "checkedAt": "2026-09-11T15:02:10.090Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf": {
+      "slug": "mcmaster-sean",
+      "pdfFile": "Sean-McMaster-06.11.2026-278T(1).pdf",
+      "pdfSha256": "8c630bbfe61a63602a4208892de85460b1dabb1b6620b5fb9875679a5685e147",
+      "candidateSha256": "81b498afea549531499e4f00223ba21d5f8710fa3b834aa513d0b0bbc104e215",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 4,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0155,
+      "checkedAt": "2026-09-11T15:02:20.865Z"
+    },
+    "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf": {
+      "slug": "warsh-kevin",
+      "pdfFile": "Kevin-Warsh-08.06.2026-278T.pdf",
+      "pdfSha256": "6578304224ce3d5225cb4f07837934fd9a11f5ad817411ca45bfeaeaa301dc06",
+      "candidateSha256": "40ddd80b9f91445c61ed9bf3348114a8d6912f571a31699d32c283e95fc817fd",
+      "model": "grok-4.6",
+      "promptVersion": "2026-09-06.1",
+      "rows": 5,
+      "confirmedIndexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "disputedIndexes": [],
+      "notFoundIndexes": [],
+      "missing": [],
+      "differences": [],
+      "pagesAudited": 3,
+      "costUsd": 0.0156,
+      "checkedAt": "2026-09-11T15:02:32.889Z"
     }
   }
 }

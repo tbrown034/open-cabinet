@@ -1,0 +1,53 @@
+{
+  "key": "0b35cfe751d7371e",
+  "pdfSha256": "8c630bbfe61a63602a4208892de85460b1dabb1b6620b5fb9875679a5685e147",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-11T14:58:36.001Z",
+  "transactions": [
+    {
+      "description": "ASGN, Inc. (ASGN)",
+      "ticker": "ASGN",
+      "type": "Sale",
+      "date": "2025-08-11",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "ASGN, Inc. (ASGN)",
+      "ticker": "ASGN",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "ASGN, Inc. (ASGN)",
+      "ticker": "ASGN",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$1,001-$15,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    },
+    {
+      "description": "ASGN, Inc. (ASGN)",
+      "ticker": "ASGN",
+      "type": "Sale",
+      "date": "2025-08-22",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": true,
+      "confidence": 0.97
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6745,
+    "outputTokens": 374,
+    "estimatedCostUsd": 0.0258
+  }
+}

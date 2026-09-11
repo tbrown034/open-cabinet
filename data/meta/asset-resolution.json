@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T18:23:46.785Z",
+  "generatedAt": "2026-09-11T15:03:12.231Z",
   "generatedBy": "scripts/build-asset-resolution.ts",
   "sources": {
     "nasdaqlisted.txt": {
@@ -17,32 +17,32 @@
     }
   },
   "summary": {
-    "rows": 11509,
+    "rows": 11555,
     "byType": {
-      "common_stock": 8180,
-      "etf": 562,
-      "mutual_fund": 346,
-      "private": 320,
+      "common_stock": 8185,
+      "etf": 586,
+      "mutual_fund": 359,
+      "private": 323,
       "crypto": 10,
       "option": 15,
       "municipal_bond": 1558,
       "corporate_note": 298,
-      "preferred": 207,
+      "preferred": 208,
       "treasury": 13
     },
     "byTier": {
-      "T1": 7848,
-      "none": 593,
-      "T2": 301,
-      "n/a": 2767
+      "T1": 7870,
+      "none": 594,
+      "T2": 307,
+      "n/a": 2784
     },
     "byRule": {
-      "R1 filed ticker, corroborated": 1031,
-      "no exact match": 557,
-      "R1 filed ETF symbol, every distinctive word in the listing": 94,
-      "R6 filed ticker, uncorroborated": 238,
-      "typed mutual_fund: no stock ticker": 346,
-      "typed private: no stock ticker": 320,
+      "R1 filed ticker, corroborated": 1039,
+      "no exact match": 558,
+      "R1 filed ETF symbol, every distinctive word in the listing": 108,
+      "R6 filed ticker, uncorroborated": 244,
+      "typed mutual_fund: no stock ticker": 359,
+      "typed private: no stock ticker": 323,
       "R3 exact name, both lists agree": 5615,
       "R2 dictionary": 1016,
       "typed crypto: no stock ticker": 10,
@@ -53,7 +53,7 @@
       "R4 exact name, one list only": 32,
       "typed corporate_note: no stock ticker": 298,
       "R2 dictionary, class differs": 4,
-      "typed preferred: no stock ticker": 207,
+      "typed preferred: no stock ticker": 208,
       "R1 refused: symbol names a non-stock listing": 1,
       "typed treasury: no stock ticker": 13,
       "R5 truncated name is a unique prefix": 27,
@@ -24165,6 +24165,57 @@
       ],
       "slug": "mcmaster-sean"
     },
+    "05ac26cc31db2d37d155818f": {
+      "instrumentType": "common_stock",
+      "issuerLabel": null,
+      "nameKey": "ASGN",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol ASGN (filed)",
+        "not in the Nasdaq directory",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "ASGN"
+      ],
+      "slug": "mcmaster-sean"
+    },
+    "1ee8d74d5333567f636439a3": {
+      "instrumentType": "common_stock",
+      "issuerLabel": null,
+      "nameKey": "ASGN",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol ASGN (filed)",
+        "not in the Nasdaq directory",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "ASGN"
+      ],
+      "slug": "mcmaster-sean"
+    },
+    "afb934222ab20bee248b91d1": {
+      "instrumentType": "common_stock",
+      "issuerLabel": null,
+      "nameKey": "ASGN",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol ASGN (filed)",
+        "not in the Nasdaq directory",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "ASGN"
+      ],
+      "slug": "mcmaster-sean"
+    },
     "5001e676a5abdbbfc3d53e2c": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
@@ -24196,6 +24247,23 @@
       ],
       "candidates": [
         "COIN"
+      ],
+      "slug": "mcmaster-sean"
+    },
+    "3f55c622b2d3ef416ac3fb16": {
+      "instrumentType": "common_stock",
+      "issuerLabel": null,
+      "nameKey": "ASGN",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol ASGN (filed)",
+        "not in the Nasdaq directory",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "ASGN"
       ],
       "slug": "mcmaster-sean"
     },
@@ -167668,6 +167736,583 @@
       ],
       "slug": "turner-eric-scott"
     },
+    "5bc0d5db85b87933b2e54f60": {
+      "instrumentType": "preferred",
+      "issuerLabel": "Preferred stock, Cohen And Steers Preferred Securities And",
+      "nameKey": "COHEN STEERS PREFERRED SECURITIES INCOME FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed preferred: no stock ticker",
+      "evidence": [
+        "preferred words"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "2b97fa35373be4d985dec457": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "DELAWARE SMALL CAP CORE FUND INSTITUTIONAL CLASS",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund words or five-letter X symbol"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "9b1ced25733cbdc0dac6203e": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "EDGEWOOD GROWTH FUND INSTITUTIONAL CLASS",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund words or five-letter X symbol"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "09cd0925764b79dfeae63f7c": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "FIDELITY ADVISOR MUNICIPAL INCOME FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "3e60101066f00325259a2272": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "INVESCO EMERGING MARKETS SOVEREIGN DEBT ETF",
+      "resolvedTicker": "PCY",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol PCY (filed)",
+        "listed as \"Invesco Emerging Markets Sovereign Debt ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "PCY"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "2077df2eb2343f894d40ae51": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "ISHARES CORE MSCI EAFE ETF",
+      "resolvedTicker": "IEFA",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol IEFA (filed)",
+        "listed as \"iShares Core MSCI EAFE ETF\" on Z",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "IEFA"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "8d8c0f863a569dd81b68bcfb": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "ISHARES CORE MSCI EMERGING MARKETS ETF",
+      "resolvedTicker": "IEMG",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol IEMG (filed)",
+        "listed as \"iShares Core MSCI Emerging Markets ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "IEMG"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "60e7d8966348d2e3d0015519": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "ISHARES CORE MSCI INTL DEVELOPED MARKETS ETF",
+      "resolvedTicker": "IDEV",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol IDEV (filed)",
+        "listed as \"iShares Core MSCI International Developed Markets ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "IDEV"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "997b0f869b9ebd6c3a8fdf05": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "ISHARES RUSSELL 1000 GROWTH ETF",
+      "resolvedTicker": "IWF",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol IWF (filed)",
+        "listed as \"iShares Russell 1000 Growth Fund\" on P",
+        "distinctive words \"RUSSELL\", \"1000\", \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "IWF"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "4a79347afe51f1ee16433634": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "ISHARES RUSSELL 1000 VALUE ETF",
+      "resolvedTicker": "IWD",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol IWD (filed)",
+        "listed as \"iShares Russell 1000 Value ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "IWD"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "42e3e8808f611450d6a75f22": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "LORD ABBETT FLOATING RATE FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund words or five-letter X symbol"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "2bf7f62fb7e7e004708ae326": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "MFS MUNICIPAL INCOME FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "b28a3b8d9c934aef209ac254": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "MFS VALUE FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "944e18dbc4ce08c76f7302ad": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "NEUBERGER BERMAN STRATEGIC INCOME FUND INSTITUTIONAL CLASS",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "d85ab58ed71fc9755991b60d": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "NEUBERGER BERMAN STRATEGIC INCOME FUND INSTITUTIONAL CLASS",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "41749c8cafe5f551452d33da": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "NUVEEN STRATEGIC INCOME FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "c1816eccbde4640f1131e5aa": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "NUVEEN STRATEGIC INCOME FUND CLASS I",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "0c6d3c67e1ba1b9099a6dbb6": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "PIMCO INCOME FUND CLASS I 2",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "661b512f004a2e52e612f16f": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "PIMCO INCOME FUND CLASS I 2",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund family product"
+      ],
+      "candidates": [],
+      "slug": "ueland-eric-m"
+    },
+    "8533e9cdde8f65354412a910": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "SCHWAB SHORT TERM US TREASURY ETF",
+      "resolvedTicker": "SCHO",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol SCHO (filed)",
+        "listed as \"Schwab Short-Term U.S. Treasury ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "SCHO"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "300df0de5e13124913938b3b": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "SCHWAB SHORT TERM US TREASURY ETF",
+      "resolvedTicker": "SCHO",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol SCHO (filed)",
+        "listed as \"Schwab Short-Term U.S. Treasury ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "SCHO"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "7a8b364548c6f5ed887f93ed": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "SCHWAB SHORT TERM US TREASURY ETF",
+      "resolvedTicker": "SCHO",
+      "tier": "T1",
+      "rule": "R1 filed ticker, corroborated",
+      "evidence": [
+        "printed symbol SCHO (filed)",
+        "listed as \"Schwab Short-Term U.S. Treasury ETF\" on P",
+        "printed name matches the listing exactly"
+      ],
+      "candidates": [
+        "SCHO"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "4f142f1954264cf290dd83c6": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "SPDRNUVEEN BLOOMBERG BARCLAYS SHORT TERM MUNICIPAL BOND ETF",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol SHM (filed)",
+        "listed as \"State Street SPDR Nuveen ICE Short Term Municipal Bond ETF\" (shares \"SHORT\" but the names are not the same)",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "SHM"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "71f3e345aab30a21e04aed42": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANECK VECTORS HIGH",
+      "resolvedTicker": null,
+      "tier": "T2",
+      "rule": "R6 filed ticker, uncorroborated",
+      "evidence": [
+        "printed symbol HYD (filed)",
+        "listed as \"VanEck High Yield Muni ETF\" (shares \"VANECK\" but the names are not the same)",
+        "not in the SEC issuer list"
+      ],
+      "candidates": [
+        "HYD"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "5370dbce93c73ecb633f7c33": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD GROWTH INDEX FUND ETF CLASS",
+      "resolvedTicker": "VUG",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VUG (filed)",
+        "listed as \"Vanguard Morningstar Growth ETF\" on P",
+        "distinctive words \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VUG"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "c6d7de58c3c743cc9e4c9105": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD GROWTH INDEX FUND ETF CLASS",
+      "resolvedTicker": "VUG",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VUG (filed)",
+        "listed as \"Vanguard Morningstar Growth ETF\" on P",
+        "distinctive words \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VUG"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "3234bd87a3a4b71b784daf8e": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD GROWTH INDEX FUND ETF CLASS",
+      "resolvedTicker": "VUG",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VUG (filed)",
+        "listed as \"Vanguard Morningstar Growth ETF\" on P",
+        "distinctive words \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VUG"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "0dbba06793e34820eb359c71": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD RUSSELL 1000 GROWTH INDEX FUND ETF",
+      "resolvedTicker": "VONG",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VONG (filed)",
+        "listed as \"Vanguard Russell 1000 Growth ETF\" on Nasdaq",
+        "distinctive words \"RUSSELL\", \"1000\", \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VONG"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "d0c9a5a8b5a541b4fcb2ae16": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD SMALL CAP GROWTH INDEX FUND ETF CLASS",
+      "resolvedTicker": "VBK",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VBK (filed)",
+        "listed as \"Vanguard Morningstar Small-Cap Growth ETF\" on P",
+        "distinctive words \"SMALL\", \"CAP\", \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VBK"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "823b226015bde645606a308b": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD SMALL CAP GROWTH INDEX FUND ETF CLASS",
+      "resolvedTicker": "VBK",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VBK (filed)",
+        "listed as \"Vanguard Morningstar Small-Cap Growth ETF\" on P",
+        "distinctive words \"SMALL\", \"CAP\", \"GROWTH\" all in the listing"
+      ],
+      "candidates": [
+        "VBK"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "05f85d8aeb4c5bcc9fa04420": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD SMALL CAP VALUE INDEX FUND ETF CLASS",
+      "resolvedTicker": "VBR",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VBR (filed)",
+        "listed as \"Vanguard Morningstar Small-Cap Value ETF\" on P",
+        "distinctive words \"SMALL\", \"CAP\", \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VBR"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "7875b70060f0766f921d0b64": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD SMALL CAP VALUE INDEX FUND ETF CLASS",
+      "resolvedTicker": "VBR",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VBR (filed)",
+        "listed as \"Vanguard Morningstar Small-Cap Value ETF\" on P",
+        "distinctive words \"SMALL\", \"CAP\", \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VBR"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "63cfb06391baf90c23a6ff75": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD SMALL CAP VALUE INDEX FUND ETF CLASS",
+      "resolvedTicker": "VBR",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VBR (filed)",
+        "listed as \"Vanguard Morningstar Small-Cap Value ETF\" on P",
+        "distinctive words \"SMALL\", \"CAP\", \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VBR"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "fa15e97bcb8c667bc6df22d3": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD TOTAL INTL BOND INDEX FUND ETF",
+      "resolvedTicker": "BNDX",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol BNDX (filed)",
+        "listed as \"Vanguard Total International Bond ETF\" on Nasdaq",
+        "distinctive words \"BOND\" all in the listing"
+      ],
+      "candidates": [
+        "BNDX"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "14f21dc0aaa7961a23980c80": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD VALUE INDEX FUND ETF",
+      "resolvedTicker": "VTV",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VTV (filed)",
+        "listed as \"Vanguard Morningstar Value ETF\" on P",
+        "distinctive words \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VTV"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "87a10e362b7a2257219ba031": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD VALUE INDEX FUND ETF",
+      "resolvedTicker": "VTV",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VTV (filed)",
+        "listed as \"Vanguard Morningstar Value ETF\" on P",
+        "distinctive words \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VTV"
+      ],
+      "slug": "ueland-eric-m"
+    },
+    "87a83e38937f9d71e3dd6c8b": {
+      "instrumentType": "etf",
+      "issuerLabel": null,
+      "nameKey": "VANGUARD VALUE INDEX FUND ETF",
+      "resolvedTicker": "VTV",
+      "tier": "T1",
+      "rule": "R1 filed ETF symbol, every distinctive word in the listing",
+      "evidence": [
+        "printed symbol VTV (filed)",
+        "listed as \"Vanguard Morningstar Value ETF\" on P",
+        "distinctive words \"VALUE\" all in the listing"
+      ],
+      "candidates": [
+        "VTV"
+      ],
+      "slug": "ueland-eric-m"
+    },
     "dc2c9762e044beba8a50ebad": {
       "instrumentType": "common_stock",
       "issuerLabel": null,
@@ -167769,6 +168414,69 @@
         "TT"
       ],
       "slug": "vaden-stephen-a"
+    },
+    "b7711d1f604765f03148d97d": {
+      "instrumentType": "common_stock",
+      "issuerLabel": null,
+      "nameKey": "ARCANA ANALYTICS",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "no exact match",
+      "evidence": [],
+      "candidates": [],
+      "slug": "warsh-kevin"
+    },
+    "154f5860912d71b8e9485ad8": {
+      "instrumentType": "mutual_fund",
+      "issuerLabel": null,
+      "nameKey": "GOAT GROWTH FUND II",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed mutual_fund: no stock ticker",
+      "evidence": [
+        "fund words or five-letter X symbol"
+      ],
+      "candidates": [],
+      "slug": "warsh-kevin"
+    },
+    "9c83b27fe0af189161fc9d00": {
+      "instrumentType": "private",
+      "issuerLabel": null,
+      "nameKey": "THSDFS SERIES 06",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed private: no stock ticker",
+      "evidence": [
+        "private entity words"
+      ],
+      "candidates": [],
+      "slug": "warsh-kevin"
+    },
+    "1cabf7bff0b683249428c168": {
+      "instrumentType": "private",
+      "issuerLabel": null,
+      "nameKey": "THSDFS SERIES 52",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed private: no stock ticker",
+      "evidence": [
+        "private entity words"
+      ],
+      "candidates": [],
+      "slug": "warsh-kevin"
+    },
+    "e6499df6c2b8cdb82584c48d": {
+      "instrumentType": "private",
+      "issuerLabel": null,
+      "nameKey": "THSDFS SERIES 58",
+      "resolvedTicker": null,
+      "tier": null,
+      "rule": "typed private: no stock ticker",
+      "evidence": [
+        "private entity words"
+      ],
+      "candidates": [],
+      "slug": "warsh-kevin"
     },
     "b1a9343260362673165ec4d9": {
       "instrumentType": "private",

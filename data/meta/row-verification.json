@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-07T01:44:37.736Z",
+  "generatedAt": "2026-09-11T15:03:11.585Z",
   "generatedBy": "scripts/build-row-verification.ts",
   "checkerVersion": "2026-09-06.1",
   "summary": {
-    "rows": 11509,
+    "rows": 11555,
     "byState": {
-      "checked": 11364,
+      "checked": 11410,
       "human_verified": 145,
       "deterministic_agree": 0,
       "two_models_agree": 0,
@@ -19,7 +19,7 @@
       "0": 0,
       "1": 0,
       "2": 0,
-      "3": 11509
+      "3": 11555
     }
   },
   "rows": {
@@ -217,7 +217,7 @@
         "ocr": "none",
         "model2": "agree",
         "session": "none",
-        "audit": "none",
+        "audit": "dispute",
         "human": "confirmed",
         "implausible": [],
         "name": "agree"
@@ -237,7 +237,7 @@
         "ocr": "none",
         "model2": "agree",
         "session": "none",
-        "audit": "none",
+        "audit": "dispute",
         "human": "confirmed",
         "implausible": [],
         "name": "agree"
@@ -31391,6 +31391,66 @@
         "name": "agree"
       }
     },
+    "05ac26cc31db2d37d155818f": {
+      "id": "05ac26cc31db2d37d155818f",
+      "slug": "mcmaster-sean",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.97,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "1ee8d74d5333567f636439a3": {
+      "id": "1ee8d74d5333567f636439a3",
+      "slug": "mcmaster-sean",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.97,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "afb934222ab20bee248b91d1": {
+      "id": "afb934222ab20bee248b91d1",
+      "slug": "mcmaster-sean",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.97,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
     "5001e676a5abdbbfc3d53e2c": {
       "id": "5001e676a5abdbbfc3d53e2c",
       "slug": "mcmaster-sean",
@@ -31415,6 +31475,26 @@
       "id": "11a076ca8208c8c26110fcb6",
       "slug": "mcmaster-sean",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/2B716301C2D9B9D585258D7700345AA8/$FILE/Sean-McMaster-09.29.2025-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.97,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "3f55c622b2d3ef416ac3fb16": {
+      "id": "3f55c622b2d3ef416ac3fb16",
+      "slug": "mcmaster-sean",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
       "score": 3,
       "state": "checked",
       "lane": "text",
@@ -222523,6 +222603,746 @@
         "name": "agree"
       }
     },
+    "5bc0d5db85b87933b2e54f60": {
+      "id": "5bc0d5db85b87933b2e54f60",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "2b97fa35373be4d985dec457": {
+      "id": "2b97fa35373be4d985dec457",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "9b1ced25733cbdc0dac6203e": {
+      "id": "9b1ced25733cbdc0dac6203e",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "09cd0925764b79dfeae63f7c": {
+      "id": "09cd0925764b79dfeae63f7c",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "3e60101066f00325259a2272": {
+      "id": "3e60101066f00325259a2272",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "2077df2eb2343f894d40ae51": {
+      "id": "2077df2eb2343f894d40ae51",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "8d8c0f863a569dd81b68bcfb": {
+      "id": "8d8c0f863a569dd81b68bcfb",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "60e7d8966348d2e3d0015519": {
+      "id": "60e7d8966348d2e3d0015519",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "997b0f869b9ebd6c3a8fdf05": {
+      "id": "997b0f869b9ebd6c3a8fdf05",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "4a79347afe51f1ee16433634": {
+      "id": "4a79347afe51f1ee16433634",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "42e3e8808f611450d6a75f22": {
+      "id": "42e3e8808f611450d6a75f22",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "2bf7f62fb7e7e004708ae326": {
+      "id": "2bf7f62fb7e7e004708ae326",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "b28a3b8d9c934aef209ac254": {
+      "id": "b28a3b8d9c934aef209ac254",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "944e18dbc4ce08c76f7302ad": {
+      "id": "944e18dbc4ce08c76f7302ad",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "d85ab58ed71fc9755991b60d": {
+      "id": "d85ab58ed71fc9755991b60d",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "41749c8cafe5f551452d33da": {
+      "id": "41749c8cafe5f551452d33da",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "c1816eccbde4640f1131e5aa": {
+      "id": "c1816eccbde4640f1131e5aa",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "0c6d3c67e1ba1b9099a6dbb6": {
+      "id": "0c6d3c67e1ba1b9099a6dbb6",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "661b512f004a2e52e612f16f": {
+      "id": "661b512f004a2e52e612f16f",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "8533e9cdde8f65354412a910": {
+      "id": "8533e9cdde8f65354412a910",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "300df0de5e13124913938b3b": {
+      "id": "300df0de5e13124913938b3b",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "7a8b364548c6f5ed887f93ed": {
+      "id": "7a8b364548c6f5ed887f93ed",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "4f142f1954264cf290dd83c6": {
+      "id": "4f142f1954264cf290dd83c6",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "71f3e345aab30a21e04aed42": {
+      "id": "71f3e345aab30a21e04aed42",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "5370dbce93c73ecb633f7c33": {
+      "id": "5370dbce93c73ecb633f7c33",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "c6d7de58c3c743cc9e4c9105": {
+      "id": "c6d7de58c3c743cc9e4c9105",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "3234bd87a3a4b71b784daf8e": {
+      "id": "3234bd87a3a4b71b784daf8e",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "0dbba06793e34820eb359c71": {
+      "id": "0dbba06793e34820eb359c71",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "d0c9a5a8b5a541b4fcb2ae16": {
+      "id": "d0c9a5a8b5a541b4fcb2ae16",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "823b226015bde645606a308b": {
+      "id": "823b226015bde645606a308b",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "05f85d8aeb4c5bcc9fa04420": {
+      "id": "05f85d8aeb4c5bcc9fa04420",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "7875b70060f0766f921d0b64": {
+      "id": "7875b70060f0766f921d0b64",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "63cfb06391baf90c23a6ff75": {
+      "id": "63cfb06391baf90c23a6ff75",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "fa15e97bcb8c667bc6df22d3": {
+      "id": "fa15e97bcb8c667bc6df22d3",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "14f21dc0aaa7961a23980c80": {
+      "id": "14f21dc0aaa7961a23980c80",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "87a10e362b7a2257219ba031": {
+      "id": "87a10e362b7a2257219ba031",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "87a83e38937f9d71e3dd6c8b": {
+      "id": "87a83e38937f9d71e3dd6c8b",
+      "slug": "ueland-eric-m",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
     "dc2c9762e044beba8a50ebad": {
       "id": "dc2c9762e044beba8a50ebad",
       "slug": "vaden-stephen-a",
@@ -222627,6 +223447,106 @@
       "id": "a18abf721ba69ac8714be873",
       "slug": "vaden-stephen-a",
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/26AA499A708D62B285258DDC002DD79C/$FILE/Stephen-A-Vaden-03.19.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "b7711d1f604765f03148d97d": {
+      "id": "b7711d1f604765f03148d97d",
+      "slug": "warsh-kevin",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "154f5860912d71b8e9485ad8": {
+      "id": "154f5860912d71b8e9485ad8",
+      "slug": "warsh-kevin",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "9c83b27fe0af189161fc9d00": {
+      "id": "9c83b27fe0af189161fc9d00",
+      "slug": "warsh-kevin",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "1cabf7bff0b683249428c168": {
+      "id": "1cabf7bff0b683249428c168",
+      "slug": "warsh-kevin",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "score": 3,
+      "state": "checked",
+      "lane": "text",
+      "note": "Text layer of the filing agrees, row for row; the page audit confirmed it",
+      "gates": {
+        "read1Confidence": 0.95,
+        "text": "agree",
+        "ocr": "none",
+        "model2": "none",
+        "session": "none",
+        "audit": "confirm",
+        "human": null,
+        "implausible": [],
+        "name": "agree"
+      }
+    },
+    "e6499df6c2b8cdb82584c48d": {
+      "id": "e6499df6c2b8cdb82584c48d",
+      "slug": "warsh-kevin",
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
       "score": 3,
       "state": "checked",
       "lane": "text",

@@ -41,8 +41,11 @@ describe("row verification display", () => {
     const html = renderToStaticMarkup(createElement(VerificationSummary, { summary }));
     expect(html).toContain("5 of 20 rows (25 percent)");
     expect(html.match(/percent/g)).toHaveLength(1);
-    for (const [state, count] of Object.entries(summary.byState)) {
-      expect(html).toContain(`${count} rows</strong> — ${STATE_LABEL[state as RowVerification["state"]]}.`);
+    // React escapes the apostrophe in "provider's" as &#x27; in static markup,
+    // and states with zero rows are not listed.
+    for (const [state, count] of Object.entries(summary.byState).filter(([, count]) => count > 0)) {
+      const label = STATE_LABEL[state as RowVerification["state"]].replaceAll("'", "&#x27;");
+      expect(html).toContain(`${count} rows</strong> — ${label}.`);
     }
     expect(html).toContain("one model read with no independent comparison yet");
     expect(html).toContain("rows are on the site while a person decides");

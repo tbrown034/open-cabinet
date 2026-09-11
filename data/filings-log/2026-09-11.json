@@ -1,0 +1,170 @@
+{
+  "date": "2026-09-11",
+  "lede": "Three filings posted this week add 46 trades to the site. Federal Reserve Chairman Kevin Warsh’s report, posted Sept. 10, discloses five sales from July and August: three more numbered series of THSDFS LLC, a stake in Arcana Analytics, Inc. reported at $1,000,001 to $5,000,000, and Goat Growth Fund II LP. Eric M. Ueland, deputy director for management at the Office of Management and Budget, appears on the site for the first time with 37 mutual fund and ETF trades all dated July 15, 2026, 19 purchases and 18 sales, none reported above $50,000. Federal Highway Administrator Sean McMaster’s report, posted Sept. 9, lists four sales of ASGN, Inc. from August 2025, each marked on the filing as received more than 30 days late, more than a year after the trades.",
+  "items": [
+    {
+      "slug": "ueland-eric-m",
+      "name": "Ueland, Eric M",
+      "title": "Deputy Director for Management",
+      "agency": "Office of Management and Budget",
+      "newCount": 37,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "postedDate": "2026-09-10",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf"
+      ],
+      "trades": [
+        {
+          "description": "Cohen & Steers Preferred Securities and Income Fund, Inc Class I Shares",
+          "ticker": "CPXIX",
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Delaware Small Cap Core Fund Institutional Class Shares",
+          "ticker": "DCCIX",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Edgewood Growth Fund Institutional Class Shares",
+          "ticker": "EGFIX",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Fidelity Advisor Municipal Income Fund Class I Shares",
+          "ticker": "FROGX",
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Invesco Emerging Markets Sovereign Debt ETF",
+          "ticker": "PCY",
+          "type": "Purchase",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "iShares Core MSCI EAFE ETF",
+          "ticker": "IEFA",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2026-07-15",
+          "lateFilingFlag": false
+        }
+      ]
+    },
+    {
+      "slug": "warsh-kevin",
+      "name": "Warsh, Kevin",
+      "title": "Chairman",
+      "agency": "Federal Reserve System Board of Governors",
+      "newCount": 5,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "postedDate": "2026-09-10",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf"
+      ],
+      "trades": [
+        {
+          "description": "Arcana Analytics, Inc.",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$1,000,001-$5,000,000",
+          "date": "2026-08-03",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "Goat Growth Fund II LP",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$100,001-$250,000",
+          "date": "2026-08-03",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 06",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$250,001-$500,000",
+          "date": "2026-07-14",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 52",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$50,001-$100,000",
+          "date": "2026-07-14",
+          "lateFilingFlag": false
+        },
+        {
+          "description": "THSDFS LLC - Series 58",
+          "ticker": null,
+          "type": "Sale",
+          "amount": "$15,001-$50,000",
+          "date": "2026-07-14",
+          "lateFilingFlag": false
+        }
+      ]
+    },
+    {
+      "slug": "mcmaster-sean",
+      "name": "McMaster, Sean",
+      "title": "Administrator, Federal Highway Administration",
+      "agency": "Department of Transportation",
+      "newCount": 4,
+      "primaryFilingUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+      "postedDate": "2026-09-09",
+      "filingUrls": [
+        "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf"
+      ],
+      "trades": [
+        {
+          "description": "ASGN, Inc. (ASGN)",
+          "ticker": "ASGN",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2025-08-22",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ASGN, Inc. (ASGN)",
+          "ticker": "ASGN",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2025-08-22",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ASGN, Inc. (ASGN)",
+          "ticker": "ASGN",
+          "type": "Sale",
+          "amount": "$15,001-$50,000",
+          "date": "2025-08-22",
+          "lateFilingFlag": true
+        },
+        {
+          "description": "ASGN, Inc. (ASGN)",
+          "ticker": "ASGN",
+          "type": "Sale",
+          "amount": "$1,001-$15,000",
+          "date": "2025-08-11",
+          "lateFilingFlag": true
+        }
+      ]
+    }
+  ],
+  "alsoNew": [],
+  "trackedOfficialCount": 37
+}

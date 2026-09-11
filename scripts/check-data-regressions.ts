@@ -44,14 +44,15 @@ async function main() {
   assertEqual(trump.transactions.length, 8940, "Trump aggregate profile transaction count");
   // Aug 22, 2026 ingest: Trump 08.12.2026 filing (+1,051, rows 1-1051 visually
   // reconciled against printed row numbers), Kupor 07.15 + 07.20 (+5)
-  assertEqual(fullDataset.officialCount, 39, "Full dataset official count");
+  assertEqual(fullDataset.officialCount, 40, "Full dataset official count");
   // Sep 6, 2026: re-read applied (Trump 8,940 -> 8,944), Landau/Bisignano and others +10,
   // Chavez-DeRemer name-wrap -1, Dixon duplicate -1, four superseded rows of the
   // Aug 12, 2025 amendment removed (Trump 8,944 -> 8,940): 11,509.
   // Sep 8: three MacGregor rows remain in the export as history; no rows removed.
-  assertEqual(fullDataset.transactionCount, 11506, "Full dataset counted transaction count");
+  // Sep 11: Warsh 08.06 (+5), Ueland 08.06 (+37, new official), McMaster 06.11(1) (+4): 11,555.
+  assertEqual(fullDataset.transactionCount, 11552, "Full dataset counted transaction count");
   assertEqual(fullDataset.historicalCount, 3, "Full dataset historical transaction count");
-  assertEqual(fullDataset.officials.reduce((n, o) => n + o.transactions.length, 0), 11509, "Full dataset preserved rows");
+  assertEqual(fullDataset.officials.reduce((n, o) => n + o.transactions.length, 0), 11555, "Full dataset preserved rows");
 
   const exportedTrump = fullDataset.officials.find((official) => official.slug === "trump-donald-j");
   if (!exportedTrump) {

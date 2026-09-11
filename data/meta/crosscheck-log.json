@@ -1,7 +1,7 @@
 {
   "version": 1,
   "checkerVersion": "2026-09-06.1",
-  "generatedAt": "2026-09-07T00:26:28.959Z",
+  "generatedAt": "2026-09-11T14:58:37.534Z",
   "entries": [
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/EC797C6A3CC5ABA085258DD4002D9D81/$FILE/Bryan-Bedford-02.27.2026-278T.pdf",
@@ -1057,6 +1057,29 @@
       "parseRecord": "current"
     },
     {
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/D4003325FAE6858085258E6E002DF6AB/$FILE/Eric-M-Ueland-08.06.2026-278T.pdf",
+      "slug": "ueland-eric-m",
+      "filingDate": "2026-09-10",
+      "pdfFile": "Eric-M-Ueland-08.06.2026-278T.pdf",
+      "pdfSha256": "39706d0bc76702e5f6e011d879715e021e8f04d5e91271172c2bd5b2c9315244",
+      "candidateSha256": "6d1b2c7d77e9127e43cc8b138c648755b47761c34c8a76c028dc5d3b3a4fd04e",
+      "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
+      "comparedFields": [
+        "type",
+        "date",
+        "amount",
+        "lateFilingFlag",
+        "rowCount",
+        "printedRowContinuity",
+        "assetNameSharedWord"
+      ],
+      "rowsCompared": 37,
+      "publishedRows": 37,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-11T14:58:26.865Z"
+    },
+    {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/AF83B6CFCFDD7C7985258D00002BFE32/$FILE/Michael-W-Faulkender-06.26.2025-278T.pdf",
       "slug": "faulkender-michael-w",
       "filingDate": "2025-09-09",
@@ -2024,6 +2047,29 @@
       "state": "checked_tuple_agreement",
       "rowsCompared": 155,
       "parseRecord": "current"
+    },
+    {
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/87D4C3BB9C104B3E85258E6D002DDD05/$FILE/Sean-McMaster-06.11.2026-278T(1).pdf",
+      "slug": "mcmaster-sean",
+      "filingDate": "2026-09-09",
+      "pdfFile": "Sean-McMaster-06.11.2026-278T(1).pdf",
+      "pdfSha256": "8c630bbfe61a63602a4208892de85460b1dabb1b6620b5fb9875679a5685e147",
+      "candidateSha256": "81b498afea549531499e4f00223ba21d5f8710fa3b834aa513d0b0bbc104e215",
+      "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
+      "comparedFields": [
+        "type",
+        "date",
+        "amount",
+        "lateFilingFlag",
+        "rowCount",
+        "printedRowContinuity",
+        "assetNameSharedWord"
+      ],
+      "rowsCompared": 4,
+      "publishedRows": 4,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-11T14:58:37.534Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/ADE89624CD8D7F1D85258E35002DD6B1/$FILE/Sean-McMaster-06.11.2026-278T.pdf",
@@ -23498,6 +23544,29 @@
       "state": "checked_tuple_agreement",
       "rowsCompared": 6,
       "parseRecord": "current"
+    },
+    {
+      "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+      "slug": "warsh-kevin",
+      "filingDate": "2026-09-10",
+      "pdfFile": "Kevin-Warsh-08.06.2026-278T.pdf",
+      "pdfSha256": "6578304224ce3d5225cb4f07837934fd9a11f5ad817411ca45bfeaeaa301dc06",
+      "candidateSha256": "40ddd80b9f91445c61ed9bf3348114a8d6912f571a31699d32c283e95fc817fd",
+      "checkerVersion": "2026-09-06.1",
+      "state": "checked_tuple_agreement",
+      "comparedFields": [
+        "type",
+        "date",
+        "amount",
+        "lateFilingFlag",
+        "rowCount",
+        "printedRowContinuity",
+        "assetNameSharedWord"
+      ],
+      "rowsCompared": 5,
+      "publishedRows": 5,
+      "parseRecord": "current",
+      "checkedAt": "2026-09-11T14:57:54.245Z"
     },
     {
       "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/0933B220C51FFFB485258E52002DD2D9/$FILE/Kevin-Warsh-06.25.2026-278T.pdf",

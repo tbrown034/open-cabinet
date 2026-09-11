@@ -1,0 +1,62 @@
+{
+  "key": "46759c817de7ef29",
+  "pdfSha256": "6578304224ce3d5225cb4f07837934fd9a11f5ad817411ca45bfeaeaa301dc06",
+  "sourceUrl": "https://extapps2.oge.gov/201/Presiden.nsf/PAS+Index/CC5D2BAFDF8EB24085258E6E002DF7E9/$FILE/Kevin-Warsh-08.06.2026-278T.pdf",
+  "chunk": null,
+  "parserVersion": "2026-09-05.2",
+  "promptSha256": "2662c84e26709fb0594c77aee41ff5452ee5aa86631b73d88f296929a5ab7bb8",
+  "model": "claude-sonnet-4-6",
+  "parsedAt": "2026-09-11T14:57:52.708Z",
+  "transactions": [
+    {
+      "description": "THSDFS LLC - Series 06",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$250,001-$500,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 52",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$50,001-$100,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "THSDFS LLC - Series 58",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-07-14",
+      "amount": "$15,001-$50,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Arcana Analytics, Inc.",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-08-03",
+      "amount": "$1,000,001-$5,000,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    },
+    {
+      "description": "Goat Growth Fund II LP",
+      "ticker": null,
+      "type": "Sale",
+      "date": "2026-08-03",
+      "amount": "$100,001-$250,000",
+      "lateFilingFlag": false,
+      "confidence": 0.95
+    }
+  ],
+  "tokenUsage": {
+    "inputTokens": 6760,
+    "outputTokens": 430,
+    "estimatedCostUsd": 0.0267
+  }
+}
