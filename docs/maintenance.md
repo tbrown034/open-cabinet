@@ -51,7 +51,7 @@ Tests use fixtures and mocks. The Ask route tests can write a local diagnostic l
 
 ## Add a new filing
 
-The scheduled path is `.github/workflows/oge-pipeline.yml`: check sources → ingest → rebuild index → validate → rebuild verification → resolve assets/registry → export → open a PR. Its dry-run option currently performs discovery only, not PDF parsing.
+The owner manually starts `.github/workflows/oge-pipeline.yml`: check sources → ingest → rebuild index → validate → rebuild verification → resolve assets/registry → export → open a PR. Its dry-run option currently performs discovery only, not PDF parsing.
 
 For a manual run, begin with discovery and inspect which URLs and officials are in scope. Approve the cost before ingestion, then inspect the changed official rows and their source evidence. Regenerate the supporting artifacts and README statistics, run checks, and review the entire diff before merging.
 

@@ -103,7 +103,7 @@ Adding a new filing and correcting an existing filing are different operations. 
 
 ## Data pipeline
 
-Open Cabinet uses two scheduled paths:
+Open Cabinet uses two separate paths:
 
 1. **Monitor** — Vercel Cron polls the OGE API daily, compares 278-T PDF URLs with previously discovered/imported URLs, records the run and sends notifications when needed. Discovery is not proof of import.
 2. **Ingest** — The owner starts the GitHub Actions workflow after reviewing an alert. It downloads new PDFs, parses them with Claude PDF support, checks them, regenerates exports and opens a PR for review.
@@ -131,7 +131,7 @@ Email subscriptions and delivery records remain in PostgreSQL. Removing mirror t
 ### Pipeline commands
 
 ```bash
-pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs (the scheduled path)
+pnpm run ingest-filings        # Update static JSON from new OGE PDF URLs (manual ingest)
 pnpm run plan-reparse          # List published filings a prompt change would re-read, with cost; never parses
 pnpm run crosscheck-sweep      # Re-run the text-layer comparison over every filing; writes the log
 pnpm run row-verification      # Rebuild the per-row verification record from every lane

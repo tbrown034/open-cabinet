@@ -71,3 +71,8 @@ data/meta/ask-log.jsonl
 /data/meta/adjudication-notes-*.md
 /data/meta/reverify-reports/
 /data/meta/reverify-history/
+
+# Audit working papers and any other root-level notes stay private (Sep 11).
+/CODEBASE_AUDIT*.md
+/*.md
+!/README.md
