@@ -1,6 +1,6 @@
 {
   "date": "2026-09-11",
-  "lede": "Three filings posted this week add 46 trades to the site. Federal Reserve Chairman Kevin Warsh’s report, posted Sept. 10, discloses five sales from July and August: three more numbered series of THSDFS LLC, a stake in Arcana Analytics, Inc. reported at $1,000,001 to $5,000,000, and Goat Growth Fund II LP. Eric M. Ueland, deputy director for management at the Office of Management and Budget, appears on the site for the first time with 37 mutual fund and ETF trades all dated July 15, 2026, 19 purchases and 18 sales, none reported above $50,000. Federal Highway Administrator Sean McMaster’s report, posted Sept. 9, lists four sales of ASGN, Inc. from August 2025, each marked on the filing as received more than 30 days late, more than a year after the trades.",
+  "lede": "Three filings posted this week add 46 trades to the site, including the first report from a newly tracked official.\n\nFederal Reserve Chairman Kevin Warsh’s report, posted Sept. 10, discloses five sales from July and August: three more numbered series of THSDFS LLC, a stake in Arcana Analytics, Inc. reported at $1,000,001 to $5,000,000, and Goat Growth Fund II LP.\n\nEric M. Ueland, deputy director for management at the Office of Management and Budget, appears on Open Cabinet for the first time. His report, also posted Sept. 10, lists 37 mutual fund and ETF trades dated July 15, 2026: 19 purchases and 18 sales, none reported above $50,000.\n\nFederal Highway Administrator Sean McMaster’s report, posted Sept. 9, lists four sales of ASGN, Inc. from August 2025, more than a year after the trades. Each is marked on the filing as received more than 30 days late.",
   "items": [
     {
       "slug": "ueland-eric-m",
@@ -62,7 +62,8 @@
           "date": "2026-07-15",
           "lateFilingFlag": false
         }
-      ]
+      ],
+      "newOfficial": true
     },
     {
       "slug": "warsh-kevin",

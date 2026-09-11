@@ -127,6 +127,25 @@ describe("selectDigestItems", () => {
     expect(result.items[0].trades.length).toBeLessThanOrEqual(6);
   });
 
+  it("flags an official whose every filing is un-notified as new to the site", () => {
+    const first = official({
+      slug: "first-timer",
+      sourceFilings: [{ date: "2026-09-10", url: "https://oge.gov/first.pdf", label: "x" }],
+    });
+    const returning = official({
+      slug: "returning",
+      sourceFilings: [
+        { date: "2026-09-10", url: "https://oge.gov/new.pdf", label: "x" },
+        { date: "2026-08-13", url: "https://oge.gov/old.pdf", label: "x" },
+      ],
+    });
+    const result = selectDigestItems([first, returning], {
+      notifiedUrls: new Set(["https://oge.gov/old.pdf"]),
+    });
+    expect(result.items.find((i) => i.slug === "first-timer")?.newOfficial).toBe(true);
+    expect(result.items.find((i) => i.slug === "returning")?.newOfficial).toBeUndefined();
+  });
+
   it("orders items by new-trade count desc (deterministic)", () => {
     const a = official({ slug: "a", lastIngestedNewCount: 1, sourceFilings: [{ date: "2026-06-10", url: "https://oge.gov/a.pdf", label: "x" }] });
     const b = official({ slug: "b", lastIngestedNewCount: 5, sourceFilings: [{ date: "2026-06-10", url: "https://oge.gov/b.pdf", label: "x" }] });

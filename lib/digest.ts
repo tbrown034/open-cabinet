@@ -52,6 +52,9 @@ export interface DigestItem {
   filingUrls: string[];
   /** A few most-recent trades to preview (proxy for "the new ones"). */
   trades: DigestTrade[];
+  /** True when none of this official's filings has been announced before:
+   * this digest is their first appearance on the site (Ueland, Sep 11). */
+  newOfficial?: boolean;
 }
 
 /**
@@ -259,6 +262,9 @@ export function selectDigestItems(
       postedDate: newFilings[0].date,
       filingUrls: urls,
       trades,
+      ...(newFilings.length === (o.sourceFilings ?? []).filter((f) => Boolean(f.url)).length
+        ? { newOfficial: true }
+        : {}),
     });
   }
 

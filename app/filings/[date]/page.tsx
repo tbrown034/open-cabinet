@@ -88,6 +88,11 @@ export default async function FilingUpdatePage({
             <Link href={`/officials/${item.slug}`} className="hover:underline">
               {displayName(item.name)}
             </Link>
+            {item.newOfficial && (
+              <span className="ml-2 align-middle bg-neutral-900 text-white text-[10px] uppercase tracking-wider px-1.5 py-0.5">
+                New to Open Cabinet
+              </span>
+            )}
           </h2>
           <p className="text-xs text-neutral-500 mt-1 mb-3">
             {officeLine(item.title, item.agency)} ·{" "}
@@ -131,7 +136,11 @@ export default async function FilingUpdatePage({
           {item.trades.length < item.newCount && (
             <p className="text-xs text-neutral-500 mt-2">
               Showing {item.trades.length} of{" "}
-              {item.newCount.toLocaleString()} new trades.
+              {item.newCount.toLocaleString()} new trades.{" "}
+              <Link href={`/officials/${item.slug}`} className="underline underline-offset-4 hover:text-neutral-900">
+                See all {item.newCount.toLocaleString()}
+              </Link>
+              .
             </p>
           )}
 
